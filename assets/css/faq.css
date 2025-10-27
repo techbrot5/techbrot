@@ -1,0 +1,117 @@
+/* --------------------------------------------------------------
+# Faq Section
+-------------------------------------------------------------- */
+
+.faq-content {
+  font-size: 15px;
+}
+
+.faq-content ol {
+  list-style-type: upper-roman;
+  margin: 8px 0 0 20px;
+  padding: 0;
+}
+
+.faq-content ol li {
+  margin-bottom: 6px;
+}
+
+.faq-toggle {
+  cursor: pointer;
+  float: right;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.faq-active .faq-toggle {
+  transform: rotate(90deg);
+}
+
+.faq .faq-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+}
+
+.faq .faq-description {
+  color: var(--default-color);
+  margin-bottom: 2rem;
+  font-size: 1.15rem;
+  font-weight: 300;
+}
+
+.faq .faq-arrow {
+  color: #28a745;
+}
+
+.faq .faq-container .faq-item {
+  background-color: var(--background-color);
+  position: relative;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.faq .faq-container .faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq .faq-container .faq-item h3 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 30px 0 0;
+  transition: 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.faq .faq-container .faq-item h3:hover {
+  color: #28a745;
+}
+
+.faq .faq-container .faq-item .faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.faq .faq-container .faq-item .faq-content p {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.faq .faq-container .faq-item .faq-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
+  line-height: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.faq .faq-container .faq-item .faq-toggle:hover {
+  color: #28a745;
+}
+
+.faq .faq-container .faq-active h3 {
+  color: #28a745;
+}
+
+.faq .faq-container .faq-active .faq-content {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  opacity: 1;
+  padding-top: 10px;
+}
+
+.faq .faq-container .faq-active .faq-toggle {
+  transform: rotate(90deg);
+  color: #28a745;
+}
+
