@@ -1,0 +1,71 @@
+/* Background and spacing */
+
+#contact-banner {
+  padding: 0.75rem 0;
+  background-image: url('../../assets/img/background-fill-dark-blue.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle overlay */
+
+#contact-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 37, 65, 0.6);
+  z-index: 0;
+}
+
+/* Layer content above overlay */
+
+#contact-banner .container, #contact-banner .row, #contact-banner p, #contact-banner a {
+  position: relative;
+  z-index: 1;
+}
+
+/* Typography */
+
+.cb-text {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* CTA button */
+
+.cb-cta {
+  padding: 0.5rem 1rem;
+  border-width: 2px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.cb-cta:hover, .cb-cta:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Layout tweaks */
+
+@media (min-width: 768px) {
+  #contact-banner .row {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .cb-text {
+    margin-right: 5%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cb-text {
+    text-align: center;
+  }
+}
+
