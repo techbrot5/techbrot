@@ -63,15 +63,159 @@
         <section id="hero" class="hero section" style="padding-top: 130px;">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div data-aos="fade-up" data-aos-delay="200" class="hero-content">
-                            <h1 class="mb-4">Explore flexible solutions with&nbsp;<span class="accent-text">QuickBooks Online Advanced</span></h1>
-                            <p>Get the tools you need to streamline your business and the insights to drive it forward. All in QuickBooks Online Advanced.</p>
-                            <div class="hero-buttons"><a href="tel:18777515575" class="hero-btn"><strong>Call 1-877-751-5575</strong></a>
-                                <p style="margin-top:0.5rem;"> Looking for product support? <a href="/contact/">Contact us</a></p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="col-lg-6"><div class="hero-content"> 
+  <h1 class="mb-4">QuickBooks Online</h1>
+  <p>
+    Simplify your accounting and manage your business from anywhere with Intuit QuickBooks Online. 
+    Our experts help you set up, customize, and optimize your QuickBooks Online account for maximum efficiency.
+  </p>
+
+  <p class="mt-3 mb-1 fw-semibold">Pricing starting at <span class="price-month">$26.60<span class="per-mo">/month</span></span></p>
+  <p class="mb-2 text-muted price-annual">Annual cost: $319.20</p>
+  <p class="fw-bold savings" style="color:#0d6efd;">Save 30% — Now only <span class="price-sale">$18.62<span class="per-mo">/month</span></span> ($223.44/year)</p>
+
+  <div class="hero-buttons mt-4 d-flex justify-content-start gap-3 flex-wrap">
+    <a class="btn btn-success px-4 py-2 fw-semibold btn-primary-cta" href="tel:18777515575">
+      <i class="bi bi-telephone"></i> Call 1-877-751-5575
+    </a>
+    <a class="btn btn-outline-success px-4 py-2 fw-semibold hero-btn-alt" href="/pricing/">
+      <i class="bi bi-tags"></i> View Pricing
+    </a>
+  </div>
+
+  <p class="mt-3">
+    Looking for product support? <a href="/contact/">Contact us</a>
+  </p>
+</div>
+
+<style>
+  :root{
+    --accent:#198754;
+    --accent-2:#0d6efd;
+    --muted:#6c757d;
+    --radius:12px;
+    --transition:250ms;
+  }
+
+  /* Container tweaks for a modern look */
+  .hero-content{
+    max-width:820px;
+    margin:0 auto;
+    padding:1rem;
+    line-height:1.5;
+    color: #222;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+
+  .hero-content h1{
+    font-weight:700;
+    letter-spacing:-0.5px;
+  }
+
+  /* Pricing emphasis */
+  .price-month{
+    display:inline-block;
+    font-weight:800;
+    font-size:1.75rem;            /* bigger for monthly */
+    color:var(--accent);
+    margin-left:0.35rem;
+    line-height:1;
+  }
+  .price-month .per-mo{
+    font-size:0.9rem;
+    font-weight:600;
+    margin-left:0.25rem;
+    color:var(--muted);
+  }
+
+  .price-sale{
+    display:inline-block;
+    font-weight:800;
+    font-size:1.45rem;            /* sale price slightly smaller than main monthly */
+    color:var(--accent-2);
+    line-height:1;
+  }
+  .price-sale .per-mo{
+    font-size:0.9rem;
+    font-weight:700;
+    margin-left:0.25rem;
+    color:var(--muted);
+  }
+
+  .price-annual{
+    font-size:1.05rem;            /* a little less than monthly */
+    color:var(--muted);
+    margin-top:0.15rem;
+    margin-bottom:0.35rem;
+  }
+
+  .savings{ margin-top:0.25rem; }
+
+  /* Buttons moved left and given entrance animation */
+  .hero-buttons{
+    align-items:center;
+    animation:fadeInUp 500ms ease both;
+  }
+
+  .btn-primary-cta{
+    border-radius:var(--radius);
+    box-shadow: 0 6px 18px rgba(25,135,84,0.12);
+    transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+  }
+
+  .btn-primary-cta:hover,
+  .btn-primary-cta:focus{
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 14px 30px rgba(25,135,84,0.12);
+    filter:brightness(1.02);
+  }
+
+  /* Subtle style for alternate button */
+  .hero-btn-alt{
+    border-radius:var(--radius);
+    transition: background-color var(--transition), color var(--transition), transform var(--transition);
+  }
+
+  .hero-btn-alt:hover,
+  .hero-btn-alt:focus,
+  .hero-btn-alt:active {
+    background-color: var(--accent) !important;
+    color: #fff !important;
+    border-color: var(--accent) !important;
+    transform: translateY(-3px);
+  }
+
+  /* Small icon spacing */
+  .hero-buttons .bi{
+    margin-right:0.5rem;
+    vertical-align:-0.075em;
+  }
+
+  /* Entrance and micro-animation for price */
+  .price-month, .price-sale{
+    animation:popIn 420ms cubic-bezier(.2,.9,.2,1) both;
+  }
+
+  @keyframes popIn{
+    from{ transform: translateY(6px) scale(.98); opacity:0; }
+    to  { transform: translateY(0) scale(1); opacity:1; }
+  }
+
+  @keyframes fadeInUp{
+    from{ transform: translateY(8px); opacity:0; }
+    to  { transform: translateY(0); opacity:1; }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px){
+    .hero-content{ padding:0.6rem; }
+    .price-month{ font-size:1.45rem; }
+    .price-sale{ font-size:1.15rem; }
+    .hero-buttons{ justify-content:flex-start; gap:0.5rem; }
+    .btn{ padding-left:0.9rem; padding-right:0.9rem; }
+  }
+</style>
+</div>
                     <div class="col-lg-6">
                         <div data-aos="zoom-out" data-aos-delay="300" class="hero-image"><img class="img-fluid" src="../../assets/img/sculpt-studios-0005-brand-photo-FY24@1.avif" alt="Hero Image">
                             <div class="customers-badge">
@@ -535,6 +679,294 @@
             <p>© <span>Copyright 2025</span><strong class="px-1 sitename">TechBrot, Inc</strong><span>All Rights Reserved.</span></p>
         </div>
     </footer><a class="d-flex justify-content-center align-items-center scroll-top" href="#" id="scroll-top"><i class="bi bi-arrow-up-short"></i></a>
+    <section class="features-section" style="background-color: rgba(249,249,249,0);padding: 0;">
+        <div class="col col-sm-12 col-md-10 mx-auto"><div class="container">
+  <h2 class="display-5 fw-semibold mb-3 text-start">We Don’t Just Sell QuickBooks Online — We Make It Work for You</h2>
+  <p class="lead mb-4 text-start">
+    At <strong>TechBrot</strong>, we go beyond simply providing QuickBooks Online. We tailor it to your business needs so you can operate smarter, faster, and more efficiently. Our certified QuickBooks experts handle everything — from setup and customization to ongoing optimization — ensuring your QuickBooks works seamlessly for your goals.
+  </p>
+
+  <div class="feature-block">
+    <div class="feature-content text-block mb-5">
+
+      <div class="row align-items-start g-5">
+
+        <!-- Left Column -->
+        <div class="col-md-6 text-start">
+          <h3 class="display-6 fw-semibold mb-3">Why Choose TechBrot for QuickBooks Online</h3>
+          <p class="lead">
+            As a trusted QuickBooks ProAdvisor and implementation partner, we’ve helped countless businesses streamline their accounting and achieve clarity in their financials. Beyond the software itself, we deliver hands-on support, process consulting, and data migration services designed to maximize your investment.
+          </p>
+          <p class="fst-italic lead">
+            “TechBrot’s personalized approach ensures businesses don’t just use QuickBooks — they get real results from it.”
+          </p>
+
+          <div class="mt-4 text-start">
+            <h5 class="mb-2 fw-semibold">What sets us apart</h5>
+            <ol class="lead list-roman">
+              <li>Dedicated QuickBooks ProAdvisors assigned to your account</li>
+              <li>Transparent, fixed-price packages and hourly support options</li>
+              <li>Fast onboarding with zero-downtime migrations</li>
+              <li>Security-first approach: encrypted backups & strict access controls</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-md-6 text-start">
+          <h3 class="display-6 fw-semibold mb-3">Our QuickBooks Online Services</h3>
+
+          <ul class="service-list lead">
+            <li>
+              <span class="icon" aria-hidden="true">
+                <!-- SVG check / heading-matching icon -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="12" cy="12" r="11" stroke="#198754" stroke-width="1.5" fill="rgba(25,135,84,0.08)"/>
+                  <path d="M8.5 12.5l2 2.5L15.5 9" stroke="#198754" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <strong>Consulting &amp; Advisory:</strong> We analyze workflows, inventory, and reporting needs to design a system that fits your processes.
+            </li>
+
+            <li>
+              <span class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="2" y="3" width="20" height="14" rx="2" stroke="#0d6efd" stroke-width="1.4" fill="rgba(13,110,253,0.06)"/>
+                  <path d="M7 18h10" stroke="#0d6efd" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <strong>Data Conversion &amp; Migration:</strong> Move data safely from Excel, Xero, or Desktop to QuickBooks Online — no downtime, no data loss.
+            </li>
+
+            <li>
+              <span class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M3 12h18" stroke="#6f42c1" stroke-width="1.6" stroke-linecap="round"/><path d="M7 7v10" stroke="#6f42c1" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <strong>Setup &amp; Implementation:</strong> Smooth deployments for single-users, multi-user teams, or cloud-hosted environments.
+            </li>
+
+            <li>
+              <span class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M3 12h18" stroke="#fd7e14" stroke-width="1.4" stroke-linecap="round"/><path d="M12 4v16" stroke="#fd7e14" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <strong>Programming &amp; Integration:</strong> Connect QuickBooks with CRMs, payroll, e-commerce and payment platforms for automated workflows.
+            </li>
+
+            <li>
+              <span class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M4 7h16M4 12h9M4 17h12" stroke="#0dcaf0" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <strong>Reporting &amp; Business Intelligence:</strong> Custom dashboards, KPIs, and automated reports that turn data into decisions.
+            </li>
+
+            <li>
+              <span class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="3" stroke="#6610f2" stroke-width="1.2" fill="rgba(102,16,242,0.04)"/>
+                  <path d="M7 12h10" stroke="#6610f2" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <strong>File Optimization &amp; Review:</strong> Stability checks, performance tuning, and cleanup to prevent costly errors.
+            </li>
+
+            <li>
+              <span class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M12 3v6M5 21v-2a6 6 0 0 1 14 0v2" stroke="#198754" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <strong>Customized Product Training:</strong> Role-based training for bookkeepers, managers, and admins to reduce errors and increase adoption.
+            </li>
+
+            <li>
+              <span class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" stroke="#198754" stroke-width="1.2" fill="rgba(25,135,84,0.04)"/>
+                  <path d="M8 12h8" stroke="#198754" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <strong>Security &amp; Compliance:</strong> Encrypted backups, role-based access, and best-practice procedures to protect your data and meet compliance needs.
+            </li>
+
+            <li>
+              <span class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M3 12c0-3.866 3.582-7 9-7s9 3.134 9 7" stroke="#0d6efd" stroke-width="1.2" fill="none"/>
+                  <path d="M12 12v5" stroke="#0d6efd" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <strong>Ongoing Support &amp; Maintenance:</strong> SLA-backed support, monthly health checks, and priority fix response.
+            </li>
+          </ul>
+
+          <p class="lead fw-semibold mb-0 mt-3">
+            Talk To An Expert — Let’s make QuickBooks Online work for you, not the other way around.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Layout tweaks & left alignment */
+  .container { max-width: 1100px; }
+  .feature-block { margin-top: 1.25rem; }
+
+  /* Headings & text */
+  .display-5 { line-height: 1.12; }
+  .feature-content h3, .feature-content h5 { text-align: left; }
+  .lead { color: #333; }
+
+  /* Service list styling with SVG bullets */
+  .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .service-list li {
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .service-list li .icon {
+    width: 28px;
+    flex: 0 0 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3px;
+  }
+  .service-list li strong { color: #111; }
+
+  /* Roman ordered list in left column */
+  .list-roman { padding-left: 1rem; margin-top: 0.5rem; }
+  .list-roman li { margin: 0.25rem 0; }
+
+  /* Visual separation between columns */
+  @media (min-width: 768px) {
+    .row.align-items-start > .col-md-6:first-child {
+      padding-right: 2rem;
+      border-right: 1px solid rgba(0,0,0,0.06);
+    }
+    .row.align-items-start > .col-md-6:last-child {
+      padding-left: 2rem;
+    }
+  }
+
+  /* Stylish card-like look */
+  .feature-content {
+    background: linear-gradient(180deg, rgba(255,255,255,1), rgba(250,252,255,1));
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(12, 30, 60, 0.05);
+  }
+
+  /* Micro-interactions */
+  .service-list li:hover {
+    transform: translateX(6px);
+    transition: transform 220ms ease;
+  }
+
+  /* Responsive */
+  @media (max-width: 767.98px) {
+    .feature-content { padding: 1rem; }
+    .row.align-items-start > .col-md-6:first-child { border-right: none; padding-right: 0; }
+    .row.align-items-start > .col-md-6:last-child { padding-left: 0; }
+    .service-list li { padding: 0.5rem 0; }
+  }
+</style>
+</div>
+    </section><section id="industry-expertise" class="features-section" style="background-color: rgba(249,249,249,0);">
+    <div class="col col-sm-12 col-md-10 mx-auto">
+        <div class="container">
+            <div class="feature-block d-flex flex-wrap align-items-center justify-content-center">
+                <div class="feature-image text-center mb-4 mb-md-0">
+                    <i class="bi bi-briefcase-fill" style="font-size: 5rem; color: #0d6efd;"></i>
+                </div>
+                <div class="feature-content text-block ps-md-4">
+                    <div class="text">
+                        <div class="resp-text-wrapper">
+                            <p><span class="ql-size-medium fw-semibold text-primary">Industry Expertise</span></p>
+                        </div>
+                    </div>
+                    <h2 class="fw-bold mb-3">A Partner That Understands Your Business</h2>
+                    <p class="lead mb-3">
+                        Every business is unique—so your QuickBooks setup should be too. Our experts fine-tune QuickBooks for your specific industry, simplifying workflows and improving accuracy across every process.
+                    </p>
+                    <p class="mb-3">
+                        Every industry is unique—and so is each organization. QuickBooks consulting can cater to every industry, helping to fine-tune your specific instance of QuickBooks so it’s optimized for the features you need while omitting those you don’t.
+                    </p>
+                    <p class="mb-4">
+                        Our QuickBooks experts can also help with QuickBooks add-ons to simplify your life and boost your productivity.
+                    </p>
+
+                    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Accounting & Finance</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Advertising & Marketing</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Agriculture</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Biotech & Pharmaceuticals</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Computer / IT Services</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Computer Software</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Construction & Contracting</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Distribution & Wholesale</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>eCommerce</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Education</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Energy / Utilities</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Engineering</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>General Business</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Government</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Healthcare / Medical</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Health & Beauty</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Insurance</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Legal</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Logistics / Transportation</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Manufacturing</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Media / Publishing</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Nonprofit</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Professional Services</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Real Estate</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Restaurant / Hospitality</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Retail</div>
+                        <div class="col"><i class="bi bi-check2-circle text-success me-1"></i>Telecommunications</div>
+                    </div>
+
+                    <div class="mt-4">
+                        <button class="btn btn-primary px-4 py-2"><strong>Talk To An Expert</strong></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="certified-quickBooks-experts" class="features-section" style="background-color: rgba(249,249,249,0);">
+        <div class="col col-sm-12 col-md-10 mx-auto">
+            <div class="container">
+                <div class="feature-block">
+                    <div class="feature-image"><img class="img-fluid" width="600" height="600" src="../../assets/img/qbpro-25-600.webp" alt="Accounting dashboard with financial tools"></div>
+                    <div class="feature-content text-block">
+                        <div class="text">
+                            <div class="resp-text-wrapper">
+                                <p><span class="ql-size-medium">QuickBooks ProAdvisors</span></p>
+                            </div>
+                        </div>
+                        <h3 class="display-6 fw-semibold">Certified QuickBooks Experts</h3>
+                        <p class="lead">Our team of certified QuickBooks ProAdvisors has completed thousands of successful implementations and cleanups across the U.S. We help you select, configure, and optimize the right QuickBooks setup for your business—so you can focus on growth, not guesswork.</p><button class="btn cta-btn" type="button"><strong>Talk To An Expert</strong></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="../../assets/js/bs-init.js"></script>

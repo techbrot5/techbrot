@@ -1700,3 +1700,372 @@ section.profit-stats h3 {
   }
 }
 
+/* --- TechBrot Core Values Grid Styles --- */
+
+.core-values-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: .25rem;
+}
+
+.core-values-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.feature-box {
+  background-color: rgba(255,255,255,0);
+  padding: 1.1rem;
+  border-radius: .5rem;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(2,6,23,0.08);
+}
+
+.feature-box i {
+  font-size: 2.2rem;
+  color: #28a745;
+  line-height: 1;
+}
+
+.feature-box h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.feature-box p {
+  margin: 0;
+  color: #444;
+  font-size: .93rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 1199.98px) {
+  .core-values-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .core-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .core-values-grid {
+    grid-template-columns: 1fr;
+    gap: .8rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .feature-box {
+    padding: .9rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .feature-box i {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .feature-box h4 {
+    font-size: .98rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .feature-box p {
+    font-size: .88rem;
+  }
+}
+
+.core-values-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.core-values-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.12);
+  border-radius: 8px;
+}
+
+/* Scoped styles for founder section */
+
+.cta-dark {
+  background: #0f1720;
+  border-color: rgba(255,255,255,0.05);
+  color: #fff;
+  padding: .55rem 1rem;
+  font-weight: 600;
+  border-radius: .45rem;
+  box-shadow: 0 6px 18px rgba(15,23,32,0.18);
+  transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-dark:hover, .cta-dark:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(15,23,32,0.22);
+  background: #11161a;
+  color: #fff;
+  outline: none;
+}
+
+.cta-dark:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 575.98px) {
+  .cta-dark {
+    width: 100%;
+    text-align: center;
+    padding: .7rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-6 .p-3 {
+    height: 100%;
+  }
+}
+
+/* Scoped styles for this section */
+
+.jobs-list li {
+  display: flex;
+  gap: .9rem;
+  align-items: flex-start;
+  padding: .55rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.jobs-list li:last-child {
+  border-bottom: none;
+}
+
+.jobs-list .check {
+  min-width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(40,167,69,0.09);
+  flex: 0 0 38px;
+  margin-top: 4px;
+}
+
+.jobs-list .check svg path {
+  stroke: #28a745;
+}
+
+.jobs-list .jobs-item {
+  min-width: 0;
+}
+
+/* allow wrapping */
+
+.jobs-list .jobs-item strong {
+  display: block;
+  color: #222;
+  font-weight: 600;
+}
+
+.jobs-list .jobs-item .small {
+  color: #555;
+}
+
+/* CTA dark button */
+
+.cta-dark {
+  background: #0f1720;
+  border-color: rgba(255,255,255,0.05);
+  color: #fff;
+  padding: .55rem 1rem;
+  font-weight: 600;
+  border-radius: .45rem;
+  box-shadow: 0 6px 18px rgba(15,23,32,0.18);
+  transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-dark:hover, .cta-dark:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(15,23,32,0.22);
+  background: #11161a;
+  color: #fff;
+  outline: none;
+}
+
+.cta-dark:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive tweaks */
+
+@media (max-width: 575.98px) {
+  .jobs-list li {
+    gap: .6rem;
+    padding: .45rem 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .jobs-list .check {
+    min-width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .jobs-list .check svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cta-dark {
+    width: 100%;
+    text-align: center;
+    padding: .7rem;
+  }
+}
+
+/* Ensure equal height look if text is longer */
+
+@media (min-width: 768px) {
+  .col-md-6 .p-3 {
+    height: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .jobs-list li {
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .jobs-list .check {
+    margin-top: 0;
+  }
+}
+
+/* Only for this section */
+
+.tb-section {
+  --accent: #ffcc00;
+}
+
+/* accent for headings/buttons */
+
+/* Use Bootstrap grid by default, but force 70/30 at large screens */
+
+@media (min-width: 992px) {
+  .tb-left {
+    flex: 0 0 70%;
+    max-width: 70%;
+  }
+}
+
+@media (min-width: 992px) {
+  .tb-right {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+}
+
+/* Right column styling: dark background + white font */
+
+.tb-benefits {
+  background-color: #0f1720;
+  color: #fff;
+  border-radius: .5rem;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.35);
+}
+
+.tb-benefits h3 {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.tb-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tb-benefits li {
+  padding: .55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+}
+
+.tb-benefits li:last-child {
+  border-bottom: none;
+}
+
+/* simple check mark circle */
+
+.tb-check {
+  min-width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 3px;
+  font-size: 14px;
+}
+
+/* Left column typography */
+
+.tb-left h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: .75rem;
+}
+
+.tb-left p {
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Make sure text remains readable on small screens */
+
+@media (max-width: 576px) {
+  .tb-left h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .tb-benefits {
+    padding: 1rem;
+  }
+}
+
