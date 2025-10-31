@@ -1,0 +1,331 @@
+/* NAMESPACE: all styles below apply only inside .qb-compare */
+
+.qb-compare .plans-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -0.75rem;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Ensure the table has a minimum width so mobile shows horizontal scroll */
+
+.qb-compare .plans-table {
+  min-width: 1100px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;
+}
+
+/* Headers */
+
+.qb-compare .plans-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  background: linear-gradient(180deg,#ffffff,#fbfdff);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 0.85rem 0.9rem;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 700;
+}
+
+.qb-compare .plans-table thead th.plan-col {
+  text-align: center;
+}
+
+/* Category header row */
+
+.qb-compare .category-row .category-header {
+  background: #f6f8fb;
+  color: #444;
+  padding: 0.65rem 0.9rem;
+  font-weight: 700;
+  border-top: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Cells */
+
+.qb-compare .plans-table tbody td {
+  padding: 0.65rem 0.9rem;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  color: #222;
+  background: #fff;
+}
+
+/* First two columns slightly wider and sticky for readability */
+
+.qb-compare .sticky-col {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background: #fff;
+}
+
+.qb-compare .category-col {
+  min-width: 180px;
+  font-weight: 700;
+  color: #111;
+}
+
+.qb-compare .feature-col {
+  min-width: 260px;
+  color: #333;
+}
+
+/* Plan column styles (badges color hints) */
+
+.qb-compare .bg-plan-1 {
+  background: linear-gradient(180deg,#f8fff8,#ffffff);
+  color: #0f5132;
+}
+
+.qb-compare .bg-plan-2 {
+  background: linear-gradient(180deg,#f0f8ff,#ffffff);
+  color: #084298;
+}
+
+.qb-compare .bg-plan-3 {
+  background: linear-gradient(180deg,#fffdf5,#ffffff);
+  color: #7a4100;
+}
+
+.qb-compare .bg-plan-4 {
+  background: linear-gradient(180deg,#f8f9fb,#ffffff);
+  color: #0b1220;
+}
+
+/* Icons */
+
+.qb-compare .icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  stroke-width: 2;
+}
+
+.qb-compare .check {
+  color: #198754;
+}
+
+/* green */
+
+.qb-compare .cross {
+  color: #c92a2a;
+}
+
+/* red */
+
+/* Text center for yes/no cells */
+
+.qb-compare .plans-table td.text-center {
+  text-align: center;
+}
+
+/* Row striping for readability */
+
+.qb-compare .plans-table tbody tr:nth-child(odd) td {
+  background: #fff;
+}
+
+.qb-compare .plans-table tbody tr:nth-child(even) td {
+  background: #fbfcfd;
+}
+
+/* Small screens: keep wrapper scrollable and show subtle shadow */
+
+@media (max-width: 991.98px) {
+  .qb-compare .plans-table {
+    min-width: 1000px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .qb-compare .sticky-col {
+    left: 0;
+    z-index: 7;
+    box-shadow: 6px 0 12px rgba(0,0,0,0.04);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .qb-compare .plans-table {
+    min-width: 900px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .qb-compare .category-col {
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .qb-compare .feature-col {
+    min-width: 220px;
+  }
+}
+
+/* Accessibility: focus visible when keyboard navigating */
+
+.qb-compare .plans-table a:focus, .qb-compare .plans-table button:focus, .qb-compare .plans-table td:focus {
+  outline: 3px solid rgba(13,110,253,0.15);
+  outline-offset: 2px;
+}
+
+/* -------------------------   Decorative left border + style upgrades (namespaced)   ------------------------- */
+
+/* make sure category header is a positioned element for ::before */
+
+.qb-compare .plans-table .category-row .category-header {
+  position: relative;
+  padding-left: 1.25rem;
+  padding-right: 0.9rem;
+  display: block;
+  overflow: visible;
+}
+
+/* decorative left bar using gradient and animation */
+
+.qb-compare .plans-table .category-row .category-header::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 6px;
+  height: calc(100% - 12px);
+  width: 8px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #34bf49 0%, #0dcaf0 50%, #7a41ff 100%);
+  box-shadow: 0 6px 18px rgba(10,20,40,0.06), inset 0 1px 0 rgba(255,255,255,0.22);
+  transform-origin: center;
+  animation: qbPulseBar 3s linear infinite;
+  z-index: 4;
+}
+
+/* gentle animated shift so the bar isn't static */
+
+@keyframes qbPulseBar {
+  0% {
+    filter: hue-rotate(0deg) saturate(1);
+    transform: translateY(0) scaleY(1);
+  }
+  50% {
+    filter: hue-rotate(15deg) saturate(1.05);
+    transform: translateY(-2px) scaleY(1.02);
+  }
+  100% {
+    filter: hue-rotate(0deg) saturate(1);
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+/* small triangular pointer so bar reads as "attached" */
+
+.qb-compare .plans-table .category-row .category-header::after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.0), rgba(255,255,255,0.06));
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  z-index: 3;
+  opacity: 0.9;
+}
+
+/* boost category header typography for impact */
+
+.qb-compare .plans-table .category-row .category-header {
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+  color: #1f2937;
+  background: linear-gradient(90deg, rgba(250,251,255,0.9), rgba(248,249,252,0.95));
+}
+
+/* improve row hover and card-like feel */
+
+.qb-compare .plans-table tbody tr:hover td {
+  transform: translateY(-3px);
+  transition: transform 220ms ease, background 220ms ease;
+  box-shadow: 0 8px 20px rgba(12,30,60,0.04);
+  z-index: 2;
+}
+
+/* stronger zebra stripe and subtle cell borders */
+
+.qb-compare .plans-table tbody tr:nth-child(odd) td {
+  background: #ffffff;
+}
+
+.qb-compare .plans-table tbody tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+.qb-compare .plans-table tbody td {
+  border-bottom: 1px solid rgba(15,23,42,0.04);
+}
+
+/* sticky header elevated look */
+
+.qb-compare .plans-table thead th {
+  box-shadow: 0 6px 18px rgba(12,30,60,0.04);
+}
+
+/* subtle drop-shadow on left sticky column to separate from scroll */
+
+.qb-compare .sticky-col {
+  box-shadow: 6px 0 18px rgba(12,30,60,0.04);
+}
+
+/* nicer scrollbar for horizontal wrapper (Chrome, Edge, Safari) */
+
+/* responsive: slightly reduce left bar width on very small screens */
+
+@media (max-width: 575.98px) {
+  .qb-compare .plans-table .category-row .category-header::before {
+    left: -12px;
+    width: 6px;
+    height: calc(100% - 10px);
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .qb-compare .plans-table .category-row .category-header::after {
+    left: -7px;
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* accessibility: ensure contrast when using dark mode or inverted schemes */
+
+@media (prefers-color-scheme: dark) {
+  .qb-compare .plans-table thead th, .qb-compare .plans-table tbody td, .qb-compare .plans-table .category-row .category-header {
+    background: #0b1220;
+    color: #e6eef8;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .qb-compare .plans-table .category-row .category-header::before {
+    filter: brightness(0.9);
+  }
+}
+
+/* tiny utility: clickable category header pointer cursor */
+
+.qb-compare .plans-table .category-row .category-header {
+  cursor: pointer;
+}
+
+.qb-compare .plans-table .category-row .category-header:active {
+  transform: translateY(1px);
+  transition: transform 100ms;
+}
+
