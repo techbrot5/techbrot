@@ -312,63 +312,339 @@
   </div>
 </div>
 <script>
-document.addEventListener('click', async function (e) {
-  const btn = e.target.closest('.stripe-buy');
-  if (!btn) return;
-  e.preventDefault();
+(function () {
+  const STORAGE_KEY = 'service_plans_cart';
 
-  // Find the nearest card and selected billing option
-  const card = btn.closest('.card') || document;
-  const billingChoice = card.querySelector('.billing-choice:checked');
-  const billingTier = billingChoice ? billingChoice.value : 'monthly';
+  /* ---------- Small top-right toast notification util ---------- */
+  (function () {
+    const TOAST_ID = 'site-toast-notification';
+    function ensureToastContainer() {
+      let el = document.getElementById(TOAST_ID);
+      if (el) return el;
+      el = document.createElement('div');
+      el.id = TOAST_ID;
+      el.setAttribute('aria-live','polite');
+      el.style.position = 'fixed';
+      el.style.top = '16px';
+      el.style.right = '16px';
+      el.style.zIndex = 99999;
+      el.style.maxWidth = '360px';
+      el.style.pointerEvents = 'auto';
+      document.body.appendChild(el);
+      return el;
+    }
+    window.showTopNotification = function (msg, opts = {}) {
+      const parent = ensureToastContainer();
+      const toast = document.createElement('div');
+      toast.className = 'site-toast';
+      toast.style.background = 'linear-gradient(90deg,#0ea5a4,#06b6d4)';
+      toast.style.color = '#fff';
+      toast.style.padding = '10px 14px';
+      toast.style.borderRadius = '10px';
+      toast.style.boxShadow = '0 8px 26px rgba(6,182,212,0.12)';
+      toast.style.marginTop = '8px';
+      toast.style.fontWeight = 600;
+      toast.style.fontFamily = 'Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial';
+      toast.style.display = 'flex';
+      toast.style.alignItems = 'center';
+      toast.style.gap = '10px';
 
-  // Choose correct price key
-  const priceKey = billingTier === 'annual'
-    ? btn.dataset.priceKeyAnnual
-    : btn.dataset.priceKeyMonthly;
+      const icon = document.createElement('span');
+      icon.innerHTML = opts.iconHTML || '✅';
+      icon.style.fontSize = '14px';
+      toast.appendChild(icon);
 
-  if (!priceKey) {
-    alert('Please select a billing option (monthly or annual) before proceeding.');
-    return;
+      const txt = document.createElement('div');
+      txt.textContent = msg || 'Saved';
+      txt.style.fontSize = '14px';
+      toast.appendChild(txt);
+
+      parent.appendChild(toast);
+
+      const duration = typeof opts.duration === 'number' ? opts.duration : 3000;
+      if (duration > 0) {
+        setTimeout(() => {
+          toast.style.transition = 'opacity .28s, transform .28s';
+          toast.style.opacity = '0';
+          toast.style.transform = 'translateY(-8px)';
+          setTimeout(() => { try { parent.removeChild(toast); } catch(e){} }, 320);
+        }, duration);
+      }
+      return toast;
+    };
+  })();
+
+  /* ---------- Local storage helpers (unchanged) ---------- */
+  function readSavedCart() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) {
+      console.warn('Failed to read saved plans cart', e);
+      return [];
+    }
   }
 
-  // Prepare data for the backend
-  const payload = {
-    productId: btn.dataset.productId,
-    productName: btn.dataset.productName,
-    priceKey,
-    quantity: Number(btn.dataset.quantity || 1)
+  function writeSavedCart(arr) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(arr || []));
+    } catch (e) {
+      console.error('Failed to write saved plans cart', e);
+    }
+  }
+
+  function detectDisplayedPrice(card) {
+    const fs3 = card.querySelector('.fs-3');
+    if (fs3 && fs3.textContent.trim()) return fs3.textContent.trim();
+    const priceMain = card.querySelector('.price-main');
+    if (priceMain && priceMain.textContent.trim()) return '$' + priceMain.textContent.trim();
+    const text = card.innerText || '';
+    const m = text.match(/\$\s*\d{1,3}(?:[,\d]{0,3})*(?:\.\d{1,2})?/);
+    return m ? m[0] : '';
+  }
+
+  // Save item into localStorage cart with automatic replace/merge rules
+  function savePlanToLocal(payload) {
+    const cart = readSavedCart();
+
+    // find existing same product (case-insensitive productId)
+    const idx = cart.findIndex(it => String(it.productId || '').trim().toLowerCase() === String(payload.productId || '').trim().toLowerCase());
+
+    if (idx > -1) {
+      const existing = cart[idx];
+      // same billing -> increment quantity
+      if ((existing.billing || '') === (payload.billing || '')) {
+        existing.quantity = (existing.quantity || 1) + (payload.quantity || 1);
+        existing.savedAt = new Date().toISOString();
+        cart[idx] = existing;
+        writeSavedCart(cart);
+        return { saved: true, action: 'incremented', item: existing };
+      }
+      // different billing -> automatically replace with new payload (no prompt)
+      payload.quantity = payload.quantity || 1;
+      payload.savedAt = new Date().toISOString();
+      cart[idx] = payload;
+      writeSavedCart(cart);
+      return { saved: true, action: 'replaced', item: payload };
+    }
+
+    // otherwise push new item
+    payload.quantity = payload.quantity || 1;
+    payload.savedAt = new Date().toISOString();
+    cart.push(payload);
+    writeSavedCart(cart);
+    return { saved: true, action: 'added', item: payload };
+  }
+
+  /* ---------- Click handler for "Buy Now" buttons (updated to show toast) ---------- */
+  document.addEventListener('click', function (ev) {
+    const btn = ev.target.closest('.stripe-buy');
+    if (!btn) return;
+    ev.preventDefault();
+
+    // immediate UX change
+    const originalHTML = btn.innerHTML;
+    btn.disabled = true;
+    btn.textContent = 'Processing…';
+
+    // gather context
+    const card = btn.closest('.card') || document;
+    const billingChoiceInput = card.querySelector('.billing-choice:checked');
+    const billing = billingChoiceInput ? billingChoiceInput.value : 'monthly';
+
+    // determine price key
+    const priceKey = (billing === 'annual') ? (btn.dataset.priceKeyAnnual || btn.getAttribute('data-price-key-annual')) : (btn.dataset.priceKeyMonthly || btn.getAttribute('data-price-key-monthly'));
+    if (!priceKey) {
+      // restore and warn
+      btn.disabled = false;
+      btn.innerHTML = originalHTML;
+      alert('Please select a billing option (monthly / annual) before proceeding.');
+      return;
+    }
+
+    const payload = {
+      productId: btn.dataset.productId || btn.getAttribute('data-product-id') || '',
+      productName: btn.dataset.productName || btn.getAttribute('data-product-name') || '',
+      billing: billing,
+      priceKey: priceKey,
+      quantity: Number(btn.dataset.quantity || btn.getAttribute('data-quantity') || 1),
+      displayPrice: detectDisplayedPrice(card),
+      savedAt: new Date().toISOString()
+    };
+
+    try {
+      const result = savePlanToLocal(payload);
+
+      // show notification (small top-right toast) then redirect
+      try {
+        showTopNotification('Product added — Redirecting to service plans…', { duration: 1800, iconHTML: '🛒' });
+      } catch (toastErr) {
+        // fail silently if toast fails
+        console.warn('Toast failed', toastErr);
+      }
+
+      // tiny delay so localStorage flush and user sees Processing text + toast
+      setTimeout(() => {
+        window.location.href = '/service-plans.html';
+      }, 350);
+
+    } catch (err) {
+      console.error('Save-to-local error', err);
+      alert('Unable to save plan locally. Please try again.');
+      btn.disabled = false;
+      btn.innerHTML = originalHTML;
+    }
+  }, { passive: false });
+
+  // debug helper
+  window._servicePlansLocal = {
+    key: STORAGE_KEY,
+    read: readSavedCart,
+    write: writeSavedCart,
+    clear: () => { localStorage.removeItem(STORAGE_KEY); }
   };
-
-  // UI feedback
-  const originalText = btn.innerHTML;
-  btn.disabled = true;
-  btn.textContent = 'Redirecting...';
-
-  try {
-    const res = await fetch('/api/create-checkout-session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Unknown error');
-    if (!data.url) throw new Error('No checkout URL returned');
-
-    // Redirect to Stripe Checkout
-    window.location.href = data.url;
-  } catch (err) {
-    console.error('Checkout error:', err);
-    alert('Unable to start checkout. Please try again or contact support.');
-  } finally {
-    btn.disabled = false;
-    btn.innerHTML = originalText;
-  }
-});
+})();
 </script>
 
+    <div id="comparison"><!-- Plans comparison section (responsive, horizontal scroll on small screens, SVG icons) -->
+<div class="container py-5 qb-compare">
+  <div class="feature-block">
+    <div class="feature-content text-block">
 
+      <h3 class="display-6 fw-semibold mb-3">QuickBooks Online Plan Comparison</h3>
+      <p class="text-muted mb-4">Compare features across Simple Start, Essentials, Plus, and Advanced. Swipe left/right on phones or use the scrollbar to view the full table.</p>
+
+      <!-- SVG symbols reused throughout the table -->
+      <svg style="display:none" aria-hidden="true">
+        <symbol id="icon-check" viewBox="0 0 24 24">
+          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </symbol>
+        <symbol id="icon-x" viewBox="0 0 24 24">
+          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6l12 12M6 18L18 6"/>
+        </symbol>
+      </svg>
+
+      <!-- horizontal scroll wrapper -->
+      <div class="plans-table-wrapper">
+        <table class="plans-table table table-borderless">
+          <thead>
+            <tr>
+              <th class="sticky-col category-col">Feature Category</th>
+              <th class="sticky-col feature-col">Feature</th>
+              <th class="plan-col text-center bg-plan-1">Simple Start<br><small class="text-muted">1 user + accountant</small></th>
+              <th class="plan-col text-center bg-plan-2">Essentials<br><small class="text-muted">up to 3 users</small></th>
+              <th class="plan-col text-center bg-plan-3">Plus<br><small class="text-muted">up to 5 users</small></th>
+              <th class="plan-col text-center bg-plan-4">Advanced<br><small class="text-muted">up to 25 users</small></th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <!-- User Access -->
+            <tr class="category-row"><td colspan="6" class="category-header">User Access</td></tr>
+            <tr>
+              <td class="category-col"></td>
+              <td class="feature-col">Users</td>
+              <td class="text-center">1</td>
+              <td class="text-center">3</td>
+              <td class="text-center">5</td>
+              <td class="text-center">25</td>
+            </tr>
+            <tr>
+              <td class="category-col"></td>
+              <td class="feature-col">Multi-User Access</td>
+              <td class="text-center no"><svg class="icon cross" aria-hidden="true"><use href="#icon-x"></use></svg></td>
+              <td class="text-center yes"><svg class="icon check" aria-hidden="true"><use href="#icon-check"></use></svg></td>
+              <td class="text-center yes"><svg class="icon check" aria-hidden="true"><use href="#icon-check"></use></svg></td>
+              <td class="text-center yes"><svg class="icon check" aria-hidden="true"><use href="#icon-check"></use></svg></td>
+            </tr>
+
+            <!-- Core Accounting -->
+            <tr class="category-row"><td colspan="6" class="category-header">Core Accounting</td></tr>
+            <tr><td></td><td>Track income &amp; expenses</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Bank feeds &amp; reconciliation</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Chart of accounts</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Multiple currencies</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Class &amp; location tracking</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Budgeting &amp; forecasting</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+
+            <!-- Automation & AI Tools -->
+            <tr class="category-row"><td colspan="6" class="category-header">Automation &amp; AI Tools</td></tr>
+            <tr><td></td><td>Intuit Assist</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Smart Expense Organization</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Accounting Agent (AI)</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Finance Agent (AI)</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Workflow automation</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Batch invoices &amp; expenses</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Anomaly detection</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+
+            <!-- Sales & Invoicing -->
+            <tr class="category-row"><td colspan="6" class="category-header">Sales &amp; Invoicing</td></tr>
+            <tr><td></td><td>Custom invoices &amp; estimates</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Recurring invoices</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Payment reminders</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Sales tax automation</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Multi-channel sales sync</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+
+            <!-- Expenses & Vendors -->
+            <tr class="category-row"><td colspan="6" class="category-header">Expenses &amp; Vendors</td></tr>
+            <tr><td></td><td>Bill management</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Expense categorization</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Receipt capture (mobile)</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Contractor management (1099s)</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+
+            <!-- Reporting & Insights -->
+            <tr class="category-row"><td colspan="6" class="category-header">Reporting &amp; Insights</td></tr>
+            <tr><td></td><td>Basic reports</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Custom reports</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Business performance dashboard</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Excel sync &amp; KPI builder</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Cash flow forecasting</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+
+            <!-- Project & Inventory -->
+            <tr class="category-row"><td colspan="6" class="category-header">Project &amp; Inventory</td></tr>
+            <tr><td></td><td>Project tracking</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Profitability by job</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Inventory tracking</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Purchase orders</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Sales orders</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+
+            <!-- Customer & CRM -->
+            <tr class="category-row"><td colspan="6" class="category-header">Customer &amp; CRM</td></tr>
+            <tr><td></td><td>Customer center</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Notes &amp; follow-ups</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Contract &amp; e-signature upload</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Appointment scheduling (Beta)</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+
+            <!-- Security & Backup -->
+            <tr class="category-row"><td colspan="6" class="category-header">Security &amp; Backup</td></tr>
+            <tr><td></td><td>Data encryption</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Automatic backups</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Data restore</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+
+            <!-- Integrations -->
+            <tr class="category-row"><td colspan="6" class="category-header">Integrations</td></tr>
+            <tr><td></td><td>Mobile app (iOS &amp; Android)</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Third-party app integrations</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Payroll add-on support</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Time tracking (via add-on)</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+
+            <!-- Support -->
+            <tr class="category-row"><td colspan="6" class="category-header">Support</td></tr>
+            <tr><td></td><td>Accountant access</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Email &amp; chat support</td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Priority support</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+            <tr><td></td><td>Dedicated success manager</td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center no"><svg class="icon cross"><use href="#icon-x"></use></svg></td><td class="text-center yes"><svg class="icon check"><use href="#icon-check"></use></svg></td></tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <p class="small text-muted mt-3 mb-0">Tip: swipe the table left/right on mobile or use the scrollbar to view all columns.</p>
+    </div>
+  </div>
+</div>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -14,32 +14,40 @@ export async function onRequestPost(context) {
     const body = await context.request.json()
     const { productName, quantity, priceKey } = body
 
-    // ✅ Real Stripe Price IDs
+    // ✅ Real Stripe Price IDs (test or live). Fill placeholders below as you create prices in Stripe.
     const PRICE_MAP = {
+      // Simple Start (already set)
       simple_start_monthly: 'price_1SOGodANBQOX99HKiCITtJ4Z',
-      simple_start_annual: 'price_1SOGutANBQOX99HKZ6voFANy',
+      simple_start_annual:  'price_1SOGutANBQOX99HKZ6voFANy',
 
-      // Add more plans as you create them
-      // essentials_monthly: 'price_xxx',
-      // essentials_annual: 'price_xxx',
-      // plus_monthly: 'price_xxx',
-      // plus_annual: 'price_xxx',
-      // advanced_monthly: 'price_xxx',
-      // advanced_annual: 'price_xxx',
+      // Essentials (placeholders — replace with your Stripe price IDs)
+      essentials_monthly:  'price_ESSENTIALS_MONTHLY_PLACEHOLDER',
+      essentials_annual:   'price_ESSENTIALS_ANNUAL_PLACEHOLDER',
+
+      // Plus (placeholders)
+      plus_monthly:        'price_PLUS_MONTHLY_PLACEHOLDER',
+      plus_annual:         'price_PLUS_ANNUAL_PLACEHOLDER',
+
+      // Advanced (placeholders)
+      advanced_monthly:    'price_ADVANCED_MONTHLY_PLACEHOLDER',
+      advanced_annual:     'price_ADVANCED_ANNUAL_PLACEHOLDER',
+
+      // (Add other product price keys here as required)
     }
 
-const priceId = PRICE_MAP[priceKey];
-if (!priceId) {
-  return new Response(JSON.stringify({
-    error: 'Invalid price key',
-    receivedKey: priceKey,
-    validKeys: Object.keys(PRICE_MAP)
-  }), {
-    status: 400,
-    headers: corsHeaders(),
-  });
-}
+    const priceId = PRICE_MAP[priceKey]
+    if (!priceId) {
+      return new Response(JSON.stringify({
+        error: 'Invalid price key',
+        receivedKey: priceKey,
+        validKeys: Object.keys(PRICE_MAP)
+      }), {
+        status: 400,
+        headers: corsHeaders(),
+      })
+    }
 
+    // Create Checkout Session (subscription mode for these plans)
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
       line_items: [{ price: priceId, quantity: quantity || 1 }],
@@ -68,7 +76,6 @@ function corsHeaders() {
     'Access-Control-Allow-Headers': 'Content-Type',
   }
 }
-
 
 // ✅ Handle OPTIONS (preflight) requests
 export async function onRequestOptions() {
