@@ -1064,16 +1064,22 @@
     });
 
     try {
-      const resp = await fetch('/create-checkout-session', {
+      const resp = await fetch('/api/create-checkout-session', {
         method: 'POST',
+        mode: 'cors',
+        credentials: 'same-origin',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ cart: cart, lineItems })
       });
+
       if (!resp.ok) {
-        const text = await resp.text();
+        // read text to help debug (server often returns HTML or JSON with error message)
+        const text = await resp.text().catch(() => '<no body>');
+        console.error('create-checkout-session error response body:', text);
         throw new Error('Server returned ' + resp.status + ': ' + text);
       }
-      const data = await resp.json();
+
+      const data = await resp.json().catch(() => null);
       if (data && data.url) {
         window.location.href = data.url;
       } else {
@@ -1082,7 +1088,7 @@
       }
     } catch (err) {
       console.error(err);
-      alert('Failed to start checkout: ' + err.message);
+      alert('Failed to start checkout: ' + (err.message || err));
     }
   }
   window.checkoutCart = checkoutCart;

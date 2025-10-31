@@ -1,12 +1,34 @@
 import Stripe from 'stripe'
 
+/**
+ * CORS helper — change Access-Control-Allow-Origin to your origin for production
+ */
+function corsHeaders() {
+  return {
+    'Access-Control-Allow-Origin': '*', // <-- set to 'https://techbrot.com' in production
+    'Access-Control-Allow-Methods': 'GET,HEAD,POST,OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    'Access-Control-Max-Age': '86400'
+  }
+}
+
+/**
+ * Respond to preflight OPTIONS requests so browsers can send POST
+ */
+export async function onRequestOptions(context) {
+  return new Response(null, {
+    status: 204,
+    headers: corsHeaders()
+  })
+}
+
 export async function onRequestPost(context) {
   try {
     const STRIPE_SECRET_KEY = context.env.STRIPE_SECRET_KEY
     if (!STRIPE_SECRET_KEY) {
       return new Response(JSON.stringify({ error: 'Stripe key missing' }), {
         status: 500,
-        headers: corsHeaders(),
+        headers: { ...corsHeaders(), 'Content-Type': 'application/json' },
       })
     }
 
@@ -60,10 +82,8 @@ export async function onRequestPost(context) {
       cfo_lite_annual_PLACEHOLDER:        'price_CFO_ANNUAL_PLACEHOLDER'
     }
 
-    // ---------- PRICE TYPE MAP (you should set 'recurring' for subscription prices and 'one_time' for one-time prices)
-    // This helps decide mode: subscription vs payment
+    // ---------- PRICE TYPE MAP ----------
     const PRICE_TYPE_MAP = {
-      // example:
       simple_start_monthly: 'recurring',
       simple_start_annual:  'recurring',
       essentials_monthly: 'recurring',
@@ -73,7 +93,7 @@ export async function onRequestPost(context) {
       advanced_monthly: 'recurring',
       advanced_annual: 'recurring',
 
-      // one-time (setup/cleanup/migration/quickstart sessions)
+      // one-time
       setup_basic_one_time_PLACEHOLDER: 'one_time',
       setup_premium_one_time_PLACEHOLDER: 'one_time',
       setup_advanced_one_time_PLACEHOLDER: 'one_time',
@@ -89,23 +109,16 @@ export async function onRequestPost(context) {
     // ---------- Normalize incoming items ----------
     let items = []
 
-    // If caller sent lineItems array (your client earlier sends { lineItems })
     if (Array.isArray(body.lineItems) && body.lineItems.length) {
-      // expect objects with priceId or priceKey (we prefer priceKey)
-      items = body.lineItems.map(li => {
-        return {
-          priceKey: li.priceKey || li.priceId || li.key || null,
-          quantity: Number(li.quantity || li.qty || 1),
-          label: li.label || li.name || ''
-        }
-      }).filter(x => x.priceKey)
+      items = body.lineItems.map(li => ({
+        priceKey: li.priceKey || li.priceId || li.key || null,
+        quantity: Number(li.quantity || li.qty || 1),
+        label: li.label || li.name || ''
+      })).filter(x => x.priceKey)
     } else if (body.priceKey) {
-      // single-item shorthand
       items = [{ priceKey: body.priceKey, quantity: Number(body.quantity || 1), label: body.productName || '' }]
     } else if (Array.isArray(body.cart) && body.cart.length) {
-      // legacy cart coming from frontend — convert to priceKeys by heuristic or reject
       items = body.cart.map(ci => ({
-        // if client provided priceKey in cart item, use it; otherwise leave null
         priceKey: ci.priceKey || ci.priceId || null,
         quantity: Number(ci.quantity || 1),
         label: ci.product || ci.productName || ''
@@ -115,14 +128,11 @@ export async function onRequestPost(context) {
     if (!items.length) {
       return new Response(JSON.stringify({ error: 'No valid line items found in request', example: { priceKey: 'simple_start_monthly', quantity: 1 } }), {
         status: 400,
-        headers: corsHeaders(),
+        headers: { ...corsHeaders(), 'Content-Type': 'application/json' },
       })
     }
 
-    // ---------- Build Stripe session line_items with price IDs ----------
-    // Determine if this is subscription-only or mixed; Stripe Checkout mode must be uniform per session.
-    // We'll decide mode = 'subscription' if ALL items are recurring; 'payment' if ALL items are one_time.
-    // Mixed types => return helpful error (you can alternatively create payment session client-side per type).
+    // ---------- Build Stripe session ----------
     const resolved = items.map(it => {
       const key = String(it.priceKey)
       const priceId = PRICE_MAP[key] || null
@@ -130,28 +140,25 @@ export async function onRequestPost(context) {
       return { ...it, key, priceId, priceType }
     })
 
-    // detect missing price IDs
     const missing = resolved.filter(r => !r.priceId)
     if (missing.length) {
       return new Response(JSON.stringify({ error: 'Missing priceId mapping for some priceKey(s)', missing: missing.map(m => m.key) }), {
         status: 400,
-        headers: corsHeaders()
+        headers: { ...corsHeaders(), 'Content-Type': 'application/json' }
       })
     }
 
     const allTypes = Array.from(new Set(resolved.map(r => r.priceType)))
     if (allTypes.length > 1) {
-      // mixed recurring + one_time not allowed in single Checkout session mode
       return new Response(JSON.stringify({
         error: 'Mixed price types in cart (subscription + one-time). Stripe Checkout requires a single mode per session.',
         detail: 'Split checkout into subscription vs one-time, or create server-side logic to create multiple sessions.'
-      }), { status: 400, headers: corsHeaders() })
+      }), { status: 400, headers: { ...corsHeaders(), 'Content-Type': 'application/json' }})
     }
 
     const priceMode = allTypes[0] === 'one_time' ? 'payment' : 'subscription'
     const line_items = resolved.map(r => ({ price: r.priceId, quantity: Number(r.quantity || 1) }))
 
-    // Create session
     const session = await stripe.checkout.sessions.create({
       mode: priceMode,
       line_items,
@@ -161,14 +168,14 @@ export async function onRequestPost(context) {
     })
 
     return new Response(JSON.stringify({ url: session.url }), {
+      status: 200,
       headers: { ...corsHeaders(), 'Content-Type': 'application/json' }
     })
   } catch (err) {
     console.error('Stripe Checkout error:', err)
-    // return stack only in dev; here we send message
-    return new Response(JSON.stringify({ error: err.message }), {
+    return new Response(JSON.stringify({ error: err.message || 'Server Error' }), {
       status: 500,
-      headers: corsHeaders()
+      headers: { ...corsHeaders(), 'Content-Type': 'application/json' }
     })
   }
 }
