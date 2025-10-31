@@ -737,26 +737,27 @@ a:focus, button:focus, input:focus { outline: none; }
   function qs(sel, ctx) { return (ctx || document).querySelector(sel); }
   function qsa(sel, ctx) { return Array.from((ctx || document).querySelectorAll(sel)); }
   function formatNumber(n) { return Number(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function escapeHtml(s) { return String(s || '').replace(/[&<>"']/g, function (m) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]; }); }
 
-  // ---------- Tabs ----------
+  // ---------- Tabs (keeps existing behaviour) ----------
   const tabList = document.getElementById('pricingTabs');
   if (tabList) {
     const tabButtons = Array.from(tabList.querySelectorAll('button[data-bs-target]'));
     const panes = Array.from(document.querySelectorAll('.tab-pane'));
     function activateTab(btn) {
       const target = btn.getAttribute('data-bs-target');
-      tabButtons.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      tabButtons.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
       panes.forEach(p => { p.classList.remove('show','active'); });
-      btn.classList.add('active'); btn.setAttribute('aria-selected', 'true');
+      btn.classList.add('active'); btn.setAttribute('aria-selected','true');
       const pane = document.querySelector(target); if (pane) pane.classList.add('show','active');
-      btn.focus();
+      try { btn.focus(); } catch(e) {}
     }
-    tabButtons.forEach((btn) => btn.addEventListener('click', function (e) { e.preventDefault(); activateTab(btn); }));
+    tabButtons.forEach(btn => btn.addEventListener('click', e => { e.preventDefault(); activateTab(btn); }));
     const initial = tabList.querySelector('button.active') || tabButtons[0];
     if (initial) activateTab(initial);
   }
 
-  // ---------- Billing toggle setup ----------
+  // ---------- Billing toggle setup (recurring cards) ----------
   qsa('.pricing-item[data-monthly]').forEach(card => {
     const monthly = Number(card.dataset.monthly || 0);
     const annual = +(monthly * 12).toFixed(2);
@@ -769,8 +770,7 @@ a:focus, button:focus, input:focus { outline: none; }
       btn.dataset.price = monthly.toString();
       btn.dataset.billing = 'monthly';
     }
-    const radios = card.querySelectorAll('.billing-toggle');
-    radios.forEach(r => r.addEventListener('change', function () {
+    card.querySelectorAll('.billing-toggle').forEach(r => r.addEventListener('change', function () {
       const priceTopEl = card.querySelector('h4');
       if (!priceTopEl || !btn) return;
       if (this.value === 'monthly') {
@@ -785,7 +785,7 @@ a:focus, button:focus, input:focus { outline: none; }
     if (checked) checked.dispatchEvent(new Event('change'));
   });
 
-  // ---------- Radio-driven prices ----------
+  // ---------- Radio-driven displays ----------
   function safeDispatch(selector, callback) { qsa(selector).forEach(r => r.addEventListener('change', callback)); }
   safeDispatch('.setup-tier', () => {
     const sel = qs('.setup-tier:checked'); if (!sel) return;
@@ -805,7 +805,8 @@ a:focus, button:focus, input:focus { outline: none; }
       const unit = sel.dataset.unit || ''; el.innerHTML = `<sup>$</sup>${sel.dataset.price} <small>${unit ? unit : ''}</small>`;
     }
   });
-  ['.setup-tier:checked', '.cleanup-option:checked', '.migration-tier:checked', '.training-tier:checked'].forEach(s => { const el = qs(s); if (el) el.dispatchEvent(new Event('change')); });
+  ['.setup-tier:checked', '.cleanup-option:checked', '.migration-tier:checked', '.training-tier:checked']
+    .forEach(s => { const el = qs(s); if (el) el.dispatchEvent(new Event('change')); });
 
   // ---------- Cart (localStorage) ----------
   const CART_KEY = 'pricing_cart';
@@ -818,56 +819,44 @@ a:focus, button:focus, input:focus { outline: none; }
     return (String(a.product || '')).trim().toLowerCase() === (String(b.product || '')).trim().toLowerCase();
   }
 
-  // addToCart with logic for single-use and recurring constraints
+  // addToCart: enforces single/multi rules
   function addToCart(item) {
     const cart = readCart();
     const singleFlag = !!item.single;
-
-    // check if same product exists
     const sameIndex = cart.findIndex(ci => productMatches(ci, item));
     if (sameIndex > -1) {
       const existing = cart[sameIndex];
-      // if single-use product already present
       if (singleFlag || existing.single) {
         alert(`"${existing.product}" is limited to one per client and is already in the cart. Remove it first to change selection.`);
         return false;
       }
-      // if same option & billing and not single, allow increment for one-time items only
       if ((existing.option || '') === (item.option || '') && (existing.billing || '') === (item.billing || '')) {
         const isRecurring = ['monthly','annual'].includes(String((item.billing || '').toLowerCase()));
         if (isRecurring) {
           alert('Recurring plans have a maximum quantity of 1. To change the plan, remove it first and add the desired tier.');
           return false;
         }
-        // increment quantity for multi-quantity items (e.g., QuickStart sessions)
         existing.quantity = (existing.quantity || 1) + (item.quantity || 1);
         writeCart(cart);
         return true;
       }
-      // same product but different option/billing -> require explicit confirmation to clear cart and add new
+      // different option for same product — confirm replacement
       const msg = `Your cart contains "${existing.product}" (${existing.option || existing.billing}).\n` +
                   `To add "${item.product}" (${item.option || item.billing}), you must remove the existing one.\n\nPress OK to clear the cart and add the new item, Cancel to keep the current cart.`;
       if (confirm(msg)) {
-        writeCart([]);
-        const newCart = [Object.assign({ quantity: 1 }, item)];
-        writeCart(newCart);
+        writeCart([ Object.assign({ quantity: 1 }, item) ]);
         return true;
       } else {
         return false;
       }
     }
 
-    // No same product in cart yet:
-    // If item is recurring, enforce quantity 1
     if (['monthly','annual'].includes(String((item.billing || '').toLowerCase()))) {
       item.quantity = 1;
-      item.single = true; // recurring treated as single for product uniqueness
+      item.single = true;
     }
+    if (singleFlag) item.quantity = 1;
 
-    // For single-use items, ensure not already added in cart (same product case covered above)
-    if (singleFlag) { item.quantity = 1; }
-
-    // add to cart
     cart.push(Object.assign({ quantity: item.quantity || 1 }, item));
     writeCart(cart);
     return true;
@@ -879,7 +868,23 @@ a:focus, button:focus, input:focus { outline: none; }
   }
   function clearCart() { localStorage.removeItem(CART_KEY); renderCartSummary(); }
 
-  // ---------- Existing "Add to cart" entrypoint (card buttons) ----------
+  // expose remove for inline onclicks
+  window.removeCartItem = removeCartItem;
+
+  // changeQty helper
+  window.changeQty = function(index, delta) {
+    const cart = readCart();
+    if (!cart[index]) return;
+    const item = cart[index];
+    const isRecurring = ['monthly','annual'].includes(String((item.billing || '').toLowerCase()));
+    const isSingle = !!item.single;
+    if (isRecurring || isSingle) { alert('Quantity cannot be changed for this item. Remove it if you want to change selection.'); return; }
+    const newQty = Math.max(0, (item.quantity || 1) + delta);
+    if (newQty === 0) cart.splice(index, 1); else cart[index].quantity = newQty;
+    writeCart(cart);
+  };
+
+  // ---------- Add-to-cart entrypoint used by Add to cart buttons ----------
   window.addToCartFromCard = function (btn) {
     if (!btn) return;
     const el = btn.closest('.pricing-item') || document;
@@ -888,36 +893,25 @@ a:focus, button:focus, input:focus { outline: none; }
     let billing = btn.dataset.billing || btn.getAttribute('data-billing') || (el && el.dataset.billing) || 'one-time';
     let option = '';
 
-    // detect single-use flag (explicit)
-    const singleAttr = (btn.dataset.single || el.dataset.single);
-    const single = singleAttr === 'true' || el.dataset.single === 'true';
+    const singleAttr = (btn.dataset.single || (el && el.dataset.single));
+    const single = singleAttr === 'true' || (el && el.dataset.single === 'true');
 
     const lower = (product || '').toLowerCase();
     if (lower.includes('setup') && qs('.setup-tier:checked', el)) {
-      const sel = qs('.setup-tier:checked', el);
-      option = sel.value; price = sel.dataset.price;
+      const sel = qs('.setup-tier:checked', el); option = sel.value; price = sel.dataset.price;
     } else if (lower.includes('cleanup') && qs('.cleanup-option:checked', el)) {
-      const sel = qs('.cleanup-option:checked', el);
-      option = sel.value; price = sel.dataset.price;
+      const sel = qs('.cleanup-option:checked', el); option = sel.value; price = sel.dataset.price;
     } else if (lower.includes('migration') && qs('.migration-tier:checked', el)) {
-      const sel = qs('.migration-tier:checked', el);
-      option = sel.value; price = sel.dataset.price;
+      const sel = qs('.migration-tier:checked', el); option = sel.value; price = sel.dataset.price;
     } else if (lower.includes('quickstart') && qs('.training-tier:checked', el)) {
-      const sel = qs('.training-tier:checked', el);
-      option = sel.value; price = sel.dataset.price;
+      const sel = qs('.training-tier:checked', el); option = sel.value; price = sel.dataset.price;
     } else if (btn.dataset.billing) {
       const card = el.closest('.pricing-item') || el;
       const billingRadio = qs('.billing-toggle:checked', card);
       if (billingRadio) {
-        const b = billingRadio.value;
-        billing = b;
-        if (b === 'annual') {
-          price = btn.dataset.annualDiscount || btn.dataset.price || price;
-          option = 'Annual';
-        } else {
-          price = btn.dataset.price || price;
-          option = 'Monthly';
-        }
+        const b = billingRadio.value; billing = b;
+        if (b === 'annual') { price = btn.dataset.annualDiscount || btn.dataset.price || price; option = 'Annual'; }
+        else { price = btn.dataset.price || price; option = 'Monthly'; }
       }
     }
 
@@ -934,40 +928,33 @@ a:focus, button:focus, input:focus { outline: none; }
 
     const added = addToCart(item);
     if (added) {
-      // small visual feedback
       try { btn.animate([{ transform: 'scale(0.98)' }, { transform: 'scale(1)' }], { duration: 160 }); } catch(e) {}
+      markCardAdded(item.product);
     }
   };
 
-  // ---------- NEW: Import saved plans from previous page (service_plans_cart) ----------
+  // ---------- Import saved plans (service_plans_cart) ----------
   (function importSavedPlans() {
-    // key used by first page script when clicking "Buy Now"
     const SAVED_KEY = 'service_plans_cart';
     try {
       const raw = localStorage.getItem(SAVED_KEY);
       if (!raw) return;
       let saved = JSON.parse(raw);
       if (!Array.isArray(saved)) {
-        // support single-object as well
         const single = saved && typeof saved === 'object' ? [saved] : [];
-        if (single.length === 0) { localStorage.removeItem(SAVED_KEY); return; }
-        else saved = single;
+        if (single.length === 0) { localStorage.removeItem(SAVED_KEY); return; } else saved = single;
       }
-      // iterate saved entries and merge into pricing_cart by reusing addToCart
       const addedNames = [];
       saved.forEach(s => {
         try {
-          // map saved payload to internal cart item shape
           const productName = s.productName || s.product || s.productId || s.name || '';
           const billing = s.billing || (s.option === 'Annual' ? 'annual' : (s.option === 'Monthly' ? 'monthly' : (s.priceKey && String(s.priceKey).toLowerCase().includes('annual') ? 'annual' : 'one-time')));
-          // extract numeric price from displayPrice if present
           let price = 0;
           if (s.displayPrice && typeof s.displayPrice === 'string') {
             const m = s.displayPrice.match(/([0-9]+(?:[.,][0-9]+)?)/);
             if (m) price = parseFloat(m[1].replace(/,/g,'')) || 0;
           }
           if (!price && s.price) price = Number(s.price) || 0;
-          // fallback: try dataset priceKey? ignore if not numeric
           const item = {
             product: productName || (s.productId || 'Unknown product'),
             option: (billing === 'annual' ? 'Annual' : (billing === 'monthly' ? 'Monthly' : (s.option || ''))),
@@ -979,35 +966,23 @@ a:focus, button:focus, input:focus { outline: none; }
           };
           const added = addToCart(item);
           if (added) addedNames.push(item.product);
-        } catch (err) {
-          console.warn('Failed to import saved plan item', err, s);
-        }
+        } catch (err) { console.warn('Failed to import saved plan item', err, s); }
       });
-
-      // Remove the saved key to avoid re-import on subsequent loads
-      try { localStorage.removeItem(SAVED_KEY); } catch(e) { /* ignore */ }
-
-      // Mark matching cards visually as "In cart"
-      if (addedNames.length) {
-        setTimeout(() => { addedNames.forEach(markCardAdded); }, 45);
-      }
-    } catch (e) {
-      console.warn('importSavedPlans error', e);
-    }
+      try { localStorage.removeItem(SAVED_KEY); } catch(e) {}
+      if (addedNames.length) setTimeout(() => { addedNames.forEach(markCardAdded); }, 45);
+    } catch (e) { console.warn('importSavedPlans error', e); }
   })();
 
-  // find card(s) and visually mark them as added
+  // ---------- Mark card visually as added ----------
   function markCardAdded(productName) {
     if (!productName) return;
     const nameLower = String(productName).trim().toLowerCase();
-    // find any pricing-item whose dataset.product or .card-title includes the product name
     qsa('.pricing-item').forEach(card => {
       const dp = String(card.dataset.product || card.dataset.plan || '').trim().toLowerCase();
       const titleEl = card.querySelector('.card-title, h3, h4');
       const title = titleEl ? String(titleEl.textContent || '').trim().toLowerCase() : '';
       if (!dp && !title) return;
       if (dp.includes(nameLower) || title.includes(nameLower) || nameLower.includes(dp) || nameLower.includes(title)) {
-        // append badge if not already present
         if (!card.querySelector('.in-cart-badge')) {
           const badge = document.createElement('div');
           badge.className = 'in-cart-badge';
@@ -1025,30 +1000,23 @@ a:focus, button:focus, input:focus { outline: none; }
           badge.setAttribute('aria-hidden','true');
           card.appendChild(badge);
         }
-        // also disable the card's primary add button to avoid duplicate clicks
         const btn = card.querySelector('.btn-cta, .btn-buy, .stripe-buy');
-        if (btn) {
-          try { btn.disabled = true; btn.dataset._saved_disabled = 'true'; } catch(e){}
-        }
+        if (btn) { try { btn.disabled = true; btn.dataset._saved_disabled = 'true'; } catch(e){} }
       }
     });
   }
 
-  // ---------- UPDATED: Hide Buy Now buttons and wire them to add-to-cart (no redirect) ----------
+  // ---------- Hide "Buy Now" and wire to add-to-cart (no redirect) ----------
   (function wireBuyNowButtons() {
-    // hide visible buy-now buttons so UI shows only Add to cart
     qsa('.stripe-buy, .btn-buy').forEach(b => {
-      try { b.style.display = 'none'; b.dataset._hidden_by_script = 'true'; } catch(e){ }
+      try { b.style.display = 'none'; b.dataset._hidden_by_script = 'true'; } catch(e) {}
     });
 
-    // still wire clicks (for dev/testing) — they'll add to cart but won't navigate
+    // clicking the (hidden) buy now still adds item to cart during dev/testing
     document.addEventListener('click', function (ev) {
       const btn = ev.target.closest ? ev.target.closest('.stripe-buy, .btn-buy') : null;
       if (!btn) return;
-      // If button is hidden by script, do not perform default buy-now navigation — instead add to cart quietly.
-      ev.preventDefault();
-      ev.stopPropagation();
-
+      ev.preventDefault(); ev.stopPropagation();
       if (btn.disabled) return;
 
       const card = btn.closest('.card') || btn.closest('.pricing-item') || document;
@@ -1064,33 +1032,19 @@ a:focus, button:focus, input:focus { outline: none; }
           if (!Number.isNaN(num)) return num;
         }
         if (!preferAnnual) {
-          const attr = btn.getAttribute('data-price-key-monthly') || btn.getAttribute('data-price-monthly') || btn.dataset.priceKeyMonthly || btn.dataset.priceMonthly;
+          const attr = btn.getAttribute('data-price-monthly') || btn.dataset.priceMonthly || btn.dataset.price;
           if (attr) { const n = parseFloat(String(attr).replace(/[^0-9.]/g,'')); if (!isNaN(n)) return n; }
         } else {
-          const attr = btn.getAttribute('data-price-key-annual') || btn.getAttribute('data-price-annual') || btn.dataset.priceKeyAnnual || btn.dataset.priceAnnual;
+          const attr = btn.getAttribute('data-price-annual') || btn.dataset.priceAnnual || btn.dataset.annualDiscount;
           if (attr) { const n = parseFloat(String(attr).replace(/[^0-9.]/g,'')); if (!isNaN(n)) return n; }
         }
-        const big = cardEl.querySelector('.fs-3.fw-bold, .fs-3 .fw-bold, .fs-3, .price-large');
-        if (big && big.textContent) {
-          const txt = big.textContent;
-          const m = txt.match(/([0-9]+(?:[.,][0-9]+)?)/);
-          if (m) return parseFloat(m[1].replace(/,/g,'')) || 0;
-        }
         const txt = cardEl.textContent || '';
-        if (preferAnnual) {
-          const yearEl = cardEl.querySelector('.discount-line, .annual-calc, .price-annual, .text-success');
-          if (yearEl && yearEl.textContent) {
-            const m = yearEl.textContent.match(/([0-9]+(?:[.,][0-9]+)?)/);
-            if (m) return parseFloat(m[1].replace(/,/g,'')) || 0;
-          }
-        }
         const mm = txt.match(/\$?\s*([0-9]+(?:[.,][0-9]+)?)/);
         if (mm) return parseFloat(mm[1].replace(/,/g,'')) || 0;
         return 0;
       }
 
       const rawPrice = extractNumericPriceFromCard(card, billing === 'annual');
-
       const item = {
         product: btn.getAttribute('data-product-name') || btn.getAttribute('data-product-id') || btn.dataset.productName || btn.dataset.product || (card.dataset.product || card.dataset.plan) || 'Unknown product',
         option: billing === 'annual' ? 'Annual' : 'Monthly',
@@ -1101,25 +1055,16 @@ a:focus, button:focus, input:focus { outline: none; }
         quantity: Number(btn.dataset.quantity || 1)
       };
 
-      // give quick UI feedback then add to cart
       const orig = btn.innerHTML;
       try { btn.disabled = true; btn.textContent = 'Adding…'; } catch(e){}
-
       const added = addToCart(item);
-      // ensure localStorage flushed
       try { localStorage.setItem(CART_KEY, JSON.stringify(readCart())); } catch(e){}
-
       if (!added) {
         try { btn.disabled = false; btn.innerHTML = orig; } catch(e){}
         return;
       }
-
       markCardAdded(item.product);
-
-      // restore button state after short delay (keeps it hidden, but prevents stuck disabled state)
-      setTimeout(() => {
-        try { btn.disabled = false; btn.innerHTML = orig; } catch(e){}
-      }, 350);
+      setTimeout(() => { try { btn.disabled = false; btn.innerHTML = orig; } catch(e){} }, 300);
     }, { passive: false });
   })();
 
@@ -1128,7 +1073,6 @@ a:focus, button:focus, input:focus { outline: none; }
     const cart = readCart();
     const el = document.getElementById('cartSummary');
     if (!el) return;
-
     if (cart.length === 0) {
       el.innerHTML = '<div style="color:#666">Your cart is empty. Add a plan or one-time item to proceed to checkout.</div>';
       return;
@@ -1140,7 +1084,6 @@ a:focus, button:focus, input:focus { outline: none; }
       total += line;
       const isRecurring = ['monthly','annual'].includes(String((it.billing || '').toLowerCase()));
       const isSingle = !!it.single;
-      // quantity controls: allow +/- only if item not single and not recurring
       const allowQtyChange = !isRecurring && !isSingle;
       html += `<div style="margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid rgba(0,0,0,0.06)">
         <div style="display:flex; justify-content:space-between; align-items:center;">
@@ -1162,107 +1105,18 @@ a:focus, button:focus, input:focus { outline: none; }
     el.innerHTML = html;
   }
 
-  // ---------- changeQty / remove helpers ----------
-  window.changeQty = function (index, delta) {
-    const cart = readCart();
-    if (!cart[index]) return;
-    const item = cart[index];
-    const isRecurring = ['monthly','annual'].includes(String((item.billing || '').toLowerCase()));
-    const isSingle = !!item.single;
-    if (isRecurring || isSingle) {
-      alert('Quantity cannot be changed for this item. Remove it if you want to change selection.');
-      return;
-    }
-    const newQty = Math.max(0, (item.quantity || 1) + delta);
-    if (newQty === 0) cart.splice(index, 1);
-    else cart[index].quantity = newQty;
-    writeCart(cart);
-  };
-
-  window.removeCartItem = removeCartItem;
-  document.getElementById('clearCartBtn') && document.getElementById('clearCartBtn').addEventListener('click', function () { if (confirm('Clear cart?')) clearCart(); });
-  document.getElementById('checkoutBtn') && document.getElementById('checkoutBtn').addEventListener('click', function () { checkoutCart(); });
-
-  function escapeHtml(s) {
-    return String(s || '').replace(/[&<>"']/g, function (m) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]; });
-  }
-
-  // ---------- Truncation & equal heights ----------
-  function truncateTextToWords(node, maxWords) {
-    const full = node.textContent.trim();
-    const words = full.split(/\s+/);
-    if (words.length <= maxWords) return;
-    const short = words.slice(0, maxWords).join(' ');
-    node.textContent = short + '…';
-    const more = document.createElement('span');
-    more.className = 'truncate-more';
-    more.textContent = 'more';
-    more.addEventListener('click', function () {
-      if (node.textContent.endsWith('…')) {
-        node.textContent = full; more.textContent = 'less'; node.appendChild(more);
-      } else {
-        node.textContent = short + '…'; more.textContent = 'more'; node.appendChild(more);
-      }
-    });
-    node.appendChild(more);
-  }
-  function applyTruncationRules() {
-    qsa('.card-desc').forEach(n => {
-      const limit = 26;
-      truncateTextToWords(n, limit);
-    });
-    qsa('.card-title').forEach(t => {
-      const full = t.textContent.trim(); const words = full.split(/\s+/);
-      if (words.length > 6) t.textContent = words.slice(0,6).join(' ') + '…';
-    });
-  }
-  applyTruncationRules();
-  const pricingNode = document.getElementById('pricing');
-  if (pricingNode) {
-    const mo = new MutationObserver(() => { applyTruncationRules(); });
-    mo.observe(pricingNode, { childList: true, subtree: true });
-  }
-
-  function equalizeHeights() {
-    qsa('.pricing-item').forEach(it => it.style.minHeight = '');
-    const groups = {};
-    qsa('.pricing-item').forEach(it => {
-      const row = it.closest('.row');
-      const key = row ? row.dataset.rowKey || (row.dataset.rowKey = Math.random().toString(36).slice(2)) : 'main';
-      groups[key] = groups[key] || []; groups[key].push(it);
-    });
-    Object.values(groups).forEach(list => {
-      let maxH = 0; list.forEach(it => { const h = it.getBoundingClientRect().height; if (h > maxH) maxH = h; });
-      list.forEach(it => it.style.minHeight = Math.ceil(maxH) + 'px');
-    });
-  }
-  setTimeout(equalizeHeights, 350);
-  window.addEventListener('resize', () => setTimeout(equalizeHeights, 120));
-
-  // Re-run equalize when CTA visibility toggles
-  qsa('.pricing-item').forEach(card => {
-    ['mouseenter','mouseleave','focusin','focusout','touchstart'].forEach(evt => {
-      card.addEventListener(evt, () => {
-        if (card._equalizeTimer) clearTimeout(card._equalizeTimer);
-        card._equalizeTimer = setTimeout(() => { equalizeHeights(); }, 120);
-      }, { passive: true });
-    });
-  });
-
-  // init
-  renderCartSummary();
-  window.addEventListener('storage', (e) => { if (e.key === CART_KEY) renderCartSummary(); });
-
-  // keyboard accessibility for add buttons
+  // ---------- Keyboard accessibility for CTA buttons ----------
   qsa('.btn-cta, .btn').forEach(b => {
     b.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); b.click(); } });
   });
 
- </script>
+  // ---------- Listen for storage changes (sync across tabs) ----------
+  window.addEventListener('storage', (e) => { if (e.key === CART_KEY) renderCartSummary(); });
 
-<script>
-  // ---------- STRIPE SECTION (frontend priceMap + robust checkoutCart) ----------
-  // Map the human-readable key your UI composes -> Stripe price_... IDs (use the exact IDs from your API mapping)
+  // ---------- Initialize cart display ----------
+  renderCartSummary();
+
+  // ---------- FRONTEND priceMap (keep synchronized with server) ----------
   const priceMap = {
     // One-time / Setup
     "All-in-One Setup & Onboarding|Basic|one-time":   "price_1SOIxiANBQOX99HKhcipo0Kw",
@@ -1285,46 +1139,32 @@ a:focus, button:focus, input:focus { outline: none; }
     // Recurring subscriptions (care plans)
     "Essential Care|Monthly|monthly": "price_1SOMteANBQOX99HKhyjvN5JA",
     "Essential Care|Annual|annual":   "price_1SOMteANBQOX99HKLmHg8o35",
-
     "Growth Care|Monthly|monthly":    "price_1SOMvbANBQOX99HKdXuX1AOf",
     "Growth Care|Annual|annual":      "price_1SOMvbANBQOX99HKLEIEDGpE",
-
-    // <-- ADDED: Premium Care mappings (server has these IDs already)
     "Premium Care|Monthly|monthly":   "price_1SOMxlANBQOX99HKm4uQLuBK",
     "Premium Care|Annual|annual":     "price_1SOMxlANBQOX99HK48CU6qZu",
-
-    // <-- ADDED: Simple Start mappings (server has these IDs in your API file)
     "Simple Start|Monthly|monthly":   "price_1SOGodANBQOX99HKiCITtJ4Z",
     "Simple Start|Annual|annual":     "price_1SOGutANBQOX99HKZ6voFANy",
-
     "CFO Lite|Monthly|monthly":       "price_CFO_MONTHLY_PLACEHOLDER",
     "CFO Lite|Annual|annual":         "price_CFO_ANNUAL_PLACEHOLDER"
-
-    // Add any other keys you have — keep this list synchronized with your server PRICE_MAP
   };
 
-  // Build and POST the cart to your server — send priceId when mapped to avoid mapping mismatches.
+  // ---------- Checkout: build payload and call server ----------
   async function checkoutCart() {
     const cart = readCart();
-    if (!cart || cart.length === 0) {
-      alert('Your cart is empty. Please add items before checkout.');
-      return;
-    }
+    if (!cart || cart.length === 0) { alert('Your cart is empty. Please add items before checkout.'); return; }
 
-    // Build line items — include explicit priceId when available
     const lineItems = cart.map(it => {
       const optionLabel = it.option || (it.billing === 'annual' ? 'Annual' : (it.billing === 'monthly' ? 'Monthly' : ''));
       const key = `${it.product}|${optionLabel}|${it.billing || 'one-time'}`;
-
       const priceId = priceMap[key] || null;
       return {
-        // server's normalization accepts li.priceKey || li.priceId || li.key; include priceId preferred
-        priceId: priceId || undefined,    // if present, send explicit Stripe price id
-        priceKey: priceId ? undefined : key, // fallback human key only when priceId not found
-        key,                                  // keep raw key for debugging on server
+        priceId: priceId || undefined,
+        priceKey: priceId ? undefined : key,
+        key,
         quantity: Number(it.quantity || 1),
         label: it.product,
-        unit_amount: Number(it.price || 0) // dollars — server will convert to cents if needed for fallback
+        unit_amount: Number(it.price || 0)
       };
     });
 
@@ -1336,28 +1176,29 @@ a:focus, button:focus, input:focus { outline: none; }
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ cart: cart, lineItems })
       });
-
       if (!resp.ok) {
         const text = await resp.text().catch(() => '<no body>');
         console.error('create-checkout-session error response body:', text);
         throw new Error('Server returned ' + resp.status + ': ' + text);
       }
-
       const data = await resp.json().catch(() => null);
-      if (data && data.url) {
-        window.location.href = data.url;
-      } else {
-        alert('Checkout started but server did not return a checkout URL. Check server logs.');
-        console.warn('create-checkout-session response:', data);
-      }
+      if (data && data.url) window.location.href = data.url;
+      else { alert('Checkout started but server did not return a checkout URL. Check server logs.'); console.warn('create-checkout-session response:', data); }
     } catch (err) {
       console.error(err);
       alert('Failed to start checkout: ' + (err.message || err));
     }
   }
   window.checkoutCart = checkoutCart;
-</script>
 
+  // Wire clear and checkout buttons if present
+  const clearBtn = document.getElementById('clearCartBtn');
+  if (clearBtn) clearBtn.addEventListener('click', () => { if (confirm('Clear cart?')) clearCart(); });
+  const chkBtn = document.getElementById('checkoutBtn');
+  if (chkBtn) chkBtn.addEventListener('click', checkoutCart);
+
+})();
+</script>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
