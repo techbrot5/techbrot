@@ -12,21 +12,21 @@ export async function onRequestPost(context) {
     const stripe = new Stripe(STRIPE_SECRET_KEY)
 
     const body = await context.request.json()
-    const { productName, quantity } = body
+    const { productName, quantity, priceKey } = body
 
-    // Replace with actual test price IDs from your Stripe Dashboard
+    // ✅ Real Stripe Price IDs
     const PRICE_MAP = {
-      simple_start_monthly: 'price_XXX',
-      simple_start_annual: 'price_YYY',
-      essentials_monthly: 'price_AAA',
-      essentials_annual: 'price_BBB',
-      plus_monthly: 'price_CCC',
-      plus_annual: 'price_DDD',
-      advanced_monthly: 'price_EEE',
-      advanced_annual: 'price_FFF',
+      simple_start_monthly: 'price_1SOGodANBQOX99HKiCITtJ4Z',
+      simple_start_annual: 'price_1SOGutANBQOX99HKZ6voFANy',
+
+      // You can add more plans below as you create them in Stripe
+      // essentials_monthly: 'price_xxx',
+      // essentials_annual: 'price_xxx',
+      // plus_monthly: 'price_xxx',
+      // plus_annual: 'price_xxx',
     }
 
-    const priceId = PRICE_MAP[body.priceKey]
+    const priceId = PRICE_MAP[priceKey]
     if (!priceId) {
       return new Response(JSON.stringify({ error: 'Invalid price key' }), {
         status: 400,
@@ -38,16 +38,16 @@ export async function onRequestPost(context) {
       line_items: [
         { price: priceId, quantity: quantity || 1 },
       ],
-      success_url: `${context.request.url.replace('/api/create-checkout-session', '')}?success=true`,
-      cancel_url: `${context.request.url.replace('/api/create-checkout-session', '')}?canceled=true`,
-      metadata: { plan: productName, tier: body.tier },
+      success_url: `${new URL(context.request.url).origin}/?success=true`,
+      cancel_url: `${new URL(context.request.url).origin}/?canceled=true`,
+      metadata: { plan: productName },
     })
 
     return new Response(JSON.stringify({ url: session.url }), {
       headers: { 'Content-Type': 'application/json' },
     })
   } catch (err) {
-    console.error(err)
+    console.error('Stripe Checkout error:', err)
     return new Response(JSON.stringify({ error: err.message }), {
       status: 500,
     })
