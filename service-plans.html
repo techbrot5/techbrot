@@ -1260,7 +1260,6 @@ a:focus, button:focus, input:focus { outline: none; }
 
  </script>
 
-<!-- REPLACE THIS BLOCK in your existing service-plans.js -->
 <script>
   // ---------- STRIPE SECTION (frontend priceMap + robust checkoutCart) ----------
   // Map the human-readable key your UI composes -> Stripe price_... IDs (use the exact IDs from your API mapping)
@@ -1290,11 +1289,16 @@ a:focus, button:focus, input:focus { outline: none; }
     "Growth Care|Monthly|monthly":    "price_1SOMvbANBQOX99HKdXuX1AOf",
     "Growth Care|Annual|annual":      "price_1SOMvbANBQOX99HKLEIEDGpE",
 
+    // <-- ADDED: Premium Care mappings (server has these IDs already)
     "Premium Care|Monthly|monthly":   "price_1SOMxlANBQOX99HKm4uQLuBK",
     "Premium Care|Annual|annual":     "price_1SOMxlANBQOX99HK48CU6qZu",
 
+    // <-- ADDED: Simple Start mappings (server has these IDs in your API file)
+    "Simple Start|Monthly|monthly":   "price_1SOGodANBQOX99HKiCITtJ4Z",
+    "Simple Start|Annual|annual":     "price_1SOGutANBQOX99HKZ6voFANy",
+
     "CFO Lite|Monthly|monthly":       "price_CFO_MONTHLY_PLACEHOLDER",
-    "CFO Lite|Annual|annual":         "price_CFO_ANNUAL_PLACEHOLDER",
+    "CFO Lite|Annual|annual":         "price_CFO_ANNUAL_PLACEHOLDER"
 
     // Add any other keys you have — keep this list synchronized with your server PRICE_MAP
   };
@@ -1353,6 +1357,7 @@ a:focus, button:focus, input:focus { outline: none; }
   }
   window.checkoutCart = checkoutCart;
 </script>
+
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
