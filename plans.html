@@ -64,7 +64,8 @@
           <!-- Buy now button (not full width) -->
           <div class="btn-wrap mb-3">
             <!-- price keys correspond to keys in PRICE_MAP in your server/env -->
- <button class="btn btn-buy btn-sm stripe-buy"
+<button 
+  class="btn btn-buy btn-sm stripe-buy"
   data-product-id="simple_start"
   data-product-name="Simple Start"
   data-price-key-monthly="simple_start_monthly"
@@ -72,6 +73,7 @@
   data-quantity="1">
   Buy Now
 </button>
+
           </div>
 
           <ul class="list-unstyled small mb-4 service-list">
@@ -309,82 +311,63 @@
     <a href="/contact/" class="btn btn-outline-secondary btn-sm">Contact us for volume, product support, and partner pricing</a>
   </div>
 </div>
-
-<!-- Global checkout script (paste once on the page) -->
 <script>
 document.addEventListener('click', async function (e) {
   const btn = e.target.closest('.stripe-buy');
   if (!btn) return;
   e.preventDefault();
 
-  // find the closest card to read billing radio
-  const card = btn.closest('.card') || btn.closest('.pricing-item') || document;
-  const billingRadio = card.querySelector('.billing-choice:checked');
-  const tier = billingRadio ? billingRadio.value : 'monthly';
+  // Find the nearest card and selected billing option
+  const card = btn.closest('.card') || document;
+  const billingChoice = card.querySelector('.billing-choice:checked');
+  const billingTier = billingChoice ? billingChoice.value : 'monthly';
 
-  // pick correct price key (monthly vs annual) from data attributes
-  let priceKey = (tier === 'annual') ? btn.dataset.priceKeyAnnual : btn.dataset.priceKeyMonthly;
+  // Choose correct price key
+  const priceKey = billingTier === 'annual'
+    ? btn.dataset.priceKeyAnnual
+    : btn.dataset.priceKeyMonthly;
+
   if (!priceKey) {
-    // fallback to single key attribute if provided
-    priceKey = btn.dataset.priceKey || btn.getAttribute('data-price-key') || '';
-  }
-
-  // Collect attributes to send to server
-  const payload = {
-    productId: btn.dataset.productId || '',
-    productName: btn.dataset.productName || '',
-    tier: tier,
-    priceKey: priceKey,
-    quantity: Number(btn.dataset.quantity || 1),
-    customerEmail: btn.dataset.email || '' // optional: pass prefilled email
-  };
-
-  // basic validation
-  if (!payload.priceKey) {
-    alert('Price selection missing. Please pick monthly or annual before continuing.');
+    alert('Please select a billing option (monthly or annual) before proceeding.');
     return;
   }
 
-  // Disable button while creating session
+  // Prepare data for the backend
+  const payload = {
+    productId: btn.dataset.productId,
+    productName: btn.dataset.productName,
+    priceKey,
+    quantity: Number(btn.dataset.quantity || 1)
+  };
+
+  // UI feedback
   const originalText = btn.innerHTML;
   btn.disabled = true;
-  btn.innerText = 'Redirecting…';
+  btn.textContent = 'Redirecting...';
 
   try {
     const res = await fetch('/api/create-checkout-session', {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
-    if (!res.ok) {
-      const errText = await res.text().catch(()=>'');
-      throw new Error('Server error creating session: ' + errText);
-    }
 
-    const { url } = await res.json();
-    if (!url) throw new Error('No checkout url returned from server');
-    // Redirect user to Stripe Checkout
-    window.location = url;
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Unknown error');
+    if (!data.url) throw new Error('No checkout URL returned');
+
+    // Redirect to Stripe Checkout
+    window.location.href = data.url;
   } catch (err) {
-    console.error(err);
+    console.error('Checkout error:', err);
+    alert('Unable to start checkout. Please try again or contact support.');
+  } finally {
     btn.disabled = false;
     btn.innerHTML = originalText;
-    alert('Sorry — could not start checkout. Try again or contact support.');
   }
 });
 </script>
-<style>
-.btn-buy {
-  transition: all 0.2s ease-in-out;
-}
-.btn-buy:disabled {
-  opacity: 0.7;
-  pointer-events: none;
-}
-.btn-buy:hover:not(:disabled) {
-  transform: translateY(-1px);
-}
-</style>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
