@@ -64,12 +64,12 @@
           <!-- Buy now button (not full width) -->
           <div class="btn-wrap mb-3">
             <!-- price keys correspond to keys in PRICE_MAP in your server/env -->
-       <button class="btn btn-buy btn-sm stripe-buy"
-        data-product-id="simple_start"
-        data-product-name="Simple Start"
-        data-price-key-monthly="price_1SOGodANBQOX99HKiCITtJ4Z"
-        data-price-key-annual="price_1SOGutANBQOX99HKZ6voFANy"
-        data-quantity="1">
+ <button class="btn btn-buy btn-sm stripe-buy"
+  data-product-id="simple_start"
+  data-product-name="Simple Start"
+  data-price-key-monthly="simple_start_monthly"
+  data-price-key-annual="simple_start_annual"
+  data-quantity="1">
   Buy Now
 </button>
           </div>
@@ -374,7 +374,16 @@ document.addEventListener('click', async function (e) {
 });
 </script>
 <style>
-
+.btn-buy {
+  transition: all 0.2s ease-in-out;
+}
+.btn-buy:disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+.btn-buy:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
 </style>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>

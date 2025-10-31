@@ -28,13 +28,17 @@ export async function onRequestPost(context) {
       // advanced_annual: 'price_xxx',
     }
 
-    const priceId = PRICE_MAP[priceKey]
-    if (!priceId) {
-      return new Response(JSON.stringify({ error: 'Invalid price key' }), {
-        status: 400,
-        headers: corsHeaders(),
-      })
-    }
+const priceId = PRICE_MAP[priceKey];
+if (!priceId) {
+  return new Response(JSON.stringify({
+    error: 'Invalid price key',
+    receivedKey: priceKey,
+    validKeys: Object.keys(PRICE_MAP)
+  }), {
+    status: 400,
+    headers: corsHeaders(),
+  });
+}
 
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
@@ -59,11 +63,12 @@ export async function onRequestPost(context) {
 // ✅ Add CORS headers for cross-domain requests
 function corsHeaders() {
   return {
-    'Access-Control-Allow-Origin': 'https://techbrot.com',
+    'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
   }
 }
+
 
 // ✅ Handle OPTIONS (preflight) requests
 export async function onRequestOptions() {
