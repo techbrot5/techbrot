@@ -19,18 +19,233 @@
     <link rel="stylesheet" href="assets/css/pricing.css">
 </head>
 
-<body><!DOCTYPE html>
-<html>
+<body><!doctype html>
+<html lang="en">
 <head>
-  <title>Checkout canceled</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Payment cancelled — Try again</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#071029;
+    --bg2:#0b1220;
+    --card: rgba(255,255,255,0.03);
+    --muted:#9aa6b2;
+    --accent:#06b6d4;
+    --danger:#ef4444;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: radial-gradient(800px 400px at 10% 20%, rgba(14,165,164,0.04), transparent 6%),
+                linear-gradient(180deg,var(--bg1),var(--bg2));
+    -webkit-font-smoothing:antialiased;
+    display:flex; align-items:center; justify-content:center;
+    padding:28px;
+  }
+
+  .container{
+    width:100%;
+    max-width:920px;
+    display:grid;
+    grid-template-columns: 1fr 320px;
+    gap:20px;
+    align-items:stretch;
+  }
+  @media (max-width:860px){
+    .container{ grid-template-columns: 1fr; padding:12px; gap:12px; }
+  }
+
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:14px;
+    padding:28px;
+    border:1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 14px 40px rgba(2,6,23,0.6);
+    min-height:220px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .left .title{
+    display:flex; align-items:center; gap:14px;
+    margin-bottom:8px;
+  }
+  .icon{
+    width:56px; height:56px; border-radius:12px;
+    background:linear-gradient(90deg, rgba(239,68,68,0.14), rgba(239,68,68,0.08));
+    display:grid; place-items:center; color:var(--danger); font-weight:800; font-size:22px;
+    border:1px solid rgba(239,68,68,0.06);
+  }
+  h1{ margin:0; font-size:22px; }
+  p.lead{ margin:12px 0 18px 0; color:var(--muted); font-size:15px }
+
+  .explain{
+    display:flex; gap:12px; align-items:flex-start; color:var(--muted); font-size:14px;
+  }
+  .explain svg{ flex:0 0 20px; margin-top:4px; opacity:0.9 }
+
+  .actions{ margin-top:18px; display:flex; gap:10px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--accent); color:#012; padding:10px 14px; border-radius:10px; border:0; font-weight:700;
+    cursor:pointer; transition:transform .12s ease, opacity .12s;
+  }
+  .btn.secondary{
+    background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.06); font-weight:600;
+  }
+  .btn:active{ transform:translateY(1px) }
+  .btn:disabled{ opacity:.6; cursor:not-allowed }
+
+  .right{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:14px; padding:20px; border:1px solid rgba(255,255,255,0.04);
+    display:flex; flex-direction:column; justify-content:center; gap:12px; min-height:160px;
+    box-shadow: 0 8px 26px rgba(2,6,23,0.5);
+  }
+  .status{ font-weight:700; color:var(--danger) }
+  .countdown{ color:var(--muted); font-size:13px }
+  .help{ font-size:13px; color:var(--muted) }
+
+  /* small animation */
+  .pulse {
+    animation: pulse 1.6s linear infinite;
+    border-radius: 999px;
+    box-shadow: 0 8px 26px rgba(239,68,68,0.06);
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.03); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* accessibility focus */
+  .btn:focus, .btn.secondary:focus { outline:3px solid rgba(6,182,212,0.12); outline-offset:4px; border-radius:10px; }
+
+  .small-note{ font-size:13px; color:var(--muted); margin-top:10px }
+</style>
 </head>
 <body>
-  <section>
-    <p>Forgot to add something to your cart? Shop around then come back to pay!</p>
+<main class="container" role="main" aria-labelledby="cancelHeading">
+
+  <section class="card left" aria-labelledby="cancelHeading">
+    <div class="title">
+      <div class="icon pulse" aria-hidden="true">✖</div>
+      <div>
+        <h1 id="cancelHeading">Payment cancelled</h1>
+        <div class="status" aria-hidden="true">No charge was made</div>
+      </div>
+    </div>
+
+    <p class="lead">It looks like your payment didn’t complete. This may happen if you closed the window, chose a different payment method, or the payment was declined.</p>
+
+    <div class="explain" role="region" aria-label="Why this can happen">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:0 0 20px; color:var(--muted)">
+        <path d="M11.25 6h1.5v7h-1.5V6z" fill="currentColor"/>
+        <path d="M12 17a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 12 17z" fill="currentColor"/>
+      </svg>
+      <div>
+        <div><strong>Why this might happen</strong></div>
+        <div class="small-note">You can try again — we saved your cart. If funds were held, check your bank; holds typically release in a few business days.</div>
+      </div>
+    </div>
+
+    <div class="actions" role="group" aria-label="Actions">
+      <button class="btn" id="retryBtn" title="Return to plans and try again">Retry / Choose a plan</button>
+      <button class="btn secondary" id="contactBtn" title="Contact support">Contact support</button>
+      <button class="btn secondary" id="clearBtn" title="Clear cart and go back to plans">Clear cart & go to plans</button>
+    </div>
+
+    <p class="small-note">If you need help, email <a href="mailto:orders@example.com" id="supportEmail">orders@example.com</a> and include your name and any order reference shown on the previous page.</p>
   </section>
+
+  <aside class="right" aria-labelledby="summaryTitle">
+    <div>
+      <div id="summaryTitle" style="font-size:15px; font-weight:700">Next steps</div>
+      <div class="countdown" id="countdownText">Redirecting to plans in <strong id="count">6</strong> seconds…</div>
+    </div>
+
+    <div class="help">
+      <div><strong>Tip:</strong> You can try again immediately by clicking <em>Retry / Choose a plan</em>, or contact support if the card was declined.</div>
+    </div>
+
+    <div style="margin-top:6px;">
+      <div class="small-note">We’ll keep your cart intact in your browser so you can continue where you left off.</div>
+    </div>
+  </aside>
+
+</main>
+
+<script>
+(function () {
+  const redirectPath = '/plans.html'; // destination after cancellation
+  const retryBtn = document.getElementById('retryBtn');
+  const contactBtn = document.getElementById('contactBtn');
+  const clearBtn = document.getElementById('clearBtn');
+  const countEl = document.getElementById('count');
+
+  // autosave countdown then redirect
+  let seconds = 6;
+  const tick = () => {
+    seconds--;
+    if (countEl) countEl.textContent = seconds;
+    if (seconds <= 0) {
+      window.location.href = redirectPath;
+    }
+  };
+  const interval = setInterval(tick, 1000);
+
+  // button handlers
+  retryBtn.addEventListener('click', function () {
+    // just go to plans — cart is intentionally preserved
+    window.location.href = redirectPath;
+  });
+
+  contactBtn.addEventListener('click', function () {
+    // open user's mail client with prefilled subject including optional cart info
+    const email = 'orders@example.com';
+    let subject = encodeURIComponent('Payment issue — need help');
+    let body = encodeURIComponent('Hi team,%0A%0AMy payment did not complete. Please help. Cart or session info: (if available) %0A%0AThanks.');
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  });
+
+  clearBtn.addEventListener('click', function () {
+    try {
+      localStorage.removeItem('pricing_cart');
+      // optional: also remove any saved service_plans_cart key
+      localStorage.removeItem('service_plans_cart');
+    } catch (e) {
+      console.warn('Unable to clear localStorage', e);
+    }
+    // go back to plans after clearing
+    window.location.href = redirectPath;
+  });
+
+  // Accessibility: focus retry button
+  retryBtn.focus();
+
+  // If the user navigates back and the page was left mid-countdown, keep it accessible
+  window.addEventListener('pageshow', (ev) => {
+    if (ev.persisted) {
+      // reset countdown
+      seconds = 6;
+      if (countEl) countEl.textContent = seconds;
+    }
+  });
+
+  // defensive: stop redirect when user interacts (clicks any button)
+  document.querySelectorAll('.btn').forEach(b => {
+    b.addEventListener('click', () => { clearInterval(interval); });
+  });
+})();
+</script>
 </body>
 </html>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

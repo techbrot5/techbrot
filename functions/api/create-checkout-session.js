@@ -14,27 +14,60 @@ export async function onRequestPost(context) {
     const body = await context.request.json()
     const { productName, quantity, priceKey } = body
 
-    // ✅ Real Stripe Price IDs (test or live). Fill placeholders below as you create prices in Stripe.
+    // ---------- FULL PRICE_MAP (placeholders & existing IDs) ----------
+    // Replace each 'price_..._PLACEHOLDER' with the real Stripe Price ID
     const PRICE_MAP = {
       // Simple Start (already set)
       simple_start_monthly: 'price_1SOGodANBQOX99HKiCITtJ4Z',
       simple_start_annual:  'price_1SOGutANBQOX99HKZ6voFANy',
 
-      // Essentials (placeholders — replace with your Stripe price IDs)
-      essentials_monthly:  'price_ESSENTIALS_MONTHLY_PLACEHOLDER',
-      essentials_annual:   'price_ESSENTIALS_ANNUAL_PLACEHOLDER',
+      // ====== Newly moved: map remaining 3 subscription products here (placed below Simple Start) ======
+      // Essentials
+      essentials_monthly:  'price_1SOPp3ANBQOX99HKgiSFutBo',
+      essentials_annual:   'price_1SOPqJANBQOX99HKHiSAqrRC',
 
-      // Plus (placeholders)
-      plus_monthly:        'price_PLUS_MONTHLY_PLACEHOLDER',
-      plus_annual:         'price_PLUS_ANNUAL_PLACEHOLDER',
+      // Plus
+      plus_monthly:        'price_1SOPsVANBQOX99HKLrF6iXz6',
+      plus_annual:         'price_1SOPtPANBQOX99HKSK6jTnCV',
 
-      // Advanced (placeholders)
-      advanced_monthly:    'price_ADVANCED_MONTHLY_PLACEHOLDER',
-      advanced_annual:     'price_ADVANCED_ANNUAL_PLACEHOLDER',
+      // Advanced
+      advanced_monthly:    'price_1SOPujANBQOX99HKCHxxENYD',
+      advanced_annual:     'price_1SOPvYANBQOX99HKMGoTodsy',
+      // =============================================================================================
 
-      // (Add other product price keys here as required)
+      // One-time / Setup tiers (All-in-One Setup & Onboarding) — existing IDs you provided
+      setup_basic_one_time_PLACEHOLDER:     'price_1SOIxiANBQOX99HKhcipo0Kw',
+      setup_premium_one_time_PLACEHOLDER:   'price_1SOJ3GANBQOX99HKy3Cw42qr',
+      setup_advanced_one_time_PLACEHOLDER:  'price_1SOJ5GANBQOX99HKNN2yasP3',
+
+      // Cleanup options (one-time estimates)
+      cleanup_3_one_time_PLACEHOLDER:       'price_1SOMqCANBQOX99HKsOFctjrf',   // 3 months (~$250)
+      cleanup_6_one_time_PLACEHOLDER:       'price_1SOMqCANBQOX99HKx5i36dFO',   // 6 months (~$450)
+      cleanup_12_one_time_PLACEHOLDER:      'price_1SOMqCANBQOX99HKHKCJegu6',  // 12+ months (~$1200)
+
+      // Migration Service (one-time)
+      migration_basic_one_time_PLACEHOLDER: 'price_1SOMmqANBQOX99HKVW52VuDE',
+      migration_full_one_time_PLACEHOLDER:  'price_1SOMmqANBQOX99HKcpCyIQXs',
+
+      // QuickStart tiers (one-time / sessions)
+      quickstart_session_one_time_PLACEHOLDER: 'price_1SOMkgANBQOX99HKEXn8s4Az', // $99/hr session
+      quickstart_workflow_one_time_PLACEHOLDER: 'price_1SOMkgANBQOX99HKrPY11AYl', // $199 workflow pack
+
+      // Recurring plans — monthly / annual (your filled IDs for other plans)
+      essential_care_monthly_PLACEHOLDER: 'price_1SOMteANBQOX99HKhyjvN5JA',
+      essential_care_annual_PLACEHOLDER:  'price_1SOMteANBQOX99HKLmHg8o35',
+
+      growth_care_monthly_PLACEHOLDER:    'price_1SOMvbANBQOX99HKdXuX1AOf',
+      growth_care_annual_PLACEHOLDER:     'price_1SOMvbANBQOX99HKLEIEDGpE',
+
+      premium_care_monthly_PLACEHOLDER:   'price_1SOMxlANBQOX99HKm4uQLuBK',
+      premium_care_annual_PLACEHOLDER:    'price_1SOMxlANBQOX99HK48CU6qZu',
+
+      cfo_lite_monthly_PLACEHOLDER:       'price_CFO_MONTHLY_PLACEHOLDER',
+      cfo_lite_annual_PLACEHOLDER:        'price_CFO_ANNUAL_PLACEHOLDER'
     }
 
+    // ---------- Existing single-price logic (unchanged) ----------
     const priceId = PRICE_MAP[priceKey]
     if (!priceId) {
       return new Response(JSON.stringify({
@@ -48,6 +81,8 @@ export async function onRequestPost(context) {
     }
 
     // Create Checkout Session (subscription mode for these plans)
+    // NOTE: this code currently creates a single-line subscription session.
+    // If you later want to support multi-line carts, swap to the multi-line worker we discussed.
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
       line_items: [{ price: priceId, quantity: quantity || 1 }],

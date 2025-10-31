@@ -19,21 +19,350 @@
     <link rel="stylesheet" href="assets/css/pricing.css">
 </head>
 
-<body><!DOCTYPE html>
-<html>
+<body><!doctype html>
+<html lang="en">
 <head>
-  <title>Thanks for your order!</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Thank you — Order received</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#0f172a;
+    --bg2:#071029;
+    --glass: rgba(255,255,255,0.06);
+    --card: rgba(255,255,255,0.03);
+    --accent1: #06b6d4;
+    --accent2: #0ea5a4;
+    --muted: #9aa6b2;
+    --success: #10b981;
+    --danger: #ef4444;
+    color-scheme: dark;
+  }
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: radial-gradient(1200px 600px at 10% 20%, rgba(6,182,212,0.06), transparent 8%),
+                radial-gradient(900px 400px at 90% 80%, rgba(14,165,164,0.05), transparent 8%),
+                linear-gradient(180deg,var(--bg1),var(--bg2));
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:28px;
+  }
+
+  .wrap{
+    width:100%;
+    max-width:980px;
+    display:grid;
+    grid-template-columns: 1fr 380px;
+    gap:28px;
+    align-items:start;
+  }
+
+  /* responsive single column */
+  @media (max-width:880px){
+    .wrap{grid-template-columns:1fr; padding:8px}
+  }
+
+  .hero{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:14px;
+    padding:28px;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+    position:relative;
+    overflow:hidden;
+    min-height:240px;
+  }
+
+  .kicker{
+    display:inline-flex;
+    gap:10px;
+    align-items:center;
+    background: linear-gradient(90deg,var(--accent1),var(--accent2));
+    color:#032; font-weight:700;
+    padding:6px 10px;
+    border-radius:999px;
+    font-size:13px;
+    box-shadow:0 6px 18px rgba(6,182,212,0.08);
+  }
+
+  h1{
+    margin:14px 0 6px 0;
+    font-size:28px;
+    line-height:1.02;
+    letter-spacing:-0.02em;
+  }
+  p.lead{
+    margin:0 0 18px 0;
+    color:var(--muted);
+    font-size:15px;
+  }
+
+  .order-card{
+    display:flex;
+    gap:18px;
+    align-items:center;
+  }
+  .order-badge{
+    width:84px; height:84px;
+    border-radius:12px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    display:flex; align-items:center; justify-content:center;
+    font-weight:800; color:var(--accent1);
+    font-size:20px; border:1px solid rgba(255,255,255,0.03);
+  }
+
+  .order-meta{flex:1}
+  .order-meta .who{font-weight:700; font-size:16px}
+  .order-meta .id{color:var(--muted); font-size:13px; margin-top:6px}
+  .order-meta .amount{font-weight:800; font-size:18px; margin-top:8px; color:var(--success)}
+
+  /* Right column summary */
+  .summary{
+    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
+    border-radius:14px;
+    padding:18px;
+    border:1px solid rgba(255,255,255,0.03);
+    min-height:220px;
+    box-shadow: 0 8px 26px rgba(2,6,23,0.6);
+  }
+  .summary h3{margin:0 0 6px 0; font-size:16px}
+  .summary .line{display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px dashed rgba(255,255,255,0.02); color:var(--muted); font-size:14px}
+  .summary .line strong{color:#fff}
+  .summary .total{font-size:18px; font-weight:800; margin-top:10px; text-align:right}
+
+  .actions{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:10px 14px; border-radius:10px; font-weight:700; font-size:14px;
+    cursor:pointer; border:0; color:#052; background:var(--accent1);
+    box-shadow: 0 10px 24px rgba(6,182,212,0.08);
+    transition:transform .12s ease, box-shadow .12s ease, opacity .12s;
+  }
+  .btn.secondary{
+    background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.06);
+    box-shadow:none; font-weight:600;
+  }
+  .btn:active{ transform:translateY(1px) scale(.998) }
+  .btn:disabled{opacity:.6; cursor:not-allowed}
+
+  .note{font-size:13px; color:var(--muted); margin-top:12px}
+
+  /* small success tick animation */
+  .tick {
+    width:52px; height:52px; border-radius:12px;
+    background: linear-gradient(90deg,var(--accent2),var(--accent1));
+    display:inline-grid; place-items:center; color:#012;
+    box-shadow:0 8px 24px rgba(5,150,145,0.14);
+    transform:translateY(-6px);
+  }
+  .tick svg{filter:drop-shadow(0 6px 16px rgba(6,182,212,0.14))}
+
+  /* subtle floating artwork */
+  .deco {
+    position:absolute; right:-60px; top:-40px; width:240px; height:240px; opacity:0.06;
+    background: conic-gradient(from 120deg at 50% 50%, rgba(6,182,212,0.35), rgba(14,165,164,0.25), transparent 70%);
+    transform: rotate(8deg);
+    border-radius:48px;
+    pointer-events:none;
+  }
+
+  /* confetti canvas overlay (absolute) */
+  #confetti { position:fixed; left:0; top:0; width:100%; height:100%; pointer-events:none; z-index:9999; }
+
+  /* accessibility: focus outlines */
+  .btn:focus, .billing-choice:focus { outline:3px solid rgba(6,182,212,0.14); outline-offset:3px; border-radius:8px; }
+</style>
 </head>
 <body>
-  <section>
-    <p>
-      We appreciate your business! If you have any questions, please email
-      <a href="mailto:orders@example.com">orders@example.com</a>.
-    </p>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<main class="wrap" role="main" aria-labelledby="thankHeading">
+  <section class="hero" aria-labelledby="thankHeading">
+    <div class="kicker" aria-hidden="true">Order complete</div>
+
+    <h1 id="thankHeading">Thanks — your order is confirmed</h1>
+    <p class="lead">We’ve received your order and emailed the receipt. You’ll also receive a confirmation from Stripe. Below is a quick summary — keep this page or download the invoice.</p>
+
+    <div class="order-card" role="status" aria-live="polite">
+      <div class="order-badge" id="orderEmoji">🎉</div>
+
+      <div class="order-meta">
+        <div class="who" id="customerName">Thanks — friend</div>
+        <div class="id" id="orderId">Order ID: <span id="orderIdVal">—</span></div>
+        <div class="amount" id="orderAmount">$0.00</div>
+      </div>
+    </div>
+
+    <p class="note">Questions? Email <a href="mailto:orders@example.com" id="contactEmail">orders@example.com</a> or reply to the receipt. If you need help with billing, include your <strong>Order ID</strong> above.</p>
+
+    <div class="deco" aria-hidden="true"></div>
   </section>
+
+  <aside class="summary" aria-labelledby="summaryHeading">
+    <h3 id="summaryHeading">Order summary</h3>
+
+    <div id="summaryLines" aria-live="polite">
+      <div class="line"><span id="lineItem">Item</span><span id="linePrice">$0.00</span></div>
+    </div>
+
+    <div class="total" id="summaryTotal"><span style="color:var(--muted); font-weight:600; margin-right:8px">Total</span>$0.00</div>
+
+    <div class="actions">
+      <button class="btn" id="downloadInvoiceBtn" title="Download invoice (if available)">Download invoice</button>
+      <button class="btn secondary" id="continueBtn">Back to home</button>
+      <button class="btn secondary" id="receiptBtn">View receipt</button>
+    </div>
+
+    <div class="note" id="metaNote">You can safely close this window. A receipt was sent to your email.</div>
+  </aside>
+</main>
+
+<script>
+(function () {
+  // Simple utilities
+  const qs = (s, ctx=document) => ctx.querySelector(s);
+  const qsa = (s, ctx=document) => Array.from((ctx||document).querySelectorAll(s));
+  function money(n){ return '$' + Number(n || 0).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2}); }
+  function param(name){ const u = new URL(window.location.href); return u.searchParams.get(name) || ''; }
+
+  // Read common URL params (if your Stripe success redirect appends these)
+  const sess = param('session_id') || param('sessionId') || param('session');
+  const order = param('order') || param('order_id') || param('orderId') || param('checkout_id') || sess;
+  const name = decodeURIComponent(param('name') || param('customer') || '').replace(/\+/g,' ').trim();
+  const amount = param('amount') || param('total') || param('price') || '';
+  const item = decodeURIComponent(param('item') || '') || 'Service plan';
+
+  // Populate UI
+  if (name) qs('#customerName').textContent = `Thanks, ${name}`;
+  qs('#orderIdVal').textContent = order || '—';
+  if (amount) {
+    const numeric = parseFloat(amount.replace(/[^0-9.]/g,'')) || 0;
+    qs('#orderAmount').textContent = money(numeric);
+    qs('#summaryTotal').innerHTML = '<span style="color:var(--muted); font-weight:600; margin-right:8px">Total</span>' + money(numeric);
+    qs('#linePrice').textContent = money(numeric);
+  } else {
+    // try to read from localStorage cart (if you set it)
+    try {
+      const cartRaw = localStorage.getItem('pricing_cart');
+      if (cartRaw) {
+        const cart = JSON.parse(cartRaw);
+        // show first item and total
+        if (Array.isArray(cart) && cart.length) {
+          const lines = cart.map(it => {
+            const label = it.product || it.plan || 'Item';
+            const qty = it.quantity||1;
+            const price = Number(it.price||0);
+            return `<div class="line"><span>${escapeHtml(label)} × ${qty}</span><span>${money(price*qty)}</span></div>`;
+          }).join('');
+          qs('#summaryLines').innerHTML = lines;
+          const tot = cart.reduce((s,i)=> s + (Number(i.price||0) * (i.quantity||1)), 0);
+          qs('#summaryTotal').innerHTML = '<span style="color:var(--muted); font-weight:600; margin-right:8px">Total</span>' + money(tot);
+          qs('#orderAmount').textContent = money(tot);
+        }
+      }
+    } catch(err){ /* ignore */ }
+  }
+
+  // small helpers
+  function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+  // Buttons
+  qs('#continueBtn').addEventListener('click', () => { window.location.href = '/'; });
+  qs('#receiptBtn').addEventListener('click', () => {
+    // If Stripe session id present, open Stripe-hosted receipt (or send to server)
+    if (sess) {
+      // you may want to replace with your server endpoint that verifies session and returns hosted receipt
+      window.open(`https://dashboard.stripe.com/test/payments/${sess}`, '_blank');
+    } else {
+      alert('Receipt link not available. Check your email for the receipt or contact support.');
+    }
+  });
+  qs('#downloadInvoiceBtn').addEventListener('click', () => {
+    // Example: open a generated invoice endpoint on your server
+    if (order) {
+      // replace with your real invoice URL path if you have one
+      window.open(`/invoices/${encodeURIComponent(order)}.pdf`, '_blank');
+    } else {
+      alert('Invoice not available. We sent a receipt to your email.');
+    }
+  });
+
+  // Show confetti once on page load (simple particle system)
+  function burstConfetti() {
+    const c = qs('#confetti');
+    if (!c) return;
+    const ctx = c.getContext('2d');
+    let particles = [];
+    function resize(){ c.width = innerWidth; c.height = innerHeight; }
+    resize(); window.addEventListener('resize', resize);
+    function rand(min,max){ return Math.random()*(max-min)+min; }
+    const colors = ['#06b6d4','#0ea5a4','#60a5fa','#f472b6','#f59e0b','#10b981'];
+    // spawn ~32 particles
+    for (let i=0;i<32;i++){
+      particles.push({
+        x: innerWidth/2 + rand(-80,80),
+        y: innerHeight/3 + rand(-30,30),
+        vx: rand(-4,4),
+        vy: rand(-6,2),
+        size: Math.floor(rand(6,14)),
+        rot: rand(0,Math.PI*2),
+        vr: rand(-0.12,0.12),
+        color: colors[Math.floor(rand(0,colors.length))],
+        ttl: rand(60,140)
+      });
+    }
+    let frame = 0;
+    function draw(){
+      ctx.clearRect(0,0,c.width,c.height);
+      particles.forEach((p, idx) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.12; // gravity
+        p.rot += p.vr;
+        p.ttl--;
+        ctx.save();
+        ctx.translate(p.x,p.y);
+        ctx.rotate(p.rot);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+        ctx.restore();
+      });
+      particles = particles.filter(p => p.ttl>0 && p.y < innerHeight + 60);
+      frame++;
+      if (particles.length) requestAnimationFrame(draw);
+      else ctx.clearRect(0,0,c.width,c.height);
+    }
+    draw();
+  }
+
+  // small tick icon tweak: if amount > 0 show confetti
+  const amtVal = (qs('#orderAmount') && qs('#orderAmount').textContent) || '';
+  if (amtVal && amtVal !== '$0.00') {
+    setTimeout(burstConfetti, 220);
+    qs('#orderEmoji').textContent = '✅';
+  }
+
+  // keyboard focus landing (for accessibility)
+  setTimeout(()=>qs('#customerName').focus && qs('#customerName').setAttribute('tabindex','-1') && qs('#customerName').focus(), 120);
+
+  // tidy: clear saved cart if present (optional)
+  try {
+    // If you want to clear the cart after successful checkout, uncomment the next line
+    // localStorage.removeItem('pricing_cart');
+  } catch(e){}
+
+})();
+</script>
 </body>
 </html>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
