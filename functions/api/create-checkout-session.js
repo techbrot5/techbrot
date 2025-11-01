@@ -1,25 +1,16 @@
 import Stripe from 'stripe'
 
-/**
- * CORS helper — change Access-Control-Allow-Origin to your origin for production
- */
 function corsHeaders() {
   return {
-    'Access-Control-Allow-Origin': '*', // <-- set to 'https://techbrot.com' in production
+    'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET,HEAD,POST,OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     'Access-Control-Max-Age': '86400'
   }
 }
 
-/**
- * Respond to preflight OPTIONS requests so browsers can send POST
- */
 export async function onRequestOptions(context) {
-  return new Response(null, {
-    status: 204,
-    headers: corsHeaders()
-  })
+  return new Response(null, { status: 204, headers: corsHeaders() })
 }
 
 export async function onRequestPost(context) {
@@ -31,25 +22,21 @@ export async function onRequestPost(context) {
         headers: { ...corsHeaders(), 'Content-Type': 'application/json' },
       })
     }
-
     const stripe = new Stripe(STRIPE_SECRET_KEY)
-    const body = await context.request.json().catch(() => ({}))
 
-    // ---------- PRICE MAP (your existing mapping) ----------
+    const body = await context.request.json().catch(()=>({}))
+
+    // --- PRICE_MAP and PRICE_TYPE_MAP (keep your existing map) ---
     const PRICE_MAP = {
       simple_start_monthly: 'price_1SOGodANBQOX99HKiCITtJ4Z',
       simple_start_annual:  'price_1SOGutANBQOX99HKZ6voFANy',
-
       essentials_monthly:  'price_1SOPp3ANBQOX99HKgiSFutBo',
       essentials_annual:   'price_1SOPqJANBQOX99HKHiSAqrRC',
-
       plus_monthly:        'price_1SOPsVANBQOX99HKLrF6iXz6',
       plus_annual:         'price_1SOPtPANBQOX99HKSK6jTnCV',
-
       advanced_monthly:    'price_1SOPujANBQOX99HKCHxxENYD',
       advanced_annual:     'price_1SOPvYANBQOX99HKMGoTodsy',
 
-      // one-time / setup (keep your IDs)
       setup_basic_one_time_PLACEHOLDER:     'price_1SOIxiANBQOX99HKhcipo0Kw',
       setup_premium_one_time_PLACEHOLDER:   'price_1SOJ3GANBQOX99HKy3Cw42qr',
       setup_advanced_one_time_PLACEHOLDER:  'price_1SOJ5GANBQOX99HKNN2yasP3',
@@ -66,18 +53,14 @@ export async function onRequestPost(context) {
 
       essential_care_monthly_PLACEHOLDER: 'price_1SOMteANBQOX99HKhyjvN5JA',
       essential_care_annual_PLACEHOLDER:  'price_1SOMteANBQOX99HKLmHg8o35',
-
       growth_care_monthly_PLACEHOLDER:    'price_1SOMvbANBQOX99HKdXuX1AOf',
       growth_care_annual_PLACEHOLDER:     'price_1SOMvbANBQOX99HKLEIEDGpE',
-
       premium_care_monthly_PLACEHOLDER:   'price_1SOMxlANBQOX99HKm4uQLuBK',
       premium_care_annual_PLACEHOLDER:    'price_1SOMxlANBQOX99HK48CU6qZu',
-
       cfo_lite_monthly_PLACEHOLDER:       'price_CFO_MONTHLY_PLACEHOLDER',
       cfo_lite_annual_PLACEHOLDER:        'price_CFO_ANNUAL_PLACEHOLDER'
     }
 
-    // ---------- PRICE TYPE MAP ----------
     const PRICE_TYPE_MAP = {
       simple_start_monthly: 'recurring',
       simple_start_annual:  'recurring',
@@ -88,7 +71,6 @@ export async function onRequestPost(context) {
       advanced_monthly: 'recurring',
       advanced_annual: 'recurring',
 
-      // one-time
       setup_basic_one_time_PLACEHOLDER: 'one_time',
       setup_premium_one_time_PLACEHOLDER: 'one_time',
       setup_advanced_one_time_PLACEHOLDER: 'one_time',
@@ -101,7 +83,6 @@ export async function onRequestPost(context) {
       quickstart_workflow_one_time_PLACEHOLDER: 'one_time',
     }
 
-    // ---------- Helpers ----------
     function normalizeKeyToMap(k) {
       if (!k || typeof k !== 'string') return k;
       let s = k.toLowerCase().trim();
@@ -112,7 +93,7 @@ export async function onRequestPost(context) {
       return s;
     }
 
-    // ---------- Normalize incoming items ----------
+    // ---------- Build items array (normalized) ----------
     let items = []
     if (Array.isArray(body.lineItems) && body.lineItems.length) {
       items = body.lineItems.map(li => ({
@@ -133,61 +114,63 @@ export async function onRequestPost(context) {
     }
 
     if (!items.length) {
-      return new Response(JSON.stringify({ error: 'No valid line items found in request' }), {
-        status: 400,
-        headers: { ...corsHeaders(), 'Content-Type': 'application/json' },
-      })
+      return new Response(JSON.stringify({ error: 'No valid line items found in request' }), { status: 400, headers: { ...corsHeaders(), 'Content-Type': 'application/json' } })
     }
 
-    // ---------- Resolve price IDs ----------
+    // ---------- Resolve price IDs & types ----------
     const resolved = items.map(it => {
       const rawKey = String(it.priceKey)
       const norm = normalizeKeyToMap(rawKey)
       const priceId = PRICE_MAP[rawKey] || PRICE_MAP[norm] || null
       const priceType = PRICE_TYPE_MAP[rawKey] || PRICE_TYPE_MAP[norm] ||
-        (norm.includes('one_time') ? 'one_time' : 'recurring')
+        (String(norm).includes('one_time') ? 'one_time' : (String(norm).includes('_monthly') || String(norm).includes('_annual') ? 'recurring' : 'one_time'))
       return { ...it, key: rawKey, norm, priceId, priceType }
     })
 
+    // If some resolved are missing priceId but also missing numeric amount -> error
     const missing = resolved.filter(r => !r.priceId)
     const missingWithoutAmount = missing.filter(m => !m.unit_amount && !m.price)
     if (missing.length && missingWithoutAmount.length === missing.length) {
-      return new Response(JSON.stringify({ error: 'Missing priceId mapping', missing: missing.map(m => m.key) }), {
+      return new Response(JSON.stringify({ error: 'Missing priceId mapping for some priceKey(s)', missing: missing.map(m => m.key) }), {
         status: 400,
         headers: { ...corsHeaders(), 'Content-Type': 'application/json' }
       })
     }
 
-    // ✅ Updated hybrid logic — prefer subscription if any recurring item exists
+    // ---------- Determine session mode: subscription if any recurring ----------
     const hasRecurring = resolved.some(r => r.priceType === 'recurring')
     const priceMode = hasRecurring ? 'subscription' : 'payment'
 
-    // ---------- Build Stripe line_items ----------
+    // ---------- Build Stripe line_items array ----------
     const line_items = await Promise.all(resolved.map(async r => {
-      if (r.priceId) {
-        return { price: r.priceId, quantity: Number(r.quantity || 1) }
-      }
+      if (r.priceId) return { price: r.priceId, quantity: Number(r.quantity || 1) }
 
       const numeric = Number(r.unit_amount || r.price || 0)
       if (!numeric || numeric <= 0) throw new Error('Missing numeric amount for key: ' + r.key)
-
       const unit_amount_cents = Math.round(numeric * 100)
-      const price_data = {
-        currency: 'usd',
-        product_data: { name: r.label || r.key || 'Custom product' },
-        unit_amount: unit_amount_cents
-      }
-
+      const price_data = { currency: 'usd', product_data: { name: r.label || r.key || 'Custom product' }, unit_amount: unit_amount_cents }
       if (r.priceType === 'recurring') {
         const k = (r.key + ' ' + r.norm).toLowerCase()
         const interval = k.includes('annual') || k.includes('year') ? 'year' : 'month'
         price_data.recurring = { interval }
       }
-
       return { price_data, quantity: Number(r.quantity || 1) }
     }))
 
-    // ✅ Create checkout session (supports card + ACH)
+    // ---------- Create deterministic idempotency key from items ----------
+    // simple stable hash (djb2) over JSON of resolved items (keeps same for identical cart)
+    const keySource = JSON.stringify(resolved.map(r => ({ key: r.key, priceId: r.priceId, qty: r.quantity, unit: r.unit_amount || null })))
+    function djb2Hash(str) {
+      let h = 5381
+      for (let i = 0; i < str.length; i++) { h = ((h << 5) + h) + str.charCodeAt(i) } // h * 33 + c
+      return 'idemp_' + (h >>> 0).toString(36)
+    }
+    const idempotencyKey = djb2Hash(keySource)
+
+    // DEBUG: include some server debug info in response for testing (remove in prod)
+    const debugInfo = { itemCount: resolved.length, hasRecurring, priceMode, idempotencyKeySample: idempotencyKey.slice(0,16) }
+
+    // ---------- Create session with idempotency to avoid duplicate creations ----------
     const session = await stripe.checkout.sessions.create({
       mode: priceMode,
       payment_method_types: ['card', 'us_bank_account'],
@@ -195,9 +178,10 @@ export async function onRequestPost(context) {
       success_url: 'https://techbrot.com/success',
       cancel_url: 'https://techbrot.com/cancel',
       metadata: { createdAt: new Date().toISOString(), items: JSON.stringify(resolved.map(r => ({ key: r.key, quantity: r.quantity }))) }
-    })
+    }, { idempotencyKey }) // <--- pass idempotency key to Stripe SDK
 
-    return new Response(JSON.stringify({ url: session.url }), {
+    // Return a single URL (and debug info while testing)
+    return new Response(JSON.stringify({ url: session.url, debug: debugInfo }), {
       status: 200,
       headers: { ...corsHeaders(), 'Content-Type': 'application/json' }
     })
