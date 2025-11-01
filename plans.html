@@ -312,56 +312,65 @@
   </div>
 </div>
 <script>
-(function () {
-  const STORAGE_KEY = 'service_plans_cart';
+/*
+  Cleaned, single-file JS for service-plans page.
+  Keeps important behavior:
+   - localStorage cart stored at "service_plans_cart"
+   - persist billing selections at "selected_billing_modes"
+   - update card price display when monthly/annual radio changes
+   - show 30% discount toast each time user selects Annual
+   - when a QBO plan (Simple Start / Essentials / Plus / Advanced) is added:
+       -> remove any other QBO plan(s) so only one QBO plan remains in cart
+       -> notify user which plan was replaced (5s toast)
+   - non-QBO items keep normal add/merge/replace logic
+   - Buy button saves to localStorage then redirects to /service-plans.html after 5s
+   - toast default duration: 5000ms
+*/
 
-  /* ---------- Small top-right toast notification util ---------- */
+(function () {
+  // ---------- CONFIG ----------
+  const CART_KEY = 'service_plans_cart';
+  const BILLING_KEY = 'selected_billing_modes';
+  const TOAST_DURATION = 5000;
+  const QBO_CANONICAL = ['simple_start','essentials','plus','advanced']; // canonical ids
+
+  // ---------- Small toast utility ----------
   (function () {
-    const TOAST_ID = 'site-toast-notification';
-    function ensureToastContainer() {
-      let el = document.getElementById(TOAST_ID);
+    const ID = 'site-toast-notification';
+    function ensure() {
+      let el = document.getElementById(ID);
       if (el) return el;
       el = document.createElement('div');
-      el.id = TOAST_ID;
-      el.setAttribute('aria-live','polite');
+      el.id = ID;
       el.style.position = 'fixed';
       el.style.top = '16px';
       el.style.right = '16px';
       el.style.zIndex = 99999;
-      el.style.maxWidth = '360px';
-      el.style.pointerEvents = 'auto';
+      el.style.maxWidth = '420px';
       document.body.appendChild(el);
       return el;
     }
-    window.showTopNotification = function (msg, opts = {}) {
-      const parent = ensureToastContainer();
+    window.showTopNotification = (msg, opts = {}) => {
+      const parent = ensure();
       const toast = document.createElement('div');
-      toast.className = 'site-toast';
-      toast.style.background = 'linear-gradient(90deg,#0ea5a4,#06b6d4)';
+      toast.style.background = opts.background || 'linear-gradient(90deg,#0ea5a4,#06b6d4)';
       toast.style.color = '#fff';
       toast.style.padding = '10px 14px';
       toast.style.borderRadius = '10px';
       toast.style.boxShadow = '0 8px 26px rgba(6,182,212,0.12)';
       toast.style.marginTop = '8px';
       toast.style.fontWeight = 600;
-      toast.style.fontFamily = 'Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial';
       toast.style.display = 'flex';
-      toast.style.alignItems = 'center';
-      toast.style.gap = '10px';
-
+      toast.style.gap = '8px';
       const icon = document.createElement('span');
       icon.innerHTML = opts.iconHTML || '✅';
       icon.style.fontSize = '14px';
       toast.appendChild(icon);
-
       const txt = document.createElement('div');
-      txt.textContent = msg || 'Saved';
-      txt.style.fontSize = '14px';
+      txt.textContent = msg || '';
       toast.appendChild(txt);
-
       parent.appendChild(toast);
-
-      const duration = typeof opts.duration === 'number' ? opts.duration : 3000;
+      const duration = typeof opts.duration === 'number' ? opts.duration : TOAST_DURATION;
       if (duration > 0) {
         setTimeout(() => {
           toast.style.transition = 'opacity .28s, transform .28s';
@@ -374,138 +383,568 @@
     };
   })();
 
-  /* ---------- Local storage helpers (unchanged) ---------- */
-  function readSavedCart() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      return raw ? JSON.parse(raw) : [];
-    } catch (e) {
-      console.warn('Failed to read saved plans cart', e);
-      return [];
-    }
+  // ---------- Storage helpers ----------
+  function readCart() {
+    try { return JSON.parse(localStorage.getItem(CART_KEY) || '[]'); }
+    catch (e) { console.warn('readCart parse failed', e); return []; }
+  }
+  function writeCart(arr) {
+    try { localStorage.setItem(CART_KEY, JSON.stringify(arr || [])); }
+    catch (e) { console.error('writeCart failed', e); }
   }
 
-  function writeSavedCart(arr) {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(arr || []));
-    } catch (e) {
-      console.error('Failed to write saved plans cart', e);
-    }
-  }
-
+  // ---------- Small helpers ----------
+  function norm(s) { return (s === null || typeof s === 'undefined') ? '' : String(s).trim().toLowerCase(); }
   function detectDisplayedPrice(card) {
-    const fs3 = card.querySelector('.fs-3');
-    if (fs3 && fs3.textContent.trim()) return fs3.textContent.trim();
-    const priceMain = card.querySelector('.price-main');
-    if (priceMain && priceMain.textContent.trim()) return '$' + priceMain.textContent.trim();
-    const text = card.innerText || '';
-    const m = text.match(/\$\s*\d{1,3}(?:[,\d]{0,3})*(?:\.\d{1,2})?/);
+    if (!card) return '';
+    const p = card.querySelector('.fs-3') || card.querySelector('.price-main');
+    if (p && p.textContent) return p.textContent.trim();
+    const txt = card.innerText || '';
+    const m = txt.match(/\$\s*\d{1,3}(?:[,\d]{0,3})*(?:\.\d{1,2})?/);
     return m ? m[0] : '';
   }
 
-  // Save item into localStorage cart with automatic replace/merge rules
-  function savePlanToLocal(payload) {
-    const cart = readSavedCart();
+  // Map arbitrary product strings to canonical QBO ids or null
+  function canonicalize(s) {
+    const t = norm(s);
+    if (!t) return null;
+    for (const c of QBO_CANONICAL) {
+      if (t === c) return c;
+      if (t.indexOf(c.replace('_',' ')) !== -1) return c;
+    }
+    if (t.indexOf('simple') !== -1 && t.indexOf('start') !== -1) return 'simple_start';
+    if (t.indexOf('essentials') !== -1) return 'essentials';
+    if (t.indexOf('plus') !== -1 && t.indexOf('addon') === -1) return 'plus';
+    if (t.indexOf('advanced') !== -1) return 'advanced';
+    if (t.indexOf('qbo') !== -1 || t.indexOf('quickbooks') !== -1) {
+      // fallback: try to guess by words
+      if (t.indexOf('essentials') !== -1) return 'essentials';
+      if (t.indexOf('plus') !== -1) return 'plus';
+      if (t.indexOf('advanced') !== -1) return 'advanced';
+      if (t.indexOf('start') !== -1) return 'simple_start';
+    }
+    return null;
+  }
 
-    // find existing same product (case-insensitive productId)
-    const idx = cart.findIndex(it => String(it.productId || '').trim().toLowerCase() === String(payload.productId || '').trim().toLowerCase());
+  // Returns canonical id for an item object (checks several fields)
+  function canonicalFromItem(it) {
+    if (!it) return null;
+    // if string likely JSON, try parse
+    if (typeof it === 'string') {
+      try { const parsed = JSON.parse(it); if (parsed && typeof parsed === 'object') it = parsed; } catch(e){}
+    }
+    const fields = [it.productId, it.productName, it.product, it.priceKey, it.label, it.name];
+    for (const f of fields) {
+      const c = canonicalize(f);
+      if (c) return c;
+    }
+    // fallback: blob search
+    const blob = fields.map(f => f||'').join(' ');
+    return canonicalize(blob);
+  }
+
+  // ---------- Primary add/replace logic ----------
+  function addOrReplacePlan(payload) {
+    payload = payload || {};
+    // normalize fields
+    payload.productId = payload.productId || payload.product || '';
+    payload.productName = payload.productName || payload.product || payload.productId || '';
+    payload.billing = payload.billing || '';
+    payload.quantity = Number(payload.quantity || 1);
+    payload.savedAt = new Date().toISOString();
+
+    const incomingCanonical = canonicalFromItem(payload); // e.g. 'essentials' or null
+    const cart = readCart();
+
+    if (incomingCanonical) {
+      // Remove all QBO-like items (aggressive): we want exactly one QBO item after this
+      const removed = [];
+      const newCart = [];
+      for (const it of cart) {
+        const c = canonicalFromItem(it);
+        if (c) {
+          removed.push(it.productName || it.product || it.productId || '(unknown)');
+          continue; // drop existing qbo item
+        }
+        newCart.push(it);
+      }
+      // ensure incoming is single qty and push it
+      payload.quantity = 1;
+      newCart.push(payload);
+      writeCart(newCart);
+
+      if (removed.length) {
+        showTopNotification(`${payload.productName} added — replaced ${removed.join(', ')} in your cart.`, { duration: TOAST_DURATION, iconHTML: '🔁' });
+        return { action: 'replaced_qbo', removed, item: payload };
+      } else {
+        showTopNotification(`${payload.productName} added to cart`, { duration: TOAST_DURATION, iconHTML: '🛒' });
+        return { action: 'added_qbo', item: payload };
+      }
+    }
+
+    // Non-QBO flow: merge / replace same product by productId/productName
+    const incomingKey = norm(payload.productId || payload.productName || payload.product || '');
+    const idx = cart.findIndex(it => norm(it.productId || it.productName || it.product || '') === incomingKey);
 
     if (idx > -1) {
       const existing = cart[idx];
-      // same billing -> increment quantity
-      if ((existing.billing || '') === (payload.billing || '')) {
+      if (norm(existing.billing) === norm(payload.billing)) {
         existing.quantity = (existing.quantity || 1) + (payload.quantity || 1);
         existing.savedAt = new Date().toISOString();
         cart[idx] = existing;
-        writeSavedCart(cart);
-        return { saved: true, action: 'incremented', item: existing };
+        writeCart(cart);
+        showTopNotification(`Updated quantity for ${existing.productName || existing.product}`, { duration: TOAST_DURATION, iconHTML: '➕' });
+        return { action: 'incremented', item: existing };
+      } else {
+        // different billing -> replace
+        payload.quantity = payload.quantity || 1;
+        payload.savedAt = new Date().toISOString();
+        cart[idx] = payload;
+        writeCart(cart);
+        showTopNotification(`${payload.productName} updated in cart`, { duration: TOAST_DURATION, iconHTML: '🔄' });
+        return { action: 'replaced', item: payload };
       }
-      // different billing -> automatically replace with new payload (no prompt)
-      payload.quantity = payload.quantity || 1;
-      payload.savedAt = new Date().toISOString();
-      cart[idx] = payload;
-      writeSavedCart(cart);
-      return { saved: true, action: 'replaced', item: payload };
     }
 
-    // otherwise push new item
-    payload.quantity = payload.quantity || 1;
-    payload.savedAt = new Date().toISOString();
+    // default add
     cart.push(payload);
-    writeSavedCart(cart);
-    return { saved: true, action: 'added', item: payload };
+    writeCart(cart);
+    showTopNotification(`${payload.productName} added to cart`, { duration: TOAST_DURATION, iconHTML: '🛒' });
+    return { action: 'added', item: payload };
   }
 
-  /* ---------- Click handler for "Buy Now" buttons (updated to show toast) ---------- */
+  // ---------- Buy button handler ----------
   document.addEventListener('click', function (ev) {
     const btn = ev.target.closest('.stripe-buy');
     if (!btn) return;
     ev.preventDefault();
 
-    // immediate UX change
     const originalHTML = btn.innerHTML;
-    btn.disabled = true;
-    btn.textContent = 'Processing…';
-
-    // gather context
-    const card = btn.closest('.card') || document;
-    const billingChoiceInput = card.querySelector('.billing-choice:checked');
-    const billing = billingChoiceInput ? billingChoiceInput.value : 'monthly';
-
-    // determine price key
-    const priceKey = (billing === 'annual') ? (btn.dataset.priceKeyAnnual || btn.getAttribute('data-price-key-annual')) : (btn.dataset.priceKeyMonthly || btn.getAttribute('data-price-key-monthly'));
-    if (!priceKey) {
-      // restore and warn
-      btn.disabled = false;
-      btn.innerHTML = originalHTML;
-      alert('Please select a billing option (monthly / annual) before proceeding.');
-      return;
-    }
-
-    const payload = {
-      productId: btn.dataset.productId || btn.getAttribute('data-product-id') || '',
-      productName: btn.dataset.productName || btn.getAttribute('data-product-name') || '',
-      billing: billing,
-      priceKey: priceKey,
-      quantity: Number(btn.dataset.quantity || btn.getAttribute('data-quantity') || 1),
-      displayPrice: detectDisplayedPrice(card),
-      savedAt: new Date().toISOString()
-    };
+    try { btn.disabled = true; btn.textContent = 'Processing…'; } catch (e) {}
 
     try {
-      const result = savePlanToLocal(payload);
+      const card = btn.closest('.card') || document;
+      const billingInput = card.querySelector('.billing-choice:checked');
+      const billing = billingInput ? billingInput.value : 'monthly';
 
-      // show notification (small top-right toast) then redirect
+      // persist billing for this planId
       try {
-        showTopNotification('Product added — Redirecting to service plans…', { duration: 1800, iconHTML: '🛒' });
-      } catch (toastErr) {
-        // fail silently if toast fails
-        console.warn('Toast failed', toastErr);
+        const planKey = (btn.dataset.productId || btn.getAttribute('data-product-id') || '').toString().trim().toLowerCase();
+        if (planKey) {
+          const map = JSON.parse(localStorage.getItem(BILLING_KEY) || '{}');
+          map[planKey] = billing;
+          localStorage.setItem(BILLING_KEY, JSON.stringify(map));
+        }
+      } catch (e) { /* ignore */ }
+
+      // pick priceKey attribute (if present) but we don't strictly need it for storage
+      const priceKey = (billing === 'annual') ? (btn.dataset.priceKeyAnnual || btn.getAttribute('data-price-key-annual')) : (btn.dataset.priceKeyMonthly || btn.getAttribute('data-price-key-monthly'));
+      if (!priceKey) {
+        alert('Please select a billing option before proceeding.');
+        try { btn.disabled = false; btn.innerHTML = originalHTML; } catch(e){}
+        return;
       }
 
-      // tiny delay so localStorage flush and user sees Processing text + toast
-      setTimeout(() => {
-        window.location.href = '/service-plans.html';
-      }, 350);
+      const payload = {
+        productId: btn.dataset.productId || btn.getAttribute('data-product-id') || '',
+        productName: btn.dataset.productName || btn.getAttribute('data-product-name') || '',
+        billing: billing,
+        priceKey: priceKey,
+        quantity: Number(btn.dataset.quantity || btn.getAttribute('data-quantity') || 1),
+        displayPrice: detectDisplayedPrice(card),
+        savedAt: new Date().toISOString()
+      };
+
+      addOrReplacePlan(payload);
+
+      // notify + redirect after TOAST_DURATION
+      showTopNotification('Saved to cart — opening service plans…', { duration: TOAST_DURATION, iconHTML: '🛒' });
+      setTimeout(() => { window.location.href = '/service-plans.html'; }, TOAST_DURATION);
 
     } catch (err) {
-      console.error('Save-to-local error', err);
-      alert('Unable to save plan locally. Please try again.');
-      btn.disabled = false;
-      btn.innerHTML = originalHTML;
+      console.error('buy handler error', err);
+      alert('Unable to add to cart. Try again.');
+      try { btn.disabled = false; btn.innerHTML = originalHTML; } catch(e){}
     }
   }, { passive: false });
 
+  // ---------- Billing radios: update UI & persist ----------
+  const pricingData = {
+    simple_start: { monthly: 38, annual: 319 },
+    essentials: { monthly: 75, annual: 630 },
+    plus: { monthly: 115, annual: 966 },
+    advanced: { monthly: 275, annual: 2310 }
+  };
+  const discountMsg = '🎉 30% OFF — for QuickBooks users when billed annually!';
+
+  function formatUSD(n) { return `$${n.toLocaleString('en-US')}`; }
+
+  function updateCardPrice(card, planKey, billing) {
+    if (!card || !planKey) return;
+    const box = card.querySelector('.fs-3');
+    const val = pricingData[planKey] && pricingData[planKey][billing];
+    if (typeof val === 'undefined' || !box) return;
+    if (billing === 'monthly') box.innerHTML = `${formatUSD(val)}<span class="text-muted fs-6">/mo</span>`;
+    else box.innerHTML = `${formatUSD(val)}<span class="text-muted fs-6">/yr</span>`;
+    // update annual calc + discount-line if present
+    const annualCalc = card.querySelector('.annual-calc');
+    const discountLine = card.querySelector('.discount-line');
+    const monthly = pricingData[planKey] && pricingData[planKey].monthly || 0;
+    if (annualCalc) annualCalc.innerHTML = `💲<strong>${monthly} × 12 = $${(monthly * 12).toLocaleString('en-US')}</strong>`;
+    if (discountLine) {
+      const annual = monthly * 12;
+      const discounted = Math.round(annual * 0.7);
+      const saved = annual - discounted;
+      discountLine.innerHTML = `(<span class="text-muted">Limited deal</span> — Save <strong>$${saved.toLocaleString('en-US')}</strong> — <strong>30% off</strong>) → <strong class="text-success">$${discounted.toLocaleString('en-US')}/year</strong>`;
+    }
+  }
+
+  document.querySelectorAll('.billing-choice').forEach(r => {
+    r.addEventListener('change', (ev) => {
+      const sel = ev.target;
+      const card = sel.closest('.card');
+      if (!card) return;
+      const planKey = sel.name.replace(/^billing_/, '');
+      const billing = sel.value;
+      updateCardPrice(card, planKey, billing);
+      // persist choice
+      try {
+        const map = JSON.parse(localStorage.getItem(BILLING_KEY) || '{}');
+        map[planKey] = billing;
+        localStorage.setItem(BILLING_KEY, JSON.stringify(map));
+      } catch (e) { console.warn('persist billing failed', e); }
+      // discount toast each time annual selected
+      if (billing === 'annual') showTopNotification(discountMsg, { duration: TOAST_DURATION, iconHTML: '💸' });
+    });
+  });
+
+  // restore billing selections on load
+  try {
+    const stored = JSON.parse(localStorage.getItem(BILLING_KEY) || '{}');
+    Object.entries(stored).forEach(([k, v]) => {
+      const input = document.querySelector(`input[name="billing_${k}"][value="${v}"]`);
+      if (input) { input.checked = true; updateCardPrice(input.closest('.card'), k, v); }
+    });
+  } catch (e) { /* ignore */ }
+
   // debug helper
   window._servicePlansLocal = {
-    key: STORAGE_KEY,
-    read: readSavedCart,
-    write: writeSavedCart,
-    clear: () => { localStorage.removeItem(STORAGE_KEY); }
+    CART_KEY,
+    readCart,
+    writeCart,
+    clearCart: () => { localStorage.removeItem(CART_KEY); }
   };
+
 })();
 </script>
+<style>
+/* --- theme variables --- */
+:root{
+  --accent: #06b6d4;           /* teal used for notification */
+  --accent-600: #0ea5a4;      /* slightly darker */
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+  --radius-lg: 12px;
+  --shadow-soft: 0 10px 30px rgba(11, 22, 37, 0.06);
+  --shadow-strong: 0 18px 40px rgba(11,22,37,0.10);
+  --glass: rgba(255,255,255,0.6);
+  --text: #0f172a;
+  --badge-text: #ffffff;
+}
 
+/* --- global body tweaks for a modern look --- */
+body {
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+/* --- Cards: modern elevated look --- */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 0;
+  transition: transform .18s ease, box-shadow .18s ease;
+  box-shadow: var(--shadow-soft);
+  overflow: visible; /* allow badges to sit visually outside if needed */
+  position: relative;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-strong);
+}
+.card-body {
+  padding: 1.25rem;
+}
+
+/* Slight spacing tweak for title area */
+.card-title {
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+/* --- Badge fix: ensure background fully covers text --- */
+/* Target badges inside card header area so we don't break other badges elsewhere */
+.card .badge {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: .35rem .6rem;
+  font-weight: 700;
+  font-size: .75rem;
+  line-height: 1;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  color: var(--badge-text) !important;
+  background: linear-gradient(90deg, var(--accent-600), var(--accent));
+  border: 0;
+  transform-origin: right center;
+  min-height: 28px;
+}
+
+/* Provide distinct colors for specific semantic badges if you want to keep them */
+.card .badge.bg-dark { background: linear-gradient(90deg,#0f172a,#111827); }
+.card .badge.bg-info { background: linear-gradient(90deg,#60a5fa,#3b82f6); color: #06234a; }
+.card .badge.bg-primary { background: linear-gradient(90deg,#6366f1,#7c3aed); }
+.card .badge.bg-success { /* default mapped above - keep this for backward compatibility */ }
+
+/* Prevent badge text overflow (if long) */
+.card .badge { max-width: 140px; text-overflow: ellipsis; overflow: hidden; }
+
+/* --- Price box styling --- */
+.fs-3 {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .5rem;
+  font-variant-numeric: tabular-nums;
+}
+.fs-3 sup { font-size: .6em; opacity: .8; margin-right: 2px; }
+
+/* --- Discount line styling --- */
+.discount-line {
+  color: var(--muted);
+  font-size: .9rem;
+}
+.discount-line .text-success { color: #15803d; font-weight:700; }
+
+/* --- Radio / billing styling (modern pill) --- */
+/* Use accent-color for native radios where supported */
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  margin-top: 0;
+  margin-right: .45rem;
+  accent-color: var(--accent);      /* modern browsers */
+  border-radius: 50%;
+  border: 1.5px solid rgba(15,23,42,.08);
+  transition: box-shadow .14s ease, transform .12s ease;
+  transform: translateY(-1px);
+  background-clip: padding-box;
+}
+
+/* If you want a custom pill highlight on label when selected: */
+.form-check-input:checked + .form-check-label {
+  background: rgba(6,182,212,0.08);
+  padding: .25rem .45rem;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(6,182,212,0.06);
+  color: var(--text);
+}
+
+/* Make the clickable label area slightly friendlier */
+.form-check-label {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  padding: .125rem .18rem;
+  transition: background .12s ease, color .12s ease;
+  border-radius: 8px;
+}
+
+/* Increase visible hit target on smaller screens */
+@media (max-width: 480px) {
+  .form-check-input { width: 20px; height: 20px; }
+  .card { border-radius: 10px; }
+}
+
+/* --- Buttons: modern CTA --- */
+.btn-buy {
+  background: linear-gradient(90deg,var(--accent-600),var(--accent));
+  color: #fff;
+  border: 0;
+  padding: .5rem .8rem;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(6,182,212,0.12);
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+.btn-buy:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(6,182,212,0.14); }
+.btn-buy:active { transform: translateY(0); opacity: .98; }
+
+/* --- Service list checks --- */
+.unique-pricing-check {
+  width: 18px; height: 18px;
+  flex: 0 0 18px;
+  color: var(--accent-600);
+  margin-top: 2px;
+  opacity: .95;
+}
+
+/* --- Small UI niceties --- */
+.btn-wrap { display: flex; gap: .6rem; align-items: center; }
+.annual-calc { color: var(--muted); font-size: .92rem; }
+.price-main { font-weight: 800; }
+
+/* If you use Bootstrap .shadow-sm anywhere else, override to our nicer shadow */
+.shadow-sm { box-shadow: var(--shadow-soft) !important; }
+
+/* Accessibility: focus ring */
+.form-check-input:focus, .btn-buy:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(6,182,212,0.12);
+}
+
+/* Small responsive tweak for badge overflow inside header */
+.d-flex .card-title { min-width: 0; } /* allow truncation of the title if necessary */
+.d-flex .card-title + .badge { margin-left: .5rem; flex-shrink: 0; }
+
+/* Optional subtle divider for card foot area */
+.card .service-list li { padding-top: .5rem; padding-bottom: .5rem; border-bottom: 1px solid rgba(15,23,42,0.03); }
+.card .service-list li:last-child { border-bottom: none; }
+
+</style>
+<!-- Paste this where your original pricing HTML is (it contains the same markup + styles) -->
+<style>
+  /* ---------- Core card styling ---------- */
+  .card {
+    border: 0;
+    border-radius: 12px;
+    background: #fff;
+    overflow: visible;
+    transition: transform .16s ease, box-shadow .16s ease;
+    box-shadow: 0 10px 30px rgba(11,22,37,0.08), 0 2px 8px rgba(11,22,37,0.04);
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(11,22,37,0.12), 0 6px 18px rgba(11,22,37,0.06);
+  }
+  .card .card-body { padding: 1.15rem; line-height: 1.15; }
+
+  /* price typography */
+  .fs-3 { line-height: 1; }
+  .fs-3 .text-muted { line-height: 1; }
+
+  /* service list spacing */
+  .card .service-list li { padding: .45rem 0; border-bottom: 1px solid rgba(15,23,42,0.03); }
+  .card .service-list li:last-child { border-bottom: none; }
+
+  /* badge fix: keep badge background around full text */
+  .card .badge {
+    display: inline-block;
+    padding: .28rem .5rem;
+    border-radius: 999px;
+    font-size: .72rem;
+    line-height: 1;
+    white-space: nowrap;
+    vertical-align: middle;
+    box-shadow: 0 4px 14px rgba(6,182,212,0.06);
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* ---------- Custom radio (pixel-perfect) ---------- */
+  /* wrapper: use inline-flex so input + label center vertically */
+  .form-check.form-check-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    margin-right: .6rem;
+    margin-bottom: .35rem;
+    vertical-align: middle;
+  }
+
+  /* hide native appearance and draw our own */
+  .form-check-input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    min-height: 18px;
+    border-radius: 50%;
+    border: 2px solid rgba(11,22,37,0.12);
+    background: #fff;
+    display: inline-grid;
+    place-items: center;
+    padding: 0;
+    box-sizing: content-box;
+    cursor: pointer;
+    transition: border-color .12s ease, box-shadow .12s ease, background .12s ease;
+    position: relative;
+  }
+
+  /* the inner dot */
+  .form-check-input::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform .12s ease;
+    background: linear-gradient(90deg,#0ea5a4,#06b6d4);
+    box-shadow: 0 2px 6px rgba(6,182,212,0.22);
+  }
+
+  /* checked state */
+  .form-check-input:checked {
+    border-color: transparent;
+    background: rgba(6,182,212,0.06);
+  }
+  .form-check-input:checked::after { transform: scale(1); }
+
+  /* focus/keyboard visible */
+  .form-check-input:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 5px rgba(6,182,212,0.10);
+  }
+
+  /* label next to radio */
+  .form-check-label {
+    display: inline-block;
+    margin: 0;
+    font-size: .92rem;
+    line-height: 1.06;
+    color: #0f172a;
+    padding: .06rem .18rem;
+    border-radius: 6px;
+    transition: background .12s ease;
+    vertical-align: middle;
+  }
+  .form-check-input:checked + .form-check-label,
+  .form-check-input:focus + .form-check-label {
+    background: rgba(6,182,212,0.06);
+  }
+
+  /* If your markup places label before input (some templates), also support that */
+  .form-check-label + .form-check-input { margin-left: .35rem; }
+
+  /* make small screens tighter */
+  @media (max-width: 540px) {
+    .form-check.form-check-inline { gap: .35rem; margin-right: .45rem; }
+    .form-check-label { font-size: .88rem; }
+  }
+
+  /* small polish for buttons in cards */
+  .btn-wrap .btn-buy { padding: .48rem .9rem; border-radius: 10px; font-weight:700; box-shadow: 0 10px 24px rgba(6,182,212,0.10); }
+
+  /* toast container polish (matches earlier toast design) */
+  #site-toast-notification { pointer-events: none; }
+  #site-toast-notification .site-toast { pointer-events: auto; }
+</style>
     <div id="comparison"><!-- Plans comparison section (responsive, horizontal scroll on small screens, SVG icons) -->
 <div class="container py-5 qb-compare">
   <div class="feature-block">

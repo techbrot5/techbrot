@@ -22,6 +22,7 @@
 <body><style>
 /* ===========================
    Pricing Section — Cleaned & Merged CSS
+   Only current classes / IDs retained
    =========================== */
 
 /* Section container + accent vars */
@@ -106,7 +107,7 @@
 
 /* Headings & prices */
 .pricing-item h3 { margin:0 0 8px 0; font-size:1.05rem; font-weight:700; color:#222; }
-.pricing-item h4 { font-size:1.4rem; font-weight:600; color:#0d6efd; margin:0 0 12px 0; }
+.pricing-item h4 { font-size:1.4rem; font-weight:600; color:var(--tab-accent); margin:0 0 12px 0; }
 .pricing-item h4 small { font-size:.85rem; color:#6c757d; }
 
 /* Feature list + inline SVG/check */
@@ -116,7 +117,7 @@
 
 /* Card description & truncation helper */
 .pricing-item .pricing-content p { font-size:.92rem; color:#6c757d; margin:0 0 8px 0; }
-.truncate-more { color:#0d6efd; cursor:pointer; font-weight:600; font-size:13px; margin-left:6px; }
+.truncate-more { color:var(--tab-accent); cursor:pointer; font-weight:600; font-size:13px; margin-left:6px; }
 
 /* CTA area (btn-wrap) — fixed at bottom on md+, static below md */
 .btn-wrap {
@@ -127,12 +128,12 @@
   transition: opacity .14s ease, transform .14s ease;
 }
 
-/* Add-to-cart (btn-cta) — 50% width, reduced vertical padding (2px less), uses tab gradient */
+/* Add-to-cart (btn-cta) — 50% width, reduced vertical padding, uses tab gradient */
 .pricing-item .btn-wrap .btn-cta,
 .btn-cta {
   width:50% !important;
   min-width:120px;
-  padding:10px 12px !important; /* 2px less than previous 12px vertical */
+  padding:10px 12px !important;
   border-radius:8px;
   background: var(--tab-active-bg) !important;
   color:#fff !important;
@@ -168,7 +169,7 @@
   .btn-wrap { position:static; opacity:1; transform:none; margin-top:10px; justify-content:center; }
   .pricing-item .pricing-content { padding-bottom:12px; }
   .pricing-item .btn-wrap .btn-cta,
-  .btn-cta { width:50% !important; } /* keep 50% on mobile; adjust if you want full width */
+  .btn-cta { width:50% !important; }
 }
 
 /* recurring spacing tweak */
@@ -235,16 +236,16 @@ a:focus, button:focus, input:focus { outline: none; }
 
 /* Misc helpers */
 .pricing.section { padding:28px 0; }
-.truncate-more { color:#0d6efd; cursor:pointer; font-weight:600; font-size:13px; margin-left:6px; }
+.truncate-more { color:var(--tab-accent); cursor:pointer; font-weight:600; font-size:13px; margin-left:6px; }
 
 /* Safe defaults for SVG checks (currentColor driven) */
 .feature-check svg { display:inline-block; width:14px; height:14px; fill:currentColor; color: #16a34a; }
+.feature-check { color: #16a34a; }
 
 /* End of merged CSS */
 </style>
 
     <div id="my-plans-qb"><section id="pricing" class="pricing section light-background">
-  
   <div class="container text-center section-title">
     <p>Plans</p>
     <h2>Pricing Table</h2>
@@ -256,7 +257,6 @@ a:focus, button:focus, input:focus { outline: none; }
       <ul id="pricingTabs" class="nav nav-pills" role="tablist" style="gap: 8px;">
         <li class="nav-item" role="presentation">
           <button id="one-time-tab" class="active nav-link tab-pill" data-bs-target="#one-time" type="button" role="tab" aria-controls="one-time" aria-selected="true">
-            <!-- rocket / launch SVG -->
             <svg class="tab-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
               <path d="M12 2l3 6 6 3-6 3-3 6-3-6-6-3 6-3 3-6z" fill="currentColor" opacity="0.12"/>
               <path d="M9 14c.6.6 2.4 1.8 4 3 1.6-1.2 3.4-2.4 4-3 .6-.6 1-1.6 1-2.6 0-1-1-2-2-2-.97 0-1.97.45-2.6 1.1L12 13 10.6 9.5C10 8.8 9 8.4 8 8.4c-1 0-1.6.4-2.2 1-.6.6-1 1.6-1 2.6 0 1 0.4 2 1 2.6.6.6 1.6 1 2.6 1z" fill="currentColor"/>
@@ -266,7 +266,6 @@ a:focus, button:focus, input:focus { outline: none; }
         </li>
         <li class="nav-item" role="presentation">
           <button id="recurring-tab" class="nav-link tab-pill" data-bs-target="#recurring" type="button" role="tab" aria-controls="recurring" aria-selected="false">
-            <!-- repeat / clock SVG -->
             <svg class="tab-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
               <path d="M12 3v2a7 7 0 1 0 7 7h2a9 9 0 1 1-9-9z" fill="currentColor" opacity="0.12"/>
               <path d="M12 7v6l4 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -287,214 +286,253 @@ a:focus, button:focus, input:focus { outline: none; }
         <div class="row gy-4">
           <!-- All-in-One Setup & Onboarding (single-use) -->
           <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="pricing-item" data-product="All-in-One Setup & Onboarding" data-price="199" data-single="true">
-              <h3 class="card-title">All-in-One Setup &amp; Onboarding</h3>
-              <h4 id="setupPriceDisplay"><sup>$</sup><span class="price-main">199</span> <small>/ one-time</small></h4>
-              <div class="pricing-content" style="text-align: left;">
-                <p class="text-muted small card-desc">Combines Basic Setup + Premium Onboarding + Advanced Setup. Best for new QBO users who want it set up right from day one.</p>
-                <ul class="card-features">
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Company setup, chart of accounts, sales tax, invoices</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Bank feeds &amp; opening balances</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Automations &amp; workflow setup</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Optional app integrations (Shopify, Stripe, Gusto, etc.)</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>1–2 live training sessions</li>
-                </ul>
+            <div class="card h-100 shadow-sm border-0 pricing-item" data-product="All-in-One Setup & Onboarding" data-price="199" data-single="true">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="card-title mb-0">All-in-One Setup &amp; Onboarding</h5>
+                </div>
 
-                <div class="mb-2"><strong class="text-muted small">Choose a tier:</strong></div>
-                <div class="mb-2">
-                  <div class="form-check">
-                    <input id="setup_basic" class="form-check-input setup-tier" type="radio" name="setup_tier" value="Basic" data-price="199" checked />
-                    <label class="form-check-label small" for="setup_basic"><strong>Basic</strong> — $199</label>
-                  </div>
-                  <div class="form-check">
-                    <input id="setup_premium" class="form-check-input setup-tier" type="radio" name="setup_tier" value="Premium" data-price="399" />
-                    <label class="form-check-label small" for="setup_premium"><strong>Premium</strong> — $399</label>
-                  </div>
-                  <div class="form-check">
-                    <input id="setup_advanced" class="form-check-input setup-tier" type="radio" name="setup_tier" value="Advanced" data-price="599" />
-                    <label class="form-check-label small" for="setup_advanced"><strong>Advanced</strong> — $599</label>
+                <h4 class="fs-3 mb-2"><sup>$</sup><span class="price-main">199</span> <small class="text-muted">/ one-time</small></h4>
+
+                <div class="pricing-content" style="text-align: left;">
+                  <p class="text-muted small card-desc">Combines Basic Setup + Premium Onboarding + Advanced Setup. Best for new QBO users who want it set up right from day one.</p>
+
+                  <ul class="list-unstyled service-list card-features">
+                    <li class="d-flex align-items-start">
+                      <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
+                      <span>Company setup, chart of accounts, sales tax, invoices</span>
+                    </li>
+                    <li class="d-flex align-items-start">
+                      <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
+                      <span>Bank feeds &amp; opening balances</span>
+                    </li>
+                    <li class="d-flex align-items-start">
+                      <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
+                      <span>Automations &amp; workflow setup</span>
+                    </li>
+                    <li class="d-flex align-items-start">
+                      <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
+                      <span>Optional app integrations (Shopify, Stripe, Gusto, etc.)</span>
+                    </li>
+                    <li class="d-flex align-items-start">
+                      <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
+                      <span>1–2 live training sessions</span>
+                    </li>
+                  </ul>
+
+                  <div class="mb-2"><strong class="text-muted small">Choose a tier:</strong></div>
+                  <div class="mb-2">
+                    <div class="form-check">
+                      <input id="setup_basic" class="form-check-input setup-tier billing-choice" type="radio" name="setup_tier" value="Basic" data-price="199" checked />
+                      <label class="form-check-label small" for="setup_basic"><strong>Basic</strong> — $199</label>
+                    </div>
+                    <div class="form-check">
+                      <input id="setup_premium" class="form-check-input setup-tier billing-choice" type="radio" name="setup_tier" value="Premium" data-price="399" />
+                      <label class="form-check-label small" for="setup_premium"><strong>Premium</strong> — $399</label>
+                    </div>
+                    <div class="form-check">
+                      <input id="setup_advanced" class="form-check-input setup-tier billing-choice" type="radio" name="setup_tier" value="Advanced" data-price="599" />
+                      <label class="form-check-label small" for="setup_advanced"><strong>Advanced</strong> — $599</label>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="btn-wrap" style="gap:8px; align-items:center;">
-                <!-- BUY NOW: replace placeholders below with real price keys from your worker -->
-                <button
-                  class="btn btn-buy btn-sm stripe-buy"
-                  type="button"
-                  data-product-id="setup"
-                  data-product-name="All-in-One Setup & Onboarding"
-                  data-price-key-monthly="setup_basic_one_time_PLACEHOLDER"
-                  data-price-key-annual="setup_basic_one_time_PLACEHOLDER"
-                  data-price-monthly="199"
-                  data-price-annual="199"
-                  data-quantity="1"
-                  aria-label="Buy Setup">
-                  Buy Now
-                </button>
+                <div class="btn-wrap mt-auto" style="gap:8px; align-items:center;">
+                  <button
+                    class="btn btn-buy btn-sm stripe-buy"
+                    type="button"
+                    data-product-id="setup"
+                    data-product-name="All-in-One Setup & Onboarding"
+                    data-price-key-monthly="setup_basic_one_time_PLACEHOLDER"
+                    data-price-key-annual="setup_basic_one_time_PLACEHOLDER"
+                    data-price-monthly="199"
+                    data-price-annual="199"
+                    data-quantity="1"
+                    aria-label="Buy Setup">
+                    Buy Now
+                  </button>
 
-                <!-- ADD TO CART (existing behaviour) -->
-                <button class="btn-cta" type="button"
-                  data-product="All-in-One Setup & Onboarding"
-                  data-price="199"
-                  data-billing="one-time"
-                  data-single="true"
-                  onclick="addToCartFromCard(this)">
-                  Add to cart
-                </button>
+                  <button class="btn-cta" type="button"
+                    data-product="All-in-One Setup & Onboarding"
+                    data-price="199"
+                    data-billing="one-time"
+                    data-single="true"
+                    onclick="addToCartFromCard(this)">
+                    Add to cart
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Cleanup & Catch-Up -->
           <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="pricing-item" data-product="Cleanup & Catch-Up" data-price="250" data-single="true">
-              <h3 class="card-title">Cleanup &amp; Catch-Up</h3>
-              <h4 id="cleanupPriceDisplay"><sup>$</sup><span class="price-main">250</span> <small>/ one-time (est)</small></h4>
-              <div class="pricing-content" style="text-align: left;">
-                <p class="text-muted small card-desc">Combines Cleanup Lite + Full Cleanup. Best for existing QBO users with messy or incomplete books.</p>
-                <ul class="card-features">
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Review of past data (3 to 12+ months)</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Categorization corrections</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Bank reconciliations &amp; fixing misposted entries</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Reporting package with before / after summary</li>
-                </ul>
-
-                <div class="mb-2"><strong class="text-muted small">Select backlog length (price estimate):</strong></div>
-                <div class="mb-2">
-                  <div class="form-check">
-                    <input id="cleanup_3" class="form-check-input cleanup-option" type="radio" name="cleanup_months" value="3 months" data-price="250" checked />
-                    <label class="form-check-label small" for="cleanup_3">Cleanup Lite — 3 months (approx $250)</label>
-                  </div>
-                  <div class="form-check">
-                    <input id="cleanup_6" class="form-check-input cleanup-option" type="radio" name="cleanup_months" value="6 months" data-price="450" />
-                    <label class="form-check-label small" for="cleanup_6">Mid Cleanup — 6 months (approx $450)</label>
-                  </div>
-                  <div class="form-check">
-                    <input id="cleanup_12" class="form-check-input cleanup-option" type="radio" name="cleanup_months" value="12+ months" data-price="1200" />
-                    <label class="form-check-label small" for="cleanup_12">Full Cleanup — 12+ months (approx $1,200+)</label>
-                  </div>
+            <div class="card h-100 shadow-sm border-0 pricing-item" data-product="Cleanup & Catch-Up" data-price="250" data-single="true">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="card-title mb-0">Cleanup &amp; Catch-Up</h5>
                 </div>
 
-                <div class="text-muted mb-2 small">Exact price quoted after review — scales by months of backlog.</div>
-              </div>
+                <h4 class="fs-3 mb-2"><sup>$</sup><span class="price-main">250</span> <small class="text-muted">/ one-time (est)</small></h4>
 
-              <div class="btn-wrap" style="gap:8px; align-items:center;">
-                <button
-                  class="btn btn-buy btn-sm stripe-buy"
-                  type="button"
-                  data-product-id="cleanup"
-                  data-product-name="Cleanup & Catch-Up"
-                  data-price-key-monthly="cleanup_3_one_time_PLACEHOLDER"
-                  data-price-key-annual="cleanup_3_one_time_PLACEHOLDER"
-                  data-price-monthly="250"
-                  data-price-annual="250"
-                  data-quantity="1"
-                  aria-label="Buy Cleanup">
-                  Buy Now
-                </button>
+                <div class="pricing-content" style="text-align: left;">
+                  <p class="text-muted small card-desc">Combines Cleanup Lite + Full Cleanup. Best for existing QBO users with messy or incomplete books.</p>
 
-                <button class="btn-cta" type="button" data-product="Cleanup & Catch-Up" data-price="250" data-billing="one-time" data-single="true" onclick="addToCartFromCard(this)">Add to cart</button>
+                  <ul class="list-unstyled service-list card-features">
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Review of past data (3 to 12+ months)</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Categorization corrections</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Bank reconciliations &amp; fixing misposted entries</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Reporting package with before / after summary</span></li>
+                  </ul>
+
+                  <div class="mb-2"><strong class="text-muted small">Select backlog length (price estimate):</strong></div>
+                  <div class="mb-2">
+                    <div class="form-check">
+                      <input id="cleanup_3" class="form-check-input cleanup-option billing-choice" type="radio" name="cleanup_months" value="3 months" data-price="250" checked />
+                      <label class="form-check-label small" for="cleanup_3">Cleanup Lite — 3 months (approx $250)</label>
+                    </div>
+                    <div class="form-check">
+                      <input id="cleanup_6" class="form-check-input cleanup-option billing-choice" type="radio" name="cleanup_months" value="6 months" data-price="450" />
+                      <label class="form-check-label small" for="cleanup_6">Mid Cleanup — 6 months (approx $450)</label>
+                    </div>
+                    <div class="form-check">
+                      <input id="cleanup_12" class="form-check-input cleanup-option billing-choice" type="radio" name="cleanup_months" value="12+ months" data-price="1200" />
+                      <label class="form-check-label small" for="cleanup_12">Full Cleanup — 12+ months (approx $1,200+)</label>
+                    </div>
+                  </div>
+
+                  <div class="text-muted mb-2 small">Exact price quoted after review — scales by months of backlog.</div>
+                </div>
+
+                <div class="btn-wrap mt-auto" style="gap:8px; align-items:center;">
+                  <button
+                    class="btn btn-buy btn-sm stripe-buy"
+                    type="button"
+                    data-product-id="cleanup"
+                    data-product-name="Cleanup & Catch-Up"
+                    data-price-key-monthly="cleanup_3_one_time_PLACEHOLDER"
+                    data-price-key-annual="cleanup_3_one_time_PLACEHOLDER"
+                    data-price-monthly="250"
+                    data-price-annual="250"
+                    data-quantity="1"
+                    aria-label="Buy Cleanup">
+                    Buy Now
+                  </button>
+
+                  <button class="btn-cta" type="button" data-product="Cleanup & Catch-Up" data-price="250" data-billing="one-time" data-single="true" onclick="addToCartFromCard(this)">Add to cart</button>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Migration Service -->
           <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="pricing-item" data-product="Migration Service" data-price="399" data-single="true">
-              <h3 class="card-title">Migration Service</h3>
-              <h4 id="migrationPriceDisplay"><sup>$</sup><span class="price-main">399</span> <small>/ one-time</small></h4>
-              <div class="pricing-content" style="text-align: left;">
-                <p class="text-muted small card-desc">Standalone service for businesses moving from Excel, Xero, or QuickBooks Desktop.</p>
-                <ul class="card-features">
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Data migration &amp; mapping</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Verification and reconciliation testing</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Onboarding support after migration</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>1 training / walkthrough session</li>
-                </ul>
-
-                <div class="mb-2"><strong class="text-muted small">Choose migration level:</strong></div>
-                <div class="mb-2">
-                  <div class="form-check">
-                    <input id="migration_basic" class="form-check-input migration-tier" type="radio" name="migration_tier" value="Basic" data-price="399" checked />
-                    <label class="form-check-label small" for="migration_basic"><strong>Basic</strong> — $399 (Excel → QBO basic)</label>
-                  </div>
-                  <div class="form-check">
-                    <input id="migration_full" class="form-check-input migration-tier" type="radio" name="migration_tier" value="Full" data-price="799" />
-                    <label class="form-check-label small" for="migration_full"><strong>Full</strong> — $799 (full history + integrations)</label>
-                  </div>
+            <div class="card h-100 shadow-sm border-0 pricing-item" data-product="Migration Service" data-price="399" data-single="true">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="card-title mb-0">Migration Service</h5>
                 </div>
 
-                <div class="text-muted mb-2 small">Optional post-migration setup can be added at checkout.</div>
-              </div>
+                <h4 class="fs-3 mb-2"><sup>$</sup><span class="price-main">399</span> <small class="text-muted">/ one-time</small></h4>
 
-              <div class="btn-wrap" style="gap:8px; align-items:center;">
-                <button
-                  class="btn btn-buy btn-sm stripe-buy"
-                  type="button"
-                  data-product-id="migration"
-                  data-product-name="Migration Service"
-                  data-price-key-monthly="migration_basic_one_time_PLACEHOLDER"
-                  data-price-key-annual="migration_basic_one_time_PLACEHOLDER"
-                  data-price-monthly="399"
-                  data-price-annual="399"
-                  data-quantity="1"
-                  aria-label="Buy Migration">
-                  Buy Now
-                </button>
+                <div class="pricing-content" style="text-align: left;">
+                  <p class="text-muted small card-desc">Standalone service for businesses moving from Excel, Xero, or QuickBooks Desktop.</p>
 
-                <button class="btn-cta" type="button" data-product="Migration Service" data-price="399" data-billing="one-time" data-single="true" onclick="addToCartFromCard(this)">Add to cart</button>
+                  <ul class="list-unstyled service-list card-features">
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Data migration &amp; mapping</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Verification and reconciliation testing</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Onboarding support after migration</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>1 training / walkthrough session</span></li>
+                  </ul>
+
+                  <div class="mb-2"><strong class="text-muted small">Choose migration level:</strong></div>
+                  <div class="mb-2">
+                    <div class="form-check">
+                      <input id="migration_basic" class="form-check-input migration-tier billing-choice" type="radio" name="migration_tier" value="Basic" data-price="399" checked />
+                      <label class="form-check-label small" for="migration_basic"><strong>Basic</strong> — $399 (Excel → QBO basic)</label>
+                    </div>
+                    <div class="form-check">
+                      <input id="migration_full" class="form-check-input migration-tier billing-choice" type="radio" name="migration_tier" value="Full" data-price="799" />
+                      <label class="form-check-label small" for="migration_full"><strong>Full</strong> — $799 (full history + integrations)</label>
+                    </div>
+                  </div>
+
+                  <div class="text-muted mb-2 small">Optional post-migration setup can be added at checkout.</div>
+                </div>
+
+                <div class="btn-wrap mt-auto" style="gap:8px; align-items:center;">
+                  <button
+                    class="btn btn-buy btn-sm stripe-buy"
+                    type="button"
+                    data-product-id="migration"
+                    data-product-name="Migration Service"
+                    data-price-key-monthly="migration_basic_one_time_PLACEHOLDER"
+                    data-price-key-annual="migration_basic_one_time_PLACEHOLDER"
+                    data-price-monthly="399"
+                    data-price-annual="399"
+                    data-quantity="1"
+                    aria-label="Buy Migration">
+                    Buy Now
+                  </button>
+
+                  <button class="btn-cta" type="button" data-product="Migration Service" data-price="399" data-billing="one-time" data-single="true" onclick="addToCartFromCard(this)">Add to cart</button>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- QuickStart (hourly — multi quantity allowed) -->
           <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="pricing-item" data-product="QuickStart — Sessions & Optimization" data-price="99" data-single="false">
-              <h3 class="card-title">QuickStart — Sessions &amp; Optimization</h3>
-              <h4 id="trainingPriceDisplay"><sup>$</sup><span class="price-main">99</span> <small>/ hour</small></h4>
-              <div class="pricing-content" style="text-align: left;">
-                <p class="text-muted small card-desc"><strong>Already have QuickBooks Online or just purchased a plan?</strong> Get expert help setting it up, connecting banks, and understanding your dashboard — without a full setup package.</p>
-
-                <div class="mb-2"><strong class="text-muted small">What you get with QuickStart:</strong></div>
-                <ul class="card-features">
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Connect bank feeds & common apps (Stripe, Shopify)</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Custom workflow & automation templates</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Chart review + quick recommendations</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>30-min follow-up & next-steps checklist</li>
-                </ul>
-
-                <div class="mb-2"><strong class="text-muted small">Choose a QuickStart tier:</strong></div>
-                <div class="mb-2">
-                  <div class="form-check">
-                    <input id="quickstart_session" class="form-check-input training-tier" type="radio" name="training_tier" value="QuickStart Session" data-price="99" data-unit="/hour" checked />
-                    <label class="form-check-label small" for="quickstart_session"><strong>Session</strong> — 1-hour remote session — <strong>$99</strong></label>
-                  </div>
-                  <div class="form-check">
-                    <input id="smart_workflow" class="form-check-input training-tier" type="radio" name="training_tier" value="Workflow Pack" data-price="199" data-unit="" />
-                    <label class="form-check-label small" for="smart_workflow"><strong>Workflow Pack</strong> — 2 sessions — <strong>$199</strong></label>
-                  </div>
+            <div class="card h-100 shadow-sm border-0 pricing-item" data-product="QuickStart — Sessions & Optimization" data-price="99" data-single="false">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="card-title mb-0">QuickStart — Sessions &amp; Optimization</h5>
                 </div>
 
-                <div class="mt-2 small text-muted">✅ Perfect for: new QBO users who don’t need full setup or bookkeeping — just guidance.</div>
-              </div>
+                <h4 class="fs-3 mb-2"><sup>$</sup><span class="price-main">99</span> <small class="text-muted">/ hour</small></h4>
 
-              <div class="btn-wrap" style="gap:8px; align-items:center;">
-                <button
-                  class="btn btn-buy btn-sm stripe-buy"
-                  type="button"
-                  data-product-id="quickstart"
-                  data-product-name="QuickStart — Sessions & Optimization"
-                  data-price-key-monthly="quickstart_session_one_time_PLACEHOLDER"
-                  data-price-key-annual="quickstart_session_one_time_PLACEHOLDER"
-                  data-price-monthly="99"
-                  data-price-annual="99"
-                  data-quantity="1"
-                  aria-label="Buy QuickStart">
-                  Buy Now
-                </button>
+                <div class="pricing-content" style="text-align: left;">
+                  <p class="text-muted small card-desc"><strong>Already have QuickBooks Online or just purchased a plan?</strong> Get expert help setting it up, connecting banks, and understanding your dashboard — without a full setup package.</p>
 
-                <button class="btn-cta" type="button" data-product="QuickStart — Sessions & Optimization" data-price="99" data-billing="one-time" data-single="false" onclick="addToCartFromCard(this)">Add to cart</button>
+                  <ul class="list-unstyled service-list card-features">
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Connect bank feeds & common apps (Stripe, Shopify)</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Custom workflow & automation templates</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Chart review + quick recommendations</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>30-min follow-up & next-steps checklist</span></li>
+                  </ul>
+
+                  <div class="mb-2"><strong class="text-muted small">Choose a QuickStart tier:</strong></div>
+                  <div class="mb-2">
+                    <div class="form-check">
+                      <input id="quickstart_session" class="form-check-input training-tier billing-choice" type="radio" name="training_tier" value="QuickStart Session" data-price="99" data-unit="/hour" checked />
+                      <label class="form-check-label small" for="quickstart_session"><strong>Session</strong> — 1-hour remote session — <strong>$99</strong></label>
+                    </div>
+                    <div class="form-check">
+                      <input id="smart_workflow" class="form-check-input training-tier billing-choice" type="radio" name="training_tier" value="Workflow Pack" data-price="199" data-unit="" />
+                      <label class="form-check-label small" for="smart_workflow"><strong>Workflow Pack</strong> — 2 sessions — <strong>$199</strong></label>
+                    </div>
+                  </div>
+
+                  <div class="mt-2 small text-muted">✅ Perfect for: new QBO users who don’t need full setup or bookkeeping — just guidance.</div>
+                </div>
+
+                <div class="btn-wrap mt-auto" style="gap:8px; align-items:center;">
+                  <button
+                    class="btn btn-buy btn-sm stripe-buy"
+                    type="button"
+                    data-product-id="quickstart"
+                    data-product-name="QuickStart — Sessions & Optimization"
+                    data-price-key-monthly="quickstart_session_one_time_PLACEHOLDER"
+                    data-price-key-annual="quickstart_session_one_time_PLACEHOLDER"
+                    data-price-monthly="99"
+                    data-price-annual="99"
+                    data-quantity="1"
+                    aria-label="Buy QuickStart">
+                    Buy Now
+                  </button>
+
+                  <button class="btn-cta" type="button" data-product="QuickStart — Sessions & Optimization" data-price="99" data-billing="one-time" data-single="false" onclick="addToCartFromCard(this)">Add to cart</button>
+                </div>
               </div>
             </div>
           </div>
@@ -505,205 +543,238 @@ a:focus, button:focus, input:focus { outline: none; }
       <div id="recurring" class="tab-pane fade" role="tabpanel" aria-labelledby="recurring-tab">
         <div class="row gy-4">
           <div class="col-md-6 col-lg-3 col-sm-6">
-            <div class="pricing-item recommended" data-plan="Essential Care" data-monthly="149" data-single="true">
-              <h3 class="card-title">Essential Care</h3>
-              <h4><sup>$</sup><span class="price-main">149</span> <small>/ month</small></h4>
-              <div class="small text-muted mb-2" style="text-align: left;">
-                <div>Annual (12×): <strong>$1,788.00</strong></div>
-                <div style="color: #0d6efd;">Limited 30% off — Pay <strong>$1,251.60</strong> (save <strong>$536.40</strong>)</div>
-              </div>
-              <div style="text-align: left;">
-                <p class="text-muted small card-desc">Light bookkeeping with expert oversight — ideal for DIY owners.</p>
-                <ul class="card-features">
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Monthly review &amp; reconciliation</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Error fixing &amp; support</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Email support</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>15-min check-in quarterly</li>
-                </ul>
+            <div class="card h-100 shadow-sm border-0 pricing-item recommended" data-plan="Essential Care" data-monthly="149" data-single="true">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="card-title mb-0">Essential Care</h5>
+                  <span class="badge bg-primary">Most popular</span>
+                </div>
 
-                <div class="mb-3 small" style="text-align: left;">
-                  <div class="form-check form-check-inline">
-                    <input id="billing_essential_monthly" class="form-check-input billing-toggle" type="radio" name="billing_essential" value="monthly" checked />
-                    <label class="form-check-label" for="billing_essential_monthly">Monthly — $149/mo</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input id="billing_essential_annual" class="form-check-input billing-toggle" type="radio" name="billing_essential" value="annual" />
-                    <label class="form-check-label" for="billing_essential_annual">Annual — $1,251.60 (30% off)</label>
+                <h4 class="fs-3 mb-2"><sup>$</sup><span class="price-main">149</span> <small class="text-muted">/ month</small></h4>
+
+                <div class="small text-muted mb-2" style="text-align: left;">
+                  <div class="annual-calc">Annual (12×): <strong>$1,788.00</strong></div>
+                  <div class="discount-line" style="color: #0d6efd;">Limited 30% off — Pay <strong>$1,251.60</strong> (save <strong>$536.40</strong>)</div>
+                </div>
+
+                <div style="text-align: left;">
+                  <p class="text-muted small card-desc">Light bookkeeping with expert oversight — ideal for DIY owners.</p>
+
+                  <ul class="list-unstyled service-list card-features">
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Monthly review &amp; reconciliation</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Error fixing &amp; support</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Email support</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>15-min check-in quarterly</span></li>
+                  </ul>
+
+                  <div class="mb-3 small" style="text-align: left;">
+                    <div class="form-check form-check-inline">
+                      <input id="billing_essential_monthly" class="form-check-input billing-toggle billing-choice" type="radio" name="billing_essential" value="monthly" checked />
+                      <label class="form-check-label" for="billing_essential_monthly">Monthly — $149/mo</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input id="billing_essential_annual" class="form-check-input billing-toggle billing-choice" type="radio" name="billing_essential" value="annual" />
+                      <label class="form-check-label" for="billing_essential_annual">Annual — $1,251.60 (30% off)</label>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="btn-wrap" style="gap:8px; align-items:center;">
-                <button
-                  class="btn btn-buy btn-sm stripe-buy"
-                  type="button"
-                  data-product-id="essential_care"
-                  data-product-name="Essential Care"
-                  data-price-key-monthly="essential_care_monthly_PLACEHOLDER"
-                  data-price-key-annual="essential_care_annual_PLACEHOLDER"
-                  data-price-monthly="149"
-                  data-price-annual="1251.60"
-                  data-quantity="1"
-                  aria-label="Buy Essential Care">
-                  Buy Now
-                </button>
+                <div class="btn-wrap mt-auto" style="gap:8px; align-items:center;">
+                  <button
+                    class="btn btn-buy btn-sm stripe-buy"
+                    type="button"
+                    data-product-id="essential_care"
+                    data-product-name="Essential Care"
+                    data-price-key-monthly="essential_care_monthly_PLACEHOLDER"
+                    data-price-key-annual="essential_care_annual_PLACEHOLDER"
+                    data-price-monthly="149"
+                    data-price-annual="1251.60"
+                    data-quantity="1"
+                    aria-label="Buy Essential Care">
+                    Buy Now
+                  </button>
 
-                <button class="btn-cta" type="button"
-                  data-product="Essential Care"
-                  data-billing="monthly"
-                  data-price="149"
-                  data-single="true"
-                  onclick="addToCartFromCard(this)">
-                  Add to cart
-                </button>
+                  <button class="btn-cta" type="button"
+                    data-product="Essential Care"
+                    data-billing="monthly"
+                    data-price="149"
+                    data-single="true"
+                    onclick="addToCartFromCard(this)">
+                    Add to cart
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Growth / Premium / CFO Lite (kept intact) -->
+          <!-- Growth / Premium / CFO Lite (kept intact but styled) -->
           <div class="col-md-6 col-lg-3 col-sm-6">
-            <div class="pricing-item" data-plan="Growth Care" data-monthly="299" data-single="true">
-              <h3 class="card-title">Growth Care</h3>
-              <h4><sup>$</sup><span class="price-main">299</span> <small>/ month</small></h4>
-              <div class="small text-muted mb-2" style="text-align: left;">
-                <div>Annual (12×): <strong>$3,588.00</strong></div>
-                <div style="color: #0d6efd;">Limited 30% off — Pay <strong>$2,511.60</strong> (save <strong>$1,076.40</strong>)</div>
-              </div>
-              <div style="text-align: left;">
-                <p class="text-muted small card-desc">Full bookkeeping for small businesses — end-to-end service.</p>
-                <ul class="card-features">
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Weekly categorization &amp; reconciliations</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Monthly financial reports</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Email &amp; chat support</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Monthly review call</li>
-                </ul>
+            <div class="card h-100 shadow-sm border-0 pricing-item" data-plan="Growth Care" data-monthly="299" data-single="true">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="card-title mb-0">Growth Care</h5>
+                </div>
 
-                <div class="mb-3 small" style="text-align: left;">
-                  <div class="form-check form-check-inline">
-                    <input id="billing_growth_monthly" class="form-check-input billing-toggle" type="radio" name="billing_growth" value="monthly" checked />
-                    <label class="form-check-label" for="billing_growth_monthly">Monthly — $299/mo</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input id="billing_growth_annual" class="form-check-input billing-toggle" type="radio" name="billing_growth" value="annual" />
-                    <label class="form-check-label" for="billing_growth_annual">Annual — $2,511.60 (30% off)</label>
+                <h4 class="fs-3 mb-2"><sup>$</sup><span class="price-main">299</span> <small class="text-muted">/ month</small></h4>
+
+                <div class="small text-muted mb-2" style="text-align: left;">
+                  <div class="annual-calc">Annual (12×): <strong>$3,588.00</strong></div>
+                  <div class="discount-line" style="color: #0d6efd;">Limited 30% off — Pay <strong>$2,511.60</strong> (save <strong>$1,076.40</strong>)</div>
+                </div>
+
+                <div style="text-align: left;">
+                  <p class="text-muted small card-desc">Full bookkeeping for small businesses — end-to-end service.</p>
+
+                  <ul class="list-unstyled service-list card-features">
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Weekly categorization &amp; reconciliations</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Monthly financial reports</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Email &amp; chat support</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Monthly review call</span></li>
+                  </ul>
+
+                  <div class="mb-3 small" style="text-align: left;">
+                    <div class="form-check form-check-inline">
+                      <input id="billing_growth_monthly" class="form-check-input billing-toggle billing-choice" type="radio" name="billing_growth" value="monthly" checked />
+                      <label class="form-check-label" for="billing_growth_monthly">Monthly — $299/mo</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input id="billing_growth_annual" class="form-check-input billing-toggle billing-choice" type="radio" name="billing_growth" value="annual" />
+                      <label class="form-check-label" for="billing_growth_annual">Annual — $2,511.60 (30% off)</label>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="btn-wrap" style="gap:8px; align-items:center;">
-                <button
-                  class="btn btn-buy btn-sm stripe-buy"
-                  type="button"
-                  data-product-id="growth_care"
-                  data-product-name="Growth Care"
-                  data-price-key-monthly="growth_care_monthly_PLACEHOLDER"
-                  data-price-key-annual="growth_care_annual_PLACEHOLDER"
-                  data-price-monthly="299"
-                  data-price-annual="2511.60"
-                  data-quantity="1"
-                  aria-label="Buy Growth Care">
-                  Buy Now
-                </button>
+                <div class="btn-wrap mt-auto" style="gap:8px; align-items:center;">
+                  <button
+                    class="btn btn-buy btn-sm stripe-buy"
+                    type="button"
+                    data-product-id="growth_care"
+                    data-product-name="Growth Care"
+                    data-price-key-monthly="growth_care_monthly_PLACEHOLDER"
+                    data-price-key-annual="growth_care_annual_PLACEHOLDER"
+                    data-price-monthly="299"
+                    data-price-annual="2511.60"
+                    data-quantity="1"
+                    aria-label="Buy Growth Care">
+                    Buy Now
+                  </button>
 
-                <button class="btn-cta" type="button" data-product="Growth Care" data-billing="monthly" data-price="299" data-single="true" onclick="addToCartFromCard(this)">Add to cart</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 col-sm-6">
-            <div class="pricing-item" data-plan="Premium Care" data-monthly="599" data-single="true">
-              <h3 class="card-title">Premium Care</h3>
-              <h4><sup>$</sup><span class="price-main">599</span> <small>/ month</small></h4>
-              <div class="small text-muted mb-2" style="text-align: left;">
-                <div>Annual (12×): <strong>$7,188.00</strong></div>
-                <div style="color: #0d6efd;">Limited 30% off — Pay <strong>$5,031.60</strong> (save <strong>$2,156.40</strong>)</div>
-              </div>
-              <div style="text-align: left;">
-                <p class="text-muted small card-desc">Bookkeeping + visibility — payroll support &amp; dashboards included.</p>
-                <ul class="card-features">
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Everything in Growth Care</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Payroll support</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Custom dashboards</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Quarterly performance call</li>
-                </ul>
-
-                <div class="mb-3 small" style="text-align: left;">
-                  <div class="form-check form-check-inline">
-                    <input id="billing_premium_monthly" class="form-check-input billing-toggle" type="radio" name="billing_premium" value="monthly" checked />
-                    <label class="form-check-label" for="billing_premium_monthly">Monthly — $599/mo</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input id="billing_premium_annual" class="form-check-input billing-toggle" type="radio" name="billing_premium" value="annual" />
-                    <label class="form-check-label" for="billing_premium_annual">Annual — $5,031.60 (30% off)</label>
-                  </div>
+                  <button class="btn-cta" type="button" data-product="Growth Care" data-billing="monthly" data-price="299" data-single="true" onclick="addToCartFromCard(this)">Add to cart</button>
                 </div>
-              </div>
-
-              <div class="btn-wrap" style="gap:8px; align-items:center;">
-                <button
-                  class="btn btn-buy btn-sm stripe-buy"
-                  type="button"
-                  data-product-id="premium_care"
-                  data-product-name="Premium Care"
-                  data-price-key-monthly="premium_care_monthly_PLACEHOLDER"
-                  data-price-key-annual="premium_care_annual_PLACEHOLDER"
-                  data-price-monthly="599"
-                  data-price-annual="5031.60"
-                  data-quantity="1"
-                  aria-label="Buy Premium Care">
-                  Buy Now
-                </button>
-
-                <button class="btn-cta" type="button" data-product="Premium Care" data-billing="monthly" data-price="599" data-single="true" onclick="addToCartFromCard(this)">Add to cart</button>
               </div>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 col-sm-6">
-            <div class="pricing-item" data-plan="CFO Lite" data-monthly="999" data-single="true">
-              <h3 class="card-title">CFO Lite</h3>
-              <h4><sup>$</sup><span class="price-main">999</span> <small>/ month</small></h4>
-              <div class="small text-muted mb-2" style="text-align: left;">
-                <div>Annual (12×): <strong>$11,988.00</strong></div>
-                <div style="color: #0d6efd;">Limited 30% off — Pay <strong>$8,391.60</strong> (save <strong>$3,596.40</strong>)</div>
-              </div>
-              <div style="text-align: left;">
-                <p class="text-muted small card-desc">Advanced financial strategy + bookkeeping for growth companies.</p>
-                <ul class="card-features">
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Everything in Premium Care</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Budgeting &amp; forecasting</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>KPI tracking</li>
-                  <li><svg class="feature-check" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>Strategic monthly CFO session</li>
-                </ul>
+            <div class="card h-100 shadow-sm border-0 pricing-item" data-plan="Premium Care" data-monthly="599" data-single="true">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="card-title mb-0">Premium Care</h5>
+                </div>
 
-                <div class="mb-3 small" style="text-align: left;">
-                  <div class="form-check form-check-inline">
-                    <input id="billing_cfo_monthly" class="form-check-input billing-toggle" type="radio" name="billing_cfo" value="monthly" checked />
-                    <label class="form-check-label" for="billing_cfo_monthly">Monthly — $999/mo</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input id="billing_cfo_annual" class="form-check-input billing-toggle" type="radio" name="billing_cfo" value="annual" />
-                    <label class="form-check-label" for="billing_cfo_annual">Annual — $8,391.60 (30% off)</label>
+                <h4 class="fs-3 mb-2"><sup>$</sup><span class="price-main">599</span> <small class="text-muted">/ month</small></h4>
+
+                <div class="small text-muted mb-2" style="text-align: left;">
+                  <div class="annual-calc">Annual (12×): <strong>$7,188.00</strong></div>
+                  <div class="discount-line" style="color: #0d6efd;">Limited 30% off — Pay <strong>$5,031.60</strong> (save <strong>$2,156.40</strong>)</div>
+                </div>
+
+                <div style="text-align: left;">
+                  <p class="text-muted small card-desc">Bookkeeping + visibility — payroll support &amp; dashboards included.</p>
+
+                  <ul class="list-unstyled service-list card-features">
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Everything in Growth Care</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Payroll support</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Custom dashboards</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Quarterly performance call</span></li>
+                  </ul>
+
+                  <div class="mb-3 small" style="text-align: left;">
+                    <div class="form-check form-check-inline">
+                      <input id="billing_premium_monthly" class="form-check-input billing-toggle billing-choice" type="radio" name="billing_premium" value="monthly" checked />
+                      <label class="form-check-label" for="billing_premium_monthly">Monthly — $599/mo</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input id="billing_premium_annual" class="form-check-input billing-toggle billing-choice" type="radio" name="billing_premium" value="annual" />
+                      <label class="form-check-label" for="billing_premium_annual">Annual — $5,031.60 (30% off)</label>
+                    </div>
                   </div>
                 </div>
+
+                <div class="btn-wrap mt-auto" style="gap:8px; align-items:center;">
+                  <button
+                    class="btn btn-buy btn-sm stripe-buy"
+                    type="button"
+                    data-product-id="premium_care"
+                    data-product-name="Premium Care"
+                    data-price-key-monthly="premium_care_monthly_PLACEHOLDER"
+                    data-price-key-annual="premium_care_annual_PLACEHOLDER"
+                    data-price-monthly="599"
+                    data-price-annual="5031.60"
+                    data-quantity="1"
+                    aria-label="Buy Premium Care">
+                    Buy Now
+                  </button>
+
+                  <button class="btn-cta" type="button" data-product="Premium Care" data-billing="monthly" data-price="599" data-single="true" onclick="addToCartFromCard(this)">Add to cart</button>
+                </div>
               </div>
+            </div>
+          </div>
 
-              <div class="btn-wrap" style="gap:8px; align-items:center;">
-                <button
-                  class="btn btn-buy btn-sm stripe-buy"
-                  type="button"
-                  data-product-id="cfo_lite"
-                  data-product-name="CFO Lite"
-                  data-price-key-monthly="cfo_lite_monthly_PLACEHOLDER"
-                  data-price-key-annual="cfo_lite_annual_PLACEHOLDER"
-                  data-price-monthly="999"
-                  data-price-annual="8391.60"
-                  data-quantity="1"
-                  aria-label="Buy CFO Lite">
-                  Buy Now
-                </button>
+          <div class="col-md-6 col-lg-3 col-sm-6">
+            <div class="card h-100 shadow-sm border-0 pricing-item" data-plan="CFO Lite" data-monthly="999" data-single="true">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="card-title mb-0">CFO Lite</h5>
+                </div>
 
-                <button class="btn-cta" type="button" data-product="CFO Lite" data-billing="monthly" data-price="999" data-single="true" onclick="addToCartFromCard(this)">Add to cart</button>
+                <h4 class="fs-3 mb-2"><sup>$</sup><span class="price-main">999</span> <small class="text-muted">/ month</small></h4>
+
+                <div class="small text-muted mb-2" style="text-align: left;">
+                  <div class="annual-calc">Annual (12×): <strong>$11,988.00</strong></div>
+                  <div class="discount-line" style="color: #0d6efd;">Limited 30% off — Pay <strong>$8,391.60</strong> (save <strong>$3,596.40</strong>)</div>
+                </div>
+
+                <div style="text-align: left;">
+                  <p class="text-muted small card-desc">Advanced financial strategy + bookkeeping for growth companies.</p>
+
+                  <ul class="list-unstyled service-list card-features">
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Everything in Premium Care</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Budgeting &amp; forecasting</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>KPI tracking</span></li>
+                    <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg><span>Strategic monthly CFO session</span></li>
+                  </ul>
+
+                  <div class="mb-3 small" style="text-align: left;">
+                    <div class="form-check form-check-inline">
+                      <input id="billing_cfo_monthly" class="form-check-input billing-toggle billing-choice" type="radio" name="billing_cfo" value="monthly" checked />
+                      <label class="form-check-label" for="billing_cfo_monthly">Monthly — $999/mo</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input id="billing_cfo_annual" class="form-check-input billing-toggle billing-choice" type="radio" name="billing_cfo" value="annual" />
+                      <label class="form-check-label" for="billing_cfo_annual">Annual — $8,391.60 (30% off)</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="btn-wrap mt-auto" style="gap:8px; align-items:center;">
+                  <button
+                    class="btn btn-buy btn-sm stripe-buy"
+                    type="button"
+                    data-product-id="cfo_lite"
+                    data-product-name="CFO Lite"
+                    data-price-key-monthly="cfo_lite_monthly_PLACEHOLDER"
+                    data-price-key-annual="cfo_lite_annual_PLACEHOLDER"
+                    data-price-monthly="999"
+                    data-price-annual="8391.60"
+                    data-quantity="1"
+                    aria-label="Buy CFO Lite">
+                    Buy Now
+                  </button>
+
+                  <button class="btn-cta" type="button" data-product="CFO Lite" data-billing="monthly" data-price="999" data-single="true" onclick="addToCartFromCard(this)">Add to cart</button>
+                </div>
               </div>
             </div>
           </div>
