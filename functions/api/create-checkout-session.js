@@ -169,17 +169,22 @@ export async function onRequestPost(context) {
       })
     }
 
-    // Determine session mode — must be uniform. We'll infer type for fallback items too.
-    const allTypes = Array.from(new Set(resolved.map(r => r.priceType)))
-    if (allTypes.length > 1) {
-      // Mixed recurring + one_time not allowed in single Checkout session mode
-      return new Response(JSON.stringify({
-        error: 'Mixed price types in cart (subscription + one-time). Stripe Checkout requires a single mode per session.',
-        detail: 'Split checkout into subscription vs one-time, or create server-side logic to create multiple sessions.'
-      }), { status: 400, headers: { ...corsHeaders(), 'Content-Type': 'application/json' }})
-    }
+  // Determine session mode: prefer 'subscription' if any recurring items exist.
+// This allows including both recurring and one-time prices in the same Checkout Session
+// (server will send mode: 'subscription' when there is at least one recurring price).
+const typesSet = new Set(resolved.map(r => r.priceType));
+const hasRecurring = Array.from(typesSet).some(t => t === 'recurring');
+const hasOneTime = Array.from(typesSet).some(t => t === 'one_time');
 
-    const priceMode = allTypes[0] === 'one_time' ? 'payment' : 'subscription'
+let priceMode;
+if (hasRecurring) {
+  // When at least one recurring price exists, use subscription mode.
+  // Stripe will create a subscription and will invoice any one-time items on the first invoice.
+  priceMode = 'subscription';
+} else {
+  // All one-time => use payment mode (single payment)
+  priceMode = 'payment';
+}
 
     // ---------- Build Stripe line_items. For items without priceId use price_data fallback when possible ----------
     const line_items = await Promise.all(resolved.map(async r => {
