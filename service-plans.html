@@ -1254,80 +1254,100 @@ a:focus, button:focus, input:focus { outline: none; }
   }
 
   // ---------- Checkout: build payload and call server (handles mixed cart by splitting) ----------
+
   async function checkoutCart() {
-    const cart = readCart();
-    if (!cart || cart.length === 0) { alert('Your cart is empty. Please add items before checkout.'); return; }
-
-    // Build frontend-enriched items (keep key so server can fallback to normalize)
-    const built = cart.map(it => {
-      const optionLabel = it.option || (it.billing === 'annual' ? 'Annual' : (it.billing === 'monthly' ? 'Monthly' : ''));
-      const key = `${it.product}|${optionLabel}|${it.billing || 'one-time'}`;
-      const priceId = priceMap[key] || null;
-      return {
-        original: it,
-        key,
-        priceId,
-        quantity: Number(it.quantity || 1),
-        label: it.product,
-        unit_amount: Number(it.price || 0)
-      };
-    });
-
-    // Split into recurring vs one-time groups (based on billing or key content)
-    const recurringItems = [];
-    const oneTimeItems = [];
-    built.forEach(b => {
-      const lk = (b.key || '').toLowerCase();
-      const billing = String(b.original.billing || '').toLowerCase();
-      const isRecurring = lk.includes('|monthly|') || lk.includes('|annual|') || lk.includes('monthly') || lk.includes('annual') || billing === 'monthly' || billing === 'annual';
-      if (isRecurring) recurringItems.push(b);
-      else oneTimeItems.push(b);
-    });
-
-    const hasRecurring = recurringItems.length > 0;
-    const hasOneTime = oneTimeItems.length > 0;
-
-    // If only one type present -> single session (old behavior)
-    if (hasRecurring && !hasOneTime) {
-      const res = await createSessionForGroup(cart, recurringItems);
-      if (!res.ok) { alert('Failed to start checkout: ' + (res.text || 'server error')); console.error(res); return; }
-      if (res.url) window.location.href = res.url;
-      else { alert('Server did not return a checkout URL.'); console.warn(res); }
+    // guard double calls (existing global is fine)
+    if (window.__creatingCheckout) {
+      console.warn('checkout already in progress — ignoring duplicate call');
       return;
     }
-    if (!hasRecurring && hasOneTime) {
-      const res = await createSessionForGroup(cart, oneTimeItems);
-      if (!res.ok) { alert('Failed to start checkout: ' + (res.text || 'server error')); console.error(res); return; }
-      if (res.url) window.location.href = res.url;
-      else { alert('Server did not return a checkout URL.'); console.warn(res); }
-      return;
-    }
+    window.__creatingCheckout = true;
 
-    // Mixed cart -> create two sessions (recurring + one-time)
-    // Create both sessions in parallel
-    const [resRecurring, resOneTime] = await Promise.all([
-      createSessionForGroup(cart, recurringItems),
-      createSessionForGroup(cart, oneTimeItems)
-    ]);
+    let origText = null;
+    try {
+      const cart = readCart();
+      if (!cart || cart.length === 0) {
+        alert('Your cart is empty. Please add items before checkout.');
+        return;
+      }
 
-    if (!resRecurring.ok || !resOneTime.ok) {
-      console.error('checkout errors', { recurring: resRecurring, oneTime: resOneTime });
-      const msgs = [];
-      if (!resRecurring.ok) msgs.push('Recurring session failed: ' + (resRecurring.text || ('status ' + resRecurring.status)));
-      if (!resOneTime.ok) msgs.push('One-time session failed: ' + (resOneTime.text || ('status ' + resOneTime.status)));
-      alert('Failed to start mixed checkout:\n' + msgs.join('\n'));
-      return;
-    }
+      // Build frontend-enriched items (keep keys so server can map to priceIds)
+      const built = cart.map(it => {
+        const optionLabel = it.option || (it.billing === 'annual' ? 'Annual' : (it.billing === 'monthly' ? 'Monthly' : ''));
+        const key = `${it.product}|${optionLabel}|${it.billing || 'one-time'}`;
+        const priceId = priceMap[key] || null;
+        return {
+          // fields your server already expects
+          priceId: priceId || undefined,
+          priceKey: priceId ? undefined : key,
+          key,
+          quantity: Number(it.quantity || 1),
+          label: it.product,
+          unit_amount: Number(it.price || 0),
+          original: it
+        };
+      });
 
-    // Both succeeded — open one-time in a new tab and navigate current to recurring (better UX for subscriptions)
-    try { if (resOneTime.url) window.open(resOneTime.url, '_blank'); } catch (err) { console.warn('Could not open one-time tab', err); }
-    if (resRecurring.url) {
-      window.location.href = resRecurring.url;
-    } else if (resOneTime.url) {
-      // fallback — open one-time in current tab if recurring missing (unlikely)
-      window.location.href = resOneTime.url;
-    } else {
-      alert('No checkout URL returned by server for either session.');
+      if (!built.length) {
+        alert('No valid items to checkout.');
+        return;
+      }
+
+      // UI lock
+      const chkBtnEl = document.getElementById('checkoutBtn');
+      origText = chkBtnEl ? chkBtnEl.innerText : null;
+      if (chkBtnEl) { chkBtnEl.disabled = true; chkBtnEl.innerText = 'Starting…'; }
+
+      // --- SEND ENTIRE CART IN A SINGLE REQUEST ---
+      const resp = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          cart: cart,
+          lineItems: built.map(b => ({
+            priceId: b.priceId,
+            priceKey: b.priceKey,
+            quantity: b.quantity,
+            label: b.label,
+            unit_amount: b.unit_amount
+          }))
+        })
+      });
+
+      const text = await resp.text().catch(()=>null);
+      let data = null;
+      try { data = text ? JSON.parse(text) : null; } catch(e) { console.warn('Non-JSON response from checkout endpoint', text); }
+
+      if (!resp.ok) {
+        console.error('create-checkout-session failed', resp.status, text);
+        alert('Failed to start checkout: ' + (data && data.error ? data.error : ('status ' + resp.status)));
+        return;
+      }
+
+      // expect a single URL from server
+      const url = (data && (data.url || data.checkoutUrl || data.redirect)) ? (data.url || data.checkoutUrl || data.redirect) : null;
+      if (!url) {
+        console.warn('Server returned success but no url field', data);
+        alert('Server did not return a checkout URL. See console for details.');
+        return;
+      }
+
+      // ONE navigation only (single Stripe Checkout page)
+      window.location.href = url;
+
+    } catch (err) {
+      console.error('checkoutCart error', err);
+      alert('Failed to start checkout: ' + String(err));
+    } finally {
+      // release lock after a short delay (navigation should happen immediately)
+      setTimeout(() => {
+        window.__creatingCheckout = false;
+        const chkBtn = document.getElementById('checkoutBtn');
+        if (chkBtn) {
+          try { chkBtn.disabled = false; chkBtn.innerText = origText || 'Checkout'; } catch(e) {}
+        }
+      }, 800);
     }
   }
   window.checkoutCart = checkoutCart;
