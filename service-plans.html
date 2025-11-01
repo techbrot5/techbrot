@@ -1221,136 +1221,102 @@ a:focus, button:focus, input:focus { outline: none; }
     "CFO Lite|Annual|annual":         "price_CFO_ANNUAL_PLACEHOLDER"
   };
 
-  // ---------- Helper: create session for a group of items ----------
-  async function createSessionForGroup(cart, itemsGroup) {
-    // itemsGroup contains objects with: key, priceId (or null), quantity, label, unit_amount
-    const payloadLineItems = itemsGroup.map(i => ({
-      // server accepts li.priceKey || li.priceId || li.key
-      priceId: i.priceId || undefined,
-      priceKey: i.priceId ? undefined : i.key,
-      key: i.key,
-      quantity: i.quantity,
-      label: i.label,
-      unit_amount: Number(i.unit_amount || 0)
-    }));
-
-    try {
-      const resp = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'same-origin',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ cart: cart, lineItems: payloadLineItems })
-      });
-      if (!resp.ok) {
-        const text = await resp.text().catch(() => '<no body>');
-        return { ok: false, status: resp.status, text };
-      }
-      const data = await resp.json().catch(() => null);
-      return { ok: true, url: data && data.url ? data.url : null, raw: data };
-    } catch (err) {
-      return { ok: false, status: 0, text: String(err) };
-    }
+  // ---------- Checkout: send entire cart in one request (single Checkout Session) ----------
+async function checkoutCart() {
+  if (window.__creatingCheckout) {
+    console.warn('checkout already in progress — ignoring duplicate call');
+    return;
   }
+  window.__creatingCheckout = true;
+  let origText = null;
 
-  // ---------- Checkout: build payload and call server (handles mixed cart by splitting) ----------
-
-  async function checkoutCart() {
-    // guard double calls (existing global is fine)
-    if (window.__creatingCheckout) {
-      console.warn('checkout already in progress — ignoring duplicate call');
+  try {
+    const cart = readCart();
+    if (!cart || cart.length === 0) {
+      alert('Your cart is empty. Please add items before checkout.');
       return;
     }
-    window.__creatingCheckout = true;
 
-    let origText = null;
-    try {
-      const cart = readCart();
-      if (!cart || cart.length === 0) {
-        alert('Your cart is empty. Please add items before checkout.');
-        return;
-      }
+    // Build frontend-enriched items (keep keys so server can map to priceIds)
+    const built = cart.map(it => {
+      const optionLabel = it.option || (it.billing === 'annual' ? 'Annual' : (it.billing === 'monthly' ? 'Monthly' : ''));
+      const key = `${it.product}|${optionLabel}|${it.billing || 'one-time'}`;
+      const priceId = priceMap[key] || null;
+      return {
+        priceKey: priceId ? undefined : key,
+        priceId: priceId || undefined,
+        key,
+        quantity: Number(it.quantity || 1),
+        label: it.product,
+        unit_amount: Number(it.price || 0),
+        original: it
+      };
+    });
 
-      // Build frontend-enriched items (keep keys so server can map to priceIds)
-      const built = cart.map(it => {
-        const optionLabel = it.option || (it.billing === 'annual' ? 'Annual' : (it.billing === 'monthly' ? 'Monthly' : ''));
-        const key = `${it.product}|${optionLabel}|${it.billing || 'one-time'}`;
-        const priceId = priceMap[key] || null;
-        return {
-          // fields your server already expects
-          priceId: priceId || undefined,
-          priceKey: priceId ? undefined : key,
-          key,
-          quantity: Number(it.quantity || 1),
-          label: it.product,
-          unit_amount: Number(it.price || 0),
-          original: it
-        };
-      });
-
-      if (!built.length) {
-        alert('No valid items to checkout.');
-        return;
-      }
-
-      // UI lock
-      const chkBtnEl = document.getElementById('checkoutBtn');
-      origText = chkBtnEl ? chkBtnEl.innerText : null;
-      if (chkBtnEl) { chkBtnEl.disabled = true; chkBtnEl.innerText = 'Starting…'; }
-
-      // --- SEND ENTIRE CART IN A SINGLE REQUEST ---
-      const resp = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          cart: cart,
-          lineItems: built.map(b => ({
-            priceId: b.priceId,
-            priceKey: b.priceKey,
-            quantity: b.quantity,
-            label: b.label,
-            unit_amount: b.unit_amount
-          }))
-        })
-      });
-
-      const text = await resp.text().catch(()=>null);
-      let data = null;
-      try { data = text ? JSON.parse(text) : null; } catch(e) { console.warn('Non-JSON response from checkout endpoint', text); }
-
-      if (!resp.ok) {
-        console.error('create-checkout-session failed', resp.status, text);
-        alert('Failed to start checkout: ' + (data && data.error ? data.error : ('status ' + resp.status)));
-        return;
-      }
-
-      // expect a single URL from server
-      const url = (data && (data.url || data.checkoutUrl || data.redirect)) ? (data.url || data.checkoutUrl || data.redirect) : null;
-      if (!url) {
-        console.warn('Server returned success but no url field', data);
-        alert('Server did not return a checkout URL. See console for details.');
-        return;
-      }
-
-      // ONE navigation only (single Stripe Checkout page)
-      window.location.href = url;
-
-    } catch (err) {
-      console.error('checkoutCart error', err);
-      alert('Failed to start checkout: ' + String(err));
-    } finally {
-      // release lock after a short delay (navigation should happen immediately)
-      setTimeout(() => {
-        window.__creatingCheckout = false;
-        const chkBtn = document.getElementById('checkoutBtn');
-        if (chkBtn) {
-          try { chkBtn.disabled = false; chkBtn.innerText = origText || 'Checkout'; } catch(e) {}
-        }
-      }, 800);
+    if (!built.length) {
+      alert('No valid items to checkout.');
+      return;
     }
+
+    // Quick UI disable
+    const chkBtnEl = document.getElementById('checkoutBtn');
+    origText = chkBtnEl ? chkBtnEl.innerText : null;
+    if (chkBtnEl) { chkBtnEl.disabled = true; chkBtnEl.innerText = 'Starting…'; }
+
+    // Send the whole cart in ONE request — server will choose mode: 'subscription' if any recurring found
+    const resp = await fetch('/api/create-checkout-session', {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        cart: cart,
+        lineItems: built.map(b => ({
+          priceId: b.priceId,
+          priceKey: b.key,
+          quantity: b.quantity,
+          label: b.label,
+          unit_amount: b.unit_amount
+        }))
+      })
+    });
+
+    const text = await resp.text().catch(()=>null);
+    let data = null;
+    try { data = text ? JSON.parse(text) : null; } catch(e) { console.warn('Non-JSON response from checkout endpoint', text); }
+
+    if (!resp.ok) {
+      console.error('create-checkout-session failed', resp.status, text);
+      alert('Failed to start checkout: ' + (data && data.error ? data.error : ('status ' + resp.status)));
+      return;
+    }
+
+    // Expect single session URL back
+    const url = (data && (data.url || data.checkoutUrl || data.redirect)) ? (data.url || data.checkoutUrl || data.redirect) : null;
+    if (!url) {
+      console.warn('Server returned success but no url field', data);
+      alert('Server did not return a checkout URL. See console for details.');
+      return;
+    }
+
+    // Single navigation to the returned Checkout Session
+    window.location.href = url;
+
+  } catch (err) {
+    console.error('checkoutCart error', err);
+    alert('Failed to start checkout: ' + String(err));
+  } finally {
+    // release lock after a short delay (navigation should happen immediately)
+    setTimeout(() => {
+      window.__creatingCheckout = false;
+      const chkBtn = document.getElementById('checkoutBtn');
+      if (chkBtn) {
+        try { chkBtn.disabled = false; chkBtn.innerText = origText || 'Checkout'; } catch(e) {}
+      }
+    }, 800);
   }
-  window.checkoutCart = checkoutCart;
+}
+window.checkoutCart = checkoutCart;
+
 
   // Wire clear and checkout buttons if present
   const clearBtn = document.getElementById('clearCartBtn');
