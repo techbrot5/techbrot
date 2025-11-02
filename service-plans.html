@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
+<html data-bs-theme="light" lang="en" data-bss-forced-theme="light">
 
 <head>
     <meta charset="utf-8">
@@ -9,1061 +9,514 @@
     <link rel="stylesheet" href="assets/css/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/Lato.css">
     <link rel="stylesheet" href="assets/css/swiper-icons.css">
+    <link rel="stylesheet" href="assets/css/pricing.css">
     <link rel="stylesheet" href="assets/css/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/vendor/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/css/main.css">
     <link rel="stylesheet" href="assets/css/style-2.css">
+    <link rel="stylesheet" href="assets/css/checkout.css">
     <link rel="stylesheet" href="assets/css/contact-banner.css">
     <link rel="stylesheet" href="assets/css/faq.css">
-    <link rel="stylesheet" href="assets/css/pricing.css">
 </head>
 
 <body><style>
-/* ===========================
-   Pricing Section — Cleaned & Merged CSS
-   Only current classes / IDs retained
-   =========================== */
+.stripe-buy, .btn-buy {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+    
+    .pricing-item .btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgb(6 182 212 / .18);
+  filter: brightness(.97);
+}
 
-/* Section container + accent vars */
+.btn-check:checked + .btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check) + .btn:active {
+  color: var(--bs-btn-active-color);
+  background-color: var(--bs-btn-active-bg);
+  border-color: var(--bs-btn-active-border-color);
+}
+
+.pricing-item .btn-cta {
+  background: linear-gradient(90deg,var(--accent-2),var(--accent));
+  color: #fff;
+    border: 1px solid var(--accent-2);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgb(6 182 212 / .15);
+  transition: transform .12s ease,box-shadow .12s ease,filter .12s ease;
+}
+
+
 #pricing {
-  --tab-accent: #0ea5a4; /* teal-cyan accent */
-  --tab-active-bg: linear-gradient(90deg,#0ea5a4,#06b6d4); /* active tab / CTA gradient */
+  --tab-accent: #0ea5a4;
+  --tab-active-bg: linear-gradient(90deg,#0ea5a4,#06b6d4);
   background: #f9fafc;
   padding: 60px 0;
-  font-family: "Inter", "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Section Title */
-#pricing .section-title h2 { font-weight:700; color:#222; letter-spacing:-0.5px; margin:0; }
-#pricing .section-title p { color:#6c757d; margin:0; }
-
-/* Tabs (nav-pills) - base */
-#pricingTabs { gap:10px; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; }
-#pricingTabs .nav-link,
-#pricingTabs .tab-pill {
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 14px;
-  border-radius:999px;
-  background:transparent;
-  color:#374151;
-  border:1px solid transparent;
-  font-weight:600;
-  transition: background .12s ease, color .12s ease, transform .08s ease, box-shadow .12s ease;
-}
-#pricingTabs .nav-link:hover,
-#pricingTabs .tab-pill:hover { background: rgba(6,182,212,0.06); color:#0b7285; transform: translateY(-1px); }
-#pricingTabs .nav-link.active,
-#pricingTabs .tab-pill.active {
-  background: var(--tab-active-bg) !important;
-  color:#fff !important;
-  border-color: rgba(255,255,255,0.08) !important;
-  box-shadow: 0 12px 30px rgba(6,182,212,0.14) !important;
-  transform: translateY(-2px);
-}
-#pricingTabs .tab-icon { color:#06b6d4; flex:0 0 16px; }
-
-/* --- Layout: equal-height rows --- */
-.row.gy-4 > [class*="col-"] { display:flex; align-items:stretch; }
-
-/* Pricing Item Cards */
-.pricing-item {
-  background:#fff;
-  border-radius:16px;
-  padding:18px 24px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  transition: transform .28s ease, box-shadow .28s ease;
-  position:relative;
-  overflow:hidden;
-  border:1px solid rgba(0,0,0,0.04);
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  height:100%;
-  box-sizing:border-box;
-}
-.pricing-item:hover { transform: translateY(-6px); box-shadow: 0 10px 28px rgba(0,0,0,0.08); }
-
-/* Recommended badge (uses active gradient) */
-.pricing-item.recommended::before {
-  content: "Most Popular";
-  position:absolute; top:14px; right:-38px;
-  background: var(--tab-active-bg);
-  color:#fff; font-size:11px; font-weight:600;
-  padding:4px 40px; transform:rotate(45deg);
-  box-shadow: 0 12px 30px rgba(6,182,212,0.14);
-}
-
-/* Content region / reserve space for CTA */
-.pricing-item .pricing-content {
-  flex:1 1 auto;
-  display:flex;
-  flex-direction:column;
-  padding-bottom:86px; /* reserved for CTA area */
-}
-.pricing-item[data-plan] .pricing-content { padding-bottom:100px; }
-
-/* Headings & prices */
-.pricing-item h3 { margin:0 0 8px 0; font-size:1.05rem; font-weight:700; color:#222; }
-.pricing-item h4 { font-size:1.4rem; font-weight:600; color:var(--tab-accent); margin:0 0 12px 0; }
-.pricing-item h4 small { font-size:.85rem; color:#6c757d; }
-
-/* Feature list + inline SVG/check */
-.pricing-item .pricing-content ul { list-style:none; padding:0; margin:8px 0 0 0; }
-.pricing-item .pricing-content ul li { display:flex; align-items:center; gap:8px; margin-bottom:8px; color:#333; font-size:.95rem; }
-.feature-check { width:14px; height:14px; flex:0 0 14px; color: #16a34a; display:inline-block; }
-
-/* Card description & truncation helper */
-.pricing-item .pricing-content p { font-size:.92rem; color:#6c757d; margin:0 0 8px 0; }
-.truncate-more { color:var(--tab-accent); cursor:pointer; font-weight:600; font-size:13px; margin-left:6px; }
-
-/* CTA area (btn-wrap) — fixed at bottom on md+, static below md */
-.btn-wrap {
-  position:absolute;
-  left:18px; right:18px; bottom:14px;
-  display:flex; gap:8px; justify-content:center;
-  z-index:2;
-  transition: opacity .14s ease, transform .14s ease;
-}
-
-/* Add-to-cart (btn-cta) — 50% width, reduced vertical padding, uses tab gradient */
-.pricing-item .btn-wrap .btn-cta,
-.btn-cta {
-  width:50% !important;
-  min-width:120px;
-  padding:10px 12px !important;
-  border-radius:8px;
-  background: var(--tab-active-bg) !important;
-  color:#fff !important;
-  border:none !important;
-  box-shadow: 0 8px 22px rgba(6,182,212,0.10) !important;
-  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease !important;
-  display:inline-block;
-  font-weight:700 !important;
-  cursor:pointer;
-}
-.pricing-item .btn-wrap .btn-cta:hover,
-.pricing-item .btn-wrap .btn-cta:focus,
-.btn-cta:hover,
-.btn-cta:focus {
-  background: linear-gradient(90deg,#06b6d4,#0891b2) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 14px 36px rgba(6,182,212,0.14) !important;
-  outline:none !important;
-  filter:brightness(.98);
-}
-.pricing-item .btn-wrap .btn-cta[disabled],
-.btn-cta[disabled] { opacity:.6 !important; cursor:not-allowed !important; transform:none !important; box-shadow:none !important; }
-.pricing-item .btn-wrap .btn-cta:focus-visible,
-.btn-cta:focus-visible { box-shadow: 0 0 0 6px rgba(14,165,164,0.12) !important; }
-
-/* Hover behavior: on md+ show CTA only when hovered/focused; below md always visible */
-@media (min-width:768px) {
-  .btn-wrap { opacity:0; pointer-events:none; transform:translateY(6px); }
-  .pricing-item:hover .btn-wrap,
-  .pricing-item:focus-within .btn-wrap { opacity:1; pointer-events:auto; transform:translateY(0); }
-}
-@media (max-width:767.98px) {
-  .btn-wrap { position:static; opacity:1; transform:none; margin-top:10px; justify-content:center; }
-  .pricing-item .pricing-content { padding-bottom:12px; }
-  .pricing-item .btn-wrap .btn-cta,
-  .btn-cta { width:50% !important; }
-}
-
-/* recurring spacing tweak */
-.pricing-item[data-plan] .pricing-content > .card-desc { margin-bottom:20px; }
-
-/* Cart panel — moved to top-right */
-#cartPanel {
-  position:fixed !important;
-  top:16px !important;
-  right:16px !important;
-  bottom:auto !important;
-  left:auto !important;
-  width:360px;
-  max-height:62vh;
-  overflow:auto;
-  background:#fff;
-  border-radius:8px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  padding:12px;
-  z-index:1200;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-}
-@media (max-width:480px) {
-  #cartPanel { right:8px !important; top:8px !important; width:calc(100% - 32px) !important; max-width:360px; }
-}
-#cartPanel .btn { margin-left:6px; }
-
-/* Checkout button uses tab gradient */
-#checkoutBtn {
-  background: var(--tab-active-bg) !important;
-  color:#fff !important;
-  border:none !important;
-  background-size:200% 200%;
-  box-shadow: 0 10px 30px rgba(14,165,164,0.12);
-  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
-}
-#checkoutBtn:hover, #checkoutBtn:focus {
-  transform: translateY(-2px);
-  filter:brightness(.98);
-  box-shadow: 0 14px 36px rgba(14,165,164,0.16);
-}
-
-/* Radio / billing toggle checked color to match tab accent */
-.form-check-input:checked,
-.form-check-input:checked:focus {
-  background-color: var(--tab-accent) !important;
-  border-color: var(--tab-accent) !important;
-  box-shadow: 0 6px 18px rgba(14,165,164,0.12);
-}
-.form-check-input:focus { box-shadow: 0 0 0 0.18rem rgba(14,165,164,0.16); }
-.form-check-label { cursor:pointer; color:#444; }
-
-/* Override inline blue (#0d6efd) usages to tab accent where present */
-[style*="color: #0d6efd"], [style*="color:#0d6efd"], [style*="color: #0d6efd;"] {
-  color: var(--tab-accent) !important;
-}
-.discount-highlight, .discount-label { color: var(--tab-accent) !important; font-weight:700; }
-
-/* Accessibility: focus outlines */
-a:focus, button:focus, input:focus { outline: none; }
-
-/* Responsive small-screen spacing */
-@media (max-width:991px) { .pricing-item { margin-bottom:20px; } }
-
-/* Misc helpers */
-.pricing.section { padding:28px 0; }
-.truncate-more { color:var(--tab-accent); cursor:pointer; font-weight:600; font-size:13px; margin-left:6px; }
-
-/* Safe defaults for SVG checks (currentColor driven) */
-.feature-check svg { display:inline-block; width:14px; height:14px; fill:currentColor; color: #16a34a; }
-.feature-check { color: #16a34a; }
-
-    /* Nice card shadows + hover lift for pricing items */
-:root{
-  --card-shadow: 0 6px 18px rgba(16,24,40,0.06), 0 2px 6px rgba(16,24,40,0.04);
-  --card-shadow-hover: 0 18px 40px rgba(16,24,40,0.12), 0 6px 18px rgba(16,24,40,0.06);
-  --card-shadow-strong: 0 28px 70px rgba(13,110,253,0.12), 0 8px 28px rgba(13,110,253,0.06);
-  --card-radius: 12px;
-  --card-transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms cubic-bezier(.2,.9,.3,1);
-}
-
-/* Base card look */
-.pricing-item .card {
-  border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
-  transition: var(--card-transition);
-  will-change: transform, box-shadow;
-  overflow: visible; /* keeps shadow crisp */
-  transform: translateZ(0);
-}
-
-/* Slight lift on hover/focus (pointer + keyboard accessible) */
-.pricing-item .card:hover,
-.pricing-item .card:focus-within {
-  transform: translateY(-8px);
-  box-shadow: var(--card-shadow-hover);
-}
-
-/* Stronger, more 'featured' look for recommended / highlighted cards */
-.pricing-item.recommended .card {
-  box-shadow: var(--card-shadow-strong);
-  border: 1px solid rgba(13,110,253,0.06);
-  transform: translateY(-4px); /* slightly lifted by default */
-}
-.pricing-item.recommended .card:hover {
-  transform: translateY(-12px) scale(1.01);
-  box-shadow: 0 34px 90px rgba(13,110,253,0.16), 0 10px 30px rgba(13,110,253,0.06);
-}
-
-/* Button / badge contrast remains crisp when card lifts */
-.pricing-item .badge,
-.pricing-item .btn {
-  transition: transform 180ms ease, box-shadow 180ms ease;
-}
-
-/* Reduce motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
-  :root { --card-transition: none; }
-  .pricing-item .card, .pricing-item.recommended .card { transition: none; transform: none !important; }
-}
-
-/* Optional: slightly stronger inner padding shadow for deeper depth */
-.pricing-item .card-body {
-  background-clip: padding-box;
-  border-radius: calc(var(--card-radius) - 2px);
-}
-
-/* End of merged CSS */
 </style>
 
-    <div id="my-plans-qb"><section id="pricing" class="pricing section light-background">
-  <div class="container text-center section-title py-4">
-    <p>Plans</p>
-    <h2>Pricing Table</h2>
-    <p class="text-muted small mb-0">We don’t just set up your QuickBooks — we keep your books accurate, compliant, and growth-ready.</p>
+    <section id="pricing" class="pricing section light-background">
+        <div class="container text-center py-4 section-title">
+            <p>Plans</p>
+            <h2>Pricing Table</h2>
+            <p class="text-muted mb-0 small">We don’t just set up your QuickBooks — we keep your books accurate, compliant, and growth-ready.</p>
+        </div>
+        <div class="container py-4">
+            <div class="d-flex justify-content-center mb-4">
+                <ul class="nav nav-pills" id="pricingTabs" role="tablist" style="gap:8px;">
+                    <li class="nav-item" role="presentation"><button class="active nav-link tab-pill" id="one-time-tab" data-bs-target="#one-time" type="button" role="tab" aria-controls="one-time" aria-selected="true"><span class="tab-label">Launch Packages</span></button></li>
+                    <li class="nav-item" role="presentation"><button id="recurring-tab" class="nav-link tab-pill" data-bs-target="#recurring" type="button" role="tab" aria-controls="recurring" aria-selected="false"><span class="tab-label">Growth Subscriptions</span></button></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div id="one-time" class="tab-pane fade show active" role="tabpanel" aria-labelledby="one-time-tab">
+                    <form id="addonCheckoutForm" action="/checkout" method="POST" style="display:none;"><input type="hidden" id="checkout_payload" name="cart_json" value=""></form>
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card h-100 pricing-item">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <h5 class="mb-0 card-title">All-in-One Setup &amp; Onboarding</h5>
+                                    </div>
+                                    <p class="text-muted mb-2">Quick, complete QuickBooks setup with optional training.</p>
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-baseline gap-2">
+                                            <div class="fs-3 fw-bold"><span>$199</span><span class="fs-6 text-muted">/one-time</span></div>
+                                        </div>
+                                        <div class="text-muted mt-1 small"><span>For 1 user + accountant access</span></div>
+                                    </div>
+                                    <div class="mb-3" style="text-align:left;">
+                                        <div class="form-check form-check-inline"><input type="radio" checked="" class="form-check-input setup-tier billing-choice" data-price="199" id="setup_basic_radio" name="setup_tier_setup" value="Basic"><label class="form-check-label small" for="setup_basic_radio"><strong>$199</strong> — Basic Setup&nbsp;</label></div>
+                                        <div class="form-check form-check-inline"><input type="radio" class="form-check-input setup-tier billing-choice" data-price="399" id="setup_premium_radio" name="setup_tier_setup" value="Premium"><label class="form-check-label small" for="setup_premium_radio"><strong>$399</strong> — Premium Setup&nbsp;</label></div>
+                                    </div>
+                                    <div class="mb-3 btn-wrap"><button class="btn btn-sm btn-buy stripe-buy" type="button" data-product-id="setup" data-product-name="All-in-One Setup &amp; Onboarding" data-price-key-monthly="setup_basic_one_time_PLACEHOLDER" data-price-key-annual="setup_basic_one_time_PLACEHOLDER" data-price-monthly="199" data-price-annual="199" data-quantity="1" aria-label="Buy Setup"> Buy Now </button><button class="btn btn-outline-primary btn-sm btn-cta" type="button" data-product="All-in-One Setup &amp; Onboarding" data-price="199" data-billing="one-time" data-single="true"> Add to cart </button></div>
+                                    <ul class="list-unstyled mb-4 small service-list">
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Chart of accounts, sales tax &amp; invoices</span></li>
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Bank feeds &amp; opening balances</span></li>
+                                        <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>1–2 live training sessions</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card h-100 pricing-item">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <h5 class="mb-0 card-title">Cleanup &amp; Catch-Up</h5>
+                                    </div>
+                                    <p class="text-muted mb-2">Fix historical issues, review past transactions, and correct categorization.</p>
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-baseline gap-2">
+                                            <div class="fs-3 fw-bold"><span>$250</span><span class="fs-6 text-muted">/one-time</span></div>
+                                        </div>
+                                        <div class="text-muted mt-1 small"><span>For up to 3 users + accountant access</span></div>
+                                    </div>
+                                    <div class="mb-3" style="text-align:left;">
+                                        <div class="form-check form-check-inline"><input type="radio" checked="" class="form-check-input cleanup-option billing-choice" data-price="250" id="cleanup_3_radio_new" name="cleanup_months_new" value="3 months"><label class="form-check-label small" for="cleanup_3_radio_new"><strong>$250</strong> —&nbsp;Lite Cleanup</label></div>
+                                        <div class="form-check form-check-inline"><input type="radio" class="form-check-input cleanup-option billing-choice" data-price="450" id="cleanup_6_radio_new" name="cleanup_months_new" value="6 months"><label class="form-check-label small" for="cleanup_6_radio_new"><strong>$450</strong> —&nbsp;Standard Catch-Up</label></div>
+                                    </div>
+                                    <div class="mb-3 btn-wrap"><button class="btn btn-sm btn-buy stripe-buy" type="button" data-product-id="cleanup" data-product-name="Cleanup &amp; Catch-Up" data-price-key-monthly="cleanup_3_one_time_PLACEHOLDER" data-price-key-annual="cleanup_3_one_time_PLACEHOLDER" data-price-monthly="250" data-price-annual="250" data-quantity="1"> Buy Now </button><button class="btn btn-outline-primary btn-sm btn-cta" type="button" data-product="Cleanup &amp; Catch-Up" data-price="250" data-billing="one-time" data-single="true" style="border: 1px solid var(--accent-2);"> Add to cart </button></div>
+                                    <ul class="list-unstyled mb-4 small service-list">
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>3–12 months review</span></li>
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Reconciliations &amp; corrections</span></li>
+                                        <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Reporting package with before/after summary</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card h-100 pricing-item">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <h5 class="mb-0 card-title">Migration Service</h5>
+                                    </div>
+                                    <p class="text-muted mb-2">Migrate from Excel, Xero, or Desktop, map &amp; verify data, and ensure an accurate transition.</p>
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-baseline gap-2">
+                                            <div class="fs-3 fw-bold"><span>$399</span><span class="fs-6 text-muted">/one-time</span></div>
+                                        </div>
+                                        <div class="text-muted mt-1 small"><span>For up to 5 users + accountant access</span></div>
+                                    </div>
+                                    <div class="mb-3" style="text-align:left;">
+                                        <div class="form-check form-check-inline"><input type="radio" checked="" class="form-check-input migration-tier billing-choice" data-price="399" id="migration_basic_radio_new" name="migration_tier_new" value="Basic"><label class="form-check-label small" for="migration_basic_radio_new"><strong>$399</strong> — Basic Migration&nbsp;</label></div>
+                                        <div class="form-check form-check-inline"><input type="radio" class="form-check-input migration-tier billing-choice" data-price="799" id="migration_full_radio_new" name="migration_tier_new" value="Full"><label class="form-check-label small" for="migration_full_radio_new"><strong>$599</strong> — Standard Migration&nbsp;</label></div>
+                                    </div>
+                                    <div class="mb-3 btn-wrap"><button class="btn btn-sm btn-buy stripe-buy" type="button" data-product-id="migration" data-product-name="Migration Service" data-price-key-monthly="migration_basic_one_time_PLACEHOLDER" data-price-key-annual="migration_basic_one_time_PLACEHOLDER" data-price-monthly="399" data-price-annual="399" data-quantity="1"> Buy Now </button><button class="btn btn-outline-primary btn-sm btn-cta" type="button" data-product="Migration Service" data-price="399" data-billing="one-time" data-single="true"> Add to cart </button></div>
+                                    <ul class="list-unstyled mb-4 small service-list">
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Data mapping &amp; verification</span></li>
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Reconciliation testing</span></li>
+                                        <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Onboarding support &amp; walkthrough</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card h-100 pricing-item recommended">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <h5 class="mb-0 card-title">QuickStart — Sessions</h5>
+                                    </div>
+                                    <p class="text-muted mb-2">Hourly sessions for personalized support, workflow setup, and automation efficiency.</p>
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-baseline gap-2">
+                                            <div class="fs-3 fw-bold"><span>$99</span><span class="fs-6 text-muted">/hour</span></div>
+                                        </div>
+                                        <div class="text-muted mt-1 small"><span>For up to 25 users + accountant access</span></div>
+                                    </div>
+                                    <div class="mb-3" style="text-align:left;">
+                                        <div class="form-check form-check-inline"><input type="radio" checked="" class="form-check-input training-tier billing-choice" data-price="99" data-unit="/hour" id="quickstart_session_radio_new" name="training_tier_new" value="QuickStart Session"><label class="form-check-label small" for="quickstart_session_radio_new"><strong>$99</strong> — Single Session&nbsp;</label></div>
+                                        <div class="form-check form-check-inline"><input type="radio" class="form-check-input training-tier billing-choice" data-price="199" id="workflow_pack_radio_new" name="training_tier_new" value="Workflow Pack"><label class="form-check-label small" for="workflow_pack_radio_new"><strong>$199 </strong>— Workflow Pack&nbsp;</label></div>
+                                    </div>
+                                    <div class="mb-3 btn-wrap"><button class="btn btn-sm btn-buy stripe-buy" type="button" data-product-id="quickstart" data-product-name="QuickStart — Sessions &amp; Optimization" data-price-key-monthly="quickstart_session_one_time_PLACEHOLDER" data-price-key-annual="quickstart_session_one_time_PLACEHOLDER" data-price-monthly="99" data-price-annual="99" data-quantity="1"> Buy Now </button><button class="btn btn-outline-primary btn-sm btn-cta" type="button" data-product="QuickStart — Sessions &amp; Optimization" data-price="99" data-billing="one-time" data-single="false"> Add to cart </button></div>
+                                    <ul class="list-unstyled mb-4 small service-list">
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Connect banks &amp; apps</span></li>
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Workflow &amp; automation recommendations</span></li>
+                                        <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>30-min follow-up &amp; checklist</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="recurring" class="tab-pane fade" role="tabpanel" aria-labelledby="recurring-tab">
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card h-100 pricing-item recommended" data-plan="Essential Care" data-monthly="149" data-single="true">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <h5 class="mb-0 card-title">Essential Care</h5>
+                                    </div>
+                                    <p class="text-muted mb-2">Light bookkeeping + review.</p>
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-baseline gap-2">
+                                            <div class="fs-3 fw-bold"><span>$149</span><span class="fs-6 text-muted">/month</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="text-muted mb-3 small">
+                                        <div class="annual-calc"><span>Annual (12×): </span><strong>$1,788.00</strong></div>
+                                        <div class="discount-line"><span>Limited 30% off — Pay </span><strong>$1,251.60</strong></div>
+                                    </div>
+                                    <div class="mb-3" style="text-align:left;">
+                                        <div class="form-check form-check-inline"><input type="radio" checked="" class="form-check-input billing-toggle billing-choice" id="essential_tier_standard" name="tier_essential" value="standard"><label class="form-check-label small" for="essential_tier_standard"><strong>$149 — Standard&nbsp;</strong></label></div>
+                                        <div class="form-check form-check-inline"><input type="radio" class="form-check-input billing-toggle billing-choice" id="essential_tier_plus" name="tier_essential" value="plus"><label class="form-check-label small" for="essential_tier_plus">$199 — Plus</label></div>
+                                    </div>
+                                    <div class="mb-3 btn-wrap"><button class="btn btn-sm btn-buy stripe-buy" type="button" data-product-id="essential_care" data-product-name="Essential Care" data-price-key-monthly="essential_care_monthly_PLACEHOLDER" data-price-key-annual="essential_care_annual_PLACEHOLDER" data-price-monthly="149" data-price-annual="1251.60" data-quantity="1" aria-label="Buy Essential Care"> Buy Now </button><button class="btn btn-outline-primary btn-sm btn-cta" type="button" data-product="Essential Care" data-billing="monthly" data-price="149" data-single="true"> Add to cart </button></div>
+                                    <ul class="list-unstyled mb-0 small service-list">
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Monthly reconciliation</span></li>
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Error fixing &amp; email support</span></li>
+                                        <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>15-min quarterly check-in</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card h-100 pricing-item" data-plan="Growth Care" data-monthly="299" data-single="true">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <h5 class="mb-0 card-title">Growth Care</h5>
+                                    </div>
+                                    <p class="text-muted mb-2">Full bookkeeping &amp; reporting.</p>
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-baseline gap-2">
+                                            <div class="fs-3 fw-bold"><span>$299</span><span class="fs-6 text-muted">/month</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="text-muted mb-3 small">
+                                        <div class="annual-calc"><span>Annual (12×): </span><strong>$3,588.00</strong></div>
+                                        <div class="discount-line"><span>Limited 30% off — Pay </span><strong>$2,511.60</strong></div>
+                                    </div>
+                                    <div class="mb-3" style="text-align:left;">
+                                        <div class="form-check form-check-inline"><input type="radio" checked="" class="form-check-input billing-toggle billing-choice" id="growth_tier_standard" name="tier_growth" value="standard"><label class="form-check-label small" for="growth_tier_standard"><strong>$299 — Standard&nbsp;</strong></label></div>
+                                        <div class="form-check form-check-inline"><input type="radio" class="form-check-input billing-toggle billing-choice" id="growth_tier_premium" name="tier_growth" value="premium"><label class="form-check-label small" for="growth_tier_premium"><strong>$399 — Premium</strong></label></div>
+                                    </div>
+                                    <div class="mb-3 btn-wrap"><button class="btn btn-sm btn-buy stripe-buy" type="button" data-product-id="growth_care" data-product-name="Growth Care" data-price-key-monthly="growth_care_monthly_PLACEHOLDER" data-price-key-annual="growth_care_annual_PLACEHOLDER" data-price-monthly="299" data-price-annual="2511.60" data-quantity="1" aria-label="Buy Growth Care"> Buy Now </button><button class="btn btn-outline-primary btn-sm btn-cta" type="button" data-product="Growth Care" data-billing="monthly" data-price="299" data-single="true"> Add to cart </button></div>
+                                    <ul class="list-unstyled mb-0 small service-list">
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Weekly categorization</span></li>
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Monthly reports &amp; analysis</span></li>
+                                        <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Monthly review call</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card h-100 pricing-item" data-plan="Premium Care" data-monthly="599" data-single="true">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <h5 class="mb-0 card-title">Premium Care</h5>
+                                    </div>
+                                    <p class="text-muted mb-2">Support &amp; custom dashboards.</p>
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-baseline gap-2">
+                                            <div class="fs-3 fw-bold"><span>$599</span><span class="fs-6 text-muted">/month</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="text-muted mb-3 small">
+                                        <div class="annual-calc"><span>Annual (12×): </span><strong>$7,188.00</strong></div>
+                                        <div class="discount-line"><span>Limited 30% off — Pay </span><strong>$5,031.60</strong></div>
+                                    </div>
+                                    <div class="mb-3" style="text-align:left;">
+                                        <div class="form-check form-check-inline"><input type="radio" checked="" class="form-check-input billing-toggle billing-choice" id="premium_tier_standard" name="tier_premium" value="standard"><label class="form-check-label small" for="premium_tier_standard"><strong>$599 — Standard&nbsp;</strong></label></div>
+                                        <div class="form-check form-check-inline"><input type="radio" class="form-check-input billing-toggle billing-choice" id="premium_tier_plus" name="tier_premium" value="plus"><label class="form-check-label small" for="premium_tier_plus"><strong>$799 — Plus</strong></label></div>
+                                    </div>
+                                    <div class="mb-3 btn-wrap"><button class="btn btn-sm btn-buy stripe-buy" type="button" data-product-id="premium_care" data-product-name="Premium Care" data-price-key-monthly="premium_care_monthly_PLACEHOLDER" data-price-key-annual="premium_care_annual_PLACEHOLDER" data-price-monthly="599" data-price-annual="5031.60" data-quantity="1" aria-label="Buy Premium Care"> Buy Now </button><button class="btn btn-outline-primary btn-sm btn-cta" type="button" data-product="Premium Care" data-billing="monthly" data-price="599" data-single="true"> Add to cart </button></div>
+                                    <ul class="list-unstyled mb-0 small service-list">
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Everything in Growth Care</span></li>
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Payroll &amp; dashboard setup</span></li>
+                                        <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Quarterly performance call</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card h-100 pricing-item" data-plan="CFO Lite" data-monthly="999" data-single="true">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <h5 class="mb-0 card-title">CFO Lite</h5>
+                                    </div>
+                                    <p class="text-muted mb-2">Advanced financial strategy</p>
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-baseline gap-2">
+                                            <div class="fs-3 fw-bold"><span>$999</span><span class="fs-6 text-muted">/month</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="text-muted mb-3 small">
+                                        <div class="annual-calc"><span>Annual (12×): </span><strong>$11,988.00</strong></div>
+                                        <div class="discount-line"><span>30% off — Pay </span><strong>$8,391.60</strong></div>
+                                    </div>
+                                    <div class="mb-3" style="text-align:left;">
+                                        <div class="form-check form-check-inline"><input type="radio" checked="" class="form-check-input billing-toggle billing-choice" id="cfo_tier_standard" name="tier_cfo" value="standard"><label class="form-check-label small" for="cfo_tier_standard">$999 — Standard&nbsp;</label></div>
+                                        <div class="form-check form-check-inline"><input type="radio" class="form-check-input billing-toggle billing-choice" id="cfo_tier_enterprise" name="tier_cfo" value="enterprise"><label class="form-check-label small" for="cfo_tier_enterprise"><strong>$1,499 — Enterprise</strong></label></div>
+                                    </div>
+                                    <div class="mb-3 btn-wrap"><button class="btn btn-sm btn-buy stripe-buy" type="button" data-product-id="cfo_lite" data-product-name="CFO Lite" data-price-key-monthly="cfo_lite_monthly_PLACEHOLDER" data-price-key-annual="cfo_lite_annual_PLACEHOLDER" data-price-monthly="999" data-price-annual="8391.60" data-quantity="1" aria-label="Buy CFO Lite"> Buy Now </button><button class="btn btn-outline-primary btn-sm btn-cta" type="button" data-product="CFO Lite" data-billing="monthly" data-price="999" data-single="true"> Add to cart </button></div>
+                                    <ul class="list-unstyled mb-0 small service-list">
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Everything in Premium Care</span></li>
+                                        <li class="d-flex align-items-start mb-2"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>Budgeting &amp; forecasting</span></li>
+                                        <li class="d-flex align-items-start"><svg class="unique-pricing-check me-2" viewbox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"></path></svg><span>KPI tracking &amp; strategic monthly session</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center text-muted mt-3 small"><span>Annual prepayment discounts: </span><strong>10–30% off</strong><span>.</span></div>
+                </div>
+            </div><div id="cartPanel" style="position: fixed; right: 16px; top: 16px; width: 360px; max-width: calc(100% - 32px); max-height: 62vh; overflow-y: auto; background: #fff; border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); padding: 12px; z-index: 1200;">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+    <strong>Cart</strong>
+    <div>
+      <button id="clearCartBtn" class="btn btn-outline-secondary btn-sm" type="button">Clear</button>
+      <button id="checkoutBtn" class="btn btn-primary btn-sm" type="button">Checkout</button>
+    </div>
   </div>
-
-  <div class="container py-4">
-    <div class="d-flex justify-content-center mb-4">
-      <ul id="pricingTabs" class="nav nav-pills" role="tablist" style="gap:8px;">
-        <li class="nav-item" role="presentation">
-          <button id="one-time-tab" class="active nav-link tab-pill" data-bs-target="#one-time" type="button" role="tab" aria-controls="one-time" aria-selected="true">
-            <svg class="tab-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path d="M12 2l3 6 6 3-6 3-3 6-3-6-6-3 6-3 3-6z" fill="currentColor" opacity="0.12"/>
-              <path d="M9 14c.6.6 2.4 1.8 4 3 1.6-1.2 3.4-2.4 4-3 .6-.6 1-1.6 1-2.6 0-1-1-2-2-2-.97 0-1.97.45-2.6 1.1L12 13 10.6 9.5C10 8.8 9 8.4 8 8.4c-1 0-1.6.4-2.2 1-.6.6-1 1.6-1 2.6 0 1 0.4 2 1 2.6.6.6 1.6 1 2.6 1z" fill="currentColor"/>
-            </svg>
-            <span class="tab-label">Launch Packages</span>
-          </button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button id="recurring-tab" class="nav-link tab-pill" data-bs-target="#recurring" type="button" role="tab" aria-controls="recurring" aria-selected="false">
-            <svg class="tab-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path d="M12 3v2a7 7 0 1 0 7 7h2a9 9 0 1 1-9-9z" fill="currentColor" opacity="0.12"/>
-              <path d="M12 7v6l4 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span class="tab-label">Growth Subscriptions</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-
-    <div class="tab-content">
-  <!-- REPLACE: ONE-TIME tab content -->
-<div id="one-time" class="tab-pane fade show active" role="tabpanel" aria-labelledby="one-time-tab">
-  <form id="addonCheckoutForm" action="/checkout" method="POST" style="display:none;">
-    <input id="checkout_payload" type="hidden" name="cart_json" value="" />
-  </form>
-
-  <div class="row g-4">
-    <!-- All-in-One Setup & Onboarding -->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card h-100 pricing-item" data-product="All-in-One Setup & Onboarding" data-price="199" data-single="true">
-        <div class="card-body d-flex flex-column">
-          <div class="mb-2">
-            <h5 class="card-title mb-0">All-in-One Setup &amp; Onboarding</h5>
-          </div>
-
-          <p class="text-muted small mb-2">Quick, complete QuickBooks setup with optional training.</p>
-
-          <div class="mb-2">
-            <div class="fs-4 mb-1"><sup>$</sup><span class="price-main">199</span> <small class="text-muted">/ one-time</small></div>
-          </div>
-
-          <!-- tier radios under price -->
-          <div class="mb-2 small">
-            <div class="form-check form-check-inline">
-              <input id="setup_basic_radio" class="form-check-input setup-tier billing-choice" type="radio" name="setup_tier" value="Basic" data-price="199" checked>
-              <label class="form-check-label small" for="setup_basic_radio"><strong>Basic</strong> — $199</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input id="setup_premium_radio" class="form-check-input setup-tier billing-choice" type="radio" name="setup_tier" value="Premium" data-price="399">
-              <label class="form-check-label small" for="setup_premium_radio"><strong>Premium</strong> — $399</label>
-            </div>
-          </div>
-
-          <!-- buy + add to cart -->
-          <div class="btn-wrap mb-3 d-flex gap-2">
-            <button class="btn btn-buy btn-sm stripe-buy"
-                    type="button"
-                    data-product-id="setup"
-                    data-product-name="All-in-One Setup & Onboarding"
-                    data-price-key-monthly="setup_basic_one_time_PLACEHOLDER"
-                    data-price-key-annual="setup_basic_one_time_PLACEHOLDER"
-                    data-price-monthly="199"
-                    data-price-annual="199"
-                    data-quantity="1"
-                    aria-label="Buy Setup">
-              Buy Now
-            </button>
-
-            <button class="btn-cta btn btn-outline-primary btn-sm"
-                    type="button"
-                    data-product="All-in-One Setup & Onboarding"
-                    data-price="199"
-                    data-billing="one-time"
-                    data-single="true"
-                    onclick="addToCartFromCard(this)">
-              Add to cart
-            </button>
-          </div>
-
-          <ul class="list-unstyled small mb-0 service-list">
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Chart of accounts, sales tax & invoices</span>
-            </li>
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Bank feeds & opening balances</span>
-            </li>
-            <li class="d-flex align-items-start">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>1–2 live training sessions</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Cleanup & Catch-Up -->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card h-100 pricing-item" data-product="Cleanup & Catch-Up" data-price="250" data-single="true">
-        <div class="card-body d-flex flex-column">
-          <div class="mb-2">
-            <h5 class="card-title mb-0">Cleanup &amp; Catch-Up</h5>
-          </div>
-
-          <p class="text-muted small mb-2">Fix historical issues and reconcile accounts.</p>
-
-          <div class="mb-2">
-            <div class="fs-4 mb-1"><sup>$</sup><span class="price-main">250</span> <small class="text-muted">/ est</small></div>
-          </div>
-
-          <!-- tier radios -->
-          <div class="mb-2 small">
-            <div class="form-check form-check-inline">
-              <input id="cleanup_3_radio" class="form-check-input cleanup-option billing-choice" type="radio" name="cleanup_months" value="3 months" data-price="250" checked>
-              <label class="form-check-label small" for="cleanup_3_radio">3 months — $250</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input id="cleanup_6_radio" class="form-check-input cleanup-option billing-choice" type="radio" name="cleanup_months" value="6 months" data-price="450">
-              <label class="form-check-label small" for="cleanup_6_radio">6 months — $450</label>
-            </div>
-          </div>
-
-          <div class="btn-wrap mb-3 d-flex gap-2">
-            <button class="btn btn-buy btn-sm stripe-buy"
-                    type="button"
-                    data-product-id="cleanup"
-                    data-product-name="Cleanup & Catch-Up"
-                    data-price-key-monthly="cleanup_3_one_time_PLACEHOLDER"
-                    data-price-key-annual="cleanup_3_one_time_PLACEHOLDER"
-                    data-price-monthly="250"
-                    data-price-annual="250"
-                    data-quantity="1">
-              Buy Now
-            </button>
-
-            <button class="btn-cta btn btn-outline-primary btn-sm"
-                    type="button"
-                    data-product="Cleanup & Catch-Up"
-                    data-price="250"
-                    data-billing="one-time"
-                    data-single="true"
-                    onclick="addToCartFromCard(this)">
-              Add to cart
-            </button>
-          </div>
-
-          <ul class="list-unstyled small mb-0 service-list">
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>3–12 months review</span>
-            </li>
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Reconciliations & corrections</span>
-            </li>
-            <li class="d-flex align-items-start">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Reporting package with before/after summary</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Migration Service -->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card h-100 pricing-item" data-product="Migration Service" data-price="399" data-single="true">
-        <div class="card-body d-flex flex-column">
-          <div class="mb-2">
-            <h5 class="card-title mb-0">Migration Service</h5>
-          </div>
-
-          <p class="text-muted small mb-2">Move from Desktop/Xero/Excel — preserve history.</p>
-
-          <div class="mb-2">
-            <div class="fs-4 mb-1"><sup>$</sup><span class="price-main">399</span> <small class="text-muted">/ one-time</small></div>
-          </div>
-
-          <!-- tier radios -->
-          <div class="mb-2 small">
-            <div class="form-check form-check-inline">
-              <input id="migration_basic_radio" class="form-check-input migration-tier billing-choice" type="radio" name="migration_tier" value="Basic" data-price="399" checked>
-              <label class="form-check-label small" for="migration_basic_radio"><strong>Basic</strong> — $399</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input id="migration_full_radio" class="form-check-input migration-tier billing-choice" type="radio" name="migration_tier" value="Full" data-price="799">
-              <label class="form-check-label small" for="migration_full_radio"><strong>Full</strong> — $799</label>
-            </div>
-          </div>
-
-          <div class="btn-wrap mb-3 d-flex gap-2">
-            <button class="btn btn-buy btn-sm stripe-buy"
-                    type="button"
-                    data-product-id="migration"
-                    data-product-name="Migration Service"
-                    data-price-key-monthly="migration_basic_one_time_PLACEHOLDER"
-                    data-price-key-annual="migration_basic_one_time_PLACEHOLDER"
-                    data-price-monthly="399"
-                    data-price-annual="399"
-                    data-quantity="1">
-              Buy Now
-            </button>
-
-            <button class="btn-cta btn btn-outline-primary btn-sm"
-                    type="button"
-                    data-product="Migration Service"
-                    data-price="399"
-                    data-billing="one-time"
-                    data-single="true"
-                    onclick="addToCartFromCard(this)">
-              Add to cart
-            </button>
-          </div>
-
-          <ul class="list-unstyled small mb-0 service-list">
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Data mapping & verification</span>
-            </li>
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Reconciliation testing</span>
-            </li>
-            <li class="d-flex align-items-start">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Onboarding support & walkthrough</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- QuickStart — Sessions -->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card h-100 pricing-item" data-product="QuickStart — Sessions & Optimization" data-price="99" data-single="false">
-        <div class="card-body d-flex flex-column">
-          <div class="mb-2">
-            <h5 class="card-title mb-0">QuickStart — Sessions</h5>
-          </div>
-
-          <p class="text-muted small mb-2">Hourly sessions to get you up to speed.</p>
-
-          <div class="mb-2">
-            <div class="fs-4 mb-1"><sup>$</sup><span class="price-main">99</span> <small class="text-muted">/ hour</small></div>
-          </div>
-
-          <!-- tier radios -->
-          <div class="mb-2 small">
-            <div class="form-check form-check-inline">
-              <input id="quickstart_session_radio" class="form-check-input training-tier billing-choice" type="radio" name="training_tier" value="QuickStart Session" data-price="99" data-unit="/hour" checked>
-              <label class="form-check-label small" for="quickstart_session_radio"><strong>Session</strong> — $99</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input id="workflow_pack_radio" class="form-check-input training-tier billing-choice" type="radio" name="training_tier" value="Workflow Pack" data-price="199">
-              <label class="form-check-label small" for="workflow_pack_radio"><strong>Workflow Pack</strong> — $199</label>
-            </div>
-          </div>
-
-          <div class="btn-wrap mb-3 d-flex gap-2">
-            <button class="btn btn-buy btn-sm stripe-buy"
-                    type="button"
-                    data-product-id="quickstart"
-                    data-product-name="QuickStart — Sessions & Optimization"
-                    data-price-key-monthly="quickstart_session_one_time_PLACEHOLDER"
-                    data-price-key-annual="quickstart_session_one_time_PLACEHOLDER"
-                    data-price-monthly="99"
-                    data-price-annual="99"
-                    data-quantity="1">
-              Buy Now
-            </button>
-
-            <button class="btn-cta btn btn-outline-primary btn-sm"
-                    type="button"
-                    data-product="QuickStart — Sessions & Optimization"
-                    data-price="99"
-                    data-billing="one-time"
-                    data-single="false"
-                    onclick="addToCartFromCard(this)">
-              Add to cart
-            </button>
-          </div>
-
-          <ul class="list-unstyled small mb-0 service-list">
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Connect banks & apps</span>
-            </li>
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Workflow & automation recommendations</span>
-            </li>
-            <li class="d-flex align-items-start">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>30-min follow-up & checklist</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div> <!-- /.row -->
-</div> <!-- /#one-time -->
-
-<!-- REPLACE: recurring tab content -->
-<div id="recurring" class="tab-pane fade" role="tabpanel" aria-labelledby="recurring-tab">
-  <div class="row g-4">
-
-    <!-- Essential Care (no "Most popular" text) -->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card h-100 pricing-item recommended" data-plan="Essential Care" data-monthly="149" data-single="true">
-        <div class="card-body d-flex flex-column">
-          <div class="d-flex justify-content-between align-items-start mb-2">
-            <h5 class="card-title mb-0">Essential Care</h5>
-          </div>
-
-          <p class="text-muted small mb-2">Light bookkeeping + monthly review.</p>
-
-          <div class="mb-2">
-            <div class="fs-4 mb-1"><sup>$</sup><span class="price-main">149</span> <small class="text-muted">/ month</small></div>
-          </div>
-
-          <!-- tier radios directly under price -->
-          <div class="mb-2 small">
-            <div class="form-check form-check-inline">
-              <input id="essential_tier_standard" class="form-check-input billing-toggle billing-choice" type="radio" name="tier_essential" value="standard" checked>
-              <label class="form-check-label small" for="essential_tier_standard">Standard — $149/mo</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input id="essential_tier_plus" class="form-check-input billing-toggle billing-choice" type="radio" name="tier_essential" value="plus">
-              <label class="form-check-label small" for="essential_tier_plus">Plus — $199/mo</label>
-            </div>
-          </div>
-
-          <!-- buy + add to cart right after tiers -->
-          <div class="btn-wrap mb-3 d-flex gap-2">
-            <button class="btn btn-buy btn-sm stripe-buy"
-                    type="button"
-                    data-product-id="essential_care"
-                    data-product-name="Essential Care"
-                    data-price-key-monthly="essential_care_monthly_PLACEHOLDER"
-                    data-price-key-annual="essential_care_annual_PLACEHOLDER"
-                    data-price-monthly="149"
-                    data-price-annual="1251.60"
-                    data-quantity="1"
-                    aria-label="Buy Essential Care">
-              Buy Now
-            </button>
-
-            <button class="btn-cta btn btn-outline-primary btn-sm"
-                    type="button"
-                    data-product="Essential Care"
-                    data-billing="monthly"
-                    data-price="149"
-                    data-single="true"
-                    onclick="addToCartFromCard(this)">
-              Add to cart
-            </button>
-          </div>
-
-          <div class="small text-muted mb-3">
-            <div class="annual-calc">Annual (12×): <strong>$1,788.00</strong></div>
-            <div class="discount-line">Limited 30% off — Pay <strong>$1,251.60</strong></div>
-          </div>
-
-          <ul class="list-unstyled small mb-0 service-list">
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Monthly reconciliation</span>
-            </li>
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Error fixing & email support</span>
-            </li>
-            <li class="d-flex align-items-start">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>15-min quarterly check-in</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Growth Care -->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card h-100 pricing-item" data-plan="Growth Care" data-monthly="299" data-single="true">
-        <div class="card-body d-flex flex-column">
-          <div class="d-flex justify-content-between align-items-start mb-2">
-            <h5 class="card-title mb-0">Growth Care</h5>
-          </div>
-
-          <p class="text-muted small mb-2">Full bookkeeping & reporting.</p>
-
-          <div class="mb-2">
-            <div class="fs-4 mb-1"><sup>$</sup><span class="price-main">299</span> <small class="text-muted">/ month</small></div>
-          </div>
-
-          <!-- tier radios -->
-          <div class="mb-2 small">
-            <div class="form-check form-check-inline">
-              <input id="growth_tier_standard" class="form-check-input billing-toggle billing-choice" type="radio" name="tier_growth" value="standard" checked>
-              <label class="form-check-label small" for="growth_tier_standard">Standard — $299/mo</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input id="growth_tier_premium" class="form-check-input billing-toggle billing-choice" type="radio" name="tier_growth" value="premium">
-              <label class="form-check-label small" for="growth_tier_premium">Premium — $399/mo</label>
-            </div>
-          </div>
-
-          <!-- buy + add to cart -->
-          <div class="btn-wrap mb-3 d-flex gap-2">
-            <button class="btn btn-buy btn-sm stripe-buy"
-                    type="button"
-                    data-product-id="growth_care"
-                    data-product-name="Growth Care"
-                    data-price-key-monthly="growth_care_monthly_PLACEHOLDER"
-                    data-price-key-annual="growth_care_annual_PLACEHOLDER"
-                    data-price-monthly="299"
-                    data-price-annual="2511.60"
-                    data-quantity="1"
-                    aria-label="Buy Growth Care">
-              Buy Now
-            </button>
-
-            <button class="btn-cta btn btn-outline-primary btn-sm"
-                    type="button"
-                    data-product="Growth Care"
-                    data-billing="monthly"
-                    data-price="299"
-                    data-single="true"
-                    onclick="addToCartFromCard(this)">
-              Add to cart
-            </button>
-          </div>
-
-          <div class="small text-muted mb-3">
-            <div class="annual-calc">Annual (12×): <strong>$3,588.00</strong></div>
-            <div class="discount-line">Limited 30% off — Pay <strong>$2,511.60</strong></div>
-          </div>
-
-          <ul class="list-unstyled small mb-0 service-list">
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Weekly categorization</span>
-            </li>
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Monthly reports & analysis</span>
-            </li>
-            <li class="d-flex align-items-start">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Monthly review call</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Premium Care -->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card h-100 pricing-item" data-plan="Premium Care" data-monthly="599" data-single="true">
-        <div class="card-body d-flex flex-column">
-          <div class="d-flex justify-content-between align-items-start mb-2">
-            <h5 class="card-title mb-0">Premium Care</h5>
-          </div>
-
-          <p class="text-muted small mb-2">Payroll support & custom dashboards.</p>
-
-          <div class="mb-2">
-            <div class="fs-4 mb-1"><sup>$</sup><span class="price-main">599</span> <small class="text-muted">/ month</small></div>
-          </div>
-
-          <!-- tier radios -->
-          <div class="mb-2 small">
-            <div class="form-check form-check-inline">
-              <input id="premium_tier_standard" class="form-check-input billing-toggle billing-choice" type="radio" name="tier_premium" value="standard" checked>
-              <label class="form-check-label small" for="premium_tier_standard">Standard — $599/mo</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input id="premium_tier_plus" class="form-check-input billing-toggle billing-choice" type="radio" name="tier_premium" value="plus">
-              <label class="form-check-label small" for="premium_tier_plus">Plus — $799/mo</label>
-            </div>
-          </div>
-
-          <!-- buy + add to cart -->
-          <div class="btn-wrap mb-3 d-flex gap-2">
-            <button class="btn btn-buy btn-sm stripe-buy"
-                    type="button"
-                    data-product-id="premium_care"
-                    data-product-name="Premium Care"
-                    data-price-key-monthly="premium_care_monthly_PLACEHOLDER"
-                    data-price-key-annual="premium_care_annual_PLACEHOLDER"
-                    data-price-monthly="599"
-                    data-price-annual="5031.60"
-                    data-quantity="1"
-                    aria-label="Buy Premium Care">
-              Buy Now
-            </button>
-
-            <button class="btn-cta btn btn-outline-primary btn-sm"
-                    type="button"
-                    data-product="Premium Care"
-                    data-billing="monthly"
-                    data-price="599"
-                    data-single="true"
-                    onclick="addToCartFromCard(this)">
-              Add to cart
-            </button>
-          </div>
-
-          <div class="small text-muted mb-3">
-            <div class="annual-calc">Annual (12×): <strong>$7,188.00</strong></div>
-            <div class="discount-line">Limited 30% off — Pay <strong>$5,031.60</strong></div>
-          </div>
-
-          <ul class="list-unstyled small mb-0 service-list">
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Everything in Growth Care</span>
-            </li>
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Payroll & dashboard setup</span>
-            </li>
-            <li class="d-flex align-items-start">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Quarterly performance call</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- CFO Lite (new) -->
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card h-100 pricing-item" data-plan="CFO Lite" data-monthly="999" data-single="true">
-        <div class="card-body d-flex flex-column">
-          <div class="d-flex justify-content-between align-items-start mb-2">
-            <h5 class="card-title mb-0">CFO Lite</h5>
-          </div>
-
-          <p class="text-muted small mb-2">Advanced financial strategy + bookkeeping for growth companies.</p>
-
-          <div class="mb-2">
-            <div class="fs-4 mb-1"><sup>$</sup><span class="price-main">999</span> <small class="text-muted">/ month</small></div>
-          </div>
-
-          <!-- tier radios placed under price -->
-          <div class="mb-2 small">
-            <div class="form-check form-check-inline">
-              <input id="cfo_tier_standard" class="form-check-input billing-toggle billing-choice" type="radio" name="tier_cfo" value="standard" checked>
-              <label class="form-check-label small" for="cfo_tier_standard">Standard — $999/mo</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input id="cfo_tier_enterprise" class="form-check-input billing-toggle billing-choice" type="radio" name="tier_cfo" value="enterprise">
-              <label class="form-check-label small" for="cfo_tier_enterprise">Enterprise — $1,499/mo</label>
-            </div>
-          </div>
-
-          <!-- buy + add to cart -->
-          <div class="btn-wrap mb-3 d-flex gap-2">
-            <button class="btn btn-buy btn-sm stripe-buy"
-                    type="button"
-                    data-product-id="cfo_lite"
-                    data-product-name="CFO Lite"
-                    data-price-key-monthly="cfo_lite_monthly_PLACEHOLDER"
-                    data-price-key-annual="cfo_lite_annual_PLACEHOLDER"
-                    data-price-monthly="999"
-                    data-price-annual="8391.60"
-                    data-quantity="1"
-                    aria-label="Buy CFO Lite">
-              Buy Now
-            </button>
-
-            <button class="btn-cta btn btn-outline-primary btn-sm"
-                    type="button"
-                    data-product="CFO Lite"
-                    data-billing="monthly"
-                    data-price="999"
-                    data-single="true"
-                    onclick="addToCartFromCard(this)">
-              Add to cart
-            </button>
-          </div>
-
-          <div class="small text-muted mb-3">
-            <div class="annual-calc">Annual (12×): <strong>$11,988.00</strong></div>
-            <div class="discount-line">Limited 30% off — Pay <strong>$8,391.60</strong> (save <strong>$3,596.40</strong>)</div>
-          </div>
-
-          <ul class="list-unstyled small mb-0 service-list">
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Everything in Premium Care</span>
-            </li>
-            <li class="d-flex align-items-start mb-2">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>Budgeting & forecasting</span>
-            </li>
-            <li class="d-flex align-items-start">
-              <svg class="unique-pricing-check me-2" viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M6 10.8L3.2 8 2 9.2 6 13.2 14 5.2 12.8 4z" fill="currentColor"/></svg>
-              <span>KPI tracking & strategic monthly session</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-  </div> <!-- /.row -->
-
-  <div class="text-center text-muted mt-3 small">
-    <span>Annual prepayment discounts: </span><strong>10–30% off</strong>.
-  </div>
+  <div id="cartSummary" style="font-size:13px; color:#333;"></div>
 </div>
 
-    </div> <!-- /.tab-content -->
-
-    <!-- small cart summary -->
-    <div id="cartPanel" style="position: fixed; right: 16px; bottom: 16px; width: 360px; max-height: 62vh; overflow: auto; background: #fff; border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); padding: 12px; z-index: 1200;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-        <strong>Cart</strong>
-        <div>
-          <button type="button" id="clearCartBtn" class="btn btn-sm btn-outline-secondary">Clear</button>
-          <button type="button" id="checkoutBtn" class="btn btn-sm btn-primary">Checkout</button>
         </div>
-      </div>
-      <div id="cartSummary" style="font-size:13px; color:#333;">
-        <!-- filled via JS -->
-      </div>
-    </div>
-
-  </div> <!-- /.container -->
-</section>
-<script>
+    </section><script>
+/* combined-cart-ui.fixed.js — Cart + Stripe checkout + UI/price helpers
+   - Keep your original API surface but make DOM-safe, add animations, toasts, small UX fixes.
+*/
 (function () {
-  // ---------- Utilities ----------
-  function qs(sel, ctx) { return (ctx || document).querySelector(sel); }
-  function qsa(sel, ctx) { return Array.from((ctx || document).querySelectorAll(sel)); }
-  function formatNumber(n) { return Number(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
-  function escapeHtml(s) { return String(s || '').replace(/[&<>"']/g, function (m) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]; }); }
+  'use strict';
 
-  // ---------- Tabs (keeps existing behaviour) ----------
-  const tabList = document.getElementById('pricingTabs');
-  if (tabList) {
-    const tabButtons = Array.from(tabList.querySelectorAll('button[data-bs-target]'));
-    const panes = Array.from(document.querySelectorAll('.tab-pane'));
-    function activateTab(btn) {
-      const target = btn.getAttribute('data-bs-target');
-      tabButtons.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
-      panes.forEach(p => { p.classList.remove('show','active'); });
-      btn.classList.add('active'); btn.setAttribute('aria-selected','true');
-      const pane = document.querySelector(target); if (pane) pane.classList.add('show','active');
-      try { btn.focus(); } catch(e) {}
-    }
-    tabButtons.forEach(btn => btn.addEventListener('click', e => { e.preventDefault(); activateTab(btn); }));
-    const initial = tabList.querySelector('button.active') || tabButtons[0];
-    if (initial) activateTab(initial);
+  // ---------- Small feature flags ----------
+  const ENABLE_TOASTS = true; // set false to disable toast helper
+  const CHECKOUT_ENDPOINTS = ['/api/create-checkout-session', '/create-checkout-session', '/create-checkout-session.php'];
+
+  // ---------- Utilities ----------
+  function qs(sel, ctx) { try { return (ctx || document).querySelector(sel); } catch (e) { return null; } }
+  function qsa(sel, ctx) { try { return Array.from((ctx || document).querySelectorAll(sel)); } catch (e) { return []; } }
+  function formatNumber(n) { return Number(n || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function escapeHtml(s) { return String(s || '').replace(/[&<>"']/g, function (m) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]; }); }
+  function extractPriceFromText(txt) {
+    if (!txt) return null;
+    const m = String(txt).replace(/\u00A0/g,' ').match(/([0-9]+(?:[.,][0-9]+)?)/);
+    if (!m) return null;
+    return parseFloat(m[1].replace(/,/g,'')) || null;
+  }
+  function safeAnimate(el, keyframes, options) {
+    if (!el || !el.animate) return null;
+    try { return el.animate(keyframes, options); } catch (e) { return null; }
   }
 
-  // ---------- Billing toggle setup (recurring cards) ----------
-  qsa('.pricing-item[data-monthly]').forEach(card => {
-    const monthly = Number(card.dataset.monthly || 0);
-    const annual = +(monthly * 12).toFixed(2);
-    const annualDiscount = +(annual * 0.7).toFixed(2);
-    const btn = card.querySelector('.btn-cta');
-    if (btn) {
-      btn.dataset.annual = annual.toFixed(2);
-      btn.dataset.annualDiscount = annualDiscount.toFixed(2);
-      btn.dataset.savings = (annual - annualDiscount).toFixed(2);
-      btn.dataset.price = monthly.toString();
-      btn.dataset.billing = 'monthly';
-    }
-    card.querySelectorAll('.billing-toggle').forEach(r => r.addEventListener('change', function () {
-      const priceTopEl = card.querySelector('h4');
-      if (!priceTopEl || !btn) return;
-      if (this.value === 'monthly') {
-        priceTopEl.innerHTML = `<sup>$</sup><span class="price-main">${monthly}</span> <small>/ month</small>`;
-        btn.dataset.billing = 'monthly'; btn.dataset.price = monthly.toString();
-      } else {
-        priceTopEl.innerHTML = `<sup>$</sup><span class="price-main">${formatNumber(annualDiscount)}</span> <small>/ year (30% off)</small>`;
-        btn.dataset.billing = 'annual'; btn.dataset.price = annualDiscount.toString();
-      }
-    }));
-    const checked = card.querySelector('.billing-toggle:checked');
-    if (checked) checked.dispatchEvent(new Event('change'));
-  });
+  // ---------- Toast helper (compact) ----------
+  let _toastContainer = null;
+  function ensureToastContainer() {
+    if (!ENABLE_TOASTS) return null;
+    if (_toastContainer) return _toastContainer;
+    _toastContainer = document.createElement('div');
+    _toastContainer.className = 'cart-toast-container';
+    // minimal inline style to be safe (you likely will style in CSS)
+    Object.assign(_toastContainer.style, {
+      position: 'fixed',
+      right: '16px',
+      top: '16px',
+      zIndex: 99999,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '8px',
+      pointerEvents: 'none'
+    });
+    document.body.appendChild(_toastContainer);
+    return _toastContainer;
+  }
+  function createToast(message, opts) {
+    if (!ENABLE_TOASTS) return;
+    const c = ensureToastContainer();
+    if (!c) return;
+    const toast = document.createElement('div');
+    toast.className = 'cart-toast';
+    toast.setAttribute('role','status');
+    toast.textContent = String(message || '');
+    Object.assign(toast.style, {
+      pointerEvents: 'auto',
+      background: 'rgba(0,0,0,0.78)',
+      color: '#fff',
+      padding: '8px 12px',
+      borderRadius: '8px',
+      fontSize: '13px',
+      boxShadow: '0 6px 18px rgba(0,0,0,0.15)',
+      transformOrigin: 'right top',
+      maxWidth: '320px'
+    });
+    c.appendChild(toast);
+    safeAnimate(toast, [{ opacity: 0, transform: 'translateY(-6px) scale(.98)'}, { opacity: 1, transform: 'translateY(0) scale(1)' }], { duration: 220, easing: 'cubic-bezier(.2,.8,.2,1)' });
+    const duration = (opts && opts.duration) ? opts.duration : 3000;
+    setTimeout(() => {
+      const anim = safeAnimate(toast, [{ opacity: 1, transform: 'translateY(0) scale(1)'}, { opacity: 0, transform: 'translateY(-6px) scale(.98)'}], { duration: 220, easing: 'ease-in' });
+      if (anim && anim.finished) anim.finished.then(() => toast.remove()).catch(()=>toast.remove());
+      else setTimeout(() => toast.remove(), 260);
+    }, duration);
+  }
 
-  // ---------- Radio-driven displays ----------
-  function safeDispatch(selector, callback) { qsa(selector).forEach(r => r.addEventListener('change', callback)); }
-  safeDispatch('.setup-tier', () => {
-    const sel = qs('.setup-tier:checked'); if (!sel) return;
-    const el = qs('#setupPriceDisplay'); if (el) el.innerHTML = `<sup>$</sup>${sel.dataset.price} <small> / one-time</small>`;
-  });
-  safeDispatch('.cleanup-option', () => {
-    const sel = qs('.cleanup-option:checked'); if (!sel) return;
-    const el = qs('#cleanupPriceDisplay'); if (el) el.innerHTML = `<sup>$</sup>${sel.dataset.price} <small> (est)</small>`;
-  });
-  safeDispatch('.migration-tier', () => {
-    const sel = qs('.migration-tier:checked'); if (!sel) return;
-    const el = qs('#migrationPriceDisplay'); if (el) el.innerHTML = `<sup>$</sup>${sel.dataset.price} <small> / one-time</small>`;
-  });
-  safeDispatch('.training-tier', () => {
-    const sel = qs('.training-tier:checked'); if (!sel) return;
-    const el = qs('#trainingPriceDisplay'); if (el) {
-      const unit = sel.dataset.unit || ''; el.innerHTML = `<sup>$</sup>${sel.dataset.price} <small>${unit ? unit : ''}</small>`;
-    }
-  });
-  ['.setup-tier:checked', '.cleanup-option:checked', '.migration-tier:checked', '.training-tier:checked']
-    .forEach(s => { const el = qs(s); if (el) el.dispatchEvent(new Event('change')); });
-
-  // ---------- Cart (localStorage) ----------
+  // ---------- Cart storage ----------
   const CART_KEY = 'pricing_cart';
   function readCart() {
     try { const raw = localStorage.getItem(CART_KEY); return raw ? JSON.parse(raw) : []; } catch (e) { console.warn('Failed to parse cart', e); return []; }
   }
-  function writeCart(items) { localStorage.setItem(CART_KEY, JSON.stringify(items || [])); renderCartSummary(); }
+  function writeCart(items) {
+    try { localStorage.setItem(CART_KEY, JSON.stringify(items || [])); } catch(e){ console.warn('Failed to save cart', e); }
+    renderCartSummary();
+    // notify UI sync
+    if (typeof window.syncCardsWithCart === 'function') window.syncCardsWithCart();
+  }
 
   function productMatches(a, b) {
     return (String(a.product || '')).trim().toLowerCase() === (String(b.product || '')).trim().toLowerCase();
   }
 
-  // addToCart: enforces single/multi rules
+  // ---------- Render cart summary ----------
+  function renderCartSummary() {
+    const cart = readCart();
+    const el = document.getElementById('cartSummary');
+    if (!el) return;
+    // Ensure container visible if we have a panel
+    const panel = document.getElementById('cartPanel'); if (panel) panel.style.display = '';
+
+    // Empty state
+    if (!cart || cart.length === 0) {
+      el.innerHTML = '<div class="cart-empty" style="color:#666; padding:12px;">Your cart is empty. Add a plan or one-time item to proceed to checkout.</div>';
+      return;
+    }
+
+    let html = '';
+    let total = 0;
+
+    cart.forEach((it, i) => {
+      const priceVal = Number(it.price || 0);
+      const qty = Number(it.quantity || 1);
+      const line = priceVal * qty;
+      total += line;
+      const isRecurring = ['monthly','annual'].includes(String((it.billing || '').toLowerCase()));
+      const isSingle = !!it.single;
+      const allowQtyChange = !isRecurring && !isSingle;
+
+      html +=
+        '<div class="cart-item" data-cart-index="'+i+'" style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 8px; border-bottom:1px solid rgba(0,0,0,0.04);">' +
+          '<div class="meta" style="flex:1; min-width:0;">' +
+            `<div class="product-title" style="font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHtml(it.product)}</div>` +
+            `<div class="meta-line" style="font-size:13px; color:#666;">${escapeHtml(it.option || '')}${it.billing ? ' · ' + escapeHtml(it.billing) : ''}</div>` +
+            `<div class="price-line" style="font-size:13px; margin-top:6px;">$${formatNumber(priceVal)} × ${qty} = <strong>$${formatNumber(line)}</strong></div>` +
+          '</div>' +
+          '<div class="controls" style="display:flex; align-items:center; gap:8px; margin-left:8px;">' +
+            (allowQtyChange
+              ? `<div class="cart-qty-controls" style="display:flex; gap:6px; align-items:center;">` +
+                  `<button type="button" data-idx="${i}" data-op="inc" class="btn-qty" aria-label="Increase quantity" style="min-width:34px; height:32px; border-radius:6px;">+</button>` +
+                  `<button type="button" data-idx="${i}" data-op="dec" class="btn-qty btn-qty--minus" aria-label="Decrease quantity" style="min-width:34px; height:32px; border-radius:6px;">–</button>` +
+                `</div>`
+              : `<div class="cart-qty-controls" style="width:68px; text-align:center;"><button disabled style="opacity:.5; width:68px; height:32px; border-radius:6px;">Qty</button></div>`) +
+            `<button type="button" data-idx="${i}" class="btn-remove" aria-label="Remove ${escapeHtml(it.product)}" style="height:32px; border-radius:6px;">Remove</button>` +
+          '</div>' +
+        '</div>';
+    });
+
+    html += `<div style="margin-top:8px; font-weight:700; text-align:right; padding:8px 0;">Total: $${formatNumber(total)}</div>`;
+    el.innerHTML = html;
+
+    // wire up qty/remove button listeners in a safe delegated manner (to avoid inline onclick problems)
+    qsa('.btn-qty', el).forEach(b => {
+      b.removeEventListener('click', qtyClickHandler);
+      b.addEventListener('click', qtyClickHandler);
+    });
+    qsa('.btn-remove', el).forEach(b => {
+      b.removeEventListener('click', removeClickHandler);
+      b.addEventListener('click', removeClickHandler);
+    });
+
+    // Softly animate list update
+    try {
+      const firstItem = el.querySelector('.cart-item');
+      if (firstItem) safeAnimate(firstItem, [{ transform: 'translateY(6px)', opacity: 0 }, { transform: 'translateY(0)', opacity: 1 }], { duration: 220, easing: 'cubic-bezier(.2,.8,.2,1)' });
+    } catch (e) {}
+  }
+
+  // expose renderer
+  window.renderCartSummary = renderCartSummary;
+
+  function qtyClickHandler(ev) {
+    const btn = ev.currentTarget;
+    const idx = Number(btn.dataset.idx);
+    const op = btn.dataset.op;
+    if (Number.isNaN(idx)) return;
+    if (op === 'inc') window.changeQty(idx, 1);
+    else if (op === 'dec') window.changeQty(idx, -1);
+  }
+  function removeClickHandler(ev) {
+    const btn = ev.currentTarget;
+    const idx = Number(btn.dataset.idx);
+    if (Number.isNaN(idx)) return;
+    removeCartItem(idx);
+    createToast('Removed item from cart', { duration: 1800 });
+  }
+
+  // ---------- Cart operations ----------
   function addToCart(item) {
     const cart = readCart();
     const singleFlag = !!item.single;
     const sameIndex = cart.findIndex(ci => productMatches(ci, item));
+
     if (sameIndex > -1) {
       const existing = cart[sameIndex];
-      if (singleFlag || existing.single) {
-        alert(`"${existing.product}" is limited to one per client and is already in the cart. Remove it first to change selection.`);
+
+      // If single or recurring item, do not add duplicates
+      const isRecurring = ['monthly','annual'].includes(String((existing.billing || '').toLowerCase()));
+      if (singleFlag || existing.single || isRecurring) {
+        createToast(`"${existing.product}" can only be added once. Remove it first to change selection.`, { duration: 3000 });
         return false;
       }
-      if ((existing.option || '') === (item.option || '') && (existing.billing || '') === (item.billing || '')) {
-        const isRecurring = ['monthly','annual'].includes(String((item.billing || '').toLowerCase()));
-        if (isRecurring) {
-          alert('Recurring plans have a maximum quantity of 1. To change the plan, remove it first and add the desired tier.');
-          return false;
-        }
-        existing.quantity = (existing.quantity || 1) + (item.quantity || 1);
-        writeCart(cart);
-        return true;
-      }
-      // different option for same product — confirm replacement
-      const msg = `Your cart contains "${existing.product}" (${existing.option || existing.billing}).\n` +
-                  `To add "${item.product}" (${item.option || item.billing}), you must remove the existing one.\n\nPress OK to clear the cart and add the new item, Cancel to keep the current cart.`;
-      if (confirm(msg)) {
-        writeCart([ Object.assign({ quantity: 1 }, item) ]);
-        return true;
-      } else {
-        return false;
-      }
+
+      // For one-time, add quantities instead of replacing
+      existing.quantity = (existing.quantity || 1) + (item.quantity || 1);
+      writeCart(cart);
+      return true;
     }
 
+    // New item — allow adding freely
     if (['monthly','annual'].includes(String((item.billing || '').toLowerCase()))) {
       item.quantity = 1;
       item.single = true;
@@ -1079,54 +532,67 @@ a:focus, button:focus, input:focus { outline: none; }
     const cart = readCart();
     if (index >= 0 && index < cart.length) { cart.splice(index, 1); writeCart(cart); }
   }
-  function clearCart() { localStorage.removeItem(CART_KEY); renderCartSummary(); }
+  function clearCart() { try { localStorage.removeItem(CART_KEY); } catch(e){} renderCartSummary(); if (typeof window.syncCardsWithCart === 'function') window.syncCardsWithCart(); }
 
-  // expose remove for inline onclicks
+  // expose
   window.removeCartItem = removeCartItem;
+  window.clearCart = clearCart;
 
-  // changeQty helper
   window.changeQty = function(index, delta) {
     const cart = readCart();
     if (!cart[index]) return;
     const item = cart[index];
     const isRecurring = ['monthly','annual'].includes(String((item.billing || '').toLowerCase()));
     const isSingle = !!item.single;
-    if (isRecurring || isSingle) { alert('Quantity cannot be changed for this item. Remove it if you want to change selection.'); return; }
+    if (isRecurring || isSingle) { createToast('Quantity cannot be changed for this item. Remove it if you want to change selection.', { duration: 2600 }); return; }
     const newQty = Math.max(0, (item.quantity || 1) + delta);
     if (newQty === 0) cart.splice(index, 1); else cart[index].quantity = newQty;
     writeCart(cart);
   };
 
-  // ---------- Add-to-cart entrypoint used by Add to cart buttons ----------
+  // ---------- Add-to-cart entrypoint (called by buttons) ----------
   window.addToCartFromCard = function (btn) {
     if (!btn) return;
-    const el = btn.closest('.pricing-item') || document;
+    const el = btn.closest('.pricing-item') || btn.closest('.card') || document;
     const product = btn.dataset.product || btn.getAttribute('data-product') || btn.dataset.addon || (el && el.dataset.product) || (el && el.dataset.plan) || '';
     let price = btn.dataset.price || btn.getAttribute('data-price') || (el && el.dataset.price) || (el && el.dataset.monthly) || '';
     let billing = btn.dataset.billing || btn.getAttribute('data-billing') || (el && el.dataset.billing) || 'one-time';
     let option = '';
 
     const singleAttr = (btn.dataset.single || (el && el.dataset.single));
-    const single = singleAttr === 'true' || (el && el.dataset.single === 'true');
+    const single = (singleAttr === 'true' || (el && el.dataset.single === 'true'));
 
     const lower = (product || '').toLowerCase();
-    if (lower.includes('setup') && qs('.setup-tier:checked', el)) {
-      const sel = qs('.setup-tier:checked', el); option = sel.value; price = sel.dataset.price;
-    } else if (lower.includes('cleanup') && qs('.cleanup-option:checked', el)) {
-      const sel = qs('.cleanup-option:checked', el); option = sel.value; price = sel.dataset.price;
-    } else if (lower.includes('migration') && qs('.migration-tier:checked', el)) {
-      const sel = qs('.migration-tier:checked', el); option = sel.value; price = sel.dataset.price;
-    } else if (lower.includes('quickstart') && qs('.training-tier:checked', el)) {
-      const sel = qs('.training-tier:checked', el); option = sel.value; price = sel.dataset.price;
-    } else if (btn.dataset.billing) {
-      const card = el.closest('.pricing-item') || el;
-      const billingRadio = qs('.billing-toggle:checked', card);
-      if (billingRadio) {
-        const b = billingRadio.value; billing = b;
-        if (b === 'annual') { price = btn.dataset.annualDiscount || btn.dataset.price || price; option = 'Annual'; }
-        else { price = btn.dataset.price || price; option = 'Monthly'; }
+    try {
+      if (lower.includes('setup') && qs('.setup-tier:checked', el)) {
+        const sel = qs('.setup-tier:checked', el); option = sel.value; price = sel.dataset.price;
+      } else if (lower.includes('cleanup') && qs('.cleanup-option:checked', el)) {
+        const sel = qs('.cleanup-option:checked', el); option = sel.value; price = sel.dataset.price;
+      } else if (lower.includes('migration') && qs('.migration-tier:checked', el)) {
+        const sel = qs('.migration-tier:checked', el); option = sel.value; price = sel.dataset.price;
+      } else if (lower.includes('quickstart') && qs('.training-tier:checked', el)) {
+        const sel = qs('.training-tier:checked', el); option = sel.value; price = sel.dataset.price;
+      } else if (btn.dataset.billing) {
+        const card = el.closest('.pricing-item') || el;
+        const billingRadio = qs('input[type="radio"]:checked', card) || qs('.billing-toggle:checked', card);
+        if (billingRadio) {
+          const b = billingRadio.value; billing = b;
+          if (billingRadio.dataset && billingRadio.dataset.price) price = billingRadio.dataset.price;
+          else {
+            const lab = billingRadio.id ? card.querySelector('label[for="' + CSS.escape(billingRadio.id) + '"]') : null;
+            const txt = (lab && lab.textContent) ? lab.textContent : (billingRadio.closest('.form-check') ? billingRadio.closest('.form-check').textContent : '');
+            const m = txt && txt.match(/([0-9]+(?:[.,][0-9]+)?)/);
+            if (m) price = m[1].replace(/,/g,'');
+          }
+          option = (b === 'annual') ? 'Annual' : 'Monthly';
+          if (b === 'annual' && btn.dataset.annualDiscount) {
+            const d = btn.dataset.annualDiscount;
+            const mm = d && d.match ? d.match(/([0-9]+(?:[.,][0-9]+)?)/) : null;
+            if (mm) price = mm[1].replace(/,/g,'');
+          }
+        }
       }
-    }
+    } catch (err) { console.warn('addToCartFromCard selection parse error', err); }
 
     price = String(price || '').trim();
     const item = {
@@ -1141,28 +607,55 @@ a:focus, button:focus, input:focus { outline: none; }
 
     const added = addToCart(item);
     if (added) {
-      try { btn.animate([{ transform: 'scale(0.98)' }, { transform: 'scale(1)' }], { duration: 160 }); } catch(e) {}
-      markCardAdded(item.product);
+      // visual pop on the card
+      try {
+        const card = btn.closest('.pricing-item') || btn.closest('.card');
+        if (card) safeAnimate(card, [{ transform: 'scale(.98)' }, { transform: 'scale(1.03)' }, { transform: 'scale(1)' }], { duration: 260, easing: 'cubic-bezier(.2,.8,.2,1)' });
+      } catch (e) {}
+      // button micro-feedback
+      try { btn.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-2px)' }, { transform: 'translateY(0)' }], { duration: 220, easing: 'ease-out' }); } catch(e) {}
+      // optional toast
+      createToast(`${item.product} added to cart`, { duration: 1600 });
+      // temporary label change for visual feedback
+      const priorText = (btn.innerText || btn.textContent || '').trim();
+      try {
+        btn.disabled = true;
+        btn.dataset._prevText = priorText;
+        btn.textContent = 'Added ✓';
+        setTimeout(() => {
+          try {
+            if (btn.dataset._prevText) btn.textContent = btn.dataset._prevText;
+            btn.disabled = false;
+            delete btn.dataset._prevText;
+          } catch(e){}
+        }, 1200);
+      } catch (e) { console.warn('btn label swap failed', e); }
+      // let card-level logic mark buttons disabled
+      if (typeof window.markCardAdded === 'function') window.markCardAdded(item.product);
     }
   };
 
-  // ---------- Import saved plans (service_plans_cart) ----------
+  // ---------- Delegated .btn-cta handler (keeps your markup logic) ----------
+  document.addEventListener('click', function (ev) {
+    const b = ev.target.closest ? ev.target.closest('.btn-cta') : null;
+    if (!b) return;
+    ev.preventDefault();
+    if (window.addToCartFromCard) window.addToCartFromCard(b);
+  }, { passive: false });
+
+  // ---------- Import saved plans ----------
   (function importSavedPlans() {
     const SAVED_KEY = 'service_plans_cart';
     try {
       const raw = localStorage.getItem(SAVED_KEY);
       if (!raw) return;
       let saved = JSON.parse(raw);
-      if (!Array.isArray(saved)) {
-        const single = saved && typeof saved === 'object' ? [saved] : [];
-        if (single.length === 0) { localStorage.removeItem(SAVED_KEY); return; } else saved = single;
-      }
-      const addedNames = [];
+      if (!Array.isArray(saved)) saved = (saved && typeof saved === 'object') ? [saved] : [];
+      if (!saved.length) { localStorage.removeItem(SAVED_KEY); return; }
       saved.forEach(s => {
         try {
           const productName = s.productName || s.product || s.productId || s.name || '';
           const billing = s.billing || (s.option === 'Annual' ? 'annual' : (s.option === 'Monthly' ? 'monthly' : (s.priceKey && String(s.priceKey).toLowerCase().includes('annual') ? 'annual' : 'one-time')));
-
           let price = 0;
           if (s.displayPrice && typeof s.displayPrice === 'string') {
             const m = s.displayPrice.match(/([0-9]+(?:[.,][0-9]+)?)/);
@@ -1178,184 +671,31 @@ a:focus, button:focus, input:focus { outline: none; }
             addedAt: new Date().toISOString(),
             quantity: Number(s.quantity || 1)
           };
-          const added = addToCart(item);
-          if (added) addedNames.push(item.product);
-        } catch (err) { console.warn('Failed to import saved plan item', err, s); }
+          addToCart(item);
+        } catch (err) { console.warn('importSavedPlans item error', err); }
       });
       try { localStorage.removeItem(SAVED_KEY); } catch(e) {}
-      if (addedNames.length) setTimeout(() => { addedNames.forEach(markCardAdded); }, 45);
     } catch (e) { console.warn('importSavedPlans error', e); }
   })();
-
-  // ---------- Mark card visually as added ----------
-  function markCardAdded(productName) {
-    if (!productName) return;
-    const nameLower = String(productName).trim().toLowerCase();
-    qsa('.pricing-item').forEach(card => {
-      const dp = String(card.dataset.product || card.dataset.plan || '').trim().toLowerCase();
-      const titleEl = card.querySelector('.card-title, h3, h4');
-      const title = titleEl ? String(titleEl.textContent || '').trim().toLowerCase() : '';
-      if (!dp && !title) return;
-      if (dp.includes(nameLower) || title.includes(nameLower) || nameLower.includes(dp) || nameLower.includes(title)) {
-        if (!card.querySelector('.in-cart-badge')) {
-          const badge = document.createElement('div');
-          badge.className = 'in-cart-badge';
-          badge.textContent = 'In cart';
-          badge.style.position = 'absolute';
-          badge.style.top = '10px';
-          badge.style.right = '12px';
-          badge.style.background = 'linear-gradient(90deg,#0ea5a4,#06b6d4)';
-          badge.style.color = '#fff';
-          badge.style.padding = '6px 10px';
-          badge.style.borderRadius = '999px';
-          badge.style.fontSize = '12px';
-          badge.style.fontWeight = '700';
-          badge.style.boxShadow = '0 8px 18px rgba(6,182,212,0.12)';
-          badge.setAttribute('aria-hidden','true');
-          card.appendChild(badge);
-        }
-        // ONLY disable/hide the Buy buttons, keep Add-to-cart (.btn-cta) enabled and visible
-        const buyBtns = card.querySelectorAll('.btn-buy, .stripe-buy');
-        buyBtns.forEach(btn => {
-          try { btn.disabled = true; btn.dataset._saved_disabled = 'true'; } catch(e){}
-        });
-        // do NOT touch .btn-cta so Add-to-cart remains clickable
-      }
-    });
-  }
-
-  // ---------- Hide "Buy Now" and wire to add-to-cart (no redirect) ----------
-  (function wireBuyNowButtons() {
-    // Keep Buy Now hidden (but do not hide .btn-cta)
-    qsa('.stripe-buy, .btn-buy').forEach(b => {
-      try { b.style.display = 'none'; b.dataset._hidden_by_script = 'true'; } catch(e) {}
-    });
-
-    // clicking the (hidden) buy now still adds item to cart during dev/testing
-    document.addEventListener('click', function (ev) {
-      const btn = ev.target.closest ? ev.target.closest('.stripe-buy, .btn-buy') : null;
-      if (!btn) return;
-      ev.preventDefault(); ev.stopPropagation();
-      if (btn.disabled) return;
-
-      const card = btn.closest('.card') || btn.closest('.pricing-item') || document;
-      const billingChoice = card.querySelector('.billing-choice:checked') || card.querySelector('.billing-toggle:checked') || null;
-      const billing = billingChoice ? billingChoice.value : (btn.dataset.billing || 'monthly');
-
-      function extractNumericPriceFromCard(cardEl, preferAnnual) {
-        if (!cardEl) return 0;
-        const priceMain = cardEl.querySelector('.price-main');
-        if (priceMain && priceMain.textContent) {
-          const m = priceMain.textContent.replace(/[^0-9.\-]/g, '');
-          const num = parseFloat(m);
-          if (!Number.isNaN(num)) return num;
-        }
-        if (!preferAnnual) {
-          const attr = btn.getAttribute('data-price-monthly') || btn.dataset.priceMonthly || btn.dataset.price;
-          if (attr) { const n = parseFloat(String(attr).replace(/[^0-9.]/g,'')); if (!isNaN(n)) return n; }
-        } else {
-          const attr = btn.getAttribute('data-price-annual') || btn.dataset.priceAnnual || btn.dataset.annualDiscount;
-          if (attr) { const n = parseFloat(String(attr).replace(/[^0-9.]/g,'')); if (!isNaN(n)) return n; }
-        }
-        const txt = cardEl.textContent || '';
-        const mm = txt.match(/\$?\s*([0-9]+(?:[.,][0-9]+)?)/);
-        if (mm) return parseFloat(mm[1].replace(/,/g,'')) || 0;
-        return 0;
-      }
-
-      const rawPrice = extractNumericPriceFromCard(card, billing === 'annual');
-      const item = {
-        product: btn.getAttribute('data-product-name') || btn.getAttribute('data-product-id') || btn.dataset.productName || btn.dataset.product || (card.dataset.product || card.dataset.plan) || 'Unknown product',
-        option: billing === 'annual' ? 'Annual' : 'Monthly',
-        price: Number(rawPrice) || 0,
-        billing: billing,
-        single: (btn.dataset.single === 'true') || (card && (card.dataset.single === 'true')) || false,
-        addedAt: new Date().toISOString(),
-        quantity: Number(btn.dataset.quantity || 1)
-      };
-
-      const orig = btn.innerHTML;
-      try { btn.disabled = true; btn.textContent = 'Adding…'; } catch(e){}
-      const added = addToCart(item);
-      try { localStorage.setItem(CART_KEY, JSON.stringify(readCart())); } catch(e){}
-      if (!added) {
-        try { btn.disabled = false; btn.innerHTML = orig; } catch(e){}
-        return;
-      }
-      markCardAdded(item.product);
-      setTimeout(() => { try { btn.disabled = false; btn.innerHTML = orig; } catch(e){} }, 300);
-    }, { passive: false });
-  })();
-
-  // ---------- Render cart summary ----------
-  function renderCartSummary() {
-    const cart = readCart();
-    const el = document.getElementById('cartSummary');
-    if (!el) return;
-    if (cart.length === 0) {
-      el.innerHTML = '<div style="color:#666">Your cart is empty. Add a plan or one-time item to proceed to checkout.</div>';
-      return;
-    }
-    let html = '<div>';
-    let total = 0;
-    cart.forEach((it, i) => {
-      const line = (it.price || 0) * (it.quantity || 1);
-      total += line;
-      const isRecurring = ['monthly','annual'].includes(String((it.billing || '').toLowerCase()));
-      const isSingle = !!it.single;
-      const allowQtyChange = !isRecurring && !isSingle;
-      html += `<div style="margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid rgba(0,0,0,0.06)">
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <div style="flex:1; min-width:0;">
-            <div style="font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHtml(it.product)}</div>
-            <div style="color:#666; font-size:12px;">${escapeHtml(it.option || '')} ${it.billing ? ' · ' + escapeHtml(it.billing) : ''}</div>
-            <div style="color:#444; font-size:13px; margin-top:4px;">$${formatNumber(it.price)} × ${it.quantity || 1} = <strong>$${formatNumber(line)}</strong></div>
-          </div>
-          <div style="margin-left:8px; text-align:right;">
-            ${allowQtyChange ? `<button onclick="changeQty(${i}, 1)" class="btn btn-sm">+</button>` : `<button class="btn btn-sm" disabled>+</button>`}
-            ${allowQtyChange ? `<button onclick="changeQty(${i}, -1)" class="btn btn-sm">–</button>` : `<button class="btn btn-sm" disabled>–</button>`}
-            <button onclick="removeCartItem(${i})" class="btn btn-sm btn-link" style="margin-top:6px; display:block;">Remove</button>
-          </div>
-        </div>
-      </div>`;
-    });
-    html += `<div style="margin-top:8px; font-weight:700; text-align:right;">Total: $${formatNumber(total)}</div>`;
-    html += '</div>';
-    el.innerHTML = html;
-  }
-
-  // ---------- Keyboard accessibility for CTA buttons ----------
-  qsa('.btn-cta, .btn').forEach(b => {
-    b.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); b.click(); } });
-  });
 
   // ---------- Listen for storage changes (sync across tabs) ----------
   window.addEventListener('storage', (e) => { if (e.key === CART_KEY) renderCartSummary(); });
 
-  // ---------- Initialize cart display ----------
+  // ---------- Initialize cart UI ----------
   renderCartSummary();
 
-  // ---------- FRONTEND priceMap (keep synchronized with server) ----------
+  // ---------- priceMap (unchanged) ----------
   const priceMap = {
-    // One-time / Setup
     "All-in-One Setup & Onboarding|Basic|one-time":   "price_1SOIxiANBQOX99HKhcipo0Kw",
     "All-in-One Setup & Onboarding|Premium|one-time": "price_1SOJ3GANBQOX99HKy3Cw42qr",
     "All-in-One Setup & Onboarding|Advanced|one-time":"price_1SOJ5GANBQOX99HKNN2yasP3",
-
-    // Cleanup & Catch-Up
     "Cleanup & Catch-Up|3 months|one-time":  "price_1SOMqCANBQOX99HKsOFctjrf",
     "Cleanup & Catch-Up|6 months|one-time":  "price_1SOMqCANBQOX99HKx5i36dFO",
     "Cleanup & Catch-Up|12+ months|one-time":"price_1SOMqCANBQOX99HKHKCJegu6",
-
-    // Migration
     "Migration Service|Basic|one-time": "price_1SOMmqANBQOX99HKVW52VuDE",
     "Migration Service|Full|one-time":  "price_1SOMmqANBQOX99HKcpCyIQXs",
-
-    // QuickStart
     "QuickStart — Sessions & Optimization|QuickStart Session|one-time": "price_1SOMkgANBQOX99HKEXn8s4Az",
     "QuickStart — Sessions & Optimization|Workflow Pack|one-time":     "price_1SOMkgANBQOX99HKrPY11AYl",
-
-    // Recurring subscriptions (care plans)
     "Essential Care|Monthly|monthly": "price_1SOMteANBQOX99HKhyjvN5JA",
     "Essential Care|Annual|annual":   "price_1SOMteANBQOX99HKLmHg8o35",
     "Growth Care|Monthly|monthly":    "price_1SOMvbANBQOX99HKdXuX1AOf",
@@ -1368,54 +708,66 @@ a:focus, button:focus, input:focus { outline: none; }
     "CFO Lite|Annual|annual":         "price_CFO_ANNUAL_PLACEHOLDER"
   };
 
-  // ---------- Checkout: send entire cart in one request (single Checkout Session) ----------
-async function checkoutCart() {
-  if (window.__creatingCheckout) {
-    console.warn('checkout already in progress — ignoring duplicate call');
-    return;
+  // ---------- Checkout: create session and redirect ----------
+  async function postJsonToEndpoints(body) {
+    // try each endpoint in order until one returns ok + JSON or redirect url
+    let lastErr = null;
+    for (let i = 0; i < CHECKOUT_ENDPOINTS.length; i++) {
+      const ep = CHECKOUT_ENDPOINTS[i];
+      try {
+        const resp = await fetch(ep, {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        const text = await resp.text().catch(()=>null);
+        let data = null;
+        try { data = text ? JSON.parse(text) : null; } catch(e) { data = null; }
+        if (!resp.ok) {
+          lastErr = { endpoint: ep, status: resp.status, body: text };
+          // if 405 specifically, try the next endpoint
+          continue;
+        }
+        return { resp, data, text, endpoint: ep };
+      } catch (err) {
+        lastErr = err;
+        continue;
+      }
+    }
+    throw lastErr || new Error('All endpoints failed');
   }
-  window.__creatingCheckout = true;
-  let origText = null;
 
-  try {
-    const cart = readCart();
-    if (!cart || cart.length === 0) {
-      alert('Your cart is empty. Please add items before checkout.');
-      return;
-    }
+  async function checkoutCart() {
+    if (window.__creatingCheckout) { console.warn('checkout already in progress — ignoring duplicate call'); return; }
+    window.__creatingCheckout = true;
+    let origText = null;
+    try {
+      const cart = readCart();
+      if (!cart || cart.length === 0) { createToast('Your cart is empty. Add items before checkout.', { duration: 2400 }); return; }
 
-    // Build frontend-enriched items (keep keys so server can map to priceIds)
-    const built = cart.map(it => {
-      const optionLabel = it.option || (it.billing === 'annual' ? 'Annual' : (it.billing === 'monthly' ? 'Monthly' : ''));
-      const key = `${it.product}|${optionLabel}|${it.billing || 'one-time'}`;
-      const priceId = priceMap[key] || null;
-      return {
-        priceKey: priceId ? undefined : key,
-        priceId: priceId || undefined,
-        key,
-        quantity: Number(it.quantity || 1),
-        label: it.product,
-        unit_amount: Number(it.price || 0),
-        original: it
-      };
-    });
+      const built = cart.map(it => {
+        const optionLabel = it.option || (it.billing === 'annual' ? 'Annual' : (it.billing === 'monthly' ? 'Monthly' : ''));
+        const key = `${it.product}|${optionLabel}|${it.billing || 'one-time'}`;
+        const priceId = priceMap[key] || null;
+        return {
+          priceKey: priceId ? undefined : key,
+          priceId: priceId || undefined,
+          key,
+          quantity: Number(it.quantity || 1),
+          label: it.product,
+          unit_amount: Number(it.price || 0),
+          original: it
+        };
+      });
 
-    if (!built.length) {
-      alert('No valid items to checkout.');
-      return;
-    }
+      if (!built.length) { createToast('No valid items to checkout.', { duration: 2400 }); return; }
 
-    // Quick UI disable
-    const chkBtnEl = document.getElementById('checkoutBtn');
-    origText = chkBtnEl ? chkBtnEl.innerText : null;
-    if (chkBtnEl) { chkBtnEl.disabled = true; chkBtnEl.innerText = 'Starting…'; }
+      const chkBtnEl = document.getElementById('checkoutBtn');
+      origText = chkBtnEl ? (chkBtnEl.innerText || chkBtnEl.textContent) : null;
+      if (chkBtnEl) { chkBtnEl.disabled = true; chkBtnEl.innerText = 'Starting…'; chkBtnEl.classList && chkBtnEl.classList.add('btn-loading'); }
 
-    // Send the whole cart in ONE request — server will choose mode: 'subscription' if any recurring found
-    const resp = await fetch('/api/create-checkout-session', {
-      method: 'POST',
-      credentials: 'same-origin',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
+      const payload = {
         cart: cart,
         lineItems: built.map(b => ({
           priceId: b.priceId,
@@ -1424,56 +776,257 @@ async function checkoutCart() {
           label: b.label,
           unit_amount: b.unit_amount
         }))
-      })
-    });
+      };
 
-    const text = await resp.text().catch(()=>null);
-    let data = null;
-    try { data = text ? JSON.parse(text) : null; } catch(e) { console.warn('Non-JSON response from checkout endpoint', text); }
+      const result = await postJsonToEndpoints(payload);
+      const { resp, data, text } = result || {};
+      if (!resp) { throw new Error('No response from checkout endpoints'); }
 
-    if (!resp.ok) {
-      console.error('create-checkout-session failed', resp.status, text);
-      alert('Failed to start checkout: ' + (data && data.error ? data.error : ('status ' + resp.status)));
-      return;
-    }
-
-    // Expect single session URL back
-    const url = (data && (data.url || data.checkoutUrl || data.redirect)) ? (data.url || data.checkoutUrl || data.redirect) : null;
-    if (!url) {
-      console.warn('Server returned success but no url field', data);
-      alert('Server did not return a checkout URL. See console for details.');
-      return;
-    }
-
-    // Single navigation to the returned Checkout Session
-    window.location.href = url;
-
-  } catch (err) {
-    console.error('checkoutCart error', err);
-    alert('Failed to start checkout: ' + String(err));
-  } finally {
-    // release lock after a short delay (navigation should happen immediately)
-    setTimeout(() => {
-      window.__creatingCheckout = false;
-      const chkBtn = document.getElementById('checkoutBtn');
-      if (chkBtn) {
-        try { chkBtn.disabled = false; chkBtn.innerText = origText || 'Checkout'; } catch(e) {}
+      if (!resp.ok) {
+        console.error('create-checkout-session failed', resp.status, text);
+        createToast('Failed to start checkout: ' + (data && data.error ? data.error : ('status ' + resp.status)), { duration: 5000 });
+        return;
       }
-    }, 800);
+
+      const url = (data && (data.url || data.checkoutUrl || data.redirect)) ? (data.url || data.checkoutUrl || data.redirect) : null;
+      if (!url) {
+        // if server returned sessionId instead, attempt to build Stripe redirect (server should supply URL ideally)
+        if (data && data.sessionId && typeof Stripe === 'function') {
+          try {
+            const stripe = Stripe(data.publishableKey || window.STRIPE_PUBLISHABLE_KEY || '');
+            if (stripe) { await stripe.redirectToCheckout({ sessionId: data.sessionId }); return; }
+          } catch (e) { console.warn('stripe redirectToCheckout failed', e); }
+        }
+        console.warn('Server returned success but no url field', data);
+        createToast('Server did not return a checkout URL. See console for details.', { duration: 6000 });
+        return;
+      }
+
+      // perform redirect
+      window.location.href = url;
+    } catch (err) {
+      console.error('checkoutCart error', err);
+      const msg = (err && err.message) ? err.message : String(err);
+      createToast('Failed to start checkout: ' + msg, { duration: 6000 });
+    } finally {
+      setTimeout(() => {
+        window.__creatingCheckout = false;
+        const chkBtn = document.getElementById('checkoutBtn');
+        if (chkBtn) {
+          try { chkBtn.disabled = false; chkBtn.innerText = origText || 'Checkout'; chkBtn.classList && chkBtn.classList.remove('btn-loading'); } catch(e) {}
+        }
+      }, 700);
+    }
   }
-}
-window.checkoutCart = checkoutCart;
+  window.checkoutCart = checkoutCart;
 
-
-  // Wire clear and checkout buttons if present
+  // wire clear/checkout buttons safely
   const clearBtn = document.getElementById('clearCartBtn');
   if (clearBtn) clearBtn.addEventListener('click', () => { if (confirm('Clear cart?')) clearCart(); });
   const chkBtn = document.getElementById('checkoutBtn');
   if (chkBtn) chkBtn.addEventListener('click', checkoutCart);
 
+  // ---------- UI helpers (price display, cards sync) ----------
+  function updateCardPriceDisplay(card, priceValue, suffixHtml) {
+    if (!card) return;
+    const priceEl = card.querySelector('.fs-3.fw-bold') || card.querySelector('.fs-3') || card.querySelector('h4');
+    if (!priceEl) return;
+    const p = (typeof priceValue === 'string' && priceValue.trim() !== '') ? Number(String(priceValue).replace(/[^0-9.-]/g,'')) : Number(priceValue || 0);
+    if (Number.isNaN(p)) { priceEl.innerHTML = suffixHtml || ''; return; }
+    const main = `<span>$${formatNumber(p)}</span>`;
+    priceEl.innerHTML = main + (suffixHtml ? ' ' + suffixHtml : '');
+  }
+
+  function ensureDiscountNotice(card) {
+    if (!card) return null;
+    let n = card.querySelector('.discount-notice');
+    if (!n) {
+      n = document.createElement('div');
+      n.className = 'discount-notice';
+      n.setAttribute('aria-hidden','true');
+      card.style.position = card.style.position || 'relative';
+      card.appendChild(n);
+    }
+    return n;
+  }
+  function showDiscountNotice(card, text) { const n = ensureDiscountNotice(card); if (!n) return; n.textContent = text || 'Discount active — sign up for services to claim this saving'; n.style.display = 'inline-block'; }
+  function hideDiscountNotice(card) { const n = card && card.querySelector ? card.querySelector('.discount-notice') : null; if (n) n.style.display = 'none'; }
+
+  // Tabs setup (safe)
+  (function setupTabs(){
+    const tabList = document.getElementById('pricingTabs'); if (!tabList) return;
+    const tabButtons = Array.from(tabList.querySelectorAll('button[data-bs-target]'));
+    const panes = Array.from(document.querySelectorAll('.tab-pane'));
+    function activateTab(btn) {
+      const target = btn.getAttribute('data-bs-target');
+      tabButtons.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      panes.forEach(p => { p.classList.remove('show','active'); });
+      btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+      const pane = document.querySelector(target); if (pane) pane.classList.add('show','active');
+      try { btn.focus(); } catch(e) {}
+    }
+    tabButtons.forEach(btn => btn.addEventListener('click', e => { e.preventDefault(); activateTab(btn); }));
+    const initial = tabList.querySelector('button.active') || tabButtons[0];
+    if (initial) activateTab(initial);
+  })();
+
+  // recurring card init (keeps top price updated, shows discount pill)
+  function initRecurringCard(card) {
+    if (!card) return;
+    const monthly = Number(card.dataset.monthly || 0);
+    const annual = +(monthly * 12).toFixed(2);
+    const annualDiscount = +(annual * 0.7).toFixed(2);
+    const cta = card.querySelector('.btn-cta');
+    if (cta) {
+      cta.dataset.price = monthly.toString();
+      cta.dataset.annual = annual.toFixed(2);
+      cta.dataset.annualDiscount = annualDiscount.toFixed(2);
+      cta.dataset.billing = 'monthly';
+    }
+    updateCardPriceDisplay(card, monthly, '<small>/ month</small>');
+    function applySelection() {
+      const checked = card.querySelector('input[type="radio"]:checked') || card.querySelector('input[type="checkbox"]:checked');
+      let chosenPrice = monthly;
+      let suffix = '<small>/ month</small>';
+      let showingDiscount = false;
+      if (checked) {
+        const dp = checked.dataset && checked.dataset.price ? extractPriceFromText(checked.dataset.price) : null;
+        if (dp) chosenPrice = dp;
+        let labelText = '';
+        if (checked.id) {
+          const lab = card.querySelector('label[for="' + CSS.escape(checked.id) + '"]');
+          if (lab) labelText = lab.textContent || '';
+        }
+        if (!labelText) {
+          const container = checked.closest('.form-check') || checked.parentElement;
+          if (container) labelText = container.textContent || '';
+        }
+        const fromLabel = extractPriceFromText(labelText);
+        if (fromLabel) chosenPrice = fromLabel;
+        const val = String(checked.value || '').toLowerCase();
+        const lblLower = String(labelText || '').toLowerCase();
+        if (val.includes('annual') || lblLower.includes('annual') || lblLower.includes('year')) {
+          chosenPrice = annualDiscount;
+          suffix = '<small>/ year (30% off)</small>';
+          showingDiscount = true;
+        } else suffix = '<small>/ month</small>';
+      }
+
+      updateCardPriceDisplay(card, chosenPrice, suffix);
+      const priceEl = card.querySelector('.fs-3.fw-bold, .fs-3, h4');
+      if (priceEl) { priceEl.classList.add('price-updated'); safeAnimate(priceEl, [{ transform: 'translateY(6px)', opacity: .6 }, { transform: 'translateY(0)', opacity: 1 }], { duration: 320, easing: 'cubic-bezier(.2,.8,.2,1)' }); setTimeout(() => priceEl.classList.remove('price-updated'), 420); }
+
+      const hasDiscountLine = !!card.querySelector('.discount-line');
+      if (hasDiscountLine && showingDiscount) showDiscountNotice(card, 'Discount active — sign up for services to claim this saving');
+      else hideDiscountNotice(card);
+
+      if (cta) {
+        cta.dataset.billing = showingDiscount ? 'annual' : 'monthly';
+        cta.dataset.price = (showingDiscount ? (Number(String(annualDiscount)) || chosenPrice) : chosenPrice).toString();
+      }
+    }
+    qsa('input[type="radio"], input[type="checkbox"]', card).forEach(inp => inp.addEventListener('change', () => setTimeout(applySelection, 8)));
+    applySelection();
+  }
+
+  qsa('.pricing-item[data-monthly], .card[data-monthly]').forEach(initRecurringCard);
+
+  // one-time radios (setup, cleanup, migration, training)
+  function safeDispatch(selector, callback) { qsa(selector).forEach(r => r.addEventListener('change', callback)); }
+
+  safeDispatch('.setup-tier', (ev) => {
+    const sel = ev.target || qs('.setup-tier:checked'); if (!sel) return;
+    const card = sel.closest('.card') || sel.closest('.pricing-item') || document;
+    const price = sel.dataset.price;
+    const el = qs('#setupPriceDisplay', card); if (el) el.innerHTML = `<sup>$</sup>${price} <small> / one-time</small>`;
+    updateCardPriceDisplay(card, price, '<small> / one-time</small>');
+    // little animation for selection change
+    try { safeAnimate(card, [{ transform: 'translateY(4px)', opacity: .8 }, { transform: 'translateY(0)', opacity: 1 }], { duration: 220 }); } catch(e) {}
+  });
+
+  safeDispatch('.cleanup-option', (ev) => {
+    const sel = ev.target || qs('.cleanup-option:checked'); if (!sel) return;
+    const card = sel.closest('.card') || sel.closest('.pricing-item') || document;
+    const price = sel.dataset.price;
+    const el = qs('#cleanupPriceDisplay', card); if (el) el.innerHTML = `<sup>$</sup>${price} <small> (est)</small>`;
+    updateCardPriceDisplay(card, price, '<small> (est)</small>');
+    try { safeAnimate(card, [{ transform: 'translateY(4px)', opacity: .8 }, { transform: 'translateY(0)', opacity: 1 }], { duration: 220 }); } catch(e) {}
+  });
+
+  safeDispatch('.migration-tier', (ev) => {
+    const sel = ev.target || qs('.migration-tier:checked'); if (!sel) return;
+    const card = sel.closest('.card') || sel.closest('.pricing-item') || document;
+    const price = sel.dataset.price;
+    const el = qs('#migrationPriceDisplay', card); if (el) el.innerHTML = `<sup>$</sup>${price} <small> / one-time</small>`;
+    updateCardPriceDisplay(card, price, '<small> / one-time</small>');
+    try { safeAnimate(card, [{ transform: 'translateY(4px)', opacity: .8 }, { transform: 'translateY(0)', opacity: 1 }], { duration: 220 }); } catch(e) {}
+  });
+
+  safeDispatch('.training-tier', (ev) => {
+    const sel = ev.target || qs('.training-tier:checked'); if (!sel) return;
+    const card = sel.closest('.card') || sel.closest('.pricing-item') || document;
+    const price = sel.dataset.price;
+    const unit = sel.dataset.unit || '';
+    const el = qs('#trainingPriceDisplay', card);
+    if (el) el.innerHTML = `<sup>$</sup>${price} <small>${unit ? unit : ''}</small>`;
+    const suffix = unit ? `<small>${unit}</small>` : '<small></small>';
+    updateCardPriceDisplay(card, price, suffix);
+    try { safeAnimate(card, [{ transform: 'translateY(4px)', opacity: .8 }, { transform: 'translateY(0)', opacity: 1 }], { duration: 220 }); } catch(e) {}
+  });
+
+  // initial dispatch for any pre-checked inputs
+  ['.setup-tier:checked', '.cleanup-option:checked', '.migration-tier:checked', '.training-tier:checked']
+    .forEach(s => { const el = qs(s); if (el) el.dispatchEvent(new Event('change')); });
+
+  // ---------- mark card added (disables buy buttons) ----------
+  function markCardAdded(productName) {
+    if (!productName) return;
+    const nameLower = String(productName).trim().toLowerCase();
+
+    qsa('.pricing-item').forEach(card => {
+      const dp = String(card.dataset.product || card.dataset.plan || '').trim().toLowerCase();
+      const titleEl = card.querySelector('.card-title, h3, h4');
+      const title = titleEl ? String(titleEl.textContent || '').trim().toLowerCase() : '';
+      const matches = nameLower === dp || nameLower === title;
+
+      const buyBtns = card.querySelectorAll('.btn-buy, .stripe-buy, .btn-cta');
+      buyBtns.forEach(btn => {
+        if (matches) { btn.disabled = true; btn.classList && btn.classList.add('added-disabled'); }
+        else { btn.disabled = false; btn.classList && btn.classList.remove('added-disabled'); }
+      });
+    });
+  }
+
+  window.markCardAdded = markCardAdded;
+
+  // ---------- syncCardsWithCart (exposed) ----------
+  function syncCardsWithCart() {
+    // re-enable everything
+    qsa('.pricing-item').forEach(card => {
+      const buyBtns = card.querySelectorAll('.btn-buy, .stripe-buy, .btn-cta');
+      buyBtns.forEach(b => { try { b.disabled = false; delete b.dataset._saved_disabled; } catch(e){} });
+      const checked = card.querySelector('input[type="radio"]:checked, input[type="checkbox"]:checked');
+      if (checked) checked.dispatchEvent(new Event('change'));
+    });
+    // mark items present in cart
+    try {
+      const parsed = localStorage.getItem(CART_KEY);
+      const cart = parsed ? JSON.parse(parsed) : [];
+      if (Array.isArray(cart)) cart.forEach(it => markCardAdded(it.product));
+    } catch (e) {}
+    if (typeof window.renderCartSummary === 'function') window.renderCartSummary();
+  }
+  window.syncCardsWithCart = syncCardsWithCart;
+
+  // initial sync (if cart pre-populated)
+  setTimeout(syncCardsWithCart, 50);
+
+  // expose toast for debugging/consumers
+  window.createCartToast = createToast;
+
 })();
 </script>
-</div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
