@@ -20,349 +20,505 @@
     <link rel="stylesheet" href="assets/css/faq.css">
 </head>
 
-<body><!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Thank you — Order received</title>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg1:#0f172a;
-    --bg2:#071029;
-    --glass: rgba(255,255,255,0.06);
-    --card: rgba(255,255,255,0.03);
-    --accent1: #06b6d4;
-    --accent2: #0ea5a4;
-    --muted: #9aa6b2;
-    --success: #10b981;
-    --danger: #ef4444;
-    color-scheme: dark;
-  }
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background: radial-gradient(1200px 600px at 10% 20%, rgba(6,182,212,0.06), transparent 8%),
-                radial-gradient(900px 400px at 90% 80%, rgba(14,165,164,0.05), transparent 8%),
-                linear-gradient(180deg,var(--bg1),var(--bg2));
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:28px;
-  }
+<body>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thank you — Order received</title>
 
-  .wrap{
-    width:100%;
-    max-width:980px;
-    display:grid;
-    grid-template-columns: 1fr 380px;
-    gap:28px;
-    align-items:start;
-  }
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  /* responsive single column */
-  @media (max-width:880px){
-    .wrap{grid-template-columns:1fr; padding:8px}
-  }
+  <!-- Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  .hero{
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border-radius:14px;
-    padding:28px;
-    box-shadow: 0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.04);
-    position:relative;
-    overflow:hidden;
-    min-height:240px;
-  }
-
-  .kicker{
-    display:inline-flex;
-    gap:10px;
-    align-items:center;
-    background: linear-gradient(90deg,var(--accent1),var(--accent2));
-    color:#032; font-weight:700;
-    padding:6px 10px;
-    border-radius:999px;
-    font-size:13px;
-    box-shadow:0 6px 18px rgba(6,182,212,0.08);
-  }
-
-  h1{
-    margin:14px 0 6px 0;
-    font-size:28px;
-    line-height:1.02;
-    letter-spacing:-0.02em;
-  }
-  p.lead{
-    margin:0 0 18px 0;
-    color:var(--muted);
-    font-size:15px;
-  }
-
-  .order-card{
-    display:flex;
-    gap:18px;
-    align-items:center;
-  }
-  .order-badge{
-    width:84px; height:84px;
-    border-radius:12px;
-    background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-    display:flex; align-items:center; justify-content:center;
-    font-weight:800; color:var(--accent1);
-    font-size:20px; border:1px solid rgba(255,255,255,0.03);
-  }
-
-  .order-meta{flex:1}
-  .order-meta .who{font-weight:700; font-size:16px}
-  .order-meta .id{color:var(--muted); font-size:13px; margin-top:6px}
-  .order-meta .amount{font-weight:800; font-size:18px; margin-top:8px; color:var(--success)}
-
-  /* Right column summary */
-  .summary{
-    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
-    border-radius:14px;
-    padding:18px;
-    border:1px solid rgba(255,255,255,0.03);
-    min-height:220px;
-    box-shadow: 0 8px 26px rgba(2,6,23,0.6);
-  }
-  .summary h3{margin:0 0 6px 0; font-size:16px}
-  .summary .line{display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px dashed rgba(255,255,255,0.02); color:var(--muted); font-size:14px}
-  .summary .line strong{color:#fff}
-  .summary .total{font-size:18px; font-weight:800; margin-top:10px; text-align:right}
-
-  .actions{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap}
-  .btn{
-    display:inline-flex; align-items:center; gap:10px;
-    padding:10px 14px; border-radius:10px; font-weight:700; font-size:14px;
-    cursor:pointer; border:0; color:#052; background:var(--accent1);
-    box-shadow: 0 10px 24px rgba(6,182,212,0.08);
-    transition:transform .12s ease, box-shadow .12s ease, opacity .12s;
-  }
-  .btn.secondary{
-    background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.06);
-    box-shadow:none; font-weight:600;
-  }
-  .btn:active{ transform:translateY(1px) scale(.998) }
-  .btn:disabled{opacity:.6; cursor:not-allowed}
-
-  .note{font-size:13px; color:var(--muted); margin-top:12px}
-
-  /* small success tick animation */
-  .tick {
-    width:52px; height:52px; border-radius:12px;
-    background: linear-gradient(90deg,var(--accent2),var(--accent1));
-    display:inline-grid; place-items:center; color:#012;
-    box-shadow:0 8px 24px rgba(5,150,145,0.14);
-    transform:translateY(-6px);
-  }
-  .tick svg{filter:drop-shadow(0 6px 16px rgba(6,182,212,0.14))}
-
-  /* subtle floating artwork */
-  .deco {
-    position:absolute; right:-60px; top:-40px; width:240px; height:240px; opacity:0.06;
-    background: conic-gradient(from 120deg at 50% 50%, rgba(6,182,212,0.35), rgba(14,165,164,0.25), transparent 70%);
-    transform: rotate(8deg);
-    border-radius:48px;
-    pointer-events:none;
-  }
-
-  /* confetti canvas overlay (absolute) */
-  #confetti { position:fixed; left:0; top:0; width:100%; height:100%; pointer-events:none; z-index:9999; }
-
-  /* accessibility: focus outlines */
-  .btn:focus, .billing-choice:focus { outline:3px solid rgba(6,182,212,0.14); outline-offset:3px; border-radius:8px; }
-</style>
+  <style>
+    :root{
+      --surface:#ffffff; --muted:#6c757d; --accent:#0ea5a4; --accent-dark:#06b6d4; --success:#16a34a;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body { height:100%; }
+    body {
+      background: linear-gradient(180deg,#f6f9fb 0%, #ffffff 100%);
+      min-height:100vh; display:flex; align-items:center; justify-content:center; padding:28px;
+      -webkit-font-smoothing:antialiased;
+    }
+    .container-lg { max-width:1100px; }
+    .card-hero { border: 0; border-radius: 14px; box-shadow: 0 8px 30px rgba(18,38,63,0.06); overflow: visible; }
+    .kicker { display:inline-flex; gap:.5rem; align-items:center; background: linear-gradient(90deg,var(--accent-dark),var(--accent)); color:white; padding:6px 10px; border-radius:999px; font-weight:700; font-size:13px; box-shadow: 0 8px 22px rgba(14,165,164,0.08); }
+    h1 { font-size:1.6rem; margin: .4rem 0 .2rem; letter-spacing:-.01em; }
+    p.lead { margin-bottom: 1rem; color:var(--muted); }
+    .order-badge { width:84px;height:84px;border-radius:12px; display:flex;align-items:center;justify-content:center; background:linear-gradient(180deg,#e6fffa,#ecfeff); color:var(--accent-dark); font-weight:800;font-size:28px; border:1px solid rgba(14,165,164,0.08); }
+    .summary-card { border-radius:12px; border:1px solid rgba(17,24,39,0.04); box-shadow: 0 6px 18px rgba(12,22,46,0.03); }
+    .line-item { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid rgba(0,0,0,0.04); }
+    .muted { color:var(--muted); }
+    .total-amount { font-weight:700; font-size:1.05rem; color:var(--success); }
+    .btn-download { background:linear-gradient(90deg,var(--accent-dark),var(--accent)); color:white; border:0; }
+    .btn-ghost { background:transparent; border:1px solid rgba(0,0,0,0.06); color: #333; }
+    @media (min-width: 992px) { .layout-grid { display:grid; grid-template-columns: 1fr 360px; gap:24px; align-items:start; } }
+    @media (max-width:991px) { .layout-grid { display:block; } }
+    #receiptForPdf { background: white; padding:20px; border-radius:8px; color: #111; font-size: 14px; line-height: 1.45; }
+    #receiptForPdf h2 { margin:0 0 .25rem; font-size:18px; }
+    #receiptForPdf .meta-row { display:flex; justify-content:space-between; gap:12px; font-size:13px; color: #444; margin-bottom:8px; }
+    #receiptForPdf table { width:100%; border-collapse: collapse; margin-top:12px; }
+    #receiptForPdf th, #receiptForPdf td { padding:8px 6px; text-align:left; border-bottom: 1px solid #eee; font-size:13px; }
+    #receiptForPdf tfoot td { font-weight:700; border-top: 2px solid #ddd; }
+    .no-data { text-align:center; padding:28px; color:#888; }
+    #accessBlocked { display:none; }
+    #confetti { position:fixed; left:0; top:0; width:100%; height:100%; pointer-events:none; z-index:1050; }
+    .visually-hidden { position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  </style>
 </head>
 <body>
-<canvas id="confetti" aria-hidden="true"></canvas>
+  <canvas id="confetti" aria-hidden="true"></canvas>
 
-<main class="wrap" role="main" aria-labelledby="thankHeading">
-  <section class="hero" aria-labelledby="thankHeading">
-    <div class="kicker" aria-hidden="true">Order complete</div>
-
-    <h1 id="thankHeading">Thanks — your order is confirmed</h1>
-    <p class="lead">We’ve received your order and emailed the receipt. You’ll also receive a confirmation from Stripe. Below is a quick summary — keep this page or download the invoice.</p>
-
-    <div class="order-card" role="status" aria-live="polite">
-      <div class="order-badge" id="orderEmoji">🎉</div>
-
-      <div class="order-meta">
-        <div class="who" id="customerName">Thanks — friend</div>
-        <div class="id" id="orderId">Order ID: <span id="orderIdVal">—</span></div>
-        <div class="amount" id="orderAmount">$0.00</div>
-      </div>
+  <main class="container-lg">
+    <div id="accessBlocked" class="alert alert-warning" role="alert">
+      This page is not accessible directly. It appears there was no completed purchase. If you are testing, append <code>?debug=1</code> to the URL to force view. On live, users are redirected here only after a successful purchase.
     </div>
 
-    <p class="note">Questions? Email <a href="mailto:orders@example.com" id="contactEmail">orders@example.com</a> or reply to the receipt. If you need help with billing, include your <strong>Order ID</strong> above.</p>
+    <div id="mainContent" class="card card-hero p-4 layout-grid" role="main" aria-labelledby="thankHeading" style="display:none;">
+      <!-- LEFT -->
+      <section>
+        <div class="d-flex align-items-start gap-3 mb-2">
+          <div class="kicker">Order complete</div>
+          <small class="ms-auto muted no-print" id="timeNote"> </small>
+        </div>
 
-    <div class="deco" aria-hidden="true"></div>
-  </section>
+        <div class="d-flex gap-3 align-items-center mb-2">
+          <div class="order-badge" id="orderEmoji">🎉</div>
+          <div>
+            <h1 id="thankHeading">Thanks — your order is confirmed</h1>
+            <p class="lead" id="subLead">We've received your order. A receipt has been emailed. You can also download a PDF receipt below.</p>
+            <div class="muted" id="contactRow">Questions? Email <a href="mailto:orders@example.com" id="contactEmail">orders@example.com</a>.</div>
+          </div>
+        </div>
 
-  <aside class="summary" aria-labelledby="summaryHeading">
-    <h3 id="summaryHeading">Order summary</h3>
+        <div id="receiptForPdf" aria-labelledby="receipt-heading">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h2 id="merchantName">Your Company, Inc.</h2>
+              <div class="muted">orders@example.com · +1 (555) 555-5555</div>
+            </div>
+            <div class="text-end">
+              <div class="muted">Receipt</div>
+              <div id="pdfOrderId" style="font-weight:700; font-size:16px;">—</div>
+              <div id="pdfDate" class="muted" style="margin-top:6px;">—</div>
+            </div>
+          </div>
 
-    <div id="summaryLines" aria-live="polite">
-      <div class="line"><span id="lineItem">Item</span><span id="linePrice">$0.00</span></div>
+          <div style="margin-top:14px;">
+            <div class="meta-row">
+              <div><strong id="pdfCustomerName">Customer</strong><div id="pdfCustomerEmail" class="muted"></div></div>
+              <div class="muted text-end">
+                <div>Payment method: <span id="pdfPaymentMethod">Card</span></div>
+                <div id="pdfSessionId">Session: —</div>
+              </div>
+            </div>
+
+            <table id="pdfItems" aria-describedby="pdfItemSummary">
+              <thead>
+                <tr><th>Item</th><th class="text-end">Unit</th><th class="text-end">Qty</th><th class="text-end">Total</th></tr>
+              </thead>
+              <tbody id="pdfItemsBody">
+                <tr><td colspan="4" class="muted text-center py-3">No items found</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="3" class="text-end muted">Subtotal</td><td id="pdfSubtotal" class="text-end">$0.00</td></tr>
+                <tr><td colspan="3" class="text-end muted">Tax</td><td id="pdfTax" class="text-end">$0.00</td></tr>
+                <tr><td colspan="3" class="text-end">Total</td><td id="pdfTotal" class="text-end total-amount">$0.00</td></tr>
+              </tfoot>
+            </table>
+
+            <div class="muted" style="margin-top:12px; font-size:13px;">
+              Order notes: <span id="pdfNotes">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3 muted small">Order ID and receipt are generated in your browser. If you prefer a server-generated invoice, contact support.</div>
+      </section>
+
+      <!-- RIGHT -->
+      <aside class="summary-card p-3">
+        <h5 class="mb-2">Order summary</h5>
+        <div id="summaryLines" class="mb-2">
+          <div class="line-item"><div><strong id="summaryItem">Item</strong><div class="muted small" id="summaryDesc"></div></div><div id="summaryPrice" class="muted">$0.00</div></div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
+          <div class="muted">Total</div>
+          <div class="total-amount" id="summaryTotal">$0.00</div>
+        </div>
+
+        <div class="d-grid gap-2 mt-3">
+          <button id="downloadReceiptBtn" class="btn btn-download btn-lg no-print" aria-label="Download receipt as PDF" disabled>⬇️ Download receipt (PDF)</button>
+          <button id="openReceiptViewBtn" class="btn btn-ghost no-print">View receipt (printer-friendly)</button>
+          <a href="/" class="btn btn-outline-secondary no-print">Back to home</a>
+        </div>
+
+        <div class="muted small mt-3" id="metaNote">You may close this page. A copy of the receipt was sent to your email.</div>
+      </aside>
     </div>
+  </main>
 
-    <div class="total" id="summaryTotal"><span style="color:var(--muted); font-weight:600; margin-right:8px">Total</span>$0.00</div>
-
-    <div class="actions">
-      <button class="btn" id="downloadInvoiceBtn" title="Download invoice (if available)">Download invoice</button>
-      <button class="btn secondary" id="continueBtn">Back to home</button>
-      <button class="btn secondary" id="receiptBtn">View receipt</button>
-    </div>
-
-    <div class="note" id="metaNote">You can safely close this window. A receipt was sent to your email.</div>
-  </aside>
-</main>
-
-<script>
+  <script>
 (function () {
-  // Simple utilities
-  const qs = (s, ctx=document) => ctx.querySelector(s);
-  const qsa = (s, ctx=document) => Array.from((ctx||document).querySelectorAll(s));
-  function money(n){ return '$' + Number(n || 0).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2}); }
-  function param(name){ const u = new URL(window.location.href); return u.searchParams.get(name) || ''; }
+  'use strict';
 
-  // Read common URL params (if your Stripe success redirect appends these)
-  const sess = param('session_id') || param('sessionId') || param('session');
-  const order = param('order') || param('order_id') || param('orderId') || param('checkout_id') || sess;
-  const name = decodeURIComponent(param('name') || param('customer') || '').replace(/\+/g,' ').trim();
-  const amount = param('amount') || param('total') || param('price') || '';
-  const item = decodeURIComponent(param('item') || '') || 'Service plan';
+  // ---------- Utilities ----------
+  const qs = (s, ctx=document) => (ctx || document).querySelector(s);
+  const qsa = (s, ctx=document) => Array.from((ctx || document).querySelectorAll(s));
+  const money = n => '$' + Number(n || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const param = name => (new URL(window.location.href)).searchParams.get(name) || '';
 
-  // Populate UI
-  if (name) qs('#customerName').textContent = `Thanks, ${name}`;
-  qs('#orderIdVal').textContent = order || '—';
-  if (amount) {
-    const numeric = parseFloat(amount.replace(/[^0-9.]/g,'')) || 0;
-    qs('#orderAmount').textContent = money(numeric);
-    qs('#summaryTotal').innerHTML = '<span style="color:var(--muted); font-weight:600; margin-right:8px">Total</span>' + money(numeric);
-    qs('#linePrice').textContent = money(numeric);
-  } else {
-    // try to read from localStorage cart (if you set it)
-    try {
-      const cartRaw = localStorage.getItem('pricing_cart');
-      if (cartRaw) {
-        const cart = JSON.parse(cartRaw);
-        // show first item and total
-        if (Array.isArray(cart) && cart.length) {
-          const lines = cart.map(it => {
-            const label = it.product || it.plan || 'Item';
-            const qty = it.quantity||1;
-            const price = Number(it.price||0);
-            return `<div class="line"><span>${escapeHtml(label)} × ${qty}</span><span>${money(price*qty)}</span></div>`;
-          }).join('');
-          qs('#summaryLines').innerHTML = lines;
-          const tot = cart.reduce((s,i)=> s + (Number(i.price||0) * (i.quantity||1)), 0);
-          qs('#summaryTotal').innerHTML = '<span style="color:var(--muted); font-weight:600; margin-right:8px">Total</span>' + money(tot);
-          qs('#orderAmount').textContent = money(tot);
-        }
-      }
-    } catch(err){ /* ignore */ }
+  // ---------- Confetti helpers (device-pixel-ratio aware) ----------
+  function setupCanvas(canvas) {
+    if (!canvas) return null;
+    const ctx = canvas.getContext('2d');
+    const DPR = Math.max(1, window.devicePixelRatio || 1);
+    function resize() {
+      canvas.width = Math.floor(window.innerWidth * DPR);
+      canvas.height = Math.floor(window.innerHeight * DPR);
+      canvas.style.width = window.innerWidth + 'px';
+      canvas.style.height = window.innerHeight + 'px';
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    return { canvas, ctx, DPR };
   }
 
-  // small helpers
-  function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
-
-  // Buttons
-  qs('#continueBtn').addEventListener('click', () => { window.location.href = '/'; });
-  qs('#receiptBtn').addEventListener('click', () => {
-    // If Stripe session id present, open Stripe-hosted receipt (or send to server)
-    if (sess) {
-      // you may want to replace with your server endpoint that verifies session and returns hosted receipt
-      window.open(`https://dashboard.stripe.com/test/payments/${sess}`, '_blank');
-    } else {
-      alert('Receipt link not available. Check your email for the receipt or contact support.');
-    }
-  });
-  qs('#downloadInvoiceBtn').addEventListener('click', () => {
-    // Example: open a generated invoice endpoint on your server
-    if (order) {
-      // replace with your real invoice URL path if you have one
-      window.open(`/invoices/${encodeURIComponent(order)}.pdf`, '_blank');
-    } else {
-      alert('Invoice not available. We sent a receipt to your email.');
-    }
-  });
-
-  // Show confetti once on page load (simple particle system)
-  function burstConfetti() {
-    const c = qs('#confetti');
-    if (!c) return;
-    const ctx = c.getContext('2d');
+  function burstConfettiOnce() {
+    const canvasEl = qs('#confetti');
+    const s = setupCanvas(canvasEl);
+    if (!s) return;
+    const ctx = s.ctx;
     let particles = [];
-    function resize(){ c.width = innerWidth; c.height = innerHeight; }
-    resize(); window.addEventListener('resize', resize);
-    function rand(min,max){ return Math.random()*(max-min)+min; }
+    function rand(min,max){ return Math.random() * (max - min) + min; }
     const colors = ['#06b6d4','#0ea5a4','#60a5fa','#f472b6','#f59e0b','#10b981'];
-    // spawn ~32 particles
-    for (let i=0;i<32;i++){
+
+    for (let i = 0; i < 40; i++) {
       particles.push({
-        x: innerWidth/2 + rand(-80,80),
-        y: innerHeight/3 + rand(-30,30),
-        vx: rand(-4,4),
-        vy: rand(-6,2),
-        size: Math.floor(rand(6,14)),
-        rot: rand(0,Math.PI*2),
-        vr: rand(-0.12,0.12),
-        color: colors[Math.floor(rand(0,colors.length))],
-        ttl: rand(60,140)
+        x: window.innerWidth / 2 + rand(-140, 140),
+        y: window.innerHeight / 3 + rand(-40, 40),
+        vx: rand(-6, 6),
+        vy: rand(-8, 2),
+        size: Math.floor(rand(6, 14)),
+        rot: rand(0, Math.PI * 2),
+        vr: rand(-0.12, 0.12),
+        color: colors[Math.floor(rand(0, colors.length))],
+        ttl: Math.floor(rand(60, 160))
       });
     }
-    let frame = 0;
-    function draw(){
-      ctx.clearRect(0,0,c.width,c.height);
-      particles.forEach((p, idx) => {
+
+    function draw() {
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      for (let p of particles) {
         p.x += p.vx;
         p.y += p.vy;
         p.vy += 0.12; // gravity
         p.rot += p.vr;
         p.ttl--;
         ctx.save();
-        ctx.translate(p.x,p.y);
+        ctx.translate(p.x, p.y);
         ctx.rotate(p.rot);
         ctx.fillStyle = p.color;
         ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
         ctx.restore();
-      });
-      particles = particles.filter(p => p.ttl>0 && p.y < innerHeight + 60);
-      frame++;
+      }
+      particles = particles.filter(p => p.ttl > 0 && p.y < window.innerHeight + 60);
       if (particles.length) requestAnimationFrame(draw);
-      else ctx.clearRect(0,0,c.width,c.height);
+      else ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
     }
     draw();
   }
 
-  // small tick icon tweak: if amount > 0 show confetti
-  const amtVal = (qs('#orderAmount') && qs('#orderAmount').textContent) || '';
-  if (amtVal && amtVal !== '$0.00') {
-    setTimeout(burstConfetti, 220);
-    qs('#orderEmoji').textContent = '✅';
+  // ---------- Order sequence ----------
+  function nextOrderSequence() {
+    try {
+      const key = 'order_seq';
+      let seq = Number(localStorage.getItem(key) || 0);
+      seq = (isNaN(seq) ? 0 : seq) + 1;
+      localStorage.setItem(key, String(seq));
+      return seq;
+    } catch (e) {
+      return Math.floor(Math.random() * 900000 + 100000);
+    }
+  }
+  function formatOrderId(seq) {
+    const d = new Date();
+    const YYYY = d.getFullYear();
+    const MM = String(d.getMonth()+1).padStart(2,'0');
+    const DD = String(d.getDate()).padStart(2,'0');
+    const seqStr = String(seq).padStart(4,'0');
+    return `ORD-${YYYY}${MM}${DD}-${seqStr}`;
   }
 
-  // keyboard focus landing (for accessibility)
-  setTimeout(()=>qs('#customerName').focus && qs('#customerName').setAttribute('tabindex','-1') && qs('#customerName').focus(), 120);
+  // ---------- Gather inputs ----------
+  const sessionId = param('session_id') || param('session') || param('sessionId') || '';
+  const checkoutId = param('checkout_id') || param('checkout') || '';
+  const amountParam = param('amount') || param('total') || param('price') || '';
+  const nameParam = decodeURIComponent(param('name') || param('customer') || '').replace(/\+/g,' ').trim();
+  const emailParam = decodeURIComponent(param('email') || '').replace(/\+/g,' ').trim();
+  const itemParam = decodeURIComponent(param('item') || '').replace(/\+/g,' ').trim();
 
-  // tidy: clear saved cart if present (optional)
-  try {
-    // If you want to clear the cart after successful checkout, uncomment the next line
-    // localStorage.removeItem('pricing_cart');
-  } catch(e){}
+  // ---------- Helpers to detect cart presence ----------
+  function hasLocalCartData() {
+    try {
+      const sp = localStorage.getItem('service_plans_cart');
+      if (sp && JSON.parse(sp || '[]').length) return true;
+      const pc = localStorage.getItem('pricing_cart');
+      if (pc && JSON.parse(pc || '[]').length) return true;
+    } catch (e) {}
+    return false;
+  }
+
+  // ---------- Access gating: only allow if purchase data present ----------
+  const isLikelyPurchase = Boolean(sessionId || checkoutId || amountParam || hasLocalCartData());
+  const mainContent = qs('#mainContent');
+  const accessBlocked = qs('#accessBlocked');
+
+  if (!isLikelyPurchase) {
+    // hide main content, show access blocked UI (the page should not be accessible directly)
+    if (accessBlocked) accessBlocked.style.display = 'block';
+    if (mainContent) mainContent.style.display = 'none';
+    console.warn('Receipt page blocked: no purchase data (session/cart/amount).');
+    return; // stop initialization
+  }
+
+  // ---------- Build receipt model ----------
+  const seq = nextOrderSequence();
+  const orderId = param('order') || param('order_id') || param('orderId') || formatOrderId(seq);
+
+  const receipt = {
+    orderId,
+    createdAt: new Date(),
+    sessionId: sessionId || checkoutId || '',
+    customerName: nameParam || 'Valued customer',
+    customerEmail: emailParam || '',
+    paymentMethod: param('pm') || param('payment_method') || 'Card',
+    items: [],
+    subtotal: 0,
+    tax: 0,
+    total: 0,
+    notes: ''
+  };
+
+  // ---------- Populate items (priority: amountParam > service_plans_cart > pricing_cart > fallback) ----------
+  (function populateFromSources() {
+    if (amountParam) {
+      const numeric = parseFloat(String(amountParam).replace(/[^0-9.]/g,'')) || 0;
+      const label = itemParam || 'Purchase';
+      receipt.items = [{ label, unit: numeric, qty: 1, total: numeric }];
+      receipt.subtotal = numeric;
+      receipt.total = numeric;
+      return;
+    }
+
+    try {
+      const sp = localStorage.getItem('service_plans_cart');
+      if (sp) {
+        const arr = JSON.parse(sp);
+        if (Array.isArray(arr) && arr.length) {
+          receipt.items = arr.map(it => {
+            const price = Number(it.price || 0);
+            const qty = Number(it.quantity || 1);
+            const lbl = it.productName || it.product || it.label || it.name || 'Item';
+            return { label: lbl, unit: price, qty, total: price * qty, billing: it.billing || '' };
+          });
+          receipt.subtotal = receipt.items.reduce((s,i)=> s + (i.total || 0), 0);
+          receipt.total = receipt.subtotal;
+          return;
+        }
+      }
+    } catch (e) {}
+
+    try {
+      const pc = localStorage.getItem('pricing_cart');
+      if (pc) {
+        const arr = JSON.parse(pc);
+        if (Array.isArray(arr) && arr.length) {
+          receipt.items = arr.map(it => {
+            const price = Number(it.price || 0);
+            const qty = Number(it.quantity || 1);
+            const lbl = it.product || it.plan || it.option || 'Item';
+            return { label: lbl, unit: price, qty, total: price * qty, billing: it.billing || '' };
+          });
+          receipt.subtotal = receipt.items.reduce((s,i)=> s + (i.total || 0), 0);
+          receipt.total = receipt.subtotal;
+          return;
+        }
+      }
+    } catch (e) {}
+
+    // fallback (shouldn't happen if isLikelyPurchase true, but defensive)
+    const fallbackAmt = 0;
+    const fallbackLabel = itemParam || 'Service plan';
+    receipt.items = [{ label: fallbackLabel, unit: fallbackAmt, qty: 1, total: fallbackAmt }];
+    receipt.subtotal = fallbackAmt;
+    receipt.total = fallbackAmt;
+  })();
+
+  // optional tax
+  const taxPercent = Number(param('tax') || 0);
+  if (taxPercent > 0) {
+    receipt.tax = +(receipt.subtotal * (taxPercent / 100));
+    receipt.total = +(receipt.subtotal + receipt.tax);
+  } else {
+    receipt.tax = 0;
+    receipt.total = receipt.total || receipt.subtotal;
+  }
+
+  // ---------- Render preview ----------
+  function renderPreview() {
+    const el = qs('#pdfOrderId'); if (el) el.textContent = receipt.orderId;
+    const elDate = qs('#pdfDate'); if (elDate) elDate.textContent = receipt.createdAt.toLocaleString();
+    const elName = qs('#pdfCustomerName'); if (elName) elName.textContent = receipt.customerName || 'Customer';
+    const elMail = qs('#pdfCustomerEmail'); if (elMail) elMail.textContent = receipt.customerEmail || '';
+    const elPay = qs('#pdfPaymentMethod'); if (elPay) elPay.textContent = receipt.paymentMethod || 'Card';
+    const elSess = qs('#pdfSessionId'); if (elSess) elSess.textContent = receipt.sessionId ? ('Session: ' + receipt.sessionId) : '';
+
+    const tbody = qs('#pdfItemsBody');
+    if (tbody) {
+      tbody.innerHTML = '';
+      if (!receipt.items || !receipt.items.length) {
+        tbody.innerHTML = '<tr><td colspan="4" class="muted text-center py-3">No items found</td></tr>';
+      } else {
+        receipt.items.forEach(it => {
+          const tr = document.createElement('tr');
+          const tdLabel = document.createElement('td'); tdLabel.textContent = it.label + (it.billing ? ' · ' + it.billing : '');
+          const tdUnit = document.createElement('td'); tdUnit.className = 'text-end'; tdUnit.textContent = money(it.unit);
+          const tdQty = document.createElement('td'); tdQty.className = 'text-end'; tdQty.textContent = String(it.qty || 1);
+          const tdTotal = document.createElement('td'); tdTotal.className = 'text-end'; tdTotal.textContent = money(it.total);
+          tr.append(tdLabel, tdUnit, tdQty, tdTotal);
+          tbody.appendChild(tr);
+        });
+      }
+    }
+
+    const elSub = qs('#pdfSubtotal'); if (elSub) elSub.textContent = money(receipt.subtotal);
+    const elTax = qs('#pdfTax'); if (elTax) elTax.textContent = money(receipt.tax);
+    const elTotal = qs('#pdfTotal'); if (elTotal) elTotal.textContent = money(receipt.total);
+
+    const summaryItem = qs('#summaryItem'); if (summaryItem) summaryItem.textContent = (receipt.items[0] && receipt.items[0].label) || 'Item';
+    const summaryDesc = qs('#summaryDesc'); if (summaryDesc) summaryDesc.textContent = (receipt.items[0] && receipt.items[0].billing) ? receipt.items[0].billing : '';
+    const summaryPrice = qs('#summaryPrice'); if (summaryPrice) summaryPrice.textContent = money(receipt.total);
+    const summaryTotal = qs('#summaryTotal'); if (summaryTotal) summaryTotal.textContent = money(receipt.total);
+
+    const emoji = qs('#orderEmoji'); if (emoji) emoji.textContent = (receipt.total > 0) ? '✅' : '🎉';
+    const metaNote = qs('#metaNote'); if (metaNote) metaNote.textContent = 'A receipt has been emailed to ' + (receipt.customerEmail || 'your email address') + '.';
+    const timeNote = qs('#timeNote'); if (timeNote) timeNote.textContent = 'Generated: ' + receipt.createdAt.toLocaleString();
+    const pdfNotes = qs('#pdfNotes'); if (pdfNotes) pdfNotes.textContent = receipt.notes || (receipt.sessionId ? 'Checkout/session present' : '');
+    const contactEmail = qs('#contactEmail'); if (contactEmail) contactEmail.href = 'mailto:orders@example.com';
+  }
+
+  // show page
+  if (mainContent) mainContent.style.display = '';
+  if (accessBlocked) accessBlocked.style.display = 'none';
+  renderPreview();
+
+  // confetti on real payable
+  if (receipt.total && receipt.total > 0) {
+    setTimeout(burstConfettiOnce, 180);
+  }
+
+  // ---------- PDF generation ----------
+  const downloadBtn = qs('#downloadReceiptBtn');
+  if (downloadBtn) {
+    // enable since we have a valid purchase
+    downloadBtn.disabled = false;
+
+    downloadBtn.addEventListener('click', () => {
+      downloadBtn.disabled = true;
+      const now = new Date();
+      const fileName = `${receipt.orderId.replace(/\s+/g,'_')}_receipt_${now.toISOString().slice(0,19).replace(/[:T]/g,'-')}.pdf`;
+      const element = qs('#receiptForPdf');
+      if (element) {
+        // update pdf date to exact generate time
+        const pdfDateEl = qs('#pdfDate');
+        if (pdfDateEl) pdfDateEl.textContent = now.toLocaleString();
+
+        const opt = {
+          margin: [10,10,10,10],
+          filename: fileName,
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: Math.min(2, window.devicePixelRatio || 1), useCORS: true, scrollY: -window.scrollY },
+          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        downloadBtn.textContent = 'Generating PDF…';
+        setTimeout(() => {
+          try {
+            html2pdf().set(opt).from(element).save().then(() => {
+              downloadBtn.disabled = false;
+              downloadBtn.textContent = '⬇️ Download receipt (PDF)';
+            }).catch(err => {
+              console.error('PDF generation failed', err);
+              alert('PDF generation failed. Try again or contact support.');
+              downloadBtn.disabled = false;
+              downloadBtn.textContent = '⬇️ Download receipt (PDF)';
+            });
+          } catch (err) {
+            console.error('PDF call failed', err);
+            alert('PDF generation failed. Try again or contact support.');
+            downloadBtn.disabled = false;
+            downloadBtn.textContent = '⬇️ Download receipt (PDF)';
+          }
+        }, 80);
+      } else {
+        alert('Receipt element not found.');
+        downloadBtn.disabled = false;
+      }
+    });
+  }
+
+  // ---------- Printer friendly popup ----------
+  const openReceiptViewBtn = qs('#openReceiptViewBtn');
+  if (openReceiptViewBtn) {
+    openReceiptViewBtn.addEventListener('click', () => {
+      const el = qs('#receiptForPdf');
+      if (!el) { alert('Receipt not available'); return; }
+      const html = el.outerHTML;
+      const popup = window.open('', '_blank', 'noopener');
+      if (!popup) { alert('Popup blocked. Please allow popups to view receipt.'); return; }
+      const doc = popup.document;
+      const title = `Receipt - ${receipt.orderId}`;
+      const docHtml = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${title}</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600,700&display=swap" rel="stylesheet">
+<style>
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;margin:24px;color:#111}
+  table{width:100%;border-collapse:collapse}
+  th,td{padding:8px;text-align:left;border-bottom:1px solid #eee}
+  tfoot td{font-weight:700;border-top:2px solid #ddd}
+</style>
+</head>
+<body>
+${html}
+<script>window.print();
+
+      doc.open();
+      doc.write(docHtml);
+      doc.close();
+    });
+  }
+
+  // accessibility focus
+  setTimeout(() => {
+    const h = qs('#thankHeading');
+    if (h) { h.setAttribute('tabindex','-1'); h.focus(); }
+  }, 120);
+
+  // keep a small console message for admins
+  console.info('Receipt page ready — orderId:', receipt.orderId, 'items:', receipt.items.length);
 
 })();
 </script>
-</body>
-</html>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
