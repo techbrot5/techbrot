@@ -26,27 +26,30 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Payment cancelled — Try again</title>
+
+<!-- Inter -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
   :root{
-    --bg1:#071029;
-    --bg2:#0b1220;
-    --card: rgba(255,255,255,0.03);
-    --muted:#9aa6b2;
-    --accent:#06b6d4;
+    --surface:#ffffff;
+    --muted:#6c757d;
+    --accent:#0ea5a4;
+    --accent-dark:#06b6d4;
     --danger:#ef4444;
-    color-scheme: dark;
+    --card-border: rgba(17,24,39,0.04);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   }
   *{box-sizing:border-box}
   html,body{height:100%}
   body{
     margin:0;
-    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background: radial-gradient(800px 400px at 10% 20%, rgba(14,165,164,0.04), transparent 6%),
-                linear-gradient(180deg,var(--bg1),var(--bg2));
+    font-family:inherit;
+    background: linear-gradient(180deg,#f6f9fb 0%, #ffffff 100%);
     -webkit-font-smoothing:antialiased;
     display:flex; align-items:center; justify-content:center;
     padding:28px;
+    color: #111;
   }
 
   .container{
@@ -62,11 +65,11 @@
   }
 
   .card{
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    background: linear-gradient(180deg, #fff, #fbfdff);
     border-radius:14px;
     padding:28px;
-    border:1px solid rgba(255,255,255,0.04);
-    box-shadow: 0 14px 40px rgba(2,6,23,0.6);
+    border:1px solid var(--card-border);
+    box-shadow: 0 14px 40px rgba(12,22,46,0.06);
     min-height:220px;
     position:relative;
     overflow:hidden;
@@ -78,11 +81,11 @@
   }
   .icon{
     width:56px; height:56px; border-radius:12px;
-    background:linear-gradient(90deg, rgba(239,68,68,0.14), rgba(239,68,68,0.08));
+    background:linear-gradient(90deg, rgba(239,68,68,0.08), rgba(239,68,68,0.04));
     display:grid; place-items:center; color:var(--danger); font-weight:800; font-size:22px;
     border:1px solid rgba(239,68,68,0.06);
   }
-  h1{ margin:0; font-size:22px; }
+  h1{ margin:0; font-size:22px; color:#0f172a; }
   p.lead{ margin:12px 0 18px 0; color:var(--muted); font-size:15px }
 
   .explain{
@@ -93,20 +96,21 @@
   .actions{ margin-top:18px; display:flex; gap:10px; flex-wrap:wrap; }
   .btn{
     display:inline-flex; align-items:center; gap:10px;
-    background:var(--accent); color:#012; padding:10px 14px; border-radius:10px; border:0; font-weight:700;
+    background:linear-gradient(90deg,var(--accent-dark),var(--accent));
+    color:#012; padding:10px 14px; border-radius:10px; border:0; font-weight:700;
     cursor:pointer; transition:transform .12s ease, opacity .12s;
   }
   .btn.secondary{
-    background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.06); font-weight:600;
+    background:transparent; color:#0f172a; border:1px solid var(--card-border); font-weight:600;
   }
   .btn:active{ transform:translateY(1px) }
   .btn:disabled{ opacity:.6; cursor:not-allowed }
 
   .right{
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border-radius:14px; padding:20px; border:1px solid rgba(255,255,255,0.04);
+    background: linear-gradient(180deg,#ffffff,#fbfdff);
+    border-radius:14px; padding:20px; border:1px solid var(--card-border);
     display:flex; flex-direction:column; justify-content:center; gap:12px; min-height:160px;
-    box-shadow: 0 8px 26px rgba(2,6,23,0.5);
+    box-shadow: 0 8px 26px rgba(12,22,46,0.04);
   }
   .status{ font-weight:700; color:var(--danger) }
   .countdown{ color:var(--muted); font-size:13px }
@@ -120,7 +124,7 @@
   }
   @keyframes pulse {
     0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.03); opacity: 0.9; }
+    50% { transform: scale(1.03); opacity: 0.93; }
     100% { transform: scale(1); opacity: 1; }
   }
 
@@ -128,6 +132,9 @@
   .btn:focus, .btn.secondary:focus { outline:3px solid rgba(6,182,212,0.12); outline-offset:4px; border-radius:10px; }
 
   .small-note{ font-size:13px; color:var(--muted); margin-top:10px }
+
+  /* receipt preview compact (not shown here, but kept similar style) */
+  .muted-link { color:var(--accent-dark); text-decoration:none; }
 </style>
 </head>
 <body>
@@ -161,7 +168,7 @@
       <button class="btn secondary" id="clearBtn" title="Clear cart and go back to plans">Clear cart & go to plans</button>
     </div>
 
-    <p class="small-note">If you need help, email <a href="mailto:orders@example.com" id="supportEmail">orders@example.com</a> and include your name and any order reference shown on the previous page.</p>
+    <p class="small-note">If you need help, email <a class="muted-link" href="mailto:orders@example.com" id="supportEmail">orders@example.com</a> and include your name and any order reference shown on the previous page.</p>
   </section>
 
   <aside class="right" aria-labelledby="summaryTitle">
@@ -183,7 +190,8 @@
 
 <script>
 (function () {
-  const redirectPath = '/plans.html'; // destination after cancellation
+  // redirect target changed as requested
+  const redirectPath = '/service-plans.html';
   const retryBtn = document.getElementById('retryBtn');
   const contactBtn = document.getElementById('contactBtn');
   const clearBtn = document.getElementById('clearBtn');
@@ -191,6 +199,7 @@
 
   // autosave countdown then redirect
   let seconds = 6;
+  if (countEl) countEl.textContent = seconds;
   const tick = () => {
     seconds--;
     if (countEl) countEl.textContent = seconds;
@@ -202,37 +211,34 @@
 
   // button handlers
   retryBtn.addEventListener('click', function () {
-    // just go to plans — cart is intentionally preserved
+    // stop auto-redirect and navigate now
+    clearInterval(interval);
     window.location.href = redirectPath;
   });
 
   contactBtn.addEventListener('click', function () {
-    // open user's mail client with prefilled subject including optional cart info
+    clearInterval(interval);
     const email = 'orders@example.com';
-    let subject = encodeURIComponent('Payment issue — need help');
-    let body = encodeURIComponent('Hi team,%0A%0AMy payment did not complete. Please help. Cart or session info: (if available) %0A%0AThanks.');
+    const subject = encodeURIComponent('Payment issue — need help');
+    const body = encodeURIComponent('Hi team,\n\nMy payment did not complete. Please help. Cart or session info: (if available)\n\nThanks.');
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
   });
 
   clearBtn.addEventListener('click', function () {
+    clearInterval(interval);
     try {
       localStorage.removeItem('pricing_cart');
-      // optional: also remove any saved service_plans_cart key
       localStorage.removeItem('service_plans_cart');
-    } catch (e) {
-      console.warn('Unable to clear localStorage', e);
-    }
-    // go back to plans after clearing
+    } catch (e) { console.warn('Unable to clear localStorage', e); }
     window.location.href = redirectPath;
   });
 
   // Accessibility: focus retry button
-  retryBtn.focus();
+  try { retryBtn.focus(); } catch(e){}
 
-  // If the user navigates back and the page was left mid-countdown, keep it accessible
+  // If the user navigates back and the page was left mid-countdown, reset if persisted
   window.addEventListener('pageshow', (ev) => {
     if (ev.persisted) {
-      // reset countdown
       seconds = 6;
       if (countEl) countEl.textContent = seconds;
     }
