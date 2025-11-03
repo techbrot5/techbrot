@@ -82,11 +82,12 @@ export async function onRequestPost(context) {
       cfo_lite_monthly_PLACEHOLDER:       'price_CFO_MONTHLY_PLACEHOLDER',
       cfo_lite_annual_PLACEHOLDER:        'price_CFO_ANNUAL_PLACEHOLDER',
 
-      // ---------- NEW: Firm Connect (starter) ----------
-      // replace these placeholders with your actual Stripe Price IDs
-      firmconnect_monthly:  'price_FIRM_MONTHLY_PLACEHOLDER', // e.g. price_1Abc...
-      firmconnect_annual:   'price_FIRM_ANNUAL_PLACEHOLDER'   // e.g. price_1Xyz...
-    }
+// ---------- NEW: Firm Connect (starter) ----------
+// Monthly Price ID (updated)
+firmconnect_monthly:  'price_1SPNguANBQOX99HKsjI5Ktyw',
+// Annual Price ID (leave placeholder until you create it in Stripe)
+firmconnect_annual:   'price_FIRM_ANNUAL_PLACEHOLDER'
+
 
     // ---------- PRICE TYPE MAP ----------
     const PRICE_TYPE_MAP = {
