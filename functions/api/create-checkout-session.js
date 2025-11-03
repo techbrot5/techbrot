@@ -35,6 +35,12 @@ export async function onRequestPost(context) {
     const stripe = new Stripe(STRIPE_SECRET_KEY)
     const body = await context.request.json().catch(() => ({}))
 
+    // --- convenience: support { product, billing } requests ---
+    // Example: { product: 'firmconnect', billing: 'monthly' } -> priceKey: 'firmconnect_monthly'
+    if (!body.priceKey && body.product && body.billing) {
+      body.priceKey = `${String(body.product).toLowerCase().trim()}_${String(body.billing).toLowerCase().trim()}`;
+    }
+
     // ---------- PRICE MAP (your existing mapping) ----------
     const PRICE_MAP = {
       simple_start_monthly: 'price_1SOGodANBQOX99HKiCITtJ4Z',
@@ -74,7 +80,12 @@ export async function onRequestPost(context) {
       premium_care_annual_PLACEHOLDER:    'price_1SOMxlANBQOX99HK48CU6qZu',
 
       cfo_lite_monthly_PLACEHOLDER:       'price_CFO_MONTHLY_PLACEHOLDER',
-      cfo_lite_annual_PLACEHOLDER:        'price_CFO_ANNUAL_PLACEHOLDER'
+      cfo_lite_annual_PLACEHOLDER:        'price_CFO_ANNUAL_PLACEHOLDER',
+
+      // ---------- NEW: Firm Connect (starter) ----------
+      // replace these placeholders with your actual Stripe Price IDs
+      firmconnect_monthly:  'price_FIRM_MONTHLY_PLACEHOLDER', // e.g. price_1Abc...
+      firmconnect_annual:   'price_FIRM_ANNUAL_PLACEHOLDER'   // e.g. price_1Xyz...
     }
 
     // ---------- PRICE TYPE MAP ----------
@@ -99,6 +110,10 @@ export async function onRequestPost(context) {
       migration_full_one_time_PLACEHOLDER: 'one_time',
       quickstart_session_one_time_PLACEHOLDER: 'one_time',
       quickstart_workflow_one_time_PLACEHOLDER: 'one_time',
+
+      // ---------- NEW: Firm Connect types ----------
+      firmconnect_monthly: 'recurring',
+      firmconnect_annual:  'recurring'
     }
 
     // ---------- Helpers ----------
