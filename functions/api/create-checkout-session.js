@@ -41,7 +41,7 @@ export async function onRequestPost(context) {
       body.priceKey = `${String(body.product).toLowerCase().trim()}_${String(body.billing).toLowerCase().trim()}`;
     }
 
-    // ---------- PRICE MAP (your existing mapping) ----------
+     // ---------- PRICE MAP (your existing mapping) ----------
     const PRICE_MAP = {
       simple_start_monthly: 'price_1SOGodANBQOX99HKiCITtJ4Z',
       simple_start_annual:  'price_1SOGutANBQOX99HKZ6voFANy',
@@ -82,12 +82,12 @@ export async function onRequestPost(context) {
       cfo_lite_monthly_PLACEHOLDER:       'price_CFO_MONTHLY_PLACEHOLDER',
       cfo_lite_annual_PLACEHOLDER:        'price_CFO_ANNUAL_PLACEHOLDER',
 
-// ---------- NEW: Firm Connect (starter) ----------
-// Monthly Price ID (updated)
-firmconnect_monthly:  'price_1SPNguANBQOX99HKsjI5Ktyw',
-// Annual Price ID (leave placeholder until you create it in Stripe)
-firmconnect_annual:   'price_FIRM_ANNUAL_PLACEHOLDER'
-
+      // ---------- NEW: Firm Connect (starter) ----------
+      // Monthly Price ID (updated)
+      firmconnect_monthly:  'price_1SPNguANBQOX99HKsjI5Ktyw',
+      // Annual Price ID (leave placeholder until you create it in Stripe)
+      firmconnect_annual:   'price_FIRM_ANNUAL_PLACEHOLDER'
+    }
 
     // ---------- PRICE TYPE MAP ----------
     const PRICE_TYPE_MAP = {
@@ -116,6 +116,7 @@ firmconnect_annual:   'price_FIRM_ANNUAL_PLACEHOLDER'
       firmconnect_monthly: 'recurring',
       firmconnect_annual:  'recurring'
     }
+
 
     // ---------- Helpers ----------
     function normalizeKeyToMap(k) {
