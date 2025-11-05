@@ -84,7 +84,7 @@ const STRIPE_SECRET_KEY = context.env.STRIPE_SECRET_KEY_LIVE || context.env.STRI
 
       // ---------- NEW: Firm Connect (starter) ----------
       // Monthly Price ID (updated)
-      firmconnect_monthly:  'price_1SPNguANBQOX99HKsjI5Ktyw',
+      firmconnect_monthly:  'price_1SQFPKARpo86Gznp5QMogQMd',
       // Annual Price ID (leave placeholder until you create it in Stripe)
       firmconnect_annual:   'price_FIRM_ANNUAL_PLACEHOLDER'
     }
