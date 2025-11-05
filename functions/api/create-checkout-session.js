@@ -24,7 +24,7 @@ export async function onRequestOptions(context) {
 
 export async function onRequestPost(context) {
   try {
-    const STRIPE_SECRET_KEY = context.env.STRIPE_SECRET_KEY
+const STRIPE_SECRET_KEY = context.env.STRIPE_SECRET_KEY_LIVE || context.env.STRIPE_SECRET_KEY
     if (!STRIPE_SECRET_KEY) {
       return new Response(JSON.stringify({ error: 'Stripe key missing' }), {
         status: 500,
