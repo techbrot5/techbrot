@@ -3,10 +3,165 @@
 
 <head>
     <meta charset="utf-8">
+<meta name="keywords" content="Certified QuickBooks ProAdvisor, QuickBooks support, QBO help, QuickBooks setup, bookkeeping services, QuickBooks cleanup, QuickBooks file review, QuickBooks hosting, QuickBooks migration, QuickBooks consultation">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+<!-- Floating Contact Us Button -->
+<button id="contactUsBtn" class="contact-button" aria-label="Contact Us">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px; vertical-align: middle;">
+        <path d="M2 4V12C2 12.55 2.45 13 3 13H11L14 16V3C14 2.45 13.55 2 13 2H3C2.45 2 2 2.45 2 3V4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Contact Us
+</button>
+
+<!-- Contact Popup -->
+<div id="contactPopup" class="contact-popup hidden" role="dialog" aria-labelledby="popupHeader">
+    <button id="closePopup" class="popup-close" aria-label="Close Contact Options">
+        ×
+    </button>
+    <div id="popupHeader" class="popup-header">How can we help?</div>
+    <div class="popup-subheader">Sales & Customer Service: <a href="tel:8777515575">877-751-5575</a></div>
+    <div class="popup-hours">Open all days, 24/7</div>
+    <div class="popup-actions">
+        <button id="scheduleCall" class="popup-button" aria-label="Schedule a Call">Schedule Now</button>
+        <a href="/insight/" class="popup-button secondary" aria-label="Visit Support Page">Visit Support Page</a>
+    </div>
+</div>
+
+<!-- Styles -->
+<style>
+    /* Floating Contact Us Button */
+    .contact-button {
+        position: fixed;
+        bottom: 14px;
+        right: -100px; /* Start off-screen */
+        background: #007bff;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: right 0.6s ease-in-out, background 0.3s;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .contact-button:hover {
+        background: #0056b3;
+    }
+    .contact-button.show {
+        right: 70px; /* Slide into view */
+    }
+
+    /* Contact Popup */
+    .contact-popup {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        width: 300px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, visibility 0.4s;
+        visibility: hidden;
+    }
+
+    .contact-popup.show {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    /* Close Button */
+    .popup-close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 18px;
+        color: #888;
+    }
+    .popup-close:hover {
+        color: #333;
+    }
+
+    /* Popup Header */
+    .popup-header {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    /* Popup Buttons */
+    .popup-button {
+        display: block;
+        margin-top: 12px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: 14px;
+        font-weight: 500;
+        border: none;
+        width: 100%;
+    }
+    .popup-button:hover {
+        background: #0056b3;
+    }
+
+    .popup-button.secondary {
+        background: #f1f1f1;
+        color: #333;
+    }
+    .popup-button.secondary:hover {
+        background: #ddd;
+    }
+</style>
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Slide-in animation for Contact Us button
+        setTimeout(() => {
+            document.getElementById("contactUsBtn").classList.add("show");
+        }, 200);
+    });
+
+    // Toggle Contact Popup
+    document.getElementById("contactUsBtn").addEventListener("click", function() {
+        document.getElementById("contactPopup").classList.toggle("show");
+    });
+
+    // Close Popup
+    document.getElementById("closePopup").addEventListener("click", function() {
+        document.getElementById("contactPopup").classList.remove("show");
+    });
+
+    // Open Consultation Modal when "Schedule Now" is clicked
+    document.getElementById("scheduleCall").addEventListener("click", function() {
+        document.getElementById("contactPopup").classList.remove("show"); // Hide the popup
+        showModal(); // Open the existing consultation modal
+    });
+</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Professional QuickBooks Experts and Bookkeeping Support Services</title>
+    <title>Certified QuickBooks ProAdvisor Services | QuickBooks Online Setup, Bookkeeping &amp; Expert QBO Support</title>
     <meta name="keywords" content="">
-    <meta name="description" content="Speak with certified QuickBooks professionals for setup cleanup and ongoing bookkeeping support Call now for expert help">
+    <meta name="description" content="Get expert help from Certified QuickBooks ProAdvisors for QuickBooks Online (QBO) and Desktop. We specialize in bookkeeping, setup, cleanup, and file review for small businesses. Talk to a live QuickBooks ProAdvisor at 877-751-5575 for immediate QBO support, data migration, and accounting help near you.">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/Lato.css">
@@ -21,6 +176,77 @@
     <link rel="stylesheet" href="assets/css/checkout.css">
     <link rel="stylesheet" href="assets/css/contact-banner.css">
     <link rel="stylesheet" href="assets/css/faq.css">
+    <link rel="stylesheet" href="assets/css/live-pricing.css">
+<!-- ✅ Global Consultation Modal -->
+<div id="consultationModal" class="consultation-modal" style="display:none;">
+  <button type="button" class="close-btn" onclick="hideModal()">×</button>
+  <h2>Schedule a Free Consultation</h2>
+  <p>Talk with a specialist for help choosing a QuickBooks product. Schedule a callback at your convenience.</p>
+
+  <form method="post" enctype="application/x-www-form-urlencoded" id="consultationForm">
+    <input type="hidden" name="form_id" value="US_QBOAV_b86ead92-354b-474d-829a-01be8d5c33b4">
+    <input type="hidden" name="lead_country" value="US">
+
+    <div class="input-container"><input type="text" name="full_name" required><label>Full name*</label></div>
+    <div class="input-container"><input type="email" name="email" required><label>Email*</label></div>
+    <div class="input-container"><input type="tel" name="phone" required><label>Phone*</label></div>
+
+    <button type="submit" class="submit-btn">Schedule Now</button>
+
+    <p class="disclaimer">
+      By clicking “Schedule,” you agree to permit Intuit to contact you regarding QuickBooks and have read and acknowledge our
+      <a href="https://www.intuit.com/privacy/" target="_blank">Privacy Statement</a>. Consent is not a condition of any purchase.
+    </p>
+  </form>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="hideModal()"></div>
+
+<!-- ✅ Modal Styles -->
+<style>
+  .consultation-modal {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1001;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+  }
+  .overlay {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: none;
+  }
+  .close-btn {
+    position: absolute; top: 10px; right: 12px;
+    border: none; background: none; font-size: 22px;
+    cursor: pointer; color: #333;
+  }
+  .submit-btn {
+    background: #0a8543; color: #fff;
+    width: 100%; padding: 12px; border: none;
+    border-radius: 4px; font-size: 16px;
+    cursor: pointer; transition: background 0.3s;
+  }
+  .submit-btn:hover { background: #28a745; }
+  .disclaimer { font-size: 12px; color: #777; margin-top: 10px; }
+  .disclaimer a { color: #0a8543; text-decoration: none; }
+  .spinner {
+    display: inline-block; width: 14px; height: 14px;
+    border: 2px solid white; border-top: 2px solid transparent;
+    border-radius: 50%; animation: spin 0.6s linear infinite;
+    margin-left: 5px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
 </head>
 
 <body class="index-page">
@@ -40,67 +266,101 @@
             </nav><a class="btn-getstarted" href="tel:+1-877-751-5575"><strong>(877) 751-5575</strong></a>
         </div>
     </header>
-    <main class="main">
-        <section id="hero" class="hero section">
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div data-aos="fade-up" data-aos-delay="200" class="hero-content">
-                            <div class="company-badge"><i class="me-2 bi bi-gear-fill"></i><span> Built for Your Growth </span></div>
-                            <h1 class="mb-4">QuickBooks &amp; ERP&nbsp;<span class="accent-text">Experts</span></h1>
-                            <p class="mb-4 mb-md-5"> We help small businesses save time, eliminate errors, and grow with confidence. Get certified QuickBooks help, tax-ready books, and on-demand expert support—accurate, secure, and hassle-free. </p>
-                            <div class="hero-buttons"><a class="btn btn-primary me-0 me-sm-2 mx-1" role="button" href="#about">Get Started</a></div>
-                        </div>
+    <main class="main"><section id="hero" class="hero section" aria-labelledby="hero-heading">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <div class="company-badge" aria-label="Built for your business growth and accounting success">
+                        <i class="me-2 bi bi-gear-fill"></i><span> Built for Your Growth </span>
                     </div>
-                    <div class="col-lg-6">
-                        <div data-aos="zoom-out" data-aos-delay="300" class="hero-image"><img class="img-fluid" src="assets/img/premier-professional-landscaping-support-0002-brand-photo-F24@1x.avif" alt="Hero Image">
-                            <div class="customers-badge">
-                                <div class="customer-avatars"><img src="assets/img/avatar-1.webp" alt="Customer 1" class="avatar"><img src="assets/img/avatar-2.webp" alt="Customer 2" class="avatar"><img src="assets/img/avatar-3.webp" alt="Customer 3" class="avatar"><img src="assets/img/avatar-4.webp" alt="Customer 4" class="avatar"><img src="assets/img/avatar-5.webp" alt="Customer 5" class="avatar"><span class="avatar more">12+</span></div>
-                                <p class="mt-2 mb-0">12,000+ successful calls and accounting solutions delivered</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row gy-4 mt-5 stats-row" data-aos="fade-up" data-aos-delay="500">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="bi bi-trophy"></i></div>
-                            <div class="stat-content">
-                                <h4>Top-Rated Support</h4>
-                                <p class="mb-0">Thousands trust us for accurate QuickBooks help.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="bi bi-briefcase"></i></div>
-                            <div class="stat-content">
-                                <h4>100K+ Transactions Cleaned</h4>
-                                <p class="mb-0">Real-time fixes. Zero backlog.<br><br></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="bi bi-graph-up"></i></div>
-                            <div class="stat-content">
-                                <h4>2000+ Businesses Served</h4>
-                                <p class="mb-0">From startups to growing firms.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="bi bi-award"></i></div>
-                            <div class="stat-content">
-                                <h4>Certified QBO Experts</h4>
-                                <p class="mb-0">ProAdvisor-backed accuracy, every time.</p>
-                            </div>
-                        </div>
+                    <h1 id="hero-heading" class="mb-4">
+                        Certified QuickBooks <span class="accent-text">ProAdvisor &amp; Bookkeeping</span>  Experts
+                    </h1>
+                    <p class="mb-4 mb-md-5">
+                        We help small businesses and entrepreneurs manage books efficiently, streamline QuickBooks setup, and maintain tax-ready records. 
+                        Get expert bookkeeping, QuickBooks Online support, and exclusive plan discounts—accurate, secure, and fully compliant with accounting standards.
+                    </p>
+                    <div class="hero-buttons">
+                        <a class="btn btn-primary me-0 me-sm-2 mx-1" role="button" href="#about" aria-label="Get started with certified QuickBooks ProAdvisor help">Get Started</a>
+                        <span class="visually-hidden">
+                            Call QuickBooks ProAdvisor for setup, bookkeeping cleanup, consultation, or QuickBooks plan discount support.
+                            Contact our team for help with QuickBooks Online, data migration, or subscription assistance.
+                        </span>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <div class="col-lg-6">
+                <div class="hero-image">
+                    <img class="img-fluid" src="assets/img/premier-professional-landscaping-support-0002-brand-photo-F24@1x.avif" 
+                         alt="Certified QuickBooks ProAdvisor providing bookkeeping support" />
+                    <div class="customers-badge" aria-label="Customer success and QuickBooks bookkeeping solutions delivered">
+                        <div class="customer-avatars">
+                            <img class="avatar" src="assets/img/avatar-1.webp" alt="Business client using QuickBooks support service" />
+                            <img class="avatar" src="assets/img/avatar-2.webp" alt="Accounting client happy with QuickBooks cleanup" />
+                            <img class="avatar" src="assets/img/avatar-3.webp" alt="Bookkeeping client satisfied with expert help" />
+                            <img class="avatar" src="assets/img/avatar-4.webp" alt="ProAdvisor consultation client" />
+                            <img class="avatar" src="assets/img/avatar-5.webp" alt="QuickBooks plan subscriber" />
+                            <span class="avatar more" aria-label="More than 12 satisfied clients">12+</span>
+                        </div>
+                        <p class="mt-2 mb-0">12,000+ bookkeeping cleanups, QuickBooks consultations, and support sessions delivered.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gy-4 mt-5 stats-row">
+            <div class="col-md-6 col-lg-3">
+                <div class="stat-item" aria-label="Top-rated QuickBooks and bookkeeping support">
+                    <div class="stat-icon"><i class="bi bi-trophy"></i></div>
+                    <div class="stat-content">
+                        <h4>Top-Rated Support</h4>
+                        <p class="mb-0">Trusted by 1,000s for certified QuickBooks help and reliable bookkeeping assistance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="stat-item" aria-label="Bookkeeping cleanup and transaction management">
+                    <div class="stat-icon"><i class="bi bi-briefcase"></i></div>
+                    <div class="stat-content">
+                        <h4>100K+ Transactions Cleaned</h4>
+                        <p class="mb-0">Accurate data cleanup and QuickBooks reconciliations—no backlog, no stress.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="stat-item" aria-label="Businesses served nationwide for QuickBooks setup and bookkeeping">
+                    <div class="stat-icon"><i class="bi bi-graph-up"></i></div>
+                    <div class="stat-content">
+                        <h4>2000+ Businesses Served</h4>
+                        <p class="mb-0">From startups to multi-entity firms—QuickBooks setup and growth-ready support.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="stat-item" aria-label="Certified QuickBooks Online ProAdvisor experts">
+                    <div class="stat-icon"><i class="bi bi-award"></i></div>
+                    <div class="stat-content">
+                        <h4>Certified QBO Experts</h4>
+                        <p class="mb-0">QuickBooks ProAdvisors ensuring precision, compliance, and expert guidance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden SEO layer for call + conversion optimization -->
+    <span class="visually-hidden">
+        QuickBooks consultation, bookkeeping cleanup, QBO setup, call a ProAdvisor, 
+        QuickBooks plan discounts, QuickBooks Online expert help, certified bookkeeping support, 
+        QuickBooks phone consultation, QuickBooks expert near me, secure accounting solutions.
+    </span>
+</section>
+
         <section id="about" class="about section">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="row gy-4 justify-content-between align-items-center">
@@ -146,7 +406,7 @@
                     </div>
                     <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="image-wrapper">
-                            <div class="position-relative images" data-aos="zoom-out" data-aos-delay="400"><img class="img-fluid rounded-4 main-image" src="assets/img/voc-modern-solutions.png" alt="Business Meeting"><img class="img-fluid rounded-4 small-image" src="assets/img/avatar-3.webp" alt="Team Discussion"></div>
+                            <div class="position-relative images" data-aos="zoom-out" data-aos-delay="400"><img class="img-fluid rounded-4 main-image" src="assets/img/voc-modern-solutions.png" alt="Business Meeting"><img class="img-fluid rounded-4 small-image" src="assets/img/avatar-4.webp" alt="Team Discussion"></div>
                             <div class="experience-badge floating">
                                 <h3>15+ <span>Years</span></h3>
                                 <p>Of experience in business service</p>
@@ -164,139 +424,194 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <section id="features" class="features section">
-            <div class="container section-title" data-aos="fade-up">
-                <div class="section-header">
-                    <h2>Core Features</h2>
-                    <p>Built for Accuracy. Backed by Expertise.</p>
-                </div>
-            </div>
-            <div class="container">
-                <div class="d-flex justify-content-center">
-                    <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
-                        <li class="nav-item"><a class="nav-link active show" data-bs-target="#features-tab-1" data-bs-toggle="tab">
-                                <h4>Real-Time Bookkeeping</h4>
-                            </a></li>
-                        <li class="nav-item"><a class="nav-link" data-bs-target="#features-tab-2" data-bs-toggle="tab">
-                                <h4>Catch-Up &amp; Cleanup</h4>
-                            </a></li>
-                        <li class="nav-item"><a class="nav-link" data-bs-target="#features-tab-3" data-bs-toggle="tab">
-                                <h4>Dedicated Support</h4>
-                            </a></li>
-                    </ul>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="200" class="tab-content">
-                    <div class="tab-pane fade active show" id="features-tab-1">
-                        <div class="row">
-                            <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1 mt-3 mt-lg-0">
-                                <h3>Smart Books, Always Ready</h3>
-                                <p class="fst-italic">We keep your books accurate, organized, and tax-ready at all times. No more guesswork or messy records — just clean, reliable data.</p>
-                                <ul>
-                                    <li><i class="bi bi-check2-all"></i><span>Real-time categorization &amp; reconciliation</span></li>
-                                    <li><i class="bi bi-check2-all"></i><span>Always prepared for audits or tax filing</span></li>
-                                    <li><i class="bi bi-check2-all"></i><span>Built directly into your QuickBooks</span></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6 text-center order-1 order-lg-2"><img class="img-fluid" src="assets/img/manage-inventory-with-ease-desktop-feature-qbes-ca-en.avif" alt=""></div>
-                        </div>
+        </section><section id="features" class="features section" aria-labelledby="features-heading">
+    <div class="container section-title">
+        <div class="section-header">
+            <h2 id="features-heading">Core Features</h2>
+            <p>Designed for Accuracy. Backed by Certified QuickBooks Expertise.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <ul class="nav nav-tabs" role="tablist" aria-label="Bookkeeping and QuickBooks support services">
+                <li class="nav-item">
+                    <a class="nav-link active show" data-bs-target="#features-tab-1" data-bs-toggle="tab" role="tab" aria-selected="true">
+                        <h4>Real-Time Bookkeeping</h4>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-target="#features-tab-2" data-bs-toggle="tab" role="tab" aria-selected="false">
+                        <h4>Catch-Up &amp; Cleanup</h4>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-target="#features-tab-3" data-bs-toggle="tab" role="tab" aria-selected="false">
+                        <h4>Dedicated Support</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-content">
+            <!-- Tab 1 -->
+            <div id="features-tab-1" class="tab-pane fade active show" role="tabpanel" aria-labelledby="real-time-bookkeeping">
+                <div class="row">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1 mt-3 mt-lg-0">
+                        <h3>Smart Books, Always Ready</h3>
+                        <p class="fst-italic">
+                            Keep your books clean, accurate, and always ready for tax time. Our certified QuickBooks ProAdvisors ensure every transaction is reconciled and categorized in real time.
+                        </p>
+                        <ul>
+                            <li><svg class="unique-pricing-check me-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Real-time categorization &amp; reconciliation</span></li>
+                            <li><svg class="unique-pricing-check me-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Always tax-ready &amp; audit-prepared</span></li>
+                            <li><svg class="unique-pricing-check me-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Seamless integration with QuickBooks Online</span></li>
+                        </ul>
                     </div>
-                    <div class="tab-pane fade" id="features-tab-2">
-                        <div class="row">
-                            <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1 mt-3 mt-lg-0">
-                                <h3>Catch Up Without Stress</h3>
-                                <p class="fst-italic">Falling behind? We specialize in multi-month or multi-year cleanups to bring order to chaos — fast, accurate, and judgment-free.</p>
-                                <ul>
-                                    <li><i class="bi bi-check2-all"></i><span>Clean old transactions and fix errors</span></li>
-                                    <li><i class="bi bi-check2-all"></i><span>Restore accuracy across accounts</span></li>
-                                    <li><i class="bi bi-check2-all"></i><span>Get current for loans, taxes, or growth</span></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6 text-center order-1 order-lg-2"><img class="img-fluid" src="assets/img/sbseg-feature-ca-en-qbes-simple-dashboard-desktop.avif" alt=""></div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="features-tab-3">
-                        <div class="row">
-                            <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1 mt-3 mt-lg-0">
-                                <h3>Dedicated Human Help</h3>
-                                <ul>
-                                    <li><i class="bi bi-check2-all"></i><span>Certified QuickBooks ProAdvisors</span></li>
-                                    <li><i class="bi bi-check2-all"></i><span>Available by phone, email, or Zoom</span></li>
-                                    <li><i class="bi bi-check2-all"></i><span>Clear answers, not tech jargon</span></li>
-                                </ul>
-                                <p class="fst-italic">No ticket systems, no bots — just experienced professionals ready to guide you when you need it most.</p>
-                            </div>
-                            <div class="col-lg-6 text-center order-1 order-lg-2"><img class="img-fluid" src="assets/img/sbseg-feature-ca-en-qbes-multiple-preffered-vendors-desktop.avif" alt=""></div>
-                        </div>
+                    <div class="col-lg-6 text-center order-1 order-lg-2">
+                        <img class="img-fluid" src="assets/img/manage-inventory-with-ease-desktop-feature-qbes-ca-en.avif" alt="QuickBooks real-time bookkeeping feature illustration" />
                     </div>
                 </div>
             </div>
-        </section>
-        <section id="features-cards" class="features-cards section">
-            <div class="container">
-                <div class="row gy-4">
-                    <div class="col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="feature-box orange"><i class="bi bi-award"></i>
-                            <h4>Accurate Data You Can Trust</h4>
-                            <p>Our experts ensure every transaction is recorded correctly, giving you confidence in your financial reports.</p>
-                        </div>
+
+            <!-- Tab 2 -->
+            <div id="features-tab-2" class="tab-pane fade" role="tabpanel" aria-labelledby="catch-up-cleanup">
+                <div class="row">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1 mt-3 mt-lg-0">
+                        <h3>Catch Up Without Stress</h3>
+                        <p class="fst-italic">
+                            Behind on bookkeeping? Our experts specialize in multi-month or multi-year cleanup services to fix errors, reconcile old data, and bring your QuickBooks up to date fast.
+                        </p>
+                        <ul>
+                            <li><svg class="unique-pricing-check me-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Clean old transactions and correct discrepancies</span></li>
+                            <li><svg class="unique-pricing-check me-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Restore accuracy across all accounts</span></li>
+                            <li><svg class="unique-pricing-check me-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Get current for loans, taxes, and growth goals</span></li>
+                        </ul>
                     </div>
-                    <div class="col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="feature-box blue"><i class="bi bi-patch-check"></i>
-                            <h4>Expert Guidance Always Available</h4>
-                            <p>Tap into certified professionals who understand your business needs and accounting challenges.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="feature-box green"><i class="bi bi-sunrise"></i>
-                            <h4>Smooth Software Transitions</h4>
-                            <p>Switch or upgrade accounting software seamlessly with expert data migration and setup support.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="feature-box red"><i class="bi bi-shield-check"></i>
-                            <h4>Custom Solutions for Your Business</h4>
-                            <p>Flexible plans tailored to your size, industry, and goals — paying only for what you need.</p>
-                        </div>
+                    <div class="col-lg-6 text-center order-1 order-lg-2">
+                        <img class="img-fluid" src="assets/img/sbseg-feature-ca-en-qbes-simple-dashboard-desktop.avif" alt="QuickBooks bookkeeping cleanup and reconciliation service" />
                     </div>
                 </div>
             </div>
-        </section>
-        <section id="call-to-action" class="call-to-action section">
-            <div class="container box-shadow" data-aos="fade-up" data-aos-delay="100">
-                <div class="row position-relative justify-content-center align-items-center content">
-                    <div class="col-lg-8 text-center mx-auto">
-                        <h2 class="display-4 mb-4">We'll Handle The Books While You Run Your Business</h2><a class="btn btn-cta" role="button" href="enterprise/support/index.html">Talk to an Expert</a>
-                    </div><div class="shape shape-1">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <path d="M47.1,-57.1C59.9,-45.6,68.5,-28.9,71.4,-10.9C74.2,7.1,71.3,26.3,61.5,41.1C51.7,55.9,35,66.2,16.9,69.2C-1.3,72.2,-21,67.8,-36.9,57.9C-52.8,48,-64.9,32.6,-69.1,15.1C-73.3,-2.4,-69.5,-22,-59.4,-37.1C-49.3,-52.2,-32.8,-62.9,-15.7,-64.9C1.5,-67,34.3,-68.5,47.1,-57.1Z" transform="translate(100 100)"></path>
-            </svg>
-          </div><div class="shape shape-2">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <path d="M41.3,-49.1C54.4,-39.3,66.6,-27.2,71.1,-12.1C75.6,3,72.4,20.9,63.3,34.4C54.2,47.9,39.2,56.9,23.2,62.3C7.1,67.7,-10,69.4,-24.8,64.1C-39.7,58.8,-52.3,46.5,-60.1,31.5C-67.9,16.4,-70.9,-1.4,-66.3,-16.6C-61.8,-31.8,-49.7,-44.3,-36.3,-54C-22.9,-63.7,-8.2,-70.6,3.6,-75.1C15.4,-79.6,28.2,-58.9,41.3,-49.1Z" transform="translate(100 100)"></path>
-            </svg>
-          </div><div class="dots dots-1">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              
-                <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
-              
-              <rect width="100" height="100" fill="url(#dot-pattern)"></rect>
-            </svg>
-          </div><div class="dots dots-2">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              
-                <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
-              
-              <rect width="100" height="100" fill="url(#dot-pattern-2)"></rect>
-            </svg>
-          </div><div class="shape shape-3">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <path d="M43.3,-57.1C57.4,-46.5,71.1,-32.6,75.3,-16.2C79.5,0.2,74.2,19.1,65.1,35.3C56,51.5,43.1,65,27.4,71.7C11.7,78.4,-6.8,78.3,-23.9,72.4C-41,66.5,-56.7,54.8,-65.4,39.2C-74.1,23.6,-75.8,4,-71.7,-13.2C-67.6,-30.4,-57.7,-45.2,-44.3,-56.1C-30.9,-67,-15.5,-74,0.7,-74.9C16.8,-75.8,33.7,-70.7,43.3,-57.1Z" transform="translate(100 100)"></path>
-            </svg>
-          </div>
+
+            <!-- Tab 3 -->
+            <div id="features-tab-3" class="tab-pane fade" role="tabpanel" aria-labelledby="dedicated-support">
+                <div class="row">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1 mt-3 mt-lg-0">
+                        <h3>Dedicated Human Help</h3>
+                        <ul>
+                            <li><svg class="unique-pricing-check me-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Certified QuickBooks ProAdvisors</span></li>
+                            <li><svg class="unique-pricing-check me-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Available by phone, email, or Zoom</span></li>
+                            <li><svg class="unique-pricing-check me-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Clear guidance, not technical jargon</span></li>
+                        </ul>
+                        <p class="fst-italic">
+                            No bots, no ticket queues — just real accounting professionals ready to help you with QuickBooks plans, setup, or monthly support.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-center order-1 order-lg-2">
+                        <img class="img-fluid" src="assets/img/sbseg-feature-ca-en-qbes-multiple-preffered-vendors-desktop.avif" alt="QuickBooks support and human help team" />
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+
+    <span class="visually-hidden">
+        QuickBooks cleanup, bookkeeping support, certified ProAdvisor help, call QuickBooks expert, setup assistance, subscription plans, bookkeeping catch-up service, tax-ready data preparation.
+    </span>
+</section>
+
+<!-- Feature Cards -->
+<section id="features-cards" class="features-cards section" aria-labelledby="feature-cards-heading">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-box orange">
+                    <i class="bi bi-award" aria-hidden="true"></i>
+                    <h4>Accurate Data You Can Trust</h4>
+                    <p>Every entry, every report — verified by certified QuickBooks ProAdvisors to give you full confidence in your numbers.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-box blue">
+                    <i class="bi bi-patch-check" aria-hidden="true"></i>
+                    <h4>Expert Guidance Always Available</h4>
+                    <p>Connect directly with bookkeeping professionals who understand your challenges — setup, cleanup, or plan optimization.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-box green">
+                    <i class="bi bi-sunrise" aria-hidden="true"></i>
+                    <h4>Smooth QuickBooks Transitions</h4>
+                    <p>Switch or upgrade QuickBooks plans with seamless data migration and setup done by certified experts.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-box red">
+                    <i class="bi bi-shield-check" aria-hidden="true"></i>
+                    <h4>Custom Bookkeeping Solutions</h4>
+                    <p>Flexible, scalable plans designed for your business size and goals — pay only for what you need, no hidden costs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <span class="visually-hidden">
+        Bookkeeping services, QuickBooks ProAdvisor plans, accounting software migration, QuickBooks expert consultation, small business bookkeeping setup.
+    </span>
+</section>
+
+        <section id="call-to-action" class="call-to-action section"><div class="container box-shadow">
+  <div class="row position-relative justify-content-center align-items-center content">
+    <div class="col-lg-8 text-center mx-auto">
+      <h2 class="display-4 mb-4">We’ll Handle the Books While You Grow Your Business</h2>
+      <p class="lead mb-4">
+        Get peace of mind knowing Certified QuickBooks ProAdvisors are managing your bookkeeping, payroll, and taxes — so you can focus on what you do best.
+      </p>
+      <a class="btn btn-cta" role="button" href="../support/index.html" aria-label="Talk to a Certified QuickBooks ProAdvisor for expert bookkeeping help">
+        Talk to an Expert
+      </a>
+    </div>
+
+    <!-- Background Shapes (Unchanged for Visual Design) -->
+    <div class="shape shape-1">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M47.1,-57.1C59.9,-45.6,68.5,-28.9,71.4,-10.9C74.2,7.1,71.3,26.3,61.5,41.1C51.7,55.9,35,66.2,16.9,69.2C-1.3,72.2,-21,67.8,-36.9,57.9C-52.8,48,-64.9,32.6,-69.1,15.1C-73.3,-2.4,-69.5,-22,-59.4,-37.1C-49.3,-52.2,-32.8,-62.9,-15.7,-64.9C1.5,-67,34.3,-68.5,47.1,-57.1Z" transform="translate(100 100)"></path>
+      </svg>
+    </div>
+
+    <div class="shape shape-2">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M41.3,-49.1C54.4,-39.3,66.6,-27.2,71.1,-12.1C75.6,3,72.4,20.9,63.3,34.4C54.2,47.9,39.2,56.9,23.2,62.3C7.1,67.7,-10,69.4,-24.8,64.1C-39.7,58.8,-52.3,46.5,-60.1,31.5C-67.9,16.4,-70.9,-1.4,-66.3,-16.6C-61.8,-31.8,-49.7,-44.3,-36.3,-54C-22.9,-63.7,-8.2,-70.6,3.6,-75.1C15.4,-79.6,28.2,-58.9,41.3,-49.1Z" transform="translate(100 100)"></path>
+      </svg>
+    </div>
+
+    <div class="dots dots-1">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+        <rect width="100" height="100" fill="url(#dot-pattern)"></rect>
+      </svg>
+    </div>
+
+    <div class="dots dots-2">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+        <rect width="100" height="100" fill="url(#dot-pattern-2)"></rect>
+      </svg>
+    </div>
+
+    <div class="shape shape-3">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M43.3,-57.1C57.4,-46.5,71.1,-32.6,75.3,-16.2C79.5,0.2,74.2,19.1,65.1,35.3C56,51.5,43.1,65,27.4,71.7C11.7,78.4,-6.8,78.3,-23.9,72.4C-41,66.5,-56.7,54.8,-65.4,39.2C-74.1,23.6,-75.8,4,-71.7,-13.2C-67.6,-30.4,-57.7,-45.2,-44.3,-56.1C-30.9,-67,-15.5,-74,0.7,-74.9C16.8,-75.8,33.7,-70.7,43.3,-57.1Z" transform="translate(100 100)"></path>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Hidden semantic keyword layer for SEO -->
+  <span class="visually-hidden">
+    Certified QuickBooks ProAdvisor support, QuickBooks help phone number, talk to QuickBooks expert, QuickBooks bookkeeping setup, QBO help phone number, QuickBooks accounting consultation, bookkeeping cleanup assistance, QuickBooks bookkeeping services near me.
+  </span>
+</div>
+</section>
         <section id="clients" class="clients section">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper init-swiper"><script type="application/json" class="swiper-config">
@@ -346,378 +661,757 @@
                 </div>
             </div>
         </section>
-        <section id="features-cards" class="features-cards section">
-            <div class="section-header section-title">
-                <h2 class="display-6">TechBrot Core Values</h2>
-                <p>At TechBrot Inc., our work is measured by the success we help create for clients. We deliver solutions that protect businesses, simplify finances, and enable growth. Our core values reflect a commitment to service, technical excellence, and an excellent client experience.</p>
-            </div><div class="container">
-    <div class="row gy-4">
-        <!-- Track performance instantly -->
-        <div class="col-md-6 col-xl-3">
-            <div class="feature-box orange" style="background-color: rgba(255,255,255,0);">
-                <!-- bar chart icon -->
-                <i class="bi bi-bar-chart-line"></i>
-                <h4>Track performance instantly</h4>
-                <p>Get clear, presentation-ready reports with the insights you need to make smarter business decisions.</p>
+        <section id="features-cards-2" class="features-cards section"><section id="core-values" class="core-values section" aria-labelledby="core-values-heading">
+    <div class="section-header text-center mb-5">
+      <h2 id="trust-compliance-heading" class="display-6 fw-semibold mb-2">Trusted by Businesses — Backed by Compliance</h2>
+      <p class="text-muted fs-5 mb-0">
+        TechBrot combines certified QuickBooks expertise with enterprise-grade data protection.  
+        Every setup, cleanup, and financial process is designed with your trust and security in mind.
+      </p>
+    </div>
+
+    <div class="container">
+        <div class="row gy-4">
+            <!-- Track performance instantly -->
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-box orange" style="background-color: rgba(255,255,255,0);">
+                    <i class="bi bi-bar-chart-line" aria-hidden="true"></i>
+                    <h4>Track Performance Instantly</h4>
+                    <p>
+                        Get audit-ready, presentation-level reports in real time — powered by
+                        precise bookkeeping and QuickBooks analytics for smarter business decisions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Cut down manual tasks -->
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-box blue" style="background-color: rgba(255,255,255,0);">
+                    <i class="bi bi-cloud-upload" aria-hidden="true"></i>
+                    <h4>Cut Down Manual Tasks</h4>
+                    <p>
+                        Automate your bookkeeping workflow — upload invoices, reconcile transactions,
+                        and sync data directly within QuickBooks Online.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Your complete financial hub -->
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-box green" style="background-color: rgba(255,255,255,0);">
+                    <i class="bi bi-layout-text-window" aria-hidden="true"></i>
+                    <h4>Your Complete Financial Hub</h4>
+                    <p>
+                        Manage accounting, payroll, and reports in one secure QuickBooks dashboard —
+                        fully integrated and easy to use for every team member.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Restore your data anytime -->
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-box red" style="background-color: rgba(255,255,255,0);">
+                    <i class="bi bi-clock-history" aria-hidden="true"></i>
+                    <h4>Restore Your Data Anytime</h4>
+                    <p>
+                        Automatic backups safeguard your financial data, letting you restore your
+                        QuickBooks books at any point — securely and instantly.
+                    </p>
+                </div>
             </div>
         </div>
-        <!-- Cut down manual tasks -->
-        <div class="col-md-6 col-xl-3">
-            <div class="feature-box blue" style="background-color: rgba(255,255,255,0);">
-                <!-- cloud upload icon -->
-                <i class="bi bi-cloud-upload"></i>
-                <h4>Cut down manual tasks</h4>
-                <p>Upload and process hundreds of invoices, bills, and expenses in just a few clicks.</p>
+
+        <div class="row gy-4 mt-3">
+            <!-- Support when you need it -->
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-box purple" style="background-color: rgba(255,255,255,0);">
+                    <i class="bi bi-headset" aria-hidden="true"></i>
+                    <h4>Support When You Need It</h4>
+                    <p>
+                        Certified QuickBooks ProAdvisors are available by phone, email, or Zoom — real people,
+                        real help, whenever you need it.
+                    </p>
+                </div>
             </div>
-        </div>
-        <!-- Your complete financial hub -->
-        <div class="col-md-6 col-xl-3">
-            <div class="feature-box green" style="background-color: rgba(255,255,255,0);">
-                <!-- layout icon -->
-                <i class="bi bi-layout-text-window"></i>
-                <h4>Your complete financial hub</h4>
-                <p>Manage all your business finances and data in one secure, easy-to-use platform.</p>
+
+            <!-- Control access with ease -->
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-box teal" style="background-color: rgba(255,255,255,0);">
+                    <i class="bi bi-shield-lock" aria-hidden="true"></i>
+                    <h4>Control Access with Ease</h4>
+                    <p>
+                        Manage roles and permissions for your team effortlessly — keeping your data
+                        private, organized, and audit-compliant.
+                    </p>
+                </div>
             </div>
-        </div>
-        <!-- Restore your data anytime -->
-        <div class="col-md-6 col-xl-3">
-            <div class="feature-box red" style="background-color: rgba(255,255,255,0);">
-                <!-- clock-history icon -->
-                <i class="bi bi-clock-history"></i>
-                <h4>Restore your data anytime</h4>
-                <p>Quickly bring your books back to a saved point with automatic background backups.*</p>
+
+            <!-- Collaborate without limits -->
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-box yellow" style="background-color: rgba(255,255,255,0);">
+                    <i class="bi bi-people" aria-hidden="true"></i>
+                    <h4>Collaborate Without Limits</h4>
+                    <p>
+                        Work seamlessly with your accountant or team in real time using
+                        secure, cloud-based QuickBooks access.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Power up with top apps -->
+            <div class="col-md-6 col-xl-3">
+                <div class="feature-box pink" style="background-color: rgba(255,255,255,0);">
+                    <i class="bi bi-puzzle" aria-hidden="true"></i>
+                    <h4>Power Up with Top Apps</h4>
+                    <p>
+                        Extend your QuickBooks with best-in-class integrations — payments, payroll,
+                        CRM, and more tailored for your business needs.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="row gy-4 mt-3">
-        <!-- Support when you need it -->
-        <div class="col-md-6 col-xl-3">
-            <div class="feature-box purple" style="background-color: rgba(255,255,255,0);">
-                <!-- headset icon -->
-                <i class="bi bi-headset"></i>
-                <h4>Support when you need it</h4>
-                <p>Access on-demand training and round-the-clock expert help to stay productive.</p>
+    <!-- Hidden SEO & Call Intent Layer -->
+    <span class="visually-hidden">
+        QuickBooks bookkeeping values, Certified QuickBooks ProAdvisor, QBO support number, QBO help phone number, 
+        how do I talk to QuickBooks, QuickBooks consultation, bookkeeping support, cloud accounting, 
+        secure financial data backup, QuickBooks Online setup help, talk to a QuickBooks expert, 
+        QuickBooks cleanup service, QuickBooks plan discounts, bookkeeping ProAdvisor near me, 
+        QBO setup consultation, QuickBooks phone consultation, QuickBooks help desk.
+    </span>
+</section>
+</section>
+        <section id="stats" class="stats section"><div class="container">
+    <div class="row gy-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="text-center w-100 h-100 stats-item">
+                <span class="purecounter" data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"></span>
+                <p>Satisfied Clients</p>
             </div>
         </div>
-        <!-- Control access with ease -->
-        <div class="col-md-6 col-xl-3">
-            <div class="feature-box teal" style="background-color: rgba(255,255,255,0);">
-                <!-- shield-lock icon -->
-                <i class="bi bi-shield-lock"></i>
-                <h4>Control access with ease</h4>
-                <p>Set custom roles and permissions to keep your team’s work secure and organized.</p>
+        <div class="col-md-6 col-lg-3">
+            <div class="text-center w-100 h-100 stats-item">
+                <span class="purecounter" data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"></span>
+                <p>Successful Projects</p>
             </div>
         </div>
-        <!-- Collaborate without limits -->
-        <div class="col-md-6 col-xl-3">
-            <div class="feature-box yellow" style="background-color: rgba(255,255,255,0);">
-                <!-- people icon -->
-                <i class="bi bi-people"></i>
-                <h4>Collaborate without limits</h4>
-                <p>Work together in real time from anywhere with cloud-based updates and sharing.</p>
+        <div class="col-md-6 col-lg-3">
+            <div class="text-center w-100 h-100 stats-item">
+                <span class="purecounter" data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1"></span>
+                <p>Hours of Dedicated Support</p>
             </div>
         </div>
-        <!-- Power up with top apps -->
-        <div class="col-md-6 col-xl-3">
-            <div class="feature-box pink" style="background-color: rgba(255,255,255,0);">
-                <!-- puzzle icon -->
-                <i class="bi bi-puzzle"></i>
-                <h4>Power up with top apps</h4>
-                <p>Enhance your workflow by integrating premium tools that fit the way you work.</p>
+        <div class="col-md-6 col-lg-3">
+            <div class="text-center w-100 h-100 stats-item">
+                <span class="purecounter" data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"></span>
+                <p>Expert Team Members</p>
             </div>
         </div>
     </div>
 </div>
+</section>
+        <section id="features-cards" class="features-cards section"><div class="container">
+  <div class="row gy-4">
 
-        </section>
-        <section id="stats" class="stats section">
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-                <div class="row gy-4">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="text-center w-100 h-100 stats-item"><span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Satisfied Clients</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="text-center w-100 h-100 stats-item"><span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Successful Projects</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="text-center w-100 h-100 stats-item"><span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Hours of Dedicated Support</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="text-center w-100 h-100 stats-item"><span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Expert Team Members</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section><section id="services" class="services section light-background">
+    <!-- TechBrot DRIVE™ Intro -->
+    <div class="col-md-4">
+      <div class="feature-box drive-intro" style="background-color: rgba(255,255,255,0);">
+        <h2>TechBrot DRIVE™</h2>
+        <p>Our proven client engagement process is built to drive long-term success through clarity, structure, and measurable results.</p>
+      </div>
+    </div>
+
+    <!-- Discover -->
+    <div class="col-md-4">
+      <div class="feature-box orange" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-search"></i>
+        <h4>Discover</h4>
+        <p>We assess your current systems and processes to uncover the real issues behind inefficiencies.</p>
+      </div>
+    </div>
+
+    <!-- Right Fit -->
+    <div class="col-md-4">
+      <div class="feature-box blue" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-check-circle"></i>
+        <h4>Right Fit</h4>
+        <p>We recommend only the tools and workflows that truly align with your business goals.</p>
+      </div>
+    </div>
+
+    <!-- Inform -->
+    <div class="col-md-4">
+      <div class="feature-box green" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-info-circle"></i>
+        <h4>Inform</h4>
+        <p>Our clear project roadmap keeps you informed, minimizes delays, and ensures smooth execution.</p>
+      </div>
+    </div>
+
+    <!-- Vision Implementation -->
+    <div class="col-md-4">
+      <div class="feature-box red" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-eye"></i>
+        <h4>Vision Implementation</h4>
+        <p>We help you achieve visibility and control over your financial and operational data for better decisions.</p>
+      </div>
+    </div>
+
+    <!-- Execute -->
+    <div class="col-md-4">
+      <div class="feature-box purple" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-rocket-takeoff"></i>
+        <h4>Execute</h4>
+        <p>We monitor performance and continuously optimize systems so your business runs smarter and faster.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section><section id="services" class="services section light-background" 
+  aria-labelledby="services-heading"
+  style="background-color:#ffffff;color:#212529;position:relative;z-index:1;padding:80px 0;overflow:hidden;">
+  
   <div class="container section-title">
-    <div class="section-header">
-      <h2>Services</h2>
-      <p>An award-winning team of experts to help solve your QuickBooks challenges.</p>
-      <div class="section-header"></div>
+    <div class="section-header text-center">
+      <h2 id="services-heading">Our QuickBooks Services</h2>
+      <p>
+        Certified QuickBooks ProAdvisors offering expert bookkeeping, setup, cleanup, and consultation — 
+        trusted by growing businesses nationwide for accuracy, compliance, and performance.
+      </p>
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" >
     <div class="row g-4">
 
       <!-- QuickBooks Consulting -->
       <div class="col-lg-6">
-        <div class="d-flex service-card">
-          <div class="flex-shrink-0 icon"><i class="bi bi-briefcase"></i></div>
+        <div class="d-flex service-card align-items-start">
+          <div class="flex-shrink-0 icon"><i class="bi bi-briefcase" aria-hidden="true"></i></div>
           <div>
             <h3>QuickBooks Consulting</h3>
-            <p>Whether you’re new to QuickBooks or have years of experience, we’ll create a customized plan to fit your goals and workflow.</p>
-            <a class="read-more" href="#">Learn More <i class="bi bi-arrow-right"></i></a>
+            <p>
+              Personalized QuickBooks consultation from Certified ProAdvisors — we evaluate your workflow, 
+              optimize reporting, and create automation strategies that save you time.
+            </p>
+            <a class="read-more" href="#contact" aria-label="Learn more about QuickBooks consulting">
+              Learn More <i class="bi bi-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
 
       <!-- QuickBooks Data Migration -->
       <div class="col-lg-6">
-        <div class="d-flex service-card">
-          <div class="flex-shrink-0 icon"><i class="bi bi-cloud-upload"></i></div>
+        <div class="d-flex service-card align-items-start">
+          <div class="flex-shrink-0 icon"><i class="bi bi-cloud-upload" aria-hidden="true"></i></div>
           <div>
             <h3>QuickBooks Data Migration</h3>
-            <p>We’ve completed thousands of migrations from systems like NetSuite, Sage, and Dynamics—fast, accurate, and stress-free.</p>
-            <a class="read-more" href="#">Learn More <i class="bi bi-arrow-right"></i></a>
+            <p>
+              Move securely from NetSuite, Sage, Xero, or Dynamics into QuickBooks Online or Desktop — 
+              precise, verified, and fast data migration for your accounting continuity.
+            </p>
+            <a class="read-more" href="#contact" aria-label="Learn more about QuickBooks data migration">
+              Learn More <i class="bi bi-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
 
       <!-- QuickBooks Bookkeeping -->
       <div class="col-lg-6">
-        <div class="d-flex service-card">
-          <div class="flex-shrink-0 icon"><i class="bi bi-journal-check"></i></div>
+        <div class="d-flex service-card align-items-start">
+          <div class="flex-shrink-0 icon"><i class="bi bi-journal-check" aria-hidden="true"></i></div>
           <div>
             <h3>QuickBooks Bookkeeping</h3>
-            <p>We tailor bookkeeping around your business, goals, and budget—all managed inside the QuickBooks tools you already use.</p>
-            <a class="read-more" href="#">Learn More <i class="bi bi-arrow-right"></i></a>
+            <p>
+              Accurate and audit-ready bookkeeping handled inside QuickBooks — reconciliations, 
+              expense tracking, and monthly reporting tailored for your business.
+            </p>
+            <a class="read-more" href="#contact" aria-label="Learn more about QuickBooks bookkeeping">
+              Learn More <i class="bi bi-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
 
       <!-- QuickBooks File Review -->
       <div class="col-lg-6">
-        <div class="d-flex service-card">
-          <div class="flex-shrink-0 icon"><i class="bi bi-file-earmark-bar-graph"></i></div>
+        <div class="d-flex service-card align-items-start">
+          <div class="flex-shrink-0 icon"><i class="bi bi-file-earmark-bar-graph" aria-hidden="true"></i></div>
           <div>
             <h3>QuickBooks File Review</h3>
-            <p>From corrupt file repairs to rebuilds and cleanups, our experts diagnose, fix, and optimize your QuickBooks files for peak performance.</p>
-            <a class="read-more" href="#">Learn More <i class="bi bi-arrow-right"></i></a>
+            <p>
+              Detect, repair, and optimize your QuickBooks data file. We correct errors, fix reconciliation issues, 
+              and enhance performance for smooth daily use.
+            </p>
+            <a class="read-more" href="#contact" aria-label="Learn more about QuickBooks file review">
+              Learn More <i class="bi bi-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
 
       <!-- QuickBooks Support -->
       <div class="col-lg-6">
-        <div class="d-flex service-card">
-          <div class="flex-shrink-0 icon"><i class="bi bi-headset"></i></div>
+        <div class="d-flex service-card align-items-start">
+          <div class="flex-shrink-0 icon"><i class="bi bi-headset" aria-hidden="true"></i></div>
           <div>
             <h3>QuickBooks Support</h3>
-            <p>Skip the hold times and confusion—our certified experts resolve your QuickBooks issues quickly and professionally.</p>
-            <a class="read-more" href="#">Learn More <i class="bi bi-arrow-right"></i></a>
+            <p>
+              Skip long hold times. Connect instantly with Certified QuickBooks ProAdvisors who resolve setup, 
+              integration, or reporting issues in real-time.
+            </p>
+            <a class="read-more" href="#contact" aria-label="Learn more about QuickBooks support">
+              Learn More <i class="bi bi-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
 
       <!-- QuickBooks Training -->
       <div class="col-lg-6">
-        <div class="d-flex service-card">
-          <div class="flex-shrink-0 icon"><i class="bi bi-person-lines-fill"></i></div>
+        <div class="d-flex service-card align-items-start">
+          <div class="flex-shrink-0 icon"><i class="bi bi-person-lines-fill" aria-hidden="true"></i></div>
           <div>
             <h3>QuickBooks Training</h3>
-            <p>Get expert-led QuickBooks training—whether it’s a single-user setup or a complex Enterprise installation with custom apps.</p>
-            <a class="read-more" href="#">Learn More <i class="bi bi-arrow-right"></i></a>
+            <p>
+              Learn QuickBooks confidently. Get one-on-one or team training for QuickBooks Online, Desktop, 
+              or Enterprise — from setup to custom reporting.
+            </p>
+            <a class="read-more" href="#contact" aria-label="Learn more about QuickBooks training">
+              Learn More <i class="bi bi-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
 
       <!-- QuickBooks Setup & Optimization -->
       <div class="col-lg-6">
-        <div class="d-flex service-card">
-          <div class="flex-shrink-0 icon"><i class="bi bi-gear-wide-connected"></i></div>
+        <div class="d-flex service-card align-items-start">
+          <div class="flex-shrink-0 icon"><i class="bi bi-gear-wide-connected" aria-hidden="true"></i></div>
           <div>
             <h3>QuickBooks Setup &amp; Optimization</h3>
-            <p>We’ll set up your QuickBooks file, chart of accounts, and automation rules for accuracy, speed, and reporting clarity.</p>
-            <a class="read-more" href="#">Learn More <i class="bi bi-arrow-right"></i></a>
+            <p>
+              We set up your QuickBooks file, chart of accounts, and automations — ensuring accuracy, 
+              smooth workflows, and faster reporting.
+            </p>
+            <a class="read-more" href="#contact" aria-label="Learn more about QuickBooks setup and optimization">
+              Learn More <i class="bi bi-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
 
       <!-- QuickBooks Cleanup & Catch-Up -->
       <div class="col-lg-6">
-        <div class="d-flex service-card">
-          <div class="flex-shrink-0 icon"><i class="bi bi-arrow-clockwise"></i></div>
+        <div class="d-flex service-card align-items-start">
+          <div class="flex-shrink-0 icon"><i class="bi bi-arrow-clockwise" aria-hidden="true"></i></div>
           <div>
             <h3>QuickBooks Cleanup &amp; Catch-Up</h3>
-            <p>Behind on bookkeeping? We’ll reconcile and clean up your books—turning chaos into clarity, month by month.</p>
-            <a class="read-more" href="#">Learn More <i class="bi bi-arrow-right"></i></a>
+            <p>
+              Behind on books? We clean, reconcile, and update past months or years of records — restoring accuracy 
+              and giving you a clear financial picture.
+            </p>
+            <a class="read-more" href="#contact" aria-label="Learn more about QuickBooks cleanup and catch-up">
+              Learn More <i class="bi bi-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
 
     </div>
   </div>
+
+  <!-- Hidden SEO Layer -->
+  <span class="visually-hidden">
+    Certified QuickBooks ProAdvisor, QuickBooks bookkeeping support, QBO support number, 
+    QBO help phone number, how do I talk to QuickBooks, QuickBooks consultation, QuickBooks cleanup service, 
+    QuickBooks setup help, bookkeeping catch-up, data migration experts, QuickBooks training for business owners, 
+    QBO ProAdvisor support number, QuickBooks file repair, bookkeeping optimization, QuickBooks data review, 
+    QuickBooks help line, QuickBooks plan support, talk to QuickBooks expert.
+  </span>
 </section>
 
-        <section class="find-accountant">
-            <div class="container text-center py-5" style="background-color: #f7f6f3;border-radius: 7px;">
-                <h2 class="fw-bold mb-3">Find an Accountant Near You</h2>
-                <p class="mb-4" style="font-size: clamp(1.45rem, 1vw + 0.5rem, 1.125rem);">Locate a bookkeeper or accountant near you that offers tax and accounting services to businesses in your area.</p>
-                <div class="d-flex justify-content-center flex-wrap gap-2 state-buttons"><a role="button" class="state-btn" href="/find-an-accountant/california/index.html">California</a><a role="button" class="state-btn" href="/find-an-accountant/texas/index.html">Texas</a><a role="button" class="state-btn" href="/find-an-accountant/new-york/index.html">New York</a><a role="button" class="state-btn" href="/find-an-accountant/florida/index.html">Florida</a><a role="button" class="state-btn" href="/find-an-accountant/illinois/index.html">Illinois</a><a role="button" class="state-btn" href="/find-an-accountant/pennsylvania/index.html">Pennsylvania</a><a role="button" class="state-btn" href="/find-an-accountant/ohio/index.html">Ohio</a><a role="button" class="state-btn" href="/find-an-accountant/georgia/index.html">Georgia</a><a role="button" class="state-btn" href="/find-an-accountant/michigan/index.html">Michigan</a><a role="button" class="state-btn" href="/find-an-accountant/new-jersey/index.html">New Jersey</a><a role="button" class="state-btn" href="/find-an-accountant/north-carolina/index.html">North Carolina</a></div>
+        <section class="find-accountant"><section id="find-accountant" class="py-5 text-center bg-light" aria-labelledby="find-accountant-heading" style="border-radius: 7px; background-color: #f7f6f3;">
+  <div class="container fade show transition">
+    <h2 id="find-accountant-heading" class="fw-bold mb-3 animate__animated animate__fadeInUp">
+      Find an Accountant Near You
+    </h2>
+    <p class="mb-4 animate__animated animate__fadeInUp animate__delay-1s"
+       style="font-size: clamp(1.45rem, 1vw + 0.5rem, 1.125rem);">
+      Locate a Certified QuickBooks ProAdvisor or bookkeeper near you that offers reliable bookkeeping, 
+      tax preparation, payroll, and accounting services for your business.
+    </p>
+
+    <div class="d-flex justify-content-center flex-wrap gap-2 state-buttons animate__animated animate__fadeInUp animate__delay-2s" aria-label="Find accountants by state">
+      <a class="state-btn btn btn-outline-dark px-3 py-2" role="button" href="/find-an-accountant/california/index.html">California</a>
+      <a class="state-btn btn btn-outline-dark px-3 py-2" role="button" href="/find-an-accountant/texas/index.html">Texas</a>
+      <a class="state-btn btn btn-outline-dark px-3 py-2" role="button" href="/find-an-accountant/new-york/index.html">New York</a>
+      <a class="state-btn btn btn-outline-dark px-3 py-2" role="button" href="/find-an-accountant/florida/index.html">Florida</a>
+      <a class="state-btn btn btn-outline-dark px-3 py-2" role="button" href="/find-an-accountant/illinois/index.html">Illinois</a>
+      <a class="state-btn btn btn-outline-dark px-3 py-2" role="button" href="/find-an-accountant/pennsylvania/index.html">Pennsylvania</a>
+      <a class="state-btn btn btn-outline-dark px-3 py-2" role="button" href="/find-an-accountant/ohio/index.html">Ohio</a>
+      <a class="state-btn btn btn-outline-dark px-3 py-2" role="button" href="/find-an-accountant/georgia/index.html">Georgia</a>
+      <a class="state-btn btn btn-outline-dark px-3 py-2" role="button" href="/find-an-accountant/michigan/index.html">Michigan</a>
+      <a class="state-btn btn btn-outline-dark px-3 py-2" role="button" href="/find-an-accountant/new-jersey/index.html">New Jersey</a>
+      <a class="state-btn btn btn-outline-dark px-3 py-2" role="button" href="/find-an-accountant/north-carolina/index.html">North Carolina</a>
+    </div>
+  </div>
+
+  <!-- Hidden SEO Layer -->
+  <span class="visually-hidden">
+    Find a QuickBooks accountant near me, Certified QuickBooks ProAdvisor, bookkeeping consultation, 
+    QBO support number, QBO help phone number, how do I talk to QuickBooks, talk to a QuickBooks expert, 
+    QuickBooks consultation call, QuickBooks plan advisor, bookkeeping expert near me, 
+    small business accountant support, QuickBooks setup help, QuickBooks bookkeeping plans.
+  </span>
+</section>
+</section>
+        <section id="testimonials" class="testimonials section light-background"><section id="testimonials" class="testimonials section py-5" aria-labelledby="testimonials-heading" style="background-color:#fff;position:relative;z-index:1;">
+  <div class="container section-title fade show transition text-center mb-5">
+    <div class="section-header animate__animated animate__fadeInUp">
+      <h2 id="testimonials-heading" class="fw-bold mb-3">What Our Clients Say</h2>
+      <p class="text-muted mb-0">
+        Hear from small business owners, entrepreneurs, and professionals who trust TechBrot 
+        for accurate bookkeeping, QuickBooks support, and expert financial guidance.
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- Testimonial 1 -->
+      <div class="col-lg-6 animate__animated animate__fadeInUp">
+        <div class="testimonial-item border rounded p-4 h-100 shadow-sm">
+          <img class="testimonial-img rounded-circle mb-3" src="assets/img/testimonials/testimonials-1.jpg" alt="Business owner sharing positive review about TechBrot QuickBooks services" width="80" height="80">
+          <h3>Michael Roberts</h3>
+          <h4>Founder, Retail Startup</h4>
+          <div class="stars text-warning mb-2">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p class="mb-0"><i class="bi bi-quote quote-icon-left text-primary"></i>
+            <span>
+              TechBrot’s bookkeeping cleanup gave us a fresh start. Their Certified QuickBooks ProAdvisors caught every error 
+              and set up automation that saves us hours every week.
+            </span>
+            <i class="bi bi-quote quote-icon-right text-primary"></i>
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="col-lg-6 animate__animated animate__fadeInUp">
+        <div class="testimonial-item border rounded p-4 h-100 shadow-sm">
+          <img class="testimonial-img rounded-circle mb-3" src="assets/img/testimonials/testimonials-2.jpg" alt="Client testimonial for TechBrot bookkeeping and QBO training" width="80" height="80">
+          <h3>Sarah Lewis</h3>
+          <h4>Freelance Designer</h4>
+          <div class="stars text-warning mb-2">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p class="mb-0"><i class="bi bi-quote quote-icon-left text-primary"></i>
+            <span>
+              They simplified my QuickBooks setup and trained me to manage reports confidently. 
+              The TechBrot team is professional, responsive, and always just a call away.
+            </span>
+            <i class="bi bi-quote quote-icon-right text-primary"></i>
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="col-lg-6 animate__animated animate__fadeInUp">
+        <div class="testimonial-item border rounded p-4 h-100 shadow-sm">
+          <img class="testimonial-img rounded-circle mb-3" src="assets/img/testimonials/testimonials-3.jpg" alt="TechBrot client testimonial about cleanup and QuickBooks support" width="80" height="80">
+          <h3>Jennifer Collins</h3>
+          <h4>eCommerce Owner</h4>
+          <div class="stars text-warning mb-2">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p class="mb-0"><i class="bi bi-quote quote-icon-left text-primary"></i>
+            <span>
+              After months of messy books, TechBrot’s cleanup service brought everything current. 
+              Now I can finally run accurate financial reports and focus on sales.
+            </span>
+            <i class="bi bi-quote quote-icon-right text-primary"></i>
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="col-lg-6 animate__animated animate__fadeInUp">
+        <div class="testimonial-item border rounded p-4 h-100 shadow-sm">
+          <img class="testimonial-img rounded-circle mb-3" src="assets/img/testimonials/testimonials-4.jpg" alt="Freelancer testimonial for TechBrot QuickBooks ProAdvisor support" width="80" height="80">
+          <h3>Mark Davidson</h3>
+          <h4>Freelance Consultant</h4>
+          <div class="stars text-warning mb-2">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p class="mb-0"><i class="bi bi-quote quote-icon-left text-primary"></i>
+            <span>
+              Great experience with TechBrot! They helped me choose the right QuickBooks plan 
+              and provided ongoing support that keeps my business finances in order.
+            </span>
+            <i class="bi bi-quote quote-icon-right text-primary"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden SEO & Keyword Layer -->
+  <span class="visually-hidden">
+    TechBrot Certified QuickBooks ProAdvisor reviews, QuickBooks cleanup service feedback, bookkeeping client testimonials, 
+    QBO support number, QBO help phone number, how do I talk to QuickBooks, QuickBooks consultation experience, 
+    talk to a QuickBooks expert, Certified QuickBooks help, QuickBooks setup review, bookkeeping service satisfaction, 
+    TechBrot customer stories, QuickBooks training testimonials.
+  </span>
+</section>
+</section>
+        <section id="certified-experts" class="features-section" style="background-color: rgba(249,249,249,0);"><section id="quickbooks-proadvisors" class="py-2">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+
+      <!-- ✅ Image Column -->
+      <div class="col-lg-6 col-md-10 text-center mb-4 mb-lg-0">
+        <img 
+          src="assets/img/qbpro-25-600.webp" 
+          alt="Certified QuickBooks ProAdvisor providing accounting setup and support"
+          width="500" height="500"
+          class="img-fluid shadow-sm"
+          style="border-radius: 12px; max-width: 100%; height: auto;" />
+      </div>
+
+      <!-- ✅ Content Column -->
+      <div class="col-lg-6 col-md-10">
+        <div class="feature-content text-block">
+          <p class="text-primary fw-semibold mb-2">QuickBooks ProAdvisors</p>
+          <h3 class="display-6 fw-semibold mb-3">Certified QuickBooks Experts You Can Trust</h3>
+
+          <p class="lead">
+            Our team of <strong>Certified QuickBooks ProAdvisors</strong> has completed thousands of successful 
+            <strong>QuickBooks Online setups, data cleanups, and migrations</strong> across the U.S. 
+            We ensure your books are accurate, compliant, and built for growth—so you can focus on running your business.
+          </p>
+
+          <p>
+            Whether you’re just getting started, switching from spreadsheets, or need help fixing messy data,
+            we provide <strong>QuickBooks consulting and bookkeeping services</strong> tailored to your needs. 
+            As certified experts, we help you save time, reduce errors, and gain financial clarity.
+          </p>
+
+          <!-- ✅ CTA Button -->
+          <div class="mt-4">
+            <a href="tel:+18777515575" class="btn cta-btn fw-semibold d-inline-flex align-items-center" aria-label="Call Certified QuickBooks ProAdvisor for help">
+           
+              <strong>Talk To An Expert</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔍 Hidden SEO Keyword Layer -->
+    <span class="visually-hidden">
+      Certified QuickBooks ProAdvisor, QuickBooks Online setup expert, QuickBooks help phone number,
+      QuickBooks consultation, QBO accountant support, QuickBooks data cleanup, QuickBooks migration expert,
+      QuickBooks ProAdvisor near me, QuickBooks Online Advanced setup, QBO support number,
+      QuickBooks bookkeeping service, QuickBooks file cleanup, Certified QuickBooks expert USA,
+      QuickBooks help and setup service, QBO ProAdvisor support team, QuickBooks Certified ProAdvisor consultation
+    </span>
+  </div>
+</section>
+</section>
+        <section class="faq-9 faq section light-background" id="faq"><section id="faq" class="faq section py-5" aria-labelledby="faq-heading" style="background-color:#ffffff;position:relative;z-index:1;">
+  <div class="container fade show transition">
+    <div class="row">
+      <div class="col-lg-5">
+        <h2 id="faq-heading" class="faq-title fw-bold mb-3">Have a Question? Check Out the FAQ</h2>
+        <p class="faq-description mb-4">
+          Get clear answers and certified guidance from TechBrot — your trusted Certified QuickBooks ProAdvisor team. 
+          Learn how we help you stay compliant, efficient, and financially confident with expert bookkeeping and 
+          discounted QuickBooks plan management.
+        </p>
+        <div class="d-none d-lg-block faq-arrow">
+          <svg class="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M198.804 194.488C189.279 189.596 179.529 185.52 169.407 182.07L169.384 182.049C169.227 181.994 169.07 181.939 168.912 181.884C166.669 181.139 165.906 184.546 167.669 185.615C174.053 189.473 182.761 191.837 189.146 195.695C156.603 195.912 119.781 196.591 91.266 179.049C62.5221 161.368 48.1094 130.695 56.934 98.891C84.5539 98.7247 112.556 84.0176 129.508 62.667C136.396 53.9724 146.193 35.1448 129.773 30.2717C114.292 25.6624 93.7109 41.8875 83.1971 51.3147C70.1109 63.039 59.63 78.433 54.2039 95.0087C52.1221 94.9842 50.0776 94.8683 48.0703 94.6608C30.1803 92.8027 11.2197 83.6338 5.44902 65.1074C-1.88449 41.5699 14.4994 19.0183 27.9202 1.56641C28.6411 0.625793 27.2862 -0.561638 26.5419 0.358501C13.4588 16.4098 -0.221091 34.5242 0.896608 56.5659C1.8218 74.6941 14.221 87.9401 30.4121 94.2058C37.7076 97.0203 45.3454 98.5003 53.0334 98.8449C47.8679 117.532 49.2961 137.487 60.7729 155.283C87.7615 197.081 139.616 201.147 184.786 201.155L174.332 206.827C172.119 208.033 174.345 211.287 176.537 210.105C182.06 207.125 187.582 204.122 193.084 201.144Z" fill="#28a745"></path>
+          </svg>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="faq-container">
+
+          <!-- FAQ 1 -->
+          <div class="faq-item faq-active">
+            <h3><span>Why should I choose TechBrot for bookkeeping and QuickBooks support?</span></h3>
+            <div class="faq-content">
+              <p>
+                TechBrot combines Certified QuickBooks ProAdvisor expertise with automated bookkeeping tools. 
+                We help you save time, reduce errors, and stay tax-ready with:<br><br>
+                (i) daily transaction categorization, <br>
+                (ii) accurate monthly reconciliations, <br>
+                (iii) year-end financial reports.<br><br>
+                You get reliable QuickBooks help, customized support plans, and access to exclusive QuickBooks subscription discounts — all managed securely by certified professionals.
+              </p>
             </div>
-        </section>
-        <section id="testimonials" class="testimonials section light-background">
-            <div class="container section-title" data-aos="fade-up">
-                <div class="section-header">
-                    <h2>Testimonials</h2>
-                    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-                </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <h3><span>Can you help me set up QuickBooks or migrate from another system?</span></h3>
+            <div class="faq-content">
+              <p>
+                Absolutely! TechBrot specializes in QuickBooks setup and data migration. 
+                Whether you’re switching from Xero, Wave, or spreadsheets, we ensure every detail is transferred accurately. 
+                Our ProAdvisors handle:<br><br>
+                (i) secure data import, <br>
+                (ii) chart of accounts setup, <br>
+                (iii) automation rules for recurring transactions.<br><br>
+                We make your transition seamless so you can start managing finances in QuickBooks without missing a beat.
+              </p>
             </div>
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="testimonial-item"><img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                            <h3>Saul Goodman</h3>
-                            <h4>Ceo &amp; Founder</h4>
-                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <p><i class="bi bi-quote quote-icon-left"></i><span>Our books have never been clearer. The team’s expertise and personalized support helped us regain control quickly and confidently. Highly recommended!</span><i class="bi bi-quote quote-icon-right"></i></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="testimonial-item"><img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                            <h3>Sara Wilsson</h3>
-                            <h4>Designer</h4>
-                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <p><i class="bi bi-quote quote-icon-left"></i><span>Professional, reliable, and always available. They simplified my bookkeeping so I could focus on what I love — designing. Their support is outstanding.</span><i class="bi bi-quote quote-icon-right"></i></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="testimonial-item"><img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                            <h3>Jena Karlis</h3>
-                            <h4>Store Owner</h4>
-                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <p><i class="bi bi-quote quote-icon-left"></i><span>Fast, thorough, and friendly service. They cleaned up my accounts and made taxes a breeze. I finally feel organized and stress-free.</span><i class="bi bi-quote quote-icon-right"></i></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="testimonial-item"><img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                            <h3>Matt Brandon</h3>
-                            <h4>Freelancer</h4>
-                            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <p><i class="bi bi-quote quote-icon-left"></i><span>Expert advice and hands-on help whenever I need it. No jargon, just clear solutions that keep my finances on track.</span><i class="bi bi-quote quote-icon-right"></i></p>
-                        </div>
-                    </div>
-                </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <h3><span>Do you offer discounted QuickBooks plans through TechBrot?</span></h3>
+            <div class="faq-content">
+              <p>
+                Yes! As Certified QuickBooks ProAdvisors, we provide our clients with exclusive discounts — up to 50% off for 3 months 
+                and ongoing 30% off subscriptions. You can choose whether we manage your plan or help you purchase directly from Intuit 
+                through our verified reseller partnership. <br><br>
+                Every plan comes with setup assistance, guided onboarding, and dedicated support from TechBrot’s QuickBooks specialists.
+              </p>
             </div>
-        </section>
-        <section class="faq-9 faq section light-background" id="faq">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5" data-aos="fade-up">
-                        <h2 class="faq-title" style="margin-top: 12px;">Have a question? Check out the FAQ</h2>
-                        <p class="faq-description">Discover clear answers and expert insights to help you master your bookkeeping and financial management. Empower your business with knowledge that drives success and confidence every step of the way.</p>
-                        <div class="d-none d-lg-block faq-arrow" data-aos="fade-up" data-aos-delay="200"><svg class="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M198.804 194.488C189.279 189.596 179.529 185.52 169.407 182.07L169.384 182.049C169.227 181.994 169.07 181.939 168.912 181.884C166.669 181.139 165.906 184.546 167.669 185.615C174.053 189.473 182.761 191.837 189.146 195.695C156.603 195.912 119.781 196.591 91.266 179.049C62.5221 161.368 48.1094 130.695 56.934 98.891C84.5539 98.7247 112.556 84.0176 129.508 62.667C136.396 53.9724 146.193 35.1448 129.773 30.2717C114.292 25.6624 93.7109 41.8875 83.1971 51.3147C70.1109 63.039 59.63 78.433 54.2039 95.0087C52.1221 94.9842 50.0776 94.8683 48.0703 94.6608C30.1803 92.8027 11.2197 83.6338 5.44902 65.1074C-1.88449 41.5699 14.4994 19.0183 27.9202 1.56641C28.6411 0.625793 27.2862 -0.561638 26.5419 0.358501C13.4588 16.4098 -0.221091 34.5242 0.896608 56.5659C1.8218 74.6941 14.221 87.9401 30.4121 94.2058C37.7076 97.0203 45.3454 98.5003 53.0334 98.8449C47.8679 117.532 49.2961 137.487 60.7729 155.283C87.7615 197.081 139.616 201.147 184.786 201.155L174.332 206.827C172.119 208.033 174.345 211.287 176.537 210.105C182.06 207.125 187.582 204.122 193.084 201.144C193.346 201.147 195.161 199.887 195.423 199.868C197.08 198.548 193.084 201.144 195.528 199.81C196.688 199.192 197.846 198.552 199.006 197.935C200.397 197.167 200.007 195.087 198.804 194.488ZM60.8213 88.0427C67.6894 72.648 78.8538 59.1566 92.1207 49.0388C98.8475 43.9065 106.334 39.2953 114.188 36.1439C117.295 34.8947 120.798 33.6609 124.168 33.635C134.365 33.5511 136.354 42.9911 132.638 51.031C120.47 77.4222 86.8639 93.9837 58.0983 94.9666C58.8971 92.6666 59.783 90.3603 60.8213 88.0427Z" fill="#28a745"></path>
-              </svg></div>
-                    </div>
-                    <div class="col-lg-7" data-aos="fade-up" data-aos-delay="300">
-                        <div class="faq-container">
-                            <div class="faq-item faq-active">
-                                <h3><span style="font-weight: normal !important;">Why should I outsource my bookkeeping services?</span></h3>
-                                <div class="faq-content">
-                                    <p>Outsourcing your bookkeeping is a smart move for business owners who want to reclaim time, cut costs, and access expert financial support without hiring an in-house team. At techbrot, we don’t just balance the books—we streamline your entire financial workflow. You benefit from:<br><br>(i) daily transaction categorization,<br><br>(ii) monthly reconciliations, and<br><br>(iii) year-end tax-ready reporting.<br><br>We handle everything behind the scenes so you can focus on growth, client relationships, and strategic planning. With real-time data and expert oversight built right into your QuickBooks, your business stays organized and audit-ready—every month of the year.</p>
-                                </div><i class="faq-toggle bi bi-chevron-right"></i>
-                            </div>
-                            <div class="faq-item">
-                                <h3><span style="font-weight: normal !important;">How can professional bookkeeping services benefit my business?</span></h3>
-                                <div class="faq-content">
-                                    <p>Professional bookkeeping keeps your finances clean, current, and compliant. At techbrot, we offer more than just accurate books—we provide clarity. You’ll receive:<br><br>(i) real-time financial reporting,<br><br>(ii) error-free documentation, and<br><br>(iii) tax-season preparedness without stress.<br><br>Our team uses cloud-based tools like QuickBooks Online so you can access your financials from anywhere. With certified ProAdvisors managing your numbers, you gain peace of mind and eliminate the guesswork from financial management.</p>
-                                </div><i class="faq-toggle bi bi-chevron-right"></i>
-                            </div>
-                            <div class="faq-item">
-                                <h3><span style="font-weight: normal !important;">What’s the difference between accrual and cash bookkeeping?</span></h3>
-                                <div class="faq-content">
-                                    <p>The key difference lies in when you record your transactions. Cash bookkeeping logs income and expenses when money actually changes hands, which makes it easier to manage day-to-day, especially for very small operations. In contrast, accrual bookkeeping records income and expenses when they’re earned or incurred, giving you:<br><br>(i) a more accurate financial picture,<br><br>(ii) consistent monthly reports, and<br><br>(iii) improved decision-making data.<br><br>That’s why techbrot uses accrual accounting from the start—so your books reflect your business’s real performance and you’re always ready to scale.</p>
-                                </div><i class="faq-toggle bi bi-chevron-right"></i>
-                            </div>
-                            <div class="faq-item">
-                                <h3><span style="font-weight: normal !important;">What do I get when I start with techbrot?</span></h3>
-                                <div class="faq-content">
-                                    <p>When you join techbrot, you’re getting more than a bookkeeper—you’re gaining a dedicated financial partner. Our Starter Plan includes:<br><br>(i) automated transaction categorization,<br><br>(ii) monthly reconciliations, and<br><br>(iii) year-end tax-ready reports.<br><br>All of this is managed by a certified QuickBooks ProAdvisor. You’ll have real-time visibility into your finances via QuickBooks Online and can reach out to our team anytime via email. As your business grows, we offer scalable services like payroll integration and advanced financial insights.</p>
-                                </div><i class="faq-toggle bi bi-chevron-right"></i>
-                            </div>
-                            <div class="faq-item">
-                                <h3><span style="font-weight: normal !important;">What does a bookkeeper actually do?</span></h3>
-                                <div class="faq-content">
-                                    <p>A bookkeeper records, organizes, and maintains your financial transactions accurately. At techbrot, we go further by offering:<br><br>(i) income and expense tracking,<br><br>(ii) payroll management,<br><br>(iii) monthly bank reconciliations, and<br><br>(iv) timely financial reports.<br><br>We don’t just manage your books—we help you understand them, so you’re always confident in your financial health and ready for tax season.</p>
-                                </div><i class="faq-toggle bi bi-chevron-right"></i>
-                            </div>
-                            <div class="faq-item">
-                                <h3><span style="font-weight: normal !important;">Why do small businesses prefer outsourcing accounting services?</span></h3>
-                                <div class="faq-content">
-                                    <p>Outsourcing is a cost-effective way to get professional accounting without the expense of hiring full-time staff. Small businesses often face challenges like:<br><br>(i) limited time,<br><br>(ii) lack of expertise, and<br><br>(iii) inconsistent financial management.<br><br>With techbrot, you gain access to expert CPAs, automation tools, and proactive financial insight—all tailored to your budget. Whether you're a solopreneur or managing a growing team, we make sure your numbers stay organized, compliant, and aligned with your goals.</p>
-                                </div><i class="faq-toggle bi bi-chevron-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <h3><span>What’s the difference between QuickBooks cleanup and catch-up services?</span></h3>
+            <div class="faq-content">
+              <p>
+                <strong>Cleanup</strong> fixes past bookkeeping errors and reconciles old transactions — perfect if your books haven’t been maintained.  
+                <br><br>
+                <strong>Catch-up</strong> focuses on bringing recent months up to date when you’ve fallen behind. 
+                <br><br>
+                TechBrot’s cleanup & catch-up services include:<br><br>
+                (i) full review of accounts, <br>
+                (ii) correction of categorization errors, <br>
+                (iii) matching bank statements to QuickBooks entries.<br><br>
+                Once complete, we ensure your books are accurate, compliant, and ready for tax season.
+              </p>
             </div>
-        </section>
-        <section id="banner-down" class="banner-section" style="background: url(&quot;assets/img/sbseg-contact-us-banner.svg&quot;) center / cover no-repeat;">
-            <div class="banner-container">
-                <h2 class="display-4 text-light banner-heading">Level up your bookkeeping with expert guidance</h2>
-                <p class="banner-subtext"></p>
-                <div class="banner-cta"><button class="cta-btn cta-btn--invert"><strong>Call 1-877-751-5575</strong></button></div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <h3><span>What kind of ongoing support do I get with TechBrot?</span></h3>
+            <div class="faq-content">
+              <p>
+                Every TechBrot client receives ongoing access to a Certified QuickBooks ProAdvisor — not a bot.  
+                Support includes:<br><br>
+                (i) live email and chat support for bookkeeping queries, <br>
+                (ii) optional phone consultations, <br>
+                (iii) monthly check-ins to review reports.<br><br>
+                Our goal is to help you understand your numbers, stay compliant, and make informed business decisions every month.
+              </p>
             </div>
-        </section>
-        <section id="contact" class="contact section light-background">
-            <div class="container section-title" data-aos="fade-up">
-                <div class="section-header">
-                    <h2 class="display-5">We're Here To Help</h2>
-                    <p>Call <a href="tel:+1-877-751-5575"><strong>1-877-751-5575</strong></a> or complete this form and one of our experts will contact you within 1 business day to discuss your specific needs.</p>
-                </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item">
+            <h3><span>What does a Certified QuickBooks ProAdvisor do for my business?</span></h3>
+            <div class="faq-content">
+              <p>
+                A Certified QuickBooks ProAdvisor helps you set up, maintain, and optimize your QuickBooks account for efficiency.  
+                At TechBrot, our ProAdvisors:<br><br>
+                (i) customize your chart of accounts, <br>
+                (ii) automate recurring entries, <br>
+                (iii) ensure accurate reconciliations, and <br>
+                (iv) provide actionable insights for better decision-making.<br><br>
+                We act as your financial tech partner — making bookkeeping, payroll, and reporting simpler and smarter.
+              </p>
             </div>
+            <i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden SEO Layer -->
+  <span class="visually-hidden">
+    TechBrot bookkeeping FAQ, QuickBooks plan discounts, Certified QuickBooks ProAdvisor support, 
+    QBO support number, QBO help phone number, how do I talk to QuickBooks, QuickBooks consultation, 
+    talk to a QuickBooks expert, QuickBooks setup help, QuickBooks cleanup service, QuickBooks migration assistance, 
+    bookkeeping plans for small business, TechBrot ProAdvisor consultation, QuickBooks plan pricing FAQ.
+  </span>
+</section>
+</section>
+        <section id="contact" class="contact section light-background"><div class="container section-title fade show transition">
+    <div class="section-header">
+        <h2 class="display-5 fw-bold">We&#39;re Here To Help</h2>
+        <p>
+            Call <a href="tel:+1-877-751-5575" aria-label="Call TechBrot QuickBooks ProAdvisor team at 1-877-751-5575">
+                <strong>1-877-751-5575</strong>
+            </a> or complete the form, and one of our Certified QuickBooks ProAdvisors will get back to you 
+            within one business day to discuss your bookkeeping, setup, or QuickBooks plan needs.
+        </p>
+    </div>
+</div>
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="row g-4 g-lg-5">
                     <div class="col-lg-5">
-                        <div data-aos="fade-up" data-aos-delay="200" class="info-box">
-                            <h3>Contact Info</h3>
-                            <p>Got a question? Need help with QuickBooks or your bookkeeping? We’re just a message away.</p>
-                            <div data-aos="fade-up" data-aos-delay="300" class="info-item">
-                                <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
-                                <div class="content">
-                                    <h4>Our Location</h4>
-                                    <p>651 N Broad St</p>
-                                    <p>Middletown,&nbsp;DE 19709</p>
-                                </div>
-                            </div>
-                            <div data-aos="fade-up" data-aos-delay="400" class="info-item">
-                                <div class="icon-box"><i class="bi bi-telephone"></i></div>
-                                <div class="content">
-                                    <h4>Phone Number</h4>
-                                    <p><strong>(877) 751-5575</strong></p>
-                                    <p>Available 9AM–6PM EST, Mon–Fri</p>
-                                </div>
-                            </div>
-                            <div data-aos="fade-up" data-aos-delay="500" class="info-item">
-                                <div class="icon-box"><i class="bi bi-envelope"></i></div>
-                                <div class="content">
-                                    <h4>Email Address</h4>
-                                    <p>info@techbrot.com</p>
-                                    <p>support@techbrot.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="info-box fade show transition">
+    <h3>Contact Info</h3>
+    <p>
+        Have questions about QuickBooks setup, cleanup, or bookkeeping services? </p>
+
+    <div class="info-item">
+        <div class="icon-box"><i class="bi bi-geo-alt" aria-hidden="true"></i></div>
+        <div class="content">
+            <h4>Our Location</h4>
+            <p>651 N Broad St</p>
+            <p>Middletown, DE 19709</p>
+        </div>
+    </div>
+
+    <div class="info-item">
+        <div class="icon-box"><i class="bi bi-telephone" aria-hidden="true"></i></div>
+        <div class="content">
+            <h4>Phone Number</h4>
+            <p><strong><a href="tel:+1-877-751-5575">(877) 751-5575</a></strong></p>
+            <p>Available 9AM–6PM EST, Monday through Friday</p>
+        </div>
+    </div>
+
+    <div class="info-item">
+        <div class="icon-box"><i class="bi bi-envelope" aria-hidden="true"></i></div>
+        <div class="content">
+            <h4>Email Address</h4>
+            <p><a href="mailto:info@techbrot.com">info@techbrot.com</a></p>
+            <p><a href="mailto:support@techbrot.com">support@techbrot.com</a></p>
+        </div>
+    </div>
+
+    <!-- Hidden SEO & Keyword Layer -->
+    <span class="visually-hidden">
+        TechBrot contact section, Certified QuickBooks ProAdvisor support, QBO support number, QBO help phone number, 
+        how do I talk to QuickBooks, QuickBooks consultation call, bookkeeping support line, 
+        QuickBooks setup assistance, QuickBooks cleanup service, QuickBooks plan advisor, 
+        TechBrot QuickBooks contact form, talk to a QuickBooks expert near me, Certified QuickBooks help desk.
+    </span>
+</div></div>
                     <div class="col-lg-7">
                         <div data-aos="fade-up" data-aos-delay="300" class="contact-form">
                             <h3>Send Us a Message</h3>
@@ -738,6 +1432,13 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section id="banner-down" class="banner-section" style="background: url(&quot;assets/img/sbseg-contact-us-banner.svg&quot;) center / cover no-repeat;">
+            <div class="banner-container">
+                <h2 class="display-4 text-light banner-heading">Level up your bookkeeping with expert guidance</h2>
+                <p class="banner-subtext"></p>
+                <div class="banner-cta"><button class="cta-btn cta-btn--invert"><strong>Call 1-877-751-5575</strong></button></div>
             </div>
         </section>
     </main>
@@ -771,11 +1472,11 @@
                         <li><a href="/live/full-service-bookkeeping/index.html">Bookkeeping Services</a></li>
                         <li><a href="/live/expert-cleanup/index.html">Setup &amp; Cleanup</a></li>
                         <li><a href="/online/advanced/support-and-training/index.html">Support &amp; Training</a></li>
-                        <li><a href="/quickbooks-hosting/index.html">QuickBooks Hosting</a></li>
-                        <li><a href="/quickbooks-file-review-service/index.html">QuickBooks File Issues</a></li>
+                        <li><a href="/quickbooks/hosting/index.html">QuickBooks Hosting</a></li>
+                        <li><a href="/quickbooks/file-review/index.html">QuickBooks File Issues</a></li>
                         <li><a href="/live/priority/index.html">Dedicated ProAdvisor Support</a></li>
                         <li><a href="/live/assisted-bookkeeping/index.html">Payroll &amp; Tax-Ready Reports</a></li>
-                        <li><a href="/quickbooks-consulting/index.html">QuickBooks Consulting</a></li>
+                        <li><a href="/quickbooks/consulting/index.html">QuickBooks Consulting</a></li>
                         <li><a href="#">Monthly &amp; Year-End Reporting</a></li>
                     </ul>
                 </div>
@@ -783,7 +1484,7 @@
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="/careers/index.html">Careers</a></li>
-                        <li><a href="/enterprise/support/index.html">24x7 Live support</a></li>
+                        <li><a href="/support/index.html">24x7 Live support</a></li>
                         <li><a href="#">Common QuickBooks Errors</a></li>
                         <li><a href="../live/expert-cleanup/index.html">QuickBooks Cleanup Checklist</a></li>
                     </ul>
@@ -816,8 +1517,10 @@
     <script src="assets/js/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/js/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/js/js/main.js"></script>
-    <script src="assets/js/consultationModal.js"></script>
     <script src="assets/js/faq-toggle.js"></script>
+    <script src="assets/js/feature-tabs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" type="module"></script>
+    <script src="assets/js/modal.js"></script>
 </body>
 
 </html>

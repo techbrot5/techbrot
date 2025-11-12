@@ -3,10 +3,165 @@
 
 <head>
     <meta charset="utf-8">
+<meta name="keywords" content="Certified QuickBooks ProAdvisor, QuickBooks support, QBO help, QuickBooks setup, bookkeeping services, QuickBooks cleanup, QuickBooks file review, QuickBooks hosting, QuickBooks migration, QuickBooks consultation">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+<!-- Floating Contact Us Button -->
+<button id="contactUsBtn" class="contact-button" aria-label="Contact Us">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px; vertical-align: middle;">
+        <path d="M2 4V12C2 12.55 2.45 13 3 13H11L14 16V3C14 2.45 13.55 2 13 2H3C2.45 2 2 2.45 2 3V4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Contact Us
+</button>
+
+<!-- Contact Popup -->
+<div id="contactPopup" class="contact-popup hidden" role="dialog" aria-labelledby="popupHeader">
+    <button id="closePopup" class="popup-close" aria-label="Close Contact Options">
+        ×
+    </button>
+    <div id="popupHeader" class="popup-header">How can we help?</div>
+    <div class="popup-subheader">Sales & Customer Service: <a href="tel:8777515575">877-751-5575</a></div>
+    <div class="popup-hours">Open all days, 24/7</div>
+    <div class="popup-actions">
+        <button id="scheduleCall" class="popup-button" aria-label="Schedule a Call">Schedule Now</button>
+        <a href="/insight/" class="popup-button secondary" aria-label="Visit Support Page">Visit Support Page</a>
+    </div>
+</div>
+
+<!-- Styles -->
+<style>
+    /* Floating Contact Us Button */
+    .contact-button {
+        position: fixed;
+        bottom: 14px;
+        right: -100px; /* Start off-screen */
+        background: #007bff;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: right 0.6s ease-in-out, background 0.3s;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .contact-button:hover {
+        background: #0056b3;
+    }
+    .contact-button.show {
+        right: 70px; /* Slide into view */
+    }
+
+    /* Contact Popup */
+    .contact-popup {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        width: 300px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, visibility 0.4s;
+        visibility: hidden;
+    }
+
+    .contact-popup.show {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    /* Close Button */
+    .popup-close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 18px;
+        color: #888;
+    }
+    .popup-close:hover {
+        color: #333;
+    }
+
+    /* Popup Header */
+    .popup-header {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    /* Popup Buttons */
+    .popup-button {
+        display: block;
+        margin-top: 12px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: 14px;
+        font-weight: 500;
+        border: none;
+        width: 100%;
+    }
+    .popup-button:hover {
+        background: #0056b3;
+    }
+
+    .popup-button.secondary {
+        background: #f1f1f1;
+        color: #333;
+    }
+    .popup-button.secondary:hover {
+        background: #ddd;
+    }
+</style>
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Slide-in animation for Contact Us button
+        setTimeout(() => {
+            document.getElementById("contactUsBtn").classList.add("show");
+        }, 200);
+    });
+
+    // Toggle Contact Popup
+    document.getElementById("contactUsBtn").addEventListener("click", function() {
+        document.getElementById("contactPopup").classList.toggle("show");
+    });
+
+    // Close Popup
+    document.getElementById("closePopup").addEventListener("click", function() {
+        document.getElementById("contactPopup").classList.remove("show");
+    });
+
+    // Open Consultation Modal when "Schedule Now" is clicked
+    document.getElementById("scheduleCall").addEventListener("click", function() {
+        document.getElementById("contactPopup").classList.remove("show"); // Hide the popup
+        showModal(); // Open the existing consultation modal
+    });
+</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Contact Our QuickBooks and Bookkeeping Experts</title>
+    <title>Contact QuickBooks Support | QBO &amp; Desktop Help Line</title>
     <meta name="keywords" content="">
-    <meta name="description" content="Speak directly with QuickBooks specialists for fast support Call now to get professional bookkeeping and accounting help">
+    <meta name="description" content="Need QuickBooks help fast? Call 877-751-5575 to speak with a Certified ProAdvisor for setup, cleanup, or bookkeeping assistance.">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/Lato.css">
@@ -21,6 +176,77 @@
     <link rel="stylesheet" href="../assets/css/checkout.css">
     <link rel="stylesheet" href="../assets/css/contact-banner.css">
     <link rel="stylesheet" href="../assets/css/faq.css">
+    <link rel="stylesheet" href="../assets/css/live-pricing.css">
+<!-- ✅ Global Consultation Modal -->
+<div id="consultationModal" class="consultation-modal" style="display:none;">
+  <button type="button" class="close-btn" onclick="hideModal()">×</button>
+  <h2>Schedule a Free Consultation</h2>
+  <p>Talk with a specialist for help choosing a QuickBooks product. Schedule a callback at your convenience.</p>
+
+  <form method="post" enctype="application/x-www-form-urlencoded" id="consultationForm">
+    <input type="hidden" name="form_id" value="US_QBOAV_b86ead92-354b-474d-829a-01be8d5c33b4">
+    <input type="hidden" name="lead_country" value="US">
+
+    <div class="input-container"><input type="text" name="full_name" required><label>Full name*</label></div>
+    <div class="input-container"><input type="email" name="email" required><label>Email*</label></div>
+    <div class="input-container"><input type="tel" name="phone" required><label>Phone*</label></div>
+
+    <button type="submit" class="submit-btn">Schedule Now</button>
+
+    <p class="disclaimer">
+      By clicking “Schedule,” you agree to permit Intuit to contact you regarding QuickBooks and have read and acknowledge our
+      <a href="https://www.intuit.com/privacy/" target="_blank">Privacy Statement</a>. Consent is not a condition of any purchase.
+    </p>
+  </form>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="hideModal()"></div>
+
+<!-- ✅ Modal Styles -->
+<style>
+  .consultation-modal {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1001;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+  }
+  .overlay {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: none;
+  }
+  .close-btn {
+    position: absolute; top: 10px; right: 12px;
+    border: none; background: none; font-size: 22px;
+    cursor: pointer; color: #333;
+  }
+  .submit-btn {
+    background: #0a8543; color: #fff;
+    width: 100%; padding: 12px; border: none;
+    border-radius: 4px; font-size: 16px;
+    cursor: pointer; transition: background 0.3s;
+  }
+  .submit-btn:hover { background: #28a745; }
+  .disclaimer { font-size: 12px; color: #777; margin-top: 10px; }
+  .disclaimer a { color: #0a8543; text-decoration: none; }
+  .spinner {
+    display: inline-block; width: 14px; height: 14px;
+    border: 2px solid white; border-top: 2px solid transparent;
+    border-radius: 50%; animation: spin 0.6s linear infinite;
+    margin-left: 5px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
 </head>
 
 <body class="starter-page-page">
@@ -80,45 +306,60 @@
                 </nav>
             </div>
         </div>
-        <section id="contact" class="contact section light-background">
-            <div class="container section-title" data-aos="fade-up">
-                <div class="section-header">
-                    <h2 class="display-5">We're Here To Help</h2>
-                    <p>Call <a href="tel:+1-877-751-5575"><strong>1-877-751-5575</strong></a> or complete this form and one of our experts will contact you within 1 business day to discuss your specific needs.</p>
-                </div>
-            </div>
+        <section id="contact" class="contact section light-background"><div class="container section-title fade show transition">
+    <div class="section-header">
+        <h2 class="display-5 fw-bold">We&#39;re Here To Help</h2>
+        <p>
+            Call <a href="tel:+1-877-751-5575" aria-label="Call TechBrot QuickBooks ProAdvisor team at 1-877-751-5575">
+                <strong>1-877-751-5575</strong>
+            </a> or complete the form, and one of our Certified QuickBooks ProAdvisors will get back to you 
+            within one business day to discuss your bookkeeping, setup, or QuickBooks plan needs.
+        </p>
+    </div>
+</div>
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="row g-4 g-lg-5">
                     <div class="col-lg-5">
-                        <div data-aos="fade-up" data-aos-delay="200" class="info-box">
-                            <h3>Contact Info</h3>
-                            <p>Got a question? Need help with QuickBooks or your bookkeeping? We’re just a message away.</p>
-                            <div data-aos="fade-up" data-aos-delay="300" class="info-item">
-                                <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
-                                <div class="content">
-                                    <h4>Our Location</h4>
-                                    <p>651 N Broad St</p>
-                                    <p>Middletown,&nbsp;DE 19709</p>
-                                </div>
-                            </div>
-                            <div data-aos="fade-up" data-aos-delay="400" class="info-item">
-                                <div class="icon-box"><i class="bi bi-telephone"></i></div>
-                                <div class="content">
-                                    <h4>Phone Number</h4>
-                                    <p><strong>(877) 751-5575</strong></p>
-                                    <p>Available 9AM–6PM EST, Mon–Fri</p>
-                                </div>
-                            </div>
-                            <div data-aos="fade-up" data-aos-delay="500" class="info-item">
-                                <div class="icon-box"><i class="bi bi-envelope"></i></div>
-                                <div class="content">
-                                    <h4>Email Address</h4>
-                                    <p>info@techbrot.com</p>
-                                    <p>support@techbrot.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="info-box fade show transition">
+    <h3>Contact Info</h3>
+    <p>
+        Have questions about QuickBooks setup, cleanup, or bookkeeping services? </p>
+
+    <div class="info-item">
+        <div class="icon-box"><i class="bi bi-geo-alt" aria-hidden="true"></i></div>
+        <div class="content">
+            <h4>Our Location</h4>
+            <p>651 N Broad St</p>
+            <p>Middletown, DE 19709</p>
+        </div>
+    </div>
+
+    <div class="info-item">
+        <div class="icon-box"><i class="bi bi-telephone" aria-hidden="true"></i></div>
+        <div class="content">
+            <h4>Phone Number</h4>
+            <p><strong><a href="tel:+1-877-751-5575">(877) 751-5575</a></strong></p>
+            <p>Available 9AM–6PM EST, Monday through Friday</p>
+        </div>
+    </div>
+
+    <div class="info-item">
+        <div class="icon-box"><i class="bi bi-envelope" aria-hidden="true"></i></div>
+        <div class="content">
+            <h4>Email Address</h4>
+            <p><a href="mailto:info@techbrot.com">info@techbrot.com</a></p>
+            <p><a href="mailto:support@techbrot.com">support@techbrot.com</a></p>
+        </div>
+    </div>
+
+    <!-- Hidden SEO & Keyword Layer -->
+    <span class="visually-hidden">
+        TechBrot contact section, Certified QuickBooks ProAdvisor support, QBO support number, QBO help phone number, 
+        how do I talk to QuickBooks, QuickBooks consultation call, bookkeeping support line, 
+        QuickBooks setup assistance, QuickBooks cleanup service, QuickBooks plan advisor, 
+        TechBrot QuickBooks contact form, talk to a QuickBooks expert near me, Certified QuickBooks help desk.
+    </span>
+</div></div>
                     <div class="col-lg-7">
                         <div data-aos="fade-up" data-aos-delay="300" class="contact-form">
                             <h3>Send Us a Message</h3>
@@ -141,13 +382,11 @@
                 </div>
             </div>
         </section>
-        <section class="text-white contact-banner" id="contact-banner" role="region" aria-label="Contact banner">
-            <div class="container">
-                <div class="row text-center text-md-start justify-content-center align-items-center">
-                    <div class="col-12 col-md-auto d-flex flex-column justify-content-center align-items-center flex-md-row gap-md-4">
-                        <p class="mb-2 mb-md-0 cb-text">Questions? Speak to a human.</p><a class="btn btn-outline-light cb-cta" role="button" aria-label="Call 1-877-751-5575" href="tel:+1-877-751-5575"> Call 1-877-751-5575</a>
-                    </div>
-                </div>
+        <section id="banner-down" class="banner-section" style="background: url(&quot;../assets/img/sbseg-contact-us-banner.svg&quot;) center / cover no-repeat;">
+            <div class="banner-container">
+                <h2 class="display-4 text-light banner-heading">Level up your bookkeeping with expert guidance</h2>
+                <p class="banner-subtext"></p>
+                <div class="banner-cta"><button class="cta-btn cta-btn--invert"><strong>Call 1-877-751-5575</strong></button></div>
             </div>
         </section>
     </main>
@@ -181,11 +420,11 @@
                         <li><a href="/live/full-service-bookkeeping/index.html">Bookkeeping Services</a></li>
                         <li><a href="/live/expert-cleanup/index.html">Setup &amp; Cleanup</a></li>
                         <li><a href="/online/advanced/support-and-training/index.html">Support &amp; Training</a></li>
-                        <li><a href="/quickbooks-hosting/index.html">QuickBooks Hosting</a></li>
-                        <li><a href="/quickbooks-file-review-service/index.html">QuickBooks File Issues</a></li>
+                        <li><a href="/quickbooks/hosting/index.html">QuickBooks Hosting</a></li>
+                        <li><a href="/quickbooks/file-review/index.html">QuickBooks File Issues</a></li>
                         <li><a href="/live/priority/index.html">Dedicated ProAdvisor Support</a></li>
                         <li><a href="/live/assisted-bookkeeping/index.html">Payroll &amp; Tax-Ready Reports</a></li>
-                        <li><a href="/quickbooks-consulting/index.html">QuickBooks Consulting</a></li>
+                        <li><a href="/quickbooks/consulting/index.html">QuickBooks Consulting</a></li>
                         <li><a href="#">Monthly &amp; Year-End Reporting</a></li>
                     </ul>
                 </div>
@@ -193,7 +432,7 @@
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="/careers/index.html">Careers</a></li>
-                        <li><a href="/enterprise/support/index.html">24x7 Live support</a></li>
+                        <li><a href="/support/index.html">24x7 Live support</a></li>
                         <li><a href="#">Common QuickBooks Errors</a></li>
                         <li><a href="../live/expert-cleanup/index.html">QuickBooks Cleanup Checklist</a></li>
                     </ul>
@@ -215,6 +454,65 @@
             <p>© <span>Copyright 2025</span><strong class="px-1 sitename">TechBrot, Inc</strong><span>All Rights Reserved.</span></p>
         </div>
     </footer>
+    <section id="features-cards" class="features-cards section"><div class="container">
+  <div class="row gy-4">
+
+    <!-- TechBrot DRIVE™ Intro -->
+    <div class="col-md-4">
+      <div class="feature-box drive-intro" style="background-color: rgba(255,255,255,0);">
+        <h2>TechBrot DRIVE™</h2>
+        <p>Our proven client engagement process is built to drive long-term success through clarity, structure, and measurable results.</p>
+      </div>
+    </div>
+
+    <!-- Discover -->
+    <div class="col-md-4">
+      <div class="feature-box orange" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-search"></i>
+        <h4>Discover</h4>
+        <p>We assess your current systems and processes to uncover the real issues behind inefficiencies.</p>
+      </div>
+    </div>
+
+    <!-- Right Fit -->
+    <div class="col-md-4">
+      <div class="feature-box blue" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-check-circle"></i>
+        <h4>Right Fit</h4>
+        <p>We recommend only the tools and workflows that truly align with your business goals.</p>
+      </div>
+    </div>
+
+    <!-- Inform -->
+    <div class="col-md-4">
+      <div class="feature-box green" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-info-circle"></i>
+        <h4>Inform</h4>
+        <p>Our clear project roadmap keeps you informed, minimizes delays, and ensures smooth execution.</p>
+      </div>
+    </div>
+
+    <!-- Vision Implementation -->
+    <div class="col-md-4">
+      <div class="feature-box red" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-eye"></i>
+        <h4>Vision Implementation</h4>
+        <p>We help you achieve visibility and control over your financial and operational data for better decisions.</p>
+      </div>
+    </div>
+
+    <!-- Execute -->
+    <div class="col-md-4">
+      <div class="feature-box purple" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-rocket-takeoff"></i>
+        <h4>Execute</h4>
+        <p>We monitor performance and continuously optimize systems so your business runs smarter and faster.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="../assets/js/smart-forms.min.js"></script>
@@ -226,8 +524,10 @@
     <script src="../assets/js/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="../assets/js/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="../assets/js/js/main.js"></script>
-    <script src="../assets/js/consultationModal.js"></script>
     <script src="../assets/js/faq-toggle.js"></script>
+    <script src="../assets/js/feature-tabs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" type="module"></script>
+    <script src="../assets/js/modal.js"></script>
 </body>
 
 </html>

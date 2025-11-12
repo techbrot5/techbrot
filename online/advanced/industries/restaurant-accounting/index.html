@@ -3,14 +3,168 @@
 
 <head>
     <meta charset="utf-8">
+<meta name="keywords" content="Certified QuickBooks ProAdvisor, QuickBooks support, QBO help, QuickBooks setup, bookkeeping services, QuickBooks cleanup, QuickBooks file review, QuickBooks hosting, QuickBooks migration, QuickBooks consultation">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+<!-- Floating Contact Us Button -->
+<button id="contactUsBtn" class="contact-button" aria-label="Contact Us">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px; vertical-align: middle;">
+        <path d="M2 4V12C2 12.55 2.45 13 3 13H11L14 16V3C14 2.45 13.55 2 13 2H3C2.45 2 2 2.45 2 3V4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Contact Us
+</button>
+
+<!-- Contact Popup -->
+<div id="contactPopup" class="contact-popup hidden" role="dialog" aria-labelledby="popupHeader">
+    <button id="closePopup" class="popup-close" aria-label="Close Contact Options">
+        ×
+    </button>
+    <div id="popupHeader" class="popup-header">How can we help?</div>
+    <div class="popup-subheader">Sales & Customer Service: <a href="tel:8777515575">877-751-5575</a></div>
+    <div class="popup-hours">Open all days, 24/7</div>
+    <div class="popup-actions">
+        <button id="scheduleCall" class="popup-button" aria-label="Schedule a Call">Schedule Now</button>
+        <a href="/insight/" class="popup-button secondary" aria-label="Visit Support Page">Visit Support Page</a>
+    </div>
+</div>
+
+<!-- Styles -->
+<style>
+    /* Floating Contact Us Button */
+    .contact-button {
+        position: fixed;
+        bottom: 14px;
+        right: -100px; /* Start off-screen */
+        background: #007bff;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: right 0.6s ease-in-out, background 0.3s;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .contact-button:hover {
+        background: #0056b3;
+    }
+    .contact-button.show {
+        right: 70px; /* Slide into view */
+    }
+
+    /* Contact Popup */
+    .contact-popup {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        width: 300px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, visibility 0.4s;
+        visibility: hidden;
+    }
+
+    .contact-popup.show {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    /* Close Button */
+    .popup-close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 18px;
+        color: #888;
+    }
+    .popup-close:hover {
+        color: #333;
+    }
+
+    /* Popup Header */
+    .popup-header {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    /* Popup Buttons */
+    .popup-button {
+        display: block;
+        margin-top: 12px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: 14px;
+        font-weight: 500;
+        border: none;
+        width: 100%;
+    }
+    .popup-button:hover {
+        background: #0056b3;
+    }
+
+    .popup-button.secondary {
+        background: #f1f1f1;
+        color: #333;
+    }
+    .popup-button.secondary:hover {
+        background: #ddd;
+    }
+</style>
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Slide-in animation for Contact Us button
+        setTimeout(() => {
+            document.getElementById("contactUsBtn").classList.add("show");
+        }, 200);
+    });
+
+    // Toggle Contact Popup
+    document.getElementById("contactUsBtn").addEventListener("click", function() {
+        document.getElementById("contactPopup").classList.toggle("show");
+    });
+
+    // Close Popup
+    document.getElementById("closePopup").addEventListener("click", function() {
+        document.getElementById("contactPopup").classList.remove("show");
+    });
+
+    // Open Consultation Modal when "Schedule Now" is clicked
+    document.getElementById("scheduleCall").addEventListener("click", function() {
+        document.getElementById("contactPopup").classList.remove("show"); // Hide the popup
+        showModal(); // Open the existing consultation modal
+    });
+</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>QuickBooks Support for Professional Service Firms</title>
-    <meta name="description" content="Certified QuickBooks experts helping professional firms with accounting and bookkeeping Call today for fast help">
+    <title>QuickBooks for Restaurants | POS Integration &amp; Cost Reports</title>
+    <meta name="description" content="Simplify restaurant bookkeeping with QuickBooks POS integration, cost tracking, and daily sales summaries built for hospitality workflows.">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../../assets/css/bootstrap-icons.css">
     <link rel="stylesheet" href="../../../../assets/css/Lato.css">
     <link rel="stylesheet" href="../../../../assets/css/swiper-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="../../../../assets/css/pricing.css">
     <link rel="stylesheet" href="../../../../assets/css/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../../assets/css/vendor/bootstrap-icons/bootstrap-icons.css">
@@ -20,6 +174,77 @@
     <link rel="stylesheet" href="../../../../assets/css/checkout.css">
     <link rel="stylesheet" href="../../../../assets/css/contact-banner.css">
     <link rel="stylesheet" href="../../../../assets/css/faq.css">
+    <link rel="stylesheet" href="../../../../assets/css/live-pricing.css">
+<!-- ✅ Global Consultation Modal -->
+<div id="consultationModal" class="consultation-modal" style="display:none;">
+  <button type="button" class="close-btn" onclick="hideModal()">×</button>
+  <h2>Schedule a Free Consultation</h2>
+  <p>Talk with a specialist for help choosing a QuickBooks product. Schedule a callback at your convenience.</p>
+
+  <form method="post" enctype="application/x-www-form-urlencoded" id="consultationForm">
+    <input type="hidden" name="form_id" value="US_QBOAV_b86ead92-354b-474d-829a-01be8d5c33b4">
+    <input type="hidden" name="lead_country" value="US">
+
+    <div class="input-container"><input type="text" name="full_name" required><label>Full name*</label></div>
+    <div class="input-container"><input type="email" name="email" required><label>Email*</label></div>
+    <div class="input-container"><input type="tel" name="phone" required><label>Phone*</label></div>
+
+    <button type="submit" class="submit-btn">Schedule Now</button>
+
+    <p class="disclaimer">
+      By clicking “Schedule,” you agree to permit Intuit to contact you regarding QuickBooks and have read and acknowledge our
+      <a href="https://www.intuit.com/privacy/" target="_blank">Privacy Statement</a>. Consent is not a condition of any purchase.
+    </p>
+  </form>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="hideModal()"></div>
+
+<!-- ✅ Modal Styles -->
+<style>
+  .consultation-modal {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1001;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+  }
+  .overlay {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: none;
+  }
+  .close-btn {
+    position: absolute; top: 10px; right: 12px;
+    border: none; background: none; font-size: 22px;
+    cursor: pointer; color: #333;
+  }
+  .submit-btn {
+    background: #0a8543; color: #fff;
+    width: 100%; padding: 12px; border: none;
+    border-radius: 4px; font-size: 16px;
+    cursor: pointer; transition: background 0.3s;
+  }
+  .submit-btn:hover { background: #28a745; }
+  .disclaimer { font-size: 12px; color: #777; margin-top: 10px; }
+  .disclaimer a { color: #0a8543; text-decoration: none; }
+  .spinner {
+    display: inline-block; width: 14px; height: 14px;
+    border: 2px solid white; border-top: 2px solid transparent;
+    border-radius: 50%; animation: spin 0.6s linear infinite;
+    margin-left: 5px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
 </head>
 
 <body>
@@ -59,68 +284,217 @@
 }
 </style>
     </header>
-    <main>
-        <section id="hero" class="hero section" style="padding-top: 120px;background: #f3f2ef;">
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div data-aos="fade-up" data-aos-delay="200" class="hero-content">
-                            <h1 class="mb-4">Your&nbsp;<span class="accent-text">Back-of-House</span>&nbsp;Partner</h1>
-                            <p>With real-time business insights, automated workflows, and streamlined financial management, you can focus on growing your business while keeping operations running smoothly.</p>
-                            <div class="hero-buttons"><a href="tel:+18777515575" class="hero-btn"><strong>Call 1-877-751-5575</strong></a>
-                                <p style="margin-top:0.5rem;"> Looking for product support? <a href="/contact/">Contact us</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div data-aos="zoom-out" data-aos-delay="300" class="hero-image"><img class="img-fluid" src="../../../../assets/img/Advanced-Hero-Restaurant-Best%20Back-of-House%20Partner.png" alt="Hero Image" style="border-radius: 50%;">
-                            <div class="customers-badge">
-                                <div class="customer-avatars"><img src="../../../../assets/img/avatar-1.webp" alt="Customer 1" class="avatar"><img src="../../../../assets/img/avatar-2.webp" alt="Customer 2" class="avatar"><img src="../../../../assets/img/avatar-3.webp" alt="Customer 3" class="avatar"><img src="../../../../assets/img/avatar-4.webp" alt="Customer 4" class="avatar"><img src="../../../../assets/img/avatar-5.webp" alt="Customer 5" class="avatar"><span class="avatar more">12+</span></div>
-                                <p class="mt-2 mb-0">12,000+ successful calls and accounting solutions delivered</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row gy-4 mt-5 stats-row" data-aos="fade-up" data-aos-delay="100">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="bi bi-trophy"></i></div>
-                            <div class="stat-content">
-                                <h4>Top-Rated Support</h4>
-                                <p class="mb-0">Thousands trust us for accurate QuickBooks help.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="bi bi-briefcase"></i></div>
-                            <div class="stat-content">
-                                <h4>100K+ Transactions&nbsp;</h4>
-                                <p class="mb-0">Real-time fixes. Zero backlog.<br><br></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="bi bi-graph-up"></i></div>
-                            <div class="stat-content">
-                                <h4>750+ Businesses Served</h4>
-                                <p class="mb-0">From startups to growing firms.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="bi bi-award"></i></div>
-                            <div class="stat-content">
-                                <h4>Certified QBO Experts</h4>
-                                <p class="mb-0">ProAdvisor-backed accuracy, every time.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <main><section id="hero" class="hero section" style="padding-top: 120px;background: #f3f2ef;">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="hero-content">
+          <h1 class="mb-4">Your <span class="accent-text">Restaurant Accounting Partner</span></h1>
+          <p>
+            Manage your restaurant finances smarter — from inventory and payroll to daily sales tracking. 
+            QuickBooks Online Advanced helps food and beverage businesses automate back-office tasks and 
+            gain real-time insight into profitability.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="hero-btn" href="tel:+18777515575">
+              <strong>Call 1-877-751-5575</strong>
+            </a>
+            <p style="margin-top: 0.5rem;">
+              Need product or plan support? <a href="/contact/">Contact us</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="hero-image">
+          <img class="img-fluid rounded-circle" src="../../../../assets/img/Advanced-Hero-Restaurant-Best%20Back-of-House%20Partner.png" alt="QuickBooks for Restaurant Accounting" />
+          <div class="customers-badge">
+            <div class="customer-avatars">
+              <img class="avatar" src="../../../../assets/img/avatar-1.webp" alt="Customer 1" />
+              <img class="avatar" src="../../../../assets/img/avatar-2.webp" alt="Customer 2" />
+              <img class="avatar" src="../../../../assets/img/avatar-3.webp" alt="Customer 3" />
+              <img class="avatar" src="../../../../assets/img/avatar-4.webp" alt="Customer 4" />
+              <img class="avatar" src="../../../../assets/img/avatar-5.webp" alt="Customer 5" />
+              <span class="avatar more">12+</span>
             </div>
-        </section>
+            <p class="mt-2 mb-0">
+              12,000+ successful QuickBooks restaurant setups and consultations delivered.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row gy-4 mt-5 stats-row text-center">
+      <div class="col-md-6 col-lg-3">
+        <div class="stat-item">
+          <div class="stat-icon"><i class="bi bi-trophy"></i></div>
+          <div class="stat-content">
+            <h4>Top-Rated Support</h4>
+            <p class="mb-0">Trusted by restaurants and franchises nationwide.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="stat-item">
+          <div class="stat-icon"><i class="bi bi-briefcase"></i></div>
+          <div class="stat-content">
+            <h4>100K+ Transactions</h4>
+            <p class="mb-0">Accurate, automated bookkeeping — no backlog, no stress.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="stat-item">
+          <div class="stat-icon"><i class="bi bi-graph-up"></i></div>
+          <div class="stat-content">
+            <h4>750+ Food Businesses Served</h4>
+            <p class="mb-0">From local cafés to multi-location franchises.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="stat-item">
+          <div class="stat-icon"><i class="bi bi-award"></i></div>
+          <div class="stat-content">
+            <h4>Certified QBO Experts</h4>
+            <p class="mb-0">ProAdvisor-certified restaurant accounting specialists.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden SEO Layer -->
+  <span class="visually-hidden">
+    QuickBooks for restaurants, restaurant accounting software, QuickBooks ProAdvisor support, 
+    QuickBooks bookkeeping for cafes, QBO setup for food service, QuickBooks help phone number, 
+    QBO support number, QuickBooks consultation, restaurant POS integration, QuickBooks payroll for restaurants.
+  </span>
+</section>
+<section class="features-section" style="background-color: rgba(249,249,249,0);">
+  <div class="section-header section-title">
+    <h2 class="display-5">Smarter Accounting for Restaurants & Food Service</h2>
+    <p>
+      Simplify your back-of-house operations with QuickBooks Online Advanced. 
+      Automate invoices, manage expenses, track inventory, and view sales trends — 
+      all from one secure dashboard designed for restaurants.
+    </p>
+  </div>
+
+  <div class="col col-sm-12 col-md-10 mx-auto">
+    <div class="container">
+
+      <!-- Do Less Manual Work -->
+      <div class="feature-block reverse">
+        <div id="circle-image-col" class="feature-image circle-image">
+          <img class="img-fluid" width="670" height="528" src="../../../../assets/img/Advanced-Feature-Image-Do%20less%20manual%20work.png" alt="QuickBooks Automation for Restaurants" />
+        </div>
+        <div id="text-col" class="feature-content text-block">
+          <h3 class="display-6 fw-bold">Do Less Manual Work</h3>
+          <p>
+            Spend more time serving customers — not spreadsheets. 
+            Automate accounting workflows for daily sales, inventory tracking, and vendor payments.
+          </p>
+          <ul class="list-unstyled mt-4 feature-list">
+            <li class="d-flex align-items-start mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" class="me-3 flex-shrink-0" viewBox="0 0 24 24"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
+              <div><strong>Batch Invoicing & Expenses</strong>
+                <p class="mt-1 mb-0">Post daily sales or bills in bulk and eliminate repetitive entry errors.</p>
+              </div>
+            </li>
+            <li class="d-flex align-items-start mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" class="me-3 flex-shrink-0" viewBox="0 0 24 24"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
+              <div><strong>Automated Cash Flow</strong>
+                <p class="mt-1 mb-0">Set alerts for expenses, vendor bills, and cash flow targets to avoid surprises.</p>
+              </div>
+            </li>
+            <li class="d-flex align-items-start mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" class="me-3 flex-shrink-0" viewBox="0 0 24 24"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
+              <div><strong>Vendor & Supplier Management</strong>
+                <p class="mt-1 mb-0">Keep track of inventory orders and vendor payments in one place.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Track Performance -->
+      <div class="feature-block">
+        <div class="feature-image circle-image">
+          <img class="img-fluid" width="670" height="528" src="../../../../assets/img/Advanced-Feature-Image-Revenue%20Streams.png" alt="Restaurant Financial Insights QuickBooks" />
+        </div>
+        <div id="text-col-1" class="feature-content text-block">
+          <h3 class="display-6 fw-bold">Track Restaurant Performance</h3>
+          <p>
+            Make data-driven decisions for every location. Monitor revenue, expenses, and profitability 
+            through real-time reporting and visual dashboards.
+          </p>
+          <ul class="list-unstyled mt-4 feature-list">
+            <li class="d-flex align-items-start mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" class="me-3 flex-shrink-0" viewBox="0 0 24 24"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
+              <div><strong>Custom Reports</strong>
+                <p class="mt-1 mb-0">Create sales or profit reports by product line, location, or vendor.</p>
+              </div>
+            </li>
+            <li class="d-flex align-items-start mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" class="me-3 flex-shrink-0" viewBox="0 0 24 24"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
+              <div><strong>Excel Integration</strong>
+                <p class="mt-1 mb-0">Export performance data to Excel for menu cost or payroll analysis.</p>
+              </div>
+            </li>
+            <li class="d-flex align-items-start mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" class="me-3 flex-shrink-0" viewBox="0 0 24 24"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
+              <div><strong>Custom Dashboards</strong>
+                <p class="mt-1 mb-0">Track KPIs like food cost %, labor ratio, or profit margin in real time.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Premium Support -->
+      <div class="feature-block reverse">
+        <div class="feature-image circle-image">
+          <img class="img-fluid" width="670" height="670" src="../../../../assets/img/Advanced-Feature-Image-Premium%20VIP%20Support.png" alt="QuickBooks ProAdvisor Support for Restaurants" />
+        </div>
+        <div id="text-col-2" class="feature-content text-block">
+          <h3 class="display-6 fw-bold">Dedicated Restaurant Support</h3>
+          <p>
+            Get direct help from Certified QuickBooks ProAdvisors specializing in restaurant accounting. 
+            From setup to cleanup, we ensure your books and POS systems sync perfectly.
+          </p>
+          <ul class="list-unstyled mt-4 feature-list">
+            <li class="d-flex align-items-start mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" class="me-3 flex-shrink-0" viewBox="0 0 24 24"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
+              <div><strong>Expert Assistance</strong>
+                <p class="mt-1 mb-0">Call or chat with restaurant accounting specialists — real people, real help.</p>
+              </div>
+            </li>
+            <li class="d-flex align-items-start mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" class="me-3 flex-shrink-0" viewBox="0 0 24 24"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
+              <div><strong>Tailored Training</strong>
+                <p class="mt-1 mb-0">Learn QuickBooks workflows made for restaurants — from sales entries to payroll and vendor reconciliation.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Hidden SEO Keywords -->
+  <span class="visually-hidden">
+    QuickBooks for restaurants, restaurant bookkeeping software, QuickBooks POS integration, 
+    QuickBooks payroll for restaurants, Certified QuickBooks ProAdvisor, QBO support number, 
+    QuickBooks help phone number, QuickBooks consultation, QuickBooks setup for food businesses, 
+    QuickBooks for cafes, QBO migration for restaurants.
+  </span>
+</section>
+
         <section class="text-white contact-banner" id="contact-banner" role="region" aria-label="Contact banner">
             <div class="container">
                 <div class="row text-center text-md-start justify-content-center align-items-center">
@@ -130,394 +504,318 @@
                 </div>
             </div>
         </section>
-        <section class="features-section" style="background-color: rgba(249,249,249,0);">
-            <div class="section-header section-title">
-                <h2 class="display-5">Flexible solutions to grow your food and beverage business</h2>
-                <p>With real-time insights, automated workflows, and customizable dashboards, you can reduce manual tasks, track performance across locations or projects, and make informed decisions that help your business thrive.</p>
-            </div>
-            <div class="col col-sm-12 col-md-10 mx-auto">
-                <div class="container">
-                    <div class="feature-block reverse">
-                        <div id="circle-image-col" class="feature-image circle-image"><img class="img-fluid" width="670" height="528" src="../../../../assets/img/Advanced-Feature-Image-Do%20less%20manual%20work.png" alt="create-estimate-product-qbo-us"></div>
-                        <div id="text-col" class="feature-content text-block">
-                            <h3 class="display-6 fw-bold"> Do Less Manual Work </h3>
-                            <p>Manage daily operations efficiently and reduce time spent on repetitive tasks. Advanced simplifies the way food and beverage businesses handle finances and vendor management.</p>
-                            <ul class="list-unstyled mt-4 feature-list">
-                                <li class="d-flex align-items-start mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" viewbox="0 0 24 24" class="me-3 flex-shrink-0"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
-                                    <div><strong>Batch Invoicing &amp; Expenses</strong>
-                                        <p class="mt-1 mb-0">Import and send hundreds of invoices or expenses at once, saving time and minimizing errors in your accounting.</p>
-                                    </div>
-                                </li>
-                                <li class="d-flex align-items-start mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" viewbox="0 0 24 24" class="me-3 flex-shrink-0"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
-                                    <div><strong>Quick Bill &amp; Check Entry</strong>
-                                        <p class="mt-1 mb-0">Enter and edit multiple bills and checks in just a few steps, making payments to suppliers and vendors faster and more organized.</p>
-                                    </div>
-                                </li>
-                                <li class="d-flex align-items-start mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" viewbox="0 0 24 24" class="me-3 flex-shrink-0"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
-                                    <div><strong>Automated Cash Flow Management</strong>
-                                        <p class="mt-1 mb-0">Set up automated reminders and approvals to streamline cash flow and keep your finances on track without constant manual oversight.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="feature-block">
-                        <div class="feature-image circle-image"><img class="img-fluid" width="670" height="528" src="../../../../assets/img/Advanced-Feature-Image-Revenue%20Streams.png" alt="deposit-on-estimate-feature-qbo-us"></div>
-                        <div id="text-col-1" class="feature-content text-block">
-                            <h3 class="display-6 fw-bold"> Track Business Performance</h3>
-                            <p>Get the insights you need to make smarter decisions and improve profitability. Advanced provides real-time reporting and customizable dashboards to keep your finger on the pulse of your business.</p>
-                            <ul class="list-unstyled mt-4 feature-list">
-                                <li class="d-flex align-items-start mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" viewbox="0 0 24 24" class="me-3 flex-shrink-0"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
-                                    <div><strong>Custom Reports</strong>
-                                        <p class="mt-1 mb-0">Create presentation-ready, customizable reports to quickly understand your business performance and key metrics.</p>
-                                    </div>
-                                </li>
-                                <li class="d-flex align-items-start mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" viewbox="0 0 24 24" class="me-3 flex-shrink-0"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
-                                    <div><strong>Excel Integration</strong>
-                                        <p class="mt-1 mb-0">Seamlessly sync data between QuickBooks Online Advanced and Excel for more accurate analysis and custom insights.</p>
-                                    </div>
-                                </li>
-                                <li class="d-flex align-items-start mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" viewbox="0 0 24 24" class="me-3 flex-shrink-0"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
-                                    <div><strong>Custom Dashboards &amp; Fields</strong>
-                                        <p class="mt-1 mb-0">Search, sort, and filter data with custom fields, and build dashboards to focus on the metrics that matter most to your business.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="feature-block reverse">
-                        <div class="feature-image circle-image"><img class="img-fluid" width="670" height="670" src="../../../../assets/img/Advanced-Feature-Image-Premium%20VIP%20Support.png" alt="feature-architects engineers consultants"></div>
-                        <div id="text-col-2" class="feature-content text-block">
-                            <h3 class="display-6 fw-bold"> Premium Support </h3>
-                            <p>Access expert guidance and advanced support whenever you need it. QuickBooks Online Advanced includes Priority Circle, providing premium resources for growing businesses.</p>
-                            <ul class="list-unstyled mt-4 feature-list">
-                                <li class="d-flex align-items-start mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" viewbox="0 0 24 24" class="me-3 flex-shrink-0"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
-                                    <div><strong>Expert Assistance</strong>
-                                        <p class="mt-1 mb-0">Call or chat with product specialists for timely help and solutions tailored to your business needs.</p>
-                                    </div>
-                                </li>
-                                <li class="d-flex align-items-start mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" viewbox="0 0 24 24" class="me-3 flex-shrink-0"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
-                                    <div><strong>Self-Paced Training</strong>
-                                        <p class="mt-1 mb-0">Get more from QuickBooks Advanced with online training courses designed for food and beverage businesses to improve workflow efficiency and financial management.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="testimonial" class="testimonial-section" aria-label="Customer testimonial about QuickBooks Desktop Enterprise with Payroll and Time Tracking">
-            <div class="section-header section-title">
-                <h2 class="display-5">Success is in their stories</h2>
-            </div>
-            <div></div>
-            <div class="testimonial-container box-shadow" role="region" aria-label="Testimonial Carousel">
-                <div class="testimonial-image-wrapper" aria-hidden="true"><img class="img-fluid" src="../../../../assets/img/Jacklyn-Wenaas-photo-qbl-us-en.avif" alt="QuickBooks Enterprise customer KinkBMX standing confidently looking at camera"></div>
-                <div class="testimonial-text-wrapper" role="article" aria-live="polite">
-                    <p class="testimonial-quote"> “With QuickBooks Live, I have more time to focus on the happiness and well-being for my employees.” </p>
-                    <p class="testimonial-author"> Jaclyn Wenaas </p>
-                    <p class="testimonial-author-note"> Owner of Bronzed Denver </p>
-                </div>
-            </div>
-        </section>
-        <section id="faq" class="faq-9 faq section light-background">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5" data-aos="fade-up">
-                        <h2 class="faq-title" style="margin-top: 12px;">Have a question? Check out the FAQ</h2>
-                        <p class="faq-description">Discover clear answers and expert insights to help you master your bookkeeping and financial management. Empower your business with knowledge that drives success and confidence every step of the way.</p>
-                        <div class="d-none d-lg-block faq-arrow" data-aos="fade-up" data-aos-delay="200"><svg class="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M198.804 194.488C189.279 189.596 179.529 185.52 169.407 182.07L169.384 182.049C169.227 181.994 169.07 181.939 168.912 181.884C166.669 181.139 165.906 184.546 167.669 185.615C174.053 189.473 182.761 191.837 189.146 195.695C156.603 195.912 119.781 196.591 91.266 179.049C62.5221 161.368 48.1094 130.695 56.934 98.891C84.5539 98.7247 112.556 84.0176 129.508 62.667C136.396 53.9724 146.193 35.1448 129.773 30.2717C114.292 25.6624 93.7109 41.8875 83.1971 51.3147C70.1109 63.039 59.63 78.433 54.2039 95.0087C52.1221 94.9842 50.0776 94.8683 48.0703 94.6608C30.1803 92.8027 11.2197 83.6338 5.44902 65.1074C-1.88449 41.5699 14.4994 19.0183 27.9202 1.56641C28.6411 0.625793 27.2862 -0.561638 26.5419 0.358501C13.4588 16.4098 -0.221091 34.5242 0.896608 56.5659C1.8218 74.6941 14.221 87.9401 30.4121 94.2058C37.7076 97.0203 45.3454 98.5003 53.0334 98.8449C47.8679 117.532 49.2961 137.487 60.7729 155.283C87.7615 197.081 139.616 201.147 184.786 201.155L174.332 206.827C172.119 208.033 174.345 211.287 176.537 210.105C182.06 207.125 187.582 204.122 193.084 201.144C193.346 201.147 195.161 199.887 195.423 199.868C197.08 198.548 193.084 201.144 195.528 199.81C196.688 199.192 197.846 198.552 199.006 197.935C200.397 197.167 200.007 195.087 198.804 194.488ZM60.8213 88.0427C67.6894 72.648 78.8538 59.1566 92.1207 49.0388C98.8475 43.9065 106.334 39.2953 114.188 36.1439C117.295 34.8947 120.798 33.6609 124.168 33.635C134.365 33.5511 136.354 42.9911 132.638 51.031C120.47 77.4222 86.8639 93.9837 58.0983 94.9666C58.8971 92.6666 59.783 90.3603 60.8213 88.0427Z" fill="#28a745"></path>
-              </svg></div>
-                    </div>
-                    <div class="col-lg-7" data-aos="fade-up" data-aos-delay="300"><div class="faq-container">
-    <div class="faq-item faq-active">
-        <h3><span style="font-weight: normal !important;">What are the advantages of using QuickBooks in the cloud?</span></h3>
-        <div class="faq-content">
-            <p>Working in the cloud means you can access your QuickBooks data from anywhere, on any device, as long as you’re connected to the internet. Your information is always current and secure, making collaboration with your bookkeeper or accountant seamless and efficient.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
+        <section id="features-cards" class="features-cards section"><div class="container">
+  <div class="row gy-4">
+
+    <!-- TechBrot DRIVE™ Intro -->
+    <div class="col-md-4">
+      <div class="feature-box drive-intro" style="background-color: rgba(255,255,255,0);">
+        <h2>TechBrot DRIVE™</h2>
+        <p>Our proven client engagement process is built to drive long-term success through clarity, structure, and measurable results.</p>
+      </div>
     </div>
-    <div class="faq-item">
-        <h3><span style="font-weight: normal !important;">I currently use QuickBooks Desktop. Should I switch to QuickBooks Online?</span></h3>
-        <div class="faq-content">
-            <p>QuickBooks Online is ideal for businesses that want flexibility, real-time collaboration, and automation. With features like automatic backups, live reporting, and streamlined workflows, moving online helps reduce manual errors and gives you more control over your finances.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
+
+    <!-- Discover -->
+    <div class="col-md-4">
+      <div class="feature-box orange" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-search"></i>
+        <h4>Discover</h4>
+        <p>We assess your current systems and processes to uncover the real issues behind inefficiencies.</p>
+      </div>
     </div>
-    <div class="faq-item">
-        <h3><span style="font-weight: normal !important;">How simple is it to migrate from QuickBooks Desktop to QuickBooks Online?</span></h3>
-        <div class="faq-content">
-            <p>We make migration stress-free. Whether you prefer to do it yourself or have a specialist handle it, the process is designed to be smooth and accurate. Our team provides expert support, step-by-step guides, and coaching so you can transition with confidence.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
+
+    <!-- Right Fit -->
+    <div class="col-md-4">
+      <div class="feature-box blue" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-check-circle"></i>
+        <h4>Right Fit</h4>
+        <p>We recommend only the tools and workflows that truly align with your business goals.</p>
+      </div>
     </div>
-    <div class="faq-item">
-        <h3><span style="font-weight: normal !important;">How secure is my financial data in QuickBooks Online?</span></h3>
-        <div class="faq-content">
-            <p>Your data is protected with bank-level encryption and automatic backups. QuickBooks Online keeps your information safe, so you can focus on running your business without worrying about losing important records.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
+
+    <!-- Inform -->
+    <div class="col-md-4">
+      <div class="feature-box green" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-info-circle"></i>
+        <h4>Inform</h4>
+        <p>Our clear project roadmap keeps you informed, minimizes delays, and ensures smooth execution.</p>
+      </div>
     </div>
-    <div class="faq-item">
-        <h3><span style="font-weight: normal !important;">Can my accountant access my QuickBooks Online account?</span></h3>
-        <div class="faq-content">
-            <p>Yes. You can securely grant your accountant their own login, allowing them to review reports, reconcile accounts, and manage books in real time—without sharing your personal login details.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
+
+    <!-- Vision Implementation -->
+    <div class="col-md-4">
+      <div class="feature-box red" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-eye"></i>
+        <h4>Vision Implementation</h4>
+        <p>We help you achieve visibility and control over your financial and operational data for better decisions.</p>
+      </div>
     </div>
-    <div class="faq-item">
-        <h3><span style="font-weight: normal !important;">What are QuickBooks AI agents, and how do they help?</span></h3>
-        <div class="faq-content">
-            <p>QuickBooks AI agents are smart tools that automate tasks and surface insights. Depending on your plan, they can assist with accounting, payments, financial analysis, and even customer or project management—saving you time while improving accuracy.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
+
+    <!-- Execute -->
+    <div class="col-md-4">
+      <div class="feature-box purple" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-rocket-takeoff"></i>
+        <h4>Execute</h4>
+        <p>We monitor performance and continuously optimize systems so your business runs smarter and faster.</p>
+      </div>
     </div>
-    <div class="faq-item">
-        <h3><span style="font-weight: normal !important;">How does Intuit ensure AI is used responsibly?</span></h3>
-        <div class="faq-content">
-            <p>Intuit follows strict responsible AI principles to ensure your data is protected and your financial insights remain accurate. AI is designed to simplify your workload, give you confidence in decision-making, and keep your information secure at all times.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
-    </div>
+
+  </div>
+</div>
+</section>
+        <section id="testimonial" class="testimonial-section" aria-label="Customer testimonial about QuickBooks Desktop Enterprise with Payroll and Time Tracking"><div class="section-header section-title">
+  <h2 class="display-5">Success Is in Their Stories</h2>
 </div>
 
-<script>
-
-</script>
+<div class="testimonial-container box-shadow" role="region" aria-label="Client testimonial about QuickBooks bookkeeping support">
+  <div class="testimonial-image-wrapper" aria-hidden="true">
+    <img class="img-fluid" src="../../../../assets/img/Jacklyn-Wenaas-photo-qbl-us-en.avif"
+      alt="Small business owner smiling after QuickBooks bookkeeping success" />
+  </div>
+  <div class="testimonial-text-wrapper" role="article" aria-live="polite">
+    <p class="testimonial-quote">
+      “Partnering with TechBrot’s Certified QuickBooks ProAdvisors gave me back valuable time to focus on growing my business.
+      My books are finally organized, accurate, and stress-free.”
+    </p>
+    <p class="testimonial-author">Jaclyn Wenaas</p>
+    <p class="testimonial-author-note">Owner of Bronzed Denver</p>
+  </div>
 </div>
-                </div>
-            </div>
-        </section>
+
+<!-- ✅ Hidden SEO Layer -->
+<span class="visually-hidden">
+  QuickBooks bookkeeping success story, Certified QuickBooks ProAdvisor testimonial,
+  QuickBooks cleanup help, QuickBooks support number, how do I talk to QuickBooks,
+  QBO bookkeeping help, small business accounting ProAdvisor, QuickBooks consultation call.
+</span>
+</section>
+        <section id="certified-experts" class="features-section" style="background-color: rgba(249,249,249,0);"><section id="quickbooks-proadvisors" class="py-2">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+
+      <!-- ✅ Image Column -->
+      <div class="col-lg-6 col-md-10 text-center mb-4 mb-lg-0">
+        <img 
+          src="../../../../assets/img/qbpro-25-600.webp" 
+          alt="Certified QuickBooks ProAdvisor providing accounting setup and support"
+          width="500" height="500"
+          class="img-fluid shadow-sm"
+          style="border-radius: 12px; max-width: 100%; height: auto;" />
+      </div>
+
+      <!-- ✅ Content Column -->
+      <div class="col-lg-6 col-md-10">
+        <div class="feature-content text-block">
+          <p class="text-primary fw-semibold mb-2">QuickBooks ProAdvisors</p>
+          <h3 class="display-6 fw-semibold mb-3">Certified QuickBooks Experts You Can Trust</h3>
+
+          <p class="lead">
+            Our team of <strong>Certified QuickBooks ProAdvisors</strong> has completed thousands of successful 
+            <strong>QuickBooks Online setups, data cleanups, and migrations</strong> across the U.S. 
+            We ensure your books are accurate, compliant, and built for growth—so you can focus on running your business.
+          </p>
+
+          <p>
+            Whether you’re just getting started, switching from spreadsheets, or need help fixing messy data,
+            we provide <strong>QuickBooks consulting and bookkeeping services</strong> tailored to your needs. 
+            As certified experts, we help you save time, reduce errors, and gain financial clarity.
+          </p>
+
+          <!-- ✅ CTA Button -->
+          <div class="mt-4">
+            <a href="tel:+18777515575" class="btn cta-btn fw-semibold d-inline-flex align-items-center" aria-label="Call Certified QuickBooks ProAdvisor for help">
+           
+              <strong>Talk To An Expert</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔍 Hidden SEO Keyword Layer -->
+    <span class="visually-hidden">
+      Certified QuickBooks ProAdvisor, QuickBooks Online setup expert, QuickBooks help phone number,
+      QuickBooks consultation, QBO accountant support, QuickBooks data cleanup, QuickBooks migration expert,
+      QuickBooks ProAdvisor near me, QuickBooks Online Advanced setup, QBO support number,
+      QuickBooks bookkeeping service, QuickBooks file cleanup, Certified QuickBooks expert USA,
+      QuickBooks help and setup service, QBO ProAdvisor support team, QuickBooks Certified ProAdvisor consultation
+    </span>
+  </div>
+</section>
+</section><section id="faq" class="faq-9 faq section light-background">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <h2 class="faq-title" style="margin-top: 12px;">Have a question? Check out the FAQ</h2>
+        <p class="faq-description">
+          Explore answers from Certified QuickBooks ProAdvisors who specialize in restaurant accounting. 
+          Learn how to manage daily sales, payroll, inventory, and cash flow — all in one place with QuickBooks Online Advanced.
+        </p>
+        <div class="d-none d-lg-block faq-arrow">
+          <svg class="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M198.804 194.488C189.279 189.596 179.529 185.52 169.407 182.07L169.384 182.049C169.227 181.994 169.07 181.939 168.912 181.884C166.669 181.139 165.906 184.546 167.669 185.615C174.053 189.473 182.761 191.837 189.146 195.695C156.603 195.912 119.781 196.591 91.266 179.049C62.5221 161.368 48.1094 130.695 56.934 98.891C84.5539 98.7247 112.556 84.0176 129.508 62.667C136.396 53.9724 146.193 35.1448 129.773 30.2717C114.292 25.6624 93.7109 41.8875 83.1971 51.3147C70.1109 63.039 59.63 78.433 54.2039 95.0087C52.1221 94.9842 50.0776 94.8683 48.0703 94.6608C30.1803 92.8027 11.2197 83.6338 5.44902 65.1074C-1.88449 41.5699 14.4994 19.0183 27.9202 1.56641C28.6411 0.625793 27.2862 -0.561638 26.5419 0.358501C13.4588 16.4098 -0.221091 34.5242 0.896608 56.5659C1.8218 74.6941 14.221 87.9401 30.4121 94.2058C37.7076 97.0203 45.3454 98.5003 53.0334 98.8449C47.8679 117.532 49.2961 137.487 60.7729 155.283C87.7615 197.081 139.616 201.147 184.786 201.155L174.332 206.827C172.119 208.033 174.345 211.287 176.537 210.105C182.06 207.125 187.582 204.122 193.084 201.144C193.346 201.147 195.161 199.887 195.423 199.868C197.08 198.548 193.084 201.144 195.528 199.81C196.688 199.192 197.846 198.552 199.006 197.935C200.397 197.167 200.007 195.087 198.804 194.488ZM60.8213 88.0427C67.6894 72.648 78.8538 59.1566 92.1207 49.0388C98.8475 43.9065 106.334 39.2953 114.188 36.1439C117.295 34.8947 120.798 33.6609 124.168 33.635C134.365 33.5511 136.354 42.9911 132.638 51.031C120.47 77.4222 86.8639 93.9837 58.0983 94.9666C58.8971 92.6666 59.783 90.3603 60.8213 88.0427Z" fill="#28a745"></path>
+          </svg>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="faq-container">
+          
+          <div class="faq-item faq-active">
+            <h3><span style="font-weight: normal;">How does QuickBooks Online help restaurant owners manage finances?</span></h3>
+            <div class="faq-content">
+              <p>
+                QuickBooks Online simplifies restaurant accounting by automating daily sales entries, 
+                reconciling POS data, managing payroll, and tracking expenses — all in one dashboard. 
+                It helps you focus on running your kitchen while keeping books accurate and up to date.
+              </p>
+            </div><i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3><span style="font-weight: normal;">Can QuickBooks integrate with my POS and delivery platforms?</span></h3>
+            <div class="faq-content">
+              <p>
+                Yes. QuickBooks Online integrates with popular restaurant POS systems and delivery apps 
+                like Toast, Square, and DoorDash. This ensures your sales and payments sync automatically, 
+                reducing manual entry and improving accuracy.
+              </p>
+            </div><i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3><span style="font-weight: normal;">How can I track food costs and vendor payments in QuickBooks?</span></h3>
+            <div class="faq-content">
+              <p>
+                You can assign expenses to ingredients, vendors, and recipes using custom fields or 
+                categories. This helps monitor cost of goods sold (COGS), reduce waste, and negotiate 
+                better supplier pricing — all from your QuickBooks dashboard.
+              </p>
+            </div><i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3><span style="font-weight: normal;">Does QuickBooks handle payroll for restaurant employees?</span></h3>
+            <div class="faq-content">
+              <p>
+                Yes. QuickBooks Payroll simplifies staff payments, tip tracking, and tax filings. 
+                You can manage hourly staff, shift schedules, and even file 1099s and W-2s automatically.
+              </p>
+            </div><i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3><span style="font-weight: normal;">Can my accountant or bookkeeper access QuickBooks Online securely?</span></h3>
+            <div class="faq-content">
+              <p>
+                Absolutely. You can invite your accountant or bookkeeper to collaborate securely in 
+                real time. Each user has role-based permissions, so sensitive data remains protected.
+              </p>
+            </div><i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3><span style="font-weight: normal;">How does TechBrot support restaurant businesses?</span></h3>
+            <div class="faq-content">
+              <p>
+                As Certified QuickBooks ProAdvisors, TechBrot offers tailored setup, cleanup, and training 
+                for restaurant owners. We help automate bookkeeping, ensure compliance, and optimize 
+                your QuickBooks for smoother financial management.
+              </p>
+            </div><i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3><span style="font-weight: normal;">Is QuickBooks secure for managing restaurant financial data?</span></h3>
+            <div class="faq-content">
+              <p>
+                Yes. QuickBooks Online uses bank-level encryption, automatic data backups, and secure cloud 
+                access to ensure your financial records are always safe and compliant with industry standards.
+              </p>
+            </div><i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden SEO Keyword Layer -->
+  <span class="visually-hidden">
+    QuickBooks for restaurants FAQ, QuickBooks for cafes, QuickBooks POS integration, 
+    QuickBooks payroll for restaurants, QuickBooks ProAdvisor support, QBO support number, 
+    QuickBooks help phone number, restaurant bookkeeping setup, QuickBooks consultation, 
+    QuickBooks for food service industry, QuickBooks restaurant accounting guide.
+  </span>
+</section>
+
         <section id="cta-bottom-card">
             <div class="section-header section-title" style="margin-bottom: 6px;">
                 <h2 class="display-5">We’re here when you need us</h2>
-            </div>
-            <div class="container py-5">
-                <div class="col col-sm-12 col-md-10 mx-auto">
-                    <div class="row align-items-stretch">
-                        <div class="col-md-6 fade-in delay-1">
-                            <div class="d-flex mb-3 feature-card-1"><img class="img-fluid me-4" src="../../../../assets/img/customer-support-light-icon-support.svg" alt="Cloud Access" style="width: 46px;height: 56px;">
-                                <div>
-                                    <h5 class="display-6 mb-3 card-title" style="font-weight: bold;color: #0fd46c;"><strong>Talk to sales</strong></h5>
-                                    <p class="text-light card-text"><span style="color: rgb(255, 255, 255);">Give us a call if you need help picking a QuickBooks product.</span><br><br><a class="fw-bold link-light" href="tel:+1-877-751-5575">Call 1-877-751-5575</a>&nbsp;<br>Mon-Fri, 5 AM to 6 PM PT</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex feature-card-1"><img class="img-fluid me-4" src="../../../../assets/img/get-support-light-icon-outline.svg" alt="List Capacity" style="width: 46px;height: 56px;">
-                                <div>
-                                    <h5 class="display-6 mb-3 card-title" style="color: #0fd46c;font-weight: bold;"><strong>Visit our support page</strong></h5>
-                                    <p class="text-light card-text">Find help articles, video tutorials, and connect with other businesses in our online community.</p><a class="mt-2 cta-btn cta-btn--invert" href="/enterprise/support/index.html" style="color: #ffffff;border-color: #ffffff;background: rgba(255,255,255,0);">Learn more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div><div class="container py-5">
+  <div class="col col-sm-12 col-md-10 mx-auto">
+    <div class="row align-items-stretch">
+      
+      <!-- ✅ CALL TO SALES -->
+      <div class="col-md-6 fade-in delay-1">
+        <div class="d-flex mb-3 feature-card-1">
+          <img class="img-fluid me-4" src="../../../../assets/img/customer-support-light-icon-support.svg" alt="QuickBooks ProAdvisor phone support icon" style="width: 46px;height: 56px;" />
+          <div>
+            <h5 class="display-6 mb-3 card-title" style="font-weight: bold;color: #0fd46c;">
+              <strong>Talk to a QuickBooks Expert</strong>
+            </h5>
+            <p class="text-light card-text">
+              <span style="color: rgb(255, 255, 255);">
+                Call our Certified QuickBooks ProAdvisors for bookkeeping setup, cleanup, or product guidance.
+              </span><br /><br />
+              <a class="fw-bold link-light" href="tel:+1-877-751-5575" aria-label="Call QuickBooks bookkeeping support number">
+                Call 1-877-751-5575
+              </a><br />
+              Mon–Fri, 9 AM to 6 PM EST
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ SUPPORT PAGE -->
+      <div class="col-md-6">
+        <div class="d-flex feature-card-1">
+          <img class="img-fluid me-4" src="../../../../assets/img/get-support-light-icon-outline.svg" alt="QuickBooks help and support resources icon" style="width: 46px;height: 56px;" />
+          <div>
+            <h5 class="display-6 mb-3 card-title" style="color: #0fd46c;font-weight: bold;">
+              <strong>Get QuickBooks Help & Resources</strong>
+            </h5>
+            <p class="text-light card-text">
+              Access help articles, troubleshooting guides, and direct support from our bookkeeping and QuickBooks experts.
+            </p>
+            <a class="mt-2 cta-btn cta-btn--invert" href="/support/index.html"
+              style="color:#ffffff;border-color:#ffffff;background:rgba(255,255,255,0);"
+              aria-label="Visit QuickBooks support page for help articles and expert assistance">
+              Learn more
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Hidden SEO Layer -->
+  <span class="visually-hidden">
+    QuickBooks bookkeeping help, QuickBooks support number, Certified QuickBooks ProAdvisor near me,
+    how do I talk to QuickBooks, QBO help phone number, QuickBooks consultation, QuickBooks cleanup expert,
+    small business bookkeeping services, call QuickBooks expert, talk to QuickBooks ProAdvisor.
+  </span>
+</div>
+
+        </section>
+        <section id="banner-down" class="banner-section" style="background: url(&quot;../../../../assets/img/sbseg-contact-us-banner.svg&quot;) center / cover no-repeat;">
+            <div class="banner-container">
+                <h2 class="display-4 text-light banner-heading">Level up your bookkeeping with expert guidance</h2>
+                <p class="banner-subtext"></p>
+                <div class="banner-cta"><button class="cta-btn cta-btn--invert"><strong>Call 1-877-751-5575</strong></button></div>
             </div>
         </section>
     </main>
-<!-- Modal -->
-<div id="consultationModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); text-align: center; z-index: 1000; border-radius: 0.25rem; width: 90%; max-width: 420px; border: 1px solid #ccc;">
-    <button onclick="hideModal()" style="position: absolute; top: 15px; right: 15px; font-size: 20px; border: none; cursor: pointer;">
-        ×
-    </button>
-    <h2 style="margin-bottom: 10px; font-size: 22px;">Schedule a Free Consultation</h2>
-    <p style="color: #555; font-size: 14px;">Talk with a specialist for help choosing a QuickBooks product. Schedule a callback at your convenience.</p>
-
-    <!-- Form -->
-    <form method="post" enctype="application/x-www-form-urlencoded" id="consultationForm" style="margin-top: 15px;">
-        <input type="hidden" name="form_id" value="US_QBOAV_b86ead92-354b-474d-829a-01be8d5c33b4">
-        <input type="hidden" name="lead_country" value="US">
-        
-        <div class="input-container">
-            <input type="text" name="full_name" required>
-            <label>Full name*</label>
-        </div>
-        
-        <div class="input-container">
-            <input type="email" name="email" required>
-            <label>Email*</label>
-        </div>
-
-        <div class="input-container">
-            <input type="tel" name="phone" required>
-            <label>Phone*</label>
-        </div>
-
-        <button type="submit" 
-            style="background: #0a8543; color: white; padding: 12px; width: 100%; border: none; cursor: pointer; font-size: 16px; border-radius: 4px; transition: background 0.3s;">
-            Schedule Now
-        </button>
-
-        <p style="font-size: 12px; color: #777; margin-top: 15px; text-align: center;">
-            By clicking “Schedule,” you agree to permit Intuit to contact you regarding QuickBooks and have read and acknowledge our 
-            <a href="https://www.intuit.com/privacy/" target="_blank" style="color: #0a8543; text-decoration: none;">Privacy Statement</a>. 
-            Consent is not a condition of any purchase.
-        </p>
-    </form>
-</div>
-
-<!-- Overlay -->
-<div id="overlay" onclick="hideModal()" 
-    style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999;">
-</div>
-
-<style>
-    /* Spinner Animation */
-    .spinner {
-        display: inline-block;
-        width: 14px;
-        height: 14px;
-        border: 2px solid white;
-        border-top: 2px solid transparent;
-        border-radius: 50%;
-        animation: spin 0.6s linear infinite;
-        margin-left: 5px;
-    }
-
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-
-
-</style>
-
-<!-- Include EmailJS Library -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-<script>
-    (function() {
-        emailjs.init("YcaZtH_XS2qvGxlNF"); // Initialize EmailJS with Public Key
-    })();
-
-    function startLoading() {
-        var btn = document.getElementById("consultationBtn");
-        btn.innerHTML = 'Please wait... <span class="spinner"></span>';
-        btn.disabled = true;
-
-        setTimeout(() => {
-            showModal();
-            btn.innerHTML = 'Get a free consultation';
-            btn.disabled = false;
-        }, 1200);
-    }
-
-    function showModal() {
-        document.getElementById("consultationModal").style.display = "block";
-        document.getElementById("overlay").style.display = "block";
-    }
-
-    function hideModal() {
-        document.getElementById("consultationModal").style.display = "none";
-        document.getElementById("overlay").style.display = "none";
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("consultationForm").addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent default form submission
-
-            var submitButton = this.querySelector("button[type='submit']");
-            submitButton.innerHTML = 'Please wait... <span class="spinner"></span>';
-            submitButton.disabled = true;
-
-            // Collect form data
-            var formData = {
-                full_name: this.full_name.value,
-                email: this.email.value,
-                phone: this.phone.value
-            };
-
-            // Send email using EmailJS
-            emailjs.send("service_aphji1a", "template_iwuzpym", formData)
-                .then(function(response) {
-                    console.log("Email sent successfully!", response);
-
-                    // Redirect after 5 seconds
-                    setTimeout(function() {
-                        window.location.href = "thank-you.html";
-                    }, 5000);
-                })
-                .catch(function(error) {
-                    console.error("Email sending failed!", error);
-                    
-                    // Restore button state on error
-                    submitButton.innerHTML = "Schedule Now";
-                    submitButton.disabled = false;
-                });
-        });
-    });
-</script>
-
-<!-- Modal -->
-<div id="consultationModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); text-align: center; z-index: 1000; border-radius: 0.25rem; width: 90%; max-width: 420px; border: 1px solid #ccc;">
-    <button onclick="hideModal()" style="position: absolute; top: 15px; right: 15px; font-size: 20px; border: none; cursor: pointer;">
-        ×
-    </button>
-    <h2 style="margin-bottom: 10px; font-size: 22px;">Schedule a Free Consultation</h2>
-    <p style="color: #555; font-size: 14px;">Talk with a specialist for help choosing a QuickBooks product. Schedule a callback at your convenience.</p>
-
-    <!-- Form -->
-    <form method="post" enctype="application/x-www-form-urlencoded" id="consultationForm" style="margin-top: 15px;">
-        <input type="hidden" name="form_id" value="US_QBOAV_b86ead92-354b-474d-829a-01be8d5c33b4">
-        <input type="hidden" name="lead_country" value="US">
-        
-        <div class="input-container">
-            <input type="text" name="full_name" required>
-            <label>Full name*</label>
-        </div>
-        
-        <div class="input-container">
-            <input type="email" name="email" required>
-            <label>Email*</label>
-        </div>
-
-        <div class="input-container">
-            <input type="tel" name="phone" required>
-            <label>Phone*</label>
-        </div>
-
-        <button type="submit" 
-            style="background: #0a8543; color: white; padding: 12px; width: 100%; border: none; cursor: pointer; font-size: 16px; border-radius: 4px; transition: background 0.3s;">
-            Schedule Now
-        </button>
-
-        <p style="font-size: 12px; color: #777; margin-top: 15px; text-align: center;">
-            By clicking “Schedule,” you agree to permit Intuit to contact you regarding QuickBooks and have read and acknowledge our 
-            <a href="https://www.intuit.com/privacy/" target="_blank" style="color: #0a8543; text-decoration: none;">Privacy Statement</a>. 
-            Consent is not a condition of any purchase.
-        </p>
-    </form>
-</div>
-
-<!-- Overlay -->
-<div id="overlay" onclick="hideModal()" 
-    style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999;">
-</div>
-
-<style>
-    /* Spinner Animation */
-    .spinner {
-        display: inline-block;
-        width: 14px;
-        height: 14px;
-        border: 2px solid white;
-        border-top: 2px solid transparent;
-        border-radius: 50%;
-        animation: spin 0.6s linear infinite;
-        margin-left: 5px;
-    }
-
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-
-
-</style>
-
-<!-- Include EmailJS Library -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-<script>
-
-</script>
-
     <footer id="footer" class="footer">
         <div class="container footer-top">
             <div class="row gy-4">
@@ -548,11 +846,11 @@
                         <li><a href="/live/full-service-bookkeeping/index.html">Bookkeeping Services</a></li>
                         <li><a href="/live/expert-cleanup/index.html">Setup &amp; Cleanup</a></li>
                         <li><a href="/online/advanced/support-and-training/index.html">Support &amp; Training</a></li>
-                        <li><a href="/quickbooks-hosting/index.html">QuickBooks Hosting</a></li>
-                        <li><a href="/quickbooks-file-review-service/index.html">QuickBooks File Issues</a></li>
+                        <li><a href="/quickbooks/hosting/index.html">QuickBooks Hosting</a></li>
+                        <li><a href="/quickbooks/file-review/index.html">QuickBooks File Issues</a></li>
                         <li><a href="/live/priority/index.html">Dedicated ProAdvisor Support</a></li>
                         <li><a href="/live/assisted-bookkeeping/index.html">Payroll &amp; Tax-Ready Reports</a></li>
-                        <li><a href="/quickbooks-consulting/index.html">QuickBooks Consulting</a></li>
+                        <li><a href="/quickbooks/consulting/index.html">QuickBooks Consulting</a></li>
                         <li><a href="#">Monthly &amp; Year-End Reporting</a></li>
                     </ul>
                 </div>
@@ -560,7 +858,7 @@
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="/careers/index.html">Careers</a></li>
-                        <li><a href="/enterprise/support/index.html">24x7 Live support</a></li>
+                        <li><a href="/support/index.html">24x7 Live support</a></li>
                         <li><a href="#">Common QuickBooks Errors</a></li>
                         <li><a href="../live/expert-cleanup/index.html">QuickBooks Cleanup Checklist</a></li>
                     </ul>
@@ -583,7 +881,6 @@
         </div>
     </footer><a class="d-flex justify-content-center align-items-center scroll-top" href="#" id="scroll-top"><i class="bi bi-arrow-up-short"></i></a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="../../../../assets/js/bs-init.js"></script>
     <script src="../../../../assets/js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../../../../assets/js/vendor/php-email-form/validate.js"></script>
@@ -592,8 +889,10 @@
     <script src="../../../../assets/js/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="../../../../assets/js/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="../../../../assets/js/js/main.js"></script>
-    <script src="../../../../assets/js/consultationModal.js"></script>
     <script src="../../../../assets/js/faq-toggle.js"></script>
+    <script src="../../../../assets/js/feature-tabs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" type="module"></script>
+    <script src="../../../../assets/js/modal.js"></script>
 </body>
 
 </html>

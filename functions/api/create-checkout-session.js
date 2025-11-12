@@ -209,8 +209,8 @@ const STRIPE_SECRET_KEY = context.env.STRIPE_SECRET_KEY_LIVE || context.env.STRI
       mode: priceMode,
       payment_method_types: ['card', 'us_bank_account'],
       line_items,
-      success_url: 'https://techbrot.com/success',
-      cancel_url: 'https://techbrot.com/cancel',
+      success_url: 'https://techbrot.com/support/success.html',
+      cancel_url: 'https://techbrot.com/support/cancel.html',
       metadata: { createdAt: new Date().toISOString(), items: JSON.stringify(resolved.map(r => ({ key: r.key, quantity: r.quantity }))) }
     })
 

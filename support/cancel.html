@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+<meta name="keywords" content="Certified QuickBooks ProAdvisor, QuickBooks support, QBO help, QuickBooks setup, bookkeeping services, QuickBooks cleanup, QuickBooks file review, QuickBooks hosting, QuickBooks migration, QuickBooks consultation">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+<!-- Floating Contact Us Button -->
+<button id="contactUsBtn" class="contact-button" aria-label="Contact Us">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px; vertical-align: middle;">
+        <path d="M2 4V12C2 12.55 2.45 13 3 13H11L14 16V3C14 2.45 13.55 2 13 2H3C2.45 2 2 2.45 2 3V4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Contact Us
+</button>
+
+<!-- Contact Popup -->
+<div id="contactPopup" class="contact-popup hidden" role="dialog" aria-labelledby="popupHeader">
+    <button id="closePopup" class="popup-close" aria-label="Close Contact Options">
+        ×
+    </button>
+    <div id="popupHeader" class="popup-header">How can we help?</div>
+    <div class="popup-subheader">Sales & Customer Service: <a href="tel:8777515575">877-751-5575</a></div>
+    <div class="popup-hours">Open all days, 24/7</div>
+    <div class="popup-actions">
+        <button id="scheduleCall" class="popup-button" aria-label="Schedule a Call">Schedule Now</button>
+        <a href="/insight/" class="popup-button secondary" aria-label="Visit Support Page">Visit Support Page</a>
+    </div>
+</div>
+
+<!-- Styles -->
+<style>
+    /* Floating Contact Us Button */
+    .contact-button {
+        position: fixed;
+        bottom: 14px;
+        right: -100px; /* Start off-screen */
+        background: #007bff;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: right 0.6s ease-in-out, background 0.3s;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .contact-button:hover {
+        background: #0056b3;
+    }
+    .contact-button.show {
+        right: 70px; /* Slide into view */
+    }
+
+    /* Contact Popup */
+    .contact-popup {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        width: 300px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, visibility 0.4s;
+        visibility: hidden;
+    }
+
+    .contact-popup.show {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    /* Close Button */
+    .popup-close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 18px;
+        color: #888;
+    }
+    .popup-close:hover {
+        color: #333;
+    }
+
+    /* Popup Header */
+    .popup-header {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    /* Popup Buttons */
+    .popup-button {
+        display: block;
+        margin-top: 12px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: 14px;
+        font-weight: 500;
+        border: none;
+        width: 100%;
+    }
+    .popup-button:hover {
+        background: #0056b3;
+    }
+
+    .popup-button.secondary {
+        background: #f1f1f1;
+        color: #333;
+    }
+    .popup-button.secondary:hover {
+        background: #ddd;
+    }
+</style>
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Slide-in animation for Contact Us button
+        setTimeout(() => {
+            document.getElementById("contactUsBtn").classList.add("show");
+        }, 200);
+    });
+
+    // Toggle Contact Popup
+    document.getElementById("contactUsBtn").addEventListener("click", function() {
+        document.getElementById("contactPopup").classList.toggle("show");
+    });
+
+    // Close Popup
+    document.getElementById("closePopup").addEventListener("click", function() {
+        document.getElementById("contactPopup").classList.remove("show");
+    });
+
+    // Open Consultation Modal when "Schedule Now" is clicked
+    document.getElementById("scheduleCall").addEventListener("click", function() {
+        document.getElementById("contactPopup").classList.remove("show"); // Hide the popup
+        showModal(); // Open the existing consultation modal
+    });
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Payment Cancelled | QuickBooks Support Assistance</title>
+    <meta name="description" content="Your payment or booking was cancelled. No charges were made. Return to your service plan page to retry your purchase.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/Lato.css">
+    <link rel="stylesheet" href="../assets/css/swiper-icons.css">
+    <link rel="stylesheet" href="../assets/css/pricing.css">
+    <link rel="stylesheet" href="../assets/css/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/css/main.css">
+    <link rel="stylesheet" href="../assets/css/style-2.css">
+    <link rel="stylesheet" href="../assets/css/checkout.css">
+    <link rel="stylesheet" href="../assets/css/contact-banner.css">
+    <link rel="stylesheet" href="../assets/css/faq.css">
+    <link rel="stylesheet" href="../assets/css/live-pricing.css">
+<!-- ✅ Global Consultation Modal -->
+<div id="consultationModal" class="consultation-modal" style="display:none;">
+  <button type="button" class="close-btn" onclick="hideModal()">×</button>
+  <h2>Schedule a Free Consultation</h2>
+  <p>Talk with a specialist for help choosing a QuickBooks product. Schedule a callback at your convenience.</p>
+
+  <form method="post" enctype="application/x-www-form-urlencoded" id="consultationForm">
+    <input type="hidden" name="form_id" value="US_QBOAV_b86ead92-354b-474d-829a-01be8d5c33b4">
+    <input type="hidden" name="lead_country" value="US">
+
+    <div class="input-container"><input type="text" name="full_name" required><label>Full name*</label></div>
+    <div class="input-container"><input type="email" name="email" required><label>Email*</label></div>
+    <div class="input-container"><input type="tel" name="phone" required><label>Phone*</label></div>
+
+    <button type="submit" class="submit-btn">Schedule Now</button>
+
+    <p class="disclaimer">
+      By clicking “Schedule,” you agree to permit Intuit to contact you regarding QuickBooks and have read and acknowledge our
+      <a href="https://www.intuit.com/privacy/" target="_blank">Privacy Statement</a>. Consent is not a condition of any purchase.
+    </p>
+  </form>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="hideModal()"></div>
+
+<!-- ✅ Modal Styles -->
+<style>
+  .consultation-modal {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1001;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+  }
+  .overlay {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: none;
+  }
+  .close-btn {
+    position: absolute; top: 10px; right: 12px;
+    border: none; background: none; font-size: 22px;
+    cursor: pointer; color: #333;
+  }
+  .submit-btn {
+    background: #0a8543; color: #fff;
+    width: 100%; padding: 12px; border: none;
+    border-radius: 4px; font-size: 16px;
+    cursor: pointer; transition: background 0.3s;
+  }
+  .submit-btn:hover { background: #28a745; }
+  .disclaimer { font-size: 12px; color: #777; margin-top: 10px; }
+  .disclaimer a { color: #0a8543; text-decoration: none; }
+  .spinner {
+    display: inline-block; width: 14px; height: 14px;
+    border: 2px solid white; border-top: 2px solid transparent;
+    border-radius: 50%; animation: spin 0.6s linear infinite;
+    margin-left: 5px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style><link rel="canonical" href="https://techbrot.com/support/cancel.html">
+</head>
+
+<body><!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Payment cancelled — Try again</title>
+
+<!-- Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --surface:#ffffff;
+    --muted:#6c757d;
+    --accent:#0ea5a4;
+    --accent-dark:#06b6d4;
+    --danger:#ef4444;
+    --card-border: rgba(17,24,39,0.04);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:inherit;
+    background: linear-gradient(180deg,#f6f9fb 0%, #ffffff 100%);
+    -webkit-font-smoothing:antialiased;
+    display:flex; align-items:center; justify-content:center;
+    padding:28px;
+    color: #111;
+  }
+
+  .container{
+    width:100%;
+    max-width:920px;
+    display:grid;
+    grid-template-columns: 1fr 320px;
+    gap:20px;
+    align-items:stretch;
+  }
+  @media (max-width:860px){
+    .container{ grid-template-columns: 1fr; padding:12px; gap:12px; }
+  }
+
+  .card{
+    background: linear-gradient(180deg, #fff, #fbfdff);
+    border-radius:14px;
+    padding:28px;
+    border:1px solid var(--card-border);
+    box-shadow: 0 14px 40px rgba(12,22,46,0.06);
+    min-height:220px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .left .title{
+    display:flex; align-items:center; gap:14px;
+    margin-bottom:8px;
+  }
+  .icon{
+    width:56px; height:56px; border-radius:12px;
+    background:linear-gradient(90deg, rgba(239,68,68,0.08), rgba(239,68,68,0.04));
+    display:grid; place-items:center; color:var(--danger); font-weight:800; font-size:22px;
+    border:1px solid rgba(239,68,68,0.06);
+  }
+  h1{ margin:0; font-size:22px; color:#0f172a; }
+  p.lead{ margin:12px 0 18px 0; color:var(--muted); font-size:15px }
+
+  .explain{
+    display:flex; gap:12px; align-items:flex-start; color:var(--muted); font-size:14px;
+  }
+  .explain svg{ flex:0 0 20px; margin-top:4px; opacity:0.9 }
+
+  .actions{ margin-top:18px; display:flex; gap:10px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    background:linear-gradient(90deg,var(--accent-dark),var(--accent));
+    color:#012; padding:10px 14px; border-radius:10px; border:0; font-weight:700;
+    cursor:pointer; transition:transform .12s ease, opacity .12s;
+  }
+  .btn.secondary{
+    background:transparent; color:#0f172a; border:1px solid var(--card-border); font-weight:600;
+  }
+  .btn:active{ transform:translateY(1px) }
+  .btn:disabled{ opacity:.6; cursor:not-allowed }
+
+  .right{
+    background: linear-gradient(180deg,#ffffff,#fbfdff);
+    border-radius:14px; padding:20px; border:1px solid var(--card-border);
+    display:flex; flex-direction:column; justify-content:center; gap:12px; min-height:160px;
+    box-shadow: 0 8px 26px rgba(12,22,46,0.04);
+  }
+  .status{ font-weight:700; color:var(--danger) }
+  .countdown{ color:var(--muted); font-size:13px }
+  .help{ font-size:13px; color:var(--muted) }
+
+  /* small animation */
+  .pulse {
+    animation: pulse 1.6s linear infinite;
+    border-radius: 999px;
+    box-shadow: 0 8px 26px rgba(239,68,68,0.06);
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.03); opacity: 0.93; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* accessibility focus */
+  .btn:focus, .btn.secondary:focus { outline:3px solid rgba(6,182,212,0.12); outline-offset:4px; border-radius:10px; }
+
+  .small-note{ font-size:13px; color:var(--muted); margin-top:10px }
+
+  /* receipt preview compact (not shown here, but kept similar style) */
+  .muted-link { color:var(--accent-dark); text-decoration:none; }
+</style>
+</head>
+<body>
+<main class="container" role="main" aria-labelledby="cancelHeading">
+
+  <section class="card left" aria-labelledby="cancelHeading">
+    <div class="title">
+      <div class="icon pulse" aria-hidden="true">✖</div>
+      <div>
+        <h1 id="cancelHeading">Payment cancelled</h1>
+        <div class="status" aria-hidden="true">No charge was made</div>
+      </div>
+    </div>
+
+    <p class="lead">It looks like your payment didn’t complete. This may happen if you closed the window, chose a different payment method, or the payment was declined.</p>
+
+    <div class="explain" role="region" aria-label="Why this can happen">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex:0 0 20px; color:var(--muted)">
+        <path d="M11.25 6h1.5v7h-1.5V6z" fill="currentColor"/>
+        <path d="M12 17a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 12 17z" fill="currentColor"/>
+      </svg>
+      <div>
+        <div><strong>Why this might happen</strong></div>
+        <div class="small-note">You can try again — we saved your cart. If funds were held, check your bank; holds typically release in a few business days.</div>
+      </div>
+    </div>
+
+    <div class="actions" role="group" aria-label="Actions">
+      <button class="btn" id="retryBtn" title="Return to plans and try again">Retry / Choose a plan</button>
+      <button class="btn secondary" id="contactBtn" title="Contact support">Contact support</button>
+      <button class="btn secondary" id="clearBtn" title="Clear cart and go back to plans">Clear cart & go to plans</button>
+    </div>
+
+    <p class="small-note">If you need help, email <a class="muted-link" href="mailto:orders@example.com" id="supportEmail">orders@example.com</a> and include your name and any order reference shown on the previous page.</p>
+  </section>
+
+  <aside class="right" aria-labelledby="summaryTitle">
+    <div>
+      <div id="summaryTitle" style="font-size:15px; font-weight:700">Next steps</div>
+      <div class="countdown" id="countdownText">Redirecting to plans in <strong id="count">6</strong> seconds…</div>
+    </div>
+
+    <div class="help">
+      <div><strong>Tip:</strong> You can try again immediately by clicking <em>Retry / Choose a plan</em>, or contact support if the card was declined.</div>
+    </div>
+
+    <div style="margin-top:6px;">
+      <div class="small-note">We’ll keep your cart intact in your browser so you can continue where you left off.</div>
+    </div>
+  </aside>
+
+</main>
+
+<script>
+(function () {
+  // redirect target changed as requested
+  const redirectPath = '/service-plans.html';
+  const retryBtn = document.getElementById('retryBtn');
+  const contactBtn = document.getElementById('contactBtn');
+  const clearBtn = document.getElementById('clearBtn');
+  const countEl = document.getElementById('count');
+
+  // autosave countdown then redirect
+  let seconds = 6;
+  if (countEl) countEl.textContent = seconds;
+  const tick = () => {
+    seconds--;
+    if (countEl) countEl.textContent = seconds;
+    if (seconds <= 0) {
+      window.location.href = redirectPath;
+    }
+  };
+  const interval = setInterval(tick, 1000);
+
+  // button handlers
+  retryBtn.addEventListener('click', function () {
+    // stop auto-redirect and navigate now
+    clearInterval(interval);
+    window.location.href = redirectPath;
+  });
+
+  contactBtn.addEventListener('click', function () {
+    clearInterval(interval);
+    const email = 'orders@example.com';
+    const subject = encodeURIComponent('Payment issue — need help');
+    const body = encodeURIComponent('Hi team,\n\nMy payment did not complete. Please help. Cart or session info: (if available)\n\nThanks.');
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  });
+
+  clearBtn.addEventListener('click', function () {
+    clearInterval(interval);
+    try {
+      localStorage.removeItem('pricing_cart');
+      localStorage.removeItem('service_plans_cart');
+    } catch (e) { console.warn('Unable to clear localStorage', e); }
+    window.location.href = redirectPath;
+  });
+
+  // Accessibility: focus retry button
+  try { retryBtn.focus(); } catch(e){}
+
+  // If the user navigates back and the page was left mid-countdown, reset if persisted
+  window.addEventListener('pageshow', (ev) => {
+    if (ev.persisted) {
+      seconds = 6;
+      if (countEl) countEl.textContent = seconds;
+    }
+  });
+
+  // defensive: stop redirect when user interacts (clicks any button)
+  document.querySelectorAll('.btn').forEach(b => {
+    b.addEventListener('click', () => { clearInterval(interval); });
+  });
+})();
+</script>
+</body>
+</html>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="../assets/js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/vendor/php-email-form/validate.js"></script>
+    <script src="../assets/js/vendor/aos/aos.js"></script>
+    <script src="../assets/js/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/js/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/js/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../assets/js/js/main.js"></script>
+    <script src="../assets/js/faq-toggle.js"></script>
+    <script src="../assets/js/feature-tabs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" type="module"></script>
+    <script src="../assets/js/modal.js"></script>
+</body>
+
+</html>

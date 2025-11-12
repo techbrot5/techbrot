@@ -3,14 +3,168 @@
 
 <head>
     <meta charset="utf-8">
+<meta name="keywords" content="Certified QuickBooks ProAdvisor, QuickBooks support, QBO help, QuickBooks setup, bookkeeping services, QuickBooks cleanup, QuickBooks file review, QuickBooks hosting, QuickBooks migration, QuickBooks consultation">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+<!-- Floating Contact Us Button -->
+<button id="contactUsBtn" class="contact-button" aria-label="Contact Us">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px; vertical-align: middle;">
+        <path d="M2 4V12C2 12.55 2.45 13 3 13H11L14 16V3C14 2.45 13.55 2 13 2H3C2.45 2 2 2.45 2 3V4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Contact Us
+</button>
+
+<!-- Contact Popup -->
+<div id="contactPopup" class="contact-popup hidden" role="dialog" aria-labelledby="popupHeader">
+    <button id="closePopup" class="popup-close" aria-label="Close Contact Options">
+        ×
+    </button>
+    <div id="popupHeader" class="popup-header">How can we help?</div>
+    <div class="popup-subheader">Sales & Customer Service: <a href="tel:8777515575">877-751-5575</a></div>
+    <div class="popup-hours">Open all days, 24/7</div>
+    <div class="popup-actions">
+        <button id="scheduleCall" class="popup-button" aria-label="Schedule a Call">Schedule Now</button>
+        <a href="/insight/" class="popup-button secondary" aria-label="Visit Support Page">Visit Support Page</a>
+    </div>
+</div>
+
+<!-- Styles -->
+<style>
+    /* Floating Contact Us Button */
+    .contact-button {
+        position: fixed;
+        bottom: 14px;
+        right: -100px; /* Start off-screen */
+        background: #007bff;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: right 0.6s ease-in-out, background 0.3s;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .contact-button:hover {
+        background: #0056b3;
+    }
+    .contact-button.show {
+        right: 70px; /* Slide into view */
+    }
+
+    /* Contact Popup */
+    .contact-popup {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        width: 300px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, visibility 0.4s;
+        visibility: hidden;
+    }
+
+    .contact-popup.show {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    /* Close Button */
+    .popup-close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 18px;
+        color: #888;
+    }
+    .popup-close:hover {
+        color: #333;
+    }
+
+    /* Popup Header */
+    .popup-header {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    /* Popup Buttons */
+    .popup-button {
+        display: block;
+        margin-top: 12px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: 14px;
+        font-weight: 500;
+        border: none;
+        width: 100%;
+    }
+    .popup-button:hover {
+        background: #0056b3;
+    }
+
+    .popup-button.secondary {
+        background: #f1f1f1;
+        color: #333;
+    }
+    .popup-button.secondary:hover {
+        background: #ddd;
+    }
+</style>
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Slide-in animation for Contact Us button
+        setTimeout(() => {
+            document.getElementById("contactUsBtn").classList.add("show");
+        }, 200);
+    });
+
+    // Toggle Contact Popup
+    document.getElementById("contactUsBtn").addEventListener("click", function() {
+        document.getElementById("contactPopup").classList.toggle("show");
+    });
+
+    // Close Popup
+    document.getElementById("closePopup").addEventListener("click", function() {
+        document.getElementById("contactPopup").classList.remove("show");
+    });
+
+    // Open Consultation Modal when "Schedule Now" is clicked
+    document.getElementById("scheduleCall").addEventListener("click", function() {
+        document.getElementById("contactPopup").classList.remove("show"); // Hide the popup
+        showModal(); // Open the existing consultation modal
+    });
+</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>QuickBooks Enterprise FAQ and Support</title>
-    <meta name="description" content="Find answers to common QuickBooks Enterprise questions Get expert guidance and call our team for more help">
+    <title>QuickBooks Enterprise FAQ | Setup &amp; Migration Support</title>
+    <meta name="description" content="Get answers to QuickBooks Enterprise setup, hosting, and data migration questions. Call 877-751-5575 for certified ProAdvisor help.">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/bootstrap-icons.css">
     <link rel="stylesheet" href="../../assets/css/Lato.css">
     <link rel="stylesheet" href="../../assets/css/swiper-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="../../assets/css/pricing.css">
     <link rel="stylesheet" href="../../assets/css/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/vendor/bootstrap-icons/bootstrap-icons.css">
@@ -20,6 +174,77 @@
     <link rel="stylesheet" href="../../assets/css/checkout.css">
     <link rel="stylesheet" href="../../assets/css/contact-banner.css">
     <link rel="stylesheet" href="../../assets/css/faq.css">
+    <link rel="stylesheet" href="../../assets/css/live-pricing.css">
+<!-- ✅ Global Consultation Modal -->
+<div id="consultationModal" class="consultation-modal" style="display:none;">
+  <button type="button" class="close-btn" onclick="hideModal()">×</button>
+  <h2>Schedule a Free Consultation</h2>
+  <p>Talk with a specialist for help choosing a QuickBooks product. Schedule a callback at your convenience.</p>
+
+  <form method="post" enctype="application/x-www-form-urlencoded" id="consultationForm">
+    <input type="hidden" name="form_id" value="US_QBOAV_b86ead92-354b-474d-829a-01be8d5c33b4">
+    <input type="hidden" name="lead_country" value="US">
+
+    <div class="input-container"><input type="text" name="full_name" required><label>Full name*</label></div>
+    <div class="input-container"><input type="email" name="email" required><label>Email*</label></div>
+    <div class="input-container"><input type="tel" name="phone" required><label>Phone*</label></div>
+
+    <button type="submit" class="submit-btn">Schedule Now</button>
+
+    <p class="disclaimer">
+      By clicking “Schedule,” you agree to permit Intuit to contact you regarding QuickBooks and have read and acknowledge our
+      <a href="https://www.intuit.com/privacy/" target="_blank">Privacy Statement</a>. Consent is not a condition of any purchase.
+    </p>
+  </form>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="hideModal()"></div>
+
+<!-- ✅ Modal Styles -->
+<style>
+  .consultation-modal {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1001;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+  }
+  .overlay {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: none;
+  }
+  .close-btn {
+    position: absolute; top: 10px; right: 12px;
+    border: none; background: none; font-size: 22px;
+    cursor: pointer; color: #333;
+  }
+  .submit-btn {
+    background: #0a8543; color: #fff;
+    width: 100%; padding: 12px; border: none;
+    border-radius: 4px; font-size: 16px;
+    cursor: pointer; transition: background 0.3s;
+  }
+  .submit-btn:hover { background: #28a745; }
+  .disclaimer { font-size: 12px; color: #777; margin-top: 10px; }
+  .disclaimer a { color: #0a8543; text-decoration: none; }
+  .spinner {
+    display: inline-block; width: 14px; height: 14px;
+    border: 2px solid white; border-top: 2px solid transparent;
+    border-radius: 50%; animation: spin 0.6s linear infinite;
+    margin-left: 5px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
 </head>
 
 <body>
@@ -39,176 +264,235 @@
             </nav><a class="btn-getstarted" href="tel:+1-877-751-5575"><strong>(877) 751-5575</strong></a>
         </div>
     </header>
-    <main class="main">
-        <section id="hero" class="hero section" style="padding-top: 120px;">
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div data-aos="fade-up" data-aos-delay="200" class="hero-content">
-                            <div class="mb-3 company-badge"><span> Frequently asked questions </span></div>
-                            <h1 class="mb-4">Frequently asked questions by business&nbsp;<span class="accent-text">owners like you</span></h1>
-                            <p>Is your question “Will I like it?”</p>
-                            <div class="hero-buttons"><a href="tel:+18777515575" class="hero-btn"><strong>Call 1-877-751-5575</strong></a></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div data-aos="zoom-out" data-aos-delay="300" class="hero-image"><img class="img-fluid" src="../../assets/img/avatar-4.webp" alt="Hero Image" style="max-width: 100%;height: auto;border-radius: 50%;">
-                            <div class="customers-badge">
-                                <div class="customer-avatars"><img src="../../assets/img/avatar-1.webp" alt="Customer 1" class="avatar"><img src="../../assets/img/avatar-2.webp" alt="Customer 2" class="avatar"><img src="../../assets/img/avatar-3.webp" alt="Customer 3" class="avatar"><img src="../../assets/img/avatar-4.webp" alt="Customer 4" class="avatar"><img src="../../assets/img/avatar-5.webp" alt="Customer 5" class="avatar"><span class="avatar more">12+</span></div>
-                                <p class="mt-2 mb-0">12,000+ successful calls and accounting solutions delivered</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <main class="main"><section id="hero" class="hero section" style="padding-top: 120px;" aria-label="QuickBooks Enterprise FAQ Hero Section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="hero-content">
+          <div class="mb-3 company-badge"><span>QuickBooks Enterprise FAQ</span></div>
+          <h1 class="mb-4">Answers to Common Questions from Business <span class="accent-text">Owners Like You</span></h1>
+          <p>From setup and migration to advanced inventory and reporting—our Certified QuickBooks ProAdvisors answer everything you need to know before upgrading.</p>
+          <div class="hero-buttons">
+            <a href="tel:+18777515575" class="hero-btn d-inline-flex align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" viewBox="0 0 24 24" class="me-2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18 19.5 19.5 0 0 1 3.1 9.81 19.79 19.79 0 0 1 .03 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .7 2.73 2 2 0 0 1-.45 2.11L6.21 7.79a16 16 0 0 0 6 6l1.23-1.05a2 2 0 0 1 2.11-.45 12.05 12.05 0 0 0 2.73.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <strong>Call QuickBooks Support: 1-877-751-5575</strong>
+            </a>
+            <p class="mt-2 mb-0">Or <a href="/contact/">request a callback</a> from a Certified ProAdvisor.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="hero-image">
+          <img class="img-fluid rounded-circle" src="../../assets/img/avatar-4.webp" alt="Certified QuickBooks ProAdvisor providing Enterprise consultation" />
+          <div class="customers-badge">
+            <div class="customer-avatars">
+              <img class="avatar" src="../../assets/img/avatar-1.webp" alt="Customer 1" />
+              <img class="avatar" src="../../assets/img/avatar-2.webp" alt="Customer 2" />
+              <img class="avatar" src="../../assets/img/avatar-3.webp" alt="Customer 3" />
+              <img class="avatar" src="../../assets/img/avatar-4.webp" alt="Customer 4" />
+              <img class="avatar" src="../../assets/img/avatar-5.webp" alt="Customer 5" />
+              <span class="avatar more">12+</span>
+            </div>
+            <p class="mt-2 mb-0">12,000+ QuickBooks consultations and accounting issues resolved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span class="visually-hidden">
+    QuickBooks Enterprise support number, QuickBooks help phone number, talk to QuickBooks, QBO phone number, Certified QuickBooks ProAdvisor near me, QuickBooks Enterprise demo, QuickBooks consultation call.
+  </span>
+</section>
+<section id="faq" class="faq-9 faq section light-background">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <h2 class="faq-title" style="margin-top: 12px;">Have a question? Check out the FAQ</h2>
+        <p class="faq-description">
+          Find expert answers to the most common questions business owners ask before switching to QuickBooks Enterprise.  
+          Our Certified QuickBooks ProAdvisors help you with setup, migration, clean-up, and everything in between.
+        </p>
+        <a href="tel:+18777515575" class="btn btn-success d-inline-flex align-items-center mt-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" viewBox="0 0 24 24" class="me-2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18 19.5 19.5 0 0 1 3.1 9.81 19.79 19.79 0 0 1 .03 1.18 2 2 0 0 1 2 0h3a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .7 2.73 2 2 0 0 1-.45 2.11L6.21 7.79a16 16 0 0 0 6 6l1.23-1.05a2 2 0 0 1 2.11-.45 12.05 12.05 0 0 0 2.73.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          Talk to a QuickBooks Expert
+        </a>
+        <div class="d-none d-lg-block faq-arrow">
+          <svg class="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M198.804 194.488C189.279 189.596 179.529 185.52 169.407 182.07L169.384 182.049C169.227 181.994 169.07 181.939 168.912 181.884C166.669 181.139 165.906 184.546 167.669 185.615C174.053 189.473 182.761 191.837 189.146 195.695C156.603 195.912 119.781 196.591 91.266 179.049C62.5221 161.368 48.1094 130.695 56.934 98.891C84.5539 98.7247 112.556 84.0176 129.508 62.667C136.396 53.9724 146.193 35.1448 129.773 30.2717C114.292 25.6624 93.7109 41.8875 83.1971 51.3147C70.1109 63.039 59.63 78.433 54.2039 95.0087C52.1221 94.9842 50.0776 94.8683 48.0703 94.6608C30.1803 92.8027 11.2197 83.6338 5.44902 65.1074C-1.88449 41.5699 14.4994 19.0183 27.9202 1.56641C28.6411 0.625793 27.2862 -0.561638 26.5419 0.358501C13.4588 16.4098 -0.221091 34.5242 0.896608 56.5659C1.8218 74.6941 14.221 87.9401 30.4121 94.2058C37.7076 97.0203 45.3454 98.5003 53.0334 98.8449C47.8679 117.532 49.2961 137.487 60.7729 155.283C87.7615 197.081 139.616 201.147 184.786 201.155L174.332 206.827C172.119 208.033 174.345 211.287 176.537 210.105C182.06 207.125 187.582 204.122 193.084 201.144C193.346 201.147 195.161 199.887 195.423 199.868C197.08 198.548 193.084 201.144 195.528 199.81C196.688 199.192 197.846 198.552 199.006 197.935C200.397 197.167 200.007 195.087 198.804 194.488ZM60.8213 88.0427C67.6894 72.648 78.8538 59.1566 92.1207 49.0388C98.8475 43.9065 106.334 39.2953 114.188 36.1439C117.295 34.8947 120.798 33.6609 124.168 33.635C134.365 33.5511 136.354 42.9911 132.638 51.031C120.47 77.4222 86.8639 93.9837 58.0983 94.9666C58.8971 92.6666 59.783 90.3603 60.8213 88.0427Z" fill="#28a745"></path>
+          </svg>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="faq-container">
+
+          <div class="faq-item faq-active">
+            <h3><span style="font-weight: normal;">What is QuickBooks Enterprise and how can it help my business?</span></h3>
+            <div class="faq-content">
+              <p>QuickBooks Enterprise is an advanced accounting and business management solution built for growing companies.  
+              It combines financial tracking, payroll, inventory, and reporting in one secure platform.  
+              <br /><br />
+              Key advantages:<br />
+              (i) Real-time dashboards for better decision-making,<br />
+              (ii) Job costing and pricing automation,<br />
+              (iii) Role-based user permissions for team control,<br />
+              (iv) Multi-location inventory and advanced reporting.<br /><br />
+              It’s perfect for businesses ready to move beyond QuickBooks Pro or Premier.</p>
+            </div><i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3><span style="font-weight: normal;">Is QuickBooks Enterprise an ERP system?</span></h3>
+            <div class="faq-content">
+              <p>Not exactly—but it delivers ERP-level functionality without ERP-level cost.  
+              You can manage accounting, payroll, inventory, and operations with simplicity and scalability.  
+              <br /><br />It’s ideal for small to midsized businesses that need a unified financial platform without complex ERP overhead.</p>
+            </div><i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3><span style="font-weight: normal;">How easy is it to use QuickBooks Enterprise?</span></h3>
+            <div class="faq-content">
+              <p>Very easy. It keeps the same familiar QuickBooks interface, so your team learns fast.  
+              <br /><br />
+              (i) Clean navigation and customizable dashboards,<br />
+              (ii) Step-by-step automation for billing, reporting, and reconciliation,<br />
+              (iii) Guided onboarding from Certified ProAdvisors to help you get started quickly.</p>
+            </div><i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3><span style="font-weight: normal;">What kind of support is available?</span></h3>
+            <div class="faq-content">
+              <p>As a Certified QuickBooks ProAdvisor partner, we provide full support:  
+              <br /><br />
+              (i) Setup, migration, and data cleanup assistance,<br />
+              (ii) Training for you and your staff,<br />
+              (iii) Ongoing phone support at <strong>1-877-751-5575</strong>.<br /><br />
+              You also receive QuickBooks Priority Circle access for U.S.-based support and training.</p>
+            </div><i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3><span style="font-weight: normal;">Is QuickBooks Enterprise right for my business?</span></h3>
+            <div class="faq-content">
+              <p>Enterprise is designed for businesses that manage complex operations or multi-location accounting.  
+              <br /><br />
+              (i) Perfect for construction, manufacturing, wholesale, and retail,<br />
+              (ii) Advanced pricing, costing, and reporting tools,<br />
+              (iii) Easily scales as your business grows.<br /><br />
+              If you need advanced accounting without ERP pricing, this is the right fit.</p>
+            </div><i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3><span style="font-weight: normal;">Can you help me upgrade or migrate my data?</span></h3>
+            <div class="faq-content">
+              <p>Yes — our Certified QuickBooks ProAdvisors handle seamless data migration from QuickBooks Pro, Premier, or other accounting systems.  
+              <br /><br />We ensure your company file is verified, cleaned, and optimized for Enterprise with minimal downtime.</p>
+            </div><i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3><span style="font-weight: normal;">What are the system requirements for QuickBooks Enterprise?</span></h3>
+            <div class="faq-content">
+              <p>QuickBooks Enterprise runs best on Windows 10 or newer, with at least 8GB RAM and stable internet access for cloud hosting.  
+              <br /><br />Need help choosing between local or hosted setup? Call our experts for free guidance at <strong>1-877-751-5575</strong>.</p>
+            </div><i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+          <div class="faq-item">
+            <h3><span style="font-weight: normal;">Can I talk to a QuickBooks ProAdvisor before buying?</span></h3>
+            <div class="faq-content">
+              <p>Absolutely. Our consultations are free and personalized.  
+              We’ll assess your business structure, recommend the right plan, and walk you through setup options.  
+              <br /><br />To speak with a Certified QuickBooks ProAdvisor, call <strong>1-877-751-5575</strong> today.</p>
+            </div><i class="faq-toggle bi bi-chevron-right"></i>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span class="visually-hidden">
+    QuickBooks Enterprise support number, QBO help phone number, talk to QuickBooks, Certified QuickBooks ProAdvisor near me, QuickBooks consultation, QuickBooks migration assistance, QuickBooks setup and training, how to contact QuickBooks.
+  </span>
+</section>
+
+        <section id="cta-bottom-card">
+            <div class="section-header section-title" style="margin-bottom: 6px;">
+                <h2 class="display-5">We’re here when you need us</h2>
+            </div><div class="container py-5">
+  <div class="col col-sm-12 col-md-10 mx-auto">
+    <div class="row align-items-stretch">
+      
+      <!-- ✅ CALL TO SALES -->
+      <div class="col-md-6 fade-in delay-1">
+        <div class="d-flex mb-3 feature-card-1">
+          <img class="img-fluid me-4" src="../../assets/img/customer-support-light-icon-support.svg" alt="QuickBooks ProAdvisor phone support icon" style="width: 46px;height: 56px;" />
+          <div>
+            <h5 class="display-6 mb-3 card-title" style="font-weight: bold;color: #0fd46c;">
+              <strong>Talk to a QuickBooks Expert</strong>
+            </h5>
+            <p class="text-light card-text">
+              <span style="color: rgb(255, 255, 255);">
+                Call our Certified QuickBooks ProAdvisors for bookkeeping setup, cleanup, or product guidance.
+              </span><br /><br />
+              <a class="fw-bold link-light" href="tel:+1-877-751-5575" aria-label="Call QuickBooks bookkeeping support number">
+                Call 1-877-751-5575
+              </a><br />
+              Mon–Fri, 9 AM to 6 PM EST
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ SUPPORT PAGE -->
+      <div class="col-md-6">
+        <div class="d-flex feature-card-1">
+          <img class="img-fluid me-4" src="../../assets/img/get-support-light-icon-outline.svg" alt="QuickBooks help and support resources icon" style="width: 46px;height: 56px;" />
+          <div>
+            <h5 class="display-6 mb-3 card-title" style="color: #0fd46c;font-weight: bold;">
+              <strong>Get QuickBooks Help & Resources</strong>
+            </h5>
+            <p class="text-light card-text">
+              Access help articles, troubleshooting guides, and direct support from our bookkeeping and QuickBooks experts.
+            </p>
+            <a class="mt-2 cta-btn cta-btn--invert" href="/support/index.html"
+              style="color:#ffffff;border-color:#ffffff;background:rgba(255,255,255,0);"
+              aria-label="Visit QuickBooks support page for help articles and expert assistance">
+              Learn more
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Hidden SEO Layer -->
+  <span class="visually-hidden">
+    QuickBooks bookkeeping help, QuickBooks support number, Certified QuickBooks ProAdvisor near me,
+    how do I talk to QuickBooks, QBO help phone number, QuickBooks consultation, QuickBooks cleanup expert,
+    small business bookkeeping services, call QuickBooks expert, talk to QuickBooks ProAdvisor.
+  </span>
+</div>
+
+        </section>
+        <section id="banner-down" class="banner-section" style="background: url(&quot;../../assets/img/sbseg-contact-us-banner.svg&quot;) center / cover no-repeat;">
+            <div class="banner-container">
+                <h2 class="display-4 text-light banner-heading">Level up your bookkeeping with expert guidance</h2>
+                <p class="banner-subtext"></p>
+                <div class="banner-cta"><button class="cta-btn cta-btn--invert"><strong>Call 1-877-751-5575</strong></button></div>
             </div>
         </section>
     </main>
-    <section id="faq" class="faq-9 faq section light-background">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4" data-aos="fade-up">
-                    <h2 class="faq-title" style="margin-top: 12px;">Have a question? Check out the FAQ</h2>
-                    <p class="faq-description">Discover clear answers and expert insights to help you master your bookkeeping and financial management. Empower your business with knowledge that drives success and confidence every step of the way.</p>
-                    <div class="d-none d-lg-block faq-arrow" data-aos="fade-up" data-aos-delay="200"><svg class="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M198.804 194.488C189.279 189.596 179.529 185.52 169.407 182.07L169.384 182.049C169.227 181.994 169.07 181.939 168.912 181.884C166.669 181.139 165.906 184.546 167.669 185.615C174.053 189.473 182.761 191.837 189.146 195.695C156.603 195.912 119.781 196.591 91.266 179.049C62.5221 161.368 48.1094 130.695 56.934 98.891C84.5539 98.7247 112.556 84.0176 129.508 62.667C136.396 53.9724 146.193 35.1448 129.773 30.2717C114.292 25.6624 93.7109 41.8875 83.1971 51.3147C70.1109 63.039 59.63 78.433 54.2039 95.0087C52.1221 94.9842 50.0776 94.8683 48.0703 94.6608C30.1803 92.8027 11.2197 83.6338 5.44902 65.1074C-1.88449 41.5699 14.4994 19.0183 27.9202 1.56641C28.6411 0.625793 27.2862 -0.561638 26.5419 0.358501C13.4588 16.4098 -0.221091 34.5242 0.896608 56.5659C1.8218 74.6941 14.221 87.9401 30.4121 94.2058C37.7076 97.0203 45.3454 98.5003 53.0334 98.8449C47.8679 117.532 49.2961 137.487 60.7729 155.283C87.7615 197.081 139.616 201.147 184.786 201.155L174.332 206.827C172.119 208.033 174.345 211.287 176.537 210.105C182.06 207.125 187.582 204.122 193.084 201.144C193.346 201.147 195.161 199.887 195.423 199.868C197.08 198.548 193.084 201.144 195.528 199.81C196.688 199.192 197.846 198.552 199.006 197.935C200.397 197.167 200.007 195.087 198.804 194.488ZM60.8213 88.0427C67.6894 72.648 78.8538 59.1566 92.1207 49.0388C98.8475 43.9065 106.334 39.2953 114.188 36.1439C117.295 34.8947 120.798 33.6609 124.168 33.635C134.365 33.5511 136.354 42.9911 132.638 51.031C120.47 77.4222 86.8639 93.9837 58.0983 94.9666C58.8971 92.6666 59.783 90.3603 60.8213 88.0427Z" fill="#28a745"></path>
-              </svg></div>
-                </div>
-                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="300"><div class="faq-container">
-    <div class="faq-item faq-active">
-        <h3><span style="font-weight: normal !important;">What is QuickBooks Enterprise and how can it help my business?</span></h3>
-        <div class="faq-content">
-            <p>QuickBooks Enterprise is a powerful accounting and business management solution designed to simplify complex business operations. Key benefits include:<br /><br />
-            (i) Advanced accounting and reporting to maintain accurate financial records,<br /><br />
-            (ii) Payroll and payments integration for streamlined staff management,<br /><br />
-            (iii) Inventory management, job costing, and pricing controls for operational efficiency,<br /><br />
-            (iv) Familiar QuickBooks interface for easy adoption by your team.<br /><br />
-            Enterprise is suitable for businesses of all sizes, helping you manage finances, operations, and compliance more efficiently.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
-    </div>
-
-    <div class="faq-item">
-        <h3><span style="font-weight: normal !important;">Is QuickBooks Enterprise like an ERP system?</span></h3>
-        <div class="faq-content">
-            <p>While QuickBooks Enterprise is not a full ERP system, it offers ERP-like functionality for small to medium businesses. You can:<br /><br />
-            (i) Manage accounting, payroll, and payments in one place,<br /><br />
-            (ii) Track inventory, pricing, and job costs accurately,<br /><br />
-            (iii) Connect with over 200 industry-specific apps for enhanced features.<br /><br />
-            These tools allow you to efficiently handle most business operations without the complexity of a full ERP system.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
-    </div>
-
-    <div class="faq-item">
-        <h3><span style="font-weight: normal !important;">How easy is QuickBooks Enterprise to use?</span></h3>
-        <div class="faq-content">
-            <p>QuickBooks Enterprise is designed for simplicity and efficiency:<br /><br />
-            (i) Familiar interface for current QuickBooks users,<br /><br />
-            (ii) Intuitive workflows that minimize the learning curve,<br /><br />
-            (iii) Customizable dashboards to monitor key business metrics quickly.<br /><br />
-            Even teams new to Enterprise can adapt quickly and start using it effectively.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
-    </div>
-
-    <div class="faq-item">
-        <h3><span style="font-weight: normal !important;">What kind of support is available for QuickBooks Enterprise?</span></h3>
-        <div class="faq-content">
-            <p>QuickBooks Enterprise offers dedicated support and resources to keep your business running smoothly:<br /><br />
-            (i) Priority Circle support with phone and live chat access,<br /><br />
-            (ii) On-demand training and guidance from certified experts,<br /><br />
-            (iii) Regular software updates and security patches to ensure optimal performance and protection.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
-    </div>
-
-    <div class="faq-item">
-        <h3><span style="font-weight: normal !important;">Is QuickBooks Enterprise right for my business?</span></h3>
-        <div class="faq-content">
-            <p>QuickBooks Enterprise is ideal for businesses that:<br /><br />
-            (i) Require advanced inventory, pricing, or job costing features,<br /><br />
-            (ii) Employ staff in specialized roles or departments,<br /><br />
-            (iii) Operate across multiple locations or branches,<br /><br />
-            (iv) Need scalable features that grow with your business.<br /><br />
-            For smaller businesses with simpler needs, QuickBooks Online may be a better option offering anywhere, anytime access and simpler workflows.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
-    </div>
-
-    <div class="faq-item">
-        <h3><span style="font-weight: normal !important;">How can I learn more about QuickBooks Enterprise?</span></h3>
-        <div class="faq-content">
-            <p>You can explore QuickBooks Enterprise and its options by:<br /><br />
-            (i) Visiting the QuickBooks Enterprise product page,<br /><br />
-            (ii) Requesting a personalized demo tailored to your business needs,<br /><br />
-            (iii) Contacting our support team to discuss features, pricing, and implementation guidance.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
-    </div>
-
-    <div class="faq-item">
-        <h3><span style="font-weight: normal !important;">What are the system requirements for QuickBooks Enterprise?</span></h3>
-        <div class="faq-content">
-            <p>QuickBooks Enterprise requires:<br /><br />
-            (i) A Windows operating system (latest supported versions),<br /><br />
-            (ii) Minimum CPU, RAM, and storage as recommended by Intuit,<br /><br />
-            (iii) An internet connection for updates, hosting, and integrations.<br /><br />
-            Always verify official requirements before installation to ensure smooth performance.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
-    </div>
-
-    <div class="faq-item">
-        <h3><span style="font-weight: normal !important;">How can I migrate data as a new QuickBooks user?</span></h3>
-        <div class="faq-content">
-            <p>If you’re new to QuickBooks, you can migrate data from Excel, CSV files, or other accounting software:<br /><br />
-            (i) Export your existing data to a compatible format,<br /><br />
-            (ii) Use QuickBooks import tools to add customers, vendors, and transactions,<br /><br />
-            (iii) Set up your chart of accounts and start accounting in Enterprise.<br /><br />
-            Our team can assist you during migration to ensure accuracy and a smooth transition.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
-    </div>
-
-    <div class="faq-item">
-        <h3><span style="font-weight: normal !important;">How do I upgrade from QuickBooks Pro or Premier to Enterprise?</span></h3>
-        <div class="faq-content">
-            <p>Upgrading to QuickBooks Enterprise is simple:<br /><br />
-            (i) Back up your current company file,<br /><br />
-            (ii) Install QuickBooks Enterprise software,<br /><br />
-            (iii) Restore your company file in Enterprise and verify data accuracy,<br /><br />
-            (iv) Set user permissions and activate your Enterprise subscription.<br /><br />
-            For minimal disruption, perform the upgrade after hours or on weekends. Our experts can guide you step-by-step if needed.</p>
-        </div><i class="faq-toggle bi bi-chevron-right"></i>
-    </div>
-</div>
-
-<script>
-
-</script>
-</div>
-            </div>
-        </div>
-    </section>
-    <section id="cta-bottom-card">
-        <div class="section-header section-title" style="margin-bottom: 6px;">
-            <h2 class="display-5">We’re here when you need us</h2>
-        </div>
-        <div class="container py-5">
-            <div class="col col-sm-12 col-md-10 mx-auto">
-                <div class="row align-items-stretch">
-                    <div class="col-md-6 fade-in delay-1">
-                        <div class="d-flex mb-3 feature-card-1"><img class="img-fluid me-4" src="../../assets/img/customer-support-light-icon-support.svg" alt="Cloud Access" style="width: 46px;height: 56px;">
-                            <div>
-                                <h5 class="display-6 mb-3 card-title" style="font-weight: bold;color: #0fd46c;"><strong>Talk to sales</strong></h5>
-                                <p class="text-light card-text"><span style="color: rgb(255, 255, 255);">Give us a call if you need help picking a QuickBooks product.</span><br><br><a class="fw-bold link-light" href="tel:+1-877-751-5575">Call 1-877-751-5575</a>&nbsp;<br>Mon-Fri, 5 AM to 6 PM PT</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="d-flex feature-card-1"><img class="img-fluid me-4" src="../../assets/img/get-support-light-icon-outline.svg" alt="List Capacity" style="width: 46px;height: 56px;">
-                            <div>
-                                <h5 class="display-6 mb-3 card-title" style="color: #0fd46c;font-weight: bold;"><strong>Visit our support page</strong></h5>
-                                <p class="text-light card-text">Find help articles, video tutorials, and connect with other businesses in our online community.</p><a class="mt-2 cta-btn cta-btn--invert" href="/enterprise/support/index.html" style="color: #ffffff;border-color: #ffffff;background: rgba(255,255,255,0);">Learn more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <footer id="footer" class="footer">
         <div class="container footer-top">
             <div class="row gy-4">
@@ -239,11 +523,11 @@
                         <li><a href="/live/full-service-bookkeeping/index.html">Bookkeeping Services</a></li>
                         <li><a href="/live/expert-cleanup/index.html">Setup &amp; Cleanup</a></li>
                         <li><a href="/online/advanced/support-and-training/index.html">Support &amp; Training</a></li>
-                        <li><a href="/quickbooks-hosting/index.html">QuickBooks Hosting</a></li>
-                        <li><a href="/quickbooks-file-review-service/index.html">QuickBooks File Issues</a></li>
+                        <li><a href="/quickbooks/hosting/index.html">QuickBooks Hosting</a></li>
+                        <li><a href="/quickbooks/file-review/index.html">QuickBooks File Issues</a></li>
                         <li><a href="/live/priority/index.html">Dedicated ProAdvisor Support</a></li>
                         <li><a href="/live/assisted-bookkeeping/index.html">Payroll &amp; Tax-Ready Reports</a></li>
-                        <li><a href="/quickbooks-consulting/index.html">QuickBooks Consulting</a></li>
+                        <li><a href="/quickbooks/consulting/index.html">QuickBooks Consulting</a></li>
                         <li><a href="#">Monthly &amp; Year-End Reporting</a></li>
                     </ul>
                 </div>
@@ -251,7 +535,7 @@
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="/careers/index.html">Careers</a></li>
-                        <li><a href="/enterprise/support/index.html">24x7 Live support</a></li>
+                        <li><a href="/support/index.html">24x7 Live support</a></li>
                         <li><a href="#">Common QuickBooks Errors</a></li>
                         <li><a href="../live/expert-cleanup/index.html">QuickBooks Cleanup Checklist</a></li>
                     </ul>
@@ -273,8 +557,66 @@
             <p>© <span>Copyright 2025</span><strong class="px-1 sitename">TechBrot, Inc</strong><span>All Rights Reserved.</span></p>
         </div>
     </footer><a class="d-flex justify-content-center align-items-center scroll-top" href="#" id="scroll-top"><i class="bi bi-arrow-up-short"></i></a>
+    <section id="features-cards" class="features-cards section"><div class="container">
+  <div class="row gy-4">
+
+    <!-- TechBrot DRIVE™ Intro -->
+    <div class="col-md-4">
+      <div class="feature-box drive-intro" style="background-color: rgba(255,255,255,0);">
+        <h2>TechBrot DRIVE™</h2>
+        <p>Our proven client engagement process is built to drive long-term success through clarity, structure, and measurable results.</p>
+      </div>
+    </div>
+
+    <!-- Discover -->
+    <div class="col-md-4">
+      <div class="feature-box orange" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-search"></i>
+        <h4>Discover</h4>
+        <p>We assess your current systems and processes to uncover the real issues behind inefficiencies.</p>
+      </div>
+    </div>
+
+    <!-- Right Fit -->
+    <div class="col-md-4">
+      <div class="feature-box blue" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-check-circle"></i>
+        <h4>Right Fit</h4>
+        <p>We recommend only the tools and workflows that truly align with your business goals.</p>
+      </div>
+    </div>
+
+    <!-- Inform -->
+    <div class="col-md-4">
+      <div class="feature-box green" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-info-circle"></i>
+        <h4>Inform</h4>
+        <p>Our clear project roadmap keeps you informed, minimizes delays, and ensures smooth execution.</p>
+      </div>
+    </div>
+
+    <!-- Vision Implementation -->
+    <div class="col-md-4">
+      <div class="feature-box red" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-eye"></i>
+        <h4>Vision Implementation</h4>
+        <p>We help you achieve visibility and control over your financial and operational data for better decisions.</p>
+      </div>
+    </div>
+
+    <!-- Execute -->
+    <div class="col-md-4">
+      <div class="feature-box purple" style="background-color: rgba(255,255,255,0);">
+        <i class="bi bi-rocket-takeoff"></i>
+        <h4>Execute</h4>
+        <p>We monitor performance and continuously optimize systems so your business runs smarter and faster.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="../../assets/js/bs-init.js"></script>
     <script src="../../assets/js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/js/vendor/php-email-form/validate.js"></script>
@@ -283,8 +625,10 @@
     <script src="../../assets/js/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="../../assets/js/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="../../assets/js/js/main.js"></script>
-    <script src="../../assets/js/consultationModal.js"></script>
     <script src="../../assets/js/faq-toggle.js"></script>
+    <script src="../../assets/js/feature-tabs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" type="module"></script>
+    <script src="../../assets/js/modal.js"></script>
 </body>
 
 </html>
