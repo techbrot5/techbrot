@@ -26,7 +26,7 @@ export async function onRequestPost(context) {
        1. Stripe initialization
     ------------------------------*/
     const STRIPE_SECRET_KEY =
-      context.env.STRIPE_SECRET_KEY_LIVE ||
+      context.env.STRIPE_SECRET_KEY ||
       context.env.STRIPE_SECRET_KEY
 
     if (!STRIPE_SECRET_KEY) {
