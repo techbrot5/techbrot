@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Confirm & Accept — TechBrot Checkout</title>
+  <style>
+    :root{--accent:#203A86;--muted:#6b7280;--bg:#f8fafc;--card:#fff}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;background:var(--bg);color:#111}
+    .wrap{max-width:760px;margin:36px auto;padding:28px}
+    .card{background:var(--card);border-radius:12px;padding:28px;box-shadow:0 6px 30px rgba(18,38,63,0.06)}
+    h1{margin:0 0 6px;font-size:22px}
+    p.lead{margin:6px 0 18px;color:var(--muted)}
+    .plan{border:1px solid #eef2ff;border-radius:8px;padding:16px;margin-bottom:14px;background:linear-gradient(180deg,#fff,#fbfdff)}
+    .plan .title{font-weight:600;font-size:16px}
+    .checkbox{width:20px;height:20px;border-radius:6px;border:2px solid #cbd5e1;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+    .checkbox.checked{background:var(--accent);border-color:var(--accent)}
+    .checkbox svg{display:block}
+    label{display:flex;gap:12px;align-items:flex-start}
+    .tos{font-size:14px;color:#111}
+    .tos a{color:var(--accent);text-decoration:underline}
+    button.primary{background:var(--accent);color:#fff;border:none;padding:12px 18px;border-radius:8px;font-weight:600;cursor:pointer}
+    button.primary[disabled]{opacity:.6;cursor:not-allowed}
+    .meta{margin-top:14px;font-size:13px;color:#374151}
+    .tools{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+    .tools button{padding:8px 10px;border-radius:6px;border:1px solid #e6edf6;background:#fff;cursor:pointer}
+    .note{margin-top:12px;color:#b91c1c;font-size:13px}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Confirm & Accept — TechBrot</h1>
+      <p class="lead">Please review and accept our Terms & Refund Policy before proceeding to secure payment.</p>
+
+      <div id="products-container"></div>
+
+      <form id="accept-form">
+        <div style="margin-top:18px">
+          <label class="tos" for="accept-check">
+            <div id="fake-checkbox" class="checkbox">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z" fill="#fff"/>
+              </svg>
+            </div>
+            <input id="accept-check" type="checkbox" style="display:none" required />
+            <div>
+              <div style="font-weight:600">
+                I agree to the 
+                <a href="/legal/terms-and-conditions.html">Terms & Conditions</a> and 
+                <a href="/legal/refund-cancellation">Refund Policy</a>.
+              </div>
+              <div class="helper">Payments already made are final. For billing issues contact support@techbrot.com before initiating a chargeback.</div>
+            </div>
+          </label>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:center;margin-top:18px">
+          <button id="proceed-btn" class="primary" type="button" disabled>Proceed to Secure Payment</button>
+          <div style="flex:1;color:var(--muted);font-size:13px">You will be redirected to Stripe.</div>
+        </div>
+
+        <div class="meta" id="status"></div>
+
+        <div class="tools">
+          <button type="button" id="download-evidence">Download JSON evidence</button>
+          <button type="button" id="email-evidence">Email evidence</button>
+          <button type="button" id="capture-screenshot">Capture screenshot evidence</button>
+        </div>
+
+        <div class="note">
+          We log your IP, browser, device, timestamp, acceptance state, cart contents, and page screenshot for dispute protection.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <script>
+    /* -----------------------------
+       1. Load payload from URL
+    ------------------------------*/
+    const params = new URLSearchParams(location.search);
+    const payload = JSON.parse(decodeURIComponent(params.get("payload") || "{}"));
+
+    const productsContainer = document.getElementById("products-container");
+    const products = payload.cart || [];
+
+    /* Render product list dynamically */
+    products.forEach((p, idx) => {
+      const div = document.createElement("div");
+      div.className = "plan";
+      div.innerHTML = `
+        <div class="title">${p.product} ${p.option ? "— " + p.option : ""}</div>
+        <div class="meta">
+          $${p.price} × ${p.quantity} 
+          ${p.billing ? " • " + p.billing : ""}
+        </div>
+      `;
+      productsContainer.appendChild(div);
+    });
+
+    /* -----------------------------
+       2. Checkbox handling
+    ------------------------------*/
+    const fakeCheckbox = document.getElementById('fake-checkbox');
+    const realCheckbox = document.getElementById('accept-check');
+    const proceedBtn = document.getElementById('proceed-btn');
+
+    function setChecked(v) {
+      if (v) {
+        fakeCheckbox.classList.add("checked");
+        realCheckbox.checked = true;
+        proceedBtn.disabled = false;
+      } else {
+        fakeCheckbox.classList.remove("checked");
+        realCheckbox.checked = false;
+        proceedBtn.disabled = true;
+      }
+    }
+    fakeCheckbox.addEventListener("click", () => setChecked(!realCheckbox.checked));
+
+    /* -----------------------------
+       3. Build acceptance record
+    ------------------------------*/
+    async function buildAcceptanceRecord(screenshotBlob) {
+      let ip = "";
+      try {
+        const r = await fetch("https://api.ipify.org?format=json");
+        ip = (await r.json()).ip;
+      } catch (e) {}
+
+      return {
+        order_id: "TB-" + Math.random().toString(36).slice(2,9).toUpperCase(),
+        timestamp_utc: new Date().toISOString(),
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        user_agent: navigator.userAgent,
+        language: navigator.language,
+        ip,
+        terms_version: "1.0",
+        refund_policy_version: "1.0",
+        accepted: true,
+        cart: payload.cart || [],
+        lineItems: payload.lineItems || [],
+        screenshot_base64: screenshotBlob ? await blobToBase64(screenshotBlob) : null
+      };
+    }
+
+    function blobToBase64(blob) {
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result);
+        reader.readAsDataURL(blob);
+      });
+    }
+
+    /* -----------------------------
+       4. Screenshot capture
+    ------------------------------*/
+    document.getElementById("capture-screenshot")
+      .addEventListener("click", async () => {
+        const canvas = await html2canvas(document.body, { scale: 2 });
+        canvas.toBlob((blob) => {
+          const a = document.createElement("a");
+          a.href = URL.createObjectURL(blob);
+          a.download = "acceptance_screenshot.png";
+          a.click();
+        });
+      });
+
+    /* -----------------------------
+       5. Proceed → Save Evidence (D1) → Stripe redirect
+    ------------------------------*/
+    const statusEl = document.getElementById("status");
+
+    proceedBtn.addEventListener("click", async () => {
+      proceedBtn.disabled = true;
+      statusEl.textContent = "Capturing evidence…";
+
+      const canvas = await html2canvas(document.body, { scale: 1.5 });
+      const screenshotBlob = await new Promise((res) => canvas.toBlob(res));
+
+      const record = await buildAcceptanceRecord(screenshotBlob);
+
+      statusEl.textContent = "Saving acceptance to secure audit log…";
+
+      /* Save to Cloudflare D1 */
+      await fetch("/acceptance-log", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(record)
+      });
+
+      statusEl.textContent = "Creating secure Stripe checkout…";
+
+      const r = await fetch("/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ 
+          metadata: record,
+          lineItems: payload.lineItems
+        })
+      });
+
+      const j = await r.json();
+      if (j.url) location.href = j.url;
+      else {
+        statusEl.textContent = "Failed to create checkout session.";
+        proceedBtn.disabled = false;
+      }
+    });
+
+    /* -----------------------------
+       6. Download + email evidence tools
+    ------------------------------*/
+    document.getElementById("download-evidence")
+      .addEventListener("click", async () => {
+        const rec = await buildAcceptanceRecord();
+        const blob = new Blob([JSON.stringify(rec, null, 2)], { type: "application/json" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = `techbrot_evidence_${rec.timestamp_utc}.json`;
+        a.click();
+      });
+
+    document.getElementById("email-evidence")
+      .addEventListener("click", async () => {
+        const rec = await buildAcceptanceRecord();
+        location.href = `mailto:support@techbrot.com?subject=Evidence&body=${encodeURIComponent(JSON.stringify(rec, null, 2))}`;
+      });
+  </script>
+</body>
+</html>
