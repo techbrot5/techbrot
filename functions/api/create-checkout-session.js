@@ -1,11 +1,11 @@
 import Stripe from 'stripe'
 
 /* -----------------------------------------
-   CORS helper — replace * with your domain
+   CORS helper — use your production domain
 ------------------------------------------*/
 function corsHeaders() {
   return {
-    'Access-Control-Allow-Origin': '*', 
+    'Access-Control-Allow-Origin': 'https://techbrot.com',
     'Access-Control-Allow-Methods': 'GET,HEAD,POST,OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     'Access-Control-Max-Age': '86400'
@@ -23,11 +23,9 @@ export async function onRequestOptions() {
 export async function onRequestPost(context) {
   try {
     /* -----------------------------
-       1. Stripe initialization
+       1. Stripe initialization (FIXED)
     ------------------------------*/
-    const STRIPE_SECRET_KEY =
-      context.env.STRIPE_SECRET_KEY ||
-      context.env.STRIPE_SECRET_KEY
+    const STRIPE_SECRET_KEY = context.env.STRIPE_SECRET_KEY
 
     if (!STRIPE_SECRET_KEY) {
       return jsonError('Stripe key missing', 500)
@@ -41,7 +39,7 @@ export async function onRequestPost(context) {
     const body = await context.request.json().catch(() => ({}))
 
     /* -----------------------------
-       2. Price Map (yours intact)
+       2. Price Map (unchanged)
     ------------------------------*/
     const PRICE_MAP = {
       simple_start_monthly: 'price_1SOGodANBQOX99HKiCITtJ4Z',
@@ -112,7 +110,7 @@ export async function onRequestPost(context) {
     }
 
     /* -----------------------------
-       3. Normalize key
+       3. Normalize key (unchanged)
     ------------------------------*/
     const normalizeKey = (k) => {
       if (!k) return k
@@ -128,11 +126,10 @@ export async function onRequestPost(context) {
     }
 
     /* -----------------------------
-       4. Convert acceptance-page data → Stripe format
+       4. Convert acceptance-page data
     ------------------------------*/
     let items = []
 
-    // NEW: this is what your acceptance page sends
     if (Array.isArray(body.lineItems)) {
       items = body.lineItems
         .map(li => ({
@@ -164,13 +161,13 @@ export async function onRequestPost(context) {
     })
 
     /* -----------------------------
-       6. Determine session mode
+       6. Determine mode
     ------------------------------*/
     const hasRecurring = resolved.some(r => r.priceType === 'recurring')
     const mode = hasRecurring ? 'subscription' : 'payment'
 
     /* -----------------------------
-       7. Build Stripe line_items
+       7. Build line items
     ------------------------------*/
     const line_items = await Promise.all(
       resolved.map(async r => {
@@ -197,8 +194,7 @@ export async function onRequestPost(context) {
     )
 
     /* -----------------------------
-       8. Attach metadata 
-       (Stripe max 500 chars → truncate screenshot)
+       8. Metadata
     ------------------------------*/
     const metadata = {
       createdAt: new Date().toISOString(),
@@ -208,7 +204,7 @@ export async function onRequestPost(context) {
           qty: r.quantity,
           amount: r.unit_amount || null
         }))
-      ).slice(0, 480), // prevent Stripe metadata overflow
+      ).slice(0, 480),
       event: 'techbrot_precheckout'
     }
 
