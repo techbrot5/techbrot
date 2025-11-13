@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Confirm & Accept — TechBrot Checkout</title>
+
   <style>
     :root{--accent:#203A86;--muted:#6b7280;--bg:#f8fafc;--card:#fff}
     body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;background:var(--bg);color:#111}
@@ -37,6 +38,7 @@
       <div id="products-container"></div>
 
       <form id="accept-form">
+        
         <div style="margin-top:18px">
           <label class="tos" for="accept-check">
             <div id="fake-checkbox" class="checkbox">
@@ -72,165 +74,213 @@
         <div class="note">
           We log your IP, browser, device, timestamp, acceptance state, cart contents, and page screenshot for dispute protection.
         </div>
+
       </form>
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
-  <script>
-    /* -----------------------------
-       1. Load payload from URL
-    ------------------------------*/
-    const params = new URLSearchParams(location.search);
-    const payload = JSON.parse(decodeURIComponent(params.get("payload") || "{}"));
+<script>
 
-    const productsContainer = document.getElementById("products-container");
-    const products = payload.cart || [];
+  /* -----------------------------
+     1. Load payload from URL
+  ------------------------------*/
+  const params = new URLSearchParams(location.search);
+  const payload = JSON.parse(decodeURIComponent(params.get("payload") || "{}"));
 
-    /* Render product list dynamically */
-    products.forEach((p, idx) => {
-      const div = document.createElement("div");
-      div.className = "plan";
-      div.innerHTML = `
-        <div class="title">${p.product} ${p.option ? "— " + p.option : ""}</div>
-        <div class="meta">
-          $${p.price} × ${p.quantity} 
-          ${p.billing ? " • " + p.billing : ""}
-        </div>
-      `;
-      productsContainer.appendChild(div);
-    });
+  const productsContainer = document.getElementById("products-container");
+  const products = payload.cart || [];
 
-    /* -----------------------------
-       2. Checkbox handling
-    ------------------------------*/
-    const fakeCheckbox = document.getElementById('fake-checkbox');
-    const realCheckbox = document.getElementById('accept-check');
-    const proceedBtn = document.getElementById('proceed-btn');
+  products.forEach((p, idx) => {
+    const div = document.createElement("div");
+    div.className = "plan";
+    div.innerHTML = `
+      <div class="title">${p.product} ${p.option ? "— " + p.option : ""}</div>
+      <div class="meta">
+        $${p.price} × ${p.quantity} 
+        ${p.billing ? " • " + p.billing : ""}
+      </div>
+    `;
+    productsContainer.appendChild(div);
+  });
 
-    function setChecked(v) {
-      if (v) {
-        fakeCheckbox.classList.add("checked");
-        realCheckbox.checked = true;
-        proceedBtn.disabled = false;
-      } else {
-        fakeCheckbox.classList.remove("checked");
-        realCheckbox.checked = false;
-        proceedBtn.disabled = true;
-      }
-    }
-    fakeCheckbox.addEventListener("click", () => setChecked(!realCheckbox.checked));
+  /* -----------------------------
+     2. Checkbox handling
+  ------------------------------*/
+  const fakeCheckbox = document.getElementById('fake-checkbox');
+  const realCheckbox = document.getElementById('accept-check');
+  const proceedBtn = document.getElementById('proceed-btn');
 
-    /* -----------------------------
-       3. Build acceptance record
-    ------------------------------*/
-    async function buildAcceptanceRecord(screenshotBlob) {
-      let ip = "";
-      try {
-        const r = await fetch("https://api.ipify.org?format=json");
-        ip = (await r.json()).ip;
-      } catch (e) {}
-
-      return {
-        order_id: "TB-" + Math.random().toString(36).slice(2,9).toUpperCase(),
-        timestamp_utc: new Date().toISOString(),
-        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-        user_agent: navigator.userAgent,
-        language: navigator.language,
-        ip,
-        terms_version: "1.0",
-        refund_policy_version: "1.0",
-        accepted: true,
-        cart: payload.cart || [],
-        lineItems: payload.lineItems || [],
-        screenshot_base64: screenshotBlob ? await blobToBase64(screenshotBlob) : null
-      };
-    }
-
-    function blobToBase64(blob) {
-      return new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.onloadend = () => resolve(reader.result);
-        reader.readAsDataURL(blob);
-      });
-    }
-
-    /* -----------------------------
-       4. Screenshot capture
-    ------------------------------*/
-    document.getElementById("capture-screenshot")
-      .addEventListener("click", async () => {
-        const canvas = await html2canvas(document.body, { scale: 2 });
-        canvas.toBlob((blob) => {
-          const a = document.createElement("a");
-          a.href = URL.createObjectURL(blob);
-          a.download = "acceptance_screenshot.png";
-          a.click();
-        });
-      });
-
-    /* -----------------------------
-       5. Proceed → Save Evidence (D1) → Stripe redirect
-    ------------------------------*/
-    const statusEl = document.getElementById("status");
-
-    proceedBtn.addEventListener("click", async () => {
+  function setChecked(v) {
+    if (v) {
+      fakeCheckbox.classList.add("checked");
+      realCheckbox.checked = true;
+      proceedBtn.disabled = false;
+    } else {
+      fakeCheckbox.classList.remove("checked");
+      realCheckbox.checked = false;
       proceedBtn.disabled = true;
-      statusEl.textContent = "Capturing evidence…";
+    }
+  }
+  fakeCheckbox.addEventListener("click", () => setChecked(!realCheckbox.checked));
 
-      const canvas = await html2canvas(document.body, { scale: 1.5 });
-      const screenshotBlob = await new Promise((res) => canvas.toBlob(res));
+  /* -----------------------------
+     3. Build acceptance record
+  ------------------------------*/
+  async function buildAcceptanceRecord() {
+    let ip = "";
+    try {
+      const r = await fetch("https://api.ipify.org?format=json");
+      ip = (await r.json()).ip;
+    } catch (e) {}
 
-      const record = await buildAcceptanceRecord(screenshotBlob);
+    return {
+      order_id: "TB-" + Math.random().toString(36).slice(2,9).toUpperCase(),
+      timestamp_utc: new Date().toISOString(),
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      user_agent: navigator.userAgent,
+      language: navigator.language,
+      ip,
+      terms_version: "1.0",
+      refund_policy_version: "1.0",
+      accepted: true,
+      cart: payload.cart || [],
+      lineItems: payload.lineItems || []
+    };
+  }
 
-      statusEl.textContent = "Saving acceptance to secure audit log…";
-
-      /* Save to Cloudflare D1 */
-await fetch("/api/acceptance-log", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(record)
-});
-
-statusEl.textContent = "Creating secure Stripe checkout…";
-
-const r = await fetch("/api/create-checkout-session", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ 
-    metadata: record,
-    lineItems: payload.lineItems
-  })
-});
-
-
-      const j = await r.json();
-      if (j.url) location.href = j.url;
-      else {
-        statusEl.textContent = "Failed to create checkout session.";
-        proceedBtn.disabled = false;
-      }
-    });
-
-    /* -----------------------------
-       6. Download + email evidence tools
-    ------------------------------*/
-    document.getElementById("download-evidence")
-      .addEventListener("click", async () => {
-        const rec = await buildAcceptanceRecord();
-        const blob = new Blob([JSON.stringify(rec, null, 2)], { type: "application/json" });
+  /* -----------------------------
+     4. Screenshot capture (manual)
+  ------------------------------*/
+  document.getElementById("capture-screenshot")
+    .addEventListener("click", async () => {
+      const canvas = await html2canvas(document.body, { scale: 2 });
+      canvas.toBlob((blob) => {
         const a = document.createElement("a");
         a.href = URL.createObjectURL(blob);
-        a.download = `techbrot_evidence_${rec.timestamp_utc}.json`;
+        a.download = "acceptance_screenshot.png";
         a.click();
       });
+    });
 
-    document.getElementById("email-evidence")
-      .addEventListener("click", async () => {
-        const rec = await buildAcceptanceRecord();
-        location.href = `mailto:support@techbrot.com?subject=Evidence&body=${encodeURIComponent(JSON.stringify(rec, null, 2))}`;
-      });
-  </script>
+  /* -----------------------------
+   5. PROCEED: Capture screenshot → Compress → Save → Stripe
+------------------------------*/
+const statusEl = document.getElementById("status");
+
+proceedBtn.addEventListener("click", async () => {
+  try {
+    proceedBtn.disabled = true;
+    statusEl.textContent = "Capturing evidence…";
+
+    // 1) Capture screenshot
+    const canvas = await html2canvas(document.body, { scale: 1.5 });
+
+    // 2) Compress to JPEG (quality 0.6)
+    const screenshotBlob = await new Promise((resolve) =>
+      canvas.toBlob(resolve, "image/jpeg", 0.6)
+    );
+
+    // 3) Convert Blob → base64
+    const reader = new FileReader();
+    reader.readAsDataURL(screenshotBlob);
+    await new Promise((res) => (reader.onloadend = res));
+    const screenshot_base64 = reader.result; // data:image/jpeg;base64,...
+
+    // 4) Build acceptance record (do NOT include huge client-generated order_id)
+    const record = await buildAcceptanceRecord();
+    record.screenshot_base64 = screenshot_base64;
+
+    statusEl.textContent = "Saving acceptance to secure audit log…";
+
+    // 5) POST to acceptance-log and wait for server response (which returns canonical order_id + hash + url)
+    const saveResp = await fetch("/api/acceptance-log", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(record),
+    });
+
+    if (!saveResp.ok) {
+      const text = await saveResp.text().catch(() => "no body");
+      console.error("acceptance-log failed:", saveResp.status, text);
+      statusEl.textContent = "Failed to save evidence. Try again or contact support.";
+      proceedBtn.disabled = false;
+      return;
+    }
+
+    const saveJson = await saveResp.json();
+    // expected: { ok: true, order_id, screenshot_url, evidence_hash }
+    const serverOrderId = saveJson.order_id;
+    const evidenceHash = saveJson.evidence_hash;
+    const screenshotUrl = saveJson.screenshot_url;
+
+    statusEl.textContent = "Creating secure Stripe checkout…";
+
+    // 6) Create Stripe checkout session with small metadata (avoid very large metadata)
+    // Keep metadata small: use order_id, evidence_hash, screenshot_url
+    const metaForStripe = {
+      order_id: serverOrderId,
+      evidence_hash: evidenceHash,
+      screenshot_url: screenshotUrl
+    };
+
+    const r = await fetch("/api/create-checkout-session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        metadata: metaForStripe,
+        lineItems: payload.lineItems
+      })
+    });
+
+    if (!r.ok) {
+      const text = await r.text().catch(() => "no body");
+      console.error("create-checkout-session failed:", r.status, text);
+      statusEl.textContent = "Failed to create checkout session. Try again.";
+      proceedBtn.disabled = false;
+      return;
+    }
+
+    const j = await r.json();
+    if (j.url) {
+      // optional: store the serverOrderId locally (e.g., in localStorage) for post-payment reconciliation
+      localStorage.setItem("last_order_id", serverOrderId);
+      location.href = j.url;
+    } else {
+      console.error("checkout session response missing url:", j);
+      statusEl.textContent = "Failed to create checkout session.";
+      proceedBtn.disabled = false;
+    }
+
+  } catch (err) {
+    console.error(err);
+    statusEl.textContent = "An unexpected error occurred. Check console.";
+    proceedBtn.disabled = false;
+  }
+});
+
+
+  /* -----------------------------
+     6. Tools: JSON download + email
+  ------------------------------*/
+  document.getElementById("download-evidence")
+    .addEventListener("click", async () => {
+      const rec = await buildAcceptanceRecord();
+      const blob = new Blob([JSON.stringify(rec, null, 2)], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `techbrot_evidence_${rec.timestamp_utc}.json`;
+      a.click();
+    });
+
+  document.getElementById("email-evidence")
+    .addEventListener("click", async () => {
+      const rec = await buildAcceptanceRecord();
+      location.href = `mailto:support@techbrot.com?subject=Evidence&body=${encodeURIComponent(JSON.stringify(rec, null, 2))}`;
+    });
+
+</script>
+
 </body>
 </html>
