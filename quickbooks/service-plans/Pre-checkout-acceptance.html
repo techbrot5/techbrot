@@ -187,22 +187,23 @@
       statusEl.textContent = "Saving acceptance to secure audit log…";
 
       /* Save to Cloudflare D1 */
-      await fetch("/acceptance-log", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(record)
-      });
+await fetch("/api/acceptance-log", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(record)
+});
 
-      statusEl.textContent = "Creating secure Stripe checkout…";
+statusEl.textContent = "Creating secure Stripe checkout…";
 
-      const r = await fetch("/create-checkout-session", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          metadata: record,
-          lineItems: payload.lineItems
-        })
-      });
+const r = await fetch("/api/create-checkout-session", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ 
+    metadata: record,
+    lineItems: payload.lineItems
+  })
+});
+
 
       const j = await r.json();
       if (j.url) location.href = j.url;
