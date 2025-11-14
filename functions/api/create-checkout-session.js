@@ -160,38 +160,58 @@ export async function onRequestPost(context) {
       return { ...it, priceId, priceType, key: raw }
     })
 
-    /* -----------------------------
-       6. Determine mode
-    ------------------------------*/
-    const hasRecurring = resolved.some(r => r.priceType === 'recurring')
-    const mode = hasRecurring ? 'subscription' : 'payment'
+   /* -----------------------------
+   6. Determine mode (FIXED)
+------------------------------*/
 
-    /* -----------------------------
-       7. Build line items
-    ------------------------------*/
-    const line_items = await Promise.all(
-      resolved.map(async r => {
-        if (r.priceId) {
-          return { price: r.priceId, quantity: r.quantity }
-        }
+// Identify recurring intervals
+const hasRecurringMonthly = resolved.some(
+  r => r.priceType === 'recurring' && r.key.toLowerCase().includes('monthly')
+)
 
-        const amount = Number(r.unit_amount || 0)
-        if (!amount) throw new Error(`Missing amount for: ${r.key}`)
+const hasRecurringAnnual = resolved.some(
+  r => r.priceType === 'recurring' && r.key.toLowerCase().includes('annual')
+)
 
-        const price_data = {
-          currency: 'usd',
-          product_data: { name: r.label || r.key },
-          unit_amount: Math.round(amount * 100)
-        }
+// ❌ Stripe does NOT allow mixing monthly + annual
+if (hasRecurringMonthly && hasRecurringAnnual) {
+  return jsonError(
+    "You cannot purchase Monthly and Annual subscriptions together. Please choose only one billing interval.",
+    400
+  )
+}
 
-        if (r.priceType === 'recurring') {
-          const interval = r.key.toLowerCase().includes('annual') ? 'year' : 'month'
-          price_data.recurring = { interval }
-        }
+// Determine checkout mode
+const hasRecurring = resolved.some(r => r.priceType === 'recurring')
+const mode = hasRecurring ? 'subscription' : 'payment'
 
-        return { price_data, quantity: r.quantity }
-      })
-    )
+  /* -----------------------------
+   7. Build line items (FIXED)
+------------------------------*/
+const line_items = await Promise.all(
+  resolved.map(async r => {
+    if (r.priceId) {
+      return { price: r.priceId, quantity: r.quantity }
+    }
+
+    const amount = Number(r.unit_amount || 0)
+    if (!amount) throw new Error(`Missing amount for: ${r.key}`)
+
+    const price_data = {
+      currency: 'usd',
+      product_data: { name: r.label || r.key },
+      unit_amount: Math.round(amount * 100)
+    }
+
+    // FIX: force all recurring custom prices to use the same interval
+    if (r.priceType === 'recurring') {
+      const interval = hasRecurringAnnual ? 'year' : 'month'
+      price_data.recurring = { interval }
+    }
+
+    return { price_data, quantity: r.quantity }
+  })
+)
 
     /* -----------------------------
        8. Metadata
