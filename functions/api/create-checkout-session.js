@@ -216,51 +216,44 @@ export async function onRequestPost(context) {
     const mode = hasRecurring ? 'subscription' : 'payment'
 
     /* -----------------------------
-       7. Build line_items (FIXED)
-    ------------------------------*/
-    const line_items = await Promise.all(
-      resolved.map(async r => {
-        const amount = Number(r.unit_amount || 0)
-        if (!amount) throw new Error(`Missing amount for: ${r.key}`)
+   7. Build line_items — FIXED
+------------------------------*/
+const line_items = resolved.map(r => {
 
-        const price_data = {
-          currency: 'usd',
-          product_data: { name: r.label || r.key },
-          unit_amount: Math.round(amount * 100)
-        }
+  // 🔥 If Stripe Price ID exists → ALWAYS use it.
+  // This ensures Stripe shows “monthly”, “annual”, “one-time” correctly.
+  if (r.priceId && r.priceId.startsWith('price_')) {
+    return {
+      price: r.priceId,
+      quantity: r.quantity || 1
+    };
+  }
 
-        // ⭐ FIXED — ALWAYS TRUST billing from acceptance page FIRST
-        if (r.priceType === 'recurring') {
-      let interval = null;
+  // Otherwise fallback to manual price_data
+  const amount = Number(r.unit_amount || 0);
+  if (!amount) throw new Error(`Missing amount for: ${r.key}`);
 
-      // ⭐ NEW — frontend sends "monthly" / "annual"
-      if (r.billing) {
-        const b = String(r.billing).toLowerCase();
-        if (b.includes('month')) interval = 'month';
-        if (b.includes('ann')) interval = 'year';
-      }
+  const price_data = {
+    currency: 'usd',
+    product_data: { name: r.label || r.key },
+    unit_amount: Math.round(amount * 100)
+  };
 
-      // fallback to existing data
-      if (!interval && r.interval) interval = r.interval;
-      if (!interval && r.key) {
-        const k = r.key.toLowerCase();
-        if (k.includes('annual') || k.includes('year')) interval = 'year';
-        if (k.includes('month')) interval = 'month';
-      }
-
-      if (interval) {
-        price_data.recurring = { interval };
-      }
+  // 🔥 Recurring detection — using billing from acceptance page FIRST
+  if (r.billing) {
+    const b = r.billing.toLowerCase();
+    if (b.includes('month')) {
+      price_data.recurring = { interval: 'month' };
+    } else if (b.includes('ann') || b.includes('year')) {
+      price_data.recurring = { interval: 'year' };
     }
+  }
 
+  // one-time → DO NOT add recurring field
 
+  return { price_data, quantity: r.quantity || 1 };
+});
 
-        return {
-          price_data,
-          quantity: r.quantity
-        }
-      })
-    )
 
     /* -----------------------------
        8. Metadata (unchanged)
