@@ -130,17 +130,18 @@ export async function onRequestPost(context) {
     ------------------------------*/
     let items = []
 
-    if (Array.isArray(body.lineItems)) {
-      items = body.lineItems
-        .map(li => ({
-          priceKey: li.priceId || li.priceKey || li.key || null,
-          quantity: Number(li.quantity || 1),
-          label: li.label || li.name || '',
-          unit_amount: li.unit_amount || li.price || null,
-          billing: li.billing || null  // ⭐ ADDED — carry interval from acceptance page
-        }))
-        .filter(x => x.priceKey)
-    }
+ if (Array.isArray(body.lineItems)) {
+  items = body.lineItems
+    .map(li => ({
+      priceKey: li.priceId || li.priceKey || li.key || null,
+      quantity: Number(li.quantity || 1),
+      label: li.label || li.name || '',
+      unit_amount: li.unit_amount || li.price || null,
+      billing: li.billing || null   // <-- ADDED: preserve interval from acceptance page
+    }))
+    .filter(x => x.priceKey)
+}
+
 
     if (!items.length) {
       return jsonError('No valid line items', 400)
@@ -149,26 +150,30 @@ export async function onRequestPost(context) {
     /* -----------------------------
        5. Resolve Stripe price IDs (unchanged)
     ------------------------------*/
-    const resolved = items.map(it => {
-      const raw = String(it.priceKey);
-      const norm = normalizeKey(raw);
+   const resolved = items.map(it => {
+  const raw = String(it.priceKey);
+  const norm = normalizeKey(raw);
 
-      let priceId = null;
-      let priceType = 'one_time';
+  let priceId = null;
+  let priceType = 'one_time';
 
-      if (raw.startsWith('price_')) {
-        priceId = raw;
-        priceType = 'recurring';
-      } else {
-        priceId = PRICE_MAP[raw] || PRICE_MAP[norm] || null;
-        priceType =
-          PRICE_TYPE_MAP[raw] ||
-          PRICE_TYPE_MAP[norm] ||
-          'one_time';
-      }
+  // preserve billing from acceptance page
+  const billing = it.billing || null; // <-- ADDED
 
-      return { ...it, priceId, priceType, key: raw };
-    });
+  if (raw.startsWith('price_')) {
+    priceId = raw;
+    priceType = 'recurring';
+  } else {
+    priceId = PRICE_MAP[raw] || PRICE_MAP[norm] || null;
+    priceType =
+      PRICE_TYPE_MAP[raw] ||
+      PRICE_TYPE_MAP[norm] ||
+      'one_time';
+  }
+
+  return { ...it, billing, priceId, priceType, key: raw }; // <-- billing included
+});
+
 
     /* -----------------------------
        6. Fetch Stripe Price metadata (unchanged)
@@ -225,18 +230,19 @@ export async function onRequestPost(context) {
         }
 
         // ⭐ FIXED — ALWAYS TRUST billing from acceptance page FIRST
-        if (r.priceType === 'recurring') {
-          const interval =
-            r.billing ||                     // ⭐ DO THIS FIRST
-            r.interval ||
-            (r.key.toLowerCase().includes('annual') ? 'year'
-             : r.key.toLowerCase().includes('month') ? 'month'
-             : null)
+     if (r.priceType === 'recurring') {
+  const interval =
+    r.billing ||                     // <-- USE billing from acceptance page first
+    r.interval ||
+    (r.key.toLowerCase().includes('annual') ? 'year'
+     : r.key.toLowerCase().includes('month') ? 'month'
+     : null)
 
-          if (interval) {
-            price_data.recurring = { interval }
-          }
-        }
+  if (interval) {
+    price_data.recurring = { interval }
+  }
+}
+
 
         return {
           price_data,
