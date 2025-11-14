@@ -16,7 +16,8 @@ export async function onRequestGet({ request, env }) {
 
   try {
     const STRIPE_SECRET_KEY = env.STRIPE_SECRET_KEY
-    if (!STRIPE_SECRET_KEY) return json({ error: 'Missing Stripe key' }, 500)
+    if (!STRIPE_SECRET_KEY)
+      return json({ error: 'Missing Stripe key' }, 500)
 
     const url = new URL(request.url)
     const sessionId =
@@ -24,16 +25,17 @@ export async function onRequestGet({ request, env }) {
       url.searchParams.get('id') ||
       undefined
 
-    if (!sessionId) return json({ error: 'Missing session_id' }, 400)
+    if (!sessionId)
+      return json({ error: 'Missing session_id' }, 400)
 
     const stripe = new Stripe(STRIPE_SECRET_KEY, {
       apiVersion: '2024-06-20',
       httpClient: Stripe.createFetchHttpClient()
     })
 
-    /* -----------------------------------------
-       FIX 1: Proper ACH-safe expansions
-    ------------------------------------------*/
+    /* ---------------------------------------------------
+       RETRIEVE SESSION + EXPAND EVERYTHING NEEDED
+    ----------------------------------------------------*/
     let session
     try {
       session = await stripe.checkout.sessions.retrieve(sessionId, {
@@ -56,61 +58,67 @@ export async function onRequestGet({ request, env }) {
 
     const rawLineItems = session.line_items?.data || []
 
-    /* -----------------------------------------
-       FIX 2: Clean line items normalized
-    ------------------------------------------*/
+    /* ---------------------------------------------------
+       FIXED LINE ITEMS — CORRECT ANNUAL UNIT_AMOUNTS
+    ----------------------------------------------------*/
     const line_items = rawLineItems.map(li => {
-      const priceObj = li.price || {}
-      const product = priceObj.product || {}
-      const recurring = priceObj.recurring || null
+      const price = li.price || {}
+      const product = price.product || {}
+      const recurring = price.recurring || null
 
-      // compute unit_amount reliably
-      let unit_amount = priceObj.unit_amount
-      if (unit_amount == null) {
-        if (li.amount_subtotal && li.quantity) {
-          unit_amount = Math.round(Number(li.amount_subtotal) / Number(li.quantity))
-        } else {
-          unit_amount = li.amount_subtotal || 0
-        }
-      }
+      // Stripe ALWAYS gives TRUE billed amount here:
+      const amount_total = Number(li.amount_total || 0)
+
+      // FIX — ALWAYS send billed amount as unit_amount
+      const unit_amount = amount_total  
+
+      // interval (month/year)
+      const interval =
+        recurring?.interval ||
+        price?.recurring?.interval ||
+        null
 
       return {
         id: li.id,
         description:
           li.description ||
           product?.name ||
-          priceObj.nickname ||
+          price.nickname ||
           '',
-        quantity: li.quantity || 1,
-        amount_total: Number(li.amount_total || li.amount_subtotal || 0),
-        unit_amount: Number(unit_amount || 0),
-        currency: li.currency || priceObj.currency || session.currency || 'usd',
-        recurring: recurring ? { interval: recurring.interval } : null,
-        price_id: priceObj.id || null,
-        product: product ? {
-          id: product.id || null,
-          name: product.name || null,
-          metadata: product.metadata || {}
-        } : null
+        quantity: Number(li.quantity || 1),
+        amount_total,
+        unit_amount,          // FIXED — always correct
+        currency:
+          li.currency ||
+          price.currency ||
+          session.currency ||
+          'usd',
+        recurring: interval ? { interval } : null,
+        price_id: price.id || null,
+        product: {
+          id: product?.id || null,
+          name: product?.name || null,
+          metadata: product?.metadata || {}
+        }
       }
     })
 
-    /* -----------------------------------------
-       FIX 3: amount_total fallback 
-    ------------------------------------------*/
+    /* ---------------------------------------------------
+       FIXED TOTAL
+    ----------------------------------------------------*/
     let amount_total = Number(session.amount_total || 0)
     if (!amount_total && line_items.length) {
-      amount_total = line_items.reduce((a, b) => a + (b.amount_total || 0), 0)
+      amount_total = line_items.reduce((sum, li) => sum + li.amount_total, 0)
     }
 
-    /* -----------------------------------------
-       FIX 4: ACH + Card + Invoice receipts
-    ------------------------------------------*/
+    /* ---------------------------------------------------
+       RECEIPT URL / INVOICE URL LOGIC (ACH SAFE)
+    ----------------------------------------------------*/
     let receipt_url = null
     let invoice_pdf = null
     let hosted_invoice_url = null
 
-    // CARD receipt (if card)
+    // CARD receipts
     try {
       const pi = session.payment_intent
       if (pi?.charges?.data?.[0]) {
@@ -118,7 +126,7 @@ export async function onRequestGet({ request, env }) {
       }
     } catch (_) {}
 
-    // Invoice (ACH or invoice flow)
+    // Invoices (ACH or subscription invoices)
     try {
       if (session.invoice) {
         invoice_pdf = session.invoice.invoice_pdf || null
@@ -126,14 +134,14 @@ export async function onRequestGet({ request, env }) {
       }
     } catch (_) {}
 
-    // STRONGEST ACH fallback: use invoice hosted page
+    // If ACH → provide hosted invoice page instead
     if (!receipt_url && hosted_invoice_url) {
       receipt_url = hosted_invoice_url
     }
 
-    /* -----------------------------------------
-       FIX 5: clean customer data
-    ------------------------------------------*/
+    /* ---------------------------------------------------
+       CUSTOMER INFO
+    ----------------------------------------------------*/
     const customer_email =
       session.customer_email ||
       session.customer?.email ||
@@ -145,26 +153,31 @@ export async function onRequestGet({ request, env }) {
       session.customer?.name ||
       ''
 
-    /* -----------------------------------------
-       FINAL STRUCTURE (unchanged)
-    ------------------------------------------*/
+    /* ---------------------------------------------------
+       FINAL RESPONSE
+    ----------------------------------------------------*/
     const out = {
       session_id: session.id,
       mode: session.mode || null,
       payment_status: session.payment_status || null,
       currency:
         session.currency ||
-        (line_items[0]?.currency) ||
+        line_items[0]?.currency ||
         'usd',
+
       amount_total,
+
       customer_details: {
         email: customer_email,
         name: customer_name
       },
+
       line_items,
+
       receipt_url,
       invoice_pdf,
       hosted_invoice_url,
+
       raw_session: {
         id: session.id,
         created: session.created || null,
