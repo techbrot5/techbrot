@@ -234,10 +234,13 @@ const line_items = await Promise.all(
     }
 
     // If heuristically classified as recurring, add recurring interval
-    if (r.priceType === 'recurring') {
-      const interval = hasRecurringAnnual ? 'year' : 'month'
-      price_data.recurring = { interval }
-    }
+   if (r.priceType === 'recurring') {
+  const interval = r.interval || (
+    r.key.toLowerCase().includes('annual') ? 'year' : 'month'
+  );
+  price_data.recurring = { interval };
+}
+
 
     return { price_data, quantity: r.quantity }
   })
@@ -271,16 +274,26 @@ const line_items = await Promise.all(
 
     const incomingMeta = safeMetadataFrom(body.metadata || {})
     const serverItemsMeta = JSON.stringify(
-      resolved.map(r => ({ key: r.key, qty: r.quantity, amount: r.unit_amount || null }))
-    ).slice(0, 480)
+    resolved.map(r => ({
+      key: r.key,
+      label: r.label,
+      qty: r.quantity,
+      amount: r.unit_amount || null,
+      billing: r.interval || r.priceType
+    }))
+  ).slice(0, 480);
+
 
     // Merge: incoming metadata first, then add server fields (server fields may overwrite if same key)
     const metadata = {
-      ...incomingMeta,
-      createdAt: new Date().toISOString(),
-      items: serverItemsMeta,
-      event: 'techbrot_precheckout'
-    }
+    ...incomingMeta,
+    createdAt: new Date().toISOString(),
+    items: serverItemsMeta,
+    event: 'techbrot_precheckout',
+    plan_name: resolved.map(r => r.label).join(', ').slice(0, 200),
+    billing_intervals: resolved.map(r => r.interval || r.priceType).join(', ')
+  };
+
 
     /* -----------------------------
        9. Create Stripe session (include customer_email if provided)

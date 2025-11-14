@@ -455,6 +455,12 @@
       recordBase.screenshot_base64 = null;
       recordBase.screenshot_capture_failed = true;
     }
+    // SAVE acceptance metadata for the success page fallback
+    try {
+      localStorage.setItem('techbrot_acceptance_record', JSON.stringify(recordBase));
+    } catch (e) {
+      console.warn('Failed to store acceptance record', e);
+    }
 
     try {
       setStatus('Saving acceptance to secure audit log…', true);
