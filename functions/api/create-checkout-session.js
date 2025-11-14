@@ -161,29 +161,65 @@ export async function onRequestPost(context) {
     })
 
    /* -----------------------------
-   6. Determine mode (FIXED)
+   6. Determine mode (enhanced)
+   - Fetch authoritative Stripe Price objects for any price_... ids,
+     update resolved entries with real type/interval, then continue.
 ------------------------------*/
 
-// Identify recurring intervals
-const hasRecurringMonthly = resolved.some(
-  r => r.priceType === 'recurring' && r.key.toLowerCase().includes('monthly')
-)
+    // If a resolved entry has a priceId or key that starts with price_, fetch Stripe price metadata
+    const priceIdsToCheck = Array.from(new Set(
+      resolved
+        .map(r => (r.priceId && r.priceId.toString()) || (r.key && r.key.toString()) || '')
+        .filter(s => typeof s === 'string' && s.startsWith('price_'))
+    ))
 
-const hasRecurringAnnual = resolved.some(
-  r => r.priceType === 'recurring' && r.key.toLowerCase().includes('annual')
-)
+    if (priceIdsToCheck.length) {
+      // Fetch each price object from Stripe (deduped)
+      const priceInfo = {}
+      await Promise.all(priceIdsToCheck.map(async (pid) => {
+        try {
+          priceInfo[pid] = await stripe.prices.retrieve(pid)
+        } catch (e) {
+          // if Stripe lookup fails for a given price id, keep heuristics (log warning)
+          console.warn('Unable to retrieve Stripe price for', pid, e && e.message)
+        }
+      }))
 
-// ❌ Stripe does NOT allow mixing monthly + annual
-if (hasRecurringMonthly && hasRecurringAnnual) {
-  return jsonError(
-    "You cannot purchase Monthly and Annual subscriptions together. Please choose only one billing interval.",
-    400
-  )
-}
+      // Annotate resolved entries with authoritative info if available
+      for (const r of resolved) {
+        const candidate = (r.priceId && r.priceId.toString()) || (r.key && r.key.toString()) || ''
+        if (candidate && candidate.startsWith('price_') && priceInfo[candidate]) {
+          const p = priceInfo[candidate]
+          // Use Stripe's price id (ensure we use canonical ID)
+          r.priceId = p.id
+          // Determine if recurring or one_time using Stripe's price object
+          r.priceType = p.recurring ? 'recurring' : 'one_time'
+          // If recurring, record interval
+          if (p.recurring && p.recurring.interval) r.interval = p.recurring.interval // 'month' or 'year'
+        }
+      }
+    }
 
-// Determine checkout mode
-const hasRecurring = resolved.some(r => r.priceType === 'recurring')
-const mode = hasRecurring ? 'subscription' : 'payment'
+    // Identify recurring intervals (prefer explicit interval if present)
+    const hasRecurringMonthly = resolved.some(
+      r => r.priceType === 'recurring' && (r.interval === 'month' || (r.key && r.key.toLowerCase().includes('monthly')))
+    )
+
+    const hasRecurringAnnual = resolved.some(
+      r => r.priceType === 'recurring' && (r.interval === 'year' || (r.key && r.key.toLowerCase().includes('annual')))
+    )
+
+    // ❌ Stripe does NOT allow mixing monthly + annual
+    if (hasRecurringMonthly && hasRecurringAnnual) {
+      return jsonError(
+        "You cannot purchase Monthly and Annual subscriptions together. Please choose only one billing interval.",
+        400
+      )
+    }
+
+    // Determine checkout mode: subscription if any recurring exists; allow mixing one_time + recurring
+    const hasRecurring = resolved.some(r => r.priceType === 'recurring')
+    const mode = hasRecurring ? 'subscription' : 'payment'
 
   /* -----------------------------
    7. Build line items (FIXED)
@@ -191,6 +227,8 @@ const mode = hasRecurring ? 'subscription' : 'payment'
 const line_items = await Promise.all(
   resolved.map(async r => {
     if (r.priceId) {
+      // If we have a Stripe price id, include it directly.
+      // Stripe supports including one_time price ids in a subscription-mode session (they will be treated as one-time).
       return { price: r.priceId, quantity: r.quantity }
     }
 
@@ -203,7 +241,7 @@ const line_items = await Promise.all(
       unit_amount: Math.round(amount * 100)
     }
 
-    // FIX: force all recurring custom prices to use the same interval
+    // If heuristically classified as recurring, add recurring interval
     if (r.priceType === 'recurring') {
       const interval = hasRecurringAnnual ? 'year' : 'month'
       price_data.recurring = { interval }
