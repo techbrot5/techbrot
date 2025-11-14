@@ -213,16 +213,14 @@ export async function onRequestPost(context) {
     const hasRecurring = resolved.some(r => r.priceType === 'recurring')
     const mode = hasRecurring ? 'subscription' : 'payment'
 
-  /* -----------------------------
-   7. Build line items (FIXED)
+ /* -----------------------------
+   7. Build line items (FULL FIX)
 ------------------------------*/
 const line_items = await Promise.all(
   resolved.map(async r => {
-    if (r.priceId) {
-      // If we have a Stripe price id, include it directly.
-      // Stripe supports including one_time price ids in a subscription-mode session (they will be treated as one-time).
-      return { price: r.priceId, quantity: r.quantity }
-    }
+
+    // ❗ ALWAYS USE unit_amount COMING FROM ACCEPTANCE PAGE
+    // Stripe Price IDs override your amount → DO NOT USE price: r.priceId
 
     const amount = Number(r.unit_amount || 0)
     if (!amount) throw new Error(`Missing amount for: ${r.key}`)
@@ -230,21 +228,27 @@ const line_items = await Promise.all(
     const price_data = {
       currency: 'usd',
       product_data: { name: r.label || r.key },
-      unit_amount: Math.round(amount * 100)
+      unit_amount: Math.round(amount * 100)   // FIX: always convert to cents
     }
 
-    // If heuristically classified as recurring, add recurring interval
-   if (r.priceType === 'recurring') {
-  const interval = r.interval || (
-    r.key.toLowerCase().includes('annual') ? 'year' : 'month'
-  );
-  price_data.recurring = { interval };
-}
+    // recurring ?
+    if (r.priceType === 'recurring') {
+      const interval =
+        r.interval ||
+        (r.key.toLowerCase().includes('annual') ? 'year'
+         : r.key.toLowerCase().includes('month') ? 'month'
+         : null)
 
+      if (interval) price_data.recurring = { interval }
+    }
 
-    return { price_data, quantity: r.quantity }
+    return {
+      price_data,
+      quantity: r.quantity
+    }
   })
 )
+
 
     /* -----------------------------
        8. Metadata (MERGE incoming metadata so order_id/evidence preserved)

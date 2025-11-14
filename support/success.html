@@ -266,7 +266,6 @@
     const formatted = "$" + d + "." + (r < 10 ? "0" + r : r);
 
     if (!interval) return formatted;
-
     return interval === "year" ? formatted + "/yr" : interval === "month" ? formatted + "/mo" : formatted;
   };
 
@@ -355,7 +354,6 @@
           if (unit && String(unit).includes('.')) unit = Math.round(Number(unit) * 100);
           else if (unit && Math.abs(unit) < 1000) unit = Math.round(Number(unit) * 100);
           else unit = Math.round(Number(unit || 0));
-
           const qty = Number(it.quantity || it.qty || 1);
           return {
             label: it.label || it.product || it.name || 'Item',
@@ -405,7 +403,7 @@
     $('#pdfSubtotal').textContent = centsToMoney(receipt.subtotal || 0);
     $('#pdfTax').textContent = centsToMoney(receipt.tax || 0);
 
-    /** FIXED — total must NOT show /mo or /yr **/
+    /** total should be raw money amount (no /mo or /yr suffix) */
     $('#pdfTotal').textContent = centsToMoney(receipt.total || 0);
 
     $('#summaryItem').textContent = receipt.items[0]?.label || 'Item';
@@ -503,17 +501,48 @@
         }
 
         if (Array.isArray(stripeData.line_items) && stripeData.line_items.length) {
+          // Normalize items robustly: prefer amount_total from Stripe and fix unit_amount scale if mismatch detected
           receipt.items = stripeData.line_items.map(li => {
-            const interval =
-              li.recurring?.interval ||
-              li.price?.recurring?.interval ||
-              "";
+            // authoritative values from worker
+            let unit = Number(li.unit_amount || (li.price && li.price.unit_amount) || 0); // may be cents or dollars (bad upstream)
+            const qty = Number(li.quantity || 1) || 1;
+            let amount_total = Number(li.amount_total || li.amount_subtotal || 0);
+
+            // If amount_total is zero but stripeData.amount_total exists, try to compute proportionally.
+            if (!amount_total && stripeData.amount_total) {
+              // fallback: try pro-rating by unit (best-effort)
+              amount_total = Math.round((Number(li.unit_amount || 0) * qty) || 0);
+            }
+
+            // If mismatch between unit*qty and amount_total, attempt to fix scale:
+            // If ratio >= 10, it's likely unit is in dollars and needs *100.
+            const computed = (unit || 0) * (qty || 1);
+            if (computed !== amount_total) {
+              // avoid division by zero
+              const ratio = computed ? (amount_total / computed) : 0;
+              if (ratio >= 10 && ratio < 10000) {
+                // unit is likely in dollars -> convert to cents
+                unit = Math.round(unit * 100);
+              } else if (unit > 0 && unit < 100 && amount_total >= 1000) {
+                // unit small (e.g. 23) but amount_total large => assume dollars->cents
+                unit = Math.round(unit * 100);
+              } else if (amount_total && qty) {
+                // last-resort: recompute unit from amount_total
+                unit = Math.round(amount_total / qty);
+              }
+            }
+
+            // ensure integers
+            unit = Math.round(Number(unit || 0));
+            amount_total = Math.round(Number(amount_total || unit * qty));
+
+            const interval = li.recurring?.interval || li.price?.recurring?.interval || '';
 
             return {
-              label: li.description || li.product?.name || "Item",
-              unit_amount: Number(li.unit_amount),
-              quantity: Number(li.quantity || 1),
-              amount_total: Number(li.amount_total),
+              label: li.description || (li.product && li.product.name) || 'Item',
+              unit_amount: unit,
+              quantity: qty,
+              amount_total: amount_total,
               billing: interval
             };
           });
@@ -563,6 +592,7 @@
 
 })();
 </script>
+
 
 </body>
 </html>
