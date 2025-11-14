@@ -214,33 +214,61 @@ const line_items = await Promise.all(
 )
 
     /* -----------------------------
-       8. Metadata
+       8. Metadata (MERGE incoming metadata so order_id/evidence preserved)
     ------------------------------*/
+
+    // Helper to safely stringify only-scalar metadata values as strings
+    const safeMetadataFrom = (obj) => {
+      if (!obj || typeof obj !== 'object') return {}
+      const out = {}
+      for (const k of Object.keys(obj)) {
+        const v = obj[k]
+        try {
+          // convert objects/arrays to JSON strings (trim to 500 chars)
+          if (v === null || v === undefined) {
+            out[k] = ''
+          } else if (typeof v === 'object') {
+            out[k] = JSON.stringify(v).slice(0, 500)
+          } else {
+            out[k] = String(v).slice(0, 500)
+          }
+        } catch (e) {
+          out[k] = ''
+        }
+      }
+      return out
+    }
+
+    const incomingMeta = safeMetadataFrom(body.metadata || {})
+    const serverItemsMeta = JSON.stringify(
+      resolved.map(r => ({ key: r.key, qty: r.quantity, amount: r.unit_amount || null }))
+    ).slice(0, 480)
+
+    // Merge: incoming metadata first, then add server fields (server fields may overwrite if same key)
     const metadata = {
+      ...incomingMeta,
       createdAt: new Date().toISOString(),
-      items: JSON.stringify(
-        resolved.map(r => ({
-          key: r.key,
-          qty: r.quantity,
-          amount: r.unit_amount || null
-        }))
-      ).slice(0, 480),
+      items: serverItemsMeta,
       event: 'techbrot_precheckout'
     }
 
     /* -----------------------------
-       9. Create Stripe session
+       9. Create Stripe session (include customer_email if provided)
     ------------------------------*/
+    // prefer email from body.email, then incoming metadata 'email'
+    const customerEmail = (body.email || incomingMeta.email || '').toString().trim() || undefined
+
     const session = await stripe.checkout.sessions.create({
       mode,
       payment_method_types: ['card', 'us_bank_account'],
       line_items,
       success_url: 'https://techbrot.com/support/success.html',
       cancel_url: 'https://techbrot.com/support/cancel.html',
-      metadata
+      metadata,
+      ...(customerEmail ? { customer_email: customerEmail } : {})
     })
 
-    return new Response(JSON.stringify({ url: session.url }), {
+    return new Response(JSON.stringify({ url: session.url, id: session.id }), {
       status: 200,
       headers: { ...corsHeaders(), 'Content-Type': 'application/json' }
     })
