@@ -136,7 +136,8 @@ export async function onRequestPost(context) {
           priceKey: li.priceId || li.priceKey || li.key || null,
           quantity: Number(li.quantity || 1),
           label: li.label || li.name || '',
-          unit_amount: li.unit_amount || li.price || null
+          unit_amount: li.unit_amount || li.price || null,
+          billing: li.billing || null  // ⭐ ADDED — carry interval from acceptance page
         }))
         .filter(x => x.priceKey)
     }
@@ -146,39 +147,33 @@ export async function onRequestPost(context) {
     }
 
     /* -----------------------------
-   5. Resolve Stripe price IDs (FIXED)
-------------------------------*/
-const resolved = items.map(it => {
-  const raw = String(it.priceKey);
-  const norm = normalizeKey(raw);
+       5. Resolve Stripe price IDs (unchanged)
+    ------------------------------*/
+    const resolved = items.map(it => {
+      const raw = String(it.priceKey);
+      const norm = normalizeKey(raw);
 
-  let priceId = null;
-  let priceType = 'one_time';
+      let priceId = null;
+      let priceType = 'one_time';
 
-  // ✅ FIX: If priceKey is already a Stripe price ID, TRUST IT and SKIP PRICE_MAP
-  if (raw.startsWith('price_')) {
-    priceId = raw;
-    priceType = 'recurring'; // Stripe will override when we fetch actual price object
-  } else {
-    // fallback to your map
-    priceId = PRICE_MAP[raw] || PRICE_MAP[norm] || null;
-    priceType =
-      PRICE_TYPE_MAP[raw] ||
-      PRICE_TYPE_MAP[norm] ||
-      'one_time';
-  }
+      if (raw.startsWith('price_')) {
+        priceId = raw;
+        priceType = 'recurring';
+      } else {
+        priceId = PRICE_MAP[raw] || PRICE_MAP[norm] || null;
+        priceType =
+          PRICE_TYPE_MAP[raw] ||
+          PRICE_TYPE_MAP[norm] ||
+          'one_time';
+      }
 
-  return { ...it, priceId, priceType, key: raw };
-});
+      return { ...it, priceId, priceType, key: raw };
+    });
 
+    /* -----------------------------
+       6. Fetch Stripe Price metadata (unchanged)
+    ------------------------------*/
 
-   /* -----------------------------
-   6. Determine mode (enhanced)
-   - Fetch authoritative Stripe Price objects for any price_... ids,
-     update resolved entries with real type/interval, then continue.
-------------------------------*/
-
-    // If a resolved entry has a priceId or key that starts with price_, fetch Stripe price metadata
     const priceIdsToCheck = Array.from(new Set(
       resolved
         .map(r => (r.priceId && r.priceId.toString()) || (r.key && r.key.toString()) || '')
@@ -186,102 +181,83 @@ const resolved = items.map(it => {
     ))
 
     if (priceIdsToCheck.length) {
-      // Fetch each price object from Stripe (deduped)
       const priceInfo = {}
       await Promise.all(priceIdsToCheck.map(async (pid) => {
         try {
           priceInfo[pid] = await stripe.prices.retrieve(pid)
         } catch (e) {
-          // if Stripe lookup fails for a given price id, keep heuristics (log warning)
-          console.warn('Unable to retrieve Stripe price for', pid, e && e.message)
+          console.warn('Unable to retrieve Stripe price for', pid, e?.message)
         }
       }))
 
-      // Annotate resolved entries with authoritative info if available
       for (const r of resolved) {
-        const candidate = (r.priceId && r.priceId.toString()) || (r.key && r.key.toString()) || ''
-        if (candidate && candidate.startsWith('price_') && priceInfo[candidate]) {
+        const candidate =
+          (r.priceId && r.priceId.toString()) ||
+          (r.key && r.key.toString()) ||
+          ''
+
+        if (candidate.startsWith('price_') && priceInfo[candidate]) {
           const p = priceInfo[candidate]
-          // Use Stripe's price id (ensure we use canonical ID)
           r.priceId = p.id
-          // Determine if recurring or one_time using Stripe's price object
           r.priceType = p.recurring ? 'recurring' : 'one_time'
-          // If recurring, record interval
-          if (p.recurring && p.recurring.interval) r.interval = p.recurring.interval // 'month' or 'year'
+          if (p.recurring && p.recurring.interval) {
+            r.interval = p.recurring.interval
+          }
         }
       }
     }
 
-    // Identify recurring intervals (prefer explicit interval if present)
-    const hasRecurringMonthly = resolved.some(
-      r => r.priceType === 'recurring' && (r.interval === 'month' || (r.key && r.key.toLowerCase().includes('monthly')))
-    )
-
-    const hasRecurringAnnual = resolved.some(
-      r => r.priceType === 'recurring' && (r.interval === 'year' || (r.key && r.key.toLowerCase().includes('annual')))
-    )
-
-    // Determine checkout mode: subscription if any recurring exists; allow mixing one_time + recurring
     const hasRecurring = resolved.some(r => r.priceType === 'recurring')
     const mode = hasRecurring ? 'subscription' : 'payment'
 
- /* -----------------------------
-   7. Build line items (FULL FIX)
-------------------------------*/
-const line_items = await Promise.all(
-  resolved.map(async r => {
+    /* -----------------------------
+       7. Build line_items (FIXED)
+    ------------------------------*/
+    const line_items = await Promise.all(
+      resolved.map(async r => {
+        const amount = Number(r.unit_amount || 0)
+        if (!amount) throw new Error(`Missing amount for: ${r.key}`)
 
-    // ❗ ALWAYS USE unit_amount COMING FROM ACCEPTANCE PAGE
-    // Stripe Price IDs override your amount → DO NOT USE price: r.priceId
+        const price_data = {
+          currency: 'usd',
+          product_data: { name: r.label || r.key },
+          unit_amount: Math.round(amount * 100)
+        }
 
-    const amount = Number(r.unit_amount || 0)
-    if (!amount) throw new Error(`Missing amount for: ${r.key}`)
+        // ⭐ FIXED — ALWAYS TRUST billing from acceptance page FIRST
+        if (r.priceType === 'recurring') {
+          const interval =
+            r.billing ||                     // ⭐ DO THIS FIRST
+            r.interval ||
+            (r.key.toLowerCase().includes('annual') ? 'year'
+             : r.key.toLowerCase().includes('month') ? 'month'
+             : null)
 
-    const price_data = {
-      currency: 'usd',
-      product_data: { name: r.label || r.key },
-      unit_amount: Math.round(amount * 100)   // FIX: always convert to cents
-    }
+          if (interval) {
+            price_data.recurring = { interval }
+          }
+        }
 
-    // recurring ?
-    if (r.priceType === 'recurring') {
-      const interval =
-        r.interval ||
-        (r.key.toLowerCase().includes('annual') ? 'year'
-         : r.key.toLowerCase().includes('month') ? 'month'
-         : null)
-
-      if (interval) price_data.recurring = { interval }
-    }
-
-    return {
-      price_data,
-      quantity: r.quantity
-    }
-  })
-)
-
+        return {
+          price_data,
+          quantity: r.quantity
+        }
+      })
+    )
 
     /* -----------------------------
-       8. Metadata (MERGE incoming metadata so order_id/evidence preserved)
+       8. Metadata (unchanged)
     ------------------------------*/
-
-    // Helper to safely stringify only-scalar metadata values as strings
     const safeMetadataFrom = (obj) => {
       if (!obj || typeof obj !== 'object') return {}
       const out = {}
       for (const k of Object.keys(obj)) {
         const v = obj[k]
         try {
-          // convert objects/arrays to JSON strings (trim to 500 chars)
-          if (v === null || v === undefined) {
-            out[k] = ''
-          } else if (typeof v === 'object') {
-            out[k] = JSON.stringify(v).slice(0, 500)
-          } else {
-            out[k] = String(v).slice(0, 500)
-          }
-        } catch (e) {
+          if (v === null || v === undefined) out[k] = ''
+          else if (typeof v === 'object') out[k] = JSON.stringify(v).slice(0, 500)
+          else out[k] = String(v).slice(0, 500)
+        } catch {
           out[k] = ''
         }
       }
@@ -289,33 +265,32 @@ const line_items = await Promise.all(
     }
 
     const incomingMeta = safeMetadataFrom(body.metadata || {})
+
     const serverItemsMeta = JSON.stringify(
-    resolved.map(r => ({
-      key: r.key,
-      label: r.label,
-      qty: r.quantity,
-      amount: r.unit_amount || null,
-      billing: r.interval || r.priceType
-    }))
-  ).slice(0, 480);
+      resolved.map(r => ({
+        key: r.key,
+        label: r.label,
+        qty: r.quantity,
+        amount: r.unit_amount || null,
+        billing: r.billing || r.interval || r.priceType   // ⭐ FIXED
+      }))
+    ).slice(0, 480)
 
-
-    // Merge: incoming metadata first, then add server fields (server fields may overwrite if same key)
     const metadata = {
-    ...incomingMeta,
-    createdAt: new Date().toISOString(),
-    items: serverItemsMeta,
-    event: 'techbrot_precheckout',
-    plan_name: resolved.map(r => r.label).join(', ').slice(0, 200),
-    billing_intervals: resolved.map(r => r.interval || r.priceType).join(', ')
-  };
-
+      ...incomingMeta,
+      createdAt: new Date().toISOString(),
+      items: serverItemsMeta,
+      event: 'techbrot_precheckout',
+      plan_name: resolved.map(r => r.label).join(', ').slice(0, 200),
+      billing_intervals:
+        resolved.map(r => r.billing || r.interval || r.priceType).join(', ')  // ⭐ FIXED
+    }
 
     /* -----------------------------
-       9. Create Stripe session (include customer_email if provided)
+       9. Create Stripe session
     ------------------------------*/
-    // prefer email from body.email, then incoming metadata 'email'
-    const customerEmail = (body.email || incomingMeta.email || '').toString().trim() || undefined
+    const customerEmail =
+      (body.email || incomingMeta.email || '').toString().trim() || undefined
 
     const session = await stripe.checkout.sessions.create({
       mode,

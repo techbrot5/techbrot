@@ -19,21 +19,15 @@ export async function onRequestPost({ request, env }) {
   }
 
   async function arrayBufferFromDataUrl(dataUrl) {
-    // If it's a data: URL, fetch it (works for large payloads)
     if (typeof dataUrl === 'string' && dataUrl.startsWith('data:')) {
-      // fetch(dataUrl) is supported in Cloudflare pages/functions and returns a Response
       const res = await fetch(dataUrl);
       if (!res.ok) throw new Error('Failed to decode data URL');
       return await res.arrayBuffer();
     }
 
-    // If it's plain base64 (no data: prefix), try decode using atob -> Uint8Array
     if (typeof dataUrl === 'string') {
-      // strip whitespace/newlines
       const b64 = dataUrl.replace(/\s+/g, '');
-      // Accept either "data:...;base64,..." or just base64 - we assume this branch is raw base64 already
       try {
-        // atob can throw for very large strings; handle that at call site
         const bin = atob(b64);
         const len = bin.length;
         const arr = new Uint8Array(len);
@@ -65,7 +59,7 @@ export async function onRequestPost({ request, env }) {
     // Extract common fields (safe defaults)
     const email = String(body.email || '').slice(0, 254);
     const ip_address = String(body.ip || request.headers.get('cf-connecting-ip') || request.headers.get('x-forwarded-for') || '').slice(0, 64);
-    const user_agent = String(body.user_agent || request.headers.get('user-agent') || '').slice(0, 1024); // trimmed
+    const user_agent = String(body.user_agent || request.headers.get('user-agent') || '').slice(0, 1024);
     const timezone = String(body.timezone || '').slice(0, 128);
     const terms_version = String(body.terms_version || env.TERMS_VERSION || '1.0').slice(0, 64);
     const refund_policy_version = String(body.refund_policy_version || '').slice(0, 64);
@@ -75,12 +69,18 @@ export async function onRequestPost({ request, env }) {
 
     // Prepare cart/line items and raw_json but strip large screenshot_base64
     const cart_json = JSON.stringify(body.cart || []);
-    const lineitems_json = JSON.stringify(body.lineItems || []);
 
-    // Build sanitized raw_json (remove screenshot_base64 if present)
+    // ⭐ FIX HERE — ensure billing is preserved
+    const lineitems_json = JSON.stringify(
+      (body.lineItems || []).map(li => ({
+        ...li,
+        billing: li.billing || null   // ⭐ ADDED
+      }))
+    );
+
+    // Build sanitized raw_json
     const safeBody = { ...body };
     if (safeBody.screenshot_base64) delete safeBody.screenshot_base64;
-    // Also remove any huge-looking fields for safety
     if (typeof safeBody.large_field === 'string' && safeBody.large_field.length > 2000) {
       safeBody.large_field = '[redacted]';
     }
@@ -100,7 +100,6 @@ export async function onRequestPost({ request, env }) {
       try {
         arrayBuffer = await arrayBufferFromDataUrl(screenshotData);
       } catch (err) {
-        // If decoding fails, reject with 400 - client should retry or continue without screenshot
         return jsonResponse({ error: 'Failed to decode screenshot data: ' + err.message }, 400);
       }
 
@@ -109,26 +108,20 @@ export async function onRequestPost({ request, env }) {
         return jsonResponse({ error: 'Screenshot file size invalid or too large', maxBytes: MAX_IMAGE_BYTES }, 413);
       }
 
-      // Compute SHA-256 hash
       evidence_hash = await computeSHA256Hex(arrayBuffer);
 
-      // Determine content type: try extract from data URL if possible
       let contentType = 'application/octet-stream';
       const matchMime = String(screenshotData).match(/^data:([a-zA-Z0-9\/+\-.]+);base64,/);
       if (matchMime && matchMime[1]) {
         contentType = matchMime[1];
       } else {
-        // fallback: attempt to detect common JPEG signatures from bytes
         const bytes = new Uint8Array(arrayBuffer);
         if (bytes[0] === 0xFF && bytes[1] === 0xD8) contentType = 'image/jpeg';
         else if (bytes[0] === 0x89 && bytes[1] === 0x50) contentType = 'image/png';
         else if (bytes[0] === 0x52 && bytes[1] === 0x49 && bytes[2] === 0x46 && bytes[3] === 0x46) contentType = 'image/webp';
       }
 
-      // Create a filename and upload to R2
-      const filename = `screenshots/${Date.now()}_${safeRandomSuffix(8)}.jpg`; // extension doesn't strictly matter but use jpg
-      // Use R2.put with ArrayBuffer or Uint8Array
-      // Cloudflare R2 `put` accepts ArrayBuffer, ReadableStream, Blob, etc.
+      const filename = `screenshots/${Date.now()}_${safeRandomSuffix(8)}.jpg`;
       try {
         await R2_BUCKET.put(filename, arrayBuffer, {
           httpMetadata: { contentType }
@@ -137,13 +130,11 @@ export async function onRequestPost({ request, env }) {
         screenshot_url = R2_PUBLIC ? `${R2_PUBLIC.replace(/\/$/, '')}/${filename}` : filename;
       } catch (err) {
         console.error('R2 upload failed', err);
-        // fail closed: do not proceed to DB insert without optionally allowing upload failure; decide policy
         return jsonResponse({ error: 'Failed to upload screenshot to storage' }, 500);
       }
     }
 
-    // Insert into D1 - prepared statement
-    // Columns (ensure your D1 table 'acceptance_records' has these columns)
+    // Insert into D1
     const stmt = `
       INSERT INTO acceptance_records
       (email, order_id, ip_address, user_agent, timezone, terms_version,
@@ -175,7 +166,6 @@ export async function onRequestPost({ request, env }) {
       return jsonResponse({ error: 'Database insert failed' }, 500);
     }
 
-    // Return success and canonical order id + evidences
     return jsonResponse({
       ok: true,
       order_id,
