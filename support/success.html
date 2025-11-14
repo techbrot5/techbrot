@@ -250,29 +250,27 @@
 <!-- libs (confetti + html2pdf) -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-
 <script>
 (function () {
   "use strict";
 
-  // short helpers
   const $ = (sel) => document.querySelector(sel);
 
-  // single centsToMoney helper (digit-by-digit, interval friendly)
   const centsToMoney = (c, interval = null) => {
     c = Number(c || 0);
     const d = Math.floor(c / 100);
     const r = Math.abs(c % 100);
     const formatted = "$" + d + "." + (r < 10 ? "0" + r : r);
-
     if (!interval) return formatted;
-    return interval === "year" ? formatted + "/yr" : interval === "month" ? formatted + "/mo" : formatted;
+    return interval === "year" ? formatted + "/yr" :
+           interval === "month" ? formatted + "/mo" : formatted;
   };
 
-  // model
   const params = new URL(location.href).searchParams;
   const receipt = {
-    orderId: params.get('order') || params.get('order_id') || (function(){ try { return localStorage.getItem('techbrot_last_order_id') } catch(e){ return null } })() || ('ORD-' + Date.now().toString(36).toUpperCase()),
+    orderId: params.get('order') || params.get('order_id') ||
+      (function(){ try { return localStorage.getItem('techbrot_last_order_id') } catch(e){ return null } })() ||
+      ('ORD-' + Date.now().toString(36).toUpperCase()),
     sessionId: params.get('session_id') || params.get('session') || '',
     customerName: '',
     customerEmail: '',
@@ -285,18 +283,19 @@
     _official: {}
   };
 
-  // confetti canvas
   const confCanvas = document.getElementById('confetti-canvas');
+
   function ensureCanvas() {
     if (!confCanvas) return null;
     confCanvas.width = window.innerWidth;
     confCanvas.height = window.innerHeight;
     try {
-      return confetti.create(confCanvas, { resize: true, useWorker: true });
-    } catch (e) {
+      return confetti.create(confCanvas, { resize:true, useWorker:true });
+    } catch(e){
       return null;
     }
   }
+
   let confettiFn = ensureCanvas();
   window.addEventListener('resize', () => { confettiFn = ensureCanvas(); });
 
@@ -304,11 +303,10 @@
     if (!receipt.sessionId) return null;
     try {
       const url = '/api/retrieve-checkout-session?session_id=' + encodeURIComponent(receipt.sessionId);
-      const res = await fetch(url, { credentials: 'same-origin' });
+      const res = await fetch(url, { credentials:'same-origin' });
       if (!res.ok) return null;
       return await res.json();
     } catch (e) {
-      console.warn('loadStripeSession error', e);
       return null;
     }
   }
@@ -316,44 +314,32 @@
   function applyAcceptanceFallback(rawMeta) {
     try {
       if (rawMeta && rawMeta.items) {
-        try {
-          const arr = JSON.parse(rawMeta.items);
-          if (Array.isArray(arr) && arr.length) {
-            receipt.items = arr.map(it => {
-              let unit = Number(it.amount || it.unit_amount || it.price || 0);
-              if (unit && String(unit).includes('.')) {
-                unit = Math.round(Number(unit) * 100);
-              } else if (unit && Math.abs(unit) < 1000) {
-                unit = Math.round(Number(unit) * 100);
-              } else {
-                unit = Math.round(Number(unit || 0));
-              }
-              const qty = Number(it.qty || it.quantity || 1);
-              return {
-                label: it.label || it.key || 'Item',
-                unit_amount: unit,
-                quantity: qty,
-                amount_total: unit * qty,
-                billing: it.billing || ''
-              };
-            });
-            receipt.total = receipt.items.reduce((s,i)=>s + (i.amount_total||0), 0);
-            receipt.subtotal = receipt.total;
-            receipt.notes = 'fallback: stripe metadata';
-            receipt.acceptance = rawMeta;
-            return true;
-          }
-        } catch(e){}
+        const arr = JSON.parse(rawMeta.items);
+        if (Array.isArray(arr) && arr.length) {
+          receipt.items = arr.map(it => {
+            const unit = Math.round(Number(it.amount || it.unit_amount || it.price || 0) * 100);
+            const qty = Number(it.qty || it.quantity || 1);
+            return {
+              label: it.label || it.key || 'Item',
+              unit_amount: unit,
+              quantity: qty,
+              amount_total: unit * qty,
+              billing: it.billing || ''
+            };
+          });
+          receipt.total = receipt.items.reduce((s,i)=>s+(i.amount_total||0),0);
+          receipt.subtotal = receipt.total;
+          receipt.notes = 'fallback: stripe metadata';
+          return true;
+        }
       }
 
       let stored = null;
       try { stored = JSON.parse(localStorage.getItem('techbrot_acceptance_record')); } catch(e){}
+
       if (stored && Array.isArray(stored.lineItems) && stored.lineItems.length) {
         receipt.items = stored.lineItems.map(it => {
-          let unit = Number(it.unit_amount || it.price || it.amount || 0);
-          if (unit && String(unit).includes('.')) unit = Math.round(Number(unit) * 100);
-          else if (unit && Math.abs(unit) < 1000) unit = Math.round(Number(unit) * 100);
-          else unit = Math.round(Number(unit || 0));
+          const unit = Math.round(Number(it.unit_amount || it.price || it.amount || 0) * 100);
           const qty = Number(it.quantity || it.qty || 1);
           return {
             label: it.label || it.product || it.name || 'Item',
@@ -366,10 +352,9 @@
         receipt.total = receipt.items.reduce((s,i)=>s+(i.amount_total||0),0);
         receipt.subtotal = receipt.total;
         receipt.notes = 'fallback: local acceptance record';
-        receipt.acceptance = stored;
         return true;
       }
-    } catch (e) {
+    } catch(e){
       console.warn('applyAcceptanceFallback error', e);
     }
     return false;
@@ -385,13 +370,17 @@
 
     const tbody = document.getElementById('pdfItemsBody');
     tbody.innerHTML = '';
+
     if (!receipt.items.length) {
-      tbody.innerHTML = '<tr><td colspan="4" class="text-center py-3 muted">No items found</td></tr>';
+      tbody.innerHTML =
+        '<tr><td colspan="4" class="text-center py-3 muted">No items found</td></tr>';
     } else {
       receipt.items.forEach(it => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td>${escapeHtml(it.label)}${it.billing ? ` <span class="text-muted small">(${escapeHtml(it.billing)})</span>` : ""}</td>
+          <td>${escapeHtml(it.label)}
+            ${it.billing ? ` <span class="text-muted small">(${escapeHtml(it.billing)})</span>` : ""}
+          </td>
           <td class="text-end">${centsToMoney(it.unit_amount, it.billing)}</td>
           <td class="text-end">${Number(it.quantity)}</td>
           <td class="text-end">${centsToMoney(it.amount_total, it.billing)}</td>
@@ -400,51 +389,28 @@
       });
     }
 
-    $('#pdfSubtotal').textContent = centsToMoney(receipt.subtotal || 0);
-    $('#pdfTax').textContent = centsToMoney(receipt.tax || 0);
-
-    /** total should be raw money amount (no /mo or /yr suffix) */
-    $('#pdfTotal').textContent = centsToMoney(receipt.total || 0);
+    $('#pdfSubtotal').textContent = centsToMoney(receipt.subtotal);
+    $('#pdfTax').textContent = centsToMoney(receipt.tax);
+    $('#pdfTotal').textContent = centsToMoney(receipt.total);
 
     $('#summaryItem').textContent = receipt.items[0]?.label || 'Item';
     $('#summaryDesc').textContent = receipt.items[0]?.billing ? `Billing: ${receipt.items[0].billing}` : '';
-    $('#summaryPrice').textContent = centsToMoney(receipt.items[0]?.amount_total || receipt.total || 0, receipt.items[0]?.billing || null);
-    $('#summaryTotal').textContent = centsToMoney(receipt.total || 0);
+    $('#summaryPrice').textContent = centsToMoney(receipt.items[0]?.amount_total || receipt.total, receipt.items[0]?.billing);
+    $('#summaryTotal').textContent = centsToMoney(receipt.total);
 
-    if (receipt.acceptance && receipt.acceptance.timestamp_utc) {
-      const d = new Date(receipt.acceptance.timestamp_utc);
-      $('#pdfNotes').textContent = receipt.notes || '';
-      $('#acceptedNote').textContent = 'Accepted on ' + d.toLocaleString();
-    } else {
-      $('#acceptedNote').textContent = '';
-      $('#pdfNotes').textContent = receipt.notes || '';
-    }
+    if (receipt._official.receipt_url)
+      $('#stripeReceiptBtn').href = receipt._official.receipt_url;
 
-    if (receipt._official) {
-      if (receipt._official.receipt_url) {
-        $('#stripeReceiptBtn').href = receipt._official.receipt_url;
-        $('#stripeReceiptBtn').style.display = 'inline-block';
-      } else $('#stripeReceiptBtn').style.display = 'none';
+    if (receipt._official.hosted_invoice_url)
+      $('#stripeInvoiceBtn').href = receipt._official.hosted_invoice_url;
 
-      if (receipt._official.hosted_invoice_url) {
-        $('#stripeInvoiceBtn').href = receipt._official.hosted_invoice_url;
-        $('#stripeInvoiceBtn').style.display = 'inline-block';
-      } else $('#stripeInvoiceBtn').style.display = 'none';
-
-      if (receipt._official.invoice_pdf) {
-        $('#stripeInvoicePdfBtn').href = receipt._official.invoice_pdf;
-        $('#stripeInvoicePdfBtn').style.display = 'inline-block';
-      } else $('#stripeInvoicePdfBtn').style.display = 'none';
-
-      if (receipt._official.receipt_url || receipt._official.hosted_invoice_url || receipt._official.invoice_pdf) {
-        $('#officialButtons').style.display = 'block';
-      } else $('#officialButtons').style.display = 'none';
-    }
+    if (receipt._official.invoice_pdf)
+      $('#stripeInvoicePdfBtn').href = receipt._official.invoice_pdf;
   }
 
   function escapeHtml(s) {
-    if (s == null) return '';
-    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    return s == null ? '' : String(s).replace(/[&<>"']/g,
+      c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
 
   function runConfetti() {
@@ -453,7 +419,7 @@
     const duration = 1500;
     const end = Date.now() + duration;
     (function frame() {
-      confettiFn({ particleCount: 6, spread: 70, startVelocity: 40, origin: { x: Math.random(), y: 0.2 } });
+      confettiFn({ particleCount:6, spread:70, startVelocity:40, origin:{x:Math.random(),y:0.2}});
       if (Date.now() < end) requestAnimationFrame(frame);
     })();
   }
@@ -461,14 +427,13 @@
   function downloadPDF() {
     const el = document.getElementById('receipt');
     if (!el) return;
-    const opt = {
+    html2pdf().set({
       margin: [10,10,10,10],
       filename: (receipt.orderId || 'receipt') + '.pdf',
-      image: { type: 'jpeg', quality: 0.95 },
-      html2canvas: { scale: 2, useCORS: true },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
-    html2pdf().set(opt).from(el).save();
+      image: { type:'jpeg', quality:0.95 },
+      html2canvas: { scale:2, useCORS:true },
+      jsPDF: { unit:'mm', format:'a4', orientation:'portrait' }
+    }).from(el).save();
   }
 
   function openPrintView() {
@@ -476,12 +441,12 @@
     if (!w) return;
     const style = `
       <style>
-        body{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial; padding:18px; color:#111}
+        body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial;padding:18px;color:#111}
         .muted{color:#6c757d}
         table{width:100%;border-collapse:collapse}
       </style>
     `;
-    w.document.write('<!doctype html><html><head><meta charset="utf-8"><title>Receipt</title>' + style + '</head><body>');
+    w.document.write('<!doctype html><html><head><meta charset="utf-8"><title>Receipt</title>'+style+'</head><body>');
     w.document.write(document.getElementById('receipt').outerHTML);
     w.document.write('</body></html>');
     w.document.close();
@@ -489,10 +454,12 @@
   }
 
   (async function init() {
+
     document.getElementById('pdfItemsBody').innerHTML =
       '<tr><td colspan="4" class="text-center py-3 muted">Loading items…</td></tr>';
 
     const stripeData = await loadStripeSession();
+
     if (stripeData) {
       try {
         if (stripeData.customer_details) {
@@ -501,45 +468,38 @@
         }
 
         if (Array.isArray(stripeData.line_items) && stripeData.line_items.length) {
-          // Normalize items robustly: prefer amount_total from Stripe and fix unit_amount scale if mismatch detected
+
           receipt.items = stripeData.line_items.map(li => {
-            // authoritative values from worker
-            let unit = Number(li.unit_amount || (li.price && li.price.unit_amount) || 0); // may be cents or dollars (bad upstream)
-            const qty = Number(li.quantity || 1) || 1;
-            let amount_total = Number(li.amount_total || li.amount_subtotal || 0);
 
-            // If amount_total is zero but stripeData.amount_total exists, try to compute proportionally.
-            if (!amount_total && stripeData.amount_total) {
-              // fallback: try pro-rating by unit (best-effort)
-              amount_total = Math.round((Number(li.unit_amount || 0) * qty) || 0);
+            // -------- SINGLE CLEAN NORMALIZATION BLOCK ----------
+            let unit = Number(li.unit_amount ?? li.price?.unit_amount ?? 0);
+            const qty = Math.max(1, Math.floor(Number(li.quantity || 1)));
+            let amount_total = Number(li.amount_total ?? li.amount_subtotal ?? 0);
+
+            if (!amount_total && qty) {
+              amount_total = unit * qty;
             }
 
-            // If mismatch between unit*qty and amount_total, attempt to fix scale:
-            // If ratio >= 10, it's likely unit is in dollars and needs *100.
-            const computed = (unit || 0) * (qty || 1);
-            if (computed !== amount_total) {
-              // avoid division by zero
-              const ratio = computed ? (amount_total / computed) : 0;
-              if (ratio >= 10 && ratio < 10000) {
-                // unit is likely in dollars -> convert to cents
-                unit = Math.round(unit * 100);
-              } else if (unit > 0 && unit < 100 && amount_total >= 1000) {
-                // unit small (e.g. 23) but amount_total large => assume dollars->cents
-                unit = Math.round(unit * 100);
-              } else if (amount_total && qty) {
-                // last-resort: recompute unit from amount_total
-                unit = Math.round(amount_total / qty);
-              }
+            // If unit is too small and amount_total large, convert dollars → cents
+            if (unit < 100 && amount_total >= 1000) {
+              unit = unit * 100;
             }
 
-            // ensure integers
-            unit = Math.round(Number(unit || 0));
-            amount_total = Math.round(Number(amount_total || unit * qty));
+            // If mismatch, recompute unit from amount_total
+            if (unit * qty !== amount_total && qty > 0) {
+              unit = Math.round(amount_total / qty);
+            }
 
-            const interval = li.recurring?.interval || li.price?.recurring?.interval || '';
+            unit = Math.round(unit);
+            amount_total = Math.round(amount_total);
+
+            const interval =
+              li.recurring?.interval ||
+              li.price?.recurring?.interval ||
+              '';
 
             return {
-              label: li.description || (li.product && li.product.name) || 'Item',
+              label: li.description || li.product?.name || 'Item',
               unit_amount: unit,
               quantity: qty,
               amount_total: amount_total,
@@ -547,8 +507,8 @@
             };
           });
 
-          receipt.subtotal = receipt.items.reduce((s,i)=>s + (i.amount_total||0),0);
-          receipt.total = Number(stripeData.amount_total || receipt.subtotal);
+          receipt.subtotal = receipt.items.reduce((s,i)=>s+(i.amount_total||0),0);
+          receipt.total = Number(stripeData.amount_total ?? receipt.subtotal);
           receipt.paymentMethod = stripeData.payment_method_types?.[0] || '';
         }
 
@@ -558,23 +518,19 @@
           hosted_invoice_url: stripeData.hosted_invoice_url || null,
           raw_metadata: stripeData.raw_session?.metadata || {}
         };
-      } catch (e) {
+
+      } catch(e){
         console.warn('stripeData parse error', e);
       }
     }
 
     if (!receipt.items.length) {
-      const rawMeta = receipt._official.raw_metadata || {};
-      applyAcceptanceFallback(rawMeta);
+      applyAcceptanceFallback(receipt._official.raw_metadata || {});
     }
 
     if (!receipt.items.length) {
       receipt.items = [{
-        label: 'Service plan',
-        unit_amount: 0,
-        quantity: 1,
-        amount_total: 0,
-        billing: ''
+        label:'Service plan', unit_amount:0, quantity:1, amount_total:0, billing:''
       }];
       receipt.subtotal = 0;
       receipt.total = 0;
@@ -588,6 +544,7 @@
     document.getElementById('viewPrintBtn')?.addEventListener('click', openPrintView);
 
     runConfetti();
+
   })();
 
 })();
