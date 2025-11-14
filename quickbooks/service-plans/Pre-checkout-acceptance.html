@@ -16,7 +16,8 @@
     .plan .title{font-weight:600;font-size:16px}
     .checkbox{width:20px;height:20px;border-radius:6px;border:2px solid #cbd5e1;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
     .checkbox.checked{background:var(--accent);border-color:var(--accent)}
-    .checkbox svg{display:block}
+    /* Let the parent handle pointer events; SVG should not block clicks */
+    .checkbox svg{display:block;pointer-events:none}
     label{display:flex;gap:12px;align-items:flex-start}
     .tos{font-size:14px;color:#111}
     .tos a{color:var(--accent);text-decoration:underline}
@@ -88,15 +89,15 @@
 
 <script>
 /* ============================
-   Safe frontend for Option B
-   (base64 screenshot in JSON)
+   Final patched frontend (Option A)
+   base64 screenshot in JSON (Option B)
    Works with /api/acceptance-log and /api/create-checkout-session
    ============================ */
 
 (function () {
   'use strict';
 
-  // --- Utilities ---
+  // --- Utilities & elements ---
   const $ = (id) => document.getElementById(id);
   const statusEl = $('status');
   const proceedBtn = $('proceed-btn');
@@ -109,27 +110,26 @@
   const productsContainer = $('products-container');
   const cardRoot = $('card-root');
 
-  // load URL payload safely
+  // Load and validate payload safely
   let payload = {};
   try {
     const params = new URLSearchParams(location.search);
     const raw = params.get('payload') || '{}';
-    // decodeURIComponent may throw if malformed, so try/catch
     payload = JSON.parse(decodeURIComponent(raw));
   } catch (err) {
     payload = {};
     console.warn('Invalid payload in URL', err);
   }
 
-  // Basic client-side validation helpers
+  // Basic validation
   function isValidLineItems(items) {
     if (!Array.isArray(items) || !items.length) return false;
     return items.every(li =>
-      li && (li.priceId || li.price_key || typeof li.unit_amount === 'number' || typeof li.unit_amount === 'string')
+      li && (li.priceId || li.price_key || li.price || li.unit_amount || li.key)
     );
   }
 
-  // Show products safely
+  // Render products
   const products = Array.isArray(payload.cart) ? payload.cart : [];
   products.forEach((p) => {
     const div = document.createElement('div');
@@ -149,14 +149,14 @@
     productsContainer.appendChild(div);
   });
 
-  // If no line items, disable proceed and warn
+  // If no items, disable proceed and show message
   if (!isValidLineItems(payload.lineItems)) {
-    statusEl.textContent = 'Invalid or missing cart data. Please go back to the checkout flow.';
+    statusEl.textContent = 'Invalid or missing cart data. Please return to the checkout flow.';
     proceedBtn.disabled = true;
   }
 
-  // --- Accessibility: toggle checkbox when clicking label but not when clicking links ---
-  function setChecked(v) {
+  // Accessibility + toggle logic (single source of truth)
+  function setChecked(v, persist = true) {
     if (v) {
       fakeCheckbox.classList.add('checked');
       fakeCheckbox.setAttribute('aria-pressed', 'true');
@@ -172,34 +172,35 @@
       downloadBtn.disabled = true;
       emailBtn.disabled = true;
     }
+    if (persist) persistChecked();
   }
 
-  // handle clicks on the fakeCheckbox and label
+  // Prevent double-toggle: we handle toggling ourselves
   fakeCheckbox.addEventListener('click', () => setChecked(!realCheckbox.checked));
   fakeCheckbox.addEventListener('keydown', (e) => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); setChecked(!realCheckbox.checked); } });
 
-  // clicking label text should toggle unless target is a link
-  document.getElementById('tos-label').addEventListener('click', (e) => {
-    if (e.target && e.target.tagName === 'A') return; // clicking links should not toggle
+  // Label click toggles unless clicking a link — prevent default browser label toggle
+  $('tos-label').addEventListener('click', (e) => {
+    if (e.target && e.target.tagName === 'A') return; // allow links
+    e.preventDefault(); // prevent native label toggle (avoid double)
     setChecked(!realCheckbox.checked);
   });
 
-  // Persist acceptance toggle in localStorage so refresh doesn't lose it
+  // Persist acceptance in localStorage
   const ACCEPT_KEY = 'techbrot_accept_checked';
-  // restore if present
   try {
     const stored = localStorage.getItem(ACCEPT_KEY);
-    if (stored === 'true') setChecked(true);
+    if (stored === 'true') setChecked(true, false);
   } catch (e) {}
 
-  // update storage when toggled
   function persistChecked() {
     try { localStorage.setItem(ACCEPT_KEY, realCheckbox.checked ? 'true' : 'false'); } catch (e) {}
   }
+  // persist on toggle events
   fakeCheckbox.addEventListener('click', persistChecked);
-  document.getElementById('tos-label').addEventListener('click', persistChecked);
+  $('tos-label').addEventListener('click', persistChecked);
 
-  // Build a trimmed acceptance record (note: we DO NOT create client order_id anymore)
+  // Build acceptance minimal metadata
   async function buildAcceptanceRecordBase() {
     let ip = '';
     try {
@@ -208,15 +209,13 @@
         const d = await r.json(); ip = d.ip || '';
       }
     } catch (e) {
-      // ignore — keep ip blank
+      // ignore
     }
 
-    // trim userAgent to avoid very large strings
     const rawUA = navigator.userAgent || '';
     const ua = rawUA.length > 300 ? rawUA.slice(0, 300) : rawUA;
 
     return {
-      // DO NOT include client-generated order_id: server will return canonical order_id
       timestamp_utc: new Date().toISOString(),
       timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || '',
       user_agent: ua,
@@ -230,32 +229,63 @@
     };
   }
 
-  // Helper to escape HTML for safe insertion
+  // Helper: escape html
   function escapeHtml(s) {
     return s.replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
 
-  // Capture screenshot of the .card element (clipped) to reduce size & noise
+  /* ===========================
+     Screenshot helpers (Option A: capture cardRoot only)
+     - compress, size guard, base64
+     - cleanupCanvasArtifacts removes lingering canvases/iframes
+     =========================== */
+
+  function cleanupCanvasArtifacts() {
+    try {
+      // Remove html2canvas-created canvases (best-effort)
+      document.querySelectorAll('canvas').forEach(c => {
+        // Heuristic: html2canvas often sets attributes or sits off-screen; check dataset or role
+        if (c.dataset && (c.dataset.html2canvas || c.classList.contains('html2canvas') || c.id?.startsWith('html2canvas'))) {
+          c.remove();
+        }
+      });
+      // also remove iframes that may be injected
+      document.querySelectorAll('iframe').forEach(f => {
+        if (f.className && f.className.toLowerCase().includes('html2canvas')) f.remove();
+      });
+      // final fallback remove fixed full-screen canvases with huge z-index
+      document.querySelectorAll('canvas').forEach(c => {
+        const style = window.getComputedStyle(c);
+        if (style.position === 'fixed' || style.zIndex === '2147483647') {
+          c.remove();
+        }
+      });
+    } catch (e) {
+      // ignore cleanup errors
+      console.warn('cleanupCanvasArtifacts error', e);
+    }
+  }
+
   async function captureScreenshotBase64() {
-    // prefer capturing the card only for clarity
     const target = cardRoot || document.body;
     try {
+      // Capture only the card (Option A). scale 1.5 for decent resolution
       const canvas = await html2canvas(target, { scale: 1.5, useCORS: true, logging: false });
-      // convert to JPEG with quality 0.6
+      // Convert to JPEG blob (quality 0.6)
       const blob = await new Promise((res) => canvas.toBlob(res, 'image/jpeg', 0.6));
+      // Clean up any artifacts that might block pointer events
+      cleanupCanvasArtifacts();
       if (!blob) throw new Error('Screenshot conversion failed');
 
-      // size guard: if blob is too large (>2.5MB), recompress at lower quality
-      const maxBytes = 2.5 * 1024 * 1024; // 2.5MB
+      // Size guard: if > 2.5MB, recompress
+      const maxBytes = 2.5 * 1024 * 1024;
       if (blob.size > maxBytes) {
-        // recompress: draw into canvas (smaller scale) and re-encode lower quality
         const reducedCanvas = document.createElement('canvas');
         const ctx = reducedCanvas.getContext('2d');
         const img = await createImageBitmap(blob);
-        // scale down by factor to keep under size (approx)
-        const scale = Math.sqrt(maxBytes / blob.size) * 0.9; // a bit of safe room
-        reducedCanvas.width = Math.max( Math.round(img.width * scale), 200 );
-        reducedCanvas.height = Math.max( Math.round(img.height * scale), 200 );
+        const scale = Math.sqrt(maxBytes / blob.size) * 0.9;
+        reducedCanvas.width = Math.max(Math.round(img.width * scale), 200);
+        reducedCanvas.height = Math.max(Math.round(img.height * scale), 200);
         ctx.drawImage(img, 0, 0, reducedCanvas.width, reducedCanvas.height);
         const newBlob = await new Promise((res) => reducedCanvas.toBlob(res, 'image/jpeg', 0.55));
         if (newBlob && newBlob.size < blob.size) {
@@ -266,11 +296,11 @@
       return await blobToBase64(blob);
     } catch (err) {
       console.warn('Screenshot failed:', err);
+      cleanupCanvasArtifacts();
       return null;
     }
   }
 
-  // Convert Blob -> dataURL (base64)
   function blobToBase64(blob) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -280,7 +310,7 @@
     });
   }
 
-  // Capture screenshot manual (download)
+  // Manual capture for download
   captureBtn.addEventListener('click', async () => {
     statusEl.textContent = 'Capturing screenshot…';
     captureBtn.disabled = true;
@@ -291,7 +321,6 @@
         captureBtn.disabled = false;
         return;
       }
-      // convert base64 to a blob for download
       const blob = base64ToBlob(b64);
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
@@ -307,7 +336,6 @@
     }
   });
 
-  // Convert dataURL to blob
   function base64ToBlob(dataURL) {
     const parts = dataURL.split(',');
     const byteString = atob(parts[1]);
@@ -318,25 +346,30 @@
     return new Blob([ab], { type: mime });
   }
 
-  // Proceed button handler: capture screenshot (base64) -> send acceptance log -> create checkout
+  /* ===========================
+     PROCEED flow:
+     - capture screenshot (card only)
+     - POST to /api/acceptance-log with base64 screenshot
+     - receive server order_id + evidence_hash + screenshot_url
+     - POST to /api/create-checkout-session with small metadata + lineItems
+     - redirect to Stripe url
+     =========================== */
+
   proceedBtn.addEventListener('click', async () => {
     if (proceedBtn.disabled) return;
     proceedBtn.disabled = true;
     setStatus('Capturing evidence…', true);
 
-    // Attempt screenshot; if fails, continue but note in metadata
     let screenshot_base64 = null;
     try {
       screenshot_base64 = await captureScreenshotBase64();
-      if (!screenshot_base64) {
-        setStatus('Could not capture screenshot; continuing without it.', false);
-      }
+      if (!screenshot_base64) setStatus('Could not capture screenshot; continuing without it.', false);
     } catch (e) {
       console.warn('Screenshot exception', e);
       setStatus('Could not capture screenshot; continuing without it.', false);
     }
 
-    // Build minimal acceptance record
+    // Build record and attach screenshot (or mark failure)
     const recordBase = await buildAcceptanceRecordBase();
     if (screenshot_base64) {
       recordBase.screenshot_base64 = screenshot_base64;
@@ -345,15 +378,11 @@
       recordBase.screenshot_capture_failed = true;
     }
 
-    // Keep the JSON reasonably small: trim long fields (cart line items should be small already)
     try {
-      // post to acceptance-log
       setStatus('Saving acceptance to secure audit log…', true);
       const saveResp = await fetch('/api/acceptance-log', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         referrerPolicy: 'no-referrer',
         body: JSON.stringify(recordBase)
       });
@@ -367,7 +396,6 @@
       }
 
       const saveJson = await saveResp.json();
-      // Expect: { ok: true, order_id, screenshot_url, evidence_hash }
       if (!saveJson || !saveJson.order_id) {
         console.error('unexpected acceptance-log response', saveJson);
         setStatus('Failed to save evidence. Try again or contact support.', false);
@@ -379,19 +407,16 @@
       const evidenceHash = saveJson.evidence_hash || '';
       const screenshotUrl = saveJson.screenshot_url || '';
 
-      // persist last order for later reference
       try { localStorage.setItem('last_order_id', serverOrderId); } catch (e) {}
 
       setStatus('Creating secure Stripe checkout…', true);
 
-      // Create checkout session with only small metadata
       const metaForStripe = {
         order_id: serverOrderId,
         evidence_hash: evidenceHash,
         screenshot_url: screenshotUrl
       };
 
-      // Validate lineItems one more time before sending
       if (!isValidLineItems(payload.lineItems)) {
         console.error('Invalid lineItems before create-checkout-session', payload.lineItems);
         setStatus('Invalid cart. Cannot create checkout.', false);
@@ -418,18 +443,13 @@
       }
 
       const j = await r.json();
-
-      // EXPECT: { url: "https://checkout.stripe.com/..." }
       if (j && j.url) {
         setStatus('Redirecting to Stripe…', false);
-        // store last_order_id
         try { localStorage.setItem('techbrot_last_order_id', serverOrderId); } catch (e) {}
-        // redirect
         location.href = j.url;
         return;
       }
 
-      // fallback - unexpected response
       console.error('create-checkout-session unexpected response', j);
       setStatus('Failed to create checkout session.', false);
       proceedBtn.disabled = false;
@@ -442,7 +462,7 @@
     }
   });
 
-  // small helper to update status and show spinner
+  // small status helper
   function setStatus(msg, spinner) {
     statusEl.textContent = '';
     if (spinner) {
@@ -456,12 +476,11 @@
     }
   }
 
-  // Tools: download & email evidence (build record again but small)
+  // Tools: download & email evidence
   downloadBtn.addEventListener('click', async () => {
     downloadBtn.disabled = true;
     try {
       const rec = await buildAcceptanceRecordBase();
-      // attach last server order id if any
       try { rec.server_order_id = localStorage.getItem('last_order_id') || null; } catch (e) {}
       const blob = new Blob([JSON.stringify(rec, null, 2)], { type: 'application/json' });
       const a = document.createElement('a');
@@ -491,11 +510,10 @@
     }
   });
 
-  // helper to reset or clear status after inactivity
+  // Clear transient status after inactivity
   setTimeout(() => { if (!statusEl.textContent) statusEl.textContent = ''; }, 5000);
 
-  // Expose a small integrity check: console message
-  console.info('TechBrot acceptance frontend loaded (option B: base64).');
+  console.info('TechBrot acceptance frontend loaded (Option A: card capture).');
 
 })();
 </script>
