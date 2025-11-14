@@ -1,211 +1,276 @@
+// /functions/api/stripe-webhook.js
 import Stripe from 'stripe'
 
 /**
- * CORS helper — change Access-Control-Allow-Origin to your origin for production
+ * Stripe Webhook for Cloudflare Pages Functions
+ *
+ * - Validates Stripe signature using STRIPE_WEBHOOK_SECRET (env)
+ * - Handles: checkout.session.completed, payment_intent.succeeded, invoice.paid,
+ *   charge.dispute.created, charge.dispute.closed
+ * - Links Stripe event data to your existing acceptance_records row using metadata.order_id
+ * - Writes payment fields to D1: stripe_session_id, stripe_payment_intent, stripe_charge_id,
+ *   stripe_customer_id, stripe_subscription_id, receipt_url, card_brand, card_last4,
+ *   amount, currency, payment_status, risk_level
+ * - Records dispute events to acceptance_records (dispute_id, dispute_status, dispute_reason, dispute_created_at)
+ *
+ * Required environment bindings:
+ *  - env.DB         (D1 binding)
+ *  - env.STRIPE_SECRET_KEY
+ *  - env.STRIPE_WEBHOOK_SECRET
+ *
+ * Deploy:
+ *  - Set STRIPE_WEBHOOK_SECRET to the endpoint signing secret from Stripe
+ *  - Point your Stripe webhook endpoint to <your-pages-url>/api/stripe-webhook
  */
+
 function corsHeaders() {
   return {
-    'Access-Control-Allow-Origin': '*', // <-- set to 'https://techbrot.com' in production
-    'Access-Control-Allow-Methods': 'GET,HEAD,POST,OPTIONS',
+    'Access-Control-Allow-Origin': 'https://techbrot.com',
+    'Access-Control-Allow-Methods': 'POST,OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    'Access-Control-Max-Age': '86400'
   }
 }
 
-/**
- * Respond to preflight OPTIONS requests so browsers can send POST
- */
-export async function onRequestOptions(context) {
-  return new Response(null, {
-    status: 204,
-    headers: corsHeaders()
-  })
+export async function onRequestOptions() {
+  return new Response(null, { status: 204, headers: corsHeaders() })
 }
 
 export async function onRequestPost(context) {
+  const { request, env } = context
+
+  const STRIPE_SECRET_KEY = env.STRIPE_SECRET_KEY
+  const STRIPE_WEBHOOK_SECRET = env.STRIPE_WEBHOOK_SECRET
+  const db = env.DB
+
+  if (!STRIPE_WEBHOOK_SECRET || !STRIPE_SECRET_KEY) {
+    return jsonError('Stripe webhook secret or Stripe key missing in env', 500)
+  }
+
+  const stripe = new Stripe(STRIPE_SECRET_KEY, {
+    apiVersion: '2024-06-20',
+    httpClient: Stripe.createFetchHttpClient(),
+  })
+
+  // Get raw body text for signature verification
+  let rawBody
   try {
-    const STRIPE_SECRET_KEY = context.env.STRIPE_SECRET_KEY
-    if (!STRIPE_SECRET_KEY) {
-      return new Response(JSON.stringify({ error: 'Stripe key missing' }), {
-        status: 500,
-        headers: { ...corsHeaders(), 'Content-Type': 'application/json' },
-      })
-    }
-
-    const stripe = new Stripe(STRIPE_SECRET_KEY)
-    const body = await context.request.json().catch(() => ({}))
-
-    // ---------- PRICE MAP (your existing mapping) ----------
-    const PRICE_MAP = {
-      simple_start_monthly: 'price_1SOGodANBQOX99HKiCITtJ4Z',
-      simple_start_annual:  'price_1SOGutANBQOX99HKZ6voFANy',
-
-      essentials_monthly:  'price_1SOPp3ANBQOX99HKgiSFutBo',
-      essentials_annual:   'price_1SOPqJANBQOX99HKHiSAqrRC',
-
-      plus_monthly:        'price_1SOPsVANBQOX99HKLrF6iXz6',
-      plus_annual:         'price_1SOPtPANBQOX99HKSK6jTnCV',
-
-      advanced_monthly:    'price_1SOPujANBQOX99HKCHxxENYD',
-      advanced_annual:     'price_1SOPvYANBQOX99HKMGoTodsy',
-
-      // one-time / setup (keep your IDs)
-      setup_basic_one_time_PLACEHOLDER:     'price_1SOIxiANBQOX99HKhcipo0Kw',
-      setup_premium_one_time_PLACEHOLDER:   'price_1SOJ3GANBQOX99HKy3Cw42qr',
-      setup_advanced_one_time_PLACEHOLDER:  'price_1SOJ5GANBQOX99HKNN2yasP3',
-
-      cleanup_3_one_time_PLACEHOLDER:       'price_1SOMqCANBQOX99HKsOFctjrf',
-      cleanup_6_one_time_PLACEHOLDER:       'price_1SOMqCANBQOX99HKx5i36dFO',
-      cleanup_12_one_time_PLACEHOLDER:      'price_1SOMqCANBQOX99HKHKCJegu6',
-
-      migration_basic_one_time_PLACEHOLDER: 'price_1SOMmqANBQOX99HKVW52VuDE',
-      migration_full_one_time_PLACEHOLDER:  'price_1SOMmqANBQOX99HKcpCyIQXs',
-
-      quickstart_session_one_time_PLACEHOLDER: 'price_1SOMkgANBQOX99HKEXn8s4Az',
-      quickstart_workflow_one_time_PLACEHOLDER: 'price_1SOMkgANBQOX99HKrPY11AYl',
-
-      essential_care_monthly_PLACEHOLDER: 'price_1SOMteANBQOX99HKhyjvN5JA',
-      essential_care_annual_PLACEHOLDER:  'price_1SOMteANBQOX99HKLmHg8o35',
-
-      growth_care_monthly_PLACEHOLDER:    'price_1SOMvbANBQOX99HKdXuX1AOf',
-      growth_care_annual_PLACEHOLDER:     'price_1SOMvbANBQOX99HKLEIEDGpE',
-
-      premium_care_monthly_PLACEHOLDER:   'price_1SOMxlANBQOX99HKm4uQLuBK',
-      premium_care_annual_PLACEHOLDER:    'price_1SOMxlANBQOX99HK48CU6qZu',
-
-      cfo_lite_monthly_PLACEHOLDER:       'price_CFO_MONTHLY_PLACEHOLDER',
-      cfo_lite_annual_PLACEHOLDER:        'price_CFO_ANNUAL_PLACEHOLDER'
-    }
-
-    // ---------- PRICE TYPE MAP ----------
-    const PRICE_TYPE_MAP = {
-      simple_start_monthly: 'recurring',
-      simple_start_annual:  'recurring',
-      essentials_monthly: 'recurring',
-      essentials_annual:  'recurring',
-      plus_monthly: 'recurring',
-      plus_annual: 'recurring',
-      advanced_monthly: 'recurring',
-      advanced_annual: 'recurring',
-
-      // one-time
-      setup_basic_one_time_PLACEHOLDER: 'one_time',
-      setup_premium_one_time_PLACEHOLDER: 'one_time',
-      setup_advanced_one_time_PLACEHOLDER: 'one_time',
-      cleanup_3_one_time_PLACEHOLDER: 'one_time',
-      cleanup_6_one_time_PLACEHOLDER: 'one_time',
-      cleanup_12_one_time_PLACEHOLDER: 'one_time',
-      migration_basic_one_time_PLACEHOLDER: 'one_time',
-      migration_full_one_time_PLACEHOLDER: 'one_time',
-      quickstart_session_one_time_PLACEHOLDER: 'one_time',
-      quickstart_workflow_one_time_PLACEHOLDER: 'one_time',
-    }
-
-    // ---------- Helpers ----------
-    function normalizeKeyToMap(k) {
-      if (!k || typeof k !== 'string') return k;
-      let s = k.toLowerCase().trim();
-      s = s.replace(/\$/g, '').replace(/&/g, 'and');
-      s = s.replace(/[\|\/\\]+/g, ' ').replace(/[^a-z0-9\s-]+/g, ' ');
-      s = s.replace(/\s+/g, ' ').replace(/[-\s]+/g, '_');
-      s = s.replace(/_monthly$/, '_monthly').replace(/_annual$/, '_annual').replace(/_one_time$/, '_one_time').replace(/_one-time$/, '_one_time');
-      return s;
-    }
-
-    // ---------- Normalize incoming items ----------
-    let items = []
-    if (Array.isArray(body.lineItems) && body.lineItems.length) {
-      items = body.lineItems.map(li => ({
-        priceKey: li.priceKey || li.priceId || li.key || null,
-        quantity: Number(li.quantity || li.qty || 1),
-        label: li.label || li.name || '',
-        unit_amount: (li.unit_amount || li.unitAmount || li.amount || null)
-      })).filter(x => x.priceKey)
-    } else if (body.priceKey) {
-      items = [{ priceKey: body.priceKey, quantity: Number(body.quantity || 1), label: body.productName || '', unit_amount: body.unit_amount || null }]
-    } else if (Array.isArray(body.cart) && body.cart.length) {
-      items = body.cart.map(ci => ({
-        priceKey: ci.priceKey || ci.priceId || ci.key || null,
-        quantity: Number(ci.quantity || 1),
-        label: ci.product || ci.productName || '',
-        unit_amount: (ci.unit_amount || ci.price || null)
-      })).filter(x => x.priceKey)
-    }
-
-    if (!items.length) {
-      return new Response(JSON.stringify({ error: 'No valid line items found in request' }), {
-        status: 400,
-        headers: { ...corsHeaders(), 'Content-Type': 'application/json' },
-      })
-    }
-
-    // ---------- Resolve price IDs ----------
-    const resolved = items.map(it => {
-      const rawKey = String(it.priceKey)
-      const norm = normalizeKeyToMap(rawKey)
-      const priceId = PRICE_MAP[rawKey] || PRICE_MAP[norm] || null
-      const priceType = PRICE_TYPE_MAP[rawKey] || PRICE_TYPE_MAP[norm] ||
-        (norm.includes('one_time') ? 'one_time' : 'recurring')
-      return { ...it, key: rawKey, norm, priceId, priceType }
-    })
-
-    const missing = resolved.filter(r => !r.priceId)
-    const missingWithoutAmount = missing.filter(m => !m.unit_amount && !m.price)
-    if (missing.length && missingWithoutAmount.length === missing.length) {
-      return new Response(JSON.stringify({ error: 'Missing priceId mapping', missing: missing.map(m => m.key) }), {
-        status: 400,
-        headers: { ...corsHeaders(), 'Content-Type': 'application/json' }
-      })
-    }
-
-    // ✅ Updated hybrid logic — prefer subscription if any recurring item exists
-    const hasRecurring = resolved.some(r => r.priceType === 'recurring')
-    const priceMode = hasRecurring ? 'subscription' : 'payment'
-
-    // ---------- Build Stripe line_items ----------
-    const line_items = await Promise.all(resolved.map(async r => {
-      if (r.priceId) {
-        return { price: r.priceId, quantity: Number(r.quantity || 1) }
-      }
-
-      const numeric = Number(r.unit_amount || r.price || 0)
-      if (!numeric || numeric <= 0) throw new Error('Missing numeric amount for key: ' + r.key)
-
-      const unit_amount_cents = Math.round(numeric * 100)
-      const price_data = {
-        currency: 'usd',
-        product_data: { name: r.label || r.key || 'Custom product' },
-        unit_amount: unit_amount_cents
-      }
-
-      if (r.priceType === 'recurring') {
-        const k = (r.key + ' ' + r.norm).toLowerCase()
-        const interval = k.includes('annual') || k.includes('year') ? 'year' : 'month'
-        price_data.recurring = { interval }
-      }
-
-      return { price_data, quantity: Number(r.quantity || 1) }
-    }))
-
-    // ✅ Create checkout session (supports card + ACH)
-    const session = await stripe.checkout.sessions.create({
-      mode: priceMode,
-      payment_method_types: ['card', 'us_bank_account'],
-      line_items,
-      success_url: 'https://techbrot.com/success',
-      cancel_url: 'https://techbrot.com/cancel',
-      metadata: { createdAt: new Date().toISOString(), items: JSON.stringify(resolved.map(r => ({ key: r.key, quantity: r.quantity }))) }
-    })
-
-    return new Response(JSON.stringify({ url: session.url }), {
-      status: 200,
-      headers: { ...corsHeaders(), 'Content-Type': 'application/json' }
-    })
+    rawBody = await request.text()
   } catch (err) {
-    console.error('Stripe Checkout error:', err)
-    return new Response(JSON.stringify({ error: err.message || 'Server Error' }), {
-      status: 500,
-      headers: { ...corsHeaders(), 'Content-Type': 'application/json' }
+    console.error('Failed to read raw body', err)
+    return jsonError('Failed to read request body', 400)
+  }
+
+  // Retrieve signature header
+  const sig = request.headers.get('stripe-signature')
+  if (!sig) {
+    return jsonError('Missing Stripe signature header', 400)
+  }
+
+  let event
+  try {
+    // constructEvent verifies signature and parses JSON
+    event = stripe.webhooks.constructEvent(rawBody, sig, STRIPE_WEBHOOK_SECRET)
+  } catch (err) {
+    console.error('Stripe signature verification failed', err.message)
+    return jsonError('Invalid signature', 400)
+  }
+
+  try {
+    const type = event.type
+    const obj = event.data.object || {}
+
+    // Helper to update acceptance record given order_id
+    async function linkToAcceptanceRecord(orderId, updates = {}) {
+      if (!orderId) return null
+      // Build SET clause dynamically
+      const keys = Object.keys(updates)
+      if (!keys.length) return null
+
+      const setClause = keys.map(k => `${k} = ?`).join(', ')
+      const values = keys.map(k => updates[k])
+      // update by order_id
+      const sql = `UPDATE acceptance_records SET ${setClause} WHERE order_id = ?`
+      try {
+        await db.prepare(sql).bind(...values, orderId).run()
+        return true
+      } catch (err) {
+        console.error('D1 update error', err)
+        return false
+      }
+    }
+
+    // Helper to optionally store a dispute record on acceptance_records
+    async function recordDispute(orderId, dispute) {
+      if (!orderId) return null
+      const updates = {
+        dispute_id: dispute.id || null,
+        dispute_status: dispute.status || null,
+        dispute_reason: dispute.reason || null,
+        dispute_created_at: dispute.created ? new Date(dispute.created * 1000).toISOString() : null,
+        dispute_last_update: new Date().toISOString()
+      }
+      return await linkToAcceptanceRecord(orderId, updates)
+    }
+
+    // Extract order_id from metadata if present
+    const metadata = obj.metadata || {}
+    const orderId = metadata.order_id || metadata.order_id?.toString?.() || null
+
+    // Handlers for event types
+    switch (type) {
+      case 'checkout.session.completed': {
+        // session object contains: id, payment_intent, customer, subscription (maybe), amount_total, currency, metadata
+        const session = obj
+        const updates = {
+          stripe_session_id: session.id || null,
+          stripe_customer_id: session.customer ? String(session.customer) : null,
+          stripe_subscription_id: session.subscription ? String(session.subscription) : null,
+          stripe_payment_intent: session.payment_intent ? String(session.payment_intent) : null,
+          payment_status: session.payment_status || null,
+          receipt_url: session.payment_intent ? null : null // will be filled by payment_intent.succeeded
+        }
+
+        // Link
+        await linkToAcceptanceRecord(orderId, updates)
+        // Optionally fetch PaymentIntent details to store more fields immediately
+        if (session.payment_intent) {
+          try {
+            const pi = await stripe.paymentIntents.retrieve(session.payment_intent)
+            const charge = (pi.charges && pi.charges.data && pi.charges.data[0]) || null
+            const more = {
+              stripe_payment_intent: pi.id || null,
+              amount: typeof pi.amount === 'number' ? pi.amount : null,
+              currency: pi.currency || null,
+              payment_status: pi.status || null
+            }
+            if (charge) {
+              more.stripe_charge_id = charge.id || null
+              more.card_brand = (charge.payment_method_details && charge.payment_method_details.card && charge.payment_method_details.card.brand) || null
+              more.card_last4 = (charge.payment_method_details && charge.payment_method_details.card && charge.payment_method_details.card.last4) || null
+              more.receipt_url = charge.receipt_url || null
+              // risk level if present
+              if (charge.outcome && charge.outcome.risk_level) {
+                more.risk_level = charge.outcome.risk_level
+              }
+            }
+            await linkToAcceptanceRecord(orderId, more)
+          } catch (err) {
+            console.warn('Could not fetch paymentIntent from Stripe', err.message)
+          }
+        }
+
+        break
+      }
+
+      case 'payment_intent.succeeded': {
+        const pi = obj
+        // find the initial order_id: pi.metadata may contain it, or the Checkout Session will have it (we prefer pi.metadata)
+        const piOrderId = (pi.metadata && pi.metadata.order_id) || orderId || null
+
+        // attach basic PI info
+        const updates = {
+          stripe_payment_intent: pi.id || null,
+          amount: typeof pi.amount === 'number' ? pi.amount : null,
+          currency: pi.currency || null,
+          payment_status: pi.status || null
+        }
+
+        // add charges info if available
+        const charge = (pi.charges && pi.charges.data && pi.charges.data[0]) || null
+        if (charge) {
+          updates.stripe_charge_id = charge.id || null
+          updates.stripe_customer_id = charge.customer ? String(charge.customer) : null
+          updates.receipt_url = charge.receipt_url || null
+          // card details
+          updates.card_brand = (charge.payment_method_details && charge.payment_method_details.card && charge.payment_method_details.card.brand) || null
+          updates.card_last4 = (charge.payment_method_details && charge.payment_method_details.card && charge.payment_method_details.card.last4) || null
+          // risk level
+          if (charge.outcome && charge.outcome.risk_level) {
+            updates.risk_level = charge.outcome.risk_level
+          }
+        }
+
+        await linkToAcceptanceRecord(piOrderId, updates)
+        break
+      }
+
+      case 'invoice.paid': {
+        const inv = obj
+        // invoice.metadata may contain order_id
+        const invOrderId = (inv.metadata && inv.metadata.order_id) || orderId || null
+        const updates = {
+          invoice_id: inv.id || null,
+          invoice_paid_at: inv.status_transitions && inv.status_transitions.paid_at ? new Date(inv.status_transitions.paid_at * 1000).toISOString() : null,
+          invoice_amount_paid: typeof inv.amount_paid === 'number' ? inv.amount_paid : null,
+          invoice_currency: inv.currency || null,
+        }
+        await linkToAcceptanceRecord(invOrderId, updates)
+        break
+      }
+
+      case 'charge.dispute.created': {
+        const dispute = obj
+        // dispute.charge may have metadata via charge; get charge to examine metadata/order_id
+        let disputeOrderId = orderId
+        try {
+          // fetch the charge to look for metadata (may be useful)
+          const charge = await stripe.charges.retrieve(dispute.charge)
+          // charge.metadata may contain order_id
+          if (!disputeOrderId && charge && charge.metadata && charge.metadata.order_id) disputeOrderId = charge.metadata.order_id
+        } catch (e) {
+          console.warn('Could not fetch charge for dispute', e.message)
+        }
+
+        // record dispute details in DB
+        await recordDispute(disputeOrderId, dispute)
+
+        // Optionally, you could prepare an evidence packet and notify admin or automatically submit evidence
+        // For now, just log and save details
+        console.info('Dispute created for order', disputeOrderId, dispute.id)
+        break
+      }
+
+      case 'charge.dispute.closed': {
+        const dispute = obj
+        let disputeOrderId = orderId
+        try {
+          const charge = await stripe.charges.retrieve(dispute.charge)
+          if (!disputeOrderId && charge && charge.metadata && charge.metadata.order_id) disputeOrderId = charge.metadata.order_id
+        } catch (e) {
+          console.warn('Could not fetch charge for dispute.closed', e.message)
+        }
+        // update DB with closure and reason/outcome
+        const updates = {
+          dispute_id: dispute.id || null,
+          dispute_status: dispute.status || null,
+          dispute_reason: dispute.reason || null,
+          dispute_closed_at: dispute.created ? new Date(dispute.created * 1000).toISOString() : new Date().toISOString()
+        }
+        await linkToAcceptanceRecord(disputeOrderId, updates)
+        break
+      }
+
+      default: {
+        // For any other events, we may want to log or store them.
+        console.info('Unhandled stripe event type', type)
+      }
+    }
+
+    // Acknowledge receipt
+    return new Response(JSON.stringify({ received: true }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    })
+
+  } catch (err) {
+    console.error('Error handling webhook event', err)
+    return jsonError('Webhook handler error', 500)
+  }
+
+  function jsonError(message, status = 400) {
+    return new Response(JSON.stringify({ error: message }), {
+      status,
+      headers: { 'Content-Type': 'application/json', ...corsHeaders() }
     })
   }
 }
