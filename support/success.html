@@ -286,7 +286,7 @@
     _official: {}
   };
 
-  // ensure confetti canvas size and create confetti instance that paints to canvas
+  // confetti canvas
   const confCanvas = document.getElementById('confetti-canvas');
   function ensureCanvas() {
     if (!confCanvas) return null;
@@ -301,32 +301,27 @@
   let confettiFn = ensureCanvas();
   window.addEventListener('resize', () => { confettiFn = ensureCanvas(); });
 
-  // fetch stripe session via your backend
   async function loadStripeSession() {
     if (!receipt.sessionId) return null;
     try {
       const url = '/api/retrieve-checkout-session?session_id=' + encodeURIComponent(receipt.sessionId);
       const res = await fetch(url, { credentials: 'same-origin' });
       if (!res.ok) return null;
-      const data = await res.json();
-      return data || null;
+      return await res.json();
     } catch (e) {
       console.warn('loadStripeSession error', e);
       return null;
     }
   }
 
-  // fallback loader: tries stripe metadata.items, then localStorage acceptance record
   function applyAcceptanceFallback(rawMeta) {
     try {
-      // 1) Stripe metadata items (stringified JSON)
       if (rawMeta && rawMeta.items) {
         try {
           const arr = JSON.parse(rawMeta.items);
           if (Array.isArray(arr) && arr.length) {
             receipt.items = arr.map(it => {
               let unit = Number(it.amount || it.unit_amount || it.price || 0);
-              // Heuristic: if unit looks like dollars (has decimal or <1000) convert to cents
               if (unit && String(unit).includes('.')) {
                 unit = Math.round(Number(unit) * 100);
               } else if (unit && Math.abs(unit) < 1000) {
@@ -335,12 +330,11 @@
                 unit = Math.round(Number(unit || 0));
               }
               const qty = Number(it.qty || it.quantity || 1);
-              const amount_total = (unit || 0) * (qty || 1);
               return {
                 label: it.label || it.key || 'Item',
-                unit_amount: unit || 0,
-                quantity: qty || 1,
-                amount_total: amount_total,
+                unit_amount: unit,
+                quantity: qty,
+                amount_total: unit * qty,
                 billing: it.billing || ''
               };
             });
@@ -353,7 +347,6 @@
         } catch(e){}
       }
 
-      // 2) localStorage acceptance record (techbrot_acceptance_record)
       let stored = null;
       try { stored = JSON.parse(localStorage.getItem('techbrot_acceptance_record')); } catch(e){}
       if (stored && Array.isArray(stored.lineItems) && stored.lineItems.length) {
@@ -362,12 +355,13 @@
           if (unit && String(unit).includes('.')) unit = Math.round(Number(unit) * 100);
           else if (unit && Math.abs(unit) < 1000) unit = Math.round(Number(unit) * 100);
           else unit = Math.round(Number(unit || 0));
+
           const qty = Number(it.quantity || it.qty || 1);
           return {
             label: it.label || it.product || it.name || 'Item',
-            unit_amount: unit || 0,
-            quantity: qty || 1,
-            amount_total: (unit || 0) * (qty || 1),
+            unit_amount: unit,
+            quantity: qty,
+            amount_total: unit * qty,
             billing: it.billing || ''
           };
         });
@@ -383,20 +377,17 @@
     return false;
   }
 
-  // render UI
   function renderReceipt() {
-    // header
     $('#pdfOrderId').textContent = receipt.orderId;
     $('#pdfDate').textContent = new Date().toLocaleString();
     $('#pdfCustomerName').textContent = receipt.customerName || 'Customer';
     $('#pdfCustomerEmail').textContent = receipt.customerEmail || '';
-    $('#pdfPaymentMethod').textContent = receipt.paymentMethod || (receipt.paymentMethod = 'Card');
+    $('#pdfPaymentMethod').textContent = receipt.paymentMethod || 'Card';
     $('#pdfSessionId').textContent = receipt.sessionId ? 'Session: ' + receipt.sessionId : '';
 
-    // items
     const tbody = document.getElementById('pdfItemsBody');
     tbody.innerHTML = '';
-    if (!receipt.items || !receipt.items.length) {
+    if (!receipt.items.length) {
       tbody.innerHTML = '<tr><td colspan="4" class="text-center py-3 muted">No items found</td></tr>';
     } else {
       receipt.items.forEach(it => {
@@ -404,25 +395,24 @@
         tr.innerHTML = `
           <td>${escapeHtml(it.label)}${it.billing ? ` <span class="text-muted small">(${escapeHtml(it.billing)})</span>` : ""}</td>
           <td class="text-end">${centsToMoney(it.unit_amount, it.billing)}</td>
-          <td class="text-end">${Number(it.quantity || 1)}</td>
+          <td class="text-end">${Number(it.quantity)}</td>
           <td class="text-end">${centsToMoney(it.amount_total, it.billing)}</td>
         `;
         tbody.appendChild(tr);
       });
     }
 
-    // totals
     $('#pdfSubtotal').textContent = centsToMoney(receipt.subtotal || 0);
     $('#pdfTax').textContent = centsToMoney(receipt.tax || 0);
-    $('#pdfTotal').textContent = centsToMoney(receipt.total || 0, receipt.items[0]?.billing || null);
 
-    // summary card
+    /** FIXED — total must NOT show /mo or /yr **/
+    $('#pdfTotal').textContent = centsToMoney(receipt.total || 0);
+
     $('#summaryItem').textContent = receipt.items[0]?.label || 'Item';
     $('#summaryDesc').textContent = receipt.items[0]?.billing ? `Billing: ${receipt.items[0].billing}` : '';
     $('#summaryPrice').textContent = centsToMoney(receipt.items[0]?.amount_total || receipt.total || 0, receipt.items[0]?.billing || null);
-    $('#summaryTotal').textContent = centsToMoney(receipt.total || 0, receipt.items[0]?.billing || null);
+    $('#summaryTotal').textContent = centsToMoney(receipt.total || 0);
 
-    // accepted note and notes
     if (receipt.acceptance && receipt.acceptance.timestamp_utc) {
       const d = new Date(receipt.acceptance.timestamp_utc);
       $('#pdfNotes').textContent = receipt.notes || '';
@@ -432,7 +422,6 @@
       $('#pdfNotes').textContent = receipt.notes || '';
     }
 
-    // official buttons
     if (receipt._official) {
       if (receipt._official.receipt_url) {
         $('#stripeReceiptBtn').href = receipt._official.receipt_url;
@@ -455,13 +444,11 @@
     }
   }
 
-  // simple HTML escape
   function escapeHtml(s) {
     if (s == null) return '';
-    return String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
 
-  // trigger confetti elegantly
   function runConfetti() {
     if (!confettiFn) confettiFn = ensureCanvas();
     if (!confettiFn) return;
@@ -473,7 +460,6 @@
     })();
   }
 
-  // download as PDF using html2pdf
   function downloadPDF() {
     const el = document.getElementById('receipt');
     if (!el) return;
@@ -487,7 +473,6 @@
     html2pdf().set(opt).from(el).save();
   }
 
-  // open print view
   function openPrintView() {
     const w = window.open('', '_blank');
     if (!w) return;
@@ -505,32 +490,37 @@
     w.focus();
   }
 
-  // main init sequence
   (async function init() {
-    // show loading
-    const tbody = document.getElementById('pdfItemsBody');
-    tbody.innerHTML = '<tr><td colspan="4" class="text-center py-3 muted">Loading items…</td></tr>';
+    document.getElementById('pdfItemsBody').innerHTML =
+      '<tr><td colspan="4" class="text-center py-3 muted">Loading items…</td></tr>';
 
-    // 1. try Stripe session
     const stripeData = await loadStripeSession();
     if (stripeData) {
       try {
         if (stripeData.customer_details) {
-          receipt.customerEmail = stripeData.customer_details.email || receipt.customerEmail;
-          receipt.customerName = stripeData.customer_details.name || receipt.customerName;
+          receipt.customerEmail = stripeData.customer_details.email || '';
+          receipt.customerName = stripeData.customer_details.name || '';
         }
 
         if (Array.isArray(stripeData.line_items) && stripeData.line_items.length) {
-          receipt.items = stripeData.line_items.map(li => ({
-            label: li.description || (li.product && li.product.name) || 'Item',
-            unit_amount: Number(li.unit_amount || li.price?.unit_amount || 0),
-            quantity: Number(li.quantity || 1),
-            amount_total: Number(li.amount_total || (li.unit_amount || 0) * (li.quantity || 1)),
-            billing: li.recurring?.interval || li.price?.recurring?.interval || ''
-          }));
+          receipt.items = stripeData.line_items.map(li => {
+            const interval =
+              li.recurring?.interval ||
+              li.price?.recurring?.interval ||
+              "";
+
+            return {
+              label: li.description || li.product?.name || "Item",
+              unit_amount: Number(li.unit_amount),
+              quantity: Number(li.quantity || 1),
+              amount_total: Number(li.amount_total),
+              billing: interval
+            };
+          });
+
           receipt.subtotal = receipt.items.reduce((s,i)=>s + (i.amount_total||0),0);
           receipt.total = Number(stripeData.amount_total || receipt.subtotal);
-          receipt.paymentMethod = stripeData.payment_method_types?.[0] || receipt.paymentMethod;
+          receipt.paymentMethod = stripeData.payment_method_types?.[0] || '';
         }
 
         receipt._official = {
@@ -544,13 +534,11 @@
       }
     }
 
-    // 2. if no items from stripe, try fallback using metadata/localStorage
     if (!receipt.items.length) {
-      const rawMeta = receipt._official.raw_metadata || (stripeData && stripeData.raw_session && stripeData.raw_session.metadata) || {};
+      const rawMeta = receipt._official.raw_metadata || {};
       applyAcceptanceFallback(rawMeta);
     }
 
-    // 3. Ensure at least one placeholder item if still empty
     if (!receipt.items.length) {
       receipt.items = [{
         label: 'Service plan',
@@ -561,22 +549,20 @@
       }];
       receipt.subtotal = 0;
       receipt.total = 0;
-      receipt.notes = receipt.notes || 'no item data';
+      receipt.notes = 'no item data';
     }
 
-    // 4. render
     renderReceipt();
 
-    // 5. wire buttons
     document.getElementById('downloadReceiptBtn')?.addEventListener('click', downloadPDF);
     document.getElementById('downloadReceiptBtn2')?.addEventListener('click', downloadPDF);
     document.getElementById('viewPrintBtn')?.addEventListener('click', openPrintView);
 
-    // 6. confetti
     runConfetti();
-  })(); // init
+  })();
 
 })();
 </script>
+
 </body>
 </html>
