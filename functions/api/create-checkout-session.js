@@ -215,13 +215,13 @@ export async function onRequestPost(context) {
     const hasRecurring = resolved.some(r => r.priceType === 'recurring')
     const mode = hasRecurring ? 'subscription' : 'payment'
 
-    /* -----------------------------
+ /* -----------------------------
    7. Build line_items — FIXED
 ------------------------------*/
 const line_items = resolved.map(r => {
 
-  // 🔥 If Stripe Price ID exists → ALWAYS use it.
-  // This ensures Stripe shows “monthly”, “annual”, “one-time” correctly.
+  // ✅ If Stripe Price ID exists → ALWAYS use it.
+  // Stripe will auto-show “monthly”, “annual”, or “one-time”.
   if (r.priceId && r.priceId.startsWith('price_')) {
     return {
       price: r.priceId,
@@ -229,7 +229,7 @@ const line_items = resolved.map(r => {
     };
   }
 
-  // Otherwise fallback to manual price_data
+  // Otherwise fallback to manual custom amount
   const amount = Number(r.unit_amount || 0);
   if (!amount) throw new Error(`Missing amount for: ${r.key}`);
 
@@ -239,21 +239,30 @@ const line_items = resolved.map(r => {
     unit_amount: Math.round(amount * 100)
   };
 
-  // 🔥 Recurring detection — using billing from acceptance page FIRST
-  if (r.billing) {
-    const b = r.billing.toLowerCase();
-    if (b.includes('month')) {
-      price_data.recurring = { interval: 'month' };
-    } else if (b.includes('ann') || b.includes('year')) {
-      price_data.recurring = { interval: 'year' };
-    }
-  }
+  /* --------------------------------------------------
+     🔥 BILLING LOGIC (ANNUAL & MONTHLY ARE LEFT INTACT)
+     → Only add recurring when billing says monthly/annual
+     → Otherwise leave price_data without recurring = ONE-TIME
+  ---------------------------------------------------*/
+  const billing = (r.billing || '').toLowerCase();
 
-  // one-time → DO NOT add recurring field
+  if (billing.includes('month')) {
+    // monthly subscription
+    price_data.recurring = { interval: 'month' };
 
-  return { price_data, quantity: r.quantity || 1 };
+  } else if (billing.includes('ann') || billing.includes('year')) {
+    // annual subscription
+    price_data.recurring = { interval: 'year' };
+
+  } 
+  // ❗ else = one-time
+  // DO NOT set `price_data.recurring` → Stripe will treat it as ONE-TIME
+
+  return {
+    price_data,
+    quantity: r.quantity || 1
+  };
 });
-
 
     /* -----------------------------
        8. Metadata (unchanged)
