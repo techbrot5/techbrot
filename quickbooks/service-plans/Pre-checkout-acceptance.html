@@ -516,71 +516,101 @@
       }
 
       // Map payload.lineItems to a stable "dollars" unit_amount the server expects
-        const normalizedLineItems = (Array.isArray(payload.lineItems) ? payload.lineItems : []).map(li => {
-          // Try to find a matching cart entry (prefer authoritative display price)
-          const needle = String(li.key || li.price_key || li.priceId || li.label || li.name || '').trim().toLowerCase();
-          const cartMatch = (Array.isArray(payload.cart) ? payload.cart : []).find(c => {
-            const candidates = [c.key, c.product, c.name, c.label].filter(Boolean).map(x => String(x).trim().toLowerCase());
-            return candidates.includes(needle) || candidates.some(x => needle && x && x.includes(needle));
-          });
+// Map payload.lineItems to a stable "dollars" unit_amount the server expects
+// Map payload.lineItems to a stable "dollars" unit_amount the server expects
+const normalizedLineItems = (Array.isArray(payload.lineItems) ? payload.lineItems : []).map(li => {
 
-          // 1) prefer parsePriceString(cart.price) if available
-          let amountDollars = null;
-          if (cartMatch && typeof cartMatch.price !== 'undefined') {
-            amountDollars = parsePriceString(cartMatch.price);
-          }
+  // FIXED: now include li.product so matching works for all plans
+  const needle = String(
+    li.key ||
+    li.price_key ||
+    li.priceId ||
+    li.product ||
+    li.label ||
+    li.name ||
+    ''
+  ).trim().toLowerCase();
 
-          // 2) fallback to li.unit_amount or li.price
-          if (amountDollars === null) {
-            const fallback = li.unit_amount ?? li.price ?? li.unitAmount ?? 0;
-            const parsedFallback = parsePriceString(fallback);
-            amountDollars = parsedFallback !== null ? parsedFallback : Number(fallback) || 0;
-          }
+  // FIXED: expand candidates so cart items match properly
+  const cartMatch = (Array.isArray(payload.cart) ? payload.cart : []).find(c => {
+    const candidates = [
+      c.key,
+      c.product,
+      c.name,
+      c.label,
+      c.option
+    ]
+    .filter(Boolean)
+    .map(x => String(x).trim().toLowerCase());
 
-          // 3) heuristic: if a numeric value looks like "cents" (very large) convert to dollars
-          //    e.g. someone might have passed 231000 meaning 2310.00 in cents -> convert.
-          if (Math.abs(amountDollars) >= 10000) {
-            // treat as cents => convert to dollars
-            amountDollars = amountDollars / 100;
-          }
+    return (
+      candidates.includes(needle) ||
+      candidates.some(x => needle && x.includes(needle))
+    );
+  });
 
-          // ensure numeric and finite
-          amountDollars = Number.isFinite(Number(amountDollars)) ? Number(amountDollars) : 0;
+  // 1) prefer parsePriceString(cart.price)
+  let amountDollars = null;
+  if (cartMatch && typeof cartMatch.price !== 'undefined') {
+    amountDollars = parsePriceString(cartMatch.price);
+  }
 
-          // ---------- NEW: determine billing/interval to send to server ----------
-          // Priorities:
-          // 1) explicit cartMatch.billing (authoritative display object)
-          // 2) li.billing (if already present)
-          // 3) li.interval or li.recurring (alternate names)
-          // 4) fallback by inspecting needle (key/name) for "annual"/"monthly"
-          // Values normalized to: 'annual' | 'monthly' | 'one_time' | null
-          let billing = null;
-          const bm = (cartMatch && (cartMatch.billing || cartMatch.interval || cartMatch.recurring)) ||
-                    li.billing || li.interval || li.recurring || null;
+  // 2) fallback
+  if (amountDollars === null) {
+    const fallback = li.unit_amount ?? li.price ?? li.unitAmount ?? 0;
+    const parsedFallback = parsePriceString(fallback);
+    amountDollars = parsedFallback !== null ? parsedFallback : Number(fallback) || 0;
+  }
 
-          if (bm && typeof bm === 'string') {
-            const bmNorm = bm.trim().toLowerCase();
-            if (bmNorm.includes('ann') || bmNorm === 'year' || bmNorm === 'annual') billing = 'annual';
-            else if (bmNorm.includes('month') || bmNorm === 'monthly' || bmNorm === 'month') billing = 'monthly';
-            else if (bmNorm.includes('one') || bmNorm.includes('one_time') || bmNorm.includes('one-time') || bmNorm === 'one_time') billing = 'one_time';
-          }
+  // 3) convert cents → dollars
+  if (Math.abs(amountDollars) >= 10000) {
+    amountDollars = amountDollars / 100;
+  }
 
-          // last-resort: infer from needle (price key like "advanced_annual" or "premium_monthly")
-          if (!billing && needle) {
-            if (needle.includes('annual') || needle.includes('_yr') || needle.includes('year')) billing = 'annual';
-            else if (needle.includes('monthly') || needle.includes('_mo') || needle.includes('month')) billing = 'monthly';
-            else if (needle.includes('one_time') || needle.includes('one-time') || needle.includes('one-time')) billing = 'one_time';
-          }
+  amountDollars = Number(amountDollars);
 
-          return {
-            ...li,
-            // Keep priceId/price if present (server will ignore priceId amount when unit_amount provided),
-            // but ensure unit_amount is a dollars number (server multiplies by 100).
-            unit_amount: amountDollars,
-            quantity: Number(li.quantity || 1),
-            billing: billing // <-- NEW: send normalized billing to server
-          };
-        });
+  // ===== Billing detection =====
+  let billing = null;
+
+  const bm =
+    (cartMatch && (cartMatch.billing || cartMatch.interval || cartMatch.recurring)) ||
+    li.billing ||
+    li.interval ||
+    li.recurring ||
+    null;
+
+  if (bm && typeof bm === 'string') {
+    const b = bm.trim().toLowerCase();
+    if (b.includes('ann') || b === 'year' || b === 'annual') billing = 'annual';
+    else if (b.includes('month') || b === 'monthly') billing = 'monthly';
+    else if (b.includes('one')) billing = 'one_time';
+  }
+
+  if (!billing && needle) {
+    if (needle.includes('annual') || needle.includes('_yr') || needle.includes('year')) billing = 'annual';
+    else if (needle.includes('monthly') || needle.includes('_mo') || needle.includes('month')) billing = 'monthly';
+    else if (needle.includes('one')) billing = 'one_time';
+  }
+
+  const inferredPriceId =
+    li.priceId ||
+    li.price_key ||
+    li.priceKey ||
+    li.key ||
+    (cartMatch && (cartMatch.priceId || cartMatch.price_key || cartMatch.key)) ||
+    null;
+
+  return {
+    ...li,
+    unit_amount: amountDollars,
+    quantity: Number(li.quantity || 1),
+    billing,
+    priceId: inferredPriceId || null
+  };
+});
+
+// DEBUG
+console.log('normalizedLineItems ->', JSON.stringify(normalizedLineItems, null, 2));
 
 
       // now post normalizedLineItems

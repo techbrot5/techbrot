@@ -230,18 +230,29 @@ export async function onRequestPost(context) {
         }
 
         // ⭐ FIXED — ALWAYS TRUST billing from acceptance page FIRST
-     if (r.priceType === 'recurring') {
-  const interval =
-    r.billing ||                     // <-- USE billing from acceptance page first
-    r.interval ||
-    (r.key.toLowerCase().includes('annual') ? 'year'
-     : r.key.toLowerCase().includes('month') ? 'month'
-     : null)
+        if (r.priceType === 'recurring') {
+      let interval = null;
 
-  if (interval) {
-    price_data.recurring = { interval }
-  }
-}
+      // ⭐ NEW — frontend sends "monthly" / "annual"
+      if (r.billing) {
+        const b = String(r.billing).toLowerCase();
+        if (b.includes('month')) interval = 'month';
+        if (b.includes('ann')) interval = 'year';
+      }
+
+      // fallback to existing data
+      if (!interval && r.interval) interval = r.interval;
+      if (!interval && r.key) {
+        const k = r.key.toLowerCase();
+        if (k.includes('annual') || k.includes('year')) interval = 'year';
+        if (k.includes('month')) interval = 'month';
+      }
+
+      if (interval) {
+        price_data.recurring = { interval };
+      }
+    }
+
 
 
         return {
