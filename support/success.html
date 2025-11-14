@@ -88,10 +88,12 @@
     }
 
     .muted { color:var(--muted) !important; }
+
+    .badge-svg { width:58px; height:58px; border-radius:14px; display:inline-flex; align-items:center; justify-content:center; }
   </style>
 </head>
 <body>
-  <canvas id="confetti-canvas"></canvas>
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
 
   <main class="container py-4">
     <div class="row g-4" id="successCard">
@@ -102,13 +104,10 @@
         <!-- Heading -->
         <div class="d-flex gap-3 mb-3 align-items-start">
           <div class="badge-svg" aria-hidden="true" style="
-            width:58px;height:58px;
-            border-radius:14px;
-            display:flex;align-items:center;justify-content:center;
             background:linear-gradient(180deg,#e5faff,#f7ffff);
             border:1px solid rgba(0,0,0,0.06);
           ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#28a745" viewBox="0 0 24 24"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#28a745" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
           </div>
 
           <div>
@@ -153,6 +152,7 @@
               <div class="text-end small muted">
                 <div>Payment method: <span id="pdfPaymentMethod">Card</span></div>
                 <div id="pdfSessionId" class="mt-1">Session: —</div>
+                <div id="acceptedNote" class="small muted mt-1"></div>
               </div>
             </div>
           </section>
@@ -195,11 +195,11 @@
           <div class="small muted mt-3">Order notes: <span id="pdfNotes">—</span></div>
         </article>
 
-        <!-- BUTTONS -->
-        <div class="d-flex gap-2 flex-wrap">
-          <button id="downloadReceiptBtn" class="btn btn-primary btn-lg">Download PDF</button>
-          <button id="viewPrintBtn" class="btn btn-outline-secondary">View / Print</button>
-          <a href="/quickbooks/service-plans/index.html" class="btn btn-link">Back to plans</a>
+        <!-- action buttons (left column) -->
+        <div class="d-flex gap-2 mb-3">
+          <button id="downloadReceiptBtn" type="button" class="btn btn-primary btn-lg">Download PDF</button>
+          <button id="viewPrintBtn" type="button" class="btn btn-outline-secondary">View / Print</button>
+          <a id="backToPlans" class="btn btn-link text-decoration-none" href="/quickbooks/service-plans/index.html">Back to plans</a>
         </div>
 
         <!-- OFFICIAL STRIPE LINKS -->
@@ -257,12 +257,17 @@
 
   // short helpers
   const $ = (sel) => document.querySelector(sel);
-  const centsToMoney = (cents) => {
-    // compute digit-by-digit to avoid float issues
-    const n = Number(cents || 0);
-    const dollars = Math.floor(n / 100);
-    const rem = Math.abs(n % 100);
-    return '$' + dollars.toString() + '.' + (rem < 10 ? '0' + rem : rem.toString());
+
+  // single centsToMoney helper (digit-by-digit, interval friendly)
+  const centsToMoney = (c, interval = null) => {
+    c = Number(c || 0);
+    const d = Math.floor(c / 100);
+    const r = Math.abs(c % 100);
+    const formatted = "$" + d + "." + (r < 10 ? "0" + r : r);
+
+    if (!interval) return formatted;
+
+    return interval === "year" ? formatted + "/yr" : interval === "month" ? formatted + "/mo" : formatted;
   };
 
   // model
@@ -288,14 +293,13 @@
     confCanvas.width = window.innerWidth;
     confCanvas.height = window.innerHeight;
     try {
-      // create a confetti function bound to canvas and responsive on resize
       return confetti.create(confCanvas, { resize: true, useWorker: true });
     } catch (e) {
       return null;
     }
   }
   let confettiFn = ensureCanvas();
-  window.addEventListener('resize', () => { ensureCanvas(); });
+  window.addEventListener('resize', () => { confettiFn = ensureCanvas(); });
 
   // fetch stripe session via your backend
   async function loadStripeSession() {
@@ -315,19 +319,17 @@
   // fallback loader: tries stripe metadata.items, then localStorage acceptance record
   function applyAcceptanceFallback(rawMeta) {
     try {
-      // 1) Stripe metadata items (stringified JSON) commonly contains items array
+      // 1) Stripe metadata items (stringified JSON)
       if (rawMeta && rawMeta.items) {
         try {
           const arr = JSON.parse(rawMeta.items);
           if (Array.isArray(arr) && arr.length) {
             receipt.items = arr.map(it => {
-              // if incoming unit amounts are already in cents or dollars – attempt to detect
               let unit = Number(it.amount || it.unit_amount || it.price || 0);
-              // Heuristic: if unit < 1000 assume dollars (e.g., 49.99) — convert to cents
-              if (unit && Math.abs(unit) < 1000 && String(unit).indexOf('.') !== -1) {
+              // Heuristic: if unit looks like dollars (has decimal or <1000) convert to cents
+              if (unit && String(unit).includes('.')) {
                 unit = Math.round(Number(unit) * 100);
-              } else if (unit && Math.abs(unit) < 1000 && Number.isInteger(unit) && unit < 1000) {
-                // could be dollars without decimal, convert to cents
+              } else if (unit && Math.abs(unit) < 1000) {
                 unit = Math.round(Number(unit) * 100);
               } else {
                 unit = Math.round(Number(unit || 0));
@@ -357,7 +359,7 @@
       if (stored && Array.isArray(stored.lineItems) && stored.lineItems.length) {
         receipt.items = stored.lineItems.map(it => {
           let unit = Number(it.unit_amount || it.price || it.amount || 0);
-          if (unit && Math.abs(unit) < 1000 && String(unit).indexOf('.') !== -1) unit = Math.round(Number(unit) * 100);
+          if (unit && String(unit).includes('.')) unit = Math.round(Number(unit) * 100);
           else if (unit && Math.abs(unit) < 1000) unit = Math.round(Number(unit) * 100);
           else unit = Math.round(Number(unit || 0));
           const qty = Number(it.quantity || it.qty || 1);
@@ -400,10 +402,10 @@
       receipt.items.forEach(it => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td>${escapeHtml(it.label)}${it.billing ? '<div class="small muted">' + escapeHtml(it.billing) + '</div>' : ''}</td>
-          <td class="text-end">${centsToMoney(it.unit_amount)}</td>
+          <td>${escapeHtml(it.label)}${it.billing ? ` <span class="text-muted small">(${escapeHtml(it.billing)})</span>` : ""}</td>
+          <td class="text-end">${centsToMoney(it.unit_amount, it.billing)}</td>
           <td class="text-end">${Number(it.quantity || 1)}</td>
-          <td class="text-end">${centsToMoney(it.amount_total)}</td>
+          <td class="text-end">${centsToMoney(it.amount_total, it.billing)}</td>
         `;
         tbody.appendChild(tr);
       });
@@ -412,21 +414,22 @@
     // totals
     $('#pdfSubtotal').textContent = centsToMoney(receipt.subtotal || 0);
     $('#pdfTax').textContent = centsToMoney(receipt.tax || 0);
-    $('#pdfTotal').textContent = centsToMoney(receipt.total || 0);
+    $('#pdfTotal').textContent = centsToMoney(receipt.total || 0, receipt.items[0]?.billing || null);
 
     // summary card
     $('#summaryItem').textContent = receipt.items[0]?.label || 'Item';
-    $('#summaryDesc').textContent = receipt.items[0]?.billing || '';
-    $('#summaryPrice').textContent = centsToMoney(receipt.total || 0);
-    $('#summaryTotal').textContent = centsToMoney(receipt.total || 0);
+    $('#summaryDesc').textContent = receipt.items[0]?.billing ? `Billing: ${receipt.items[0].billing}` : '';
+    $('#summaryPrice').textContent = centsToMoney(receipt.items[0]?.amount_total || receipt.total || 0, receipt.items[0]?.billing || null);
+    $('#summaryTotal').textContent = centsToMoney(receipt.total || 0, receipt.items[0]?.billing || null);
 
-    // accepted note
+    // accepted note and notes
     if (receipt.acceptance && receipt.acceptance.timestamp_utc) {
       const d = new Date(receipt.acceptance.timestamp_utc);
       $('#pdfNotes').textContent = receipt.notes || '';
       $('#acceptedNote').textContent = 'Accepted on ' + d.toLocaleString();
     } else {
       $('#acceptedNote').textContent = '';
+      $('#pdfNotes').textContent = receipt.notes || '';
     }
 
     // official buttons
@@ -446,14 +449,13 @@
         $('#stripeInvoicePdfBtn').style.display = 'inline-block';
       } else $('#stripeInvoicePdfBtn').style.display = 'none';
 
-      // show container if any of these present
       if (receipt._official.receipt_url || receipt._official.hosted_invoice_url || receipt._official.invoice_pdf) {
         $('#officialButtons').style.display = 'block';
       } else $('#officialButtons').style.display = 'none';
     }
   }
 
-  // small HTML escape
+  // simple HTML escape
   function escapeHtml(s) {
     if (s == null) return '';
     return String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -466,7 +468,6 @@
     const duration = 1500;
     const end = Date.now() + duration;
     (function frame() {
-      // burst from center-top with varying origin
       confettiFn({ particleCount: 6, spread: 70, startVelocity: 40, origin: { x: Math.random(), y: 0.2 } });
       if (Date.now() < end) requestAnimationFrame(frame);
     })();
@@ -513,12 +514,12 @@
     // 1. try Stripe session
     const stripeData = await loadStripeSession();
     if (stripeData) {
-      // prefer the canonical shapes returned by your worker
       try {
         if (stripeData.customer_details) {
           receipt.customerEmail = stripeData.customer_details.email || receipt.customerEmail;
           receipt.customerName = stripeData.customer_details.name || receipt.customerName;
         }
+
         if (Array.isArray(stripeData.line_items) && stripeData.line_items.length) {
           receipt.items = stripeData.line_items.map(li => ({
             label: li.description || (li.product && li.product.name) || 'Item',
@@ -532,7 +533,6 @@
           receipt.paymentMethod = stripeData.payment_method_types?.[0] || receipt.paymentMethod;
         }
 
-        // official doc links (if your worker provided)
         receipt._official = {
           receipt_url: stripeData.receipt_url || null,
           invoice_pdf: stripeData.invoice_pdf || null,
@@ -550,7 +550,7 @@
       applyAcceptanceFallback(rawMeta);
     }
 
-    // 3. final totals if still empty, set 0-item default
+    // 3. Ensure at least one placeholder item if still empty
     if (!receipt.items.length) {
       receipt.items = [{
         label: 'Service plan',
@@ -567,15 +567,16 @@
     // 4. render
     renderReceipt();
 
-    // 5. setup buttons
+    // 5. wire buttons
     document.getElementById('downloadReceiptBtn')?.addEventListener('click', downloadPDF);
     document.getElementById('downloadReceiptBtn2')?.addEventListener('click', downloadPDF);
     document.getElementById('viewPrintBtn')?.addEventListener('click', openPrintView);
 
     // 6. confetti
     runConfetti();
-
   })(); // init
 
 })();
 </script>
+</body>
+</html>
