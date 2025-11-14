@@ -507,15 +507,64 @@
         proceedBtn.disabled = false;
         return;
       }
+      // ---- NORMALIZE lineItems before creating the Stripe session ----
+      function parsePriceString(s) {
+        if (s === null || s === undefined) return null;
+        const cleaned = String(s).replace(/[^0-9.]/g, '');
+        const n = Number(cleaned);
+        return Number.isFinite(n) ? n : null;
+      }
 
-        const r = await fetch('/api/create-checkout-session', {
+      // Map payload.lineItems to a stable "dollars" unit_amount the server expects
+      const normalizedLineItems = (Array.isArray(payload.lineItems) ? payload.lineItems : []).map(li => {
+        // Try to find a matching cart entry (prefer authoritative display price)
+        const needle = String(li.key || li.price_key || li.priceId || li.label || li.name || '').trim().toLowerCase();
+        const cartMatch = (Array.isArray(payload.cart) ? payload.cart : []).find(c => {
+          const candidates = [c.key, c.product, c.name, c.label].filter(Boolean).map(x => String(x).trim().toLowerCase());
+          return candidates.includes(needle) || candidates.some(x => needle && x && x.includes(needle));
+        });
+
+        // 1) prefer parsePriceString(cart.price) if available
+        let amountDollars = null;
+        if (cartMatch && typeof cartMatch.price !== 'undefined') {
+          amountDollars = parsePriceString(cartMatch.price);
+        }
+
+        // 2) fallback to li.unit_amount or li.price
+        if (amountDollars === null) {
+          const fallback = li.unit_amount ?? li.price ?? li.unitAmount ?? 0;
+          const parsedFallback = parsePriceString(fallback);
+          amountDollars = parsedFallback !== null ? parsedFallback : Number(fallback) || 0;
+        }
+
+        // 3) heuristic: if a numeric value looks like "cents" (very large) convert to dollars
+        //    e.g. someone might have passed 231000 meaning 2310.00 in cents -> convert.
+        if (Math.abs(amountDollars) >= 10000) {
+          // treat as cents => convert to dollars
+          amountDollars = amountDollars / 100;
+        }
+
+        // ensure numeric and finite
+        amountDollars = Number.isFinite(Number(amountDollars)) ? Number(amountDollars) : 0;
+
+        return {
+          ...li,
+          // Keep priceId/price if present (server will ignore priceId amount when unit_amount provided),
+          // but ensure unit_amount is a dollars number (server multiplies by 100).
+          unit_amount: amountDollars,
+          quantity: Number(li.quantity || 1)
+        };
+      });
+
+      // now post normalizedLineItems
+      const r = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         referrerPolicy: 'no-referrer',
         body: JSON.stringify({
-        metadata: metaForStripe,
-        lineItems: payload.lineItems,
-        email: document.getElementById('email').value || ''
+          metadata: metaForStripe,
+          lineItems: normalizedLineItems,
+          email: document.getElementById('email').value || ''
         })
       });
 
