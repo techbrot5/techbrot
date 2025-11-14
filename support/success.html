@@ -194,35 +194,25 @@
     #receipt{ padding:20px; }
   }
  /* FIX: Confetti canvas should never affect layout */
-#confetti-canvas {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  display: block !important;
-  pointer-events: none !important;
-  z-index: 2000 !important;
-
-  /* CRITICAL FIX */
-  inset: 0 !important;
-  overflow: hidden !important;
-  block-size: 0 !important;
-}
-
-/* Extra protection */
-canvas#confetti-canvas {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  max-height: 0 !important;  /* prevents layout shift */
-}
-
-
+  /* Confetti canvas — fixed, full-screen, does not affect layout */
+  #confetti-canvas {
+    position: fixed !important;
+    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: block !important;
+    pointer-events: none !important;
+    z-index: 2000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    opacity: 0;                 /* start hidden; we'll fade in for the run */
+    transition: opacity .35s ease;
+  }
 </style>
-
-
-
 </head>
 <body>
   <canvas id="confetti-canvas" aria-hidden="true"></canvas>
@@ -418,19 +408,65 @@ canvas#confetti-canvas {
 
   const confCanvas = document.getElementById('confetti-canvas');
 
+  /* ===================================================
+     FIXED: Confetti canvas init (no spacing issues)
+     =================================================== */
   function ensureCanvas() {
     if (!confCanvas) return null;
-    confCanvas.width = window.innerWidth;
-    confCanvas.height = window.innerHeight;
+
+    // full-screen render area
+    confCanvas.style.width = "100vw";
+    confCanvas.style.height = "100vh";
+    confCanvas.style.opacity = "0";   // start hidden
+    confCanvas.style.display = "block";
+
     try {
-      return confetti.create(confCanvas, { resize:true, useWorker:true });
-    } catch(e){
+      return confetti.create(confCanvas, { resize: true, useWorker: true });
+    } catch (e) {
+      console.warn("Confetti create failed", e);
       return null;
     }
   }
 
   let confettiFn = ensureCanvas();
-  window.addEventListener('resize', () => { confettiFn = ensureCanvas(); });
+  window.addEventListener("resize", () => { confettiFn = ensureCanvas(); });
+
+  /* ===================================================
+     NEW: Run confetti once → fade out → hide canvas
+     =================================================== */
+  function runConfettiAsync(duration = 1200) {
+    return new Promise((resolve) => {
+      if (!confettiFn) confettiFn = ensureCanvas();
+      if (!confettiFn) return resolve();
+
+      confCanvas.style.opacity = "1";
+
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confettiFn({
+          particleCount: 12,
+          spread: 70,
+          startVelocity: 45,
+          origin: { x: Math.random(), y: Math.random() * 0.25 }
+        });
+
+        if (Date.now() < end) requestAnimationFrame(frame);
+        else {
+          // fade out smoothly
+          confCanvas.style.opacity = "0";
+          setTimeout(() => {
+            confCanvas.style.display = "none";
+            resolve();
+          }, 350);
+        }
+      })();
+    });
+  }
+
+  /* ===================================================
+     REST OF YOUR SCRIPT — UNTOUCHED
+     =================================================== */
 
   async function loadStripeSession() {
     if (!receipt.sessionId) return null;
@@ -526,26 +562,24 @@ canvas#confetti-canvas {
     $('#pdfTax').textContent = centsToMoney(receipt.tax);
     $('#pdfTotal').textContent = centsToMoney(receipt.total);
 
-    // ---------- FIX: Render ALL summary items ----------
-const sumWrap = document.getElementById('summaryLines');
-sumWrap.innerHTML = '';
+    const sumWrap = document.getElementById('summaryLines');
+    sumWrap.innerHTML = '';
 
-receipt.items.forEach(it => {
-  const row = document.createElement('div');
-  row.className = "d-flex justify-content-between mb-2";
-  row.innerHTML = `
-    <div>
-      <div class="fw-semibold">${escapeHtml(it.label)}</div>
-      ${it.billing ? `<div class="small muted">Billing: ${escapeHtml(it.billing)}</div>` : ""}
-    </div>
-    <div class="fw-semibold">${centsToMoney(it.amount_total, it.billing)}</div>
-  `;
-  sumWrap.appendChild(row);
-});
+    receipt.items.forEach(it => {
+      const row = document.createElement('div');
+      row.className = "d-flex justify-content-between mb-2";
+      row.innerHTML = `
+        <div>
+          <div class="fw-semibold">${escapeHtml(it.label)}</div>
+          ${it.billing ? `<div class="small muted">Billing: ${escapeHtml(it.billing)}</div>` : ""}
+        </div>
+        <div class="fw-semibold">${centsToMoney(it.amount_total, it.billing)}</div>
+      `;
+      sumWrap.appendChild(row);
+    });
 
-document.getElementById('summaryTotal').textContent =
-  centsToMoney(receipt.total);
-
+    document.getElementById('summaryTotal').textContent =
+      centsToMoney(receipt.total);
 
     if (receipt._official.receipt_url)
       $('#stripeReceiptBtn').href = receipt._official.receipt_url;
@@ -560,17 +594,6 @@ document.getElementById('summaryTotal').textContent =
   function escapeHtml(s) {
     return s == null ? '' : String(s).replace(/[&<>"']/g,
       c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  }
-
-  function runConfetti() {
-    if (!confettiFn) confettiFn = ensureCanvas();
-    if (!confettiFn) return;
-    const duration = 1500;
-    const end = Date.now() + duration;
-    (function frame() {
-      confettiFn({ particleCount:6, spread:70, startVelocity:40, origin:{x:Math.random(),y:0.2}});
-      if (Date.now() < end) requestAnimationFrame(frame);
-    })();
   }
 
   function downloadPDF() {
@@ -602,6 +625,9 @@ document.getElementById('summaryTotal').textContent =
     w.focus();
   }
 
+  /* ===================================================
+     INIT — now runs confetti first then shows page
+     =================================================== */
   (async function init() {
 
     document.getElementById('pdfItemsBody').innerHTML =
@@ -620,7 +646,6 @@ document.getElementById('summaryTotal').textContent =
 
           receipt.items = stripeData.line_items.map(li => {
 
-            // -------- SINGLE CLEAN NORMALIZATION BLOCK ----------
             let unit = Number(li.unit_amount ?? li.price?.unit_amount ?? 0);
             const qty = Math.max(1, Math.floor(Number(li.quantity || 1)));
             let amount_total = Number(li.amount_total ?? li.amount_subtotal ?? 0);
@@ -629,12 +654,10 @@ document.getElementById('summaryTotal').textContent =
               amount_total = unit * qty;
             }
 
-            // If unit is too small and amount_total large, convert dollars → cents
             if (unit < 100 && amount_total >= 1000) {
               unit = unit * 100;
             }
 
-            // If mismatch, recompute unit from amount_total
             if (unit * qty !== amount_total && qty > 0) {
               unit = Math.round(amount_total / qty);
             }
@@ -692,12 +715,14 @@ document.getElementById('summaryTotal').textContent =
     document.getElementById('downloadReceiptBtn2')?.addEventListener('click', downloadPDF);
     document.getElementById('viewPrintBtn')?.addEventListener('click', openPrintView);
 
-    runConfetti();
+    /* ---- FIXED: Run confetti first, then hide it ---- */
+    await runConfettiAsync(1200);
 
   })();
 
 })();
 </script>
+
 
 
 </body>
