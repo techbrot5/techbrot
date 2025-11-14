@@ -242,21 +242,35 @@ proceedBtn.addEventListener("click", async () => {
       return;
     }
 
-    const j = await r.json();
-    if (j.url) {
-      // optional: store the serverOrderId locally (e.g., in localStorage) for post-payment reconciliation
-      localStorage.setItem("last_order_id", serverOrderId);
-      location.href = j.url;
-    } else {
-      console.error("checkout session response missing url:", j);
-      statusEl.textContent = "Failed to create checkout session.";
-      proceedBtn.disabled = false;
-    }
+   // after fetch("/api/create-checkout-session", ...)
+const j = await r.json();
 
-  } catch (err) {
-    console.error(err);
-    statusEl.textContent = "An unexpected error occurred. Check console.";
-    proceedBtn.disabled = false;
+// If single URL (old behavior)
+if (j.url) {
+  localStorage.setItem("last_order_id", serverOrderId);
+  location.href = j.url;
+  return;
+}
+
+// If mixed (two URLs returned)
+if (Array.isArray(j.urls) && j.urls.length) {
+  // open both, redirect to the first (subscription) so user completes subscription flow first
+  // and open the payment session in a new tab so they can complete both.
+  try {
+    window.open(j.urls[1], '_blank'); // open one-time payment in new tab
+  } catch (e) {
+    console.warn('Could not open one-time payment in new tab, user will need second link:', j.urls[1]);
+  }
+  // redirect the current tab to subscription URL
+  location.href = j.urls[0];
+  return;
+}
+
+// fallback
+console.error("create-checkout-session unexpected response", j);
+statusEl.textContent = "Failed to create checkout session.";
+proceedBtn.disabled = false;
+
   }
 });
 
