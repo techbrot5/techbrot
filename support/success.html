@@ -3,383 +3,373 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Payment Successful — TechBrot</title>
-
-  <!-- Bootstrap -->
+  <title>Payment Successful | TechBrot Inc. — QuickBooks Support & Bookkeeping</title>
+  <meta name="description" content="Thank you for your payment! Your QuickBooks setup or bookkeeping service has been confirmed. A Certified ProAdvisor will contact you soon.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <style>
-    :root{
-      --bg:#f6f9fb; --card:#ffffff; --muted:#6b7280; --accent:#0ea5a4; --accent-2:#06b6d4; --success:#16a34a;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
-    html,body{height:100%;margin:0;background:var(--bg);-webkit-font-smoothing:antialiased;}
-    .page-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;}
-    .card-main{width:100%;max-width:1100px;background:var(--card);border-radius:12px;padding:20px;box-shadow:0 10px 30px rgba(11,22,35,0.06);opacity:0;transform:translateY(8px);transition:all .36s ease}
-    .card-main.visible{opacity:1;transform:none}
-    .order-badge{width:72px;height:72px;border-radius:12px;background:linear-gradient(180deg,#e6fffa,#ecfeff);display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--accent-2)}
-    #receiptForPdf{background:#fff;border-radius:8px;padding:14px;border:1px solid #eef2f7}
-    #receiptForPdf table{width:100%;border-collapse:collapse}
-    #receiptForPdf th,#receiptForPdf td{padding:8px 6px;border-bottom:1px solid #f1f5f9;font-size:13px}
-    .muted{color:var(--muted)}
-    .total-amount{font-weight:700;color:var(--success)}
-    .btn-primary{background:linear-gradient(90deg,var(--accent-2),var(--accent));border:0}
-    #confetti{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:1050}
-    @media (min-width:992px){ .layout-grid{display:grid;grid-template-columns:1fr 360px;gap:20px} }
-    @media (max-width:991px){ .layout-grid{display:block} }
+    :root{ --accent:#06b6d4; --muted:#6c757d; --success:#16a34a }
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#f8fafb;color:#0b1220}
+    main.container{max-width:1100px;padding:2rem 1rem}
+    #confetti-canvas{position:fixed;inset:0;z-index:1050;pointer-events:none}
+    #receipt{background:#fff;border-radius:.5rem;padding:1rem;box-shadow:0 9px 30px rgba(12,22,46,0.05)}
+    .badge-svg{width:56px;height:56px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;background:linear-gradient(180deg,#e8fff9,#f0ffff);border:1px solid rgba(6,182,212,0.08)}
+    .muted{color:var(--muted)!important}
+    @media (max-width:767.98px){ main.container{padding:1rem} }
   </style>
 </head>
 <body>
-  <canvas id="confetti" aria-hidden="true"></canvas>
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
 
-  <div class="page-wrap">
-    <main class="card-main" id="cardMain" role="main" aria-labelledby="thankHeading">
-      <div class="layout-grid">
-        <!-- LEFT / receipt -->
-        <section>
-          <div class="d-flex align-items-start gap-3 mb-3">
-            <div class="order-badge" id="orderEmoji">🎉</div>
-            <div class="flex-grow-1">
-              <h1 id="thankHeading" class="h5 mb-1">Thanks — your order is confirmed</h1>
-              <p id="subLead" class="muted mb-0">We've received your payment. A receipt is shown below.</p>
-              <small class="muted d-block mt-2" id="timeNote">Preparing receipt…</small>
-            </div>
+  <main class="container">
+    <div class="row g-4 align-items-start" id="successCard">
+      <section class="col-12 col-lg-8">
+        <div class="d-flex gap-3 mb-3 align-items-start">
+          <div class="badge-svg" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#28a745" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.285 6.709l-11.49 11.49-5.657-5.657 1.414-1.414 4.243 4.243 10.076-10.076z"></path></svg>
           </div>
+          <div class="flex-grow-1">
+            <h1 id="thankHeading" class="h4 mb-1">Payment received — thank you</h1>
+            <p id="subLead" class="mb-1 text-muted">We've received your payment. A receipt was emailed to you. You can download a printer-friendly PDF below.</p>
+            <div class="small muted">Need help? Email <a id="contactEmail" class="link-primary" href="mailto:support@techbrot.com">support@techbrot.com</a> · <span class="text-muted">Phone: <a href="tel:+18777515575">+1 (877) 751-5575</a></span></div>
+          </div>
+        </div>
 
-          <div id="receiptForPdf" aria-labelledby="receiptHeading">
-            <div class="d-flex justify-content-between align-items-start">
+        <article id="receipt" class="mb-3" aria-labelledby="receiptLabel">
+          <header class="d-flex justify-content-between align-items-start mb-2">
+            <div>
+              <div id="merchantName" class="fw-semibold">TechBrot Inc.</div>
+              <div class="small muted">support@techbrot.com · +1 (877) 751-5575</div>
+            </div>
+            <div class="text-end">
+              <div class="small muted">Receipt</div>
+              <div id="pdfOrderId" class="fw-bold">—</div>
+              <div id="pdfDate" class="small muted">—</div>
+            </div>
+          </header>
+
+          <section id="receiptBody">
+            <div class="d-flex justify-content-between mb-2">
               <div>
-                <div class="h6 mb-0" id="merchantName">TechBrot — QuickBooks Support</div>
-                <div class="muted" id="merchantContact">support@techbrot.com · +1 (877) 751-5575</div>
+                <div id="pdfCustomerName" class="fw-medium">Customer</div>
+                <div id="pdfCustomerEmail" class="small muted"></div>
               </div>
-              <div class="text-end">
-                <div class="muted small">Receipt</div>
-                <div id="pdfOrderId" style="font-weight:700;font-size:16px">—</div>
-                <div id="pdfDate" class="muted" style="margin-top:6px">—</div>
-              </div>
-            </div>
-
-            <div class="row mt-3">
-              <div class="col-12 col-lg-6">
-                <strong id="pdfCustomerName">Customer</strong>
-                <div class="muted" id="pdfCustomerEmail"></div>
-              </div>
-              <div class="col-12 col-lg-6 text-lg-end mt-2 mt-lg-0 muted">
-                Payment method: <span id="pdfPaymentMethod">Card</span><br>
-                <span id="pdfSessionId" class="d-block"></span>
+              <div class="small muted text-end">
+                <div>Payment method: <span id="pdfPaymentMethod">Card</span></div>
+                <div id="pdfSessionId">Session: —</div>
+                <div id="acceptedNote" class="small muted mt-1"></div>
               </div>
             </div>
 
-            <div class="table-responsive mt-3">
-              <table class="table table-borderless mb-0" aria-describedby="receipt-items">
-                <thead>
-                  <tr><th>Item</th><th class="text-end">Unit</th><th class="text-end">Qty</th><th class="text-end">Total</th></tr>
+            <div class="table-responsive">
+              <table class="table table-borderless mb-0" id="pdfItems" aria-describedby="pdfItemSummary">
+                <thead class="small text-muted border-top">
+                  <tr>
+                    <th>Item</th>
+                    <th class="text-end">Unit</th>
+                    <th class="text-end">Qty</th>
+                    <th class="text-end">Total</th>
+                  </tr>
                 </thead>
-                <tbody id="pdfItemsBody">
-                  <tr><td colspan="4" class="text-center muted py-3">Loading items…</td></tr>
-                </tbody>
-                <tfoot>
-                  <tr><td colspan="3" class="text-end muted">Subtotal</td><td id="pdfSubtotal" class="text-end">$0.00</td></tr>
-                  <tr><td colspan="3" class="text-end muted">Tax</td><td id="pdfTax" class="text-end">$0.00</td></tr>
-                  <tr><td colspan="3" class="text-end"><strong>Total</strong></td><td id="pdfTotal" class="text-end total-amount">$0.00</td></tr>
+                <tbody id="pdfItemsBody"><tr><td colspan="4" class="text-center muted py-3">No items found</td></tr></tbody>
+                <tfoot class="border-top">
+                  <tr><td colspan="3" class="text-end small muted">Subtotal</td><td class="text-end small" id="pdfSubtotal">$0.00</td></tr>
+                  <tr><td colspan="3" class="text-end small muted">Tax</td><td class="text-end small" id="pdfTax">$0.00</td></tr>
+                  <tr><td colspan="3" class="text-end fw-semibold">Total</td><td class="text-end fw-semibold" id="pdfTotal">$0.00</td></tr>
                 </tfoot>
               </table>
             </div>
 
-            <div class="muted small mt-3">Order notes: <span id="pdfNotes">—</span></div>
+            <div class="small muted mt-3">Order notes: <span id="pdfNotes">—</span></div>
+          </section>
+        </article>
+
+        <div class="d-flex gap-2 flex-wrap">
+          <button id="downloadReceiptBtn" type="button" class="btn btn-primary btn-lg">Download PDF</button>
+          <button id="viewPrintBtn" type="button" class="btn btn-outline-secondary">View / Print</button>
+          <a id="backToPlans" class="btn btn-link text-decoration-none" href="/quickbooks/service-plans/index.html">Back to plans</a>
+        </div>
+
+        <div id="officialButtons" class="mt-3" style="display:none">
+          <div class="small muted mb-2">Official Stripe documents</div>
+          <div class="d-flex gap-2">
+            <a id="stripeReceiptBtn" class="btn btn-outline-success" target="_blank" rel="noopener">View Stripe receipt</a>
+            <a id="stripeInvoiceBtn" class="btn btn-outline-secondary" target="_blank" rel="noopener">Open invoice</a>
+            <a id="stripeInvoicePdfBtn" class="btn btn-outline-primary" target="_blank" rel="noopener">Download invoice (PDF)</a>
           </div>
+        </div>
+      </section>
 
-          <div class="d-flex gap-2 mt-3">
-            <button id="downloadReceiptBtn" class="btn btn-primary">Download receipt (PDF)</button>
-            <button id="openReceiptViewBtn" class="btn btn-outline-secondary">Print / View</button>
-            <button id="confirmBackendBtn" class="btn btn-light" title="Tell backend this session completed (optional)">Confirm backend</button>
-          </div>
-
-        </section>
-
-        <!-- RIGHT / summary -->
-        <aside class="summary-card p-3">
-          <h6 class="mb-3">Order summary</h6>
-          <div id="summaryLines" aria-live="polite">
-            <div class="line-item d-flex justify-content-between">
-              <div>
-                <strong id="summaryItem">Item</strong>
-                <div class="muted small" id="summaryDesc"></div>
+      <aside class="col-12 col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h6 class="card-title mb-2">Order summary</h6>
+            <div id="summaryLines" class="mb-3">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <div id="summaryItem" class="fw-semibold">Item</div>
+                  <div id="summaryDesc" class="small muted"></div>
+                </div>
+                <div id="summaryPrice" class="fw-semibold">$0.00</div>
               </div>
-              <div id="summaryPrice" class="muted text-end">$0.00</div>
             </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="small muted">Total</div>
+              <div id="summaryTotal" class="fs-5 fw-semibold">$0.00</div>
+            </div>
+
+            <div class="d-grid">
+              <button id="downloadReceiptBtn2" class="btn btn-success">Download receipt</button>
+              <a href="/support/index.html" class="btn btn-outline-secondary mt-2">Contact support</a>
+            </div>
+
+            <p class="small muted mt-3 mb-0">You may close this page. A copy of the receipt was sent to your email.</p>
           </div>
+        </div>
+      </aside>
+    </div>
+  </main>
 
-          <div class="d-flex justify-content-between align-items-center mt-2">
-            <div class="muted">Total</div>
-            <div class="total-amount" id="summaryTotal">$0.00</div>
-          </div>
-
-          <div class="mt-3">
-            <a id="backPlans" href="/quickbooks/service-plans/index.html" class="btn btn-outline-secondary w-100">Back to plans</a>
-          </div>
-
-          <div class="muted small mt-3" id="metaNote">You may close this page. If your payment was via card, Stripe will email a receipt.</div>
-        </aside>
-      </div>
-    </main>
-  </div>
-
-  <!-- html2pdf -->
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 
   <script>
   (function(){
     'use strict';
-
-    // Utilities
-    const qs = s => document.querySelector(s);
-    const money = cents => '$' + Number((Number(cents) || 0) / 100).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2});
-    const param = name => (new URL(location.href)).searchParams.get(name) || '';
-    const safeJSON = k => { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch(e) { return null; } };
-
-    // Elements
-    const cardMain = qs('#cardMain');
-    const confettiCanvas = qs('#confetti');
-    const CONFETTI_MS = 3800;
-
-    // confetti: single burst
-    function runConfetti() {
-      if (!confettiCanvas) return;
-      const ctx = confettiCanvas.getContext('2d');
-      const DPR = Math.max(1, window.devicePixelRatio || 1);
-      function resize(){ confettiCanvas.width = innerWidth * DPR; confettiCanvas.height = innerHeight * DPR; confettiCanvas.style.width = innerWidth + 'px'; confettiCanvas.style.height = innerHeight + 'px'; ctx.setTransform(DPR,0,0,DPR,0,0); }
-      resize(); window.addEventListener('resize', resize, {passive:true});
-      const pieces = []; const colors = ['#06b6d4','#0ea5a4','#60a5fa','#f472b6','#f59e0b','#10b981'];
-      for(let i=0;i<80;i++){
-        pieces.push({ x: innerWidth/2 + (Math.random()*300-150), y: innerHeight/3 + (Math.random()*120-60), vx: (Math.random()*8-4), vy: (Math.random()*-6), s: 6 + Math.random()*12, rot: Math.random()*Math.PI*2, vr: (Math.random()*0.14-0.07), color: colors[Math.floor(Math.random()*colors.length)], life: 120 + Math.floor(Math.random()*200) });
-      }
-      let running = true;
-      function step(){
-        if (!running){ ctx.clearRect(0,0,confettiCanvas.width,confettiCanvas.height); return; }
-        ctx.clearRect(0,0,confettiCanvas.width,confettiCanvas.height);
-        let alive = 0;
-        for(const p of pieces){
-          if (p.life <= 0) continue;
-          p.x += p.vx; p.y += p.vy; p.vy += 0.12; p.rot += p.vr; p.life--;
-          ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot);
-          ctx.fillStyle = p.color; ctx.fillRect(-p.s/2, -p.s/2, p.s, p.s); ctx.restore();
-          if (p.y < innerHeight + 200 && p.life > 0) alive++;
-        }
-        if (alive) requestAnimationFrame(step); else ctx.clearRect(0,0,confettiCanvas.width,confettiCanvas.height);
-      }
-      step();
-      setTimeout(()=>{ running=false; try{ ctx.clearRect(0,0,confettiCanvas.width,confettiCanvas.height); }catch(e){} }, CONFETTI_MS);
-    }
-
-    // read session id / other params
-    const sessionId = param('session_id') || param('session') || param('checkout_session') || '';
-    const orderParam = param('order') || param('order_id') || '';
-    const urlAmount = param('amount') || param('total') || '';
+    const $ = s => document.querySelector(s);
+    const param = k => new URL(location.href).searchParams.get(k) || '';
+    const centsToMoney = (cents) => {
+      // safe digit-by-digit arithmetic
+      const n = Number(cents || 0);
+      const dollars = Math.floor(n / 100);
+      const rem = Math.abs(n % 100);
+      return '$' + dollars.toString() + '.' + (rem < 10 ? '0' + rem : rem.toString());
+    };
 
     // receipt model
     const receipt = {
-      orderId: orderParam || ('ORD-' + Date.now().toString(36).toUpperCase().slice(2,10)),
-      sessionId: sessionId || '',
-      createdAt: new Date(),
+      orderId: param('order') || param('order_id') || (localStorage.getItem('techbrot_last_order_id') || ('ORD-' + Date.now().toString(36).toUpperCase())),
+      sessionId: param('session_id') || param('session') || '',
       customerName: '',
       customerEmail: '',
-      paymentMethod: 'Card',
       items: [],
-      subtotal: 0,
-      tax: 0,
-      total: 0,
-      notes: ''
+      subtotal: 0, tax: 0, total: 0,
+      paymentMethod: 'Card', notes: '',
+      acceptance: null // acceptance metadata fallback
     };
 
-    // localStorage fallback keys
-    const cartKeys = ['service_plans_cart','pricing_cart','techbrot_cart','pricingCart','cart','checkout_cart'];
+    // fetch stripe session
+    async function loadStripeSession(){
+      if (!receipt.sessionId) return null;
+      try {
+        const res = await fetch(`/api/retrieve-checkout-session?session_id=${encodeURIComponent(receipt.sessionId)}`, { credentials: 'same-origin' });
+        if (!res.ok) return null;
+        const data = await res.json();
+        if (!data) return null;
 
-    function loadCartFromLocal() {
-      for (const k of cartKeys) {
-        const val = safeJSON(k);
-        if (Array.isArray(val) && val.length) return { items: val, key: k };
+        // Fill model
+        receipt.customerEmail = data.customer_details?.email || receipt.customerEmail || '';
+        receipt.customerName = data.customer_details?.name || receipt.customerName || '';
+        receipt.items = (data.line_items || []).map(li => ({
+          label: li.description || (li.product && li.product.name) || 'Item',
+          unit_amount: li.unit_amount || 0,
+          quantity: li.quantity || 1,
+          amount_total: li.amount_total || ((li.unit_amount || 0) * (li.quantity || 1)),
+          billing: li.recurring?.interval || ''
+        }));
+        receipt.subtotal = receipt.items.reduce((s,i)=>s + (i.amount_total||0),0);
+        receipt.total = data.amount_total || receipt.subtotal;
+        receipt.paymentMethod = data.payment_method_types?.[0] || receipt.paymentMethod;
+        receipt.notes = data.raw_session?.metadata?.event ? 'stripe' : receipt.notes;
+
+        // official documents
+        receipt._official = {
+          receipt_url: data.receipt_url || null,
+          invoice_pdf: data.invoice_pdf || null,
+          hosted_invoice_url: data.hosted_invoice_url || null,
+          raw_metadata: data.raw_session?.metadata || {}
+        }
+
+        return data;
+      } catch (e) {
+        console.warn('Stripe fetch failed', e);
+        return null;
       }
-      return { items: null, key: null };
     }
 
-    // Render helpers
-    function setText(sel, txt){ const el = qs(sel); if (el) el.textContent = txt; }
-    function formatMoneyCents(cents){ return money(cents); }
+    // fallback: get acceptance metadata from localStorage or session metadata
+    function fallbackAcceptance(rawMeta){
+      try {
+        // 1) from raw metadata passed from Stripe (if present)
+        if (rawMeta && typeof rawMeta === 'object' && rawMeta.items) {
+          try {
+            const items = JSON.parse(rawMeta.items);
+            if (Array.isArray(items) && items.length) {
+              receipt.items = items.map(it => ({
+                label: it.label || it.key || 'Item',
+                unit_amount: Math.round((it.amount || it.unit_amount || 0) * 100),
+                quantity: Number(it.qty || it.quantity || 1),
+                amount_total: Math.round((it.amount || it.unit_amount || 0) * 100) * Number(it.qty || it.quantity || 1),
+                billing: it.billing || ''
+              }));
+              receipt.subtotal = receipt.items.reduce((s,i)=>s+(i.amount_total||0),0);
+              receipt.total = receipt.subtotal;
+              receipt.notes = 'acceptance_meta';
+              receipt.acceptance = rawMeta;
+              return true;
+            }
+          } catch (e) { /* ignore parse */ }
+        }
 
-    function renderReceiptToDOM() {
-      setText('#pdfOrderId', receipt.orderId);
-      setText('#pdfDate', receipt.createdAt.toLocaleString());
-      setText('#pdfCustomerName', receipt.customerName || 'Valued customer');
-      setText('#pdfCustomerEmail', receipt.customerEmail || '');
-      setText('#pdfPaymentMethod', receipt.paymentMethod || 'Card');
-      setText('#pdfSessionId', receipt.sessionId ? ('Session: ' + receipt.sessionId) : '');
-      const tbody = qs('#pdfItemsBody');
+        // 2) attempt localStorage last order acceptance record (if you stored it)
+        const stored = localStorage.getItem('techbrot_acceptance_record');
+        if (stored) {
+          const rec = JSON.parse(stored);
+          if (rec && Array.isArray(rec.lineItems) && rec.lineItems.length) {
+            receipt.items = rec.lineItems.map(it => ({
+              label: it.label || it.product || it.name,
+              unit_amount: Math.round((it.unit_amount || it.price || 0) * 100),
+              quantity: Number(it.quantity || 1),
+              amount_total: Math.round((it.unit_amount || it.price || 0) * 100) * Number(it.quantity || 1),
+              billing: it.billing || ''
+            }));
+            receipt.subtotal = receipt.items.reduce((s,i)=>s+(i.amount_total||0),0);
+            receipt.total = receipt.subtotal;
+            receipt.notes = 'local_acceptance';
+            receipt.acceptance = rec;
+            return true;
+          }
+        }
+      } catch (e) { /* ignore */ }
+      return false;
+    }
+
+    // render UI
+    function render() {
+      const set = (sel, txt) => { const el = document.querySelector(sel); if (el) el.textContent = txt; };
+
+      set('#pdfOrderId', receipt.orderId);
+      set('#pdfDate', new Date().toLocaleString());
+      set('#pdfCustomerName', receipt.customerName || 'Customer');
+      set('#pdfCustomerEmail', receipt.customerEmail || '');
+      set('#pdfSessionId', receipt.sessionId ? 'Session: ' + receipt.sessionId : '');
+      set('#pdfPaymentMethod', receipt.paymentMethod || 'Card');
+      set('#pdfNotes', receipt.notes || '');
+
+      const tbody = document.getElementById('pdfItemsBody');
+      if (!tbody) return;
       tbody.innerHTML = '';
       if (!receipt.items || !receipt.items.length) {
         tbody.innerHTML = '<tr><td colspan="4" class="text-center muted py-3">No items found</td></tr>';
       } else {
         receipt.items.forEach(it => {
           const tr = document.createElement('tr');
-          tr.innerHTML = `<td>${escapeHtml(it.label)}${it.billing ? '<div class="muted small">'+escapeHtml(it.billing)+'</div>' : ''}</td>
-                          <td class="text-end">${formatMoneyCents(it.unit_amount)}</td>
-                          <td class="text-end">${Number(it.quantity || it.qty || 1)}</td>
-                          <td class="text-end">${formatMoneyCents(it.amount_total || (it.unit_amount * (it.quantity||1)))}</td>`;
+          tr.innerHTML = `
+            <td>${escapeHtml(it.label)}${it.billing ? '<div class="small text-muted">' + escapeHtml(it.billing) + '</div>' : ''}</td>
+            <td class="text-end small">${centsToMoney(it.unit_amount)}</td>
+            <td class="text-end small">${Number(it.quantity||1)}</td>
+            <td class="text-end small">${centsToMoney(it.amount_total)}</td>
+          `;
           tbody.appendChild(tr);
         });
       }
-      setText('#pdfSubtotal', formatMoneyCents(Math.round(receipt.subtotal)));
-      setText('#pdfTax', formatMoneyCents(Math.round(receipt.tax)));
-      setText('#pdfTotal', formatMoneyCents(Math.round(receipt.total)));
-      setText('#summaryItem', (receipt.items[0] && receipt.items[0].label) || 'Item');
-      setText('#summaryDesc', (receipt.items[0] && receipt.items[0].billing) ? receipt.items[0].billing : '');
-      setText('#summaryPrice', formatMoneyCents(Math.round(receipt.total)));
-      setText('#summaryTotal', formatMoneyCents(Math.round(receipt.total)));
-      setText('#pdfNotes', receipt.notes || '');
-      setText('#timeNote', 'Generated: ' + new Date().toLocaleString());
-      const emoji = qs('#orderEmoji'); if (emoji) emoji.textContent = (receipt.total > 0 ? '✅' : '🎉');
+
+      set('#pdfSubtotal', centsToMoney(receipt.subtotal));
+      set('#pdfTax', centsToMoney(receipt.tax));
+      set('#pdfTotal', centsToMoney(receipt.total));
+
+      set('#summaryItem', receipt.items[0]?.label || 'Item');
+      set('#summaryDesc', receipt.items[0]?.billing || '');
+      set('#summaryPrice', centsToMoney(receipt.total));
+      set('#summaryTotal', centsToMoney(receipt.total));
+
+      // acceptance note
+      if (receipt.acceptance && receipt.acceptance.timestamp_utc) {
+        $('#acceptedNote').textContent = 'Accepted on ' + new Date(receipt.acceptance.timestamp_utc).toLocaleString();
+      }
     }
 
-    function escapeHtml(s){ if (s == null) return ''; return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+    function escapeHtml(str){ if (typeof str !== 'string') return String(str||''); return str.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+    function centsToMoney(c){ if(!c && c!==0) return '$0.00'; const n = Number(c||0); const dollars = Math.floor(n/100); const rem = Math.abs(n%100); return '$'+dollars+'.'+(rem<10?'0'+rem:rem); }
 
-    // notify backend (calls your payment-complete-update to log to D1)
-    async function postPaymentComplete(session) {
-      if (!session) return null;
+    // notify backend (non-blocking)
+    async function notifyBackend() {
+      if (!receipt.sessionId) return;
       try {
-        // POST session id to your update endpoint; non-blocking for UI
-        const res = await fetch('/api/payment-complete-update', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ session_id: session })
+        await fetch('/api/payment-complete-update', {
+          method:'POST',
+          headers:{ 'Content-Type':'application/json' },
+          body: JSON.stringify({ session_id: receipt.sessionId })
         });
-        if (!res.ok) {
-          console.info('payment-complete-update returned', res.status);
-          try { return await res.json(); } catch(e) { return null; }
-        }
-        return await res.json();
-      } catch (e) {
-        console.info('notify backend failed', e);
-        return null;
-      }
+      } catch (e) { console.warn('notify backend failed', e) }
     }
 
-    // fetch authoritative Stripe session via new endpoint
-    async function fetchStripeSession(session) {
-      if (!session) return null;
+    // confetti
+    function fireConfetti() {
       try {
-        const res = await fetch('/api/retrieve-checkout-session?session_id=' + encodeURIComponent(session), { method: 'GET' });
-        if (!res.ok) { console.info('retrieve-checkout-session not available', res.status); return null; }
-        return await res.json();
-      } catch (e) {
-        console.info('retrieve-checkout-session fetch failed', e);
-        return null;
-      }
+        const conf = window.confetti;
+        if (!conf) return;
+        const duration = 2000, end = Date.now()+duration;
+        (function frame(){
+          conf({ particleCount: 6, startVelocity: 45, spread: 90, origin:{x: Math.random(), y: Math.random()*0.5} });
+          if (Date.now() < end) requestAnimationFrame(frame);
+        })();
+      } catch(e){}
     }
 
-    // Bootstrap UI: attach buttons (pdf, print, confirm)
-    (function attachButtons(){
-      const dl = qs('#downloadReceiptBtn');
-      if (dl) dl.addEventListener('click', () => {
-        dl.disabled = true; dl.textContent = 'Generating PDF…';
-        const element = qs('#receiptForPdf');
-        const now = new Date(); setText('#pdfDate', now.toLocaleString());
-        try {
-          const opt = { margin: 10, filename: (receipt.orderId || 'receipt') + '.pdf', image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: Math.min(2, window.devicePixelRatio || 1), useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } };
-          html2pdf().set(opt).from(element).save().then(()=>{ dl.disabled=false; dl.textContent='Download receipt (PDF)'; }).catch(err=>{ console.error(err); alert('PDF generation failed'); dl.disabled=false; dl.textContent='Download receipt (PDF)'; });
-        } catch(e){ console.error(e); alert('PDF generation failed'); dl.disabled=false; dl.textContent='Download receipt (PDF)'; }
-      });
+    // PDF generation
+    function downloadPDF(){
+      const el = document.getElementById('receipt');
+      if(!el) return;
+      const opt = { margin:10, filename:(receipt.orderId||'receipt') + '.pdf', image:{type:'jpeg',quality:0.98}, html2canvas:{scale:2,useCORS:true}, jsPDF:{unit:'mm',format:'a4',orientation:'portrait'} };
+      html2pdf().set(opt).from(el).save();
+    }
 
-      const printBtn = qs('#openReceiptViewBtn');
-      if (printBtn) printBtn.addEventListener('click', () => {
-        const w = window.open('', '_blank');
-        if (!w) { alert('Popup blocked. Allow popups to view/print.'); return; }
-        const html = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Receipt - ${escapeHtml(receipt.orderId)}</title><style>body{font-family:Inter,system-ui;padding:20px;color:#111}table{width:100%;border-collapse:collapse}th,td{padding:8px;border-bottom:1px solid #eee}</style></head><body>${qs('#receiptForPdf').outerHTML}<script>window.print();<\/script></body></html>`;
-        w.document.open(); w.document.write(html); w.document.close();
-      });
+    function openPrintView(){
+      const w = window.open('','_blank'); if(!w) return;
+      const html = `<html><head><title>Receipt - ${escapeHtml(receipt.orderId)}</title><meta name="viewport" content="width=device-width,initial-scale=1" /><style>body{font-family:system-ui, -apple-system,Segoe UI,Roboto,Arial;padding:20px;color:#111}.muted{color:#6c757d}</style></head><body>${document.getElementById('receipt').outerHTML}</body></html>`;
+      w.document.write(html); w.document.close(); w.focus();
+    }
 
-      const confirmBtn = qs('#confirmBackendBtn');
-      if (confirmBtn) confirmBtn.addEventListener('click', async ()=>{
-        confirmBtn.disabled = true; confirmBtn.textContent = 'Notifying backend…';
-        try {
-          const r = await postPaymentComplete(receipt.sessionId);
-          if (r && r.ok) { confirmBtn.textContent = 'Backend notified'; } else { confirmBtn.textContent = 'No backend endpoint found'; setTimeout(()=>confirmBtn.textContent='Confirm backend',2500); }
-        } catch(e){ console.error(e); confirmBtn.textContent='Confirm backend'; }
-        confirmBtn.disabled = false;
-      });
-    })();
+    // main init
+    (async function init(){
+      const stripeData = await loadStripeSession();
 
-    // main flow
-    (async function main(){
-      try { runConfetti(); } catch(e){ /* ignore */ }
-      // show card quickly
-      setTimeout(()=>{ try{ cardMain.classList.add('visible'); } catch(e){} }, 380);
-
-      // 1) Try to fetch Stripe session details (authoritative)
-      let stripeData = null;
-      if (receipt.sessionId) {
-        stripeData = await fetchStripeSession(receipt.sessionId);
-        // attempt to update DB (non-blocking)
-        try { postPaymentComplete(receipt.sessionId).then(r => { if (r && r.ok) console.info('backend updated'); }); } catch(e){ /* ignore */ }
-      }
-
-      // 2) Build receipt model - prefer Stripe data, then URL amount, then localStorage
-      if (stripeData && stripeData.line_items && stripeData.line_items.length) {
-        // use authoritative Stripe payload
-        receipt.customerEmail = (stripeData.customer_details && stripeData.customer_details.email) || '';
-        receipt.customerName = (stripeData.customer_details && stripeData.customer_details.name) || '';
-        receipt.items = stripeData.line_items.map(li => ({
-          label: li.description || (li.product && li.product.name) || 'Item',
-          unit_amount: li.unit_amount || 0,
-          quantity: li.quantity || 1,
-          amount_total: li.amount_total || (li.unit_amount * (li.quantity||1)),
-          billing: li.recurring && li.recurring.interval ? (li.recurring.interval === 'month' ? 'monthly' : 'annual') : ''
-        }));
-        receipt.subtotal = receipt.items.reduce((s,i)=> s + (i.amount_total||0), 0);
-        receipt.total = Number(stripeData.amount_total || receipt.subtotal);
-        receipt.notes = 'Data from Stripe / retrieve-checkout-session';
-      } else if (urlAmount) {
-        const numeric = Number(String(urlAmount).replace(/[^0-9.]/g,'')) || 0;
-        receipt.items = [{ label: decodeURIComponent(param('item') || 'Purchase'), unit_amount: Math.round(numeric*100), quantity:1, amount_total: Math.round(numeric*100), billing: '' }];
-        receipt.subtotal = receipt.items[0].amount_total; receipt.total = receipt.subtotal;
-        receipt.notes = 'Populated from URL params';
-      } else {
-        // localStorage fallback
-        const cart = loadCartFromLocal();
-        if (cart.items && cart.items.length) {
-          // try to standardize many shapes
-          receipt.items = cart.items.map(it => {
-            const unit = Math.round((Number(it.price ?? it.unit_amount ?? it.amount ?? it.unit || 0) || 0) * 100) / 1; // if already in dollars might be wrong — we try common shapes
-            const qty = Number(it.quantity ?? it.qty ?? 1);
-            // If price seems < 1000 it's probably dollars; assume dollars if less than 10,000
-            let unit_cents = 0;
-            if (unit > 1000) unit_cents = Math.round(unit); // treat as cents
-            else unit_cents = Math.round((Number(it.price ?? it.unit_amount ?? it.amount ?? 0) || 0) * 100);
-            return {
-              label: it.productName || it.product || it.label || it.name || 'Item',
-              unit_amount: unit_cents,
-              quantity: qty,
-              amount_total: unit_cents * qty,
-              billing: it.billing || it.interval || ''
-            };
-          });
-          receipt.subtotal = receipt.items.reduce((s,i)=>s + (i.amount_total||0),0);
-          receipt.total = receipt.subtotal;
-          receipt.notes = 'Populated from localStorage';
-        } else {
-          // fallback empty
-          receipt.items = [{ label: 'Service plan', unit_amount: 0, quantity:1, amount_total:0 }];
-          receipt.subtotal = 0; receipt.total = 0;
-          receipt.notes = 'No cart data available';
+      // If stripe didn't return items, try acceptance metadata (from stripe metadata or local)
+      if ((!stripeData || !stripeData.line_items || stripeData.line_items.length === 0) && stripeData && stripeData.raw_session && stripeData.raw_session.metadata) {
+        fallbackAcceptance(stripeData.raw_session.metadata);
+      } else if (!stripeData) {
+        // try local acceptance record stored by your acceptance page
+        const stored = localStorage.getItem('techbrot_acceptance_record');
+        if (stored) {
+          try { fallbackAcceptance(JSON.parse(stored)) } catch(e){}
         }
       }
 
-      // currency: if stripeData present use stripe currency; otherwise default USD
-      const currency = (stripeData && stripeData.currency) || 'usd';
-      // render
-      renderReceiptToDOM();
+      render();
 
-      // store last order id for convenience
-      try { localStorage.setItem('techbrot_last_order_id', receipt.orderId); } catch(e){}
+      // Show official doc buttons if available
+      if (receipt._official && (receipt._official.receipt_url || receipt._official.hosted_invoice_url || receipt._official.invoice_pdf)) {
+        document.getElementById('officialButtons').style.display = 'block';
+        if (receipt._official.receipt_url) { $('#stripeReceiptBtn').href = receipt._official.receipt_url; $('#stripeReceiptBtn').style.display='inline-block'; }
+        else $('#stripeReceiptBtn').style.display='none';
+        if (receipt._official.hosted_invoice_url) { $('#stripeInvoiceBtn').href = receipt._official.hosted_invoice_url; $('#stripeInvoiceBtn').style.display='inline-block'; }
+        else $('#stripeInvoiceBtn').style.display='none';
+        if (receipt._official.invoice_pdf) { $('#stripeInvoicePdfBtn').href = receipt._official.invoice_pdf; $('#stripeInvoicePdfBtn').style.display='inline-block'; }
+        else $('#stripeInvoicePdfBtn').style.display='none';
+      }
+
+      // Notify backend (non-blocking)
+      notifyBackend();
+
+      // wire up buttons
+      $('#downloadReceiptBtn')?.addEventListener('click', downloadPDF);
+      $('#downloadReceiptBtn2')?.addEventListener('click', downloadPDF);
+      $('#viewPrintBtn')?.addEventListener('click', openPrintView);
+
+      // confetti on first visible load
+      fireConfetti();
     })();
 
   })();

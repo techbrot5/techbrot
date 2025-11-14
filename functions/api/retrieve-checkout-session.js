@@ -1,4 +1,3 @@
-// /functions/api/retrieve-checkout-session.js
 import Stripe from 'stripe'
 
 export async function onRequestGet({ request, env }) {
@@ -28,25 +27,29 @@ export async function onRequestGet({ request, env }) {
       httpClient: Stripe.createFetchHttpClient()
     })
 
-    // Retrieve session and expand line items/products
+    // Retrieve session and expand line items/products, invoice and payment_intent.charges.data
     let session
     try {
       session = await stripe.checkout.sessions.retrieve(sessionId, {
-        expand: ['line_items.data.price.product', 'payment_intent', 'customer']
+        expand: [
+          'line_items.data.price.product',
+          'payment_intent',
+          'payment_intent.charges.data',
+          'invoice',
+          'customer'
+        ]
       })
     } catch (err) {
       console.error('Stripe retrieve error', err)
       return json({ error: 'Failed to retrieve Stripe session', details: String(err && err.message) }, 500)
     }
 
-    // Normalize line items for frontend (safe shape)
     const rawLineItems = (session.line_items && session.line_items.data) || []
     const line_items = rawLineItems.map(li => {
       const priceObj = li.price || {}
       const product = priceObj.product || (priceObj.product && priceObj.product.id) || {}
       const recurring = priceObj.recurring || (li.price && li.price.recurring) || null
 
-      // unit amount: prefer price.unit_amount if available; fallback to amount_subtotal / quantity
       let unit_amount = null
       if (typeof priceObj.unit_amount !== 'undefined' && priceObj.unit_amount !== null) {
         unit_amount = priceObj.unit_amount
@@ -73,24 +76,46 @@ export async function onRequestGet({ request, env }) {
       }
     })
 
-    // Compute amount_total (prefer session.amount_total; fallback to summing line_items)
     let amount_total = Number(session.amount_total || 0)
     if (!amount_total && line_items.length) {
       amount_total = line_items.reduce((s, li) => s + (li.amount_total || 0), 0)
     }
 
-    // Build minimal, stable response object for front-end
+    // extract official receipt / invoice URLs if present
+    let receipt_url = null
+    let invoice_pdf = null
+    let hosted_invoice_url = null
+
+    // payment_intent.charges.data[0].receipt_url
+    try {
+      const pi = session.payment_intent
+      if (pi && pi.charges && Array.isArray(pi.charges.data) && pi.charges.data[0]) {
+        receipt_url = pi.charges.data[0].receipt_url || null
+      }
+    } catch (e) { /* ignore */ }
+
+    // invoice fields
+    try {
+      if (session.invoice) {
+        invoice_pdf = session.invoice.invoice_pdf || null
+        hosted_invoice_url = session.invoice.hosted_invoice_url || null
+      }
+    } catch (e) {}
+
     const out = {
       session_id: session.id,
       mode: session.mode || null,
       payment_status: session.payment_status || null,
       currency: session.currency || (line_items[0] && line_items[0].currency) || 'usd',
-      amount_total: amount_total, // in cents
+      amount_total: amount_total,
       customer_details: {
         email: session.customer_email || (session.customer && session.customer.email) || (session.customer_details && session.customer_details.email) || '',
         name: (session.customer_details && session.customer_details.name) || (session.customer && session.customer.name) || ''
       },
       line_items,
+      receipt_url,
+      invoice_pdf,
+      hosted_invoice_url,
       raw_session: {
         id: session.id,
         created: session.created || null,
