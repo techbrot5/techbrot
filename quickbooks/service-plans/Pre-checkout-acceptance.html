@@ -515,23 +515,38 @@
         return Number.isFinite(n) ? n : null;
       }
 
-      // Map payload.lineItems to a stable "dollars" unit_amount the server expects
-// Map payload.lineItems to a stable "dollars" unit_amount the server expects
-// Map payload.lineItems to a stable "dollars" unit_amount the server expects
+    // ===== NORMALIZED LINE ITEMS (REPLACEMENT START) =====
 const normalizedLineItems = (Array.isArray(payload.lineItems) ? payload.lineItems : []).map(li => {
 
-  // FIXED: now include li.product so matching works for all plans
-  const needle = String(
+  // make needle (original raw identifier)
+  const needleRaw = String(
     li.key ||
     li.price_key ||
     li.priceId ||
+    li.priceKey ||
     li.product ||
     li.label ||
     li.name ||
     ''
-  ).trim().toLowerCase();
+  ).trim();
 
-  // FIXED: expand candidates so cart items match properly
+  // front-end normalize function (similar to backend normalizeKey)
+  function normalizeKeyFront(k) {
+    if (!k) return '';
+    return String(k)
+      .toLowerCase()
+      .trim()
+      .replace(/\$/g, '')
+      .replace(/&/g, 'and')
+      .replace(/[\|\/\\]+/g, ' ')
+      .replace(/[^a-z0-9\s-]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .replace(/[-\s]+/g, '_');
+  }
+
+  const needle = normalizeKeyFront(needleRaw);
+
+  // try to match cart item (if provided) for richer metadata
   const cartMatch = (Array.isArray(payload.cart) ? payload.cart : []).find(c => {
     const candidates = [
       c.key,
@@ -541,39 +556,40 @@ const normalizedLineItems = (Array.isArray(payload.lineItems) ? payload.lineItem
       c.option
     ]
     .filter(Boolean)
-    .map(x => String(x).trim().toLowerCase());
-
+    .map(x => normalizeKeyFront(String(x)));
     return (
       candidates.includes(needle) ||
       candidates.some(x => needle && x.includes(needle))
     );
   });
 
-  // 1) prefer parsePriceString(cart.price)
+  // parse price string -> dollars
+  function parsePriceString(s) {
+    if (s === null || s === undefined) return null;
+    const cleaned = String(s).replace(/[^0-9.]/g, '');
+    const n = Number(cleaned);
+    return Number.isFinite(n) ? n : null;
+  }
+
+  // determine unit amount
   let amountDollars = null;
   if (cartMatch && typeof cartMatch.price !== 'undefined') {
     amountDollars = parsePriceString(cartMatch.price);
   }
-
-  // 2) fallback
   if (amountDollars === null) {
     const fallback = li.unit_amount ?? li.price ?? li.unitAmount ?? 0;
     const parsedFallback = parsePriceString(fallback);
     amountDollars = parsedFallback !== null ? parsedFallback : Number(fallback) || 0;
   }
+  // convert cents -> dollars if it's clearly cents
+  if (Math.abs(amountDollars) >= 10000) amountDollars = amountDollars / 100;
+  amountDollars = Number(amountDollars || 0);
 
-  // 3) convert cents → dollars
-  if (Math.abs(amountDollars) >= 10000) {
-    amountDollars = amountDollars / 100;
-  }
-
-  amountDollars = Number(amountDollars);
-
-  // ===== Billing detection =====
+  // ----- billing detection (improved)
   let billing = null;
 
   const bm =
-    (cartMatch && (cartMatch.billing || cartMatch.interval || cartMatch.recurring)) ||
+    (cartMatch && (cartMatch.billing || cartMatch.interval || cartMatch.recurring || cartMatch.option || cartMatch.label)) ||
     li.billing ||
     li.interval ||
     li.recurring ||
@@ -581,37 +597,66 @@ const normalizedLineItems = (Array.isArray(payload.lineItems) ? payload.lineItem
 
   if (bm && typeof bm === 'string') {
     const b = bm.trim().toLowerCase();
-    if (b.includes('ann') || b === 'year' || b === 'annual') billing = 'annual';
-    else if (b.includes('month') || b === 'monthly') billing = 'monthly';
-    else if (b.includes('one')) billing = 'one_time';
+    if (b.includes('ann') || b === 'year' || b === 'annual' || b.includes('yr')) billing = 'annual';
+    else if (b.includes('month') || b === 'monthly' || b.includes('mo')) billing = 'monthly';
+    else if (b.includes('one') || b.includes('session') || b.includes('single') || b.includes('one-time')) billing = 'one_time';
   }
 
+  // additional heuristic from needle itself
   if (!billing && needle) {
     if (needle.includes('annual') || needle.includes('_yr') || needle.includes('year')) billing = 'annual';
     else if (needle.includes('monthly') || needle.includes('_mo') || needle.includes('month')) billing = 'monthly';
-    else if (needle.includes('one')) billing = 'one_time';
+    else if (needle.includes('one') || needle.includes('session') || needle.includes('single')) billing = 'one_time';
   }
 
-  const inferredPriceId =
-    li.priceId ||
-    li.price_key ||
-    li.priceKey ||
-    li.key ||
-    (cartMatch && (cartMatch.priceId || cartMatch.price_key || cartMatch.key)) ||
-    null;
+  // If it's clearly a "session" style product, force one_time
+  const productNameCheck = String(cartMatch && (cartMatch.product || cartMatch.name || cartMatch.option || cartMatch.label) || '').toLowerCase();
+  if (!billing && productNameCheck && (productNameCheck.includes('session') || productNameCheck.includes('sessions') || productNameCheck.includes('cleanup') || productNameCheck.includes('catch-up') || productNameCheck.includes('quickstart'))) {
+    billing = 'one_time';
+  }
+
+  // ----- inferred price id (if payload already includes a real Stripe price id)
+  const explicitPriceId = (li.priceId || li.price_id || li.price_key || li.priceKey || null);
+  const explicitIsStripePrice = explicitPriceId && String(explicitPriceId).startsWith('price_');
+
+  // ----- build a sensible priceKey that matches backend PRICE_MAP naming
+  // Prefer baseKey (remove billing tokens from needle)
+  let baseKey = needle || '';
+  baseKey = baseKey.replace(/_(annual|monthly|month|yr|year|one_time|one|one-time|session|sessions|single|_mo|_yr)$/i, '').replace(/_+$/,'');
+  if (!baseKey && cartMatch) {
+    baseKey = normalizeKeyFront(String(cartMatch.key || cartMatch.product || cartMatch.name || cartMatch.label || ''));
+  }
+  baseKey = baseKey || needle || '';
+
+  // construct candidate mapping key (matching your server PRICE_MAP keys)
+  let candidatePriceKey = null;
+  if (billing === 'annual' && baseKey) candidatePriceKey = `${baseKey}_annual`;
+  else if (billing === 'monthly' && baseKey) candidatePriceKey = `${baseKey}_monthly`;
+  else if (billing === 'one_time' && baseKey) candidatePriceKey = `${baseKey}_one_time`;
+  else if (baseKey) candidatePriceKey = baseKey; // fallback to baseKey only
+
+  // choose the final priceId vs priceKey to send:
+  // - if payload already gives a real Stripe price_... id → preserve it in priceId
+  // - otherwise send priceKey (server will map priceKey -> price_... using PRICE_MAP)
+  const outgoingPriceId = explicitIsStripePrice ? explicitPriceId : null;
+  const outgoingPriceKey = outgoingPriceId ? null : (candidatePriceKey || null);
 
   return {
     ...li,
     unit_amount: amountDollars,
     quantity: Number(li.quantity || 1),
     billing,
-    priceId: inferredPriceId || null
+    // server expects either priceId or a "raw" key; we set priceKey to help the server map.
+    priceId: outgoingPriceId,
+    priceKey: outgoingPriceKey,
+    // preserve the original key for debugging if present
+    key: li.key || li.price_key || li.priceKey || li.priceId || li.product || li.name || null
   };
 });
 
-// DEBUG
+// DEBUG (keeps your debug line but now shows the new shape)
 console.log('normalizedLineItems ->', JSON.stringify(normalizedLineItems, null, 2));
-
+// ===== NORMALIZED LINE ITEMS (REPLACEMENT END) =====
 
       // now post normalizedLineItems
       const r = await fetch('/api/create-checkout-session', {
