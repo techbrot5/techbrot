@@ -8,89 +8,195 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-    :root {
-      --accent: #0ea5e9;
-      --muted: #6c757d;
-      --line: rgba(0,0,0,0.08);
-    }
+  :root{
+    --accent: #0078d4;
+    --accent-dark: #0b5ed7;
+    --muted: #6c757d;
+    --line: rgba(0,0,0,0.08);
+    --radius-lg: 12px;
+    --radius-sm: 8px;
+    --btn-radius: 8px;
+  }
 
-    body {
-      background:#f4f6f8;
-      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
+  body{
+    background:#f4f6f8;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color:#111827;
+  }
 
-    /* Apple-like card */
-    #receipt {
-      background:white;
-      border-radius:18px;
-      padding:32px;
-      box-shadow:0 12px 40px rgba(0,0,0,0.06);
-      max-width:720px;
-      margin:0 auto;
-    }
+  /* ===== Receipt Card ===== */
+  #receipt{
+    background:#fff;
+    border-radius:var(--radius-lg);
+    padding:28px;
+    max-width:920px;
+    margin:0 auto;
+    box-shadow:0 4px 16px rgba(0,0,0,0.06);
+  }
 
-    /* Apple receipt headers */
-    #receipt header {
-      border-bottom:1px solid var(--line);
-      padding-bottom:12px;
-      margin-bottom:18px;
-    }
+  #receipt header{
+    border-bottom:1px solid var(--line);
+    padding-bottom:12px;
+    margin-bottom:18px;
+  }
 
-    #receipt .merchant {
-      font-size:20px;
-      font-weight:600;
-    }
+  #receipt .merchant{
+    font-size:20px;
+    font-weight:600;
+  }
 
-    /* Apple table style */
-    table.receipt-table {
-      width:100%;
-      border-collapse:collapse;
-      margin-top:10px;
-    }
+  /* ===== Table ===== */
+  table.receipt-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+  }
 
-    table.receipt-table thead th {
-      font-size:13px;
-      font-weight:500;
-      color:var(--muted);
-      border-bottom:1px solid var(--line);
-      padding-bottom:6px;
-    }
+  table.receipt-table thead th{
+    font-size:13px;
+    font-weight:600;
+    color:var(--muted);
+    border-bottom:1px solid var(--line);
+    padding-bottom:8px;
+  }
 
-    table.receipt-table tbody td {
-      padding:10px 0;
-      border-bottom:1px solid #eee;
-      font-size:15px;
-    }
+  table.receipt-table tbody td{
+    padding:12px 0;
+    border-bottom:1px solid #eceff1;
+    font-size:15px;
+  }
 
-    table.receipt-table tfoot td {
-      padding:6px 0;
-      font-size:15px;
-    }
+  table.receipt-table tfoot td{
+    padding:8px 0;
+    font-size:15px;
+  }
 
-    table.receipt-table tfoot tr.total-row td {
-      font-weight:600;
-      font-size:18px;
-      padding-top:14px;
-    }
+  table.receipt-table tfoot tr.total-row td{
+    font-weight:700;
+    font-size:18px;
+    padding-top:14px;
+  }
 
-    /* Summary card */
-    .summary-card {
-      border-radius:14px;
-      background:white;
-      box-shadow:0 6px 22px rgba(0,0,0,0.05);
-    }
+  /* ===== Summary Card ===== */
+  .summary-card{
+    border-radius:var(--radius-sm);
+    background:#fff;
+    padding:18px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+  }
 
-    #confetti-canvas {
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      z-index:2000;
-    }
+  .muted{ color:var(--muted)!important; }
 
-    .muted { color:var(--muted) !important; }
+  /* =========================================================
+     BUTTON SYSTEM — Fluent V2 (clean, sharp, minimal)
+     ========================================================= */
 
-    .badge-svg { width:58px; height:58px; border-radius:14px; display:inline-flex; align-items:center; justify-content:center; }
-  </style>
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.45rem;
+    font-weight:600;
+    padding:.6rem 1.05rem;
+    border-radius:var(--btn-radius);
+    border: 1px solid #6c757d;
+    cursor:pointer;
+    text-decoration:none;
+    transition:
+      background .15s ease,
+      border-color .15s ease,
+      color .15s ease,
+      box-shadow .15s ease,
+      transform .12s ease;
+  }
+
+
+  /* ===== FILLED (PRIMARY) ===== */
+  .btn.btn-primary,
+  .btn.btn-success{
+    background:var(--accent);
+    color:#fff!important;
+    border-color:var(--accent);
+    box-shadow:0 2px 6px rgba(0,0,0,0.12);
+  }
+
+  .btn.btn-primary:hover,
+  .btn.btn-success:hover{
+    background:var(--accent-dark);
+    border-color:var(--accent-dark);
+    transform:translateY(-1px);
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  .btn.btn-primary:active,
+  .btn.btn-success:active{
+    transform:translateY(0);
+    box-shadow:0 2px 4px rgba(0,0,0,0.12) inset;
+  }
+
+
+  /* ===== OUTLINE BUTTONS ===== */
+  .btn-outline-accent,
+  .btn-outline-success{
+    background:transparent;
+    color:var(--accent);
+    border:1.5px solid var(--accent);
+  }
+
+  .btn-outline-accent:hover,
+  .btn-outline-success:hover{
+    background:var(--accent-dark);
+    color:#fff!important;
+    border-color:var(--accent-dark);
+    transform:translateY(-1px);
+    box-shadow:0 4px 10px rgba(0,0,0,0.12);
+  }
+
+  .btn-outline-accent:active,
+  .btn-outline-success:active{
+    background:var(--accent-dark);
+    transform:translateY(0);
+  }
+
+
+  /* ===== SECONDARY ===== */
+  .btn-secondary{
+    background:#fff;
+    color:#222;
+    border:1px solid #d0d7de;
+  }
+
+  .btn-secondary:hover{
+    background:#f3f4f6;
+  }
+
+  .btn-secondary:active{
+    background:#e7e9eb;
+  }
+
+
+  /* ===== LINK BUTTON ===== */
+  .btn-link{
+    color:var(--accent);
+    background:transparent;
+    border:none;
+    padding:.25rem .5rem;
+  }
+
+  .btn-link:hover{
+    color:var(--accent-dark);
+    text-decoration:underline;
+  }
+
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:992px){
+    #receipt{ padding:20px; }
+  }
+</style>
+
+
+
 </head>
 <body>
   <canvas id="confetti-canvas" aria-hidden="true"></canvas>
@@ -196,11 +302,12 @@
         </article>
 
         <!-- action buttons (left column) -->
-        <div class="d-flex gap-2 mb-3">
-          <button id="downloadReceiptBtn" type="button" class="btn btn-primary btn-lg">Download PDF</button>
-          <button id="viewPrintBtn" type="button" class="btn btn-outline-secondary">View / Print</button>
-          <a id="backToPlans" class="btn btn-link text-decoration-none" href="/quickbooks/service-plans/index.html">Back to plans</a>
-        </div>
+       <div class="mb-3">
+      <a id="backToPlans" class="btn btn-link text-decoration-none" href="/quickbooks/service-plans/index.html">
+        Back to plans
+      </a>
+    </div>
+
 
         <!-- OFFICIAL STRIPE LINKS -->
         <div id="officialButtons" class="mt-3" style="display:none;">
@@ -393,10 +500,26 @@
     $('#pdfTax').textContent = centsToMoney(receipt.tax);
     $('#pdfTotal').textContent = centsToMoney(receipt.total);
 
-    $('#summaryItem').textContent = receipt.items[0]?.label || 'Item';
-    $('#summaryDesc').textContent = receipt.items[0]?.billing ? `Billing: ${receipt.items[0].billing}` : '';
-    $('#summaryPrice').textContent = centsToMoney(receipt.items[0]?.amount_total || receipt.total, receipt.items[0]?.billing);
-    $('#summaryTotal').textContent = centsToMoney(receipt.total);
+    // ---------- FIX: Render ALL summary items ----------
+const sumWrap = document.getElementById('summaryLines');
+sumWrap.innerHTML = '';
+
+receipt.items.forEach(it => {
+  const row = document.createElement('div');
+  row.className = "d-flex justify-content-between mb-2";
+  row.innerHTML = `
+    <div>
+      <div class="fw-semibold">${escapeHtml(it.label)}</div>
+      ${it.billing ? `<div class="small muted">Billing: ${escapeHtml(it.billing)}</div>` : ""}
+    </div>
+    <div class="fw-semibold">${centsToMoney(it.amount_total, it.billing)}</div>
+  `;
+  sumWrap.appendChild(row);
+});
+
+document.getElementById('summaryTotal').textContent =
+  centsToMoney(receipt.total);
+
 
     if (receipt._official.receipt_url)
       $('#stripeReceiptBtn').href = receipt._official.receipt_url;
