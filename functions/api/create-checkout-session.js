@@ -146,19 +146,31 @@ export async function onRequestPost(context) {
     }
 
     /* -----------------------------
-       5. Resolve Stripe price IDs
-    ------------------------------*/
-    const resolved = items.map(it => {
-      const raw = String(it.priceKey)
-      const norm = normalizeKey(raw)
-      const priceId = PRICE_MAP[raw] || PRICE_MAP[norm] || null
-      const priceType =
+   5. Resolve Stripe price IDs (FIXED)
+------------------------------*/
+const resolved = items.map(it => {
+  const raw = String(it.priceKey);
+  const norm = normalizeKey(raw);
+
+  let priceId = null;
+  let priceType = 'one_time';
+
+  // ✅ FIX: If priceKey is already a Stripe price ID, TRUST IT and SKIP PRICE_MAP
+  if (raw.startsWith('price_')) {
+    priceId = raw;
+    priceType = 'recurring'; // Stripe will override when we fetch actual price object
+  } else {
+    // fallback to your map
+    priceId = PRICE_MAP[raw] || PRICE_MAP[norm] || null;
+    priceType =
       PRICE_TYPE_MAP[raw] ||
       PRICE_TYPE_MAP[norm] ||
-      'one_time'; // default to one_time, not recurring
+      'one_time';
+  }
 
-      return { ...it, priceId, priceType, key: raw }
-    })
+  return { ...it, priceId, priceType, key: raw };
+});
+
 
    /* -----------------------------
    6. Determine mode (enhanced)
