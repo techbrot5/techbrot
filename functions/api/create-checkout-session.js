@@ -153,9 +153,9 @@ export async function onRequestPost(context) {
       const norm = normalizeKey(raw)
       const priceId = PRICE_MAP[raw] || PRICE_MAP[norm] || null
       const priceType =
-        PRICE_TYPE_MAP[raw] ||
-        PRICE_TYPE_MAP[norm] ||
-        (norm.includes('one_time') ? 'one_time' : 'recurring')
+      PRICE_TYPE_MAP[raw] ||
+      PRICE_TYPE_MAP[norm] ||
+      'one_time'; // default to one_time, not recurring
 
       return { ...it, priceId, priceType, key: raw }
     })
@@ -208,14 +208,6 @@ export async function onRequestPost(context) {
     const hasRecurringAnnual = resolved.some(
       r => r.priceType === 'recurring' && (r.interval === 'year' || (r.key && r.key.toLowerCase().includes('annual')))
     )
-
-    // ❌ Stripe does NOT allow mixing monthly + annual
-    if (hasRecurringMonthly && hasRecurringAnnual) {
-      return jsonError(
-        "You cannot purchase Monthly and Annual subscriptions together. Please choose only one billing interval.",
-        400
-      )
-    }
 
     // Determine checkout mode: subscription if any recurring exists; allow mixing one_time + recurring
     const hasRecurring = resolved.some(r => r.priceType === 'recurring')
