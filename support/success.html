@@ -723,25 +723,48 @@
 })();
 </script>
 <script>
-(async function(){
+(async function () {
+
   const params = new URLSearchParams(location.search);
   const sessionId = params.get('session_id');
-  const orderId = localStorage.getItem('techbrot_last_order_id') || params.get('order_id');
-  const email = localStorage.getItem('techbrot_email');
 
-  if (!orderId || !email) return;
+  // Load saved data from localStorage
+  let orderId = localStorage.getItem('techbrot_last_order_id');
+  let email = localStorage.getItem('techbrot_email');
+  let amount = localStorage.getItem('techbrot_amount');
+
+  // Fallbacks
+  if (!orderId) orderId = params.get('order_id') || ('ORD-' + Date.now());
+  if (!email) email = params.get('email');
+
+  if (!email) {
+    console.warn("NO EMAIL FOUND — CANNOT SEND CONFIRMATION EMAIL.");
+    return;
+  }
 
   try {
-    await fetch('/api/payment-confirmed', {
-      method:'POST',
-      headers:{ 'Content-Type':'application/json' },
-      body: JSON.stringify({ session_id: sessionId, order_id: orderId, email, amount: localStorage.getItem('techbrot_amount') || undefined })
+    console.log("Sending payment-confirmed →", { sessionId, orderId, email, amount });
+
+    const res = await fetch('/api/payment-confirmed', {
+      method: 'POST',
+      headers: { 'Content-Type':'application/json' },
+      body: JSON.stringify({
+        session_id: sessionId,
+        order_id: orderId,
+        email: email,
+        amount: amount
+      })
     });
+
+    console.log("payment-confirmed response:", res.status);
+
   } catch (e) {
-    console.warn('payment confirm failed', e);
+    console.error('payment-confirmed failed', e);
   }
+
 })();
 </script>
+
 
 
 

@@ -424,90 +424,168 @@
     return new Blob([ab], { type: mime });
   }
 
-  /* ===========================
-     PROCEED flow:
-     - capture screenshot (card only)
-     - POST to /api/acceptance-log with base64 screenshot
-     - receive server order_id + evidence_hash + screenshot_url
-     - POST to /api/create-checkout-session with small metadata + lineItems
-     - redirect to Stripe url
-     =========================== */
+ /* ===========================
+   PROCEED flow:
+   - capture screenshot (card only)
+   - POST to /api/acceptance-log with base64 screenshot
+   - receive server order_id + evidence_hash + screenshot_url
+   - STORE post-payment evidence tracking (critical)
+   - POST to /api/create-checkout-session with metadata + lineItems
+   - redirect to Stripe url
+   =========================== */
 
-  proceedBtn.addEventListener('click', async () => {
-    if (proceedBtn.disabled) return;
-    proceedBtn.disabled = true;
-    setStatus('Capturing evidence…', true);
+proceedBtn.addEventListener('click', async () => {
+  if (proceedBtn.disabled) return;
+  proceedBtn.disabled = true;
+  setStatus('Capturing evidence…', true);
 
-    let screenshot_base64 = null;
-    try {
-      screenshot_base64 = await captureScreenshotBase64();
-      if (!screenshot_base64) setStatus('Could not capture screenshot; continuing without it.', false);
-    } catch (e) {
-      console.warn('Screenshot exception', e);
+  let screenshot_base64 = null;
+  try {
+    screenshot_base64 = await captureScreenshotBase64();
+    if (!screenshot_base64) {
       setStatus('Could not capture screenshot; continuing without it.', false);
     }
+  } catch (e) {
+    console.warn('Screenshot exception', e);
+    setStatus('Could not capture screenshot; continuing without it.', false);
+  }
 
-    // Build record and attach screenshot (or mark failure)
-    const recordBase = await buildAcceptanceRecordBase();
-    if (screenshot_base64) {
-      recordBase.screenshot_base64 = screenshot_base64;
-    } else {
-      recordBase.screenshot_base64 = null;
-      recordBase.screenshot_capture_failed = true;
+  // Build record and attach screenshot
+  const recordBase = await buildAcceptanceRecordBase();
+  if (screenshot_base64) {
+    recordBase.screenshot_base64 = screenshot_base64;
+  } else {
+    recordBase.screenshot_base64 = null;
+    recordBase.screenshot_capture_failed = true;
+  }
+
+  // Save acceptance for fallback evidence
+  try {
+    localStorage.setItem('techbrot_acceptance_record', JSON.stringify(recordBase));
+  } catch (e) {
+    console.warn('Failed to store acceptance record', e);
+  }
+
+  try {
+    setStatus('Saving acceptance to secure audit log…', true);
+
+    const saveResp = await fetch('/api/acceptance-log', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify(recordBase)
+    });
+
+    if (!saveResp.ok) {
+      const text = await saveResp.text().catch(() => 'no body');
+      console.error('acceptance-log failed:', saveResp.status, text);
+      setStatus('Failed to save evidence. Try again or contact support.', false);
+      proceedBtn.disabled = false;
+      return;
     }
-    // SAVE acceptance metadata for the success page fallback
+
+    const saveJson = await saveResp.json();
+    if (!saveJson || !saveJson.order_id) {
+      console.error('unexpected acceptance-log response', saveJson);
+      setStatus('Failed to save evidence. Try again or contact support.', false);
+      proceedBtn.disabled = false;
+      return;
+    }
+
+    const serverOrderId = saveJson.order_id;
+    const evidenceHash = saveJson.evidence_hash || '';
+    const screenshotUrl = saveJson.screenshot_url || '';
+
+    try { localStorage.setItem('last_order_id', serverOrderId); } catch (e) {}
+
+    /* =====================================================
+       ⭐ CRITICAL FIX: STORE POST-PAYMENT TRACKING VALUES
+       ===================================================== */
     try {
-      localStorage.setItem('techbrot_acceptance_record', JSON.stringify(recordBase));
+      localStorage.setItem('techbrot_last_order_id', serverOrderId);
+      localStorage.setItem('techbrot_email', emailInput.value || '');
+
+      // Safe fallback for amount
+      const planAmount =
+        (payload?.cart?.[0]?.price) ||
+        (payload?.lineItems?.[0]?.unit_amount) ||
+        0;
+
+      localStorage.setItem('techbrot_amount', planAmount);
     } catch (e) {
-      console.warn('Failed to store acceptance record', e);
+      console.warn('Failed to store post-payment evidence values', e);
+    }
+    /* ===================================================== */
+
+    setStatus('Creating secure Stripe checkout…', true);
+
+    const metaForStripe = {
+      order_id: serverOrderId,
+      evidence_hash: evidenceHash,
+      screenshot_url: screenshotUrl
+    };
+
+    if (!isValidLineItems(payload.lineItems)) {
+      console.error('Invalid lineItems before create-checkout-session', payload.lineItems);
+      setStatus('Invalid cart. Cannot create checkout.', false);
+      proceedBtn.disabled = false;
+      return;
     }
 
-    try {
-      setStatus('Saving acceptance to secure audit log…', true);
-      const saveResp = await fetch('/api/acceptance-log', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        referrerPolicy: 'no-referrer',
-        body: JSON.stringify(recordBase)
+    // ---- NORMALIZE lineItems before creating the Stripe session ----
+    function parsePriceString(s) {
+      if (s === null || s === undefined) return null;
+      const cleaned = String(s).replace(/[^0-9.]/g, '');
+      const n = Number(cleaned);
+      return Number.isFinite(n) ? n : null;
+    }
+
+    // ===== NORMALIZED LINE ITEMS (REPLACEMENT START) =====
+    const normalizedLineItems = (Array.isArray(payload.lineItems) ? payload.lineItems : []).map(li => {
+
+      const needleRaw = String(
+        li.key ||
+        li.price_key ||
+        li.priceId ||
+        li.priceKey ||
+        li.product ||
+        li.label ||
+        li.name ||
+        ''
+      ).trim();
+
+      function normalizeKeyFront(k) {
+        if (!k) return '';
+        return String(k)
+          .toLowerCase()
+          .trim()
+          .replace(/\$/g, '')
+          .replace(/&/g, 'and')
+          .replace(/[\|\/\\]+/g, ' ')
+          .replace(/[^a-z0-9\s-]+/g, ' ')
+          .replace(/\s+/g, ' ')
+          .replace(/[-\s]+/g, '_');
+      }
+
+      const needle = normalizeKeyFront(needleRaw);
+
+      const cartMatch = (Array.isArray(payload.cart) ? payload.cart : []).find(c => {
+        const candidates = [
+          c.key,
+          c.product,
+          c.name,
+          c.label,
+          c.option
+        ]
+          .filter(Boolean)
+          .map(x => normalizeKeyFront(String(x)));
+
+        return (
+          candidates.includes(needle) ||
+          candidates.some(x => needle && x.includes(needle))
+        );
       });
 
-      if (!saveResp.ok) {
-        const text = await saveResp.text().catch(() => 'no body');
-        console.error('acceptance-log failed:', saveResp.status, text);
-        setStatus('Failed to save evidence. Try again or contact support.', false);
-        proceedBtn.disabled = false;
-        return;
-      }
-
-      const saveJson = await saveResp.json();
-      if (!saveJson || !saveJson.order_id) {
-        console.error('unexpected acceptance-log response', saveJson);
-        setStatus('Failed to save evidence. Try again or contact support.', false);
-        proceedBtn.disabled = false;
-        return;
-      }
-
-      const serverOrderId = saveJson.order_id;
-      const evidenceHash = saveJson.evidence_hash || '';
-      const screenshotUrl = saveJson.screenshot_url || '';
-
-      try { localStorage.setItem('last_order_id', serverOrderId); } catch (e) {}
-
-      setStatus('Creating secure Stripe checkout…', true);
-
-      const metaForStripe = {
-        order_id: serverOrderId,
-        evidence_hash: evidenceHash,
-        screenshot_url: screenshotUrl
-      };
-
-      if (!isValidLineItems(payload.lineItems)) {
-        console.error('Invalid lineItems before create-checkout-session', payload.lineItems);
-        setStatus('Invalid cart. Cannot create checkout.', false);
-        proceedBtn.disabled = false;
-        return;
-      }
-      // ---- NORMALIZE lineItems before creating the Stripe session ----
       function parsePriceString(s) {
         if (s === null || s === undefined) return null;
         const cleaned = String(s).replace(/[^0-9.]/g, '');
@@ -515,189 +593,127 @@
         return Number.isFinite(n) ? n : null;
       }
 
-    // ===== NORMALIZED LINE ITEMS (REPLACEMENT START) =====
-const normalizedLineItems = (Array.isArray(payload.lineItems) ? payload.lineItems : []).map(li => {
+      let amountDollars = null;
 
-  // make needle (original raw identifier)
-  const needleRaw = String(
-    li.key ||
-    li.price_key ||
-    li.priceId ||
-    li.priceKey ||
-    li.product ||
-    li.label ||
-    li.name ||
-    ''
-  ).trim();
-
-  // front-end normalize function (similar to backend normalizeKey)
-  function normalizeKeyFront(k) {
-    if (!k) return '';
-    return String(k)
-      .toLowerCase()
-      .trim()
-      .replace(/\$/g, '')
-      .replace(/&/g, 'and')
-      .replace(/[\|\/\\]+/g, ' ')
-      .replace(/[^a-z0-9\s-]+/g, ' ')
-      .replace(/\s+/g, ' ')
-      .replace(/[-\s]+/g, '_');
-  }
-
-  const needle = normalizeKeyFront(needleRaw);
-
-  // try to match cart item (if provided) for richer metadata
-  const cartMatch = (Array.isArray(payload.cart) ? payload.cart : []).find(c => {
-    const candidates = [
-      c.key,
-      c.product,
-      c.name,
-      c.label,
-      c.option
-    ]
-    .filter(Boolean)
-    .map(x => normalizeKeyFront(String(x)));
-    return (
-      candidates.includes(needle) ||
-      candidates.some(x => needle && x.includes(needle))
-    );
-  });
-
-  // parse price string -> dollars
-  function parsePriceString(s) {
-    if (s === null || s === undefined) return null;
-    const cleaned = String(s).replace(/[^0-9.]/g, '');
-    const n = Number(cleaned);
-    return Number.isFinite(n) ? n : null;
-  }
-
-  // determine unit amount
-  let amountDollars = null;
-  if (cartMatch && typeof cartMatch.price !== 'undefined') {
-    amountDollars = parsePriceString(cartMatch.price);
-  }
-  if (amountDollars === null) {
-    const fallback = li.unit_amount ?? li.price ?? li.unitAmount ?? 0;
-    const parsedFallback = parsePriceString(fallback);
-    amountDollars = parsedFallback !== null ? parsedFallback : Number(fallback) || 0;
-  }
-  // convert cents -> dollars if it's clearly cents
-  if (Math.abs(amountDollars) >= 10000) amountDollars = amountDollars / 100;
-  amountDollars = Number(amountDollars || 0);
-
-  // ----- billing detection (improved)
-  let billing = null;
-
-  const bm =
-    (cartMatch && (cartMatch.billing || cartMatch.interval || cartMatch.recurring || cartMatch.option || cartMatch.label)) ||
-    li.billing ||
-    li.interval ||
-    li.recurring ||
-    null;
-
-  if (bm && typeof bm === 'string') {
-    const b = bm.trim().toLowerCase();
-    if (b.includes('ann') || b === 'year' || b === 'annual' || b.includes('yr')) billing = 'annual';
-    else if (b.includes('month') || b === 'monthly' || b.includes('mo')) billing = 'monthly';
-    else if (b.includes('one') || b.includes('session') || b.includes('single') || b.includes('one-time')) billing = 'one_time';
-  }
-
-  // additional heuristic from needle itself
-  if (!billing && needle) {
-    if (needle.includes('annual') || needle.includes('_yr') || needle.includes('year')) billing = 'annual';
-    else if (needle.includes('monthly') || needle.includes('_mo') || needle.includes('month')) billing = 'monthly';
-    else if (needle.includes('one') || needle.includes('session') || needle.includes('single')) billing = 'one_time';
-  }
-
-  // If it's clearly a "session" style product, force one_time
-  const productNameCheck = String(cartMatch && (cartMatch.product || cartMatch.name || cartMatch.option || cartMatch.label) || '').toLowerCase();
-  if (!billing && productNameCheck && (productNameCheck.includes('session') || productNameCheck.includes('sessions') || productNameCheck.includes('cleanup') || productNameCheck.includes('catch-up') || productNameCheck.includes('quickstart'))) {
-    billing = 'one_time';
-  }
-
-  // ----- inferred price id (if payload already includes a real Stripe price id)
-  const explicitPriceId = (li.priceId || li.price_id || li.price_key || li.priceKey || null);
-  const explicitIsStripePrice = explicitPriceId && String(explicitPriceId).startsWith('price_');
-
-  // ----- build a sensible priceKey that matches backend PRICE_MAP naming
-  // Prefer baseKey (remove billing tokens from needle)
-  let baseKey = needle || '';
-  baseKey = baseKey.replace(/_(annual|monthly|month|yr|year|one_time|one|one-time|session|sessions|single|_mo|_yr)$/i, '').replace(/_+$/,'');
-  if (!baseKey && cartMatch) {
-    baseKey = normalizeKeyFront(String(cartMatch.key || cartMatch.product || cartMatch.name || cartMatch.label || ''));
-  }
-  baseKey = baseKey || needle || '';
-
-  // construct candidate mapping key (matching your server PRICE_MAP keys)
-  let candidatePriceKey = null;
-  if (billing === 'annual' && baseKey) candidatePriceKey = `${baseKey}_annual`;
-  else if (billing === 'monthly' && baseKey) candidatePriceKey = `${baseKey}_monthly`;
-  else if (billing === 'one_time' && baseKey) candidatePriceKey = `${baseKey}_one_time`;
-  else if (baseKey) candidatePriceKey = baseKey; // fallback to baseKey only
-
-  // choose the final priceId vs priceKey to send:
-  // - if payload already gives a real Stripe price_... id → preserve it in priceId
-  // - otherwise send priceKey (server will map priceKey -> price_... using PRICE_MAP)
-  const outgoingPriceId = explicitIsStripePrice ? explicitPriceId : null;
-  const outgoingPriceKey = outgoingPriceId ? null : (candidatePriceKey || null);
-
-  return {
-    ...li,
-    unit_amount: amountDollars,
-    quantity: Number(li.quantity || 1),
-    billing,
-    // server expects either priceId or a "raw" key; we set priceKey to help the server map.
-    priceId: outgoingPriceId,
-    priceKey: outgoingPriceKey,
-    // preserve the original key for debugging if present
-    key: li.key || li.price_key || li.priceKey || li.priceId || li.product || li.name || null
-  };
-});
-
-// DEBUG (keeps your debug line but now shows the new shape)
-console.log('normalizedLineItems ->', JSON.stringify(normalizedLineItems, null, 2));
-// ===== NORMALIZED LINE ITEMS (REPLACEMENT END) =====
-
-      // now post normalizedLineItems
-      const r = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        referrerPolicy: 'no-referrer',
-        body: JSON.stringify({
-          metadata: metaForStripe,
-          lineItems: normalizedLineItems,
-          email: document.getElementById('email').value || ''
-        })
-      });
-
-
-      if (!r.ok) {
-        const text = await r.text().catch(() => 'no body');
-        console.error('create-checkout-session failed:', r.status, text);
-        setStatus('Failed to create checkout session. Try again.', false);
-        proceedBtn.disabled = false;
-        return;
+      if (cartMatch && typeof cartMatch.price !== 'undefined') {
+        amountDollars = parsePriceString(cartMatch.price);
       }
 
-      const j = await r.json();
-      if (j && j.url) {
-        setStatus('Redirecting to Stripe…', false);
-        try { localStorage.setItem('techbrot_last_order_id', serverOrderId); } catch (e) {}
-        location.href = j.url;
-        return;
+      if (amountDollars === null) {
+        const fallback = li.unit_amount ?? li.price ?? li.unitAmount ?? 0;
+        const parsedFallback = parsePriceString(fallback);
+        amountDollars = parsedFallback !== null ? parsedFallback : Number(fallback) || 0;
       }
 
-      console.error('create-checkout-session unexpected response', j);
-      setStatus('Failed to create checkout session.', false);
+      if (Math.abs(amountDollars) >= 10000) amountDollars = amountDollars / 100;
+      amountDollars = Number(amountDollars || 0);
+
+      let billing = null;
+
+      const bm =
+        (cartMatch && (cartMatch.billing || cartMatch.interval || cartMatch.recurring || cartMatch.option || cartMatch.label)) ||
+        li.billing ||
+        li.interval ||
+        li.recurring ||
+        null;
+
+      if (bm && typeof bm === 'string') {
+        const b = bm.trim().toLowerCase();
+        if (b.includes('ann') || b === 'year' || b === 'annual' || b.includes('yr'))
+          billing = 'annual';
+        else if (b.includes('month') || b === 'monthly' || b.includes('mo'))
+          billing = 'monthly';
+        else if (b.includes('one') || b.includes('session') || b.includes('single') || b.includes('one-time'))
+          billing = 'one_time';
+      }
+
+      if (!billing && needle) {
+        if (needle.includes('annual') || needle.includes('_yr') || needle.includes('year')) billing = 'annual';
+        else if (needle.includes('monthly') || needle.includes('_mo') || needle.includes('month')) billing = 'monthly';
+        else if (needle.includes('one') || needle.includes('session') || needle.includes('single')) billing = 'one_time';
+      }
+
+      const productNameCheck = String(cartMatch && (cartMatch.product || cartMatch.name || cartMatch.option || cartMatch.label) || '').toLowerCase();
+      if (!billing &&
+        (productNameCheck.includes('session') ||
+         productNameCheck.includes('sessions') ||
+         productNameCheck.includes('cleanup') ||
+         productNameCheck.includes('catch-up') ||
+         productNameCheck.includes('quickstart'))) {
+        billing = 'one_time';
+      }
+
+      const explicitPriceId = (li.priceId || li.price_id || li.price_key || li.priceKey || null);
+      const explicitIsStripePrice = explicitPriceId && String(explicitPriceId).startsWith('price_');
+
+      let baseKey = needle || '';
+      baseKey = baseKey.replace(/_(annual|monthly|month|yr|year|one_time|one|one-time|session|sessions|single|_mo|_yr)$/i, '').replace(/_+$/,'');
+      if (!baseKey && cartMatch) {
+        baseKey = normalizeKeyFront(String(cartMatch.key || cartMatch.product || cartMatch.name || cartMatch.label || ''));
+      }
+      baseKey = baseKey || needle || '';
+
+      let candidatePriceKey = null;
+      if (billing === 'annual' && baseKey) candidatePriceKey = `${baseKey}_annual`;
+      else if (billing === 'monthly' && baseKey) candidatePriceKey = `${baseKey}_monthly`;
+      else if (billing === 'one_time' && baseKey) candidatePriceKey = `${baseKey}_one_time`;
+      else if (baseKey) candidatePriceKey = baseKey;
+
+      const outgoingPriceId = explicitIsStripePrice ? explicitPriceId : null;
+      const outgoingPriceKey = outgoingPriceId ? null : (candidatePriceKey || null);
+
+      return {
+        ...li,
+        unit_amount: amountDollars,
+        quantity: Number(li.quantity || 1),
+        billing,
+        priceId: outgoingPriceId,
+        priceKey: outgoingPriceKey,
+        key: li.key || li.price_key || li.priceKey || li.priceId || li.product || li.name || null
+      };
+    });
+
+    console.log('normalizedLineItems ->', JSON.stringify(normalizedLineItems, null, 2));
+    // ===== NORMALIZED LINE ITEMS (REPLACEMENT END) =====
+
+    const r = await fetch('/api/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify({
+        metadata: metaForStripe,
+        lineItems: normalizedLineItems,
+        email: document.getElementById('email').value || ''
+      })
+    });
+
+    if (!r.ok) {
+      const text = await r.text().catch(() => 'no body');
+      console.error('create-checkout-session failed:', r.status, text);
+      setStatus('Failed to create checkout session. Try again.', false);
       proceedBtn.disabled = false;
       return;
-
-    } catch (err) {
-      console.error('Proceed flow error', err);
-      setStatus('Server error. Try again or contact support.', false);
-      proceedBtn.disabled = false;
     }
-  });
+
+    const j = await r.json();
+    if (j && j.url) {
+      setStatus('Redirecting to Stripe…', false);
+      try { localStorage.setItem('techbrot_last_order_id', serverOrderId); } catch (e) {}
+      location.href = j.url;
+      return;
+    }
+
+    console.error('create-checkout-session unexpected response', j);
+    setStatus('Failed to create checkout session.', false);
+    proceedBtn.disabled = false;
+
+  } catch (err) {
+    console.error('Proceed flow error', err);
+    setStatus('Server error. Try again or contact support.', false);
+    proceedBtn.disabled = false;
+  }
+});
+
 
   // small status helper
   function setStatus(msg, spinner) {
