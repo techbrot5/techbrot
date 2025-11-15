@@ -722,6 +722,27 @@
 
 })();
 </script>
+<script>
+(async function(){
+  const params = new URLSearchParams(location.search);
+  const sessionId = params.get('session_id');
+  const orderId = localStorage.getItem('techbrot_last_order_id') || params.get('order_id');
+  const email = localStorage.getItem('techbrot_email');
+
+  if (!orderId || !email) return;
+
+  try {
+    await fetch('/api/payment-confirmed', {
+      method:'POST',
+      headers:{ 'Content-Type':'application/json' },
+      body: JSON.stringify({ session_id: sessionId, order_id: orderId, email, amount: localStorage.getItem('techbrot_amount') || undefined })
+    });
+  } catch (e) {
+    console.warn('payment confirm failed', e);
+  }
+})();
+</script>
+
 
 
 
