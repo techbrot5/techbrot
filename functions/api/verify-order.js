@@ -1,14 +1,10 @@
 // ------------------------------------------------------------------
 // functions/api/verify-order.js
-// Handles customer verification after payment confirmation email.
-// Stores verification proof, updates D1, logs event to email_attempts.
+// Handles customer verification after the verification email.
+// Stores evidence (IP + UA) in R2 and logs the event in D1.
 // ------------------------------------------------------------------
 
 export async function onRequestPost(context) {
-
-  // ------------------------------------------------------------------
-  // : ENV + REQUEST + SAFE BODY PARSE
-  // ------------------------------------------------------------------
   const env = context.env;
   const req = context.request;
   const body = await req.json().catch(() => null);
@@ -24,15 +20,13 @@ export async function onRequestPost(context) {
   const token = String(body.token);
 
   // ------------------------------------------------------------------
-  // : LOOKUP ORDER + TOKEN VALIDATION
+  // Validate token
   // ------------------------------------------------------------------
   const row = await env.DB.prepare(`
-      SELECT verification_token, token_expires_at, email 
-      FROM orders 
+      SELECT verification_token, token_expires_at, email
+      FROM orders
       WHERE order_id = ?
-    `)
-    .bind(order_id)
-    .first();
+  `).bind(order_id).first();
 
   if (!row || !row.verification_token) {
     return new Response(
@@ -59,26 +53,23 @@ export async function onRequestPost(context) {
   }
 
   // ------------------------------------------------------------------
-  // : MARK ORDER AS VERIFIED
-  // (verification DOES NOT stop follow-ups — correct behavior)
-// ------------------------------------------------------------------
+  // Mark verified (verification DOES NOT stop follow-ups — correct logic)
+  // ------------------------------------------------------------------
   try {
     await env.DB.prepare(`
-        UPDATE orders 
-        SET verified = 1,
-            verified_at = datetime('now'),
-            verification_token = NULL,
-            token_expires_at = NULL
-        WHERE order_id = ?
-      `)
-      .bind(order_id)
-      .run();
+      UPDATE orders
+      SET verified = 1,
+          verified_at = datetime('now'),
+          verification_token = NULL,
+          token_expires_at = NULL
+      WHERE order_id = ?
+    `).bind(order_id).run();
   } catch (e) {
-    console.warn("verification update error:", e);
+    console.warn("verify order update error:", e);
   }
 
   // ------------------------------------------------------------------
-  // : CAPTURE CLIENT PROOF (IP + USER AGENT)
+  // Capture client evidence (IP + UA)
   // ------------------------------------------------------------------
   const ip =
     req.headers.get("CF-Connecting-IP") ||
@@ -92,44 +83,41 @@ export async function onRequestPost(context) {
     email: row.email,
     ip,
     user_agent: ua,
-    timestamp_utc: new Date().toISOString(),
+    verified_at_utc: new Date().toISOString()
   };
 
   // ------------------------------------------------------------------
-  // : STORE VERIFICATION EVIDENCE IN R2
+  // Store evidence in R2
   // ------------------------------------------------------------------
   const key = `verification/${order_id}/${Date.now()}.json`;
 
   try {
     await env.R2.put(key, JSON.stringify(record), {
-      httpMetadata: { contentType: "application/json" },
+      httpMetadata: { contentType: "application/json" }
     });
   } catch (e) {
     console.warn("R2 write failed:", e);
   }
 
   // ------------------------------------------------------------------
-  // : LOG EVENT INTO email_attempts TABLE
-  // (this is important for disputes)
-// ------------------------------------------------------------------
+  // Log in email_attempts as a system event
+  // ------------------------------------------------------------------
   try {
     await env.DB.prepare(`
-        INSERT INTO email_attempts
-          (order_id, email_to, subject, body_snippet, status, provider_event_id, raw_r2_key)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-      `)
-      .bind(
-        order_id,
-        row.email,
-        "Order verification",
-        "Customer clicked verification link",
-        "verified",
-        `verify_${Date.now()}`,
-        key
-      )
-      .run();
+      INSERT INTO email_attempts
+        (order_id, email_to, subject, body_snippet, status, provider_event_id, raw_r2_key)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
+    `).bind(
+      order_id,
+      row.email,
+      "Order verification",
+      "Customer clicked verification link",
+      "verified",
+      `verify_${Date.now()}`,
+      key
+    ).run();
   } catch (e) {
-    console.warn("email_attempts insert failed:", e);
+    console.warn("email_attempt log failed:", e);
   }
 
   return new Response(
