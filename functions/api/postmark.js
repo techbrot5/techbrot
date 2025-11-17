@@ -19,7 +19,7 @@ export async function sendEmail(env, { to, subject, html, text, order_id }) {
       : cleanHtml.replace(/<[^>]+>/g, "").slice(0, 20000);
 
   const body = {
-    From: env.POSTMARK_FROM_EMAIL,  // REQUIRED
+    From: env.POSTMARK_FROM_EMAIL,   // ← MUST resolve to a verified sender
     To: to,
     Subject: cleanSubject,
     HtmlBody: cleanHtml,
@@ -45,33 +45,23 @@ export async function sendEmail(env, { to, subject, html, text, order_id }) {
     });
 
     status = res.status;
-
     try {
       responseJson = await res.json();
-    } catch (err) {
+    } catch {
       responseJson = { parseError: true };
     }
-
   } catch (err) {
-    responseJson = {
-      fatal: true,
-      message: err.message || "Postmark fetch error"
-    };
+    responseJson = { fatal: true, message: err.message || "Postmark fetch error" };
     status = 500;
   }
 
   // ------------------------------------------------------------------
-  // EXTRACT PROVIDER MESSAGE ID
+  // PROVIDER MESSAGE ID
   // ------------------------------------------------------------------
-  let providerId = null;
-  try {
-    providerId = responseJson?.MessageID || null;
-  } catch (_) {
-    providerId = null;
-  }
+  const providerId = responseJson?.MessageID ?? null;
 
   // ------------------------------------------------------------------
-  // SAVE FULL PROVIDER LOG TO R2 (EVIDENCE)
+  // SAVE PROVIDER LOG TO R2
   // ------------------------------------------------------------------
   const r2key = `email_attempts/${order_id || "no-order"}/${Date.now()}.json`;
 
@@ -95,7 +85,7 @@ export async function sendEmail(env, { to, subject, html, text, order_id }) {
   }
 
   // ------------------------------------------------------------------
-  // FINAL RETURN
+  // RETURN RESULT
   // ------------------------------------------------------------------
   return {
     ok: status >= 200 && status < 300,
@@ -105,3 +95,6 @@ export async function sendEmail(env, { to, subject, html, text, order_id }) {
     r2key
   };
 }
+
+// ✔ IMPORTANT — provide a default export for safety
+export default { sendEmail };
