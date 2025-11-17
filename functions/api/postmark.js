@@ -19,7 +19,7 @@ export async function sendEmail(env, { to, subject, html, text, order_id }) {
     Subject: cleanSubject,
     HtmlBody: cleanHtml,
     TextBody: cleanText,
-    MessageStream: "transactional"
+    MessageStream: "outbound"
   };
 
   let responseJson = null;
