@@ -1,62 +1,224 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Verify Order — TechBrot</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+
   <style>
-    body{font-family:Inter,system-ui,Arial;margin:20px;color:#111;background:#f6f7f8}
-    .card{max-width:720px;margin:36px auto;padding:28px;border-radius:10px;background:#fff;box-shadow:0 8px 30px rgba(2,6,23,0.06)}
-    button{background:#0fd46c;border:none;padding:12px 16px;border-radius:8px;color:#042;cursor:pointer;font-weight:600}
-    a.button{display:inline-block;padding:12px 16px;border-radius:8px;background:#0fd46c;color:#042;text-decoration:none}
+    body {
+      font-family: Inter, system-ui, Arial;
+      margin: 0;
+      padding: 24px;
+      color: #111;
+      background: #f6f7f8;
+    }
+
+    .card {
+      max-width: 720px;
+      margin: 36px auto;
+      padding: 32px;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.06);
+      animation: fadeIn 0.35s ease;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 26px;
+    }
+
+    .button-main {
+      background: #0fd46c;
+      border: none;
+      padding: 14px 22px;
+      border-radius: 10px;
+      color: #042;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 16px;
+      margin-top: 16px;
+      transition: background 0.18s ease;
+    }
+
+    .button-main:hover:not(:disabled) {
+      background: #0cc15f;
+    }
+
+    .button-main:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .success-box {
+      text-align: center;
+      padding: 40px 20px;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .success-check {
+      font-size: 64px;
+      line-height: 1;
+      margin-bottom: 14px;
+      color: #0fd46c;
+    }
+
+    .details {
+      margin-top: 24px;
+      text-align: left;
+      display: inline-block;
+      background: #f9fafb;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #333;
+      box-shadow: inset 0 0 0 1px #e5e7eb;
+    }
+
+    .details div {
+      margin-bottom: 6px;
+    }
+
+    .confetti {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 999;
+    }
+
+    @keyframes confettiFall {
+      0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
+
 <body>
-  <div class="card">
-    <h1>Verify & Authorize your order</h1>
-    <p id="desc">Click the button below to confirm you authorized this payment and accept the service terms.</p>
-    <div id="result"></div>
-    <div style="margin-top:18px">
-      <button id="verifyBtn">Verify my order</button>
-    </div>
-  </div>
+
+<div id="verifyCard" class="card">
+  <h1>Verify & Authorize your order</h1>
+  <p id="desc">
+    Click the button below to confirm you authorized this payment and accept the service terms.
+  </p>
+  <div id="result" style="margin-top:12px;"></div>
+
+  <button id="verifyBtn" class="button-main">Verify my order</button>
+</div>
+
+<div class="confetti" id="confettiContainer"></div>
 
 <script>
-(async function(){
+(function() {
   const params = new URLSearchParams(location.search);
   const orderId = params.get('order_id');
   const token = params.get('token');
+
   const btn = document.getElementById('verifyBtn');
   const resEl = document.getElementById('result');
+  const verifyCard = document.getElementById('verifyCard');
+  const confettiContainer = document.getElementById('confettiContainer');
 
   if (!orderId || !token) {
-    resEl.innerText = 'Missing or invalid verification link. Contact support.';
+    resEl.innerText = "Missing or invalid verification link. Contact support.";
     btn.disabled = true;
     return;
   }
 
   async function doVerify() {
     btn.disabled = true;
-    resEl.innerText = 'Verifying...';
+    resEl.textContent = "Verifying…";
+
     try {
-      const r = await fetch('/api/verify-order', {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
+      const r = await fetch("/api/verify-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ order_id: orderId, token })
       });
+
       const j = await r.json();
-      if (r.ok && j && j.ok) {
-        resEl.innerHTML = '<strong>Verified — thank you.</strong><p>We recorded your confirmation.</p>';
+
+      if (r.ok && j.ok) {
+        runCelebration();
+        showSuccessMessage(j);
       } else {
-        resEl.innerText = 'Verification failed: ' + (j && j.error ? j.error : 'unknown error. Contact support.');
+        btn.disabled = false;
+        resEl.textContent = "Verification failed: " + (j.error || "Unknown error. Contact support.");
       }
     } catch (e) {
-      resEl.innerText = 'Network error. Try again later.';
+      btn.disabled = false;
+      resEl.textContent = "Network error. Try again later.";
     }
   }
 
-  btn.addEventListener('click', doVerify);
+  btn.addEventListener("click", doVerify);
+
+  function showSuccessMessage(apiResponse) {
+    const now = new Date();
+    const maskedEmail = apiResponse.email
+      ? apiResponse.email.replace(/(.{2}).+(@.+)/, "$1***$2")
+      : "Hidden";
+
+    const ip = apiResponse.ip
+      ? apiResponse.ip.replace(/\.\d+$/, ".***")
+      : "Recorded";
+
+    const stripeSession = apiResponse.stripe_session_id
+      ? apiResponse.stripe_session_id.slice(-6)
+      : "N/A";
+
+    verifyCard.innerHTML = `
+      <div class="success-box">
+        <div class="success-check">✔</div>
+        <h2>Order Verified</h2>
+        <p>Your confirmation has been securely recorded.</p>
+
+        <div class="details">
+          <div><strong>Order ID:</strong> ${orderId}</div>
+          <div><strong>Email:</strong> ${maskedEmail}</div>
+          <div><strong>Verified at:</strong> ${now.toLocaleString()} (Local)</div>
+          <div><strong>UTC:</strong> ${now.toISOString()}</div>
+          <div><strong>IP:</strong> ${ip}</div>
+          <div><strong>Session:</strong> ${stripeSession}</div>
+        </div>
+
+        <p style="margin-top: 22px; color:#444">You may close this page now.</p>
+      </div>
+    `;
+  }
+
+  function runCelebration() {
+    for (let i = 0; i < 32; i++) {
+      const piece = document.createElement("div");
+      piece.style.position = "absolute";
+      piece.style.top = "-20px";
+      piece.style.left = Math.random() * 100 + "vw";
+      piece.style.width = "10px";
+      piece.style.height = "14px";
+      piece.style.background = randomColor();
+      piece.style.opacity = "0.9";
+      piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+      piece.style.animation = `confettiFall ${1.6 + Math.random()}s linear`;
+      confettiContainer.appendChild(piece);
+
+      setTimeout(() => piece.remove(), 2500);
+    }
+  }
+
+  function randomColor() {
+    const colors = ["#0fd46c", "#2dd4bf", "#60a5fa", "#facc15", "#fb923c", "#f472b6"];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+
 })();
 </script>
+
 </body>
 </html>

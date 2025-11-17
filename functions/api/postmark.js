@@ -1,27 +1,61 @@
 // functions/api/postmark.js
 //
 // Unified Postmark email sender
+// Supports:
+//   • Raw HTML emails
+//   • Postmark Templates (TemplateId / TemplateAlias + TemplateModel)
+// Includes R2 logging for dispute evidence.
 //
 
-export async function sendEmail(env, { to, subject, html, text, order_id }) {
+export async function sendEmail(
+  env,
+  {
+    to,
+    subject,
+    html,
+    text,
+    order_id,
+    templateId = null,
+    templateAlias = null,
+    templateModel = null
+  }
+) {
   const API = "https://api.postmarkapp.com/email";
 
-  const cleanSubject = String(subject || "").slice(0, 200);
-  const cleanHtml = typeof html === "string" ? html.slice(0, 20000) : "";
+  const cleanSubject = subject ? String(subject).slice(0, 200) : "";
+  const cleanHtml =
+    typeof html === "string" ? html.slice(0, 20000) : "";
   const cleanText =
     typeof text === "string"
       ? text.slice(0, 20000)
       : cleanHtml.replace(/<[^>]+>/g, "").slice(0, 20000);
 
-  const body = {
-    From: env.POSTMARK_FROM_EMAIL,   // must be verified sender
+  // -------------------------------
+  // 1) Choose TEMPLATE MODE or RAW MODE
+  // -------------------------------
+  let body = {
+    From: env.POSTMARK_FROM_EMAIL,
     To: to,
-    Subject: cleanSubject,
-    HtmlBody: cleanHtml,
-    TextBody: cleanText,
     MessageStream: "outbound"
   };
 
+  // TEMPLATE MODE (preferred)
+  if ((templateId || templateAlias) && templateModel) {
+    if (templateId) body.TemplateId = Number(templateId);
+    if (templateAlias) body.TemplateAlias = String(templateAlias);
+
+    body.TemplateModel = templateModel;
+  }
+  // RAW HTML MODE
+  else {
+    body.Subject = cleanSubject;
+    body.HtmlBody = cleanHtml;
+    body.TextBody = cleanText;
+  }
+
+  // -------------------------------
+  // 2) Send request to Postmark
+  // -------------------------------
   let responseJson = null;
   let status = 0;
 
@@ -53,6 +87,9 @@ export async function sendEmail(env, { to, subject, html, text, order_id }) {
 
   const providerId = responseJson?.MessageID ?? null;
 
+  // -------------------------------
+  // 3) Log to R2 (evidence logging)
+  // -------------------------------
   const r2key = `email_attempts/${order_id || "no-order"}/${Date.now()}.json`;
 
   try {
@@ -60,6 +97,7 @@ export async function sendEmail(env, { to, subject, html, text, order_id }) {
       r2key,
       JSON.stringify(
         {
+          mode: templateId || templateAlias ? "template" : "raw",
           request: body,
           response: responseJson,
           status,
@@ -83,5 +121,4 @@ export async function sendEmail(env, { to, subject, html, text, order_id }) {
   };
 }
 
-// ✔ Correct default export
 export default sendEmail;
