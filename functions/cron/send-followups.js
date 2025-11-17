@@ -4,7 +4,7 @@
 // Uses Postmark for sending, logs evidence through postmark.js.
 // ------------------------------------------------------------------
 
-import sendEmail from "../api/postmark.js";
+import { sendEmail } from "../api/postmark.js";
 
 export default {
   async scheduled(event, env, ctx) {
@@ -12,7 +12,7 @@ export default {
     // ------------------------------------------------------------------
     // : FETCH ALL ORDERS NEEDING FOLLOW-UP
     // Verification does NOT stop follow-ups.
-// ------------------------------------------------------------------
+    // ------------------------------------------------------------------
 
     const rows = await env.DB.prepare(`
       SELECT *

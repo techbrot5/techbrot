@@ -19,7 +19,7 @@ export async function sendEmail(env, { to, subject, html, text, order_id }) {
       : cleanHtml.replace(/<[^>]+>/g, "").slice(0, 20000);
 
   const body = {
-    From: env.POSTMARK_FROM_EMAIL,
+    From: env.POSTMARK_FROM_EMAIL,  // REQUIRED
     To: to,
     Subject: cleanSubject,
     HtmlBody: cleanHtml,
@@ -105,5 +105,3 @@ export async function sendEmail(env, { to, subject, html, text, order_id }) {
     r2key
   };
 }
-
-export default sendEmail;

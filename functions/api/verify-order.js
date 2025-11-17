@@ -20,9 +20,6 @@ export async function onRequestPost(context) {
     );
   }
 
-  // ------------------------------------------------------------------
-  // : SANITIZED INPUTS
-  // ------------------------------------------------------------------
   const order_id = String(body.order_id);
   const token = String(body.token);
 
@@ -63,7 +60,8 @@ export async function onRequestPost(context) {
 
   // ------------------------------------------------------------------
   // : MARK ORDER AS VERIFIED
-  // ------------------------------------------------------------------
+  // (verification DOES NOT stop follow-ups — correct behavior)
+// ------------------------------------------------------------------
   try {
     await env.DB.prepare(`
         UPDATE orders 
@@ -86,6 +84,7 @@ export async function onRequestPost(context) {
     req.headers.get("CF-Connecting-IP") ||
     req.headers.get("x-forwarded-for") ||
     "";
+
   const ua = req.headers.get("user-agent") || "";
 
   const record = {
@@ -111,7 +110,8 @@ export async function onRequestPost(context) {
 
   // ------------------------------------------------------------------
   // : LOG EVENT INTO email_attempts TABLE
-  // ------------------------------------------------------------------
+  // (this is important for disputes)
+// ------------------------------------------------------------------
   try {
     await env.DB.prepare(`
         INSERT INTO email_attempts
@@ -132,9 +132,6 @@ export async function onRequestPost(context) {
     console.warn("email_attempts insert failed:", e);
   }
 
-  // ------------------------------------------------------------------
-  // : RETURN SUCCESS
-  // ------------------------------------------------------------------
   return new Response(
     JSON.stringify({ ok: true, order_id, r2_key: key }),
     { headers: { "Content-Type": "application/json" } }
