@@ -4,7 +4,7 @@
 // email sending, and evidence-safe logging.
 // ------------------------------------------------------------------
 
-import { sendEmailMailerSend } from "./mailersend.js";
+import sendEmail from "./postmark.js";
 
 export async function onRequestPost(context) {
   // ------------------------------------------------------------------
@@ -109,9 +109,9 @@ export async function onRequestPost(context) {
   `;
 
   // ------------------------------------------------------------------
-  // : SEND MAIL USING STANDARDIZED WRAPPER
+  // : SEND EMAIL VIA POSTMARK WRAPPER
   // ------------------------------------------------------------------
-  const sent1 = await sendEmailMailerSend(env, {
+  const sent1 = await sendEmail(env, {
     to: email,
     subject: `TechBrot — Order ${order_id} Confirmed — Verify`,
     html: htmlConfirm,
@@ -134,7 +134,7 @@ export async function onRequestPost(context) {
         `Order ${order_id} Confirmed`,
         htmlConfirm.slice(0, 200),
         sent1.ok ? "sent" : "failed",
-        sent1.provider_id || `mailersend_${Date.now()}`,
+        sent1.provider_id || `postmark_${Date.now()}`,
         sent1.r2key
       )
       .run();

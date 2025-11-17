@@ -1,17 +1,12 @@
-// functions/api/mailersend.js
+// functions/api/postmark.js
+//
+// Unified Postmark email sender
+// Used for payment confirmation, verification, follow-ups,
+// and all transactional evidence-logged emails.
+//
 
-/**
- * sendEmailMailerSend
- * Unified MailerSend wrapper used by:
- *  - payment-confirmed.js
- *  - send-followups.js
- *  - any future transactional emails
- *
- * Fully aligned with TechBrot evidence logging conventions.
- */
-
-export async function sendEmailMailerSend(env, { to, subject, html, text, order_id }) {
-  const API = "https://api.mailersend.com/v1/email";
+export async function sendEmail(env, { to, subject, html, text, order_id }) {
+  const API = "https://api.postmarkapp.com/email";
 
   // ------------------------------------------------------------------
   // SANITIZE + BUILD PAYLOAD
@@ -24,11 +19,12 @@ export async function sendEmailMailerSend(env, { to, subject, html, text, order_
       : cleanHtml.replace(/<[^>]+>/g, "").slice(0, 20000);
 
   const body = {
-    from: { email: env.MAILERSEND_FROM_EMAIL },
-    to: [{ email: to }],
-    subject: cleanSubject,
-    html: cleanHtml,
-    text: cleanText
+    From: env.POSTMARK_FROM_EMAIL,
+    To: to,
+    Subject: cleanSubject,
+    HtmlBody: cleanHtml,
+    TextBody: cleanText,
+    MessageStream: "transactional"
   };
 
   // ------------------------------------------------------------------
@@ -41,7 +37,8 @@ export async function sendEmailMailerSend(env, { to, subject, html, text, order_
     const res = await fetch(API, {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${env.MAILERSEND_API_TOKEN}`,
+        "X-Postmark-Server-Token": env.POSTMARK_API_TOKEN,
+        "Accept": "application/json",
         "Content-Type": "application/json"
       },
       body: JSON.stringify(body)
@@ -54,31 +51,27 @@ export async function sendEmailMailerSend(env, { to, subject, html, text, order_
     } catch (err) {
       responseJson = { parseError: true };
     }
+
   } catch (err) {
-    // catastrophic network failure
     responseJson = {
       fatal: true,
-      message: err.message || "MailerSend fetch error"
+      message: err.message || "Postmark fetch error"
     };
     status = 500;
   }
 
   // ------------------------------------------------------------------
-  // EXTRACT PROVIDER MESSAGE ID (if present)
+  // EXTRACT PROVIDER MESSAGE ID
   // ------------------------------------------------------------------
   let providerId = null;
-
   try {
-    providerId =
-      responseJson?.data?.[0]?.id ||
-      responseJson?.message_id ||
-      null;
-  } catch (e) {
+    providerId = responseJson?.MessageID || null;
+  } catch (_) {
     providerId = null;
   }
 
   // ------------------------------------------------------------------
-  // SAVE FULL PROVIDER LOG TO R2 (your repo standard)
+  // SAVE FULL PROVIDER LOG TO R2 (EVIDENCE)
   // ------------------------------------------------------------------
   const r2key = `email_attempts/${order_id || "no-order"}/${Date.now()}.json`;
 
@@ -112,3 +105,5 @@ export async function sendEmailMailerSend(env, { to, subject, html, text, order_
     r2key
   };
 }
+
+export default sendEmail;
