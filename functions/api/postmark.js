@@ -1,16 +1,11 @@
 // functions/api/postmark.js
 //
 // Unified Postmark email sender
-// Used for payment confirmation, verification, follow-ups,
-// and all transactional evidence-logged emails.
 //
 
 export async function sendEmail(env, { to, subject, html, text, order_id }) {
   const API = "https://api.postmarkapp.com/email";
 
-  // ------------------------------------------------------------------
-  // SANITIZE + BUILD PAYLOAD
-  // ------------------------------------------------------------------
   const cleanSubject = String(subject || "").slice(0, 200);
   const cleanHtml = typeof html === "string" ? html.slice(0, 20000) : "";
   const cleanText =
@@ -19,7 +14,7 @@ export async function sendEmail(env, { to, subject, html, text, order_id }) {
       : cleanHtml.replace(/<[^>]+>/g, "").slice(0, 20000);
 
   const body = {
-    From: env.POSTMARK_FROM_EMAIL,   // ← MUST resolve to a verified sender
+    From: env.POSTMARK_FROM_EMAIL,   // must be verified sender
     To: to,
     Subject: cleanSubject,
     HtmlBody: cleanHtml,
@@ -27,9 +22,6 @@ export async function sendEmail(env, { to, subject, html, text, order_id }) {
     MessageStream: "transactional"
   };
 
-  // ------------------------------------------------------------------
-  // SEND EMAIL
-  // ------------------------------------------------------------------
   let responseJson = null;
   let status = 0;
 
@@ -38,31 +30,29 @@ export async function sendEmail(env, { to, subject, html, text, order_id }) {
       method: "POST",
       headers: {
         "X-Postmark-Server-Token": env.POSTMARK_API_TOKEN,
-        "Accept": "application/json",
+        Accept: "application/json",
         "Content-Type": "application/json"
       },
       body: JSON.stringify(body)
     });
 
     status = res.status;
+
     try {
       responseJson = await res.json();
     } catch {
       responseJson = { parseError: true };
     }
   } catch (err) {
-    responseJson = { fatal: true, message: err.message || "Postmark fetch error" };
+    responseJson = {
+      fatal: true,
+      message: err.message || "Postmark fetch error"
+    };
     status = 500;
   }
 
-  // ------------------------------------------------------------------
-  // PROVIDER MESSAGE ID
-  // ------------------------------------------------------------------
   const providerId = responseJson?.MessageID ?? null;
 
-  // ------------------------------------------------------------------
-  // SAVE PROVIDER LOG TO R2
-  // ------------------------------------------------------------------
   const r2key = `email_attempts/${order_id || "no-order"}/${Date.now()}.json`;
 
   try {
@@ -84,9 +74,6 @@ export async function sendEmail(env, { to, subject, html, text, order_id }) {
     console.warn("R2 save failed", err);
   }
 
-  // ------------------------------------------------------------------
-  // RETURN RESULT
-  // ------------------------------------------------------------------
   return {
     ok: status >= 200 && status < 300,
     status,
@@ -96,5 +83,5 @@ export async function sendEmail(env, { to, subject, html, text, order_id }) {
   };
 }
 
-// ✔ IMPORTANT — provide a default export for safety
-export default { sendEmail };
+// ✔ Correct default export
+export default sendEmail;

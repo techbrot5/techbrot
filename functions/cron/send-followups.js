@@ -1,48 +1,29 @@
-// ------------------------------------------------------------------
 // functions/cron/send-followups.js
-// Sends follow-up emails for paid orders that require reminders.
-// Uses Postmark for sending, logs evidence through postmark.js.
-// ------------------------------------------------------------------
+// Sends follow-up emails for paid orders.
 
-import { sendEmail } from "../api/postmark.js";
+import sendEmail from "../api/postmark.js";
 
 export default {
   async scheduled(event, env, ctx) {
-
-    // ------------------------------------------------------------------
-    // : FETCH ALL ORDERS NEEDING FOLLOW-UP
-    // Verification does NOT stop follow-ups.
-    // ------------------------------------------------------------------
 
     const rows = await env.DB.prepare(`
       SELECT *
       FROM orders
       WHERE paid = 1
-        AND customer_responded = 0   -- STOP only if customer replies
-        AND next_email_index <= 5    -- Up to 5 follow-ups total
+        AND customer_responded = 0
+        AND next_email_index <= 5
     `).all();
 
     const now = Date.now();
 
-    // ------------------------------------------------------------------
-    // : LOOP THROUGH PENDING ORDERS
-    // ------------------------------------------------------------------
     for (const order of rows.results || []) {
 
-      // ------------------------------------------------------------------
-      // : RATE LIMIT — once every 24 hours
-      // ------------------------------------------------------------------
       const last = order.last_email_sent_at
         ? new Date(order.last_email_sent_at).getTime()
         : 0;
 
-      if (last && now - last < 24 * 3600 * 1000) {
-        continue; // skip this order
-      }
+      if (last && now - last < 24 * 3600 * 1000) continue;
 
-      // ------------------------------------------------------------------
-      // : BUILD SUBJECT + HTML
-      // ------------------------------------------------------------------
       const idx = order.next_email_index || 1;
 
       const subject =
@@ -65,9 +46,6 @@ export default {
         <p>If you already verified, you may ignore this reminder.</p>
       `;
 
-      // ------------------------------------------------------------------
-      // : SEND FOLLOW-UP EMAIL (POSTMARK)
-      // ------------------------------------------------------------------
       const sent = await sendEmail(env, {
         to: order.email,
         subject,
@@ -76,9 +54,6 @@ export default {
         order_id: order.order_id
       });
 
-      // ------------------------------------------------------------------
-      // : LOG INTO email_attempts TABLE
-      // ------------------------------------------------------------------
       try {
         await env.DB.prepare(`
           INSERT INTO email_attempts
@@ -99,9 +74,6 @@ export default {
         console.warn("email_attempt logging failed:", e);
       }
 
-      // ------------------------------------------------------------------
-      // : INCREMENT next_email_index + UPDATE last_email_sent_at
-      // ------------------------------------------------------------------
       const nextIdx = Math.min(5, idx + 1);
 
       try {
@@ -118,9 +90,6 @@ export default {
       }
     }
 
-    // ------------------------------------------------------------------
-    // : WRITE CRON HISTORY
-    // ------------------------------------------------------------------
     try {
       await env.DB.prepare(`
         INSERT INTO cron_history (processed, notes)
@@ -131,5 +100,5 @@ export default {
     } catch (e) {
       console.warn("cron history insert failed:", e);
     }
-  },
+  }
 };
