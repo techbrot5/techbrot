@@ -1,11 +1,9 @@
 name = "techbrot"
-main = "functions"
 compatibility_date = "2024-11-01"
 compatibility_flags = ["nodejs_compat"]
 
-# Enable Cloudflare Browser Rendering API
-browser = { binding = "BROWSER" }
+# Serve site from root
+pages_build_output_dir = "."
 
-# Cron (existing)
-[triggers]
-crons = ["0 * * * *"]
+[observability]
+enabled = true
