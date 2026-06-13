@@ -1,0 +1,143 @@
+{#- Site header chrome — NEW SKIN (changeover round 10, 03-chrome.SKIN).
+    chrome: "full" (default) | "minimal" (T-BOFU conversion endpoints —
+    logo + phone only, no nav = no funnel leakage). Link set carried
+    verbatim from the old chrome (content equity); markup re-cut to the
+    new class vocabulary. Behavior contract = tb-nav.js (aria-expanded
+    toggles, data-open panels, Escape/outside close, drawer focus). -#}
+{%- if chrome != "minimal" %}
+<div class="util-bar" role="region" aria-label="Secondary">
+  <div class="container">
+    <span>Independent Certified QuickBooks ProAdvisor firm &middot; U.S.-based</span>
+    <nav aria-label="For accountants and partners">
+      <a href="/find-an-accountant/">Find an Accountant</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/partners/">For Accountants &rarr;</a>
+    </nav>
+  </div>
+</div>
+{%- endif %}
+
+<header class="site-header{% if chrome == "minimal" %} site-header--minimal{% endif %}" role="banner" id="site-header">
+  <div class="container">
+    <a class="site-header__logo" href="/" aria-label="TechBrot home">
+      <img src="/assets/img/brand/logo-horizontal.svg" alt="TechBrot" width="116" height="30">
+    </a>
+
+    {%- if chrome != "minimal" %}
+    <ul class="site-nav" aria-label="Primary navigation" id="primary-nav">
+      <li class="nav__item">
+        <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-accounting" aria-haspopup="true">Accounting</button>
+        <div class="nav__dropdown" id="nav-menu-accounting" role="region" aria-label="Accounting services" data-open="false">
+          <a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping<span>Recurring close, weekly cadence</span></a>
+          <a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup bookkeeping<span>Books out of order, rebuilt</span></a>
+          <a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping<span>Months or years behind</span></a>
+          <a href="/accounting/payroll-management/">Payroll management</a>
+          <a href="/accounting/sales-tax-compliance/">Sales tax compliance</a>
+          <a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a>
+          <a href="/accounting/services/">All services &rarr;</a>
+          <a href="/accounting/">Accounting overview &rarr;</a>
+        </div>
+      </li>
+      <li class="nav__item">
+        <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-quickbooks" aria-haspopup="true">QuickBooks</button>
+        <div class="nav__dropdown" id="nav-menu-quickbooks" role="region" aria-label="QuickBooks services" data-open="false">
+          <a href="/quickbooks/setup/">Setup &amp; onboarding</a>
+          <a href="/quickbooks/cleanup/">File cleanup</a>
+          <a href="/quickbooks/migration/">Desktop &rarr; Online migration</a>
+          <a href="/quickbooks/help/">QuickBooks help</a>
+          <a href="/quickbooks/payroll/">QuickBooks Payroll</a>
+          <a href="/quickbooks/proadvisor-team/">Our ProAdvisor team</a>
+          <a href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a>
+          <a href="/quickbooks/">QuickBooks overview &rarr;</a>
+        </div>
+      </li>
+      <li class="nav__item"><a class="nav__link" href="/find-an-accountant/">Find an Accountant</a></li>
+      <li class="nav__item"><a class="nav__link" href="/pricing/">Pricing</a></li>
+      <li class="nav__item">
+        <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-why" aria-haspopup="true">Why TechBrot</button>
+        <div class="nav__dropdown" id="nav-menu-why" role="region" aria-label="Why TechBrot" data-open="false">
+          <a href="/trust/">Trust &amp; standards</a>
+          <a href="/about/methodology/">Our methodology</a>
+          <a href="/reviews/">Client reviews</a>
+          <a href="/vs/">Comparisons</a>
+          <a href="/about/">About &amp; team</a>
+        </div>
+      </li>
+    </ul>
+    {%- endif %}
+
+    <div class="site-header__actions">
+      <a class="site-header__phone" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click" aria-label="Call TechBrot at {{ site.phone.display }}">
+        {% include "icons/phone.svg" %}
+        <span class="site-header__phone-num">{{ site.phone.display }}</span>
+      </a>
+      {%- if chrome != "minimal" %}
+      <a class="btn btn--primary site-header__cta" href="/contact/?intent=home">Book the discovery call</a>
+      <button class="nav__hamburger" type="button" aria-expanded="false" aria-controls="site-drawer" aria-label="Open navigation menu">
+        {% include "icons/menu.svg" %}
+      </button>
+      {%- endif %}
+    </div>
+  </div>
+</header>
+
+{%- if chrome != "minimal" %}
+<div class="drawer" id="site-drawer" role="dialog" aria-modal="true" aria-label="Navigation" data-open="false">
+  <div class="drawer__head">
+    <a class="site-header__logo" href="/" aria-label="TechBrot home">
+      <img src="/assets/img/brand/logo-horizontal.svg" alt="TechBrot" width="116" height="30">
+    </a>
+    <button class="drawer__close" type="button" aria-label="Close navigation menu" data-action="close-drawer">
+      {% include "icons/x.svg" %}
+    </button>
+  </div>
+  <nav aria-label="Mobile primary navigation">
+    <div class="drawer__group">
+      <button class="drawer__trigger" type="button" aria-expanded="false" aria-controls="drawer-accounting">Accounting</button>
+      <div class="drawer__panel" id="drawer-accounting" data-open="false">
+        <ul>
+          <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+          <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup bookkeeping</a></li>
+          <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+          <li><a href="/accounting/payroll-management/">Payroll management</a></li>
+          <li><a href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+          <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+          <li><a href="/accounting/">Accounting overview &rarr;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="drawer__group">
+      <button class="drawer__trigger" type="button" aria-expanded="false" aria-controls="drawer-quickbooks">QuickBooks</button>
+      <div class="drawer__panel" id="drawer-quickbooks" data-open="false">
+        <ul>
+          <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+          <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+          <li><a href="/quickbooks/migration/">Migration</a></li>
+          <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+          <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+          <li><a href="/quickbooks/">QuickBooks overview &rarr;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="drawer__group"><a class="drawer__link" href="/find-an-accountant/">Find an Accountant</a></div>
+    <div class="drawer__group"><a class="drawer__link" href="/pricing/">Pricing</a></div>
+    <div class="drawer__group">
+      <button class="drawer__trigger" type="button" aria-expanded="false" aria-controls="drawer-why">Why TechBrot</button>
+      <div class="drawer__panel" id="drawer-why" data-open="false">
+        <ul>
+          <li><a href="/trust/">Trust &amp; standards</a></li>
+          <li><a href="/about/methodology/">Our methodology</a></li>
+          <li><a href="/reviews/">Client reviews</a></li>
+          <li><a href="/vs/">Comparisons</a></li>
+          <li><a href="/about/">About &amp; team</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="drawer__group"><a class="drawer__link" href="/partners/">For Accountants</a></div>
+  </nav>
+  <div class="drawer__foot">
+    <a class="btn btn--primary btn--lg" href="/contact/?intent=home">Book the discovery call</a>
+    <a class="phone-cta" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">{% include "icons/phone.svg" %} {{ site.phone.display }}</a>
+  </div>
+</div>
+{%- endif %}

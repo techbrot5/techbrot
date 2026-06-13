@@ -1,0 +1,91 @@
+/* 04-chrome.css — INSTALLED from handoff/03-chrome.SKIN.css by _build/extract_css.py (changeover round 10) · R1 re-tokenized. Edit the handoff source, not this file. */
+/* ============================================================================
+   TechBrot · NEW SKIN · 03 — SITE CHROME (Stage 2)
+   util-bar · sticky header + dropdown · mobile drawer · dark footer ·
+   minimal (BOFU) variants. Token-only. Behavior contract = tb-nav.js
+   (aria-expanded toggles, Escape/outside close, drawer focus trap) unchanged.
+   ============================================================================ */
+
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--color-ink);color:var(--color-ink-inverted);padding:var(--space-3) var(--space-5);border-radius:0 0 var(--radius-md) 0;z-index:var(--z-toast)}
+.skip-link:focus{left:0}
+.container{max-width:var(--container-max);margin:0 auto;padding:0 var(--container-padding-lg)}
+
+/* ---- util bar ---- */
+.util-bar{background:var(--bg-section-alt);border-bottom:1px solid var(--border-hairline);font-size:var(--fs-13);color:var(--text-secondary)}
+.util-bar .container{display:flex;justify-content:space-between;align-items:center;height:36px}
+.util-bar a{color:var(--text-secondary);text-decoration:none}
+.util-bar a:hover{color:var(--text-primary)}
+.util-bar__phone{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+
+/* ---- sticky header ---- */
+.site-header{position:sticky;top:0;z-index:var(--z-header);background:rgba(251,250,247,0.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border-hairline);transition:height var(--motion-base) var(--ease-out)}
+.site-header .container{display:flex;align-items:center;gap:var(--space-8);height:var(--header-height)}
+.site-header.is-scrolled .container{height:var(--header-height-scrolled)}
+.site-header__logo{display:flex;align-items:center;text-decoration:none;flex:none}
+.site-nav{display:flex;align-items:center;gap:var(--space-1);margin-right:auto;list-style:none;padding:0;margin-top:0;margin-bottom:0}
+.nav__item{position:relative}
+.nav__link,.nav__trigger{display:inline-flex;align-items:center;gap:var(--space-1);font-family:var(--font-sans);font-size:var(--fs-14);font-weight:var(--fw-medium);color:var(--text-body);text-decoration:none;background:none;border:0;padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);cursor:pointer;transition:background var(--motion-fast) var(--ease-out),color var(--motion-fast) var(--ease-out)}
+.nav__link:hover,.nav__trigger:hover,.nav__trigger[aria-expanded="true"]{background:var(--bg-section-alt);color:var(--text-primary)}
+.nav__link[aria-current="page"]{color:var(--text-primary)}
+.nav__trigger::after{content:"";width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin:-3px 0 0 2px;transition:transform var(--motion-base) var(--ease-out)}
+.nav__trigger[aria-expanded="true"]::after{transform:rotate(225deg);margin-top:3px}
+.nav__dropdown{position:absolute;top:calc(100% + 6px);left:0;min-width:280px;background:var(--bg-card);border:1px solid var(--border-hairline);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:var(--space-2);display:none;z-index:var(--z-dropdown)}
+.nav__dropdown[data-open="true"]{display:block}
+.nav__dropdown a{display:block;padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);font-size:var(--fs-14);font-weight:var(--fw-medium);color:var(--text-primary);text-decoration:none}
+.nav__dropdown a:hover{background:var(--color-paper-mist)}
+.nav__dropdown a span{display:block;font-size:var(--fs-12);font-weight:var(--fw-regular);color:var(--text-secondary);margin-top:1px}
+.site-header__actions{display:flex;align-items:center;gap:var(--space-4);flex:none}
+.site-header__phone{display:inline-flex;align-items:center;gap:var(--space-2);font-family:var(--font-mono);font-size:var(--fs-14);font-variant-numeric:tabular-nums;color:var(--text-primary);text-decoration:none}
+.site-header__phone:hover{color:var(--color-accent-deep)}
+.site-header__phone svg{color:var(--accent)}
+.nav__hamburger{display:none;background:none;border:0;color:var(--text-primary);padding:var(--space-2);cursor:pointer;border-radius:var(--radius-md)}
+@media (max-width:920px){.site-nav,.site-header__cta{display:none}.nav__hamburger{display:inline-flex}}
+/* R13 mobile-nav fix: on true phone widths the logo + full phone number +
+   hamburger row overran the viewport and clipped the hamburger off-screen.
+   Below 480px the phone collapses to its tappable icon (number hidden; the
+   link keeps its accessible name via aria-label), leaving ample room for the
+   hamburger. The min-width:0 lets the actions row shrink instead of pushing
+   the hamburger out. */
+.site-header__actions{min-width:0}
+@media (max-width:480px){.site-header__phone-num{display:none}}
+
+/* ---- minimal header (BOFU: logo + phone only) ---- */
+.site-header--minimal .container{justify-content:space-between}
+
+/* ---- mobile drawer ---- */
+.drawer{position:fixed;inset:0;z-index:var(--z-drawer);background:var(--color-paper);display:flex;flex-direction:column;padding:0 var(--container-padding) var(--space-8);transform:translateX(100%);transition:transform var(--motion-slow) var(--ease-out);overflow-y:auto}
+.drawer[data-open="true"]{transform:translateX(0)}
+.drawer__head{display:flex;justify-content:space-between;align-items:center;height:var(--header-height);border-bottom:1px solid var(--border-hairline);margin-bottom:var(--space-4)}
+.drawer__close{background:none;border:0;color:var(--text-primary);padding:var(--space-2);cursor:pointer;border-radius:var(--radius-md)}
+.drawer__group{border-bottom:1px solid var(--border-hairline)}
+.drawer__trigger{width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:0;padding:var(--space-4) 0;font-family:var(--font-sans);font-size:var(--fs-17);font-weight:var(--fw-semibold);color:var(--text-primary);cursor:pointer}
+.drawer__trigger::after{content:"";width:8px;height:8px;border-right:1.75px solid var(--color-ink-mute);border-bottom:1.75px solid var(--color-ink-mute);transform:rotate(45deg);transition:transform var(--motion-base) var(--ease-out)}
+.drawer__trigger[aria-expanded="true"]::after{transform:rotate(225deg)}
+.drawer__panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows var(--motion-base) var(--ease-out)}
+.drawer__panel[data-open="true"]{grid-template-rows:1fr}
+.drawer__panel ul{overflow:hidden;min-height:0;list-style:none;margin:0;padding:0}
+.drawer__panel a{display:block;padding:var(--space-2) 0 var(--space-3);font-size:var(--fs-15);color:var(--text-body);text-decoration:none}
+.drawer__link{display:block;padding:var(--space-4) 0;font-size:var(--fs-17);font-weight:var(--fw-semibold);color:var(--text-primary);text-decoration:none}
+.drawer__foot{margin-top:auto;padding-top:var(--space-8);display:grid;gap:var(--space-4)}
+
+/* ---- footer (dark) ---- */
+.site-footer{background:var(--color-surface-dark);color:var(--color-ink-inverted-mute);font-size:var(--fs-14)}
+.site-footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:var(--space-8);padding:var(--space-16) 0 var(--space-10)}
+@media (max-width:920px){.site-footer__grid{grid-template-columns:1fr 1fr}}
+.site-footer__note{margin:var(--space-4) 0 0;max-width:30em;line-height:var(--lh-base)}
+.site-footer__col h2{font-family:var(--font-sans);font-size:var(--fs-12);font-weight:var(--fw-semibold);letter-spacing:var(--ls-wider);text-transform:uppercase;color:var(--color-ink-inverted);margin:0 0 var(--space-4)}
+.site-footer__col ul{list-style:none;margin:0;padding:0;display:grid;gap:var(--space-2)}
+.site-footer__col a{color:var(--color-ink-inverted-mute);text-decoration:none}
+.site-footer__col a:hover{color:var(--color-ink-inverted)}
+.site-footer__disclosure{position:relative;border-top:1px solid rgba(245,243,236,0.12);padding:var(--space-5) 0;font-size:var(--fs-13);line-height:var(--lh-base)}
+.site-footer__disclosure::before{content:"";position:absolute;top:-2px;left:0;width:48px;height:3px;background:linear-gradient(90deg,var(--color-accent-soft) 0 30px,transparent 30px 34px,var(--color-accent-soft) 34px 48px)}
+.site-footer__legal{display:flex;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;border-top:1px solid rgba(245,243,236,0.12);padding:var(--space-5) 0 var(--space-8);font-size:var(--fs-13)}
+.site-footer__legal a{color:var(--color-ink-inverted-mute);text-decoration:underline;text-underline-offset:0.16em}
+.site-footer__legal a:hover{color:var(--color-ink-inverted)}
+
+/* ---- minimal footer (BOFU slim) ---- */
+.site-footer--minimal .site-footer__slim{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--space-8);flex-wrap:wrap;padding:var(--space-10) 0 var(--space-4)}
+
+@media (max-width:920px){.util-bar{display:none}}
+.drawer{visibility:hidden;transition:transform var(--motion-slow) var(--ease-out),visibility 0s var(--motion-slow)}.drawer[data-open="true"]{visibility:visible;transition:transform var(--motion-slow) var(--ease-out),visibility 0s 0s}
+.site-footer strong{color:var(--color-ink-inverted)}.site-footer__disclosure a{color:var(--color-ink-inverted);text-decoration:underline;text-underline-offset:0.16em}.site-footer__slim a{color:var(--color-ink-inverted-mute)}.site-footer__slim a:hover{color:var(--color-ink-inverted)}

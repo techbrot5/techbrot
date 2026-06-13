@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+<!-- ============================================================================
+  TECHBROT.COM — GLOBAL HEAD (PRODUCTION v4)
+  Bootstrap Studio Global Template · Loads sitewide on every page
+  ----------------------------------------------------------------------------
+  SCOPE:    Site-level signals only. Each page sets:
+              • <title>
+              • <meta name="description">
+              • <link rel="canonical">
+              • <link rel="alternate" hreflang>
+              • <meta property="og:url">
+              • <meta property="og:title">
+              • <meta property="og:description">
+              • <meta name="twitter:title">
+              • <meta name="twitter:description">
+              • Page-specific schema: WebPage, BreadcrumbList, FAQPage,
+                QAPage, Article, Service offerings — all referencing
+                the global Organization / Person / WebSite via @id.
+
+  GOAL:     Top 0.01% AI citation, entity SEO, E-E-A-T, semantic search,
+            Google / Perplexity / ChatGPT / Claude / Gemini retrieval.
+
+  STACK:    Bootstrap Studio · Static HTML · TechBrot Inc. (US C-Corp)
+  MODEL:    Independent accounting platform with vetted local partners
+
+  v4 CHANGE LOG:
+    • Added Person node for David Westgate (#david-westgate) — Lead
+      QuickBooks ProAdvisor, the named/visible page author referenced by
+      each page's WebPage.reviewedBy. Both Abid (founder/CEO) and David
+      (lead ProAdvisor) are certified; David references the same shared
+      #credential-* entities by @id. Abid remains founder + off visible
+      pages (org-level relationship, not page authorship).
+  UPDATED:  June 2026
+============================================================================ -->
+
+
+<!-- ── 01. RENDERING ──────────────────────────────────── -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- ── 02. PAGE IDENTITY — GLOBAL FALLBACKS (overridden per page) ─────────
+  These are global safety-net values. Every real page overrides title
+  and description in its own head.
+<title>A Modern Accounting Platform with Vetted Local Partners · TechBrot</title>
+<meta name="description" content="TechBrot is an independent U.S. accounting platform delivering QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations through a curated network of vetted local partners.">
+ -->
+
+<!-- ── 03. CANONICAL & HREFLANG — PER-PAGE ONLY ──────────────────────────
+  Reference template (do NOT uncomment globally):
+    <link rel="canonical" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="en-US" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="x-default" href="https://techbrot.com/[slug]/">
+-->
+
+
+<!-- ── 04. INDEXING & CRAWL DIRECTIVES ───────────────────────────────────
+  AI crawler policy (GPTBot, ClaudeBot, PerplexityBot, Google-Extended,
+  Applebot-Extended) is managed at robots.txt + Cloudflare WAF level.
+  These meta directives govern traditional search crawlers only. -->
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="bingbot" content="index, follow">
+
+
+<!-- ── 05. SITE IDENTITY & AUTHORSHIP ────────────────────────────────────-->
+
+<meta name="author" content="TechBrot Inc.">
+<meta name="application-name" content="TechBrot">
+<meta name="apple-mobile-web-app-title" content="TechBrot">
+
+<!-- ── 06. GEO & LOCALE ──────────────────────────────────────────────────
+  Registered: 651 N Broad St, Suite 201, Middletown, DE 19709.
+  Service area: 50 US states (national virtual + local partner network).
+  geo.region uses ISO 3166-2 (US-DE). Nationwide service is declared in
+  Organization schema areaServed (full state ItemList below). -->
+
+<meta http-equiv="content-language" content="en-US">
+<meta name="language" content="English">
+
+<!-- ── 07. BROWSER, DEVICE & PWA ─────────────────────────────────────────-->
+
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B0B" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-TileColor" content="#FAFAF7">
+<meta name="msapplication-config" content="/browserconfig.xml">
+
+
+<!-- ── 08. SECURITY & REFERRER ───────────────────────────────────────────-->
+
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+
+<!-- ── 09. OPEN GRAPH — SITE-LEVEL ONLY (image is per-page) ─────────────
+  Per-page sets: og:url, og:title, og:description, og:image (+ dimensions),
+  and og:type="article" on articles. Global default og:type is "website". -->
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TechBrot">
+<meta property="og:locale" content="en_US">
+
+<!-- ── 10. TWITTER / X CARD — SITE-LEVEL ONLY (image is per-page) ───────-->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@techbrot_inc">
+<meta name="twitter:creator" content="@techbrot_inc">
+
+<!-- ── 11. FAVICONS, ICONS & WEB APP MANIFEST ───────────────────────────-->
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/img/brand/safari-pinned-tab.svg" color="#0B0B0B">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<!-- ── 12. SITEMAP & FEEDS ──────────────────────────────────────────────-->
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+
+<!-- ── 13. PERFORMANCE: PRECONNECT, DNS-PREFETCH, FONT PRELOAD ──────────
+  Fonts: Fraunces (serif headings) + Inter (sans body/UI), both Google.
+  Preloading the two heaviest weights eliminates layout-shift on first
+  paint. Adjust paths if you self-host. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+
+<link rel="preload" as="image" href="/assets/img/brand/wordmark.svg" fetchpriority="high">
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<!-- ── 14. STRUCTURED DATA — ENTITY GRAPH ───────────────────────────────
+  Six-node @graph:
+    1. Organization (multi-type: Organization + ProfessionalService) —
+       the primary entity. Brand, knowsAbout (topical authority),
+       hasOfferCatalog (service routing), areaServed (full US),
+       contactPoint (toll-free), full sameAs cluster.
+    2. Brand — separate Brand entity for AI knowledge-graph systems.
+    3. Person (Abid Khan) — founder/CEO authority; certified ProAdvisor.
+    4. Person (David Westgate) — Lead ProAdvisor; the named, visible page
+       author referenced by each page's WebPage.reviewedBy. Both are
+       certified and share the #credential-* entities by @id.
+    5. WebSite — publisher entity with SearchAction.
+    (ProAdvisor credential entities #credential-* are defined inline on
+     the Abid node and referenced by David.)
+
+  Per-page schema attaches via @id reference, never duplicates these. -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://techbrot.com/#organization",
+
+      "name": "TechBrot Inc.",
+      "legalName": "TechBrot Inc.",
+      "alternateName": [
+        "TechBrot",
+        "TechBrot Network",
+        "TechBrot Accounting Platform"
+      ],
+      "slogan": "A modern accounting platform with vetted local partners.",
+      "description": "TechBrot Inc. is an independent U.S. firm of Certified QuickBooks ProAdvisors, accountants, and advisors serving small and mid-sized businesses. Services span QuickBooks setup, cleanup, and migration; monthly, cleanup, and catch-up bookkeeping; payroll; multi-state sales tax; 1099 preparation; financial reporting; and fractional CFO advisory — delivered directly and through a curated network of vetted local Certified ProAdvisors. Independent Certified QuickBooks ProAdvisor firm; not affiliated with Intuit Inc.",
+      "disambiguatingDescription": "Independent accounting platform with vetted local partners — not affiliated with Intuit Inc. QuickBooks is a registered trademark of Intuit Inc.",
+
+      "url": "https://techbrot.com/",
+
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://techbrot.com/#logo",
+        "url": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "contentUrl": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "caption": "TechBrot — A modern accounting platform with vetted local partners",
+        "width": 512,
+        "height": 512,
+        "inLanguage": "en-US"
+      },
+
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://techbrot.com/assets/img/og/techbrot-og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "TechBrot — A modern accounting platform with vetted local partners"
+      },
+
+      "brand": {
+        "@id": "https://techbrot.com/#brand"
+      },
+
+   
+      "foundingDate": "2023",
+      "founder": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+      "founders": [
+        { "@id": "https://techbrot.com/#abid-khan" }
+      ],
+      "employee": [
+        { "@id": "https://techbrot.com/#abid-khan" },
+        { "@id": "https://techbrot.com/#david-westgate" }
+      ],
+
+      "email": "support@techbrot.com",
+      "telephone": "+1-877-751-5575",
+      "priceRange": "$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": ["Credit Card", "Bank Transfer", "ACH", "Check"],
+
+      "naics": "541219",
+      "isicV4": "6920",
+
+      "address": {
+        "@type": "PostalAddress",
+        "@id": "https://techbrot.com/#address",
+        "streetAddress": "651 N Broad St, Suite 201",
+        "addressLocality": "Middletown",
+        "addressRegion": "DE",
+        "postalCode": "19709",
+        "addressCountry": "US"
+      },
+
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.449",
+        "longitude": "-75.716"
+      },
+
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "customer service",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "sales",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "partners@techbrot.com",
+          "contactType": "partner inquiries",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        }
+      ],
+
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States",
+        "@id": "https://www.wikidata.org/entity/Q30"
+      },
+
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Small and mid-sized U.S. businesses"
+      },
+
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        }
+      ],
+
+      "keywords": "accounting platform, QuickBooks ProAdvisor, bookkeeping services, QuickBooks cleanup, monthly bookkeeping, catch-up bookkeeping, payroll services, fractional CFO, sales tax compliance, 1099 preparation, vetted accounting partners, U.S. small business accounting",
+
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "TechBrot Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monthly Bookkeeping",
+              "description": "Recurring monthly bookkeeping with real reconciliation, monthly close package, and named operator point of contact.",
+              "url": "https://techbrot.com/accounting/bookkeeping/monthly-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks and Bookkeeping Cleanup",
+              "description": "Reconstruct accurate books from a messy state — categorization fixes, real bank and credit-card reconciliations, prior-period correction, and reliable financial statements.",
+              "url": "https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Catch-up Bookkeeping",
+              "description": "Bring backlogged books current — from a few missed months to multi-year historical cleanup before tax filing.",
+              "url": "https://techbrot.com/accounting/bookkeeping/catch-up-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Setup and Onboarding",
+              "description": "Independent ProAdvisor-led QuickBooks setup, chart of accounts, banking, payroll, and integration configuration for new and existing businesses.",
+              "url": "https://techbrot.com/quickbooks/setup/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Migration",
+              "description": "QuickBooks Desktop-to-Online migration and other software-to-QuickBooks migrations performed by Certified ProAdvisors with data integrity verification.",
+              "url": "https://techbrot.com/quickbooks/migration/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Independent QuickBooks ProAdvisor Help",
+              "description": "Certified ProAdvisor help with QuickBooks file issues, reconciliation problems, plan selection, and workflow advisory — independent guidance beyond product support.",
+              "url": "https://techbrot.com/quickbooks/help/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Payroll Setup and Management",
+              "description": "Payroll setup, processing, tax filing, and compliance support delivered through the TechBrot operator network.",
+              "url": "https://techbrot.com/accounting/payroll-management/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sales Tax Compliance",
+              "description": "Multi-state sales tax registration, filing, and nexus advisory for U.S. small and mid-sized businesses.",
+              "url": "https://techbrot.com/accounting/sales-tax-compliance/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "1099 Preparation",
+              "description": "Annual 1099 preparation, vendor data collection, and IRS filing for U.S. small businesses.",
+              "url": "https://techbrot.com/accounting/1099-preparation/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fractional CFO Services",
+              "description": "Senior financial advisory delivered through the TechBrot network — cash flow planning, forecasting, KPI reporting, and board-ready financials for growing businesses.",
+              "url": "https://techbrot.com/accounting/advisory/fractional-cfo/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Find a Local Accounting Partner",
+              "description": "Match with a vetted, credentialed, insured TechBrot operator partner in your U.S. state — typically within 48 hours.",
+              "url": "https://techbrot.com/find-an-accountant/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          }
+        ]
+      },
+
+      "knowsAbout": [
+        "Accounting",
+        "Bookkeeping",
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Premier",
+        "QuickBooks Payroll",
+        "QuickBooks ProAdvisor",
+        "QuickBooks setup",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "QuickBooks Desktop to Online migration",
+        "QuickBooks plan selection",
+        "QuickBooks reconciliation",
+        "QuickBooks bank feeds",
+        "QuickBooks error troubleshooting",
+        "QuickBooks company file repair",
+        "QuickBooks multi-user mode",
+        "QuickBooks payroll setup",
+        "QuickBooks payroll troubleshooting",
+        "QuickBooks sales tax",
+        "QuickBooks 1099 preparation",
+        "Monthly bookkeeping",
+        "Catch-up bookkeeping",
+        "Cleanup bookkeeping",
+        "Historical bookkeeping cleanup",
+        "Virtual bookkeeping",
+        "Outsourced bookkeeping",
+        "Small business accounting",
+        "Startup accounting",
+        "Bank reconciliation",
+        "Accounts payable management",
+        "Accounts receivable management",
+        "Chart of accounts setup",
+        "Month-end close",
+        "Year-end close",
+        "Financial statement preparation",
+        "Financial reporting",
+        "Cash flow forecasting",
+        "Cash flow management",
+        "Profitability analysis",
+        "KPI reporting",
+        "Budgeting and forecasting",
+        "Payroll services",
+        "Payroll tax compliance",
+        "Sales tax compliance",
+        "Sales tax nexus",
+        "1099 preparation and filing",
+        "Tax planning",
+        "IRS problem resolution",
+        "Fractional CFO services",
+        "Controller services",
+        "Business advisory services",
+        "Ecommerce accounting",
+        "Real estate accounting",
+        "Construction accounting",
+        "Restaurant accounting",
+        "Healthcare accounting",
+        "Law firm accounting",
+        "SaaS accounting",
+        "Professional services accounting",
+        "Manufacturing accounting",
+        "Trucking accounting",
+        "Nonprofit accounting",
+        "Franchise accounting",
+        "Retail accounting",
+        "Job costing",
+        "Shopify QuickBooks integration",
+        "Amazon QuickBooks integration",
+        "Stripe QuickBooks integration",
+        "Vetted accounting partner network",
+        "Operator-led accounting platform",
+        "Independent ProAdvisor firm"
+      ],
+
+      "subjectOf": {
+        "@type": "WebPage",
+        "@id": "https://techbrot.com/about/"
+      },
+
+    "sameAs": [
+  "https://www.linkedin.com/company/techbrot-inc/",
+  "https://x.com/techbrot_inc",
+  "https://www.instagram.com/techbrot_inc",
+  "https://www.youtube.com/@techbrot_inc",
+  "https://www.facebook.com/techbrotinc",
+  "https://www.tumblr.com/techbrot",
+  "https://pin.it/1d4Qrx4At",
+  "https://www.tiktok.com/@techbrot_inc",
+  "https://medium.com/@techbrot5",
+  "https://clutch.co/profile/techbrot"
+]
+    },
+
+    {
+      "@type": "Brand",
+      "@id": "https://techbrot.com/#brand",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Network",
+      "url": "https://techbrot.com/",
+      "logo": "https://techbrot.com/assets/img/brand/logo_img.png",
+      "slogan": "A modern accounting platform with vetted local partners."
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#abid-khan",
+
+      "name": "Abid Khan",
+      "givenName": "Abid",
+      "familyName": "Khan",
+
+      "url": "https://techbrot.com/about/team/#abid-khan",
+
+      "jobTitle": "Founder & CEO",
+      "description": "Abid Khan is the Founder and CEO of TechBrot Inc., an independent U.S. accounting platform with a curated network of vetted local partners. He is a Certified QuickBooks ProAdvisor across QuickBooks Online, Desktop, Enterprise, and Payroll, and leads platform architecture, partner network development, and AI-first search infrastructure.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "Small business bookkeeping",
+        "Bank reconciliation",
+        "Accounting platform architecture",
+        "Partner network development",
+        "AI-first SEO",
+        "Topical authority architecture",
+        "E-E-A-T optimization"
+      ],
+
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qbo-l2",
+          "name": "QuickBooks Online ProAdvisor (Level 2)",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-desktop",
+          "name": "QuickBooks Desktop ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-enterprise",
+          "name": "QuickBooks Enterprise ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-payroll",
+          "name": "QuickBooks Payroll ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        }
+      ],
+
+      "sameAs": [
+  "https://www.linkedin.com/in/abid-khan-ai/",
+  "https://www.reddit.com/user/techbrot_inc/",
+  "https://www.quora.com/profile/Abid-Khan-119",
+  "https://www.credly.com/users/abid-khan.3ceb70a5/badges#credly"
+      ]
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#david-westgate",
+
+      "name": "David Westgate",
+      "givenName": "David",
+      "familyName": "Westgate",
+
+      "url": "https://techbrot.com/about/team/#david-westgate",
+
+      "jobTitle": "Lead QuickBooks ProAdvisor",
+      "description": "David Westgate is the Lead QuickBooks ProAdvisor at TechBrot Inc., with more than 40 years of accounting experience. A Certified QuickBooks ProAdvisor across QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll, he leads bookkeeping, cleanup, reconciliation, and QuickBooks file rebuilds across construction, professional services, and nonprofit engagements, and is the reviewing authority for TechBrot's published accounting content.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks reconciliation",
+        "Bookkeeping",
+        "Bank reconciliation",
+        "Month-end close",
+        "Sales tax compliance",
+        "IOLTA trust accounting",
+        "Job costing",
+        "Construction accounting",
+        "Nonprofit accounting"
+      ],
+
+      "hasCredential": [
+        { "@id": "https://techbrot.com/#credential-qbo-l2" },
+        { "@id": "https://techbrot.com/#credential-qb-desktop" },
+        { "@id": "https://techbrot.com/#credential-qb-enterprise" },
+        { "@id": "https://techbrot.com/#credential-qb-payroll" }
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://techbrot.com/#website",
+
+      "url": "https://techbrot.com/",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Accounting Platform",
+      "description": "Independent U.S. accounting platform — QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations delivered through a curated network of vetted local partners.",
+      "inLanguage": "en-US",
+
+      "publisher": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "author": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+
+      "about": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightHolder": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightYear": "2023",
+
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://techbrot.com/search/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2Z8GK69Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K2Z8GK69Z5');
+</script>
+
+<!-- ── 15. TRADEMARK DISCLOSURE (machine-readable, AI-citation safety) ──
+  Distinct meta tag declaring trademark posture. Some AI scrapers
+  prioritize meta declarations over body content. Provides an
+  additional structural defense against impersonation classification. -->
+
+<meta name="trademark-disclosure" content="QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc.">
+<meta name="affiliation-disclosure" content="independent">
+
+<!-- ============================================================================
+  END GLOBAL HEAD
+============================================================================ --><!-- ====== PARTNERS FAQ · PAGE HEAD ====== -->
+<title>Operator Network FAQ: For Certified ProAdvisors · TechBrot</title>
+<meta name="description" content="Twenty-six questions on TechBrot's vetted operator network for Certified QuickBooks ProAdvisors, EAs, and experienced bookkeepers. Application process, compensation model, what TechBrot provides operators, work standards, geographic coverage, and exit terms.">
+<link rel="canonical" href="https://techbrot.com/partners/faq/">
+<link rel="alternate" hreflang="en-US" href="https://techbrot.com/partners/faq/">
+<link rel="alternate" hreflang="x-default" href="https://techbrot.com/partners/faq/">
+<meta property="og:url" content="https://techbrot.com/partners/faq/">
+<meta property="og:title" content="Operator Network FAQ: For Certified ProAdvisors">
+<meta property="og:description" content="Twenty-six answers for ProAdvisors considering TechBrot's network — application, compensation, what we provide, work standards, exit terms.">
+<meta property="og:image" content="https://techbrot.com/assets/img/og/partners-faq-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TechBrot — Operator Network FAQ for ProAdvisors">
+<meta name="twitter:title" content="Operator Network FAQ · TechBrot">
+<meta name="twitter:description" content="Twenty-six answers for ProAdvisors considering TechBrot's vetted operator network.">
+<meta name="twitter:image" content="https://techbrot.com/assets/img/og/partners-faq-og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://techbrot.com/partners/faq/#webpage",
+      "url": "https://techbrot.com/partners/faq/",
+      "name": "Operator Network FAQ: For Certified ProAdvisors",
+      "description": "Comprehensive operator-network knowledge base for Certified QuickBooks ProAdvisors, EAs, and experienced bookkeepers considering joining TechBrot's vetted network. Covers who the network is for (eligibility, fit signals, deselect signals, distinction from TechBrot's lead practice), what TechBrot provides operators (lead flow, brand, platform, operational support, technology stack), what operators provide (work quality, communication standards, certification maintenance, time commitment), compensation model (fee splits, retention windows, payment cadence), application and vetting process (application requirements, vetting bar, timeline, evaluation criteria), engagement mechanics (client matching, geographic coverage, conflicts), and operating independence (non-competes, outside clients, exit terms). Maintained by TechBrot Inc.",
+      "isPartOf": { "@id": "https://techbrot.com/#website" },
+      "about": { "@id": "https://techbrot.com/#organization" },
+      "publisher": { "@id": "https://techbrot.com/#organization" },
+      "inLanguage": "en-US",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Certified QuickBooks ProAdvisors, Enrolled Agents, and experienced bookkeepers considering network partnership"
+      },
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://techbrot.com/assets/img/og/partners-faq-og.png" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["#pfaq-popular", "#pfaq-intro"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://techbrot.com/partners/faq/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://techbrot.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Partners", "item": "https://techbrot.com/partners/" },
+        { "@type": "ListItem", "position": 3, "name": "FAQ" }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://techbrot.com/partners/faq/#collection",
+      "name": "Operator Network FAQ — 26 questions across 7 clusters",
+      "url": "https://techbrot.com/partners/faq/",
+      "isPartOf": { "@id": "https://techbrot.com/partners/faq/#webpage" },
+      "hasPart": [
+        { "@type": "CollectionPage", "name": "Who the network is for", "url": "https://techbrot.com/partners/faq/#cluster-who" },
+        { "@type": "CollectionPage", "name": "What TechBrot provides", "url": "https://techbrot.com/partners/faq/#cluster-techbrot-provides" },
+        { "@type": "CollectionPage", "name": "What operators provide", "url": "https://techbrot.com/partners/faq/#cluster-operators-provide" },
+        { "@type": "CollectionPage", "name": "Compensation model", "url": "https://techbrot.com/partners/faq/#cluster-compensation" },
+        { "@type": "CollectionPage", "name": "Application & vetting", "url": "https://techbrot.com/partners/faq/#cluster-application" },
+        { "@type": "CollectionPage", "name": "Engagement mechanics", "url": "https://techbrot.com/partners/faq/#cluster-engagement" },
+        { "@type": "CollectionPage", "name": "Operating independence & exit", "url": "https://techbrot.com/partners/faq/#cluster-independence" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://techbrot.com/partners/faq/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Who is the TechBrot operator network for?", "acceptedAnswer": { "@type": "Answer", "text": "The network is built for Certified QuickBooks ProAdvisors, Enrolled Agents, CPAs (operational/bookkeeping work only — not tax filing engagements), and experienced independent bookkeepers with 5+ years of operational experience who want to focus on client work without running a full firm. The ideal fit: a credentialed practitioner with 1-15 active clients, capacity to take on more, strong technical work product, and frustration with the operational overhead of marketing, lead generation, billing, contracts, and brand-building. The network handles that overhead so operators focus on delivery. Not the right fit: practitioners without ProAdvisor certification or equivalent experience, generalists without operational accounting depth, practitioners primarily focused on tax-filing work, or solo bookkeepers without business operating discipline." } },
+        { "@type": "Question", "name": "How is the network different from TechBrot's lead practice?", "acceptedAnswer": { "@type": "Answer", "text": "TechBrot operates two delivery modes under one firm standard. Lead practice: TechBrot's own Certified ProAdvisors deliver directly — common for QuickBooks-heavy engagements like cleanup, migration, and platform work. Vetted operator network: curated independent local ProAdvisors deliver under TechBrot's brand, standards, platform, and engagement model — matched to the client's state, industry, and engagement type. Both modes operate under one engagement standard: fixed-fee, written scope, named ProAdvisor accountability, work performed in the client's own QuickBooks file, TechBrot quality review on deliverables. The network is the second-priority proof in our positioning — TechBrot leads as the expertise-first firm, the network provides scale, local presence, and continuity." } },
+        { "@type": "Question", "name": "What does TechBrot provide operators?", "acceptedAnswer": { "@type": "Answer", "text": "Six core areas. (1) Lead flow — qualified inbound leads from TechBrot's marketing, SEO, and AI-search positioning, matched to operator geography and industry expertise. (2) Brand and trust positioning — operators work under TechBrot Inc., not their own brand, with the credentialing, content, and reputation built around the firm. (3) Platform and process infrastructure — engagement model, written scope templates, fixed-fee pricing framework, client communication standards, document management systems, technology stack. (4) Quality assurance and second-set-of-eyes — TechBrot reviews deliverables before they reach clients, providing operational feedback and catching errors. (5) Operational support — billing, contracts, client onboarding, conflict resolution, escalation handling. (6) Community and continuing education — peer network with other vetted operators, internal CE on QuickBooks updates, industry-specific training. Operators focus on client work; TechBrot handles everything around it." } },
+        { "@type": "Question", "name": "How are operators compensated?", "acceptedAnswer": { "@type": "Answer", "text": "Operators are compensated on a fee-split model — operators receive a defined percentage of client engagement fees, TechBrot retains the remainder for the infrastructure, lead generation, quality assurance, brand, and operational overhead the network depends on. Specific splits are set at onboarding based on engagement type, operator experience, and lead source. The model is transparent: every engagement has a written fee schedule that both operator and TechBrot reference. Payment cadence: monthly, in arrears, based on client payments received in the prior month. Operators don't carry payment risk on clients — TechBrot handles collection and operator payments are tied to actual revenue collected, not invoiced. No equity, no buy-in, no per-client fees from operators — the relationship is straightforwardly compensation for delivered work." } },
+        { "@type": "Question", "name": "What is the application process and how long does vetting take?", "acceptedAnswer": { "@type": "Answer", "text": "The application process has three stages over typically 3-5 weeks. Stage 1 — application (15 minutes): operator submits credentials (active ProAdvisor certification verified via Intuit directory, prior engagement experience, geographic and industry depth, references). Stage 2 — work sample review (1-2 weeks): operator provides redacted sample deliverables (a cleanup report, a monthly close package, or an industry-specific engagement). TechBrot reviews for technical quality, communication standards, and engagement model alignment. Stage 3 — interview and reference checks (1-2 weeks): video interview covering technical depth, communication style, professional judgment, and fit with TechBrot's standards. Reference checks with prior clients or professional contacts. Onboarding follows acceptance, typically 1-2 weeks for platform setup, brand training, and first-client assignment. Total timeline from application to first engagement: typically 5-8 weeks." } },
+        { "@type": "Question", "name": "How does client matching work?", "acceptedAnswer": { "@type": "Answer", "text": "Client matching uses three primary factors. Geographic match: operators are matched to clients in their state or adjacent states where state-specific knowledge (tax, payroll, regulatory) matters — though all work is virtual, geographic alignment improves continuity and state-specific accuracy. Industry match: operators with depth in specific industries (construction, SaaS, restaurants, etc.) are matched to clients in those industries. Engagement type match: cleanup specialists get cleanup engagements, monthly bookkeeping operators get monthly retainers, advisory-qualified operators get fractional CFO or advisory work. The discovery call with the client identifies their fit; TechBrot matches to the operator whose specific combination fits best. Operators can decline matches that don't fit (industry outside their depth, capacity issues, conflict of interest), and we re-match. No quotas, no penalty for declining genuinely poor fits." } },
+        { "@type": "Question", "name": "Can I continue to serve my own clients outside the network?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — operators retain full independence to serve clients outside the TechBrot network. The network engagement covers work done through TechBrot (where TechBrot is the client-facing brand and TechBrot's engagement model applies); it does not restrict the operator's outside practice. The standard agreement includes a narrow non-solicit clause: operators don't actively recruit TechBrot clients away from the network during or for 12 months after the engagement, and don't use TechBrot's proprietary processes, templates, or client lists outside the network. Outside that, operators run their own practice freely. Many operators maintain a smaller independent book of long-term clients while taking new growth through TechBrot — the model is designed to be additive, not exclusive." } }
+      ]
+    }
+  ]
+}
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>BSS-1-11ty</title>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/04-pages.css">
+    <link rel="stylesheet" href="../../assets/css/01-tokens.css">
+    <link rel="stylesheet" href="../../assets/css/02-base.css">
+    <link rel="stylesheet" href="../../assets/css/03-components.css">
+</head>
+
+<body><!-- ============================================================================
+     CHROME · utility bar + primary header + mobile drawer + search palette
+     ============================================================================ -->
+
+<div class="util-bar" role="region" aria-label="Secondary">
+  <div class="container util-bar__inner">
+    <p class="util-bar__trust">
+      <span class="util-bar__dot" aria-hidden="true"></span>
+      <span>Independent Certified QuickBooks ProAdvisor firm · U.S.-based</span>
+    </p>
+    <nav class="util-bar__nav" aria-label="For accountants and partners">
+      <a class="util-bar__link" href="/find-an-accountant/">Find an Accountant</a>
+      <a class="util-bar__link" href="/partners/">For Accountants →</a>
+    </nav>
+  </div>
+</div>
+
+<header class="site-header" role="banner" id="site-header" data-sticky="true">
+  <div class="container site-header__inner">
+
+    <a class="site-brand" href="/" aria-label="TechBrot home" title="TechBrot — A Modern Accounting Platform">
+      <img class="site-brand__mark" src="/assets/img/brand/icon.svg" alt="TechBrot" width="140" height="56" decoding="async" fetchpriority="high">
+    </a>
+
+    <nav class="site-nav site-nav--desktop" aria-label="Primary navigation" id="primary-nav">
+      <ul class="site-nav__list">
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-services" aria-haspopup="true">
+            Accounting
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-services" role="region" aria-label="Accounting services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Bookkeeping</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/">All bookkeeping →</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Financial Operations</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/payroll-management/">Payroll management</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/services/">All services →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/accounting/">Accounting overview →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-quickbooks" aria-haspopup="true">
+            QuickBooks
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-quickbooks" role="region" aria-label="QuickBooks services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">ProAdvisor Services</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/cleanup/">File cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/migration/">Desktop → Online migration</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/help/">QuickBooks help</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Products</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/proadvisor-team/">Our ProAdvisor team</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/">QuickBooks overview →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/legal/disclaimer/">Independent firm — not affiliated with Intuit →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/find-an-accountant/">Find an Accountant</a>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/pricing/">Pricing</a>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-why" aria-haspopup="true">
+            Why TechBrot
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu" id="nav-menu-why" role="region" aria-label="Why TechBrot" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Authority &amp; trust</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/trust/">Trust &amp; standards</a></li>
+                  <li><a class="nav-menu__link" href="/about/methodology/">Our methodology</a></li>
+                  <li><a class="nav-menu__link" href="/reviews/">Client reviews</a></li>
+                  <li><a class="nav-menu__link" href="/vs/">Comparisons</a></li>
+                  <li><a class="nav-menu__link" href="/about/">About &amp; team</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="site-header__utility">
+      <button class="site-search-trigger" type="button" aria-label="Search (press / or Cmd-K)" data-search-open="" title="Search — / or ⌘K">
+        <svg class="site-search-trigger__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+          <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+        </svg>
+        <span class="site-search-trigger__hint" aria-hidden="true"><kbd>/</kbd></span>
+      </button>
+
+      <a class="site-header__phone" href="tel:+18777515575" aria-label="Call TechBrot" data-cta="header-phone" title="Call TechBrot">
+        <span class="site-header__phone-label">Call</span>
+        <span class="site-header__phone-number">(877) 751-5575</span>
+      </a>
+
+      <a class="btn btn--primary btn--sm" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="header-primary" title="Book a discovery call">
+        Book a Call
+      </a>
+    </div>
+
+    <button class="site-header__mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+    </button>
+
+  </div>
+</header>
+
+<aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation" hidden="">
+  <div class="mobile-drawer__header">
+    <a class="site-brand" href="/" aria-label="TechBrot home">
+      <img class="site-brand__mark" src="/assets/img/brand/wordmark.png" alt="TechBrot" width="120" height="36">
+    </a>
+    <button class="mobile-drawer__close" type="button" aria-label="Close navigation menu" data-action="close-drawer">
+      <span class="mobile-drawer__close-x" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <nav class="mobile-drawer__nav" aria-label="Mobile primary navigation">
+    <ul class="mobile-drawer__list">
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-services">
+          <span>Accounting</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-services" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll management</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-quickbooks">
+          <span>QuickBooks</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-quickbooks" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/find-an-accountant/">Find an Accountant</a></li>
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/pricing/">Pricing</a></li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-why">
+          <span>Why TechBrot</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-why" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/about/methodology/">Our methodology</a></li>
+            <li><a href="/reviews/">Client reviews</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+            <li><a href="/about/">About &amp; team</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/partners/">For Accountants</a></li>
+    </ul>
+  </nav>
+
+  <div class="mobile-drawer__footer">
+    <a class="btn btn--primary btn--lg btn--full" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="mobile-primary">Book a Discovery Call</a>
+    <a class="mobile-drawer__phone" href="tel:+18777515575">(877) 751-5575</a>
+  </div>
+</aside>
+
+<div class="search-palette" id="search-palette" role="dialog" aria-modal="true" aria-label="Search TechBrot" hidden="">
+  <div class="search-palette__backdrop" data-search-close=""></div>
+  <div class="search-palette__panel" role="combobox" aria-expanded="true" aria-haspopup="listbox" aria-owns="search-results">
+    <div class="search-palette__field">
+      <svg class="search-palette__icon" width="20" height="20" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+        <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+      </svg>
+      <input class="search-palette__input" id="search-input" type="text" autocomplete="off" spellcheck="false" placeholder="Search services, QuickBooks, comparisons, states, Indiana topics…" aria-label="Search" aria-controls="search-results" aria-autocomplete="list">
+      <button class="search-palette__close" type="button" aria-label="Close search" data-search-close=""><kbd>Esc</kbd></button>
+    </div>
+    <div class="search-palette__body">
+      <ul class="search-palette__results" id="search-results" role="listbox" aria-label="Search results"></ul>
+      <div class="search-palette__suggested" id="search-suggested">
+        <p class="search-palette__suggested-label">Try</p>
+        <ul class="search-palette__chips" role="list">
+          <li><button type="button" class="search-chip" data-q="indiana cagit">Indiana CAGIT payroll</button></li>
+          <li><button type="button" class="search-chip" data-q="bookkeeping cleanup">Bookkeeping cleanup</button></li>
+          <li><button type="button" class="search-chip" data-q="quickbooks migration">QuickBooks migration</button></li>
+          <li><button type="button" class="search-chip" data-q="indianapolis">Indianapolis</button></li>
+          <li><button type="button" class="search-chip" data-q="manufacturing">Manufacturing accounting</button></li>
+          <li><button type="button" class="search-chip" data-q="pricing">Pricing</button></li>
+        </ul>
+      </div>
+      <p class="search-palette__empty" id="search-empty" hidden="">No matches. Try a service, “QuickBooks”, an Indiana topic, a city, or a comparison.</p>
+    </div>
+    <div class="search-palette__foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+<div class="page page--kb-faq page--partners-faq" data-page="partners-faq">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <main id="main" role="main">
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="Breadcrumb" id="pfaq-breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/">Home</a></li>
+          <li class="breadcrumb__item"><a href="/partners/">Partners</a></li>
+          <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">FAQ</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- KB HERO -->
+    <section class="section section--kb-hero" id="pfaq-hero" aria-labelledby="pfaq-hero-heading">
+      <div class="container">
+        <div class="kb-hero">
+          <p class="kb-hero__eyebrow">The operator network reference &middot; For ProAdvisors considering partnership</p>
+          <h1 class="kb-hero__heading" id="pfaq-hero-heading">
+            The operator network, answered.
+          </h1>
+          <p class="kb-hero__subheading" id="pfaq-intro">
+            Twenty-six questions for Certified QuickBooks ProAdvisors, EAs, and experienced independent bookkeepers considering TechBrot&rsquo;s vetted operator network. The network is built for credentialed practitioners who want to focus on client work without running a full firm &mdash; TechBrot handles the lead generation, brand, platform, billing, contracts, and operational overhead; operators handle the work. Every answer reflects the actual engagement model, not idealized recruitment language.
+          </p>
+          <dl class="kb-hero__meta">
+            <div class="kb-hero__meta-item">
+              <dt class="kb-hero__meta-label">Audience</dt>
+              <dd class="kb-hero__meta-value">ProAdvisors, EAs, bookkeepers</dd>
+            </div>
+            <div class="kb-hero__meta-item">
+              <dt class="kb-hero__meta-label">Questions</dt>
+              <dd class="kb-hero__meta-value">26 across 7 clusters</dd>
+            </div>
+            <div class="kb-hero__meta-item">
+              <dt class="kb-hero__meta-label">Application timeline</dt>
+              <dd class="kb-hero__meta-value">5&ndash;8 weeks typical</dd>
+            </div>
+            <div class="kb-hero__meta-item">
+              <dt class="kb-hero__meta-label">Last reviewed</dt>
+              <dd class="kb-hero__meta-value"><time datetime="2026-06">June 2026</time></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- POPULAR QUESTIONS STRIP -->
+    <section class="section section--kb-popular" id="pfaq-popular" aria-labelledby="pfaq-popular-heading">
+      <div class="container">
+        <header class="kb-popular__header">
+          <p class="kb-popular__eyebrow">Most asked</p>
+          <h2 class="kb-popular__heading" id="pfaq-popular-heading">Six questions ProAdvisors ask first.</h2>
+        </header>
+        <ul class="kb-popular__list" role="list">
+          <li class="kb-popular__item">
+            <a class="kb-popular__link" href="#q01">
+              <span class="kb-popular__id">Q.01</span>
+              <span class="kb-popular__question">Who is the TechBrot operator network for?</span>
+              <span class="kb-popular__cluster">Who</span>
+            </a>
+          </li>
+          <li class="kb-popular__item">
+            <a class="kb-popular__link" href="#q05">
+              <span class="kb-popular__id">Q.05</span>
+              <span class="kb-popular__question">What does TechBrot provide operators?</span>
+              <span class="kb-popular__cluster">What we provide</span>
+            </a>
+          </li>
+          <li class="kb-popular__item">
+            <a class="kb-popular__link" href="#q13">
+              <span class="kb-popular__id">Q.13</span>
+              <span class="kb-popular__question">How are operators compensated?</span>
+              <span class="kb-popular__cluster">Compensation</span>
+            </a>
+          </li>
+          <li class="kb-popular__item">
+            <a class="kb-popular__link" href="#q17">
+              <span class="kb-popular__id">Q.17</span>
+              <span class="kb-popular__question">What is the application process?</span>
+              <span class="kb-popular__cluster">Application</span>
+            </a>
+          </li>
+          <li class="kb-popular__item">
+            <a class="kb-popular__link" href="#q21">
+              <span class="kb-popular__id">Q.21</span>
+              <span class="kb-popular__question">How does client matching work?</span>
+              <span class="kb-popular__cluster">Engagement</span>
+            </a>
+          </li>
+          <li class="kb-popular__item">
+            <a class="kb-popular__link" href="#q24">
+              <span class="kb-popular__id">Q.24</span>
+              <span class="kb-popular__question">Can I continue to serve my own clients outside the network?</span>
+              <span class="kb-popular__cluster">Independence</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- KB BODY LAYOUT -->
+    <section class="section section--kb-body" id="pfaq-body" aria-labelledby="pfaq-body-heading">
+      <div class="container">
+        <h2 class="sr-only" id="pfaq-body-heading">All operator network questions, organized by topic</h2>
+        <div class="kb-layout">
+
+          <!-- KB QUICKJUMP NAV -->
+          <aside class="kb-quickjump" aria-label="Jump to topic cluster">
+            <details class="kb-quickjump__details" open>
+              <summary class="kb-quickjump__summary">
+                <span class="kb-quickjump__summary-label">Topic clusters</span>
+                <span class="kb-quickjump__summary-count">7</span>
+              </summary>
+              <nav class="kb-quickjump__nav" aria-label="Topic navigation">
+                <ol class="kb-quickjump__list" role="list">
+                  <li class="kb-quickjump__item"><a class="kb-quickjump__link" href="#cluster-who" data-cluster="who"><span class="kb-quickjump__number">01</span><span class="kb-quickjump__label">Who the network is for</span><span class="kb-quickjump__count">Q.01&ndash;04</span></a></li>
+                  <li class="kb-quickjump__item"><a class="kb-quickjump__link" href="#cluster-techbrot-provides" data-cluster="techbrot-provides"><span class="kb-quickjump__number">02</span><span class="kb-quickjump__label">What TechBrot provides</span><span class="kb-quickjump__count">Q.05&ndash;08</span></a></li>
+                  <li class="kb-quickjump__item"><a class="kb-quickjump__link" href="#cluster-operators-provide" data-cluster="operators-provide"><span class="kb-quickjump__number">03</span><span class="kb-quickjump__label">What operators provide</span><span class="kb-quickjump__count">Q.09&ndash;12</span></a></li>
+                  <li class="kb-quickjump__item"><a class="kb-quickjump__link" href="#cluster-compensation" data-cluster="compensation"><span class="kb-quickjump__number">04</span><span class="kb-quickjump__label">Compensation model</span><span class="kb-quickjump__count">Q.13&ndash;16</span></a></li>
+                  <li class="kb-quickjump__item"><a class="kb-quickjump__link" href="#cluster-application" data-cluster="application"><span class="kb-quickjump__number">05</span><span class="kb-quickjump__label">Application &amp; vetting</span><span class="kb-quickjump__count">Q.17&ndash;20</span></a></li>
+                  <li class="kb-quickjump__item"><a class="kb-quickjump__link" href="#cluster-engagement" data-cluster="engagement"><span class="kb-quickjump__number">06</span><span class="kb-quickjump__label">Engagement mechanics</span><span class="kb-quickjump__count">Q.21&ndash;23</span></a></li>
+                  <li class="kb-quickjump__item"><a class="kb-quickjump__link" href="#cluster-independence" data-cluster="independence"><span class="kb-quickjump__number">07</span><span class="kb-quickjump__label">Operating independence &amp; exit</span><span class="kb-quickjump__count">Q.24&ndash;26</span></a></li>
+                </ol>
+              </nav>
+            </details>
+          </aside>
+
+          <!-- KB CONTENT -->
+          <div class="kb-content">
+
+            <!-- CLUSTER 01: WHO -->
+            <section class="kb-cluster" id="cluster-who" aria-labelledby="cluster-who-heading">
+              <header class="kb-cluster__header">
+                <p class="kb-cluster__number">Cluster 01</p>
+                <h2 class="kb-cluster__heading" id="cluster-who-heading">Who the network is for.</h2>
+                <p class="kb-cluster__lede">Eligibility, who fits, who doesn&rsquo;t, and how the network relates to TechBrot&rsquo;s lead practice.</p>
+              </header>
+              <ol class="kb-list" role="list">
+
+                <li class="kb-item" id="q01">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.01</span>
+                      <span class="kb-item__question">Who is the TechBrot operator network for?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>The network is built for <strong>Certified QuickBooks ProAdvisors, Enrolled Agents, CPAs</strong> (operational/bookkeeping work only &mdash; not tax filing engagements), and <strong>experienced independent bookkeepers</strong> with 5+ years of operational experience who want to focus on client work without running a full firm.</p>
+                      <p>The ideal fit: a credentialed practitioner with 1&ndash;15 active clients, capacity to take on more, strong technical work product, and frustration with the operational overhead of marketing, lead generation, billing, contracts, and brand-building. The network handles that overhead so operators focus on delivery.</p>
+                      <p>Not the right fit: practitioners without ProAdvisor certification or equivalent experience, generalists without operational accounting depth, practitioners primarily focused on tax-filing work, or solo bookkeepers without business operating discipline.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q02">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.02</span>
+                      <span class="kb-item__question">How is the network different from TechBrot&rsquo;s lead practice?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>TechBrot operates two delivery modes under one firm standard. <strong>Lead practice</strong>: TechBrot&rsquo;s own Certified ProAdvisors deliver directly &mdash; common for QuickBooks-heavy engagements like <a href="/quickbooks/cleanup/">cleanup</a>, <a href="/quickbooks/migration/">migration</a>, and platform work. <strong>Vetted operator network</strong>: curated independent local ProAdvisors deliver under TechBrot&rsquo;s brand, standards, platform, and engagement model &mdash; matched to the client&rsquo;s state, industry, and engagement type.</p>
+                      <p>Both modes operate under one engagement standard: fixed-fee, written scope, named ProAdvisor accountability, work performed in the client&rsquo;s own QuickBooks file, TechBrot quality review on deliverables. The network is the second-priority proof in our positioning &mdash; TechBrot leads as the expertise-first firm, the network provides scale, local presence, and continuity. See <a href="/about/network/">/about/network/</a> for the full network model from the client perspective.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q03">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.03</span>
+                      <span class="kb-item__question">What if I&rsquo;m a CPA &mdash; can I still join?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Yes &mdash; for operational accounting work only. CPAs with active QuickBooks ProAdvisor certification or equivalent operational depth are welcome in the network for bookkeeping, cleanup, monthly close, payroll, sales tax compliance, and advisory engagements. <strong>The network does not deliver tax filing engagements</strong> &mdash; TechBrot&rsquo;s scope is operational, and tax filing stays with the client&rsquo;s CPA or EA.</p>
+                      <p>If you&rsquo;re primarily a tax CPA looking to expand into operational work, the network can fit. If you&rsquo;re primarily looking for tax-engagement lead flow, the network isn&rsquo;t the right channel &mdash; TechBrot specifically positions away from tax filing work (see <a href="/legal/disclaimer/">/legal/disclaimer/</a>). The honest answer at the discovery interview will identify whether the fit works for both sides.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q04">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.04</span>
+                      <span class="kb-item__question">Do I need to be a U.S. resident or U.S.-based practitioner?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Yes. TechBrot serves U.S. small and mid-market businesses, and the network requires operators who are U.S.-based, U.S.-credentialed (active U.S. Certified QuickBooks ProAdvisor, U.S.-licensed EA or CPA, or equivalent U.S. operational experience), and authorized to work in the United States. State-specific knowledge matters for payroll, sales tax, and regulatory work &mdash; operators need real U.S. domain depth, not just QuickBooks fluency.</p>
+                      <p>Geographic distribution within the U.S. is intentional: the network is built to provide local-state coverage across all 50 states, with operators matched to clients in their state or adjacent states where state-specific knowledge applies. Operators outside the U.S. are not eligible regardless of QuickBooks proficiency &mdash; the work requires U.S. tax, payroll, and regulatory fluency that doesn&rsquo;t transfer cleanly from outside the country.</p>
+                    </div>
+                  </details>
+                </li>
+
+              </ol>
+            </section>
+
+            <!-- CLUSTER 02: TECHBROT PROVIDES -->
+            <section class="kb-cluster" id="cluster-techbrot-provides" aria-labelledby="cluster-techbrot-provides-heading">
+              <header class="kb-cluster__header">
+                <p class="kb-cluster__number">Cluster 02</p>
+                <h2 class="kb-cluster__heading" id="cluster-techbrot-provides-heading">What TechBrot provides.</h2>
+                <p class="kb-cluster__lede">Lead flow, brand, platform, quality review, operational support, and the technology stack that lets operators focus on the work.</p>
+              </header>
+              <ol class="kb-list" role="list">
+
+                <li class="kb-item" id="q05">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.05</span>
+                      <span class="kb-item__question">What does TechBrot provide operators?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Six core areas:</p>
+                      <ol>
+                        <li><strong>Lead flow</strong> &mdash; qualified inbound leads from TechBrot&rsquo;s marketing, SEO, and AI-search positioning, matched to operator geography and industry expertise.</li>
+                        <li><strong>Brand and trust positioning</strong> &mdash; operators work under TechBrot Inc., not their own brand, with the credentialing, content, and reputation built around the firm.</li>
+                        <li><strong>Platform and process infrastructure</strong> &mdash; engagement model, written scope templates, fixed-fee pricing framework, client communication standards, document management systems, technology stack.</li>
+                        <li><strong>Quality assurance and second-set-of-eyes</strong> &mdash; TechBrot reviews deliverables before they reach clients, providing operational feedback and catching errors.</li>
+                        <li><strong>Operational support</strong> &mdash; billing, contracts, client onboarding, conflict resolution, escalation handling.</li>
+                        <li><strong>Community and continuing education</strong> &mdash; peer network with other vetted operators, internal CE on QuickBooks updates, industry-specific training.</li>
+                      </ol>
+                      <p>Operators focus on client work; TechBrot handles everything around it.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q06">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.06</span>
+                      <span class="kb-item__question">How does lead flow actually work?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Leads come through TechBrot&rsquo;s inbound channels: organic search (Google + AI search engines), direct inquiries from the website, referrals from existing clients, and content-driven inquiries from the FAQ hubs, industry pages, and editorial content. Leads go through a discovery call with TechBrot first &mdash; we qualify fit, scope the engagement, identify industry and geographic match, then route to the operator whose specific combination fits best.</p>
+                      <p><strong>Operators don&rsquo;t do their own marketing, lead generation, or sales work under the TechBrot brand</strong>. They receive matched, qualified leads with engagement scope already drafted. Lead volume varies by operator depth (industry specialization, state coverage, engagement types served) and by TechBrot&rsquo;s overall pipeline at the time. We don&rsquo;t guarantee a specific lead volume &mdash; the honest read is that operators in high-demand industries or underserved states see more matches; operators in saturated combinations see fewer.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q07">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.07</span>
+                      <span class="kb-item__question">What technology stack do operators work in?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Operators work in client QuickBooks files via QuickBooks Online Accountant (QBOA) access &mdash; same as TechBrot&rsquo;s lead practice. Core platforms: <a href="/quickbooks/online/">QuickBooks Online</a>, <a href="/quickbooks/desktop/">QuickBooks Desktop</a>, and <a href="/quickbooks/enterprise/">QuickBooks Enterprise</a> across all three product lines. Operators access client files using their own QBOA account, with all client work performed in the client&rsquo;s own QuickBooks file (not on TechBrot infrastructure).</p>
+                      <p>Operational tooling: TechBrot provides shared document management (Box and SharePoint with permission-controlled client folders), client communication channels (email + Slack workspace where applicable), engagement management (project tracking, deliverable handoff, quality review workflow), and time tracking for internal reporting (operators don&rsquo;t bill clients by hours, but internal time tracking helps engagement scoping accuracy over time). Industry-specific platform access (ServiceTitan, MindBody, Shopify, etc.) is established by the client, with operator access granted at engagement start. See the integration platforms list at <a href="/accounting/industries/faq/#q29">Q.29 in the Industries FAQ</a>.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q08">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.08</span>
+                      <span class="kb-item__question">Does TechBrot review my work before it reaches clients?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Yes &mdash; quality review is part of how the network maintains the TechBrot engagement standard across operators. Deliverables that reach clients (monthly financial packages, cleanup completion reports, advisory dashboards, written scope documents, year-end packages) go through TechBrot quality review before delivery. Review focuses on: reconciliation completeness, GAAP compliance where required, CoA integrity, KPI accuracy, communication clarity, and brand standards.</p>
+                      <p>Review is positioned as <strong>operational support, not gatekeeping</strong> &mdash; experienced operators rarely have substantive issues caught at review; less-experienced operators or new-to-the-network operators benefit from the second-set-of-eyes during ramp-up. As operators establish track record, review intensity reduces (initial engagements reviewed deliverable-by-deliverable; established operators reviewed at sampled cadence). The review process protects the client, the brand, and the operator from preventable errors. Operators receive direct feedback to improve over time.</p>
+                    </div>
+                  </details>
+                </li>
+
+              </ol>
+            </section>
+
+            <!-- CLUSTER 03: OPERATORS PROVIDE -->
+            <section class="kb-cluster" id="cluster-operators-provide" aria-labelledby="cluster-operators-provide-heading">
+              <header class="kb-cluster__header">
+                <p class="kb-cluster__number">Cluster 03</p>
+                <h2 class="kb-cluster__heading" id="cluster-operators-provide-heading">What operators provide.</h2>
+                <p class="kb-cluster__lede">Work quality standards, communication discipline, certification maintenance, capacity expectations, and the operating culture the network requires.</p>
+              </header>
+              <ol class="kb-list" role="list">
+
+                <li class="kb-item" id="q09">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.09</span>
+                      <span class="kb-item__question">What work-quality standards does TechBrot expect?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Five concrete standards. <strong>(1) Disciplined monthly close</strong> &mdash; clients&rsquo; books close on the defined calendar (typically 5&ndash;10 business days from period end), with full reconciliation, accruals posted, and prior period locked. See <a href="/accounting/month-end-close/">/accounting/month-end-close/</a>. <strong>(2) GAAP compliance where required</strong> &mdash; deferred revenue under ASC 606, leases under ASC 842, fund accounting under ASC 958 for nonprofits, percentage-of-completion for construction, depending on client industry. <strong>(3) Industry-specific CoA and KPI handling</strong> &mdash; operators are expected to know their assigned industries deeply enough to design and maintain industry-appropriate structures.</p>
+                      <p><strong>(4) Clean documentation</strong> &mdash; every judgment call, journal entry, and engagement adjustment documented in the file or shared workspace. The work should be picked up by another operator if needed without losing context. <strong>(5) Client communication</strong> &mdash; monthly review calls happen on schedule, async messages get responded to within one business day, escalations get raised early rather than concealed. Operators who consistently meet these standards stay in the network and receive priority on new matches; operators who don&rsquo;t exit the network.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q10">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.10</span>
+                      <span class="kb-item__question">What communication standards do operators follow with clients?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Communication cadence and tone follow the TechBrot engagement standard. <strong>Monthly review call</strong>: 30&ndash;45 minutes when the prior month closes, structured agenda covering financial statements, KPI commentary, decisions needed, forward-looking items. Operators run this call directly with the client. <strong>Async messaging</strong>: same-day response on urgent items, one-business-day response on standard items, via the channels established at engagement start (email, Slack, or shared workspace).</p>
+                      <p><strong>Tone</strong>: enterprise-professional, plain English (no jargon dump on clients), honest about scope and limitations (never bluff on expertise outside the operator&rsquo;s depth), and direct about issues found (cleanup needs, GAAP questions, judgment calls). Operators sign client communications as themselves with TechBrot firm attribution &mdash; never as an anonymous &ldquo;account manager&rdquo; or under a generic team name. Clients know their named ProAdvisor and have direct access during business hours.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q11">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.11</span>
+                      <span class="kb-item__question">Do operators have to maintain active ProAdvisor certification?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Yes &mdash; active certification is a continuous requirement, not a one-time qualification. Operators must maintain active Certified QuickBooks ProAdvisor status (or equivalent credentials &mdash; active EA license, active CPA license with operational accounting focus) for the duration of their network engagement. Annual recertification on the QuickBooks product lines they serve is required; lapsed certifications trigger network suspension until current.</p>
+                      <p>Active certification is visible in Intuit&rsquo;s public Find a ProAdvisor directory; TechBrot verifies status periodically. Operators are also expected to keep current on QuickBooks platform changes (Online, Desktop, Enterprise version updates), regulatory changes affecting client industries (state payroll changes, sales tax nexus updates, GAAP standard changes), and integration platform updates relevant to their assigned clients. TechBrot provides internal CE resources to support this; operators are responsible for using them.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q12">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.12</span>
+                      <span class="kb-item__question">What time commitment does the network require?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>There&rsquo;s no fixed minimum or maximum &mdash; commitment scales with the client work an operator takes. A typical network operator carries <strong>3&ndash;10 active client engagements through TechBrot</strong>, representing roughly 15&ndash;35 hours per week depending on engagement mix (cleanup and catch-up projects are more intensive; established monthly bookkeeping retainers are lighter once stabilized). Many operators run the network engagements as their primary practice; others maintain a smaller outside book of long-term clients.</p>
+                      <p>What the network requires regardless of volume: <strong>defined availability</strong> (operators commit to specific working hours so client expectations can be set honestly), <strong>predictable responsiveness</strong> within those hours, <strong>capacity discipline</strong> (operators don&rsquo;t take matches they can&rsquo;t actually deliver against), and <strong>honest communication about capacity changes</strong> (illness, family commitments, capacity shifts &mdash; operators raise these early so re-matching can happen cleanly). The network model works because operators run their practice professionally; it breaks when operators over-commit or under-communicate.</p>
+                    </div>
+                  </details>
+                </li>
+
+              </ol>
+            </section>
+
+            <!-- CLUSTER 04: COMPENSATION -->
+            <section class="kb-cluster" id="cluster-compensation" aria-labelledby="cluster-compensation-heading">
+              <header class="kb-cluster__header">
+                <p class="kb-cluster__number">Cluster 04</p>
+                <h2 class="kb-cluster__heading" id="cluster-compensation-heading">Compensation model.</h2>
+                <p class="kb-cluster__lede">How operators are paid, the fee-split structure, payment cadence, and what operators don&rsquo;t pay for.</p>
+              </header>
+              <ol class="kb-list" role="list">
+
+                <li class="kb-item" id="q13">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.13</span>
+                      <span class="kb-item__question">How are operators compensated?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Operators are compensated on a <strong>fee-split model</strong> &mdash; operators receive a defined percentage of client engagement fees, TechBrot retains the remainder for the infrastructure, lead generation, quality assurance, brand, and operational overhead the network depends on. Specific splits are set at onboarding based on engagement type, operator experience, and lead source. The model is transparent: every engagement has a written fee schedule that both operator and TechBrot reference.</p>
+                      <p>Payment cadence: <strong>monthly, in arrears, based on client payments received in the prior month</strong>. Operators don&rsquo;t carry payment risk on clients &mdash; TechBrot handles collection and operator payments are tied to actual revenue collected, not invoiced. <strong>No equity, no buy-in, no per-client fees from operators</strong> &mdash; the relationship is straightforwardly compensation for delivered work.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q14">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.14</span>
+                      <span class="kb-item__question">What are the actual fee splits?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Specific splits are set at onboarding and documented in writing &mdash; they vary by engagement type, operator experience and tenure in the network, and lead source. Rather than publish a single rate that wouldn&rsquo;t apply uniformly, TechBrot discusses the actual splits during the interview stage so operators understand the economics before committing.</p>
+                      <p>The general structure: <strong>operator share is larger on engagements where operator depth provides the differentiating value</strong> (industry-specialist work, advisory and fractional CFO engagements, complex cleanups) and <strong>TechBrot share is larger on engagements where TechBrot infrastructure provides the differentiating value</strong> (lead-flow-heavy engagements, standardized monthly bookkeeping, work on TechBrot-developed playbooks). Across the operator&rsquo;s portfolio, the blended split typically results in operator economics that are competitive with running an independent practice &mdash; without the marketing, sales, and operational overhead. Specific numbers are shared at the application interview to allow honest evaluation before commitment.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q15">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.15</span>
+                      <span class="kb-item__question">When and how are operators paid?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Operators are paid <strong>monthly, in arrears</strong>, on a defined date each month (typically the 15th of the month following client collection). Payments cover the operator&rsquo;s share of client engagement fees collected in the prior month, with a detailed statement showing engagement-by-engagement breakdown. Payments are issued via ACH to the operator&rsquo;s designated business account.</p>
+                      <p>Operators contract with TechBrot as independent contractors (1099-NEC at year-end), not as employees. This means: operators handle their own self-employment tax, can deduct their own business expenses, set their own work hours within engagement requirements, and aren&rsquo;t covered by TechBrot for benefits, insurance, or workers&rsquo; compensation. Operators with their own LLC or S-Corp can structure compensation accordingly. TechBrot provides year-end 1099-NEC for tax reporting. This structure is standard for professional network arrangements and is documented in writing at onboarding.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q16">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.16</span>
+                      <span class="kb-item__question">What costs do operators bear themselves?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Operators are responsible for: <strong>their own QuickBooks ProAdvisor membership and annual certification fees</strong> (paid directly to Intuit), <strong>their own continuing education</strong> beyond what TechBrot provides internally, <strong>their own professional liability insurance / E&amp;O coverage</strong> (required as a condition of network membership; minimum coverage levels documented at onboarding), <strong>their own QuickBooks Online Accountant access</strong> (free from Intuit but maintained by the operator), <strong>their own home-office or workspace</strong> (operators work remotely; TechBrot doesn&rsquo;t provide office space), and <strong>their own equipment and connectivity</strong> (computer, internet, phone).</p>
+                      <p>TechBrot covers: the platforms and tooling operators use to deliver client work (document management, communication systems, time tracking, quality review workflow), the lead generation engine, the brand and marketing, the website and content, and the operational support staff. The split is intentional: operators run as independent practitioners under the TechBrot brand; TechBrot doesn&rsquo;t employ them or carry their employment overhead.</p>
+                    </div>
+                  </details>
+                </li>
+
+              </ol>
+            </section>
+
+            <!-- CLUSTER 05: APPLICATION -->
+            <section class="kb-cluster" id="cluster-application" aria-labelledby="cluster-application-heading">
+              <header class="kb-cluster__header">
+                <p class="kb-cluster__number">Cluster 05</p>
+                <h2 class="kb-cluster__heading" id="cluster-application-heading">Application &amp; vetting.</h2>
+                <p class="kb-cluster__lede">The application process, vetting bar, timeline, and what TechBrot actually evaluates before extending an offer.</p>
+              </header>
+              <ol class="kb-list" role="list">
+
+                <li class="kb-item" id="q17">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.17</span>
+                      <span class="kb-item__question">What is the application process and how long does vetting take?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>The application process has three stages over typically <strong>3&ndash;5 weeks</strong>.</p>
+                      <p><strong>Stage 1 &mdash; application</strong> (15 minutes): operator submits credentials (active ProAdvisor certification verified via Intuit directory, prior engagement experience, geographic and industry depth, references).</p>
+                      <p><strong>Stage 2 &mdash; work sample review</strong> (1&ndash;2 weeks): operator provides redacted sample deliverables (a cleanup report, a monthly close package, or an industry-specific engagement). TechBrot reviews for technical quality, communication standards, and engagement model alignment.</p>
+                      <p><strong>Stage 3 &mdash; interview and reference checks</strong> (1&ndash;2 weeks): video interview covering technical depth, communication style, professional judgment, and fit with TechBrot&rsquo;s standards. Reference checks with prior clients or professional contacts.</p>
+                      <p>Onboarding follows acceptance, typically 1&ndash;2 weeks for platform setup, brand training, and first-client assignment. Total timeline from application to first engagement: <strong>typically 5&ndash;8 weeks</strong>.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q18">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.18</span>
+                      <span class="kb-item__question">What does TechBrot actually evaluate during vetting?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Five dimensions, in roughly this order of weight. <strong>(1) Technical work quality</strong> &mdash; demonstrated through the work sample. Does the operator&rsquo;s deliverable meet TechBrot&rsquo;s standard for reconciliation discipline, CoA design, GAAP application, and reporting clarity? <strong>(2) Industry and engagement type depth</strong> &mdash; what industries can the operator actually serve well? What engagement types (monthly, cleanup, catch-up, advisory)? Realistic self-assessment matters more than maximum claimed coverage.</p>
+                      <p><strong>(3) Communication and judgment</strong> &mdash; demonstrated through the interview. Does the operator communicate clearly with clients? Handle scope honestly? Raise issues early? Refuse work outside their depth? <strong>(4) Professional discipline</strong> &mdash; reliability, calendar management, follow-through on commitments. Evaluated via references. <strong>(5) Fit with TechBrot&rsquo;s engagement model</strong> &mdash; some operators prefer hourly billing, custom pricing per client, or other models that don&rsquo;t align with TechBrot&rsquo;s fixed-fee discipline. The vetting identifies misalignment honestly before onboarding rather than after.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q19">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.19</span>
+                      <span class="kb-item__question">Does TechBrot accept everyone who applies?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>No. The vetting process meaningfully filters &mdash; the network exists to maintain the TechBrot engagement standard across operators, and accepting operators who can&rsquo;t deliver that standard would compromise the brand for everyone. Common reasons applications don&rsquo;t advance: <strong>technical work quality below the network bar</strong> (reconciliation gaps, CoA design issues, GAAP errors in the work sample), <strong>communication style misalignment</strong> (jargon-heavy, evasive on limitations, defensive in interview), <strong>insufficient operational experience</strong> (under 5 years of independent practice, or experience entirely in tax-focused work without operational depth), <strong>misalignment with the engagement model</strong> (preference for hourly billing, resistance to written scope discipline, reluctance to accept quality review).</p>
+                      <p>Operators not accepted receive specific feedback so the application can succeed later if circumstances change. Some operators reapply after gaining additional experience; some find the network model genuinely isn&rsquo;t the right fit and pursue other paths. The vetting is honest, not adversarial &mdash; the goal is genuine fit identification, not arbitrary gatekeeping.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q20">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.20</span>
+                      <span class="kb-item__question">Can I apply if I&rsquo;m newer to independent practice but credentialed?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>The 5+ years of operational experience standard isn&rsquo;t a strict cutoff &mdash; it&rsquo;s the typical floor where operators have built enough engagement depth to handle TechBrot&rsquo;s engagement model independently. Practitioners with less independent experience but substantial relevant background (5+ years at an accounting firm in operational accounting roles, recent ProAdvisor certification with strong prior industry experience, former controller transitioning to fractional advisory work) are evaluated on the substance, not the years.</p>
+                      <p>What doesn&rsquo;t work: newly certified ProAdvisors without underlying accounting experience, generalist bookkeepers without operational depth, practitioners primarily looking for hands-on training rather than active practice. The network expects operators who can deliver client work independently from day one &mdash; with TechBrot providing the brand and platform, not the technical training. Earlier-stage practitioners benefit more from working at an accounting firm in employed roles before transitioning to a network like this.</p>
+                    </div>
+                  </details>
+                </li>
+
+              </ol>
+            </section>
+
+            <!-- CLUSTER 06: ENGAGEMENT -->
+            <section class="kb-cluster" id="cluster-engagement" aria-labelledby="cluster-engagement-heading">
+              <header class="kb-cluster__header">
+                <p class="kb-cluster__number">Cluster 06</p>
+                <h2 class="kb-cluster__heading" id="cluster-engagement-heading">Engagement mechanics.</h2>
+                <p class="kb-cluster__lede">How client matching works, geographic coverage, conflicts, and what happens when a match isn&rsquo;t right.</p>
+              </header>
+              <ol class="kb-list" role="list">
+
+                <li class="kb-item" id="q21">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.21</span>
+                      <span class="kb-item__question">How does client matching work?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Client matching uses three primary factors. <strong>Geographic match</strong>: operators are matched to clients in their state or adjacent states where state-specific knowledge (tax, payroll, regulatory) matters &mdash; though all work is virtual, geographic alignment improves continuity and state-specific accuracy. <strong>Industry match</strong>: operators with depth in specific industries (<a href="/accounting/industries/construction/">construction</a>, <a href="/accounting/industries/saas/">SaaS</a>, <a href="/accounting/industries/restaurant/">restaurants</a>, etc.) are matched to clients in those industries. <strong>Engagement type match</strong>: cleanup specialists get cleanup engagements, monthly bookkeeping operators get monthly retainers, advisory-qualified operators get <a href="/accounting/advisory/fractional-cfo/">fractional CFO</a> or advisory work.</p>
+                      <p>The discovery call with the client identifies their fit; TechBrot matches to the operator whose specific combination fits best. <strong>Operators can decline matches that don&rsquo;t fit</strong> (industry outside their depth, capacity issues, conflict of interest), and we re-match. No quotas, no penalty for declining genuinely poor fits. The goal is engagements both sides commit to honestly &mdash; mismatched engagements fail and damage everyone&rsquo;s reputation.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q22">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.22</span>
+                      <span class="kb-item__question">What if I&rsquo;m the only operator in my state? What if there are several?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Both situations exist across the network. In <strong>states where coverage is thin</strong> (currently many states beyond the top metros), operators receive matches across their state for both adjacent and home-state work. As state coverage builds, matches become more locally focused. <strong>In states with multiple operators</strong> (currently several top metros), matches are distributed based on industry depth, engagement type fit, and capacity &mdash; not first-come-first-served. Two operators in California can serve different industries (one SaaS-focused, one construction-focused) and rarely compete for the same lead.</p>
+                      <p>The network is actively expanding state coverage through the 50-state buildout plan &mdash; we&rsquo;re intentionally onboarding operators in underserved states first to support TechBrot&rsquo;s state-level SEO and AI-search expansion. Operators in priority states (CA, TX, FL, NY, IL plus 20 next-tier states) see disproportionate lead flow during the buildout phase. Operators in lower-priority states still receive matches but volume varies more with overall pipeline.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q23">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.23</span>
+                      <span class="kb-item__question">What happens if I have a conflict of interest with a matched client?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Conflicts of interest are flagged and handled transparently. Standard conflicts: prior business relationship with the client (operator previously served them as an employee, contractor, or independent), family relationship, equity ownership in a competing business, current engagement that creates conflicting fiduciary duties. Operators are expected to flag conflicts immediately when a match is offered &mdash; both upfront (during the operator&rsquo;s industry/state profile setup) and at match-time (when specific client information is shared).</p>
+                      <p>Flagged conflicts trigger re-match to a different operator. Operators are never penalized for flagging conflicts &mdash; the alternative (proceeding with a conflict, having it surface during the engagement) damages the client relationship, the operator&rsquo;s reputation, and the brand. Some conflicts are obvious (prior employer); some are subtle (family member of a key competitor). When in doubt, flag and discuss. TechBrot also tracks operator and client information to identify potential conflicts proactively before match offers.</p>
+                    </div>
+                  </details>
+                </li>
+
+              </ol>
+            </section>
+
+            <!-- CLUSTER 07: INDEPENDENCE -->
+            <section class="kb-cluster" id="cluster-independence" aria-labelledby="cluster-independence-heading">
+              <header class="kb-cluster__header">
+                <p class="kb-cluster__number">Cluster 07</p>
+                <h2 class="kb-cluster__heading" id="cluster-independence-heading">Operating independence &amp; exit.</h2>
+                <p class="kb-cluster__lede">What operators can do outside the network, non-solicit terms, and how exit actually works on both sides.</p>
+              </header>
+              <ol class="kb-list" role="list">
+
+                <li class="kb-item" id="q24">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.24</span>
+                      <span class="kb-item__question">Can I continue to serve my own clients outside the network?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Yes &mdash; operators retain full independence to serve clients outside the TechBrot network. The network engagement covers work done through TechBrot (where TechBrot is the client-facing brand and TechBrot&rsquo;s engagement model applies); it does not restrict the operator&rsquo;s outside practice.</p>
+                      <p>The standard agreement includes a narrow non-solicit clause: <strong>operators don&rsquo;t actively recruit TechBrot clients away from the network during or for 12 months after the engagement</strong>, and don&rsquo;t use TechBrot&rsquo;s proprietary processes, templates, or client lists outside the network. Outside that, operators run their own practice freely. Many operators maintain a smaller independent book of long-term clients while taking new growth through TechBrot &mdash; the model is designed to be additive, not exclusive.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q25">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.25</span>
+                      <span class="kb-item__question">What are the exit terms if I decide to leave the network?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Exit is structured to protect clients from disruption while letting operators leave on reasonable timelines. <strong>Standard notice period: 60 days</strong> &mdash; operators give 60 days&rsquo; notice, during which existing engagements are transitioned to other operators (or back to TechBrot lead practice). <strong>Client transition</strong>: TechBrot handles client communication, operator change introductions, and knowledge transfer to the receiving operator. The departing operator participates in the transition to ensure continuity.</p>
+                      <p><strong>Final compensation</strong>: operators receive payment for work completed through the exit date, with the standard monthly payment cycle applying to final amounts. <strong>Non-solicit terms apply for 12 months post-exit</strong> as described in Q.24 &mdash; operators don&rsquo;t actively recruit TechBrot clients away during that window. There&rsquo;s no exit fee, no buyout, no penalty for leaving. The relationship is professional, the exit is clean. Operators have left and rejoined the network later when their practice circumstances changed; the network is designed to accommodate that.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q26">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.26</span>
+                      <span class="kb-item__question">How do I apply?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Submit the application through the <a href="/partners/">partners page</a> or contact us directly with your credentials, geographic coverage, industry depth, and a brief summary of your current practice. The application form covers the basics; the substantive vetting happens in stages 2 and 3 (work sample review and interview).</p>
+                      <p>Before applying, honest self-assessment helps: do you have active ProAdvisor or equivalent credentials? Do you have 5+ years of operational accounting experience? Do you have at least one industry where you have genuine depth (not surface familiarity)? Are you comfortable with fixed-fee pricing, written scope discipline, and quality review on your deliverables? Do you want to focus on client work rather than build your own brand? If the answers are yes, the application is worth submitting. If the answers are mixed, the discovery interview will identify whether the network is the right fit at this point in your practice.</p>
+                      <p><a class="btn btn--primary btn--inline" href="/contact/?intent=partners-faq" data-cta="pfaq-q26-cta">Apply to the network &rarr;</a></p>
+                    </div>
+                  </details>
+                </li>
+
+              </ol>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED -->
+    <section class="section section--kb-related" id="pfaq-related" aria-labelledby="pfaq-related-heading">
+      <div class="container">
+        <header class="kb-related__header">
+          <p class="kb-related__eyebrow">Related</p>
+          <h2 class="kb-related__heading" id="pfaq-related-heading">Learn more about the firm and the engagement model.</h2>
+          <p class="kb-related__lede">For ProAdvisors evaluating fit, the broader firm context matters. These pages cover how TechBrot operates from the client perspective &mdash; the engagement model network operators deliver against.</p>
+        </header>
+        <ul class="kb-related__grid" role="list">
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">Partners</p>
+            <h3 class="kb-related__card-heading"><a href="/partners/">Partners Hub</a></h3>
+            <p class="kb-related__card-body">The main partner-facing page covering the network model, what TechBrot provides operators, and the application process.</p>
+            <a class="kb-related__card-cta" href="/partners/">Partners hub &rarr;</a>
+          </li>
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">About</p>
+            <h3 class="kb-related__card-heading"><a href="/about/">About TechBrot</a></h3>
+            <p class="kb-related__card-body">The firm story &mdash; positioning, structure, methodology, and the team behind the lead practice.</p>
+            <a class="kb-related__card-cta" href="/about/">About TechBrot &rarr;</a>
+          </li>
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">About</p>
+            <h3 class="kb-related__card-heading"><a href="/about/network/">The Operator Network</a></h3>
+            <p class="kb-related__card-body">The client-facing view of the network &mdash; how vetted local ProAdvisors deliver under TechBrot&rsquo;s brand and standards.</p>
+            <a class="kb-related__card-cta" href="/about/network/">Network page &rarr;</a>
+          </li>
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">About</p>
+            <h3 class="kb-related__card-heading"><a href="/about/methodology/">Engagement Methodology</a></h3>
+            <p class="kb-related__card-body">The engagement model operators deliver against &mdash; fixed-fee, written scope, named ProAdvisor, monthly close discipline.</p>
+            <a class="kb-related__card-cta" href="/about/methodology/">Methodology &rarr;</a>
+          </li>
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">Trust</p>
+            <h3 class="kb-related__card-heading"><a href="/trust/">Trust &amp; Standards</a></h3>
+            <p class="kb-related__card-body">The firm&rsquo;s standards for client work &mdash; the bar operators commit to maintaining.</p>
+            <a class="kb-related__card-cta" href="/trust/">Trust page &rarr;</a>
+          </li>
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">Pricing</p>
+            <h3 class="kb-related__card-heading"><a href="/pricing/">Pricing Reference</a></h3>
+            <p class="kb-related__card-body">Canonical pricing across all engagement types &mdash; the framework operators deliver fixed-fee work within.</p>
+            <a class="kb-related__card-cta" href="/pricing/">Pricing &rarr;</a>
+          </li>
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">FAQ</p>
+            <h3 class="kb-related__card-heading"><a href="/accounting/faq/">Accounting FAQ</a></h3>
+            <p class="kb-related__card-body">The broader client-facing accounting FAQ &mdash; understanding what clients ask helps operators understand the engagement landscape.</p>
+            <a class="kb-related__card-cta" href="/accounting/faq/">Accounting FAQ &rarr;</a>
+          </li>
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">FAQ</p>
+            <h3 class="kb-related__card-heading"><a href="/accounting/industries/faq/">Industries FAQ</a></h3>
+            <p class="kb-related__card-body">The 17 industries TechBrot serves and the industry-specific patterns network operators are matched against.</p>
+            <a class="kb-related__card-cta" href="/accounting/industries/faq/">Industries FAQ &rarr;</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--kb-cta" id="pfaq-cta" aria-labelledby="pfaq-cta-heading">
+      <div class="container container--narrow">
+        <div class="kb-cta">
+          <p class="kb-cta__eyebrow">Ready to apply?</p>
+          <h2 class="kb-cta__heading" id="pfaq-cta-heading">Apply to the operator network.</h2>
+          <p class="kb-cta__lede">Twenty-six questions cover the structural mechanics of the network. The remaining questions are specific to your practice &mdash; current client mix, industry depth, geographic coverage, capacity, and how TechBrot&rsquo;s engagement model fits your operating style. Submit your application and we&rsquo;ll respond within 3 business days with next steps. The application is complimentary; vetting is honest; commitment happens only after both sides confirm fit in writing.</p>
+          <div class="kb-cta__actions" role="group" aria-label="Final actions">
+            <a class="btn btn--primary btn--lg btn--inverted" href="/contact/?intent=partners-faq" data-cta="pfaq-cta-primary">Apply to the Network</a>
+            <a class="btn btn--ghost btn--lg btn--inverted" href="/partners/" data-cta="pfaq-cta-secondary">Partners Overview</a>
+          </div>
+          <p class="kb-cta__disclaimer">TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm. QuickBooks is a registered trademark of Intuit Inc. TechBrot Inc. is not affiliated with Intuit Inc. and earns no commission, affiliate, or referral fees on QuickBooks subscriptions or any other Intuit products. Operators contract with TechBrot Inc. as independent contractors (1099-NEC); the network does not constitute employment, partnership, or joint venture. The network does not deliver income-tax filing, IRS representation, audit, or assurance engagements. Specific compensation terms, non-solicit terms, and engagement standards are documented in the network operator agreement and shared during the interview stage. This FAQ is maintained for accuracy by TechBrot Inc. and last reviewed in <time datetime="2026-06">June 2026</time>.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div><!-- ============================================================================
+     FOOTER
+     ============================================================================ -->
+
+<footer class="site-footer" role="contentinfo" id="site-footer">
+
+  <section class="site-footer__band" aria-label="Newsletter signup">
+    <div class="container">
+      <div class="footer-band">
+        <div class="footer-band__copy">
+          <h2 class="footer-band__heading">The monthly brief.</h2>
+          <p class="footer-band__lede">One email a month — operational accounting, QuickBooks, and finance-ops insight for U.S. business owners. No spam, unsubscribe anytime.</p>
+        </div>
+        <form class="footer-band__form" action="/subscribe" method="post" aria-label="Subscribe to the monthly brief">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input class="footer-band__input" type="email" id="footer-email" name="email" placeholder="you@company.com" autocomplete="email" required="">
+          <button class="btn btn--primary btn--md" type="submit" data-cta="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="site-footer__main">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="site-footer__brand-col">
+          <a class="site-brand site-brand--footer" href="/" aria-label="TechBrot home">
+            <img class="site-brand__mark" src="/assets/img/brand/wordmark-light.png" alt="TechBrot" width="140" height="36" decoding="async">
+          </a>
+          <p class="site-footer__tagline">A modern accounting platform with vetted local partners.</p>
+          <ul class="site-footer__contact-list">
+            <li><a href="mailto:hello@techbrot.com">hello@techbrot.com</a></li>
+            <li><a href="tel:+18777515575">(877) 751-5575</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Book a discovery call →</a></li>
+          </ul>
+          <ul class="site-footer__social" aria-label="Social media">
+  <li>
+    <a href="https://www.linkedin.com/company/techbrot-inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on LinkedIn">
+      <img src="/assets/img/icons/linkedin.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://x.com/techbrot_inc"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on X">
+      <img src="/assets/img/icons/x.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.instagram.com/techbrot_inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on Instagram">
+      <img src="/assets/img/icons/instagram.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+</ul>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Accounting">
+          <h2 class="site-footer__heading" id="fh-services" aria-controls="fl-services" aria-expanded="false" role="button" tabindex="0">Accounting</h2>
+          <ul class="site-footer__links" id="fl-services" aria-labelledby="fh-services">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="QuickBooks">
+          <h2 class="site-footer__heading" id="fh-quickbooks" aria-controls="fl-quickbooks" aria-expanded="false" role="button" tabindex="0">QuickBooks</h2>
+          <ul class="site-footer__links" id="fl-quickbooks" aria-labelledby="fh-quickbooks">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Company">
+          <h2 class="site-footer__heading" id="fh-company" aria-controls="fl-company" aria-expanded="false" role="button" tabindex="0">Company</h2>
+          <ul class="site-footer__links" id="fl-company" aria-labelledby="fh-company">
+            <li><a href="/about/">About</a></li>
+            <li><a href="/about/methodology/">Methodology</a></li>
+            <li><a href="/about/team/">Team</a></li>
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Network">
+          <h2 class="site-footer__heading" id="fh-network" aria-controls="fl-network" aria-expanded="false" role="button" tabindex="0">Network</h2>
+          <ul class="site-footer__links" id="fl-network" aria-labelledby="fh-network">
+            <li><a href="/find-an-accountant/">Find an Accountant</a></li>
+            <li><a href="/partners/">For Accountants</a></li>
+            <li><a href="/about/network/">How it works</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__base">
+    <div class="container">
+      <p class="site-footer__disclosure" role="note">
+        <strong>Independent ProAdvisor firm.</strong> QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc. <a href="/legal/disclaimer/">Read full notice</a>.
+      </p>
+      <div class="site-footer__base-row">
+        <p class="site-footer__copyright">© <time>2026</time> TechBrot Inc. All rights reserved.</p>
+        <ul class="site-footer__legal" aria-label="Legal links">
+          <li><a href="/legal/privacy-policy/">Privacy</a></li>
+          <li><a href="/legal/terms/">Terms</a></li>
+          <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+          <li><a href="/legal/dpa/">Data processing</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</footer>
+    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+---json
+{
+  "layout": "layouts/base.njk",
+  "permalink": "/404.html",
+  "chrome": "minimal",
+  "robotsOverride": "noindex, follow",
+  "eleventyExcludeFromCollections": true,
+  "title": "Page not found — TechBrot",
+  "description": "The address doesn't match anything in our books. Find the page you meant, or call and a ProAdvisor will point you right."
+}
+---
+{#- 404 — built from handoff pages/404.html (changeover step 5).
+    Render copy verbatim; placeholder links/phone replaced with the real
+    destinations + site.json NAP. Hairline rule-mark from 08-additions.
+    "Converts even in failure." -#}
+
+<section class="section" id="notfound">
+  <div class="container">
+    <p class="nf-code"><span class="rule-mark" aria-hidden="true"></span>404 &middot; page not found</p>
+    <h1 class="nf-heading">This page didn&rsquo;t reconcile.</h1>
+    <p class="nf-lede">The address doesn&rsquo;t match anything in our books. The places people usually mean are below &mdash; or just call, and a ProAdvisor will point you right.</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary btn--lg" href="/">Back to the homepage</a>
+      <a class="phone-cta" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">
+        <span class="phone-cta__icon">{% include "icons/phone.svg" %}</span>
+        <span><span class="phone-cta__number">{{ site.phone.display }}</span><span class="phone-cta__note">a ProAdvisor answers</span></span>
+      </a>
+    </div>
+    <ul class="nf-silos">
+      <li><a href="/quickbooks/file-review/?intent=file-review">QuickBooks file review<span>Free &middot; the usual destination</span></a></li>
+      <li><a href="/accounting/services/">Services<span>Bookkeeping, cleanup, advisory</span></a></li>
+      <li><a href="/pricing/">Pricing<span>Fixed-fee, in writing</span></a></li>
+      <li><a href="/quickbooks/">QuickBooks<span>Setup, cleanup, migration, help</span></a></li>
+      <li><a href="/find-an-accountant/">Find an accountant<span>State by state</span></a></li>
+      <li><a href="/contact/">Contact<span>One business day, a human</span></a></li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,191 @@
+---
+layout: layouts/base.njk
+chrome: minimal
+slug: dev-form-test
+title: "DEV · Form contract harness — not a site page"
+description: "Localhost-only harness proving the rebuilt form reproduces the live payload contract byte-for-byte. Excluded from production output."
+includeFormJs: true
+eleventyExcludeFromCollections: true
+---
+
+<section class="section" id="dev-form-test-intro">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Dev harness · {{ env.name }}</p>
+      <h1 class="section__heading">Form contract harness.</h1>
+      <p class="section__lede">Field names, data-meta hooks, and trackers match the repo contact form exactly. Submitting logs the would-send payload below and to the console — nothing is posted outside production. Try it with <code>?intent=monthly</code> etc. to verify intent routing.</p>
+    </header>
+  </div>
+</section>
+
+<section class="section" id="dev-form-test-form">
+  <div class="container container--narrow">
+    <div class="contact-form-wrap">
+      <form class="intake-form" id="contact-discovery-form" data-form="contact-discovery" method="POST" action="/contact/submit" novalidate>
+        <header class="intake-form__header">
+          <p class="intake-form__eyebrow">Discovery brief</p>
+          <h2 class="intake-form__heading" data-intent-headline>Send us your situation.</h2>
+          <p class="intake-form__lede" data-intent-lede>Six minutes. Six fields. We&rsquo;ll respond within one business day.</p>
+        </header>
+
+        <fieldset class="intake-group">
+          <legend class="intake-group__legend"><span class="intake-group__title">About you</span></legend>
+          <div class="intake-row intake-row--two">
+            <div class="intake-field">
+              <label class="intake-field__label" for="contact-name">Full name *</label>
+              <input class="intake-field__input" type="text" id="contact-name" name="name" required autocomplete="name">
+            </div>
+            <div class="intake-field">
+              <label class="intake-field__label" for="contact-company">Company *</label>
+              <input class="intake-field__input" type="text" id="contact-company" name="company" required autocomplete="organization">
+            </div>
+          </div>
+          <div class="intake-row intake-row--two">
+            <div class="intake-field">
+              <label class="intake-field__label" for="contact-email">Work email *</label>
+              <input class="intake-field__input" type="email" id="contact-email" name="email" required autocomplete="email">
+            </div>
+            <div class="intake-field">
+              <label class="intake-field__label" for="contact-phone">Phone</label>
+              <input class="intake-field__input" type="tel" id="contact-phone" name="phone" autocomplete="tel">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="intake-group">
+          <legend class="intake-group__legend"><span class="intake-group__title">What we should discuss</span></legend>
+          <div class="intake-checkboxes" role="group">
+            {%- set services = [
+              ["monthly-bookkeeping", "Monthly bookkeeping"],
+              ["cleanup", "QuickBooks cleanup"],
+              ["catch-up", "Catch-up bookkeeping"],
+              ["qb-setup", "QuickBooks setup"],
+              ["qb-migration", "QuickBooks migration"],
+              ["payroll", "Payroll management"],
+              ["sales-tax", "Sales tax compliance"],
+              ["fractional-cfo", "Fractional CFO"],
+              ["new-business", "New business setup"],
+              ["not-sure", "Not sure yet"]
+            ] %}
+            {%- for s in services %}
+            <label class="intake-checkbox" data-service="{{ s[0] }}">
+              <input type="checkbox" name="services[]" value="{{ s[0] }}" data-service-input>
+              <span class="intake-checkbox__indicator" aria-hidden="true"></span>
+              <span class="intake-checkbox__body"><span class="intake-checkbox__label">{{ s[1] }}</span></span>
+            </label>
+            {%- endfor %}
+          </div>
+        </fieldset>
+
+        <fieldset class="intake-group">
+          <legend class="intake-group__legend"><span class="intake-group__title">Business context</span></legend>
+          <div class="intake-row intake-row--two">
+            <div class="intake-field">
+              <label class="intake-field__label" for="contact-revenue">Annual revenue</label>
+              <select class="intake-field__select" id="contact-revenue" name="revenue_range">
+                <option value="">Select range</option>
+                <option value="pre-revenue">Pre-revenue / new business</option>
+                <option value="under-500k">Under $500K</option>
+                <option value="500k-1m">$500K&ndash;$1M</option>
+                <option value="1m-5m">$1M&ndash;$5M</option>
+                <option value="5m-25m">$5M&ndash;$25M</option>
+                <option value="25m-plus">$25M+</option>
+                <option value="prefer-not">Prefer not to share</option>
+              </select>
+            </div>
+            <div class="intake-field">
+              <label class="intake-field__label" for="contact-industry">Industry</label>
+              <select class="intake-field__select" id="contact-industry" name="industry">
+                <option value="">Select industry</option>
+                <option value="ecommerce">E-commerce / DTC</option>
+                <option value="saas">SaaS / Software</option>
+                <option value="professional-services">Professional services</option>
+                <option value="agency">Agency / Marketing</option>
+                <option value="construction">Construction / Trades</option>
+                <option value="real-estate">Real estate</option>
+                <option value="restaurants">Restaurants / Hospitality</option>
+                <option value="manufacturing">Manufacturing</option>
+                <option value="healthcare">Healthcare</option>
+                <option value="nonprofit">Nonprofit</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="intake-row intake-row--two">
+            <div class="intake-field">
+              <label class="intake-field__label" for="contact-qb-status">QuickBooks status</label>
+              <select class="intake-field__select" id="contact-qb-status" name="qb_status">
+                <option value="">Select status</option>
+                <option value="qbo-current">Using QuickBooks Online</option>
+                <option value="qb-desktop">Using QuickBooks Desktop</option>
+                <option value="qb-enterprise">Using QuickBooks Enterprise</option>
+                <option value="other-software">Using other software (Xero, Wave, etc.)</option>
+                <option value="no-software">No accounting software / spreadsheets</option>
+                <option value="not-sure">Not sure</option>
+              </select>
+            </div>
+            <div class="intake-field">
+              <label class="intake-field__label" for="contact-timeline">Timeline</label>
+              <select class="intake-field__select" id="contact-timeline" name="timeline">
+                <option value="">Select urgency</option>
+                <option value="immediate">Immediate &mdash; this week</option>
+                <option value="month">Within a month</option>
+                <option value="quarter">Within this quarter</option>
+                <option value="exploring">Just exploring</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="intake-group">
+          <legend class="intake-group__legend"><span class="intake-group__title">Tell us more</span></legend>
+          <div class="intake-field">
+            <label class="intake-field__label sr-only" for="contact-message">Discovery notes</label>
+            <textarea class="intake-field__textarea" id="contact-message" name="message" rows="5"></textarea>
+          </div>
+        </fieldset>
+
+        {# Hidden metadata — names + data-meta identical to the live contract #}
+        <input type="hidden" name="intent"             data-meta="intent"             value="">
+        <input type="hidden" name="state"              data-meta="state"              value="">
+        <input type="hidden" name="city"               data-meta="city"               value="">
+        <input type="hidden" name="industry_intent"    data-meta="industry"           value="">
+        <input type="hidden" name="service"            data-meta="service"            value="">
+        <input type="hidden" name="source_page"        data-meta="source_page"        value="">
+        <input type="hidden" name="source_type"        data-meta="source_type"        value="">
+        <input type="hidden" name="funnel_stage"       data-meta="funnel_stage"       value="">
+        <input type="hidden" name="urgency"            data-meta="urgency"            value="">
+        <input type="hidden" name="operator_candidate" data-meta="operator_candidate" value="">
+        <input type="hidden" name="referring_intent" id="contact-referring-intent" value="" data-intent-tracker>
+        <input type="hidden" name="referring_page"   id="contact-referring-page"   value="" data-referrer-tracker>
+
+        {# Honeypot — bots fill it; humans never see it. NOT in the payload. #}
+        <div class="sr-only" aria-hidden="true">
+          <label for="contact-company-website">Company website (leave blank)</label>
+          <input type="text" id="contact-company-website" name="company_website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="intake-form__footer">
+          <label class="intake-checkbox intake-checkbox--consent">
+            <input type="checkbox" name="consent" value="agreed" required>
+            <span class="intake-checkbox__indicator" aria-hidden="true"></span>
+            <span class="intake-checkbox__body"><span class="intake-checkbox__label">I agree to be contacted by TechBrot regarding this inquiry.</span></span>
+          </label>
+          <div class="intake-form__actions">
+            <button class="btn btn--primary btn--lg" type="submit" data-cta="contact-form-submit">Send the Discovery Brief</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div style="margin-block-start: var(--space-12);">
+      <p class="section__eyebrow">Would-send payload (contract review)</p>
+      <pre data-payload-log style="font-family: var(--font-mono); font-size: var(--fs-13); background: var(--bg-section-alt); border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); padding: var(--space-4); overflow-x: auto; min-height: 8rem;">— submit the form to log the payload —</pre>
+    </div>
+  </div>
+</section>
+
+<script>
+window.TB_INTENT_MAP = {{ intents.intents | dump | safe }};
+window.TB_LOOKUPS = {{ intents.lookups | dump | safe }};
+</script>

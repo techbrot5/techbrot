@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+<!-- ============================================================================
+  TECHBROT.COM — GLOBAL HEAD (PRODUCTION v4)
+  Bootstrap Studio Global Template · Loads sitewide on every page
+  ----------------------------------------------------------------------------
+  SCOPE:    Site-level signals only. Each page sets:
+              • <title>
+              • <meta name="description">
+              • <link rel="canonical">
+              • <link rel="alternate" hreflang>
+              • <meta property="og:url">
+              • <meta property="og:title">
+              • <meta property="og:description">
+              • <meta name="twitter:title">
+              • <meta name="twitter:description">
+              • Page-specific schema: WebPage, BreadcrumbList, FAQPage,
+                QAPage, Article, Service offerings — all referencing
+                the global Organization / Person / WebSite via @id.
+
+  GOAL:     Top 0.01% AI citation, entity SEO, E-E-A-T, semantic search,
+            Google / Perplexity / ChatGPT / Claude / Gemini retrieval.
+
+  STACK:    Bootstrap Studio · Static HTML · TechBrot Inc. (US C-Corp)
+  MODEL:    Independent accounting platform with vetted local partners
+
+  v4 CHANGE LOG:
+    • Added Person node for David Westgate (#david-westgate) — Lead
+      QuickBooks ProAdvisor, the named/visible page author referenced by
+      each page's WebPage.reviewedBy. Both Abid (founder/CEO) and David
+      (lead ProAdvisor) are certified; David references the same shared
+      #credential-* entities by @id. Abid remains founder + off visible
+      pages (org-level relationship, not page authorship).
+  UPDATED:  June 2026
+============================================================================ -->
+
+
+<!-- ── 01. RENDERING ──────────────────────────────────── -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- ── 02. PAGE IDENTITY — GLOBAL FALLBACKS (overridden per page) ─────────
+  These are global safety-net values. Every real page overrides title
+  and description in its own head.
+<title>A Modern Accounting Platform with Vetted Local Partners · TechBrot</title>
+<meta name="description" content="TechBrot is an independent U.S. accounting platform delivering QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations through a curated network of vetted local partners.">
+ -->
+
+<!-- ── 03. CANONICAL & HREFLANG — PER-PAGE ONLY ──────────────────────────
+  Reference template (do NOT uncomment globally):
+    <link rel="canonical" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="en-US" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="x-default" href="https://techbrot.com/[slug]/">
+-->
+
+
+<!-- ── 04. INDEXING & CRAWL DIRECTIVES ───────────────────────────────────
+  AI crawler policy (GPTBot, ClaudeBot, PerplexityBot, Google-Extended,
+  Applebot-Extended) is managed at robots.txt + Cloudflare WAF level.
+  These meta directives govern traditional search crawlers only. -->
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="bingbot" content="index, follow">
+
+
+<!-- ── 05. SITE IDENTITY & AUTHORSHIP ────────────────────────────────────-->
+
+<meta name="author" content="TechBrot Inc.">
+<meta name="application-name" content="TechBrot">
+<meta name="apple-mobile-web-app-title" content="TechBrot">
+
+<!-- ── 06. GEO & LOCALE ──────────────────────────────────────────────────
+  Registered: 651 N Broad St, Suite 201, Middletown, DE 19709.
+  Service area: 50 US states (national virtual + local partner network).
+  geo.region uses ISO 3166-2 (US-DE). Nationwide service is declared in
+  Organization schema areaServed (full state ItemList below). -->
+
+<meta http-equiv="content-language" content="en-US">
+<meta name="language" content="English">
+
+<!-- ── 07. BROWSER, DEVICE & PWA ─────────────────────────────────────────-->
+
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B0B" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-TileColor" content="#FAFAF7">
+<meta name="msapplication-config" content="/browserconfig.xml">
+
+
+<!-- ── 08. SECURITY & REFERRER ───────────────────────────────────────────-->
+
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+
+<!-- ── 09. OPEN GRAPH — SITE-LEVEL ONLY (image is per-page) ─────────────
+  Per-page sets: og:url, og:title, og:description, og:image (+ dimensions),
+  and og:type="article" on articles. Global default og:type is "website". -->
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TechBrot">
+<meta property="og:locale" content="en_US">
+
+<!-- ── 10. TWITTER / X CARD — SITE-LEVEL ONLY (image is per-page) ───────-->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@techbrot_inc">
+<meta name="twitter:creator" content="@techbrot_inc">
+
+<!-- ── 11. FAVICONS, ICONS & WEB APP MANIFEST ───────────────────────────-->
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/img/brand/safari-pinned-tab.svg" color="#0B0B0B">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<!-- ── 12. SITEMAP & FEEDS ──────────────────────────────────────────────-->
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+
+<!-- ── 13. PERFORMANCE: PRECONNECT, DNS-PREFETCH, FONT PRELOAD ──────────
+  Fonts: Fraunces (serif headings) + Inter (sans body/UI), both Google.
+  Preloading the two heaviest weights eliminates layout-shift on first
+  paint. Adjust paths if you self-host. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+
+<link rel="preload" as="image" href="/assets/img/brand/wordmark.svg" fetchpriority="high">
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<!-- ── 14. STRUCTURED DATA — ENTITY GRAPH ───────────────────────────────
+  Six-node @graph:
+    1. Organization (multi-type: Organization + ProfessionalService) —
+       the primary entity. Brand, knowsAbout (topical authority),
+       hasOfferCatalog (service routing), areaServed (full US),
+       contactPoint (toll-free), full sameAs cluster.
+    2. Brand — separate Brand entity for AI knowledge-graph systems.
+    3. Person (Abid Khan) — founder/CEO authority; certified ProAdvisor.
+    4. Person (David Westgate) — Lead ProAdvisor; the named, visible page
+       author referenced by each page's WebPage.reviewedBy. Both are
+       certified and share the #credential-* entities by @id.
+    5. WebSite — publisher entity with SearchAction.
+    (ProAdvisor credential entities #credential-* are defined inline on
+     the Abid node and referenced by David.)
+
+  Per-page schema attaches via @id reference, never duplicates these. -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://techbrot.com/#organization",
+
+      "name": "TechBrot Inc.",
+      "legalName": "TechBrot Inc.",
+      "alternateName": [
+        "TechBrot",
+        "TechBrot Network",
+        "TechBrot Accounting Platform"
+      ],
+      "slogan": "A modern accounting platform with vetted local partners.",
+      "description": "TechBrot Inc. is an independent U.S. firm of Certified QuickBooks ProAdvisors, accountants, and advisors serving small and mid-sized businesses. Services span QuickBooks setup, cleanup, and migration; monthly, cleanup, and catch-up bookkeeping; payroll; multi-state sales tax; 1099 preparation; financial reporting; and fractional CFO advisory — delivered directly and through a curated network of vetted local Certified ProAdvisors. Independent Certified QuickBooks ProAdvisor firm; not affiliated with Intuit Inc.",
+      "disambiguatingDescription": "Independent accounting platform with vetted local partners — not affiliated with Intuit Inc. QuickBooks is a registered trademark of Intuit Inc.",
+
+      "url": "https://techbrot.com/",
+
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://techbrot.com/#logo",
+        "url": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "contentUrl": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "caption": "TechBrot — A modern accounting platform with vetted local partners",
+        "width": 512,
+        "height": 512,
+        "inLanguage": "en-US"
+      },
+
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://techbrot.com/assets/img/og/techbrot-og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "TechBrot — A modern accounting platform with vetted local partners"
+      },
+
+      "brand": {
+        "@id": "https://techbrot.com/#brand"
+      },
+
+   
+      "foundingDate": "2023",
+      "founder": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+      "founders": [
+        { "@id": "https://techbrot.com/#abid-khan" }
+      ],
+      "employee": [
+        { "@id": "https://techbrot.com/#abid-khan" },
+        { "@id": "https://techbrot.com/#david-westgate" }
+      ],
+
+      "email": "support@techbrot.com",
+      "telephone": "+1-877-751-5575",
+      "priceRange": "$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": ["Credit Card", "Bank Transfer", "ACH", "Check"],
+
+      "naics": "541219",
+      "isicV4": "6920",
+
+      "address": {
+        "@type": "PostalAddress",
+        "@id": "https://techbrot.com/#address",
+        "streetAddress": "651 N Broad St, Suite 201",
+        "addressLocality": "Middletown",
+        "addressRegion": "DE",
+        "postalCode": "19709",
+        "addressCountry": "US"
+      },
+
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.449",
+        "longitude": "-75.716"
+      },
+
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "customer service",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "sales",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "partners@techbrot.com",
+          "contactType": "partner inquiries",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        }
+      ],
+
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States",
+        "@id": "https://www.wikidata.org/entity/Q30"
+      },
+
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Small and mid-sized U.S. businesses"
+      },
+
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        }
+      ],
+
+      "keywords": "accounting platform, QuickBooks ProAdvisor, bookkeeping services, QuickBooks cleanup, monthly bookkeeping, catch-up bookkeeping, payroll services, fractional CFO, sales tax compliance, 1099 preparation, vetted accounting partners, U.S. small business accounting",
+
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "TechBrot Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monthly Bookkeeping",
+              "description": "Recurring monthly bookkeeping with real reconciliation, monthly close package, and named operator point of contact.",
+              "url": "https://techbrot.com/accounting/bookkeeping/monthly-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks and Bookkeeping Cleanup",
+              "description": "Reconstruct accurate books from a messy state — categorization fixes, real bank and credit-card reconciliations, prior-period correction, and reliable financial statements.",
+              "url": "https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Catch-up Bookkeeping",
+              "description": "Bring backlogged books current — from a few missed months to multi-year historical cleanup before tax filing.",
+              "url": "https://techbrot.com/accounting/bookkeeping/catch-up-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Setup and Onboarding",
+              "description": "Independent ProAdvisor-led QuickBooks setup, chart of accounts, banking, payroll, and integration configuration for new and existing businesses.",
+              "url": "https://techbrot.com/quickbooks/setup/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Migration",
+              "description": "QuickBooks Desktop-to-Online migration and other software-to-QuickBooks migrations performed by Certified ProAdvisors with data integrity verification.",
+              "url": "https://techbrot.com/quickbooks/migration/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Independent QuickBooks ProAdvisor Help",
+              "description": "Certified ProAdvisor help with QuickBooks file issues, reconciliation problems, plan selection, and workflow advisory — independent guidance beyond product support.",
+              "url": "https://techbrot.com/quickbooks/help/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Payroll Setup and Management",
+              "description": "Payroll setup, processing, tax filing, and compliance support delivered through the TechBrot operator network.",
+              "url": "https://techbrot.com/accounting/payroll-management/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sales Tax Compliance",
+              "description": "Multi-state sales tax registration, filing, and nexus advisory for U.S. small and mid-sized businesses.",
+              "url": "https://techbrot.com/accounting/sales-tax-compliance/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "1099 Preparation",
+              "description": "Annual 1099 preparation, vendor data collection, and IRS filing for U.S. small businesses.",
+              "url": "https://techbrot.com/accounting/1099-preparation/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fractional CFO Services",
+              "description": "Senior financial advisory delivered through the TechBrot network — cash flow planning, forecasting, KPI reporting, and board-ready financials for growing businesses.",
+              "url": "https://techbrot.com/accounting/advisory/fractional-cfo/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Find a Local Accounting Partner",
+              "description": "Match with a vetted, credentialed, insured TechBrot operator partner in your U.S. state — typically within 48 hours.",
+              "url": "https://techbrot.com/find-an-accountant/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          }
+        ]
+      },
+
+      "knowsAbout": [
+        "Accounting",
+        "Bookkeeping",
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Premier",
+        "QuickBooks Payroll",
+        "QuickBooks ProAdvisor",
+        "QuickBooks setup",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "QuickBooks Desktop to Online migration",
+        "QuickBooks plan selection",
+        "QuickBooks reconciliation",
+        "QuickBooks bank feeds",
+        "QuickBooks error troubleshooting",
+        "QuickBooks company file repair",
+        "QuickBooks multi-user mode",
+        "QuickBooks payroll setup",
+        "QuickBooks payroll troubleshooting",
+        "QuickBooks sales tax",
+        "QuickBooks 1099 preparation",
+        "Monthly bookkeeping",
+        "Catch-up bookkeeping",
+        "Cleanup bookkeeping",
+        "Historical bookkeeping cleanup",
+        "Virtual bookkeeping",
+        "Outsourced bookkeeping",
+        "Small business accounting",
+        "Startup accounting",
+        "Bank reconciliation",
+        "Accounts payable management",
+        "Accounts receivable management",
+        "Chart of accounts setup",
+        "Month-end close",
+        "Year-end close",
+        "Financial statement preparation",
+        "Financial reporting",
+        "Cash flow forecasting",
+        "Cash flow management",
+        "Profitability analysis",
+        "KPI reporting",
+        "Budgeting and forecasting",
+        "Payroll services",
+        "Payroll tax compliance",
+        "Sales tax compliance",
+        "Sales tax nexus",
+        "1099 preparation and filing",
+        "Tax planning",
+        "IRS problem resolution",
+        "Fractional CFO services",
+        "Controller services",
+        "Business advisory services",
+        "Ecommerce accounting",
+        "Real estate accounting",
+        "Construction accounting",
+        "Restaurant accounting",
+        "Healthcare accounting",
+        "Law firm accounting",
+        "SaaS accounting",
+        "Professional services accounting",
+        "Manufacturing accounting",
+        "Trucking accounting",
+        "Nonprofit accounting",
+        "Franchise accounting",
+        "Retail accounting",
+        "Job costing",
+        "Shopify QuickBooks integration",
+        "Amazon QuickBooks integration",
+        "Stripe QuickBooks integration",
+        "Vetted accounting partner network",
+        "Operator-led accounting platform",
+        "Independent ProAdvisor firm"
+      ],
+
+      "subjectOf": {
+        "@type": "WebPage",
+        "@id": "https://techbrot.com/about/"
+      },
+
+    "sameAs": [
+  "https://www.linkedin.com/company/techbrot-inc/",
+  "https://x.com/techbrot_inc",
+  "https://www.instagram.com/techbrot_inc",
+  "https://www.youtube.com/@techbrot_inc",
+  "https://www.facebook.com/techbrotinc",
+  "https://www.tumblr.com/techbrot",
+  "https://pin.it/1d4Qrx4At",
+  "https://www.tiktok.com/@techbrot_inc",
+  "https://medium.com/@techbrot5",
+  "https://clutch.co/profile/techbrot"
+]
+    },
+
+    {
+      "@type": "Brand",
+      "@id": "https://techbrot.com/#brand",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Network",
+      "url": "https://techbrot.com/",
+      "logo": "https://techbrot.com/assets/img/brand/logo_img.png",
+      "slogan": "A modern accounting platform with vetted local partners."
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#abid-khan",
+
+      "name": "Abid Khan",
+      "givenName": "Abid",
+      "familyName": "Khan",
+
+      "url": "https://techbrot.com/about/team/#abid-khan",
+
+      "jobTitle": "Founder & CEO",
+      "description": "Abid Khan is the Founder and CEO of TechBrot Inc., an independent U.S. accounting platform with a curated network of vetted local partners. He is a Certified QuickBooks ProAdvisor across QuickBooks Online, Desktop, Enterprise, and Payroll, and leads platform architecture, partner network development, and AI-first search infrastructure.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "Small business bookkeeping",
+        "Bank reconciliation",
+        "Accounting platform architecture",
+        "Partner network development",
+        "AI-first SEO",
+        "Topical authority architecture",
+        "E-E-A-T optimization"
+      ],
+
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qbo-l2",
+          "name": "QuickBooks Online ProAdvisor (Level 2)",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-desktop",
+          "name": "QuickBooks Desktop ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-enterprise",
+          "name": "QuickBooks Enterprise ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-payroll",
+          "name": "QuickBooks Payroll ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        }
+      ],
+
+      "sameAs": [
+  "https://www.linkedin.com/in/abid-khan-ai/",
+  "https://www.reddit.com/user/techbrot_inc/",
+  "https://www.quora.com/profile/Abid-Khan-119",
+  "https://www.credly.com/users/abid-khan.3ceb70a5/badges#credly"
+      ]
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#david-westgate",
+
+      "name": "David Westgate",
+      "givenName": "David",
+      "familyName": "Westgate",
+
+      "url": "https://techbrot.com/about/team/#david-westgate",
+
+      "jobTitle": "Lead QuickBooks ProAdvisor",
+      "description": "David Westgate is the Lead QuickBooks ProAdvisor at TechBrot Inc., with more than 40 years of accounting experience. A Certified QuickBooks ProAdvisor across QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll, he leads bookkeeping, cleanup, reconciliation, and QuickBooks file rebuilds across construction, professional services, and nonprofit engagements, and is the reviewing authority for TechBrot's published accounting content.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks reconciliation",
+        "Bookkeeping",
+        "Bank reconciliation",
+        "Month-end close",
+        "Sales tax compliance",
+        "IOLTA trust accounting",
+        "Job costing",
+        "Construction accounting",
+        "Nonprofit accounting"
+      ],
+
+      "hasCredential": [
+        { "@id": "https://techbrot.com/#credential-qbo-l2" },
+        { "@id": "https://techbrot.com/#credential-qb-desktop" },
+        { "@id": "https://techbrot.com/#credential-qb-enterprise" },
+        { "@id": "https://techbrot.com/#credential-qb-payroll" }
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://techbrot.com/#website",
+
+      "url": "https://techbrot.com/",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Accounting Platform",
+      "description": "Independent U.S. accounting platform — QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations delivered through a curated network of vetted local partners.",
+      "inLanguage": "en-US",
+
+      "publisher": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "author": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+
+      "about": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightHolder": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightYear": "2023",
+
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://techbrot.com/search/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2Z8GK69Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K2Z8GK69Z5');
+</script>
+
+<!-- ── 15. TRADEMARK DISCLOSURE (machine-readable, AI-citation safety) ──
+  Distinct meta tag declaring trademark posture. Some AI scrapers
+  prioritize meta declarations over body content. Provides an
+  additional structural defense against impersonation classification. -->
+
+<meta name="trademark-disclosure" content="QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc.">
+<meta name="affiliation-disclosure" content="independent">
+
+<!-- ============================================================================
+  END GLOBAL HEAD
+============================================================================ --><title>Contact TechBrot · Book a Discovery Call or Send a Brief</title>
+<meta name="description" content="Book a 30-minute discovery call with a Certified QuickBooks ProAdvisor. We'll review where your books are, recommend the right engagement, and produce a written fixed-fee scope within 3 business days. No pitch.">
+
+<link rel="canonical" href="https://techbrot.com/contact/">
+<link rel="alternate" hreflang="en-US" href="https://techbrot.com/contact/">
+<link rel="alternate" hreflang="x-default" href="https://techbrot.com/contact/">
+
+<meta property="og:url" content="https://techbrot.com/contact/">
+<meta property="og:title" content="Contact TechBrot · Book a Discovery Call">
+<meta property="og:description" content="Book a 30-minute discovery call with a Certified QuickBooks ProAdvisor. Written fixed-fee scope within 3 business days. No pitch.">
+
+<meta name="twitter:title" content="Contact TechBrot · Book a Discovery Call">
+<meta name="twitter:description" content="Book a discovery call with a Certified QuickBooks ProAdvisor. Written scope within 3 business days. No pitch.">
+
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://techbrot.com/contact/#webpage",
+      "url": "https://techbrot.com/contact/",
+      "name": "Contact TechBrot",
+      "description": "Discovery call booking and contact form for TechBrot, an independent U.S. accounting platform delivering bookkeeping, QuickBooks ProAdvisor services, payroll, sales tax compliance, and fractional CFO engagements.",
+      "isPartOf": { "@id": "https://techbrot.com/#website" },
+      "about": { "@id": "https://techbrot.com/#organization" },
+      "publisher": { "@id": "https://techbrot.com/#organization" },
+      "inLanguage": "en-US",
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://techbrot.com/assets/img/og/contact-og.png" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["#contact-promise"] },
+      "mainEntity": { "@id": "https://techbrot.com/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://techbrot.com/contact/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://techbrot.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://techbrot.com/contact/" }
+      ]
+    }
+  ]
+}
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>BSS-1-11ty</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/04-pages.css">
+    <link rel="stylesheet" href="../assets/css/01-tokens.css">
+    <link rel="stylesheet" href="../assets/css/02-base.css">
+    <link rel="stylesheet" href="../assets/css/03-components.css">
+</head>
+
+<body><!-- ============================================================================
+     CHROME · utility bar + primary header + mobile drawer + search palette
+     ============================================================================ -->
+
+<div class="util-bar" role="region" aria-label="Secondary">
+  <div class="container util-bar__inner">
+    <p class="util-bar__trust">
+      <span class="util-bar__dot" aria-hidden="true"></span>
+      <span>Independent Certified QuickBooks ProAdvisor firm · U.S.-based</span>
+    </p>
+    <nav class="util-bar__nav" aria-label="For accountants and partners">
+      <a class="util-bar__link" href="/find-an-accountant/">Find an Accountant</a>
+      <a class="util-bar__link" href="/partners/">For Accountants →</a>
+    </nav>
+  </div>
+</div>
+
+<header class="site-header" role="banner" id="site-header" data-sticky="true">
+  <div class="container site-header__inner">
+
+    <a class="site-brand" href="/" aria-label="TechBrot home" title="TechBrot — A Modern Accounting Platform">
+      <img class="site-brand__mark" src="/assets/img/brand/icon.svg" alt="TechBrot" width="140" height="56" decoding="async" fetchpriority="high">
+    </a>
+
+    <nav class="site-nav site-nav--desktop" aria-label="Primary navigation" id="primary-nav">
+      <ul class="site-nav__list">
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-services" aria-haspopup="true">
+            Accounting
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-services" role="region" aria-label="Accounting services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Bookkeeping</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/">All bookkeeping →</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Financial Operations</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/payroll-management/">Payroll management</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/services/">All services →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/accounting/">Accounting overview →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-quickbooks" aria-haspopup="true">
+            QuickBooks
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-quickbooks" role="region" aria-label="QuickBooks services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">ProAdvisor Services</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/cleanup/">File cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/migration/">Desktop → Online migration</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/help/">QuickBooks help</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Products</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/proadvisor-team/">Our ProAdvisor team</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/">QuickBooks overview →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/legal/disclaimer/">Independent firm — not affiliated with Intuit →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/find-an-accountant/">Find an Accountant</a>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/pricing/">Pricing</a>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-why" aria-haspopup="true">
+            Why TechBrot
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu" id="nav-menu-why" role="region" aria-label="Why TechBrot" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Authority &amp; trust</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/trust/">Trust &amp; standards</a></li>
+                  <li><a class="nav-menu__link" href="/about/methodology/">Our methodology</a></li>
+                  <li><a class="nav-menu__link" href="/reviews/">Client reviews</a></li>
+                  <li><a class="nav-menu__link" href="/vs/">Comparisons</a></li>
+                  <li><a class="nav-menu__link" href="/about/">About &amp; team</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="site-header__utility">
+      <button class="site-search-trigger" type="button" aria-label="Search (press / or Cmd-K)" data-search-open="" title="Search — / or ⌘K">
+        <svg class="site-search-trigger__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+          <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+        </svg>
+        <span class="site-search-trigger__hint" aria-hidden="true"><kbd>/</kbd></span>
+      </button>
+
+      <a class="site-header__phone" href="tel:+18777515575" aria-label="Call TechBrot" data-cta="header-phone" title="Call TechBrot">
+        <span class="site-header__phone-label">Call</span>
+        <span class="site-header__phone-number">(877) 751-5575</span>
+      </a>
+
+      <a class="btn btn--primary btn--sm" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="header-primary" title="Book a discovery call">
+        Book a Call
+      </a>
+    </div>
+
+    <button class="site-header__mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+    </button>
+
+  </div>
+</header>
+
+<aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation" hidden="">
+  <div class="mobile-drawer__header">
+    <a class="site-brand" href="/" aria-label="TechBrot home">
+      <img class="site-brand__mark" src="/assets/img/brand/wordmark.png" alt="TechBrot" width="120" height="36">
+    </a>
+    <button class="mobile-drawer__close" type="button" aria-label="Close navigation menu" data-action="close-drawer">
+      <span class="mobile-drawer__close-x" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <nav class="mobile-drawer__nav" aria-label="Mobile primary navigation">
+    <ul class="mobile-drawer__list">
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-services">
+          <span>Accounting</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-services" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll management</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-quickbooks">
+          <span>QuickBooks</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-quickbooks" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/find-an-accountant/">Find an Accountant</a></li>
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/pricing/">Pricing</a></li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-why">
+          <span>Why TechBrot</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-why" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/about/methodology/">Our methodology</a></li>
+            <li><a href="/reviews/">Client reviews</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+            <li><a href="/about/">About &amp; team</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/partners/">For Accountants</a></li>
+    </ul>
+  </nav>
+
+  <div class="mobile-drawer__footer">
+    <a class="btn btn--primary btn--lg btn--full" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="mobile-primary">Book a Discovery Call</a>
+    <a class="mobile-drawer__phone" href="tel:+18777515575">(877) 751-5575</a>
+  </div>
+</aside>
+
+<div class="search-palette" id="search-palette" role="dialog" aria-modal="true" aria-label="Search TechBrot" hidden="">
+  <div class="search-palette__backdrop" data-search-close=""></div>
+  <div class="search-palette__panel" role="combobox" aria-expanded="true" aria-haspopup="listbox" aria-owns="search-results">
+    <div class="search-palette__field">
+      <svg class="search-palette__icon" width="20" height="20" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+        <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+      </svg>
+      <input class="search-palette__input" id="search-input" type="text" autocomplete="off" spellcheck="false" placeholder="Search services, QuickBooks, comparisons, states, Indiana topics…" aria-label="Search" aria-controls="search-results" aria-autocomplete="list">
+      <button class="search-palette__close" type="button" aria-label="Close search" data-search-close=""><kbd>Esc</kbd></button>
+    </div>
+    <div class="search-palette__body">
+      <ul class="search-palette__results" id="search-results" role="listbox" aria-label="Search results"></ul>
+      <div class="search-palette__suggested" id="search-suggested">
+        <p class="search-palette__suggested-label">Try</p>
+        <ul class="search-palette__chips" role="list">
+          <li><button type="button" class="search-chip" data-q="indiana cagit">Indiana CAGIT payroll</button></li>
+          <li><button type="button" class="search-chip" data-q="bookkeeping cleanup">Bookkeeping cleanup</button></li>
+          <li><button type="button" class="search-chip" data-q="quickbooks migration">QuickBooks migration</button></li>
+          <li><button type="button" class="search-chip" data-q="indianapolis">Indianapolis</button></li>
+          <li><button type="button" class="search-chip" data-q="manufacturing">Manufacturing accounting</button></li>
+          <li><button type="button" class="search-chip" data-q="pricing">Pricing</button></li>
+        </ul>
+      </div>
+      <p class="search-palette__empty" id="search-empty" hidden="">No matches. Try a service, “QuickBooks”, an Indiana topic, a city, or a comparison.</p>
+    </div>
+    <div class="search-palette__foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+<div class="page page--contact" data-page="contact">
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <main id="main" role="main">
+
+    
+
+    <!-- HERO + FORM (split layout — form right, trust column left) -->
+    <section class="section section--contact-main" id="contact-main" aria-labelledby="contact-main-heading">
+      <div class="container">
+
+        <header class="contact-hero">
+          <p class="contact-hero__eyebrow"><span>Contact</span></p>
+          <h1 class="contact-hero__heading" id="contact-main-heading" data-contact-headline-default>
+            Tell us about your books.<br>We&rsquo;ll do the rest.
+          </h1>
+          <!-- Contextual headlines auto-swap based on ?intent= URL parameter -->
+          <p class="contact-hero__lede" data-contact-lede-default>
+            Book a 30-minute discovery call. We&rsquo;ll review where your books are, recommend the right engagement, and produce a written fixed-fee scope within 3 business days. If TechBrot isn&rsquo;t the right fit, we&rsquo;ll say so &mdash; and point you toward what is.
+          </p>
+        </header>
+
+        <div class="contact-layout">
+
+          <!-- ============================================================ -->
+          <!-- TRUST COLUMN (left on desktop)                                 -->
+          <!-- ============================================================ -->
+          <aside class="contact-trust" aria-labelledby="contact-trust-heading">
+
+            <h2 class="sr-only" id="contact-trust-heading">How to reach us &amp; what to expect</h2>
+
+            <!-- Response promise -->
+            <div class="contact-trust__block contact-trust__block--promise" id="contact-promise">
+              <p class="contact-trust__label">Our response promise</p>
+              <p class="contact-trust__body">Every contact form submission gets a response from a Certified ProAdvisor within <strong>1 business day</strong>. Discovery calls scheduled within <strong>3&ndash;5 business days</strong>. Written fixed-fee scopes delivered within <strong>3 business days</strong> of the call.</p>
+            </div>
+
+            <!-- Direct contact methods -->
+            <div class="contact-trust__block">
+              <p class="contact-trust__label">Direct contact</p>
+              <ul class="contact-methods" role="list">
+                <li class="contact-method">
+                  <svg class="contact-method__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <div class="contact-method__body">
+                    <p class="contact-method__label">Phone</p>
+                    <a class="contact-method__value" href="tel:+18777515575" aria-label="Call TechBrot at 1-877-751-5575">+1 (877) 751-5575</a><!-- [VERIFY] number -->
+                    <p class="contact-method__detail">Mon&ndash;Fri, 9&nbsp;AM&ndash;6&nbsp;PM ET</p>
+                  </div>
+                </li>
+                <li class="contact-method">
+                  <svg class="contact-method__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <div class="contact-method__body">
+                    <p class="contact-method__label">Email</p>
+                    <a class="contact-method__value" href="mailto:hello@techbrot.com" aria-label="Email TechBrot at hello@techbrot.com">hello@techbrot.com</a><!-- [VERIFY] email -->
+                    <p class="contact-method__detail">Replied within 1 business day</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- What to expect -->
+            <div class="contact-trust__block">
+              <p class="contact-trust__label">What to expect</p>
+              <ol class="contact-expectations" role="list">
+                <li class="contact-expectation">
+                  <p class="contact-expectation__step">01</p>
+                  <p class="contact-expectation__body">Confirmation email within 1 business day with discovery call slots</p>
+                </li>
+                <li class="contact-expectation">
+                  <p class="contact-expectation__step">02</p>
+                  <p class="contact-expectation__body">30-minute discovery call with a Certified ProAdvisor &mdash; no pitch, just review</p>
+                </li>
+                <li class="contact-expectation">
+                  <p class="contact-expectation__step">03</p>
+                  <p class="contact-expectation__body">Written fixed-fee scope within 3 business days &mdash; or an honest &ldquo;not the right fit&rdquo;</p>
+                </li>
+              </ol>
+            </div>
+
+            <!-- Trust signals -->
+            <div class="contact-trust__block">
+              <p class="contact-trust__label">Why owners choose TechBrot</p>
+              <ul class="contact-signals" role="list">
+                <li class="contact-signal">
+                  <svg class="contact-signal__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Certified QuickBooks ProAdvisors &times;4 (Online L2, Desktop, Enterprise, Payroll)</span>
+                </li>
+                <li class="contact-signal">
+                  <svg class="contact-signal__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Fixed-fee scopes, written before any work begins</span>
+                </li>
+                <li class="contact-signal">
+                  <svg class="contact-signal__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc.</span>
+                </li>
+                <li class="contact-signal">
+                  <svg class="contact-signal__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>We work in your QuickBooks file &mdash; you keep your data, always</span>
+                </li>
+                <li class="contact-signal">
+                  <svg class="contact-signal__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Named operator, real accountability</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Office address (small print) -->
+            <div class="contact-trust__block contact-trust__block--address">
+              <p class="contact-trust__label">Headquartered</p>
+              <address class="contact-address">
+                TechBrot Inc.<br>
+                651 N Broad St, Suite 201<br>
+                Middletown, DE 19709<br>
+                United States
+              </address>
+            </div>
+
+          </aside>
+
+          <!-- ============================================================ -->
+          <!-- INTAKE FORM (right on desktop)                                -->
+          <!-- ============================================================ -->
+          <div class="contact-form-wrap">
+
+            <form class="intake-form"
+                  id="contact-discovery-form"
+                  data-form="contact-discovery"
+                  method="POST"
+                  action="/contact/submit"
+                  novalidate
+                  aria-labelledby="intake-form-heading">
+
+              <header class="intake-form__header">
+                <p class="intake-form__eyebrow">Discovery brief</p>
+                <h2 class="intake-form__heading" id="intake-form-heading">Send us your situation.</h2>
+                <p class="intake-form__lede">Six minutes. Six fields. We&rsquo;ll respond within one business day with discovery call slots and a sense of where we&rsquo;d start.</p>
+              </header>
+
+              <!-- ============== GROUP 1: ABOUT YOU =================== -->
+              <fieldset class="intake-group">
+                <legend class="intake-group__legend">
+                  <span class="intake-group__number">01</span>
+                  <span class="intake-group__title">About you</span>
+                </legend>
+
+                <div class="intake-row intake-row--two">
+                  <div class="intake-field">
+                    <label class="intake-field__label" for="contact-name">
+                      Full name <span class="intake-field__required" aria-hidden="true">*</span>
+                    </label>
+                    <input class="intake-field__input"
+                           type="text"
+                           id="contact-name"
+                           name="name"
+                           required
+                           autocomplete="name"
+                           aria-required="true"
+                           placeholder="Jane Cooper">
+                  </div>
+
+                  <div class="intake-field">
+                    <label class="intake-field__label" for="contact-company">
+                      Company <span class="intake-field__required" aria-hidden="true">*</span>
+                    </label>
+                    <input class="intake-field__input"
+                           type="text"
+                           id="contact-company"
+                           name="company"
+                           required
+                           autocomplete="organization"
+                           aria-required="true"
+                           placeholder="Acme Inc.">
+                  </div>
+                </div>
+
+                <div class="intake-row intake-row--two">
+                  <div class="intake-field">
+                    <label class="intake-field__label" for="contact-email">
+                      Work email <span class="intake-field__required" aria-hidden="true">*</span>
+                    </label>
+                    <input class="intake-field__input"
+                           type="email"
+                           id="contact-email"
+                           name="email"
+                           required
+                           autocomplete="email"
+                           aria-required="true"
+                           placeholder="jane@acme.com">
+                  </div>
+
+                  <div class="intake-field">
+                    <label class="intake-field__label" for="contact-phone">
+                      Phone <span class="intake-field__optional">optional</span>
+                    </label>
+                    <input class="intake-field__input"
+                           type="tel"
+                           id="contact-phone"
+                           name="phone"
+                           autocomplete="tel"
+                           placeholder="(555) 123-4567">
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- ============== GROUP 2: SERVICE INTEREST =================== -->
+              <fieldset class="intake-group">
+                <legend class="intake-group__legend">
+                  <span class="intake-group__number">02</span>
+                  <span class="intake-group__title">What we should discuss</span>
+                </legend>
+                <p class="intake-group__hint">Pick what fits. Pick more than one if more than one fits.</p>
+
+                <div class="intake-checkboxes" role="group" aria-labelledby="intake-services-label">
+                  <p class="sr-only" id="intake-services-label">Service interest</p>
+
+                  <label class="intake-checkbox" data-service="monthly-bookkeeping">
+                    <input type="checkbox" name="services[]" value="monthly-bookkeeping" data-service-input>
+                    <span class="intake-checkbox__indicator" aria-hidden="true"></span>
+                    <span class="intake-checkbox__body">
+                      <span class="intake-checkbox__label">Monthly bookkeeping</span>
+                      <span class="intake-checkbox__hint">Recurring, fixed-fee monthly close</span>
+                    </span>
+                  </label>
+
+                  <label class="intake-checkbox" data-service="cleanup">
+                    <input type="checkbox" name="services[]" value="cleanup" data-service-input>
+                    <span class="intake-checkbox__indicator" aria-hidden="true"></span>
+                    <span class="intake-checkbox__body">
+                      <span class="intake-checkbox__label">QuickBooks cleanup</span>
+                      <span class="intake-checkbox__hint">Books out of order, structural issues</span>
+                    </span>
+                  </label>
+
+                  <label class="intake-checkbox" data-service="catch-up">
+                    <input type="checkbox" name="services[]" value="catch-up" data-service-input>
+                    <span class="intake-checkbox__indicator" aria-hidden="true"></span>
+                    <span class="intake-checkbox__body">
+                      <span class="intake-checkbox__label">Catch-up bookkeeping</span>
+                      <span class="intake-checkbox__hint">Months or years behind</span>
+                    </span>
+                  </label>
+
+                  <label class="intake-checkbox" data-service="qb-setup">
+                    <input type="checkbox" name="services[]" value="qb-setup" data-service-input>
+                    <span class="intake-checkbox__indicator" aria-hidden="true"></span>
+                    <span class="intake-checkbox__body">
+                      <span class="intake-checkbox__label">QuickBooks setup</span>
+                      <span class="intake-checkbox__hint">New file or restructuring</span>
+                    </span>
+                  </label>
+
+                  <label class="intake-checkbox" data-service="qb-migration">
+                    <input type="checkbox" name="services[]" value="qb-migration" data-service-input>
+                    <span class="intake-checkbox__indicator" aria-hidden="true"></span>
+                    <span class="intake-checkbox__body">
+                      <span class="intake-checkbox__label">QuickBooks migration</span>
+                      <span class="intake-checkbox__hint">Desktop &rarr; Online, or platform switch</span>
+                    </span>
+                  </label>
+
+                  <label class="intake-checkbox" data-service="payroll">
+                    <input type="checkbox" name="services[]" value="payroll" data-service-input>
+                    <span class="intake-checkbox__indicator" aria-hidden="true"></span>
+                    <span class="intake-checkbox__body">
+                      <span class="intake-checkbox__label">Payroll management</span>
+                      <span class="intake-checkbox__hint">Single or multi-state payroll</span>
+                    </span>
+                  </label>
+
+                  <label class="intake-checkbox" data-service="sales-tax">
+                    <input type="checkbox" name="services[]" value="sales-tax" data-service-input>
+                    <span class="intake-checkbox__indicator" aria-hidden="true"></span>
+                    <span class="intake-checkbox__body">
+                      <span class="intake-checkbox__label">Sales tax compliance</span>
+                      <span class="intake-checkbox__hint">Multi-state nexus, filings, audits</span>
+                    </span>
+                  </label>
+
+                  <label class="intake-checkbox" data-service="fractional-cfo">
+                    <input type="checkbox" name="services[]" value="fractional-cfo" data-service-input>
+                    <span class="intake-checkbox__indicator" aria-hidden="true"></span>
+                    <span class="intake-checkbox__body">
+                      <span class="intake-checkbox__label">Fractional CFO</span>
+                      <span class="intake-checkbox__hint">Strategic finance, by application</span>
+                    </span>
+                  </label>
+
+                  <label class="intake-checkbox" data-service="new-business">
+                    <input type="checkbox" name="services[]" value="new-business" data-service-input>
+                    <span class="intake-checkbox__indicator" aria-hidden="true"></span>
+                    <span class="intake-checkbox__body">
+                      <span class="intake-checkbox__label">New business setup</span>
+                      <span class="intake-checkbox__hint">First-time accounting infrastructure</span>
+                    </span>
+                  </label>
+
+                  <label class="intake-checkbox" data-service="not-sure">
+                    <input type="checkbox" name="services[]" value="not-sure" data-service-input>
+                    <span class="intake-checkbox__indicator" aria-hidden="true"></span>
+                    <span class="intake-checkbox__body">
+                      <span class="intake-checkbox__label">Not sure yet</span>
+                      <span class="intake-checkbox__hint">Diagnostic call will figure it out</span>
+                    </span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <!-- ============== GROUP 3: BUSINESS CONTEXT =================== -->
+              <fieldset class="intake-group">
+                <legend class="intake-group__legend">
+                  <span class="intake-group__number">03</span>
+                  <span class="intake-group__title">Business context</span>
+                </legend>
+                <p class="intake-group__hint">Helps us route to the right operator. Skip what doesn&rsquo;t apply.</p>
+
+                <div class="intake-row intake-row--two">
+                  <div class="intake-field">
+                    <label class="intake-field__label" for="contact-revenue">
+                      Annual revenue <span class="intake-field__optional">optional</span>
+                    </label>
+                    <select class="intake-field__select" id="contact-revenue" name="revenue_range" autocomplete="off">
+                      <option value="">Select range</option>
+                      <option value="pre-revenue">Pre-revenue / new business</option>
+                      <option value="under-500k">Under $500K</option>
+                      <option value="500k-1m">$500K&ndash;$1M</option>
+                      <option value="1m-5m">$1M&ndash;$5M</option>
+                      <option value="5m-25m">$5M&ndash;$25M</option>
+                      <option value="25m-plus">$25M+</option>
+                      <option value="prefer-not">Prefer not to share</option>
+                    </select>
+                  </div>
+
+                  <div class="intake-field">
+                    <label class="intake-field__label" for="contact-industry">
+                      Industry <span class="intake-field__optional">optional</span>
+                    </label>
+                    <select class="intake-field__select" id="contact-industry" name="industry" autocomplete="off">
+                      <option value="">Select industry</option>
+                      <option value="ecommerce">E-commerce / DTC</option>
+                      <option value="saas">SaaS / Software</option>
+                      <option value="professional-services">Professional services</option>
+                      <option value="agency">Agency / Marketing</option>
+                      <option value="construction">Construction / Trades</option>
+                      <option value="real-estate">Real estate</option>
+                      <option value="restaurants">Restaurants / Hospitality</option>
+                      <option value="manufacturing">Manufacturing</option>
+                      <option value="healthcare">Healthcare</option>
+                      <option value="nonprofit">Nonprofit</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="intake-row intake-row--two">
+                  <div class="intake-field">
+                    <label class="intake-field__label" for="contact-qb-status">
+                      QuickBooks status <span class="intake-field__optional">optional</span>
+                    </label>
+                    <select class="intake-field__select" id="contact-qb-status" name="qb_status" autocomplete="off">
+                      <option value="">Select status</option>
+                      <option value="qbo-current">Using QuickBooks Online</option>
+                      <option value="qb-desktop">Using QuickBooks Desktop</option>
+                      <option value="qb-enterprise">Using QuickBooks Enterprise</option>
+                      <option value="other-software">Using other software (Xero, Wave, etc.)</option>
+                      <option value="no-software">No accounting software / spreadsheets</option>
+                      <option value="not-sure">Not sure</option>
+                    </select>
+                  </div>
+
+                  <div class="intake-field">
+                    <label class="intake-field__label" for="contact-timeline">
+                      Timeline <span class="intake-field__optional">optional</span>
+                    </label>
+                    <select class="intake-field__select" id="contact-timeline" name="timeline" autocomplete="off">
+                      <option value="">Select urgency</option>
+                      <option value="immediate">Immediate &mdash; this week</option>
+                      <option value="month">Within a month</option>
+                      <option value="quarter">Within this quarter</option>
+                      <option value="exploring">Just exploring</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- ============== GROUP 4: TELL US MORE =================== -->
+              <fieldset class="intake-group">
+                <legend class="intake-group__legend">
+                  <span class="intake-group__number">04</span>
+                  <span class="intake-group__title">Tell us more</span>
+                </legend>
+                <p class="intake-group__hint">Anything specific about your situation. The more context, the better the diagnostic call.</p>
+
+                <div class="intake-field">
+                  <label class="intake-field__label sr-only" for="contact-message">Discovery notes</label>
+                  <textarea class="intake-field__textarea"
+                            id="contact-message"
+                            name="message"
+                            rows="5"
+                            placeholder="E.g. &ldquo;Books are 8 months behind, switched bookkeepers twice in 2 years, need to be CPA-ready for tax season. We&rsquo;re on QuickBooks Online Plus, ~$2M revenue, e-commerce. Tried Bench, didn&rsquo;t work out.&rdquo;"
+                            autocomplete="off"></textarea>
+                </div>
+              </fieldset>
+
+             <!-- ============== V2 HIDDEN METADATA TRACKING =================== -->
+              <input type="hidden" name="intent"             data-meta="intent"             value="">
+              <input type="hidden" name="state"              data-meta="state"              value="">
+              <input type="hidden" name="city"               data-meta="city"               value="">
+              <input type="hidden" name="industry_intent"    data-meta="industry"           value="">
+              <input type="hidden" name="service"            data-meta="service"            value="">
+              <input type="hidden" name="source_page"        data-meta="source_page"        value="">
+              <input type="hidden" name="source_type"        data-meta="source_type"        value="">
+              <input type="hidden" name="funnel_stage"       data-meta="funnel_stage"       value="">
+              <input type="hidden" name="urgency"            data-meta="urgency"            value="">
+              <input type="hidden" name="operator_candidate" data-meta="operator_candidate" value="">
+
+              <!-- Legacy trackers (kept so existing analytics/back-end keeps working) -->
+              <input type="hidden" name="referring_intent" id="contact-referring-intent" value="" data-intent-tracker>
+              <input type="hidden" name="referring_page"   id="contact-referring-page"   value="" data-referrer-tracker>
+
+              <!-- ============== SUBMIT =================== -->
+              <div class="intake-form__footer">
+                <div class="intake-consent">
+                  <label class="intake-checkbox intake-checkbox--consent">
+                    <input type="checkbox" name="consent" value="agreed" required aria-required="true">
+                    <span class="intake-checkbox__indicator" aria-hidden="true"></span>
+                    <span class="intake-checkbox__body">
+                      <span class="intake-checkbox__label">I agree to be contacted by TechBrot regarding this inquiry.</span>
+                      <span class="intake-checkbox__hint">We&rsquo;ll only use your details to respond to this request. See our <a href="/legal/privacy/">privacy policy</a>.</span>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="intake-form__actions">
+                  <button class="btn btn--primary btn--lg btn--submit" type="submit" data-cta="contact-form-submit">
+                    Send the Discovery Brief
+                  </button>
+                  <p class="intake-form__assurance">Response within 1 business day. No marketing list. No sales follow-up sequence.</p>
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ALTERNATIVE PATHS BAND (book directly, call directly, partner inquiry) -->
+    <section class="section section--contact-alt" id="contact-alt" aria-labelledby="contact-alt-heading">
+      <div class="container">
+        <header class="section__header section__header--centered">
+          <p class="section__eyebrow">Other ways to connect</p>
+          <h2 class="section__heading" id="contact-alt-heading">If the form isn&rsquo;t the right path.</h2>
+        </header>
+
+        <ul class="contact-alt-grid" role="list">
+
+          <li class="contact-alt-card">
+            <article>
+              <h3 class="contact-alt-card__heading">Schedule directly</h3>
+              <p class="contact-alt-card__body">Book a 30-minute discovery call on our calendar without filling the form. Same operator, same outcome.</p>
+              <a class="contact-alt-card__cta" href="https://calendly.com/techbrot/discovery" rel="noopener" data-cta="contact-alt-calendar">Open the calendar &rarr;</a>
+              <!-- [VERIFY] Calendly URL -->
+            </article>
+          </li>
+
+          <li class="contact-alt-card">
+            <article>
+              <h3 class="contact-alt-card__heading">Call us</h3>
+              <p class="contact-alt-card__body">Speak with a ProAdvisor directly during business hours. We answer the phone &mdash; this isn&rsquo;t routed through an offshore queue.</p>
+              <a class="contact-alt-card__cta" href="tel:+18777515575" data-cta="contact-alt-phone">+1 (877) 751-5575 &rarr;</a>
+              <!-- [VERIFY] number -->
+            </article>
+          </li>
+
+          <li class="contact-alt-card">
+            <article>
+              <h3 class="contact-alt-card__heading">Partner inquiry</h3>
+              <p class="contact-alt-card__body">If you&rsquo;re an independent accounting practice interested in the operator network, the partner application form is the right path.</p>
+              <a class="contact-alt-card__cta" href="/partners/" data-cta="contact-alt-partner">Apply to the network &rarr;</a>
+            </article>
+          </li>
+
+          <li class="contact-alt-card">
+            <article>
+              <h3 class="contact-alt-card__heading">Press &amp; media</h3>
+              <p class="contact-alt-card__body">Journalists, podcast hosts, and event organizers can reach our media contact directly.</p>
+              <a class="contact-alt-card__cta" href="mailto:press@techbrot.com" data-cta="contact-alt-press">press@techbrot.com &rarr;</a>
+              <!-- [VERIFY] email -->
+            </article>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+<script src="/assets/js/intent-map.js"></script>
+<script src="/assets/js/contact-intents.js"></script>
+<script src="/assets/js/contact.js"></script><!-- ============================================================================
+     FOOTER
+     ============================================================================ -->
+
+<footer class="site-footer" role="contentinfo" id="site-footer">
+
+  <section class="site-footer__band" aria-label="Newsletter signup">
+    <div class="container">
+      <div class="footer-band">
+        <div class="footer-band__copy">
+          <h2 class="footer-band__heading">The monthly brief.</h2>
+          <p class="footer-band__lede">One email a month — operational accounting, QuickBooks, and finance-ops insight for U.S. business owners. No spam, unsubscribe anytime.</p>
+        </div>
+        <form class="footer-band__form" action="/subscribe" method="post" aria-label="Subscribe to the monthly brief">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input class="footer-band__input" type="email" id="footer-email" name="email" placeholder="you@company.com" autocomplete="email" required="">
+          <button class="btn btn--primary btn--md" type="submit" data-cta="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="site-footer__main">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="site-footer__brand-col">
+          <a class="site-brand site-brand--footer" href="/" aria-label="TechBrot home">
+            <img class="site-brand__mark" src="/assets/img/brand/wordmark-light.png" alt="TechBrot" width="140" height="36" decoding="async">
+          </a>
+          <p class="site-footer__tagline">A modern accounting platform with vetted local partners.</p>
+          <ul class="site-footer__contact-list">
+            <li><a href="mailto:hello@techbrot.com">hello@techbrot.com</a></li>
+            <li><a href="tel:+18777515575">(877) 751-5575</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Book a discovery call →</a></li>
+          </ul>
+          <ul class="site-footer__social" aria-label="Social media">
+  <li>
+    <a href="https://www.linkedin.com/company/techbrot-inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on LinkedIn">
+      <img src="/assets/img/icons/linkedin.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://x.com/techbrot_inc"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on X">
+      <img src="/assets/img/icons/x.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.instagram.com/techbrot_inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on Instagram">
+      <img src="/assets/img/icons/instagram.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+</ul>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Accounting">
+          <h2 class="site-footer__heading" id="fh-services" aria-controls="fl-services" aria-expanded="false" role="button" tabindex="0">Accounting</h2>
+          <ul class="site-footer__links" id="fl-services" aria-labelledby="fh-services">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="QuickBooks">
+          <h2 class="site-footer__heading" id="fh-quickbooks" aria-controls="fl-quickbooks" aria-expanded="false" role="button" tabindex="0">QuickBooks</h2>
+          <ul class="site-footer__links" id="fl-quickbooks" aria-labelledby="fh-quickbooks">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Company">
+          <h2 class="site-footer__heading" id="fh-company" aria-controls="fl-company" aria-expanded="false" role="button" tabindex="0">Company</h2>
+          <ul class="site-footer__links" id="fl-company" aria-labelledby="fh-company">
+            <li><a href="/about/">About</a></li>
+            <li><a href="/about/methodology/">Methodology</a></li>
+            <li><a href="/about/team/">Team</a></li>
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Network">
+          <h2 class="site-footer__heading" id="fh-network" aria-controls="fl-network" aria-expanded="false" role="button" tabindex="0">Network</h2>
+          <ul class="site-footer__links" id="fl-network" aria-labelledby="fh-network">
+            <li><a href="/find-an-accountant/">Find an Accountant</a></li>
+            <li><a href="/partners/">For Accountants</a></li>
+            <li><a href="/about/network/">How it works</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__base">
+    <div class="container">
+      <p class="site-footer__disclosure" role="note">
+        <strong>Independent ProAdvisor firm.</strong> QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc. <a href="/legal/disclaimer/">Read full notice</a>.
+      </p>
+      <div class="site-footer__base-row">
+        <p class="site-footer__copyright">© <time>2026</time> TechBrot Inc. All rights reserved.</p>
+        <ul class="site-footer__legal" aria-label="Legal links">
+          <li><a href="/legal/privacy-policy/">Privacy</a></li>
+          <li><a href="/legal/terms/">Terms</a></li>
+          <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+          <li><a href="/legal/dpa/">Data processing</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</footer>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

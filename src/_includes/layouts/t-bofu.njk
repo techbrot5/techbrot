@@ -1,0 +1,78 @@
+---
+layout: layouts/base.njk
+chrome: minimal
+tierClass: section--tier-bofu
+callBar: true
+---
+{#- T-BOFU tier skeleton — NEW SKIN (tiers/t-bofu.html + PLACEMENT-MAP).
+    chrome: minimal (logo + phone, slim footer — no funnel leakage) ·
+    paper compact hero with the GAPPED-RULE mark (BOFU signature) ·
+    breadcrumb · sticky call-bar (mobile, by rule) · bofu tint on TL;DR +
+    cta-band. Content machinery (24-key form, quick-5, FAQ, schema,
+    section IDs) is page-owned — FENCED. -#}
+
+{%- if breadcrumb %}
+<nav class="breadcrumb" aria-label="Breadcrumb" id="{{ slug }}-breadcrumb">
+  <div class="container">
+    <ol>
+      {%- for item in breadcrumb %}
+      {%- if item.href %}
+      <li><a href="{{ item.href }}">{{ item.name }}</a></li>
+      <li class="sep" aria-hidden="true">/</li>
+      {%- else %}
+      <li aria-current="page">{{ item.name }}</li>
+      {%- endif %}
+      {%- endfor %}
+    </ol>
+  </div>
+</nav>
+{%- endif %}
+
+<section class="section hero-tier hero--compact hero--rule" id="{{ slug }}-hero">
+  <div class="container">
+    <div class="hero">
+      <p class="hero__eyebrow">{{ hero.eyebrow | safe }}</p>
+      <h1 class="hero__heading">{{ hero.heading | safe }}</h1>
+      <p class="hero__subheading">{{ hero.subheading | safe }}</p>
+      <div class="hero__actions">
+        {%- for action in hero.actions %}
+        <a class="btn {{ action.class }} btn--lg" href="{{ action.href }}"
+          {%- if action.href.startsWith("tel:") %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- if inBrief %}
+<section class="section section--compact" id="{{ slug }}-in-brief">
+  <div class="container">
+    <div class="in-brief">
+      <p class="in-brief__text" id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
+      {%- if inBrief.source %}<p class="in-brief__source">{{ inBrief.source | safe }}</p>{%- endif %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{{ content | safe }}
+
+{%- if ctaBand %}
+<section class="section section--cta-band section--cta-band--light {{ tierClass }}" id="{{ slug }}-cta">
+  <div class="cta-band__motif" aria-hidden="true">{% include "partials/motif-align-single.svg" %}</div>
+  <div class="container">
+    <div class="final-cta">
+      <p class="section__eyebrow">{{ ctaBand.eyebrow | safe }}</p>
+      <h2 class="final-cta__heading">{{ ctaBand.heading | safe }}</h2>
+      <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
+      <div class="final-cta__actions">
+        {%- for action in ctaBand.actions %}
+        <a class="btn {{ action.class }}" href="{{ action.href }}"
+          {%- if action.href.startsWith("tel:") %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+        {%- endfor %}
+      </div>
+      <p class="final-cta__disclaimer">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
+    </div>
+  </div>
+</section>
+{%- endif %}

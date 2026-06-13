@@ -1,0 +1,44 @@
+<!-- @dsCard group="Conversion" viewport="390x720" subtitle="#11 — mobile sticky call bar: phone + primary action, auto-hide on scroll-down / reveal on scroll-up, safe-area aware, zero CLS. Scroll the page." name="sticky call bar · 390" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../handoff/fonts-preview.css">
+<link rel="stylesheet" href="../handoff/01-tokens.SKIN.css">
+<link rel="stylesheet" href="../handoff/02-conversion.SKIN.css">
+<link rel="stylesheet" href="../handoff/06-additions.SKIN.css">
+<style>
+body{margin:0;background:var(--bg-page);font-family:var(--font-sans);color:var(--text-body)}
+.fake{padding:24px 20px}
+.fake h1{font-family:var(--font-serif);font-size:2rem;font-variation-settings:"opsz" 40;line-height:1.15;color:var(--text-primary);margin:0 0 12px;max-width:11em}
+.fake p{font-size:0.9375rem;line-height:1.55;margin:0 0 14px}
+</style>
+</head><body class="has-call-bar">
+<main class="fake">
+  <h1>Get a free QuickBooks file review.</h1>
+  <p>A certified ProAdvisor reads your file, documents what's broken, and hands you a written fixed-fee scope.</p>
+  <p>Scroll down — the bar tucks away to give the page back. Scroll up — it returns, because that's when buyers decide.</p>
+  <p>Every account reconciled. Undeposited funds cleared. A/R aging that matches reality. Payroll liabilities that tie out. Locked periods and a clean audit trail.</p>
+  <p>The review takes three business days from accountant access — read-only, revocable by you at any time.</p>
+  <p>Most reviews end with a one-time fix scope, not a subscription pitch. The written scope is yours to take anywhere.</p>
+  <p>If the file is fine, you'll have that in writing too — and a shorter worry list.</p>
+  <p>Fixed-fee, written scope, a named operator. Pricing before work begins, always.</p>
+  <p>Urgent situations jump the queue — call and an operator answers, not a phone tree.</p>
+</main>
+<div class="call-bar" id="cb">
+  <a class="call-bar__phone" href="tel:+15555550143" aria-label="Call (555) 555-0143" data-tb-event="phone_click">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+  </a>
+  <a class="btn btn--primary" href="#">Get the free review</a>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('cb'), last=0, down=0;
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY;
+    if(y>last+4 && y>80){bar.classList.add('call-bar--hidden');}
+    else if(y<last-4){bar.classList.remove('call-bar--hidden');}
+    last=y;
+  },{passive:true});
+})();
+</script>
+</body></html>

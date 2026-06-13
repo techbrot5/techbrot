@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+<!-- ============================================================================
+  TECHBROT.COM — GLOBAL HEAD (PRODUCTION v4)
+  Bootstrap Studio Global Template · Loads sitewide on every page
+  ----------------------------------------------------------------------------
+  SCOPE:    Site-level signals only. Each page sets:
+              • <title>
+              • <meta name="description">
+              • <link rel="canonical">
+              • <link rel="alternate" hreflang>
+              • <meta property="og:url">
+              • <meta property="og:title">
+              • <meta property="og:description">
+              • <meta name="twitter:title">
+              • <meta name="twitter:description">
+              • Page-specific schema: WebPage, BreadcrumbList, FAQPage,
+                QAPage, Article, Service offerings — all referencing
+                the global Organization / Person / WebSite via @id.
+
+  GOAL:     Top 0.01% AI citation, entity SEO, E-E-A-T, semantic search,
+            Google / Perplexity / ChatGPT / Claude / Gemini retrieval.
+
+  STACK:    Bootstrap Studio · Static HTML · TechBrot Inc. (US C-Corp)
+  MODEL:    Independent accounting platform with vetted local partners
+
+  v4 CHANGE LOG:
+    • Added Person node for David Westgate (#david-westgate) — Lead
+      QuickBooks ProAdvisor, the named/visible page author referenced by
+      each page's WebPage.reviewedBy. Both Abid (founder/CEO) and David
+      (lead ProAdvisor) are certified; David references the same shared
+      #credential-* entities by @id. Abid remains founder + off visible
+      pages (org-level relationship, not page authorship).
+  UPDATED:  June 2026
+============================================================================ -->
+
+
+<!-- ── 01. RENDERING ──────────────────────────────────── -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- ── 02. PAGE IDENTITY — GLOBAL FALLBACKS (overridden per page) ─────────
+  These are global safety-net values. Every real page overrides title
+  and description in its own head.
+<title>A Modern Accounting Platform with Vetted Local Partners · TechBrot</title>
+<meta name="description" content="TechBrot is an independent U.S. accounting platform delivering QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations through a curated network of vetted local partners.">
+ -->
+
+<!-- ── 03. CANONICAL & HREFLANG — PER-PAGE ONLY ──────────────────────────
+  Reference template (do NOT uncomment globally):
+    <link rel="canonical" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="en-US" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="x-default" href="https://techbrot.com/[slug]/">
+-->
+
+
+<!-- ── 04. INDEXING & CRAWL DIRECTIVES ───────────────────────────────────
+  AI crawler policy (GPTBot, ClaudeBot, PerplexityBot, Google-Extended,
+  Applebot-Extended) is managed at robots.txt + Cloudflare WAF level.
+  These meta directives govern traditional search crawlers only. -->
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="bingbot" content="index, follow">
+
+
+<!-- ── 05. SITE IDENTITY & AUTHORSHIP ────────────────────────────────────-->
+
+<meta name="author" content="TechBrot Inc.">
+<meta name="application-name" content="TechBrot">
+<meta name="apple-mobile-web-app-title" content="TechBrot">
+
+<!-- ── 06. GEO & LOCALE ──────────────────────────────────────────────────
+  Registered: 651 N Broad St, Suite 201, Middletown, DE 19709.
+  Service area: 50 US states (national virtual + local partner network).
+  geo.region uses ISO 3166-2 (US-DE). Nationwide service is declared in
+  Organization schema areaServed (full state ItemList below). -->
+
+<meta http-equiv="content-language" content="en-US">
+<meta name="language" content="English">
+
+<!-- ── 07. BROWSER, DEVICE & PWA ─────────────────────────────────────────-->
+
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B0B" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-TileColor" content="#FAFAF7">
+<meta name="msapplication-config" content="/browserconfig.xml">
+
+
+<!-- ── 08. SECURITY & REFERRER ───────────────────────────────────────────-->
+
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+
+<!-- ── 09. OPEN GRAPH — SITE-LEVEL ONLY (image is per-page) ─────────────
+  Per-page sets: og:url, og:title, og:description, og:image (+ dimensions),
+  and og:type="article" on articles. Global default og:type is "website". -->
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TechBrot">
+<meta property="og:locale" content="en_US">
+
+<!-- ── 10. TWITTER / X CARD — SITE-LEVEL ONLY (image is per-page) ───────-->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@techbrot_inc">
+<meta name="twitter:creator" content="@techbrot_inc">
+
+<!-- ── 11. FAVICONS, ICONS & WEB APP MANIFEST ───────────────────────────-->
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/img/brand/safari-pinned-tab.svg" color="#0B0B0B">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<!-- ── 12. SITEMAP & FEEDS ──────────────────────────────────────────────-->
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+
+<!-- ── 13. PERFORMANCE: PRECONNECT, DNS-PREFETCH, FONT PRELOAD ──────────
+  Fonts: Fraunces (serif headings) + Inter (sans body/UI), both Google.
+  Preloading the two heaviest weights eliminates layout-shift on first
+  paint. Adjust paths if you self-host. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+
+<link rel="preload" as="image" href="/assets/img/brand/wordmark.svg" fetchpriority="high">
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<!-- ── 14. STRUCTURED DATA — ENTITY GRAPH ───────────────────────────────
+  Six-node @graph:
+    1. Organization (multi-type: Organization + ProfessionalService) —
+       the primary entity. Brand, knowsAbout (topical authority),
+       hasOfferCatalog (service routing), areaServed (full US),
+       contactPoint (toll-free), full sameAs cluster.
+    2. Brand — separate Brand entity for AI knowledge-graph systems.
+    3. Person (Abid Khan) — founder/CEO authority; certified ProAdvisor.
+    4. Person (David Westgate) — Lead ProAdvisor; the named, visible page
+       author referenced by each page's WebPage.reviewedBy. Both are
+       certified and share the #credential-* entities by @id.
+    5. WebSite — publisher entity with SearchAction.
+    (ProAdvisor credential entities #credential-* are defined inline on
+     the Abid node and referenced by David.)
+
+  Per-page schema attaches via @id reference, never duplicates these. -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://techbrot.com/#organization",
+
+      "name": "TechBrot Inc.",
+      "legalName": "TechBrot Inc.",
+      "alternateName": [
+        "TechBrot",
+        "TechBrot Network",
+        "TechBrot Accounting Platform"
+      ],
+      "slogan": "A modern accounting platform with vetted local partners.",
+      "description": "TechBrot Inc. is an independent U.S. firm of Certified QuickBooks ProAdvisors, accountants, and advisors serving small and mid-sized businesses. Services span QuickBooks setup, cleanup, and migration; monthly, cleanup, and catch-up bookkeeping; payroll; multi-state sales tax; 1099 preparation; financial reporting; and fractional CFO advisory — delivered directly and through a curated network of vetted local Certified ProAdvisors. Independent Certified QuickBooks ProAdvisor firm; not affiliated with Intuit Inc.",
+      "disambiguatingDescription": "Independent accounting platform with vetted local partners — not affiliated with Intuit Inc. QuickBooks is a registered trademark of Intuit Inc.",
+
+      "url": "https://techbrot.com/",
+
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://techbrot.com/#logo",
+        "url": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "contentUrl": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "caption": "TechBrot — A modern accounting platform with vetted local partners",
+        "width": 512,
+        "height": 512,
+        "inLanguage": "en-US"
+      },
+
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://techbrot.com/assets/img/og/techbrot-og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "TechBrot — A modern accounting platform with vetted local partners"
+      },
+
+      "brand": {
+        "@id": "https://techbrot.com/#brand"
+      },
+
+   
+      "foundingDate": "2023",
+      "founder": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+      "founders": [
+        { "@id": "https://techbrot.com/#abid-khan" }
+      ],
+      "employee": [
+        { "@id": "https://techbrot.com/#abid-khan" },
+        { "@id": "https://techbrot.com/#david-westgate" }
+      ],
+
+      "email": "support@techbrot.com",
+      "telephone": "+1-877-751-5575",
+      "priceRange": "$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": ["Credit Card", "Bank Transfer", "ACH", "Check"],
+
+      "naics": "541219",
+      "isicV4": "6920",
+
+      "address": {
+        "@type": "PostalAddress",
+        "@id": "https://techbrot.com/#address",
+        "streetAddress": "651 N Broad St, Suite 201",
+        "addressLocality": "Middletown",
+        "addressRegion": "DE",
+        "postalCode": "19709",
+        "addressCountry": "US"
+      },
+
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.449",
+        "longitude": "-75.716"
+      },
+
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "customer service",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "sales",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "partners@techbrot.com",
+          "contactType": "partner inquiries",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        }
+      ],
+
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States",
+        "@id": "https://www.wikidata.org/entity/Q30"
+      },
+
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Small and mid-sized U.S. businesses"
+      },
+
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        }
+      ],
+
+      "keywords": "accounting platform, QuickBooks ProAdvisor, bookkeeping services, QuickBooks cleanup, monthly bookkeeping, catch-up bookkeeping, payroll services, fractional CFO, sales tax compliance, 1099 preparation, vetted accounting partners, U.S. small business accounting",
+
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "TechBrot Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monthly Bookkeeping",
+              "description": "Recurring monthly bookkeeping with real reconciliation, monthly close package, and named operator point of contact.",
+              "url": "https://techbrot.com/accounting/bookkeeping/monthly-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks and Bookkeeping Cleanup",
+              "description": "Reconstruct accurate books from a messy state — categorization fixes, real bank and credit-card reconciliations, prior-period correction, and reliable financial statements.",
+              "url": "https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Catch-up Bookkeeping",
+              "description": "Bring backlogged books current — from a few missed months to multi-year historical cleanup before tax filing.",
+              "url": "https://techbrot.com/accounting/bookkeeping/catch-up-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Setup and Onboarding",
+              "description": "Independent ProAdvisor-led QuickBooks setup, chart of accounts, banking, payroll, and integration configuration for new and existing businesses.",
+              "url": "https://techbrot.com/quickbooks/setup/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Migration",
+              "description": "QuickBooks Desktop-to-Online migration and other software-to-QuickBooks migrations performed by Certified ProAdvisors with data integrity verification.",
+              "url": "https://techbrot.com/quickbooks/migration/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Independent QuickBooks ProAdvisor Help",
+              "description": "Certified ProAdvisor help with QuickBooks file issues, reconciliation problems, plan selection, and workflow advisory — independent guidance beyond product support.",
+              "url": "https://techbrot.com/quickbooks/help/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Payroll Setup and Management",
+              "description": "Payroll setup, processing, tax filing, and compliance support delivered through the TechBrot operator network.",
+              "url": "https://techbrot.com/accounting/payroll-management/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sales Tax Compliance",
+              "description": "Multi-state sales tax registration, filing, and nexus advisory for U.S. small and mid-sized businesses.",
+              "url": "https://techbrot.com/accounting/sales-tax-compliance/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "1099 Preparation",
+              "description": "Annual 1099 preparation, vendor data collection, and IRS filing for U.S. small businesses.",
+              "url": "https://techbrot.com/accounting/1099-preparation/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fractional CFO Services",
+              "description": "Senior financial advisory delivered through the TechBrot network — cash flow planning, forecasting, KPI reporting, and board-ready financials for growing businesses.",
+              "url": "https://techbrot.com/accounting/advisory/fractional-cfo/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Find a Local Accounting Partner",
+              "description": "Match with a vetted, credentialed, insured TechBrot operator partner in your U.S. state — typically within 48 hours.",
+              "url": "https://techbrot.com/find-an-accountant/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          }
+        ]
+      },
+
+      "knowsAbout": [
+        "Accounting",
+        "Bookkeeping",
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Premier",
+        "QuickBooks Payroll",
+        "QuickBooks ProAdvisor",
+        "QuickBooks setup",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "QuickBooks Desktop to Online migration",
+        "QuickBooks plan selection",
+        "QuickBooks reconciliation",
+        "QuickBooks bank feeds",
+        "QuickBooks error troubleshooting",
+        "QuickBooks company file repair",
+        "QuickBooks multi-user mode",
+        "QuickBooks payroll setup",
+        "QuickBooks payroll troubleshooting",
+        "QuickBooks sales tax",
+        "QuickBooks 1099 preparation",
+        "Monthly bookkeeping",
+        "Catch-up bookkeeping",
+        "Cleanup bookkeeping",
+        "Historical bookkeeping cleanup",
+        "Virtual bookkeeping",
+        "Outsourced bookkeeping",
+        "Small business accounting",
+        "Startup accounting",
+        "Bank reconciliation",
+        "Accounts payable management",
+        "Accounts receivable management",
+        "Chart of accounts setup",
+        "Month-end close",
+        "Year-end close",
+        "Financial statement preparation",
+        "Financial reporting",
+        "Cash flow forecasting",
+        "Cash flow management",
+        "Profitability analysis",
+        "KPI reporting",
+        "Budgeting and forecasting",
+        "Payroll services",
+        "Payroll tax compliance",
+        "Sales tax compliance",
+        "Sales tax nexus",
+        "1099 preparation and filing",
+        "Tax planning",
+        "IRS problem resolution",
+        "Fractional CFO services",
+        "Controller services",
+        "Business advisory services",
+        "Ecommerce accounting",
+        "Real estate accounting",
+        "Construction accounting",
+        "Restaurant accounting",
+        "Healthcare accounting",
+        "Law firm accounting",
+        "SaaS accounting",
+        "Professional services accounting",
+        "Manufacturing accounting",
+        "Trucking accounting",
+        "Nonprofit accounting",
+        "Franchise accounting",
+        "Retail accounting",
+        "Job costing",
+        "Shopify QuickBooks integration",
+        "Amazon QuickBooks integration",
+        "Stripe QuickBooks integration",
+        "Vetted accounting partner network",
+        "Operator-led accounting platform",
+        "Independent ProAdvisor firm"
+      ],
+
+      "subjectOf": {
+        "@type": "WebPage",
+        "@id": "https://techbrot.com/about/"
+      },
+
+    "sameAs": [
+  "https://www.linkedin.com/company/techbrot-inc/",
+  "https://x.com/techbrot_inc",
+  "https://www.instagram.com/techbrot_inc",
+  "https://www.youtube.com/@techbrot_inc",
+  "https://www.facebook.com/techbrotinc",
+  "https://www.tumblr.com/techbrot",
+  "https://pin.it/1d4Qrx4At",
+  "https://www.tiktok.com/@techbrot_inc",
+  "https://medium.com/@techbrot5",
+  "https://clutch.co/profile/techbrot"
+]
+    },
+
+    {
+      "@type": "Brand",
+      "@id": "https://techbrot.com/#brand",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Network",
+      "url": "https://techbrot.com/",
+      "logo": "https://techbrot.com/assets/img/brand/logo_img.png",
+      "slogan": "A modern accounting platform with vetted local partners."
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#abid-khan",
+
+      "name": "Abid Khan",
+      "givenName": "Abid",
+      "familyName": "Khan",
+
+      "url": "https://techbrot.com/about/team/#abid-khan",
+
+      "jobTitle": "Founder & CEO",
+      "description": "Abid Khan is the Founder and CEO of TechBrot Inc., an independent U.S. accounting platform with a curated network of vetted local partners. He is a Certified QuickBooks ProAdvisor across QuickBooks Online, Desktop, Enterprise, and Payroll, and leads platform architecture, partner network development, and AI-first search infrastructure.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "Small business bookkeeping",
+        "Bank reconciliation",
+        "Accounting platform architecture",
+        "Partner network development",
+        "AI-first SEO",
+        "Topical authority architecture",
+        "E-E-A-T optimization"
+      ],
+
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qbo-l2",
+          "name": "QuickBooks Online ProAdvisor (Level 2)",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-desktop",
+          "name": "QuickBooks Desktop ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-enterprise",
+          "name": "QuickBooks Enterprise ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-payroll",
+          "name": "QuickBooks Payroll ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        }
+      ],
+
+      "sameAs": [
+  "https://www.linkedin.com/in/abid-khan-ai/",
+  "https://www.reddit.com/user/techbrot_inc/",
+  "https://www.quora.com/profile/Abid-Khan-119",
+  "https://www.credly.com/users/abid-khan.3ceb70a5/badges#credly"
+      ]
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#david-westgate",
+
+      "name": "David Westgate",
+      "givenName": "David",
+      "familyName": "Westgate",
+
+      "url": "https://techbrot.com/about/team/#david-westgate",
+
+      "jobTitle": "Lead QuickBooks ProAdvisor",
+      "description": "David Westgate is the Lead QuickBooks ProAdvisor at TechBrot Inc., with more than 40 years of accounting experience. A Certified QuickBooks ProAdvisor across QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll, he leads bookkeeping, cleanup, reconciliation, and QuickBooks file rebuilds across construction, professional services, and nonprofit engagements, and is the reviewing authority for TechBrot's published accounting content.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks reconciliation",
+        "Bookkeeping",
+        "Bank reconciliation",
+        "Month-end close",
+        "Sales tax compliance",
+        "IOLTA trust accounting",
+        "Job costing",
+        "Construction accounting",
+        "Nonprofit accounting"
+      ],
+
+      "hasCredential": [
+        { "@id": "https://techbrot.com/#credential-qbo-l2" },
+        { "@id": "https://techbrot.com/#credential-qb-desktop" },
+        { "@id": "https://techbrot.com/#credential-qb-enterprise" },
+        { "@id": "https://techbrot.com/#credential-qb-payroll" }
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://techbrot.com/#website",
+
+      "url": "https://techbrot.com/",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Accounting Platform",
+      "description": "Independent U.S. accounting platform — QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations delivered through a curated network of vetted local partners.",
+      "inLanguage": "en-US",
+
+      "publisher": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "author": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+
+      "about": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightHolder": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightYear": "2023",
+
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://techbrot.com/search/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2Z8GK69Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K2Z8GK69Z5');
+</script>
+
+<!-- ── 15. TRADEMARK DISCLOSURE (machine-readable, AI-citation safety) ──
+  Distinct meta tag declaring trademark posture. Some AI scrapers
+  prioritize meta declarations over body content. Provides an
+  additional structural defense against impersonation classification. -->
+
+<meta name="trademark-disclosure" content="QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc.">
+<meta name="affiliation-disclosure" content="independent">
+
+<!-- ============================================================================
+  END GLOBAL HEAD
+============================================================================ --><title>Migrate to QuickBooks from Xero, FreshBooks, Wave &amp; Sage · TechBrot</title>
+<meta name="description" content="Switching to QuickBooks Online from Xero, FreshBooks, Wave, Sage, or spreadsheets? Certified ProAdvisors export, map, build, and verify the new file against your source — books that tie, not a raw import. Fixed-fee.">
+
+<link rel="canonical" href="https://techbrot.com/quickbooks/migration/other-software-to-qb/">
+<link rel="alternate" hreflang="en-US" href="https://techbrot.com/quickbooks/migration/other-software-to-qb/">
+<link rel="alternate" hreflang="x-default" href="https://techbrot.com/quickbooks/migration/other-software-to-qb/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://techbrot.com/quickbooks/migration/other-software-to-qb/">
+<meta property="og:title" content="Migrate to QuickBooks from Xero, FreshBooks, Wave &amp; Sage">
+<meta property="og:description" content="No native one-click tool moves Xero, FreshBooks, Wave, or Sage into QuickBooks cleanly. Certified ProAdvisors export, map, build, and verify against your source — books that tie, not a raw import. Fixed-fee.">
+<meta property="og:image" content="https://techbrot.com/assets/img/og/qb-other-software-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TechBrot — migrate to QuickBooks from other accounting software">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Migrate to QuickBooks from Xero, FreshBooks, Wave &amp; Sage · TechBrot">
+<meta name="twitter:description" content="Certified ProAdvisors export, map, build, and verify the new QuickBooks file against your source — books that tie, not a raw import.">
+<meta name="twitter:image" content="https://techbrot.com/assets/img/og/qb-other-software-og.png">
+
+<!-- WebPage · BreadcrumbList · Service(Offers) · FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://techbrot.com/quickbooks/migration/other-software-to-qb/#webpage",
+      "url": "https://techbrot.com/quickbooks/migration/other-software-to-qb/",
+      "name": "Migrate to QuickBooks from Other Software (Xero, FreshBooks, Wave, Sage)",
+      "description": "Migrating to QuickBooks Online from Xero, FreshBooks, Wave, Sage, or spreadsheets. Certified ProAdvisors export, map, build, and verify the new file against your source — books that tie, not a raw import. Fixed-fee.",
+      "isPartOf": {
+        "@id": "https://techbrot.com/#website"
+      },
+      "about": {
+        "@id": "https://techbrot.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://techbrot.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://techbrot.com/quickbooks/migration/other-software-to-qb/#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://techbrot.com/assets/img/og/qb-other-software-og.png"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "#osq-ai-summary",
+          "#osq-tldr-body"
+        ]
+      },
+      "reviewedBy": {
+        "@id": "https://techbrot.com/#david-westgate"
+      },
+      "lastReviewed": "2026-06-07"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://techbrot.com/quickbooks/migration/other-software-to-qb/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://techbrot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "QuickBooks",
+          "item": "https://techbrot.com/quickbooks/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Migration",
+          "item": "https://techbrot.com/quickbooks/migration/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Other Software to QuickBooks"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://techbrot.com/quickbooks/migration/other-software-to-qb/#service",
+      "name": "Migrate to QuickBooks from Other Software",
+      "serviceType": "Cross-platform migration to QuickBooks Online",
+      "description": "Migration to QuickBooks Online from Xero, FreshBooks, Wave, Sage, and spreadsheets — export, mapping, company build, and verification against the source, by a Certified ProAdvisor.",
+      "provider": {
+        "@id": "https://techbrot.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Standard migration",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "2500",
+            "priceCurrency": "USD"
+          },
+          "description": "Single-entity cross-platform migration from $2,500, fixed-fee."
+        },
+        {
+          "@type": "Offer",
+          "name": "Complex migration",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": "5000",
+            "priceCurrency": "USD"
+          },
+          "description": "Multi-year / multi-entity migration from $5,000, fixed-fee."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://techbrot.com/quickbooks/migration/other-software-to-qb/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can you migrate to QuickBooks from Xero, FreshBooks, Wave, or Sage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. TechBrot Certified ProAdvisors migrate businesses to QuickBooks Online from Xero, FreshBooks, Wave, Sage, and other accounting software, as well as from spreadsheets. Unlike a same-platform Desktop-to-Online conversion, moving from a different software has no Intuit-native one-click tool. Partial third-party converters exist (for example, Intuit recommends a Dataswitcher-assisted conversion for Xero), but they don't carry everything — payroll and reconciliation history typically don't transfer — and they don't verify the result. Exporting and mapping the source data, building a properly structured QuickBooks Online company, and verifying that balances and lists landed correctly is the core of the engagement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from a Desktop-to-Online migration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Desktop-to-Online migration moves between two QuickBooks products, so Intuit's conversion tool handles most of the data automatically. Migrating from a different platform like Xero or FreshBooks has no equivalent native tool — the data structures differ, so it must be exported, mapped to QuickBooks' chart of accounts and list structure, and imported with verification. Even where a third-party converter helps, some data (such as payroll and reconciliation history) doesn't transfer, and the converted file still has to be reconciled to the source. The right approach depends on your source software and how much history you need."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much historical data can I bring into QuickBooks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the source software and the cleanliness of its data. In some cases full transaction history can be imported; in others the practical and cost-effective approach is to bring opening balances as of a chosen cutover date plus open AR and AP, and start fresh in QuickBooks from there, keeping the old system as a read-only archive for prior periods. Some converters (like Dataswitcher for Xero) cover roughly the current plus one or two prior fiscal years and roll older periods into an opening balance. We assess your source data and recommend the approach that balances completeness against cost — there's rarely value in paying to import years of messy history you'll never reference."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to migrate to QuickBooks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A straightforward migration — a clean source file, a single entity, opening balances plus current-year detail — typically completes in two to four weeks. Bringing multiple years of full history, multiple entities, inventory, or heavy integrations extends that to four to eight weeks. The largest variables are how much history you want and how clean the source data is. The timeline is fixed in the written scope before work begins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does it cost to migrate to QuickBooks from other software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Migration from another platform is priced by scope, not by hour. A standard single-entity migration — opening balances, current-year detail, lists, and core setup — typically runs $2,500 to $5,000. A complex migration with multiple years of history, multiple entities, inventory, or extensive integrations runs $5,000 to $10,000 or more. Every engagement is fixed-fee against a written scope produced from an assessment of your source data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I switch from my current software to QuickBooks at all?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not always. QuickBooks Online is the right fit for most U.S. small and mid-sized businesses, but not every one — some workflows are genuinely better served by the platform you're on. As an independent firm with no incentive to move you, we'll assess your situation honestly: if QuickBooks is a clear improvement, we'll scope the migration; if your current software is serving you well, we'll say so rather than sell a move you don't need."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my data be accurate after migrating to QuickBooks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That's the entire point of doing it with a ProAdvisor rather than a raw data import. The migration includes integrity verification — the balances, AR, AP, and key totals in QuickBooks are reconciled against the source system before sign-off, so the new file ties back to the numbers you had. A raw import or an unverified tool conversion is how businesses end up with wrong balances and untrustworthy books; the verification step is what prevents it. (Intuit itself recommends a ProAdvisor verify the data after any third-party conversion.)"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>BSS-1-11ty</title>
+    <link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../assets/css/04-pages.css">
+    <link rel="stylesheet" href="../../../assets/css/01-tokens.css">
+    <link rel="stylesheet" href="../../../assets/css/02-base.css">
+    <link rel="stylesheet" href="../../../assets/css/03-components.css">
+</head>
+
+<body><!-- ============================================================================
+     CHROME · utility bar + primary header + mobile drawer + search palette
+     ============================================================================ -->
+
+<div class="util-bar" role="region" aria-label="Secondary">
+  <div class="container util-bar__inner">
+    <p class="util-bar__trust">
+      <span class="util-bar__dot" aria-hidden="true"></span>
+      <span>Independent Certified QuickBooks ProAdvisor firm · U.S.-based</span>
+    </p>
+    <nav class="util-bar__nav" aria-label="For accountants and partners">
+      <a class="util-bar__link" href="/find-an-accountant/">Find an Accountant</a>
+      <a class="util-bar__link" href="/partners/">For Accountants →</a>
+    </nav>
+  </div>
+</div>
+
+<header class="site-header" role="banner" id="site-header" data-sticky="true">
+  <div class="container site-header__inner">
+
+    <a class="site-brand" href="/" aria-label="TechBrot home" title="TechBrot — A Modern Accounting Platform">
+      <img class="site-brand__mark" src="/assets/img/brand/icon.svg" alt="TechBrot" width="140" height="56" decoding="async" fetchpriority="high">
+    </a>
+
+    <nav class="site-nav site-nav--desktop" aria-label="Primary navigation" id="primary-nav">
+      <ul class="site-nav__list">
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-services" aria-haspopup="true">
+            Accounting
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-services" role="region" aria-label="Accounting services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Bookkeeping</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/">All bookkeeping →</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Financial Operations</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/payroll-management/">Payroll management</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/services/">All services →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/accounting/">Accounting overview →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-quickbooks" aria-haspopup="true">
+            QuickBooks
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-quickbooks" role="region" aria-label="QuickBooks services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">ProAdvisor Services</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/cleanup/">File cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/migration/">Desktop → Online migration</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/help/">QuickBooks help</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Products</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/proadvisor-team/">Our ProAdvisor team</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/">QuickBooks overview →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/legal/disclaimer/">Independent firm — not affiliated with Intuit →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/find-an-accountant/">Find an Accountant</a>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/pricing/">Pricing</a>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-why" aria-haspopup="true">
+            Why TechBrot
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu" id="nav-menu-why" role="region" aria-label="Why TechBrot" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Authority &amp; trust</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/trust/">Trust &amp; standards</a></li>
+                  <li><a class="nav-menu__link" href="/about/methodology/">Our methodology</a></li>
+                  <li><a class="nav-menu__link" href="/reviews/">Client reviews</a></li>
+                  <li><a class="nav-menu__link" href="/vs/">Comparisons</a></li>
+                  <li><a class="nav-menu__link" href="/about/">About &amp; team</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="site-header__utility">
+      <button class="site-search-trigger" type="button" aria-label="Search (press / or Cmd-K)" data-search-open="" title="Search — / or ⌘K">
+        <svg class="site-search-trigger__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+          <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+        </svg>
+        <span class="site-search-trigger__hint" aria-hidden="true"><kbd>/</kbd></span>
+      </button>
+
+      <a class="site-header__phone" href="tel:+18777515575" aria-label="Call TechBrot" data-cta="header-phone" title="Call TechBrot">
+        <span class="site-header__phone-label">Call</span>
+        <span class="site-header__phone-number">(877) 751-5575</span>
+      </a>
+
+      <a class="btn btn--primary btn--sm" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="header-primary" title="Book a discovery call">
+        Book a Call
+      </a>
+    </div>
+
+    <button class="site-header__mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+    </button>
+
+  </div>
+</header>
+
+<aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation" hidden="">
+  <div class="mobile-drawer__header">
+    <a class="site-brand" href="/" aria-label="TechBrot home">
+      <img class="site-brand__mark" src="/assets/img/brand/wordmark.png" alt="TechBrot" width="120" height="36">
+    </a>
+    <button class="mobile-drawer__close" type="button" aria-label="Close navigation menu" data-action="close-drawer">
+      <span class="mobile-drawer__close-x" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <nav class="mobile-drawer__nav" aria-label="Mobile primary navigation">
+    <ul class="mobile-drawer__list">
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-services">
+          <span>Accounting</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-services" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll management</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-quickbooks">
+          <span>QuickBooks</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-quickbooks" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/find-an-accountant/">Find an Accountant</a></li>
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/pricing/">Pricing</a></li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-why">
+          <span>Why TechBrot</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-why" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/about/methodology/">Our methodology</a></li>
+            <li><a href="/reviews/">Client reviews</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+            <li><a href="/about/">About &amp; team</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/partners/">For Accountants</a></li>
+    </ul>
+  </nav>
+
+  <div class="mobile-drawer__footer">
+    <a class="btn btn--primary btn--lg btn--full" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="mobile-primary">Book a Discovery Call</a>
+    <a class="mobile-drawer__phone" href="tel:+18777515575">(877) 751-5575</a>
+  </div>
+</aside>
+
+<div class="search-palette" id="search-palette" role="dialog" aria-modal="true" aria-label="Search TechBrot" hidden="">
+  <div class="search-palette__backdrop" data-search-close=""></div>
+  <div class="search-palette__panel" role="combobox" aria-expanded="true" aria-haspopup="listbox" aria-owns="search-results">
+    <div class="search-palette__field">
+      <svg class="search-palette__icon" width="20" height="20" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+        <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+      </svg>
+      <input class="search-palette__input" id="search-input" type="text" autocomplete="off" spellcheck="false" placeholder="Search services, QuickBooks, comparisons, states, Indiana topics…" aria-label="Search" aria-controls="search-results" aria-autocomplete="list">
+      <button class="search-palette__close" type="button" aria-label="Close search" data-search-close=""><kbd>Esc</kbd></button>
+    </div>
+    <div class="search-palette__body">
+      <ul class="search-palette__results" id="search-results" role="listbox" aria-label="Search results"></ul>
+      <div class="search-palette__suggested" id="search-suggested">
+        <p class="search-palette__suggested-label">Try</p>
+        <ul class="search-palette__chips" role="list">
+          <li><button type="button" class="search-chip" data-q="indiana cagit">Indiana CAGIT payroll</button></li>
+          <li><button type="button" class="search-chip" data-q="bookkeeping cleanup">Bookkeeping cleanup</button></li>
+          <li><button type="button" class="search-chip" data-q="quickbooks migration">QuickBooks migration</button></li>
+          <li><button type="button" class="search-chip" data-q="indianapolis">Indianapolis</button></li>
+          <li><button type="button" class="search-chip" data-q="manufacturing">Manufacturing accounting</button></li>
+          <li><button type="button" class="search-chip" data-q="pricing">Pricing</button></li>
+        </ul>
+      </div>
+      <p class="search-palette__empty" id="search-empty" hidden="">No matches. Try a service, “QuickBooks”, an Indiana topic, a city, or a comparison.</p>
+    </div>
+    <div class="search-palette__foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+<!-- ============================================================================
+     /quickbooks/migration/other-software-to-qb/ · NATIONAL CHILD · BODY
+     Focused single-topic page. National pattern (service-hero-split + national
+     final-cta; NOT a location child). Reworked to 0.01%: "no automated tool"
+     claim corrected to accurate "no Intuit-native one-click tool; partial
+     third-party converters exist but don't carry everything or verify" (more
+     defensible, same selling logic). Schema to HEAD, expert-review added.
+     FAQ word-for-word matches HEAD. chrome.js owns FAQ accordion.
+     ============================================================================ -->
+<div class="page page--service page--qb-other-software" data-page="qb-other-software">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <main id="main" role="main">
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="Breadcrumb" id="osq-breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/">Home</a></li>
+          <li class="breadcrumb__item"><a href="/quickbooks/">QuickBooks</a></li>
+          <li class="breadcrumb__item"><a href="/quickbooks/migration/">Migration</a></li>
+          <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Other Software to QuickBooks</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="section section--hero section--service-hero section--service-hero-split" id="osq-hero" aria-labelledby="osq-hero-heading">
+      <div class="container">
+        <div class="service-hero-split">
+          <div class="service-hero">
+            <p class="service-hero__eyebrow"><span class="service-hero__eyebrow-text">QuickBooks Migration &middot; From other software</span></p>
+            <h1 class="service-hero__heading" id="osq-hero-heading">Moving to QuickBooks?<br>Bring your data with you.</h1>
+            <p class="service-hero__subheading">Switching from Xero, FreshBooks, Wave, Sage, or spreadsheets &mdash; there&rsquo;s no Intuit-native one-click tool, and the partial third-party converters that exist don&rsquo;t carry everything or verify the result. It takes exporting and mapping your data, building a properly structured QuickBooks Online company, and confirming every balance landed right. TechBrot Certified ProAdvisors run the full migration so you arrive in QuickBooks with books that tie, not a raw import you can&rsquo;t trust.</p>
+            <div class="service-hero__actions" role="group" aria-label="Primary actions">
+              <a class="btn btn--primary btn--lg" href="/contact/?intent=qb-migration-to-qb" data-cta="osq-hero-primary">Book a Migration Assessment</a>
+              <a class="btn btn--ghost btn--lg" href="#osq-sources" data-cta="osq-hero-secondary">See Supported Platforms</a>
+            </div>
+            <p class="service-hero__assurance">
+              <span class="service-hero__assurance-label">Delivered by</span>
+              <span class="service-hero__assurance-body">Certified QuickBooks ProAdvisors &middot; Balances verified against your source &middot; Fixed-fee written scope &middot; Independent firm, not affiliated with Intuit Inc.</span>
+            </p>
+          </div>
+          <div class="service-hero-split__visual" aria-hidden="true">
+            <img src="/assets/img/services/qb-other-software-hero.webp" alt="" width="720" height="640" decoding="async" fetchpriority="high">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROADVISOR CREDENTIAL STRIP -->
+    <section class="section section--proadvisor-credentials" id="osq-credentials" aria-labelledby="osq-credentials-heading">
+      <div class="container">
+        <h2 class="proadvisor-credentials__heading sr-only" id="osq-credentials-heading">Certified QuickBooks ProAdvisor credentials</h2>
+        <div class="proadvisor-credentials">
+          <div class="proadvisor-credentials__lede">
+            <p class="proadvisor-credentials__eyebrow">Certified by Intuit</p>
+            <p class="proadvisor-credentials__statement">Migrating into QuickBooks means building the destination file correctly &mdash; the right chart of accounts, lists, and structure from day one. Every TechBrot ProAdvisor holds active certifications across the full QuickBooks stack. Verification available on request.</p>
+          </div>
+          <ul class="proadvisor-credentials__badges" role="list" aria-label="QuickBooks ProAdvisor certifications">
+            <li class="proadvisor-credentials__badge"><img src="/assets/img/badges/proadvisor-online.svg" alt="QuickBooks Online ProAdvisor (Level 2)" width="96" height="40" loading="lazy" decoding="async"><span class="proadvisor-credentials__badge-label">Online (L2)</span></li>
+            <li class="proadvisor-credentials__badge"><img src="/assets/img/badges/proadvisor-desktop.svg" alt="QuickBooks Desktop ProAdvisor" width="96" height="40" loading="lazy" decoding="async"><span class="proadvisor-credentials__badge-label">Desktop</span></li>
+            <li class="proadvisor-credentials__badge"><img src="/assets/img/badges/proadvisor-enterprise.svg" alt="QuickBooks Enterprise ProAdvisor" width="96" height="40" loading="lazy" decoding="async"><span class="proadvisor-credentials__badge-label">Enterprise</span></li>
+            <li class="proadvisor-credentials__badge"><img src="/assets/img/badges/proadvisor-payroll.svg" alt="QuickBooks Payroll ProAdvisor" width="96" height="40" loading="lazy" decoding="async"><span class="proadvisor-credentials__badge-label">Payroll</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TL;DR -->
+    <section class="section section--tldr" id="osq-tldr" aria-labelledby="osq-tldr-heading">
+      <div class="container container--narrow">
+        <div class="tldr">
+          <p class="tldr__eyebrow">In one paragraph</p>
+          <h2 class="tldr__heading" id="osq-tldr-heading">Migrating to QuickBooks from other software, plainly.</h2>
+          <p class="tldr__body" id="osq-tldr-body"><strong>Migrating to QuickBooks from another accounting software</strong> &mdash; Xero, FreshBooks, Wave, Sage, or spreadsheets &mdash; is different from a same-platform <a href="/quickbooks/migration/desktop-to-online/">Desktop-to-Online conversion</a>. There&rsquo;s <strong>no Intuit-native one-click tool</strong>, and the partial third-party converters that do exist (for example, Intuit points Xero users to a Dataswitcher-assisted conversion) don&rsquo;t carry everything &mdash; payroll and reconciliation history typically don&rsquo;t come across &mdash; and they don&rsquo;t verify the result. The work is to <strong>export and map the source data</strong>, build a properly structured QuickBooks Online company, import with verification, and confirm that <strong>balances and lists landed correctly</strong>. How much history transfers depends on the source: some platforms allow full transaction history; for others the cost-effective path is opening balances plus open AR/AP at a cutover date, with the old system kept as a read-only archive. TechBrot&rsquo;s <a href="/quickbooks/proadvisor-team/">Certified ProAdvisors</a> assess your source data, recommend the right approach, run the migration, and <strong>reconcile the new file back to the source</strong> &mdash; so you arrive with books that tie, not a raw import. Fixed-fee against a written scope. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI SUMMARY -->
+    <section class="section section--ai-summary" id="osq-ai-summary" aria-labelledby="osq-ai-summary-heading">
+      <div class="container container--narrow">
+        <header class="section__header">
+          <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+          <h2 class="section__heading" id="osq-ai-summary-heading">Migrating to QuickBooks, in five questions.</h2>
+        </header>
+        <dl class="ai-summary__list">
+          <div class="ai-summary__item"><dt class="ai-summary__question">Can you migrate from Xero, FreshBooks, Wave, or Sage?</dt><dd class="ai-summary__answer"><p>Yes &mdash; to QuickBooks Online from Xero, FreshBooks, Wave, Sage, other software, and spreadsheets. Unlike a Desktop-to-Online conversion, there&rsquo;s <strong>no Intuit-native one-click tool</strong>; partial third-party converters exist but don&rsquo;t carry payroll or reconciliation history and don&rsquo;t verify. Exporting, mapping, importing, and verifying the source data is the engagement.</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">How is it different from Desktop-to-Online?</dt><dd class="ai-summary__answer"><p>Desktop-to-Online moves between two QuickBooks products, so Intuit&rsquo;s tool automates most of it. A different platform has <strong>no native equivalent</strong> &mdash; data structures differ, so it&rsquo;s exported, mapped to QuickBooks&rsquo; structure, and imported with verification, even where a third-party converter helps.</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">How much history can I bring?</dt><dd class="ai-summary__answer"><p>Depends on the source. Sometimes <strong>full history</strong> imports; often the cost-effective path is <strong>opening balances plus open AR/AP</strong> at a cutover date, keeping the old system as a read-only archive. We recommend the balance of completeness vs cost &mdash; rarely worth paying to import years of messy history.</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">How long and how much?</dt><dd class="ai-summary__answer"><p><strong>Two to four weeks</strong> straightforward; four to eight for multi-year, multi-entity, or heavy integrations. Cost: <strong>$2,500&ndash;$5,000 standard</strong>, <strong>$5,000&ndash;$10,000+ complex</strong>. Fixed-fee against written scope after a source-data assessment.</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">Should I switch at all?</dt><dd class="ai-summary__answer"><p>Not always. QuickBooks fits most U.S. small businesses, but not every one. As an independent firm with no incentive to move you, we&rsquo;ll say so honestly &mdash; <strong>if your current software serves you well, we won&rsquo;t sell you a migration you don&rsquo;t need.</strong></p></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- SUPPORTED SOURCES (signal-grid) -->
+    <section class="section section--cleanup-signals" id="osq-sources" aria-labelledby="osq-sources-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Where businesses migrate from</p>
+          <h2 class="section__heading" id="osq-sources-heading">Coming from one of these? We&rsquo;ve done it.</h2>
+          <p class="section__lede">Every source platform stores data differently, so each migration is mapped to its specifics. These are the moves we handle most often.</p>
+        </header>
+        <ul class="signal-grid" role="list">
+          <li class="signal-card"><h3 class="signal-card__heading">Xero to QuickBooks</h3><p class="signal-card__body">The most common cross-platform move. Xero&rsquo;s chart of accounts, contacts, and transaction structure mapped to QuickBooks &mdash; with a Dataswitcher-assisted conversion where it fits &mdash; and balances and AR/AP reconciled to the source.</p></li>
+          <li class="signal-card"><h3 class="signal-card__heading">FreshBooks to QuickBooks</h3><p class="signal-card__body">Businesses outgrowing FreshBooks&rsquo; invoicing-first model. Clients, invoices, expenses, and balances brought into a full double-entry QuickBooks structure.</p></li>
+          <li class="signal-card"><h3 class="signal-card__heading">Wave to QuickBooks</h3><p class="signal-card__body">Moving off Wave for more capability or integrations. Customers, vendors, transactions, and opening balances migrated and verified in QuickBooks Online.</p></li>
+          <li class="signal-card"><h3 class="signal-card__heading">Sage to QuickBooks</h3><p class="signal-card__body">Sage 50, Sage Business Cloud, or Sage Intacct to QuickBooks. Chart of accounts, lists, and balances mapped and reconciled across the structural differences.</p></li>
+          <li class="signal-card"><h3 class="signal-card__heading">Spreadsheets to QuickBooks</h3><p class="signal-card__body">Graduating from Excel or Google Sheets to real accounting software. Opening balances established, lists built, and a clean QuickBooks structure set up from scratch.</p></li>
+          <li class="signal-card"><h3 class="signal-card__heading">Other software or a custom system</h3><p class="signal-card__body">Industry-specific tools, legacy systems, or anything that can export data. If it produces a usable export, we can map it into QuickBooks &mdash; the assessment confirms what&rsquo;s possible.</p></li>
+        </ul>
+        <div class="cleanup-signals__cta">
+          <a class="btn btn--text" href="/contact/?intent=qb-migration-to-qb" data-cta="osq-sources-cta">Ask about your source platform &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT THE MIGRATION COVERS (why-grid) -->
+    <section class="section section--osq-includes" id="osq-includes" aria-labelledby="osq-includes-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">What the migration covers</p>
+          <h2 class="section__heading" id="osq-includes-heading">A clean arrival, not a raw import.</h2>
+          <p class="section__lede">The difference between a migration and a data dump is everything below &mdash; the work that makes the QuickBooks file trustworthy on day one.</p>
+        </header>
+        <ul class="why-grid" role="list">
+          <li class="why-card"><p class="why-card__number">01</p><h3 class="why-card__heading">Source assessment &amp; approach</h3><p class="why-card__body">We review your current software&rsquo;s data and export options, decide how much history to bring versus archive, and recommend the cutover approach that balances completeness against cost.</p></li>
+          <li class="why-card"><p class="why-card__number">02</p><h3 class="why-card__heading">Export &amp; mapping</h3><p class="why-card__body">Source data exported &mdash; via a third-party converter where one fits, or by direct export &mdash; and mapped to QuickBooks&rsquo; structure: chart of accounts, customers, vendors, items, and transactions translated from how your old system stored them to how QuickBooks expects them.</p></li>
+          <li class="why-card"><p class="why-card__number">03</p><h3 class="why-card__heading">QuickBooks company build</h3><p class="why-card__body">A properly structured QuickBooks Online company built to receive the data &mdash; the same <a href="/quickbooks/setup/">setup discipline</a> as a fresh file, so you&rsquo;re not importing into a default template that fights your business.</p></li>
+          <li class="why-card"><p class="why-card__number">04</p><h3 class="why-card__heading">Opening balances &amp; AR/AP</h3><p class="why-card__body">Opening balances established as of the cutover date and open invoices and bills brought in as individual transactions &mdash; so you can collect, pay, and reconcile from day one.</p></li>
+          <li class="why-card"><p class="why-card__number">05</p><h3 class="why-card__heading">Integrity verification</h3><p class="why-card__body">Balances, AR, AP, and key totals in QuickBooks <a href="/accounting/reconciliation-services/">reconciled against the source system</a> before sign-off &mdash; the step a tool conversion skips, and the one that separates trustworthy books from a guess.</p></li>
+          <li class="why-card"><p class="why-card__number">06</p><h3 class="why-card__heading">Integrations &amp; training</h3><p class="why-card__body">Bank feeds, payments, payroll, and app integrations connected for QuickBooks, plus team training on the new workflows so the switch is a step forward, not a stumble.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HISTORY APPROACH (scope-grid) -->
+    <section class="section section--process" id="osq-history" aria-labelledby="osq-history-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">How much history to bring</p>
+          <h2 class="section__heading" id="osq-history-heading">Three approaches to your historical data.</h2>
+        </header>
+        <ul class="scope-grid" role="list">
+          <li class="scope-card"><h3 class="scope-card__heading">Full history</h3><p class="scope-card__body">When the source data is clean and the platform exports it well, multiple years of transaction history can be imported and verified. Best when you genuinely need year-over-year detail inside QuickBooks &mdash; and worth the added scope to get it.</p></li>
+          <li class="scope-card"><h3 class="scope-card__heading">Opening balances + current year</h3><p class="scope-card__body">The most common and cost-effective path: bring opening balances and open AR/AP at a cutover date plus the current year&rsquo;s detail, and keep the old system as a read-only archive for prior periods. Clean, fast, and trustworthy.</p></li>
+          <li class="scope-card"><h3 class="scope-card__heading">Clean start</h3><p class="scope-card__body">When the source data is messy or the history isn&rsquo;t worth migrating, start fresh in QuickBooks with correct opening balances as of the cutover. Often paired with a <a href="/quickbooks/setup/">setup engagement</a> for a genuinely clean foundation.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section section--process" id="osq-process" aria-labelledby="osq-process-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">How migration works</p>
+          <h2 class="section__heading" id="osq-process-heading">From your old software to a verified QuickBooks file.</h2>
+          <p class="section__lede">Every migration into QuickBooks from another platform follows the same four-phase sequence &mdash; with verification against the source built in.</p>
+        </header>
+        <ol class="process__list" role="list">
+          <li class="process-step" data-step="1"><p class="process-step__number">01</p><h3 class="process-step__heading">Assessment &amp; scope</h3><p class="process-step__body">A ProAdvisor reviews your current software, its export options, and how much history you need. We recommend the approach, confirm what&rsquo;s feasible, and produce a written fixed-fee scope within 3 business days.</p><p class="process-step__meta">Typical: 3 business days</p></li>
+          <li class="process-step" data-step="2"><p class="process-step__number">02</p><h3 class="process-step__heading">Build &amp; map</h3><p class="process-step__body">The QuickBooks Online company is built and the source data exported and mapped to it. We document the source balances first, so we have a baseline to verify the import against.</p><p class="process-step__meta">Typical: 1&ndash;2 weeks</p></li>
+          <li class="process-step" data-step="3"><p class="process-step__number">03</p><h3 class="process-step__heading">Import &amp; verify</h3><p class="process-step__body">Data imported, opening balances and AR/AP established, and the QuickBooks file reconciled against the source totals. Every discrepancy resolved before sign-off.</p><p class="process-step__meta">Typical: 1&ndash;3 weeks</p></li>
+          <li class="process-step" data-step="4"><p class="process-step__number">04</p><h3 class="process-step__heading">Connect, train &amp; hand off</h3><p class="process-step__body">Integrations connected, team trained on QuickBooks workflows, a written summary of what transferred provided, and optional transition to <a href="/accounting/bookkeeping/monthly-bookkeeping/">monthly bookkeeping</a> in the new file.</p><p class="process-step__meta">Optional: ongoing engagement</p></li>
+        </ol>
+        <div class="process__cta">
+          <a class="btn btn--primary" href="/contact/?intent=qb-migration-to-qb" data-cta="osq-process-cta">Book a Migration Assessment</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section section--cleanup-pricing" id="osq-pricing" aria-labelledby="osq-pricing-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Pricing scope</p>
+          <h2 class="section__heading" id="osq-pricing-heading">Fixed fee, written scope, no hourly billing.</h2>
+          <p class="section__lede">Migration into QuickBooks is priced against a written scope after a source-data assessment. Most engagements fall into one of two tiers.</p>
+        </header>
+        <div class="pricing-tiers" role="list">
+          <article class="pricing-tier pricing-tier--featured" role="listitem" data-tier="standard">
+            <header class="pricing-tier__header"><p class="pricing-tier__eyebrow">Tier 01 &middot; Most common</p><h3 class="pricing-tier__heading">Standard migration</h3><p class="pricing-tier__range">$2,500&ndash;$5,000</p></header>
+            <p class="pricing-tier__fit">For: single-entity businesses bringing opening balances plus current-year detail from a clean source file.</p>
+            <ul class="pricing-tier__includes"><li>Source assessment &amp; approach</li><li>Export &amp; mapping</li><li>QuickBooks company build</li><li>Opening balances &amp; AR/AP</li><li>Integrity verification to source</li><li>Core integrations connected</li><li>Written transfer summary</li></ul>
+            <a class="pricing-tier__cta" href="/contact/?intent=qb-migration-to-qb-standard">Scope a standard migration &rarr;</a>
+          </article>
+          <article class="pricing-tier" role="listitem" data-tier="complex">
+            <header class="pricing-tier__header"><p class="pricing-tier__eyebrow">Tier 02</p><h3 class="pricing-tier__heading">Complex migration</h3><p class="pricing-tier__range">$5,000&ndash;$10,000+</p></header>
+            <p class="pricing-tier__fit">For: multiple years of full history, multiple entities, inventory, or extensive integrations and workflow setup.</p>
+            <ul class="pricing-tier__includes"><li>Everything in Standard</li><li>Multi-year history import</li><li>Multi-entity migration</li><li>Inventory migration &amp; setup</li><li>Extensive integration rebuild</li><li>Full workflow configuration</li><li>Team training sessions</li></ul>
+            <a class="pricing-tier__cta" href="/contact/?intent=qb-migration-to-qb-complex">Scope a complex migration &rarr;</a>
+          </article>
+        </div>
+        <p class="pricing-tiers__note">Ranges are typical engagements; final pricing is set by the source-data assessment. Moving <em>from</em> QuickBooks Desktop instead? That&rsquo;s a <a href="/quickbooks/migration/desktop-to-online/">Desktop-to-Online migration</a>. Considering a move <em>away</em> from QuickBooks? See <a href="/quickbooks/migration/quickbooks-to-xero/">QuickBooks to Xero</a> &mdash; we&rsquo;ll tell you honestly whether you should.</p>
+      </div>
+    </section>
+
+    <!-- OPERATOR BLOCK -->
+    <section class="section section--cleanup-operator" id="osq-operator" aria-labelledby="osq-operator-heading">
+      <div class="container">
+        <div class="operator-block">
+          <div class="operator-block__copy">
+            <p class="section__eyebrow">Who performs the work</p>
+            <h2 class="section__heading" id="osq-operator-heading">A Certified ProAdvisor who builds the destination right.</h2>
+            <p class="operator-block__lede">Migrating into QuickBooks is only as good as the file you arrive in. Every TechBrot migration is delivered by a Certified ProAdvisor who builds the QuickBooks Online company with the same care as a fresh setup &mdash; correct chart of accounts, lists, and structure &mdash; then verifies the imported data against your source before sign-off.</p>
+            <p class="operator-block__lede">Platform-level quality review backs every migration, and every step is documented so your CPA can see exactly what transferred.</p>
+            <div class="operator-block__actions">
+              <a class="btn btn--ghost" href="/quickbooks/proadvisor-team/" data-cta="osq-operator-team">Meet the ProAdvisor team</a>
+              <a class="btn btn--text" href="/trust/" data-cta="osq-operator-trust">Trust &amp; methodology &rarr;</a>
+            </div>
+          </div>
+          <aside class="operator-block__credentials" aria-label="Operator credentials">
+            <ul class="credential-list">
+              <li class="credential-item"><p class="credential-item__label">Certification</p><p class="credential-item__detail">QuickBooks ProAdvisor &mdash; Online (L2), Desktop, Enterprise, Payroll</p></li>
+              <li class="credential-item"><p class="credential-item__label">Method</p><p class="credential-item__detail">Destination built to setup standard; import verified against the source</p></li>
+              <li class="credential-item"><p class="credential-item__label">Accountability</p><p class="credential-item__detail">Named ProAdvisor, platform-level quality review</p></li>
+              <li class="credential-item"><p class="credential-item__label">Independence</p><p class="credential-item__detail">Independent ProAdvisor firm, not affiliated with Intuit Inc.</p></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (FLAT) -->
+    <section class="section section--faq" id="osq-faq" aria-labelledby="osq-faq-heading">
+      <div class="container container--narrow">
+        <header class="section__header">
+          <p class="section__eyebrow">Migration questions</p>
+          <h2 class="section__heading" id="osq-faq-heading">Migrating to QuickBooks: your questions.</h2>
+        </header>
+        <dl class="faq__list">
+          <div class="faq__item"><dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="osq-faq-1" id="osq-faq-q-1">Can you migrate to QuickBooks from Xero, FreshBooks, Wave, or Sage?</button></dt><dd class="faq__answer" id="osq-faq-1" role="region" aria-labelledby="osq-faq-q-1"><p>Yes. TechBrot Certified ProAdvisors migrate businesses to QuickBooks Online from Xero, FreshBooks, Wave, Sage, and other accounting software, as well as from spreadsheets. Unlike a same-platform Desktop-to-Online conversion, moving from a different software has no Intuit-native one-click tool. Partial third-party converters exist (for example, Intuit recommends a Dataswitcher-assisted conversion for Xero), but they don't carry everything — payroll and reconciliation history typically don't transfer — and they don't verify the result. Exporting and mapping the source data, building a properly structured QuickBooks Online company, and verifying that balances and lists landed correctly is the core of the engagement.</p></dd></div>
+          <div class="faq__item"><dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="osq-faq-2" id="osq-faq-q-2">How is this different from a Desktop-to-Online migration?</button></dt><dd class="faq__answer" id="osq-faq-2" role="region" aria-labelledby="osq-faq-q-2"><p>A Desktop-to-Online migration moves between two QuickBooks products, so Intuit's conversion tool handles most of the data automatically. Migrating from a different platform like Xero or FreshBooks has no equivalent native tool — the data structures differ, so it must be exported, mapped to QuickBooks' chart of accounts and list structure, and imported with verification. Even where a third-party converter helps, some data (such as payroll and reconciliation history) doesn't transfer, and the converted file still has to be reconciled to the source. The right approach depends on your source software and how much history you need.</p></dd></div>
+          <div class="faq__item"><dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="osq-faq-3" id="osq-faq-q-3">How much historical data can I bring into QuickBooks?</button></dt><dd class="faq__answer" id="osq-faq-3" role="region" aria-labelledby="osq-faq-q-3"><p>It depends on the source software and the cleanliness of its data. In some cases full transaction history can be imported; in others the practical and cost-effective approach is to bring opening balances as of a chosen cutover date plus open AR and AP, and start fresh in QuickBooks from there, keeping the old system as a read-only archive for prior periods. Some converters (like Dataswitcher for Xero) cover roughly the current plus one or two prior fiscal years and roll older periods into an opening balance. We assess your source data and recommend the approach that balances completeness against cost — there's rarely value in paying to import years of messy history you'll never reference.</p></dd></div>
+          <div class="faq__item"><dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="osq-faq-4" id="osq-faq-q-4">How long does it take to migrate to QuickBooks?</button></dt><dd class="faq__answer" id="osq-faq-4" role="region" aria-labelledby="osq-faq-q-4"><p>A straightforward migration — a clean source file, a single entity, opening balances plus current-year detail — typically completes in two to four weeks. Bringing multiple years of full history, multiple entities, inventory, or heavy integrations extends that to four to eight weeks. The largest variables are how much history you want and how clean the source data is. The timeline is fixed in the written scope before work begins.</p></dd></div>
+          <div class="faq__item"><dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="osq-faq-5" id="osq-faq-q-5">How much does it cost to migrate to QuickBooks from other software?</button></dt><dd class="faq__answer" id="osq-faq-5" role="region" aria-labelledby="osq-faq-q-5"><p>Migration from another platform is priced by scope, not by hour. A standard single-entity migration — opening balances, current-year detail, lists, and core setup — typically runs $2,500 to $5,000. A complex migration with multiple years of history, multiple entities, inventory, or extensive integrations runs $5,000 to $10,000 or more. Every engagement is fixed-fee against a written scope produced from an assessment of your source data.</p></dd></div>
+          <div class="faq__item"><dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="osq-faq-6" id="osq-faq-q-6">Should I switch from my current software to QuickBooks at all?</button></dt><dd class="faq__answer" id="osq-faq-6" role="region" aria-labelledby="osq-faq-q-6"><p>Not always. QuickBooks Online is the right fit for most U.S. small and mid-sized businesses, but not every one — some workflows are genuinely better served by the platform you're on. As an independent firm with no incentive to move you, we'll assess your situation honestly: if QuickBooks is a clear improvement, we'll scope the migration; if your current software is serving you well, we'll say so rather than sell a move you don't need.</p></dd></div>
+          <div class="faq__item"><dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="osq-faq-7" id="osq-faq-q-7">Will my data be accurate after migrating to QuickBooks?</button></dt><dd class="faq__answer" id="osq-faq-7" role="region" aria-labelledby="osq-faq-q-7"><p>That's the entire point of doing it with a ProAdvisor rather than a raw data import. The migration includes integrity verification — the balances, AR, AP, and key totals in QuickBooks are reconciled against the source system before sign-off, so the new file ties back to the numbers you had. A raw import or an unverified tool conversion is how businesses end up with wrong balances and untrustworthy books; the verification step is what prevents it. (Intuit itself recommends a ProAdvisor verify the data after any third-party conversion.)</p></dd></div>
+        </dl>
+        <p class="faq__more"><a href="/quickbooks/faq/">See all QuickBooks frequently asked questions &rarr;</a></p>
+      </div>
+    </section>
+
+    <!-- EXPERT REVIEW -->
+    <section class="section section--speak-review" id="osq-review" aria-labelledby="osq-review-heading">
+      <div class="container container--narrow">
+        <div class="expert-review">
+          <p class="expert-review__eyebrow">Page review &amp; standards</p>
+          <h2 class="expert-review__heading" id="osq-review-heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+          <div class="expert-review__body"><p>This page reflects how TechBrot migrates businesses into QuickBooks from other accounting software. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, an independent ProAdvisor firm, and reviewed for technical accuracy on source export, mapping, company build, and verification against the source. Conversion-tool facts (including Intuit&rsquo;s recommended Xero conversion path) were verified against current sources as of the review date. TechBrot performs the migration and coordinates with your CPA, who files.</p></div>
+          <ul class="expert-review__credentials" role="list">
+            <li class="expert-review__credential"><p class="expert-review__credential-label">Certifications</p><p class="expert-review__credential-detail">Active Intuit ProAdvisor across QBO L2, Desktop, Enterprise, Payroll</p></li>
+            <li class="expert-review__credential"><p class="expert-review__credential-label">Scope</p><p class="expert-review__credential-detail">Cross-platform migration to QuickBooks &middot; income-tax filing coordinated with your CPA/EA</p></li>
+            <li class="expert-review__credential"><p class="expert-review__credential-label">Method</p><p class="expert-review__credential-detail">Destination built to setup standard; import reconciled to the source &middot; fixed-fee, written scope</p></li>
+            <li class="expert-review__credential"><p class="expert-review__credential-label">Independence</p><p class="expert-review__credential-detail">Not affiliated with Intuit Inc. or any source-platform vendor</p></li>
+          </ul>
+          <p class="expert-review__updated">Page last reviewed: <time datetime="2026-06">June 2026</time>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED -->
+    <section class="section section--cleanup-related" id="osq-related" aria-labelledby="osq-related-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Related</p>
+          <h2 class="section__heading" id="osq-related-heading">Related QuickBooks services.</h2>
+        </header>
+        <ul class="related-grid" role="list">
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/quickbooks/migration/desktop-to-online/">Desktop to Online migration</a></h3><p class="related-card__body">Already on QuickBooks Desktop? That&rsquo;s a same-platform conversion with its own tooling.</p><a class="related-card__cta" href="/quickbooks/migration/desktop-to-online/">Explore Desktop to Online &rarr;</a></article></li>
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/quickbooks/setup/">QuickBooks setup</a></h3><p class="related-card__body">A clean start in QuickBooks &mdash; the foundation every good migration is built on.</p><a class="related-card__cta" href="/quickbooks/setup/">Explore setup &rarr;</a></article></li>
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/quickbooks/migration/quickbooks-to-xero/">QuickBooks to Xero</a></h3><p class="related-card__body">Considering the reverse move? We&rsquo;ll tell you honestly whether you should &mdash; and do it right if you do.</p><a class="related-card__cta" href="/quickbooks/migration/quickbooks-to-xero/">Explore the reverse move &rarr;</a></article></li>
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></h3><p class="related-card__body">Ongoing close in your new QuickBooks file &mdash; the common next step after migrating.</p><a class="related-card__cta" href="/accounting/bookkeeping/monthly-bookkeeping/">Explore monthly &rarr;</a></article></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FINAL CTA (national, inverted) -->
+    <section class="section section--final-cta" id="osq-final-cta" aria-labelledby="osq-final-cta-heading">
+      <div class="container container--narrow">
+        <div class="final-cta">
+          <p class="section__eyebrow section__eyebrow--inverted">Migration starts here</p>
+          <h2 class="final-cta__heading" id="osq-final-cta-heading">Arrive in QuickBooks with books that tie.</h2>
+          <p class="final-cta__lede">Book a migration assessment. A ProAdvisor reviews your current software, tells you how much history is worth bringing, and scopes the migration in writing &mdash; before any work begins. If staying on your current platform is genuinely right for you, we&rsquo;ll say so. No pitch.</p>
+          <div class="final-cta__actions" role="group" aria-label="Final actions">
+            <a class="btn btn--primary btn--lg btn--inverted" href="/contact/?intent=qb-migration-to-qb" data-cta="osq-final-primary">Book a Migration Assessment</a>
+            <a class="btn btn--ghost btn--lg btn--inverted" href="/quickbooks/migration/" data-cta="osq-final-secondary">All Migration Services</a>
+          </div>
+          <p class="final-cta__disclaimer">TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm. QuickBooks and QuickBooks Online are registered trademarks of Intuit Inc. Xero, FreshBooks, Wave, and Sage are trademarks of their respective owners. TechBrot Inc. is not affiliated with Intuit Inc. or any source-platform vendor. Migration services do not include income-tax filing, IRS representation, audit, or assurance.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div><!-- ============================================================================
+     FOOTER
+     ============================================================================ -->
+
+<footer class="site-footer" role="contentinfo" id="site-footer">
+
+  <section class="site-footer__band" aria-label="Newsletter signup">
+    <div class="container">
+      <div class="footer-band">
+        <div class="footer-band__copy">
+          <h2 class="footer-band__heading">The monthly brief.</h2>
+          <p class="footer-band__lede">One email a month — operational accounting, QuickBooks, and finance-ops insight for U.S. business owners. No spam, unsubscribe anytime.</p>
+        </div>
+        <form class="footer-band__form" action="/subscribe" method="post" aria-label="Subscribe to the monthly brief">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input class="footer-band__input" type="email" id="footer-email" name="email" placeholder="you@company.com" autocomplete="email" required="">
+          <button class="btn btn--primary btn--md" type="submit" data-cta="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="site-footer__main">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="site-footer__brand-col">
+          <a class="site-brand site-brand--footer" href="/" aria-label="TechBrot home">
+            <img class="site-brand__mark" src="/assets/img/brand/wordmark-light.png" alt="TechBrot" width="140" height="36" decoding="async">
+          </a>
+          <p class="site-footer__tagline">A modern accounting platform with vetted local partners.</p>
+          <ul class="site-footer__contact-list">
+            <li><a href="mailto:hello@techbrot.com">hello@techbrot.com</a></li>
+            <li><a href="tel:+18777515575">(877) 751-5575</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Book a discovery call →</a></li>
+          </ul>
+          <ul class="site-footer__social" aria-label="Social media">
+  <li>
+    <a href="https://www.linkedin.com/company/techbrot-inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on LinkedIn">
+      <img src="/assets/img/icons/linkedin.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://x.com/techbrot_inc"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on X">
+      <img src="/assets/img/icons/x.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.instagram.com/techbrot_inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on Instagram">
+      <img src="/assets/img/icons/instagram.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+</ul>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Accounting">
+          <h2 class="site-footer__heading" id="fh-services" aria-controls="fl-services" aria-expanded="false" role="button" tabindex="0">Accounting</h2>
+          <ul class="site-footer__links" id="fl-services" aria-labelledby="fh-services">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="QuickBooks">
+          <h2 class="site-footer__heading" id="fh-quickbooks" aria-controls="fl-quickbooks" aria-expanded="false" role="button" tabindex="0">QuickBooks</h2>
+          <ul class="site-footer__links" id="fl-quickbooks" aria-labelledby="fh-quickbooks">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Company">
+          <h2 class="site-footer__heading" id="fh-company" aria-controls="fl-company" aria-expanded="false" role="button" tabindex="0">Company</h2>
+          <ul class="site-footer__links" id="fl-company" aria-labelledby="fh-company">
+            <li><a href="/about/">About</a></li>
+            <li><a href="/about/methodology/">Methodology</a></li>
+            <li><a href="/about/team/">Team</a></li>
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Network">
+          <h2 class="site-footer__heading" id="fh-network" aria-controls="fl-network" aria-expanded="false" role="button" tabindex="0">Network</h2>
+          <ul class="site-footer__links" id="fl-network" aria-labelledby="fh-network">
+            <li><a href="/find-an-accountant/">Find an Accountant</a></li>
+            <li><a href="/partners/">For Accountants</a></li>
+            <li><a href="/about/network/">How it works</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__base">
+    <div class="container">
+      <p class="site-footer__disclosure" role="note">
+        <strong>Independent ProAdvisor firm.</strong> QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc. <a href="/legal/disclaimer/">Read full notice</a>.
+      </p>
+      <div class="site-footer__base-row">
+        <p class="site-footer__copyright">© <time>2026</time> TechBrot Inc. All rights reserved.</p>
+        <ul class="site-footer__legal" aria-label="Legal links">
+          <li><a href="/legal/privacy-policy/">Privacy</a></li>
+          <li><a href="/legal/terms/">Terms</a></li>
+          <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+          <li><a href="/legal/dpa/">Data processing</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</footer>
+    <script src="../../../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

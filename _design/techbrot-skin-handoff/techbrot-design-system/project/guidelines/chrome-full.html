@@ -1,0 +1,82 @@
+<!-- @dsCard group="Chrome" viewport="1280x980" subtitle="util-bar + sticky blurred header with dropdown OPEN + full dark footer with aligned-segment disclosure" name="full chrome" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../handoff/01-tokens.SKIN.css">
+<link rel="stylesheet" href="../handoff/02-conversion.SKIN.css">
+<link rel="stylesheet" href="../handoff/03-chrome.SKIN.css">
+<style>body{margin:0;background:var(--bg-page);font-family:var(--font-sans)}
+.spacer{height:240px;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:11px;color:var(--text-secondary)}</style>
+</head><body>
+<div class="util-bar">
+  <div class="container">
+    <span>Independent · Certified QuickBooks ProAdvisor</span>
+    <a class="util-bar__phone" href="tel:+15555550143" data-tb-event="phone_click">(555) 555-0143</a>
+  </div>
+</div>
+<header class="site-header">
+  <div class="container">
+    <a class="site-header__logo" href="/" aria-label="TechBrot home">
+      <svg viewBox="0 0 248 64" height="28" role="img" aria-label="TechBrot"><g fill="#1A1915"><path d="M8 14 H30.5 V47 H21.5 V23 H8 Z"></path><rect x="33.5" y="14" width="10.5" height="9"></rect></g><text x="58" y="44" font-family="Fraunces, Georgia, serif" font-size="30" font-weight="600" letter-spacing="-0.4" fill="#1A1915" style="font-variation-settings:'opsz' 40">TechBrot</text></svg>
+    </a>
+    <ul class="site-nav">
+      <li class="nav__item">
+        <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="dd-services">Services</button>
+        <div class="nav__dropdown" id="dd-services" data-open="false">
+          <a href="#">Monthly bookkeeping<span>Weekly cadence, day-3 close</span></a>
+          <a href="#">Cleanup &amp; catch-up<span>Books you can trust again</span></a>
+          <a href="#">QuickBooks setup &amp; migration<span>Built right the first time</span></a>
+          <a href="#">Fractional CFO<span>Judgment, not just reports</span></a>
+        </div>
+      </li>
+      <li class="nav__item"><a class="nav__link" href="#">QuickBooks</a></li>
+      <li class="nav__item"><a class="nav__link" href="#">Pricing</a></li>
+      <li class="nav__item"><a class="nav__link" aria-current="page" href="#">Resources</a></li>
+      <li class="nav__item"><a class="nav__link" href="#">About</a></li>
+    </ul>
+    <div class="site-header__actions">
+      <a class="site-header__phone" href="tel:+15555550143" data-tb-event="phone_click">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        (555) 555-0143</a>
+      <a class="btn btn--primary site-header__cta" href="#">Book a call</a>
+      <button class="nav__hamburger" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg></button>
+    </div>
+  </div>
+</header>
+<div class="spacer">page content — dropdown is LIVE: hover or click “Services”, Tab/Enter/Escape work (tb-nav.js behavior contract)</div>
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <svg viewBox="0 0 248 64" height="26" role="img" aria-label="TechBrot"><g fill="#F5F3EC"><path d="M8 14 H30.5 V47 H21.5 V23 H8 Z"></path><rect x="33.5" y="14" width="10.5" height="9"></rect></g><text x="58" y="44" font-family="Fraunces, Georgia, serif" font-size="30" font-weight="600" letter-spacing="-0.4" fill="#F5F3EC" style="font-variation-settings:'opsz' 40">TechBrot</text></svg>
+        <p class="site-footer__note">Platform-agnostic accounting technology advisory. Certified QuickBooks ProAdvisors, accountants, and advisors.</p>
+      </div>
+      <nav class="site-footer__col" aria-label="Services"><h2>Services</h2><ul><li><a href="#">Monthly bookkeeping</a></li><li><a href="#">Cleanup</a></li><li><a href="#">Catch-up</a></li><li><a href="#">Setup &amp; migration</a></li><li><a href="#">Fractional CFO</a></li></ul></nav>
+      <nav class="site-footer__col" aria-label="QuickBooks"><h2>QuickBooks</h2><ul><li><a href="#">File review</a></li><li><a href="#">Cleanup tiers</a></li><li><a href="#">ProAdvisor help</a></li><li><a href="#">Migration</a></li></ul></nav>
+      <nav class="site-footer__col" aria-label="Resources"><h2>Resources</h2><ul><li><a href="#">Guides</a></li><li><a href="#">Comparisons</a></li><li><a href="#">Find an accountant</a></li><li><a href="#">Pricing</a></li></ul></nav>
+      <nav class="site-footer__col" aria-label="Company"><h2>Company</h2><ul><li><a href="#">About</a></li><li><a href="#">Methodology</a></li><li><a href="#">Reviews</a></li><li><a href="#">Contact</a></li></ul></nav>
+    </div>
+    <div class="site-footer__disclosure">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</div>
+    <div class="site-footer__legal">
+      <span>© 2026 TechBrot Inc. · [NAP PLACEHOLDER — site.json at build]</span>
+      <span><a href="#">Privacy policy</a> · <a href="#">Terms</a> · <a href="#">Trust</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var item=document.querySelector('.nav__item');
+  var btn=item.querySelector('.nav__trigger');
+  var dd=document.getElementById('dd-services');
+  var hoverTimer;
+  function setOpen(open){btn.setAttribute('aria-expanded',String(open));dd.setAttribute('data-open',String(open));}
+  function isOpen(){return btn.getAttribute('aria-expanded')==='true';}
+  btn.addEventListener('click',function(){setOpen(!isOpen());});
+  item.addEventListener('mouseenter',function(){clearTimeout(hoverTimer);setOpen(true);});
+  item.addEventListener('mouseleave',function(){hoverTimer=setTimeout(function(){setOpen(false);},150);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&isOpen()){setOpen(false);btn.focus();}});
+  document.addEventListener('click',function(e){if(!item.contains(e.target))setOpen(false);});
+  item.addEventListener('focusout',function(e){if(!item.contains(e.relatedTarget))setOpen(false);});
+})();
+</script>
+</body></html>

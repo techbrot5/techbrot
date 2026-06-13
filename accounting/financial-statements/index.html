@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+<!-- ============================================================================
+  TECHBROT.COM — GLOBAL HEAD (PRODUCTION v4)
+  Bootstrap Studio Global Template · Loads sitewide on every page
+  ----------------------------------------------------------------------------
+  SCOPE:    Site-level signals only. Each page sets:
+              • <title>
+              • <meta name="description">
+              • <link rel="canonical">
+              • <link rel="alternate" hreflang>
+              • <meta property="og:url">
+              • <meta property="og:title">
+              • <meta property="og:description">
+              • <meta name="twitter:title">
+              • <meta name="twitter:description">
+              • Page-specific schema: WebPage, BreadcrumbList, FAQPage,
+                QAPage, Article, Service offerings — all referencing
+                the global Organization / Person / WebSite via @id.
+
+  GOAL:     Top 0.01% AI citation, entity SEO, E-E-A-T, semantic search,
+            Google / Perplexity / ChatGPT / Claude / Gemini retrieval.
+
+  STACK:    Bootstrap Studio · Static HTML · TechBrot Inc. (US C-Corp)
+  MODEL:    Independent accounting platform with vetted local partners
+
+  v4 CHANGE LOG:
+    • Added Person node for David Westgate (#david-westgate) — Lead
+      QuickBooks ProAdvisor, the named/visible page author referenced by
+      each page's WebPage.reviewedBy. Both Abid (founder/CEO) and David
+      (lead ProAdvisor) are certified; David references the same shared
+      #credential-* entities by @id. Abid remains founder + off visible
+      pages (org-level relationship, not page authorship).
+  UPDATED:  June 2026
+============================================================================ -->
+
+
+<!-- ── 01. RENDERING ──────────────────────────────────── -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- ── 02. PAGE IDENTITY — GLOBAL FALLBACKS (overridden per page) ─────────
+  These are global safety-net values. Every real page overrides title
+  and description in its own head.
+<title>A Modern Accounting Platform with Vetted Local Partners · TechBrot</title>
+<meta name="description" content="TechBrot is an independent U.S. accounting platform delivering QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations through a curated network of vetted local partners.">
+ -->
+
+<!-- ── 03. CANONICAL & HREFLANG — PER-PAGE ONLY ──────────────────────────
+  Reference template (do NOT uncomment globally):
+    <link rel="canonical" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="en-US" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="x-default" href="https://techbrot.com/[slug]/">
+-->
+
+
+<!-- ── 04. INDEXING & CRAWL DIRECTIVES ───────────────────────────────────
+  AI crawler policy (GPTBot, ClaudeBot, PerplexityBot, Google-Extended,
+  Applebot-Extended) is managed at robots.txt + Cloudflare WAF level.
+  These meta directives govern traditional search crawlers only. -->
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="bingbot" content="index, follow">
+
+
+<!-- ── 05. SITE IDENTITY & AUTHORSHIP ────────────────────────────────────-->
+
+<meta name="author" content="TechBrot Inc.">
+<meta name="application-name" content="TechBrot">
+<meta name="apple-mobile-web-app-title" content="TechBrot">
+
+<!-- ── 06. GEO & LOCALE ──────────────────────────────────────────────────
+  Registered: 651 N Broad St, Suite 201, Middletown, DE 19709.
+  Service area: 50 US states (national virtual + local partner network).
+  geo.region uses ISO 3166-2 (US-DE). Nationwide service is declared in
+  Organization schema areaServed (full state ItemList below). -->
+
+<meta http-equiv="content-language" content="en-US">
+<meta name="language" content="English">
+
+<!-- ── 07. BROWSER, DEVICE & PWA ─────────────────────────────────────────-->
+
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B0B" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-TileColor" content="#FAFAF7">
+<meta name="msapplication-config" content="/browserconfig.xml">
+
+
+<!-- ── 08. SECURITY & REFERRER ───────────────────────────────────────────-->
+
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+
+<!-- ── 09. OPEN GRAPH — SITE-LEVEL ONLY (image is per-page) ─────────────
+  Per-page sets: og:url, og:title, og:description, og:image (+ dimensions),
+  and og:type="article" on articles. Global default og:type is "website". -->
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TechBrot">
+<meta property="og:locale" content="en_US">
+
+<!-- ── 10. TWITTER / X CARD — SITE-LEVEL ONLY (image is per-page) ───────-->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@techbrot_inc">
+<meta name="twitter:creator" content="@techbrot_inc">
+
+<!-- ── 11. FAVICONS, ICONS & WEB APP MANIFEST ───────────────────────────-->
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/img/brand/safari-pinned-tab.svg" color="#0B0B0B">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<!-- ── 12. SITEMAP & FEEDS ──────────────────────────────────────────────-->
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+
+<!-- ── 13. PERFORMANCE: PRECONNECT, DNS-PREFETCH, FONT PRELOAD ──────────
+  Fonts: Fraunces (serif headings) + Inter (sans body/UI), both Google.
+  Preloading the two heaviest weights eliminates layout-shift on first
+  paint. Adjust paths if you self-host. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+
+<link rel="preload" as="image" href="/assets/img/brand/wordmark.svg" fetchpriority="high">
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<!-- ── 14. STRUCTURED DATA — ENTITY GRAPH ───────────────────────────────
+  Six-node @graph:
+    1. Organization (multi-type: Organization + ProfessionalService) —
+       the primary entity. Brand, knowsAbout (topical authority),
+       hasOfferCatalog (service routing), areaServed (full US),
+       contactPoint (toll-free), full sameAs cluster.
+    2. Brand — separate Brand entity for AI knowledge-graph systems.
+    3. Person (Abid Khan) — founder/CEO authority; certified ProAdvisor.
+    4. Person (David Westgate) — Lead ProAdvisor; the named, visible page
+       author referenced by each page's WebPage.reviewedBy. Both are
+       certified and share the #credential-* entities by @id.
+    5. WebSite — publisher entity with SearchAction.
+    (ProAdvisor credential entities #credential-* are defined inline on
+     the Abid node and referenced by David.)
+
+  Per-page schema attaches via @id reference, never duplicates these. -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://techbrot.com/#organization",
+
+      "name": "TechBrot Inc.",
+      "legalName": "TechBrot Inc.",
+      "alternateName": [
+        "TechBrot",
+        "TechBrot Network",
+        "TechBrot Accounting Platform"
+      ],
+      "slogan": "A modern accounting platform with vetted local partners.",
+      "description": "TechBrot Inc. is an independent U.S. firm of Certified QuickBooks ProAdvisors, accountants, and advisors serving small and mid-sized businesses. Services span QuickBooks setup, cleanup, and migration; monthly, cleanup, and catch-up bookkeeping; payroll; multi-state sales tax; 1099 preparation; financial reporting; and fractional CFO advisory — delivered directly and through a curated network of vetted local Certified ProAdvisors. Independent Certified QuickBooks ProAdvisor firm; not affiliated with Intuit Inc.",
+      "disambiguatingDescription": "Independent accounting platform with vetted local partners — not affiliated with Intuit Inc. QuickBooks is a registered trademark of Intuit Inc.",
+
+      "url": "https://techbrot.com/",
+
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://techbrot.com/#logo",
+        "url": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "contentUrl": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "caption": "TechBrot — A modern accounting platform with vetted local partners",
+        "width": 512,
+        "height": 512,
+        "inLanguage": "en-US"
+      },
+
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://techbrot.com/assets/img/og/techbrot-og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "TechBrot — A modern accounting platform with vetted local partners"
+      },
+
+      "brand": {
+        "@id": "https://techbrot.com/#brand"
+      },
+
+   
+      "foundingDate": "2023",
+      "founder": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+      "founders": [
+        { "@id": "https://techbrot.com/#abid-khan" }
+      ],
+      "employee": [
+        { "@id": "https://techbrot.com/#abid-khan" },
+        { "@id": "https://techbrot.com/#david-westgate" }
+      ],
+
+      "email": "support@techbrot.com",
+      "telephone": "+1-877-751-5575",
+      "priceRange": "$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": ["Credit Card", "Bank Transfer", "ACH", "Check"],
+
+      "naics": "541219",
+      "isicV4": "6920",
+
+      "address": {
+        "@type": "PostalAddress",
+        "@id": "https://techbrot.com/#address",
+        "streetAddress": "651 N Broad St, Suite 201",
+        "addressLocality": "Middletown",
+        "addressRegion": "DE",
+        "postalCode": "19709",
+        "addressCountry": "US"
+      },
+
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.449",
+        "longitude": "-75.716"
+      },
+
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "customer service",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "sales",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "partners@techbrot.com",
+          "contactType": "partner inquiries",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        }
+      ],
+
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States",
+        "@id": "https://www.wikidata.org/entity/Q30"
+      },
+
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Small and mid-sized U.S. businesses"
+      },
+
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        }
+      ],
+
+      "keywords": "accounting platform, QuickBooks ProAdvisor, bookkeeping services, QuickBooks cleanup, monthly bookkeeping, catch-up bookkeeping, payroll services, fractional CFO, sales tax compliance, 1099 preparation, vetted accounting partners, U.S. small business accounting",
+
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "TechBrot Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monthly Bookkeeping",
+              "description": "Recurring monthly bookkeeping with real reconciliation, monthly close package, and named operator point of contact.",
+              "url": "https://techbrot.com/accounting/bookkeeping/monthly-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks and Bookkeeping Cleanup",
+              "description": "Reconstruct accurate books from a messy state — categorization fixes, real bank and credit-card reconciliations, prior-period correction, and reliable financial statements.",
+              "url": "https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Catch-up Bookkeeping",
+              "description": "Bring backlogged books current — from a few missed months to multi-year historical cleanup before tax filing.",
+              "url": "https://techbrot.com/accounting/bookkeeping/catch-up-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Setup and Onboarding",
+              "description": "Independent ProAdvisor-led QuickBooks setup, chart of accounts, banking, payroll, and integration configuration for new and existing businesses.",
+              "url": "https://techbrot.com/quickbooks/setup/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Migration",
+              "description": "QuickBooks Desktop-to-Online migration and other software-to-QuickBooks migrations performed by Certified ProAdvisors with data integrity verification.",
+              "url": "https://techbrot.com/quickbooks/migration/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Independent QuickBooks ProAdvisor Help",
+              "description": "Certified ProAdvisor help with QuickBooks file issues, reconciliation problems, plan selection, and workflow advisory — independent guidance beyond product support.",
+              "url": "https://techbrot.com/quickbooks/help/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Payroll Setup and Management",
+              "description": "Payroll setup, processing, tax filing, and compliance support delivered through the TechBrot operator network.",
+              "url": "https://techbrot.com/accounting/payroll-management/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sales Tax Compliance",
+              "description": "Multi-state sales tax registration, filing, and nexus advisory for U.S. small and mid-sized businesses.",
+              "url": "https://techbrot.com/accounting/sales-tax-compliance/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "1099 Preparation",
+              "description": "Annual 1099 preparation, vendor data collection, and IRS filing for U.S. small businesses.",
+              "url": "https://techbrot.com/accounting/1099-preparation/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fractional CFO Services",
+              "description": "Senior financial advisory delivered through the TechBrot network — cash flow planning, forecasting, KPI reporting, and board-ready financials for growing businesses.",
+              "url": "https://techbrot.com/accounting/advisory/fractional-cfo/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Find a Local Accounting Partner",
+              "description": "Match with a vetted, credentialed, insured TechBrot operator partner in your U.S. state — typically within 48 hours.",
+              "url": "https://techbrot.com/find-an-accountant/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          }
+        ]
+      },
+
+      "knowsAbout": [
+        "Accounting",
+        "Bookkeeping",
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Premier",
+        "QuickBooks Payroll",
+        "QuickBooks ProAdvisor",
+        "QuickBooks setup",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "QuickBooks Desktop to Online migration",
+        "QuickBooks plan selection",
+        "QuickBooks reconciliation",
+        "QuickBooks bank feeds",
+        "QuickBooks error troubleshooting",
+        "QuickBooks company file repair",
+        "QuickBooks multi-user mode",
+        "QuickBooks payroll setup",
+        "QuickBooks payroll troubleshooting",
+        "QuickBooks sales tax",
+        "QuickBooks 1099 preparation",
+        "Monthly bookkeeping",
+        "Catch-up bookkeeping",
+        "Cleanup bookkeeping",
+        "Historical bookkeeping cleanup",
+        "Virtual bookkeeping",
+        "Outsourced bookkeeping",
+        "Small business accounting",
+        "Startup accounting",
+        "Bank reconciliation",
+        "Accounts payable management",
+        "Accounts receivable management",
+        "Chart of accounts setup",
+        "Month-end close",
+        "Year-end close",
+        "Financial statement preparation",
+        "Financial reporting",
+        "Cash flow forecasting",
+        "Cash flow management",
+        "Profitability analysis",
+        "KPI reporting",
+        "Budgeting and forecasting",
+        "Payroll services",
+        "Payroll tax compliance",
+        "Sales tax compliance",
+        "Sales tax nexus",
+        "1099 preparation and filing",
+        "Tax planning",
+        "IRS problem resolution",
+        "Fractional CFO services",
+        "Controller services",
+        "Business advisory services",
+        "Ecommerce accounting",
+        "Real estate accounting",
+        "Construction accounting",
+        "Restaurant accounting",
+        "Healthcare accounting",
+        "Law firm accounting",
+        "SaaS accounting",
+        "Professional services accounting",
+        "Manufacturing accounting",
+        "Trucking accounting",
+        "Nonprofit accounting",
+        "Franchise accounting",
+        "Retail accounting",
+        "Job costing",
+        "Shopify QuickBooks integration",
+        "Amazon QuickBooks integration",
+        "Stripe QuickBooks integration",
+        "Vetted accounting partner network",
+        "Operator-led accounting platform",
+        "Independent ProAdvisor firm"
+      ],
+
+      "subjectOf": {
+        "@type": "WebPage",
+        "@id": "https://techbrot.com/about/"
+      },
+
+    "sameAs": [
+  "https://www.linkedin.com/company/techbrot-inc/",
+  "https://x.com/techbrot_inc",
+  "https://www.instagram.com/techbrot_inc",
+  "https://www.youtube.com/@techbrot_inc",
+  "https://www.facebook.com/techbrotinc",
+  "https://www.tumblr.com/techbrot",
+  "https://pin.it/1d4Qrx4At",
+  "https://www.tiktok.com/@techbrot_inc",
+  "https://medium.com/@techbrot5",
+  "https://clutch.co/profile/techbrot"
+]
+    },
+
+    {
+      "@type": "Brand",
+      "@id": "https://techbrot.com/#brand",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Network",
+      "url": "https://techbrot.com/",
+      "logo": "https://techbrot.com/assets/img/brand/logo_img.png",
+      "slogan": "A modern accounting platform with vetted local partners."
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#abid-khan",
+
+      "name": "Abid Khan",
+      "givenName": "Abid",
+      "familyName": "Khan",
+
+      "url": "https://techbrot.com/about/team/#abid-khan",
+
+      "jobTitle": "Founder & CEO",
+      "description": "Abid Khan is the Founder and CEO of TechBrot Inc., an independent U.S. accounting platform with a curated network of vetted local partners. He is a Certified QuickBooks ProAdvisor across QuickBooks Online, Desktop, Enterprise, and Payroll, and leads platform architecture, partner network development, and AI-first search infrastructure.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "Small business bookkeeping",
+        "Bank reconciliation",
+        "Accounting platform architecture",
+        "Partner network development",
+        "AI-first SEO",
+        "Topical authority architecture",
+        "E-E-A-T optimization"
+      ],
+
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qbo-l2",
+          "name": "QuickBooks Online ProAdvisor (Level 2)",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-desktop",
+          "name": "QuickBooks Desktop ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-enterprise",
+          "name": "QuickBooks Enterprise ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-payroll",
+          "name": "QuickBooks Payroll ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        }
+      ],
+
+      "sameAs": [
+  "https://www.linkedin.com/in/abid-khan-ai/",
+  "https://www.reddit.com/user/techbrot_inc/",
+  "https://www.quora.com/profile/Abid-Khan-119",
+  "https://www.credly.com/users/abid-khan.3ceb70a5/badges#credly"
+      ]
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#david-westgate",
+
+      "name": "David Westgate",
+      "givenName": "David",
+      "familyName": "Westgate",
+
+      "url": "https://techbrot.com/about/team/#david-westgate",
+
+      "jobTitle": "Lead QuickBooks ProAdvisor",
+      "description": "David Westgate is the Lead QuickBooks ProAdvisor at TechBrot Inc., with more than 40 years of accounting experience. A Certified QuickBooks ProAdvisor across QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll, he leads bookkeeping, cleanup, reconciliation, and QuickBooks file rebuilds across construction, professional services, and nonprofit engagements, and is the reviewing authority for TechBrot's published accounting content.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks reconciliation",
+        "Bookkeeping",
+        "Bank reconciliation",
+        "Month-end close",
+        "Sales tax compliance",
+        "IOLTA trust accounting",
+        "Job costing",
+        "Construction accounting",
+        "Nonprofit accounting"
+      ],
+
+      "hasCredential": [
+        { "@id": "https://techbrot.com/#credential-qbo-l2" },
+        { "@id": "https://techbrot.com/#credential-qb-desktop" },
+        { "@id": "https://techbrot.com/#credential-qb-enterprise" },
+        { "@id": "https://techbrot.com/#credential-qb-payroll" }
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://techbrot.com/#website",
+
+      "url": "https://techbrot.com/",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Accounting Platform",
+      "description": "Independent U.S. accounting platform — QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations delivered through a curated network of vetted local partners.",
+      "inLanguage": "en-US",
+
+      "publisher": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "author": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+
+      "about": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightHolder": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightYear": "2023",
+
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://techbrot.com/search/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2Z8GK69Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K2Z8GK69Z5');
+</script>
+
+<!-- ── 15. TRADEMARK DISCLOSURE (machine-readable, AI-citation safety) ──
+  Distinct meta tag declaring trademark posture. Some AI scrapers
+  prioritize meta declarations over body content. Provides an
+  additional structural defense against impersonation classification. -->
+
+<meta name="trademark-disclosure" content="QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc.">
+<meta name="affiliation-disclosure" content="independent">
+
+<!-- ============================================================================
+  END GLOBAL HEAD
+============================================================================ --><!-- ====== FINANCIAL STATEMENTS (definitional spoke) · PAGE HEAD (unique values only) ====== -->
+<title>Financial Statements: P&amp;L, Balance Sheet &amp; Cash Flow · TechBrot</title>
+<meta name="description" content="Monthly financial statements by Certified ProAdvisors — income statement, balance sheet, and cash flow statement built from reconciled QuickBooks books, CPA-ready, with plain-language commentary.">
+<link rel="canonical" href="https://techbrot.com/accounting/financial-statements/">
+<link rel="alternate" hreflang="en-US" href="https://techbrot.com/accounting/financial-statements/">
+<link rel="alternate" hreflang="x-default" href="https://techbrot.com/accounting/financial-statements/">
+<meta property="og:url" content="https://techbrot.com/accounting/financial-statements/">
+<meta property="og:title" content="Financial Statements: P&L, Balance Sheet & Cash Flow">
+<meta property="og:description" content="Income statement, balance sheet, and cash flow built from reconciled QuickBooks books, CPA-ready, with plain-language commentary — by Certified ProAdvisors.">
+<meta property="og:image" content="https://techbrot.com/assets/img/og/financial-statements-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TechBrot — financial statements services">
+<meta name="twitter:title" content="Financial Statements: P&L, Balance Sheet & Cash Flow · TechBrot">
+<meta name="twitter:description" content="Income statement, balance sheet, cash flow — CPA-ready, with commentary. By Certified ProAdvisors.">
+<meta name="twitter:image" content="https://techbrot.com/assets/img/og/financial-statements-og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://techbrot.com/accounting/financial-statements/#webpage",
+      "url": "https://techbrot.com/accounting/financial-statements/",
+      "name": "Financial Statements: P&L, Balance Sheet & Cash Flow",
+      "description": "Monthly financial statement preparation for U.S. small and mid-sized businesses — income statement, balance sheet, and cash flow statement built from reconciled QuickBooks books, CPA-ready, with plain-language commentary, delivered by Certified ProAdvisors.",
+      "isPartOf": { "@id": "https://techbrot.com/#website" },
+      "about": { "@id": "https://techbrot.com/#organization" },
+      "publisher": { "@id": "https://techbrot.com/#organization" },
+      "inLanguage": "en-US",
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://techbrot.com/assets/img/og/financial-statements-og.png" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["#fin-ai-summary", "#fin-tldr-body"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://techbrot.com/accounting/financial-statements/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://techbrot.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Accounting", "item": "https://techbrot.com/accounting/" },
+        { "@type": "ListItem", "position": 3, "name": "Financial Statements" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://techbrot.com/accounting/financial-statements/#service",
+      "name": "Financial Statement Preparation",
+      "serviceType": "Financial statement preparation",
+      "description": "Monthly preparation of the income statement (P&L), balance sheet, and cash flow statement from reconciled QuickBooks books for U.S. businesses, delivered CPA-ready with plain-language commentary by Certified ProAdvisors. Internal management and CPA-ready reporting; not GAAP audit, review, or compilation engagements.",
+      "provider": { "@id": "https://techbrot.com/#organization" },
+      "areaServed": { "@type": "Country", "name": "United States" },
+      "audience": { "@type": "BusinessAudience", "audienceType": "U.S. small and mid-sized businesses, owners, and operators" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://techbrot.com/accounting/financial-statements/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What are the three main financial statements?", "acceptedAnswer": { "@type": "Answer", "text": "The income statement (also called profit and loss or P&L), the balance sheet, and the cash flow statement. The income statement shows revenue, expenses, and profit over a period. The balance sheet shows what the business owns and owes at a single point in time. The cash flow statement reconciles profit to actual cash movement. Together they give the complete financial picture; alone, each is incomplete." } },
+        { "@type": "Question", "name": "What's the difference between the P&L and the cash flow statement?", "acceptedAnswer": { "@type": "Answer", "text": "The P&L reports income and expenses when they are earned and incurred, regardless of when cash moves. The cash flow statement reports actual cash in and out. A business can be profitable on the P&L while losing cash, or losing money on the P&L while collecting cash — the difference is timing. The cash flow statement explains that gap." } },
+        { "@type": "Question", "name": "What is the balance sheet?", "acceptedAnswer": { "@type": "Answer", "text": "The balance sheet is a snapshot of the business at a single moment: assets (what it owns — cash, receivables, inventory, equipment), liabilities (what it owes — payables, loans, deposits held), and owner's equity. Assets equal liabilities plus equity, always. It's the statement that shows financial health and structure, not just performance." } },
+        { "@type": "Question", "name": "How often should financial statements be produced?", "acceptedAnswer": { "@type": "Answer", "text": "Monthly is the standard for active management. Quarterly is acceptable for steady, lower-complexity businesses. Annual-only is almost always too infrequent — you'll find out in March how December went, with no time to act. TechBrot prepares statements monthly as part of recurring bookkeeping engagements." } },
+        { "@type": "Question", "name": "Are TechBrot financial statements GAAP audit-ready?", "acceptedAnswer": { "@type": "Answer", "text": "TechBrot prepares internal management financial statements and CPA-ready packages — accurate, reconciled, and structured so your CPA can file from them or, when needed, perform a formal compilation, review, or audit engagement on top. We do not provide audit, review, or compilation services ourselves; those are licensed CPA engagements." } },
+        { "@type": "Question", "name": "What does financial statement preparation cost?", "acceptedAnswer": { "@type": "Answer", "text": "Monthly financial statement preparation is included in TechBrot's monthly bookkeeping engagements, which range from $400 to $2,500+ per month with complexity adjustments. Stand-alone historical statement preparation — for past periods that need rebuilding — is quoted as a fixed-fee project against scope. No hourly billing." } }
+      ]
+    }
+  ]
+}
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>BSS-1-11ty</title>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/04-pages.css">
+    <link rel="stylesheet" href="../../assets/css/01-tokens.css">
+    <link rel="stylesheet" href="../../assets/css/02-base.css">
+    <link rel="stylesheet" href="../../assets/css/03-components.css">
+</head>
+
+<body><!-- ============================================================================
+     CHROME · utility bar + primary header + mobile drawer + search palette
+     ============================================================================ -->
+
+<div class="util-bar" role="region" aria-label="Secondary">
+  <div class="container util-bar__inner">
+    <p class="util-bar__trust">
+      <span class="util-bar__dot" aria-hidden="true"></span>
+      <span>Independent Certified QuickBooks ProAdvisor firm · U.S.-based</span>
+    </p>
+    <nav class="util-bar__nav" aria-label="For accountants and partners">
+      <a class="util-bar__link" href="/find-an-accountant/">Find an Accountant</a>
+      <a class="util-bar__link" href="/partners/">For Accountants →</a>
+    </nav>
+  </div>
+</div>
+
+<header class="site-header" role="banner" id="site-header" data-sticky="true">
+  <div class="container site-header__inner">
+
+    <a class="site-brand" href="/" aria-label="TechBrot home" title="TechBrot — A Modern Accounting Platform">
+      <img class="site-brand__mark" src="/assets/img/brand/icon.svg" alt="TechBrot" width="140" height="56" decoding="async" fetchpriority="high">
+    </a>
+
+    <nav class="site-nav site-nav--desktop" aria-label="Primary navigation" id="primary-nav">
+      <ul class="site-nav__list">
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-services" aria-haspopup="true">
+            Accounting
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-services" role="region" aria-label="Accounting services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Bookkeeping</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/">All bookkeeping →</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Financial Operations</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/payroll-management/">Payroll management</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/services/">All services →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/accounting/">Accounting overview →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-quickbooks" aria-haspopup="true">
+            QuickBooks
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-quickbooks" role="region" aria-label="QuickBooks services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">ProAdvisor Services</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/cleanup/">File cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/migration/">Desktop → Online migration</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/help/">QuickBooks help</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Products</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/proadvisor-team/">Our ProAdvisor team</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/">QuickBooks overview →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/legal/disclaimer/">Independent firm — not affiliated with Intuit →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/find-an-accountant/">Find an Accountant</a>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/pricing/">Pricing</a>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-why" aria-haspopup="true">
+            Why TechBrot
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu" id="nav-menu-why" role="region" aria-label="Why TechBrot" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Authority &amp; trust</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/trust/">Trust &amp; standards</a></li>
+                  <li><a class="nav-menu__link" href="/about/methodology/">Our methodology</a></li>
+                  <li><a class="nav-menu__link" href="/reviews/">Client reviews</a></li>
+                  <li><a class="nav-menu__link" href="/vs/">Comparisons</a></li>
+                  <li><a class="nav-menu__link" href="/about/">About &amp; team</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="site-header__utility">
+      <button class="site-search-trigger" type="button" aria-label="Search (press / or Cmd-K)" data-search-open="" title="Search — / or ⌘K">
+        <svg class="site-search-trigger__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+          <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+        </svg>
+        <span class="site-search-trigger__hint" aria-hidden="true"><kbd>/</kbd></span>
+      </button>
+
+      <a class="site-header__phone" href="tel:+18777515575" aria-label="Call TechBrot" data-cta="header-phone" title="Call TechBrot">
+        <span class="site-header__phone-label">Call</span>
+        <span class="site-header__phone-number">(877) 751-5575</span>
+      </a>
+
+      <a class="btn btn--primary btn--sm" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="header-primary" title="Book a discovery call">
+        Book a Call
+      </a>
+    </div>
+
+    <button class="site-header__mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+    </button>
+
+  </div>
+</header>
+
+<aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation" hidden="">
+  <div class="mobile-drawer__header">
+    <a class="site-brand" href="/" aria-label="TechBrot home">
+      <img class="site-brand__mark" src="/assets/img/brand/wordmark.png" alt="TechBrot" width="120" height="36">
+    </a>
+    <button class="mobile-drawer__close" type="button" aria-label="Close navigation menu" data-action="close-drawer">
+      <span class="mobile-drawer__close-x" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <nav class="mobile-drawer__nav" aria-label="Mobile primary navigation">
+    <ul class="mobile-drawer__list">
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-services">
+          <span>Accounting</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-services" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll management</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-quickbooks">
+          <span>QuickBooks</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-quickbooks" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/find-an-accountant/">Find an Accountant</a></li>
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/pricing/">Pricing</a></li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-why">
+          <span>Why TechBrot</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-why" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/about/methodology/">Our methodology</a></li>
+            <li><a href="/reviews/">Client reviews</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+            <li><a href="/about/">About &amp; team</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/partners/">For Accountants</a></li>
+    </ul>
+  </nav>
+
+  <div class="mobile-drawer__footer">
+    <a class="btn btn--primary btn--lg btn--full" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="mobile-primary">Book a Discovery Call</a>
+    <a class="mobile-drawer__phone" href="tel:+18777515575">(877) 751-5575</a>
+  </div>
+</aside>
+
+<div class="search-palette" id="search-palette" role="dialog" aria-modal="true" aria-label="Search TechBrot" hidden="">
+  <div class="search-palette__backdrop" data-search-close=""></div>
+  <div class="search-palette__panel" role="combobox" aria-expanded="true" aria-haspopup="listbox" aria-owns="search-results">
+    <div class="search-palette__field">
+      <svg class="search-palette__icon" width="20" height="20" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+        <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+      </svg>
+      <input class="search-palette__input" id="search-input" type="text" autocomplete="off" spellcheck="false" placeholder="Search services, QuickBooks, comparisons, states, Indiana topics…" aria-label="Search" aria-controls="search-results" aria-autocomplete="list">
+      <button class="search-palette__close" type="button" aria-label="Close search" data-search-close=""><kbd>Esc</kbd></button>
+    </div>
+    <div class="search-palette__body">
+      <ul class="search-palette__results" id="search-results" role="listbox" aria-label="Search results"></ul>
+      <div class="search-palette__suggested" id="search-suggested">
+        <p class="search-palette__suggested-label">Try</p>
+        <ul class="search-palette__chips" role="list">
+          <li><button type="button" class="search-chip" data-q="indiana cagit">Indiana CAGIT payroll</button></li>
+          <li><button type="button" class="search-chip" data-q="bookkeeping cleanup">Bookkeeping cleanup</button></li>
+          <li><button type="button" class="search-chip" data-q="quickbooks migration">QuickBooks migration</button></li>
+          <li><button type="button" class="search-chip" data-q="indianapolis">Indianapolis</button></li>
+          <li><button type="button" class="search-chip" data-q="manufacturing">Manufacturing accounting</button></li>
+          <li><button type="button" class="search-chip" data-q="pricing">Pricing</button></li>
+        </ul>
+      </div>
+      <p class="search-palette__empty" id="search-empty" hidden="">No matches. Try a service, “QuickBooks”, an Indiana topic, a city, or a comparison.</p>
+    </div>
+    <div class="search-palette__foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+<div class="page page--service page--financial-statements" data-page="financial-statements">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <main id="main" role="main">
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="Breadcrumb" id="fin-breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/">Home</a></li>
+          <li class="breadcrumb__item"><a href="/accounting/">Accounting</a></li>
+          <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Financial Statements</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="section section--hero" id="fin-hero" aria-labelledby="fin-hero-heading">
+      <div class="container">
+        <div class="hero">
+          <p class="hero__eyebrow"><span class="hero__eyebrow-text">Accounting · Financial statements</span></p>
+          <h1 class="hero__heading" id="fin-hero-heading">
+            Three statements. One real picture of the business.
+          </h1>
+          <p class="hero__subheading">
+            Most owners get a P&amp;L and call it &ldquo;the books.&rdquo; A complete picture takes all three statements &mdash; income, balance sheet, cash flow &mdash; reconciled, in agreement, and read together. TechBrot&rsquo;s Certified ProAdvisors prepare them monthly from your QuickBooks file, CPA-ready, with plain-language commentary.
+          </p>
+          <div class="hero__actions" role="group" aria-label="Primary actions">
+            <a class="btn btn--primary btn--lg" href="/contact/?intent=financial-statements-prep" data-cta="fin-hero-primary">Book a Discovery Call</a>
+            <a class="btn btn--ghost btn--lg" href="/accounting/bookkeeping/monthly-bookkeeping/" data-cta="fin-hero-secondary">Monthly Bookkeeping</a>
+          </div>
+          <p class="hero__proof">
+            <span class="hero__proof-label">Built on</span>
+            <span class="hero__proof-list">Reconciled books · Monthly cadence · CPA-ready</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TL;DR -->
+    <section class="section section--tldr" id="fin-tldr" aria-labelledby="fin-tldr-heading">
+      <div class="container container--narrow">
+        <div class="tldr">
+          <p class="tldr__eyebrow">In one paragraph</p>
+          <h2 class="tldr__heading" id="fin-tldr-heading">Financial statements, plainly.</h2>
+          <p class="tldr__body" id="fin-tldr-body">
+            The three financial statements report a business from three angles: the <strong>income statement (P&amp;L)</strong> shows revenue, expense, and profit over a period; the <strong>balance sheet</strong> shows what the business owns and owes at a moment in time; the <strong>cash flow statement</strong> reconciles profit to actual cash. Read separately, each is incomplete &mdash; a profitable P&amp;L can sit alongside a tight bank account, and a healthy balance sheet can mask a weak cash flow trend. TechBrot&rsquo;s <a href="/quickbooks/proadvisor-team/">Certified ProAdvisors</a> prepare all three monthly from a reconciled <a href="/accounting/bookkeeping/">QuickBooks file</a>, deliver them CPA-ready for your tax professional, and pair them with plain-language commentary so the numbers translate into decisions. Internal management and CPA-ready reporting &mdash; not audit, review, or compilation, which are licensed CPA engagements we coordinate with. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI SUMMARY -->
+    <section class="section section--ai-summary" id="fin-ai-summary" aria-labelledby="fin-ai-summary-heading">
+      <div class="container container--narrow">
+        <header class="section__header">
+          <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+          <h2 class="section__heading" id="fin-ai-summary-heading">Financial statements, in five questions.</h2>
+        </header>
+        <dl class="ai-summary__list">
+          <div class="ai-summary__item"><dt class="ai-summary__question">What are the three main financial statements?</dt><dd class="ai-summary__answer"><p>The <strong>income statement</strong> (P&amp;L), <strong>balance sheet</strong>, and <strong>cash flow statement</strong>. P&amp;L shows performance over a period; balance sheet shows financial position at a point in time; cash flow reconciles profit to actual cash.</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">P&amp;L vs cash flow statement?</dt><dd class="ai-summary__answer"><p>P&amp;L reports income and expense when <strong>earned and incurred</strong>; cash flow reports actual <strong>cash in and out</strong>. A business can be profitable while losing cash &mdash; the cash flow statement explains that gap.</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">What is the balance sheet?</dt><dd class="ai-summary__answer"><p>A <strong>snapshot</strong> at a single moment: assets (what the business owns), liabilities (what it owes), and equity. Assets equal liabilities plus equity, always. Shows financial health and structure, not just performance.</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">Are TechBrot statements GAAP audit-ready?</dt><dd class="ai-summary__answer"><p>We prepare <strong>internal management and CPA-ready</strong> statements &mdash; reconciled and structured so your CPA can file from them or perform a formal compilation, review, or audit on top. We don&rsquo;t provide audit, review, or compilation ourselves &mdash; those are licensed CPA engagements.</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">How often should they be produced?</dt><dd class="ai-summary__answer"><p><strong>Monthly</strong> is standard. Annual-only is almost always too infrequent &mdash; you find out in March how December went. Included in monthly bookkeeping engagements ($400&ndash;$2,500+/mo). See <a href="/pricing/">pricing</a>.</p></dd></div>
+        </dl>
+      </div>
+    </section>
+<!-- AI SUMMARY · QAPage schema (matches the 5 visible quick-answer questions) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "QAPage",
+  "@id": "https://techbrot.com/accounting/financial-statements/#qa",
+  "isPartOf": { "@id": "https://techbrot.com/accounting/financial-statements/#webpage" },
+  "mainEntity": {
+    "@type": "Question",
+    "name": "What are the three main financial statements?",
+    "answerCount": 1,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The income statement (P&L), balance sheet, and cash flow statement. P&L shows performance over a period; balance sheet shows financial position at a point in time; cash flow reconciles profit to actual cash."
+    }
+  },
+  "about": {
+    "@type": "ItemList",
+    "name": "Financial statements — quick answers",
+    "itemListElement": [
+      {
+        "@type": "Question",
+        "position": 1,
+        "name": "P&L vs cash flow statement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "P&L reports income and expense when earned and incurred; cash flow reports actual cash in and out. A business can be profitable while losing cash — the cash flow statement explains that gap."
+        }
+      },
+      {
+        "@type": "Question",
+        "position": 2,
+        "name": "What is the balance sheet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A snapshot at a single moment: assets (what the business owns), liabilities (what it owes), and equity. Assets equal liabilities plus equity, always. Shows financial health and structure, not just performance."
+        }
+      },
+      {
+        "@type": "Question",
+        "position": 3,
+        "name": "Are TechBrot statements GAAP audit-ready?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We prepare internal management and CPA-ready statements — reconciled and structured so your CPA can file from them or perform a formal compilation, review, or audit on top. We don't provide audit, review, or compilation ourselves — those are licensed CPA engagements."
+        }
+      },
+      {
+        "@type": "Question",
+        "position": 4,
+        "name": "How often should they be produced?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Monthly is standard. Annual-only is almost always too infrequent — you find out in March how December went. Included in monthly bookkeeping engagements ($400–$2,500+/mo)."
+        }
+      }
+    ]
+  }
+}
+</script>
+    <!-- THE THREE STATEMENTS (why-grid, 3 cards) -->
+    <section class="section section--fin-three" id="fin-three" aria-labelledby="fin-three-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">The three statements</p>
+          <h2 class="section__heading" id="fin-three-heading">What each one tells you &mdash; and what it doesn&rsquo;t.</h2>
+          <p class="section__lede">Each statement answers a different question. Used alone, each one misleads. Read together, they tell the truth.</p>
+        </header>
+        <ul class="why-grid" role="list">
+          <li class="why-card">
+            <p class="why-card__number">01</p>
+            <h3 class="why-card__heading">Income statement (P&amp;L)</h3>
+            <p class="why-card__body"><strong>Performance over a period.</strong> Revenue, cost of goods, operating expenses, profit. The headline question: did the business make money this month, this quarter, this year? Doesn&rsquo;t tell you whether you have cash, what you own, or what you owe.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">02</p>
+            <h3 class="why-card__heading">Balance sheet</h3>
+            <p class="why-card__body"><strong>Position at a moment in time.</strong> Assets equal liabilities plus equity. Shows financial structure &mdash; cash, receivables, inventory, equipment, debt, owner&rsquo;s stake. The question it answers: is the business financially sound? Doesn&rsquo;t tell you how it&rsquo;s performing right now.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">03</p>
+            <h3 class="why-card__heading">Cash flow statement</h3>
+            <p class="why-card__body"><strong>Profit reconciled to cash.</strong> Shows how operating, investing, and financing activities moved cash over the period &mdash; and why profit and bank balance disagree. The question it answers: where did the cash actually go? The statement most owners never see and need most.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SIGNALS (signal-grid) -->
+    <section class="section section--cleanup-signals" id="fin-signals" aria-labelledby="fin-signals-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">When real financial statements earn their keep</p>
+          <h2 class="section__heading" id="fin-signals-heading">If any of these sound familiar, the answer is yes.</h2>
+          <p class="section__lede">Most owners reach for proper monthly statements when a single P&amp;L stops answering the questions they&rsquo;re asking.</p>
+        </header>
+        <ul class="signal-grid" role="list">
+          <li class="signal-card"><h3 class="signal-card__heading">You only ever see a P&amp;L.</h3><p class="signal-card__body">A P&amp;L without a balance sheet and cash flow is half the picture &mdash; or less. The numbers you don&rsquo;t see are usually the ones that bite.</p></li>
+          <li class="signal-card"><h3 class="signal-card__heading">Profit and bank balance don&rsquo;t match your intuition.</h3><p class="signal-card__body">When the P&amp;L says one thing and the bank says another, the cash flow statement explains the gap. Without it, the gap stays a mystery.</p></li>
+          <li class="signal-card"><h3 class="signal-card__heading">Your balance sheet hasn&rsquo;t reconciled in months.</h3><p class="signal-card__body">An unreconciled balance sheet means the books don&rsquo;t actually agree with reality. Every other statement is unreliable until that&rsquo;s fixed.</p></li>
+          <li class="signal-card"><h3 class="signal-card__heading">A lender, board, or investor wants statements.</h3><p class="signal-card__body">Outside stakeholders expect all three statements, monthly, in a credible format. We produce them CPA-ready so they hold up.</p></li>
+          <li class="signal-card"><h3 class="signal-card__heading">Year-end is a scramble.</h3><p class="signal-card__body">If your CPA spends January untangling December, the monthly close isn&rsquo;t producing real statements. A reliable monthly process eliminates the scramble.</p></li>
+          <li class="signal-card"><h3 class="signal-card__heading">You can&rsquo;t answer simple questions from your books.</h3><p class="signal-card__body">&ldquo;How much do I owe vendors?&rdquo; &ldquo;What was my gross margin last quarter?&rdquo; &ldquo;Where did the cash go?&rdquo; If the books can&rsquo;t answer in a minute, they aren&rsquo;t doing their job.</p></li>
+        </ul>
+        <div class="cleanup-signals__cta">
+          <a class="btn btn--text" href="/contact/?intent=financial-statements-prep" data-cta="fin-signals-cta">Talk to a ProAdvisor &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT'S INCLUDED (why-grid) -->
+    <section class="section section--fin-included" id="fin-included" aria-labelledby="fin-included-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">What&rsquo;s included</p>
+          <h2 class="section__heading" id="fin-included-heading">What financial statement preparation actually delivers.</h2>
+          <p class="section__lede">Included in monthly bookkeeping engagements. Stand-alone historical preparation quoted as fixed-fee project work.</p>
+        </header>
+        <ul class="why-grid" role="list">
+          <li class="why-card">
+            <p class="why-card__number">01</p>
+            <h3 class="why-card__heading">All three statements, monthly</h3>
+            <p class="why-card__body">Income statement, balance sheet, and cash flow statement &mdash; produced from reconciled books each month, not just at year-end.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">02</p>
+            <h3 class="why-card__heading">Reconciled balance sheet</h3>
+            <p class="why-card__body">Every balance sheet account reconciled to its source &mdash; bank, credit card, loan, payroll liability &mdash; so the numbers are real, not estimates.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">03</p>
+            <h3 class="why-card__heading">Comparative views</h3>
+            <p class="why-card__body">Month-over-month and year-over-year comparisons so trends are visible at a glance &mdash; not buried in a single-period snapshot.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">04</p>
+            <h3 class="why-card__heading">Plain-language commentary</h3>
+            <p class="why-card__body">A short written read each month from a named ProAdvisor: what changed, why, and what to watch. Not just delivery &mdash; interpretation.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">05</p>
+            <h3 class="why-card__heading">CPA-ready handoff</h3>
+            <p class="why-card__body">Statements structured so your CPA or EA can file from them or, when needed, perform a formal compilation, review, or audit on top &mdash; no rework.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">06</p>
+            <h3 class="why-card__heading">Segment &amp; location views</h3>
+            <p class="why-card__body">Where the business is multi-segment or multi-location, statements broken out by class or location so each unit is visible inside the consolidated picture.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HONEST SCOPE (scope-grid) -->
+    <section class="section section--process" id="fin-scope" aria-labelledby="fin-scope-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Honest scope</p>
+          <h2 class="section__heading" id="fin-scope-heading">Management statements vs CPA engagements.</h2>
+        </header>
+        <ul class="scope-grid" role="list">
+          <li class="scope-card">
+            <h3 class="scope-card__heading">We do</h3>
+            <p class="scope-card__body">Monthly preparation of income statement, balance sheet, and cash flow statement from reconciled QuickBooks books. Internal management reporting. CPA-ready year-end packages. Comparative and segment views. Plain-language commentary. Historical statement preparation for past periods needing rebuild.</p>
+          </li>
+          <li class="scope-card">
+            <h3 class="scope-card__heading">We don&rsquo;t</h3>
+            <p class="scope-card__body">Issue <strong>GAAP compilation, review, or audit reports</strong> &mdash; those are licensed CPA engagements. File income tax returns or represent before the IRS. Provide tax positions or legal advice. Issue formal opinions on statements for third parties.</p>
+          </li>
+          <li class="scope-card">
+            <h3 class="scope-card__heading">We coordinate with</h3>
+            <p class="scope-card__body">Your CPA or EA for tax filing and any formal CPA engagement. Your lender, board, or investor for reporting requirements. Your attorney when a transaction or due diligence is involved. We provide the underlying books and statements; licensed work stays with licensed professionals.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ADVISORY CROSS-SELL (mission-block) -->
+    <section class="section section--credential-strip" id="fin-advisory" aria-labelledby="fin-advisory-heading">
+      <div class="container container--narrow">
+        <div class="mission-block">
+          <p class="mission-block__eyebrow">Beyond the statements</p>
+          <h2 class="mission-block__heading" id="fin-advisory-heading">Reliable statements are the floor, not the ceiling.</h2>
+          <div class="mission-block__body">
+            <p>Producing the three statements accurately every month is the foundation. The real value starts when someone who understands them tells you what to do about what they show: where margin is leaking, why cash is tight, which segment is carrying the business, when to hire. That&rsquo;s where reporting becomes <strong>advisory</strong>.</p>
+            <p>TechBrot layers <a href="/accounting/advisory/kpi-reporting/">KPI reporting</a>, <a href="/accounting/advisory/cash-flow-management/">cash flow management</a>, and <a href="/accounting/advisory/business-performance-review/">performance reviews</a> on top of reliable statements &mdash; up to a <a href="/accounting/advisory/fractional-cfo/">fractional CFO</a> seat when the work becomes continuous. As automation handles the routine, this interpretation layer is where the real value now lives.</p>
+            <p><a href="/accounting/advisory/">Explore advisory &rarr;</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--faq" id="fin-faq" aria-labelledby="fin-faq-heading">
+      <div class="container container--narrow">
+        <header class="section__header">
+          <p class="section__eyebrow">FAQ</p>
+          <h2 class="section__heading" id="fin-faq-heading">Financial statement questions.</h2>
+        </header>
+        <dl class="faq__list">
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="fin-faq-1" id="fin-faq-q-1">What are the three main financial statements?</button></dt>
+            <dd class="faq__answer" id="fin-faq-1" role="region" aria-labelledby="fin-faq-q-1"><p>The income statement (also called profit and loss or P&amp;L), the balance sheet, and the cash flow statement. The income statement shows revenue, expenses, and profit over a period. The balance sheet shows what the business owns and owes at a single point in time. The cash flow statement reconciles profit to actual cash movement. Together they give the complete financial picture; alone, each is incomplete.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="fin-faq-2" id="fin-faq-q-2">What&rsquo;s the difference between the P&amp;L and the cash flow statement?</button></dt>
+            <dd class="faq__answer" id="fin-faq-2" role="region" aria-labelledby="fin-faq-q-2"><p>The P&amp;L reports income and expenses when they are earned and incurred, regardless of when cash moves. The cash flow statement reports actual cash in and out. A business can be profitable on the P&amp;L while losing cash, or losing money on the P&amp;L while collecting cash &mdash; the difference is timing. The cash flow statement explains that gap.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="fin-faq-3" id="fin-faq-q-3">What is the balance sheet?</button></dt>
+            <dd class="faq__answer" id="fin-faq-3" role="region" aria-labelledby="fin-faq-q-3"><p>The balance sheet is a snapshot of the business at a single moment: assets (what it owns &mdash; cash, receivables, inventory, equipment), liabilities (what it owes &mdash; payables, loans, deposits held), and owner&rsquo;s equity. Assets equal liabilities plus equity, always. It&rsquo;s the statement that shows financial health and structure, not just performance.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="fin-faq-4" id="fin-faq-q-4">How often should financial statements be produced?</button></dt>
+            <dd class="faq__answer" id="fin-faq-4" role="region" aria-labelledby="fin-faq-q-4"><p>Monthly is the standard for active management. Quarterly is acceptable for steady, lower-complexity businesses. Annual-only is almost always too infrequent &mdash; you&rsquo;ll find out in March how December went, with no time to act. TechBrot prepares statements monthly as part of recurring <a href="/accounting/bookkeeping/monthly-bookkeeping/">bookkeeping engagements</a>.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="fin-faq-5" id="fin-faq-q-5">Are TechBrot financial statements GAAP audit-ready?</button></dt>
+            <dd class="faq__answer" id="fin-faq-5" role="region" aria-labelledby="fin-faq-q-5"><p>TechBrot prepares internal management financial statements and CPA-ready packages &mdash; accurate, reconciled, and structured so your CPA can file from them or, when needed, perform a formal compilation, review, or audit engagement on top. We do not provide audit, review, or compilation services ourselves; those are licensed CPA engagements.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="fin-faq-6" id="fin-faq-q-6">Can you rebuild statements for prior periods?</button></dt>
+            <dd class="faq__answer" id="fin-faq-6" role="region" aria-labelledby="fin-faq-q-6"><p>Yes. If past periods have unreliable or missing statements &mdash; for a lender, board, sale, or tax filing &mdash; we rebuild them as part of a <a href="/accounting/bookkeeping/cleanup-bookkeeping/">cleanup</a> or <a href="/accounting/bookkeeping/catch-up-bookkeeping/">catch-up</a> engagement, quoted as fixed-fee project work.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="fin-faq-7" id="fin-faq-q-7">What does financial statement preparation cost?</button></dt>
+            <dd class="faq__answer" id="fin-faq-7" role="region" aria-labelledby="fin-faq-q-7"><p>Monthly financial statement preparation is included in TechBrot&rsquo;s <a href="/accounting/bookkeeping/monthly-bookkeeping/">monthly bookkeeping engagements</a>, which range from $400 to $2,500+ per month with complexity adjustments. Stand-alone historical statement preparation &mdash; for past periods that need rebuilding &mdash; is quoted as a fixed-fee project against scope. No hourly billing. See <a href="/pricing/">pricing</a>.</p></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- EXPERT REVIEW -->
+    <section class="section section--speak-review" id="fin-review" aria-labelledby="fin-review-heading">
+      <div class="container container--narrow">
+        <div class="expert-review">
+          <p class="expert-review__eyebrow">Page review &amp; standards</p>
+          <h2 class="expert-review__heading" id="fin-review-heading">Reviewed by the ProAdvisor team.</h2>
+          <div class="expert-review__body">
+            <p>This page reflects how TechBrot prepares financial statements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on statement preparation methodology, reconciliation standards, and the boundary with licensed CPA engagements (audit, review, compilation).</p>
+            <p>Where our approach or scope changes, this page is updated. Statements are delivered CPA-ready and coordinated with your tax professional for filing and any formal CPA engagement.</p>
+          </div>
+          <ul class="expert-review__credentials" role="list">
+            <li class="expert-review__credential">
+              <p class="expert-review__credential-label">Certifications</p>
+              <p class="expert-review__credential-detail">Active Intuit ProAdvisor across QBO L2, Desktop, Enterprise, Payroll &middot; <a href="https://proadvisor.intuit.com" rel="noopener" target="_blank">Verifiable on Intuit&rsquo;s directory</a></p>
+            </li>
+            <li class="expert-review__credential">
+              <p class="expert-review__credential-label">Scope</p>
+              <p class="expert-review__credential-detail">Monthly P&amp;L, balance sheet, cash flow &middot; reconciliation &middot; CPA-ready handoff &middot; not audit, review, or compilation engagements</p>
+            </li>
+            <li class="expert-review__credential">
+              <p class="expert-review__credential-label">Engagement</p>
+              <p class="expert-review__credential-detail">Fixed-fee, written scope before work &middot; delivered in your own QuickBooks file</p>
+            </li>
+            <li class="expert-review__credential">
+              <p class="expert-review__credential-label">Independence</p>
+              <p class="expert-review__credential-detail">Not affiliated with Intuit Inc. &middot; QuickBooks is a registered trademark of Intuit Inc.</p>
+            </li>
+          </ul>
+          <p class="expert-review__updated">Page last reviewed: <time datetime="2026-05">May 2026</time>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED -->
+    <section class="section section--cleanup-related" id="fin-related" aria-labelledby="fin-related-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Related</p>
+          <h2 class="section__heading" id="fin-related-heading">Related services.</h2>
+        </header>
+        <ul class="related-grid" role="list">
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></h3><p class="related-card__body">The recurring engagement statements are produced inside of.</p><a class="related-card__cta" href="/accounting/bookkeeping/monthly-bookkeeping/">Explore monthly &rarr;</a></article></li>
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></h3><p class="related-card__body">Where the books need rebuilding before reliable statements can be produced.</p><a class="related-card__cta" href="/accounting/bookkeeping/cleanup-bookkeeping/">Explore cleanup &rarr;</a></article></li>
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/accounting/advisory/cash-flow-management/">Cash flow management</a></h3><p class="related-card__body">The forward-looking layer that turns the cash flow statement into action.</p><a class="related-card__cta" href="/accounting/advisory/cash-flow-management/">Explore cash flow &rarr;</a></article></li>
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/accounting/advisory/">Advisory</a></h3><p class="related-card__body">The judgment layer that turns reliable statements into decisions.</p><a class="related-card__cta" href="/accounting/advisory/">Explore advisory &rarr;</a></article></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section section--final-cta" id="fin-final-cta" aria-labelledby="fin-final-cta-heading">
+      <div class="container container--narrow">
+        <div class="final-cta">
+          <p class="section__eyebrow section__eyebrow--inverted">Ready when you are</p>
+          <h2 class="final-cta__heading" id="fin-final-cta-heading">Get all three statements, every month.</h2>
+          <p class="final-cta__lede">Book a 30-minute discovery call. We&rsquo;ll review where your books stand, what your statements should look like, and the right next step &mdash; written fixed-fee scope within 3 business days. No pitch.</p>
+          <div class="final-cta__actions" role="group" aria-label="Final actions">
+            <a class="btn btn--primary btn--lg btn--inverted" href="/contact/?intent=financial-statements-prep" data-cta="fin-final-primary">Book a Discovery Call</a>
+            <a class="btn btn--ghost btn--lg btn--inverted" href="/pricing/" data-cta="fin-final-secondary">See Pricing</a>
+          </div>
+          <p class="final-cta__disclaimer">TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm. QuickBooks is a registered trademark of Intuit Inc. TechBrot Inc. is not affiliated with Intuit Inc. TechBrot prepares internal management and CPA-ready financial statements; we do not provide audit, review, or compilation services, which are licensed CPA engagements.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div><!-- ============================================================================
+     FOOTER
+     ============================================================================ -->
+
+<footer class="site-footer" role="contentinfo" id="site-footer">
+
+  <section class="site-footer__band" aria-label="Newsletter signup">
+    <div class="container">
+      <div class="footer-band">
+        <div class="footer-band__copy">
+          <h2 class="footer-band__heading">The monthly brief.</h2>
+          <p class="footer-band__lede">One email a month — operational accounting, QuickBooks, and finance-ops insight for U.S. business owners. No spam, unsubscribe anytime.</p>
+        </div>
+        <form class="footer-band__form" action="/subscribe" method="post" aria-label="Subscribe to the monthly brief">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input class="footer-band__input" type="email" id="footer-email" name="email" placeholder="you@company.com" autocomplete="email" required="">
+          <button class="btn btn--primary btn--md" type="submit" data-cta="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="site-footer__main">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="site-footer__brand-col">
+          <a class="site-brand site-brand--footer" href="/" aria-label="TechBrot home">
+            <img class="site-brand__mark" src="/assets/img/brand/wordmark-light.png" alt="TechBrot" width="140" height="36" decoding="async">
+          </a>
+          <p class="site-footer__tagline">A modern accounting platform with vetted local partners.</p>
+          <ul class="site-footer__contact-list">
+            <li><a href="mailto:hello@techbrot.com">hello@techbrot.com</a></li>
+            <li><a href="tel:+18777515575">(877) 751-5575</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Book a discovery call →</a></li>
+          </ul>
+          <ul class="site-footer__social" aria-label="Social media">
+  <li>
+    <a href="https://www.linkedin.com/company/techbrot-inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on LinkedIn">
+      <img src="/assets/img/icons/linkedin.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://x.com/techbrot_inc"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on X">
+      <img src="/assets/img/icons/x.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.instagram.com/techbrot_inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on Instagram">
+      <img src="/assets/img/icons/instagram.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+</ul>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Accounting">
+          <h2 class="site-footer__heading" id="fh-services" aria-controls="fl-services" aria-expanded="false" role="button" tabindex="0">Accounting</h2>
+          <ul class="site-footer__links" id="fl-services" aria-labelledby="fh-services">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="QuickBooks">
+          <h2 class="site-footer__heading" id="fh-quickbooks" aria-controls="fl-quickbooks" aria-expanded="false" role="button" tabindex="0">QuickBooks</h2>
+          <ul class="site-footer__links" id="fl-quickbooks" aria-labelledby="fh-quickbooks">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Company">
+          <h2 class="site-footer__heading" id="fh-company" aria-controls="fl-company" aria-expanded="false" role="button" tabindex="0">Company</h2>
+          <ul class="site-footer__links" id="fl-company" aria-labelledby="fh-company">
+            <li><a href="/about/">About</a></li>
+            <li><a href="/about/methodology/">Methodology</a></li>
+            <li><a href="/about/team/">Team</a></li>
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Network">
+          <h2 class="site-footer__heading" id="fh-network" aria-controls="fl-network" aria-expanded="false" role="button" tabindex="0">Network</h2>
+          <ul class="site-footer__links" id="fl-network" aria-labelledby="fh-network">
+            <li><a href="/find-an-accountant/">Find an Accountant</a></li>
+            <li><a href="/partners/">For Accountants</a></li>
+            <li><a href="/about/network/">How it works</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__base">
+    <div class="container">
+      <p class="site-footer__disclosure" role="note">
+        <strong>Independent ProAdvisor firm.</strong> QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc. <a href="/legal/disclaimer/">Read full notice</a>.
+      </p>
+      <div class="site-footer__base-row">
+        <p class="site-footer__copyright">© <time>2026</time> TechBrot Inc. All rights reserved.</p>
+        <ul class="site-footer__legal" aria-label="Legal links">
+          <li><a href="/legal/privacy-policy/">Privacy</a></li>
+          <li><a href="/legal/terms/">Terms</a></li>
+          <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+          <li><a href="/legal/dpa/">Data processing</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</footer>
+    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

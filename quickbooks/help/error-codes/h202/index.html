@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+<!-- ============================================================================
+  TECHBROT.COM — GLOBAL HEAD (PRODUCTION v4)
+  Bootstrap Studio Global Template · Loads sitewide on every page
+  ----------------------------------------------------------------------------
+  SCOPE:    Site-level signals only. Each page sets:
+              • <title>
+              • <meta name="description">
+              • <link rel="canonical">
+              • <link rel="alternate" hreflang>
+              • <meta property="og:url">
+              • <meta property="og:title">
+              • <meta property="og:description">
+              • <meta name="twitter:title">
+              • <meta name="twitter:description">
+              • Page-specific schema: WebPage, BreadcrumbList, FAQPage,
+                QAPage, Article, Service offerings — all referencing
+                the global Organization / Person / WebSite via @id.
+
+  GOAL:     Top 0.01% AI citation, entity SEO, E-E-A-T, semantic search,
+            Google / Perplexity / ChatGPT / Claude / Gemini retrieval.
+
+  STACK:    Bootstrap Studio · Static HTML · TechBrot Inc. (US C-Corp)
+  MODEL:    Independent accounting platform with vetted local partners
+
+  v4 CHANGE LOG:
+    • Added Person node for David Westgate (#david-westgate) — Lead
+      QuickBooks ProAdvisor, the named/visible page author referenced by
+      each page's WebPage.reviewedBy. Both Abid (founder/CEO) and David
+      (lead ProAdvisor) are certified; David references the same shared
+      #credential-* entities by @id. Abid remains founder + off visible
+      pages (org-level relationship, not page authorship).
+  UPDATED:  June 2026
+============================================================================ -->
+
+
+<!-- ── 01. RENDERING ──────────────────────────────────── -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- ── 02. PAGE IDENTITY — GLOBAL FALLBACKS (overridden per page) ─────────
+  These are global safety-net values. Every real page overrides title
+  and description in its own head.
+<title>A Modern Accounting Platform with Vetted Local Partners · TechBrot</title>
+<meta name="description" content="TechBrot is an independent U.S. accounting platform delivering QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations through a curated network of vetted local partners.">
+ -->
+
+<!-- ── 03. CANONICAL & HREFLANG — PER-PAGE ONLY ──────────────────────────
+  Reference template (do NOT uncomment globally):
+    <link rel="canonical" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="en-US" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="x-default" href="https://techbrot.com/[slug]/">
+-->
+
+
+<!-- ── 04. INDEXING & CRAWL DIRECTIVES ───────────────────────────────────
+  AI crawler policy (GPTBot, ClaudeBot, PerplexityBot, Google-Extended,
+  Applebot-Extended) is managed at robots.txt + Cloudflare WAF level.
+  These meta directives govern traditional search crawlers only. -->
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="bingbot" content="index, follow">
+
+
+<!-- ── 05. SITE IDENTITY & AUTHORSHIP ────────────────────────────────────-->
+
+<meta name="author" content="TechBrot Inc.">
+<meta name="application-name" content="TechBrot">
+<meta name="apple-mobile-web-app-title" content="TechBrot">
+
+<!-- ── 06. GEO & LOCALE ──────────────────────────────────────────────────
+  Registered: 651 N Broad St, Suite 201, Middletown, DE 19709.
+  Service area: 50 US states (national virtual + local partner network).
+  geo.region uses ISO 3166-2 (US-DE). Nationwide service is declared in
+  Organization schema areaServed (full state ItemList below). -->
+
+<meta http-equiv="content-language" content="en-US">
+<meta name="language" content="English">
+
+<!-- ── 07. BROWSER, DEVICE & PWA ─────────────────────────────────────────-->
+
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B0B" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-TileColor" content="#FAFAF7">
+<meta name="msapplication-config" content="/browserconfig.xml">
+
+
+<!-- ── 08. SECURITY & REFERRER ───────────────────────────────────────────-->
+
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+
+<!-- ── 09. OPEN GRAPH — SITE-LEVEL ONLY (image is per-page) ─────────────
+  Per-page sets: og:url, og:title, og:description, og:image (+ dimensions),
+  and og:type="article" on articles. Global default og:type is "website". -->
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TechBrot">
+<meta property="og:locale" content="en_US">
+
+<!-- ── 10. TWITTER / X CARD — SITE-LEVEL ONLY (image is per-page) ───────-->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@techbrot_inc">
+<meta name="twitter:creator" content="@techbrot_inc">
+
+<!-- ── 11. FAVICONS, ICONS & WEB APP MANIFEST ───────────────────────────-->
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/img/brand/safari-pinned-tab.svg" color="#0B0B0B">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<!-- ── 12. SITEMAP & FEEDS ──────────────────────────────────────────────-->
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+
+<!-- ── 13. PERFORMANCE: PRECONNECT, DNS-PREFETCH, FONT PRELOAD ──────────
+  Fonts: Fraunces (serif headings) + Inter (sans body/UI), both Google.
+  Preloading the two heaviest weights eliminates layout-shift on first
+  paint. Adjust paths if you self-host. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+
+<link rel="preload" as="image" href="/assets/img/brand/wordmark.svg" fetchpriority="high">
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<!-- ── 14. STRUCTURED DATA — ENTITY GRAPH ───────────────────────────────
+  Six-node @graph:
+    1. Organization (multi-type: Organization + ProfessionalService) —
+       the primary entity. Brand, knowsAbout (topical authority),
+       hasOfferCatalog (service routing), areaServed (full US),
+       contactPoint (toll-free), full sameAs cluster.
+    2. Brand — separate Brand entity for AI knowledge-graph systems.
+    3. Person (Abid Khan) — founder/CEO authority; certified ProAdvisor.
+    4. Person (David Westgate) — Lead ProAdvisor; the named, visible page
+       author referenced by each page's WebPage.reviewedBy. Both are
+       certified and share the #credential-* entities by @id.
+    5. WebSite — publisher entity with SearchAction.
+    (ProAdvisor credential entities #credential-* are defined inline on
+     the Abid node and referenced by David.)
+
+  Per-page schema attaches via @id reference, never duplicates these. -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://techbrot.com/#organization",
+
+      "name": "TechBrot Inc.",
+      "legalName": "TechBrot Inc.",
+      "alternateName": [
+        "TechBrot",
+        "TechBrot Network",
+        "TechBrot Accounting Platform"
+      ],
+      "slogan": "A modern accounting platform with vetted local partners.",
+      "description": "TechBrot Inc. is an independent U.S. firm of Certified QuickBooks ProAdvisors, accountants, and advisors serving small and mid-sized businesses. Services span QuickBooks setup, cleanup, and migration; monthly, cleanup, and catch-up bookkeeping; payroll; multi-state sales tax; 1099 preparation; financial reporting; and fractional CFO advisory — delivered directly and through a curated network of vetted local Certified ProAdvisors. Independent Certified QuickBooks ProAdvisor firm; not affiliated with Intuit Inc.",
+      "disambiguatingDescription": "Independent accounting platform with vetted local partners — not affiliated with Intuit Inc. QuickBooks is a registered trademark of Intuit Inc.",
+
+      "url": "https://techbrot.com/",
+
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://techbrot.com/#logo",
+        "url": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "contentUrl": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "caption": "TechBrot — A modern accounting platform with vetted local partners",
+        "width": 512,
+        "height": 512,
+        "inLanguage": "en-US"
+      },
+
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://techbrot.com/assets/img/og/techbrot-og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "TechBrot — A modern accounting platform with vetted local partners"
+      },
+
+      "brand": {
+        "@id": "https://techbrot.com/#brand"
+      },
+
+   
+      "foundingDate": "2023",
+      "founder": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+      "founders": [
+        { "@id": "https://techbrot.com/#abid-khan" }
+      ],
+      "employee": [
+        { "@id": "https://techbrot.com/#abid-khan" },
+        { "@id": "https://techbrot.com/#david-westgate" }
+      ],
+
+      "email": "support@techbrot.com",
+      "telephone": "+1-877-751-5575",
+      "priceRange": "$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": ["Credit Card", "Bank Transfer", "ACH", "Check"],
+
+      "naics": "541219",
+      "isicV4": "6920",
+
+      "address": {
+        "@type": "PostalAddress",
+        "@id": "https://techbrot.com/#address",
+        "streetAddress": "651 N Broad St, Suite 201",
+        "addressLocality": "Middletown",
+        "addressRegion": "DE",
+        "postalCode": "19709",
+        "addressCountry": "US"
+      },
+
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.449",
+        "longitude": "-75.716"
+      },
+
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "customer service",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "sales",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "partners@techbrot.com",
+          "contactType": "partner inquiries",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        }
+      ],
+
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States",
+        "@id": "https://www.wikidata.org/entity/Q30"
+      },
+
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Small and mid-sized U.S. businesses"
+      },
+
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        }
+      ],
+
+      "keywords": "accounting platform, QuickBooks ProAdvisor, bookkeeping services, QuickBooks cleanup, monthly bookkeeping, catch-up bookkeeping, payroll services, fractional CFO, sales tax compliance, 1099 preparation, vetted accounting partners, U.S. small business accounting",
+
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "TechBrot Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monthly Bookkeeping",
+              "description": "Recurring monthly bookkeeping with real reconciliation, monthly close package, and named operator point of contact.",
+              "url": "https://techbrot.com/accounting/bookkeeping/monthly-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks and Bookkeeping Cleanup",
+              "description": "Reconstruct accurate books from a messy state — categorization fixes, real bank and credit-card reconciliations, prior-period correction, and reliable financial statements.",
+              "url": "https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Catch-up Bookkeeping",
+              "description": "Bring backlogged books current — from a few missed months to multi-year historical cleanup before tax filing.",
+              "url": "https://techbrot.com/accounting/bookkeeping/catch-up-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Setup and Onboarding",
+              "description": "Independent ProAdvisor-led QuickBooks setup, chart of accounts, banking, payroll, and integration configuration for new and existing businesses.",
+              "url": "https://techbrot.com/quickbooks/setup/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Migration",
+              "description": "QuickBooks Desktop-to-Online migration and other software-to-QuickBooks migrations performed by Certified ProAdvisors with data integrity verification.",
+              "url": "https://techbrot.com/quickbooks/migration/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Independent QuickBooks ProAdvisor Help",
+              "description": "Certified ProAdvisor help with QuickBooks file issues, reconciliation problems, plan selection, and workflow advisory — independent guidance beyond product support.",
+              "url": "https://techbrot.com/quickbooks/help/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Payroll Setup and Management",
+              "description": "Payroll setup, processing, tax filing, and compliance support delivered through the TechBrot operator network.",
+              "url": "https://techbrot.com/accounting/payroll-management/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sales Tax Compliance",
+              "description": "Multi-state sales tax registration, filing, and nexus advisory for U.S. small and mid-sized businesses.",
+              "url": "https://techbrot.com/accounting/sales-tax-compliance/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "1099 Preparation",
+              "description": "Annual 1099 preparation, vendor data collection, and IRS filing for U.S. small businesses.",
+              "url": "https://techbrot.com/accounting/1099-preparation/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fractional CFO Services",
+              "description": "Senior financial advisory delivered through the TechBrot network — cash flow planning, forecasting, KPI reporting, and board-ready financials for growing businesses.",
+              "url": "https://techbrot.com/accounting/advisory/fractional-cfo/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Find a Local Accounting Partner",
+              "description": "Match with a vetted, credentialed, insured TechBrot operator partner in your U.S. state — typically within 48 hours.",
+              "url": "https://techbrot.com/find-an-accountant/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          }
+        ]
+      },
+
+      "knowsAbout": [
+        "Accounting",
+        "Bookkeeping",
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Premier",
+        "QuickBooks Payroll",
+        "QuickBooks ProAdvisor",
+        "QuickBooks setup",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "QuickBooks Desktop to Online migration",
+        "QuickBooks plan selection",
+        "QuickBooks reconciliation",
+        "QuickBooks bank feeds",
+        "QuickBooks error troubleshooting",
+        "QuickBooks company file repair",
+        "QuickBooks multi-user mode",
+        "QuickBooks payroll setup",
+        "QuickBooks payroll troubleshooting",
+        "QuickBooks sales tax",
+        "QuickBooks 1099 preparation",
+        "Monthly bookkeeping",
+        "Catch-up bookkeeping",
+        "Cleanup bookkeeping",
+        "Historical bookkeeping cleanup",
+        "Virtual bookkeeping",
+        "Outsourced bookkeeping",
+        "Small business accounting",
+        "Startup accounting",
+        "Bank reconciliation",
+        "Accounts payable management",
+        "Accounts receivable management",
+        "Chart of accounts setup",
+        "Month-end close",
+        "Year-end close",
+        "Financial statement preparation",
+        "Financial reporting",
+        "Cash flow forecasting",
+        "Cash flow management",
+        "Profitability analysis",
+        "KPI reporting",
+        "Budgeting and forecasting",
+        "Payroll services",
+        "Payroll tax compliance",
+        "Sales tax compliance",
+        "Sales tax nexus",
+        "1099 preparation and filing",
+        "Tax planning",
+        "IRS problem resolution",
+        "Fractional CFO services",
+        "Controller services",
+        "Business advisory services",
+        "Ecommerce accounting",
+        "Real estate accounting",
+        "Construction accounting",
+        "Restaurant accounting",
+        "Healthcare accounting",
+        "Law firm accounting",
+        "SaaS accounting",
+        "Professional services accounting",
+        "Manufacturing accounting",
+        "Trucking accounting",
+        "Nonprofit accounting",
+        "Franchise accounting",
+        "Retail accounting",
+        "Job costing",
+        "Shopify QuickBooks integration",
+        "Amazon QuickBooks integration",
+        "Stripe QuickBooks integration",
+        "Vetted accounting partner network",
+        "Operator-led accounting platform",
+        "Independent ProAdvisor firm"
+      ],
+
+      "subjectOf": {
+        "@type": "WebPage",
+        "@id": "https://techbrot.com/about/"
+      },
+
+    "sameAs": [
+  "https://www.linkedin.com/company/techbrot-inc/",
+  "https://x.com/techbrot_inc",
+  "https://www.instagram.com/techbrot_inc",
+  "https://www.youtube.com/@techbrot_inc",
+  "https://www.facebook.com/techbrotinc",
+  "https://www.tumblr.com/techbrot",
+  "https://pin.it/1d4Qrx4At",
+  "https://www.tiktok.com/@techbrot_inc",
+  "https://medium.com/@techbrot5",
+  "https://clutch.co/profile/techbrot"
+]
+    },
+
+    {
+      "@type": "Brand",
+      "@id": "https://techbrot.com/#brand",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Network",
+      "url": "https://techbrot.com/",
+      "logo": "https://techbrot.com/assets/img/brand/logo_img.png",
+      "slogan": "A modern accounting platform with vetted local partners."
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#abid-khan",
+
+      "name": "Abid Khan",
+      "givenName": "Abid",
+      "familyName": "Khan",
+
+      "url": "https://techbrot.com/about/team/#abid-khan",
+
+      "jobTitle": "Founder & CEO",
+      "description": "Abid Khan is the Founder and CEO of TechBrot Inc., an independent U.S. accounting platform with a curated network of vetted local partners. He is a Certified QuickBooks ProAdvisor across QuickBooks Online, Desktop, Enterprise, and Payroll, and leads platform architecture, partner network development, and AI-first search infrastructure.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "Small business bookkeeping",
+        "Bank reconciliation",
+        "Accounting platform architecture",
+        "Partner network development",
+        "AI-first SEO",
+        "Topical authority architecture",
+        "E-E-A-T optimization"
+      ],
+
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qbo-l2",
+          "name": "QuickBooks Online ProAdvisor (Level 2)",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-desktop",
+          "name": "QuickBooks Desktop ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-enterprise",
+          "name": "QuickBooks Enterprise ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-payroll",
+          "name": "QuickBooks Payroll ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        }
+      ],
+
+      "sameAs": [
+  "https://www.linkedin.com/in/abid-khan-ai/",
+  "https://www.reddit.com/user/techbrot_inc/",
+  "https://www.quora.com/profile/Abid-Khan-119",
+  "https://www.credly.com/users/abid-khan.3ceb70a5/badges#credly"
+      ]
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#david-westgate",
+
+      "name": "David Westgate",
+      "givenName": "David",
+      "familyName": "Westgate",
+
+      "url": "https://techbrot.com/about/team/#david-westgate",
+
+      "jobTitle": "Lead QuickBooks ProAdvisor",
+      "description": "David Westgate is the Lead QuickBooks ProAdvisor at TechBrot Inc., with more than 40 years of accounting experience. A Certified QuickBooks ProAdvisor across QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll, he leads bookkeeping, cleanup, reconciliation, and QuickBooks file rebuilds across construction, professional services, and nonprofit engagements, and is the reviewing authority for TechBrot's published accounting content.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks reconciliation",
+        "Bookkeeping",
+        "Bank reconciliation",
+        "Month-end close",
+        "Sales tax compliance",
+        "IOLTA trust accounting",
+        "Job costing",
+        "Construction accounting",
+        "Nonprofit accounting"
+      ],
+
+      "hasCredential": [
+        { "@id": "https://techbrot.com/#credential-qbo-l2" },
+        { "@id": "https://techbrot.com/#credential-qb-desktop" },
+        { "@id": "https://techbrot.com/#credential-qb-enterprise" },
+        { "@id": "https://techbrot.com/#credential-qb-payroll" }
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://techbrot.com/#website",
+
+      "url": "https://techbrot.com/",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Accounting Platform",
+      "description": "Independent U.S. accounting platform — QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations delivered through a curated network of vetted local partners.",
+      "inLanguage": "en-US",
+
+      "publisher": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "author": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+
+      "about": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightHolder": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightYear": "2023",
+
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://techbrot.com/search/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2Z8GK69Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K2Z8GK69Z5');
+</script>
+
+<!-- ── 15. TRADEMARK DISCLOSURE (machine-readable, AI-citation safety) ──
+  Distinct meta tag declaring trademark posture. Some AI scrapers
+  prioritize meta declarations over body content. Provides an
+  additional structural defense against impersonation classification. -->
+
+<meta name="trademark-disclosure" content="QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc.">
+<meta name="affiliation-disclosure" content="independent">
+
+<!-- ============================================================================
+  END GLOBAL HEAD
+============================================================================ --><!-- ====== QUICKBOOKS ERROR H202 · PAGE HEAD ====== -->
+<title>QuickBooks Error H202: What It Means &amp; How to Fix It · TechBrot</title>
+<meta name="description" content="QuickBooks Error H202 explained by Certified ProAdvisors — what it means, what causes it, step-by-step self-fix, and when to call a ProAdvisor. Multi-user mode and Database Server Manager troubleshooting reference.">
+<link rel="canonical" href="https://techbrot.com/quickbooks/help/error-codes/h202/">
+<link rel="alternate" hreflang="en-US" href="https://techbrot.com/quickbooks/help/error-codes/h202/">
+<link rel="alternate" hreflang="x-default" href="https://techbrot.com/quickbooks/help/error-codes/h202/">
+<meta property="og:url" content="https://techbrot.com/quickbooks/help/error-codes/h202/">
+<meta property="og:title" content="QuickBooks Error H202: What It Means and How to Fix It">
+<meta property="og:description" content="What H202 means, what causes it, step-by-step self-fix, and when a Certified ProAdvisor needs to step in.">
+<meta property="og:image" content="https://techbrot.com/assets/img/og/qb-error-h202-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TechBrot — QuickBooks Error H202 troubleshooting reference">
+<meta name="twitter:title" content="QuickBooks Error H202: Fix Reference · TechBrot">
+<meta name="twitter:description" content="What H202 means, what causes it, step-by-step self-fix, when to escalate.">
+<meta name="twitter:image" content="https://techbrot.com/assets/img/og/qb-error-h202-og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://techbrot.com/quickbooks/help/error-codes/h202/#article",
+      "url": "https://techbrot.com/quickbooks/help/error-codes/h202/",
+      "headline": "QuickBooks Error H202: What It Means and How to Fix It",
+      "description": "Comprehensive reference to QuickBooks Error H202 — a multi-user mode error indicating a workstation cannot communicate with the server hosting the company file. Covers root causes, step-by-step self-fix procedures using QuickBooks Tool Hub and Database Server Manager, when self-fix isn't sufficient, and how a Certified ProAdvisor resolves persistent H202.",
+      "isPartOf": { "@id": "https://techbrot.com/#website" },
+      "about": { "@id": "https://techbrot.com/#organization" },
+      "publisher": { "@id": "https://techbrot.com/#organization" },
+      "author": { "@id": "https://techbrot.com/#organization" },
+      "inLanguage": "en-US",
+      "image": "https://techbrot.com/assets/img/og/qb-error-h202-og.png",
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["#h202-ai-summary", "#h202-tldr-body"] },
+      "mentions": [
+        { "@type": "SoftwareApplication", "name": "QuickBooks Desktop", "applicationCategory": "BusinessApplication" },
+        { "@type": "SoftwareApplication", "name": "QuickBooks Enterprise", "applicationCategory": "BusinessApplication" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://techbrot.com/quickbooks/help/error-codes/h202/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://techbrot.com/" },
+        { "@type": "ListItem", "position": 2, "name": "QuickBooks", "item": "https://techbrot.com/quickbooks/" },
+        { "@type": "ListItem", "position": 3, "name": "Help", "item": "https://techbrot.com/quickbooks/help/" },
+        { "@type": "ListItem", "position": 4, "name": "Error Codes", "item": "https://techbrot.com/quickbooks/help/error-codes/" },
+        { "@type": "ListItem", "position": 5, "name": "Error H202" }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://techbrot.com/quickbooks/help/error-codes/h202/#howto",
+      "name": "How to Fix QuickBooks Error H202",
+      "description": "Step-by-step self-fix procedure for QuickBooks Error H202, in order of likelihood that each step resolves the issue. Stop and escalate to a Certified ProAdvisor if the error persists after these steps or recurs within days.",
+      "totalTime": "PT30M",
+      "tool": [
+        { "@type": "HowToTool", "name": "QuickBooks Tool Hub" },
+        { "@type": "HowToTool", "name": "QuickBooks Database Server Manager" }
+      ],
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Run QuickBooks File Doctor from Tool Hub", "text": "Download and install QuickBooks Tool Hub (free from Intuit). Open Tool Hub, go to the Company File Issues tab, and run Quick Fix My File first. If that doesn't resolve the error, run QuickBooks File Doctor and select the affected company file. File Doctor automates several of the diagnostics in the steps below and resolves H202 in many cases without further intervention." },
+        { "@type": "HowToStep", "position": 2, "name": "Verify Database Server Manager is running on the host", "text": "On the host computer (the machine storing the company file), open Services (services.msc) and confirm QuickBooksDBXX (where XX matches your QuickBooks year version) is running. If it's stopped, start it and set startup to Automatic. If the service won't start, reinstall Database Server Manager via the QuickBooks installer." },
+        { "@type": "HowToStep", "position": 3, "name": "Verify hosting settings on each machine", "text": "On the host computer: open QuickBooks, go to File > Utilities, and confirm 'Stop Hosting Multi-User Access' is the visible option (meaning hosting is currently enabled). On each workstation: same path, but confirm 'Host Multi-User Access' is the visible option (meaning hosting is currently disabled — workstations should not host, only the server should). Mismatch here is one of the most common H202 causes." },
+        { "@type": "HowToStep", "position": 4, "name": "Add QuickBooks ports to the Windows Firewall", "text": "On the host computer, open Windows Defender Firewall with Advanced Security, create new Inbound Rules for the QuickBooks ports specific to your year version (Intuit publishes the port numbers per version). Repeat for Outbound Rules. Also create rules for the executables: QBDBMgrN.exe, QBCFMonitorService.exe, QBLaunch.exe, QBUpdate.exe. Third-party antivirus may also need configuration." },
+        { "@type": "HowToStep", "position": 5, "name": "Verify the company file path uses UNC notation, not a mapped drive letter", "text": "Map drives can disconnect or change, breaking the path QuickBooks expects. From each workstation, open the company file using the UNC path format (\\\\servername\\share\\path\\file.qbw) rather than a mapped drive letter (Z:\\path\\file.qbw). UNC paths are more reliable for multi-user QuickBooks access." },
+        { "@type": "HowToStep", "position": 6, "name": "Confirm hostname resolution works", "text": "From each workstation, open Command Prompt and ping the host computer's name (e.g., 'ping servername'). The ping should succeed. If hostname resolution is failing, you have a deeper network issue — DNS, hosts file, or networking configuration — that may need IT involvement beyond QuickBooks-specific troubleshooting." },
+        { "@type": "HowToStep", "position": 7, "name": "If H202 persists after all the above, escalate", "text": "If the error persists or recurs within days, the root cause is past surface configuration. A Certified ProAdvisor diagnoses the underlying issue — network architecture, file corruption, or hosting configuration deeper than these steps reach — in a 30-minute call. Continuing to self-troubleshoot at this point usually wastes more time than it saves." }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://techbrot.com/quickbooks/help/error-codes/h202/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is QuickBooks Error H202?", "acceptedAnswer": { "@type": "Answer", "text": "QuickBooks Error H202 means QuickBooks is configured for multi-user mode but a workstation cannot communicate with the server hosting the company file. The workstation can see that the file exists but cannot establish the connection needed to open it in multi-user mode. It's one of the most common multi-user errors in QuickBooks Desktop, Premier, and Enterprise — and one of the most consistently fixable, since it almost always traces back to one of five or six specific causes." } },
+        { "@type": "Question", "name": "What causes QuickBooks Error H202?", "acceptedAnswer": { "@type": "Answer", "text": "Five causes account for the large majority of H202 occurrences. First, the QuickBooks Database Server Manager isn't running on the host computer — the service that brokers multi-user file access. Second, hosting is configured incorrectly: either the host isn't set to host, or one or more workstations are mistakenly set to host themselves. Third, a firewall (Windows Firewall or third-party antivirus) is blocking the QuickBooks ports or executables needed for multi-user communication. Fourth, the company file is being accessed via a mapped drive letter that has changed or disconnected, instead of a stable UNC path. Fifth, hostname resolution is failing — the workstation can't translate the host computer's name to an IP address. Less common causes include damaged .ND files, multiple QuickBooks versions installed on the same host, or deeper file corruption." } },
+        { "@type": "Question", "name": "Can I fix QuickBooks Error H202 myself?", "acceptedAnswer": { "@type": "Answer", "text": "Often yes. First-occurrence H202 errors resolve with the QuickBooks Tool Hub (Quick Fix My File, then QuickBooks File Doctor) in many cases. If Tool Hub doesn't resolve it, working through the documented steps — verifying Database Server Manager is running, confirming hosting settings on each machine, adding QuickBooks ports and executables to the firewall, using UNC paths instead of mapped drives, and confirming hostname resolution — resolves H202 for the majority of cases. Stop and escalate to a Certified ProAdvisor if the error persists after these steps, if it recurs within days of a fix, or if you don't have administrative access to the host computer and firewall." } },
+        { "@type": "Question", "name": "When does Error H202 require a ProAdvisor?", "acceptedAnswer": { "@type": "Answer", "text": "Escalate to a Certified ProAdvisor when: documented self-fix steps don't resolve it; the error recurs within days of resolution; multiple workstations are showing H202 simultaneously (indicates a broader network or host configuration issue); you don't have admin access to the host computer or firewall; you're seeing H202 alongside other errors like 6000-series (suggests deeper file integrity issues); or the error is blocking critical work and Intuit's queue time isn't acceptable. Most H202-driven engagements are scoped as focused file cleanup in the $1,200–$3,000 range, sometimes lower if it's purely a configuration fix." } },
+        { "@type": "Question", "name": "What's the difference between Error H202 and Error H505?", "acceptedAnswer": { "@type": "Answer", "text": "Both are multi-user mode errors with similar root causes, but they signal slightly different states. Error H202 means a workstation knows the company file exists somewhere but can't establish the multi-user connection — typically because Database Server Manager isn't running, hosting is misconfigured, or the firewall is blocking communication. Error H505 means the workstation thinks the file is on a different computer that isn't set up to host — typically a hosting-configuration issue specifically, where the wrong machine is being asked to host. The same diagnostic approach resolves both, but H505 more often traces to hosting settings on the workstation side while H202 more often involves the host computer's services or firewall." } },
+        { "@type": "Question", "name": "Does Error H202 appear in QuickBooks Online?", "acceptedAnswer": { "@type": "Answer", "text": "No. H202 is exclusive to QuickBooks Desktop and QuickBooks Enterprise — products that use locally installed multi-user mode with a host computer brokering file access. QuickBooks Online is a cloud platform where Intuit manages all multi-user concurrency on their infrastructure, so the architectural conditions that produce H202 don't exist. If you're seeing connection errors in QuickBooks Online, they're typically browser issues, integration sync errors, or Intuit service status issues — not H202." } } 
+      ]
+    }
+  ]
+}
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>BSS-1-11ty</title>
+    <link rel="stylesheet" href="../../../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../../assets/css/04-pages.css">
+    <link rel="stylesheet" href="../../../../assets/css/01-tokens.css">
+    <link rel="stylesheet" href="../../../../assets/css/02-base.css">
+    <link rel="stylesheet" href="../../../../assets/css/03-components.css">
+</head>
+
+<body><!-- ============================================================================
+     CHROME · utility bar + primary header + mobile drawer + search palette
+     ============================================================================ -->
+
+<div class="util-bar" role="region" aria-label="Secondary">
+  <div class="container util-bar__inner">
+    <p class="util-bar__trust">
+      <span class="util-bar__dot" aria-hidden="true"></span>
+      <span>Independent Certified QuickBooks ProAdvisor firm · U.S.-based</span>
+    </p>
+    <nav class="util-bar__nav" aria-label="For accountants and partners">
+      <a class="util-bar__link" href="/find-an-accountant/">Find an Accountant</a>
+      <a class="util-bar__link" href="/partners/">For Accountants →</a>
+    </nav>
+  </div>
+</div>
+
+<header class="site-header" role="banner" id="site-header" data-sticky="true">
+  <div class="container site-header__inner">
+
+    <a class="site-brand" href="/" aria-label="TechBrot home" title="TechBrot — A Modern Accounting Platform">
+      <img class="site-brand__mark" src="/assets/img/brand/icon.svg" alt="TechBrot" width="140" height="56" decoding="async" fetchpriority="high">
+    </a>
+
+    <nav class="site-nav site-nav--desktop" aria-label="Primary navigation" id="primary-nav">
+      <ul class="site-nav__list">
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-services" aria-haspopup="true">
+            Accounting
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-services" role="region" aria-label="Accounting services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Bookkeeping</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/">All bookkeeping →</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Financial Operations</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/payroll-management/">Payroll management</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/services/">All services →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/accounting/">Accounting overview →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-quickbooks" aria-haspopup="true">
+            QuickBooks
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-quickbooks" role="region" aria-label="QuickBooks services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">ProAdvisor Services</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/cleanup/">File cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/migration/">Desktop → Online migration</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/help/">QuickBooks help</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Products</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/proadvisor-team/">Our ProAdvisor team</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/">QuickBooks overview →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/legal/disclaimer/">Independent firm — not affiliated with Intuit →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/find-an-accountant/">Find an Accountant</a>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/pricing/">Pricing</a>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-why" aria-haspopup="true">
+            Why TechBrot
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu" id="nav-menu-why" role="region" aria-label="Why TechBrot" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Authority &amp; trust</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/trust/">Trust &amp; standards</a></li>
+                  <li><a class="nav-menu__link" href="/about/methodology/">Our methodology</a></li>
+                  <li><a class="nav-menu__link" href="/reviews/">Client reviews</a></li>
+                  <li><a class="nav-menu__link" href="/vs/">Comparisons</a></li>
+                  <li><a class="nav-menu__link" href="/about/">About &amp; team</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="site-header__utility">
+      <button class="site-search-trigger" type="button" aria-label="Search (press / or Cmd-K)" data-search-open="" title="Search — / or ⌘K">
+        <svg class="site-search-trigger__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+          <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+        </svg>
+        <span class="site-search-trigger__hint" aria-hidden="true"><kbd>/</kbd></span>
+      </button>
+
+      <a class="site-header__phone" href="tel:+18777515575" aria-label="Call TechBrot" data-cta="header-phone" title="Call TechBrot">
+        <span class="site-header__phone-label">Call</span>
+        <span class="site-header__phone-number">(877) 751-5575</span>
+      </a>
+
+      <a class="btn btn--primary btn--sm" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="header-primary" title="Book a discovery call">
+        Book a Call
+      </a>
+    </div>
+
+    <button class="site-header__mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+    </button>
+
+  </div>
+</header>
+
+<aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation" hidden="">
+  <div class="mobile-drawer__header">
+    <a class="site-brand" href="/" aria-label="TechBrot home">
+      <img class="site-brand__mark" src="/assets/img/brand/wordmark.png" alt="TechBrot" width="120" height="36">
+    </a>
+    <button class="mobile-drawer__close" type="button" aria-label="Close navigation menu" data-action="close-drawer">
+      <span class="mobile-drawer__close-x" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <nav class="mobile-drawer__nav" aria-label="Mobile primary navigation">
+    <ul class="mobile-drawer__list">
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-services">
+          <span>Accounting</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-services" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll management</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-quickbooks">
+          <span>QuickBooks</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-quickbooks" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/find-an-accountant/">Find an Accountant</a></li>
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/pricing/">Pricing</a></li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-why">
+          <span>Why TechBrot</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-why" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/about/methodology/">Our methodology</a></li>
+            <li><a href="/reviews/">Client reviews</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+            <li><a href="/about/">About &amp; team</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/partners/">For Accountants</a></li>
+    </ul>
+  </nav>
+
+  <div class="mobile-drawer__footer">
+    <a class="btn btn--primary btn--lg btn--full" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="mobile-primary">Book a Discovery Call</a>
+    <a class="mobile-drawer__phone" href="tel:+18777515575">(877) 751-5575</a>
+  </div>
+</aside>
+
+<div class="search-palette" id="search-palette" role="dialog" aria-modal="true" aria-label="Search TechBrot" hidden="">
+  <div class="search-palette__backdrop" data-search-close=""></div>
+  <div class="search-palette__panel" role="combobox" aria-expanded="true" aria-haspopup="listbox" aria-owns="search-results">
+    <div class="search-palette__field">
+      <svg class="search-palette__icon" width="20" height="20" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+        <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+      </svg>
+      <input class="search-palette__input" id="search-input" type="text" autocomplete="off" spellcheck="false" placeholder="Search services, QuickBooks, comparisons, states, Indiana topics…" aria-label="Search" aria-controls="search-results" aria-autocomplete="list">
+      <button class="search-palette__close" type="button" aria-label="Close search" data-search-close=""><kbd>Esc</kbd></button>
+    </div>
+    <div class="search-palette__body">
+      <ul class="search-palette__results" id="search-results" role="listbox" aria-label="Search results"></ul>
+      <div class="search-palette__suggested" id="search-suggested">
+        <p class="search-palette__suggested-label">Try</p>
+        <ul class="search-palette__chips" role="list">
+          <li><button type="button" class="search-chip" data-q="indiana cagit">Indiana CAGIT payroll</button></li>
+          <li><button type="button" class="search-chip" data-q="bookkeeping cleanup">Bookkeeping cleanup</button></li>
+          <li><button type="button" class="search-chip" data-q="quickbooks migration">QuickBooks migration</button></li>
+          <li><button type="button" class="search-chip" data-q="indianapolis">Indianapolis</button></li>
+          <li><button type="button" class="search-chip" data-q="manufacturing">Manufacturing accounting</button></li>
+          <li><button type="button" class="search-chip" data-q="pricing">Pricing</button></li>
+        </ul>
+      </div>
+      <p class="search-palette__empty" id="search-empty" hidden="">No matches. Try a service, “QuickBooks”, an Indiana topic, a city, or a comparison.</p>
+    </div>
+    <div class="search-palette__foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+<div class="page page--service page--qb-error-h202" data-page="qb-error-h202">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <main id="main" role="main">
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="Breadcrumb" id="h202-breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/">Home</a></li>
+          <li class="breadcrumb__item"><a href="/quickbooks/">QuickBooks</a></li>
+          <li class="breadcrumb__item"><a href="/quickbooks/help/">Help</a></li>
+          <li class="breadcrumb__item"><a href="/quickbooks/help/error-codes/">Error Codes</a></li>
+          <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Error H202</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- HERO (split layout, matches QB silo) -->
+    <section class="section section--hero section--service-hero section--service-hero-split" id="h202-hero" aria-labelledby="h202-hero-heading">
+      <div class="container">
+        <div class="service-hero-split">
+          <div class="service-hero">
+            <p class="service-hero__eyebrow"><span class="service-hero__eyebrow-text">QuickBooks error reference &middot; H202</span></p>
+            <h1 class="service-hero__heading" id="h202-hero-heading">
+              QuickBooks Error H202:<br>What it means &amp; how to fix it.
+            </h1>
+            <p class="service-hero__subheading">
+              <strong>Error H202 means QuickBooks is configured for multi-user mode but a workstation cannot communicate with the server hosting the company file.</strong> It&rsquo;s one of the most common multi-user errors in QuickBooks Desktop, Premier, and Enterprise &mdash; and one of the most consistently fixable. Below: what causes it, the step-by-step self-fix in order of likelihood, and when to call a Certified ProAdvisor.
+            </p>
+            <div class="service-hero__actions" role="group" aria-label="Primary actions">
+              <a class="btn btn--ghost btn--lg" href="#h202-self-fix" data-cta="h202-hero-primary">Jump to the Self-Fix Steps</a>
+              <a class="btn btn--primary btn--lg" href="/contact/?intent=qb-error-h202" data-cta="h202-hero-secondary">Get a ProAdvisor on the Line</a>
+            </div>
+            <p class="service-hero__assurance">
+              <span class="service-hero__assurance-label">Reference written by</span>
+              <span class="service-hero__assurance-body">Certified QuickBooks ProAdvisors &middot; Desktop &amp; Enterprise specialists &middot; Independent firm, not affiliated with Intuit Inc.</span>
+            </p>
+          </div>
+          <div class="service-hero-split__visual" aria-hidden="true">
+            <img src="/assets/img/services/qb-error-h202-hero.webp" alt="" width="720" height="640" decoding="async" fetchpriority="high">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROADVISOR CREDENTIAL STRIP -->
+    <section class="section section--proadvisor-credentials" id="h202-credentials" aria-labelledby="h202-credentials-heading">
+      <div class="container">
+        <h2 class="proadvisor-credentials__heading sr-only" id="h202-credentials-heading">Certified QuickBooks ProAdvisor credentials</h2>
+        <div class="proadvisor-credentials">
+          <div class="proadvisor-credentials__lede">
+            <p class="proadvisor-credentials__eyebrow">Certified by Intuit</p>
+            <p class="proadvisor-credentials__statement">H202 is a Desktop/Enterprise error &mdash; resolving it requires fluency in multi-user mode, Database Server Manager, and network configuration. Every TechBrot ProAdvisor holds active Desktop and Enterprise certifications, with the operational experience to diagnose H202 past the documented surface steps. Verification available on request.</p>
+          </div>
+          <ul class="proadvisor-credentials__badges" role="list" aria-label="QuickBooks ProAdvisor certifications">
+            <li class="proadvisor-credentials__badge">
+              <img src="/assets/img/badges/proadvisor-desktop.svg" alt="QuickBooks Desktop ProAdvisor" width="96" height="40" loading="lazy" decoding="async">
+              <span class="proadvisor-credentials__badge-label">Desktop</span>
+            </li>
+            <li class="proadvisor-credentials__badge">
+              <img src="/assets/img/badges/proadvisor-enterprise.svg" alt="QuickBooks Enterprise ProAdvisor" width="96" height="40" loading="lazy" decoding="async">
+              <span class="proadvisor-credentials__badge-label">Enterprise</span>
+            </li>
+            <li class="proadvisor-credentials__badge">
+              <img src="/assets/img/badges/proadvisor-online.svg" alt="QuickBooks Online ProAdvisor (Level 2)" width="96" height="40" loading="lazy" decoding="async">
+              <span class="proadvisor-credentials__badge-label">Online (L2)</span>
+            </li>
+            <li class="proadvisor-credentials__badge">
+              <img src="/assets/img/badges/proadvisor-payroll.svg" alt="QuickBooks Payroll ProAdvisor" width="96" height="40" loading="lazy" decoding="async">
+              <span class="proadvisor-credentials__badge-label">Payroll</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TL;DR -->
+    <section class="section section--tldr" id="h202-tldr" aria-labelledby="h202-tldr-heading">
+      <div class="container container--narrow">
+        <div class="tldr">
+          <p class="tldr__eyebrow">In one paragraph</p>
+          <h2 class="tldr__heading" id="h202-tldr-heading">Error H202, plainly.</h2>
+          <p class="tldr__body" id="h202-tldr-body">
+            <strong>QuickBooks Error H202</strong> appears when QuickBooks is set to multi-user mode but a workstation cannot establish the connection to the host computer that stores the company file. The workstation can see the file exists, but multi-user access fails. <strong>Five causes account for the large majority of H202 occurrences</strong>: (1) <strong>QuickBooks Database Server Manager</strong> isn&rsquo;t running on the host computer; (2) <strong>hosting is configured incorrectly</strong> &mdash; either the host isn&rsquo;t hosting, or a workstation is mistakenly set to host itself; (3) a <strong>firewall</strong> (Windows or third-party) is blocking QuickBooks ports or executables; (4) the file is being accessed via a <strong>mapped drive letter</strong> that&rsquo;s unstable instead of a UNC path; or (5) <strong>hostname resolution</strong> is failing between workstation and host. The good news: H202 is highly fixable, and the steps work in order of likelihood &mdash; running <strong>QuickBooks Tool Hub</strong> (Quick Fix My File, then File Doctor) resolves H202 in many cases before deeper troubleshooting is needed. If self-fix doesn&rsquo;t resolve it within an hour or two, or the error recurs within days, a <a href="/quickbooks/cleanup/">Certified ProAdvisor diagnostic</a> identifies the deeper cause &mdash; typically configuration past the documented surface steps. H202 is exclusive to <a href="/quickbooks/desktop/">QuickBooks Desktop</a>, Premier, and <a href="/quickbooks/enterprise/">Enterprise</a>; it does not appear in <a href="/quickbooks/online/">QuickBooks Online</a>. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI SUMMARY -->
+    <section class="section section--ai-summary" id="h202-ai-summary" aria-labelledby="h202-ai-summary-heading">
+      <div class="container container--narrow">
+        <header class="section__header">
+          <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+          <h2 class="section__heading" id="h202-ai-summary-heading">Error H202, in five questions.</h2>
+        </header>
+        <dl class="ai-summary__list">
+          <div class="ai-summary__item"><dt class="ai-summary__question">What is Error H202?</dt><dd class="ai-summary__answer"><p>A <strong>QuickBooks multi-user error</strong>: the workstation can see the company file exists on a host computer but <strong>can&rsquo;t establish the multi-user connection</strong>. The workstation knows the file is somewhere; it just can&rsquo;t reach it. Exclusive to QuickBooks Desktop, Premier, and Enterprise &mdash; does not occur in QuickBooks Online.</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">What causes it?</dt><dd class="ai-summary__answer"><p>Five common causes: <strong>(1) Database Server Manager not running</strong> on the host; <strong>(2) hosting misconfigured</strong> on host or workstation; <strong>(3) firewall blocking</strong> QuickBooks ports or executables; <strong>(4) mapped drive letter</strong> instead of UNC path; <strong>(5) hostname resolution failing</strong> between workstation and host.</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">Can I fix it myself?</dt><dd class="ai-summary__answer"><p><strong>Often yes</strong>, in this order: run <strong>QuickBooks Tool Hub</strong> (Quick Fix My File, then File Doctor); verify <strong>Database Server Manager</strong> is running on host; check <strong>hosting settings</strong> on each machine; add <strong>firewall rules</strong> for QuickBooks ports and executables; switch to <strong>UNC path</strong>; confirm <strong>hostname resolution</strong> works. Tool Hub alone resolves H202 in many cases.</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">When to call a ProAdvisor?</dt><dd class="ai-summary__answer"><p>When: <strong>self-fix didn&rsquo;t resolve it</strong> after an hour or two; the error <strong>recurs within days</strong>; <strong>multiple workstations</strong> show H202 simultaneously; you don&rsquo;t have <strong>admin access</strong> to host or firewall; or H202 appears <strong>alongside other errors</strong> (suggesting deeper file integrity issues).</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">H202 vs H505 vs H101?</dt><dd class="ai-summary__answer"><p>All multi-user errors with similar root causes. <strong>H202</strong>: workstation can&rsquo;t connect to host. <strong><a href="/quickbooks/help/error-codes/h505/">H505</a></strong>: workstation thinks file is on a different machine that isn&rsquo;t set up to host. <strong><a href="/quickbooks/help/error-codes/h101/">H101</a></strong>: multi-user setup incomplete on this machine. Same diagnostic approach resolves all three.</p></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- WHAT CAUSES H202 (why-grid) -->
+    <section class="section section--h202-causes" id="h202-causes" aria-labelledby="h202-causes-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">What causes H202</p>
+          <h2 class="section__heading" id="h202-causes-heading">Five common causes, in order of likelihood.</h2>
+          <p class="section__lede">The self-fix steps below address these causes in the same order &mdash; so working through them sequentially typically resolves H202 efficiently.</p>
+        </header>
+        <ul class="why-grid" role="list">
+          <li class="why-card">
+            <p class="why-card__number">01</p>
+            <h3 class="why-card__heading">Database Server Manager not running</h3>
+            <p class="why-card__body">The most common cause. QuickBooks Database Server Manager (QBDBXX, where XX is the QuickBooks year version) brokers all multi-user file access. If the service isn&rsquo;t running on the host machine, no workstation can connect &mdash; resulting in H202.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">02</p>
+            <h3 class="why-card__heading">Hosting configured incorrectly</h3>
+            <p class="why-card__body">Two patterns: (a) the host computer isn&rsquo;t set to host multi-user access, or (b) one or more workstations are mistakenly set to host themselves. Only the host should host; workstations should never host. Mismatched configuration breaks multi-user mode.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">03</p>
+            <h3 class="why-card__heading">Firewall blocking QuickBooks</h3>
+            <p class="why-card__body">Windows Firewall or third-party antivirus blocks the network ports or executables QuickBooks needs for multi-user communication. The fix: explicit inbound and outbound rules for QuickBooks&rsquo; ports (specific to your year version) and executables (QBDBMgrN.exe, QBCFMonitorService.exe, others).</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">04</p>
+            <h3 class="why-card__heading">Mapped drive letter unstable</h3>
+            <p class="why-card__body">Workstations accessing the file via mapped drive letters (Z:\, etc.) can break when the mapping changes or disconnects briefly. UNC paths (\\servername\share\path\file.qbw) are significantly more stable for multi-user QuickBooks.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">05</p>
+            <h3 class="why-card__heading">Hostname resolution failing</h3>
+            <p class="why-card__body">If the workstation can&rsquo;t translate the host&rsquo;s computer name to its IP address (a DNS, hosts file, or networking issue), it can&rsquo;t establish the multi-user connection. Test with ping; resolution failures often point to network issues beyond QuickBooks-specific troubleshooting.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">06</p>
+            <h3 class="why-card__heading">Less common: damaged .ND files, multi-version conflicts, deeper file corruption</h3>
+            <p class="why-card__body">When the above five don&rsquo;t apply, less common causes include damaged network data files (.ND), multiple QuickBooks year-versions installed on the same host competing for the same ports, or company file integrity issues. These typically require <a href="/quickbooks/cleanup/">ProAdvisor diagnostic</a> rather than self-fix.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SELF-FIX STEPS (process__list - the HowTo) -->
+    <section class="section section--process" id="h202-self-fix" aria-labelledby="h202-self-fix-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Self-fix steps</p>
+          <h2 class="section__heading" id="h202-self-fix-heading">How to fix H202 yourself.</h2>
+          <p class="section__lede">Work through these steps in order. Each is more involved than the last &mdash; and Tool Hub (step 1) alone resolves H202 in many cases. Stop at step 7 if the error persists; that&rsquo;s the escalation signal.</p>
+        </header>
+        <ol class="process__list" role="list">
+          <li class="process-step" data-step="1"><p class="process-step__number">01</p><h3 class="process-step__heading">Run QuickBooks File Doctor from Tool Hub</h3><p class="process-step__body">Download <strong>QuickBooks Tool Hub</strong> (free from Intuit). Open Tool Hub, go to <strong>Company File Issues</strong>, and run <strong>Quick Fix My File</strong> first. If that doesn&rsquo;t resolve it, run <strong>QuickBooks File Doctor</strong> and select the company file. File Doctor automates several of the diagnostics below and resolves H202 in many cases without further work.</p><p class="process-step__meta">Typical time: 10&ndash;15 minutes</p></li>
+          <li class="process-step" data-step="2"><p class="process-step__number">02</p><h3 class="process-step__heading">Verify Database Server Manager is running</h3><p class="process-step__body">On the <strong>host computer</strong>, open <strong>Services</strong> (run <code>services.msc</code>). Find <strong>QuickBooksDBXX</strong> (XX matches your year version, e.g., QuickBooksDB30 for QB 2020). Confirm it&rsquo;s <strong>Running</strong> and startup type is <strong>Automatic</strong>. If stopped, start it; if it won&rsquo;t start, reinstall Database Server Manager via the QuickBooks installer.</p><p class="process-step__meta">Typical time: 5 minutes</p></li>
+          <li class="process-step" data-step="3"><p class="process-step__number">03</p><h3 class="process-step__heading">Verify hosting settings on each machine</h3><p class="process-step__body">On the <strong>host</strong>: open QuickBooks &rarr; <strong>File &rarr; Utilities</strong>. If you see &ldquo;<strong>Stop Hosting Multi-User Access</strong>,&rdquo; hosting is correctly enabled. On each <strong>workstation</strong>: same path; you should see &ldquo;<strong>Host Multi-User Access</strong>&rdquo; (meaning hosting is disabled &mdash; correct). Only the host should host. Fix any mismatch.</p><p class="process-step__meta">Typical time: 5 minutes per machine</p></li>
+          <li class="process-step" data-step="4"><p class="process-step__number">04</p><h3 class="process-step__heading">Add QuickBooks ports to the firewall</h3><p class="process-step__body">On the host, open <strong>Windows Defender Firewall with Advanced Security</strong>. Create new <strong>Inbound Rules</strong> for the QuickBooks ports specific to your year version (Intuit publishes the port numbers per version). Repeat for <strong>Outbound Rules</strong>. Also create rules for these executables: <strong>QBDBMgrN.exe, QBCFMonitorService.exe, QBLaunch.exe, QBUpdate.exe</strong>. Third-party antivirus may also need configuration.</p><p class="process-step__meta">Typical time: 15&ndash;20 minutes</p></li>
+          <li class="process-step" data-step="5"><p class="process-step__number">05</p><h3 class="process-step__heading">Use UNC path instead of mapped drive</h3><p class="process-step__body">From each workstation, open the company file using the <strong>UNC path</strong> format: <code>\\servername\share\path\file.qbw</code> &mdash; rather than a mapped drive letter. UNC paths are significantly more stable for multi-user QuickBooks and resolve a meaningful slice of H202 cases that other steps don&rsquo;t.</p><p class="process-step__meta">Typical time: 5 minutes</p></li>
+          <li class="process-step" data-step="6"><p class="process-step__number">06</p><h3 class="process-step__heading">Confirm hostname resolution</h3><p class="process-step__body">From each workstation, open <strong>Command Prompt</strong> and run <code>ping servername</code> (replace with your host&rsquo;s computer name). The ping should succeed. If it fails, you have a deeper network issue &mdash; DNS, hosts file, or networking configuration &mdash; that may need IT involvement beyond QuickBooks-specific troubleshooting.</p><p class="process-step__meta">Typical time: 5 minutes</p></li>
+          <li class="process-step" data-step="7"><p class="process-step__number">07</p><h3 class="process-step__heading">If H202 persists, escalate</h3><p class="process-step__body">If you&rsquo;ve worked through steps 1&ndash;6 and the error persists, or it returns within days of resolution, the root cause is past surface configuration. A <strong>Certified ProAdvisor diagnostic</strong> identifies the underlying issue &mdash; network architecture, file corruption, or hosting configuration deeper than these steps reach &mdash; in a 30-minute call. Continuing to self-troubleshoot at this point usually wastes more time than it saves.</p><p class="process-step__meta">Diagnostic usually scheduled within a day</p></li>
+        </ol>
+        <div class="process__cta">
+          <a class="btn btn--primary" href="/contact/?intent=qb-error-h202" data-cta="h202-self-fix-cta">Book a ProAdvisor diagnostic</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHEN SELF-FIX ISN'T ENOUGH (scope-grid) -->
+    <section class="section section--process" id="h202-escalate" aria-labelledby="h202-escalate-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">When self-fix has reached its limit</p>
+          <h2 class="section__heading" id="h202-escalate-heading">Three signals it&rsquo;s a ProAdvisor call.</h2>
+        </header>
+        <ul class="scope-grid" role="list">
+          <li class="scope-card">
+            <h3 class="scope-card__heading">It persists after all six steps</h3>
+            <p class="scope-card__body">You ran Tool Hub, verified Database Server Manager, checked hosting settings, configured the firewall, switched to UNC, confirmed ping works &mdash; and H202 still appears. The cause is past surface configuration; a deeper diagnostic is the appropriate next step.</p>
+          </li>
+          <li class="scope-card">
+            <h3 class="scope-card__heading">It keeps coming back</h3>
+            <p class="scope-card__body">Self-fix worked, then within days H202 returned. Recurring H202 means the underlying issue wasn&rsquo;t addressed &mdash; only the surface symptom was masked. This pattern typically points to network architecture problems or file integrity issues that need professional diagnosis.</p>
+          </li>
+          <li class="scope-card">
+            <h3 class="scope-card__heading">It&rsquo;s appearing alongside other errors</h3>
+            <p class="scope-card__body">H202 combined with <a href="/quickbooks/help/error-codes/error-6000-series/">6000-series errors</a>, unrecoverable errors, or PS-series errors strongly suggests the file has integrity problems beyond multi-user configuration. The right engagement is full <a href="/quickbooks/cleanup/">QuickBooks file cleanup</a>, not iterative single-error troubleshooting.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RELATED H-SERIES (related-grid) -->
+    <section class="section section--cleanup-related" id="h202-related-h" aria-labelledby="h202-related-h-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Related H-series errors</p>
+          <h2 class="section__heading" id="h202-related-h-heading">If you&rsquo;re seeing other H-codes too.</h2>
+          <p class="section__lede">H-series errors share root causes. Seeing more than one suggests a host or network-level issue affecting multiple workstations &mdash; not separate isolated problems.</p>
+        </header>
+        <ul class="related-grid" role="list">
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/quickbooks/help/error-codes/h505/">Error H505</a></h3><p class="related-card__body">Workstation thinks the file is on a different computer that isn&rsquo;t set up to host. Similar to H202 but more often a hosting-configuration issue on the workstation side specifically.</p><a class="related-card__cta" href="/quickbooks/help/error-codes/h505/">H505 reference &rarr;</a></article></li>
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/quickbooks/help/error-codes/h101/">Error H101</a></h3><p class="related-card__body">Multi-user setup incomplete on this machine. Often appears on fresh installations or new workstations that weren&rsquo;t fully configured for multi-user access.</p><a class="related-card__cta" href="/quickbooks/help/error-codes/h101/">H101 reference &rarr;</a></article></li>
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/quickbooks/help/error-codes/">All error codes</a></h3><p class="related-card__body">Full ProAdvisor reference: H-series, 6000-series, PS-series, 3371, 15000-series, unrecoverable, C-series.</p><a class="related-card__cta" href="/quickbooks/help/error-codes/">Error code hub &rarr;</a></article></li>
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/quickbooks/cleanup/">File cleanup</a></h3><p class="related-card__body">When H202 is part of a broader pattern of errors or file integrity issues, file cleanup is the engagement that addresses the underlying cause.</p><a class="related-card__cta" href="/quickbooks/cleanup/">Explore cleanup &rarr;</a></article></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HOW WE HELP (operator-block) -->
+    <section class="section section--cleanup-operator" id="h202-operator" aria-labelledby="h202-operator-heading">
+      <div class="container">
+        <div class="operator-block">
+          <div class="operator-block__copy">
+            <p class="section__eyebrow">When you&rsquo;ve hit the self-fix limit</p>
+            <h2 class="section__heading" id="h202-operator-heading">A Certified ProAdvisor diagnoses past the surface.</h2>
+            <p class="operator-block__lede">H202 self-fix works in many cases &mdash; but when it doesn&rsquo;t, continuing to troubleshoot blindly typically wastes more time than the diagnostic itself takes. A Certified ProAdvisor reviews the host configuration, the workstation setup, the network architecture, and the company file itself &mdash; identifying the actual root cause in a 30-minute call, then scoping the fix in writing.</p>
+            <p class="operator-block__lede">Every TechBrot ProAdvisor holds active Desktop and Enterprise certifications with hands-on experience resolving H202 patterns across hundreds of client engagements. Fixed-fee, no hourly billing, no commission on Intuit products.</p>
+            <div class="operator-block__actions">
+              <a class="btn btn--primary" href="/contact/?intent=qb-error-h202" data-cta="h202-operator-primary">Book a 30-min diagnostic</a>
+              <a class="btn btn--ghost" href="/quickbooks/cleanup/" data-cta="h202-operator-cleanup">File cleanup overview</a>
+            </div>
+          </div>
+          <aside class="operator-block__credentials" aria-label="Operator credentials">
+            <ul class="credential-list">
+              <li class="credential-item"><p class="credential-item__label">Certification</p><p class="credential-item__detail">QuickBooks ProAdvisor (Desktop, Enterprise, Online L2, Payroll)</p></li>
+              <li class="credential-item"><p class="credential-item__label">Diagnostic</p><p class="credential-item__detail">30-minute call, usually scheduled within a day</p></li>
+              <li class="credential-item"><p class="credential-item__label">Pricing</p><p class="credential-item__detail">Typically $1,200&ndash;$3,000 fixed-fee for H202 resolution</p></li>
+              <li class="credential-item"><p class="credential-item__label">Independence</p><p class="credential-item__detail">Independent ProAdvisor firm, not affiliated with Intuit Inc.</p></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (FLAT) -->
+    <section class="section section--faq" id="h202-faq" aria-labelledby="h202-faq-heading">
+      <div class="container container--narrow">
+        <header class="section__header">
+          <p class="section__eyebrow">Error H202 questions</p>
+          <h2 class="section__heading" id="h202-faq-heading">What people ask about Error H202.</h2>
+        </header>
+        <dl class="faq__list">
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="h202-faq-1" id="h202-faq-q-1">What is QuickBooks Error H202?</button></dt>
+            <dd class="faq__answer" id="h202-faq-1" role="region" aria-labelledby="h202-faq-q-1"><p>QuickBooks Error H202 means QuickBooks is configured for multi-user mode but a workstation cannot communicate with the server hosting the company file. The workstation can see that the file exists but cannot establish the connection needed to open it in multi-user mode. It&rsquo;s one of the most common multi-user errors in QuickBooks Desktop, Premier, and Enterprise &mdash; and one of the most consistently fixable, since it almost always traces back to one of five or six specific causes.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="h202-faq-2" id="h202-faq-q-2">What causes QuickBooks Error H202?</button></dt>
+            <dd class="faq__answer" id="h202-faq-2" role="region" aria-labelledby="h202-faq-q-2"><p>Five causes account for the large majority of H202 occurrences. First, the QuickBooks Database Server Manager isn&rsquo;t running on the host computer &mdash; the service that brokers multi-user file access. Second, hosting is configured incorrectly: either the host isn&rsquo;t set to host, or one or more workstations are mistakenly set to host themselves. Third, a firewall (Windows Firewall or third-party antivirus) is blocking the QuickBooks ports or executables needed for multi-user communication. Fourth, the company file is being accessed via a mapped drive letter that has changed or disconnected, instead of a stable UNC path. Fifth, hostname resolution is failing &mdash; the workstation can&rsquo;t translate the host computer&rsquo;s name to an IP address. Less common causes include damaged .ND files, multiple QuickBooks versions installed on the same host, or deeper file corruption.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="h202-faq-3" id="h202-faq-q-3">Can I fix QuickBooks Error H202 myself?</button></dt>
+            <dd class="faq__answer" id="h202-faq-3" role="region" aria-labelledby="h202-faq-q-3"><p>Often yes. First-occurrence H202 errors resolve with the QuickBooks Tool Hub (Quick Fix My File, then QuickBooks File Doctor) in many cases. If Tool Hub doesn&rsquo;t resolve it, working through the documented steps &mdash; verifying Database Server Manager is running, confirming hosting settings on each machine, adding QuickBooks ports and executables to the firewall, using UNC paths instead of mapped drives, and confirming hostname resolution &mdash; resolves H202 for the majority of cases. Stop and escalate to a Certified ProAdvisor if the error persists after these steps, if it recurs within days of a fix, or if you don&rsquo;t have administrative access to the host computer and firewall.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="h202-faq-4" id="h202-faq-q-4">When does Error H202 require a ProAdvisor?</button></dt>
+            <dd class="faq__answer" id="h202-faq-4" role="region" aria-labelledby="h202-faq-q-4"><p>Escalate to a Certified ProAdvisor when: documented self-fix steps don&rsquo;t resolve it; the error recurs within days of resolution; multiple workstations are showing H202 simultaneously (indicates a broader network or host configuration issue); you don&rsquo;t have admin access to the host computer or firewall; you&rsquo;re seeing H202 alongside other errors like 6000-series (suggests deeper file integrity issues); or the error is blocking critical work and Intuit&rsquo;s queue time isn&rsquo;t acceptable. Most H202-driven engagements are scoped as focused <a href="/quickbooks/cleanup/">file cleanup</a> in the $1,200&ndash;$3,000 range, sometimes lower if it&rsquo;s purely a configuration fix.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="h202-faq-5" id="h202-faq-q-5">What&rsquo;s the difference between Error H202 and Error H505?</button></dt>
+            <dd class="faq__answer" id="h202-faq-5" role="region" aria-labelledby="h202-faq-q-5"><p>Both are multi-user mode errors with similar root causes, but they signal slightly different states. Error H202 means a workstation knows the company file exists somewhere but can&rsquo;t establish the multi-user connection &mdash; typically because Database Server Manager isn&rsquo;t running, hosting is misconfigured, or the firewall is blocking communication. <a href="/quickbooks/help/error-codes/h505/">Error H505</a> means the workstation thinks the file is on a different computer that isn&rsquo;t set up to host &mdash; typically a hosting-configuration issue specifically, where the wrong machine is being asked to host. The same diagnostic approach resolves both, but H505 more often traces to hosting settings on the workstation side while H202 more often involves the host computer&rsquo;s services or firewall.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="h202-faq-6" id="h202-faq-q-6">Does Error H202 appear in QuickBooks Online?</button></dt>
+            <dd class="faq__answer" id="h202-faq-6" role="region" aria-labelledby="h202-faq-q-6"><p>No. H202 is exclusive to <a href="/quickbooks/desktop/">QuickBooks Desktop</a> and <a href="/quickbooks/enterprise/">QuickBooks Enterprise</a> &mdash; products that use locally installed multi-user mode with a host computer brokering file access. <a href="/quickbooks/online/">QuickBooks Online</a> is a cloud platform where Intuit manages all multi-user concurrency on their infrastructure, so the architectural conditions that produce H202 don&rsquo;t exist. If you&rsquo;re seeing connection errors in QuickBooks Online, they&rsquo;re typically browser issues, integration sync errors, or Intuit service status issues &mdash; not H202.</p></dd>
+          </div>
+        </dl>
+        <p class="faq__more"><a href="/quickbooks/help/error-codes/">All QuickBooks error codes &rarr;</a></p>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section section--final-cta" id="h202-final-cta" aria-labelledby="h202-final-cta-heading">
+      <div class="container container--narrow">
+        <div class="final-cta">
+          <p class="section__eyebrow section__eyebrow--inverted">H202 resolution starts here</p>
+          <h2 class="final-cta__heading" id="h202-final-cta-heading">Self-fix didn&rsquo;t work? Book a diagnostic.</h2>
+          <p class="final-cta__lede">If you&rsquo;ve worked through the steps above and H202 persists &mdash; or if you&rsquo;d rather skip self-troubleshooting and have a Certified ProAdvisor handle it &mdash; book a 30-minute diagnostic. We&rsquo;ll identify the root cause and scope the fix in writing. Fixed-fee, typically $1,200&ndash;$3,000 for focused H202 resolution. No hourly billing, no commission on Intuit products.</p>
+          <div class="final-cta__actions" role="group" aria-label="Final actions">
+            <a class="btn btn--primary btn--lg btn--inverted" href="/contact/?intent=qb-error-h202" data-cta="h202-final-primary">Book a ProAdvisor Diagnostic</a>
+            <a class="btn btn--ghost btn--lg btn--inverted" href="/quickbooks/help/error-codes/" data-cta="h202-final-secondary">All Error Codes</a>
+          </div>
+          <p class="final-cta__disclaimer">TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm. QuickBooks, QuickBooks Desktop, and QuickBooks Enterprise are registered trademarks of Intuit Inc. TechBrot Inc. is not affiliated with Intuit Inc. Self-fix steps reflect documented troubleshooting procedures; actual results vary by QuickBooks version, operating system, and network configuration. Services do not include income-tax filing, IRS representation, audit, or assurance.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div><!-- ============================================================================
+     FOOTER
+     ============================================================================ -->
+
+<footer class="site-footer" role="contentinfo" id="site-footer">
+
+  <section class="site-footer__band" aria-label="Newsletter signup">
+    <div class="container">
+      <div class="footer-band">
+        <div class="footer-band__copy">
+          <h2 class="footer-band__heading">The monthly brief.</h2>
+          <p class="footer-band__lede">One email a month — operational accounting, QuickBooks, and finance-ops insight for U.S. business owners. No spam, unsubscribe anytime.</p>
+        </div>
+        <form class="footer-band__form" action="/subscribe" method="post" aria-label="Subscribe to the monthly brief">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input class="footer-band__input" type="email" id="footer-email" name="email" placeholder="you@company.com" autocomplete="email" required="">
+          <button class="btn btn--primary btn--md" type="submit" data-cta="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="site-footer__main">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="site-footer__brand-col">
+          <a class="site-brand site-brand--footer" href="/" aria-label="TechBrot home">
+            <img class="site-brand__mark" src="/assets/img/brand/wordmark-light.png" alt="TechBrot" width="140" height="36" decoding="async">
+          </a>
+          <p class="site-footer__tagline">A modern accounting platform with vetted local partners.</p>
+          <ul class="site-footer__contact-list">
+            <li><a href="mailto:hello@techbrot.com">hello@techbrot.com</a></li>
+            <li><a href="tel:+18777515575">(877) 751-5575</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Book a discovery call →</a></li>
+          </ul>
+          <ul class="site-footer__social" aria-label="Social media">
+  <li>
+    <a href="https://www.linkedin.com/company/techbrot-inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on LinkedIn">
+      <img src="/assets/img/icons/linkedin.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://x.com/techbrot_inc"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on X">
+      <img src="/assets/img/icons/x.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.instagram.com/techbrot_inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on Instagram">
+      <img src="/assets/img/icons/instagram.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+</ul>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Accounting">
+          <h2 class="site-footer__heading" id="fh-services" aria-controls="fl-services" aria-expanded="false" role="button" tabindex="0">Accounting</h2>
+          <ul class="site-footer__links" id="fl-services" aria-labelledby="fh-services">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="QuickBooks">
+          <h2 class="site-footer__heading" id="fh-quickbooks" aria-controls="fl-quickbooks" aria-expanded="false" role="button" tabindex="0">QuickBooks</h2>
+          <ul class="site-footer__links" id="fl-quickbooks" aria-labelledby="fh-quickbooks">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Company">
+          <h2 class="site-footer__heading" id="fh-company" aria-controls="fl-company" aria-expanded="false" role="button" tabindex="0">Company</h2>
+          <ul class="site-footer__links" id="fl-company" aria-labelledby="fh-company">
+            <li><a href="/about/">About</a></li>
+            <li><a href="/about/methodology/">Methodology</a></li>
+            <li><a href="/about/team/">Team</a></li>
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Network">
+          <h2 class="site-footer__heading" id="fh-network" aria-controls="fl-network" aria-expanded="false" role="button" tabindex="0">Network</h2>
+          <ul class="site-footer__links" id="fl-network" aria-labelledby="fh-network">
+            <li><a href="/find-an-accountant/">Find an Accountant</a></li>
+            <li><a href="/partners/">For Accountants</a></li>
+            <li><a href="/about/network/">How it works</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__base">
+    <div class="container">
+      <p class="site-footer__disclosure" role="note">
+        <strong>Independent ProAdvisor firm.</strong> QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc. <a href="/legal/disclaimer/">Read full notice</a>.
+      </p>
+      <div class="site-footer__base-row">
+        <p class="site-footer__copyright">© <time>2026</time> TechBrot Inc. All rights reserved.</p>
+        <ul class="site-footer__legal" aria-label="Legal links">
+          <li><a href="/legal/privacy-policy/">Privacy</a></li>
+          <li><a href="/legal/terms/">Terms</a></li>
+          <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+          <li><a href="/legal/dpa/">Data processing</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</footer>
+    <script src="../../../../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{#- Mobile sticky call-bar (06-additions.SKIN, PLACEMENT-MAP: LOCATION/
+    MOFU/BOFU only — never guides/legal). Pages opt out with
+    callBar: false. body.has-call-bar reserves the space (zero CLS);
+    tb-callbar.js drives auto-hide/reveal. -#}
+{%- if callBar %}
+<div class="call-bar" role="region" aria-label="Quick contact">
+  <a class="call-bar__phone" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click" aria-label="Call {{ site.phone.display }}">
+    {% include "icons/phone.svg" %}
+  </a>
+  <a class="btn btn--primary" href="{{ callBar.href or '/contact/?intent=home' }}">{{ callBar.label or "Book the discovery call" }}</a>
+</div>
+{%- endif %}

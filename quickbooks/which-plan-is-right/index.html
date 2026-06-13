@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+<!-- ============================================================================
+  TECHBROT.COM — GLOBAL HEAD (PRODUCTION v4)
+  Bootstrap Studio Global Template · Loads sitewide on every page
+  ----------------------------------------------------------------------------
+  SCOPE:    Site-level signals only. Each page sets:
+              • <title>
+              • <meta name="description">
+              • <link rel="canonical">
+              • <link rel="alternate" hreflang>
+              • <meta property="og:url">
+              • <meta property="og:title">
+              • <meta property="og:description">
+              • <meta name="twitter:title">
+              • <meta name="twitter:description">
+              • Page-specific schema: WebPage, BreadcrumbList, FAQPage,
+                QAPage, Article, Service offerings — all referencing
+                the global Organization / Person / WebSite via @id.
+
+  GOAL:     Top 0.01% AI citation, entity SEO, E-E-A-T, semantic search,
+            Google / Perplexity / ChatGPT / Claude / Gemini retrieval.
+
+  STACK:    Bootstrap Studio · Static HTML · TechBrot Inc. (US C-Corp)
+  MODEL:    Independent accounting platform with vetted local partners
+
+  v4 CHANGE LOG:
+    • Added Person node for David Westgate (#david-westgate) — Lead
+      QuickBooks ProAdvisor, the named/visible page author referenced by
+      each page's WebPage.reviewedBy. Both Abid (founder/CEO) and David
+      (lead ProAdvisor) are certified; David references the same shared
+      #credential-* entities by @id. Abid remains founder + off visible
+      pages (org-level relationship, not page authorship).
+  UPDATED:  June 2026
+============================================================================ -->
+
+
+<!-- ── 01. RENDERING ──────────────────────────────────── -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- ── 02. PAGE IDENTITY — GLOBAL FALLBACKS (overridden per page) ─────────
+  These are global safety-net values. Every real page overrides title
+  and description in its own head.
+<title>A Modern Accounting Platform with Vetted Local Partners · TechBrot</title>
+<meta name="description" content="TechBrot is an independent U.S. accounting platform delivering QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations through a curated network of vetted local partners.">
+ -->
+
+<!-- ── 03. CANONICAL & HREFLANG — PER-PAGE ONLY ──────────────────────────
+  Reference template (do NOT uncomment globally):
+    <link rel="canonical" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="en-US" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="x-default" href="https://techbrot.com/[slug]/">
+-->
+
+
+<!-- ── 04. INDEXING & CRAWL DIRECTIVES ───────────────────────────────────
+  AI crawler policy (GPTBot, ClaudeBot, PerplexityBot, Google-Extended,
+  Applebot-Extended) is managed at robots.txt + Cloudflare WAF level.
+  These meta directives govern traditional search crawlers only. -->
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="bingbot" content="index, follow">
+
+
+<!-- ── 05. SITE IDENTITY & AUTHORSHIP ────────────────────────────────────-->
+
+<meta name="author" content="TechBrot Inc.">
+<meta name="application-name" content="TechBrot">
+<meta name="apple-mobile-web-app-title" content="TechBrot">
+
+<!-- ── 06. GEO & LOCALE ──────────────────────────────────────────────────
+  Registered: 651 N Broad St, Suite 201, Middletown, DE 19709.
+  Service area: 50 US states (national virtual + local partner network).
+  geo.region uses ISO 3166-2 (US-DE). Nationwide service is declared in
+  Organization schema areaServed (full state ItemList below). -->
+
+<meta http-equiv="content-language" content="en-US">
+<meta name="language" content="English">
+
+<!-- ── 07. BROWSER, DEVICE & PWA ─────────────────────────────────────────-->
+
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B0B" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-TileColor" content="#FAFAF7">
+<meta name="msapplication-config" content="/browserconfig.xml">
+
+
+<!-- ── 08. SECURITY & REFERRER ───────────────────────────────────────────-->
+
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+
+<!-- ── 09. OPEN GRAPH — SITE-LEVEL ONLY (image is per-page) ─────────────
+  Per-page sets: og:url, og:title, og:description, og:image (+ dimensions),
+  and og:type="article" on articles. Global default og:type is "website". -->
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TechBrot">
+<meta property="og:locale" content="en_US">
+
+<!-- ── 10. TWITTER / X CARD — SITE-LEVEL ONLY (image is per-page) ───────-->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@techbrot_inc">
+<meta name="twitter:creator" content="@techbrot_inc">
+
+<!-- ── 11. FAVICONS, ICONS & WEB APP MANIFEST ───────────────────────────-->
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/img/brand/safari-pinned-tab.svg" color="#0B0B0B">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<!-- ── 12. SITEMAP & FEEDS ──────────────────────────────────────────────-->
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+
+<!-- ── 13. PERFORMANCE: PRECONNECT, DNS-PREFETCH, FONT PRELOAD ──────────
+  Fonts: Fraunces (serif headings) + Inter (sans body/UI), both Google.
+  Preloading the two heaviest weights eliminates layout-shift on first
+  paint. Adjust paths if you self-host. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+
+<link rel="preload" as="image" href="/assets/img/brand/wordmark.svg" fetchpriority="high">
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<!-- ── 14. STRUCTURED DATA — ENTITY GRAPH ───────────────────────────────
+  Six-node @graph:
+    1. Organization (multi-type: Organization + ProfessionalService) —
+       the primary entity. Brand, knowsAbout (topical authority),
+       hasOfferCatalog (service routing), areaServed (full US),
+       contactPoint (toll-free), full sameAs cluster.
+    2. Brand — separate Brand entity for AI knowledge-graph systems.
+    3. Person (Abid Khan) — founder/CEO authority; certified ProAdvisor.
+    4. Person (David Westgate) — Lead ProAdvisor; the named, visible page
+       author referenced by each page's WebPage.reviewedBy. Both are
+       certified and share the #credential-* entities by @id.
+    5. WebSite — publisher entity with SearchAction.
+    (ProAdvisor credential entities #credential-* are defined inline on
+     the Abid node and referenced by David.)
+
+  Per-page schema attaches via @id reference, never duplicates these. -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://techbrot.com/#organization",
+
+      "name": "TechBrot Inc.",
+      "legalName": "TechBrot Inc.",
+      "alternateName": [
+        "TechBrot",
+        "TechBrot Network",
+        "TechBrot Accounting Platform"
+      ],
+      "slogan": "A modern accounting platform with vetted local partners.",
+      "description": "TechBrot Inc. is an independent U.S. firm of Certified QuickBooks ProAdvisors, accountants, and advisors serving small and mid-sized businesses. Services span QuickBooks setup, cleanup, and migration; monthly, cleanup, and catch-up bookkeeping; payroll; multi-state sales tax; 1099 preparation; financial reporting; and fractional CFO advisory — delivered directly and through a curated network of vetted local Certified ProAdvisors. Independent Certified QuickBooks ProAdvisor firm; not affiliated with Intuit Inc.",
+      "disambiguatingDescription": "Independent accounting platform with vetted local partners — not affiliated with Intuit Inc. QuickBooks is a registered trademark of Intuit Inc.",
+
+      "url": "https://techbrot.com/",
+
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://techbrot.com/#logo",
+        "url": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "contentUrl": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "caption": "TechBrot — A modern accounting platform with vetted local partners",
+        "width": 512,
+        "height": 512,
+        "inLanguage": "en-US"
+      },
+
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://techbrot.com/assets/img/og/techbrot-og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "TechBrot — A modern accounting platform with vetted local partners"
+      },
+
+      "brand": {
+        "@id": "https://techbrot.com/#brand"
+      },
+
+   
+      "foundingDate": "2023",
+      "founder": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+      "founders": [
+        { "@id": "https://techbrot.com/#abid-khan" }
+      ],
+      "employee": [
+        { "@id": "https://techbrot.com/#abid-khan" },
+        { "@id": "https://techbrot.com/#david-westgate" }
+      ],
+
+      "email": "support@techbrot.com",
+      "telephone": "+1-877-751-5575",
+      "priceRange": "$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": ["Credit Card", "Bank Transfer", "ACH", "Check"],
+
+      "naics": "541219",
+      "isicV4": "6920",
+
+      "address": {
+        "@type": "PostalAddress",
+        "@id": "https://techbrot.com/#address",
+        "streetAddress": "651 N Broad St, Suite 201",
+        "addressLocality": "Middletown",
+        "addressRegion": "DE",
+        "postalCode": "19709",
+        "addressCountry": "US"
+      },
+
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.449",
+        "longitude": "-75.716"
+      },
+
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "customer service",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "sales",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "partners@techbrot.com",
+          "contactType": "partner inquiries",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        }
+      ],
+
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States",
+        "@id": "https://www.wikidata.org/entity/Q30"
+      },
+
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Small and mid-sized U.S. businesses"
+      },
+
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        }
+      ],
+
+      "keywords": "accounting platform, QuickBooks ProAdvisor, bookkeeping services, QuickBooks cleanup, monthly bookkeeping, catch-up bookkeeping, payroll services, fractional CFO, sales tax compliance, 1099 preparation, vetted accounting partners, U.S. small business accounting",
+
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "TechBrot Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monthly Bookkeeping",
+              "description": "Recurring monthly bookkeeping with real reconciliation, monthly close package, and named operator point of contact.",
+              "url": "https://techbrot.com/accounting/bookkeeping/monthly-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks and Bookkeeping Cleanup",
+              "description": "Reconstruct accurate books from a messy state — categorization fixes, real bank and credit-card reconciliations, prior-period correction, and reliable financial statements.",
+              "url": "https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Catch-up Bookkeeping",
+              "description": "Bring backlogged books current — from a few missed months to multi-year historical cleanup before tax filing.",
+              "url": "https://techbrot.com/accounting/bookkeeping/catch-up-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Setup and Onboarding",
+              "description": "Independent ProAdvisor-led QuickBooks setup, chart of accounts, banking, payroll, and integration configuration for new and existing businesses.",
+              "url": "https://techbrot.com/quickbooks/setup/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Migration",
+              "description": "QuickBooks Desktop-to-Online migration and other software-to-QuickBooks migrations performed by Certified ProAdvisors with data integrity verification.",
+              "url": "https://techbrot.com/quickbooks/migration/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Independent QuickBooks ProAdvisor Help",
+              "description": "Certified ProAdvisor help with QuickBooks file issues, reconciliation problems, plan selection, and workflow advisory — independent guidance beyond product support.",
+              "url": "https://techbrot.com/quickbooks/help/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Payroll Setup and Management",
+              "description": "Payroll setup, processing, tax filing, and compliance support delivered through the TechBrot operator network.",
+              "url": "https://techbrot.com/accounting/payroll-management/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sales Tax Compliance",
+              "description": "Multi-state sales tax registration, filing, and nexus advisory for U.S. small and mid-sized businesses.",
+              "url": "https://techbrot.com/accounting/sales-tax-compliance/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "1099 Preparation",
+              "description": "Annual 1099 preparation, vendor data collection, and IRS filing for U.S. small businesses.",
+              "url": "https://techbrot.com/accounting/1099-preparation/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fractional CFO Services",
+              "description": "Senior financial advisory delivered through the TechBrot network — cash flow planning, forecasting, KPI reporting, and board-ready financials for growing businesses.",
+              "url": "https://techbrot.com/accounting/advisory/fractional-cfo/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Find a Local Accounting Partner",
+              "description": "Match with a vetted, credentialed, insured TechBrot operator partner in your U.S. state — typically within 48 hours.",
+              "url": "https://techbrot.com/find-an-accountant/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          }
+        ]
+      },
+
+      "knowsAbout": [
+        "Accounting",
+        "Bookkeeping",
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Premier",
+        "QuickBooks Payroll",
+        "QuickBooks ProAdvisor",
+        "QuickBooks setup",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "QuickBooks Desktop to Online migration",
+        "QuickBooks plan selection",
+        "QuickBooks reconciliation",
+        "QuickBooks bank feeds",
+        "QuickBooks error troubleshooting",
+        "QuickBooks company file repair",
+        "QuickBooks multi-user mode",
+        "QuickBooks payroll setup",
+        "QuickBooks payroll troubleshooting",
+        "QuickBooks sales tax",
+        "QuickBooks 1099 preparation",
+        "Monthly bookkeeping",
+        "Catch-up bookkeeping",
+        "Cleanup bookkeeping",
+        "Historical bookkeeping cleanup",
+        "Virtual bookkeeping",
+        "Outsourced bookkeeping",
+        "Small business accounting",
+        "Startup accounting",
+        "Bank reconciliation",
+        "Accounts payable management",
+        "Accounts receivable management",
+        "Chart of accounts setup",
+        "Month-end close",
+        "Year-end close",
+        "Financial statement preparation",
+        "Financial reporting",
+        "Cash flow forecasting",
+        "Cash flow management",
+        "Profitability analysis",
+        "KPI reporting",
+        "Budgeting and forecasting",
+        "Payroll services",
+        "Payroll tax compliance",
+        "Sales tax compliance",
+        "Sales tax nexus",
+        "1099 preparation and filing",
+        "Tax planning",
+        "IRS problem resolution",
+        "Fractional CFO services",
+        "Controller services",
+        "Business advisory services",
+        "Ecommerce accounting",
+        "Real estate accounting",
+        "Construction accounting",
+        "Restaurant accounting",
+        "Healthcare accounting",
+        "Law firm accounting",
+        "SaaS accounting",
+        "Professional services accounting",
+        "Manufacturing accounting",
+        "Trucking accounting",
+        "Nonprofit accounting",
+        "Franchise accounting",
+        "Retail accounting",
+        "Job costing",
+        "Shopify QuickBooks integration",
+        "Amazon QuickBooks integration",
+        "Stripe QuickBooks integration",
+        "Vetted accounting partner network",
+        "Operator-led accounting platform",
+        "Independent ProAdvisor firm"
+      ],
+
+      "subjectOf": {
+        "@type": "WebPage",
+        "@id": "https://techbrot.com/about/"
+      },
+
+    "sameAs": [
+  "https://www.linkedin.com/company/techbrot-inc/",
+  "https://x.com/techbrot_inc",
+  "https://www.instagram.com/techbrot_inc",
+  "https://www.youtube.com/@techbrot_inc",
+  "https://www.facebook.com/techbrotinc",
+  "https://www.tumblr.com/techbrot",
+  "https://pin.it/1d4Qrx4At",
+  "https://www.tiktok.com/@techbrot_inc",
+  "https://medium.com/@techbrot5",
+  "https://clutch.co/profile/techbrot"
+]
+    },
+
+    {
+      "@type": "Brand",
+      "@id": "https://techbrot.com/#brand",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Network",
+      "url": "https://techbrot.com/",
+      "logo": "https://techbrot.com/assets/img/brand/logo_img.png",
+      "slogan": "A modern accounting platform with vetted local partners."
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#abid-khan",
+
+      "name": "Abid Khan",
+      "givenName": "Abid",
+      "familyName": "Khan",
+
+      "url": "https://techbrot.com/about/team/#abid-khan",
+
+      "jobTitle": "Founder & CEO",
+      "description": "Abid Khan is the Founder and CEO of TechBrot Inc., an independent U.S. accounting platform with a curated network of vetted local partners. He is a Certified QuickBooks ProAdvisor across QuickBooks Online, Desktop, Enterprise, and Payroll, and leads platform architecture, partner network development, and AI-first search infrastructure.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "Small business bookkeeping",
+        "Bank reconciliation",
+        "Accounting platform architecture",
+        "Partner network development",
+        "AI-first SEO",
+        "Topical authority architecture",
+        "E-E-A-T optimization"
+      ],
+
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qbo-l2",
+          "name": "QuickBooks Online ProAdvisor (Level 2)",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-desktop",
+          "name": "QuickBooks Desktop ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-enterprise",
+          "name": "QuickBooks Enterprise ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-payroll",
+          "name": "QuickBooks Payroll ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        }
+      ],
+
+      "sameAs": [
+  "https://www.linkedin.com/in/abid-khan-ai/",
+  "https://www.reddit.com/user/techbrot_inc/",
+  "https://www.quora.com/profile/Abid-Khan-119",
+  "https://www.credly.com/users/abid-khan.3ceb70a5/badges#credly"
+      ]
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#david-westgate",
+
+      "name": "David Westgate",
+      "givenName": "David",
+      "familyName": "Westgate",
+
+      "url": "https://techbrot.com/about/team/#david-westgate",
+
+      "jobTitle": "Lead QuickBooks ProAdvisor",
+      "description": "David Westgate is the Lead QuickBooks ProAdvisor at TechBrot Inc., with more than 40 years of accounting experience. A Certified QuickBooks ProAdvisor across QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll, he leads bookkeeping, cleanup, reconciliation, and QuickBooks file rebuilds across construction, professional services, and nonprofit engagements, and is the reviewing authority for TechBrot's published accounting content.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks reconciliation",
+        "Bookkeeping",
+        "Bank reconciliation",
+        "Month-end close",
+        "Sales tax compliance",
+        "IOLTA trust accounting",
+        "Job costing",
+        "Construction accounting",
+        "Nonprofit accounting"
+      ],
+
+      "hasCredential": [
+        { "@id": "https://techbrot.com/#credential-qbo-l2" },
+        { "@id": "https://techbrot.com/#credential-qb-desktop" },
+        { "@id": "https://techbrot.com/#credential-qb-enterprise" },
+        { "@id": "https://techbrot.com/#credential-qb-payroll" }
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://techbrot.com/#website",
+
+      "url": "https://techbrot.com/",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Accounting Platform",
+      "description": "Independent U.S. accounting platform — QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations delivered through a curated network of vetted local partners.",
+      "inLanguage": "en-US",
+
+      "publisher": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "author": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+
+      "about": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightHolder": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightYear": "2023",
+
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://techbrot.com/search/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2Z8GK69Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K2Z8GK69Z5');
+</script>
+
+<!-- ── 15. TRADEMARK DISCLOSURE (machine-readable, AI-citation safety) ──
+  Distinct meta tag declaring trademark posture. Some AI scrapers
+  prioritize meta declarations over body content. Provides an
+  additional structural defense against impersonation classification. -->
+
+<meta name="trademark-disclosure" content="QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc.">
+<meta name="affiliation-disclosure" content="independent">
+
+<!-- ============================================================================
+  END GLOBAL HEAD
+============================================================================ --><!-- ====== WHICH QUICKBOOKS PLAN IS RIGHT? · PAGE HEAD ====== -->
+<title>Which QuickBooks Plan Is Right for You? · Free ProAdvisor Advisory · TechBrot</title>
+<meta name="description" content="An independent Certified QuickBooks ProAdvisor helps you pick the right product and plan — QuickBooks Online (Simple Start, Essentials, Plus, Advanced), Desktop, or Enterprise. Free 30-minute call. No commission, no upsell.">
+<link rel="canonical" href="https://techbrot.com/quickbooks/which-plan-is-right/">
+<link rel="alternate" hreflang="en-US" href="https://techbrot.com/quickbooks/which-plan-is-right/">
+<link rel="alternate" hreflang="x-default" href="https://techbrot.com/quickbooks/which-plan-is-right/">
+<meta property="og:url" content="https://techbrot.com/quickbooks/which-plan-is-right/">
+<meta property="og:title" content="Which QuickBooks Plan Is Right for You? · Free ProAdvisor Advisory">
+<meta property="og:description" content="An independent ProAdvisor helps you pick — Online, Desktop, or Enterprise. Free 30-minute call. No commission, no upsell.">
+<meta property="og:image" content="https://techbrot.com/assets/img/og/which-quickbooks-plan-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TechBrot — Which QuickBooks plan is right for your business?">
+<meta name="twitter:title" content="Which QuickBooks Plan Is Right? · Free ProAdvisor Advisory · TechBrot">
+<meta name="twitter:description" content="Independent ProAdvisor picks the right product and plan for your business. Free 30-minute call.">
+<meta name="twitter:image" content="https://techbrot.com/assets/img/og/which-quickbooks-plan-og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://techbrot.com/quickbooks/which-plan-is-right/#webpage",
+      "url": "https://techbrot.com/quickbooks/which-plan-is-right/",
+      "name": "Which QuickBooks Plan Is Right for You?",
+      "description": "An independent Certified QuickBooks ProAdvisor's decision framework for choosing the right QuickBooks product and plan — covering QuickBooks Online (Simple Start, Essentials, Plus, Advanced), QuickBooks Desktop (Pro, Premier, Mac), and QuickBooks Enterprise. Includes the decision factors that matter (user count, inventory complexity, industry needs, cloud vs local, CPA preference), common patterns by business profile, and a complimentary 30-minute plan-selection call with a Certified ProAdvisor.",
+      "isPartOf": { "@id": "https://techbrot.com/#website" },
+      "about": { "@id": "https://techbrot.com/#organization" },
+      "publisher": { "@id": "https://techbrot.com/#organization" },
+      "inLanguage": "en-US",
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://techbrot.com/assets/img/og/which-quickbooks-plan-og.png" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["#qwp-ai-summary", "#qwp-tldr-body"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://techbrot.com/quickbooks/which-plan-is-right/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://techbrot.com/" },
+        { "@type": "ListItem", "position": 2, "name": "QuickBooks", "item": "https://techbrot.com/quickbooks/" },
+        { "@type": "ListItem", "position": 3, "name": "Which Plan Is Right?" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://techbrot.com/quickbooks/which-plan-is-right/#service",
+      "name": "QuickBooks Plan Selection Advisory",
+      "serviceType": "QuickBooks plan and product selection advisory",
+      "description": "A complimentary 30-minute call with a Certified QuickBooks ProAdvisor to assess which QuickBooks product (Online, Desktop, or Enterprise) and which plan tier fits the business. Independent advisory with no commission, no affiliate revenue, and no upsell incentive. Delivered by Certified ProAdvisors. Does not include income-tax filing, IRS representation, audit, or assurance.",
+      "provider": { "@id": "https://techbrot.com/#organization" },
+      "areaServed": { "@type": "Country", "name": "United States" },
+      "audience": { "@type": "BusinessAudience", "audienceType": "U.S. businesses choosing or reconsidering a QuickBooks plan" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Complimentary 30-minute plan-selection call with a Certified ProAdvisor." }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://techbrot.com/quickbooks/which-plan-is-right/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do I choose the right QuickBooks plan?", "acceptedAnswer": { "@type": "Answer", "text": "Five factors decide it: how many people need to work in the file simultaneously, whether you need inventory tracking, whether you need class or location tracking for departmental reporting, whether your industry has specific accounting needs (manufacturing, construction, nonprofit, retail), and whether you need cloud access or work in a local-only environment. These five together point to a specific product tier — Online Simple Start, Essentials, Plus, or Advanced; Desktop Pro, Premier, or Mac; or Enterprise. The honest answer for most businesses is QuickBooks Online Plus, but the edges matter and getting them wrong costs real money in plan-juggling, file migration, or feature workarounds. A 30-minute call with a Certified ProAdvisor sorts it correctly the first time." } },
+        { "@type": "Question", "name": "What's the difference between QuickBooks Online and QuickBooks Desktop?", "acceptedAnswer": { "@type": "Answer", "text": "QuickBooks Online is cloud-based and accessed via browser or mobile app, billed monthly per subscription. QuickBooks Desktop is locally installed software with annual subscription pricing. Online provides real-time multi-user cloud access, a larger native app ecosystem, automatic updates, and receives most new feature development. Desktop offers deeper inventory features (particularly in Enterprise), more flexible reporting at lower tiers, and runs without internet connectivity. For most US small and mid-sized businesses, Online is the better default; for businesses with deep inventory, industry-specific Desktop workflows, or specific reasons to stay local, Desktop or Enterprise is still genuinely right." } },
+        { "@type": "Question", "name": "How many users can each QuickBooks plan support?", "acceptedAnswer": { "@type": "Answer", "text": "User capacity is one of the main differentiators across the QuickBooks lineup. QuickBooks Online: Simple Start supports 1 user, Essentials supports 3, Plus supports 5, Advanced supports 25 — all plus 2-3 free accountant logins. QuickBooks Desktop: Pro Plus supports up to 3 simultaneous users, Premier Plus up to 5, Mac Plus up to 3. QuickBooks Enterprise supports up to 40 simultaneous users. Accountant logins are typically separate from user counts and included free. The right tier depends on concurrent users — the number actually working in the file at the same time — not total employees." } },
+        { "@type": "Question", "name": "Which QuickBooks plan has inventory tracking?", "acceptedAnswer": { "@type": "Answer", "text": "QuickBooks inventory tracking starts at QuickBooks Online Plus (and Advanced) on the cloud side, with basic inventory tracking, item-level reporting, and reorder points. QuickBooks Desktop Premier adds inventory and forecasting beyond Pro's basic capability. QuickBooks Enterprise has by far the deepest inventory features: FIFO costing, serial and lot tracking, bin location tracking, multi-warehouse support, and assembly builds for manufacturers. If you need true multi-location stock management or serialized inventory, Enterprise is typically the answer; for standard product-based businesses, QBO Plus is usually sufficient." } },
+        { "@type": "Question", "name": "Do I need QuickBooks Plus or QuickBooks Advanced?", "acceptedAnswer": { "@type": "Answer", "text": "QuickBooks Online Plus fits most small businesses needing inventory, projects, or class/location tracking, with up to 5 users. QuickBooks Online Advanced adds workflow automation, batch invoicing, custom user roles, dedicated support, deeper custom reporting, and supports up to 25 users. The honest test for Advanced: do you have 10+ people working in the file regularly, do you need automation Plus doesn't offer, or do you need custom reporting beyond Plus's capabilities? If yes to any, Advanced is the right call. If not, Plus is usually sufficient and significantly cheaper." } },
+        { "@type": "Question", "name": "Is QuickBooks Self-Employed the same as QuickBooks Online?", "acceptedAnswer": { "@type": "Answer", "text": "No. QuickBooks Self-Employed is a separate Intuit product designed for sole proprietors and Schedule C filers — freelancers, independent contractors, and gig workers. It handles income and expense tracking, mileage logging, quarterly estimated tax estimates, and Schedule C export, but does not do double-entry bookkeeping, balance sheet reporting, AR/AP, or true business accounting. It's not a tier of QuickBooks Online and your data does not migrate easily between them. For any business operating as anything other than a sole proprietor, QuickBooks Online (starting at Simple Start) is the right product, not Self-Employed." } },
+        { "@type": "Question", "name": "Can I switch QuickBooks plans later?", "acceptedAnswer": { "@type": "Answer", "text": "Within QuickBooks Online, you can upgrade or downgrade between Simple Start, Essentials, Plus, and Advanced at any time from inside your QBO account — data carries over and billing is prorated. Switching between products (Online to Desktop, or Desktop to Enterprise) requires a migration, which is a larger project. Switching between QBO and Xero, or QBO and Desktop, is a full data migration. The honest read: getting the plan right the first time is significantly cheaper than fixing it later, which is why the free 30-minute selection call is the right place to start." } },
+        { "@type": "Question", "name": "Why is your QuickBooks plan selection advisory free?", "acceptedAnswer": { "@type": "Answer", "text": "Three reasons. First, plan selection is the cheapest part of the QuickBooks lifecycle but the most consequential — getting it wrong creates expensive cleanup work later. Second, the call lets us assess fit for downstream services (setup, migration, ongoing bookkeeping) where we do earn revenue, so investing 30 minutes upfront is good business for us. Third, as an independent ProAdvisor firm with no commission or affiliate revenue from Intuit, we have no incentive to push you to a higher tier — which means the honest answer might be 'pick Simple Start, you don't need more,' and we'd rather give that answer free than charge to deliver it." } }
+      ]
+    }
+  ]
+}
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>BSS-1-11ty</title>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/04-pages.css">
+    <link rel="stylesheet" href="../../assets/css/01-tokens.css">
+    <link rel="stylesheet" href="../../assets/css/02-base.css">
+    <link rel="stylesheet" href="../../assets/css/03-components.css">
+</head>
+
+<body><!-- ============================================================================
+     CHROME · utility bar + primary header + mobile drawer + search palette
+     ============================================================================ -->
+
+<div class="util-bar" role="region" aria-label="Secondary">
+  <div class="container util-bar__inner">
+    <p class="util-bar__trust">
+      <span class="util-bar__dot" aria-hidden="true"></span>
+      <span>Independent Certified QuickBooks ProAdvisor firm · U.S.-based</span>
+    </p>
+    <nav class="util-bar__nav" aria-label="For accountants and partners">
+      <a class="util-bar__link" href="/find-an-accountant/">Find an Accountant</a>
+      <a class="util-bar__link" href="/partners/">For Accountants →</a>
+    </nav>
+  </div>
+</div>
+
+<header class="site-header" role="banner" id="site-header" data-sticky="true">
+  <div class="container site-header__inner">
+
+    <a class="site-brand" href="/" aria-label="TechBrot home" title="TechBrot — A Modern Accounting Platform">
+      <img class="site-brand__mark" src="/assets/img/brand/icon.svg" alt="TechBrot" width="140" height="56" decoding="async" fetchpriority="high">
+    </a>
+
+    <nav class="site-nav site-nav--desktop" aria-label="Primary navigation" id="primary-nav">
+      <ul class="site-nav__list">
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-services" aria-haspopup="true">
+            Accounting
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-services" role="region" aria-label="Accounting services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Bookkeeping</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/">All bookkeeping →</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Financial Operations</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/payroll-management/">Payroll management</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/services/">All services →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/accounting/">Accounting overview →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-quickbooks" aria-haspopup="true">
+            QuickBooks
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-quickbooks" role="region" aria-label="QuickBooks services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">ProAdvisor Services</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/cleanup/">File cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/migration/">Desktop → Online migration</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/help/">QuickBooks help</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Products</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/proadvisor-team/">Our ProAdvisor team</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/">QuickBooks overview →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/legal/disclaimer/">Independent firm — not affiliated with Intuit →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/find-an-accountant/">Find an Accountant</a>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/pricing/">Pricing</a>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-why" aria-haspopup="true">
+            Why TechBrot
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu" id="nav-menu-why" role="region" aria-label="Why TechBrot" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Authority &amp; trust</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/trust/">Trust &amp; standards</a></li>
+                  <li><a class="nav-menu__link" href="/about/methodology/">Our methodology</a></li>
+                  <li><a class="nav-menu__link" href="/reviews/">Client reviews</a></li>
+                  <li><a class="nav-menu__link" href="/vs/">Comparisons</a></li>
+                  <li><a class="nav-menu__link" href="/about/">About &amp; team</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="site-header__utility">
+      <button class="site-search-trigger" type="button" aria-label="Search (press / or Cmd-K)" data-search-open="" title="Search — / or ⌘K">
+        <svg class="site-search-trigger__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+          <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+        </svg>
+        <span class="site-search-trigger__hint" aria-hidden="true"><kbd>/</kbd></span>
+      </button>
+
+      <a class="site-header__phone" href="tel:+18777515575" aria-label="Call TechBrot" data-cta="header-phone" title="Call TechBrot">
+        <span class="site-header__phone-label">Call</span>
+        <span class="site-header__phone-number">(877) 751-5575</span>
+      </a>
+
+      <a class="btn btn--primary btn--sm" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="header-primary" title="Book a discovery call">
+        Book a Call
+      </a>
+    </div>
+
+    <button class="site-header__mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+    </button>
+
+  </div>
+</header>
+
+<aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation" hidden="">
+  <div class="mobile-drawer__header">
+    <a class="site-brand" href="/" aria-label="TechBrot home">
+      <img class="site-brand__mark" src="/assets/img/brand/wordmark.png" alt="TechBrot" width="120" height="36">
+    </a>
+    <button class="mobile-drawer__close" type="button" aria-label="Close navigation menu" data-action="close-drawer">
+      <span class="mobile-drawer__close-x" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <nav class="mobile-drawer__nav" aria-label="Mobile primary navigation">
+    <ul class="mobile-drawer__list">
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-services">
+          <span>Accounting</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-services" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll management</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-quickbooks">
+          <span>QuickBooks</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-quickbooks" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/find-an-accountant/">Find an Accountant</a></li>
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/pricing/">Pricing</a></li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-why">
+          <span>Why TechBrot</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-why" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/about/methodology/">Our methodology</a></li>
+            <li><a href="/reviews/">Client reviews</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+            <li><a href="/about/">About &amp; team</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/partners/">For Accountants</a></li>
+    </ul>
+  </nav>
+
+  <div class="mobile-drawer__footer">
+    <a class="btn btn--primary btn--lg btn--full" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="mobile-primary">Book a Discovery Call</a>
+    <a class="mobile-drawer__phone" href="tel:+18777515575">(877) 751-5575</a>
+  </div>
+</aside>
+
+<div class="search-palette" id="search-palette" role="dialog" aria-modal="true" aria-label="Search TechBrot" hidden="">
+  <div class="search-palette__backdrop" data-search-close=""></div>
+  <div class="search-palette__panel" role="combobox" aria-expanded="true" aria-haspopup="listbox" aria-owns="search-results">
+    <div class="search-palette__field">
+      <svg class="search-palette__icon" width="20" height="20" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+        <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+      </svg>
+      <input class="search-palette__input" id="search-input" type="text" autocomplete="off" spellcheck="false" placeholder="Search services, QuickBooks, comparisons, states, Indiana topics…" aria-label="Search" aria-controls="search-results" aria-autocomplete="list">
+      <button class="search-palette__close" type="button" aria-label="Close search" data-search-close=""><kbd>Esc</kbd></button>
+    </div>
+    <div class="search-palette__body">
+      <ul class="search-palette__results" id="search-results" role="listbox" aria-label="Search results"></ul>
+      <div class="search-palette__suggested" id="search-suggested">
+        <p class="search-palette__suggested-label">Try</p>
+        <ul class="search-palette__chips" role="list">
+          <li><button type="button" class="search-chip" data-q="indiana cagit">Indiana CAGIT payroll</button></li>
+          <li><button type="button" class="search-chip" data-q="bookkeeping cleanup">Bookkeeping cleanup</button></li>
+          <li><button type="button" class="search-chip" data-q="quickbooks migration">QuickBooks migration</button></li>
+          <li><button type="button" class="search-chip" data-q="indianapolis">Indianapolis</button></li>
+          <li><button type="button" class="search-chip" data-q="manufacturing">Manufacturing accounting</button></li>
+          <li><button type="button" class="search-chip" data-q="pricing">Pricing</button></li>
+        </ul>
+      </div>
+      <p class="search-palette__empty" id="search-empty" hidden="">No matches. Try a service, “QuickBooks”, an Indiana topic, a city, or a comparison.</p>
+    </div>
+    <div class="search-palette__foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+<div class="page page--hub page--which-plan" data-page="which-plan">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <main id="main" role="main">
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="Breadcrumb" id="qwp-breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/">Home</a></li>
+          <li class="breadcrumb__item"><a href="/quickbooks/">QuickBooks</a></li>
+          <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Which Plan Is Right?</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- HUB HERO -->
+    <section class="section section--hub-hero" id="qwp-hero" aria-labelledby="qwp-hero-heading">
+      <div class="container">
+        <div class="hub-hero">
+          <p class="hub-hero__eyebrow"><span>QuickBooks plan selection</span></p>
+          <h1 class="hub-hero__heading" id="qwp-hero-heading">
+            Which QuickBooks plan<br>is right for your business?
+          </h1>
+          <p class="hub-hero__subheading">
+            <strong>Free 30-minute call with a Certified ProAdvisor.</strong> We assess your specific situation &mdash; user count, inventory needs, industry workflows, growth trajectory &mdash; and recommend the right QuickBooks product and plan tier. <em>No commission, no affiliate revenue, no upsell incentive.</em> Sometimes the honest answer is &ldquo;pick the cheapest tier, you don&rsquo;t need more,&rdquo; and we&rsquo;d rather give that answer than push you toward something you don&rsquo;t need.
+          </p>
+          <div class="hub-hero__actions" role="group" aria-label="Primary actions">
+            <a class="btn btn--primary btn--lg" href="/contact/?intent=qwp-advisory" data-cta="qwp-hero-primary">Book Free Plan-Selection Call</a>
+            <a class="btn btn--ghost btn--lg" href="#qwp-framework" data-cta="qwp-hero-secondary">See the Decision Framework</a>
+          </div>
+          <ul class="hub-hero__stats" role="list">
+            <li class="hub-hero__stat"><p class="hub-hero__stat-number">$0</p><p class="hub-hero__stat-label">Cost of the advisory call</p></li>
+            <li class="hub-hero__stat"><p class="hub-hero__stat-number">30 min</p><p class="hub-hero__stat-label">Typical call length</p></li>
+            <li class="hub-hero__stat"><p class="hub-hero__stat-number">0</p><p class="hub-hero__stat-label">Affiliate or referral commissions</p></li>
+            <li class="hub-hero__stat"><p class="hub-hero__stat-number">9</p><p class="hub-hero__stat-label">QuickBooks tiers and editions covered</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROADVISOR CREDENTIAL STRIP -->
+    <section class="section section--proadvisor-credentials" id="qwp-credentials" aria-labelledby="qwp-credentials-heading">
+      <div class="container">
+        <h2 class="proadvisor-credentials__heading sr-only" id="qwp-credentials-heading">Certified QuickBooks ProAdvisor credentials</h2>
+        <div class="proadvisor-credentials">
+          <div class="proadvisor-credentials__lede">
+            <p class="proadvisor-credentials__eyebrow">Certified by Intuit</p>
+            <p class="proadvisor-credentials__statement">Plan-selection advice is only as good as the depth of QuickBooks knowledge behind it. Every TechBrot ProAdvisor holds active certifications across the entire QuickBooks product line &mdash; Online (Level 2), Desktop, Enterprise, and Payroll &mdash; meaning the recommendation you get comes from someone fluent in all of them, not just the one we&rsquo;d like to sell. Verification available on request.</p>
+          </div>
+          <ul class="proadvisor-credentials__badges" role="list" aria-label="QuickBooks ProAdvisor certifications">
+            <li class="proadvisor-credentials__badge">
+              <img src="/assets/img/badges/proadvisor-online.svg" alt="QuickBooks Online ProAdvisor (Level 2)" width="96" height="40" loading="lazy" decoding="async">
+              <span class="proadvisor-credentials__badge-label">Online (L2)</span>
+            </li>
+            <li class="proadvisor-credentials__badge">
+              <img src="/assets/img/badges/proadvisor-desktop.svg" alt="QuickBooks Desktop ProAdvisor" width="96" height="40" loading="lazy" decoding="async">
+              <span class="proadvisor-credentials__badge-label">Desktop</span>
+            </li>
+            <li class="proadvisor-credentials__badge">
+              <img src="/assets/img/badges/proadvisor-enterprise.svg" alt="QuickBooks Enterprise ProAdvisor" width="96" height="40" loading="lazy" decoding="async">
+              <span class="proadvisor-credentials__badge-label">Enterprise</span>
+            </li>
+            <li class="proadvisor-credentials__badge">
+              <img src="/assets/img/badges/proadvisor-payroll.svg" alt="QuickBooks Payroll ProAdvisor" width="96" height="40" loading="lazy" decoding="async">
+              <span class="proadvisor-credentials__badge-label">Payroll</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TL;DR -->
+    <section class="section section--tldr" id="qwp-tldr" aria-labelledby="qwp-tldr-heading">
+      <div class="container container--narrow">
+        <div class="tldr">
+          <p class="tldr__eyebrow">In one paragraph</p>
+          <h2 class="tldr__heading" id="qwp-tldr-heading">How to pick the right QuickBooks plan.</h2>
+          <p class="tldr__body" id="qwp-tldr-body">
+            Choosing the right QuickBooks plan comes down to <strong>five factors</strong>: <strong>how many users</strong> need to work in the file simultaneously, whether you need <strong>inventory tracking</strong>, whether you need <strong>class or location tracking</strong> for departmental reporting, whether your <strong>industry has specific accounting needs</strong> (manufacturing, construction, nonprofit, retail), and whether you need <strong>cloud access</strong> or work in a local-only environment. These five together point to a specific product and tier: <a href="/quickbooks/online/">QuickBooks Online</a> Simple Start, Essentials, Plus, or Advanced for most US small businesses; <a href="/quickbooks/desktop/">QuickBooks Desktop</a> Pro, Premier, or Mac for businesses with reasons to stay local; or <a href="/quickbooks/enterprise/">QuickBooks Enterprise</a> for mid-market businesses with serious inventory or industry-specific needs. <strong>The honest answer for most US small businesses is QuickBooks Online Plus</strong>, but the edges matter &mdash; and getting the choice wrong costs real money in plan-juggling, file migration, or feature workarounds. The complimentary 30-minute call with a Certified ProAdvisor sorts it correctly the first time. <em>We earn nothing from your QuickBooks subscription</em> &mdash; no affiliate revenue, no referral commissions, no Intuit kickback &mdash; so the recommendation reflects what fits your business, not what pays us. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI SUMMARY -->
+    <section class="section section--ai-summary" id="qwp-ai-summary" aria-labelledby="qwp-ai-summary-heading">
+      <div class="container container--narrow">
+        <header class="section__header">
+          <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+          <h2 class="section__heading" id="qwp-ai-summary-heading">QuickBooks plan selection, in five questions.</h2>
+        </header>
+        <dl class="ai-summary__list">
+          <div class="ai-summary__item"><dt class="ai-summary__question">How do I choose?</dt><dd class="ai-summary__answer"><p>Five factors: <strong>user count, inventory needs, class/location tracking, industry-specific workflows, cloud vs local</strong>. Together they point to a specific product and tier. <strong>QBO Plus fits most US small businesses</strong>; the edges (Enterprise for deep inventory, Desktop for specific industries, Advanced for 10+ users) matter.</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">QBO or Desktop?</dt><dd class="ai-summary__answer"><p><strong>QBO</strong>: cloud, multi-user from anywhere, larger app ecosystem, new features first. Default for most US small businesses. <strong>Desktop</strong>: local install, deeper inventory (especially Enterprise), industry-specific workflows in Premier/Enterprise, runs without internet. Right for specific operational profiles.</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">How many users do I need?</dt><dd class="ai-summary__answer"><p><strong>QBO</strong>: Simple Start 1, Essentials 3, Plus 5, Advanced 25. <strong>Desktop</strong>: Pro 3, Premier 5, Mac 3. <strong>Enterprise</strong>: up to 40. Count <em>concurrent</em> users (working at the same time), not total employees. Accountant logins are usually free and separate.</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">Which has inventory?</dt><dd class="ai-summary__answer"><p>Inventory starts at <strong>QBO Plus</strong> (basic) and <strong>Desktop Premier</strong> (with forecasting). <strong>Enterprise</strong> has the deepest: FIFO, serial/lot, bin tracking, multi-warehouse, assemblies. Standard product business &rarr; QBO Plus. Complex inventory &rarr; Enterprise.</p></dd></div>
+          <div class="ai-summary__item"><dt class="ai-summary__question">Why is the call free?</dt><dd class="ai-summary__answer"><p>Three reasons: <strong>plan selection is the most consequential decision but the cheapest part of the lifecycle</strong> &mdash; getting it wrong creates expensive cleanup later; the call assesses fit for downstream services (setup, migration, monthly bookkeeping) where we earn revenue; and as an independent firm with no commission, we&rsquo;d rather give the honest answer free than charge for it.</p></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- THE FIVE DECISION FACTORS (why-grid) -->
+    <section class="section section--qwp-framework" id="qwp-framework" aria-labelledby="qwp-framework-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">The decision framework</p>
+          <h2 class="section__heading" id="qwp-framework-heading">Five factors that decide the right plan.</h2>
+          <p class="section__lede">Every QuickBooks plan question reduces to these five. Map your business honestly against each, and the right product and tier becomes obvious &mdash; or obviously needs a ProAdvisor&rsquo;s read.</p>
+        </header>
+        <ul class="why-grid" role="list">
+          <li class="why-card">
+            <p class="why-card__number">01</p>
+            <h3 class="why-card__heading">Concurrent users</h3>
+            <p class="why-card__body">Not total employees &mdash; the number of people who need to work in the file <em>at the same time</em>. <strong>1 user &rarr;</strong> QBO Simple Start, Desktop Pro/Mac. <strong>2&ndash;3 &rarr;</strong> QBO Essentials, Desktop Pro/Mac. <strong>4&ndash;5 &rarr;</strong> QBO Plus, Desktop Premier. <strong>6&ndash;25 &rarr;</strong> QBO Advanced. <strong>26&ndash;40 &rarr;</strong> Enterprise. Accountant logins are usually separate and free.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">02</p>
+            <h3 class="why-card__heading">Inventory complexity</h3>
+            <p class="why-card__body"><strong>No inventory &rarr;</strong> any tier works. <strong>Basic product tracking &rarr;</strong> QBO Plus or Advanced (item lists, reorder points, basic stock). <strong>Multi-warehouse, serial/lot, FIFO, assemblies &rarr;</strong> Enterprise. Inventory is the single biggest reason businesses genuinely need to step up tiers &mdash; or down to Enterprise from QBO.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">03</p>
+            <h3 class="why-card__heading">Class &amp; location tracking</h3>
+            <p class="why-card__body">If you need <strong>P&amp;L by department, location, division, business line, or project</strong>, you need class or location tracking. QBO Plus and Advanced support it; Simple Start and Essentials don&rsquo;t. Most businesses underuse this feature &mdash; but for those who need it, it&rsquo;s a hard requirement that sets the minimum tier.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">04</p>
+            <h3 class="why-card__heading">Industry-specific needs</h3>
+            <p class="why-card__body"><strong>Manufacturing</strong> (assemblies, BOM): Enterprise Manufacturing &amp; Wholesale. <strong>Construction</strong> (job costing, AIA invoicing, certified payroll): Desktop Premier Contractor or Enterprise Contractor. <strong>Nonprofit</strong> (fund accounting, Form 990): Desktop Premier Nonprofit or Enterprise Nonprofit. <strong>Retail, professional services</strong>: similar tier logic. Industry depth is where Desktop and Enterprise outperform QBO meaningfully.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">05</p>
+            <h3 class="why-card__heading">Cloud vs local</h3>
+            <p class="why-card__body"><strong>Cloud access required</strong> (remote team, multi-location, mobile access): QBO &mdash; any tier. <strong>Cloud preferred but not required</strong>: QBO usually still wins (apps, updates, CPA fluency). <strong>Genuine local-only operations</strong> (low bandwidth, air-gapped, specific compliance): Desktop or Enterprise. Note: Enterprise hosted tiers add cloud access on top of the Enterprise feature set.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">06</p>
+            <h3 class="why-card__heading">Your CPA&rsquo;s preference</h3>
+            <p class="why-card__body">Often overlooked, often decisive. <strong>If your CPA works primarily in QBO</strong> (most US CPAs do now), the fee savings and friction reduction usually outweigh other factors. <strong>If your CPA prefers Desktop</strong> (particularly common for construction, manufacturing, certain professional services), that&rsquo;s a real signal. Ask before deciding.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- COMMON PATTERNS (signal-grid) -->
+    <section class="section section--cleanup-signals" id="qwp-patterns" aria-labelledby="qwp-patterns-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Common business patterns</p>
+          <h2 class="section__heading" id="qwp-patterns-heading">What we typically recommend, by business profile.</h2>
+          <p class="section__lede">These aren&rsquo;t rules &mdash; every business has nuances &mdash; but they&rsquo;re the patterns we see most often. Find the one closest to your situation, then book the call to confirm the specifics.</p>
+        </header>
+        <ul class="signal-grid" role="list">
+          <li class="signal-card"><h3 class="signal-card__heading">Solo freelancer or consultant</h3><p class="signal-card__body">No employees, simple income/expense tracking, one or two clients invoicing per month, no inventory. <strong>Usually:</strong> <a href="/quickbooks/online/">QBO Simple Start</a>. Don&rsquo;t pay for tiers you don&rsquo;t need.</p></li>
+          <li class="signal-card"><h3 class="signal-card__heading">Small service business, 2&ndash;5 people</h3><p class="signal-card__body">Service business (agency, consultancy, professional services), few bills to manage, no inventory, simple reporting. <strong>Usually:</strong> QBO Essentials or Plus, depending on whether class tracking matters.</p></li>
+          <li class="signal-card"><h3 class="signal-card__heading">Product business, 5&ndash;15 people</h3><p class="signal-card__body">E-commerce, small retail, light wholesale &mdash; basic inventory matters but not multi-warehouse. <strong>Usually:</strong> QBO Plus. Step to Advanced only if user count or reporting depth demands it.</p></li>
+          <li class="signal-card"><h3 class="signal-card__heading">Construction, 5&ndash;25 people</h3><p class="signal-card__body">Job costing, change orders, progress invoicing, certified payroll. <strong>Usually:</strong> <a href="/quickbooks/desktop/">Desktop Premier Contractor</a> or <a href="/quickbooks/enterprise/">Enterprise Contractor</a> &mdash; QBO doesn&rsquo;t match the job-costing depth.</p></li>
+          <li class="signal-card"><h3 class="signal-card__heading">Manufacturer or wholesaler</h3><p class="signal-card__body">Assemblies, bill of materials, multi-warehouse stock, serial or lot tracking. <strong>Usually:</strong> <a href="/quickbooks/enterprise/">Enterprise Manufacturing &amp; Wholesale</a>. QBO inventory isn&rsquo;t deep enough for genuine manufacturing.</p></li>
+          <li class="signal-card"><h3 class="signal-card__heading">Larger SMB, 10&ndash;30 people, no deep inventory</h3><p class="signal-card__body">Growing business, multiple departments, custom reporting needs, automation matters. <strong>Usually:</strong> QBO Advanced. Only step to Enterprise if inventory or industry-specific needs genuinely require it.</p></li>
+        </ul>
+        <div class="cleanup-signals__cta">
+          <a class="btn btn--text" href="/contact/?intent=qwp-advisory" data-cta="qwp-patterns-cta">Confirm yours in the free call &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE FULL QUICKBOOKS PRODUCT MAP (hub-service-grid --six) -->
+    <section class="section section--bookkeeping-services" id="qwp-products" aria-labelledby="qwp-products-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">The full QuickBooks product map</p>
+          <h2 class="section__heading" id="qwp-products-heading">Nine tiers and editions, one decision.</h2>
+          <p class="section__lede">The complete QuickBooks landscape, organized by where each product fits in the lineup. Click through to any product hub for the deep read &mdash; or book the call and we&rsquo;ll walk you through it directly.</p>
+        </header>
+
+        <ul class="hub-service-grid hub-service-grid--six" role="list">
+
+          <li class="hub-service-tile" data-product="qbo-simple-start">
+            <article>
+              <p class="hub-service-tile__eyebrow">01 &middot; QBO entry</p>
+              <h3 class="hub-service-tile__heading">QuickBooks Online Simple Start</h3>
+              <p class="hub-service-tile__lede">Single-user QBO. Core bookkeeping, invoicing, expense tracking, sales tax, basic reports. The right call for freelancers and very small service businesses without bill-management or multi-user needs.</p>
+              <dl class="hub-service-tile__meta">
+                <div><dt>Users</dt><dd>1 (+ 2 accountant)</dd></div>
+                <div><dt>Best for</dt><dd>Solo freelancers, very small services</dd></div>
+              </dl>
+              <a class="hub-service-tile__cta" href="/quickbooks/online/">QBO overview &rarr;</a>
+            </article>
+          </li>
+
+          <li class="hub-service-tile" data-product="qbo-essentials">
+            <article>
+              <p class="hub-service-tile__eyebrow">02 &middot; QBO multi-user</p>
+              <h3 class="hub-service-tile__heading">QuickBooks Online Essentials</h3>
+              <p class="hub-service-tile__lede">Adds bill management, multi-user access (3), and basic time tracking. The first tier most growing service businesses outgrow Simple Start into.</p>
+              <dl class="hub-service-tile__meta">
+                <div><dt>Users</dt><dd>3 (+ 2 accountant)</dd></div>
+                <div><dt>Best for</dt><dd>Small teams, bill-heavy services</dd></div>
+              </dl>
+              <a class="hub-service-tile__cta" href="/quickbooks/online/">QBO overview &rarr;</a>
+            </article>
+          </li>
+
+          <li class="hub-service-tile hub-service-tile--featured" data-product="qbo-plus">
+            <article>
+              <p class="hub-service-tile__eyebrow">03 &middot; Most common answer</p>
+              <h3 class="hub-service-tile__heading">QuickBooks Online Plus</h3>
+              <p class="hub-service-tile__lede">Adds inventory, projects, and class/location tracking. <strong>The honest default for most US small businesses</strong> &mdash; product businesses, multi-department service firms, anyone needing departmental reporting.</p>
+              <dl class="hub-service-tile__meta">
+                <div><dt>Users</dt><dd>5 (+ 2 accountant)</dd></div>
+                <div><dt>Best for</dt><dd>Most US small businesses</dd></div>
+              </dl>
+              <a class="hub-service-tile__cta" href="/quickbooks/online/">QBO overview &rarr;</a>
+            </article>
+          </li>
+
+          <li class="hub-service-tile" data-product="qbo-advanced">
+            <article>
+              <p class="hub-service-tile__eyebrow">04 &middot; QBO top tier</p>
+              <h3 class="hub-service-tile__heading">QuickBooks Online Advanced</h3>
+              <p class="hub-service-tile__lede">Adds workflow automation, batch invoicing, custom user roles, dedicated support, deeper custom reporting. Right when 10+ users or automation needs push past Plus.</p>
+              <dl class="hub-service-tile__meta">
+                <div><dt>Users</dt><dd>25 (+ 3 accountant)</dd></div>
+                <div><dt>Best for</dt><dd>Larger SMBs needing automation</dd></div>
+              </dl>
+              <a class="hub-service-tile__cta" href="/quickbooks/online/">QBO overview &rarr;</a>
+            </article>
+          </li>
+
+          <li class="hub-service-tile" data-product="desktop">
+            <article>
+              <p class="hub-service-tile__eyebrow">05 &middot; Local install</p>
+              <h3 class="hub-service-tile__heading">QuickBooks Desktop (Pro / Premier / Mac)</h3>
+              <p class="hub-service-tile__lede">Locally installed Desktop. Pro for general use, Premier for industry editions (Contractor, Manufacturing, Nonprofit, etc.), Mac for Mac-only environments. Intuit has restricted new sales of Pro and Premier; Mac still actively sold.</p>
+              <dl class="hub-service-tile__meta">
+                <div><dt>Users</dt><dd>Up to 5 (Premier)</dd></div>
+                <div><dt>Best for</dt><dd>Industry-specific Desktop workflows</dd></div>
+              </dl>
+              <a class="hub-service-tile__cta" href="/quickbooks/desktop/">Desktop overview &rarr;</a>
+            </article>
+          </li>
+
+          <li class="hub-service-tile" data-product="enterprise">
+            <article>
+              <p class="hub-service-tile__eyebrow">06 &middot; Mid-market</p>
+              <h3 class="hub-service-tile__heading">QuickBooks Enterprise</h3>
+              <p class="hub-service-tile__lede">Mid-market product, up to 40 users. Advanced inventory (FIFO, serial/lot, bins, multi-warehouse), advanced reporting, six industry editions. The Desktop product Intuit is still actively developing.</p>
+              <dl class="hub-service-tile__meta">
+                <div><dt>Users</dt><dd>Up to 40</dd></div>
+                <div><dt>Best for</dt><dd>Mid-market, deep inventory, industry depth</dd></div>
+              </dl>
+              <a class="hub-service-tile__cta" href="/quickbooks/enterprise/">Enterprise overview &rarr;</a>
+            </article>
+          </li>
+
+        </ul>
+
+        <div class="plan-comparison__footer">
+          <p class="plan-comparison__footer-lede">Don&rsquo;t see your situation cleanly fitting one of these? That&rsquo;s exactly what the free call is for. <a href="/contact/?intent=qwp-advisory">Book a 30-minute plan-selection call</a> &mdash; we&rsquo;ll map your specific business against the full product line and recommend the right answer.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHEN OUR ADVICE GETS NUANCED (scope-grid) -->
+    <section class="section section--process" id="qwp-nuance" aria-labelledby="qwp-nuance-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Where the call earns its keep</p>
+          <h2 class="section__heading" id="qwp-nuance-heading">Three situations where the answer isn&rsquo;t obvious.</h2>
+          <p class="section__lede">Most plan decisions are straightforward. These three patterns are where having a ProAdvisor genuinely matters &mdash; because the right answer depends on variables that don&rsquo;t show up on any comparison page.</p>
+        </header>
+        <ul class="scope-grid" role="list">
+          <li class="scope-card">
+            <h3 class="scope-card__heading">Between QBO Plus and Advanced</h3>
+            <p class="scope-card__body">The price gap between Plus and Advanced is significant, and most businesses considering Advanced don&rsquo;t actually need it. The honest test isn&rsquo;t &ldquo;could we use the automation features?&rdquo; &mdash; it&rsquo;s &ldquo;would we actually <em>use</em> them, and is custom reporting genuinely required, and do we have 10+ users?&rdquo; A ProAdvisor sorts this without bias toward the higher-priced tier.</p>
+          </li>
+          <li class="scope-card">
+            <h3 class="scope-card__heading">Between QBO Advanced and Enterprise</h3>
+            <p class="scope-card__body">Both serve businesses in similar revenue ranges, but they solve different problems. <strong>QBO Advanced</strong> wins on cloud-native multi-user, app ecosystem, CPA familiarity. <strong>Enterprise</strong> wins on inventory depth, industry-specific features, ODBC database access. The decision usually hinges on inventory complexity and industry needs, not on size alone &mdash; and the ProAdvisor reads those factors against your specific operations.</p>
+          </li>
+          <li class="scope-card">
+            <h3 class="scope-card__heading">Between Enterprise and a real ERP</h3>
+            <p class="scope-card__body">If you&rsquo;re hitting Enterprise&rsquo;s ceiling &mdash; multi-entity consolidation, large-scale manufacturing complexity, audit/SOC requirements &mdash; the right answer might be <strong>NetSuite, Sage Intacct, or Microsoft Dynamics</strong>, not Enterprise. We don&rsquo;t do ERP implementations, but we&rsquo;ll tell you honestly when you&rsquo;ve outgrown QuickBooks entirely and refer you to qualified ERP partners. Saying &ldquo;you need something else&rdquo; is exactly what independence is for.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- WHAT THE CALL ACTUALLY COVERS (why-grid) -->
+    <section class="section section--qwp-call" id="qwp-call" aria-labelledby="qwp-call-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">What happens on the call</p>
+          <h2 class="section__heading" id="qwp-call-heading">Thirty minutes. No pitch. Just the answer.</h2>
+          <p class="section__lede">Here&rsquo;s exactly what a Certified ProAdvisor will cover in the free 30-minute plan-selection call &mdash; so you know what to expect and what to have ready.</p>
+        </header>
+        <ul class="why-grid" role="list">
+          <li class="why-card">
+            <p class="why-card__number">01</p>
+            <h3 class="why-card__heading">Your operations</h3>
+            <p class="why-card__body">Business type, industry, revenue range, growth trajectory, current accounting setup (if any). Five minutes; we just need enough context to think about your situation accurately.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">02</p>
+            <h3 class="why-card__heading">The five factors</h3>
+            <p class="why-card__body">Concurrent user count, inventory needs, class/location tracking needs, industry-specific workflows, cloud vs local preference. Ten minutes; we walk each factor against your business.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">03</p>
+            <h3 class="why-card__heading">CPA &amp; integration alignment</h3>
+            <p class="why-card__body">Your CPA&rsquo;s platform preference, your existing app stack (payments, payroll, e-commerce, receipt capture), and any integrations that constrain the choice. Five minutes; this often decides the close calls.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">04</p>
+            <h3 class="why-card__heading">The recommendation</h3>
+            <p class="why-card__body">A specific product and tier recommendation, plus the reasoning. If it&rsquo;s a close call, the trade-offs. If the honest answer is &ldquo;none of these &mdash; you need an ERP,&rdquo; we say that too. Five minutes.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">05</p>
+            <h3 class="why-card__heading">Next steps</h3>
+            <p class="why-card__body">If you want help with <a href="/quickbooks/setup/">setup</a>, <a href="/quickbooks/migration/">migration</a>, or ongoing <a href="/accounting/bookkeeping/monthly-bookkeeping/">monthly bookkeeping</a>, we scope those separately in writing. If not, you have your answer and we&rsquo;re done. Five minutes.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">06</p>
+            <h3 class="why-card__heading">What we don&rsquo;t do</h3>
+            <p class="why-card__body">No pitch, no follow-up sales sequence, no commission-driven recommendation, no upsell pressure. If the right answer is &ldquo;pick the cheapest tier, you don&rsquo;t need more,&rdquo; that&rsquo;s exactly what you&rsquo;ll hear.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- OPERATOR BLOCK -->
+    <section class="section section--cleanup-operator" id="qwp-operator" aria-labelledby="qwp-operator-heading">
+      <div class="container">
+        <div class="operator-block">
+          <div class="operator-block__copy">
+            <p class="section__eyebrow">Who delivers the advice</p>
+            <h2 class="section__heading" id="qwp-operator-heading">Certified across every QuickBooks product. No commission on any of them.</h2>
+            <p class="operator-block__lede">Plan-selection advice is only as good as the depth of QuickBooks knowledge behind it. Every TechBrot ProAdvisor holds active certifications across the entire QuickBooks product line &mdash; Online Level 2, Desktop, Enterprise, and Payroll. The recommendation you get comes from someone fluent in all of them, not someone who&rsquo;s only worked in one.</p>
+            <p class="operator-block__lede">Critically: we earn nothing from your QuickBooks subscription, regardless of which product or tier you pick. No Intuit affiliate revenue, no referral commissions, no kickback on Enterprise sales. The independence is structural &mdash; which is what makes the recommendation worth giving free.</p>
+            <div class="operator-block__actions">
+              <a class="btn btn--ghost" href="/quickbooks/proadvisor-team/" data-cta="qwp-operator-team">Meet the ProAdvisor team</a>
+              <a class="btn btn--text" href="/trust/" data-cta="qwp-operator-trust">Trust &amp; methodology &rarr;</a>
+            </div>
+          </div>
+          <aside class="operator-block__credentials" aria-label="Operator credentials">
+            <ul class="credential-list">
+              <li class="credential-item"><p class="credential-item__label">Certification</p><p class="credential-item__detail">Certified across QuickBooks Online (L2), Desktop, Enterprise, and Payroll</p></li>
+              <li class="credential-item"><p class="credential-item__label">Commission</p><p class="credential-item__detail">Zero &mdash; on any QuickBooks product, at any tier</p></li>
+              <li class="credential-item"><p class="credential-item__label">Call cost</p><p class="credential-item__detail">Complimentary, 30 minutes, no obligation</p></li>
+              <li class="credential-item"><p class="credential-item__label">Independence</p><p class="credential-item__detail">Independent ProAdvisor firm, not affiliated with Intuit Inc.</p></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (FLAT — 8 citable Q&As) -->
+    <section class="section section--faq" id="qwp-faq" aria-labelledby="qwp-faq-heading">
+      <div class="container container--narrow">
+        <header class="section__header">
+          <p class="section__eyebrow">QuickBooks plan-selection questions</p>
+          <h2 class="section__heading" id="qwp-faq-heading">What people ask about picking a QuickBooks plan.</h2>
+        </header>
+        <dl class="faq__list">
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qwp-faq-1" id="qwp-faq-q-1">How do I choose the right QuickBooks plan?</button></dt>
+            <dd class="faq__answer" id="qwp-faq-1" role="region" aria-labelledby="qwp-faq-q-1"><p>Five factors decide it: how many people need to work in the file simultaneously, whether you need inventory tracking, whether you need class or location tracking for departmental reporting, whether your industry has specific accounting needs (manufacturing, construction, nonprofit, retail), and whether you need cloud access or work in a local-only environment. These five together point to a specific product tier &mdash; <a href="/quickbooks/online/">Online</a> Simple Start, Essentials, Plus, or Advanced; <a href="/quickbooks/desktop/">Desktop</a> Pro, Premier, or Mac; or <a href="/quickbooks/enterprise/">Enterprise</a>. The honest answer for most businesses is QuickBooks Online Plus, but the edges matter and getting them wrong costs real money in plan-juggling, file migration, or feature workarounds. A 30-minute call with a Certified ProAdvisor sorts it correctly the first time.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qwp-faq-2" id="qwp-faq-q-2">What&rsquo;s the difference between QuickBooks Online and QuickBooks Desktop?</button></dt>
+            <dd class="faq__answer" id="qwp-faq-2" role="region" aria-labelledby="qwp-faq-q-2"><p><a href="/quickbooks/online/">QuickBooks Online</a> is cloud-based and accessed via browser or mobile app, billed monthly per subscription. <a href="/quickbooks/desktop/">QuickBooks Desktop</a> is locally installed software with annual subscription pricing. Online provides real-time multi-user cloud access, a larger native app ecosystem, automatic updates, and receives most new feature development. Desktop offers deeper inventory features (particularly in Enterprise), more flexible reporting at lower tiers, and runs without internet connectivity. For most US small and mid-sized businesses, Online is the better default; for businesses with deep inventory, industry-specific Desktop workflows, or specific reasons to stay local, Desktop or Enterprise is still genuinely right.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qwp-faq-3" id="qwp-faq-q-3">How many users can each QuickBooks plan support?</button></dt>
+            <dd class="faq__answer" id="qwp-faq-3" role="region" aria-labelledby="qwp-faq-q-3"><p>User capacity is one of the main differentiators across the QuickBooks lineup. QuickBooks Online: Simple Start supports 1 user, Essentials supports 3, Plus supports 5, Advanced supports 25 &mdash; all plus 2&ndash;3 free accountant logins. QuickBooks Desktop: Pro Plus supports up to 3 simultaneous users, Premier Plus up to 5, Mac Plus up to 3. <a href="/quickbooks/enterprise/">QuickBooks Enterprise</a> supports up to 40 simultaneous users. Accountant logins are typically separate from user counts and included free. The right tier depends on concurrent users &mdash; the number actually working in the file at the same time &mdash; not total employees.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qwp-faq-4" id="qwp-faq-q-4">Which QuickBooks plan has inventory tracking?</button></dt>
+            <dd class="faq__answer" id="qwp-faq-4" role="region" aria-labelledby="qwp-faq-q-4"><p>QuickBooks inventory tracking starts at QuickBooks Online Plus (and Advanced) on the cloud side, with basic inventory tracking, item-level reporting, and reorder points. QuickBooks Desktop Premier adds inventory and forecasting beyond Pro&rsquo;s basic capability. <a href="/quickbooks/enterprise/">QuickBooks Enterprise</a> has by far the deepest inventory features: FIFO costing, serial and lot tracking, bin location tracking, multi-warehouse support, and assembly builds for manufacturers. If you need true multi-location stock management or serialized inventory, Enterprise is typically the answer; for standard product-based businesses, QBO Plus is usually sufficient.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qwp-faq-5" id="qwp-faq-q-5">Do I need QuickBooks Plus or QuickBooks Advanced?</button></dt>
+            <dd class="faq__answer" id="qwp-faq-5" role="region" aria-labelledby="qwp-faq-q-5"><p>QuickBooks Online Plus fits most small businesses needing inventory, projects, or class/location tracking, with up to 5 users. QuickBooks Online Advanced adds workflow automation, batch invoicing, custom user roles, dedicated support, deeper custom reporting, and supports up to 25 users. The honest test for Advanced: do you have 10+ people working in the file regularly, do you need automation Plus doesn&rsquo;t offer, or do you need custom reporting beyond Plus&rsquo;s capabilities? If yes to any, Advanced is the right call. If not, Plus is usually sufficient and significantly cheaper.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qwp-faq-6" id="qwp-faq-q-6">Is QuickBooks Self-Employed the same as QuickBooks Online?</button></dt>
+            <dd class="faq__answer" id="qwp-faq-6" role="region" aria-labelledby="qwp-faq-q-6"><p>No. QuickBooks Self-Employed is a separate Intuit product designed for sole proprietors and Schedule C filers &mdash; freelancers, independent contractors, and gig workers. It handles income and expense tracking, mileage logging, quarterly estimated tax estimates, and Schedule C export, but does not do double-entry bookkeeping, balance sheet reporting, AR/AP, or true business accounting. It&rsquo;s not a tier of QuickBooks Online and your data does not migrate easily between them. For any business operating as anything other than a sole proprietor, <a href="/quickbooks/online/">QuickBooks Online</a> (starting at Simple Start) is the right product, not Self-Employed.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qwp-faq-7" id="qwp-faq-q-7">Can I switch QuickBooks plans later?</button></dt>
+            <dd class="faq__answer" id="qwp-faq-7" role="region" aria-labelledby="qwp-faq-q-7"><p>Within QuickBooks Online, you can upgrade or downgrade between Simple Start, Essentials, Plus, and Advanced at any time from inside your QBO account &mdash; data carries over and billing is prorated. Switching between products (Online to Desktop, or Desktop to Enterprise) requires a <a href="/quickbooks/migration/">migration</a>, which is a larger project. Switching between QBO and Xero, or QBO and Desktop, is a full data migration. The honest read: getting the plan right the first time is significantly cheaper than fixing it later, which is why the free 30-minute selection call is the right place to start.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qwp-faq-8" id="qwp-faq-q-8">Why is your QuickBooks plan selection advisory free?</button></dt>
+            <dd class="faq__answer" id="qwp-faq-8" role="region" aria-labelledby="qwp-faq-q-8"><p>Three reasons. First, plan selection is the cheapest part of the QuickBooks lifecycle but the most consequential &mdash; getting it wrong creates expensive cleanup work later. Second, the call lets us assess fit for downstream services (<a href="/quickbooks/setup/">setup</a>, <a href="/quickbooks/migration/">migration</a>, <a href="/accounting/bookkeeping/monthly-bookkeeping/">ongoing bookkeeping</a>) where we do earn revenue, so investing 30 minutes upfront is good business for us. Third, as an independent ProAdvisor firm with no commission or affiliate revenue from Intuit, we have no incentive to push you to a higher tier &mdash; which means the honest answer might be &ldquo;pick Simple Start, you don&rsquo;t need more,&rdquo; and we&rsquo;d rather give that answer free than charge to deliver it.</p></dd>
+          </div>
+        </dl>
+        <p class="faq__more"><a href="/quickbooks/faq/">See all QuickBooks frequently asked questions &rarr;</a></p>
+      </div>
+    </section>
+
+    <!-- RELATED -->
+    <section class="section section--cleanup-related" id="qwp-related" aria-labelledby="qwp-related-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">All QuickBooks products</p>
+          <h2 class="section__heading" id="qwp-related-heading">Deep reads on each product.</h2>
+        </header>
+        <ul class="related-grid" role="list">
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/quickbooks/online/">QuickBooks Online</a></h3><p class="related-card__body">The cloud default. Four plan tiers: Simple Start, Essentials, Plus, Advanced. The right answer for most US small businesses.</p><a class="related-card__cta" href="/quickbooks/online/">QBO hub &rarr;</a></article></li>
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/quickbooks/desktop/">QuickBooks Desktop</a></h3><p class="related-card__body">Pro, Premier, Mac. Locally installed; Intuit is winding down new sales of Pro/Premier but supporting existing subscribers.</p><a class="related-card__cta" href="/quickbooks/desktop/">Desktop hub &rarr;</a></article></li>
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/quickbooks/enterprise/">QuickBooks Enterprise</a></h3><p class="related-card__body">Mid-market product. Up to 40 users, six industry editions, deep inventory. The Desktop product Intuit is still actively developing.</p><a class="related-card__cta" href="/quickbooks/enterprise/">Enterprise hub &rarr;</a></article></li>
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/quickbooks/">All QuickBooks services</a></h3><p class="related-card__body">Setup, migration, file cleanup, ongoing bookkeeping &mdash; the complete ProAdvisor service lineup.</p><a class="related-card__cta" href="/quickbooks/">QuickBooks hub &rarr;</a></article></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section section--final-cta" id="qwp-final-cta" aria-labelledby="qwp-final-cta-heading">
+      <div class="container container--narrow">
+        <div class="final-cta">
+          <p class="section__eyebrow section__eyebrow--inverted">Free 30-minute call</p>
+          <h2 class="final-cta__heading" id="qwp-final-cta-heading">Get the right answer, free, in 30 minutes.</h2>
+          <p class="final-cta__lede">Book the call. A Certified ProAdvisor walks your specific situation against the full QuickBooks product line and recommends the right product and tier. No commission, no upsell, no pitch. If the honest answer is &ldquo;pick the cheapest tier&rdquo; or &ldquo;you need an ERP, not QuickBooks,&rdquo; that&rsquo;s exactly what you&rsquo;ll hear &mdash; and you can take that recommendation anywhere.</p>
+          <div class="final-cta__actions" role="group" aria-label="Final actions">
+            <a class="btn btn--primary btn--lg btn--inverted" href="/contact/?intent=qwp-advisory" data-cta="qwp-final-primary">Book Free Plan-Selection Call</a>
+            <a class="btn btn--ghost btn--lg btn--inverted" href="/quickbooks/" data-cta="qwp-final-secondary">All QuickBooks Services</a>
+          </div>
+          <p class="final-cta__disclaimer">TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm. QuickBooks, QuickBooks Online, QuickBooks Desktop, and QuickBooks Enterprise are registered trademarks of Intuit Inc. TechBrot Inc. is not affiliated with Intuit Inc. and earns no commission, affiliate, or referral fees on any QuickBooks subscriptions. Plan-selection advisory is provided complimentary; it does not include income-tax filing, IRS representation, audit, or assurance.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div><!-- ============================================================================
+     FOOTER
+     ============================================================================ -->
+
+<footer class="site-footer" role="contentinfo" id="site-footer">
+
+  <section class="site-footer__band" aria-label="Newsletter signup">
+    <div class="container">
+      <div class="footer-band">
+        <div class="footer-band__copy">
+          <h2 class="footer-band__heading">The monthly brief.</h2>
+          <p class="footer-band__lede">One email a month — operational accounting, QuickBooks, and finance-ops insight for U.S. business owners. No spam, unsubscribe anytime.</p>
+        </div>
+        <form class="footer-band__form" action="/subscribe" method="post" aria-label="Subscribe to the monthly brief">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input class="footer-band__input" type="email" id="footer-email" name="email" placeholder="you@company.com" autocomplete="email" required="">
+          <button class="btn btn--primary btn--md" type="submit" data-cta="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="site-footer__main">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="site-footer__brand-col">
+          <a class="site-brand site-brand--footer" href="/" aria-label="TechBrot home">
+            <img class="site-brand__mark" src="/assets/img/brand/wordmark-light.png" alt="TechBrot" width="140" height="36" decoding="async">
+          </a>
+          <p class="site-footer__tagline">A modern accounting platform with vetted local partners.</p>
+          <ul class="site-footer__contact-list">
+            <li><a href="mailto:hello@techbrot.com">hello@techbrot.com</a></li>
+            <li><a href="tel:+18777515575">(877) 751-5575</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Book a discovery call →</a></li>
+          </ul>
+          <ul class="site-footer__social" aria-label="Social media">
+  <li>
+    <a href="https://www.linkedin.com/company/techbrot-inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on LinkedIn">
+      <img src="/assets/img/icons/linkedin.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://x.com/techbrot_inc"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on X">
+      <img src="/assets/img/icons/x.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.instagram.com/techbrot_inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on Instagram">
+      <img src="/assets/img/icons/instagram.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+</ul>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Accounting">
+          <h2 class="site-footer__heading" id="fh-services" aria-controls="fl-services" aria-expanded="false" role="button" tabindex="0">Accounting</h2>
+          <ul class="site-footer__links" id="fl-services" aria-labelledby="fh-services">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="QuickBooks">
+          <h2 class="site-footer__heading" id="fh-quickbooks" aria-controls="fl-quickbooks" aria-expanded="false" role="button" tabindex="0">QuickBooks</h2>
+          <ul class="site-footer__links" id="fl-quickbooks" aria-labelledby="fh-quickbooks">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Company">
+          <h2 class="site-footer__heading" id="fh-company" aria-controls="fl-company" aria-expanded="false" role="button" tabindex="0">Company</h2>
+          <ul class="site-footer__links" id="fl-company" aria-labelledby="fh-company">
+            <li><a href="/about/">About</a></li>
+            <li><a href="/about/methodology/">Methodology</a></li>
+            <li><a href="/about/team/">Team</a></li>
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Network">
+          <h2 class="site-footer__heading" id="fh-network" aria-controls="fl-network" aria-expanded="false" role="button" tabindex="0">Network</h2>
+          <ul class="site-footer__links" id="fl-network" aria-labelledby="fh-network">
+            <li><a href="/find-an-accountant/">Find an Accountant</a></li>
+            <li><a href="/partners/">For Accountants</a></li>
+            <li><a href="/about/network/">How it works</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__base">
+    <div class="container">
+      <p class="site-footer__disclosure" role="note">
+        <strong>Independent ProAdvisor firm.</strong> QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc. <a href="/legal/disclaimer/">Read full notice</a>.
+      </p>
+      <div class="site-footer__base-row">
+        <p class="site-footer__copyright">© <time>2026</time> TechBrot Inc. All rights reserved.</p>
+        <ul class="site-footer__legal" aria-label="Legal links">
+          <li><a href="/legal/privacy-policy/">Privacy</a></li>
+          <li><a href="/legal/terms/">Terms</a></li>
+          <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+          <li><a href="/legal/dpa/">Data processing</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</footer>
+    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+<!-- ============================================================================
+  TECHBROT.COM — GLOBAL HEAD (PRODUCTION v4)
+  Bootstrap Studio Global Template · Loads sitewide on every page
+  ----------------------------------------------------------------------------
+  SCOPE:    Site-level signals only. Each page sets:
+              • <title>
+              • <meta name="description">
+              • <link rel="canonical">
+              • <link rel="alternate" hreflang>
+              • <meta property="og:url">
+              • <meta property="og:title">
+              • <meta property="og:description">
+              • <meta name="twitter:title">
+              • <meta name="twitter:description">
+              • Page-specific schema: WebPage, BreadcrumbList, FAQPage,
+                QAPage, Article, Service offerings — all referencing
+                the global Organization / Person / WebSite via @id.
+
+  GOAL:     Top 0.01% AI citation, entity SEO, E-E-A-T, semantic search,
+            Google / Perplexity / ChatGPT / Claude / Gemini retrieval.
+
+  STACK:    Bootstrap Studio · Static HTML · TechBrot Inc. (US C-Corp)
+  MODEL:    Independent accounting platform with vetted local partners
+
+  v4 CHANGE LOG:
+    • Added Person node for David Westgate (#david-westgate) — Lead
+      QuickBooks ProAdvisor, the named/visible page author referenced by
+      each page's WebPage.reviewedBy. Both Abid (founder/CEO) and David
+      (lead ProAdvisor) are certified; David references the same shared
+      #credential-* entities by @id. Abid remains founder + off visible
+      pages (org-level relationship, not page authorship).
+  UPDATED:  June 2026
+============================================================================ -->
+
+
+<!-- ── 01. RENDERING ──────────────────────────────────── -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- ── 02. PAGE IDENTITY — GLOBAL FALLBACKS (overridden per page) ─────────
+  These are global safety-net values. Every real page overrides title
+  and description in its own head.
+<title>A Modern Accounting Platform with Vetted Local Partners · TechBrot</title>
+<meta name="description" content="TechBrot is an independent U.S. accounting platform delivering QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations through a curated network of vetted local partners.">
+ -->
+
+<!-- ── 03. CANONICAL & HREFLANG — PER-PAGE ONLY ──────────────────────────
+  Reference template (do NOT uncomment globally):
+    <link rel="canonical" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="en-US" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="x-default" href="https://techbrot.com/[slug]/">
+-->
+
+
+<!-- ── 04. INDEXING & CRAWL DIRECTIVES ───────────────────────────────────
+  AI crawler policy (GPTBot, ClaudeBot, PerplexityBot, Google-Extended,
+  Applebot-Extended) is managed at robots.txt + Cloudflare WAF level.
+  These meta directives govern traditional search crawlers only. -->
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="bingbot" content="index, follow">
+
+
+<!-- ── 05. SITE IDENTITY & AUTHORSHIP ────────────────────────────────────-->
+
+<meta name="author" content="TechBrot Inc.">
+<meta name="application-name" content="TechBrot">
+<meta name="apple-mobile-web-app-title" content="TechBrot">
+
+<!-- ── 06. GEO & LOCALE ──────────────────────────────────────────────────
+  Registered: 651 N Broad St, Suite 201, Middletown, DE 19709.
+  Service area: 50 US states (national virtual + local partner network).
+  geo.region uses ISO 3166-2 (US-DE). Nationwide service is declared in
+  Organization schema areaServed (full state ItemList below). -->
+
+<meta http-equiv="content-language" content="en-US">
+<meta name="language" content="English">
+
+<!-- ── 07. BROWSER, DEVICE & PWA ─────────────────────────────────────────-->
+
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B0B" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-TileColor" content="#FAFAF7">
+<meta name="msapplication-config" content="/browserconfig.xml">
+
+
+<!-- ── 08. SECURITY & REFERRER ───────────────────────────────────────────-->
+
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+
+<!-- ── 09. OPEN GRAPH — SITE-LEVEL ONLY (image is per-page) ─────────────
+  Per-page sets: og:url, og:title, og:description, og:image (+ dimensions),
+  and og:type="article" on articles. Global default og:type is "website". -->
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TechBrot">
+<meta property="og:locale" content="en_US">
+
+<!-- ── 10. TWITTER / X CARD — SITE-LEVEL ONLY (image is per-page) ───────-->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@techbrot_inc">
+<meta name="twitter:creator" content="@techbrot_inc">
+
+<!-- ── 11. FAVICONS, ICONS & WEB APP MANIFEST ───────────────────────────-->
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/img/brand/safari-pinned-tab.svg" color="#0B0B0B">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<!-- ── 12. SITEMAP & FEEDS ──────────────────────────────────────────────-->
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+
+<!-- ── 13. PERFORMANCE: PRECONNECT, DNS-PREFETCH, FONT PRELOAD ──────────
+  Fonts: Fraunces (serif headings) + Inter (sans body/UI), both Google.
+  Preloading the two heaviest weights eliminates layout-shift on first
+  paint. Adjust paths if you self-host. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+
+<link rel="preload" as="image" href="/assets/img/brand/wordmark.svg" fetchpriority="high">
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<!-- ── 14. STRUCTURED DATA — ENTITY GRAPH ───────────────────────────────
+  Six-node @graph:
+    1. Organization (multi-type: Organization + ProfessionalService) —
+       the primary entity. Brand, knowsAbout (topical authority),
+       hasOfferCatalog (service routing), areaServed (full US),
+       contactPoint (toll-free), full sameAs cluster.
+    2. Brand — separate Brand entity for AI knowledge-graph systems.
+    3. Person (Abid Khan) — founder/CEO authority; certified ProAdvisor.
+    4. Person (David Westgate) — Lead ProAdvisor; the named, visible page
+       author referenced by each page's WebPage.reviewedBy. Both are
+       certified and share the #credential-* entities by @id.
+    5. WebSite — publisher entity with SearchAction.
+    (ProAdvisor credential entities #credential-* are defined inline on
+     the Abid node and referenced by David.)
+
+  Per-page schema attaches via @id reference, never duplicates these. -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://techbrot.com/#organization",
+
+      "name": "TechBrot Inc.",
+      "legalName": "TechBrot Inc.",
+      "alternateName": [
+        "TechBrot",
+        "TechBrot Network",
+        "TechBrot Accounting Platform"
+      ],
+      "slogan": "A modern accounting platform with vetted local partners.",
+      "description": "TechBrot Inc. is an independent U.S. firm of Certified QuickBooks ProAdvisors, accountants, and advisors serving small and mid-sized businesses. Services span QuickBooks setup, cleanup, and migration; monthly, cleanup, and catch-up bookkeeping; payroll; multi-state sales tax; 1099 preparation; financial reporting; and fractional CFO advisory — delivered directly and through a curated network of vetted local Certified ProAdvisors. Independent Certified QuickBooks ProAdvisor firm; not affiliated with Intuit Inc.",
+      "disambiguatingDescription": "Independent accounting platform with vetted local partners — not affiliated with Intuit Inc. QuickBooks is a registered trademark of Intuit Inc.",
+
+      "url": "https://techbrot.com/",
+
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://techbrot.com/#logo",
+        "url": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "contentUrl": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "caption": "TechBrot — A modern accounting platform with vetted local partners",
+        "width": 512,
+        "height": 512,
+        "inLanguage": "en-US"
+      },
+
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://techbrot.com/assets/img/og/techbrot-og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "TechBrot — A modern accounting platform with vetted local partners"
+      },
+
+      "brand": {
+        "@id": "https://techbrot.com/#brand"
+      },
+
+   
+      "foundingDate": "2023",
+      "founder": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+      "founders": [
+        { "@id": "https://techbrot.com/#abid-khan" }
+      ],
+      "employee": [
+        { "@id": "https://techbrot.com/#abid-khan" },
+        { "@id": "https://techbrot.com/#david-westgate" }
+      ],
+
+      "email": "support@techbrot.com",
+      "telephone": "+1-877-751-5575",
+      "priceRange": "$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": ["Credit Card", "Bank Transfer", "ACH", "Check"],
+
+      "naics": "541219",
+      "isicV4": "6920",
+
+      "address": {
+        "@type": "PostalAddress",
+        "@id": "https://techbrot.com/#address",
+        "streetAddress": "651 N Broad St, Suite 201",
+        "addressLocality": "Middletown",
+        "addressRegion": "DE",
+        "postalCode": "19709",
+        "addressCountry": "US"
+      },
+
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.449",
+        "longitude": "-75.716"
+      },
+
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "customer service",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "sales",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "partners@techbrot.com",
+          "contactType": "partner inquiries",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        }
+      ],
+
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States",
+        "@id": "https://www.wikidata.org/entity/Q30"
+      },
+
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Small and mid-sized U.S. businesses"
+      },
+
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        }
+      ],
+
+      "keywords": "accounting platform, QuickBooks ProAdvisor, bookkeeping services, QuickBooks cleanup, monthly bookkeeping, catch-up bookkeeping, payroll services, fractional CFO, sales tax compliance, 1099 preparation, vetted accounting partners, U.S. small business accounting",
+
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "TechBrot Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monthly Bookkeeping",
+              "description": "Recurring monthly bookkeeping with real reconciliation, monthly close package, and named operator point of contact.",
+              "url": "https://techbrot.com/accounting/bookkeeping/monthly-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks and Bookkeeping Cleanup",
+              "description": "Reconstruct accurate books from a messy state — categorization fixes, real bank and credit-card reconciliations, prior-period correction, and reliable financial statements.",
+              "url": "https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Catch-up Bookkeeping",
+              "description": "Bring backlogged books current — from a few missed months to multi-year historical cleanup before tax filing.",
+              "url": "https://techbrot.com/accounting/bookkeeping/catch-up-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Setup and Onboarding",
+              "description": "Independent ProAdvisor-led QuickBooks setup, chart of accounts, banking, payroll, and integration configuration for new and existing businesses.",
+              "url": "https://techbrot.com/quickbooks/setup/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Migration",
+              "description": "QuickBooks Desktop-to-Online migration and other software-to-QuickBooks migrations performed by Certified ProAdvisors with data integrity verification.",
+              "url": "https://techbrot.com/quickbooks/migration/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Independent QuickBooks ProAdvisor Help",
+              "description": "Certified ProAdvisor help with QuickBooks file issues, reconciliation problems, plan selection, and workflow advisory — independent guidance beyond product support.",
+              "url": "https://techbrot.com/quickbooks/help/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Payroll Setup and Management",
+              "description": "Payroll setup, processing, tax filing, and compliance support delivered through the TechBrot operator network.",
+              "url": "https://techbrot.com/accounting/payroll-management/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sales Tax Compliance",
+              "description": "Multi-state sales tax registration, filing, and nexus advisory for U.S. small and mid-sized businesses.",
+              "url": "https://techbrot.com/accounting/sales-tax-compliance/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "1099 Preparation",
+              "description": "Annual 1099 preparation, vendor data collection, and IRS filing for U.S. small businesses.",
+              "url": "https://techbrot.com/accounting/1099-preparation/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fractional CFO Services",
+              "description": "Senior financial advisory delivered through the TechBrot network — cash flow planning, forecasting, KPI reporting, and board-ready financials for growing businesses.",
+              "url": "https://techbrot.com/accounting/advisory/fractional-cfo/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Find a Local Accounting Partner",
+              "description": "Match with a vetted, credentialed, insured TechBrot operator partner in your U.S. state — typically within 48 hours.",
+              "url": "https://techbrot.com/find-an-accountant/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          }
+        ]
+      },
+
+      "knowsAbout": [
+        "Accounting",
+        "Bookkeeping",
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Premier",
+        "QuickBooks Payroll",
+        "QuickBooks ProAdvisor",
+        "QuickBooks setup",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "QuickBooks Desktop to Online migration",
+        "QuickBooks plan selection",
+        "QuickBooks reconciliation",
+        "QuickBooks bank feeds",
+        "QuickBooks error troubleshooting",
+        "QuickBooks company file repair",
+        "QuickBooks multi-user mode",
+        "QuickBooks payroll setup",
+        "QuickBooks payroll troubleshooting",
+        "QuickBooks sales tax",
+        "QuickBooks 1099 preparation",
+        "Monthly bookkeeping",
+        "Catch-up bookkeeping",
+        "Cleanup bookkeeping",
+        "Historical bookkeeping cleanup",
+        "Virtual bookkeeping",
+        "Outsourced bookkeeping",
+        "Small business accounting",
+        "Startup accounting",
+        "Bank reconciliation",
+        "Accounts payable management",
+        "Accounts receivable management",
+        "Chart of accounts setup",
+        "Month-end close",
+        "Year-end close",
+        "Financial statement preparation",
+        "Financial reporting",
+        "Cash flow forecasting",
+        "Cash flow management",
+        "Profitability analysis",
+        "KPI reporting",
+        "Budgeting and forecasting",
+        "Payroll services",
+        "Payroll tax compliance",
+        "Sales tax compliance",
+        "Sales tax nexus",
+        "1099 preparation and filing",
+        "Tax planning",
+        "IRS problem resolution",
+        "Fractional CFO services",
+        "Controller services",
+        "Business advisory services",
+        "Ecommerce accounting",
+        "Real estate accounting",
+        "Construction accounting",
+        "Restaurant accounting",
+        "Healthcare accounting",
+        "Law firm accounting",
+        "SaaS accounting",
+        "Professional services accounting",
+        "Manufacturing accounting",
+        "Trucking accounting",
+        "Nonprofit accounting",
+        "Franchise accounting",
+        "Retail accounting",
+        "Job costing",
+        "Shopify QuickBooks integration",
+        "Amazon QuickBooks integration",
+        "Stripe QuickBooks integration",
+        "Vetted accounting partner network",
+        "Operator-led accounting platform",
+        "Independent ProAdvisor firm"
+      ],
+
+      "subjectOf": {
+        "@type": "WebPage",
+        "@id": "https://techbrot.com/about/"
+      },
+
+    "sameAs": [
+  "https://www.linkedin.com/company/techbrot-inc/",
+  "https://x.com/techbrot_inc",
+  "https://www.instagram.com/techbrot_inc",
+  "https://www.youtube.com/@techbrot_inc",
+  "https://www.facebook.com/techbrotinc",
+  "https://www.tumblr.com/techbrot",
+  "https://pin.it/1d4Qrx4At",
+  "https://www.tiktok.com/@techbrot_inc",
+  "https://medium.com/@techbrot5",
+  "https://clutch.co/profile/techbrot"
+]
+    },
+
+    {
+      "@type": "Brand",
+      "@id": "https://techbrot.com/#brand",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Network",
+      "url": "https://techbrot.com/",
+      "logo": "https://techbrot.com/assets/img/brand/logo_img.png",
+      "slogan": "A modern accounting platform with vetted local partners."
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#abid-khan",
+
+      "name": "Abid Khan",
+      "givenName": "Abid",
+      "familyName": "Khan",
+
+      "url": "https://techbrot.com/about/team/#abid-khan",
+
+      "jobTitle": "Founder & CEO",
+      "description": "Abid Khan is the Founder and CEO of TechBrot Inc., an independent U.S. accounting platform with a curated network of vetted local partners. He is a Certified QuickBooks ProAdvisor across QuickBooks Online, Desktop, Enterprise, and Payroll, and leads platform architecture, partner network development, and AI-first search infrastructure.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "Small business bookkeeping",
+        "Bank reconciliation",
+        "Accounting platform architecture",
+        "Partner network development",
+        "AI-first SEO",
+        "Topical authority architecture",
+        "E-E-A-T optimization"
+      ],
+
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qbo-l2",
+          "name": "QuickBooks Online ProAdvisor (Level 2)",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-desktop",
+          "name": "QuickBooks Desktop ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-enterprise",
+          "name": "QuickBooks Enterprise ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-payroll",
+          "name": "QuickBooks Payroll ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        }
+      ],
+
+      "sameAs": [
+  "https://www.linkedin.com/in/abid-khan-ai/",
+  "https://www.reddit.com/user/techbrot_inc/",
+  "https://www.quora.com/profile/Abid-Khan-119",
+  "https://www.credly.com/users/abid-khan.3ceb70a5/badges#credly"
+      ]
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#david-westgate",
+
+      "name": "David Westgate",
+      "givenName": "David",
+      "familyName": "Westgate",
+
+      "url": "https://techbrot.com/about/team/#david-westgate",
+
+      "jobTitle": "Lead QuickBooks ProAdvisor",
+      "description": "David Westgate is the Lead QuickBooks ProAdvisor at TechBrot Inc., with more than 40 years of accounting experience. A Certified QuickBooks ProAdvisor across QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll, he leads bookkeeping, cleanup, reconciliation, and QuickBooks file rebuilds across construction, professional services, and nonprofit engagements, and is the reviewing authority for TechBrot's published accounting content.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks reconciliation",
+        "Bookkeeping",
+        "Bank reconciliation",
+        "Month-end close",
+        "Sales tax compliance",
+        "IOLTA trust accounting",
+        "Job costing",
+        "Construction accounting",
+        "Nonprofit accounting"
+      ],
+
+      "hasCredential": [
+        { "@id": "https://techbrot.com/#credential-qbo-l2" },
+        { "@id": "https://techbrot.com/#credential-qb-desktop" },
+        { "@id": "https://techbrot.com/#credential-qb-enterprise" },
+        { "@id": "https://techbrot.com/#credential-qb-payroll" }
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://techbrot.com/#website",
+
+      "url": "https://techbrot.com/",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Accounting Platform",
+      "description": "Independent U.S. accounting platform — QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations delivered through a curated network of vetted local partners.",
+      "inLanguage": "en-US",
+
+      "publisher": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "author": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+
+      "about": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightHolder": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightYear": "2023",
+
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://techbrot.com/search/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2Z8GK69Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K2Z8GK69Z5');
+</script>
+
+<!-- ── 15. TRADEMARK DISCLOSURE (machine-readable, AI-citation safety) ──
+  Distinct meta tag declaring trademark posture. Some AI scrapers
+  prioritize meta declarations over body content. Provides an
+  additional structural defense against impersonation classification. -->
+
+<meta name="trademark-disclosure" content="QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc.">
+<meta name="affiliation-disclosure" content="independent">
+
+<!-- ============================================================================
+  END GLOBAL HEAD
+============================================================================ --><!-- ============================================================================
+     NEW YORK · CONSULTING (industry child) · PAGE HEAD
+     5-level breadcrumb (real folder child under /industries/). Service audience =
+     consulting/professional-services. Global <head> set site-wide.
+     AI-summary pure HTML (no QAPage). Facts reviewed June 2026. chrome.js owns FAQ.
+     ============================================================================ -->
+
+<title>New York Consulting Accounting · TechBrot</title>
+<meta name="description" content="Consulting &amp; professional-services accounting for New York firms — profit by client and project, retainer revenue recognition, NY taxable-service tracking, multi-state nexus data. From $400/mo. Call (877) 751-5575.">
+
+<link rel="canonical" href="https://techbrot.com/find-an-accountant/new-york/industries/consulting/">
+<link rel="alternate" hreflang="en-US" href="https://techbrot.com/find-an-accountant/new-york/industries/consulting/">
+<link rel="alternate" hreflang="x-default" href="https://techbrot.com/find-an-accountant/new-york/industries/consulting/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://techbrot.com/find-an-accountant/new-york/industries/consulting/">
+<meta property="og:title" content="New York Consulting Accounting">
+<meta property="og:description" content="Consulting &amp; professional-services accounting for New York firms — profit by client and project, retainer revenue recognition, NY taxable-service tracking, multi-state nexus data. From $400/mo. Call (877) 751-5575.">
+<meta property="og:image" content="https://techbrot.com/assets/img/og/new-york-consulting-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TechBrot — New York consulting accounting">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="New York Consulting Accounting · TechBrot">
+<meta name="twitter:description" content="Consulting &amp; professional-services accounting for New York firms — profit by client and project, retainer revenue recognition, NY taxable-service tracking, multi-state nexus data. From $400/mo. Call (877) 751-5575.">
+<meta name="twitter:image" content="https://techbrot.com/assets/img/og/new-york-consulting-og.png">
+
+<!-- WebPage · BreadcrumbList · Service · FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://techbrot.com/find-an-accountant/new-york/industries/consulting/#webpage",
+      "url": "https://techbrot.com/find-an-accountant/new-york/industries/consulting/",
+      "name": "New York consulting accounting",
+      "description": "Consulting & professional-services accounting for New York firms — profit by client and project, retainer revenue recognition, NY taxable-service tracking, multi-state nexus data. From $400/mo. Call (877) 751-5575.",
+      "isPartOf": {
+        "@id": "https://techbrot.com/#website"
+      },
+      "about": {
+        "@id": "https://techbrot.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://techbrot.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://techbrot.com/find-an-accountant/new-york/industries/consulting/#breadcrumb"
+      },
+      "inLanguage": "en-US",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://techbrot.com/assets/img/og/new-york-consulting-og.png"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "#nycns-ai-summary",
+          "#nycns-tldr-body"
+        ]
+      },
+      "reviewedBy": {
+        "@id": "https://techbrot.com/#david-westgate"
+      },
+      "lastReviewed": "2026-06-07"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://techbrot.com/find-an-accountant/new-york/industries/consulting/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://techbrot.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Find an Accountant",
+          "item": "https://techbrot.com/find-an-accountant/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "New York",
+          "item": "https://techbrot.com/find-an-accountant/new-york/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Industries",
+          "item": "https://techbrot.com/find-an-accountant/new-york/industries/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Consulting",
+          "item": "https://techbrot.com/find-an-accountant/new-york/industries/consulting/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://techbrot.com/find-an-accountant/new-york/industries/consulting/#service",
+      "name": "New York Consulting Accounting Service",
+      "serviceType": "Consulting and professional-services bookkeeping",
+      "description": "Bookkeeping and QuickBooks accounting for New York consulting and professional-services firms — client/project profitability, revenue recognition, and multi-state nexus tracking — delivered by a Certified QuickBooks ProAdvisor.",
+      "provider": {
+        "@id": "https://techbrot.com/#organization"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "New York",
+        "sameAs": "https://en.wikipedia.org/wiki/New_York_(state)"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "New York consultancies, agencies, professional-services firms, and independent advisors"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "400",
+        "description": "Fixed monthly fee from $400/mo against a written scope.",
+        "url": "https://techbrot.com/find-an-accountant/new-york/industries/consulting/"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://techbrot.com/find-an-accountant/new-york/industries/consulting/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What makes accounting for a New York consulting firm different?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Consulting profit lives in utilization and project margin, not the bank balance. Good consulting accounting tracks billable rates and project costs so you can see which clients and engagements actually make money, recognizes retainer and milestone revenue in the period it's earned rather than when cash arrives, and separates reimbursable pass-through costs from marked-up ones. For a New York firm it also means handling sales tax on the consulting services that are taxable here and tracking the multi-state exposure that out-of-state clients and remote staff create."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do consultants have to charge sales tax in New York?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the service. Pure management or strategy consulting is generally not subject to New York sales tax, but several adjacent services are — certain information services, prewritten software, and some staffing arrangements, for example. The risk is treating everything as non-taxable when part of what you sell is taxable. We configure QuickBooks to charge sales tax on the taxable services and leave the rest, so your quarterly New York return reconciles to the books. Your CPA confirms taxability for your specific offering and files the return."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I have clients in other states — does that create a tax problem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can. Serving clients in other states, or employing remote staff who live elsewhere, can create income-tax and sales-tax nexus in those states — meaning you may have filing obligations beyond New York. It's one of the most common things growing consultancies overlook. We don't determine your nexus position (your CPA does that), but we structure QuickBooks to track revenue and payroll by state, so the data your CPA needs to assess and manage multi-state exposure is there rather than reconstructed under pressure later."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does consulting bookkeeping cost in New York?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Monthly bookkeeping for a New York consultancy runs $400–$2,500+ per month, fixed-fee against a written scope. Pricing is set by transaction volume, number of accounts, and how much project- and client-level reporting you need — a solo advisor on retainers is at the lower end, a multi-consultant firm with project accounting and deferred revenue higher. We quote a firm number after reviewing your file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you show profit by client and by project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — it's the core of consulting accounting. Using QuickBooks classes, projects, and tags, we structure your file so you can pull a profit-and-loss filtered by client, project, or service line rather than only a company-wide view. That's what lets you see which engagements carry margin, which clients cost more time than they pay for, and where to focus or raise rates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you handle retainers and upfront payments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A retainer or milestone paid up front is deferred revenue — earned over the period you deliver the work, not profit on the day it lands. We book it to a deferred-revenue liability and recognize it across the engagement, so your monthly profit reflects work actually delivered. Without that, one big invoice makes a month look spectacular and the next look broke, and your margins never read true. Clean revenue recognition also matters if you ever raise capital, sell, or face due diligence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with my time-tracking and invoicing tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We work alongside the tools consultancies use — Harvest, Toggl, HubSpot, Bill.com, Stripe, Expensify, Gusto, and others — reconciling what they export into QuickBooks. If your time-tracking or PSA platform exports to QuickBooks, we can build the workflow around it rather than asking you to switch. We work in your own QuickBooks file, which you continue to own."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do we get started?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Book a free discovery call. We review your QuickBooks file remotely, map your service lines and client mix, determine whether you need a cleanup first or can go straight to monthly service, and send a written fixed-fee proposal within 3 business days. Your named Certified ProAdvisor begins as soon as you approve. We do the books; your CPA files."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>BSS-1-11ty</title>
+    <link rel="stylesheet" href="../../../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../../assets/css/04-pages.css">
+    <link rel="stylesheet" href="../../../../assets/css/01-tokens.css">
+    <link rel="stylesheet" href="../../../../assets/css/02-base.css">
+    <link rel="stylesheet" href="../../../../assets/css/03-components.css">
+</head>
+
+<body><!-- ============================================================================
+     CHROME · utility bar + primary header + mobile drawer + search palette
+     ============================================================================ -->
+
+<div class="util-bar" role="region" aria-label="Secondary">
+  <div class="container util-bar__inner">
+    <p class="util-bar__trust">
+      <span class="util-bar__dot" aria-hidden="true"></span>
+      <span>Independent Certified QuickBooks ProAdvisor firm · U.S.-based</span>
+    </p>
+    <nav class="util-bar__nav" aria-label="For accountants and partners">
+      <a class="util-bar__link" href="/find-an-accountant/">Find an Accountant</a>
+      <a class="util-bar__link" href="/partners/">For Accountants →</a>
+    </nav>
+  </div>
+</div>
+
+<header class="site-header" role="banner" id="site-header" data-sticky="true">
+  <div class="container site-header__inner">
+
+    <a class="site-brand" href="/" aria-label="TechBrot home" title="TechBrot — A Modern Accounting Platform">
+      <img class="site-brand__mark" src="/assets/img/brand/icon.svg" alt="TechBrot" width="140" height="56" decoding="async" fetchpriority="high">
+    </a>
+
+    <nav class="site-nav site-nav--desktop" aria-label="Primary navigation" id="primary-nav">
+      <ul class="site-nav__list">
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-services" aria-haspopup="true">
+            Accounting
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-services" role="region" aria-label="Accounting services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Bookkeeping</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/">All bookkeeping →</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Financial Operations</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/payroll-management/">Payroll management</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/services/">All services →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/accounting/">Accounting overview →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-quickbooks" aria-haspopup="true">
+            QuickBooks
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-quickbooks" role="region" aria-label="QuickBooks services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">ProAdvisor Services</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/cleanup/">File cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/migration/">Desktop → Online migration</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/help/">QuickBooks help</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Products</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/proadvisor-team/">Our ProAdvisor team</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/">QuickBooks overview →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/legal/disclaimer/">Independent firm — not affiliated with Intuit →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/find-an-accountant/">Find an Accountant</a>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/pricing/">Pricing</a>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-why" aria-haspopup="true">
+            Why TechBrot
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu" id="nav-menu-why" role="region" aria-label="Why TechBrot" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Authority &amp; trust</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/trust/">Trust &amp; standards</a></li>
+                  <li><a class="nav-menu__link" href="/about/methodology/">Our methodology</a></li>
+                  <li><a class="nav-menu__link" href="/reviews/">Client reviews</a></li>
+                  <li><a class="nav-menu__link" href="/vs/">Comparisons</a></li>
+                  <li><a class="nav-menu__link" href="/about/">About &amp; team</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="site-header__utility">
+      <button class="site-search-trigger" type="button" aria-label="Search (press / or Cmd-K)" data-search-open="" title="Search — / or ⌘K">
+        <svg class="site-search-trigger__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+          <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+        </svg>
+        <span class="site-search-trigger__hint" aria-hidden="true"><kbd>/</kbd></span>
+      </button>
+
+      <a class="site-header__phone" href="tel:+18777515575" aria-label="Call TechBrot" data-cta="header-phone" title="Call TechBrot">
+        <span class="site-header__phone-label">Call</span>
+        <span class="site-header__phone-number">(877) 751-5575</span>
+      </a>
+
+      <a class="btn btn--primary btn--sm" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="header-primary" title="Book a discovery call">
+        Book a Call
+      </a>
+    </div>
+
+    <button class="site-header__mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+    </button>
+
+  </div>
+</header>
+
+<aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation" hidden="">
+  <div class="mobile-drawer__header">
+    <a class="site-brand" href="/" aria-label="TechBrot home">
+      <img class="site-brand__mark" src="/assets/img/brand/wordmark.png" alt="TechBrot" width="120" height="36">
+    </a>
+    <button class="mobile-drawer__close" type="button" aria-label="Close navigation menu" data-action="close-drawer">
+      <span class="mobile-drawer__close-x" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <nav class="mobile-drawer__nav" aria-label="Mobile primary navigation">
+    <ul class="mobile-drawer__list">
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-services">
+          <span>Accounting</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-services" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll management</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-quickbooks">
+          <span>QuickBooks</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-quickbooks" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/find-an-accountant/">Find an Accountant</a></li>
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/pricing/">Pricing</a></li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-why">
+          <span>Why TechBrot</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-why" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/about/methodology/">Our methodology</a></li>
+            <li><a href="/reviews/">Client reviews</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+            <li><a href="/about/">About &amp; team</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/partners/">For Accountants</a></li>
+    </ul>
+  </nav>
+
+  <div class="mobile-drawer__footer">
+    <a class="btn btn--primary btn--lg btn--full" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="mobile-primary">Book a Discovery Call</a>
+    <a class="mobile-drawer__phone" href="tel:+18777515575">(877) 751-5575</a>
+  </div>
+</aside>
+
+<div class="search-palette" id="search-palette" role="dialog" aria-modal="true" aria-label="Search TechBrot" hidden="">
+  <div class="search-palette__backdrop" data-search-close=""></div>
+  <div class="search-palette__panel" role="combobox" aria-expanded="true" aria-haspopup="listbox" aria-owns="search-results">
+    <div class="search-palette__field">
+      <svg class="search-palette__icon" width="20" height="20" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+        <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+      </svg>
+      <input class="search-palette__input" id="search-input" type="text" autocomplete="off" spellcheck="false" placeholder="Search services, QuickBooks, comparisons, states, Indiana topics…" aria-label="Search" aria-controls="search-results" aria-autocomplete="list">
+      <button class="search-palette__close" type="button" aria-label="Close search" data-search-close=""><kbd>Esc</kbd></button>
+    </div>
+    <div class="search-palette__body">
+      <ul class="search-palette__results" id="search-results" role="listbox" aria-label="Search results"></ul>
+      <div class="search-palette__suggested" id="search-suggested">
+        <p class="search-palette__suggested-label">Try</p>
+        <ul class="search-palette__chips" role="list">
+          <li><button type="button" class="search-chip" data-q="indiana cagit">Indiana CAGIT payroll</button></li>
+          <li><button type="button" class="search-chip" data-q="bookkeeping cleanup">Bookkeeping cleanup</button></li>
+          <li><button type="button" class="search-chip" data-q="quickbooks migration">QuickBooks migration</button></li>
+          <li><button type="button" class="search-chip" data-q="indianapolis">Indianapolis</button></li>
+          <li><button type="button" class="search-chip" data-q="manufacturing">Manufacturing accounting</button></li>
+          <li><button type="button" class="search-chip" data-q="pricing">Pricing</button></li>
+        </ul>
+      </div>
+      <p class="search-palette__empty" id="search-empty" hidden="">No matches. Try a service, “QuickBooks”, an Indiana topic, a city, or a comparison.</p>
+    </div>
+    <div class="search-palette__foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+<!-- ============================================================================
+     NEW YORK · CONSULTING (industry child) · BODY
+     Real industry-child components (mirrors ny-construction): child-hero · tldr ·
+     ai-summary · urgency-tiers · editorial-break · call-topics(hub-service-grid) ·
+     ecom-integrations(integration-grid) · call-process(cadence) · credential-strip ·
+     faq · speak-review · related · child-cta.
+     5-level breadcrumb (real folder child under /industries/). page--industry.
+     AI-summary pure HTML (no QAPage). chrome.js owns FAQ.
+     ============================================================================ -->
+<main id="main" class="page page--industry page--industry-consulting page--location-child" data-page="ny-consulting">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb" id="nycns-breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="/">Home</a></li>
+        <li class="breadcrumb__item"><a href="/find-an-accountant/">Find an Accountant</a></li>
+        <li class="breadcrumb__item"><a href="/find-an-accountant/new-york/">New York</a></li>
+        <li class="breadcrumb__item"><a href="/find-an-accountant/new-york/industries/">Industries</a></li>
+        <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Consulting</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="section section--child-hero" id="nycns-hero" aria-labelledby="nycns-hero-heading">
+    <div class="container">
+      <div class="child-hero">
+        <div class="child-hero__copy">
+          <p class="child-hero__eyebrow"><span>New York · Consulting &amp; Professional Services</span></p>
+          <h1 class="child-hero__title" id="nycns-hero-heading">New York <em>consulting</em> accounting that shows which clients actually pay.</h1>
+          <p class="child-hero__lede">For consultancies, agencies, and independent advisors, profit hides in utilization, project margin, and revenue timing — not the bank balance. A named Certified QuickBooks ProAdvisor builds the books to show client-level profit, handles retainer and milestone revenue correctly, and tracks the multi-state nexus remote consulting creates.</p>
+          <div class="child-hero__actions" role="group" aria-label="Primary actions">
+            <a class="btn btn--primary btn--lg" href="/contact/?intent=new-york&amp;state=new-york&amp;source_type=industry&amp;funnel_stage=MOFU" data-cta="nycns-hero-primary">Get a Free Books Review</a>
+            <a class="btn btn--ghost btn--lg" href="#nycns-challenges" data-cta="nycns-hero-secondary">Where the numbers slip</a>
+          </div>
+        </div>
+        <dl class="child-hero__aside">
+          <div class="child-hero__stat"><dt>Built around</dt><dd>Client profit</dd></div>
+          <div class="child-hero__stat"><dt>Monthly from</dt><dd>$400</dd></div>
+          <div class="child-hero__stat"><dt>Your ProAdvisor</dt><dd>Named</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- TL;DR -->
+  <section class="section section--tldr" id="nycns-tldr" aria-labelledby="nycns-tldr-heading">
+    <div class="container container--narrow">
+      <h2 class="tldr__heading" id="nycns-tldr-heading">The short version.</h2>
+      <p class="tldr__body" id="nycns-tldr-body"><strong>Consulting accounting</strong> in New York is about project and client profitability, not just clean books. The work that matters: tracking <strong>billable utilization</strong> and effective rates, recognizing <strong>retainer and milestone revenue</strong> in the right period (deferred revenue, not cash-in), separating <strong>pass-through expenses from marked-up costs</strong>, and handling the <strong>multi-state nexus</strong> a NY consultancy creates the moment it serves out-of-state clients with remote staff. A named Certified ProAdvisor builds your <a href="/quickbooks/online/">QuickBooks</a> file to report profit by client and project, runs <a href="/find-an-accountant/new-york/monthly-bookkeeping/">monthly close</a>, and tracks <a href="/find-an-accountant/new-york/sales-tax-help/">NYC sales tax</a> on the consulting services that are taxable in New York. Fixed-fee at <a href="/find-an-accountant/new-york/pricing/">$400–$2,500+/mo</a>, all 62 counties. We do the books; your CPA files.</p>
+    </div>
+  </section>
+
+  <!-- AI SUMMARY -->
+  <section class="section section--ai-summary" id="nycns-ai-summary" aria-labelledby="nycns-ai-summary-heading">
+    <div class="container container--narrow">
+      <p class="ai-summary__eyebrow">Quick answers</p>
+      <h2 class="ai-summary__heading" id="nycns-ai-summary-heading">New York consulting accounting, in five questions.</h2>
+      <dl class="ai-summary__list" id="nycns-ai-summary-list">
+        <div class="ai-summary__item"><dt class="ai-summary__question">What's different about accounting for a consulting firm?</dt>
+          <dd class="ai-summary__answer"><p><strong>Profit lives in utilization and project margin, not the bank balance.</strong> Consulting accounting tracks billable rates, recognizes retainer and milestone revenue in the right period, and separates pass-through costs from marked-up ones — so you see which clients and projects actually make money.</p></dd></div>
+        <div class="ai-summary__item"><dt class="ai-summary__question">Do New York consultants charge sales tax?</dt>
+          <dd class="ai-summary__answer"><p><strong>It depends on the service.</strong> Pure management consulting is generally not taxable in New York, but services like certain information services, software, or staffing can be. We set QuickBooks up to tax what's taxable and leave the rest — so your return reconciles.</p></dd></div>
+        <div class="ai-summary__item"><dt class="ai-summary__question">What about clients in other states?</dt>
+          <dd class="ai-summary__answer"><p><strong>That's where nexus appears.</strong> A NY consultancy serving out-of-state clients — or with remote staff in other states — can trigger income-tax and sales-tax nexus elsewhere. We track the data your CPA needs to manage multi-state exposure.</p></dd></div>
+        <div class="ai-summary__item"><dt class="ai-summary__question">What does it cost?</dt>
+          <dd class="ai-summary__answer"><p><strong>$400–$2,500+/mo</strong>, fixed-fee against a written scope, set by transaction volume, number of accounts, and project-reporting complexity.</p></dd></div>
+        <div class="ai-summary__item"><dt class="ai-summary__question">Can you report profit by client and project?</dt>
+          <dd class="ai-summary__answer"><p><strong>Yes — that's the core of it.</strong> Using QuickBooks classes, projects, and tags, a named Certified ProAdvisor structures the file so you can pull profitability by client, project, or service line, not just a company-wide P&amp;L.</p></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- CHALLENGES (urgency-tiers) -->
+  <section class="section section--urgency-tiers" id="nycns-challenges" aria-labelledby="nycns-challenges-heading">
+    <div class="container">
+      <header class="section__header">
+        <p class="section__eyebrow">Why NY consulting books mislead</p>
+        <h2 class="section__heading" id="nycns-challenges-heading">Three places New York consultancies lose the real numbers.</h2>
+        <p class="section__lede">A busy, profitable-looking firm can still be subsidizing its worst clients. Knowing which of these you're in tells us where to start.</p>
+      </header>
+      <ul class="urgency-tier-grid" role="list">
+        <li class="urgency-tier urgency-tier--immediate">
+          <header class="urgency-tier__header">
+            <p class="urgency-tier__signal">Client profit is invisible</p>
+            <h3 class="urgency-tier__heading">No project or client costing.</h3>
+            <p class="urgency-tier__response">Most common &middot; almost every firm</p>
+          </header>
+          <div class="urgency-tier__body">
+            <p><strong>The problem:</strong> Revenue and labor land in company-wide totals, not against clients or projects. You know the firm was profitable this year — you don't know <em>which engagements</em> earned it and which ran over budget on your time. You price the next proposal blind.</p>
+            <p><strong>The fix:</strong> Profit tracked by client and project using QuickBooks classes, projects, and tags — billable time and direct costs mapped to each engagement.</p>
+            <p class="urgency-tier__honesty"><strong>Honest read:</strong> If you can't pull margin on a single completed engagement in under a minute, this is your starting point.</p>
+          </div>
+        </li>
+        <li class="urgency-tier urgency-tier--scoping">
+          <header class="urgency-tier__header">
+            <p class="urgency-tier__signal">Revenue is booked wrong</p>
+            <h3 class="urgency-tier__heading">Retainers and milestones recognized as cash-in.</h3>
+            <p class="urgency-tier__response">High impact &middot; retainer &amp; project work</p>
+          </header>
+          <div class="urgency-tier__body">
+            <p><strong>The problem:</strong> A six-month retainer paid up front isn't six months of profit today — it's deferred revenue earned over the term. Book it as cash-in and the P&amp;L swings wildly, margins look unreal, and a mid-year exit or audit gets messy.</p>
+            <p><strong>The fix:</strong> Retainer and milestone revenue recognized across the period it's earned, with deferred revenue tracked on the balance sheet.</p>
+            <p class="urgency-tier__honesty"><strong>Honest read:</strong> If a big invoice makes one month look spectacular and the next look broke, your revenue timing is off.</p>
+          </div>
+        </li>
+        <li class="urgency-tier urgency-tier--planning">
+          <header class="urgency-tier__header">
+            <p class="urgency-tier__signal">NY &amp; multi-state risk</p>
+            <h3 class="urgency-tier__heading">No handle on nexus or taxable services.</h3>
+            <p class="urgency-tier__response">Rising risk &middot; remote &amp; multi-state firms</p>
+          </header>
+          <div class="urgency-tier__body">
+            <p><strong>The problem:</strong> The moment a NY consultancy serves out-of-state clients or hires remote staff elsewhere, it can create income- and sales-tax nexus in those states. And not all consulting is sales-tax-free in New York — some information and staffing services are taxable. Both get missed until a notice arrives.</p>
+            <p><strong>The fix:</strong> QuickBooks set to tax the services that are taxable in NY, with the by-state revenue and payroll data your CPA needs to manage multi-state exposure.</p>
+            <p class="urgency-tier__honesty"><strong>Honest read:</strong> If you bill clients in three states and have never looked at nexus, the exposure is already accruing.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EDITORIAL BREAK -->
+  <section class="section section--editorial-break" id="nycns-editorial-break" aria-hidden="true">
+    <div class="editorial-break">
+      <picture>
+        <source media="(min-width: 1024px)" srcset="/assets/img/locations/new-york-consulting-editorial-wide.webp">
+        <source media="(min-width: 720px)" srcset="/assets/img/locations/new-york-consulting-editorial-tablet.webp">
+        <img src="/assets/img/locations/new-york-consulting-editorial-mobile.webp" alt="" width="1440" height="540" loading="lazy" decoding="async">
+      </picture>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED (call-topics / hub-service-grid) -->
+  <section class="section section--call-topics" id="nycns-included" aria-labelledby="nycns-included-heading">
+    <div class="container">
+      <header class="section__header">
+        <p class="section__eyebrow">What TechBrot handles</p>
+        <h2 class="section__heading" id="nycns-included-heading">New York consulting accounting, done by an expert.</h2>
+        <p class="section__lede">Every engagement is scoped to your clients and service lines, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+      </header>
+      <ul class="hub-service-grid hub-service-grid--six" role="list">
+        <li class="hub-service-tile"><article>
+          <p class="hub-service-tile__eyebrow">01 · Client &amp; project profit</p>
+          <h3 class="hub-service-tile__heading"><a href="/find-an-accountant/new-york/quickbooks-setup/">Profit by client &amp; project</a></h3>
+          <p class="hub-service-tile__body">Classes, projects, and tags configured so every client and engagement shows true margin — the reporting you price proposals from.</p>
+          <a class="hub-service-tile__cta" href="/find-an-accountant/new-york/quickbooks-setup/">QuickBooks setup &rarr;</a>
+        </article></li>
+        <li class="hub-service-tile"><article>
+          <p class="hub-service-tile__eyebrow">02 · Revenue recognition</p>
+          <h3 class="hub-service-tile__heading"><a href="/find-an-accountant/new-york/monthly-bookkeeping/">Retainer &amp; milestone revenue</a></h3>
+          <p class="hub-service-tile__body">Deferred revenue tracked and recognized across the period it's earned, so monthly profit reflects work delivered — not when the invoice cleared.</p>
+          <a class="hub-service-tile__cta" href="/find-an-accountant/new-york/monthly-bookkeeping/">Monthly bookkeeping &rarr;</a>
+        </article></li>
+        <li class="hub-service-tile"><article>
+          <p class="hub-service-tile__eyebrow">03 · Pass-through costs</p>
+          <h3 class="hub-service-tile__heading"><a href="/find-an-accountant/new-york/bookkeeping-services/">Pass-through vs. marked-up</a></h3>
+          <p class="hub-service-tile__body">Reimbursable client costs separated from marked-up expenses, so margin is real and client invoicing is clean.</p>
+          <a class="hub-service-tile__cta" href="/find-an-accountant/new-york/bookkeeping-services/">Bookkeeping &rarr;</a>
+        </article></li>
+        <li class="hub-service-tile"><article>
+          <p class="hub-service-tile__eyebrow">04 · Sales tax on services</p>
+          <h3 class="hub-service-tile__heading"><a href="/find-an-accountant/new-york/sales-tax-help/">NY taxable-service tracking</a></h3>
+          <p class="hub-service-tile__body">QuickBooks set to charge NY sales tax on the consulting services that are taxable and leave the rest — so your quarterly return reconciles.</p>
+          <a class="hub-service-tile__cta" href="/find-an-accountant/new-york/sales-tax-help/">Sales tax help &rarr;</a>
+        </article></li>
+        <li class="hub-service-tile"><article>
+          <p class="hub-service-tile__eyebrow">05 · Multi-state &amp; nexus data</p>
+          <h3 class="hub-service-tile__heading"><a href="/find-an-accountant/new-york/state-tax-notice-help/">By-state revenue &amp; payroll</a></h3>
+          <p class="hub-service-tile__body">Revenue and payroll tracked by state so your CPA can manage income- and sales-tax nexus from remote staff and out-of-state clients.</p>
+          <a class="hub-service-tile__cta" href="/find-an-accountant/new-york/state-tax-notice-help/">State notices &rarr;</a>
+        </article></li>
+        <li class="hub-service-tile"><article>
+          <p class="hub-service-tile__eyebrow">06 · Contractor vs. employee</p>
+          <h3 class="hub-service-tile__heading"><a href="/accounting/payroll-management/">1099 &amp; payroll handling</a></h3>
+          <p class="hub-service-tile__body">Subcontractors and W-2 staff tracked and paid correctly, with the worker-classification care New York enforces closely.</p>
+          <a class="hub-service-tile__cta" href="/accounting/payroll-management/">Payroll &rarr;</a>
+        </article></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TOOLS (ecom-integrations / integration-grid) -->
+  <section class="section section--ecom-integrations" id="nycns-integrations" aria-labelledby="nycns-integrations-heading">
+    <div class="container">
+      <header class="section__header section__header--centered">
+        <p class="section__eyebrow">Tools we work alongside</p>
+        <h2 class="section__heading" id="nycns-integrations-heading">Connected to how you run the practice.</h2>
+      </header>
+      <ul class="integration-grid" role="list" aria-label="Consulting tools reconciled with QuickBooks">
+        <li class="integration-pill">QuickBooks Online</li>
+        <li class="integration-pill">Harvest</li>
+        <li class="integration-pill">Toggl</li>
+        <li class="integration-pill">HubSpot</li>
+        <li class="integration-pill">Bill.com</li>
+        <li class="integration-pill">Gusto</li>
+        <li class="integration-pill">Stripe</li>
+        <li class="integration-pill">Expensify</li>
+      </ul>
+      <p class="integration-grid__note">Using different time-tracking or PSA software? If it exports to QuickBooks, we can work with it. <a href="/contact/?intent=new-york&amp;state=new-york&amp;source_type=industry&amp;funnel_stage=MOFU">Ask on a discovery call</a>.</p>
+    </div>
+  </section>
+
+  <!-- PROCESS (call-process / cadence) -->
+  <section class="section section--call-process" id="nycns-process" aria-labelledby="nycns-process-heading">
+    <div class="container">
+      <header class="section__header">
+        <p class="section__eyebrow">How engagements work</p>
+        <h2 class="section__heading" id="nycns-process-heading">From flat P&amp;L to client-level profit.</h2>
+        <p class="section__lede">Every New York consulting engagement follows the same four-phase rhythm — books accurate first, profit visibility second, advisory third.</p>
+      </header>
+      <ol class="cadence" role="list">
+        <li class="cadence__phase" data-phase="1">
+          <p class="cadence__day">Phase 1</p>
+          <h3 class="cadence__heading">Discovery</h3>
+          <p class="cadence__body">A 30-minute call to map your service lines, retainer and project mix, where clients are based, and where the books stop telling you the truth. No pitch.</p>
+        </li>
+        <li class="cadence__phase" data-phase="2">
+          <p class="cadence__day">Phase 2</p>
+          <h3 class="cadence__heading">Structure &amp; cleanup</h3>
+          <p class="cadence__body">Configure client/project classes and revenue-recognition handling, plus a <a href="/find-an-accountant/new-york/cleanup-bookkeeping/">cleanup</a> to reclassify past revenue and costs to the right engagements.</p>
+        </li>
+        <li class="cadence__phase" data-phase="3">
+          <p class="cadence__day">Phase 3</p>
+          <h3 class="cadence__heading">Monthly close &amp; reporting</h3>
+          <p class="cadence__body">Monthly reconciliation with client- and project-profitability reporting, deferred-revenue schedules, and by-state revenue tracking for nexus.</p>
+        </li>
+        <li class="cadence__phase" data-phase="4">
+          <p class="cadence__day">Phase 4</p>
+          <h3 class="cadence__heading">Reporting &amp; advisory</h3>
+          <p class="cadence__body">Profitability and utilization reporting and, as you scale, <a href="/accounting/advisory/fractional-cfo/">pricing and cash-flow advisory</a>.</p>
+        </li>
+      </ol>
+      <div class="process__cta">
+        <a class="btn btn--primary" href="/contact/?intent=new-york&amp;state=new-york&amp;source_type=industry&amp;funnel_stage=MOFU" data-cta="nycns-process-cta">Book a Discovery Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVISORY (credential-strip / mission-block) -->
+  <section class="section section--credential-strip" id="nycns-advisory" aria-labelledby="nycns-advisory-heading">
+    <div class="container container--narrow">
+      <div class="mission-block">
+        <p class="mission-block__eyebrow">Beyond the books</p>
+        <h2 class="mission-block__heading" id="nycns-advisory-heading">Accurate client margins are the start. Pricing the work is the point.</h2>
+        <div class="mission-block__body">
+          <p>Once every client and project shows real profit and your revenue is recognized cleanly, the question shifts from "are the books right?" to "what should we charge, and who should we fire?" Which service lines carry margin, which clients quietly cost more than they pay, when to raise rates, how cash flows across overlapping retainers — the decisions that separate New York consultancies that scale from those that just stay busy.</p>
+          <p>That's where <strong>advisory</strong> comes in: a Certified ProAdvisor who knows your client-profitability data turning it into pricing strategy, utilization targets, and cash-flow forecasting. <strong>Automation handles the data entry. We handle the judgment.</strong> As automation takes over routine entry, this judgment layer is where consultancies find their edge.</p>
+          <p><a href="/accounting/advisory/fractional-cfo/">Explore fractional CFO &amp; advisory &rarr;</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--faq" id="nycns-faq" aria-labelledby="nycns-faq-heading">
+    <div class="container container--narrow">
+      <p class="faq__eyebrow">Common questions</p>
+      <h2 class="faq__heading" id="nycns-faq-heading">New York consulting accounting questions.</h2>
+      <dl class="faq__list">
+        <div class="faq__item">
+          <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="nycns-faq-1" id="nycns-faq-q-1">What makes accounting for a New York consulting firm different?</button></dt>
+          <dd class="faq__answer" id="nycns-faq-1" role="region" aria-labelledby="nycns-faq-q-1"><p>Consulting profit lives in utilization and project margin, not the bank balance. Good consulting accounting tracks billable rates and project costs so you can see which clients and engagements actually make money, recognizes retainer and milestone revenue in the period it's earned rather than when cash arrives, and separates reimbursable pass-through costs from marked-up ones. For a New York firm it also means handling sales tax on the consulting services that are taxable here and tracking the multi-state exposure that out-of-state clients and remote staff create.</p></dd>
+        </div>
+        <div class="faq__item">
+          <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="nycns-faq-2" id="nycns-faq-q-2">Do consultants have to charge sales tax in New York?</button></dt>
+          <dd class="faq__answer" id="nycns-faq-2" role="region" aria-labelledby="nycns-faq-q-2"><p>It depends on the service. Pure management or strategy consulting is generally not subject to New York sales tax, but several adjacent services are — certain information services, prewritten software, and some staffing arrangements, for example. The risk is treating everything as non-taxable when part of what you sell is taxable. We configure QuickBooks to charge sales tax on the taxable services and leave the rest, so your quarterly New York return reconciles to the books. Your CPA confirms taxability for your specific offering and files the return.</p></dd>
+        </div>
+        <div class="faq__item">
+          <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="nycns-faq-3" id="nycns-faq-q-3">I have clients in other states — does that create a tax problem?</button></dt>
+          <dd class="faq__answer" id="nycns-faq-3" role="region" aria-labelledby="nycns-faq-q-3"><p>It can. Serving clients in other states, or employing remote staff who live elsewhere, can create income-tax and sales-tax nexus in those states — meaning you may have filing obligations beyond New York. It's one of the most common things growing consultancies overlook. We don't determine your nexus position (your CPA does that), but we structure QuickBooks to track revenue and payroll by state, so the data your CPA needs to assess and manage multi-state exposure is there rather than reconstructed under pressure later.</p></dd>
+        </div>
+        <div class="faq__item">
+          <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="nycns-faq-4" id="nycns-faq-q-4">How much does consulting bookkeeping cost in New York?</button></dt>
+          <dd class="faq__answer" id="nycns-faq-4" role="region" aria-labelledby="nycns-faq-q-4"><p>Monthly bookkeeping for a New York consultancy runs $400–$2,500+ per month, fixed-fee against a written scope. Pricing is set by transaction volume, number of accounts, and how much project- and client-level reporting you need — a solo advisor on retainers is at the lower end, a multi-consultant firm with project accounting and deferred revenue higher. We quote a firm number after reviewing your file.</p></dd>
+        </div>
+        <div class="faq__item">
+          <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="nycns-faq-5" id="nycns-faq-q-5">Can you show profit by client and by project?</button></dt>
+          <dd class="faq__answer" id="nycns-faq-5" role="region" aria-labelledby="nycns-faq-q-5"><p>Yes — it's the core of consulting accounting. Using QuickBooks classes, projects, and tags, we structure your file so you can pull a profit-and-loss filtered by client, project, or service line rather than only a company-wide view. That's what lets you see which engagements carry margin, which clients cost more time than they pay for, and where to focus or raise rates.</p></dd>
+        </div>
+        <div class="faq__item">
+          <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="nycns-faq-6" id="nycns-faq-q-6">How do you handle retainers and upfront payments?</button></dt>
+          <dd class="faq__answer" id="nycns-faq-6" role="region" aria-labelledby="nycns-faq-q-6"><p>A retainer or milestone paid up front is deferred revenue — earned over the period you deliver the work, not profit on the day it lands. We book it to a deferred-revenue liability and recognize it across the engagement, so your monthly profit reflects work actually delivered. Without that, one big invoice makes a month look spectacular and the next look broke, and your margins never read true. Clean revenue recognition also matters if you ever raise capital, sell, or face due diligence.</p></dd>
+        </div>
+        <div class="faq__item">
+          <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="nycns-faq-7" id="nycns-faq-q-7">Do you work with my time-tracking and invoicing tools?</button></dt>
+          <dd class="faq__answer" id="nycns-faq-7" role="region" aria-labelledby="nycns-faq-q-7"><p>Yes. We work alongside the tools consultancies use — Harvest, Toggl, HubSpot, Bill.com, Stripe, Expensify, Gusto, and others — reconciling what they export into QuickBooks. If your time-tracking or PSA platform exports to QuickBooks, we can build the workflow around it rather than asking you to switch. We work in your own QuickBooks file, which you continue to own.</p></dd>
+        </div>
+        <div class="faq__item">
+          <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="nycns-faq-8" id="nycns-faq-q-8">How do we get started?</button></dt>
+          <dd class="faq__answer" id="nycns-faq-8" role="region" aria-labelledby="nycns-faq-q-8"><p>Book a free discovery call. We review your QuickBooks file remotely, map your service lines and client mix, determine whether you need a <a href="/find-an-accountant/new-york/cleanup-bookkeeping/">cleanup</a> first or can go straight to monthly service, and send a written fixed-fee proposal within 3 business days. Your named Certified ProAdvisor begins as soon as you approve. We do the books; your CPA files.</p></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- EXPERT REVIEW -->
+  <section class="section section--speak-review" id="nycns-review" aria-labelledby="nycns-review-heading">
+    <div class="container container--narrow">
+      <div class="expert-review">
+        <p class="expert-review__eyebrow">Page review &amp; standards</p>
+        <h2 class="expert-review__heading" id="nycns-review-heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+        <div class="expert-review__body"><p>Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor firm serving New York consulting and professional-services businesses remotely. Pricing reflects TechBrot's New York engagement ranges; New York sales-tax and nexus references reflect rules current as of the date below and are reviewed periodically. TechBrot provides bookkeeping and coordinates with your CPA, who files and confirms taxability.</p></div>
+        <div class="expert-review__credentials">
+          <div class="expert-review__credential"><p class="expert-review__credential-label">Reviewer</p><p class="expert-review__credential-detail">David Westgate · 40+ years operational accounting experience</p></div>
+          <div class="expert-review__credential"><p class="expert-review__credential-label">Standards</p><p class="expert-review__credential-detail">Fixed-fee, written scope · Client retains QuickBooks ownership · Taxability confirmed by your CPA · No tax-filing or representation claims (out of scope) · No fabricated data</p></div>
+        </div>
+        <p class="expert-review__updated">Last reviewed: June 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="section section--cleanup-related" id="nycns-related" aria-labelledby="nycns-related-heading">
+    <div class="container">
+      <header class="section__header"><p class="section__eyebrow">Related</p><h2 class="section__heading" id="nycns-related-heading">Related New York services &amp; industries.</h2></header>
+      <ul class="related-grid" role="list">
+        <li class="related-card"><article><h3 class="related-card__heading"><a href="/find-an-accountant/new-york/monthly-bookkeeping/">Monthly bookkeeping</a></h3><p class="related-card__body">Client- and project-level monthly close that keeps consulting margins visible.</p><a class="related-card__cta" href="/find-an-accountant/new-york/monthly-bookkeeping/">Explore monthly &rarr;</a></article></li>
+        <li class="related-card"><article><h3 class="related-card__heading"><a href="/find-an-accountant/new-york/sales-tax-help/">NY sales tax help</a></h3><p class="related-card__body">Which consulting services are taxable in New York, tracked correctly in QuickBooks.</p><a class="related-card__cta" href="/find-an-accountant/new-york/sales-tax-help/">Sales tax help &rarr;</a></article></li>
+        <li class="related-card"><article><h3 class="related-card__heading"><a href="/find-an-accountant/new-york/state-tax-notice-help/">State tax notice help</a></h3><p class="related-card__body">Multi-state nexus from out-of-state clients and remote staff, with the data your CPA needs.</p><a class="related-card__cta" href="/find-an-accountant/new-york/state-tax-notice-help/">State notices &rarr;</a></article></li>
+        <li class="related-card"><article><h3 class="related-card__heading"><a href="/find-an-accountant/new-york/industries/">All NY industries</a></h3><p class="related-card__body">See how TechBrot tailors accounting to the way your industry runs in New York.</p><a class="related-card__cta" href="/find-an-accountant/new-york/industries/">All industries &rarr;</a></article></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section section--child-cta" id="nycns-final-cta" aria-labelledby="nycns-final-cta-heading">
+    <div class="container container--narrow">
+      <div class="child-cta">
+        <h2 class="child-cta__heading" id="nycns-final-cta-heading">See which clients actually make you money.</h2>
+        <p class="child-cta__lede">Book a free books review. We'll look at your QuickBooks file, show you where client and project profit is hiding, and send a written fixed-fee quote within 3 business days. No pitch.</p>
+        <div class="child-cta__actions">
+          <a class="btn btn--primary btn--lg" href="/contact/?intent=new-york&amp;state=new-york&amp;source_type=industry&amp;funnel_stage=BOFU" data-cta="nycns-final-primary">Get a Free Books Review</a>
+          <a class="btn btn--ghost btn--lg" href="/find-an-accountant/new-york/bookkeeping-services/" data-cta="nycns-final-secondary">New York bookkeeping services</a>
+        </div>
+        <p class="child-cta__disclaimer">TechBrot is an independent Certified QuickBooks ProAdvisor firm. We provide bookkeeping, QuickBooks, payroll, and advisory services and coordinate with your CPA or EA. We do not file tax returns, determine tax nexus, or represent clients before tax authorities. QuickBooks is a registered trademark of Intuit Inc.; TechBrot is not affiliated with Intuit Inc.</p>
+      </div>
+    </div>
+  </section>
+
+</main><!-- ============================================================================
+     FOOTER
+     ============================================================================ -->
+
+<footer class="site-footer" role="contentinfo" id="site-footer">
+
+  <section class="site-footer__band" aria-label="Newsletter signup">
+    <div class="container">
+      <div class="footer-band">
+        <div class="footer-band__copy">
+          <h2 class="footer-band__heading">The monthly brief.</h2>
+          <p class="footer-band__lede">One email a month — operational accounting, QuickBooks, and finance-ops insight for U.S. business owners. No spam, unsubscribe anytime.</p>
+        </div>
+        <form class="footer-band__form" action="/subscribe" method="post" aria-label="Subscribe to the monthly brief">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input class="footer-band__input" type="email" id="footer-email" name="email" placeholder="you@company.com" autocomplete="email" required="">
+          <button class="btn btn--primary btn--md" type="submit" data-cta="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="site-footer__main">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="site-footer__brand-col">
+          <a class="site-brand site-brand--footer" href="/" aria-label="TechBrot home">
+            <img class="site-brand__mark" src="/assets/img/brand/wordmark-light.png" alt="TechBrot" width="140" height="36" decoding="async">
+          </a>
+          <p class="site-footer__tagline">A modern accounting platform with vetted local partners.</p>
+          <ul class="site-footer__contact-list">
+            <li><a href="mailto:hello@techbrot.com">hello@techbrot.com</a></li>
+            <li><a href="tel:+18777515575">(877) 751-5575</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Book a discovery call →</a></li>
+          </ul>
+          <ul class="site-footer__social" aria-label="Social media">
+  <li>
+    <a href="https://www.linkedin.com/company/techbrot-inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on LinkedIn">
+      <img src="/assets/img/icons/linkedin.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://x.com/techbrot_inc"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on X">
+      <img src="/assets/img/icons/x.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.instagram.com/techbrot_inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on Instagram">
+      <img src="/assets/img/icons/instagram.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+</ul>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Accounting">
+          <h2 class="site-footer__heading" id="fh-services" aria-controls="fl-services" aria-expanded="false" role="button" tabindex="0">Accounting</h2>
+          <ul class="site-footer__links" id="fl-services" aria-labelledby="fh-services">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="QuickBooks">
+          <h2 class="site-footer__heading" id="fh-quickbooks" aria-controls="fl-quickbooks" aria-expanded="false" role="button" tabindex="0">QuickBooks</h2>
+          <ul class="site-footer__links" id="fl-quickbooks" aria-labelledby="fh-quickbooks">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Company">
+          <h2 class="site-footer__heading" id="fh-company" aria-controls="fl-company" aria-expanded="false" role="button" tabindex="0">Company</h2>
+          <ul class="site-footer__links" id="fl-company" aria-labelledby="fh-company">
+            <li><a href="/about/">About</a></li>
+            <li><a href="/about/methodology/">Methodology</a></li>
+            <li><a href="/about/team/">Team</a></li>
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Network">
+          <h2 class="site-footer__heading" id="fh-network" aria-controls="fl-network" aria-expanded="false" role="button" tabindex="0">Network</h2>
+          <ul class="site-footer__links" id="fl-network" aria-labelledby="fh-network">
+            <li><a href="/find-an-accountant/">Find an Accountant</a></li>
+            <li><a href="/partners/">For Accountants</a></li>
+            <li><a href="/about/network/">How it works</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__base">
+    <div class="container">
+      <p class="site-footer__disclosure" role="note">
+        <strong>Independent ProAdvisor firm.</strong> QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc. <a href="/legal/disclaimer/">Read full notice</a>.
+      </p>
+      <div class="site-footer__base-row">
+        <p class="site-footer__copyright">© <time>2026</time> TechBrot Inc. All rights reserved.</p>
+        <ul class="site-footer__legal" aria-label="Legal links">
+          <li><a href="/legal/privacy-policy/">Privacy</a></li>
+          <li><a href="/legal/terms/">Terms</a></li>
+          <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+          <li><a href="/legal/dpa/">Data processing</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</footer>
+    <script src="../../../../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

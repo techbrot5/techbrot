@@ -1,0 +1,89 @@
+/* ui_kits/website — minimal shared chrome for tier mockups.
+   The production mega-nav and footer are being rebuilt from scratch (see
+   03-components.css note) — this is deliberately minimal placeholder chrome,
+   NOT a proposed nav design. */
+
+.site-top {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-block-end: 1px solid var(--border-hairline);
+  background: var(--bg-page);
+}
+
+.site-top__lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.site-top__lockup img {
+  height: 30px;
+  width: auto;
+}
+
+.site-top__wordmark {
+  font-family: var(--font-serif);
+  font-size: var(--fs-22);
+  letter-spacing: var(--ls-tight);
+  color: var(--text-primary);
+}
+
+.site-top__wordmark em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+.site-top__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.site-top__phone {
+  font-family: var(--font-serif);
+  font-size: var(--fs-17);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+
+.site-top__phone:hover {
+  color: var(--color-accent);
+}
+
+.site-top__note {
+  font-size: var(--fs-12);
+  color: var(--text-eyebrow);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.site-base {
+  padding-block: var(--space-8);
+  background: var(--color-surface-dark);
+  color: var(--color-ink-inverted-mute);
+  font-size: var(--fs-12);
+  line-height: 1.6;
+}
+
+.site-base .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-8);
+  justify-content: space-between;
+}
+
+.site-base a {
+  color: var(--color-ink-inverted-soft);
+}
+
+.site-base a:hover {
+  color: var(--color-ink-inverted);
+}
+
+/* tier-mockup helper: dark hero motif placement */
+.hero-tier .container {
+  position: relative;
+  z-index: var(--z-base);
+}

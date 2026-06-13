@@ -1,0 +1,68 @@
+/* ============================================================================
+   TechBrot · NEW SKIN — DRAFT token subset (Stage 1, motif renders)
+   ----------------------------------------------------------------------------
+   New-system values landed UNDER the enforced 01-tokens.css names so the
+   battery's css-drift + skin-guarantee checks survive. This is the subset the
+   Stage-1 motif renders consume; the complete re-skinned 01-tokens.css ships
+   in Stage 2. New names only for genuinely new concepts (--color-brass).
+   ============================================================================ */
+:root {
+  /* Paper ramp (warm) — four steps + edge */
+  --color-paper: #FBFAF7;
+  --color-paper-mist: #F6F4EF;   /* tier: hub */
+  --color-paper-warm: #F4F2EC;   /* tier: guide / mofu */
+  --color-paper-deep: #EDEAE1;   /* tier: bofu */
+  --color-paper-edge: #DCD8CC;
+
+  /* Ink ramp */
+  --color-ink: #1A1915;
+  --color-ink-soft: #45433C;
+  --color-ink-mute: #5F5B52;     /* AA ≥5.2:1 on paper-deep — eyebrow-safe */
+  --color-ink-faint: #908C80;    /* non-text only (placeholders, hairmarks) */
+
+  /* Accent — cobalt (replaces oxblood #841E1E under the same names) */
+  --color-accent: #2B4FD6;       /* 5.4:1 on paper-deep — AA at all tints */
+  --color-accent-deep: #1D3EB8;
+  --color-accent-soft: #3D63E8;  /* dark-surface motif + focus duty */
+
+  /* NEW concept (brass garnish — eyebrows on light, highlighted figures) */
+  --color-brass: #8A6321;
+
+  /* Inverted / dark */
+  --color-ink-inverted: #F5F3EC;
+  --color-ink-inverted-soft: rgba(245, 243, 236, 0.78);
+  --color-ink-inverted-mute: rgba(245, 243, 236, 0.55);
+  --color-surface-dark: #181711;
+  --color-surface-dark-2: #23211A;
+
+  /* Tier surfaces (standing rule table preserved; values from the new ramp) */
+  --surface-tier-hub: var(--color-paper-mist);
+  --surface-tier-bofu: var(--color-paper-deep);
+  --surface-tier-guide: var(--color-paper-warm);
+
+  /* Status */
+  --color-focus: #3D63E8;
+  --color-success: #2E7D4F;
+  --color-warning: #9A5E04;
+
+  /* Semantic aliases (names preserved) */
+  --bg-page: var(--color-paper);
+  --bg-section-alt: var(--color-paper-warm);
+  --bg-card: #FFFFFF;
+  --bg-card-on-warm: #FFFFFF;
+  --text-primary: var(--color-ink);
+  --text-body: var(--color-ink-soft);
+  --text-secondary: var(--color-ink-mute);
+  --text-eyebrow: var(--color-ink-mute);
+  --border-hairline: var(--color-paper-edge);
+  --accent: var(--color-accent);
+
+  /* Type (families swap; the fs/lh/ls/fw scales keep their enforced values) */
+  --font-serif: "Fraunces", "Fraunces-fallback", Georgia, "Times New Roman", serif;
+  --font-sans: "Public Sans", "PublicSans-fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", Consolas, monospace;
+
+  /* Motif constants (new concepts) */
+  --motif-gap: 10px;            /* field scale: bar h24 : gap 10 */
+  --rule-aligned-w: 48px;       /* hairline intensity: 30 / 4 / 14 */
+}

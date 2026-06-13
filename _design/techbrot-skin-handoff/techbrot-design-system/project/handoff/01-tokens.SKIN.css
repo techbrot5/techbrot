@@ -1,0 +1,167 @@
+/* ============================================================================
+   TechBrot · NEW SKIN · 01 — DESIGN TOKENS (complete re-skin, Stage 2)
+   ----------------------------------------------------------------------------
+   Drop-in replacement for 01-tokens.css: every enforced name preserved,
+   values re-cut to the new system (cobalt accent, warm four-step paper ramp,
+   Fraunces / Public Sans / IBM Plex Mono). New names ONLY for genuinely new
+   concepts — marked NEW-CONCEPT. AA matrix computed 2026-06-13 (WCAG relative
+   luminance): every text token ≥4.9:1 on its worst-case tier tint unless
+   marked non-text. Load order unchanged: tokens → base → components → pages.
+   ============================================================================ */
+
+:root {
+  /* Paper ramp (warm). Ratios below are vs --color-ink. */
+  --color-paper: #FBFAF7;        /* page                                  */
+  --color-paper-warm: #F4F2EC;   /* tier: guide/mofu · ink 15.71:1        */
+  --color-paper-deep: #EDEAE1;   /* tier: bofu        · ink 14.62:1      */
+  --color-paper-edge: #DCD8CC;   /* hairlines, input borders (non-text)   */
+  --color-ink: #1A1915;          /* 16.85:1 on paper                      */
+  --color-ink-soft: #45433C;     /* body · 9.49 paper / 8.23 deep         */
+  --color-ink-mute: #5F5B52;     /* secondary+eyebrow · 6.48 / 5.62 deep  */
+  --color-ink-faint: #908C80;    /* NON-TEXT ONLY (3.2:1) — hairmarks, placeholders */
+  --color-accent: #2B4FD6;       /* cobalt · 6.30 paper / 5.47 deep       */
+  --color-accent-deep: #1D3EB8;  /* hover/active · 8.27 / 7.17            */
+  --color-accent-soft: #3D63E8;  /* dark-surface motif + focus duty (non-text on light) */
+  --color-ink-inverted: #F5F3EC; /* 16.17:1 on surface-dark               */
+  --color-ink-inverted-soft: rgba(245, 243, 236, 0.78); /* 10.16:1 composited */
+  --color-ink-inverted-mute: rgba(245, 243, 236, 0.55); /* 5.62:1 composited — ≥14px only */
+  --color-surface-dark: #181711;
+  --color-surface-dark-2: #23211A;
+  /* Tier-coded section surfaces (ruling B table preserved).
+     --color-paper-mist interpolated inside the new ramp. */
+  --color-paper-mist: #F6F4EF;   /* ink 16.00:1 */
+  --surface-tier-hub: var(--color-paper-mist);
+  --surface-tier-bofu: var(--color-paper-deep);
+  --surface-tier-guide: var(--color-paper-warm);
+  --color-focus: #118A7E;        /* RECUT (2A ruling 3): teal — never confusable with cobalt links. Ring ≥3:1 everywhere: 4.06 paper / 3.85 mist / 3.78 warm / 3.52 deep / 4.24 dark */
+  --color-success: #29714A;      /* 5.66 paper / 4.91 deep */
+  --color-warning: #8E5603;      /* 5.78 paper / 5.01 deep */
+  /* NEW-CONCEPT: form/validation red — the old skin reused oxblood accent
+     for error duty; cobalt cannot. 5.83 paper / 5.06 deep. */
+  --color-critical: #B0382C;
+  /* NEW-CONCEPT: brass — editorial garnish (eyebrows on light surfaces,
+     highlighted figures, diagram secondaries). 5.97 paper / 5.18 deep. */
+  /* NEW-CONCEPT: brass on dark surfaces (rating stars, dark-band garnish) — base brass fails AA on ink. 7.6:1 on #181711. */
+  --color-brass-bright: #C9A961;
+  --color-brass: #7E5A1E;
+  --bg-page: var(--color-paper);
+  --bg-section-alt: var(--color-paper-warm);
+  --bg-card: #FFFFFF;            /* cards step UP to white off the warm page */
+  --bg-card-on-warm: #FFFFFF;
+  --text-primary: var(--color-ink);
+  --text-body: var(--color-ink-soft);
+  --text-secondary: var(--color-ink-mute);
+  --text-eyebrow: var(--color-ink-mute); /* AA fix inherited: ink-mute, never ink-faint */
+  --border-hairline: var(--color-paper-edge);
+  --accent: var(--color-accent);
+  --font-serif: "Fraunces", "Fraunces-fallback", Georgia, "Times New Roman", serif;
+  --font-sans: "Public Sans", "PublicSans-fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", Consolas, monospace;
+  /* NEW-CONCEPT: Fraunces variable axes — display vs heading voice */
+  --serif-display-axes: "opsz" 90, "SOFT" 0, "WONK" 0;
+  --serif-heading-axes: "opsz" 40, "SOFT" 0, "WONK" 0;
+  /* NEW-CONCEPT: motif constants (Stage-1 ruling). REFERENCE values — usages
+     inline the literal gradient (capture/render engines mishandle gradient-
+     holding custom properties on pseudo-elements). */
+  --rule-aligned: linear-gradient(90deg, var(--accent) 0 30px, transparent 30px 34px, var(--accent) 34px 48px);
+  --rule-aligned-sm: linear-gradient(90deg, var(--accent) 0 16px, transparent 16px 19px, var(--accent) 19px 26px);
+  --fs-11: 0.6875rem;
+  --fs-12: 0.75rem;
+  --fs-13: 0.8125rem;
+  --fs-14: 0.875rem;
+  --fs-15: 0.9375rem;
+  --fs-16: 1rem;
+  --fs-17: 1.0625rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-22: 1.375rem;
+  --fs-24: 1.5rem;
+  --fs-28: 1.75rem;
+  --fs-32: 2rem;
+  --fs-38: 2.375rem;
+  --fs-44: 2.75rem;
+  --fs-52: 3.25rem;
+  --fs-68: 4.25rem;
+  --lh-tight: 1.05; /* @kind other */
+  --lh-snug: 1.15; /* @kind other */
+  --lh-base: 1.55; /* @kind other */
+  --lh-loose: 1.7; /* @kind other */
+  --ls-tight: -0.02em;
+  --ls-snug: -0.012em;
+  --ls-base: -0.005em;
+  --ls-wide: 0.08em;
+  --ls-wider: 0.14em;
+  --fw-regular: 400; /* @kind font */
+  --fw-medium: 500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold: 700; /* @kind font */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-40: 10rem;
+  --container-max: 1240px;
+  --container-narrow: 820px;
+  --container-wide: 1440px;
+  --container-padding: 1.25rem;
+  --container-padding-lg: 2rem;
+  --header-height: 72px;
+  --header-height-scrolled: 60px;
+  --radius-none: 0;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;  /* re-cut: cards round to 10 in the new language */
+  --radius-pill: 999px;
+  /* Elevation — warm-tinted, fainter than the old skin; rest state is FLAT */
+  --shadow-xs: 0 1px 2px rgba(26, 25, 21, 0.06);
+  --shadow-sm: 0 1px 2px rgba(26, 25, 21, 0.05), 0 2px 8px rgba(26, 25, 21, 0.05);
+  --shadow-md: 0 2px 4px rgba(26, 25, 21, 0.05), 0 8px 24px rgba(26, 25, 21, 0.08);
+  --shadow-lg: 0 4px 8px rgba(26, 25, 21, 0.06), 0 16px 48px rgba(26, 25, 21, 0.12);
+  --shadow-focus: 0 0 0 3px rgba(17, 138, 126, 0.32);
+  --motion-fast: 120ms; /* @kind other */
+  --motion-base: 200ms; /* @kind other */
+  --motion-slow: 360ms; /* @kind other */
+  --motion-slower: 600ms; /* @kind other */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --ease-spring: cubic-bezier(0.5, 1.2, 0.4, 1); /* @kind other */
+  --z-base: 1; /* @kind other */
+  --z-sticky: 50; /* @kind other */
+  --z-header: 100; /* @kind other */
+  --z-dropdown: 200; /* @kind other */
+  --z-drawer: 300; /* @kind other */
+  --z-modal: 400; /* @kind other */
+  --z-toast: 500; /* @kind other */
+}
+
+/* DARK MODE — opt-in via [data-theme="dark"], future-ready (unchanged shape) */
+[data-theme="dark"] {
+  --bg-page: var(--color-surface-dark);
+  --bg-section-alt: var(--color-surface-dark-2);
+  --text-primary: var(--color-ink-inverted);
+  --text-body: var(--color-ink-inverted-soft);
+  --text-secondary: var(--color-ink-inverted-mute);
+  --text-eyebrow: var(--color-ink-inverted-mute);
+  --border-hairline: rgba(245, 243, 236, 0.12);
+}
+
+/* REDUCED MOTION — token-level zeroing (contract preserved) */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms; /* @kind other */
+    --motion-base: 0ms; /* @kind other */
+    --motion-slow: 0ms; /* @kind other */
+    --motion-slower: 0ms; /* @kind other */
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "techbrot-11ty",
+  "version": "0.1.0",
+  "private": true,
+  "description": "techbrot.com — 11ty rebuild (redesign + content elevation). See CLAUDE.md + BUILD-TRACKER.md.",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "clean": "node -e \"require('fs').rmSync('_site-prod',{recursive:true,force:true})\"",
+    "build:prod": "npm run clean && cross-env ENVIRONMENT=production TB_OUTDIR=_site-prod eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^6.0.4",
+    "axe-core": "^4.12.1",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.28.1"
+  }
+}

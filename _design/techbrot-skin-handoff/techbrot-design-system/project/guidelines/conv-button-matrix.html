@@ -1,0 +1,89 @@
+<!-- @dsCard group="Conversion" viewport="1280x1240" subtitle="DEFECT FIX RE-RENDER: every variant × surface × state with label/fill pinned and computed contrast — no state shares text and fill color" name="button matrix · all states" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../handoff/01-tokens.SKIN.css">
+<link rel="stylesheet" href="../handoff/02-conversion.SKIN.css">
+<style>
+body{margin:0;font-family:var(--font-sans)}
+.band{padding:28px 40px}
+.band--paper{background:var(--color-paper)}
+.band--mist{background:var(--surface-tier-hub)}
+.band--warm{background:var(--surface-tier-guide)}
+.band--deep{background:var(--surface-tier-bofu)}
+.band--dark{background:var(--color-surface-dark)}
+.band h2{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);margin:0 0 14px}
+.band--dark h2{color:var(--color-ink-inverted-mute)}
+.row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.c{font-family:var(--font-mono);font-size:10px;color:var(--text-secondary)}
+.band--dark .c{color:var(--color-ink-inverted-mute)}
+/* simulated states — mirror the handoff declarations exactly */
+.s-hover.btn--primary{background:var(--color-accent-deep);color:var(--color-ink-inverted)}
+.s-press.btn--primary{background:var(--color-accent-deep);color:var(--color-ink-inverted);transform:translateY(0.5px)}
+.s-hover.btn--ghost{border-color:var(--color-ink-faint);color:var(--text-primary)}
+.s-hover.btn--primary.btn--inverted{background:#FFFFFF;color:var(--color-ink)}
+.s-hover.btn--ghost.btn--inverted{border-color:var(--color-ink-inverted);color:var(--color-ink-inverted)}
+.s-focus{outline:2px solid var(--color-focus);outline-offset:2px}
+.s-hover.link-standalone{color:var(--color-accent-deep)}
+.s-hover.link-standalone::after{width:100%;background:var(--accent)}
+</style>
+</head><body>
+<div class="band band--paper">
+  <h2>paper #FBFAF7</h2>
+  <div class="row">
+    <button class="btn btn--primary" type="button">Primary rest</button><span class="c">15.84</span>
+    <button class="btn btn--primary s-hover" type="button">hover</button><span class="c">7.77</span>
+    <button class="btn btn--primary s-hover s-focus" type="button">focus</button><span class="c">7.77 + teal ring</span>
+    <button class="btn btn--primary s-press" type="button">press</button><span class="c">7.77</span>
+  </div>
+  <div class="row">
+    <button class="btn btn--ghost" type="button">Ghost rest</button><span class="c">17.59</span>
+    <button class="btn btn--ghost s-hover" type="button">hover</button><span class="c">17.59</span>
+    <button class="btn btn--ghost s-focus" type="button">focus</button><span class="c">17.59 + ring</span>
+  </div>
+  <div class="row">
+    <a class="link-standalone" href="#">Text button rest</a><span class="c">16.85</span>
+    <a class="link-standalone s-hover" href="#">hover — rule grows</a><span class="c">8.27</span>
+  </div>
+</div>
+<div class="band band--mist">
+  <h2>tier-hub · mist #F6F4EF</h2>
+  <div class="row">
+    <button class="btn btn--primary" type="button">Primary rest</button><span class="c">15.84</span>
+    <button class="btn btn--primary s-hover" type="button">hover</button><span class="c">7.77</span>
+    <button class="btn btn--ghost" type="button">Ghost rest</button><span class="c">17.59 (white fill)</span>
+    <button class="btn btn--ghost s-hover" type="button">hover</button><span class="c">17.59</span>
+    <a class="link-standalone s-hover" href="#">Text hover</a><span class="c">7.85</span>
+  </div>
+</div>
+<div class="band band--warm">
+  <h2>tier-guide · warm #F4F2EC</h2>
+  <div class="row">
+    <button class="btn btn--primary" type="button">Primary rest</button><span class="c">15.84</span>
+    <button class="btn btn--primary s-hover" type="button">hover</button><span class="c">7.77</span>
+    <button class="btn btn--ghost" type="button">Ghost rest</button><span class="c">17.59</span>
+    <button class="btn btn--ghost s-hover" type="button">hover</button><span class="c">17.59</span>
+    <a class="link-standalone s-hover" href="#">Text hover</a><span class="c">7.71</span>
+  </div>
+</div>
+<div class="band band--deep">
+  <h2>tier-bofu · deep #EDEAE1</h2>
+  <div class="row">
+    <button class="btn btn--primary" type="button">Primary rest</button><span class="c">15.84</span>
+    <button class="btn btn--primary s-hover" type="button">hover</button><span class="c">7.77</span>
+    <button class="btn btn--ghost" type="button">Ghost rest</button><span class="c">17.59</span>
+    <button class="btn btn--ghost s-hover" type="button">hover</button><span class="c">17.59</span>
+    <a class="link-standalone s-hover" href="#">Text hover</a><span class="c">7.17</span>
+  </div>
+</div>
+<div class="band band--dark">
+  <h2>dark #181711</h2>
+  <div class="row">
+    <button class="btn btn--primary btn--inverted" type="button">Inverted primary rest</button><span class="c">15.84</span>
+    <button class="btn btn--primary btn--inverted s-hover" type="button">hover</button><span class="c">17.59</span>
+    <button class="btn btn--primary btn--inverted s-hover s-focus" type="button">focus</button><span class="c">17.59 + ring 4.24</span>
+    <button class="btn btn--ghost btn--inverted" type="button">Inverted ghost rest</button><span class="c">16.17</span>
+    <button class="btn btn--ghost btn--inverted s-hover" type="button">hover</button><span class="c">16.17</span>
+  </div>
+</div>
+</body></html>

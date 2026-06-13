@@ -1,0 +1,95 @@
+{#- Site footer chrome — NEW SKIN (changeover round 10, 03-chrome.SKIN).
+    Carries the MANDATORY trademark disclaimer (chrome exempt from the
+    two-mention ceiling, round-4 ruling). Link set carried verbatim
+    (content equity); aligned-segment disclosure mark per the new motif
+    grammar. Newsletter band stays EXCLUDED (no dead forms). -#}
+<footer class="site-footer{% if chrome == "minimal" %} site-footer--minimal{% endif %}" role="contentinfo">
+  <div class="container">
+    {%- if chrome != "minimal" %}
+    <div class="site-footer__grid">
+      <div class="site-footer__col">
+        <a class="site-header__logo" href="/" aria-label="TechBrot home">
+          <img src="/assets/img/brand/logo-horizontal-dark.svg" alt="TechBrot" width="116" height="30">
+        </a>
+        <p class="site-footer__note">{{ site.tagline }}.</p>
+        <ul>
+          <li><a href="mailto:{{ site.emails.info }}">{{ site.emails.info }}</a></li>
+          <li><a href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">{{ site.phone.display }}</a></li>
+          <li>{{ site.address.streetAddress }}, {{ site.address.addressLocality }}, {{ site.address.addressRegion }} {{ site.address.postalCode }}</li>
+          <li><a href="/contact/?intent=home">Book the discovery call &rarr;</a></li>
+        </ul>
+      </div>
+      <nav class="site-footer__col" aria-label="Accounting">
+        <h2>Accounting</h2>
+        <ul>
+          <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+          <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup</a></li>
+          <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up</a></li>
+          <li><a href="/accounting/payroll-management/">Payroll</a></li>
+          <li><a href="/accounting/sales-tax-compliance/">Sales tax</a></li>
+          <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+          <li><a href="/accounting/services/">All services</a></li>
+        </ul>
+      </nav>
+      <nav class="site-footer__col" aria-label="QuickBooks">
+        <h2>QuickBooks</h2>
+        <ul>
+          <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+          <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+          <li><a href="/quickbooks/migration/">Migration</a></li>
+          <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+          <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+          <li><a href="/quickbooks/">QuickBooks overview</a></li>
+        </ul>
+      </nav>
+      <nav class="site-footer__col" aria-label="Company">
+        <h2>Company</h2>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/about/methodology/">Methodology</a></li>
+          <li><a href="/about/team/">Team</a></li>
+          <li><a href="/trust/">Trust &amp; standards</a></li>
+          <li><a href="/reviews/">Reviews</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="site-footer__col" aria-label="Network">
+        <h2>Network</h2>
+        <ul>
+          <li><a href="/find-an-accountant/">Find an Accountant</a></li>
+          <li><a href="/partners/">For Accountants</a></li>
+          <li><a href="/about/network/">How it works</a></li>
+          <li><a href="/vs/">Comparisons</a></li>
+        </ul>
+      </nav>
+    </div>
+    {%- else %}
+    <div class="site-footer__slim">
+      <a class="site-header__logo" href="/" aria-label="TechBrot home">
+        <img src="/assets/img/brand/logo-horizontal-dark.svg" alt="TechBrot" width="116" height="30">
+      </a>
+      <ul>
+        <li><a href="mailto:{{ site.emails.info }}">{{ site.emails.info }}</a></li>
+        <li><a href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">{{ site.phone.display }}</a></li>
+        <li>{{ site.address.streetAddress }}, {{ site.address.addressLocality }}, {{ site.address.addressRegion }} {{ site.address.postalCode }}</li>
+      </ul>
+    </div>
+    {%- endif %}
+
+    <p class="site-footer__disclosure" role="note">
+      <strong>Independent ProAdvisor firm.</strong> QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. {{ site.legalName }} is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc. <a href="/legal/disclaimer/">Read full notice</a>.
+    </p>
+    <div class="site-footer__legal">
+      <p>&copy; <time>2026</time> {{ site.legalName }} All rights reserved.</p>
+      <p>
+        <a href="/legal/privacy-policy/">Privacy</a> &middot;
+        <a href="/legal/terms/">Terms</a>
+        {%- if chrome != "minimal" %} &middot;
+        <a href="/legal/disclaimer/">Disclaimer</a> &middot;
+        <a href="/legal/dpa/">Data processing</a>
+        {%- endif %}
+      </p>
+    </div>
+  </div>
+</footer>

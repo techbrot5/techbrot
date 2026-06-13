@@ -1,0 +1,247 @@
+/* 05-kit.css — CURATED SUBSET (grows per round; round-9 trim applied). */
+
+/* 1. IN-BRIEF — quotable opener directly under the */
+
+.in-brief {
+  max-width: 56ch;
+  margin-block: var(--space-6) var(--space-8);
+  padding-inline-start: var(--space-5);
+  border-inline-start: 2px solid var(--color-accent);
+}
+
+.in-brief__text {
+  font-family: var(--font-serif);
+  font-size: var(--fs-20);
+  line-height: 1.45;
+  letter-spacing: var(--ls-snug);
+  color: var(--text-primary);
+}
+
+@media (min-width: 720px) {
+  .in-brief__text {
+    font-size: var(--fs-22);
+  }
+}
+
+.in-brief__source {
+  margin-block-start: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--fs-13);
+  color: var(--text-secondary);
+  letter-spacing: var(--ls-base);
+}
+
+/* 3. FRAMEWORK — DefinedTerm card (term + definiti */
+
+.framework {
+  padding: var(--space-8);
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  border-block-start: 2px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  max-width: 720px;
+}
+
+@media (min-width: 720px) {
+  .framework {
+    padding: var(--space-10);
+  }
+}
+
+.framework__eyebrow {
+  font-size: var(--fs-12);
+  font-weight: var(--fw-semibold);
+  color: var(--color-accent);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  margin-block-end: var(--space-3);
+}
+
+.framework__term {
+  font-family: var(--font-serif);
+  font-size: var(--fs-28);
+  line-height: 1.15;
+  letter-spacing: var(--ls-tight);
+  color: var(--text-primary);
+  font-weight: var(--fw-regular);
+  margin-block-end: var(--space-4);
+}
+
+.framework__definition {
+  font-size: var(--fs-17);
+  line-height: var(--lh-loose);
+  color: var(--text-body);
+}
+
+.framework__attribution {
+  margin-block-start: var(--space-5);
+  padding-block-start: var(--space-4);
+  border-block-start: 1px solid var(--border-hairline);
+  font-size: var(--fs-13);
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* 6. CTA BAND — formalized dark conversion block ( */
+
+.section--cta-band {
+  background: var(--color-surface-dark);
+  color: var(--color-ink-inverted);
+  padding-block: var(--space-20) var(--space-24);
+  position: relative;
+  overflow: hidden;
+}
+
+.section--cta-band .section__heading,
+.section--cta-band h2 {
+  color: var(--color-ink-inverted);
+}
+
+.cta-band__motif {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: 0;
+  width: min(40%, 480px);
+  color: var(--color-accent);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.cta-band__motif svg {
+  height: 100%;
+  width: 100%;
+}
+
+/* 7. TRUST ROW — real Clutch reviews + ProAdvisor */
+
+.trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--space-6) var(--space-10);
+  padding-block: var(--space-6);
+  border-block-start: 1px solid var(--border-hairline);
+  border-block-end: 1px solid var(--border-hairline);
+}
+
+.trust-row__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.trust-row__value {
+  font-family: var(--font-serif);
+  font-size: var(--fs-24);
+  line-height: 1.1;
+  letter-spacing: var(--ls-tight);
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.trust-row__value em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+.trust-row__label {
+  font-size: var(--fs-13);
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.trust-row__divider {
+  width: 1px;
+  align-self: stretch;
+  background: var(--border-hairline);
+}
+
+@media (max-width: 719px) {
+  .trust-row__divider {
+    display: none;
+  }
+}
+
+/* 14. HERO TIERS — five fixed variants (brief §6) */
+
+.hero-tier {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-tier .hero__heading {
+  margin-block-end: var(--space-6);
+}
+
+.hero--hub {
+  background: var(--color-surface-dark);
+  color: var(--color-ink-inverted);
+  padding-block: var(--space-24) var(--space-24);
+}
+
+.hero--hub .hero__heading {
+  color: var(--color-ink-inverted);
+}
+
+.hero--hub .hero__subheading {
+  color: var(--color-ink-inverted-soft);
+}
+
+.hero--hub .hero__eyebrow {
+  background: var(--color-surface-dark-2);
+  border-color: rgba(250, 250, 247, 0.18);
+  color: var(--color-ink-inverted-mute);
+}
+
+.hero__motif {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: 0;
+  width: min(46%, 560px);
+  color: var(--color-accent);
+  pointer-events: none;
+}
+
+.hero__motif svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 959px) {
+  .hero__motif {
+    opacity: 0.35;
+  }
+}
+
+.hero--service {
+  padding-block: var(--space-20) var(--space-20);
+}
+
+.hero--service .hero__motif {
+  width: min(32%, 380px);
+  opacity: 0.8;
+}
+
+.hero--compact {
+  padding-block: var(--space-16) var(--space-12);
+  border-block-end: 1px solid var(--border-hairline);
+}
+
+.hero--compact .hero__heading {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+}
+
+.hero--compact::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--color-accent);
+}
+
+.hero--editorial {
+  padding-block: var(--space-16) var(--space-12);
+}

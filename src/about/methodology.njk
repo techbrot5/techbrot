@@ -1,0 +1,182 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/about/methodology/",
+  "slug": "methodology",
+  "chrome": "full",
+  "callBar": false,
+  "tierClass": "section--tier-guide",
+  "bodyClass": "page--mofu",
+  "title": "Our Methodology · 5-Phase Engagement · TechBrot",
+  "description": "How a TechBrot engagement works: discovery, written fixed-fee scope, onboarding, delivery by a named Certified ProAdvisor, and a CPA-ready handoff.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "About", "href": "/about/" },
+    { "name": "Methodology" }
+  ],
+  "hero": {
+    "eyebrow": "Our methodology",
+    "heading": "The same operating model behind every engagement.",
+    "subheading": "Engaging an accounting firm shouldn&rsquo;t be a gamble on how they work. TechBrot runs one consistent methodology &mdash; discovery, written fixed-fee scope, onboarding, delivery by a named ProAdvisor, CPA-ready handoff &mdash; whether the work is bookkeeping, QuickBooks cleanup, payroll, or fractional CFO. The process is the product.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=home", "class": "btn--primary" },
+      { "label": "Explore Services", "href": "/accounting/services/", "class": "btn--ghost" }
+    ]
+  },
+  "ctaBand": {
+    "eyebrow": "Start here",
+    "heading": "Phase one is a conversation.",
+    "lede": "Book a free 30-minute discovery call. A Certified ProAdvisor reviews your situation, gives you an honest assessment of fit, and produces a written fixed-fee scope within 3 business days.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=home", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "href": "tel:{{ site.phone.e164 }}", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section section--compact section--tier-guide" id="methodology-tldr">
+  <div class="container">
+    <div class="tldr">
+      <p class="tldr__label">In one paragraph</p>
+      <h2 class="tldr__heading">How a TechBrot engagement works.</h2>
+      <p class="tldr__body" id="methodology-tldr-body">Every TechBrot engagement follows five consistent phases. <strong>1) Discovery</strong> &mdash; a free 30-minute call with a Certified ProAdvisor, with an honest assessment of fit. <strong>2) Written fixed-fee scope</strong> &mdash; within 3 business days you receive exactly what will be done, by when, and for what fixed fee; no hourly billing. <strong>3) Onboarding</strong> &mdash; a named ProAdvisor is assigned and you grant accountant-user access to your own QuickBooks file. <strong>4) Delivery</strong> &mdash; the work happens inside your file, audit trail visible to you, on a consistent rhythm. <strong>5) CPA-ready handoff</strong> &mdash; books stay CPA-ready throughout, with year-end files delivered to your CPA at no extra cost. The methodology is identical across bookkeeping, QuickBooks, payroll, sales tax, and fractional CFO &mdash; consistency is what makes engaging TechBrot predictable rather than a gamble.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="methodology-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">The methodology, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="methodology-process">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The five phases</p>
+      <h2 class="section__heading">From first contact to ongoing delivery.</h2>
+      <p class="section__lede">Each phase has a defined output &mdash; so you always know where the engagement stands.</p>
+    </header>
+    <ol class="process-diagram">
+      {%- for ph in phases %}
+      <li class="process-step">
+        <p class="process-step__number">0{{ loop.index }}</p>
+        <h3 class="process-step__heading">{{ ph.name | safe }}</h3>
+        <p class="process-step__body">{{ ph.body | safe }}</p>
+        <p class="process-step__body"><strong>Output:</strong> {{ ph.out | safe }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="methodology-why">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Why it&rsquo;s built this way</p>
+      <h2 class="section__heading">Predictability is the point.</h2>
+    </header>
+    <div class="legal-doc__body">
+      <p>Most small businesses have a bad accounting story &mdash; the bookkeeper who vanished, the surprise invoice, the books that turned out to be wrong at tax time, the firm that rotated them through three account managers in a year. Those failures almost always trace back to the same root cause: <strong>no defined process</strong>.</p>
+      <p>TechBrot&rsquo;s methodology exists to remove that risk. A written scope means you&rsquo;re never surprised by cost or deliverables. A named ProAdvisor means you&rsquo;re never re-explaining your business or wondering who&rsquo;s responsible. Working inside your own file means you never lose control of your data. CPA-ready books mean tax season is never a fire drill.</p>
+      <p>None of this is exotic &mdash; it&rsquo;s simply what an operationally mature firm does. The difference is that TechBrot makes it explicit and applies it the same way to every engagement, every time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="methodology-standards">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The operating standard</p>
+      <h2 class="section__heading">The standards that run through the whole process.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for s in standards %}
+      <article class="review-card">
+        <h3>{{ s.name | safe }}</h3>
+        <p class="review-card__fact">{{ s.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="methodology-scope">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What it covers</p>
+      <h2 class="section__heading">And what it deliberately doesn&rsquo;t.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for b in boundaries %}
+      <article class="review-card">
+        <h3>{{ b.name | safe }}</h3>
+        <p class="review-card__fact">{{ b.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="methodology-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Before you start</p>
+      <h2 class="section__heading">Questions about how we work.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="methodology-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="methodology-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="methodology-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the TechBrot platform team.</h2>
+    </header>
+    <div class="legal-doc__body">
+      <p>This methodology is maintained and reviewed by the <strong>Certified QuickBooks ProAdvisor team</strong> at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm. The operating sequence is the same one applied to every engagement &mdash; direct or network &mdash; and is reviewed against the platform&rsquo;s standards. It connects directly to our <a href="/trust/">trust &amp; standards</a> and the canonical <a href="/pricing/">pricing</a> behind every scope.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="methodology-next">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Go deeper</p>
+      <h2 class="section__heading">Where to go next.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for card in navCards %}
+      <article class="review-card">
+        <h3>{{ card.name | safe }}</h3>
+        <p class="review-card__fact">{{ card.body | safe }}</p>
+        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} &rarr;</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

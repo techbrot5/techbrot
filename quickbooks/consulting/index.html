@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+<!-- ============================================================================
+  TECHBROT.COM — GLOBAL HEAD (PRODUCTION v4)
+  Bootstrap Studio Global Template · Loads sitewide on every page
+  ----------------------------------------------------------------------------
+  SCOPE:    Site-level signals only. Each page sets:
+              • <title>
+              • <meta name="description">
+              • <link rel="canonical">
+              • <link rel="alternate" hreflang>
+              • <meta property="og:url">
+              • <meta property="og:title">
+              • <meta property="og:description">
+              • <meta name="twitter:title">
+              • <meta name="twitter:description">
+              • Page-specific schema: WebPage, BreadcrumbList, FAQPage,
+                QAPage, Article, Service offerings — all referencing
+                the global Organization / Person / WebSite via @id.
+
+  GOAL:     Top 0.01% AI citation, entity SEO, E-E-A-T, semantic search,
+            Google / Perplexity / ChatGPT / Claude / Gemini retrieval.
+
+  STACK:    Bootstrap Studio · Static HTML · TechBrot Inc. (US C-Corp)
+  MODEL:    Independent accounting platform with vetted local partners
+
+  v4 CHANGE LOG:
+    • Added Person node for David Westgate (#david-westgate) — Lead
+      QuickBooks ProAdvisor, the named/visible page author referenced by
+      each page's WebPage.reviewedBy. Both Abid (founder/CEO) and David
+      (lead ProAdvisor) are certified; David references the same shared
+      #credential-* entities by @id. Abid remains founder + off visible
+      pages (org-level relationship, not page authorship).
+  UPDATED:  June 2026
+============================================================================ -->
+
+
+<!-- ── 01. RENDERING ──────────────────────────────────── -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- ── 02. PAGE IDENTITY — GLOBAL FALLBACKS (overridden per page) ─────────
+  These are global safety-net values. Every real page overrides title
+  and description in its own head.
+<title>A Modern Accounting Platform with Vetted Local Partners · TechBrot</title>
+<meta name="description" content="TechBrot is an independent U.S. accounting platform delivering QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations through a curated network of vetted local partners.">
+ -->
+
+<!-- ── 03. CANONICAL & HREFLANG — PER-PAGE ONLY ──────────────────────────
+  Reference template (do NOT uncomment globally):
+    <link rel="canonical" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="en-US" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="x-default" href="https://techbrot.com/[slug]/">
+-->
+
+
+<!-- ── 04. INDEXING & CRAWL DIRECTIVES ───────────────────────────────────
+  AI crawler policy (GPTBot, ClaudeBot, PerplexityBot, Google-Extended,
+  Applebot-Extended) is managed at robots.txt + Cloudflare WAF level.
+  These meta directives govern traditional search crawlers only. -->
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="bingbot" content="index, follow">
+
+
+<!-- ── 05. SITE IDENTITY & AUTHORSHIP ────────────────────────────────────-->
+
+<meta name="author" content="TechBrot Inc.">
+<meta name="application-name" content="TechBrot">
+<meta name="apple-mobile-web-app-title" content="TechBrot">
+
+<!-- ── 06. GEO & LOCALE ──────────────────────────────────────────────────
+  Registered: 651 N Broad St, Suite 201, Middletown, DE 19709.
+  Service area: 50 US states (national virtual + local partner network).
+  geo.region uses ISO 3166-2 (US-DE). Nationwide service is declared in
+  Organization schema areaServed (full state ItemList below). -->
+
+<meta http-equiv="content-language" content="en-US">
+<meta name="language" content="English">
+
+<!-- ── 07. BROWSER, DEVICE & PWA ─────────────────────────────────────────-->
+
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B0B" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-TileColor" content="#FAFAF7">
+<meta name="msapplication-config" content="/browserconfig.xml">
+
+
+<!-- ── 08. SECURITY & REFERRER ───────────────────────────────────────────-->
+
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+
+<!-- ── 09. OPEN GRAPH — SITE-LEVEL ONLY (image is per-page) ─────────────
+  Per-page sets: og:url, og:title, og:description, og:image (+ dimensions),
+  and og:type="article" on articles. Global default og:type is "website". -->
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TechBrot">
+<meta property="og:locale" content="en_US">
+
+<!-- ── 10. TWITTER / X CARD — SITE-LEVEL ONLY (image is per-page) ───────-->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@techbrot_inc">
+<meta name="twitter:creator" content="@techbrot_inc">
+
+<!-- ── 11. FAVICONS, ICONS & WEB APP MANIFEST ───────────────────────────-->
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/img/brand/safari-pinned-tab.svg" color="#0B0B0B">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<!-- ── 12. SITEMAP & FEEDS ──────────────────────────────────────────────-->
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+
+<!-- ── 13. PERFORMANCE: PRECONNECT, DNS-PREFETCH, FONT PRELOAD ──────────
+  Fonts: Fraunces (serif headings) + Inter (sans body/UI), both Google.
+  Preloading the two heaviest weights eliminates layout-shift on first
+  paint. Adjust paths if you self-host. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+
+<link rel="preload" as="image" href="/assets/img/brand/wordmark.svg" fetchpriority="high">
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<!-- ── 14. STRUCTURED DATA — ENTITY GRAPH ───────────────────────────────
+  Six-node @graph:
+    1. Organization (multi-type: Organization + ProfessionalService) —
+       the primary entity. Brand, knowsAbout (topical authority),
+       hasOfferCatalog (service routing), areaServed (full US),
+       contactPoint (toll-free), full sameAs cluster.
+    2. Brand — separate Brand entity for AI knowledge-graph systems.
+    3. Person (Abid Khan) — founder/CEO authority; certified ProAdvisor.
+    4. Person (David Westgate) — Lead ProAdvisor; the named, visible page
+       author referenced by each page's WebPage.reviewedBy. Both are
+       certified and share the #credential-* entities by @id.
+    5. WebSite — publisher entity with SearchAction.
+    (ProAdvisor credential entities #credential-* are defined inline on
+     the Abid node and referenced by David.)
+
+  Per-page schema attaches via @id reference, never duplicates these. -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://techbrot.com/#organization",
+
+      "name": "TechBrot Inc.",
+      "legalName": "TechBrot Inc.",
+      "alternateName": [
+        "TechBrot",
+        "TechBrot Network",
+        "TechBrot Accounting Platform"
+      ],
+      "slogan": "A modern accounting platform with vetted local partners.",
+      "description": "TechBrot Inc. is an independent U.S. firm of Certified QuickBooks ProAdvisors, accountants, and advisors serving small and mid-sized businesses. Services span QuickBooks setup, cleanup, and migration; monthly, cleanup, and catch-up bookkeeping; payroll; multi-state sales tax; 1099 preparation; financial reporting; and fractional CFO advisory — delivered directly and through a curated network of vetted local Certified ProAdvisors. Independent Certified QuickBooks ProAdvisor firm; not affiliated with Intuit Inc.",
+      "disambiguatingDescription": "Independent accounting platform with vetted local partners — not affiliated with Intuit Inc. QuickBooks is a registered trademark of Intuit Inc.",
+
+      "url": "https://techbrot.com/",
+
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://techbrot.com/#logo",
+        "url": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "contentUrl": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "caption": "TechBrot — A modern accounting platform with vetted local partners",
+        "width": 512,
+        "height": 512,
+        "inLanguage": "en-US"
+      },
+
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://techbrot.com/assets/img/og/techbrot-og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "TechBrot — A modern accounting platform with vetted local partners"
+      },
+
+      "brand": {
+        "@id": "https://techbrot.com/#brand"
+      },
+
+   
+      "foundingDate": "2023",
+      "founder": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+      "founders": [
+        { "@id": "https://techbrot.com/#abid-khan" }
+      ],
+      "employee": [
+        { "@id": "https://techbrot.com/#abid-khan" },
+        { "@id": "https://techbrot.com/#david-westgate" }
+      ],
+
+      "email": "support@techbrot.com",
+      "telephone": "+1-877-751-5575",
+      "priceRange": "$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": ["Credit Card", "Bank Transfer", "ACH", "Check"],
+
+      "naics": "541219",
+      "isicV4": "6920",
+
+      "address": {
+        "@type": "PostalAddress",
+        "@id": "https://techbrot.com/#address",
+        "streetAddress": "651 N Broad St, Suite 201",
+        "addressLocality": "Middletown",
+        "addressRegion": "DE",
+        "postalCode": "19709",
+        "addressCountry": "US"
+      },
+
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.449",
+        "longitude": "-75.716"
+      },
+
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "customer service",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "sales",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "partners@techbrot.com",
+          "contactType": "partner inquiries",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        }
+      ],
+
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States",
+        "@id": "https://www.wikidata.org/entity/Q30"
+      },
+
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Small and mid-sized U.S. businesses"
+      },
+
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        }
+      ],
+
+      "keywords": "accounting platform, QuickBooks ProAdvisor, bookkeeping services, QuickBooks cleanup, monthly bookkeeping, catch-up bookkeeping, payroll services, fractional CFO, sales tax compliance, 1099 preparation, vetted accounting partners, U.S. small business accounting",
+
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "TechBrot Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monthly Bookkeeping",
+              "description": "Recurring monthly bookkeeping with real reconciliation, monthly close package, and named operator point of contact.",
+              "url": "https://techbrot.com/accounting/bookkeeping/monthly-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks and Bookkeeping Cleanup",
+              "description": "Reconstruct accurate books from a messy state — categorization fixes, real bank and credit-card reconciliations, prior-period correction, and reliable financial statements.",
+              "url": "https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Catch-up Bookkeeping",
+              "description": "Bring backlogged books current — from a few missed months to multi-year historical cleanup before tax filing.",
+              "url": "https://techbrot.com/accounting/bookkeeping/catch-up-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Setup and Onboarding",
+              "description": "Independent ProAdvisor-led QuickBooks setup, chart of accounts, banking, payroll, and integration configuration for new and existing businesses.",
+              "url": "https://techbrot.com/quickbooks/setup/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Migration",
+              "description": "QuickBooks Desktop-to-Online migration and other software-to-QuickBooks migrations performed by Certified ProAdvisors with data integrity verification.",
+              "url": "https://techbrot.com/quickbooks/migration/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Independent QuickBooks ProAdvisor Help",
+              "description": "Certified ProAdvisor help with QuickBooks file issues, reconciliation problems, plan selection, and workflow advisory — independent guidance beyond product support.",
+              "url": "https://techbrot.com/quickbooks/help/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Payroll Setup and Management",
+              "description": "Payroll setup, processing, tax filing, and compliance support delivered through the TechBrot operator network.",
+              "url": "https://techbrot.com/accounting/payroll-management/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sales Tax Compliance",
+              "description": "Multi-state sales tax registration, filing, and nexus advisory for U.S. small and mid-sized businesses.",
+              "url": "https://techbrot.com/accounting/sales-tax-compliance/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "1099 Preparation",
+              "description": "Annual 1099 preparation, vendor data collection, and IRS filing for U.S. small businesses.",
+              "url": "https://techbrot.com/accounting/1099-preparation/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fractional CFO Services",
+              "description": "Senior financial advisory delivered through the TechBrot network — cash flow planning, forecasting, KPI reporting, and board-ready financials for growing businesses.",
+              "url": "https://techbrot.com/accounting/advisory/fractional-cfo/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Find a Local Accounting Partner",
+              "description": "Match with a vetted, credentialed, insured TechBrot operator partner in your U.S. state — typically within 48 hours.",
+              "url": "https://techbrot.com/find-an-accountant/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          }
+        ]
+      },
+
+      "knowsAbout": [
+        "Accounting",
+        "Bookkeeping",
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Premier",
+        "QuickBooks Payroll",
+        "QuickBooks ProAdvisor",
+        "QuickBooks setup",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "QuickBooks Desktop to Online migration",
+        "QuickBooks plan selection",
+        "QuickBooks reconciliation",
+        "QuickBooks bank feeds",
+        "QuickBooks error troubleshooting",
+        "QuickBooks company file repair",
+        "QuickBooks multi-user mode",
+        "QuickBooks payroll setup",
+        "QuickBooks payroll troubleshooting",
+        "QuickBooks sales tax",
+        "QuickBooks 1099 preparation",
+        "Monthly bookkeeping",
+        "Catch-up bookkeeping",
+        "Cleanup bookkeeping",
+        "Historical bookkeeping cleanup",
+        "Virtual bookkeeping",
+        "Outsourced bookkeeping",
+        "Small business accounting",
+        "Startup accounting",
+        "Bank reconciliation",
+        "Accounts payable management",
+        "Accounts receivable management",
+        "Chart of accounts setup",
+        "Month-end close",
+        "Year-end close",
+        "Financial statement preparation",
+        "Financial reporting",
+        "Cash flow forecasting",
+        "Cash flow management",
+        "Profitability analysis",
+        "KPI reporting",
+        "Budgeting and forecasting",
+        "Payroll services",
+        "Payroll tax compliance",
+        "Sales tax compliance",
+        "Sales tax nexus",
+        "1099 preparation and filing",
+        "Tax planning",
+        "IRS problem resolution",
+        "Fractional CFO services",
+        "Controller services",
+        "Business advisory services",
+        "Ecommerce accounting",
+        "Real estate accounting",
+        "Construction accounting",
+        "Restaurant accounting",
+        "Healthcare accounting",
+        "Law firm accounting",
+        "SaaS accounting",
+        "Professional services accounting",
+        "Manufacturing accounting",
+        "Trucking accounting",
+        "Nonprofit accounting",
+        "Franchise accounting",
+        "Retail accounting",
+        "Job costing",
+        "Shopify QuickBooks integration",
+        "Amazon QuickBooks integration",
+        "Stripe QuickBooks integration",
+        "Vetted accounting partner network",
+        "Operator-led accounting platform",
+        "Independent ProAdvisor firm"
+      ],
+
+      "subjectOf": {
+        "@type": "WebPage",
+        "@id": "https://techbrot.com/about/"
+      },
+
+    "sameAs": [
+  "https://www.linkedin.com/company/techbrot-inc/",
+  "https://x.com/techbrot_inc",
+  "https://www.instagram.com/techbrot_inc",
+  "https://www.youtube.com/@techbrot_inc",
+  "https://www.facebook.com/techbrotinc",
+  "https://www.tumblr.com/techbrot",
+  "https://pin.it/1d4Qrx4At",
+  "https://www.tiktok.com/@techbrot_inc",
+  "https://medium.com/@techbrot5",
+  "https://clutch.co/profile/techbrot"
+]
+    },
+
+    {
+      "@type": "Brand",
+      "@id": "https://techbrot.com/#brand",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Network",
+      "url": "https://techbrot.com/",
+      "logo": "https://techbrot.com/assets/img/brand/logo_img.png",
+      "slogan": "A modern accounting platform with vetted local partners."
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#abid-khan",
+
+      "name": "Abid Khan",
+      "givenName": "Abid",
+      "familyName": "Khan",
+
+      "url": "https://techbrot.com/about/team/#abid-khan",
+
+      "jobTitle": "Founder & CEO",
+      "description": "Abid Khan is the Founder and CEO of TechBrot Inc., an independent U.S. accounting platform with a curated network of vetted local partners. He is a Certified QuickBooks ProAdvisor across QuickBooks Online, Desktop, Enterprise, and Payroll, and leads platform architecture, partner network development, and AI-first search infrastructure.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "Small business bookkeeping",
+        "Bank reconciliation",
+        "Accounting platform architecture",
+        "Partner network development",
+        "AI-first SEO",
+        "Topical authority architecture",
+        "E-E-A-T optimization"
+      ],
+
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qbo-l2",
+          "name": "QuickBooks Online ProAdvisor (Level 2)",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-desktop",
+          "name": "QuickBooks Desktop ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-enterprise",
+          "name": "QuickBooks Enterprise ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-payroll",
+          "name": "QuickBooks Payroll ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        }
+      ],
+
+      "sameAs": [
+  "https://www.linkedin.com/in/abid-khan-ai/",
+  "https://www.reddit.com/user/techbrot_inc/",
+  "https://www.quora.com/profile/Abid-Khan-119",
+  "https://www.credly.com/users/abid-khan.3ceb70a5/badges#credly"
+      ]
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#david-westgate",
+
+      "name": "David Westgate",
+      "givenName": "David",
+      "familyName": "Westgate",
+
+      "url": "https://techbrot.com/about/team/#david-westgate",
+
+      "jobTitle": "Lead QuickBooks ProAdvisor",
+      "description": "David Westgate is the Lead QuickBooks ProAdvisor at TechBrot Inc., with more than 40 years of accounting experience. A Certified QuickBooks ProAdvisor across QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll, he leads bookkeeping, cleanup, reconciliation, and QuickBooks file rebuilds across construction, professional services, and nonprofit engagements, and is the reviewing authority for TechBrot's published accounting content.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks reconciliation",
+        "Bookkeeping",
+        "Bank reconciliation",
+        "Month-end close",
+        "Sales tax compliance",
+        "IOLTA trust accounting",
+        "Job costing",
+        "Construction accounting",
+        "Nonprofit accounting"
+      ],
+
+      "hasCredential": [
+        { "@id": "https://techbrot.com/#credential-qbo-l2" },
+        { "@id": "https://techbrot.com/#credential-qb-desktop" },
+        { "@id": "https://techbrot.com/#credential-qb-enterprise" },
+        { "@id": "https://techbrot.com/#credential-qb-payroll" }
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://techbrot.com/#website",
+
+      "url": "https://techbrot.com/",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Accounting Platform",
+      "description": "Independent U.S. accounting platform — QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations delivered through a curated network of vetted local partners.",
+      "inLanguage": "en-US",
+
+      "publisher": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "author": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+
+      "about": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightHolder": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightYear": "2023",
+
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://techbrot.com/search/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2Z8GK69Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K2Z8GK69Z5');
+</script>
+
+<!-- ── 15. TRADEMARK DISCLOSURE (machine-readable, AI-citation safety) ──
+  Distinct meta tag declaring trademark posture. Some AI scrapers
+  prioritize meta declarations over body content. Provides an
+  additional structural defense against impersonation classification. -->
+
+<meta name="trademark-disclosure" content="QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc.">
+<meta name="affiliation-disclosure" content="independent">
+
+<!-- ============================================================================
+  END GLOBAL HEAD
+============================================================================ --><!-- ====== QUICKBOOKS CONSULTING · PAGE HEAD ====== -->
+<title>QuickBooks Consulting: Certified ProAdvisor Advisory · TechBrot</title>
+<meta name="description" content="Ongoing QuickBooks consulting by Certified ProAdvisors — workflow optimization, configuration audits, integration troubleshooting, ongoing advisory as your business grows. Monthly retainer, no hourly billing.">
+<link rel="canonical" href="https://techbrot.com/quickbooks/consulting/">
+<link rel="alternate" hreflang="en-US" href="https://techbrot.com/quickbooks/consulting/">
+<link rel="alternate" hreflang="x-default" href="https://techbrot.com/quickbooks/consulting/">
+<meta property="og:url" content="https://techbrot.com/quickbooks/consulting/">
+<meta property="og:title" content="QuickBooks Consulting: Certified ProAdvisor Advisory">
+<meta property="og:description" content="Ongoing QuickBooks advisory — workflow optimization, configuration audits, integration troubleshooting, evolving configuration as the business grows.">
+<meta property="og:image" content="https://techbrot.com/assets/img/og/qb-consulting-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TechBrot — Certified ProAdvisor QuickBooks consulting">
+<meta name="twitter:title" content="QuickBooks Consulting · TechBrot">
+<meta name="twitter:description" content="Ongoing ProAdvisor advisory — workflow optimization, configuration, integration. Monthly retainer.">
+<meta name="twitter:image" content="https://techbrot.com/assets/img/og/qb-consulting-og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://techbrot.com/quickbooks/consulting/#webpage",
+      "url": "https://techbrot.com/quickbooks/consulting/",
+      "name": "QuickBooks Consulting: Certified ProAdvisor Advisory",
+      "description": "Ongoing QuickBooks consulting by Certified ProAdvisors — workflow optimization, configuration audits, integration troubleshooting, custom reporting, and ongoing advisory as the business grows. Monthly retainer engagement with no hourly billing. Delivered by independent Certified ProAdvisors with no commission on QuickBooks subscriptions.",
+      "isPartOf": { "@id": "https://techbrot.com/#website" },
+      "about": { "@id": "https://techbrot.com/#organization" },
+      "publisher": { "@id": "https://techbrot.com/#organization" },
+      "inLanguage": "en-US",
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://techbrot.com/assets/img/og/qb-consulting-og.png" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["#qbc-ai-summary", "#qbc-tldr-body"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://techbrot.com/quickbooks/consulting/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://techbrot.com/" },
+        { "@type": "ListItem", "position": 2, "name": "QuickBooks", "item": "https://techbrot.com/quickbooks/" },
+        { "@type": "ListItem", "position": 3, "name": "Consulting" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://techbrot.com/quickbooks/consulting/#service",
+      "name": "QuickBooks Consulting",
+      "serviceType": "Ongoing QuickBooks advisory and workflow optimization",
+      "description": "Ongoing Certified ProAdvisor consulting for U.S. businesses running QuickBooks Online, Desktop, or Enterprise. Covers workflow optimization, configuration audits, integration troubleshooting, custom reporting setup, configuration evolution as the business grows, and direct ProAdvisor access for QuickBooks questions as they arise. Delivered as a monthly advisory retainer. Does not include income-tax filing, IRS representation, audit, or assurance. Coordinates with the client's CPA/EA where tax matters arise.",
+      "provider": { "@id": "https://techbrot.com/#organization" },
+      "areaServed": { "@type": "Country", "name": "United States" },
+      "audience": { "@type": "BusinessAudience", "audienceType": "U.S. businesses seeking ongoing QuickBooks advisory and optimization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://techbrot.com/quickbooks/consulting/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does QuickBooks consulting actually include?",
+          "acceptedAnswer": { "@type": "Answer", "text": "QuickBooks consulting at TechBrot is an ongoing advisory retainer — not a one-time project and not support tickets. The engagement covers workflow optimization (identifying where QuickBooks is adding friction rather than reducing it), configuration audits (reviewing current setup for accumulated errors, drift, and inefficiencies), integration troubleshooting (when connected apps stop syncing correctly), custom reporting setup (building and maintaining the reports the business actually needs), payroll configuration support (not payroll processing, but setup and ongoing configuration guidance), and direct ProAdvisor access for QuickBooks questions as they arise. The engagement evolves as the business grows — new entities, new integrations, new reporting needs, new users." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between QuickBooks consulting and QuickBooks support?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Intuit's QuickBooks support (chat, phone, community forums) answers questions about how the software works — feature explanations, error messages, basic how-to questions. A Certified ProAdvisor consulting engagement is different in kind: it's an ongoing advisory relationship where someone with deep QuickBooks expertise is embedded in your workflow, proactively identifies configuration problems before they compound, optimizes how QuickBooks integrates with your operations, and gives recommendations based on how your specific business works rather than generic feature guidance. Support answers 'how does this button work'; consulting answers 'is your QuickBooks configuration actually serving your business.'" }
+        },
+        {
+          "@type": "Question",
+          "name": "How is QuickBooks consulting priced?",
+          "acceptedAnswer": { "@type": "Answer", "text": "TechBrot QuickBooks consulting is delivered as a monthly advisory retainer. Retainer pricing varies based on QuickBooks product (Online vs Desktop vs Enterprise), business complexity, integration count, and the scope of ongoing advisory needed. Typical retainers start in the $500–$1,500 per month range for simpler QuickBooks Online businesses; businesses on QuickBooks Enterprise or with significant integration complexity typically scope $1,500–$3,500 per month. Retainers are billed monthly with a minimum engagement period; there is no hourly billing. An initial configuration audit is typically conducted at engagement start to establish baseline and identify priority optimization areas." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this the same as QuickBooks training?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No — training and consulting are different. QuickBooks training teaches you or your team how to use the software: how to enter transactions, run reports, manage payroll runs, navigate the interface. Training is appropriate when the team needs to build QuickBooks proficiency. Consulting is appropriate when a Certified ProAdvisor's judgment is the value — not because you don't know how to use QuickBooks, but because the configuration, workflow design, integration architecture, and ongoing optimization decisions benefit from expert advisory rather than internal trial-and-error. Many consulting engagements include some training as a component, but the primary value is advisory judgment, not software instruction." }
+        },
+        {
+          "@type": "Question",
+          "name": "Who needs QuickBooks consulting?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Businesses that typically benefit most from ongoing QuickBooks consulting: growing businesses whose QuickBooks configuration hasn't kept pace with the business (new products, new locations, new entities added but configuration not updated); businesses using QuickBooks Enterprise where the configuration complexity is meaningfully higher than Online or Desktop; businesses with significant app integrations (Shopify, Stripe, Bill.com, Gusto, industry-specific software) where sync issues arise and integration architecture matters; businesses whose internal bookkeeper or controller manages day-to-day QuickBooks but needs expert backup for configuration decisions; and businesses preparing for audit, sale, or fundraising where QuickBooks data quality and configuration soundness matter for due diligence." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between QuickBooks consulting and monthly bookkeeping?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Monthly bookkeeping is transactional work: categorizing transactions, reconciling accounts, producing monthly financial statements. The work is execution-focused and produces the accounting record. QuickBooks consulting is advisory work: optimizing the configuration that bookkeeping runs on, troubleshooting integrations, designing reports, and evolving the setup as the business changes. The two are complementary: consulting without bookkeeping is configuration advice on a file someone else maintains; bookkeeping without consulting means the configuration underlying the work may degrade over time without expert oversight. Some businesses run both through TechBrot as a combined engagement; others run consulting alongside an internal bookkeeper or a separate bookkeeping service." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>BSS-1-11ty</title>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/04-pages.css">
+    <link rel="stylesheet" href="../../assets/css/01-tokens.css">
+    <link rel="stylesheet" href="../../assets/css/02-base.css">
+    <link rel="stylesheet" href="../../assets/css/03-components.css">
+</head>
+
+<body><!-- ============================================================================
+     CHROME · utility bar + primary header + mobile drawer + search palette
+     ============================================================================ -->
+
+<div class="util-bar" role="region" aria-label="Secondary">
+  <div class="container util-bar__inner">
+    <p class="util-bar__trust">
+      <span class="util-bar__dot" aria-hidden="true"></span>
+      <span>Independent Certified QuickBooks ProAdvisor firm · U.S.-based</span>
+    </p>
+    <nav class="util-bar__nav" aria-label="For accountants and partners">
+      <a class="util-bar__link" href="/find-an-accountant/">Find an Accountant</a>
+      <a class="util-bar__link" href="/partners/">For Accountants →</a>
+    </nav>
+  </div>
+</div>
+
+<header class="site-header" role="banner" id="site-header" data-sticky="true">
+  <div class="container site-header__inner">
+
+    <a class="site-brand" href="/" aria-label="TechBrot home" title="TechBrot — A Modern Accounting Platform">
+      <img class="site-brand__mark" src="/assets/img/brand/icon.svg" alt="TechBrot" width="140" height="56" decoding="async" fetchpriority="high">
+    </a>
+
+    <nav class="site-nav site-nav--desktop" aria-label="Primary navigation" id="primary-nav">
+      <ul class="site-nav__list">
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-services" aria-haspopup="true">
+            Accounting
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-services" role="region" aria-label="Accounting services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Bookkeeping</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/">All bookkeeping →</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Financial Operations</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/payroll-management/">Payroll management</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/services/">All services →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/accounting/">Accounting overview →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-quickbooks" aria-haspopup="true">
+            QuickBooks
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-quickbooks" role="region" aria-label="QuickBooks services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">ProAdvisor Services</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/cleanup/">File cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/migration/">Desktop → Online migration</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/help/">QuickBooks help</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Products</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/proadvisor-team/">Our ProAdvisor team</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/">QuickBooks overview →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/legal/disclaimer/">Independent firm — not affiliated with Intuit →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/find-an-accountant/">Find an Accountant</a>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/pricing/">Pricing</a>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-why" aria-haspopup="true">
+            Why TechBrot
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu" id="nav-menu-why" role="region" aria-label="Why TechBrot" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Authority &amp; trust</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/trust/">Trust &amp; standards</a></li>
+                  <li><a class="nav-menu__link" href="/about/methodology/">Our methodology</a></li>
+                  <li><a class="nav-menu__link" href="/reviews/">Client reviews</a></li>
+                  <li><a class="nav-menu__link" href="/vs/">Comparisons</a></li>
+                  <li><a class="nav-menu__link" href="/about/">About &amp; team</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="site-header__utility">
+      <button class="site-search-trigger" type="button" aria-label="Search (press / or Cmd-K)" data-search-open="" title="Search — / or ⌘K">
+        <svg class="site-search-trigger__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+          <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+        </svg>
+        <span class="site-search-trigger__hint" aria-hidden="true"><kbd>/</kbd></span>
+      </button>
+
+      <a class="site-header__phone" href="tel:+18777515575" aria-label="Call TechBrot" data-cta="header-phone" title="Call TechBrot">
+        <span class="site-header__phone-label">Call</span>
+        <span class="site-header__phone-number">(877) 751-5575</span>
+      </a>
+
+      <a class="btn btn--primary btn--sm" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="header-primary" title="Book a discovery call">
+        Book a Call
+      </a>
+    </div>
+
+    <button class="site-header__mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+    </button>
+
+  </div>
+</header>
+
+<aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation" hidden="">
+  <div class="mobile-drawer__header">
+    <a class="site-brand" href="/" aria-label="TechBrot home">
+      <img class="site-brand__mark" src="/assets/img/brand/wordmark.png" alt="TechBrot" width="120" height="36">
+    </a>
+    <button class="mobile-drawer__close" type="button" aria-label="Close navigation menu" data-action="close-drawer">
+      <span class="mobile-drawer__close-x" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <nav class="mobile-drawer__nav" aria-label="Mobile primary navigation">
+    <ul class="mobile-drawer__list">
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-services">
+          <span>Accounting</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-services" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll management</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-quickbooks">
+          <span>QuickBooks</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-quickbooks" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/find-an-accountant/">Find an Accountant</a></li>
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/pricing/">Pricing</a></li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-why">
+          <span>Why TechBrot</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-why" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/about/methodology/">Our methodology</a></li>
+            <li><a href="/reviews/">Client reviews</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+            <li><a href="/about/">About &amp; team</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/partners/">For Accountants</a></li>
+    </ul>
+  </nav>
+
+  <div class="mobile-drawer__footer">
+    <a class="btn btn--primary btn--lg btn--full" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="mobile-primary">Book a Discovery Call</a>
+    <a class="mobile-drawer__phone" href="tel:+18777515575">(877) 751-5575</a>
+  </div>
+</aside>
+
+<div class="search-palette" id="search-palette" role="dialog" aria-modal="true" aria-label="Search TechBrot" hidden="">
+  <div class="search-palette__backdrop" data-search-close=""></div>
+  <div class="search-palette__panel" role="combobox" aria-expanded="true" aria-haspopup="listbox" aria-owns="search-results">
+    <div class="search-palette__field">
+      <svg class="search-palette__icon" width="20" height="20" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+        <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+      </svg>
+      <input class="search-palette__input" id="search-input" type="text" autocomplete="off" spellcheck="false" placeholder="Search services, QuickBooks, comparisons, states, Indiana topics…" aria-label="Search" aria-controls="search-results" aria-autocomplete="list">
+      <button class="search-palette__close" type="button" aria-label="Close search" data-search-close=""><kbd>Esc</kbd></button>
+    </div>
+    <div class="search-palette__body">
+      <ul class="search-palette__results" id="search-results" role="listbox" aria-label="Search results"></ul>
+      <div class="search-palette__suggested" id="search-suggested">
+        <p class="search-palette__suggested-label">Try</p>
+        <ul class="search-palette__chips" role="list">
+          <li><button type="button" class="search-chip" data-q="indiana cagit">Indiana CAGIT payroll</button></li>
+          <li><button type="button" class="search-chip" data-q="bookkeeping cleanup">Bookkeeping cleanup</button></li>
+          <li><button type="button" class="search-chip" data-q="quickbooks migration">QuickBooks migration</button></li>
+          <li><button type="button" class="search-chip" data-q="indianapolis">Indianapolis</button></li>
+          <li><button type="button" class="search-chip" data-q="manufacturing">Manufacturing accounting</button></li>
+          <li><button type="button" class="search-chip" data-q="pricing">Pricing</button></li>
+        </ul>
+      </div>
+      <p class="search-palette__empty" id="search-empty" hidden="">No matches. Try a service, “QuickBooks”, an Indiana topic, a city, or a comparison.</p>
+    </div>
+    <div class="search-palette__foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+<div class="page page--service page--qb-consulting" data-page="qb-consulting">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <main id="main" role="main">
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="Breadcrumb" id="qbc-breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/">Home</a></li>
+          <li class="breadcrumb__item"><a href="/quickbooks/">QuickBooks</a></li>
+          <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Consulting</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="section section--hero section--service-hero section--service-hero-split" id="qbc-hero" aria-labelledby="qbc-hero-heading">
+      <div class="container">
+        <div class="service-hero-split">
+          <div class="service-hero">
+            <p class="service-hero__eyebrow"><span class="service-hero__eyebrow-text">QuickBooks &middot; Consulting</span></p>
+            <h1 class="service-hero__heading" id="qbc-hero-heading">
+              A Certified ProAdvisor<br>embedded in your workflow.
+            </h1>
+            <p class="service-hero__subheading">
+              QuickBooks configurations drift. What worked at 10 employees doesn&rsquo;t work at 50. Integrations break quietly. Ad-hoc account additions accumulate. Reports stop answering the questions leadership asks &mdash; and no one notices until a year-end reconciliation or a new CPA surfaces the damage. <strong>Ongoing ProAdvisor consulting is the preventive layer</strong>: expert QuickBooks judgment embedded in your workflow, optimizing configuration as you grow, catching problems before they compound.
+            </p>
+            <div class="service-hero__actions" role="group" aria-label="Primary actions">
+              <a class="btn btn--primary btn--lg" href="/contact/?intent=qb-consulting" data-cta="qbc-hero-primary">Book a Discovery Call</a>
+              <a class="btn btn--ghost btn--lg" href="#qbc-what-it-covers" data-cta="qbc-hero-secondary">See What It Covers</a>
+            </div>
+            <p class="service-hero__assurance">
+              <span class="service-hero__assurance-label">Delivered by</span>
+              <span class="service-hero__assurance-body">Certified QuickBooks ProAdvisors &middot; Monthly retainer, no hourly billing &middot; Not affiliated with Intuit Inc.</span>
+            </p>
+          </div>
+          <div class="service-hero-split__visual" aria-hidden="true">
+            <img src="/assets/img/services/qb-consulting-hero.webp" alt="" width="720" height="640" decoding="async" fetchpriority="high">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROADVISOR CREDENTIAL STRIP -->
+    <section class="section section--proadvisor-credentials" id="qbc-credentials" aria-labelledby="qbc-credentials-heading">
+      <div class="container">
+        <h2 class="proadvisor-credentials__heading sr-only" id="qbc-credentials-heading">Certified QuickBooks ProAdvisor credentials</h2>
+        <div class="proadvisor-credentials">
+          <div class="proadvisor-credentials__lede">
+            <p class="proadvisor-credentials__eyebrow">Certified by Intuit</p>
+            <p class="proadvisor-credentials__statement">Consulting engagements are delivered by ProAdvisors holding active certifications across the full QuickBooks product line &mdash; Online (Level 2), Desktop, Enterprise, and Payroll. The depth matters: workflow optimization and configuration advisory require platform fluency across all products, not specialization in one. Verification available on request.</p>
+          </div>
+          <ul class="proadvisor-credentials__badges" role="list" aria-label="QuickBooks ProAdvisor certifications">
+            <li class="proadvisor-credentials__badge">
+              <img src="/assets/img/badges/proadvisor-online.svg" alt="QuickBooks Online ProAdvisor (Level 2)" width="96" height="40" loading="lazy" decoding="async">
+              <span class="proadvisor-credentials__badge-label">Online (L2)</span>
+            </li>
+            <li class="proadvisor-credentials__badge">
+              <img src="/assets/img/badges/proadvisor-desktop.svg" alt="QuickBooks Desktop ProAdvisor" width="96" height="40" loading="lazy" decoding="async">
+              <span class="proadvisor-credentials__badge-label">Desktop</span>
+            </li>
+            <li class="proadvisor-credentials__badge">
+              <img src="/assets/img/badges/proadvisor-enterprise.svg" alt="QuickBooks Enterprise ProAdvisor" width="96" height="40" loading="lazy" decoding="async">
+              <span class="proadvisor-credentials__badge-label">Enterprise</span>
+            </li>
+            <li class="proadvisor-credentials__badge">
+              <img src="/assets/img/badges/proadvisor-payroll.svg" alt="QuickBooks Payroll ProAdvisor" width="96" height="40" loading="lazy" decoding="async">
+              <span class="proadvisor-credentials__badge-label">Payroll</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TL;DR -->
+    <section class="section section--tldr" id="qbc-tldr" aria-labelledby="qbc-tldr-heading">
+      <div class="container container--narrow">
+        <div class="tldr">
+          <p class="tldr__eyebrow">In one paragraph</p>
+          <h2 class="tldr__heading" id="qbc-tldr-heading">QuickBooks consulting, plainly.</h2>
+          <p class="tldr__body" id="qbc-tldr-body">
+            <strong>QuickBooks consulting is an ongoing advisory retainer</strong> &mdash; not a one-time project, not support tickets, not training. A Certified ProAdvisor is embedded in your QuickBooks workflow to <strong>optimize configuration as the business grows</strong>, catch problems before they compound, troubleshoot integration failures when connected apps drift, build and maintain the custom reports leadership actually uses, and answer QuickBooks questions with expert judgment rather than generic support responses. The engagement covers: <strong>workflow optimization</strong> (identifying where QuickBooks adds friction instead of reducing it); <strong>configuration audits</strong> (reviewing accumulated drift, ad-hoc changes, and inefficiencies); <strong>integration management</strong> (Shopify, Stripe, Bill.com, Gusto, industry-specific apps); <strong>custom reporting</strong> (class reports, location P&amp;Ls, KPI dashboards inside QuickBooks); <strong>payroll configuration support</strong> (not payroll processing &mdash; configuration and advisory); and <strong>direct ProAdvisor access</strong> for questions as they arise. <strong>Pricing: monthly retainer</strong>, typically <strong>$500&ndash;$1,500/month</strong> for simpler QuickBooks Online businesses; <strong>$1,500&ndash;$3,500/month</strong> for Enterprise or high-integration complexity. <strong>Initial configuration audit</strong> at engagement start establishes baseline. <strong>Not the right engagement</strong> for one-time error fixes (see <a href="/quickbooks/help/error-codes/">error code references</a>), initial setup (see <a href="/quickbooks/setup/">QuickBooks setup</a>), or payroll processing (see <a href="/quickbooks/payroll/">payroll services</a>). <strong>Coordinates with your CPA</strong> on tax matters; doesn&rsquo;t include tax filing, IRS representation, audit, or assurance. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI SUMMARY -->
+    <section class="section section--ai-summary" id="qbc-ai-summary" aria-labelledby="qbc-ai-summary-heading">
+      <div class="container container--narrow">
+        <header class="section__header">
+          <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+          <h2 class="section__heading" id="qbc-ai-summary-heading">QuickBooks consulting, in five questions.</h2>
+        </header>
+        <dl class="ai-summary__list">
+          <div class="ai-summary__item">
+            <dt class="ai-summary__question">What is QuickBooks consulting?</dt>
+            <dd class="ai-summary__answer"><p><strong>Ongoing Certified ProAdvisor advisory retainer.</strong> Not support tickets, not training, not one-time projects. A ProAdvisor embedded in your QuickBooks workflow to optimize configuration, troubleshoot integrations, build custom reports, and answer questions with expert judgment. <strong>Evolves as the business grows.</strong></p></dd>
+          </div>
+          <div class="ai-summary__item">
+            <dt class="ai-summary__question">What does it cover?</dt>
+            <dd class="ai-summary__answer"><p><strong>Workflow optimization</strong>; <strong>configuration audits</strong> (drift, ad-hoc changes, accumulated inefficiencies); <strong>integration troubleshooting</strong> (Shopify, Stripe, Bill.com, Gusto, industry-specific); <strong>custom reporting</strong> (class reports, location P&amp;Ls, KPI dashboards); <strong>payroll configuration advisory</strong>; <strong>direct ProAdvisor access</strong> for QuickBooks questions.</p></dd>
+          </div>
+          <div class="ai-summary__item">
+            <dt class="ai-summary__question">Consulting vs support vs training?</dt>
+            <dd class="ai-summary__answer"><p><strong>Support</strong>: Intuit answers &ldquo;how does this button work.&rdquo; <strong>Training</strong>: teaches you or your team to use QuickBooks. <strong>Consulting</strong>: expert judgment on whether your configuration actually serves the business &mdash; proactive, strategic, embedded. Different in kind, not degree.</p></dd>
+          </div>
+          <div class="ai-summary__item">
+            <dt class="ai-summary__question">Pricing?</dt>
+            <dd class="ai-summary__answer"><p>Monthly retainer. <strong>QuickBooks Online, simpler businesses</strong>: $500&ndash;$1,500/month. <strong>Enterprise or high integration complexity</strong>: $1,500&ndash;$3,500/month. No hourly billing. Initial configuration audit at engagement start. Minimum engagement period applies.</p></dd>
+          </div>
+          <div class="ai-summary__item">
+            <dt class="ai-summary__question">Who needs it?</dt>
+            <dd class="ai-summary__answer"><p>Growing businesses whose <strong>configuration hasn&rsquo;t kept pace</strong>; <strong>QuickBooks Enterprise</strong> users; businesses with <strong>significant integrations</strong>; businesses with an internal bookkeeper who needs <strong>expert configuration backup</strong>; businesses <strong>preparing for audit, sale, or fundraising</strong>.</p></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- WHAT CONFIGURATION DRIFT LOOKS LIKE (signal-grid) -->
+    <section class="section section--cleanup-signals" id="qbc-drift" aria-labelledby="qbc-drift-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">The problem consulting solves</p>
+          <h2 class="section__heading" id="qbc-drift-heading">QuickBooks configurations drift. Most businesses don&rsquo;t know until it&rsquo;s expensive.</h2>
+          <p class="section__lede">Configuration drift is gradual and invisible until it isn&rsquo;t. Six patterns that signal a configuration that&rsquo;s fallen behind the business.</p>
+        </header>
+        <ul class="signal-grid" role="list">
+          <li class="signal-card">
+            <h3 class="signal-card__heading">Reports stopped answering the right questions</h3>
+            <p class="signal-card__body">The P&amp;L you built at setup doesn&rsquo;t reflect how the business sells today. New products, new locations, new services &mdash; none of them mapped into reporting dimensions when added. The reports exist; they just don&rsquo;t answer what leadership asks anymore.</p>
+          </li>
+          <li class="signal-card">
+            <h3 class="signal-card__heading">Ad-hoc accounts have accumulated</h3>
+            <p class="signal-card__body">&ldquo;Just add an account for this&rdquo; &mdash; repeated over years &mdash; produces a chart with hundreds of partially-used accounts, inconsistent categorization rules, and reports that are technically complete but operationally useless. The chart is fighting the bookkeeping.</p>
+          </li>
+          <li class="signal-card">
+            <h3 class="signal-card__heading">Integrations are unreliable</h3>
+            <p class="signal-card__body">Shopify stopped syncing correctly after an update. Bill.com payments double-post occasionally. Gusto&rsquo;s journal entries land in the wrong accounts. Each integration is mostly working &mdash; but the &ldquo;mostly&rdquo; creates month-end cleanup that shouldn&rsquo;t exist.</p>
+          </li>
+          <li class="signal-card">
+            <h3 class="signal-card__heading">New users changed things without realizing it</h3>
+            <p class="signal-card__body">A new bookkeeper added accounts, changed a rule, remapped some items. Individually each change seemed reasonable. Cumulatively they broke the consistency the system depended on. No one has a clear picture of the current state.</p>
+          </li>
+          <li class="signal-card">
+            <h3 class="signal-card__heading">QuickBooks Enterprise is being used as QuickBooks Online</h3>
+            <p class="signal-card__body">Enterprise has advanced inventory, advanced pricing, serial/lot number tracking, custom fields, enhanced reporting. Most Enterprise subscribers use 20% of what they&rsquo;re paying for. The configuration hasn&rsquo;t been built to leverage the product.</p>
+          </li>
+          <li class="signal-card">
+            <h3 class="signal-card__heading">A new CPA found problems</h3>
+            <p class="signal-card__body">The most common consulting engagement trigger: new CPA or CFO reviews the QuickBooks file and identifies structural problems &mdash; wrong equity treatment, inconsistent COGS methodology, payroll items posting to wrong accounts, bank reconciliation drift. The configuration needs expert repair and ongoing oversight.</p>
+          </li>
+        </ul>
+        <div class="cleanup-signals__cta">
+          <a class="btn btn--text" href="/contact/?intent=qb-consulting" data-cta="qbc-drift-cta">Talk to a ProAdvisor about your setup &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IT COVERS (why-grid) -->
+    <section class="section section--qbc-covers" id="qbc-what-it-covers" aria-labelledby="qbc-covers-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">What the engagement covers</p>
+          <h2 class="section__heading" id="qbc-covers-heading">Six advisory areas, one ongoing retainer.</h2>
+          <p class="section__lede">The retainer scope is defined at engagement start and adjusted as the business evolves. The six areas below cover the most common consulting work; the actual mix depends on the business.</p>
+        </header>
+        <ul class="why-grid" role="list">
+          <li class="why-card">
+            <p class="why-card__number">01</p>
+            <h3 class="why-card__heading">Workflow optimization</h3>
+            <p class="why-card__body">Mapping how the business actually operates against how QuickBooks is configured &mdash; identifying where the software adds friction instead of reducing it, where manual steps exist that QuickBooks could automate, where the workflow is fighting the tool. <strong>The most common consulting deliverable</strong> for established businesses.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">02</p>
+            <h3 class="why-card__heading">Configuration audits</h3>
+            <p class="why-card__body">Systematic review of the current QuickBooks configuration: chart of accounts, item list, payroll items, tax setup, bank feed rules, recurring transactions, user permissions, integration mapping. Identifies accumulated drift, ad-hoc changes that broke consistency, and configuration gaps against what the business needs. <strong>Typically the first work in a new consulting engagement.</strong></p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">03</p>
+            <h3 class="why-card__heading">Integration management</h3>
+            <p class="why-card__body">QuickBooks integrations with connected apps: Shopify, Stripe, PayPal, Square, Bill.com, Gusto, HubSpot, Salesforce, industry-specific platforms. When syncs drift, duplicates appear, or journal entries land in wrong accounts, the consulting engagement is what resolves it &mdash; at the integration-architecture level, not as a one-time support ticket.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">04</p>
+            <h3 class="why-card__heading">Custom reporting</h3>
+            <p class="why-card__body">Building and maintaining the reports leadership actually uses: class-based P&amp;Ls, location breakouts, job-cost reports, project profitability, custom KPI dashboards inside QuickBooks, memorized report sets for monthly reviews. <strong>Reports built once and maintained</strong> rather than recreated monthly.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">05</p>
+            <h3 class="why-card__heading">Payroll configuration advisory</h3>
+            <p class="why-card__body"><em>Not payroll processing</em> &mdash; that&rsquo;s a separate <a href="/quickbooks/payroll/">payroll engagement</a>. But ongoing advisory on payroll configuration: payroll item mapping, QuickBooks Payroll integration with the general ledger, payroll liability account maintenance, workers&rsquo; comp integration, payroll-CoA mapping drift. The configuration layer that makes payroll processing work correctly.</p>
+          </li>
+          <li class="why-card">
+            <p class="why-card__number">06</p>
+            <h3 class="why-card__heading">Direct ProAdvisor access</h3>
+            <p class="why-card__body">QuickBooks questions answered with expert judgment as they arise &mdash; not routed to Intuit support, not searched in community forums, not escalated internally. A Certified ProAdvisor who knows your specific configuration gives a specific answer. <strong>The retainer value that compounds over time as the ProAdvisor builds context on the business.</strong></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PRICING (pricing-tiers) -->
+    <section class="section section--pricing" id="qbc-pricing" aria-labelledby="qbc-pricing-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Pricing</p>
+          <h2 class="section__heading" id="qbc-pricing-heading">Monthly retainer, scoped by complexity.</h2>
+          <p class="section__lede">Retainer pricing scales with QuickBooks product, business complexity, integration count, and advisory scope. Every engagement starts with a configuration audit to establish baseline and set retainer scope.</p>
+        </header>
+        <ul class="pricing-tiers" role="list">
+          <li class="pricing-tier" data-tier="qbo-standard">
+            <header class="pricing-tier__header">
+              <p class="pricing-tier__eyebrow">QuickBooks Online &middot; Standard</p>
+              <h3 class="pricing-tier__heading">$500&ndash;$1,500</h3>
+              <p class="pricing-tier__cadence">Per month, monthly retainer</p>
+            </header>
+            <p class="pricing-tier__fit"><strong>Fits:</strong> QuickBooks Online businesses with straightforward operations, 1&ndash;3 integrations, under ~25 employees, no significant multi-entity or multi-location complexity.</p>
+            <ul class="pricing-tier__includes" role="list">
+              <li>Initial configuration audit</li>
+              <li>Monthly workflow review and optimization</li>
+              <li>Integration troubleshooting (up to 3 apps)</li>
+              <li>Custom report build and maintenance</li>
+              <li>Direct ProAdvisor access for QuickBooks questions</li>
+              <li>Quarterly configuration health check</li>
+            </ul>
+            <a class="btn btn--ghost pricing-tier__cta" href="/contact/?intent=qb-consulting">Get a retainer scope &rarr;</a>
+          </li>
+          <li class="pricing-tier pricing-tier--featured" data-tier="qbo-complex">
+            <header class="pricing-tier__header">
+              <p class="pricing-tier__eyebrow">Most common &middot; QBO advanced or Desktop</p>
+              <h3 class="pricing-tier__heading">$1,500&ndash;$3,500</h3>
+              <p class="pricing-tier__cadence">Per month, monthly retainer</p>
+            </header>
+            <p class="pricing-tier__fit"><strong>Fits:</strong> QuickBooks Online Advanced, QuickBooks Desktop, or QuickBooks Enterprise businesses; 3+ integrations; multi-location or multi-entity; 25&ndash;100 employees; or businesses with significant configuration complexity.</p>
+            <ul class="pricing-tier__includes" role="list">
+              <li>Everything in standard, plus:</li>
+              <li>Multi-location and multi-entity configuration advisory</li>
+              <li>Integration management across 3+ connected apps</li>
+              <li>Advanced reporting (class, location, project P&amp;Ls)</li>
+              <li>QuickBooks Desktop or Enterprise feature optimization</li>
+              <li>Payroll configuration advisory</li>
+              <li>Monthly configuration integrity review</li>
+            </ul>
+            <a class="btn btn--primary pricing-tier__cta" href="/contact/?intent=qb-consulting">Get a retainer scope &rarr;</a>
+          </li>
+          <li class="pricing-tier pricing-tier--recurring" data-tier="enterprise">
+            <header class="pricing-tier__header">
+              <p class="pricing-tier__eyebrow">Enterprise &middot; High complexity</p>
+              <h3 class="pricing-tier__heading">Custom</h3>
+              <p class="pricing-tier__cadence">Monthly retainer, scoped per engagement</p>
+            </header>
+            <p class="pricing-tier__fit"><strong>Fits:</strong> QuickBooks Enterprise with advanced inventory, advanced pricing, or job-costing; multi-entity architecture; 100+ employees; or businesses with deeply integrated operational systems requiring ProAdvisor oversight across multiple functions.</p>
+            <ul class="pricing-tier__includes" role="list">
+              <li>Everything in advanced, plus:</li>
+              <li>Advanced inventory configuration advisory</li>
+              <li>Advanced pricing and job-costing optimization</li>
+              <li>Custom field and template architecture</li>
+              <li>Multi-entity consolidation reporting</li>
+              <li>Deep integration architecture advisory</li>
+              <li>Dedicated senior ProAdvisor assignment</li>
+            </ul>
+            <a class="btn btn--ghost pricing-tier__cta" href="/contact/?intent=qb-consulting">Get a custom scope &rarr;</a>
+          </li>
+        </ul>
+        <p class="pricing-tiers__note">All retainers include an initial configuration audit before ongoing advisory begins. Minimum engagement period applies; retainer scope reviewed quarterly and adjusted as the business evolves. No hourly billing outside the retainer.</p>
+      </div>
+    </section>
+
+    <!-- THIS VS THAT (scope-grid) -->
+    <section class="section section--process" id="qbc-versus" aria-labelledby="qbc-versus-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Is this the right engagement?</p>
+          <h2 class="section__heading" id="qbc-versus-heading">Consulting vs the other QuickBooks engagements.</h2>
+          <p class="section__lede">Consulting is one of several QuickBooks engagement types. Three common situations where a different engagement fits better:</p>
+        </header>
+        <ul class="scope-grid" role="list">
+          <li class="scope-card">
+            <h3 class="scope-card__heading">You have a one-time error or problem &rarr; error reference</h3>
+            <p class="scope-card__body">If QuickBooks is showing a specific error (H202, 6000-series, PS038, 3371, 15240, C-series), the right first step is the <a href="/quickbooks/help/error-codes/">error code reference</a> for self-fix, or a focused <a href="/quickbooks/help/error-codes/">ProAdvisor diagnostic</a> for that specific error. One-time error resolution isn&rsquo;t ongoing consulting &mdash; it&rsquo;s a bounded diagnostic engagement.</p>
+          </li>
+          <li class="scope-card">
+            <h3 class="scope-card__heading">You need initial QuickBooks setup &rarr; setup engagement</h3>
+            <p class="scope-card__body">If you&rsquo;re setting up QuickBooks for the first time (or migrating to a new platform), the right engagement is <a href="/quickbooks/setup/">QuickBooks setup</a> &mdash; a one-time fixed-fee project. Consulting assumes a working QuickBooks installation that needs optimization and ongoing advisory. Setup comes first; consulting is what follows.</p>
+          </li>
+          <li class="scope-card">
+            <h3 class="scope-card__heading">You need payroll processing &rarr; payroll engagement</h3>
+            <p class="scope-card__body">Consulting covers payroll <em>configuration advisory</em> &mdash; the setup and ongoing configuration of QuickBooks Payroll. It doesn&rsquo;t include payroll <em>processing</em> (running payrolls, managing pay runs, handling payroll errors). For payroll processing support, see <a href="/quickbooks/payroll/">QuickBooks Payroll services</a>. The two can be combined; the scope is defined at engagement start.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- OPERATOR BLOCK -->
+    <section class="section section--cleanup-operator" id="qbc-operator" aria-labelledby="qbc-operator-heading">
+      <div class="container">
+        <div class="operator-block">
+          <div class="operator-block__copy">
+            <p class="section__eyebrow">Who delivers the advisory</p>
+            <h2 class="section__heading" id="qbc-operator-heading">Certified across the full product line. Independent. No commission.</h2>
+            <p class="operator-block__lede">QuickBooks consulting is only as good as the depth of platform knowledge behind it. Every TechBrot consulting engagement is delivered by a ProAdvisor holding active certifications across QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll &mdash; not a single-product specialist giving advice outside their lane. Consulting across the full product line means the advisory is consistent whether your business is on QBO, Desktop, or Enterprise, and whether the question involves payroll configuration, integration architecture, or reporting design.</p>
+            <p class="operator-block__lede">We earn nothing from your QuickBooks subscription &mdash; no Intuit affiliate revenue, no commissions. The configuration advice reflects what&rsquo;s right for your workflow, not what keeps you on a more expensive plan.</p>
+            <div class="operator-block__actions">
+              <a class="btn btn--primary" href="/contact/?intent=qb-consulting" data-cta="qbc-operator-primary">Book the discovery call</a>
+              <a class="btn btn--ghost" href="/quickbooks/proadvisor-team/" data-cta="qbc-operator-team">Meet the ProAdvisor team</a>
+            </div>
+          </div>
+          <aside class="operator-block__credentials" aria-label="Operator credentials">
+            <ul class="credential-list">
+              <li class="credential-item"><p class="credential-item__label">Certifications</p><p class="credential-item__detail">QBO L2, Desktop, Enterprise, Payroll &mdash; full product line</p></li>
+              <li class="credential-item"><p class="credential-item__label">Pricing</p><p class="credential-item__detail">$500&ndash;$1,500/month standard; $1,500&ndash;$3,500/month advanced; custom for Enterprise</p></li>
+              <li class="credential-item"><p class="credential-item__label">Engagement model</p><p class="credential-item__detail">Monthly retainer, minimum period, no hourly billing outside retainer</p></li>
+              <li class="credential-item"><p class="credential-item__label">Independence</p><p class="credential-item__detail">Not affiliated with Intuit Inc., zero commission on QuickBooks subscriptions</p></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (FLAT) -->
+    <section class="section section--faq" id="qbc-faq" aria-labelledby="qbc-faq-heading">
+      <div class="container container--narrow">
+        <header class="section__header">
+          <p class="section__eyebrow">Consulting questions</p>
+          <h2 class="section__heading" id="qbc-faq-heading">What people ask about QuickBooks consulting.</h2>
+        </header>
+        <dl class="faq__list">
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbc-faq-1" id="qbc-faq-q-1">What does QuickBooks consulting actually include?</button></dt>
+            <dd class="faq__answer" id="qbc-faq-1" role="region" aria-labelledby="qbc-faq-q-1"><p>QuickBooks consulting at TechBrot is an ongoing advisory retainer &mdash; not a one-time project and not support tickets. The engagement covers workflow optimization (identifying where QuickBooks is adding friction rather than reducing it), configuration audits (reviewing current setup for accumulated errors, drift, and inefficiencies), integration troubleshooting (when connected apps stop syncing correctly), custom reporting setup (building and maintaining the reports the business actually needs), payroll configuration support (not payroll processing, but setup and ongoing configuration guidance), and direct ProAdvisor access for QuickBooks questions as they arise. The engagement evolves as the business grows &mdash; new entities, new integrations, new reporting needs, new users.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbc-faq-2" id="qbc-faq-q-2">What&rsquo;s the difference between QuickBooks consulting and QuickBooks support?</button></dt>
+            <dd class="faq__answer" id="qbc-faq-2" role="region" aria-labelledby="qbc-faq-q-2"><p>Intuit&rsquo;s QuickBooks support (chat, phone, community forums) answers questions about how the software works &mdash; feature explanations, error messages, basic how-to questions. A Certified ProAdvisor consulting engagement is different in kind: it&rsquo;s an ongoing advisory relationship where someone with deep QuickBooks expertise is embedded in your workflow, proactively identifies configuration problems before they compound, optimizes how QuickBooks integrates with your operations, and gives recommendations based on how your specific business works rather than generic feature guidance. Support answers &ldquo;how does this button work&rdquo;; consulting answers &ldquo;is your QuickBooks configuration actually serving your business.&rdquo;</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbc-faq-3" id="qbc-faq-q-3">How is QuickBooks consulting priced?</button></dt>
+            <dd class="faq__answer" id="qbc-faq-3" role="region" aria-labelledby="qbc-faq-q-3"><p>TechBrot QuickBooks consulting is delivered as a monthly advisory retainer. Retainer pricing varies based on QuickBooks product (<a href="/quickbooks/online/">Online</a> vs <a href="/quickbooks/desktop/">Desktop</a> vs <a href="/quickbooks/enterprise/">Enterprise</a>), business complexity, integration count, and the scope of ongoing advisory needed. Typical retainers start in the $500&ndash;$1,500 per month range for simpler QuickBooks Online businesses; businesses on QuickBooks Enterprise or with significant integration complexity typically scope $1,500&ndash;$3,500 per month. Retainers are billed monthly with a minimum engagement period; there is no hourly billing. An initial configuration audit is typically conducted at engagement start to establish baseline and identify priority optimization areas.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbc-faq-4" id="qbc-faq-q-4">Is this the same as QuickBooks training?</button></dt>
+            <dd class="faq__answer" id="qbc-faq-4" role="region" aria-labelledby="qbc-faq-q-4"><p>No &mdash; training and consulting are different. QuickBooks training teaches you or your team how to use the software: how to enter transactions, run reports, manage payroll runs, navigate the interface. Training is appropriate when the team needs to build QuickBooks proficiency. Consulting is appropriate when a Certified ProAdvisor&rsquo;s judgment is the value &mdash; not because you don&rsquo;t know how to use QuickBooks, but because the configuration, workflow design, integration architecture, and ongoing optimization decisions benefit from expert advisory rather than internal trial-and-error. Many consulting engagements include some training as a component, but the primary value is advisory judgment, not software instruction.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbc-faq-5" id="qbc-faq-q-5">Who needs QuickBooks consulting?</button></dt>
+            <dd class="faq__answer" id="qbc-faq-5" role="region" aria-labelledby="qbc-faq-q-5"><p>Businesses that typically benefit most from ongoing QuickBooks consulting: growing businesses whose QuickBooks configuration hasn&rsquo;t kept pace with the business (new products, new locations, new entities added but configuration not updated); businesses using <a href="/quickbooks/enterprise/">QuickBooks Enterprise</a> where the configuration complexity is meaningfully higher than Online or Desktop; businesses with significant app integrations (Shopify, Stripe, Bill.com, Gusto, industry-specific software) where sync issues arise and integration architecture matters; businesses whose internal bookkeeper or controller manages day-to-day QuickBooks but needs expert backup for configuration decisions; and businesses preparing for audit, sale, or fundraising where QuickBooks data quality and configuration soundness matter for due diligence.</p></dd>
+          </div>
+          <div class="faq__item">
+            <dt class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbc-faq-6" id="qbc-faq-q-6">What&rsquo;s the difference between QuickBooks consulting and monthly bookkeeping?</button></dt>
+            <dd class="faq__answer" id="qbc-faq-6" role="region" aria-labelledby="qbc-faq-q-6"><p>Monthly bookkeeping is transactional work: categorizing transactions, reconciling accounts, producing monthly financial statements. The work is execution-focused and produces the accounting record. QuickBooks consulting is advisory work: optimizing the configuration that bookkeeping runs on, troubleshooting integrations, designing reports, and evolving the setup as the business changes. The two are complementary: consulting without bookkeeping is configuration advice on a file someone else maintains; bookkeeping without consulting means the configuration underlying the work may degrade over time without expert oversight. Some businesses run both through TechBrot as a combined engagement; others run consulting alongside an internal bookkeeper or a separate bookkeeping service.</p></dd>
+          </div>
+        </dl>
+        <p class="faq__more"><a href="/quickbooks/faq/">See all QuickBooks frequently asked questions &rarr;</a></p>
+      </div>
+    </section>
+
+    <!-- RELATED -->
+    <section class="section section--cleanup-related" id="qbc-related" aria-labelledby="qbc-related-heading">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Related services</p>
+          <h2 class="section__heading" id="qbc-related-heading">Other QuickBooks engagements.</h2>
+        </header>
+        <ul class="related-grid" role="list">
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/quickbooks/setup/">QuickBooks Setup</a></h3><p class="related-card__body">The one-time fixed-fee setup engagement that consulting typically follows. If you haven&rsquo;t set up QuickBooks correctly yet, start here.</p><a class="related-card__cta" href="/quickbooks/setup/">Setup overview &rarr;</a></article></li>
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/quickbooks/cleanup/">QuickBooks Cleanup</a></h3><p class="related-card__body">If the existing QuickBooks file has significant accumulated errors before consulting begins, cleanup typically precedes the consulting retainer.</p><a class="related-card__cta" href="/quickbooks/cleanup/">Cleanup overview &rarr;</a></article></li>
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/quickbooks/payroll/">QuickBooks Payroll</a></h3><p class="related-card__body">Payroll processing, setup, multi-state, and year-end &mdash; the operational payroll engagement that sits alongside or within the consulting retainer.</p><a class="related-card__cta" href="/quickbooks/payroll/">Payroll services &rarr;</a></article></li>
+          <li class="related-card"><article><h3 class="related-card__heading"><a href="/quickbooks/help/error-codes/">Error codes</a></h3><p class="related-card__body">For one-time QuickBooks errors, the reference library covers H-series, 6000-series, PS038, 3371, 15240, unrecoverable, and C-series.</p><a class="related-card__cta" href="/quickbooks/help/error-codes/">Error references &rarr;</a></article></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section section--final-cta" id="qbc-final-cta" aria-labelledby="qbc-final-cta-heading">
+      <div class="container container--narrow">
+        <div class="final-cta">
+          <p class="section__eyebrow section__eyebrow--inverted">QuickBooks consulting starts here</p>
+          <h2 class="final-cta__heading" id="qbc-final-cta-heading">Stop letting configuration drift compound.</h2>
+          <p class="final-cta__lede">Book a 30-minute discovery call. A Certified ProAdvisor reviews your current QuickBooks product, integration stack, business complexity, and the specific problems you&rsquo;re seeing &mdash; then scopes a consulting retainer matched to your actual needs. Initial configuration audit at engagement start. Monthly retainer, minimum period, no hourly billing outside the retainer.</p>
+          <div class="final-cta__actions" role="group" aria-label="Final actions">
+            <a class="btn btn--primary btn--lg btn--inverted" href="/contact/?intent=qb-consulting" data-cta="qbc-final-primary">Book a Discovery Call</a>
+            <a class="btn btn--ghost btn--lg btn--inverted" href="/quickbooks/" data-cta="qbc-final-secondary">QuickBooks Services</a>
+          </div>
+          <p class="final-cta__disclaimer">TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm. QuickBooks, QuickBooks Online, QuickBooks Desktop, and QuickBooks Enterprise are registered trademarks of Intuit Inc. TechBrot Inc. is not affiliated with Intuit Inc. and earns no commission, affiliate, or referral fees on QuickBooks subscriptions. Consulting services cover QuickBooks configuration and workflow advisory; services do not include income-tax filing, IRS representation, audit, or assurance. Tax matters are coordinated with the client&rsquo;s CPA or EA.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div><!-- ============================================================================
+     FOOTER
+     ============================================================================ -->
+
+<footer class="site-footer" role="contentinfo" id="site-footer">
+
+  <section class="site-footer__band" aria-label="Newsletter signup">
+    <div class="container">
+      <div class="footer-band">
+        <div class="footer-band__copy">
+          <h2 class="footer-band__heading">The monthly brief.</h2>
+          <p class="footer-band__lede">One email a month — operational accounting, QuickBooks, and finance-ops insight for U.S. business owners. No spam, unsubscribe anytime.</p>
+        </div>
+        <form class="footer-band__form" action="/subscribe" method="post" aria-label="Subscribe to the monthly brief">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input class="footer-band__input" type="email" id="footer-email" name="email" placeholder="you@company.com" autocomplete="email" required="">
+          <button class="btn btn--primary btn--md" type="submit" data-cta="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="site-footer__main">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="site-footer__brand-col">
+          <a class="site-brand site-brand--footer" href="/" aria-label="TechBrot home">
+            <img class="site-brand__mark" src="/assets/img/brand/wordmark-light.png" alt="TechBrot" width="140" height="36" decoding="async">
+          </a>
+          <p class="site-footer__tagline">A modern accounting platform with vetted local partners.</p>
+          <ul class="site-footer__contact-list">
+            <li><a href="mailto:hello@techbrot.com">hello@techbrot.com</a></li>
+            <li><a href="tel:+18777515575">(877) 751-5575</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Book a discovery call →</a></li>
+          </ul>
+          <ul class="site-footer__social" aria-label="Social media">
+  <li>
+    <a href="https://www.linkedin.com/company/techbrot-inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on LinkedIn">
+      <img src="/assets/img/icons/linkedin.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://x.com/techbrot_inc"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on X">
+      <img src="/assets/img/icons/x.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.instagram.com/techbrot_inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on Instagram">
+      <img src="/assets/img/icons/instagram.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+</ul>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Accounting">
+          <h2 class="site-footer__heading" id="fh-services" aria-controls="fl-services" aria-expanded="false" role="button" tabindex="0">Accounting</h2>
+          <ul class="site-footer__links" id="fl-services" aria-labelledby="fh-services">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="QuickBooks">
+          <h2 class="site-footer__heading" id="fh-quickbooks" aria-controls="fl-quickbooks" aria-expanded="false" role="button" tabindex="0">QuickBooks</h2>
+          <ul class="site-footer__links" id="fl-quickbooks" aria-labelledby="fh-quickbooks">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Company">
+          <h2 class="site-footer__heading" id="fh-company" aria-controls="fl-company" aria-expanded="false" role="button" tabindex="0">Company</h2>
+          <ul class="site-footer__links" id="fl-company" aria-labelledby="fh-company">
+            <li><a href="/about/">About</a></li>
+            <li><a href="/about/methodology/">Methodology</a></li>
+            <li><a href="/about/team/">Team</a></li>
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Network">
+          <h2 class="site-footer__heading" id="fh-network" aria-controls="fl-network" aria-expanded="false" role="button" tabindex="0">Network</h2>
+          <ul class="site-footer__links" id="fl-network" aria-labelledby="fh-network">
+            <li><a href="/find-an-accountant/">Find an Accountant</a></li>
+            <li><a href="/partners/">For Accountants</a></li>
+            <li><a href="/about/network/">How it works</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__base">
+    <div class="container">
+      <p class="site-footer__disclosure" role="note">
+        <strong>Independent ProAdvisor firm.</strong> QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc. <a href="/legal/disclaimer/">Read full notice</a>.
+      </p>
+      <div class="site-footer__base-row">
+        <p class="site-footer__copyright">© <time>2026</time> TechBrot Inc. All rights reserved.</p>
+        <ul class="site-footer__legal" aria-label="Legal links">
+          <li><a href="/legal/privacy-policy/">Privacy</a></li>
+          <li><a href="/legal/terms/">Terms</a></li>
+          <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+          <li><a href="/legal/dpa/">Data processing</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</footer>
+    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

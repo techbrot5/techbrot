@@ -1,0 +1,59 @@
+---
+layout: layouts/base.njk
+tierClass: section--tier-hub
+---
+{#- T-HUB tier skeleton — NEW SKIN (tiers/t-hub.html + PLACEMENT-MAP).
+    Dark hero + full aligned motif (the only dark band on the page) ·
+    chrome full · no call-bar · cta-band light on hub tint. Hero buttons
+    take the inverted variants on the dark band. Content machinery
+    (quick-5, FAQ, intents, schema, section IDs) is page-owned — FENCED. -#}
+
+<section class="section hero-tier hero--hub" id="{{ slug }}-hero">
+  <div class="hero__motif" aria-hidden="true">{% include "partials/motif-align-full.svg" %}</div>
+  <div class="container">
+    <div class="hero">
+      <p class="hero__eyebrow">{{ hero.eyebrow | safe }}</p>
+      <h1 class="hero__heading">{{ hero.heading | safe }}</h1>
+      <p class="hero__subheading">{{ hero.subheading | safe }}</p>
+      <div class="hero__actions">
+        {%- for action in hero.actions %}
+        <a class="btn {{ action.class }} btn--inverted btn--lg" href="{{ action.href }}"
+          {%- if action.href.startsWith("tel:") %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- if inBrief %}
+<section class="section section--compact" id="{{ slug }}-in-brief">
+  <div class="container">
+    <div class="in-brief">
+      <p class="in-brief__text" id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
+      {%- if inBrief.source %}<p class="in-brief__source">{{ inBrief.source | safe }}</p>{%- endif %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{{ content | safe }}
+
+{%- if ctaBand %}
+<section class="section section--cta-band section--cta-band--light {{ tierClass }}" id="{{ slug }}-cta">
+  <div class="cta-band__motif" aria-hidden="true">{% include "partials/motif-align-single.svg" %}</div>
+  <div class="container">
+    <div class="final-cta">
+      <p class="section__eyebrow">{{ ctaBand.eyebrow | safe }}</p>
+      <h2 class="final-cta__heading">{{ ctaBand.heading | safe }}</h2>
+      <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
+      <div class="final-cta__actions">
+        {%- for action in ctaBand.actions %}
+        <a class="btn {{ action.class }}" href="{{ action.href }}"
+          {%- if action.href.startsWith("tel:") %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+        {%- endfor %}
+      </div>
+      <p class="final-cta__disclaimer">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
+    </div>
+  </div>
+</section>
+{%- endif %}

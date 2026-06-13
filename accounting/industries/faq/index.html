@@ -1,0 +1,1996 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+<!-- ============================================================================
+  TECHBROT.COM — GLOBAL HEAD (PRODUCTION v4)
+  Bootstrap Studio Global Template · Loads sitewide on every page
+  ----------------------------------------------------------------------------
+  SCOPE:    Site-level signals only. Each page sets:
+              • <title>
+              • <meta name="description">
+              • <link rel="canonical">
+              • <link rel="alternate" hreflang>
+              • <meta property="og:url">
+              • <meta property="og:title">
+              • <meta property="og:description">
+              • <meta name="twitter:title">
+              • <meta name="twitter:description">
+              • Page-specific schema: WebPage, BreadcrumbList, FAQPage,
+                QAPage, Article, Service offerings — all referencing
+                the global Organization / Person / WebSite via @id.
+
+  GOAL:     Top 0.01% AI citation, entity SEO, E-E-A-T, semantic search,
+            Google / Perplexity / ChatGPT / Claude / Gemini retrieval.
+
+  STACK:    Bootstrap Studio · Static HTML · TechBrot Inc. (US C-Corp)
+  MODEL:    Independent accounting platform with vetted local partners
+
+  v4 CHANGE LOG:
+    • Added Person node for David Westgate (#david-westgate) — Lead
+      QuickBooks ProAdvisor, the named/visible page author referenced by
+      each page's WebPage.reviewedBy. Both Abid (founder/CEO) and David
+      (lead ProAdvisor) are certified; David references the same shared
+      #credential-* entities by @id. Abid remains founder + off visible
+      pages (org-level relationship, not page authorship).
+  UPDATED:  June 2026
+============================================================================ -->
+
+
+<!-- ── 01. RENDERING ──────────────────────────────────── -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- ── 02. PAGE IDENTITY — GLOBAL FALLBACKS (overridden per page) ─────────
+  These are global safety-net values. Every real page overrides title
+  and description in its own head.
+<title>A Modern Accounting Platform with Vetted Local Partners · TechBrot</title>
+<meta name="description" content="TechBrot is an independent U.S. accounting platform delivering QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations through a curated network of vetted local partners.">
+ -->
+
+<!-- ── 03. CANONICAL & HREFLANG — PER-PAGE ONLY ──────────────────────────
+  Reference template (do NOT uncomment globally):
+    <link rel="canonical" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="en-US" href="https://techbrot.com/[slug]/">
+    <link rel="alternate" hreflang="x-default" href="https://techbrot.com/[slug]/">
+-->
+
+
+<!-- ── 04. INDEXING & CRAWL DIRECTIVES ───────────────────────────────────
+  AI crawler policy (GPTBot, ClaudeBot, PerplexityBot, Google-Extended,
+  Applebot-Extended) is managed at robots.txt + Cloudflare WAF level.
+  These meta directives govern traditional search crawlers only. -->
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="bingbot" content="index, follow">
+
+
+<!-- ── 05. SITE IDENTITY & AUTHORSHIP ────────────────────────────────────-->
+
+<meta name="author" content="TechBrot Inc.">
+<meta name="application-name" content="TechBrot">
+<meta name="apple-mobile-web-app-title" content="TechBrot">
+
+<!-- ── 06. GEO & LOCALE ──────────────────────────────────────────────────
+  Registered: 651 N Broad St, Suite 201, Middletown, DE 19709.
+  Service area: 50 US states (national virtual + local partner network).
+  geo.region uses ISO 3166-2 (US-DE). Nationwide service is declared in
+  Organization schema areaServed (full state ItemList below). -->
+
+<meta http-equiv="content-language" content="en-US">
+<meta name="language" content="English">
+
+<!-- ── 07. BROWSER, DEVICE & PWA ─────────────────────────────────────────-->
+
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B0B" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-TileColor" content="#FAFAF7">
+<meta name="msapplication-config" content="/browserconfig.xml">
+
+
+<!-- ── 08. SECURITY & REFERRER ───────────────────────────────────────────-->
+
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+
+<!-- ── 09. OPEN GRAPH — SITE-LEVEL ONLY (image is per-page) ─────────────
+  Per-page sets: og:url, og:title, og:description, og:image (+ dimensions),
+  and og:type="article" on articles. Global default og:type is "website". -->
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TechBrot">
+<meta property="og:locale" content="en_US">
+
+<!-- ── 10. TWITTER / X CARD — SITE-LEVEL ONLY (image is per-page) ───────-->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@techbrot_inc">
+<meta name="twitter:creator" content="@techbrot_inc">
+
+<!-- ── 11. FAVICONS, ICONS & WEB APP MANIFEST ───────────────────────────-->
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/img/brand/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/img/brand/safari-pinned-tab.svg" color="#0B0B0B">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<!-- ── 12. SITEMAP & FEEDS ──────────────────────────────────────────────-->
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+
+<!-- ── 13. PERFORMANCE: PRECONNECT, DNS-PREFETCH, FONT PRELOAD ──────────
+  Fonts: Fraunces (serif headings) + Inter (sans body/UI), both Google.
+  Preloading the two heaviest weights eliminates layout-shift on first
+  paint. Adjust paths if you self-host. -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+
+<link rel="preload" as="image" href="/assets/img/brand/wordmark.svg" fetchpriority="high">
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<!-- ── 14. STRUCTURED DATA — ENTITY GRAPH ───────────────────────────────
+  Six-node @graph:
+    1. Organization (multi-type: Organization + ProfessionalService) —
+       the primary entity. Brand, knowsAbout (topical authority),
+       hasOfferCatalog (service routing), areaServed (full US),
+       contactPoint (toll-free), full sameAs cluster.
+    2. Brand — separate Brand entity for AI knowledge-graph systems.
+    3. Person (Abid Khan) — founder/CEO authority; certified ProAdvisor.
+    4. Person (David Westgate) — Lead ProAdvisor; the named, visible page
+       author referenced by each page's WebPage.reviewedBy. Both are
+       certified and share the #credential-* entities by @id.
+    5. WebSite — publisher entity with SearchAction.
+    (ProAdvisor credential entities #credential-* are defined inline on
+     the Abid node and referenced by David.)
+
+  Per-page schema attaches via @id reference, never duplicates these. -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://techbrot.com/#organization",
+
+      "name": "TechBrot Inc.",
+      "legalName": "TechBrot Inc.",
+      "alternateName": [
+        "TechBrot",
+        "TechBrot Network",
+        "TechBrot Accounting Platform"
+      ],
+      "slogan": "A modern accounting platform with vetted local partners.",
+      "description": "TechBrot Inc. is an independent U.S. firm of Certified QuickBooks ProAdvisors, accountants, and advisors serving small and mid-sized businesses. Services span QuickBooks setup, cleanup, and migration; monthly, cleanup, and catch-up bookkeeping; payroll; multi-state sales tax; 1099 preparation; financial reporting; and fractional CFO advisory — delivered directly and through a curated network of vetted local Certified ProAdvisors. Independent Certified QuickBooks ProAdvisor firm; not affiliated with Intuit Inc.",
+      "disambiguatingDescription": "Independent accounting platform with vetted local partners — not affiliated with Intuit Inc. QuickBooks is a registered trademark of Intuit Inc.",
+
+      "url": "https://techbrot.com/",
+
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://techbrot.com/#logo",
+        "url": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "contentUrl": "https://techbrot.com/assets/img/brand/logo_img.png",
+        "caption": "TechBrot — A modern accounting platform with vetted local partners",
+        "width": 512,
+        "height": 512,
+        "inLanguage": "en-US"
+      },
+
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://techbrot.com/assets/img/og/techbrot-og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "TechBrot — A modern accounting platform with vetted local partners"
+      },
+
+      "brand": {
+        "@id": "https://techbrot.com/#brand"
+      },
+
+   
+      "foundingDate": "2023",
+      "founder": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+      "founders": [
+        { "@id": "https://techbrot.com/#abid-khan" }
+      ],
+      "employee": [
+        { "@id": "https://techbrot.com/#abid-khan" },
+        { "@id": "https://techbrot.com/#david-westgate" }
+      ],
+
+      "email": "support@techbrot.com",
+      "telephone": "+1-877-751-5575",
+      "priceRange": "$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": ["Credit Card", "Bank Transfer", "ACH", "Check"],
+
+      "naics": "541219",
+      "isicV4": "6920",
+
+      "address": {
+        "@type": "PostalAddress",
+        "@id": "https://techbrot.com/#address",
+        "streetAddress": "651 N Broad St, Suite 201",
+        "addressLocality": "Middletown",
+        "addressRegion": "DE",
+        "postalCode": "19709",
+        "addressCountry": "US"
+      },
+
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.449",
+        "longitude": "-75.716"
+      },
+
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "customer service",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-877-751-5575",
+          "contactType": "sales",
+          "contactOption": "TollFree",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "partners@techbrot.com",
+          "contactType": "partner inquiries",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        }
+      ],
+
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States",
+        "@id": "https://www.wikidata.org/entity/Q30"
+      },
+
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Small and mid-sized U.S. businesses"
+      },
+
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        }
+      ],
+
+      "keywords": "accounting platform, QuickBooks ProAdvisor, bookkeeping services, QuickBooks cleanup, monthly bookkeeping, catch-up bookkeeping, payroll services, fractional CFO, sales tax compliance, 1099 preparation, vetted accounting partners, U.S. small business accounting",
+
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "TechBrot Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monthly Bookkeeping",
+              "description": "Recurring monthly bookkeeping with real reconciliation, monthly close package, and named operator point of contact.",
+              "url": "https://techbrot.com/accounting/bookkeeping/monthly-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks and Bookkeeping Cleanup",
+              "description": "Reconstruct accurate books from a messy state — categorization fixes, real bank and credit-card reconciliations, prior-period correction, and reliable financial statements.",
+              "url": "https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Catch-up Bookkeeping",
+              "description": "Bring backlogged books current — from a few missed months to multi-year historical cleanup before tax filing.",
+              "url": "https://techbrot.com/accounting/bookkeeping/catch-up-bookkeeping/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Setup and Onboarding",
+              "description": "Independent ProAdvisor-led QuickBooks setup, chart of accounts, banking, payroll, and integration configuration for new and existing businesses.",
+              "url": "https://techbrot.com/quickbooks/setup/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Migration",
+              "description": "QuickBooks Desktop-to-Online migration and other software-to-QuickBooks migrations performed by Certified ProAdvisors with data integrity verification.",
+              "url": "https://techbrot.com/quickbooks/migration/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Independent QuickBooks ProAdvisor Help",
+              "description": "Certified ProAdvisor help with QuickBooks file issues, reconciliation problems, plan selection, and workflow advisory — independent guidance beyond product support.",
+              "url": "https://techbrot.com/quickbooks/help/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Payroll Setup and Management",
+              "description": "Payroll setup, processing, tax filing, and compliance support delivered through the TechBrot operator network.",
+              "url": "https://techbrot.com/accounting/payroll-management/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sales Tax Compliance",
+              "description": "Multi-state sales tax registration, filing, and nexus advisory for U.S. small and mid-sized businesses.",
+              "url": "https://techbrot.com/accounting/sales-tax-compliance/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "1099 Preparation",
+              "description": "Annual 1099 preparation, vendor data collection, and IRS filing for U.S. small businesses.",
+              "url": "https://techbrot.com/accounting/1099-preparation/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fractional CFO Services",
+              "description": "Senior financial advisory delivered through the TechBrot network — cash flow planning, forecasting, KPI reporting, and board-ready financials for growing businesses.",
+              "url": "https://techbrot.com/accounting/advisory/fractional-cfo/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Find a Local Accounting Partner",
+              "description": "Match with a vetted, credentialed, insured TechBrot operator partner in your U.S. state — typically within 48 hours.",
+              "url": "https://techbrot.com/find-an-accountant/",
+              "provider": { "@id": "https://techbrot.com/#organization" }
+            }
+          }
+        ]
+      },
+
+      "knowsAbout": [
+        "Accounting",
+        "Bookkeeping",
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Premier",
+        "QuickBooks Payroll",
+        "QuickBooks ProAdvisor",
+        "QuickBooks setup",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "QuickBooks Desktop to Online migration",
+        "QuickBooks plan selection",
+        "QuickBooks reconciliation",
+        "QuickBooks bank feeds",
+        "QuickBooks error troubleshooting",
+        "QuickBooks company file repair",
+        "QuickBooks multi-user mode",
+        "QuickBooks payroll setup",
+        "QuickBooks payroll troubleshooting",
+        "QuickBooks sales tax",
+        "QuickBooks 1099 preparation",
+        "Monthly bookkeeping",
+        "Catch-up bookkeeping",
+        "Cleanup bookkeeping",
+        "Historical bookkeeping cleanup",
+        "Virtual bookkeeping",
+        "Outsourced bookkeeping",
+        "Small business accounting",
+        "Startup accounting",
+        "Bank reconciliation",
+        "Accounts payable management",
+        "Accounts receivable management",
+        "Chart of accounts setup",
+        "Month-end close",
+        "Year-end close",
+        "Financial statement preparation",
+        "Financial reporting",
+        "Cash flow forecasting",
+        "Cash flow management",
+        "Profitability analysis",
+        "KPI reporting",
+        "Budgeting and forecasting",
+        "Payroll services",
+        "Payroll tax compliance",
+        "Sales tax compliance",
+        "Sales tax nexus",
+        "1099 preparation and filing",
+        "Tax planning",
+        "IRS problem resolution",
+        "Fractional CFO services",
+        "Controller services",
+        "Business advisory services",
+        "Ecommerce accounting",
+        "Real estate accounting",
+        "Construction accounting",
+        "Restaurant accounting",
+        "Healthcare accounting",
+        "Law firm accounting",
+        "SaaS accounting",
+        "Professional services accounting",
+        "Manufacturing accounting",
+        "Trucking accounting",
+        "Nonprofit accounting",
+        "Franchise accounting",
+        "Retail accounting",
+        "Job costing",
+        "Shopify QuickBooks integration",
+        "Amazon QuickBooks integration",
+        "Stripe QuickBooks integration",
+        "Vetted accounting partner network",
+        "Operator-led accounting platform",
+        "Independent ProAdvisor firm"
+      ],
+
+      "subjectOf": {
+        "@type": "WebPage",
+        "@id": "https://techbrot.com/about/"
+      },
+
+    "sameAs": [
+  "https://www.linkedin.com/company/techbrot-inc/",
+  "https://x.com/techbrot_inc",
+  "https://www.instagram.com/techbrot_inc",
+  "https://www.youtube.com/@techbrot_inc",
+  "https://www.facebook.com/techbrotinc",
+  "https://www.tumblr.com/techbrot",
+  "https://pin.it/1d4Qrx4At",
+  "https://www.tiktok.com/@techbrot_inc",
+  "https://medium.com/@techbrot5",
+  "https://clutch.co/profile/techbrot"
+]
+    },
+
+    {
+      "@type": "Brand",
+      "@id": "https://techbrot.com/#brand",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Network",
+      "url": "https://techbrot.com/",
+      "logo": "https://techbrot.com/assets/img/brand/logo_img.png",
+      "slogan": "A modern accounting platform with vetted local partners."
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#abid-khan",
+
+      "name": "Abid Khan",
+      "givenName": "Abid",
+      "familyName": "Khan",
+
+      "url": "https://techbrot.com/about/team/#abid-khan",
+
+      "jobTitle": "Founder & CEO",
+      "description": "Abid Khan is the Founder and CEO of TechBrot Inc., an independent U.S. accounting platform with a curated network of vetted local partners. He is a Certified QuickBooks ProAdvisor across QuickBooks Online, Desktop, Enterprise, and Payroll, and leads platform architecture, partner network development, and AI-first search infrastructure.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks migration",
+        "Small business bookkeeping",
+        "Bank reconciliation",
+        "Accounting platform architecture",
+        "Partner network development",
+        "AI-first SEO",
+        "Topical authority architecture",
+        "E-E-A-T optimization"
+      ],
+
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qbo-l2",
+          "name": "QuickBooks Online ProAdvisor (Level 2)",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-desktop",
+          "name": "QuickBooks Desktop ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-enterprise",
+          "name": "QuickBooks Enterprise ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "@id": "https://techbrot.com/#credential-qb-payroll",
+          "name": "QuickBooks Payroll ProAdvisor",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit Inc.",
+            "url": "https://www.intuit.com/"
+          }
+        }
+      ],
+
+      "sameAs": [
+  "https://www.linkedin.com/in/abid-khan-ai/",
+  "https://www.reddit.com/user/techbrot_inc/",
+  "https://www.quora.com/profile/Abid-Khan-119",
+  "https://www.credly.com/users/abid-khan.3ceb70a5/badges#credly"
+      ]
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://techbrot.com/#david-westgate",
+
+      "name": "David Westgate",
+      "givenName": "David",
+      "familyName": "Westgate",
+
+      "url": "https://techbrot.com/about/team/#david-westgate",
+
+      "jobTitle": "Lead QuickBooks ProAdvisor",
+      "description": "David Westgate is the Lead QuickBooks ProAdvisor at TechBrot Inc., with more than 40 years of accounting experience. A Certified QuickBooks ProAdvisor across QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll, he leads bookkeeping, cleanup, reconciliation, and QuickBooks file rebuilds across construction, professional services, and nonprofit engagements, and is the reviewing authority for TechBrot's published accounting content.",
+
+      "worksFor": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "knowsAbout": [
+        "QuickBooks Online",
+        "QuickBooks Desktop",
+        "QuickBooks Enterprise",
+        "QuickBooks Payroll",
+        "QuickBooks file cleanup",
+        "QuickBooks reconciliation",
+        "Bookkeeping",
+        "Bank reconciliation",
+        "Month-end close",
+        "Sales tax compliance",
+        "IOLTA trust accounting",
+        "Job costing",
+        "Construction accounting",
+        "Nonprofit accounting"
+      ],
+
+      "hasCredential": [
+        { "@id": "https://techbrot.com/#credential-qbo-l2" },
+        { "@id": "https://techbrot.com/#credential-qb-desktop" },
+        { "@id": "https://techbrot.com/#credential-qb-enterprise" },
+        { "@id": "https://techbrot.com/#credential-qb-payroll" }
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://techbrot.com/#website",
+
+      "url": "https://techbrot.com/",
+      "name": "TechBrot",
+      "alternateName": "TechBrot Accounting Platform",
+      "description": "Independent U.S. accounting platform — QuickBooks cleanup, monthly bookkeeping, payroll, and financial operations delivered through a curated network of vetted local partners.",
+      "inLanguage": "en-US",
+
+      "publisher": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "author": {
+        "@id": "https://techbrot.com/#abid-khan"
+      },
+
+      "about": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightHolder": {
+        "@id": "https://techbrot.com/#organization"
+      },
+
+      "copyrightYear": "2023",
+
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://techbrot.com/search/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ]
+    }
+
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2Z8GK69Z5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K2Z8GK69Z5');
+</script>
+
+<!-- ── 15. TRADEMARK DISCLOSURE (machine-readable, AI-citation safety) ──
+  Distinct meta tag declaring trademark posture. Some AI scrapers
+  prioritize meta declarations over body content. Provides an
+  additional structural defense against impersonation classification. -->
+
+<meta name="trademark-disclosure" content="QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc.">
+<meta name="affiliation-disclosure" content="independent">
+
+<!-- ============================================================================
+  END GLOBAL HEAD
+============================================================================ --><!-- ====== INDUSTRIES FAQ · PAGE HEAD ====== -->
+<title>Industry Accounting FAQ: Why Specialization Matters · TechBrot</title>
+<meta name="description" content="Thirty-two questions on industry-specific accounting — why specialization matters, how to choose your industry fit, cross-industry patterns, the 17 industries we serve, technology by industry, and how engagements actually work. By Certified ProAdvisors, zero affiliate commission.">
+<link rel="canonical" href="https://techbrot.com/accounting/industries/faq/">
+<link rel="alternate" hreflang="en-US" href="https://techbrot.com/accounting/industries/faq/">
+<link rel="alternate" hreflang="x-default" href="https://techbrot.com/accounting/industries/faq/">
+<meta property="og:url" content="https://techbrot.com/accounting/industries/faq/">
+<meta property="og:title" content="Industry Accounting FAQ: Why Specialization Matters">
+<meta property="og:description" content="Thirty-two answers on industry-specific accounting — why it matters, choosing your industry fit, 17 industries covered, technology stack — by Certified ProAdvisors.">
+<meta property="og:image" content="https://techbrot.com/assets/img/og/industries-faq-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TechBrot — Industry Accounting FAQ by Certified ProAdvisors">
+<meta name="twitter:title" content="Industry Accounting FAQ · TechBrot">
+<meta name="twitter:description" content="Thirty-two answers on industry-specific accounting, specialization, and the 17 industries we serve.">
+<meta name="twitter:image" content="https://techbrot.com/assets/img/og/industries-faq-og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://techbrot.com/accounting/industries/faq/#webpage",
+      "url": "https://techbrot.com/accounting/industries/faq/",
+      "name": "Industry Accounting FAQ: Why Specialization Matters",
+      "description": "Comprehensive industry-specialization knowledge base for U.S. small and mid-market businesses. Covers why industry-specific accounting matters (revenue recognition, operational economics, GAAP requirements, regulatory overlays, platform integration), how to choose the right industry fit (multi-industry businesses, sub-vertical positioning, when industry specialization is overkill), cross-industry patterns (deferred revenue, project accounting, inventory, multi-state operations, integration stack), the 17 industries TechBrot serves (agency, construction, dental, ecommerce, fitness, franchise, healthcare, home services, legal, manufacturing, nonprofit, professional services, real estate, restaurant, retail, SaaS, trucking), and what's outside the scope. Maintained by the Certified QuickBooks ProAdvisor team.",
+      "isPartOf": { "@id": "https://techbrot.com/#website" },
+      "about": { "@id": "https://techbrot.com/#organization" },
+      "publisher": { "@id": "https://techbrot.com/#organization" },
+      "inLanguage": "en-US",
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://techbrot.com/assets/img/og/industries-faq-og.png" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["#indfaq-popular", "#indfaq-intro"] }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://techbrot.com/accounting/industries/faq/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://techbrot.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Accounting", "item": "https://techbrot.com/accounting/" },
+        { "@type": "ListItem", "position": 3, "name": "Industries", "item": "https://techbrot.com/accounting/industries/" },
+        { "@type": "ListItem", "position": 4, "name": "FAQ" }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://techbrot.com/accounting/industries/faq/#collection",
+      "name": "Industries FAQ — 32 questions across 7 clusters",
+      "url": "https://techbrot.com/accounting/industries/faq/",
+      "isPartOf": { "@id": "https://techbrot.com/accounting/industries/faq/#webpage" },
+      "hasPart": [
+        { "@type": "CollectionPage", "name": "Why industry matters", "url": "https://techbrot.com/accounting/industries/faq/#cluster-why" },
+        { "@type": "CollectionPage", "name": "Choosing the right industry fit", "url": "https://techbrot.com/accounting/industries/faq/#cluster-fit" },
+        { "@type": "CollectionPage", "name": "Cross-industry patterns", "url": "https://techbrot.com/accounting/industries/faq/#cluster-patterns" },
+        { "@type": "CollectionPage", "name": "The 17 industries we cover", "url": "https://techbrot.com/accounting/industries/faq/#cluster-coverage" },
+        { "@type": "CollectionPage", "name": "Switching industries & new ventures", "url": "https://techbrot.com/accounting/industries/faq/#cluster-switching" },
+        { "@type": "CollectionPage", "name": "Technology by industry", "url": "https://techbrot.com/accounting/industries/faq/#cluster-tech" },
+        { "@type": "CollectionPage", "name": "Engagement & next steps", "url": "https://techbrot.com/accounting/industries/faq/#cluster-engagement" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://techbrot.com/accounting/industries/faq/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why does industry-specific accounting matter?", "acceptedAnswer": { "@type": "Answer", "text": "Industries have distinctive accounting patterns that generic bookkeeping completely misses. Revenue recognition varies wildly: SaaS deferred revenue under ASC 606, construction percentage-of-completion, agencies gross vs net (principal vs agent), fitness memberships as deferred revenue, nonprofits restricted vs unrestricted under ASC 958. Operational economics differ: restaurants need prime cost, manufacturers need BOM costing, home services need revenue per truck per day, law firms need IOLTA trust accounting. Generic accountants handle the universal layer (bookkeeping, financial statements) but miss the industry layer (industry-specific KPIs, industry-specific CoA, industry-specific GAAP requirements). The result: books that pass a generic audit but don't produce the operational insights the business actually needs. Industry specialization separates competent operators from generalists." } },
+        { "@type": "Question", "name": "When is industry specialization essential vs when is generic accounting fine?", "acceptedAnswer": { "@type": "Answer", "text": "Industry specialization is essential when: the industry has distinctive revenue recognition (SaaS, construction, fitness, nonprofit, franchise), distinctive operational economics (restaurant prime cost, agency utilization, home services RPTD, trucking IFTA), distinctive GAAP requirements (nonprofit ASC 958, construction percentage-of-completion, leases under ASC 842), distinctive regulatory requirements (legal IOLTA, healthcare HIPAA-aware bookkeeping, multi-state franchise FDD reporting), or distinctive operational platforms (FSM, POS, PMS, AMS systems that drive the financial data). Industry specialization is less critical when the business is small ($300K-$1M revenue) with simple service operations, single-state, no inventory, no deferred revenue, generic SMB QuickBooks setup, and minimal complexity. At that scale, a competent generalist bookkeeper handles the work well. As businesses grow into complexity, the industry layer compounds in importance." } },
+        { "@type": "Question", "name": "How does industry-specific accounting actually show up in the engagement?", "acceptedAnswer": { "@type": "Answer", "text": "Industry specialization shows up in five concrete places. (1) Chart of accounts design — industry-specific CoA structure that surfaces the right operational categories. (2) Integration setup — connecting QuickBooks to the operational source-of-truth platforms (ServiceTitan for HVAC, MindBody for fitness, Toast or Square for restaurants, Shopify and Amazon for ecommerce). (3) Revenue recognition methodology — ASC 606 implementation tailored to the industry's revenue patterns. (4) KPI dashboards — industry-specific metrics (RPTD, utilization, prime cost, MRR, etc.) calculated and reported monthly. (5) FAQ depth in proposals and advisory — the engagement structure anticipates the industry's specific challenges rather than treating it generically. Generic bookkeepers handle steps 1 and 2 superficially and skip 3, 4, and 5 entirely. The difference is visible in monthly reporting: industry-specialist books surface what's actually happening in the business; generic books surface accounting categories." } },
+        { "@type": "Question", "name": "What if my business doesn't fit cleanly into one industry?", "acceptedAnswer": { "@type": "Answer", "text": "Multi-industry businesses are common — agencies with productized SaaS arms, retailers with ecommerce channels, restaurants with catering plus retail products, construction firms with property management. We handle these through Class or Department tracking in QuickBooks, with a chart-of-accounts structure that lets each business line report separately while still rolling up to a consolidated view. Pricing reflects complexity but generally scales sub-linearly — a business spanning two industries doesn't pay double a single-industry engagement; it pays a complexity premium roughly 30-50% above the dominant-industry baseline. The discovery call identifies the dominant model (typically the one driving 60%+ of revenue or complexity), maps the secondary lines, and scopes the engagement to handle both without forcing the business into a category that doesn't fit." } },
+        { "@type": "Question", "name": "Which industries does TechBrot serve?", "acceptedAnswer": { "@type": "Answer", "text": "TechBrot serves 17 industries across U.S. small and mid-market businesses, with dedicated industry pages and specialist depth in each: agencies (marketing, advertising, PR), construction, dental practices, ecommerce, fitness studios, franchise operations, healthcare practices, home services (HVAC, plumbing, electrical), law firms, manufacturing, nonprofits, professional services, real estate, restaurants, retail, SaaS, and trucking. Each industry has its own service page with industry-specific challenges, sub-vertical breakdowns, integration platforms, KPI frameworks, and FAQ content. Industry experience matters because each industry has specific QuickBooks configurations, chart-of-accounts structures, and operational workflows that don't translate cleanly across sectors." } },
+        { "@type": "Question", "name": "What industries do you not serve well?", "acceptedAnswer": { "@type": "Answer", "text": "We're explicit about coverage limits. Industries we don't serve well: cannabis (separate legal scope, banking restrictions, state-by-state regulatory complexity we don't specialize in), oil & gas operations (specialty depletion accounting, working-interest economics), insurance carrier accounting (heavily regulated, separate from agency-side which we do cover), financial services with regulatory overlay (broker-dealers, registered investment advisors, mortgage originators), agriculture and farming operations (commodity hedging, crop insurance, USDA programs), and businesses operating internationally with material foreign-currency or transfer-pricing complexity. When industry fit isn't a match, we say so on the discovery call and recommend specialists better positioned to serve. Honest scope is the moat — we'd rather decline an engagement than deliver mediocre work outside our depth." } },
+        { "@type": "Question", "name": "How do I get started?", "acceptedAnswer": { "@type": "Answer", "text": "Book a 30-minute discovery call. The call identifies your dominant industry fit (or multi-industry structure if applicable), assesses where your books currently stand (cleanup needed? catch-up? generic books to convert to industry-specialist?), maps the right engagement type (monthly bookkeeping with industry overlay, cleanup project, advisory engagement), and answers your questions. Within 3 business days of the call, we deliver a written scope with fixed-fee pricing — no surprises, no hourly billing. If your industry isn't on our coverage list, we'll say so and route to specialists who fit better. The discovery call is complimentary; the scope is non-binding; engagement starts only when you commit in writing." } }
+      ]
+    }
+  ]
+}
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>BSS-1-11ty</title>
+    <link rel="stylesheet" href="../../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../assets/css/04-pages.css">
+    <link rel="stylesheet" href="../../../assets/css/01-tokens.css">
+    <link rel="stylesheet" href="../../../assets/css/02-base.css">
+    <link rel="stylesheet" href="../../../assets/css/03-components.css">
+</head>
+
+<body><!-- ============================================================================
+     CHROME · utility bar + primary header + mobile drawer + search palette
+     ============================================================================ -->
+
+<div class="util-bar" role="region" aria-label="Secondary">
+  <div class="container util-bar__inner">
+    <p class="util-bar__trust">
+      <span class="util-bar__dot" aria-hidden="true"></span>
+      <span>Independent Certified QuickBooks ProAdvisor firm · U.S.-based</span>
+    </p>
+    <nav class="util-bar__nav" aria-label="For accountants and partners">
+      <a class="util-bar__link" href="/find-an-accountant/">Find an Accountant</a>
+      <a class="util-bar__link" href="/partners/">For Accountants →</a>
+    </nav>
+  </div>
+</div>
+
+<header class="site-header" role="banner" id="site-header" data-sticky="true">
+  <div class="container site-header__inner">
+
+    <a class="site-brand" href="/" aria-label="TechBrot home" title="TechBrot — A Modern Accounting Platform">
+      <img class="site-brand__mark" src="/assets/img/brand/icon.svg" alt="TechBrot" width="140" height="56" decoding="async" fetchpriority="high">
+    </a>
+
+    <nav class="site-nav site-nav--desktop" aria-label="Primary navigation" id="primary-nav">
+      <ul class="site-nav__list">
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-services" aria-haspopup="true">
+            Accounting
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-services" role="region" aria-label="Accounting services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Bookkeeping</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/bookkeeping/">All bookkeeping →</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Financial Operations</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/accounting/payroll-management/">Payroll management</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+                  <li><a class="nav-menu__link" href="/accounting/services/">All services →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/accounting/">Accounting overview →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-quickbooks" aria-haspopup="true">
+            QuickBooks
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu nav-menu--two-col" id="nav-menu-quickbooks" role="region" aria-label="QuickBooks services" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">ProAdvisor Services</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/cleanup/">File cleanup</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/migration/">Desktop → Online migration</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/help/">QuickBooks help</a></li>
+                </ul>
+              </div>
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Products</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/proadvisor-team/">Our ProAdvisor team</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+                  <li><a class="nav-menu__link" href="/quickbooks/">QuickBooks overview →</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav-menu__footer">
+              <a class="nav-menu__footer-link" href="/legal/disclaimer/">Independent firm — not affiliated with Intuit →</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/find-an-accountant/">Find an Accountant</a>
+        </li>
+
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="/pricing/">Pricing</a>
+        </li>
+
+        <li class="site-nav__item site-nav__item--has-menu">
+          <button class="site-nav__link site-nav__link--toggle" type="button" aria-expanded="false" aria-controls="nav-menu-why" aria-haspopup="true">
+            Why TechBrot
+            <span class="site-nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-menu" id="nav-menu-why" role="region" aria-label="Why TechBrot" hidden="">
+            <div class="nav-menu__inner">
+              <div class="nav-menu__col">
+                <p class="nav-menu__heading">Authority &amp; trust</p>
+                <ul class="nav-menu__list">
+                  <li><a class="nav-menu__link" href="/trust/">Trust &amp; standards</a></li>
+                  <li><a class="nav-menu__link" href="/about/methodology/">Our methodology</a></li>
+                  <li><a class="nav-menu__link" href="/reviews/">Client reviews</a></li>
+                  <li><a class="nav-menu__link" href="/vs/">Comparisons</a></li>
+                  <li><a class="nav-menu__link" href="/about/">About &amp; team</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="site-header__utility">
+      <button class="site-search-trigger" type="button" aria-label="Search (press / or Cmd-K)" data-search-open="" title="Search — / or ⌘K">
+        <svg class="site-search-trigger__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+          <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+        </svg>
+        <span class="site-search-trigger__hint" aria-hidden="true"><kbd>/</kbd></span>
+      </button>
+
+      <a class="site-header__phone" href="tel:+18777515575" aria-label="Call TechBrot" data-cta="header-phone" title="Call TechBrot">
+        <span class="site-header__phone-label">Call</span>
+        <span class="site-header__phone-number">(877) 751-5575</span>
+      </a>
+
+      <a class="btn btn--primary btn--sm" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="header-primary" title="Book a discovery call">
+        Book a Call
+      </a>
+    </div>
+
+    <button class="site-header__mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+      <span class="site-header__mobile-bar" aria-hidden="true"></span>
+    </button>
+
+  </div>
+</header>
+
+<aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation" hidden="">
+  <div class="mobile-drawer__header">
+    <a class="site-brand" href="/" aria-label="TechBrot home">
+      <img class="site-brand__mark" src="/assets/img/brand/wordmark.png" alt="TechBrot" width="120" height="36">
+    </a>
+    <button class="mobile-drawer__close" type="button" aria-label="Close navigation menu" data-action="close-drawer">
+      <span class="mobile-drawer__close-x" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <nav class="mobile-drawer__nav" aria-label="Mobile primary navigation">
+    <ul class="mobile-drawer__list">
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-services">
+          <span>Accounting</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-services" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Bookkeeping cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll management</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-quickbooks">
+          <span>QuickBooks</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-quickbooks" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview →</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/find-an-accountant/">Find an Accountant</a></li>
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/pricing/">Pricing</a></li>
+
+      <li class="mobile-drawer__item mobile-drawer__item--accordion">
+        <button class="mobile-drawer__accordion-toggle" type="button" aria-expanded="false" aria-controls="mobile-why">
+          <span>Why TechBrot</span><span class="mobile-drawer__caret" aria-hidden="true"></span>
+        </button>
+        <div class="mobile-drawer__panel" id="mobile-why" hidden="">
+          <ul class="mobile-drawer__sublist">
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/about/methodology/">Our methodology</a></li>
+            <li><a href="/reviews/">Client reviews</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+            <li><a href="/about/">About &amp; team</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="mobile-drawer__item"><a class="mobile-drawer__link" href="/partners/">For Accountants</a></li>
+    </ul>
+  </nav>
+
+  <div class="mobile-drawer__footer">
+    <a class="btn btn--primary btn--lg btn--full" href="/quickbooks/speak-to-a-quickbooks-expert/" data-cta="mobile-primary">Book a Discovery Call</a>
+    <a class="mobile-drawer__phone" href="tel:+18777515575">(877) 751-5575</a>
+  </div>
+</aside>
+
+<div class="search-palette" id="search-palette" role="dialog" aria-modal="true" aria-label="Search TechBrot" hidden="">
+  <div class="search-palette__backdrop" data-search-close=""></div>
+  <div class="search-palette__panel" role="combobox" aria-expanded="true" aria-haspopup="listbox" aria-owns="search-results">
+    <div class="search-palette__field">
+      <svg class="search-palette__icon" width="20" height="20" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"></circle>
+        <path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+      </svg>
+      <input class="search-palette__input" id="search-input" type="text" autocomplete="off" spellcheck="false" placeholder="Search services, QuickBooks, comparisons, states, Indiana topics…" aria-label="Search" aria-controls="search-results" aria-autocomplete="list">
+      <button class="search-palette__close" type="button" aria-label="Close search" data-search-close=""><kbd>Esc</kbd></button>
+    </div>
+    <div class="search-palette__body">
+      <ul class="search-palette__results" id="search-results" role="listbox" aria-label="Search results"></ul>
+      <div class="search-palette__suggested" id="search-suggested">
+        <p class="search-palette__suggested-label">Try</p>
+        <ul class="search-palette__chips" role="list">
+          <li><button type="button" class="search-chip" data-q="indiana cagit">Indiana CAGIT payroll</button></li>
+          <li><button type="button" class="search-chip" data-q="bookkeeping cleanup">Bookkeeping cleanup</button></li>
+          <li><button type="button" class="search-chip" data-q="quickbooks migration">QuickBooks migration</button></li>
+          <li><button type="button" class="search-chip" data-q="indianapolis">Indianapolis</button></li>
+          <li><button type="button" class="search-chip" data-q="manufacturing">Manufacturing accounting</button></li>
+          <li><button type="button" class="search-chip" data-q="pricing">Pricing</button></li>
+        </ul>
+      </div>
+      <p class="search-palette__empty" id="search-empty" hidden="">No matches. Try a service, “QuickBooks”, an Indiana topic, a city, or a comparison.</p>
+    </div>
+    <div class="search-palette__foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>Esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+<div class="page page--kb-faq page--industries-faq" data-page="industries-faq">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <main id="main" role="main">
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="Breadcrumb" id="indfaq-breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/">Home</a></li>
+          <li class="breadcrumb__item"><a href="/accounting/">Accounting</a></li>
+          <li class="breadcrumb__item"><a href="/accounting/industries/">Industries</a></li>
+          <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">FAQ</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- KB HERO -->
+    <section class="section section--kb-hero" id="indfaq-hero" aria-labelledby="indfaq-hero-heading">
+      <div class="container">
+        <div class="kb-hero">
+          <p class="kb-hero__eyebrow">The industry-specialization reference &middot; Maintained by Certified ProAdvisors</p>
+          <h1 class="kb-hero__heading" id="indfaq-hero-heading">
+            Industry-specific accounting, answered.
+          </h1>
+          <p class="kb-hero__subheading" id="indfaq-intro">
+            Thirty-two questions on why industry-specific accounting matters, how to know which industry fits your business, the cross-industry patterns we see most often, the 17 industries TechBrot serves with specialist depth, what we don&rsquo;t cover, and how industry-aware engagements actually work. Written by Certified QuickBooks ProAdvisors with zero commission on QuickBooks or any other platform. Industry specialization is what separates competent operational accounting from generic bookkeeping.
+          </p>
+          <dl class="kb-hero__meta">
+            <div class="kb-hero__meta-item">
+              <dt class="kb-hero__meta-label">Maintained by</dt>
+              <dd class="kb-hero__meta-value">Certified ProAdvisors</dd>
+            </div>
+            <div class="kb-hero__meta-item">
+              <dt class="kb-hero__meta-label">Questions</dt>
+              <dd class="kb-hero__meta-value">32 across 7 clusters</dd>
+            </div>
+            <div class="kb-hero__meta-item">
+              <dt class="kb-hero__meta-label">Industries covered</dt>
+              <dd class="kb-hero__meta-value">17 dedicated</dd>
+            </div>
+            <div class="kb-hero__meta-item">
+              <dt class="kb-hero__meta-label">Last reviewed</dt>
+              <dd class="kb-hero__meta-value"><time datetime="2026-06">June 2026</time></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- POPULAR QUESTIONS STRIP -->
+    <section class="section section--kb-popular" id="indfaq-popular" aria-labelledby="indfaq-popular-heading">
+      <div class="container">
+        <header class="kb-popular__header">
+          <p class="kb-popular__eyebrow">Most asked</p>
+          <h2 class="kb-popular__heading" id="indfaq-popular-heading">Six questions answered most often.</h2>
+        </header>
+        <ul class="kb-popular__list" role="list">
+          <li class="kb-popular__item">
+            <a class="kb-popular__link" href="#q01">
+              <span class="kb-popular__id">Q.01</span>
+              <span class="kb-popular__question">Why does industry-specific accounting matter?</span>
+              <span class="kb-popular__cluster">Why</span>
+            </a>
+          </li>
+          <li class="kb-popular__item">
+            <a class="kb-popular__link" href="#q03">
+              <span class="kb-popular__id">Q.03</span>
+              <span class="kb-popular__question">When is industry specialization essential vs when is generic fine?</span>
+              <span class="kb-popular__cluster">Why</span>
+            </a>
+          </li>
+          <li class="kb-popular__item">
+            <a class="kb-popular__link" href="#q06">
+              <span class="kb-popular__id">Q.06</span>
+              <span class="kb-popular__question">What if my business doesn&rsquo;t fit cleanly into one industry?</span>
+              <span class="kb-popular__cluster">Fit</span>
+            </a>
+          </li>
+          <li class="kb-popular__item">
+            <a class="kb-popular__link" href="#q18">
+              <span class="kb-popular__id">Q.18</span>
+              <span class="kb-popular__question">Which industries does TechBrot serve?</span>
+              <span class="kb-popular__cluster">Coverage</span>
+            </a>
+          </li>
+          <li class="kb-popular__item">
+            <a class="kb-popular__link" href="#q22">
+              <span class="kb-popular__id">Q.22</span>
+              <span class="kb-popular__question">What industries do you not serve well?</span>
+              <span class="kb-popular__cluster">Coverage</span>
+            </a>
+          </li>
+          <li class="kb-popular__item">
+            <a class="kb-popular__link" href="#q32">
+              <span class="kb-popular__id">Q.32</span>
+              <span class="kb-popular__question">How do I get started?</span>
+              <span class="kb-popular__cluster">Engagement</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- KB BODY LAYOUT -->
+    <section class="section section--kb-body" id="indfaq-body" aria-labelledby="indfaq-body-heading">
+      <div class="container">
+        <h2 class="sr-only" id="indfaq-body-heading">All industry-specialization questions, organized by topic</h2>
+        <div class="kb-layout">
+
+          <!-- KB QUICKJUMP NAV -->
+          <aside class="kb-quickjump" aria-label="Jump to topic cluster">
+            <details class="kb-quickjump__details" open>
+              <summary class="kb-quickjump__summary">
+                <span class="kb-quickjump__summary-label">Topic clusters</span>
+                <span class="kb-quickjump__summary-count">7</span>
+              </summary>
+              <nav class="kb-quickjump__nav" aria-label="Topic navigation">
+                <ol class="kb-quickjump__list" role="list">
+                  <li class="kb-quickjump__item"><a class="kb-quickjump__link" href="#cluster-why" data-cluster="why"><span class="kb-quickjump__number">01</span><span class="kb-quickjump__label">Why industry matters</span><span class="kb-quickjump__count">Q.01&ndash;05</span></a></li>
+                  <li class="kb-quickjump__item"><a class="kb-quickjump__link" href="#cluster-fit" data-cluster="fit"><span class="kb-quickjump__number">02</span><span class="kb-quickjump__label">Choosing the right industry fit</span><span class="kb-quickjump__count">Q.06&ndash;11</span></a></li>
+                  <li class="kb-quickjump__item"><a class="kb-quickjump__link" href="#cluster-patterns" data-cluster="patterns"><span class="kb-quickjump__number">03</span><span class="kb-quickjump__label">Cross-industry patterns</span><span class="kb-quickjump__count">Q.12&ndash;17</span></a></li>
+                  <li class="kb-quickjump__item"><a class="kb-quickjump__link" href="#cluster-coverage" data-cluster="coverage"><span class="kb-quickjump__number">04</span><span class="kb-quickjump__label">The 17 industries we cover</span><span class="kb-quickjump__count">Q.18&ndash;23</span></a></li>
+                  <li class="kb-quickjump__item"><a class="kb-quickjump__link" href="#cluster-switching" data-cluster="switching"><span class="kb-quickjump__number">05</span><span class="kb-quickjump__label">Switching industries &amp; new ventures</span><span class="kb-quickjump__count">Q.24&ndash;27</span></a></li>
+                  <li class="kb-quickjump__item"><a class="kb-quickjump__link" href="#cluster-tech" data-cluster="tech"><span class="kb-quickjump__number">06</span><span class="kb-quickjump__label">Technology by industry</span><span class="kb-quickjump__count">Q.28&ndash;30</span></a></li>
+                  <li class="kb-quickjump__item"><a class="kb-quickjump__link" href="#cluster-engagement" data-cluster="engagement"><span class="kb-quickjump__number">07</span><span class="kb-quickjump__label">Engagement &amp; next steps</span><span class="kb-quickjump__count">Q.31&ndash;32</span></a></li>
+                </ol>
+              </nav>
+            </details>
+          </aside>
+
+          <!-- KB CONTENT -->
+          <div class="kb-content">
+
+            <!-- CLUSTER 01: WHY -->
+            <section class="kb-cluster" id="cluster-why" aria-labelledby="cluster-why-heading">
+              <header class="kb-cluster__header">
+                <p class="kb-cluster__number">Cluster 01</p>
+                <h2 class="kb-cluster__heading" id="cluster-why-heading">Why industry matters.</h2>
+                <p class="kb-cluster__lede">What industry-specific accounting actually means, where it shows up in the books, and when specialization is essential vs when a competent generalist will do.</p>
+              </header>
+              <ol class="kb-list" role="list">
+
+                <li class="kb-item" id="q01">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.01</span>
+                      <span class="kb-item__question">Why does industry-specific accounting matter?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Industries have distinctive accounting patterns that generic bookkeeping completely misses. <strong>Revenue recognition</strong> varies wildly: <a href="/accounting/industries/saas/">SaaS</a> deferred revenue under ASC 606, <a href="/accounting/industries/construction/">construction</a> percentage-of-completion, <a href="/accounting/industries/agency/">agencies</a> gross vs net (principal vs agent), <a href="/accounting/industries/fitness/">fitness</a> memberships as deferred revenue, <a href="/accounting/industries/nonprofit/">nonprofits</a> restricted vs unrestricted under ASC 958. <strong>Operational economics</strong> differ: <a href="/accounting/industries/restaurant/">restaurants</a> need prime cost, <a href="/accounting/industries/manufacturing/">manufacturers</a> need BOM costing, <a href="/accounting/industries/home-services/">home services</a> need revenue per truck per day, <a href="/accounting/industries/legal/">law firms</a> need IOLTA trust accounting.</p>
+                      <p>Generic accountants handle the universal layer (bookkeeping, financial statements) but miss the industry layer (industry-specific KPIs, industry-specific CoA, industry-specific GAAP requirements). The result: books that pass a generic audit but don&rsquo;t produce the operational insights the business actually needs. Industry specialization separates competent operators from generalists. See <a href="/accounting/industries/">/accounting/industries/</a> for the full coverage map.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q02">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.02</span>
+                      <span class="kb-item__question">Where does industry specialization actually show up in the books?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Industry specialization shows up in five concrete places. <strong>(1) Chart of accounts design</strong> &mdash; industry-specific CoA structure that surfaces the right operational categories (a <a href="/accounting/industries/restaurant/">restaurant</a> CoA breaks revenue by daypart and category; a <a href="/accounting/industries/saas/">SaaS</a> CoA separates new ARR, expansion ARR, and renewals; a <a href="/accounting/industries/legal/">law firm</a> CoA separates trust from operating). <strong>(2) Integration setup</strong> &mdash; connecting QuickBooks to the operational source-of-truth platforms (ServiceTitan for HVAC, MindBody for fitness, Toast or Square for restaurants, Shopify and Amazon for ecommerce). <strong>(3) Revenue recognition methodology</strong> &mdash; ASC 606 implementation tailored to the industry&rsquo;s revenue patterns.</p>
+                      <p><strong>(4) KPI dashboards</strong> &mdash; industry-specific metrics (RPTD, utilization, prime cost, MRR) calculated and reported monthly. <strong>(5) FAQ depth in proposals and advisory</strong> &mdash; the engagement structure anticipates the industry&rsquo;s specific challenges rather than treating it generically. Generic bookkeepers handle steps 1 and 2 superficially and skip 3, 4, and 5 entirely. The difference is visible in monthly reporting: industry-specialist books surface what&rsquo;s actually happening in the business; generic books surface accounting categories.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q03">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.03</span>
+                      <span class="kb-item__question">When is industry specialization essential vs when is generic accounting fine?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Industry specialization is <strong>essential</strong> when the business has any of: distinctive revenue recognition (SaaS, construction, fitness, nonprofit, franchise), distinctive operational economics (restaurant prime cost, agency utilization, home services RPTD, trucking IFTA), distinctive GAAP requirements (nonprofit ASC 958, construction percentage-of-completion, leases under ASC 842), distinctive regulatory requirements (legal IOLTA, healthcare HIPAA-aware bookkeeping, multi-state franchise FDD reporting), or distinctive operational platforms (FSM, POS, PMS, AMS systems that drive the financial data).</p>
+                      <p>Industry specialization is <strong>less critical</strong> when the business is small ($300K&ndash;$1M revenue) with simple service operations, single-state, no inventory, no deferred revenue, generic SMB QuickBooks setup, and minimal complexity. At that scale, a competent generalist bookkeeper handles the work well. As businesses grow into complexity, the industry layer compounds in importance. Most businesses that engage us recognize the industry layer is missing before they engage; some realize it only after switching from a generalist and seeing the difference in monthly reporting.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q04">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.04</span>
+                      <span class="kb-item__question">What&rsquo;s the difference between industry-specialist and industry-aware accounting?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p><strong>Industry-aware</strong> means the accountant has worked with businesses in your industry before and avoids the obvious mistakes &mdash; they know what a chart of accounts should roughly look like, what the major operational platforms are, what GAAP touchpoints exist. <strong>Industry-specialist</strong> means the firm has worked with dozens or hundreds of businesses in the industry, has built reusable engagement models for that industry, maintains a current view of industry-specific platforms and integrations, and treats the industry as a continued specialization rather than incidental coverage.</p>
+                      <p>The practical difference: industry-aware accountants handle the major touchpoints correctly but may miss sub-vertical nuances or recent platform changes. Industry specialists handle nuances, sub-verticals, and platform evolution because they see the industry continuously. For most growing businesses, industry-aware is enough early; industry-specialist matters more as the business scales into complexity. TechBrot positions as industry-specialist across 17 industries &mdash; we maintain dedicated pages, FAQ depth, and engagement models for each.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q05">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.05</span>
+                      <span class="kb-item__question">Does industry specialization cost more than generic bookkeeping?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Industry-specialist engagements typically price similarly to industry-aware engagements once you compare like-for-like scope. The fee differential isn&rsquo;t the industry overlay &mdash; it&rsquo;s the depth of the engagement (KPI dashboards, integration management, revenue recognition discipline, advisory layer). A generic bookkeeper at $300/month delivers transaction categorization and basic reconciliation; an industry-specialist firm at $800&ndash;$1,500/month delivers all of that plus the industry-specific reporting that actually drives decisions.</p>
+                      <p>The economic comparison is not generic vs specialist at the same price point &mdash; it&rsquo;s the value differential of correct industry treatment. <a href="/accounting/industries/construction/">Construction</a> books without WIP tracking pass a tax filing but provide no operational visibility; with proper WIP they reveal project margin in real time. <a href="/accounting/industries/saas/">SaaS</a> books without ASC 606 discipline create misleading early-month profitability; with proper deferred revenue they show actual unit economics. The marginal cost of industry specialization typically returns 5&ndash;20x in better decisions and avoided mistakes. See <a href="/pricing/">/pricing/</a> for canonical pricing.</p>
+                    </div>
+                  </details>
+                </li>
+
+              </ol>
+            </section>
+
+            <!-- CLUSTER 02: FIT -->
+            <section class="kb-cluster" id="cluster-fit" aria-labelledby="cluster-fit-heading">
+              <header class="kb-cluster__header">
+                <p class="kb-cluster__number">Cluster 02</p>
+                <h2 class="kb-cluster__heading" id="cluster-fit-heading">Choosing the right industry fit.</h2>
+                <p class="kb-cluster__lede">Multi-industry businesses, sub-vertical positioning, holding-company structures, and when industry classification matters less than it seems.</p>
+              </header>
+              <ol class="kb-list" role="list">
+
+                <li class="kb-item" id="q06">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.06</span>
+                      <span class="kb-item__question">What if my business doesn&rsquo;t fit cleanly into one industry?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Multi-industry businesses are common &mdash; <a href="/accounting/industries/agency/">agencies</a> with productized <a href="/accounting/industries/saas/">SaaS</a> arms, <a href="/accounting/industries/retail/">retailers</a> with ecommerce channels, <a href="/accounting/industries/restaurant/">restaurants</a> with catering plus retail products, <a href="/accounting/industries/construction/">construction</a> firms with property management. We handle these through <strong>Class or Department tracking</strong> in QuickBooks, with a chart-of-accounts structure that lets each business line report separately while still rolling up to a consolidated view.</p>
+                      <p>Pricing reflects complexity but generally scales sub-linearly &mdash; a business spanning two industries doesn&rsquo;t pay double a single-industry engagement; it pays a complexity premium roughly <strong>30&ndash;50% above the dominant-industry baseline</strong>. The discovery call identifies the dominant model (typically the one driving 60%+ of revenue or complexity), maps the secondary lines, and scopes the engagement to handle both without forcing the business into a category that doesn&rsquo;t fit. Multi-industry handling is one of the places industry specialization actually helps &mdash; you need a firm fluent enough in multiple industries to see what each requires.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q07">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.07</span>
+                      <span class="kb-item__question">My industry isn&rsquo;t on your list &mdash; does that mean you can&rsquo;t help?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Most industries fit close enough to our 17 published verticals that engagement structure works. Common &ldquo;not on the list&rdquo; cases that actually fit: <strong>insurance agencies</strong> (similar to <a href="/accounting/industries/professional-services/">professional services</a> with some agency mechanics), <strong>consulting practices</strong> (covered by professional services), <strong>creative agencies and design studios</strong> (covered by <a href="/accounting/industries/agency/">agency</a>), <strong>specialty trade contractors</strong> (covered by <a href="/accounting/industries/home-services/">home services</a> or <a href="/accounting/industries/construction/">construction</a> depending on scope), <strong>tourism and hospitality</strong> (covered by <a href="/accounting/industries/restaurant/">restaurant</a> for operational similarity), <strong>independent medical specialties</strong> (covered by <a href="/accounting/industries/healthcare/">healthcare</a>), <strong>wholesale and distribution</strong> (covered by <a href="/accounting/industries/manufacturing/">manufacturing</a> or <a href="/accounting/industries/retail/">retail</a> with inventory overlay).</p>
+                      <p>The discovery call maps your business to the nearest fit and identifies any gaps in the standard engagement model. If the fit is genuinely poor (see Q.22 for what we don&rsquo;t serve well), we&rsquo;ll route to a specialist firm with the right depth. Industry coverage isn&rsquo;t about checking boxes &mdash; it&rsquo;s about whether we can actually serve your business well.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q08">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.08</span>
+                      <span class="kb-item__question">Do you serve multi-entity businesses or holding companies?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Yes &mdash; multi-entity and multi-industry engagements are common, particularly for holding companies, multi-location operators, and businesses with related-party operations across different verticals. Multi-entity engagement scope includes: <strong>separate QuickBooks files per entity</strong> (or multi-company structure where appropriate), <strong>consolidated financial reporting across entities</strong>, <strong>intercompany transaction reconciliation</strong>, <strong>equity tracking across entities</strong>, and <strong>entity-level KPIs reported separately plus consolidated reporting</strong>.</p>
+                      <p>Common multi-industry patterns we handle: <a href="/accounting/industries/franchise/">franchise operators</a> with 5&ndash;20+ units across multiple brands; <a href="/accounting/industries/real-estate/">real estate</a> holdings combining property management and operating companies; family offices with operating businesses plus investment entities; service businesses with both retail and B2B divisions. Pricing scales with complexity but more efficiently than single-entity multipliers &mdash; some work (CoA design, integration setup, reporting standards) applies across all entities. For coordinated <a href="/accounting/advisory/fractional-cfo/">fractional CFO</a> work across multi-entity groups, see the <a href="/accounting/advisory/">advisory hub</a>.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q09">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.09</span>
+                      <span class="kb-item__question">How do you handle businesses with sub-verticals?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Many industries have meaningful sub-verticals that change the engagement model. <a href="/accounting/industries/ecommerce/">Ecommerce</a> sub-verticals: Amazon FBA sellers (FBA fee structure, inventory in fulfillment centers, multi-state nexus), Shopify direct-to-consumer (payment processor reconciliation, refund handling), wholesale ecommerce (B2B terms, Net 30 receivables), subscription ecommerce (deferred revenue under ASC 606). <a href="/accounting/industries/saas/">SaaS</a> sub-verticals: pure SaaS subscription, usage-based pricing, hybrid SaaS+services, marketplace SaaS, vertical SaaS. <a href="/accounting/industries/construction/">Construction</a> sub-verticals: residential remodeling, commercial general contracting, specialty trades, government contractors with certified payroll.</p>
+                      <p>Each industry page on our site covers the major sub-verticals with specific guidance. The engagement model adapts to your sub-vertical: a certified-payroll commercial GC has very different needs than a residential remodel shop, even though both are &ldquo;construction.&rdquo; The discovery call identifies the sub-vertical and scopes accordingly. See the individual industry pages for sub-vertical depth.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q10">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.10</span>
+                      <span class="kb-item__question">What if I&rsquo;m in a regulated industry (legal, healthcare, financial services)?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Regulated industries add a compliance overlay on top of standard accounting. For <a href="/accounting/industries/legal/">law firms</a>, <strong>IOLTA trust accounting</strong> is the major regulatory dimension &mdash; trust funds must be tracked separately from operating funds, three-way reconciliation between trust ledger, bank statement, and client matter ledger is required, and state bar audit standards apply. We handle IOLTA. For <a href="/accounting/industries/healthcare/">healthcare practices</a>, HIPAA-aware bookkeeping means PHI doesn&rsquo;t flow through accounting systems; we maintain that discipline. For <a href="/accounting/industries/nonprofit/">nonprofits</a>, ASC 958 fund accounting (restricted vs unrestricted) is required and we maintain it.</p>
+                      <p>Regulated areas <strong>outside our coverage</strong>: registered investment advisor (RIA) compliance reporting to the SEC, broker-dealer regulatory accounting, mortgage originator compliance, cannabis state-by-state banking and regulatory accounting (see Q.22), and insurance carrier statutory accounting. For these, we recommend specialists with the specific regulatory depth required. Honest scope is the moat &mdash; the wrong firm in a regulated industry creates real risk.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q11">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.11</span>
+                      <span class="kb-item__question">What if my business is too small to need industry specialization?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Genuine answer: businesses under roughly $300K revenue with simple operations may not need industry specialization yet. A solo consultant on cash basis, a small ecommerce business with only one channel, a single-location service business with no employees &mdash; these can run on competent generalist bookkeeping. The industry overlay produces value when complexity emerges, not before.</p>
+                      <p>That said, two things to consider: <strong>(1)</strong> generic books built at $300K revenue often need restructuring when the business hits $1M&ndash;$2M &mdash; the CoA wasn&rsquo;t designed for the operations the business eventually has. Starting with industry-aware structure (even if engagement is minimal) prevents rebuild later. <strong>(2)</strong> If the business is in a high-complexity industry (<a href="/accounting/industries/construction/">construction</a>, <a href="/accounting/industries/legal/">law</a>, <a href="/accounting/industries/franchise/">franchise</a>, <a href="/accounting/industries/saas/">SaaS</a>), the industry layer matters even at small size because the GAAP and regulatory requirements don&rsquo;t scale down. The discovery call honestly assesses whether industry specialization is worth the cost at your current stage &mdash; sometimes the answer is &ldquo;not yet,&rdquo; and we&rsquo;ll say so.</p>
+                    </div>
+                  </details>
+                </li>
+
+              </ol>
+            </section>
+
+            <!-- CLUSTER 03: PATTERNS -->
+            <section class="kb-cluster" id="cluster-patterns" aria-labelledby="cluster-patterns-heading">
+              <header class="kb-cluster__header">
+                <p class="kb-cluster__number">Cluster 03</p>
+                <h2 class="kb-cluster__heading" id="cluster-patterns-heading">Cross-industry patterns.</h2>
+                <p class="kb-cluster__lede">The accounting patterns that recur across multiple industries &mdash; deferred revenue, project accounting, inventory, multi-state operations, integration discipline, and what they actually require.</p>
+              </header>
+              <ol class="kb-list" role="list">
+
+                <li class="kb-item" id="q12">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.12</span>
+                      <span class="kb-item__question">Which industries require deferred revenue handling under ASC 606?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>ASC 606 deferred revenue applies anywhere a business collects payment before delivering service. The high-deferred-revenue industries on our coverage map: <strong><a href="/accounting/industries/saas/">SaaS</a></strong> (annual or quarterly subscriptions paid upfront, recognized over the service period), <strong><a href="/accounting/industries/fitness/">fitness studios</a></strong> (annual memberships, class packages, personal training packs all collected upfront and earned over service), <strong><a href="/accounting/industries/franchise/">franchise operations</a></strong> (initial franchise fees recognized over the franchise term, not at signing under FASB ASC 606 changes), <strong><a href="/accounting/industries/retail/">retail</a></strong> (gift cards as deferred revenue until redemption or breakage recognition), <strong><a href="/accounting/industries/home-services/">home services</a></strong> with prepaid maintenance agreements, <strong><a href="/accounting/industries/professional-services/">professional services</a></strong> with retainer arrangements, and <strong><a href="/accounting/industries/nonprofit/">nonprofits</a></strong> with grants received before grant period.</p>
+                      <p>Without ASC 606 discipline, deferred revenue businesses look artificially profitable in early months and unprofitable when the deferred revenue runs off. With proper recognition, monthly P&amp;L shows actual unit economics. Industry-specialist engagement includes ASC 606 implementation as default for industries that need it.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q13">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.13</span>
+                      <span class="kb-item__question">Which industries need project-based or job-cost accounting?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Project accounting applies wherever revenue and cost are best understood at the project or job level rather than the aggregate. The industries that need it: <strong><a href="/accounting/industries/construction/">construction</a></strong> (every project has its own P&amp;L; WIP and percentage-of-completion required by GAAP), <strong><a href="/accounting/industries/manufacturing/">manufacturing</a></strong> (BOM costs, labor allocation, overhead absorption per work order), <strong><a href="/accounting/industries/agency/">marketing agencies</a></strong> (client and project-level profitability), <strong><a href="/accounting/industries/legal/">law firms</a></strong> (matter-level profitability), <strong><a href="/accounting/industries/professional-services/">professional services</a></strong> (engagement-level profitability with utilization tracking), and most <strong><a href="/accounting/industries/home-services/">home services</a></strong> work that involves larger installations or commercial jobs.</p>
+                      <p>Project accounting requires CoA structure that separates direct costs (allocated to jobs) from overhead (allocated by a defined rate), QuickBooks Customer:Job structure or Class tracking, time tracking integration to allocate labor costs, and reporting that surfaces gross margin by job. Without project accounting, businesses don&rsquo;t know which projects make money and which lose money. See <a href="/accounting/job-costing/">/accounting/job-costing/</a> for the implementation methodology.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q14">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.14</span>
+                      <span class="kb-item__question">Which industries have the most complex inventory accounting?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Inventory complexity sorts roughly into tiers. <strong>Simple inventory</strong>: small <a href="/accounting/industries/retail/">retail</a> with limited SKUs, single location, periodic counts. <strong>Moderate inventory</strong>: multi-channel <a href="/accounting/industries/ecommerce/">ecommerce</a> (Shopify + Amazon + retail) with shared inventory pool, multi-location <a href="/accounting/industries/retail/">retail</a> with inventory transfers, <a href="/accounting/industries/restaurant/">restaurants</a> with food cost tracking. <strong>Complex inventory</strong>: <a href="/accounting/industries/manufacturing/">manufacturing</a> with raw materials, WIP, and finished goods (three-stage inventory), serial-number or lot-tracked items, FIFO/weighted-average/specific identification costing decisions, landed cost capitalization for imports.</p>
+                      <p>For most growing businesses, inventory eventually outgrows QuickBooks Online&rsquo;s native inventory and requires either <a href="/quickbooks/enterprise/">QuickBooks Enterprise</a> (with Advanced Inventory) or a third-party inventory platform integrated with QuickBooks. The transition point is usually somewhere between $1M&ndash;$5M revenue depending on SKU count, multi-location complexity, and reporting requirements. We handle the platform selection and configuration as part of monthly bookkeeping engagements for inventory-heavy industries.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q15">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.15</span>
+                      <span class="kb-item__question">Which industries face the most multi-state complexity?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Multi-state complexity shows up in three dimensions: <strong>sales tax nexus</strong> (where the business must collect sales tax), <strong>payroll tax</strong> (where employees physically work), and <strong>income tax nexus</strong> (where the business must file state income tax). High multi-state complexity industries: <strong><a href="/accounting/industries/ecommerce/">ecommerce</a></strong> (sales tax nexus across most states post-Wayfair), <strong><a href="/accounting/industries/saas/">SaaS</a></strong> (state-specific SaaS taxability and nexus thresholds), <strong><a href="/accounting/industries/construction/">construction</a></strong> (project sites across states create nexus), <strong><a href="/accounting/industries/trucking/">trucking</a></strong> (IFTA quarterly fuel tax across all US/Canadian jurisdictions), <strong><a href="/accounting/industries/franchise/">franchise operations</a></strong> (multi-unit operators across states), and <strong>any business with remote employees</strong> (payroll registration in every state where employees work).</p>
+                      <p>Multi-state work spans <a href="/accounting/sales-tax-compliance/">sales tax compliance</a>, <a href="/accounting/payroll-management/">payroll management</a> with multi-state setup, and coordination with the client&rsquo;s CPA on income tax nexus opinions. Industry pages cover the specific multi-state patterns for each industry.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q16">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.16</span>
+                      <span class="kb-item__question">Which industries are most platform-dependent for accounting?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Some industries run almost entirely from operational platforms that feed QuickBooks &mdash; the accounting follows the platform, not the other way around. Highly platform-dependent industries: <strong><a href="/accounting/industries/home-services/">home services</a></strong> (ServiceTitan, Housecall Pro, Jobber, FieldEdge), <strong><a href="/accounting/industries/fitness/">fitness studios</a></strong> (MindBody, Mariana Tek, Glofox, ClubReady), <strong><a href="/accounting/industries/restaurant/">restaurants</a></strong> (Toast, Square POS, Lightspeed, Clover), <strong><a href="/accounting/industries/dental/">dental practices</a></strong> (Dentrix, Eaglesoft, Open Dental), <strong><a href="/accounting/industries/healthcare/">healthcare practices</a></strong> (Epic, Athena, NextGen, Kareo), <strong><a href="/accounting/industries/legal/">law firms</a></strong> (Clio, MyCase, PracticePanther), <strong><a href="/accounting/industries/construction/">construction</a></strong> (Procore, Buildertrend, CoConstruct, Sage 100), <strong><a href="/accounting/industries/ecommerce/">ecommerce</a></strong> (Shopify, Amazon Seller Central, with A2X or Webgility connectors).</p>
+                      <p>For these industries, the engagement model is heavily about <strong>integration discipline</strong>: getting the platform-to-QuickBooks data flow correct, reconciling between platform reports and QuickBooks GL, handling the platform-specific revenue recognition. An industry-specialist firm knows the platforms by name and has built integration playbooks; a generic firm fumbles the platforms or treats them as afterthoughts.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q17">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.17</span>
+                      <span class="kb-item__question">Which industries need the most advisory layer on top of bookkeeping?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Every industry benefits from <a href="/accounting/advisory/">advisory</a>, but some industries have operational economics that make advisory especially valuable. <strong>High-advisory-value industries</strong>: <a href="/accounting/industries/saas/">SaaS</a> (unit economics &mdash; CAC, LTV, gross retention &mdash; drive every strategic decision), <a href="/accounting/industries/agency/">agencies</a> (utilization and AGI per FTE drive profitability), <a href="/accounting/industries/construction/">construction</a> (project margin and WIP drive cash flow), <a href="/accounting/industries/restaurant/">restaurants</a> (prime cost and labor management drive survival), <a href="/accounting/industries/home-services/">home services</a> (RPTD and recurring revenue drive valuation), <a href="/accounting/industries/professional-services/">professional services</a> (utilization, realization, and AR drive cash), <a href="/accounting/industries/manufacturing/">manufacturing</a> (BOM costing, inventory turnover, gross margin discipline).</p>
+                      <p>For these industries, <a href="/accounting/advisory/fractional-cfo/">fractional CFO</a> work often pays for itself within months by identifying specific operational improvements (pricing adjustment, capacity reallocation, working capital optimization) that produce $50K&ndash;$500K+ in annual margin. The discovery call assesses whether the business is ready to act on advisory analysis &mdash; advisory is wasted if leadership doesn&rsquo;t use the work.</p>
+                    </div>
+                  </details>
+                </li>
+
+              </ol>
+            </section>
+
+            <!-- CLUSTER 04: COVERAGE -->
+            <section class="kb-cluster" id="cluster-coverage" aria-labelledby="cluster-coverage-heading">
+              <header class="kb-cluster__header">
+                <p class="kb-cluster__number">Cluster 04</p>
+                <h2 class="kb-cluster__heading" id="cluster-coverage-heading">The 17 industries we cover.</h2>
+                <p class="kb-cluster__lede">The full coverage map, what&rsquo;s distinctive about each industry cluster, what fits where, and explicitly what we don&rsquo;t serve.</p>
+              </header>
+              <ol class="kb-list" role="list">
+
+                <li class="kb-item" id="q18">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.18</span>
+                      <span class="kb-item__question">Which industries does TechBrot serve?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>TechBrot serves 17 industries across U.S. small and mid-market businesses, with dedicated industry pages and specialist depth in each: <a href="/accounting/industries/agency/">agencies</a> (marketing, advertising, PR), <a href="/accounting/industries/construction/">construction</a>, <a href="/accounting/industries/dental/">dental practices</a>, <a href="/accounting/industries/ecommerce/">ecommerce</a>, <a href="/accounting/industries/fitness/">fitness studios</a>, <a href="/accounting/industries/franchise/">franchise operations</a>, <a href="/accounting/industries/healthcare/">healthcare practices</a>, <a href="/accounting/industries/home-services/">home services</a> (HVAC, plumbing, electrical), <a href="/accounting/industries/legal/">law firms</a>, <a href="/accounting/industries/manufacturing/">manufacturing</a>, <a href="/accounting/industries/nonprofit/">nonprofits</a>, <a href="/accounting/industries/professional-services/">professional services</a>, <a href="/accounting/industries/real-estate/">real estate</a>, <a href="/accounting/industries/restaurant/">restaurants</a>, <a href="/accounting/industries/retail/">retail</a>, <a href="/accounting/industries/saas/">SaaS</a>, and <a href="/accounting/industries/trucking/">trucking</a>.</p>
+                      <p>Each industry has its own dedicated page with industry-specific challenges, sub-vertical breakdowns, integration platforms, KPI frameworks, FAQ content, and engagement scope. Industry experience matters because each industry has specific QuickBooks configurations, chart-of-accounts structures, and operational workflows that don&rsquo;t translate cleanly across sectors. The <a href="/accounting/industries/">industries hub</a> is the navigation entry point.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q19">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.19</span>
+                      <span class="kb-item__question">What groups the 17 industries we cover?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>The 17 industries cluster naturally into <strong>five groupings</strong> by accounting pattern. <strong>(1) Project-based operators</strong>: <a href="/accounting/industries/agency/">agencies</a>, <a href="/accounting/industries/construction/">construction</a>, <a href="/accounting/industries/legal/">law firms</a>, <a href="/accounting/industries/professional-services/">professional services</a> &mdash; share matter/project-level P&amp;L, utilization metrics, WIP discipline. <strong>(2) Subscription / recurring revenue</strong>: <a href="/accounting/industries/saas/">SaaS</a>, <a href="/accounting/industries/fitness/">fitness</a>, <a href="/accounting/industries/franchise/">franchise</a>, prepaid services in home services &mdash; share ASC 606 deferred revenue mechanics, MRR/ARR or analogous metrics, retention KPIs.</p>
+                      <p><strong>(3) Inventory / product operators</strong>: <a href="/accounting/industries/ecommerce/">ecommerce</a>, <a href="/accounting/industries/retail/">retail</a>, <a href="/accounting/industries/manufacturing/">manufacturing</a>, <a href="/accounting/industries/restaurant/">restaurant</a> &mdash; share inventory accounting, COGS discipline, supplier reconciliation, multi-channel revenue. <strong>(4) Dispatched-service operators</strong>: <a href="/accounting/industries/home-services/">home services</a>, <a href="/accounting/industries/trucking/">trucking</a> &mdash; share crew/vehicle economics, dispatched-service KPIs, route-based revenue, equipment-heavy capital structure. <strong>(5) Regulated practitioners</strong>: <a href="/accounting/industries/dental/">dental</a>, <a href="/accounting/industries/healthcare/">healthcare</a>, <a href="/accounting/industries/nonprofit/">nonprofits</a>, <a href="/accounting/industries/real-estate/">real estate</a> &mdash; share regulatory overlays, specialty platform integration, distinctive revenue cycles. Understanding the grouping helps identify which cross-industry patterns apply to your business.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q20">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.20</span>
+                      <span class="kb-item__question">What about industries adjacent to your 17 &mdash; insurance, consulting, hospitality?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Several adjacent industries we cover under existing pages. <strong>Insurance agencies</strong> &mdash; covered under <a href="/accounting/industries/professional-services/">professional services</a> for the standard agency model (commission-based revenue, carrier appointments, premium trust handling if applicable). Insurance brokerages with more complex revenue (MGA arrangements, profit-sharing, override commissions) we handle with custom scope. <strong>Consulting practices</strong> &mdash; covered under professional services with utilization and engagement-based reporting. <strong>Hospitality (hotels, B&amp;Bs, short-term rentals)</strong> &mdash; partial overlap with <a href="/accounting/industries/restaurant/">restaurant</a> (similar daily revenue tracking) and <a href="/accounting/industries/real-estate/">real estate</a> (occupancy economics, property-level P&amp;L); we handle smaller operators in this space.</p>
+                      <p><strong>Veterinary practices</strong> &mdash; covered under <a href="/accounting/industries/healthcare/">healthcare</a> patterns with practice management software (Cornerstone, AVImark) integration. <strong>Education and tutoring services</strong> &mdash; partial overlap with professional services and SaaS depending on model. <strong>Subscription boxes and DTC ecommerce</strong> &mdash; covered under <a href="/accounting/industries/ecommerce/">ecommerce</a> with subscription accounting overlay from <a href="/accounting/industries/saas/">SaaS</a> patterns. The discovery call maps your business to the right combination.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q21">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.21</span>
+                      <span class="kb-item__question">Will TechBrot add coverage for my industry if it&rsquo;s not on the list?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>The 17 industries currently covered reflect where we have built deep engagement experience and reusable playbooks. We expand coverage <strong>only when we have built genuine depth</strong> &mdash; we don&rsquo;t claim an industry on the website just because we&rsquo;d like the search traffic. Adding a published industry requires: multiple completed engagements in the industry, mapped CoA and KPI templates, identified key integration platforms, documented sub-verticals, and an active engagement model.</p>
+                      <p>That said, for businesses outside the current 17, we still handle engagements that fit close enough to existing patterns (see Q.20). If you&rsquo;re in an industry we don&rsquo;t cover and don&rsquo;t fit any existing pattern well, the discovery call honestly assesses whether we&rsquo;re the right firm or whether you&rsquo;d be better served by a specialist. We&rsquo;d rather decline the engagement than deliver mediocre work outside our depth. Industries we&rsquo;re unlikely to add in the foreseeable future are listed in Q.22.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q22">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.22</span>
+                      <span class="kb-item__question">What industries do you not serve well?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>We&rsquo;re explicit about coverage limits. Industries we don&rsquo;t serve well:</p>
+                      <ul>
+                        <li><strong>Cannabis</strong> (separate legal scope, banking restrictions, state-by-state regulatory complexity we don&rsquo;t specialize in)</li>
+                        <li><strong>Oil &amp; gas operations</strong> (specialty depletion accounting, working-interest economics)</li>
+                        <li><strong>Insurance carrier accounting</strong> (heavily regulated statutory accounting, separate from agency-side which we do cover)</li>
+                        <li><strong>Financial services with regulatory overlay</strong> &mdash; broker-dealers, registered investment advisors, mortgage originators, money services businesses</li>
+                        <li><strong>Agriculture and farming operations</strong> (commodity hedging, crop insurance, USDA programs, farm-specific tax provisions)</li>
+                        <li><strong>International businesses with material foreign currency or transfer pricing complexity</strong> (cross-border tax structuring, multi-jurisdictional reporting)</li>
+                        <li><strong>Government contractors with DCAA compliance requirements</strong> (cost accounting standards, indirect rate audits)</li>
+                      </ul>
+                      <p>When industry fit isn&rsquo;t a match, we say so on the discovery call and recommend specialists better positioned to serve. Honest scope is the moat &mdash; we&rsquo;d rather decline an engagement than deliver mediocre work outside our depth.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q23">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.23</span>
+                      <span class="kb-item__question">Can you handle international or multi-country businesses?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Partially &mdash; depends on the international complexity. <strong>US businesses with minor international exposure</strong> (some international customers paying in USD, a single foreign vendor, minor foreign-currency transactions): we handle this within standard engagements. <strong>US businesses with meaningful international operations</strong> (foreign subsidiaries, transfer pricing arrangements, multi-currency operations, foreign payroll, VAT/GST compliance in other countries): we handle the US side cleanly but coordinate with international specialists for the non-US side &mdash; this work falls outside our depth.</p>
+                      <p><strong>Non-US businesses</strong> (incorporated outside the United States with US-only or US-primary operations): we can handle the US accounting layer for US tax compliance and US operations, but we don&rsquo;t practice in any other country&rsquo;s accounting standards or tax systems. <strong>Multi-country businesses with substantial cross-border complexity</strong>: not our depth &mdash; we recommend international accounting firms. The honest read: TechBrot is a US-focused independent ProAdvisor firm; we excel within that scope and acknowledge limits beyond it.</p>
+                    </div>
+                  </details>
+                </li>
+
+              </ol>
+            </section>
+
+            <!-- CLUSTER 05: SWITCHING -->
+            <section class="kb-cluster" id="cluster-switching" aria-labelledby="cluster-switching-heading">
+              <header class="kb-cluster__header">
+                <p class="kb-cluster__number">Cluster 05</p>
+                <h2 class="kb-cluster__heading" id="cluster-switching-heading">Switching industries &amp; new ventures.</h2>
+                <p class="kb-cluster__lede">Business pivots, parallel ventures, holding-company structures, and what to do when industry classification changes over time.</p>
+              </header>
+              <ol class="kb-list" role="list">
+
+                <li class="kb-item" id="q24">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.24</span>
+                      <span class="kb-item__question">What if my business is pivoting industries?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Pivots happen &mdash; an <a href="/accounting/industries/agency/">agency</a> builds productized services that become a <a href="/accounting/industries/saas/">SaaS</a> business, a <a href="/accounting/industries/retail/">retailer</a> shifts heavily to <a href="/accounting/industries/ecommerce/">ecommerce</a>, a <a href="/accounting/industries/restaurant/">restaurant</a> launches a packaged-goods line. The accounting must follow. A pivot engagement typically includes: <strong>(1)</strong> revised CoA structure to handle both the legacy industry and the new direction, <strong>(2)</strong> revised revenue recognition methodology if the new model has different ASC 606 patterns, <strong>(3)</strong> new platform integrations for the new business mode (a SaaS platform on top of agency operations, a Shopify integration on top of retail), <strong>(4)</strong> revised KPI dashboard reflecting the metrics that now matter, <strong>(5)</strong> revised monthly review focus.</p>
+                      <p>The transition is often best handled as a one-time restructure engagement followed by ongoing monthly bookkeeping in the new structure. We&rsquo;ve handled enough pivots to do this cleanly without forcing the business to rebuild books from scratch.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q25">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.25</span>
+                      <span class="kb-item__question">What if I&rsquo;m launching a parallel business in a different industry?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Common with successful operators &mdash; the original business is established and the founder launches a second business in an adjacent or unrelated industry. Two structural approaches: <strong>(1) Same entity, separated tracking</strong> &mdash; both businesses in one legal entity with Class or Department tracking to separate them in QuickBooks. Simpler legally and operationally but doesn&rsquo;t fully separate liability. <strong>(2) Separate legal entities</strong> &mdash; new LLC or corporation for the new business, with intercompany transactions tracked between entities. More overhead but cleaner liability separation, simpler exit later.</p>
+                      <p>The right structure depends on liability concerns, expected scale, tax planning (coordinate with your CPA on this), and whether the businesses will likely separate later. For most parallel ventures we recommend separate entities once the new business is generating meaningful revenue ($100K+ annual). The engagement scope grows to handle both businesses &mdash; pricing reflects the added complexity but typically scales sub-linearly because we already understand the operator and the underlying entity structure.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q26">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.26</span>
+                      <span class="kb-item__question">How do you handle holding-company structures across industries?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Holding-company structures are common for operators with multiple businesses, often across different industries. Standard engagement structure: <strong>holding company</strong> (typically an LLC or LP) for ownership and consolidation; <strong>operating subsidiaries</strong> as separate legal entities, each in its own industry. Each subsidiary maintains its own QuickBooks file with industry-specific structure; the holding company maintains its own minimal QuickBooks file primarily for intercompany transactions and equity flows.</p>
+                      <p>Consolidated reporting rolls up across all entities for a unified holding-level view; subsidiary-level reporting maintains industry-specific structure for operational use. We handle holding-company engagements as multi-entity scope with industry-specialist treatment per subsidiary. Common patterns we see: <a href="/accounting/industries/real-estate/">real estate</a> holding companies with multiple property LLCs plus an operating company; family offices with mixed operating businesses; serial entrepreneurs with multiple ventures; private equity individual operators rolling up acquisitions. See <a href="/accounting/advisory/fractional-cfo/">fractional CFO</a> for coordinated holding-level financial leadership.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q27">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.27</span>
+                      <span class="kb-item__question">My CPA categorizes my business as one industry but it operates as another &mdash; what do I do?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>This happens often. Tax classification (NAICS code, principal business activity on the tax return) sometimes lags how a business actually operates &mdash; particularly after pivots or new ventures. The tax-side classification matters for tax filings; the operational classification matters for accounting depth and KPI design.</p>
+                      <p>The fix is dual: <strong>(1) Operationally</strong>, we design CoA, integrations, and KPIs around how the business actually runs &mdash; not the tax classification. <strong>(2) For tax filing</strong>, your CPA may want to update the NAICS code on the return to reflect current operations, which can have implications for industry-specific tax provisions, audit risk, and IRS classification. The two layers don&rsquo;t need to be identical, but they should be coherent &mdash; we coordinate with your CPA so operational reporting and tax classification tell the same story without contradicting each other.</p>
+                    </div>
+                  </details>
+                </li>
+
+              </ol>
+            </section>
+
+            <!-- CLUSTER 06: TECH -->
+            <section class="kb-cluster" id="cluster-tech" aria-labelledby="cluster-tech-heading">
+              <header class="kb-cluster__header">
+                <p class="kb-cluster__number">Cluster 06</p>
+                <h2 class="kb-cluster__heading" id="cluster-tech-heading">Technology by industry.</h2>
+                <p class="kb-cluster__lede">Which QuickBooks plan fits which industry, the industry-specific integration platforms we work with, and how the technology stack actually comes together.</p>
+              </header>
+              <ol class="kb-list" role="list">
+
+                <li class="kb-item" id="q28">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.28</span>
+                      <span class="kb-item__question">Which QuickBooks plan fits which industries?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Rough mapping by typical business stage. <strong><a href="/quickbooks/online/">QuickBooks Online (QBO)</a></strong>: most service businesses regardless of industry (<a href="/accounting/industries/agency/">agencies</a>, <a href="/accounting/industries/professional-services/">professional services</a>, <a href="/accounting/industries/legal/">law firms</a>, <a href="/accounting/industries/healthcare/">healthcare practices</a>, smaller <a href="/accounting/industries/restaurant/">restaurants</a> and <a href="/accounting/industries/home-services/">home services</a> operations), early-stage <a href="/accounting/industries/saas/">SaaS</a> startups, and most small <a href="/accounting/industries/ecommerce/">ecommerce</a> businesses. <strong><a href="/quickbooks/desktop/">QuickBooks Desktop</a></strong>: increasingly rare for new businesses but still appropriate for established operators with industry-specific Desktop workflows, particularly in <a href="/accounting/industries/manufacturing/">manufacturing</a> and <a href="/accounting/industries/construction/">construction</a> running legacy ERP-style operations.</p>
+                      <p><strong><a href="/quickbooks/enterprise/">QuickBooks Enterprise</a></strong>: larger operations with advanced inventory (multi-location <a href="/accounting/industries/retail/">retail</a>, growing <a href="/accounting/industries/manufacturing/">manufacturing</a>, mid-market <a href="/accounting/industries/ecommerce/">ecommerce</a>), 25+ employee counts, multi-entity structures, or industry-specific Enterprise editions (Contractor for <a href="/accounting/industries/construction/">construction</a>, Manufacturing for manufacturers, Retail for retailers, Nonprofit for <a href="/accounting/industries/nonprofit/">nonprofits</a>). The discovery call assesses fit based on your specific operations, not generic revenue thresholds. See <a href="/quickbooks/which-plan-is-right/">/quickbooks/which-plan-is-right/</a> for the full decision framework.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q29">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.29</span>
+                      <span class="kb-item__question">What integration platforms do you work with by industry?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Industry-specific platforms we integrate with QuickBooks:</p>
+                      <ul>
+                        <li><strong><a href="/accounting/industries/home-services/">Home services</a></strong>: ServiceTitan, Housecall Pro, Jobber, FieldEdge, Service Fusion</li>
+                        <li><strong><a href="/accounting/industries/fitness/">Fitness</a></strong>: MindBody, Mariana Tek, Glofox, ClubReady, Zen Planner</li>
+                        <li><strong><a href="/accounting/industries/restaurant/">Restaurant</a></strong>: Toast, Square POS, Lightspeed, Clover, Aloha</li>
+                        <li><strong><a href="/accounting/industries/ecommerce/">Ecommerce</a></strong>: Shopify, Amazon Seller Central, BigCommerce, WooCommerce, A2X, Webgility</li>
+                        <li><strong><a href="/accounting/industries/dental/">Dental</a></strong>: Dentrix, Eaglesoft, Open Dental, Curve Dental</li>
+                        <li><strong><a href="/accounting/industries/healthcare/">Healthcare</a></strong>: Epic, Athenahealth, NextGen, Kareo, DrChrono</li>
+                        <li><strong><a href="/accounting/industries/legal/">Legal</a></strong>: Clio, MyCase, PracticePanther, LeanLaw</li>
+                        <li><strong><a href="/accounting/industries/construction/">Construction</a></strong>: Procore, Buildertrend, CoConstruct, Sage 100 Contractor</li>
+                        <li><strong><a href="/accounting/industries/agency/">Agency</a></strong>: HubSpot, Salesforce, Asana, Harvest, Productive, Float</li>
+                        <li><strong><a href="/accounting/industries/manufacturing/">Manufacturing</a></strong>: NetSuite, Fishbowl, Cin7, Katana, DEAR Systems</li>
+                        <li><strong><a href="/accounting/industries/retail/">Retail</a></strong>: Shopify POS, Square POS, Lightspeed Retail, Vend</li>
+                        <li><strong><a href="/accounting/industries/saas/">SaaS</a></strong>: Stripe, Chargebee, Recurly, ProfitWell, ChartMogul</li>
+                        <li><strong><a href="/accounting/industries/trucking/">Trucking</a></strong>: KeepTruckin, Samsara, McLeod, Tailwind, RoadOne</li>
+                      </ul>
+                      <p>Plus universal integrations across all industries: Gusto (payroll), Bill.com (AP), Ramp (cards and expense), Avalara or TaxJar (sales tax), Box and SharePoint (document management). Selection is based on fit, not commission &mdash; we earn no affiliate revenue on any platform.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q30">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.30</span>
+                      <span class="kb-item__question">What if my industry needs a platform you don&rsquo;t work with?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>We work with most major platforms in our covered industries and can typically learn an unfamiliar platform if it&rsquo;s in an industry we already serve. The threshold question is whether the platform has a viable QuickBooks integration path &mdash; some platforms export clean data we can import, some have native QuickBooks sync, some require manual journal entry from monthly reports. We work with any of these.</p>
+                      <p>Platforms we genuinely struggle with: <strong>truly proprietary or custom-built ERPs</strong> with no QuickBooks integration and no clean export, <strong>industry-specific platforms in industries we don&rsquo;t cover</strong> (where we&rsquo;d need to learn both the platform and the industry from scratch), and <strong>platforms with security restrictions that prevent ProAdvisor access</strong> (rare but exists). The discovery call assesses platform fit honestly &mdash; if your stack genuinely doesn&rsquo;t work with our model, we&rsquo;ll say so. Otherwise, integration setup is part of standard engagement scope, not a separate fee.</p>
+                    </div>
+                  </details>
+                </li>
+
+              </ol>
+            </section>
+
+            <!-- CLUSTER 07: ENGAGEMENT -->
+            <section class="kb-cluster" id="cluster-engagement" aria-labelledby="cluster-engagement-heading">
+              <header class="kb-cluster__header">
+                <p class="kb-cluster__number">Cluster 07</p>
+                <h2 class="kb-cluster__heading" id="cluster-engagement-heading">Engagement &amp; next steps.</h2>
+                <p class="kb-cluster__lede">How industry-aware engagements actually start, what the discovery process identifies, and the path from first call to ongoing work.</p>
+              </header>
+              <ol class="kb-list" role="list">
+
+                <li class="kb-item" id="q31">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.31</span>
+                      <span class="kb-item__question">What does an industry-aware discovery call cover?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>The discovery call covers four dimensions in 30 minutes. <strong>(1) Industry identification</strong> &mdash; which of the 17 industries fits, what sub-vertical, whether the business is multi-industry, what the dominant operational model is. <strong>(2) Current state assessment</strong> &mdash; where the books currently stand (clean, partially-clean, needing cleanup, needing catch-up), what platforms are in use, what reporting currently exists, what&rsquo;s missing. <strong>(3) Engagement fit</strong> &mdash; what engagement type makes sense (monthly bookkeeping with industry overlay, cleanup or catch-up project, advisory engagement, fractional CFO), what scope, what timeline.</p>
+                      <p><strong>(4) Honest assessment</strong> &mdash; whether TechBrot is actually the right firm. If your industry isn&rsquo;t our depth (see Q.22), if you need a CPA we don&rsquo;t provide, if you need a specialist we&rsquo;re not, we&rsquo;ll say so on the call. The discovery is genuinely complimentary &mdash; no pressure to commit on the call, no high-pressure sales tactics. The written scope follows within 3 business days; engagement starts only when you commit in writing. The discovery call format is the same regardless of which industry you&rsquo;re in &mdash; the depth of industry-specific questions varies.</p>
+                    </div>
+                  </details>
+                </li>
+
+                <li class="kb-item" id="q32">
+                  <details class="kb-item__details">
+                    <summary class="kb-item__summary">
+                      <span class="kb-item__id">Q.32</span>
+                      <span class="kb-item__question">How do I get started?</span>
+                      <span class="kb-item__indicator" aria-hidden="true"></span>
+                    </summary>
+                    <div class="kb-item__body">
+                      <p>Book a 30-minute discovery call. The call identifies your dominant industry fit (or multi-industry structure if applicable), assesses where your books currently stand (cleanup needed? catch-up? generic books to convert to industry-specialist?), maps the right engagement type (monthly bookkeeping with industry overlay, cleanup project, advisory engagement), and answers your questions. Within <strong>3 business days</strong> of the call, we deliver a written scope with fixed-fee pricing &mdash; no surprises, no hourly billing.</p>
+                      <p>If your industry isn&rsquo;t on our coverage list, we&rsquo;ll say so and route to specialists who fit better. If you need work outside our scope (income tax filing, IRS representation, audit, assurance, regulatory specialty work), we&rsquo;ll route to the right professionals. The discovery call is complimentary; the scope is non-binding; engagement starts only when you commit in writing.</p>
+                      <p><a class="btn btn--primary btn--inline" href="/contact/?intent=industries-faq" data-cta="indfaq-q32-cta">Book the discovery call &rarr;</a></p>
+                    </div>
+                  </details>
+                </li>
+
+              </ol>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED SERVICES -->
+    <section class="section section--kb-related" id="indfaq-related" aria-labelledby="indfaq-related-heading">
+      <div class="container">
+        <header class="kb-related__header">
+          <p class="kb-related__eyebrow">Related</p>
+          <h2 class="kb-related__heading" id="indfaq-related-heading">Explore the 17 industries we cover.</h2>
+          <p class="kb-related__lede">Every industry has a dedicated page with sub-vertical depth, integration platforms, KPI frameworks, and engagement model. Start where your business lives.</p>
+        </header>
+        <ul class="kb-related__grid" role="list">
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">Industries</p>
+            <h3 class="kb-related__card-heading"><a href="/accounting/industries/">Industries Hub</a></h3>
+            <p class="kb-related__card-body">Navigation hub for all 17 industry pages &mdash; agency, construction, dental, ecommerce, fitness, franchise, healthcare, home services, legal, manufacturing, nonprofit, professional services, real estate, restaurant, retail, SaaS, trucking.</p>
+            <a class="kb-related__card-cta" href="/accounting/industries/">Industries hub &rarr;</a>
+          </li>
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">Project-based</p>
+            <h3 class="kb-related__card-heading"><a href="/accounting/industries/agency/">Agency Accounting</a></h3>
+            <p class="kb-related__card-body">Marketing, advertising, PR. Utilization, AGI per FTE, project margin, gross vs net revenue under ASC 606.</p>
+            <a class="kb-related__card-cta" href="/accounting/industries/agency/">Agency accounting &rarr;</a>
+          </li>
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">Project-based</p>
+            <h3 class="kb-related__card-heading"><a href="/accounting/industries/construction/">Construction Accounting</a></h3>
+            <p class="kb-related__card-body">WIP, percentage-of-completion, job costing, retention, lien waivers, multi-state payroll, certified payroll.</p>
+            <a class="kb-related__card-cta" href="/accounting/industries/construction/">Construction accounting &rarr;</a>
+          </li>
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">Subscription</p>
+            <h3 class="kb-related__card-heading"><a href="/accounting/industries/saas/">SaaS Accounting</a></h3>
+            <p class="kb-related__card-body">ASC 606 deferred revenue, MRR/ARR, CAC/LTV, gross retention, multi-state SaaS taxability, R&amp;D capitalization.</p>
+            <a class="kb-related__card-cta" href="/accounting/industries/saas/">SaaS accounting &rarr;</a>
+          </li>
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">Inventory</p>
+            <h3 class="kb-related__card-heading"><a href="/accounting/industries/ecommerce/">Ecommerce Accounting</a></h3>
+            <p class="kb-related__card-body">Shopify, Amazon, Stripe. Multi-channel reconciliation, COGS, inventory, sales tax nexus across states.</p>
+            <a class="kb-related__card-cta" href="/accounting/industries/ecommerce/">Ecommerce accounting &rarr;</a>
+          </li>
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">Dispatched</p>
+            <h3 class="kb-related__card-heading"><a href="/accounting/industries/home-services/">Home Services Accounting</a></h3>
+            <p class="kb-related__card-body">HVAC, plumbing, electrical. Revenue per truck per day, service agreements as deferred revenue, FSM platform integration.</p>
+            <a class="kb-related__card-cta" href="/accounting/industries/home-services/">Home services accounting &rarr;</a>
+          </li>
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">Regulated</p>
+            <h3 class="kb-related__card-heading"><a href="/accounting/industries/legal/">Law Firm Accounting</a></h3>
+            <p class="kb-related__card-body">IOLTA trust accounting, three-way reconciliation, matter-level profitability, WIP for hourly and contingency work.</p>
+            <a class="kb-related__card-cta" href="/accounting/industries/legal/">Law firm accounting &rarr;</a>
+          </li>
+          <li class="kb-related__card">
+            <p class="kb-related__card-cluster">FAQ</p>
+            <h3 class="kb-related__card-heading"><a href="/accounting/faq/">Accounting FAQ</a></h3>
+            <p class="kb-related__card-body">The broader accounting FAQ &mdash; fundamentals, bookkeeping, payroll, advisory, engagement model. 42 questions across 7 clusters.</p>
+            <a class="kb-related__card-cta" href="/accounting/faq/">Accounting FAQ &rarr;</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EXPERT HELP CTA -->
+    <section class="section section--kb-cta" id="indfaq-cta" aria-labelledby="indfaq-cta-heading">
+      <div class="container container--narrow">
+        <div class="kb-cta">
+          <p class="kb-cta__eyebrow">Question not answered above?</p>
+          <h2 class="kb-cta__heading" id="indfaq-cta-heading">Talk to an industry-specialist ProAdvisor directly.</h2>
+          <p class="kb-cta__lede">Thirty-two questions answer most of what businesses ask about industry-specific accounting. The remainder are specific to your situation &mdash; industry, sub-vertical, current configuration, multi-industry mix, platform stack. Book a 30-minute discovery call to discuss industry fit for your specific business. Complimentary, no obligation, no hourly billing.</p>
+          <div class="kb-cta__actions" role="group" aria-label="Final actions">
+            <a class="btn btn--primary btn--lg btn--inverted" href="/contact/?intent=industries-faq" data-cta="indfaq-cta-primary">Book the Discovery Call</a>
+            <a class="btn btn--ghost btn--lg btn--inverted" href="/accounting/industries/" data-cta="indfaq-cta-secondary">Browse All 17 Industries</a>
+          </div>
+          <p class="kb-cta__disclaimer">TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm. QuickBooks is a registered trademark of Intuit Inc. TechBrot Inc. is not affiliated with Intuit Inc. and earns no commission, affiliate, or referral fees on QuickBooks subscriptions or any other Intuit products. Services do not include income-tax filing, IRS representation, audit, or assurance; we coordinate with the client&rsquo;s CPA or EA on tax matters. Industry coverage limits described in Q.22 reflect honest scope. This FAQ is maintained for accuracy by the Certified ProAdvisor team and last reviewed in <time datetime="2026-06">June 2026</time>.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div><!-- ============================================================================
+     FOOTER
+     ============================================================================ -->
+
+<footer class="site-footer" role="contentinfo" id="site-footer">
+
+  <section class="site-footer__band" aria-label="Newsletter signup">
+    <div class="container">
+      <div class="footer-band">
+        <div class="footer-band__copy">
+          <h2 class="footer-band__heading">The monthly brief.</h2>
+          <p class="footer-band__lede">One email a month — operational accounting, QuickBooks, and finance-ops insight for U.S. business owners. No spam, unsubscribe anytime.</p>
+        </div>
+        <form class="footer-band__form" action="/subscribe" method="post" aria-label="Subscribe to the monthly brief">
+          <label class="sr-only" for="footer-email">Email address</label>
+          <input class="footer-band__input" type="email" id="footer-email" name="email" placeholder="you@company.com" autocomplete="email" required="">
+          <button class="btn btn--primary btn--md" type="submit" data-cta="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="site-footer__main">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="site-footer__brand-col">
+          <a class="site-brand site-brand--footer" href="/" aria-label="TechBrot home">
+            <img class="site-brand__mark" src="/assets/img/brand/wordmark-light.png" alt="TechBrot" width="140" height="36" decoding="async">
+          </a>
+          <p class="site-footer__tagline">A modern accounting platform with vetted local partners.</p>
+          <ul class="site-footer__contact-list">
+            <li><a href="mailto:hello@techbrot.com">hello@techbrot.com</a></li>
+            <li><a href="tel:+18777515575">(877) 751-5575</a></li>
+            <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Book a discovery call →</a></li>
+          </ul>
+          <ul class="site-footer__social" aria-label="Social media">
+  <li>
+    <a href="https://www.linkedin.com/company/techbrot-inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on LinkedIn">
+      <img src="/assets/img/icons/linkedin.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://x.com/techbrot_inc"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on X">
+      <img src="/assets/img/icons/x.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.instagram.com/techbrot_inc/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="TechBrot on Instagram">
+      <img src="/assets/img/icons/instagram.svg"
+           alt=""
+           width="18"
+           height="18"
+           aria-hidden="true">
+    </a>
+  </li>
+</ul>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Accounting">
+          <h2 class="site-footer__heading" id="fh-services" aria-controls="fl-services" aria-expanded="false" role="button" tabindex="0">Accounting</h2>
+          <ul class="site-footer__links" id="fl-services" aria-labelledby="fh-services">
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="QuickBooks">
+          <h2 class="site-footer__heading" id="fh-quickbooks" aria-controls="fl-quickbooks" aria-expanded="false" role="button" tabindex="0">QuickBooks</h2>
+          <ul class="site-footer__links" id="fl-quickbooks" aria-labelledby="fh-quickbooks">
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Company">
+          <h2 class="site-footer__heading" id="fh-company" aria-controls="fl-company" aria-expanded="false" role="button" tabindex="0">Company</h2>
+          <ul class="site-footer__links" id="fl-company" aria-labelledby="fh-company">
+            <li><a href="/about/">About</a></li>
+            <li><a href="/about/methodology/">Methodology</a></li>
+            <li><a href="/about/team/">Team</a></li>
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="Network">
+          <h2 class="site-footer__heading" id="fh-network" aria-controls="fl-network" aria-expanded="false" role="button" tabindex="0">Network</h2>
+          <ul class="site-footer__links" id="fl-network" aria-labelledby="fh-network">
+            <li><a href="/find-an-accountant/">Find an Accountant</a></li>
+            <li><a href="/partners/">For Accountants</a></li>
+            <li><a href="/about/network/">How it works</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__base">
+    <div class="container">
+      <p class="site-footer__disclosure" role="note">
+        <strong>Independent ProAdvisor firm.</strong> QuickBooks, QuickBooks Online, QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll are registered trademarks of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc. <a href="/legal/disclaimer/">Read full notice</a>.
+      </p>
+      <div class="site-footer__base-row">
+        <p class="site-footer__copyright">© <time>2026</time> TechBrot Inc. All rights reserved.</p>
+        <ul class="site-footer__legal" aria-label="Legal links">
+          <li><a href="/legal/privacy-policy/">Privacy</a></li>
+          <li><a href="/legal/terms/">Terms</a></li>
+          <li><a href="/legal/disclaimer/">Disclaimer</a></li>
+          <li><a href="/legal/dpa/">Data processing</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</footer>
+    <script src="../../../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

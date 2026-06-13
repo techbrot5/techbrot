@@ -1,0 +1,71 @@
+<!-- @dsCard group="Brand" viewport="1240x780" name="Token specimen board" subtitle="Brief §10.1 — color roles, type scale, space rhythm on one board" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { background: var(--bg-page); padding: var(--space-10); }
+  .board { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-10); max-width: 1160px; }
+  .board__full { grid-column: 1 / -1; }
+  .label { font-size: var(--fs-12); font-weight: var(--fw-semibold); letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--text-eyebrow); margin-block-end: var(--space-4); padding-block-end: var(--space-2); border-block-end: 1px solid var(--border-hairline); }
+  /* type */
+  .t-display { font-family: var(--font-serif); font-size: var(--fs-52); line-height: var(--lh-tight); letter-spacing: var(--ls-tight); color: var(--text-primary); max-width: 18ch; }
+  .t-sub { font-size: var(--fs-18); color: var(--text-secondary); max-width: 50ch; line-height: 1.5; margin-block-start: var(--space-4); }
+  .t-italic { font-family: var(--font-serif); font-style: italic; font-size: var(--fs-17); color: var(--text-secondary); margin-block-start: var(--space-4); }
+  /* color roles */
+  .roles { display: flex; flex-direction: column; gap: 6px; }
+  .role { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center; }
+  .role__chip { height: 32px; border-radius: var(--radius-xs); border: 1px solid var(--border-hairline); }
+  .role__name { font-family: var(--font-mono); font-size: 10px; color: var(--text-primary); }
+  .role__use { font-size: 11px; color: var(--text-secondary); }
+  /* rhythm */
+  .rhythm { display: flex; align-items: flex-end; gap: var(--space-2); }
+  .rhythm__bar { background: var(--color-accent); opacity: 0.85; width: 18px; }
+  .rhythm__tok { font-family: var(--font-mono); font-size: 9px; color: var(--text-secondary); writing-mode: vertical-rl; }
+  .rhythm__item { display: flex; gap: 5px; align-items: flex-end; }
+  /* buttons strip */
+  .strip { display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap; }
+  .dark-chip { background: var(--color-surface-dark); border-radius: var(--radius-sm); padding: var(--space-3) var(--space-4); display: inline-flex; gap: var(--space-3); }
+</style>
+</head>
+<body>
+  <div class="board">
+    <div class="board__full">
+      <h1 class="t-display">Automation handles the data entry. We handle the judgment.</h1>
+      <p class="t-sub">Fraunces regular for every heading; Inter for everything that works. One oxblood accent under 5% of any page's surface. Warm paper, never pure white.</p>
+      <p class="t-italic">Italic Fraunces is the human aside — the buyer signal, the honesty note.</p>
+    </div>
+    <div>
+      <p class="label">Color roles</p>
+      <div class="roles">
+        <div class="role"><div class="role__chip" style="background: var(--color-paper);"></div><div><div class="role__name">--color-paper · #FAFAF7</div><div class="role__use">primary ground</div></div></div>
+        <div class="role"><div class="role__chip" style="background: var(--color-paper-warm);"></div><div><div class="role__name">--color-paper-warm · #F3F1EB</div><div class="role__use">alternating sections</div></div></div>
+        <div class="role"><div class="role__chip" style="background: var(--color-ink);"></div><div><div class="role__name">--color-ink · #0B0B0B</div><div class="role__use">headings, primary buttons</div></div></div>
+        <div class="role"><div class="role__chip" style="background: var(--color-ink-mute);"></div><div><div class="role__name">--color-ink-mute · #5A5A56</div><div class="role__use">secondary text</div></div></div>
+        <div class="role"><div class="role__chip" style="background: var(--color-accent);"></div><div><div class="role__name">--color-accent · #841E1E</div><div class="role__use">the signal — rules, marks, hovers</div></div></div>
+        <div class="role"><div class="role__chip" style="background: var(--color-surface-dark);"></div><div><div class="role__name">--color-surface-dark · #111110</div><div class="role__use">cta-band, hub heroes, footer</div></div></div>
+      </div>
+    </div>
+    <div>
+      <p class="label">Space rhythm · 4px base</p>
+      <div class="rhythm">
+        <div class="rhythm__item"><div class="rhythm__bar" style="height: 8px;"></div><span class="rhythm__tok">2</span></div>
+        <div class="rhythm__item"><div class="rhythm__bar" style="height: 16px;"></div><span class="rhythm__tok">4</span></div>
+        <div class="rhythm__item"><div class="rhythm__bar" style="height: 24px;"></div><span class="rhythm__tok">6</span></div>
+        <div class="rhythm__item"><div class="rhythm__bar" style="height: 32px;"></div><span class="rhythm__tok">8</span></div>
+        <div class="rhythm__item"><div class="rhythm__bar" style="height: 48px;"></div><span class="rhythm__tok">12</span></div>
+        <div class="rhythm__item"><div class="rhythm__bar" style="height: 64px;"></div><span class="rhythm__tok">16</span></div>
+        <div class="rhythm__item"><div class="rhythm__bar" style="height: 96px;"></div><span class="rhythm__tok">24</span></div>
+        <div class="rhythm__item"><div class="rhythm__bar" style="height: 128px;"></div><span class="rhythm__tok">32</span></div>
+      </div>
+      <p class="label" style="margin-block-start: var(--space-6);">Actions</p>
+      <div class="strip">
+        <a class="btn btn--primary" href="#">Speak to an expert</a>
+        <a class="btn btn--ghost" href="#">See pricing</a>
+        <span class="dark-chip"><a class="btn btn--primary btn--inverted" href="#">Book the diagnostic</a></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!-- @dsCard group="Spacing" viewport="700x220" name="Hairlines, shadows & card anatomy" subtitle="Drawn with 1px hairlines, not shadows; shadow is a hover event" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 18px 24px; background: var(--bg-page); display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: stretch; }
+  .demo { padding: 16px; background: var(--bg-card); border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); display: flex; flex-direction: column; gap: 6px; }
+  .demo h4 { font-size: var(--fs-17); }
+  .demo p { font-size: 12px; color: var(--text-secondary); line-height: 1.45; }
+  .demo--hover { border-color: var(--text-primary); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .demo--featured { border-inline-start: 3px solid var(--color-accent); }
+  .tok { font-family: var(--font-mono); font-size: 9px; color: var(--text-eyebrow); margin-top: auto; }
+</style>
+</head>
+<body>
+  <div class="demo"><h4>Resting card</h4><p>Paper field, 1px hairline, 4px radius, flat — no shadow.</p><span class="tok">--border-hairline · --radius-sm</span></div>
+  <div class="demo demo--hover"><h4>Hover state</h4><p>Border darkens to ink, lifts −2px, soft shadow appears.</p><span class="tok">--shadow-md · --motion-slow --ease-out</span></div>
+  <div class="demo demo--featured"><h4>Featured / disclosure</h4><p>3px oxblood left rule marks promises, disclosures, the "us" column.</p><span class="tok">border-inline-start: 3px --color-accent</span></div>
+</body>
+</html>

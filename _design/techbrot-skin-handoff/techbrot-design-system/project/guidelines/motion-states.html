@@ -1,0 +1,35 @@
+<!-- @dsCard group="Conversion" viewport="700x420" subtitle="Hover micro-states + scroll entrance + view transitions — the page-level motion spec, all within 120–360ms / ≤8px" name="motion · page level" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../handoff/01-tokens.SKIN.css">
+<link rel="stylesheet" href="../handoff/02-conversion.SKIN.css">
+<link rel="stylesheet" href="../handoff/04-motion.SKIN.css">
+<style>body{margin:0;background:var(--bg-page);font-family:var(--font-sans);padding:28px 36px;display:grid;gap:20px}
+.demo-label{font-family:var(--font-mono);font-size:10.5px;color:var(--text-secondary);margin:0;text-transform:uppercase;letter-spacing:0.08em}
+.row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.demo-card{background:var(--bg-card);border:1px solid var(--border-hairline);border-radius:var(--radius-lg);padding:14px 18px;font-size:var(--fs-14)}
+.demo-row-table{width:100%;border-collapse:collapse;font-size:var(--fs-14)}
+.demo-row-table td{padding:10px 14px;border-bottom:1px solid var(--border-hairline)}
+.demo-row-table tr{transition:background var(--motion-fast) var(--ease-out)}
+.demo-row-table tr:hover{background:var(--color-paper-mist)}
+.pill{display:inline-flex;padding:7px 14px;border:1px solid var(--border-hairline);border-radius:var(--radius-pill);font-size:var(--fs-13);color:var(--text-body);text-decoration:none}
+.spec{font-family:var(--font-mono);font-size:10.5px;color:var(--text-secondary);line-height:1.7;margin:0;border-top:1px solid var(--border-hairline);padding-top:14px}</style>
+</head><body>
+<div>
+  <p class="demo-label" style="margin-bottom:10px">Hover micro-states — every interactive element, ≤4px, 120–200ms</p>
+  <div class="row">
+    <button class="btn btn--primary" type="button">Button → bg step</button>
+    <div class="demo-card card-hover">Card → raise 2px + shadow-sm</div>
+    <a class="pill tile" href="#">Pill → mist</a>
+    <a class="link-standalone" href="#">Link → rule grows</a>
+  </div>
+</div>
+<table class="demo-row-table"><tbody>
+  <tr><td>Table row hover</td><td style="font-family:var(--font-mono);font-size:12px">→ --color-paper-mist · 120ms</td></tr>
+  <tr><td>Second row</td><td style="font-family:var(--font-mono);font-size:12px">consistency is the craft</td></tr>
+</tbody></table>
+<p class="spec">scroll entrance: content fades up 8px as sections enter · CSS scroll-driven animation (@supports animation-timeline: view()) · no-support = instant, content always in DOM (zero SEO cost)<br>
+page transitions: @view-transition navigation:auto · 200ms cross-fade · progressive enhancement only<br>
+reduced-motion: zeroed at the token layer + transform/animation killed in 04-motion · nothing is load-bearing</p>
+</body></html>

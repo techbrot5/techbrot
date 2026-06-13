@@ -1,0 +1,147 @@
+/* ============================================================================
+   TechBrot · BSS-1 · 01 — DESIGN TOKENS
+   ----------------------------------------------------------------------------
+   All variables that the rest of the design system inherits from.
+   Change a token here → every component that uses it updates.
+   Load order: tokens → base → components → pages
+   ============================================================================ */
+
+:root {
+  --color-paper: #FAFAF7;
+  --color-paper-warm: #F3F1EB;
+  --color-paper-deep: #ECEAE2;
+  --color-paper-edge: #DDD9CC;
+  --color-ink: #0B0B0B;
+  --color-ink-soft: #2A2A28;
+  --color-ink-mute: #5A5A56;
+  --color-ink-faint: #8B8B85;
+  --color-accent: #841E1E;
+  --color-accent-deep: #6B1818;
+  --color-accent-soft: #B85050;
+  --color-ink-inverted: #FAFAF7;
+  --color-ink-inverted-soft: rgba(250, 250, 247, 0.78);
+  --color-ink-inverted-mute: rgba(250, 250, 247, 0.55);
+  --color-surface-dark: #111110;
+  --color-surface-dark-2: #1A1A18;
+  --color-focus: #0F4FCC;
+  --color-success: #1F6F3F;
+  --color-warning: #B07410;
+  --bg-page: var(--color-paper);
+  --bg-section-alt: var(--color-paper-warm);
+  --bg-card: var(--color-paper);
+  --bg-card-on-warm: var(--color-paper);
+  --text-primary: var(--color-ink);
+  --text-body: var(--color-ink-soft);
+  --text-secondary: var(--color-ink-mute);
+  --text-eyebrow: var(--color-ink-faint);
+  --border-hairline: var(--color-paper-edge);
+  --accent: var(--color-accent);
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  --fs-12: 0.75rem;
+  --fs-13: 0.8125rem;
+  --fs-14: 0.875rem;
+  --fs-15: 0.9375rem;
+  --fs-16: 1rem;
+  --fs-17: 1.0625rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-22: 1.375rem;
+  --fs-24: 1.5rem;
+  --fs-28: 1.75rem;
+  --fs-32: 2rem;
+  --fs-38: 2.375rem;
+  --fs-44: 2.75rem;
+  --fs-52: 3.25rem;
+  --fs-68: 4.25rem;
+  --lh-tight: 1.05; /* @kind other */
+  --lh-snug: 1.15; /* @kind other */
+  --lh-base: 1.55; /* @kind other */
+  --lh-loose: 1.7; /* @kind other */
+  --ls-tight: -0.02em;
+  --ls-snug: -0.012em;
+  --ls-base: -0.005em;
+  --ls-wide: 0.08em;
+  --ls-wider: 0.14em;
+  --fw-regular: 400; /* @kind font */
+  --fw-medium: 500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold: 700; /* @kind font */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-40: 10rem;
+  --container-max: 1240px;
+  --container-narrow: 820px;
+  --container-wide: 1440px;
+  --container-padding: 1.25rem;
+  --container-padding-lg: 2rem;
+  --header-height: 72px;
+  --header-height-scrolled: 60px;
+  --radius-none: 0;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-pill: 999px;
+  --shadow-xs: 0 1px 2px rgba(11, 11, 11, 0.04);
+  --shadow-sm: 0 2px 8px rgba(11, 11, 11, 0.06);
+  --shadow-md: 0 8px 24px rgba(11, 11, 11, 0.08);
+  --shadow-lg: 0 20px 48px rgba(11, 11, 11, 0.12);
+  --shadow-focus: 0 0 0 3px rgba(15, 79, 204, 0.35);
+  --motion-fast: 120ms; /* @kind other */
+  --motion-base: 200ms; /* @kind other */
+  --motion-slow: 360ms; /* @kind other */
+  --motion-slower: 600ms; /* @kind other */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --ease-spring: cubic-bezier(0.5, 1.2, 0.4, 1); /* @kind other */
+  --z-base: 1; /* @kind other */
+  --z-sticky: 50; /* @kind other */
+  --z-header: 100; /* @kind other */
+  --z-dropdown: 200; /* @kind other */
+  --z-drawer: 300; /* @kind other */
+  --z-modal: 400; /* @kind other */
+  --z-toast: 500; /* @kind other */
+}
+
+/* ============================================================================
+   DARK MODE — opt-in via [data-theme="dark"], future-ready
+   Currently unused; here so we don't have to retrofit later.
+   ============================================================================ */
+
+[data-theme="dark"] {
+  --bg-page: var(--color-surface-dark);
+  --bg-section-alt: var(--color-surface-dark-2);
+  --text-primary: var(--color-ink-inverted);
+  --text-body: var(--color-ink-inverted-soft);
+  --text-secondary: var(--color-ink-inverted-mute);
+  --text-eyebrow: var(--color-ink-inverted-mute);
+  --border-hairline: rgba(250, 250, 247, 0.12);
+}
+
+/* ============================================================================
+   REDUCED MOTION — respect user preference
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms; /* @kind other */
+    --motion-base: 0ms; /* @kind other */
+    --motion-slow: 0ms; /* @kind other */
+    --motion-slower: 0ms; /* @kind other */
+  }
+}
+
