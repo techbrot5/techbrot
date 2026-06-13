@@ -10,11 +10,13 @@ fresh-clone `npm ci --omit=dev` + `npm run build` + `npx serve _site` →
 (payroll) — founder pushes.** (Problem-1 deps fix 6d30375 already pushed in
 ced7855 — that's why pages load; the CSS issue was separate.)
 ROUND 17 batch: rulings resolved (v4 confirmed; **1099 DEFERRED** — build-new,
-future round). **1 of 7 clean elevations DONE** (payroll-management); 6 queued
-(sales-tax, advisory hub, fractional-cfo, qb-cleanup, qb-help hub, qb-payroll).
-Paused page-building for the CF fix (priority) — no page left half-built.
-Dev server RUNNING http://192.168.1.8:8080/. Report: **round-17.md**.
-Elevated total: 19 of 139 + home + file-review.
+future round). **2 of 7 clean elevations DONE** (payroll-management `baaea7d`;
+sales-tax-compliance `0b765da`); 5 queued (advisory hub, fractional-cfo,
+qb-cleanup, qb-help hub, qb-payroll). Each committed page complete + verified
+(equity GREEN · axe 0 · overflow PASS · LH 100/100/100 · CLS 0). CF CSS fix
+(7cc89e2) still UNPUSHED — founder pushes. Dev server RUNNING
+http://192.168.1.8:8080/. Report: **round-17.md**.
+Elevated total: 20 of 139 + home + file-review.
 
 Updated: 2026-06-14 · ROUND 16 — accounting + quickbooks silo elevation batch
 **COMPLETE — all 7 pages DONE + FULLY VERIFIED.** Accounting silo (hub + 3
