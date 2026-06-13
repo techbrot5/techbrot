@@ -9,11 +9,13 @@
     "clean": "node -e \"require('fs').rmSync('_site-prod',{recursive:true,force:true})\"",
     "build:prod": "npm run clean && cross-env ENVIRONMENT=production TB_OUTDIR=_site-prod eleventy"
   },
-  "devDependencies": {
+  "dependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^6.0.4",
-    "axe-core": "^4.12.1",
     "cross-env": "^7.0.3",
     "esbuild": "^0.28.1"
+  },
+  "devDependencies": {
+    "axe-core": "^4.12.1"
   }
 }

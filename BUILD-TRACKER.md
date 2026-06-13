@@ -72,6 +72,32 @@ solo-first as instructed. Full report: round-16.md.
   dir → EBUSY on clean), `npm run build:prod`, restart `npx serve -l 8125
   _site-prod`. Dev server (8080) NOT killed.
 
+## CLOUDFLARE DEPLOY CONTRACT (round 16 — fixed the unstyled/no-home preview)
+Two preview failures diagnosed: (1) pages rendered unstyled — `site.min.css`
+missing; (2) home `/` didn't load. **Root cause:** all build tools
+(`@11ty/eleventy`, `@11ty/eleventy-img`, `esbuild`, `cross-env`) were in
+`devDependencies`. `site.min.css` is generated at build time by the eleventy
+esbuild hook and `index.html` (home) by `src/index.njk` — neither is committed
+(`_site/` is gitignored). When Cloudflare's prod environment omits devDependencies
+(standard when `NODE_ENV=production`), `eleventy` isn't installed, `npm run build`
+fails, no `_site` is produced, and Cloudflare falls back to serving the **repo
+root** — which has no home (founder deleted it) and no `site.min.css` (the old
+`assets/` only has the legacy Bootstrap CSS). Exactly the two symptoms.
+**Fix (commit pending):** moved the four build tools to `dependencies`
+(`axe-core` stays devDependency — test-only); regenerated `package-lock.json`
+(build tools now `dev=false`). Proven: `npm ls --omit=dev` lists all four; a clean
+`npm run build` produces a complete self-contained `_site` (home 72KB +
+`site.min.css` 53,773B + all 26 pages + js/fonts); plain `npx serve _site`
+(true CF proxy, NOT the dev server) serves `/`→200, `/assets/css/site.min.css`
+→200 text/css, every page →200, styled.
+**Cloudflare Pages settings (confirm in dashboard):**
+- Build command: `npm run build`  ·  Build output directory: `_site`  ·  Root: `/`
+- Production env var: `ENVIRONMENT=production` (Production deployment ONLY — flips
+  noindex→index + GA4 on). Preview leaves it unset (noindex, fail-closed).
+- Do NOT use `build-prod.ps1` anywhere (its `extract_css.py` step clobbers CSS —
+  see build-prod note). `npm run build` alone produces the complete site.
+- Nothing depends on the eleventy dev server or any separate manual step.
+
 ## STANDING RULE — CTA STRATEGY (founder, 2026-06-14, round 16; governs every page)
 Per-tier hero/band CTA mapping. Applies to all round-16 pages + every future
 page. **Never a phone CTA as a hero CTA on a hub. Never "Speak to a ProAdvisor"
