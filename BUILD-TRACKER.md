@@ -1,8 +1,41 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
-Updated: 2026-06-13 · ROUND 13 — mobile-nav fix + head migration DONE +
-VERIFIED; Cloudflare deploy local-prep done, **BLOCKED on founder-held
-access** (git/Cloudflare/DNS/GSC). STOPPED for founder action. Report:
-**round-13.md**. Elevated total: 11 of 139 + home + file-review.
+Updated: 2026-06-13 · ROUND 14 — footer brand fix + credential display +
+nav-CTA verify (PASS) DONE; **local git repo initialized on branch
+`preview-11ty` (commit 1981ef5), verified FAIL-CLOSED**; PUSH BLOCKED on
+founder GitHub access. Report: **round-14.md** (preview-URL steps at top).
+Elevated total: 11 of 139 + home + file-review.
+
+## ROUND 14 — footer · credentials · nav-CTA · preview branch (awaiting push)
+Full report: round-14.md. Parts A/B/C done+verified; D = local branch ready,
+push is founder's.
+- **(A) FOOTER brand language:** site.json `tagline` → "An independent firm of
+  Certified QuickBooks ProAdvisors." (only consumer = footer note). Zero-drift:
+  home/trust fingerprints IDENTICAL (text-only); bundle byte-identical
+  (53,611 B). Battery + axe GREEN.
+- **(B) CREDENTIAL display:** "Bookkeeping" added to visible cert lists on
+  /about/ + /pricing/ (team aggregate: QBO L2 + Desktop + Payroll + Bookkeeping
+  [founder] + Enterprise [David]). No individual named; "Certified QuickBooks
+  ProAdvisor team" attribution stays. content-equity GREEN both; axe ZERO.
+- **(C) NAV CTA at narrow widths:** PASS — header `.site-header__cta` is hidden
+  ≤920px (covers ≤480). Verified true-360 iframe capture (header = logo +
+  phone-icon + hamburger only). No change.
+- **(D) PREVIEW BRANCH:** repo was NOT git-initialized → did local `git init`,
+  branch **`preview-11ty`**, commit **1981ef5** (717 files; .gitignore excludes
+  node_modules/_site/_site-prod/_build-verify/.claude). **Fail-closed VERIFIED**
+  (preview build = noindex + robots Disallow + no GA4). **PUSH BLOCKED** — no
+  remote/creds; founder runs `git remote add origin
+  https://github.com/techbrot5/techbrot.git` + `git push -u origin
+  preview-11ty`. Expected preview URL: `preview-11ty.techbrot.pages.dev`
+  (post-push). **main/techbrot.com UNTOUCHED** (no remote configured).
+  🛑 CRITICAL: Cloudflare `ENVIRONMENT=production` must be Production-only,
+  NOT Preview, or the preview indexes (harming the old site). Build settings
+  (CORRECTED): ONE command `npm run build` (NOT `build:prod` — that hardcodes
+  ENVIRONMENT=production via cross-env and would index the preview), output
+  `_site`, env var `ENVIRONMENT=production` on the Production env only →
+  prod indexes + dev excluded, preview fail-closed automatically.
+
+## ROUND 13 — mobile-nav fix + head migration DONE + VERIFIED; Cloudflare
+deploy local-prep done, BLOCKED on founder access. Report: **round-13.md**.
 
 ## ROUND 13 — mobile-nav · head migration · deploy-prep (awaiting founder for C)
 Round-12 rulings applied (lexicon "Become a Partner", "The Team" retarget,
