@@ -177,39 +177,143 @@ per-page checklist going forward.
 
 ---
 
-## ⏳ PAGES 3–7 — QUEUED (sources confirmed, frameworks specified)
+## ✅ PAGE 3 OF 7 — /accounting/bookkeeping/cleanup-bookkeeping/ (t-bofu) — DONE + VERIFIED
+**Sources read:** baseline (42h/12faq) + old HTML. **Coined citable: COMPOUNDING
+RECONCILIATION DRIFT** — each unreconciled period inherits and amplifies the
+prior period's miscategorizations and discrepancies, so the gap between books and
+bank compounds month over month; cleanup unwinds the accumulated drift to a
+reconciled baseline. Surfaced in a pull-quote, the quick-5, and the before/after
+table lede. **Visual:** before/after ComparisonGrid (`vs-table`). Price
+$1,500–$15,000+ across 3 tiers. Within-page variety: hero · prose + pull-quote ·
+buyer-card grid · quick-5 · numbered deliverables grid (8) · process-diagram HowTo
+(4 steps) · vs-table · review-card tiers · trust-row · stacked cross-sell · FAQ.
+**Verify:** content-equity 42h/12faq/schema (HowTo+ItemList+FAQPage added;
+QAPage→FAQPage, 2 footer-chrome, newsletter, 0 FAQ removals — cleanup dupes were
+exact) · battery GREEN · axe ZERO (26) · overflow 360/375/753 · Lighthouse
+100/100/100 · CLS 0.0 · shots `cleanup-compare-1280` + `cleanup-drift-360`. CTA:
+bookkeeping BOFU, no phone in hero. Commit `ffce279`.
 
-| # | URL | Tier | Citable / coined element | Visual |
-|---|---|---|---|---|
-| 3 | /accounting/bookkeeping/cleanup-bookkeeping/ | t-bofu | **COMPOUNDING RECONCILIATION DRIFT** (coined) | staged timeline / ComparisonGrid |
-| 4 | /accounting/bookkeeping/catch-up-bookkeeping/ | t-bofu | **HISTORICAL ACCOUNTING DEBT** (coined); $2,000–$20,000+ | — |
-| 5 | /quickbooks/ | t-hub | full ProAdvisor credential stack (QBO L2, Desktop, Enterprise, Payroll, Bookkeeping) | — |
-| 6 | /quickbooks/setup/ | t-bofu | **TechBrot Setup Protocol** — 5-phase, named output per phase | 5-phase ProcessFlow |
-| 7 | /quickbooks/migration/ | t-bofu | **Migration Integrity Protocol** — 7-point checklist; $2,500–$10,000+ | — |
+## ✅ PAGE 4 OF 7 — /accounting/bookkeeping/catch-up-bookkeeping/ (t-bofu) — DONE + VERIFIED
+**Sources read:** baseline (40h/12faq) + old HTML. **Coined citable: HISTORICAL
+ACCOUNTING DEBT** — the accumulated liability of un-entered, unreconciled periods
+that compounds like interest (principal = months of backlog, interest = rising
+complexity); catch-up pays it down oldest-period-first. **Visual:** catch-up-vs-
+cleanup decision (`vs-table`, distinct from cleanup's before/after). Priced per
+month of backlog ($300–$650/mo); typical total engagement **$2,000–$20,000+**.
+**Verify:** content-equity 40h/12faq/schema (HowTo+ItemList+FAQPage; QAPage→
+FAQPage, 2 chrome, newsletter) · battery GREEN · axe ZERO (26) · overflow
+360/375/753 · Lighthouse 100/100/100 · CLS 0.0 · shots `catchup-decide-1280` +
+`catchup-decide-360`. CTA: bookkeeping BOFU, no phone in hero. **Completes the
+accounting silo** (hub + 3 bookkeeping BOFU). Commit `1955266`.
 
-Pages 3–4 reuse the **proven bookkeeping-BOFU pattern** from page 2 (pending your
-audit). Each gets the same treatment: both sources read, handoff re-checked,
-within-page variety, full verification battery.
+## ✅ PAGE 5 OF 7 — /quickbooks/ (t-hub) — DONE + VERIFIED
+**Sources read:** baseline (36h/6faq) + old HTML. **Citable: the full Certified
+ProAdvisor credential stack** — QuickBooks Online ProAdvisor (Level 2), Desktop,
+Enterprise, Payroll, **plus Intuit Certified Bookkeeping Professional** (5 named
+credentials; rendered as a stat-row + checks-list). This is the team-level stack
+per the round-13 credential reconciliation (David Westgate holds Enterprise);
+honest and verifiable. Within-page variety: hero · credentials (stat-row +
+checks-list) · prose definition · review-card grid-3 (6 engagements) · grid-2
+product blocks (4) · quick-5 · process-diagram (6 independence points) · stacked
+bookkeeping cross-sell · trust-row operator · FAQ (7). **Verify:** content-equity
+36h/6faq/28 schema (newsletter only) · battery GREEN · axe ZERO (24) · overflow
+360/375/753 · Lighthouse 100/100/100 · CLS 0.0 · shot `qb-credentials-1280`.
+CTA: **hub** — PRIMARY "Explore Services" (→#quickbooks-engagements) + SECONDARY
+"Book the discovery call", **no phone in hero**.
+
+## ✅ PAGE 6 OF 7 — /quickbooks/setup/ (t-bofu) — DONE + VERIFIED
+**Sources read:** baseline (43h/8faq) + old HTML. **Citable / NAMED: the
+"TechBrot Setup Protocol"** — the setup phase sequence, each phase with a **named
+output** (written scope → configured file & chart → connected integrations &
+records → reconciled first month + summary & training). **Visual:** ProcessFlow
+of the protocol. Price $750–$5,000+ across 3 tiers. **Verify:** content-equity
+43h/8faq/29 schema (HowTo added; newsletter + 2 chrome) · battery GREEN · axe ZERO
+(24) · overflow 360/375/753 · Lighthouse 100/100/100 · CLS 0.0 · shot
+`setup-protocol-1280`. CTA: **QB-specific BOFU** — PRIMARY "Book the discovery
+call" + SECONDARY "Get the free file review" + **TERTIARY "Speak to a ProAdvisor"
+(tel, renders `+18777515575`)** per the standing rule.
+
+⚠ **SETUP PHASE-COUNT FLAG (needs your call):** your spec asked for a **5-phase**
+protocol, but the frozen baseline documents **four** phases (the baseline H2 is
+literally *"Every setup engagement runs four phases."* — a content-equity heading).
+I preserved the 4-phase equity, named it the TechBrot Setup Protocol, and gave each
+phase a named output. **If you want a 5th phase**, tell me which (e.g. a "Go-Live &
+Transition" phase after Handoff) and I'll add it + re-word the H2 (logged as an
+equity exception).
+
+## ✅ PAGE 7 OF 7 — /quickbooks/migration/ (t-bofu) — DONE + VERIFIED
+**Sources read:** baseline (42h/7faq) + old HTML. **Citable / NAMED: the
+"Migration Integrity Protocol"** — a **7-point verification checklist** run
+against the source file before any migration is signed off: opening balances ·
+bank & credit-card feeds · payroll history · vendor/customer lists · inventory ·
+recurring transactions · report parity. **Plus** an "Intuit free tool vs
+professional migration" `vs-table` and the factual Desktop-sunset timeline (Sep
+2024 stop-sell → Sep 2027 Desktop-2024 EOL). Price $2,500–$10,000+ across 3 tiers.
+**Verify:** content-equity 42h/7faq/27 schema (HowTo+ItemList+FAQPage; newsletter
++ 3 chrome) · battery GREEN · axe ZERO (26) · overflow 360/375/753 · Lighthouse
+100/100/100 · CLS 0.001 (≈0) · shots `migration-integrity-1280` +
+`migration-integrity-360`. CTA: QB-specific BOFU — phone tertiary present.
+
+## ROUND-16 VERIFICATION MATRIX (all 7)
+| Page | Tier | Citable | Equity | axe | Overflow | LH a11y/BP/SEO | CLS |
+|---|---|---|---|---|---|---|---|
+| /accounting/ | hub | fixed-fee engagement shapes | GREEN | 0 | PASS | 100/100/100 | 0.001 |
+| …/monthly-bookkeeping/ | bofu | pricing tiers + close cadence | GREEN | 0 | PASS | 100/100/100 | 0.0 |
+| …/cleanup-bookkeeping/ | bofu | COMPOUNDING RECONCILIATION DRIFT | GREEN | 0 | PASS | 100/100/100 | 0.0 |
+| …/catch-up-bookkeeping/ | bofu | HISTORICAL ACCOUNTING DEBT | GREEN | 0 | PASS | 100/100/100 | 0.0 |
+| /quickbooks/ | hub | full credential stack (5) | GREEN | 0 | PASS | 100/100/100 | 0.0 |
+| /quickbooks/setup/ | bofu | TechBrot Setup Protocol | GREEN | 0 | PASS | 100/100/100 | 0.0 |
+| /quickbooks/migration/ | bofu | Migration Integrity Protocol (7-point) | GREEN | 0 | PASS | 100/100/100 | 0.001 |
+
+Full battery GREEN across all 26 built URLs · 2008 hrefs resolve · CSS minified
+**53,773 B / 59,392 B** gate holds · css-drift clean · manifest clean ·
+cta-lexicon clean · founder-zero (no individual named in visible content) ·
+intents valid. Overflow/Lighthouse run against the prod artifact (`_site-prod`,
+rebuilt with `npm run build:prod` — NOT `build-prod.ps1`, which would clobber the
+hand-edited CSS; see the regression note below).
+
+## ⚠ MID-ROUND REGRESSION — CAUGHT & FIXED
+`build-prod.ps1` (used once to refresh the audit artifact) runs `extract_css.py`,
+which re-extracts CSS from the design handoff and **reverted the round 12–15
+hand-edited fixes** (gapped-mark `box-sizing:content-box`, ≤480 phone rules; −12
+lines from 04-chrome and 06-motif-rules). It briefly landed in a commit; I caught
+it (content-box grep + git numstat), restored the CSS from `f725474`, rebuilt via
+`npm run build:prod`, re-verified (css 53,773 B, overflow re-passed), and logged a
+loud BUILD-TRACKER warning + a memory note. **Going forward: never run
+`build-prod.ps1`; use `npm run build:prod`.** Commit `fe44b67`.
+
+## EXCEPTIONS NEEDING YOUR SIGN-OFF (logged in equity-exceptions.json)
+All are reported, never silent. Newsletter "The monthly brief." removals and
+footer-chrome relocations (Accounting/Company/Network under chrome:minimal) follow
+prior founder rulings. **New this round, requesting sign-off:**
+1. **QAPage → FAQPage** on monthly-bookkeeping, cleanup, catch-up — FAQPage is the
+   correct schema.org type for a multi-question FAQ; QAPage models a single
+   user-asked page. FAQPage + HowTo + ItemList carry the structured-data equity.
+2. **2 schema-only condensed FAQ variants** on monthly-bookkeeping ("When is my
+   financial package delivered?" / "Do I need cleanup or catch-up before
+   monthly?") — substance carried verbatim by the rendered Q's; the duplicate
+   schema-only variants retire (standing rule: FAQPage = accordion verbatim).
+3. **Setup phase count** — 4 phases preserved vs your 5-phase request (see the
+   setup flag above).
 
 ## OPEN ITEMS / STOPPED AT
-1. **Bug fix done + verified** (sitewide broken phone links → 0 raw template
-   vars; CTA standing rule applied/logged). Committed `f725474`.
-2. **Pages 1 & 2 done + fully verified.** `/accounting/` hero corrected per the
-   new CTA rule; `/accounting/bookkeeping/monthly-bookkeeping/` built as the
-   bookkeeping-BOFU proving page. Review both on your phone:
-   http://192.168.1.8:8080/accounting/ and
-   http://192.168.1.8:8080/accounting/bookkeeping/monthly-bookkeeping/
-3. **STOPPED for your audit of the page-2 BOFU pattern** (CLAUDE.md rule 1 —
-   nothing mass-produces until the template is approved on a real page). On your
-   OK, pages 3–4 (cleanup, catch-up) stamp the same pattern; then the QB silo
-   (5–7). Say "continue" to proceed.
-4. **Committed** (NOT pushed) on `preview-11ty` — two commits this round:
-   `cfefee0` (page 1 + round-15 nav) and `f725474` (bug fix); page 2 committed
-   next. You push when ready.
-5. **Dev server LEFT RUNNING** at http://192.168.1.8:8080/ — never killed. Only
-   probe chrome cycled (kill_probe.ps1). The 8125 `_site-prod` audit server was
-   restarted to pick up page 2 (not the dev server).
-6. **Sign-off carry-over:** the round-12 `/about/methodology/` "The Team"
-   retarget + round-8 /partners/ FAQ schema fixes + the new page-2 schema-only
-   FAQ/QAPage removals all await your explicit sign-off in the exceptions log.
-STOPPED. Tell me to continue for page 2.
+1. **All 7 pages done + fully verified** (matrix above). The accounting silo (hub
+   + 3 bookkeeping BOFU) and the QuickBooks silo (hub + setup + migration) are
+   complete. Bug fix + CTA standing rule + regression recovery also shipped.
+2. **Review on your phone** — http://192.168.1.8:8080/ (LAN). Money pages:
+   `/accounting/bookkeeping/monthly-bookkeeping/`, `…/cleanup-bookkeeping/`,
+   `…/catch-up-bookkeeping/`, `/quickbooks/`, `/quickbooks/setup/`,
+   `/quickbooks/migration/`.
+3. **Needs your ruling:** (a) the setup 4-vs-5-phase question; (b) sign-off on the
+   QAPage→FAQPage + schema-only-FAQ-variant retirements (item list above).
+4. **Committed (NOT pushed) on `preview-11ty`** — round-16 commits: `cfefee0`
+   (page 1 + round-15 nav), `f725474` (bug fix + CTA rule), `4beed29` (page 2),
+   `fe44b67` (CSS restore), `ffce279` (page 3), `1955266` (page 4), plus pages 5–7
+   + this report (final commit). You push when ready — push is production.
+5. **Dev server LEFT RUNNING** at **http://192.168.1.8:8080/** — never killed.
+   Only headless probe chrome was cycled (kill_probe.ps1); the 8125 `_site-prod`
+   audit server was stopped/rebuilt/restarted between page batches (never the dev
+   server).
+6. **Sign-off carry-over** (unchanged): round-12 `/about/methodology/` "The Team"
+   retarget + round-8 /partners/ FAQ schema-defect fixes still await sign-off.
+STOPPED. Round 16 complete — awaiting your audit + the two rulings above.

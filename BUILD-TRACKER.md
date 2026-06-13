@@ -1,10 +1,11 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
 Updated: 2026-06-14 · ROUND 16 — accounting + quickbooks silo elevation batch
-**IN PROGRESS**: /accounting/ hub DONE + FULLY VERIFIED (1 of 7); 6 pages
-queued (3 bookkeeping BOFU + /quickbooks/ hub + 2 QB BOFU). Dev server
-RUNNING at http://192.168.1.8:8080/. Report: **round-16.md**.
-Elevated total: 13 of 139 + home + file-review. (R16: /accounting/ +
-monthly-bookkeeping done + verified; sitewide phone-CTA bug fixed; 5 queued.)
+**COMPLETE — all 7 pages DONE + FULLY VERIFIED.** Accounting silo (hub + 3
+bookkeeping BOFU) + QuickBooks silo (hub + setup + migration). Sitewide phone-CTA
+bug fixed + CTA standing rule logged + a build-prod CSS regression caught/fixed.
+Awaiting founder audit + 2 rulings (setup 4-vs-5 phases; QAPage→FAQPage sign-off).
+Dev server RUNNING at http://192.168.1.8:8080/. Report: **round-16.md**.
+Elevated total: 18 of 139 + home + file-review.
 
 ## ROUND 16 — accounting + quickbooks silos (IN PROGRESS — multi-turn batch)
 Pre-flight: all 7 pages confirmed to have BOTH baseline records AND root HTML
@@ -37,12 +38,27 @@ solo-first as instructed. Full report: round-16.md.
   battery GREEN · axe ZERO · overflow 360/375/753 · Lighthouse 100/100/100 ·
   CLS 0.0 · shots r16/monthly-pricing-1280 + monthly-cadence-360. CTA: bookkeeping
   BOFU → NO phone in hero (Book the discovery call + Get the free file review).
-- **QUEUED (5):** cleanup-bookkeeping (t-bofu, COMPOUNDING RECONCILIATION DRIFT)
-  · catch-up-bookkeeping (t-bofu, HISTORICAL ACCOUNTING DEBT) · /quickbooks/
-  (t-hub, ProAdvisor credential stack) · /quickbooks/setup/ (t-bofu, TechBrot
-  Setup Protocol 5-phase) · /quickbooks/migration/ (t-bofu, Migration Integrity
-  Protocol 7-point). All have baseline + root HTML confirmed. cleanup + catch-up
-  reuse the proven bookkeeping-BOFU pattern — pending founder audit of page 2.
+- **cleanup-bookkeeping (t-bofu) — DONE + VERIFIED.** Coined COMPOUNDING
+  RECONCILIATION DRIFT; before/after vs-table; $1,500–$15,000+. 42h/12faq GREEN ·
+  axe 0 · overflow 360/375/753 · LH 100/100/100 · CLS 0.0. Commit ffce279.
+- **catch-up-bookkeeping (t-bofu) — DONE + VERIFIED.** Coined HISTORICAL
+  ACCOUNTING DEBT; catch-up-vs-cleanup vs-table; per-month pricing, total
+  $2,000–$20,000+. 40h/12faq GREEN · axe 0 · overflow PASS · LH 100/100/100 · CLS
+  0.0. Commit 1955266. (Completes accounting silo.)
+- **/quickbooks/ (t-hub) — DONE + VERIFIED.** Citable: full credential stack (QBO
+  L2/Desktop/Enterprise/Payroll + Intuit Certified Bookkeeping Professional, 5).
+  36h/6faq GREEN · axe 0 · overflow PASS · LH 100/100/100 · CLS 0.0.
+- **/quickbooks/setup/ (t-bofu) — DONE + VERIFIED.** Named TechBrot Setup Protocol
+  (named output per phase); $750–$5,000+. 43h/8faq GREEN · axe 0 · overflow PASS ·
+  LH 100/100/100 · CLS 0.0. QB-BOFU phone tertiary present. ⚠ FLAG: baseline = 4
+  phases, founder asked 5 — preserved 4 + named protocol; awaiting founder ruling.
+- **/quickbooks/migration/ (t-bofu) — DONE + VERIFIED.** Named Migration Integrity
+  Protocol (7-point verification); Intuit-tool vs-table; Desktop sunset timeline;
+  $2,500–$10,000+. 42h/7faq GREEN · axe 0 · overflow PASS · LH 100/100/100 · CLS
+  0.001. QB-BOFU phone tertiary present.
+- **Sign-off pending:** QAPage→FAQPage (monthly/cleanup/catch-up) + 2 schema-only
+  FAQ-variant retirements (monthly) + setup 4-vs-5 phase ruling. All logged in
+  equity-exceptions.json, reported in round-16.md.
 - **Build note:** eleventy --serve does NOT auto-rebuild NEW templates added
   after start — `npm run build` (→_site) for each new page. Lighthouse/overflow
   probe the PROD artifact on 8125 (`_site-prod`); a new page must be in

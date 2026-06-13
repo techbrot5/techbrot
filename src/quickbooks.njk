@@ -1,0 +1,195 @@
+---json
+{
+  "layout": "layouts/t-hub.njk",
+  "permalink": "/quickbooks/",
+  "slug": "quickbooks",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--hub",
+  "title": "QuickBooks ProAdvisor Services for U.S. Small Businesses · TechBrot",
+  "description": "Independent Certified QuickBooks ProAdvisor services across Online, Desktop, Enterprise & Payroll — setup, cleanup, migration, plan selection & ongoing help. Delivered by vetted local operators. Not affiliated with Intuit Inc.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "QuickBooks" }
+  ],
+  "hero": {
+    "eyebrow": "QuickBooks ProAdvisor services",
+    "heading": "Independent ProAdvisor services across the full QuickBooks stack.",
+    "subheading": "Setup, cleanup, migration, plan selection, workflow advisory, and operational help across QuickBooks Online, Desktop, Enterprise, and Payroll &mdash; delivered by Certified ProAdvisors against a written scope. Independent ProAdvisor firm, not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Explore Services", "href": "#quickbooks-engagements", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot QuickBooks services</strong> are independent Certified ProAdvisor engagements &mdash; setup, file cleanup, migration, consulting, and plan selection &mdash; across QuickBooks Online, Desktop, Enterprise, and Payroll, delivered by a vetted local operator against a written scope with platform-level quality review.",
+    "source": "Independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with, endorsed by, or sponsored by Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Start here",
+    "heading": "Talk to an independent ProAdvisor.",
+    "lede": "Book a free 30-minute discovery call. A Certified ProAdvisor reviews your QuickBooks situation, recommends the right engagement, and delivers a written fixed-fee scope within 3 business days &mdash; before you commit to anything.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks", "class": "btn--primary" },
+      { "label": "Explore Services", "href": "#quickbooks-engagements", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section section--compact section--tier-hub" id="quickbooks-credentials">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Certified by Intuit</p>
+      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials.</h2>
+      <p class="section__lede">Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack, plus the Intuit Certified Bookkeeping Professional credential. Verification available on request.</p>
+    </header>
+    <div class="stat-row">
+      {%- for s in stats %}
+      <div><div class="stat__value">{{ s.value }}</div><div class="stat__label">{{ s.label }}</div></div>
+      {%- endfor %}
+    </div>
+    <ul class="checks-list">
+      {%- for c in credentials %}<li>{{ c | safe }}</li>{%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="quickbooks-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The silo</p>
+      <h2 class="section__heading">What TechBrot QuickBooks services are.</h2>
+    </header>
+    <div class="prose">
+      <p>TechBrot QuickBooks services are independent Certified ProAdvisor engagements delivered by a curated network of vetted local accounting practices, serving U.S. small and mid-sized businesses. The QuickBooks silo covers six engagement types &mdash; setup &amp; onboarding, file cleanup, migration, consulting &amp; workflow advisory, plan selection, and the ProAdvisor help center &mdash; across four QuickBooks products: Online, Desktop, Enterprise, and Payroll.</p>
+      <p>Every engagement is delivered by a Certified ProAdvisor against a written scope, with platform-level quality review. <strong>TechBrot is an independent ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="quickbooks-engagements">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The engagements</p>
+      <h2 class="section__heading">Six ProAdvisor engagements. Pick the one that fits.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for e in engagements %}
+      <article class="review-card">
+        <p class="review-card__role">{{ e.num }} &middot; {{ e.tag }}</p>
+        <h3>{{ e.name | safe }}</h3>
+        <p class="review-card__fact">{{ e.body | safe }}</p>
+        <p class="review-card__fact"><strong>For:</strong> {{ e.forWhom | safe }} &middot; <strong>{{ e.timeline | safe }}</strong> &middot; {{ e.price | safe }}</p>
+        <a class="review-card__link" href="{{ e.href }}">{{ e.cta | safe }} &rarr;</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="quickbooks-products">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The products</p>
+      <h2 class="section__heading">Every QuickBooks product. Same operator network.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for p in products %}
+      <div class="stack-8">
+        <h3>{{ p.name | safe }}</h3>
+        <p class="prose">{{ p.body | safe }}</p>
+        <p class="prose"><strong>Best for:</strong> {{ p.best | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="quickbooks-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">TechBrot QuickBooks services, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="quickbooks-independence">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Why independent</p>
+      <h2 class="section__heading">Independence matters in QuickBooks advisory.</h2>
+    </header>
+    <ol class="process-diagram">
+      {%- for d in independence %}
+      <li class="process-step">
+        <p class="process-step__number">{{ d.num }}</p>
+        <h3 class="process-step__heading">{{ d.name | safe }}</h3>
+        <p class="process-step__body">{{ d.body | safe }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section section--alt" id="quickbooks-bookkeeping">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The tool and the work</p>
+      <h2 class="section__heading">QuickBooks is the tool. Bookkeeping is the work.</h2>
+    </header>
+    {%- for n in bookkeepingLinks %}
+    <div class="stack-8">
+      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+      <p class="prose">{{ n.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section" id="quickbooks-operator">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Who performs the work</p>
+      <h2 class="section__heading">A named Certified ProAdvisor.</h2>
+    </header>
+    <div class="prose">
+      <p>Every TechBrot QuickBooks engagement is delivered by a vetted local operator &mdash; an independent accounting practice running under TechBrot&rsquo;s brand, standards, and infrastructure. Every operator holds active Certified ProAdvisor credentials, is credentialed and insured, and is onboarded against a defined quality standard. Named point of contact, platform-level quality review, continuity guaranteed.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in operatorSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="quickbooks-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">What people ask about TechBrot QuickBooks services.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="quickbooks-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="quickbooks-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

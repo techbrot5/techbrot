@@ -1,0 +1,236 @@
+---json
+{
+  "layout": "layouts/t-bofu.njk",
+  "permalink": "/quickbooks/setup/",
+  "slug": "setup",
+  "tierClass": "section--tier-bofu",
+  "bodyClass": "page--bofu",
+  "title": "QuickBooks Setup Services · Professional Configuration by Certified ProAdvisors",
+  "description": "Professional QuickBooks setup for U.S. small businesses — chart of accounts design, opening balances, bank integration, sales tax, payroll, and class tracking by Certified QuickBooks ProAdvisors. Fixed fees, written scope, 2–4 weeks.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "QuickBooks", "href": "/quickbooks/" },
+    { "name": "Setup" }
+  ],
+  "hero": {
+    "eyebrow": "QuickBooks setup",
+    "heading": "QuickBooks, set up right. The first time.",
+    "subheading": "Professional QuickBooks implementation by Certified ProAdvisors &mdash; a chart of accounts designed for your business and industry, opening balances reconciled, sales tax configured for your nexus states, integrations connected, training delivered. Fixed fee, written scope, 2&ndash;4 weeks. The foundation everything else depends on.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks-setup", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>Professional QuickBooks setup</strong> is the implementation engagement where a Certified ProAdvisor configures QuickBooks for your business &mdash; the right product, an industry-specific chart of accounts, reconciled opening balances, sales tax for your nexus states, integrations, first-month reconciliation, and a documented handoff. Fixed fee <strong>$750&ndash;$5,000+</strong>, 2&ndash;4 weeks.",
+    "source": "Most cleanup engagements exist because the original setup was wrong. Not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Setup starts here",
+    "heading": "Let&rsquo;s scope a setup engagement.",
+    "lede": "Book a free 30-minute setup diagnostic. We&rsquo;ll review your business, recommend the right product, and deliver a written fixed-fee scope and implementation plan within 3 business days &mdash; before any work begins.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks-setup", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="setup-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The engagement</p>
+      <h2 class="section__heading">What professional QuickBooks setup actually is.</h2>
+    </header>
+    <div class="prose">
+      <p>Professional QuickBooks setup is the implementation engagement where a Certified ProAdvisor configures QuickBooks specifically for your business &mdash; the company file in the right product, a custom chart of accounts designed for your industry, opening balances reconciled against prior records, sales tax configured for your nexus states, payroll if applicable, class and location tracking for segment reporting, bank and credit-card integration, customer and vendor records, third-party integrations, a first-month reconciliation to verify the setup is correct, and a documented handoff.</p>
+      <p>The setup determines whether your books are reliable for the next several years &mdash; <strong>most cleanup engagements TechBrot performs exist because the original setup was wrong.</strong> Fixed-fee engagements run $750&ndash;$5,000+ depending on complexity, completed in 2&ndash;4 weeks. Many setups transition directly into <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> with the same operator.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="setup-signals">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Is it time?</p>
+      <h2 class="section__heading">If any of these apply, the answer is yes.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for s in signals %}
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
+        <p class="buyer-card__body">{{ s.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="setup-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">QuickBooks setup, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="setup-protocol">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The TechBrot Setup Protocol</p>
+      <h2 class="section__heading">Every setup engagement runs four phases.</h2>
+      <p class="section__lede">Four phases, each with a named output &mdash; so you always know what you’re getting and when.</p>
+    </header>
+    <ol class="process-diagram">
+      {%- for s in protocol %}
+      <li class="process-step">
+        <p class="process-step__number">{{ s.num }} &middot; {{ s.when | safe }}</p>
+        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
+        <p class="process-step__body">{{ s.body | safe }}</p>
+        <p class="process-step__body"><strong>Output:</strong> {{ s.output | safe }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="setup-deliverables">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The deliverables</p>
+      <h2 class="section__heading">What you actually get from a setup engagement.</h2>
+    </header>
+    <div class="grid-2">
+      <div>
+        <h3>Every setup includes</h3>
+        <ul class="checks-list">
+          {%- for d in included %}<li>{{ d | safe }}</li>{%- endfor %}
+        </ul>
+      </div>
+      <div>
+        <h3>Configured when scope requires</h3>
+        <ul class="checks-list">
+          {%- for d in configured %}<li>{{ d | safe }}</li>{%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="setup-pricing">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Pricing</p>
+      <h2 class="section__heading">Fixed-fee setup, written scope, no surprises.</h2>
+      <p class="section__lede">Three tiers; final pricing follows the diagnostic. Software subscriptions pass through at Intuit list pricing. See <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> for the optional ongoing engagement after setup.</p>
+    </header>
+    <div class="grid-3">
+      {%- for t in tiers %}
+      <article class="review-card">
+        {%- if t.note %}<p class="review-card__role">{{ t.note | safe }}</p>{%- endif %}
+        <h3>{{ t.name | safe }}</h3>
+        <p class="review-card__fact"><strong>{{ t.price | safe }}</strong></p>
+        <p class="review-card__fact"><strong>For:</strong> {{ t.forWhom | safe }}</p>
+        <ul class="checks-list">
+          {%- for b in t.bullets %}<li>{{ b | safe }}</li>{%- endfor %}
+        </ul>
+        <a class="review-card__link" href="/contact/?intent=quickbooks-setup">{{ t.cta | safe }} &rarr;</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="setup-products">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Product selection</p>
+      <h2 class="section__heading">Which QuickBooks product fits your business.</h2>
+    </header>
+    {%- for p in products %}
+    <div class="stack-8">
+      <h3><span class="num">{{ p.tag | safe }}</span> {{ p.name | safe }}</h3>
+      <p class="prose">{{ p.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section section--alt" id="setup-foundation">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">What setup is actually for</p>
+      <h2 class="section__heading">Setup is the foundation. The relationship is what comes next.</h2>
+    </header>
+    <div class="prose">
+      <p>The strict technical work of QuickBooks setup &mdash; chart of accounts, opening balances, integrations &mdash; takes 2 to 4 weeks. The reason it matters runs longer than that.</p>
+      <p>A well-built QuickBooks file is the foundation everything else depends on. Monthly bookkeeping runs cleanly because the file was built right. Tax preparation takes hours instead of days because your CPA isn&rsquo;t fixing structural problems first. Financial advisory work &mdash; cash-flow forecasting, margin analysis, scenario planning, fractional CFO engagement &mdash; only works on top of accurate books.</p>
+      <p>Most TechBrot setup engagements continue into monthly bookkeeping with the same operator. Many continue further &mdash; into multi-state sales-tax compliance, payroll management, and, as the business grows, the advisory work that distinguishes a profitable operation from a struggling one. The setup is the first decision in a longer relationship. We build the file accordingly.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="setup-operator">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Who performs the work</p>
+      <h2 class="section__heading">A named Certified ProAdvisor.</h2>
+    </header>
+    <div class="prose">
+      <p>Every TechBrot setup is delivered by a vetted local operator &mdash; an independent accounting practice running under TechBrot&rsquo;s brand, standards, and infrastructure. You&rsquo;ll know exactly who is building your file and how to reach them, backed by platform-level quality review.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in operatorSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="setup-next">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">After setup</p>
+      <h2 class="section__heading">What setup commonly leads into.</h2>
+    </header>
+    {%- for n in nextSteps %}
+    <div class="stack-8">
+      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+      <p class="prose">{{ n.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section" id="setup-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">What people ask before booking setup.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="setup-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="setup-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,286 @@
+---json
+{
+  "layout": "layouts/t-bofu.njk",
+  "permalink": "/quickbooks/migration/",
+  "slug": "migration",
+  "tierClass": "section--tier-bofu",
+  "bodyClass": "page--bofu",
+  "title": "QuickBooks Migration — Desktop to Online · TechBrot",
+  "description": "Professional QuickBooks Desktop-to-Online migration by Certified ProAdvisors — data conversion, integration replacement, reconciliation, training, CPA handoff, verified by the 7-point Migration Integrity Protocol. Fixed-fee, 3–8 weeks.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "QuickBooks", "href": "/quickbooks/" },
+    { "name": "Migration" }
+  ],
+  "hero": {
+    "eyebrow": "QuickBooks migration",
+    "heading": "QuickBooks Desktop is ending. Migrate professionally.",
+    "subheading": "Intuit stopped selling new QuickBooks Desktop subscriptions on September 30, 2024, and support is ending version by version &mdash; Desktop 2023 in 2026, Desktop 2024 in 2027. Professional Desktop-to-Online migration by Certified ProAdvisors: data conversion, integration replacement, historical reconciliation, training, CPA-coordinated handoff. Fixed fee, 3&ndash;8 weeks. Better to move now than during the rush.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks-migration", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>Professional QuickBooks migration</strong> moves your accounting from Desktop to QuickBooks Online (or from Wave, Xero, FreshBooks, or Bench to QuickBooks) cleanly &mdash; data conversion, chart-of-accounts restructuring, historical reconciliation, integration replacement, payroll-history migration, training, and CPA handoff, verified by the <strong>7-point Migration Integrity Protocol</strong>. Fixed fee $2,500&ndash;$10,000+, 3&ndash;8 weeks.",
+    "source": "The free Intuit tool moves data; professional migration delivers a working file. Not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Migration starts here",
+    "heading": "Move now, not during the rush.",
+    "lede": "Book a free 30-minute migration review. We&rsquo;ll audit your current file, tell you what transfers cleanly and what needs rework, and deliver a written fixed-fee scope within 3 business days &mdash; before any work begins.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks-migration", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="migration-timeline">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The Desktop sunset</p>
+      <h2 class="section__heading">What&rsquo;s actually happening &mdash; and why timing matters.</h2>
+      <p class="section__lede">If you&rsquo;re still on QuickBooks Desktop, the question isn&rsquo;t whether to migrate &mdash; it&rsquo;s whether to do it on your schedule or during the industry rush. Enterprise customers are exempt from the sunset.</p>
+    </header>
+    {%- for t in timeline %}
+    <div class="stack-8">
+      <p class="num">{{ t.num | safe }}</p>
+      <h3>{{ t.name | safe }}</h3>
+      <p class="prose">{{ t.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section section--alt" id="migration-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The engagement</p>
+      <h2 class="section__heading">What QuickBooks migration actually is.</h2>
+    </header>
+    <div class="prose">
+      <p>Professional QuickBooks migration moves your accounting from QuickBooks Desktop to QuickBooks Online &mdash; or from a competing platform like Wave, Xero, FreshBooks, or Bench to QuickBooks &mdash; cleanly: data conversion, chart-of-accounts restructuring for the new platform, historical transaction reconciliation, integration replacement (Desktop integrations rarely transfer directly to Online), payroll-history migration, opening-balance verification, sales-tax reconfiguration, a documented handoff, training, and CPA coordination.</p>
+      <p>Intuit&rsquo;s Desktop sunset &mdash; new-subscription stop-sell on September 30, 2024, support ending version by version through September 2027 (Enterprise excepted) &mdash; means most U.S. small businesses still on Desktop are migrating now. Fixed-fee engagements run $2,500&ndash;$10,000+ depending on years of history and complexity, completed in 3&ndash;8 weeks. Many migrations transition directly into <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> with the same operator.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="migration-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">QuickBooks migration, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="migration-signals">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Is it time?</p>
+      <h2 class="section__heading">If any of these apply, the answer is yes.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for s in signals %}
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
+        <p class="buyer-card__body">{{ s.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="migration-phases">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The process</p>
+      <h2 class="section__heading">Every migration runs four phases.</h2>
+    </header>
+    <ol class="process-diagram">
+      {%- for s in phases %}
+      <li class="process-step">
+        <p class="process-step__number">{{ s.num }} &middot; {{ s.when | safe }}</p>
+        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
+        <p class="process-step__body">{{ s.body | safe }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section section--alt" id="migration-integrity">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The Migration Integrity Protocol</p>
+      <h2 class="section__heading">Seven things verified before any migration is signed off.</h2>
+      <p class="section__lede">The free Intuit tool moves data. The <strong>Migration Integrity Protocol</strong> is how we prove the moved file is actually correct &mdash; seven checks run against the source before handoff.</p>
+    </header>
+    <ol class="process-diagram">
+      {%- for d in integrity %}
+      <li class="process-step">
+        <p class="process-step__number">0{{ loop.index }}</p>
+        <h3 class="process-step__heading">{{ d.point | safe }}</h3>
+        <p class="process-step__body">{{ d.body | safe }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="migration-deliverables">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The deliverables</p>
+      <h2 class="section__heading">What you actually get from a migration engagement.</h2>
+    </header>
+    <div class="grid-2">
+      <div>
+        <h3>Every migration includes</h3>
+        <ul class="checks-list">
+          {%- for d in included %}<li>{{ d | safe }}</li>{%- endfor %}
+        </ul>
+      </div>
+      <div>
+        <h3>Handled when scope requires</h3>
+        <ul class="checks-list">
+          {%- for d in configured %}<li>{{ d | safe }}</li>{%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="migration-pricing">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Pricing</p>
+      <h2 class="section__heading">Fixed-fee migration, written scope, no surprises.</h2>
+      <p class="section__lede">Three tiers; final pricing follows the diagnostic. Subscriptions pass through at Intuit list pricing. Optional continuation into <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> after migration.</p>
+    </header>
+    <div class="grid-3">
+      {%- for t in tiers %}
+      <article class="review-card">
+        {%- if t.note %}<p class="review-card__role">{{ t.note | safe }}</p>{%- endif %}
+        <h3>{{ t.name | safe }}</h3>
+        <p class="review-card__fact"><strong>{{ t.price | safe }}</strong></p>
+        <p class="review-card__fact"><strong>For:</strong> {{ t.forWhom | safe }}</p>
+        <ul class="checks-list">
+          {%- for b in t.bullets %}<li>{{ b | safe }}</li>{%- endfor %}
+        </ul>
+        <a class="review-card__link" href="/contact/?intent=quickbooks-migration">{{ t.cta | safe }} &rarr;</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="migration-tool">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Honest about Intuit&rsquo;s free tool</p>
+      <h2 class="section__heading">What Intuit&rsquo;s migration tool does &mdash; and doesn&rsquo;t do.</h2>
+      <p class="section__lede">Intuit&rsquo;s free tool is real and it works for the technical data transfer. It&rsquo;s what it <em>doesn&rsquo;t</em> do that produces unusable files.</p>
+    </header>
+    <div class="vs-scroll">
+      <table class="vs-table">
+        <caption class="sr-only">Professional migration versus Intuit&rsquo;s free migration tool, by capability.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Capability</th>
+            <th scope="col" class="vs-table__us">Professional migration</th>
+            <th scope="col">Intuit free tool</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for row in toolCompare %}
+          <tr>
+            <th scope="row">{{ row.dim | safe }}</th>
+            <td class="vs-table__us"><strong>{{ row.us | safe }}</strong></td>
+            <td class="vs-table__concede">{{ row.other | safe }}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="migration-modernization">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">What migration is actually for</p>
+      <h2 class="section__heading">Migration is the modernization. The capabilities are what matter.</h2>
+    </header>
+    <div class="prose">
+      <p>Migration as a forced reaction to Intuit&rsquo;s sunset roadmap is the wrong way to think about the move. Migration as deliberate modernization &mdash; positioning the business for the next decade of accounting work &mdash; is the right way.</p>
+      <p>A well-migrated QuickBooks Online file enables what Desktop couldn&rsquo;t: cloud accessibility for distributed teams, real-time CPA collaboration instead of file-handoff cycles, modern integrations with payment processors and e-commerce and time-tracking tools, better lender and investor positioning for capital events, and the foundation for advisory work &mdash; cash-flow forecasting, scenario planning, margin analysis &mdash; that requires data your CPA can actually access.</p>
+      <p>Most TechBrot migration engagements transition into monthly bookkeeping with the same operator, and many continue further as the business grows. The migration is the modernization moment. Done right, it unlocks the next decade.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="migration-operator">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Who runs your migration</p>
+      <h2 class="section__heading">A named Certified ProAdvisor &mdash; Desktop and Online.</h2>
+    </header>
+    <div class="prose">
+      <p>Every TechBrot migration is delivered by a Certified QuickBooks ProAdvisor with credentials across both QuickBooks Desktop and QuickBooks Online. Migration work requires fluency in both environments &mdash; this is one of the few engagement types where Desktop expertise is still essential. Platform-level quality review backs every migration, and the operator who runs it can continue with monthly bookkeeping in the new system if you want the relationship to continue.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in operatorSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="migration-next">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">After migration</p>
+      <h2 class="section__heading">What migration commonly pairs with.</h2>
+    </header>
+    {%- for n in nextSteps %}
+    <div class="stack-8">
+      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+      <p class="prose">{{ n.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section" id="migration-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">What people ask before booking migration.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="migration-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="migration-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
