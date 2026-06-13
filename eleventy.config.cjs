@@ -5,29 +5,9 @@
 const fs = require("fs");
 const path = require("path");
 
-// NEW-SKIN load order (changeover round 10): fonts → tokens → base (locked
-// structural floor) → conversion components → chrome → tier layout/responsive
-// spec → motif rules (after tiers per handoff note) → motion → additions →
-// session extensions.
-const CSS_ORDER = [
-  "00-fonts.css",
-  "01-tokens.css",
-  "02-base.css",
-  "03-conversion.css",
-  "04-chrome.css",
-  "05-tiers.css",
-  "06-motif-rules.css",
-  "07-motion.css",
-  "08-additions.css",
-  "09-extensions.css",
-];
-// BUDGET GATE — RE-RATIFIED by founder (contact-elevation round, 2026-06-13):
-// HARD gate = minified site.min.css ≤58KB (shipping artifact). 58KB is the
-// CEILING THROUGH CUTOVER — the gate does not move again. A source trim pass
-// is a scheduled task during silo elevation (target: source back under 75KB).
-// Source soft-cap 70KB — flagged when exceeded, never blocking.
-const CSS_BUDGET_MIN = 58 * 1024; // minified, hard build gate (ceiling — final)
-const CSS_BUDGET_SRC = 70 * 1024; // source soft-cap, flagged only
+// NEW-SKIN CSS load order + the 58KB minified gate now live in the first-class
+// bundle template: src/assets/css/site.min.css.11ty.js (round-17 Cloudflare CSS
+// fix — see that file's header). fs/path retained for the image pipeline below.
 
 module.exports = function (eleventyConfig) {
   const isProduction = process.env.ENVIRONMENT === "production";
@@ -38,35 +18,13 @@ module.exports = function (eleventyConfig) {
   });
 
   // ONE site.min.css bundled from the design-handoff sources (design truth —
-  // foundations verbatim, components curated per round).
-  eleventyConfig.on("eleventy.before", async ({ directories }) => {
-    const srcDir = path.join(directories.input, "assets", "css");
-    const source = CSS_ORDER.map((f) =>
-      // strip per-file BOMs — a U+FEFF mid-concatenation corrupts the next
-      // selector after minification (esbuild escapes it into the selector)
-      fs.readFileSync(path.join(srcDir, f), "utf8").replace(/^﻿/, "")
-    ).join("\n");
-    const srcBytes = Buffer.byteLength(source);
-    const esbuild = require("esbuild");
-    const { code } = await esbuild.transform(source, {
-      loader: "css",
-      minify: true,
-    });
-    const minBytes = Buffer.byteLength(code);
-    if (minBytes > CSS_BUDGET_MIN) {
-      throw new Error(
-        `CSS minified budget exceeded: ${minBytes} > ${CSS_BUDGET_MIN} bytes`
-      );
-    }
-    const srcFlag = srcBytes > CSS_BUDGET_SRC
-      ? ` ⚠ SOURCE OVER 70KB SOFT-CAP (flagged)` : "";
-    const outDir = path.join(directories.output, "assets", "css");
-    fs.mkdirSync(outDir, { recursive: true });
-    fs.writeFileSync(path.join(outDir, "site.min.css"), code);
-    console.log(
-      `[css] minified ${minBytes}B / hard gate ${CSS_BUDGET_MIN}B · source ${srcBytes}B${srcFlag} → assets/css/site.min.css`
-    );
-  });
+  // foundations verbatim, components curated per round). Generated as a
+  // FIRST-CLASS Eleventy template — see src/assets/css/site.min.css.11ty.js.
+  // (Round-17 Cloudflare CSS fix: moved off the former `eleventy.before`
+  // side-effect fs.writeFileSync, which wrote outside Eleventy's pipeline and
+  // could be missing from the deployed artifact. The template flows through
+  // Eleventy's writer, so the bundle is always in _site and always deployed.
+  // CSS_ORDER + budget constants now live in that template.)
 
   // SHARP IMAGE PIPELINE ({% photo %}) — founder ruling 2026-06-13 (TODO 14):
   // AVIF/WebP/JPEG via @11ty/eleventy-img, explicit width/height (CLS 0),
