@@ -1,11 +1,20 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
-Updated: 2026-06-14 · ROUND 17 — elevation campaign (8 spokes). **PRE-FLIGHT
-DONE; STOPPED for 2 rulings before the batch.** CF build fix CONFIRMED via exact
-prod-only simulation (push-ready, commit 6d30375). 7 of 8 pages are clean
-elevations (baseline + root HTML); **/accounting/1099-preparation/ is BUILD-NEW
-(no baseline, no root HTML) — needs founder ruling**; blueprint is v3 (no v4
-found). Dev server RUNNING http://192.168.1.8:8080/. Report: **round-17.md**.
-On founder go: run the 7 clean pages continuously. Elevated total: 18 of 139.
+Updated: 2026-06-14 · ROUND 17 — elevation campaign + Cloudflare CSS fix.
+**CF CSS-404 FIXED** (commit 7cc89e2 — see _build/reports/cloudflare-fix.md):
+site.min.css was written by a side-effect `eleventy.before` fs.writeFileSync
+(outside Eleventy's pipeline → could drop from the CF deploy → unstyled). Moved
+to a FIRST-CLASS Eleventy template (src/assets/css/site.min.css.11ty.js) so the
+bundle is a tracked output, always in _site, always deployed. Verified via
+fresh-clone `npm ci --omit=dev` + `npm run build` + `npx serve _site` →
+/assets/css/site.min.css 200 text/css. **UNPUSHED: 7cc89e2 (CSS fix) + baaea7d
+(payroll) — founder pushes.** (Problem-1 deps fix 6d30375 already pushed in
+ced7855 — that's why pages load; the CSS issue was separate.)
+ROUND 17 batch: rulings resolved (v4 confirmed; **1099 DEFERRED** — build-new,
+future round). **1 of 7 clean elevations DONE** (payroll-management); 6 queued
+(sales-tax, advisory hub, fractional-cfo, qb-cleanup, qb-help hub, qb-payroll).
+Paused page-building for the CF fix (priority) — no page left half-built.
+Dev server RUNNING http://192.168.1.8:8080/. Report: **round-17.md**.
+Elevated total: 19 of 139 + home + file-review.
 
 Updated: 2026-06-14 · ROUND 16 — accounting + quickbooks silo elevation batch
 **COMPLETE — all 7 pages DONE + FULLY VERIFIED.** Accounting silo (hub + 3
