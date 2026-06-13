@@ -1,4 +1,12 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
+Updated: 2026-06-14 · ROUND 17 — elevation campaign (8 spokes). **PRE-FLIGHT
+DONE; STOPPED for 2 rulings before the batch.** CF build fix CONFIRMED via exact
+prod-only simulation (push-ready, commit 6d30375). 7 of 8 pages are clean
+elevations (baseline + root HTML); **/accounting/1099-preparation/ is BUILD-NEW
+(no baseline, no root HTML) — needs founder ruling**; blueprint is v3 (no v4
+found). Dev server RUNNING http://192.168.1.8:8080/. Report: **round-17.md**.
+On founder go: run the 7 clean pages continuously. Elevated total: 18 of 139.
+
 Updated: 2026-06-14 · ROUND 16 — accounting + quickbooks silo elevation batch
 **COMPLETE — all 7 pages DONE + FULLY VERIFIED.** Accounting silo (hub + 3
 bookkeeping BOFU) + QuickBooks silo (hub + setup + migration). Sitewide phone-CTA
