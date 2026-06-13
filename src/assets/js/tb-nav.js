@@ -77,12 +77,26 @@
       if (ev.key === 'Escape' && drawerOpen()) setDrawer(false);
     });
 
-    /* drawer accordions */
-    drawer.querySelectorAll('.drawer__trigger').forEach(function (t) {
+    /* drawer accordions — R15: one panel open at a time (mutual exclusion,
+       mirroring the desktop dropdowns). Opening one closes the others. */
+    var drawerTriggers = Array.prototype.slice.call(
+      drawer.querySelectorAll('.drawer__trigger'));
+
+    function closeOtherPanels(except) {
+      drawerTriggers.forEach(function (t) {
+        if (t === except) return;
+        t.setAttribute('aria-expanded', 'false');
+        var p = document.getElementById(t.getAttribute('aria-controls'));
+        if (p) p.setAttribute('data-open', 'false');
+      });
+    }
+
+    drawerTriggers.forEach(function (t) {
       t.addEventListener('click', function () {
         var panel = document.getElementById(t.getAttribute('aria-controls'));
         if (!panel) return;
         var open = t.getAttribute('aria-expanded') === 'true';
+        closeOtherPanels(t);
         t.setAttribute('aria-expanded', String(!open));
         panel.setAttribute('data-open', String(!open));
       });

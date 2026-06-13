@@ -19,7 +19,7 @@
 
 /* ---- sticky header ---- */
 .site-header{position:sticky;top:0;z-index:var(--z-header);background:rgba(251,250,247,0.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border-hairline);transition:height var(--motion-base) var(--ease-out)}
-.site-header .container{display:flex;align-items:center;gap:var(--space-8);height:var(--header-height)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:var(--space-8);height:var(--header-height)}
 .site-header.is-scrolled .container{height:var(--header-height-scrolled)}
 .site-header__logo{display:flex;align-items:center;text-decoration:none;flex:none}
 .site-nav{display:flex;align-items:center;gap:var(--space-1);margin-right:auto;list-style:none;padding:0;margin-top:0;margin-bottom:0}
@@ -40,14 +40,16 @@
 .site-header__phone svg{color:var(--accent)}
 .nav__hamburger{display:none;background:none;border:0;color:var(--text-primary);padding:var(--space-2);cursor:pointer;border-radius:var(--radius-md)}
 @media (max-width:920px){.site-nav,.site-header__cta{display:none}.nav__hamburger{display:inline-flex}}
-/* R13 mobile-nav fix: on true phone widths the logo + full phone number +
-   hamburger row overran the viewport and clipped the hamburger off-screen.
-   Below 480px the phone collapses to its tappable icon (number hidden; the
-   link keeps its accessible name via aria-label), leaving ample room for the
-   hamburger. The min-width:0 lets the actions row shrink instead of pushing
-   the hamburger out. */
+/* R15: phone shows icon + FULL number at ALL widths (the R13 number-hide is
+   reverted). The min-width:0 lets the actions row shrink. At <=480 the number
+   tightens (smaller mono size + tighter tracking) and the header gaps compress
+   so logo + icon + full number + hamburger fit with no clip / no h-scroll. */
 .site-header__actions{min-width:0}
-@media (max-width:480px){.site-header__phone-num{display:none}}
+@media (max-width:480px){
+  .site-header .container{gap:var(--space-3)}
+  .site-header__actions{gap:var(--space-2)}
+  .site-header__phone{font-size:var(--fs-13);letter-spacing:var(--ls-tight)}
+}
 
 /* ---- minimal header (BOFU: logo + phone only) ---- */
 .site-header--minimal .container{justify-content:space-between}
@@ -55,7 +57,7 @@
 /* ---- mobile drawer ---- */
 .drawer{position:fixed;inset:0;z-index:var(--z-drawer);background:var(--color-paper);display:flex;flex-direction:column;padding:0 var(--container-padding) var(--space-8);transform:translateX(100%);transition:transform var(--motion-slow) var(--ease-out);overflow-y:auto}
 .drawer[data-open="true"]{transform:translateX(0)}
-.drawer__head{display:flex;justify-content:space-between;align-items:center;height:var(--header-height);border-bottom:1px solid var(--border-hairline);margin-bottom:var(--space-4)}
+.drawer__head{display:flex;width:100%;justify-content:space-between;align-items:center;height:var(--header-height);border-bottom:1px solid var(--border-hairline);margin-bottom:var(--space-4)}
 .drawer__close{background:none;border:0;color:var(--text-primary);padding:var(--space-2);cursor:pointer;border-radius:var(--radius-md)}
 .drawer__group{border-bottom:1px solid var(--border-hairline)}
 .drawer__trigger{width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:0;padding:var(--space-4) 0;font-family:var(--font-sans);font-size:var(--fs-17);font-weight:var(--fw-semibold);color:var(--text-primary);cursor:pointer}

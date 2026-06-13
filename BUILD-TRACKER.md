@@ -1,9 +1,59 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
-Updated: 2026-06-13 · ROUND 14 — footer brand fix + credential display +
-nav-CTA verify (PASS) DONE; **local git repo initialized on branch
-`preview-11ty` (commit 1981ef5), verified FAIL-CLOSED**; PUSH BLOCKED on
-founder GitHub access. Report: **round-14.md** (preview-URL steps at top).
-Elevated total: 11 of 139 + home + file-review.
+Updated: 2026-06-14 · ROUND 16 — accounting + quickbooks silo elevation batch
+**IN PROGRESS**: /accounting/ hub DONE + FULLY VERIFIED (1 of 7); 6 pages
+queued (3 bookkeeping BOFU + /quickbooks/ hub + 2 QB BOFU). Dev server
+RUNNING at http://192.168.1.8:8080/. Report: **round-16.md**.
+Elevated total: 12 of 139 + home + file-review.
+
+## ROUND 16 — accounting + quickbooks silos (IN PROGRESS — multi-turn batch)
+Pre-flight: all 7 pages confirmed to have BOTH baseline records AND root HTML
+(no gaps). 7 full money/hub elevations at the content bar = multi-turn; built
+solo-first as instructed. Full report: round-16.md.
+- **/accounting/ (t-hub) — DONE + VERIFIED.** Sources read: baseline (30h/5faq)
+  + accounting/index.html. Citable: the three fixed-fee ENGAGEMENT SHAPES
+  (recurring monthly / fixed-fee project / senior retainer). Within-page
+  variety: tldr · quick-5 · grid-3 service cards · prose distinction · grid-2
+  mode cards · numbered process-diagram differentiators · stacked do/don't ·
+  FAQ. Verify: content-equity 30/30 + 26 schema · battery GREEN (7 FAQ, +2
+  additive to clear faq-min-6) · axe ZERO · overflow 345/375/753 · Lighthouse
+  100/100/100 · CLS 0.001 (≈0) · shots r16/accounting-desktop+360.
+- **QUEUED (6):** /accounting/bookkeeping/monthly-bookkeeping/ (t-bofu, monthly
+  close ProcessFlow) · cleanup-bookkeeping (t-bofu, COMPOUNDING RECONCILIATION
+  DRIFT framework) · catch-up-bookkeeping (t-bofu, HISTORICAL ACCOUNTING DEBT
+  framework) · /quickbooks/ (t-hub, ProAdvisor credential stack) · setup
+  (t-bofu, TechBrot Setup Protocol 5-phase) · migration (t-bofu, Migration
+  Integrity Protocol 7-point). All have baseline + root HTML confirmed.
+- **Build note:** eleventy --serve does NOT auto-rebuild NEW templates added
+  after start — must `npm run build` (writes _site, serve serves from disk) to
+  pick up each new page, then verify. Dev server NOT killed.
+
+## ROUND 15 — nav fixes + full responsiveness audit DONE + VERIFIED
+(phone full-number all widths · flush-right · drawer align · nav/drawer mutual
+exclusion · quick-5 +5px · overflow ALL 14 PAGES PASS). Report: round-15.md.
+
+## ROUND 15 — nav/chrome fixes + responsiveness audit (done + verified)
+Full report: round-15.md. Scope: nav/chrome only; design tokens + 1 JS fix.
+- **FIX1 phone:** R13 number-hide REVERTED — icon + FULL number at all widths;
+  at ≤480 tightens (`fs-13` + `ls-tight`) + header gaps compress (space-3/2).
+  Orphan `site-header__phone-num` class removed. Verified true 360.
+- **FIX2 flush-right:** `.site-header .container` `justify-content:space-between`
+  → logo left / actions right (desktop nav margin-right:auto intact). 360+1280.
+- **FIX3 drawer head:** `width:100%` added → logo left / X right. Captured 360.
+- **FIX4 mutual exclusion (tb-nav.js):** desktop `closeAllMenus` already; ADDED
+  drawer `closeOtherPanels`. Functional test: 2 clicks → 1 open (both desktop
+  dropdowns + drawer panels). axe ZERO.
+- **FIX5 quick-5:** `.ai-summary__question` fs-15→fs-20 (+5px). Captured 360+1280,
+  no overflow in narrow column.
+- **FIX6 overflow audit:** ALL 14 pages PASS at 360/390/768 (sw ≤360/375/753);
+  the prior 4px drawer phantom is GONE (resolved by FIX1/3).
+- **Verify:** battery GREEN · axe ZERO (home/about/pricing) · gate 53,773 B ·
+  zero-drift element counts STABLE (home 782/terms 378/partners 676), hashes
+  shift only from the intended global header + quick-5 changes.
+- New scripts: shot_drawer.ps1, nav_test.ps1.
+
+## ROUND 14 — footer brand fix + credential display + nav-CTA verify (PASS);
+local git repo on branch `preview-11ty` (commit 1981ef5), FAIL-CLOSED; PUSH
+BLOCKED on founder GitHub access. Report: **round-14.md**.
 
 ## ROUND 14 — footer · credentials · nav-CTA · preview branch (awaiting push)
 Full report: round-14.md. Parts A/B/C done+verified; D = local branch ready,
