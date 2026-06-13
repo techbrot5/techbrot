@@ -45,8 +45,16 @@ solo-first as instructed. Full report: round-16.md.
   reuse the proven bookkeeping-BOFU pattern — pending founder audit of page 2.
 - **Build note:** eleventy --serve does NOT auto-rebuild NEW templates added
   after start — `npm run build` (→_site) for each new page. Lighthouse/overflow
-  probe the PROD artifact on 8125 (`_site-prod`) — must `build-prod.ps1` after
-  adding a page or they hit a 404 (false pass). Dev server (8080) NOT killed.
+  probe the PROD artifact on 8125 (`_site-prod`); a new page must be in
+  `_site-prod` or they hit a 404 (false pass). **⚠ Refresh `_site-prod` with
+  `npm run build:prod` ONLY — do NOT run `build-prod.ps1`: its first step
+  `extract_css.py` RE-EXTRACTS CSS from the design handoff and REVERTS every
+  hand-edited fix in src/assets/css/*.css (round 12–15 gapped-mark content-box,
+  ≤480 phone rules, etc.). It clobbered them once this round (caught + restored
+  from f725474; the manual CSS fixes live only in the extracted files, not the
+  design source).** To rebuild _site-prod: stop the 8125 server (it locks the
+  dir → EBUSY on clean), `npm run build:prod`, restart `npx serve -l 8125
+  _site-prod`. Dev server (8080) NOT killed.
 
 ## STANDING RULE — CTA STRATEGY (founder, 2026-06-14, round 16; governs every page)
 Per-tier hero/band CTA mapping. Applies to all round-16 pages + every future
