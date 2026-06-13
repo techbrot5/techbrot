@@ -35,8 +35,8 @@ tierClass: section--tier-guide
       {%- if hero.actions %}
       <div class="hero__actions">
         {%- for action in hero.actions %}
-        <a class="btn {{ action.class }} btn--lg" href="{{ action.href }}"
-          {%- if action.href.startsWith("tel:") %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+        <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
+          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
         {%- endfor %}
       </div>
       {%- endif %}
@@ -68,8 +68,8 @@ tierClass: section--tier-guide
       <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
       <div class="final-cta__actions">
         {%- for action in ctaBand.actions %}
-        <a class="btn {{ action.class }}" href="{{ action.href }}"
-          {%- if action.href.startsWith("tel:") %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+        <a class="btn {{ action.class }}" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
+          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
         {%- endfor %}
       </div>
       <p class="final-cta__disclaimer">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>

@@ -27,6 +27,37 @@ solo-first as instructed. Full report: round-16.md.
   after start — must `npm run build` (writes _site, serve serves from disk) to
   pick up each new page, then verify. Dev server NOT killed.
 
+## STANDING RULE — CTA STRATEGY (founder, 2026-06-14, round 16; governs every page)
+Per-tier hero/band CTA mapping. Applies to all round-16 pages + every future
+page. **Never a phone CTA as a hero CTA on a hub. Never "Speak to a ProAdvisor"
+as primary on any page. Never "Explore Services" as primary except a hub hero.**
+- **HUB (t-hub):** hero PRIMARY "Explore Services" (deeper into silo) · hero
+  SECONDARY "Book the discovery call" (→/contact/?intent=…) · NO phone in hero.
+- **BOFU service:** hero PRIMARY "Book the discovery call" · SECONDARY "Get the
+  free file review" · TERTIARY (QuickBooks-specific BOFU ONLY — setup, migration,
+  help, error-code) "Speak to a ProAdvisor" (tel). NOT on bookkeeping BOFU
+  (monthly/cleanup/catch-up).
+- **MOFU/GUIDE:** hero PRIMARY "Get the free file review" · SECONDARY "Book the
+  discovery call".
+- **FINAL CTA BAND (every page incl. hubs):** PRIMARY always "Book the discovery
+  call" (visitor is warm). A phone secondary in the band is permitted.
+- **Phone-link mechanism:** hero/band actions render phone via `action.tel:true`
+  (layouts substitute `tel:{{ site.phone.e164 }}` — single source). NEVER put a
+  `{{ }}` var in front-matter JSON href (front matter is NOT Nunjucks-rendered —
+  it ships the literal string = broken link). Fixed sitewide round 16.
+
+## CONTACT-PAGE REBUILD RULES — LOGGED (do when /contact/ is rebuilt; NOT yet built)
+1. **Intent system:** /contact/ heading, subheading, and form fields respond to
+   the `?intent=` URL param — each intent maps to a specific heading, paragraph,
+   and pre-selected form options (personalized landing matching the origin page).
+   Intent registry lives in `src/_data/intents.json` (battery enforces every CTA
+   intent key exists there). `accounting` key added round 16.
+2. **CTA pattern above form:** contact hero = primary button ("Book the discovery
+   call" scrolls to form anchor) + the 404-style phone block (circular cobalt
+   icon + large number + "a ProAdvisor answers"). Form below. Match 404 exactly.
+3. **NO sticky elements on /contact/:** suppress all sticky bars / sticky phone /
+   sticky nav CTAs — visitor is converting, sticky = friction.
+
 ## ROUND 15 — nav fixes + full responsiveness audit DONE + VERIFIED
 (phone full-number all widths · flush-right · drawer align · nav/drawer mutual
 exclusion · quick-5 +5px · overflow ALL 14 PAGES PASS). Report: round-15.md.
