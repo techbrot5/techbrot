@@ -27,6 +27,32 @@ catch-up 40h/12faq · /quickbooks/ 36h/6faq · setup 43h/8faq · migration
 
 ---
 
+## 🐛 BUG FIX (sitewide) — unrendered `{{ }}` in front-matter CTAs — FIXED
+**Root cause:** Nunjucks `{{ }}` inside `---json` front matter is **not**
+template-rendered — Eleventy stores the literal string. Five pages shipped
+`href="tel:{{ site.phone.e164 }}"` verbatim into the HTML = **broken phone
+links** (accounting hero + about / pricing / about-methodology / about-network
+CTA bands). The site partials (header, footer, call-bar, 404) were fine — they
+render `tel:` in template bodies.
+**Fix (root-level, single source):** all 5 tier layouts now support an
+`action.tel: true` flag that the layout substitutes with `tel:{{ site.phone.e164 }}`
+(from `site.json`). Page front matter switched `href:"tel:…"` → `tel:true`. No
+`{{ }}` ever lives in front-matter JSON again. **Raw `{{` in built output: 5 → 0**
+(grepped all HTML). All `tel:` links now render `tel:+18777515575`.
+Committed `f725474`.
+
+## 📐 CTA STANDING RULE — applied + logged (BUILD-TRACKER.md)
+Per-tier CTA mapping now governs every page (hub heroes carry NO phone CTA;
+"Speak to a ProAdvisor" never primary; "Explore Services" only a hub-hero
+primary; final band always "Book the discovery call"; QB-specific BOFU may add a
+phone tertiary, bookkeeping BOFU may not). **`/accounting/` hero corrected** →
+PRIMARY "Explore Services" + SECONDARY "Book the discovery call"
+(`?intent=accounting`), phone removed. Added additive `accounting` intent key.
+Contact-page rebuild rules (intent system · 404-style phone block · no sticky
+elements) logged for a future round — **/contact/ NOT rebuilt**.
+
+---
+
 ## ✅ PAGE 1 OF 7 — /accounting/ (t-hub) — DONE + FULLY VERIFIED
 
 **Sources read (both, before building):**
@@ -85,33 +111,105 @@ disk), then verified the served artifact.
 
 ---
 
-## ⏳ PAGES 2–7 — QUEUED (sources confirmed, frameworks specified)
+## ✅ PAGE 2 OF 7 — /accounting/bookkeeping/monthly-bookkeeping/ (t-bofu) — DONE + FULLY VERIFIED
+**This is the first t-bofu service page of the batch — the bookkeeping-BOFU
+PROVING PAGE.** Per CLAUDE.md rule 1, its pattern should be founder-approved
+before cleanup + catch-up reuse it.
+
+**Sources read (both, first):** baseline (35 headings, 12 FAQ — 7 substantive +
+5 schema-only dupes) + `accounting/bookkeeping/monthly-bookkeeping/index.html`
+(full copy: definition, close cycle, deliverables, signals, tiers, operator,
+cross-sell).
+
+**Citable element:** the three fixed-fee **pricing tiers** — Essentials
+**$400–$700/mo** · Standard **$700–$1,400/mo** · Complex **$1,400–$2,500+/mo** —
+plus the **named monthly deliverables** (10 included + 10 layered), and the
+coined **"monthly close cadence"**: Days 1–5 documents in → Days 6–10 reconcile
+→ Days 11–14 close & review → **Day 15 package delivered**. Canonical pricing
+only; no invented stats/testimonials/team.
+
+**Within-page variety (12 distinct patterns):** compact rule-hero → inBrief
+(speakable) → prose definition → **process-diagram** close cadence (day-band
+marker + H3 stage + desc — the ProcessFlow visual) → **grid-2** two checks-lists
+(included / layered) → **ai-summary** quick-5 → **buyer-card** grid-2 (6 "is it
+time?" signals) → **review-card** grid-3 priced tiers → prose + **trust-row**
+operator credential spec → stacked cross-sell links (cleanup/catch-up/payroll/
+CFO) → FAQ accordion (7) → cta-band. No two sections share a structural pattern.
+
+**Handoff check:** CLASS-MANIFEST re-read; used best-fit components — `flow`-
+family wasn't needed (process-diagram carries the cadence with real H3 equity),
+`buyer-card` for buyer-voice signals, `review-card` for priced tiers (as
+`/pricing/` does — no separate price-card component exists, so reused not
+improvised), `trust-row` for the credential spec. Invented `process-step--accent`
+was caught by the manifest check and removed — no improvised classes shipped.
+
+**Verification — all green:**
+- **Content-equity: GREEN** — 35/35 baseline headings + **29 schema nodes**
+  (added an `ItemList` of the deliverables). Justified removals (logged,
+  SIGN-OFF REQUESTED): `"The monthly brief."` (newsletter); 3 footer-chrome
+  columns (Accounting/Company/Network — chrome-relocated, t-bofu chrome:minimal);
+  2 schema-only condensed FAQ variants (substance carried verbatim by the
+  rendered Q's); `QAPage` → **FAQPage** (the correct type for a multi-Q FAQ).
+- **Battery: ALL GREEN** — faq-min-6 (7), faq-overlap (quick-5 zero overlap),
+  faq-schema-verbatim (7 Q/A), cta-lexicon, manifest, founder-zero, intents
+  (`monthly` key), css-bytes (gate holds).
+- **axe-core: ZERO** (24 passes). · **Overflow:** sw 360 / 375 / 753 — **PASS**
+  (re-verified against the real prod artifact after a `_site-prod` rebuild — see
+  note below).
+- **Lighthouse (desktop):** accessibility **100** · best-practices **100** ·
+  SEO **100** · **CLS 0.0**.
+- **CTA (bookkeeping BOFU — no "Speak to a ProAdvisor"):** hero PRIMARY "Book
+  the discovery call" (`?intent=monthly`) + SECONDARY "Get the free file review";
+  no phone in hero; sticky mobile call-bar present (BOFU signature).
+- **Captures:** `shots/r16/monthly-pricing-1280.png` (tiers) +
+  `monthly-cadence-360.png` (ProcessFlow at 360) — centered, responsive, clean.
+
+**Files created:** `src/accounting/bookkeeping/monthly-bookkeeping.11tydata.js`
++ `.njk`. **Edited:** `equity-exceptions.json` (+entry), `intents.json` (already
+had `monthly`).
+
+**⚠ Probe note (important for the rest of the batch):** Lighthouse + overflow
+probe the **prod artifact on 8125 (`_site-prod`)**, not `_site`. A new page must
+be in `_site-prod` (run `build-prod.ps1`) or the probe hits a 404 and **falsely
+passes** (404 page shows no overflow). Caught here: the first overflow read was a
+404 false-pass; rebuilt `_site-prod` and re-probed the real page. Folded into the
+per-page checklist going forward.
+
+---
+
+## ⏳ PAGES 3–7 — QUEUED (sources confirmed, frameworks specified)
 
 | # | URL | Tier | Citable / coined element | Visual |
 |---|---|---|---|---|
-| 2 | /accounting/bookkeeping/monthly-bookkeeping/ | t-bofu | pricing tiers ($400–700 essentials / $700–1,400 standard / $1,400–2,500+ complex) + named deliverables | monthly-close ProcessFlow |
 | 3 | /accounting/bookkeeping/cleanup-bookkeeping/ | t-bofu | **COMPOUNDING RECONCILIATION DRIFT** (coined) | staged timeline / ComparisonGrid |
 | 4 | /accounting/bookkeeping/catch-up-bookkeeping/ | t-bofu | **HISTORICAL ACCOUNTING DEBT** (coined); $2,000–$20,000+ | — |
 | 5 | /quickbooks/ | t-hub | full ProAdvisor credential stack (QBO L2, Desktop, Enterprise, Payroll, Bookkeeping) | — |
 | 6 | /quickbooks/setup/ | t-bofu | **TechBrot Setup Protocol** — 5-phase, named output per phase | 5-phase ProcessFlow |
-| 7 | /quickbooks/migration/ | t-bofu | **Migration Integrity Protocol** — 7-point verification checklist; $2,500–$10,000+ | — |
+| 7 | /quickbooks/migration/ | t-bofu | **Migration Integrity Protocol** — 7-point checklist; $2,500–$10,000+ | — |
 
-Each will get the same treatment as page 1: both sources read first, handoff
-re-checked, within-page variety enforced, then the full verification battery
-before moving to the next.
+Pages 3–4 reuse the **proven bookkeeping-BOFU pattern** from page 2 (pending your
+audit). Each gets the same treatment: both sources read, handoff re-checked,
+within-page variety, full verification battery.
 
 ## OPEN ITEMS / STOPPED AT
-1. **/accounting/ (1 of 7) is done and fully verified** — review it on your
-   phone at http://192.168.1.8:8080/accounting/.
-2. **6 pages remain** (table above) — say "continue" and I build page 2
-   (/accounting/bookkeeping/monthly-bookkeeping/) next, fully verified, then on
-   through migration. This batch is multi-turn at the content bar by design.
-3. **Committed** (NOT pushed) on `preview-11ty`: this commit also captures the
-   round-15 nav/responsiveness fixes, which had not been committed yet. You
-   push when ready.
-4. **Dev server LEFT RUNNING** at http://192.168.1.8:8080/ — never killed; only
-   probe chrome was cycled via kill_probe.ps1.
-5. **Sign-off carry-over** (unchanged): the round-12 `/about/methodology/`
-   "The Team" retarget + the round-8 /partners/ FAQ schema-defect fixes still
-   await your explicit sign-off in the exceptions log.
+1. **Bug fix done + verified** (sitewide broken phone links → 0 raw template
+   vars; CTA standing rule applied/logged). Committed `f725474`.
+2. **Pages 1 & 2 done + fully verified.** `/accounting/` hero corrected per the
+   new CTA rule; `/accounting/bookkeeping/monthly-bookkeeping/` built as the
+   bookkeeping-BOFU proving page. Review both on your phone:
+   http://192.168.1.8:8080/accounting/ and
+   http://192.168.1.8:8080/accounting/bookkeeping/monthly-bookkeeping/
+3. **STOPPED for your audit of the page-2 BOFU pattern** (CLAUDE.md rule 1 —
+   nothing mass-produces until the template is approved on a real page). On your
+   OK, pages 3–4 (cleanup, catch-up) stamp the same pattern; then the QB silo
+   (5–7). Say "continue" to proceed.
+4. **Committed** (NOT pushed) on `preview-11ty` — two commits this round:
+   `cfefee0` (page 1 + round-15 nav) and `f725474` (bug fix); page 2 committed
+   next. You push when ready.
+5. **Dev server LEFT RUNNING** at http://192.168.1.8:8080/ — never killed. Only
+   probe chrome cycled (kill_probe.ps1). The 8125 `_site-prod` audit server was
+   restarted to pick up page 2 (not the dev server).
+6. **Sign-off carry-over:** the round-12 `/about/methodology/` "The Team"
+   retarget + round-8 /partners/ FAQ schema fixes + the new page-2 schema-only
+   FAQ/QAPage removals all await your explicit sign-off in the exceptions log.
 STOPPED. Tell me to continue for page 2.

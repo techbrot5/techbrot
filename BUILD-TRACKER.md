@@ -3,7 +3,8 @@ Updated: 2026-06-14 · ROUND 16 — accounting + quickbooks silo elevation batch
 **IN PROGRESS**: /accounting/ hub DONE + FULLY VERIFIED (1 of 7); 6 pages
 queued (3 bookkeeping BOFU + /quickbooks/ hub + 2 QB BOFU). Dev server
 RUNNING at http://192.168.1.8:8080/. Report: **round-16.md**.
-Elevated total: 12 of 139 + home + file-review.
+Elevated total: 13 of 139 + home + file-review. (R16: /accounting/ +
+monthly-bookkeeping done + verified; sitewide phone-CTA bug fixed; 5 queued.)
 
 ## ROUND 16 — accounting + quickbooks silos (IN PROGRESS — multi-turn batch)
 Pre-flight: all 7 pages confirmed to have BOTH baseline records AND root HTML
@@ -17,15 +18,35 @@ solo-first as instructed. Full report: round-16.md.
   FAQ. Verify: content-equity 30/30 + 26 schema · battery GREEN (7 FAQ, +2
   additive to clear faq-min-6) · axe ZERO · overflow 345/375/753 · Lighthouse
   100/100/100 · CLS 0.001 (≈0) · shots r16/accounting-desktop+360.
-- **QUEUED (6):** /accounting/bookkeeping/monthly-bookkeeping/ (t-bofu, monthly
-  close ProcessFlow) · cleanup-bookkeeping (t-bofu, COMPOUNDING RECONCILIATION
-  DRIFT framework) · catch-up-bookkeeping (t-bofu, HISTORICAL ACCOUNTING DEBT
-  framework) · /quickbooks/ (t-hub, ProAdvisor credential stack) · setup
-  (t-bofu, TechBrot Setup Protocol 5-phase) · migration (t-bofu, Migration
-  Integrity Protocol 7-point). All have baseline + root HTML confirmed.
+- **BUG FIX (sitewide) — DONE + VERIFIED.** Unrendered `{{ site.phone.e164 }}`
+  shipped literal on 5 pages (front-matter JSON is NOT Nunjucks-rendered) =
+  broken phone links. Fixed at layout level via `action.tel` flag (all 5
+  tiers). Raw `{{` in output 5→0. CTA STANDING RULE logged + applied; contact
+  rebuild rules logged. `accounting` intent key added. Commit f725474.
+- **/accounting/bookkeeping/monthly-bookkeeping/ (t-bofu) — DONE + VERIFIED.**
+  FIRST t-bofu service page of the batch = the bookkeeping-BOFU PROVING PAGE
+  (rule 1: pattern must be founder-approved before cleanup/catch-up reuse it).
+  Sources read: baseline (35h/12faq) + old HTML. Citable: 3 pricing tiers
+  (Essentials $400–700 / Standard $700–1,400 / Complex $1,400–2,500+) + named
+  deliverables + coined "monthly close cadence" (Days 1–5/6–10/11–14/Day 15,
+  package by the 15th). Within-page variety (12 patterns): hero · inBrief ·
+  prose-definition · process-diagram cadence · grid-2 checks-lists · quick-5 ·
+  buyer-card signals · review-card grid-3 tiers · trust-row operator · stacked
+  cross-sell · FAQ · band. Verify: content-equity 35h/12faq/29 schema (justified:
+  newsletter + 3 footer-chrome + 2 schema-only FAQ variants + QAPage→FAQPage) ·
+  battery GREEN · axe ZERO · overflow 360/375/753 · Lighthouse 100/100/100 ·
+  CLS 0.0 · shots r16/monthly-pricing-1280 + monthly-cadence-360. CTA: bookkeeping
+  BOFU → NO phone in hero (Book the discovery call + Get the free file review).
+- **QUEUED (5):** cleanup-bookkeeping (t-bofu, COMPOUNDING RECONCILIATION DRIFT)
+  · catch-up-bookkeeping (t-bofu, HISTORICAL ACCOUNTING DEBT) · /quickbooks/
+  (t-hub, ProAdvisor credential stack) · /quickbooks/setup/ (t-bofu, TechBrot
+  Setup Protocol 5-phase) · /quickbooks/migration/ (t-bofu, Migration Integrity
+  Protocol 7-point). All have baseline + root HTML confirmed. cleanup + catch-up
+  reuse the proven bookkeeping-BOFU pattern — pending founder audit of page 2.
 - **Build note:** eleventy --serve does NOT auto-rebuild NEW templates added
-  after start — must `npm run build` (writes _site, serve serves from disk) to
-  pick up each new page, then verify. Dev server NOT killed.
+  after start — `npm run build` (→_site) for each new page. Lighthouse/overflow
+  probe the PROD artifact on 8125 (`_site-prod`) — must `build-prod.ps1` after
+  adding a page or they hit a 404 (false pass). Dev server (8080) NOT killed.
 
 ## STANDING RULE — CTA STRATEGY (founder, 2026-06-14, round 16; governs every page)
 Per-tier hero/band CTA mapping. Applies to all round-16 pages + every future
