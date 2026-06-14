@@ -1,4 +1,25 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
+
+## ⭐ PERMANENT STANDING RULES (added 2026-06-15 — apply EVERY session, EVERY stop)
+**R1 — REPORT AT EVERY STOP.** Before asking the founder for anything (approval, a
+decision, review), write a complete, stand-alone, honest report to
+`_build/reports/round-NN.md` containing: (1) WHAT YOU DID — every page/file built or
+changed this turn; (2) PREVIEW URLS — exact full `https://techbrot-preview.pages.dev/…`
+link for every page touched + a one-line note each (what to check / what changed / the
+citable specific added); (3) WHAT YOU THOUGHT / DECISIONS — the reasoning behind every
+judgment call, tier assignment, content choice, deviation (so the founder + strategy-Claude
+audit the thinking, not just the output); (4) VERIFICATION — per page: equity GREEN, axe,
+overflow, tier, design-fidelity gate, CSS bytes vs gate; (5) OPEN ITEMS / next / STOP state.
+Flag weaknesses, do not defend. **NO approval request without the report + URLs.**
+**R2 — MIGRATION BUILD RULE (content-to-goal, visual-floor).** For the 104 migrations:
+CONTENT is built to the GOAL — fully enhanced, rich, deep, citable-specific, correct tier,
+conversion seam, honest-triage where it applies, every baseline equity element preserved AND
+enriched. Content is PERMANENT (survives the design reset unchanged) so it is worth doing
+right now; never thin content to save time. VISUAL EXECUTION is floor — current components
+used correctly, design-fidelity gate passes, no 404s, no breakage, but no bespoke
+current-design polish (the skin is redone in the reset). Citable specifics must be TRUE and
+publicly verifiable; honesty discipline is absolute (no fabricated stats/reviews/prices/dates).
+
 Updated: 2026-06-14 · NEW PHASE — PATH B MIGRATION. Goal: migrate the 104 remaining
 baselines to the current cobalt system FAST (build-to-FLOOR, not polish — all 104 get
 re-patterned on the new design system after cutover), reach all-139-baselines parity, then
