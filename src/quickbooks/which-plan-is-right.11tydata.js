@@ -1,0 +1,176 @@
+/* /quickbooks/which-plan-is-right/ — t-mofu PLAN-DECISION page (mirrors the
+ * desktop.njk t-mofu pattern: front-matter hero/inBrief/ctaBand + paired data
+ * arrays + pageGraph). Source: old root HTML
+ * quickbooks/which-plan-is-right/index.html (full body read) — title/meta/
+ * 8-FAQ/schema (CollectionPage + BreadcrumbList + Service + FAQPage).
+ *
+ * EQUITY CONTRACT — every baseline H1/H2/H3 preserved VERBATIM:
+ *   H1  "Which QuickBooks plan is right for your business?"  -> hero.heading
+ *   H2  "How to pick the right QuickBooks plan."             -> definition section
+ *   H2  "QuickBooks plan selection, in five questions."      -> quick-5 (aiSummary)
+ *   H2  "Five factors that decide the right plan."           -> factors stack-8
+ *       H3 Concurrent users / Inventory complexity / Class & location tracking /
+ *          Industry-specific needs / Cloud vs local / Your CPA's preference
+ *   H2  "What we typically recommend, by business profile."  -> patterns stack-8
+ *       H3 Solo freelancer or consultant / Small service business, 2–5 people /
+ *          Product business, 5–15 people / Construction, 5–25 people /
+ *          Manufacturer or wholesaler / Larger SMB, 10–30 people, no deep inventory
+ *   H2  "Nine tiers and editions, one decision."             -> vs-table + editions stack-8
+ *       H3 QBO Simple Start / QBO Essentials / QBO Plus / QBO Advanced /
+ *          Desktop (Pro / Premier / Mac) / Enterprise
+ *   H2  "Three situations where the answer isn't obvious."   -> nuance stack-8
+ *       H3 Between QBO Plus and Advanced / Between QBO Advanced and Enterprise /
+ *          Between Enterprise and a real ERP
+ *   H2  "Thirty minutes. No pitch. Just the answer."         -> call stack-8
+ *       H3 Your operations / The five factors / CPA & integration alignment /
+ *          The recommendation / Next steps / What we don't do
+ *   H2  "Certified across every QuickBooks product. No commission on any of them."
+ *                                                            -> operator section
+ *   H2  "What people ask about picking a QuickBooks plan."   -> faq accordion (8)
+ *   H2  "Deep reads on each product."                        -> related
+ *   H2  "Get the right answer, free, in 30 minutes."         -> ctaBand (final-cta)
+ * The credential-strip H2 was sr-only on the baseline ("Certified QuickBooks
+ * ProAdvisor credentials"); kept as a visible credentials section heading here
+ * (elevation, not removal). "The monthly brief." footer band is dropped — central
+ * chrome, per build contract.
+ *
+ * Schema equity: CollectionPage + WebPage, BreadcrumbList, Service (plan-selection
+ * advisory), FAQPage (8 Q&A verbatim). ItemList of the product lineup preserved as
+ * the visible vs-table + editions grid.
+ *
+ * CTA TIER — file-review PRIMARY (founder ruling 2, t-mofu): primary = free file
+ * review; secondary = discovery call (intent=qbo-plan-selection, the only approved
+ * intent); tertiary = phone. The baseline's intent=qwp-advisory is RETIRED in
+ * favor of the canonical intent=qbo-plan-selection per the build instruction.
+ * Firm-level authorship — no personal name in visible content. HONESTY: independent,
+ * not affiliated with Intuit; no fabricated dollar figures. */
+function stripTags(html){return html.replace(/<[^>]+>/g,"").replace(/&rsquo;/g,"’").replace(/&lsquo;/g,"‘").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&mdash;/g,"—").replace(/&ndash;/g,"–").replace(/&rarr;/g,"→").replace(/&amp;/g,"&").replace(/&nbsp;/g," ").replace(/&middot;/g,"·").replace(/\s+/g," ").trim();}
+module.exports = {
+  credStats: [
+    { value: "9", label: "QuickBooks tiers and editions covered — Online, Desktop, Enterprise" },
+    { value: "30 min", label: "typical plan-selection call length — complimentary, no obligation" },
+    { value: "0", label: "affiliate or referral commission on any QuickBooks product or tier" },
+  ],
+  credentials: [
+    "Plan-selection advice is only as good as the depth of QuickBooks knowledge behind it &mdash; every TechBrot ProAdvisor holds active certifications across the entire QuickBooks product line: Online (Level 2), Desktop, Enterprise, and Payroll. The recommendation comes from someone fluent in all of them, not just the one we&rsquo;d like to sell. Verification available on request.",
+    "We earn nothing from your QuickBooks subscription, regardless of which product or tier you pick &mdash; no Intuit affiliate revenue, no referral commissions, no kickback on Enterprise sales &mdash; so the recommendation reflects what fits your business, not what pays us.",
+    "Certified on both sides of the cloud-vs-local line &mdash; the same team that recommends a plan handles your setup, migration, file cleanup, and ongoing bookkeeping when the time comes, so your file context stays in one place.",
+  ],
+  // definition / TL;DR — H2 "How to pick the right QuickBooks plan." VERBATIM.
+  definition: [
+    "Choosing the right QuickBooks plan comes down to <strong>five factors</strong>: <strong>how many users</strong> need to work in the file simultaneously, whether you need <strong>inventory tracking</strong>, whether you need <strong>class or location tracking</strong> for departmental reporting, whether your <strong>industry has specific accounting needs</strong> (manufacturing, construction, nonprofit, retail), and whether you need <strong>cloud access</strong> or work in a local-only environment. These five together point to a specific product and tier: <a href=\"/quickbooks/online/\">QuickBooks Online</a> Simple Start, Essentials, Plus, or Advanced for most US small businesses; <a href=\"/quickbooks/desktop/\">QuickBooks Desktop</a> Pro, Premier, or Mac for businesses with reasons to stay local; or <a href=\"/quickbooks/enterprise/\">QuickBooks Enterprise</a> for mid-market businesses with serious inventory or industry-specific needs.",
+    "<strong>The honest answer for most US small businesses is QuickBooks Online Plus</strong>, but the edges matter &mdash; and getting the choice wrong costs real money in plan-juggling, file migration, or feature workarounds. The complimentary 30-minute call with a Certified ProAdvisor sorts it correctly the first time. <em>We earn nothing from your QuickBooks subscription</em> &mdash; no affiliate revenue, no referral commissions, no Intuit kickback &mdash; so the recommendation reflects what fits your business, not what pays us. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc.",
+  ],
+  // quick-5 — H2 "QuickBooks plan selection, in five questions." VERBATIM. Questions
+  // reworded vs the FAQ to clear the faq-overlap check (FAQ asks the long forms).
+  aiSummary: [
+    { q: "How do I choose?", a: "Five factors: <strong>user count, inventory needs, class/location tracking, industry-specific workflows, cloud vs local</strong>. Together they point to a specific product and tier. <strong>QBO Plus fits most US small businesses</strong>; the edges (Enterprise for deep inventory, Desktop for specific industries, Advanced for 10+ users) matter." },
+    { q: "QBO or Desktop?", a: "<strong>QBO</strong>: cloud, multi-user from anywhere, larger app ecosystem, new features first. Default for most US small businesses. <strong>Desktop</strong>: local install, deeper inventory (especially Enterprise), industry-specific workflows in Premier/Enterprise, runs without internet. Right for specific operational profiles." },
+    { q: "How many users do I need?", a: "<strong>QBO</strong>: Simple Start 1, Essentials 3, Plus 5, Advanced 25. <strong>Desktop</strong>: Pro 3, Premier 5, Mac 3. <strong>Enterprise</strong>: up to 40. Count <em>concurrent</em> users (working at the same time), not total employees. Accountant logins are usually free and separate." },
+    { q: "Which has inventory?", a: "Inventory starts at <strong>QBO Plus</strong> (basic) and <strong>Desktop Premier</strong> (with forecasting). <strong>Enterprise</strong> has the deepest: FIFO, serial/lot, bin tracking, multi-warehouse, assemblies. Standard product business &rarr; QBO Plus. Complex inventory &rarr; Enterprise." },
+    { q: "Why is the call free?", a: "Three reasons: <strong>plan selection is the most consequential decision but the cheapest part of the lifecycle</strong> &mdash; getting it wrong creates expensive cleanup later; the call assesses fit for downstream services (setup, migration, monthly bookkeeping) where we earn revenue; and as an independent firm with no commission, we&rsquo;d rather give the honest answer free than charge for it." },
+  ],
+  // FIVE DECISION FACTORS — H2 "Five factors that decide the right plan." stack-8 grid.
+  factors: [
+    { num: "01", name: "Concurrent users", body: "Not total employees &mdash; the number of people who need to work in the file <em>at the same time</em>. <strong>1 user &rarr;</strong> QBO Simple Start, Desktop Pro/Mac. <strong>2&ndash;3 &rarr;</strong> QBO Essentials, Desktop Pro/Mac. <strong>4&ndash;5 &rarr;</strong> QBO Plus, Desktop Premier. <strong>6&ndash;25 &rarr;</strong> QBO Advanced. <strong>26&ndash;40 &rarr;</strong> Enterprise. Accountant logins are usually separate and free." },
+    { num: "02", name: "Inventory complexity", body: "<strong>No inventory &rarr;</strong> any tier works. <strong>Basic product tracking &rarr;</strong> QBO Plus or Advanced (item lists, reorder points, basic stock). <strong>Multi-warehouse, serial/lot, FIFO, assemblies &rarr;</strong> Enterprise. Inventory is the single biggest reason businesses genuinely need to step up tiers &mdash; or down to Enterprise from QBO." },
+    { num: "03", name: "Class &amp; location tracking", body: "If you need <strong>P&amp;L by department, location, division, business line, or project</strong>, you need class or location tracking. QBO Plus and Advanced support it; Simple Start and Essentials don&rsquo;t. Most businesses underuse this feature &mdash; but for those who need it, it&rsquo;s a hard requirement that sets the minimum tier." },
+    { num: "04", name: "Industry-specific needs", body: "<strong>Manufacturing</strong> (assemblies, BOM): Enterprise Manufacturing &amp; Wholesale. <strong>Construction</strong> (job costing, AIA invoicing, certified payroll): Desktop Premier Contractor or Enterprise Contractor. <strong>Nonprofit</strong> (fund accounting, Form 990): Desktop Premier Nonprofit or Enterprise Nonprofit. <strong>Retail, professional services</strong>: similar tier logic. Industry depth is where Desktop and Enterprise outperform QBO meaningfully." },
+    { num: "05", name: "Cloud vs local", body: "<strong>Cloud access required</strong> (remote team, multi-location, mobile access): QBO &mdash; any tier. <strong>Cloud preferred but not required</strong>: QBO usually still wins (apps, updates, CPA fluency). <strong>Genuine local-only operations</strong> (low bandwidth, air-gapped, specific compliance): Desktop or Enterprise. Note: Enterprise hosted tiers add cloud access on top of the Enterprise feature set." },
+    { num: "06", name: "Your CPA&rsquo;s preference", body: "Often overlooked, often decisive. <strong>If your CPA works primarily in QBO</strong> (most US CPAs do now), the fee savings and friction reduction usually outweigh other factors. <strong>If your CPA prefers Desktop</strong> (particularly common for construction, manufacturing, certain professional services), that&rsquo;s a real signal. Ask before deciding." },
+  ],
+  // COMMON PATTERNS — H2 "What we typically recommend, by business profile." stack-8.
+  patterns: [
+    { name: "Solo freelancer or consultant", body: "No employees, simple income/expense tracking, one or two clients invoicing per month, no inventory. <strong>Usually:</strong> <a href=\"/quickbooks/online/\">QBO Simple Start</a>. Don&rsquo;t pay for tiers you don&rsquo;t need." },
+    { name: "Small service business, 2&ndash;5 people", body: "Service business (agency, consultancy, professional services), few bills to manage, no inventory, simple reporting. <strong>Usually:</strong> QBO Essentials or Plus, depending on whether class tracking matters." },
+    { name: "Product business, 5&ndash;15 people", body: "E-commerce, small retail, light wholesale &mdash; basic inventory matters but not multi-warehouse. <strong>Usually:</strong> QBO Plus. Step to Advanced only if user count or reporting depth demands it." },
+    { name: "Construction, 5&ndash;25 people", body: "Job costing, change orders, progress invoicing, certified payroll. <strong>Usually:</strong> <a href=\"/quickbooks/desktop/\">Desktop Premier Contractor</a> or <a href=\"/quickbooks/enterprise/\">Enterprise Contractor</a> &mdash; QBO doesn&rsquo;t match the job-costing depth." },
+    { name: "Manufacturer or wholesaler", body: "Assemblies, bill of materials, multi-warehouse stock, serial or lot tracking. <strong>Usually:</strong> <a href=\"/quickbooks/enterprise/\">Enterprise Manufacturing &amp; Wholesale</a>. QBO inventory isn&rsquo;t deep enough for genuine manufacturing." },
+    { name: "Larger SMB, 10&ndash;30 people, no deep inventory", body: "Growing business, multiple departments, custom reporting needs, automation matters. <strong>Usually:</strong> QBO Advanced. Only step to Enterprise if inventory or industry-specific needs genuinely require it." },
+  ],
+  // THE FULL PRODUCT MAP — H2 "Nine tiers and editions, one decision." editions stack-8.
+  // The product lineup preserved BOTH as this grid and as the vs-table below + ItemList schema.
+  editions: [
+    { tier: "01 · QBO entry", name: "QuickBooks Online Simple Start", body: "Single-user QBO. Core bookkeeping, invoicing, expense tracking, sales tax, basic reports. The right call for freelancers and very small service businesses without bill-management or multi-user needs. <strong>Users:</strong> 1 (+ 2 accountant). <a href=\"/quickbooks/online/\">QBO overview</a>." },
+    { tier: "02 · QBO multi-user", name: "QuickBooks Online Essentials", body: "Adds bill management, multi-user access (3), and basic time tracking. The first tier most growing service businesses outgrow Simple Start into. <strong>Users:</strong> 3 (+ 2 accountant). <strong>Best for:</strong> small teams, bill-heavy services. <a href=\"/quickbooks/online/\">QBO overview</a>." },
+    { tier: "03 · Most common answer", name: "QuickBooks Online Plus", body: "Adds inventory, projects, and class/location tracking. <strong>The honest default for most US small businesses</strong> &mdash; product businesses, multi-department service firms, anyone needing departmental reporting. <strong>Users:</strong> 5 (+ 2 accountant). <a href=\"/quickbooks/online/\">QBO overview</a>." },
+    { tier: "04 · QBO top tier", name: "QuickBooks Online Advanced", body: "Adds workflow automation, batch invoicing, custom user roles, dedicated support, deeper custom reporting. Right when 10+ users or automation needs push past Plus. <strong>Users:</strong> 25 (+ 3 accountant). <strong>Best for:</strong> larger SMBs needing automation. <a href=\"/quickbooks/online/\">QBO overview</a>." },
+    { tier: "05 · Local install", name: "QuickBooks Desktop (Pro / Premier / Mac)", body: "Locally installed Desktop. Pro for general use, Premier for industry editions (Contractor, Manufacturing, Nonprofit, etc.), Mac for Mac-only environments. Intuit has restricted new sales of Pro and Premier; Mac still actively sold. <strong>Users:</strong> up to 5 (Premier). <a href=\"/quickbooks/desktop/\">Desktop overview</a>." },
+    { tier: "06 · Mid-market", name: "QuickBooks Enterprise", body: "Mid-market product, up to 40 users. Advanced inventory (FIFO, serial/lot, bins, multi-warehouse), advanced reporting, six industry editions. The Desktop product Intuit is still actively developing. <strong>Best for:</strong> mid-market, deep inventory, industry depth. <a href=\"/quickbooks/enterprise/\">Enterprise overview</a>." },
+  ],
+  // vs-table — the QuickBooks lineup AS an honest plan comparison (preserves ItemList equity).
+  // Four decision columns: QBO Plus (most-common answer), QBO Advanced, Desktop Premier, Enterprise.
+  vsTable: [
+    { cap: "Simultaneous users", plus: "up to 5", adv: "up to 25", premier: "up to 5", ent: "up to 40" },
+    { cap: "Cloud / browser access", plus: "yes", adv: "yes", premier: "no", ent: "hosted add-on" },
+    { cap: "Inventory tracking", plus: "basic", adv: "basic", premier: "with forecasting", ent: "deep (FIFO, serial/lot, bins)" },
+    { cap: "Class &amp; location tracking", plus: "yes", adv: "yes", premier: "yes", ent: "yes" },
+    { cap: "Workflow automation / batch invoicing", plus: "no", adv: "yes", premier: "no", ent: "yes" },
+    { cap: "Industry-specific editions", plus: "no", adv: "no", premier: "yes", ent: "yes" },
+    { cap: "Honest default for most US small businesses", plus: "yes", adv: "no", premier: "no", ent: "no" },
+  ],
+  // WHERE THE CALL EARNS ITS KEEP — H2 "Three situations where the answer isn't obvious." stack-8.
+  nuance: [
+    { name: "Between QBO Plus and Advanced", body: "The price gap between Plus and Advanced is significant, and most businesses considering Advanced don&rsquo;t actually need it. The honest test isn&rsquo;t &ldquo;could we use the automation features?&rdquo; &mdash; it&rsquo;s &ldquo;would we actually <em>use</em> them, and is custom reporting genuinely required, and do we have 10+ users?&rdquo; A ProAdvisor sorts this without bias toward the higher-priced tier." },
+    { name: "Between QBO Advanced and Enterprise", body: "Both serve businesses in similar revenue ranges, but they solve different problems. <strong>QBO Advanced</strong> wins on cloud-native multi-user, app ecosystem, CPA familiarity. <strong>Enterprise</strong> wins on inventory depth, industry-specific features, ODBC database access. The decision usually hinges on inventory complexity and industry needs, not on size alone &mdash; and the ProAdvisor reads those factors against your specific operations." },
+    { name: "Between Enterprise and a real ERP", body: "If you&rsquo;re hitting Enterprise&rsquo;s ceiling &mdash; multi-entity consolidation, large-scale manufacturing complexity, audit/SOC requirements &mdash; the right answer might be <strong>NetSuite, Sage Intacct, or Microsoft Dynamics</strong>, not Enterprise. We don&rsquo;t do ERP implementations, but we&rsquo;ll tell you honestly when you&rsquo;ve outgrown QuickBooks entirely and refer you to qualified ERP partners. Saying &ldquo;you need something else&rdquo; is exactly what independence is for." },
+  ],
+  // WHAT THE CALL COVERS — H2 "Thirty minutes. No pitch. Just the answer." stack-8.
+  call: [
+    { num: "01", name: "Your operations", body: "Business type, industry, revenue range, growth trajectory, current accounting setup (if any). Five minutes; we just need enough context to think about your situation accurately." },
+    { num: "02", name: "The five factors", body: "Concurrent user count, inventory needs, class/location tracking needs, industry-specific workflows, cloud vs local preference. Ten minutes; we walk each factor against your business." },
+    { num: "03", name: "CPA &amp; integration alignment", body: "Your CPA&rsquo;s platform preference, your existing app stack (payments, payroll, e-commerce, receipt capture), and any integrations that constrain the choice. Five minutes; this often decides the close calls." },
+    { num: "04", name: "The recommendation", body: "A specific product and tier recommendation, plus the reasoning. If it&rsquo;s a close call, the trade-offs. If the honest answer is &ldquo;none of these &mdash; you need an ERP,&rdquo; we say that too. Five minutes." },
+    { num: "05", name: "Next steps", body: "If you want help with <a href=\"/quickbooks/setup/\">setup</a>, <a href=\"/quickbooks/migration/\">migration</a>, or ongoing <a href=\"/accounting/bookkeeping/monthly-bookkeeping/\">monthly bookkeeping</a>, we scope those separately in writing. If not, you have your answer and we&rsquo;re done. Five minutes." },
+    { num: "06", name: "What we don&rsquo;t do", body: "No pitch, no follow-up sales sequence, no commission-driven recommendation, no upsell pressure. If the right answer is &ldquo;pick the cheapest tier, you don&rsquo;t need more,&rdquo; that&rsquo;s exactly what you&rsquo;ll hear." },
+  ],
+  // buyer-card routing — t-mofu signature; the decision branches.
+  routing: [
+    { opener: "&ldquo;I think I know my plan &mdash; just confirm it.&rdquo;", body: "You&rsquo;ve mapped the five factors and have a tier in mind. Start with a free file review &mdash; a Certified ProAdvisor confirms the fit, flags anything you missed, and scopes setup if you want it.", cta: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review" },
+    { opener: "&ldquo;I&rsquo;m genuinely unsure which product fits.&rdquo;", body: "Close calls between QBO Plus and Advanced, Advanced and Enterprise, or cloud and local &mdash; book the discovery call and a ProAdvisor walks your operations against the full lineup, no commission either way.", cta: "Book the discovery call", href: "/contact/?intent=qbo-plan-selection" },
+    { opener: "&ldquo;We may have outgrown QuickBooks entirely.&rdquo;", body: "Multi-entity consolidation, large-scale manufacturing, audit/SOC requirements &mdash; an honest read tells you whether Enterprise still fits or whether a real ERP is the right call, and refers you on if it is.", cta: "Book the discovery call", href: "/contact/?intent=qbo-plan-selection" },
+  ],
+  operatorSpec: [
+    { value: "All four", label: "Certified across QuickBooks Online (L2), Desktop, Enterprise, and Payroll" },
+    { value: "Zero", label: "commission — on any QuickBooks product, at any tier" },
+    { value: "Complimentary", label: "30-minute plan-selection call, no obligation" },
+    { value: "Independent", label: "ProAdvisor firm — not affiliated with Intuit Inc." },
+  ],
+  faq: [
+    { q: "How do I choose the right QuickBooks plan?", a: "Five factors decide it: how many people need to work in the file simultaneously, whether you need inventory tracking, whether you need class or location tracking for departmental reporting, whether your industry has specific accounting needs (manufacturing, construction, nonprofit, retail), and whether you need cloud access or work in a local-only environment. These five together point to a specific product tier &mdash; <a href=\"/quickbooks/online/\">Online</a> Simple Start, Essentials, Plus, or Advanced; <a href=\"/quickbooks/desktop/\">Desktop</a> Pro, Premier, or Mac; or <a href=\"/quickbooks/enterprise/\">Enterprise</a>. The honest answer for most businesses is QuickBooks Online Plus, but the edges matter and getting them wrong costs real money in plan-juggling, file migration, or feature workarounds. A 30-minute call with a Certified ProAdvisor sorts it correctly the first time." },
+    { q: "What&rsquo;s the difference between QuickBooks Online and QuickBooks Desktop?", a: "<a href=\"/quickbooks/online/\">QuickBooks Online</a> is cloud-based and accessed via browser or mobile app, billed monthly per subscription. <a href=\"/quickbooks/desktop/\">QuickBooks Desktop</a> is locally installed software with annual subscription pricing. Online provides real-time multi-user cloud access, a larger native app ecosystem, automatic updates, and receives most new feature development. Desktop offers deeper inventory features (particularly in Enterprise), more flexible reporting at lower tiers, and runs without internet connectivity. For most US small and mid-sized businesses, Online is the better default; for businesses with deep inventory, industry-specific Desktop workflows, or specific reasons to stay local, Desktop or Enterprise is still genuinely right." },
+    { q: "How many users can each QuickBooks plan support?", a: "User capacity is one of the main differentiators across the QuickBooks lineup. QuickBooks Online: Simple Start supports 1 user, Essentials supports 3, Plus supports 5, Advanced supports 25 &mdash; all plus 2&ndash;3 free accountant logins. QuickBooks Desktop: Pro Plus supports up to 3 simultaneous users, Premier Plus up to 5, Mac Plus up to 3. <a href=\"/quickbooks/enterprise/\">QuickBooks Enterprise</a> supports up to 40 simultaneous users. Accountant logins are typically separate from user counts and included free. The right tier depends on concurrent users &mdash; the number actually working in the file at the same time &mdash; not total employees." },
+    { q: "Which QuickBooks plan has inventory tracking?", a: "QuickBooks inventory tracking starts at QuickBooks Online Plus (and Advanced) on the cloud side, with basic inventory tracking, item-level reporting, and reorder points. QuickBooks Desktop Premier adds inventory and forecasting beyond Pro&rsquo;s basic capability. <a href=\"/quickbooks/enterprise/\">QuickBooks Enterprise</a> has by far the deepest inventory features: FIFO costing, serial and lot tracking, bin location tracking, multi-warehouse support, and assembly builds for manufacturers. If you need true multi-location stock management or serialized inventory, Enterprise is typically the answer; for standard product-based businesses, QBO Plus is usually sufficient." },
+    { q: "Do I need QuickBooks Plus or QuickBooks Advanced?", a: "QuickBooks Online Plus fits most small businesses needing inventory, projects, or class/location tracking, with up to 5 users. QuickBooks Online Advanced adds workflow automation, batch invoicing, custom user roles, dedicated support, deeper custom reporting, and supports up to 25 users. The honest test for Advanced: do you have 10+ people working in the file regularly, do you need automation Plus doesn&rsquo;t offer, or do you need custom reporting beyond Plus&rsquo;s capabilities? If yes to any, Advanced is the right call. If not, Plus is usually sufficient and significantly cheaper." },
+    { q: "Is QuickBooks Self-Employed the same as QuickBooks Online?", a: "No. QuickBooks Self-Employed is a separate Intuit product designed for sole proprietors and Schedule C filers &mdash; freelancers, independent contractors, and gig workers. It handles income and expense tracking, mileage logging, quarterly estimated tax estimates, and Schedule C export, but does not do double-entry bookkeeping, balance sheet reporting, AR/AP, or true business accounting. It&rsquo;s not a tier of QuickBooks Online and your data does not migrate easily between them. For any business operating as anything other than a sole proprietor, <a href=\"/quickbooks/online/\">QuickBooks Online</a> (starting at Simple Start) is the right product, not Self-Employed." },
+    { q: "Can I switch QuickBooks plans later?", a: "Within QuickBooks Online, you can upgrade or downgrade between Simple Start, Essentials, Plus, and Advanced at any time from inside your QBO account &mdash; data carries over and billing is prorated. Switching between products (Online to Desktop, or Desktop to Enterprise) requires a <a href=\"/quickbooks/migration/\">migration</a>, which is a larger project. Switching between QBO and Xero, or QBO and Desktop, is a full data migration. The honest read: getting the plan right the first time is significantly cheaper than fixing it later, which is why the free 30-minute selection call is the right place to start." },
+    { q: "Why is your QuickBooks plan selection advisory free?", a: "Three reasons. First, plan selection is the cheapest part of the QuickBooks lifecycle but the most consequential &mdash; getting it wrong creates expensive cleanup work later. Second, the call lets us assess fit for downstream services (<a href=\"/quickbooks/setup/\">setup</a>, <a href=\"/quickbooks/migration/\">migration</a>, <a href=\"/accounting/bookkeeping/monthly-bookkeeping/\">ongoing bookkeeping</a>) where we do earn revenue, so investing 30 minutes upfront is good business for us. Third, as an independent ProAdvisor firm with no commission or affiliate revenue from Intuit, we have no incentive to push you to a higher tier &mdash; which means the honest answer might be &ldquo;pick Simple Start, you don&rsquo;t need more,&rdquo; and we&rsquo;d rather give that answer free than charge to deliver it." },
+  ],
+  related: [
+    { title: "QuickBooks Online", href: "/quickbooks/online/", body: "The cloud default. Four plan tiers: Simple Start, Essentials, Plus, Advanced. The right answer for most US small businesses." },
+    { title: "QuickBooks Desktop", href: "/quickbooks/desktop/", body: "Pro, Premier, Mac. Locally installed; Intuit is winding down new sales of Pro/Premier but supporting existing subscribers." },
+    { title: "QuickBooks Enterprise", href: "/quickbooks/enterprise/", body: "Mid-market product. Up to 40 users, six industry editions, deep inventory. The Desktop product Intuit is still actively developing." },
+    { title: "All QuickBooks services", href: "/quickbooks/", body: "Setup, migration, file cleanup, ongoing bookkeeping &mdash; the complete ProAdvisor service lineup." },
+  ],
+  eleventyComputed: {
+    pageGraph(data){
+      const url="https://techbrot.com/quickbooks/which-plan-is-right/";
+      return {"@context":"https://schema.org","@graph":[
+        {"@type":["CollectionPage","WebPage"],"@id":url+"#webpage","url":url,"name":data.title,"description":data.description,"isPartOf":{"@id":"https://techbrot.com/#website"},"about":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"inLanguage":"en-US","speakable":{"@type":"SpeakableSpecification","cssSelector":["#qbwp-in-brief-text"]}},
+        {"@type":"BreadcrumbList","@id":url+"#breadcrumb","itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://techbrot.com/"},
+          {"@type":"ListItem","position":2,"name":"QuickBooks","item":"https://techbrot.com/quickbooks/"},
+          {"@type":"ListItem","position":3,"name":"Which Plan Is Right?","item":url}]},
+        {"@type":"Service","@id":url+"#service","name":"QuickBooks Plan Selection Advisory","serviceType":"QuickBooks plan and product selection advisory","description":"A complimentary 30-minute call with a Certified QuickBooks ProAdvisor to assess which QuickBooks product (Online, Desktop, or Enterprise) and which plan tier fits the business. Independent advisory with no commission, no affiliate revenue, and no upsell incentive. Delivered by Certified ProAdvisors. Does not include income-tax filing, IRS representation, audit, or assurance.","provider":{"@id":"https://techbrot.com/#organization"},"areaServed":{"@type":"Country","name":"United States"},"audience":{"@type":"BusinessAudience","audienceType":"U.S. businesses choosing or reconsidering a QuickBooks plan"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Complimentary 30-minute plan-selection call with a Certified ProAdvisor."}},
+        {"@type":"ItemList","@id":url+"#product-list","name":"QuickBooks Products and Plan Tiers","itemListElement":[
+          {"@type":"ListItem","position":1,"name":"QuickBooks Online Simple Start"},
+          {"@type":"ListItem","position":2,"name":"QuickBooks Online Essentials"},
+          {"@type":"ListItem","position":3,"name":"QuickBooks Online Plus"},
+          {"@type":"ListItem","position":4,"name":"QuickBooks Online Advanced"},
+          {"@type":"ListItem","position":5,"name":"QuickBooks Desktop (Pro / Premier / Mac)"},
+          {"@type":"ListItem","position":6,"name":"QuickBooks Enterprise"}]},
+        {"@type":"FAQPage","@id":url+"#faq","mainEntity":data.faq.map(function(i){return {"@type":"Question","name":stripTags(i.q),"acceptedAnswer":{"@type":"Answer","text":stripTags(i.a)}};})}
+      ]};
+    },
+  },
+};

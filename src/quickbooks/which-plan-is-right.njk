@@ -1,0 +1,287 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/quickbooks/which-plan-is-right/",
+  "slug": "qbwp",
+  "tierClass": "section--tier-guide",
+  "bodyClass": "page--mofu",
+  "callBar": true,
+  "title": "Which QuickBooks Plan Is Right for You? · Free ProAdvisor Advisory · TechBrot",
+  "description": "An independent Certified QuickBooks ProAdvisor helps you pick the right product and plan &mdash; QuickBooks Online (Simple Start, Essentials, Plus, Advanced), Desktop, or Enterprise. Free 30-minute call. No commission, no upsell. Independent firm, not affiliated with Intuit Inc.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "QuickBooks", "href": "/quickbooks/" },
+    { "name": "Which Plan Is Right?" }
+  ],
+  "hero": {
+    "eyebrow": "QuickBooks · plan selection",
+    "heading": "Which QuickBooks plan is right for your business?",
+    "subheading": "An independent Certified ProAdvisor helps you pick the right QuickBooks product and plan tier &mdash; we assess your specific situation (user count, inventory needs, industry workflows, growth trajectory) and recommend the right product and tier. <strong>No commission, no affiliate revenue, no upsell incentive.</strong> Sometimes the honest answer is &ldquo;pick the cheapest tier, you don&rsquo;t need more,&rdquo; and we&rsquo;d rather give that answer than push you toward something you don&rsquo;t need. Independent firm, not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=qbo-plan-selection", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "Choosing the right QuickBooks plan comes down to <strong>five factors</strong>: how many users need to work in the file simultaneously, whether you need inventory tracking, whether you need class or location tracking for departmental reporting, whether your industry has specific accounting needs, and whether you need cloud access or work locally. These point to a specific product and tier &mdash; <strong>QuickBooks Online</strong> (Simple Start, Essentials, Plus, Advanced) for most US small businesses, <strong>QuickBooks Desktop</strong> (Pro, Premier, Mac) for businesses with reasons to stay local, or <strong>QuickBooks Enterprise</strong> for mid-market businesses with serious inventory or industry-specific needs. The honest answer for most US small businesses is <strong>QuickBooks Online Plus</strong> &mdash; but the edges matter, and getting the choice wrong costs real money. A complimentary 30-minute call with a Certified ProAdvisor sorts it the first time.",
+    "source": "Plan-selection advisory maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. No affiliate or referral commissions on any QuickBooks product or tier."
+  },
+  "ctaBand": {
+    "eyebrow": "Free 30-minute call",
+    "heading": "Get the right answer, free, in 30 minutes.",
+    "lede": "Book the call. A Certified ProAdvisor walks your specific situation against the full QuickBooks product line and recommends the right product and tier. No commission, no upsell, no pitch. If the honest answer is &ldquo;pick the cheapest tier&rdquo; or &ldquo;you need an ERP, not QuickBooks,&rdquo; that&rsquo;s exactly what you&rsquo;ll hear &mdash; and you can take that recommendation anywhere. Independent firm &mdash; earns no fees on QuickBooks subscriptions.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=qbo-plan-selection", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section section--compact" id="qbwp-byline">
+  <div class="container container--narrow">
+    <div class="byline-block">
+      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">Reviewed by a QuickBooks Online, Desktop &amp; Enterprise ProAdvisor &middot; independent, no reseller incentive</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--compact section--tier-guide" id="qbwp-credentials">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Certified by Intuit &middot; Online (L2), Desktop, Enterprise, Payroll</p>
+      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials.</h2>
+    </header>
+    <div class="stat-row">
+      {%- for s in credStats %}
+      <div><div class="stat__value">{{ s.value }}</div><div class="stat__label">{{ s.label }}</div></div>
+      {%- endfor %}
+    </div>
+    <ul class="checks-list">
+      {%- for c in credentials %}<li>{{ c | safe }}</li>{%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbwp-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In one paragraph</p>
+      <h2 class="section__heading">How to pick the right QuickBooks plan.</h2>
+    </header>
+    <div class="prose">
+      {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbwp-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">QuickBooks plan selection, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbwp-framework">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The decision framework</p>
+      <h2 class="section__heading">Five factors that decide the right plan.</h2>
+      <p class="section__lede">Every QuickBooks plan question reduces to these five. Map your business honestly against each, and the right product and tier becomes obvious &mdash; or obviously needs a ProAdvisor&rsquo;s read.</p>
+    </header>
+    <div class="grid-3">
+      {%- for f in factors %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ f.num }}</p>
+        <h3>{{ f.name | safe }}</h3>
+        <p class="prose">{{ f.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbwp-patterns">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Common business patterns</p>
+      <h2 class="section__heading">What we typically recommend, by business profile.</h2>
+      <p class="section__lede">These aren&rsquo;t rules &mdash; every business has nuances &mdash; but they&rsquo;re the patterns we see most often. Find the one closest to your situation, then book the call to confirm the specifics.</p>
+    </header>
+    <div class="grid-3">
+      {%- for p in patterns %}
+      <div class="stack-8">
+        <h3>{{ p.name | safe }}</h3>
+        <p class="prose">{{ p.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbwp-products">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The full QuickBooks product map</p>
+      <h2 class="section__heading">Nine tiers and editions, one decision.</h2>
+      <p class="section__lede">The complete QuickBooks landscape, organized by where each product fits in the lineup. Click through to any product hub for the deep read &mdash; or book the call and we&rsquo;ll walk you through it directly. For specific pricing, check Intuit directly &mdash; we don&rsquo;t publish their numbers because they change.</p>
+    </header>
+    <div class="grid-2">
+      {%- for e in editions %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ e.tier }}</p>
+        <h3>{{ e.name | safe }}</h3>
+        <p class="prose">{{ e.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbwp-vs">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The plan tiers, head to head</p>
+      <h2 class="section__heading">QBO Plus vs QBO Advanced vs Desktop Premier vs Enterprise.</h2>
+      <p class="section__lede">An honest comparison of the four tiers most plan decisions come down to &mdash; user counts, cloud access, inventory depth, automation, and industry features. We hold no reseller incentive in any direction.</p>
+    </header>
+    <div class="vs-scroll">
+      <table class="vs-table">
+        <caption class="sr-only">QuickBooks plan tiers compared — QBO Plus, QBO Advanced, Desktop Premier, and Enterprise</caption>
+        <thead><tr><th scope="col">Capability</th><th scope="col" class="vs-table__us">QBO Plus</th><th scope="col">QBO Advanced</th><th scope="col">Desktop Premier</th><th scope="col">Enterprise</th></tr></thead>
+        <tbody>
+          {%- for r in vsTable %}
+          <tr><th scope="row">{{ r.cap | safe }}</th>
+            <td class="vs-table__us">{% if r.plus == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.plus == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.plus | safe }}</span>{% endif %}</td>
+            <td>{% if r.adv == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.adv == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.adv | safe }}</span>{% endif %}</td>
+            <td>{% if r.premier == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.premier == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.premier | safe }}</span>{% endif %}</td>
+            <td>{% if r.ent == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.ent == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.ent | safe }}</span>{% endif %}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbwp-nuance">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Where the call earns its keep</p>
+      <h2 class="section__heading">Three situations where the answer isn&rsquo;t obvious.</h2>
+      <p class="section__lede">Most plan decisions are straightforward. These three patterns are where having a ProAdvisor genuinely matters &mdash; because the right answer depends on variables that don&rsquo;t show up on any comparison page.</p>
+    </header>
+    <div class="grid-3">
+      {%- for n in nuance %}
+      <div class="stack-8">
+        <h3>{{ n.name | safe }}</h3>
+        <p class="prose">{{ n.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbwp-call">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What happens on the call</p>
+      <h2 class="section__heading">Thirty minutes. No pitch. Just the answer.</h2>
+      <p class="section__lede">Here&rsquo;s exactly what a Certified ProAdvisor will cover in the free 30-minute plan-selection call &mdash; so you know what to expect and what to have ready.</p>
+    </header>
+    <div class="grid-3">
+      {%- for c in call %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ c.num }}</p>
+        <h3>{{ c.name | safe }}</h3>
+        <p class="prose">{{ c.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbwp-routing">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Your situation</p>
+      <h2 class="section__heading">Where are you in the plan decision?</h2>
+    </header>
+    <div class="grid-3">
+      {%- for b in routing %}
+      <a class="buyer-card" href="{{ b.href }}"><p class="buyer-card__opener">{{ b.opener | safe }}</p><p class="buyer-card__body">{{ b.body | safe }}</p><span class="buyer-card__cta">{{ b.cta | safe }}</span></a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbwp-operator">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Who delivers the advice</p>
+      <h2 class="section__heading">Certified across every QuickBooks product. No commission on any of them.</h2>
+    </header>
+    <div class="prose">
+      <p>Plan-selection advice is only as good as the depth of QuickBooks knowledge behind it. Every TechBrot ProAdvisor holds active certifications across the entire QuickBooks product line &mdash; Online Level 2, Desktop, Enterprise, and Payroll. The recommendation you get comes from someone fluent in all of them, not someone who&rsquo;s only worked in one.</p>
+      <p>Critically: we earn nothing from your QuickBooks subscription, regardless of which product or tier you pick &mdash; no Intuit affiliate revenue, no referral commissions, no kickback on Enterprise sales. The independence is structural, which is what makes the recommendation worth giving free. You can <a href="/quickbooks/proadvisor-team/">meet the ProAdvisor team</a> or read our <a href="/trust/">trust &amp; methodology standards</a>. Independent firm &mdash; not affiliated with Intuit Inc.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in operatorSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbwp-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">QuickBooks plan-selection questions</p>
+      <h2 class="section__heading">What people ask about picking a QuickBooks plan.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbwp-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="qbwp-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-14</span><span>Updated: 2026-06-14</span><span>Reviewed: 2026-06-14 &middot; QuickBooks Online, Desktop &amp; Enterprise ProAdvisor</span></p>
+  </div>
+</section>
+
+<section class="section" id="qbwp-related">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">All QuickBooks products</p>
+      <h2 class="section__heading">Deep reads on each product.</h2>
+    </header>
+    {%- for n in related %}
+    <div class="stack-8">
+      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+      <p class="prose">{{ n.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
