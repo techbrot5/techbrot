@@ -53,3 +53,25 @@ rep) · a11y/BP/SEO 100 · CSS 55,933 B.
 **Verification (all 5):** equity GREEN · t-location · axe 0 · overflow clean 360/390/768 · CSS 55,933 B.
 
 **PROGRESS: 10 / 38 NY children done** (all 11 cities + cities-hub). **NEXT:** wave 3 — syracuse, yonkers (last 2 cities) + industries-hub + construction + consulting (continuing, no stop).
+
+---
+
+## WAVE 3 — last 2 cities + industries-hub + 2 industries · DONE · commit `bdd253b`
+| Page | Preview URL | Local content (citable) |
+|---|---|---|
+| Syracuse | …/find-an-accountant/new-york/cities/syracuse/ | Onondaga County ~8% (4%+4%), upstate (no UBT/CRT), SU + SUNY Upstate + healthcare, Micron semiconductor (Clay) |
+| Yonkers | …/find-an-accountant/new-york/cities/yonkers/ | Westchester County 8.875% (8.375% base + Yonkers +0.5%); no NYC UBT/CRT BUT the **Yonkers resident income-tax surcharge** (framed qualitatively) |
+| Industries hub | …/find-an-accountant/new-york/industries/ | routes to the 8 NY industries with each one's real NY angle |
+| Construction | …/find-an-accountant/new-york/industries/construction/ | job costing, WIP, retainage, % -of-completion, AIA billing, NYS certified/prevailing-wage payroll, multi-state crews, capital-improvement ST-124 |
+| Consulting | …/find-an-accountant/new-york/industries/consulting/ | NYC UBT on unincorporated firms (NYC-202/204), partner/guaranteed-payment reporting, project profitability, AB5 classification, multi-state nexus |
+
+**Decisions/judgment calls:** zero class/CTA drift. **Honesty catch:** the consulting baseline named an
+individual ("David Westgate · 40+ years") in a reviewer line — the agent reframed it to firm-level
+("TechBrot Certified ProAdvisor team · 40+ years combined") per R9 (no individual in visible content).
+The industries-hub (baseline 5 FAQ) got a genuine 6th coverage FAQ (gate). **Yonkers surcharge:** the
+agent added it as append-only enrichment framed qualitatively (no exact rate asserted) — honest, real,
+flagged as net-new. Fixes: 5 newsletter exceptions; whitelisted `page--industry` bodyClass.
+**Verification (all 5):** equity GREEN · t-location · axe 0 · overflow clean 360/390/768 · CSS 55,933 B.
+
+**PROGRESS: 15 / 38 NY children done** (11 cities + cities-hub + industries-hub + 2 industries).
+**NEXT:** wave 4 — industries ecommerce, healthcare, legal, nonprofit, real-estate (continuing, no stop).
