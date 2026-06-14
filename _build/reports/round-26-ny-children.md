@@ -75,3 +75,27 @@ flagged as net-new. Fixes: 5 newsletter exceptions; whitelisted `page--industry`
 
 **PROGRESS: 15 / 38 NY children done** (11 cities + cities-hub + industries-hub + 2 industries).
 **NEXT:** wave 4 — industries ecommerce, healthcare, legal, nonprofit, real-estate (continuing, no stop).
+
+---
+
+## WAVE 4 — 5 NY industry pages · DONE · commit `9f85efb`
+| Page | Preview URL | Local content (citable) |
+|---|---|---|
+| E-commerce | …/find-an-accountant/new-york/industries/ecommerce/ | post-Wayfair economic nexus (NY $500K **and** 100-txn test), marketplace-facilitator (Amazon/Etsy/eBay), Shopify/Stripe/A2X recon, landed-cost COGS by SKU, NYC 8.875% |
+| Healthcare | …/find-an-accountant/new-york/industries/healthcare/ | payer-AR + contractual-adjustment recon, PC/PLLC + Corporate-Practice-of-Medicine, W-2 clinicians vs 1099 locums, PMS→QBO (athena/DrChrono/Tebra), no sales tax on medical services |
+| Legal | …/find-an-accountant/new-york/industries/legal/ | IOLA/IOLTA trust accounting, RPC 1.15 three-way recon, NY Lawyers' Fund overdraft reporting, 7-yr retention, NYC UBT on law partnerships |
+| Nonprofit | …/find-an-accountant/new-york/industries/nonprofit/ | CHAR500 (NY AG) + Form 990, fund accounting (restricted/unrestricted), functional-expense allocation, grant revenue recognition, audit>$1M / review>$250K |
+| Real estate | …/find-an-accountant/new-york/industries/real-estate/ | entity-per-property P&L, NYC RPIE, Commercial Rent Tax, 1031 (45/180-day QI), security-deposit separate-account, cost-seg, IT-2663 |
+
+**Decisions/judgment calls:** zero class/CTA drift; battery passed first try. **Honesty (R9/R5):** all
+5 reframed the baseline named-reviewer line ("David Westgate · 40+ years") to firm-level. **healthcare
+honesty call:** the agent declined to assert an NYC-UBT professional exemption for medical PCs it
+couldn't verify cleanly — framed qualitatively, led on the solidly-true no-sales-tax-on-medical-services
+wrinkle. **real-estate:** reframed outcome figures to representative ranges. Fixes: 6 newsletter
+exceptions; **legal hero `<strong>IOLA</strong>` unwrapped** (dark-hero contrast violation — same fix as
+the pillar; re-probed axe 0).
+**Verification (all 5):** equity GREEN · t-location · axe 0 · overflow clean 360/390/768 · CSS 55,933 B.
+
+**PROGRESS: 20 / 38 NY children done** (12 cities-tier + industries-hub + all 8 industries... restaurant
+still pending — it batches into wave 5 with the first service-children).
+**NEXT:** wave 5 — restaurant + first 4 NY service-children (continuing, no stop).
