@@ -14,18 +14,18 @@ foreach ($w in 360, 390, 768) {
     "--only-audits=content-width,viewport" `
     "--screenEmulation.width=$w" "--screenEmulation.height=900" `
     "--screenEmulation.mobile" "--screenEmulation.deviceScaleFactor=2" `
-    "--chrome-flags=--headless=new" `
+    "--chrome-flags=--headless=new --user-data-dir=C:\tb-probe-profile" `
     "--blocked-url-patterns=*googletagmanager*" `
     --output=json "--output-path=_build\verify\overflow-$w.json"
 }
 
 npx lighthouse http://localhost:8125/ --quiet `
-  "--chrome-flags=--headless=new" `
+  "--chrome-flags=--headless=new --user-data-dir=C:\tb-probe-profile" `
   "--blocked-url-patterns=*googletagmanager*" `
   --output=json --output=html "--output-path=_build\verify\lighthouse-mobile.json"
 
 npx lighthouse http://localhost:8125/ --quiet --preset=desktop `
-  "--chrome-flags=--headless=new" `
+  "--chrome-flags=--headless=new --user-data-dir=C:\tb-probe-profile" `
   "--blocked-url-patterns=*googletagmanager*" `
   --output=json --output=html "--output-path=_build\verify\lighthouse-desktop.json"
 

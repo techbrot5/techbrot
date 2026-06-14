@@ -8,8 +8,8 @@ $shots = Join-Path (Get-Location) "_build\verify\shots\changeover"
 New-Item -ItemType Directory -Force $shots | Out-Null
 
 foreach ($t in "t-hub", "t-mofu", "t-guide", "t-bofu", "t-location") {
-  & $chrome --headless --disable-gpu --hide-scrollbars --window-size=1280,5200 --screenshot="$shots\$t-OURS.png" "http://localhost:8090/dev/sample-$t/" | Out-Null
-  & $chrome --headless --disable-gpu --hide-scrollbars --window-size=1280,5200 --screenshot="$shots\$t-DESIGN.png" "http://localhost:8091/handoff/tiers/$t.html" | Out-Null
+  & $chrome --headless --user-data-dir=C:\tb-probe-profile --disable-gpu --hide-scrollbars --window-size=1280,5200 --screenshot="$shots\$t-OURS.png" "http://localhost:8090/dev/sample-$t/" | Out-Null
+  & $chrome --headless --user-data-dir=C:\tb-probe-profile --disable-gpu --hide-scrollbars --window-size=1280,5200 --screenshot="$shots\$t-DESIGN.png" "http://localhost:8091/handoff/tiers/$t.html" | Out-Null
   Write-Output "pair: $t"
 }
 Get-ChildItem $shots | ForEach-Object { "{0}  {1}b" -f $_.Name, $_.Length }

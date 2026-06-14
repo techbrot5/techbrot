@@ -10,7 +10,7 @@ Set-Location (Join-Path $PSScriptRoot "..\..")
 $out = "_build\verify\lighthouse-$Preset.json"
 $lhArgs = @(
   "lighthouse", "http://localhost:8125/", "--quiet",
-  "--chrome-flags=--headless=new",
+  "--chrome-flags=--headless=new --user-data-dir=C:\tb-probe-profile",
   "--blocked-url-patterns=*googletagmanager*",
   "--output=json", "--output=html",
   "--output-path=$out"

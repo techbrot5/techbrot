@@ -58,7 +58,7 @@ Set-Content -Path "_site\dev-edge-probe.html" -Value $probe -Encoding ascii
 $chrome = "$env:ProgramFiles\Google\Chrome\Application\chrome.exe"
 if (-not (Test-Path $chrome)) { $chrome = "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe" }
 
-& $chrome --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=30000 --dump-dom "http://localhost:8090/dev-edge-probe.html" 2>$null |
+& $chrome --headless=new --user-data-dir=C:\tb-probe-profile --disable-gpu --hide-scrollbars --virtual-time-budget=30000 --dump-dom "http://localhost:8090/dev-edge-probe.html" 2>$null |
   Select-String "EDGE:" | Select-Object -First 1 | ForEach-Object { ($_.Line -replace '^.*EDGE:', 'EDGE:') -replace '</div>.*$', '' }
 
 Remove-Item "_site\dev-edge-probe.html" -Force

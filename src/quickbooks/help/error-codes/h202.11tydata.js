@@ -13,10 +13,9 @@
 function stripTags(html){return html.replace(/<[^>]+>/g,"").replace(/&rsquo;/g,"’").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&mdash;/g,"—").replace(/&ndash;/g,"–").replace(/&rarr;/g,"→").replace(/&amp;/g,"&").replace(/&nbsp;/g," ").replace(/&middot;/g,"·").replace(/\s+/g," ").trim();}
 module.exports = {
   credStats: [
-    { value: "Desktop", label: "Certified" },
-    { value: "Enterprise", label: "Certified" },
-    { value: "Online", label: "Level 2" },
-    { value: "Payroll", label: "Certified" },
+    { value: "4", label: "core QuickBooks platforms certified — Desktop, Enterprise, Online (Level 2), Payroll" },
+    { value: "L2", label: "QuickBooks Online ProAdvisor tier (the highest)" },
+    { value: "Yearly", label: "Intuit re-certification — verifiable on the public ProAdvisor directory" },
   ],
   credentials: [
     "H202 is a Desktop/Enterprise error &mdash; resolving it takes fluency in multi-user mode, Database Server Manager, and network configuration.",

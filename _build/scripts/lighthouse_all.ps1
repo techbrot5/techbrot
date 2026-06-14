@@ -10,7 +10,7 @@ $pages = @(
 foreach ($p in $pages) {
   $out = "_build\verify\lighthouse-$($p[1])-desktop"
   npx lighthouse ("http://localhost:8125" + $p[0]) --quiet `
-    "--chrome-flags=--headless=new" "--blocked-url-patterns=*googletagmanager*" `
+    "--chrome-flags=--headless=new --user-data-dir=C:\tb-probe-profile" "--blocked-url-patterns=*googletagmanager*" `
     --preset=desktop --output=json "--output-path=$out.json" 2>$null | Out-Null
   $j = Get-Content "$out.report.json" -Raw 2>$null
   if (-not $j) { $j = Get-Content "$out.json" -Raw 2>$null }

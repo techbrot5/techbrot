@@ -59,7 +59,7 @@ Set-Content -Path "_site\dev-form-probe.html" -Value $probe -Encoding ascii
 $chrome = "$env:ProgramFiles\Google\Chrome\Application\chrome.exe"
 if (-not (Test-Path $chrome)) { $chrome = "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe" }
 
-$line = & $chrome --headless=new --disable-gpu --virtual-time-budget=15000 --dump-dom "http://localhost:8090/dev-form-probe.html" 2>$null |
+$line = & $chrome --headless=new --user-data-dir=C:\tb-probe-profile --disable-gpu --virtual-time-budget=15000 --dump-dom "http://localhost:8090/dev-form-probe.html" 2>$null |
   Select-String "PAYLOAD-RESULTS:\{" | Select-Object -First 1
 
 Remove-Item "_site\dev-form-probe.html" -Force

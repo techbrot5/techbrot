@@ -38,6 +38,6 @@ $probe = $probe.Replace("PAGEPATH", $Path)
 Set-Content -Path "$Root\dev-nav-test.html" -Value $probe -Encoding ascii
 $chrome = "$env:ProgramFiles\Google\Chrome\Application\chrome.exe"
 if (-not (Test-Path $chrome)) { $chrome = "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe" }
-& $chrome --headless --disable-gpu --hide-scrollbars --virtual-time-budget=30000 --dump-dom "http://localhost:$Port/dev-nav-test.html" 2>$null |
+& $chrome --headless --user-data-dir=C:\tb-probe-profile --disable-gpu --hide-scrollbars --virtual-time-budget=30000 --dump-dom "http://localhost:$Port/dev-nav-test.html" 2>$null |
   Select-String "NAVTEST:" | Select-Object -First 1 | ForEach-Object { ($_.Line -replace '^.*NAVTEST:', 'NAVTEST:') -replace '</div>.*$', '' }
 Remove-Item "$Root\dev-nav-test.html" -Force

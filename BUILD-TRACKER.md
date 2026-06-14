@@ -23,6 +23,27 @@ nuance ("Read the methodology" used where Sheet-9 names "Explore Services").
 **⚠ PROBE INFRA:** chrome-headless stalled mid-session (documented leak) — axe ran
 clean before the stall; overflow/LH calibrated sweep deferred to batch end.
 
+## STANDING RULE — PROBE CHROME ISOLATION (founder, round 21 — HARD RULE)
+The founder's personal Chrome is OFF-LIMITS, always. NEVER kill Chrome by image
+name (`Get-Process chrome | Stop-Process`, `Stop-Process -Name chrome`, `taskkill
+/IM chrome.exe`) — that closes the founder's browser/tabs. Every probe launches
+headless Chrome with a dedicated isolated profile **`--user-data-dir=C:\tb-probe-
+profile`** (the marker); all 28 chrome-launching scripts in `_build/scripts/`
+carry it (patched round 21 via patch_probe_isolation.py). `kill_probe.ps1` now
+matches ONLY processes whose command line contains `tb-probe-profile` and stops
+just those PIDs — it reports `personal-chrome-untouched=N`. Run kill_probe BETWEEN
+probe launches (each launch holds the isolated profile's singleton lock until it
+exits; consecutive launches without a kill stall — that was the round-20
+"chrome-leak", root-caused round 21: probes were sharing the founder's DEFAULT
+profile, which both stalled dumps via the singleton lock AND let the old
+image-name kill close the founder's tabs). Bug fixed; both symptoms gone.
+INLINE chrome one-offs dump unreliably — use the *script* form (overflow_probe.ps1
+etc.); they're reliable with kill_probe between.
+DESIGN NOTE (round 21): `.stat-row` becomes `display:flex` with large gaps at
+≥768px — `stat__value` is for SHORT numeric metrics only (e.g. "4", "L2", "48hr").
+Long word-values ("Enterprise") overflow the container at 768. (Caught + fixed on
+h202.)
+
 ## STANDING RULE — HUB-REFRESH-ON-SPOKE-ADD (round 20)
 When a spoke ships, update the parent hub BODY **and** ≥1 topical sibling BODY to
 link it **in-content** (not just nav). Round-19 found later-built spokes (payroll,

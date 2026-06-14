@@ -36,6 +36,6 @@ Set-Content -Path "$Root\dev-drawer-probe.html" -Value $probe -Encoding ascii
 $chrome = "$env:ProgramFiles\Google\Chrome\Application\chrome.exe"
 if (-not (Test-Path $chrome)) { $chrome = "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe" }
 $shots = Join-Path (Get-Location) "_build\verify\shots"
-& $chrome --headless --disable-gpu --hide-scrollbars --window-size="$Width,820" --virtual-time-budget=8000 --screenshot="$shots\$Out" "http://localhost:$Port/dev-drawer-probe.html" | Out-Null
+& $chrome --headless --user-data-dir=C:\tb-probe-profile --disable-gpu --hide-scrollbars --window-size="$Width,820" --virtual-time-budget=8000 --screenshot="$shots\$Out" "http://localhost:$Port/dev-drawer-probe.html" | Out-Null
 Remove-Item "$Root\dev-drawer-probe.html" -Force
 Write-Output "saved $shots\$Out"

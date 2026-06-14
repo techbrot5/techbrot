@@ -24,8 +24,8 @@ $pages = @(
 )
 foreach ($p in $pages) {
   $url = "http://localhost:8125" + $p.path
-  & $chrome --headless --disable-gpu --hide-scrollbars --window-size=1280,9500 --screenshot="$shots\$($p.slug)-desktop.png" $url | Out-Null
-  & $chrome --headless --disable-gpu --hide-scrollbars --window-size=360,7000 --screenshot="$shots\$($p.slug)-m360.png" $url | Out-Null
+  & $chrome --headless --user-data-dir=C:\tb-probe-profile --disable-gpu --hide-scrollbars --window-size=1280,9500 --screenshot="$shots\$($p.slug)-desktop.png" $url | Out-Null
+  & $chrome --headless --user-data-dir=C:\tb-probe-profile --disable-gpu --hide-scrollbars --window-size=360,7000 --screenshot="$shots\$($p.slug)-m360.png" $url | Out-Null
   Write-Output ("shot: " + $p.slug)
 }
 
@@ -36,7 +36,7 @@ $pairs = @(
   @{ slug = "DESIGN-404";         url = "http://localhost:8091/handoff/pages/404.html" }
 )
 foreach ($p in $pairs) {
-  & $chrome --headless --disable-gpu --hide-scrollbars --window-size=1280,9500 --screenshot="$shots\$($p.slug)-desktop.png" $p.url | Out-Null
+  & $chrome --headless --user-data-dir=C:\tb-probe-profile --disable-gpu --hide-scrollbars --window-size=1280,9500 --screenshot="$shots\$($p.slug)-desktop.png" $p.url | Out-Null
   Write-Output ("design: " + $p.slug)
 }
 Get-ChildItem $shots | Measure-Object | ForEach-Object { "total shots: $($_.Count)" }

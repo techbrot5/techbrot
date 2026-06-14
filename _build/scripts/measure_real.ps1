@@ -20,7 +20,7 @@ $js = @'
 '@ -replace "`r?`n", " "
 $chrome = "$env:ProgramFiles\Google\Chrome\Application\chrome.exe"
 if (-not (Test-Path $chrome)) { $chrome = "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe" }
-& $chrome --headless=new --disable-gpu --hide-scrollbars --window-size=360,1200 --virtual-time-budget=6000 --run-all-compositor-stages-before-draw "--dump-dom" "javascript:void(0)" 2>$null | Out-Null
+& $chrome --headless=new --user-data-dir=C:\tb-probe-profile --disable-gpu --hide-scrollbars --window-size=360,1200 --virtual-time-budget=6000 --run-all-compositor-stages-before-draw "--dump-dom" "javascript:void(0)" 2>$null | Out-Null
 # dump-dom can't run arbitrary JS easily; use a harness page instead
 $probe = "<!DOCTYPE html><html><body><script>window.location.replace('PAGE');</script></body></html>"
 # simpler: inject via a tiny evaluate using --headless screenshot won't return JS.

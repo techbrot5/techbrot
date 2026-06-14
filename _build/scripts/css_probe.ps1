@@ -55,7 +55,7 @@ Set-Content -Path "_site\dev-css-probe.html" -Value $probe -Encoding ascii
 $chrome = "$env:ProgramFiles\Google\Chrome\Application\chrome.exe"
 if (-not (Test-Path $chrome)) { $chrome = "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe" }
 
-& $chrome --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=30000 --dump-dom "http://localhost:8090/dev-css-probe.html" 2>$null |
+& $chrome --headless=new --user-data-dir=C:\tb-probe-profile --disable-gpu --hide-scrollbars --virtual-time-budget=30000 --dump-dom "http://localhost:8090/dev-css-probe.html" 2>$null |
   Select-String "STYLE-HASH:" | Select-Object -First 1 | ForEach-Object { ($_.Line -replace '^.*STYLE-HASH:', 'STYLE-HASH:') -replace '</div>.*$', '' }
 
 Remove-Item "_site\dev-css-probe.html" -Force

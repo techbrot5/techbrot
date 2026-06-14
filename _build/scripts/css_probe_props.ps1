@@ -32,7 +32,7 @@ Set-Content -Path "_site\dev-css-probe.html" -Value $probe -Encoding ascii
 $chrome = "$env:ProgramFiles\Google\Chrome\Application\chrome.exe"
 if (-not (Test-Path $chrome)) { $chrome = "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe" }
 
-$line = & $chrome --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=30000 --dump-dom "http://localhost:8090/dev-css-probe.html" 2>$null |
+$line = & $chrome --headless=new --user-data-dir=C:\tb-probe-profile --disable-gpu --hide-scrollbars --virtual-time-budget=30000 --dump-dom "http://localhost:8090/dev-css-probe.html" 2>$null |
   Select-String "PROPS-RESULT:" | Select-Object -First 1
 
 Remove-Item "_site\dev-css-probe.html" -Force

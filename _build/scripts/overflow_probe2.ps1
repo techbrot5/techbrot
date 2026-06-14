@@ -31,7 +31,7 @@ Set-Content -Path "_site-prod\dev-overflow-probe2.html" -Value $probe -Encoding 
 $chrome = "$env:ProgramFiles\Google\Chrome\Application\chrome.exe"
 if (-not (Test-Path $chrome)) { $chrome = "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe" }
 
-& $chrome --headless=new --disable-gpu --virtual-time-budget=10000 --dump-dom "http://localhost:8125/dev-overflow-probe2.html" 2>$null |
+& $chrome --headless=new --user-data-dir=C:\tb-probe-profile --disable-gpu --virtual-time-budget=10000 --dump-dom "http://localhost:8125/dev-overflow-probe2.html" 2>$null |
   Select-String "OFFENDERS" | ForEach-Object { $_.Line.Trim() }
 
 Remove-Item "_site-prod\dev-overflow-probe2.html" -Force

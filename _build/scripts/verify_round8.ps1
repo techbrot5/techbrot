@@ -26,8 +26,8 @@ $shots = Join-Path (Get-Location) "_build\verify\shots"
 New-Item -ItemType Directory -Force $shots | Out-Null
 foreach ($p in $pages) {
   $url = "http://localhost:8125" + $p.Path
-  & $chrome --headless --disable-gpu --hide-scrollbars --window-size=1280,9500 --screenshot="$shots\$($p.Slug)-desktop-full.png" $url | Out-Null
-  & $chrome --headless --disable-gpu --hide-scrollbars --window-size=360,7000 --screenshot="$shots\$($p.Slug)-mobile-360.png" $url | Out-Null
+  & $chrome --headless --user-data-dir=C:\tb-probe-profile --disable-gpu --hide-scrollbars --window-size=1280,9500 --screenshot="$shots\$($p.Slug)-desktop-full.png" $url | Out-Null
+  & $chrome --headless --user-data-dir=C:\tb-probe-profile --disable-gpu --hide-scrollbars --window-size=360,7000 --screenshot="$shots\$($p.Slug)-mobile-360.png" $url | Out-Null
   Write-Output ("shot: " + $p.Slug)
 }
 Get-ChildItem $shots -Filter "*-360.png" | ForEach-Object { "{0}  {1}b" -f $_.Name, $_.Length }
