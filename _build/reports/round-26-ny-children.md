@@ -137,3 +137,30 @@ Fixes: 5 newsletter exceptions. **Probe note:** restaurant's overflow probe flak
 **PROGRESS: 25 / 38 NY children done** (12 cities-tier + industries-hub + all 8 industries + 4 services).
 **NEXT:** wave 6 — 5 QuickBooks service-children (quickbooks-accountant, -setup, -cleanup,
 -reconciliation, -training) (continuing, no stop).
+
+---
+
+## WAVE 6 — 5 NY QuickBooks service-children · DONE · commit `40f82ac`
+| Page | Preview URL | Local content (citable) |
+|---|---|---|
+| QuickBooks accountant | …/find-an-accountant/new-york/quickbooks-accountant/ | Certified ProAdvisor on the client's QBO/Desktop file, NY sales-tax-ready, UBT awareness, books/CPA boundary |
+| QuickBooks setup | …/find-an-accountant/new-york/quickbooks-setup/ | new file, NY chart of accounts, 8.875% tax items broken out (4% + 4.5% + 0.375% MCTD), bank feeds, opening balances, users/permissions |
+| QuickBooks cleanup | …/find-an-accountant/new-york/quickbooks-cleanup/ | **44-heading page** — file diagnostic, undeposited funds, reconciliation-discrepancy + sales-tax-liability cleanup, A/R-A/P, catch-up, clean handoff |
+| QuickBooks reconciliation | …/find-an-accountant/new-york/quickbooks-reconciliation/ | every bank/credit/loan/merchant account to statement, the reconciliation-discrepancy account worked to zero, undeposited funds, beginning-balance mismatches |
+| QuickBooks training | …/find-an-accountant/new-york/quickbooks-training/ | ProAdvisor-led on the client's OWN file (not generic), role-based, daily workflows + NY sales-tax handling, live + recorded |
+
+**Decisions/judgment calls:** **zero drift — battery passed first try.** The explicit "no invented
+classes / pricing range = buyer-card__body+strong, buttons = btn--primary, NO btn--text/__price/
+__cadence" instruction (added after wave 5 caught those) fully held. **Honesty (R9/R5):** all 5 reframed
+the baseline named-reviewer line to firm-level; not-affiliated-with-Intuit + does-not-file-NY-taxes
+throughout. **qbcleanup T3:** promoted a baseline sr-only credentials heading to a real H2 (no-collapse
+rule), all 44 headings rendered as real <hN>, the before/after table reframed to a checks-list (no
+table-cell demotion). Fixes: 5 newsletter exceptions. **Probe note:** qb-accountant overflow flaked empty
+on first launch (recurring serve-warmup flake) → re-probed clean.
+**Verification (all 5):** equity GREEN · t-location · axe 0 · overflow clean 360/390/768 · CSS 55,933 B.
+
+**PROGRESS: 30 / 38 NY children done** (12 cities-tier + industries-hub + 8 industries + 9 services).
+**NEXT:** wave 7 — the last 4 clean services (quickbooks-migration, cleanup-bookkeeping, pricing,
+sales-tax-help). Then wave 8 = the 4 sensitive honest-triage pages (business-tax-problems,
+state-tax-notice-help, urgent-bookkeeping, speak-to-a-proadvisor) — careful R5/Sheet-7 handling, possible
+founder stop.
