@@ -19,6 +19,17 @@ right now; never thin content to save time. VISUAL EXECUTION is floor — curren
 used correctly, design-fidelity gate passes, no 404s, no breakage, but no bespoke
 current-design polish (the skin is redone in the reset). Citable specifics must be TRUE and
 publicly verifiable; honesty discipline is absolute (no fabricated stats/reviews/prices/dates).
+**R3 — MIGRATION DRIFT DISCIPLINE (added 2026-06-15, after round-22 wave-1 drift).** Follow
+`_build/reports/MIGRATION-PROTOCOL.md` for every migration agent: (T1) INJECT the frozen equity
+contract from `equity_contract.py <url>` into the prompt — agents match exact baseline.json
+strings, never re-derive headings/FAQ from the old HTML; (T2) headings are frozen strings (exact
+level, no reword/`<br>`/qualifier/reorder); (T3) no collapsing a baseline H2/H3 into hero/CTA/
+in-brief/table-cell; (T4) FAQ from the contract verbatim, enrichment append-only; (T5) mandatory
+pre-return self-check checklist against the contract; (T6) content-to-goal, visual-floor. **WAVE
+CAP ~5 pages** (never a full silo). Central battery gate before every commit is the backstop.
+Special-case pages get their OWN review, not batch-approval:
+`/quickbooks/speak-to-a-quickbooks-expert/` (Sheet-7 honest-triage), team/credentials pages
+(founder-name-zero), and the first `find-an-accountant/` t-location page (new tier).
 
 Updated: 2026-06-14 · NEW PHASE — PATH B MIGRATION. Goal: migrate the 104 remaining
 baselines to the current cobalt system FAST (build-to-FLOOR, not polish — all 104 get
