@@ -187,136 +187,19 @@ trustRow:
       {# NEW-SKIN form shell (handoff pages render). The render is a SHELL:
          every locked contract detail is OURS — services[] names, full
          option sets + values, hidden meta, trackers, honeypot. FENCED. #}
-      <form class="intake-form" id="file-review-form-el" data-form="contact-discovery" method="POST" action="/contact/submit" novalidate>
-
-        <div class="intake-grid">
-          <div class="intake-field">
-            <label class="intake-field__label" for="fr-name">Full name</label>
-            <input type="text" id="fr-name" name="name" required autocomplete="name">
-          </div>
-          <div class="intake-field">
-            <label class="intake-field__label" for="fr-company">Company</label>
-            <input type="text" id="fr-company" name="company" required autocomplete="organization">
-          </div>
-          <div class="intake-field">
-            <label class="intake-field__label" for="fr-email">Work email</label>
-            <input type="email" id="fr-email" name="email" required autocomplete="email">
-          </div>
-          <div class="intake-field">
-            <label class="intake-field__label" for="fr-phone">Phone <span class="intake-field__optional">optional</span></label>
-            <input type="tel" id="fr-phone" name="phone" autocomplete="tel" aria-describedby="fr-phone-help">
-            <p class="intake-field__help" id="fr-phone-help">Only used to schedule the call &mdash; never for marketing.</p>
-          </div>
-        </div>
-
-        <fieldset class="intake-group">
-          <legend>What we should look at</legend>
-          <p class="intake-group__note">Check everything that applies &mdash; &ldquo;not sure&rdquo; is a real answer.</p>
-          <div class="intake-group__grid">
-            <label class="intake-checkbox"><input type="checkbox" name="services[]" value="cleanup" data-service-input><span>QuickBooks cleanup</span></label>
-            <label class="intake-checkbox"><input type="checkbox" name="services[]" value="catch-up" data-service-input><span>Catch-up bookkeeping</span></label>
-            <label class="intake-checkbox"><input type="checkbox" name="services[]" value="monthly-bookkeeping" data-service-input><span>Monthly bookkeeping</span></label>
-            <label class="intake-checkbox"><input type="checkbox" name="services[]" value="qb-setup" data-service-input><span>QuickBooks setup</span></label>
-            <label class="intake-checkbox"><input type="checkbox" name="services[]" value="qb-migration" data-service-input><span>QuickBooks migration</span></label>
-            <label class="intake-checkbox"><input type="checkbox" name="services[]" value="payroll" data-service-input><span>Payroll management</span></label>
-            <label class="intake-checkbox"><input type="checkbox" name="services[]" value="sales-tax" data-service-input><span>Sales tax compliance</span></label>
-            <label class="intake-checkbox"><input type="checkbox" name="services[]" value="fractional-cfo" data-service-input><span>Fractional CFO</span></label>
-            <label class="intake-checkbox"><input type="checkbox" name="services[]" value="new-business" data-service-input><span>New business setup</span></label>
-            <label class="intake-checkbox"><input type="checkbox" name="services[]" value="not-sure" data-service-input><span>Not sure &mdash; please advise</span></label>
-          </div>
-        </fieldset>
-
-        <div class="intake-grid">
-          <div class="intake-field">
-            <label class="intake-field__label" for="fr-revenue">Annual revenue <span class="intake-field__optional">optional</span></label>
-            <select id="fr-revenue" name="revenue_range">
-              <option value="">Select range</option>
-              <option value="pre-revenue">Pre-revenue / new business</option>
-              <option value="under-500k">Under $500K</option>
-              <option value="500k-1m">$500K&ndash;$1M</option>
-              <option value="1m-5m">$1M&ndash;$5M</option>
-              <option value="5m-25m">$5M&ndash;$25M</option>
-              <option value="25m-plus">$25M+</option>
-              <option value="prefer-not">Prefer not to share</option>
-            </select>
-          </div>
-          <div class="intake-field">
-            <label class="intake-field__label" for="fr-industry">Industry <span class="intake-field__optional">optional</span></label>
-            <select id="fr-industry" name="industry">
-              <option value="">Select industry</option>
-              <option value="ecommerce">E-commerce / DTC</option>
-              <option value="saas">SaaS / Software</option>
-              <option value="professional-services">Professional services</option>
-              <option value="agency">Agency / Marketing</option>
-              <option value="construction">Construction / Trades</option>
-              <option value="real-estate">Real estate</option>
-              <option value="restaurants">Restaurants / Hospitality</option>
-              <option value="manufacturing">Manufacturing</option>
-              <option value="healthcare">Healthcare</option>
-              <option value="nonprofit">Nonprofit</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="intake-field">
-            <label class="intake-field__label" for="fr-qb-status">QuickBooks version</label>
-            <select id="fr-qb-status" name="qb_status">
-              <option value="">Select version</option>
-              <option value="qbo-current">QuickBooks Online</option>
-              <option value="qb-desktop">QuickBooks Desktop</option>
-              <option value="qb-enterprise">QuickBooks Enterprise</option>
-              <option value="other-software">Other software (Xero, Wave, etc.)</option>
-              <option value="no-software">No accounting software / spreadsheets</option>
-              <option value="not-sure">Not sure</option>
-            </select>
-          </div>
-          <div class="intake-field">
-            <label class="intake-field__label" for="fr-timeline">Timeline</label>
-            <select id="fr-timeline" name="timeline">
-              <option value="">Select urgency</option>
-              <option value="immediate">Immediate &mdash; this week</option>
-              <option value="month">Within a month</option>
-              <option value="quarter">Within this quarter</option>
-              <option value="exploring">Just exploring</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="intake-field">
-          <label class="intake-field__label" for="fr-message">What you&rsquo;re seeing in the file <span class="intake-field__optional">optional</span></label>
-          <textarea id="fr-message" name="message" rows="5" placeholder="Reconciliation gaps, balances that don&rsquo;t look right, errors &mdash; anything you want a Certified ProAdvisor to confirm."></textarea>
-        </div>
-
-        <div class="intake-consent">
-          <label class="intake-checkbox"><input type="checkbox" name="consent" value="agreed" required><span>I agree to be contacted by TechBrot regarding this file review.</span></label>
-        </div>
-
-        {# Hidden metadata — names + data-meta identical to the live form
-           contract; defaults are this page's own. URL params override,
-           empty params never wipe (round-6 engine rule). #}
-        <input type="hidden" name="intent"             data-meta="intent"             value="file-review">
-        <input type="hidden" name="state"              data-meta="state"              value="">
-        <input type="hidden" name="city"               data-meta="city"               value="">
-        <input type="hidden" name="industry_intent"    data-meta="industry"           value="">
-        <input type="hidden" name="service"            data-meta="service"            value="">
-        <input type="hidden" name="source_page"        data-meta="source_page"        value="">
-        <input type="hidden" name="source_type"        data-meta="source_type"        value="bofu-conversion">
-        <input type="hidden" name="funnel_stage"       data-meta="funnel_stage"       value="BOFU">
-        <input type="hidden" name="urgency"            data-meta="urgency"            value="">
-        <input type="hidden" name="operator_candidate" data-meta="operator_candidate" value="">
-        <input type="hidden" name="referring_intent" id="fr-referring-intent" value="" data-intent-tracker>
-        <input type="hidden" name="referring_page"   id="fr-referring-page"   value="" data-referrer-tracker>
-
-        {# Honeypot — bots fill it; humans never see it. NOT in the payload. #}
-        <div class="sr-only" aria-hidden="true">
-          <label for="fr-company-website">Company website (leave blank)</label>
-          <input type="text" id="fr-company-website" name="company_website" tabindex="-1" autocomplete="off">
-        </div>
-
-        <div>
-          <button class="btn btn--primary btn--lg" type="submit" data-cta="contact-form-submit">Get the free file review</button>
-          <p class="intake-form__reassurance">No spam, no list, no obligation. A ProAdvisor replies within one business day.</p>
-        </div>
-      </form>
+      {%- set intakePrefix = "fr" %}
+      {%- set intakeFormId = "file-review-form-el" %}
+      {%- set intakeIntent = "file-review" %}
+      {%- set intakeSourceType = "bofu-conversion" %}
+      {%- set intakeFunnelStage = "BOFU" %}
+      {%- set intakeLegend = "What we should look at" %}
+      {%- set intakeNote = "Check everything that applies &mdash; &ldquo;not sure&rdquo; is a real answer." %}
+      {%- set intakeConsent = "I agree to be contacted by TechBrot regarding this file review." %}
+      {%- set intakeMessageLabel = "What you&rsquo;re seeing in the file" %}
+      {%- set intakeMessagePlaceholder = "Reconciliation gaps, balances that don&rsquo;t look right, errors &mdash; anything you want a Certified ProAdvisor to confirm." %}
+      {%- set intakeSubmit = "Get the free file review" %}
+      {%- set intakeReassurance = "No spam, no list, no obligation. A ProAdvisor replies within one business day." %}
+      {% include "partials/intake-form.njk" %}
     </div>
   </div>
 </section>

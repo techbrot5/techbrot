@@ -1,0 +1,145 @@
+{#- SHARED INTAKE FORM (round-21 ruling 1 — extract once, reuse on contact /
+    file-review / payroll). The LOCKED CONTRACT is identical everywhere: field
+    names, services[] values, select values, the 12 hidden-meta names + data-meta
+    keys, the company_website honeypot, and the data-form="contact-discovery"
+    JS hook. Only PRESENTATION is parameterized per page (set before include):
+      intakePrefix      — id/for prefix (fr · contact · pm)            [required]
+      intakeFormId      — the <form> id                               [required]
+      intakeIntent      — hidden intent default          (default "")
+      intakeSourceType  — hidden source_type default      (default "")
+      intakeFunnelStage — hidden funnel_stage default     (default "")
+      intakeLegend      — services fieldset legend
+      intakeNote        — services fieldset note
+      intakeConsent     — consent label text
+      intakeSubmit      — submit button label (lexicon)   (default "Send the Discovery Brief")
+      intakeReassurance — reassurance line
+    URL params override hidden defaults; empty params never wipe (round-6 engine). -#}
+<form class="intake-form" id="{{ intakeFormId }}" data-form="contact-discovery" method="POST" action="/contact/submit" novalidate>
+
+  <div class="intake-grid">
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-name">Full name</label>
+      <input type="text" id="{{ intakePrefix }}-name" name="name" required autocomplete="name">
+    </div>
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-company">Company</label>
+      <input type="text" id="{{ intakePrefix }}-company" name="company" required autocomplete="organization">
+    </div>
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-email">Work email</label>
+      <input type="email" id="{{ intakePrefix }}-email" name="email" required autocomplete="email">
+    </div>
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-phone">Phone <span class="intake-field__optional">optional</span></label>
+      <input type="tel" id="{{ intakePrefix }}-phone" name="phone" autocomplete="tel" aria-describedby="{{ intakePrefix }}-phone-help">
+      <p class="intake-field__help" id="{{ intakePrefix }}-phone-help">Only used to schedule the call &mdash; never for marketing.</p>
+    </div>
+  </div>
+
+  <fieldset class="intake-group">
+    <legend>{{ intakeLegend or "What we should discuss" }}</legend>
+    <p class="intake-group__note">{{ intakeNote or "Pick what fits. Pick more than one if more than one fits." }}</p>
+    <div class="intake-group__grid">
+      <label class="intake-checkbox"><input type="checkbox" name="services[]" value="monthly-bookkeeping" data-service-input><span>Monthly bookkeeping<span class="intake-checkbox__help">Recurring, fixed-fee monthly close</span></span></label>
+      <label class="intake-checkbox"><input type="checkbox" name="services[]" value="cleanup" data-service-input><span>QuickBooks cleanup<span class="intake-checkbox__help">Books out of order, structural issues</span></span></label>
+      <label class="intake-checkbox"><input type="checkbox" name="services[]" value="catch-up" data-service-input><span>Catch-up bookkeeping<span class="intake-checkbox__help">Months or years behind</span></span></label>
+      <label class="intake-checkbox"><input type="checkbox" name="services[]" value="qb-setup" data-service-input><span>QuickBooks setup<span class="intake-checkbox__help">New file or restructuring</span></span></label>
+      <label class="intake-checkbox"><input type="checkbox" name="services[]" value="qb-migration" data-service-input><span>QuickBooks migration<span class="intake-checkbox__help">Desktop &rarr; Online, or platform switch</span></span></label>
+      <label class="intake-checkbox"><input type="checkbox" name="services[]" value="payroll" data-service-input><span>Payroll management<span class="intake-checkbox__help">Single or multi-state payroll</span></span></label>
+      <label class="intake-checkbox"><input type="checkbox" name="services[]" value="sales-tax" data-service-input><span>Sales tax compliance<span class="intake-checkbox__help">Multi-state nexus, filings, audits</span></span></label>
+      <label class="intake-checkbox"><input type="checkbox" name="services[]" value="fractional-cfo" data-service-input><span>Fractional CFO<span class="intake-checkbox__help">Strategic finance, by application</span></span></label>
+      <label class="intake-checkbox"><input type="checkbox" name="services[]" value="new-business" data-service-input><span>New business setup<span class="intake-checkbox__help">First-time accounting infrastructure</span></span></label>
+      <label class="intake-checkbox"><input type="checkbox" name="services[]" value="not-sure" data-service-input><span>Not sure yet<span class="intake-checkbox__help">Diagnostic call will figure it out</span></span></label>
+    </div>
+  </fieldset>
+
+  <div class="intake-grid">
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-revenue">Annual revenue <span class="intake-field__optional">optional</span></label>
+      <select id="{{ intakePrefix }}-revenue" name="revenue_range">
+        <option value="">Select range</option>
+        <option value="pre-revenue">Pre-revenue / new business</option>
+        <option value="under-500k">Under $500K</option>
+        <option value="500k-1m">$500K&ndash;$1M</option>
+        <option value="1m-5m">$1M&ndash;$5M</option>
+        <option value="5m-25m">$5M&ndash;$25M</option>
+        <option value="25m-plus">$25M+</option>
+        <option value="prefer-not">Prefer not to share</option>
+      </select>
+    </div>
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-industry">Industry <span class="intake-field__optional">optional</span></label>
+      <select id="{{ intakePrefix }}-industry" name="industry">
+        <option value="">Select industry</option>
+        <option value="ecommerce">E-commerce / DTC</option>
+        <option value="saas">SaaS / Software</option>
+        <option value="professional-services">Professional services</option>
+        <option value="agency">Agency / Marketing</option>
+        <option value="construction">Construction / Trades</option>
+        <option value="real-estate">Real estate</option>
+        <option value="restaurants">Restaurants / Hospitality</option>
+        <option value="manufacturing">Manufacturing</option>
+        <option value="healthcare">Healthcare</option>
+        <option value="nonprofit">Nonprofit</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-qb-status">QuickBooks status <span class="intake-field__optional">optional</span></label>
+      <select id="{{ intakePrefix }}-qb-status" name="qb_status">
+        <option value="">Select status</option>
+        <option value="qbo-current">Using QuickBooks Online</option>
+        <option value="qb-desktop">Using QuickBooks Desktop</option>
+        <option value="qb-enterprise">Using QuickBooks Enterprise</option>
+        <option value="other-software">Using other software (Xero, Wave, etc.)</option>
+        <option value="no-software">No accounting software / spreadsheets</option>
+        <option value="not-sure">Not sure</option>
+      </select>
+    </div>
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-timeline">Timeline <span class="intake-field__optional">optional</span></label>
+      <select id="{{ intakePrefix }}-timeline" name="timeline">
+        <option value="">Select urgency</option>
+        <option value="immediate">Immediate &mdash; this week</option>
+        <option value="month">Within a month</option>
+        <option value="quarter">Within this quarter</option>
+        <option value="exploring">Just exploring</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="intake-field">
+    <label class="intake-field__label" for="{{ intakePrefix }}-message">{{ intakeMessageLabel or "Discovery notes" }} <span class="intake-field__optional">optional</span></label>
+    <textarea id="{{ intakePrefix }}-message" name="message" rows="5" placeholder="{{ intakeMessagePlaceholder or "Anything specific about your situation. The more context, the better the diagnostic call." }}"></textarea>
+  </div>
+
+  <div class="intake-consent">
+    <label class="intake-checkbox"><input type="checkbox" name="consent" value="agreed" required><span>{{ intakeConsent or "I agree to be contacted by TechBrot regarding this inquiry." }}<span class="intake-checkbox__help">We&rsquo;ll only use your details to respond to this request. See our <a href="/legal/privacy-policy/">privacy policy</a>.</span></span></label>
+  </div>
+
+  {# Hidden metadata — names + data-meta identical to the live form contract;
+     defaults are this page's own. URL params override; empty params never wipe. #}
+  <input type="hidden" name="intent"             data-meta="intent"             value="{{ intakeIntent }}">
+  <input type="hidden" name="state"              data-meta="state"              value="">
+  <input type="hidden" name="city"               data-meta="city"               value="">
+  <input type="hidden" name="industry_intent"    data-meta="industry"           value="">
+  <input type="hidden" name="service"            data-meta="service"            value="">
+  <input type="hidden" name="source_page"        data-meta="source_page"        value="">
+  <input type="hidden" name="source_type"        data-meta="source_type"        value="{{ intakeSourceType }}">
+  <input type="hidden" name="funnel_stage"       data-meta="funnel_stage"       value="{{ intakeFunnelStage }}">
+  <input type="hidden" name="urgency"            data-meta="urgency"            value="">
+  <input type="hidden" name="operator_candidate" data-meta="operator_candidate" value="">
+  <input type="hidden" name="referring_intent" id="{{ intakePrefix }}-referring-intent" value="" data-intent-tracker>
+  <input type="hidden" name="referring_page"   id="{{ intakePrefix }}-referring-page"   value="" data-referrer-tracker>
+
+  {# Honeypot — bots fill it; humans never see it. NOT in the payload. #}
+  <div class="sr-only" aria-hidden="true">
+    <label for="{{ intakePrefix }}-company-website">Company website (leave blank)</label>
+    <input type="text" id="{{ intakePrefix }}-company-website" name="company_website" tabindex="-1" autocomplete="off">
+  </div>
+
+  <div>
+    <button class="btn btn--primary btn--lg" type="submit" data-cta="contact-form-submit">{{ intakeSubmit or "Send the Discovery Brief" }}</button>
+    <p class="intake-form__reassurance">{{ intakeReassurance or "Response within 1 business day. No marketing list. No sales follow-up sequence." }}</p>
+  </div>
+</form>
