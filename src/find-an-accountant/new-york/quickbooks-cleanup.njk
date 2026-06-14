@@ -1,0 +1,269 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/new-york/quickbooks-cleanup/",
+  "slug": "ny-svc-qbcleanup",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "title": "New York QuickBooks Cleanup & File Repair · TechBrot",
+  "description": "QuickBooks file cleanup for New York businesses — bank feeds, reconciliation rebuild, file corruption, undeposited funds, NYC/NY sales-tax tie-out. Fixed-fee, CPA-ready. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "New York", "href": "/find-an-accountant/new-york/" },
+    { "name": "QuickBooks Cleanup" }
+  ],
+  "hero": {
+    "eyebrow": "New York &middot; QuickBooks File Cleanup",
+    "heading": "When QuickBooks itself is the problem .",
+    "subheading": "Broken bank feeds. File corruption. Reconciliation that won&rsquo;t balance. NYC sales-tax liability that doesn&rsquo;t tie out. TechBrot Certified ProAdvisors repair the file, reconcile it to reality, and document every fix &mdash; independent expertise beyond what Intuit product support provides. We deliver the clean file; your CPA files.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-spoke&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor file cleanup for New York businesses</strong> &mdash; bank-feed repair, reconciliation rebuild, undeposited-funds clearing, duplicate and missing-transaction resolution, file-corruption recovery, and NYC/NY sales-tax tie-out, performed inside your own QuickBooks file by a named ProAdvisor. The full New York QuickBooks cleanup summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. TechBrot delivers the cleanup and coordinates with your CPA, who files; it does not file New York State or NYC tax returns."
+  },
+  "ctaBand": {
+    "eyebrow": "New York businesses start here",
+    "heading": "Let&rsquo;s see what your New York file actually needs.",
+    "lede": "Book a free file diagnostic. We&rsquo;ll review your QuickBooks file, identify the real issues &mdash; broken feeds, reconciliation drift, undeposited-funds backlog, NYC/NY sales-tax mismatch &mdash; and send a written fixed-fee scope within 3 business days. No pitch. Independent firm &mdash; does not file NY taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-spoke&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── CREDENTIALS · frozen H2 now a REAL heading (was sr-only in baseline — T3 no demotion). (H2: Certified QuickBooks ProAdvisor credentials) ── #}
+<section class="section section--compact" id="ny-svc-qbcleanup-credentials">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Certified by Intuit</p>
+      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials</h2>
+    </header>
+    <p class="prose">{{ credentials.statement | safe }}</p>
+    <ul class="checks-list">
+      {%- for c in credentials.badges %}<li>{{ c | safe }}</li>{%- endfor %}
+    </ul>
+  </div>
+</section>
+
+{# ── SUMMARY · real H2 carrying the cleanup summary prose. (H2: What New York QuickBooks cleanup actually is.) ── #}
+<section class="section" id="ny-svc-qbcleanup-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In one paragraph</p>
+      <h2 class="section__heading">What New York QuickBooks cleanup actually is.</h2>
+    </header>
+    <div class="stack-8">
+      {%- for p in summary %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── SIGNALS · the file-level issues that need a ProAdvisor (grid-3 buyer-cards). (H2 + 6 H3s) ── #}
+<section class="section section--alt" id="ny-svc-qbcleanup-signals">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">When QuickBooks cleanup is the right fit</p>
+      <h2 class="section__heading">If you&rsquo;ve hit any of these, you need a ProAdvisor.</h2>
+      <p class="section__lede">These are the file-level issues Intuit support typically can&rsquo;t resolve &mdash; either because the work crosses into bookkeeping judgment, or because the fix requires direct file repair.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in signals %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
+        <p class="buyer-card__body">{{ s.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── AI SUMMARY · five-question block. (H2: New York QuickBooks cleanup, in five questions.) ── #}
+<section class="section" id="ny-svc-qbcleanup-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">New York QuickBooks cleanup, in five questions.</h2>
+    </header>
+    <dl class="ai-summary ai-summary--ruled" id="ny-svc-qbcleanup-ai-summary-list">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
+        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+{# ── WHAT'S INCLUDED · the eight workstreams (grid-3 buyer-cards). (H2 + 8 H3s) ── #}
+<section class="section section--alt" id="ny-svc-qbcleanup-includes">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What&rsquo;s included</p>
+      <h2 class="section__heading">What New York QuickBooks cleanup actually delivers.</h2>
+      <p class="section__lede">Every TechBrot QuickBooks cleanup covers these eight workstreams. Specific scope is tuned to your file during the diagnostic.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in includes %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ s.num }}</p>
+        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
+        <p class="buyer-card__body">{{ s.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── PROCESS · four-phase engagement rhythm (grid-2 buyer-cards). (H2 + 4 H3s) ── #}
+<section class="section" id="ny-svc-qbcleanup-process">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">How engagements work</p>
+      <h2 class="section__heading">From file diagnostic to clean QuickBooks.</h2>
+      <p class="section__lede">Every TechBrot QuickBooks cleanup follows the same four-phase sequence &mdash; diagnose first, repair and reconcile second, verify and document third, then a clean handoff.</p>
+    </header>
+    <div class="grid-2">
+      {%- for p in process %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ p.phase }}</p>
+        <h3 class="buyer-card__heading">{{ p.title | safe }}</h3>
+        <p class="buyer-card__body">{{ p.body | safe }}</p>
+        {%- if p.meta %}<p class="buyer-card__opener">{{ p.meta | safe }}</p>{%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── OUTCOMES · what changes when the file is clean (checks-list, NO table demotion — T3). (H2: What changes when the file is clean.) ── #}
+<section class="section section--alt" id="ny-svc-qbcleanup-outcomes">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Before &amp; after</p>
+      <h2 class="section__heading">What changes when the file is clean.</h2>
+      <p class="section__lede">QuickBooks cleanup outcomes aren&rsquo;t cosmetic. A working file is a working business operation.</p>
+    </header>
+    <ul class="checks-list">
+      {%- for o in outcomes %}<li>{{ o | safe }}</li>{%- endfor %}
+    </ul>
+  </div>
+</section>
+
+{# ── PRICING · fixed-fee scope tiers (grid-3 buyer-cards). (H2 + 3 H3s) ── #}
+<section class="section" id="ny-svc-qbcleanup-pricing">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Pricing scope</p>
+      <h2 class="section__heading">Fixed fee, written scope, no hourly billing.</h2>
+      <p class="section__lede">Every TechBrot QuickBooks cleanup is priced against a written scope before work begins. Most engagements fall into one of three tiers.</p>
+    </header>
+    <div class="grid-3">
+      {%- for t in pricing %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ t.tier | safe }}</p>
+        <h3 class="buyer-card__heading">{{ t.title | safe }}</h3>
+        <p class="buyer-card__body">{{ t.range | safe }} &middot; {{ t.fit | safe }}</p>
+        <a class="buyer-card__cta" href="{{ t.href }}">{{ t.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="prose">{{ pricingNote | safe }}</p>
+  </div>
+</section>
+
+{# ── OPERATOR · expertise-first framing (byline-block + trust-row). (H2: A named Certified ProAdvisor — not an offshore call center.) ── #}
+<section class="section section--alt" id="ny-svc-qbcleanup-operator">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Who performs the work</p>
+      <h2 class="section__heading">A named Certified ProAdvisor &mdash; not an offshore call center.</h2>
+    </header>
+    <div class="stack-8">
+      {%- for p in operatorBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+    </div>
+    <div class="trust-row">
+      {%- for c in operatorCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── RELATED · file cleanup as part of a larger engagement (grid-2 buyer-cards). (H2 + 4 H3s) ── #}
+<section class="section" id="ny-svc-qbcleanup-related">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related services</p>
+      <h2 class="section__heading">File cleanup is often part of a larger engagement.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for r in related %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading">{{ r.title | safe }}</h3>
+        <p class="buyer-card__body">{{ r.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── FAQ · 7 verbatim contract Q/A; visible faq__list = FAQPage schema (same array). (H2: What people ask before scoping a New York QuickBooks cleanup.) ── #}
+<section class="section section--alt" id="ny-svc-qbcleanup-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">QuickBooks cleanup questions</p>
+      <h2 class="section__heading">What people ask before scoping a New York QuickBooks cleanup.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-svc-qbcleanup-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="ny-svc-qbcleanup-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level, no founder name (byline-block + meta-reviewed). (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
+<section class="section" id="ny-svc-qbcleanup-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    </header>
+    <div class="byline-block">
+      <div class="byline-block__mark" aria-hidden="true"></div>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose">
+      <p>This page reflects how TechBrot handles New York QuickBooks cleanup engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on file repair, reconciliation rebuild, undeposited-funds clearing, and <a href="/find-an-accountant/new-york/sales-tax-help/">NYC/NY sales-tax tie-out</a>. TechBrot delivers the cleanup and coordinates with your CPA, who files.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-07</span><span>Updated: 2026-06-07</span><span>Reviewed: 2026-06-07 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
