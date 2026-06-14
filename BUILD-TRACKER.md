@@ -1,4 +1,22 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
+Updated: 2026-06-14 · NEW PHASE — PATH B MIGRATION. Goal: migrate the 104 remaining
+baselines to the current cobalt system FAST (build-to-FLOOR, not polish — all 104 get
+re-patterned on the new design system after cutover), reach all-139-baselines parity, then
+cutover techbrot.com, THEN design reset + re-pattern live. 200 is NOT a target; the gate is
+"all 139 baselines migrated." Floor per page: equity GREEN · axe 0 · overflow clean · correct
+tier + CTA · honest-triage where it applies · design-fidelity per-tier pass. Speed over polish.
+**MANDATORY: maintain `_build/reports/PAGE-TYPE-REGISTRY.md`** (every page tagged to type/tier
++ exact section list per type, incl. not-yet-built types) — it is the input to the design reset
+and must be complete by cutover.
+**MIGRATION ORDER (proposed):** silo 1 quickbooks (16) → silo 2 vs (5) → silo 3 accounting
+(39) → silo 4 partners (1) → silo 5 find-an-accountant (43, needs t-location). Hubs before
+children (no internal 404s); ranking-value weighted; the cross-linked /quickbooks/proadvisor-team/
++ /speak-to-a-quickbooks-expert/ are dependency-priority (already linked from shipped pages →
+currently broken on the new build). find-an-accountant last (orphan/lowest indexed + new tier).
+**Silo-1 batch-1 = proof page /quickbooks/desktop/** (t-mofu) to establish the migration recipe
++ registry entry; replicate the rest of silo 1 on founder sign-off. STOP per batch (preview review).
+HELD: #4 research-log N=0 · #5 the-9 t-bofu/t-mofu decided on preview · #2 footer WCAG queued.
+
 Updated: 2026-06-14 · ROUND 21 DESIGN-FIDELITY DEBT **FULLY CLEARED** — /about/methodology/
 + /trust/ (the last 2 generic-primitive pages) re-patterned to their tier (both t-mofu).
 Each got mofu's by-rule signatures per PLACEMENT-MAP: `byline-block` at the top of the
