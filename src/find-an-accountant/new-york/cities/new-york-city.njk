@@ -1,0 +1,219 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/new-york/cities/new-york-city/",
+  "slug": "ny-nyc",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "title": "New York City Bookkeeper & QuickBooks Accountant · TechBrot",
+  "description": "QuickBooks ProAdvisor bookkeeping for New York City businesses — all five boroughs. NYC sales tax, UBT, Commercial Rent Tax aware. Fixed-fee. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "New York", "href": "/find-an-accountant/new-york/" },
+    { "name": "Cities", "href": "/find-an-accountant/new-york/cities/" },
+    { "name": "New York City" }
+  ],
+  "hero": {
+    "eyebrow": "New York City &middot; All Five Boroughs &middot; NYC Metro",
+    "heading": "New York City bookkeeper &amp; QuickBooks accountant.",
+    "subheading": "Certified QuickBooks ProAdvisor bookkeeping for New York City businesses &mdash; across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island. NYC&rsquo;s 8.875% sales tax, the 4% Unincorporated Business Tax, and the Commercial Rent Tax built into how your books are kept. A named bookkeeper on the same file every month, with the books kept CPA-ready for your CPA to file.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&city=new-york-city&source_type=city-page&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor bookkeeping for New York City businesses</strong> across all five boroughs &mdash; monthly bookkeeping, <a href=\"/find-an-accountant/new-york/quickbooks-cleanup/\">cleanup</a>, and QuickBooks management by a named bookkeeper on the same file every month. The full New York City summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. New York City tax figures verified against the NYC Department of Finance and NY DTF."
+  },
+  "ctaBand": {
+    "eyebrow": "NYC businesses start here",
+    "heading": "Ready for a NYC bookkeeper who knows the city&rsquo;s tax stack?",
+    "lede": "Book a free discovery call. We&rsquo;ll review your QuickBooks file and your NYC situation, flag any UBT, sales-tax, or Commercial Rent Tax exposure, and send a written fixed-fee quote within 3 business days. No pitch. Independent firm &mdash; does not file NY/NYC taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&city=new-york-city&source_type=city-page&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY · real H2 carrying the NYC summary prose (right after the in-brief). (H2: The short version.) ── #}
+<section class="section section--compact" id="ny-nyc-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <h2 class="section__heading">The short version.</h2>
+    </header>
+    <p class="prose">{{ summarized | safe }}</p>
+  </div>
+</section>
+
+{# ── AI SUMMARY · five-question block. (H2: New York City bookkeeping, in five questions.) ── #}
+<section class="section" id="ny-nyc-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">New York City bookkeeping, in five questions.</h2>
+    </header>
+    <dl class="ai-summary ai-summary--ruled" id="ny-nyc-ai-summary-list">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
+        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+{# ── LOCAL CONTEXT · the un-clonable band. (H2: Why New York City books are different.) ── #}
+<section class="section section--alt" id="ny-nyc-local">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Bookkeeping built for how NYC actually operates</p>
+      <h2 class="section__heading">Why New York City books are different.</h2>
+    </header>
+    <div class="stack-8">
+      {%- for p in localContext %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── AREAS · across the five boroughs. (H2: New York City areas we serve.) ── #}
+<section class="section" id="ny-nyc-areas">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Across the five boroughs</p>
+      <h2 class="section__heading">New York City areas we serve.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for a in areas %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ a.name | safe }}</p>
+        <p class="prose">{{ a.note | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── TAX STACK · grid-3 + stack-8 (NOT proof-strip__item). (H2: New York City's tax stack, at a glance.) ── #}
+<section class="section section--alt" id="ny-nyc-tax">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The three NYC taxes we build into your books</p>
+      <h2 class="section__heading">New York City&rsquo;s tax stack, at a glance.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for t in taxStack %}
+      <div class="stack-8">
+        <p class="proof-strip__rating">{{ t.figure | safe }}</p>
+        <p class="prose">{{ t.desc | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+    <p class="prose"><small>{{ taxNote | safe }}</small></p>
+  </div>
+</section>
+
+{# ── INDUSTRIES · NYC verticals (checks-list into NY industry pages). (H2: Industry-specific bookkeeping for NYC businesses.) ── #}
+<section class="section" id="ny-nyc-industries">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">NYC verticals we know</p>
+      <h2 class="section__heading">Industry-specific bookkeeping for NYC businesses.</h2>
+      <p class="section__lede">Each links to our dedicated New York industry page, with the city-specific wrinkles built in.</p>
+    </header>
+    <ul class="checks-list">
+      {%- for i in industries %}
+      <li><a href="{{ i.href }}">{{ i.label | safe }}</a> &mdash; {{ i.note | safe }}</li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+{# ── SERVICES · value stack (grid-2 buyer-cards). (H2: Complete bookkeeping, NYC-aware. + 4 H3s) ── #}
+<section class="section section--alt" id="ny-nyc-services">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What we do for NYC businesses</p>
+      <h2 class="section__heading">Complete bookkeeping, NYC-aware.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for s in services %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ s.num }}</p>
+        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
+        <p class="buyer-card__body">{{ s.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ s.href }}">{{ s.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── ADVISORY · standing brand line. (H2: Automation handles the data entry. We handle the judgment.) ── #}
+<section class="section" id="ny-nyc-advisory">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The advisory line</p>
+      <h2 class="section__heading">Automation handles the data entry. We handle the judgment.</h2>
+    </header>
+    <p class="prose">{{ advisoryBody | safe }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary btn--lg" href="/contact/?intent=new-york&amp;state=new-york&amp;city=new-york-city&amp;source_type=city-page&amp;funnel_stage=BOFU">Book the discovery call</a>
+    </div>
+  </div>
+</section>
+
+{# ── FAQ · 8 verbatim Q/A; visible = FAQPage schema. (H2: New York City bookkeeping questions.) ── #}
+<section class="section section--alt" id="ny-nyc-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">New York City bookkeeping questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-nyc-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="ny-nyc-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level, no founder name (byline-block + meta-reviewed). (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
+<section class="section" id="ny-nyc-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    </header>
+    <div class="byline-block">
+      <div class="byline-block__mark" aria-hidden="true"></div>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose">
+      <p>Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor firm serving New York City across all five boroughs. NYC tax figures &mdash; the 8.875% combined sales tax (4% state + 4.5% city + 0.375% MTA/MCTD); the 4% UBT after the $95,000 gross-income threshold, with a credit fully offsetting UBT of $3,400 or less; and the Commercial Rent Tax, which applies only to Manhattan tenants south of 96th Street paying $250,000+ in annual rent &mdash; reflect <a href="https://www.nyc.gov/site/finance/index.page" rel="noopener nofollow">NYC Department of Finance</a> and <a href="https://www.tax.ny.gov/" rel="noopener nofollow">NY DTF</a> rules current as of the date below and are reviewed periodically. TechBrot provides bookkeeping and coordinates with your CPA, who files.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-07</span><span>Updated: 2026-06-07</span><span>Reviewed: 2026-06-07 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>

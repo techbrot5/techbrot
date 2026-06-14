@@ -1,0 +1,268 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/new-york/cities/rochester/",
+  "slug": "ny-rochester",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "title": "Rochester Bookkeeper & QuickBooks Accountant · TechBrot",
+  "description": "QuickBooks ProAdvisor bookkeeping for Rochester, NY businesses. Monroe County 8% sales tax tracked, CPA-ready books, fixed-fee. Serving Rochester & the Finger Lakes remotely.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "New York", "href": "/find-an-accountant/new-york/" },
+    { "name": "Cities", "href": "/find-an-accountant/new-york/cities/" },
+    { "name": "Rochester" }
+  ],
+  "hero": {
+    "eyebrow": "Rochester &middot; Monroe County &middot; Finger Lakes",
+    "heading": "Rochester bookkeeper &amp; QuickBooks accountant.",
+    "subheading": "Certified QuickBooks ProAdvisor bookkeeping for Rochester and Finger Lakes businesses &mdash; reconciled accounts, Monroe County&rsquo;s 8% sales tax tracked, and CPA-ready statements every month, by a named bookkeeper on the same file. No NYC Unincorporated Business Tax, no Commercial Rent Tax, and one of the lower combined sales-tax rates in the state &mdash; a lighter tax layer than downstate, with the optics, photonics, and R&amp;D realities of the Rochester economy built into the books.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&city=rochester&source_type=location&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor bookkeeping</strong> for Rochester and Monroe County businesses &mdash; monthly bookkeeping, cleanup, and QuickBooks management, with the 8% Monroe County sales tax tracked and CPA-ready books handed to your CPA. The full Rochester summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Rochester sales-tax rate verified against the NY Department of Taxation &amp; Finance."
+  },
+  "ctaBand": {
+    "eyebrow": "Rochester businesses start here",
+    "heading": "Ready for a Rochester bookkeeper who knows the Finger Lakes economy?",
+    "lede": "Book a free discovery call. We&rsquo;ll review your QuickBooks file and your Rochester situation, and send a written fixed-fee quote within 3 business days. <strong>No pitch.</strong> Independent firm &mdash; does not file NY taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&city=rochester&source_type=location&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY · real H2 carrying the Rochester short-version prose (right after the in-brief) ── #}
+<section class="section section--compact" id="ny-rochester-summarized">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <h2 class="section__heading">The short version.</h2>
+    </header>
+    <p class="prose">{{ summarized | safe }}</p>
+  </div>
+</section>
+
+{# ── AI SUMMARY · 5 entity-dense Q&As (H2: Rochester bookkeeping, in five questions.) ── #}
+<section class="section section--alt" id="ny-rochester-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Rochester bookkeeping, in five questions.</h2>
+    </header>
+    <dl class="ai-summary ai-summary--ruled" id="ny-rochester-ai-summary-list">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
+        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+{# ── LOCAL CONTEXT · the un-clonable band (H2: Why Rochester books have their own character.) ── #}
+<section class="section" id="ny-rochester-context">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Bookkeeping built for how Rochester actually operates</p>
+      <h2 class="section__heading">Why Rochester books have their own character.</h2>
+    </header>
+    <p class="prose"><strong>{{ localLead | safe }}</strong></p>
+    {%- for p in localBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+  </div>
+</section>
+
+{# ── AREAS · Monroe County & Finger Lakes coverage (H2: Rochester areas we serve.) ── #}
+<section class="section section--alt" id="ny-rochester-areas">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Across Monroe County &amp; the Finger Lakes</p>
+      <h2 class="section__heading">Rochester areas we serve.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for a in areas %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ a.name | safe }}</p>
+        <p class="prose">{{ a.note | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── TAX FACTS · grid-3 + stack-8 (H2: Rochester sales tax, at a glance.) ── #}
+<section class="section" id="ny-rochester-tax">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">{{ taxEyebrow | safe }}</p>
+      <h2 class="section__heading">Rochester sales tax, at a glance.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for t in taxFacts %}
+      <div class="stack-8">
+        <div class="stat__value">{{ t.fig | safe }}</div>
+        <p class="prose">{{ t.desc | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── INDUSTRIES · Rochester verticals → NY industry pages (H2: Industry-specific bookkeeping for Rochester businesses.) ── #}
+<section class="section section--alt" id="ny-rochester-industries">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Rochester verticals we know</p>
+      <h2 class="section__heading">Industry-specific bookkeeping for Rochester businesses.</h2>
+      <p class="section__lede">Each links to our dedicated New York industry page, with the local wrinkles built in.</p>
+    </header>
+    <ul class="checks-list">
+      {%- for i in industries %}
+      <li><a href="{{ i.href }}">{{ i.name | safe }}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+{# ── VALUE STACK · 4 services + 4 H3s (H2: Complete bookkeeping, locally aware.) ── #}
+<section class="section" id="ny-rochester-value">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What we do for Rochester businesses</p>
+      <h2 class="section__heading">Complete bookkeeping, locally aware.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for v in valueStack %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ v.num }}</p>
+        <h3 class="buyer-card__heading">{{ v.title | safe }}</h3>
+        <p class="buyer-card__body">{{ v.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── ADVISORY · standing brand line (H2: Automation handles the data entry. We handle the judgment.) ── #}
+<section class="section section--alt" id="ny-rochester-advisory">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The advisory line</p>
+      <h2 class="section__heading">Automation handles the data entry. We handle the judgment.</h2>
+    </header>
+    <p class="prose">{{ advisoryBody | safe }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary btn--lg" href="/contact/?intent=new-york&amp;state=new-york&amp;city=rochester&amp;source_type=location&amp;funnel_stage=BOFU">Book the discovery call</a>
+    </div>
+  </div>
+</section>
+
+{# ── INTAKE · dual-path call + shared intake-form partial. No new H2/H3 (contract headings frozen); card titles are non-heading. ── #}
+<section class="section" id="ny-rochester-intake">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Talk to a Certified ProAdvisor</p>
+      <p class="section__lede">Two ways to start a Rochester engagement &mdash; both paths go to the same Certified ProAdvisor. Pick the one that fits how you work.</p>
+    </header>
+
+    <div class="grid-2">
+      <div class="stack-8">
+        <div class="byline-block">
+          <div class="byline-block__mark" aria-hidden="true"></div>
+          <div>
+            <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+            <p class="byline-block__review">{{ teamProAdvisor.name | safe }} &middot; {{ teamProAdvisor.role | safe }}</p>
+          </div>
+        </div>
+        <p class="section__eyebrow">{{ teamProAdvisor.creds | safe }}</p>
+        <p class="prose">{{ teamProAdvisor.line | safe }}</p>
+        <a class="buyer-card__cta" href="https://proadvisor.intuit.com/" rel="noopener nofollow">Verify on Intuit&rsquo;s ProAdvisor directory &rarr;</a>
+      </div>
+      <div class="stack-8">
+        <div class="byline-block">
+          <div class="byline-block__mark" aria-hidden="true"></div>
+          <div>
+            <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+            <p class="byline-block__review">{{ teamIntake.name | safe }} &middot; {{ teamIntake.role }}</p>
+          </div>
+        </div>
+        <p class="section__eyebrow">{{ teamIntake.creds | safe }}</p>
+        <p class="prose">{{ teamIntake.line | safe }}</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <article class="buyer-card">
+        <p class="buyer-card__opener">Option 01</p>
+        <p class="buyer-card__heading">Call directly.</p>
+        <p class="buyer-card__body">A Certified ProAdvisor answers &mdash; not a call center. Best for same-day diagnostics, behind-on-the-books situations, or a quick read on your Rochester file.</p>
+        <a class="btn btn--primary btn--lg" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">Speak to a ProAdvisor</a>
+        <ul class="checks-list">{%- for a in callAssurance %}<li>{{ a | safe }}</li>{%- endfor %}</ul>
+      </article>
+      <div class="contact-form-wrap">
+        <p class="buyer-card__heading" id="ny-rochester-intake-form-heading">Send a short discovery brief.</p>
+        <p class="prose">Six fields. We respond by the next business day with a path forward &mdash; a scoping call or, if not a fit, a referral. <strong>Includes a free QuickBooks file review &mdash; we&rsquo;ll identify the top 3 issues in your file before any engagement begins.</strong></p>
+        {%- set intakePrefix = "ny-rochester" %}
+        {%- set intakeFormId = "ny-rochester-intake-form" %}
+        {%- set intakeIntent = "new-york" %}
+        {%- set intakeSourceType = "location" %}
+        {%- set intakeFunnelStage = "MOFU" %}
+        {%- set intakeLegend = "What we should discuss for your Rochester business" %}
+        {%- set intakeSubmit = "Send the Discovery Brief" %}
+        {%- set intakeReassurance = "Same-day diagnostic for emergencies, 1 business day for scoping, written fixed-fee scope within 3 business days of the first call." %}
+        {% include "partials/intake-form.njk" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── FAQ · 8 contract Q/A verbatim; visible = FAQPage schema (H2: Rochester bookkeeping questions.) ── #}
+<section class="section section--alt" id="ny-rochester-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">Rochester bookkeeping questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-rochester-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="ny-rochester-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level, no founder name (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
+<section class="section" id="ny-rochester-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    </header>
+    <div class="prose">
+      <p>{{ reviewBody | safe }}</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-07</span><span>Updated: 2026-06-07</span><span>Reviewed: 2026-06-07 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
