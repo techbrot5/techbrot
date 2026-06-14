@@ -1,0 +1,286 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/quickbooks/desktop/",
+  "slug": "qbd",
+  "tierClass": "section--tier-guide",
+  "bodyClass": "page--mofu",
+  "callBar": true,
+  "title": "QuickBooks Desktop: Independent ProAdvisor Guide · TechBrot",
+  "description": "An independent Certified ProAdvisor&rsquo;s honest read on QuickBooks Desktop — Pro, Premier, Mac, and Enterprise; who still needs it, when to migrate, and what Intuit&rsquo;s sunset transition actually means for your business. Independent firm, not affiliated with Intuit Inc.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "QuickBooks", "href": "/quickbooks/" },
+    { "name": "Desktop" }
+  ],
+  "hero": {
+    "eyebrow": "QuickBooks products · Desktop",
+    "heading": "QuickBooks Desktop, read honestly.",
+    "subheading": "Intuit is winding Desktop down &mdash; gradually, not in a single date. Most US businesses should plan their move off Desktop deliberately, on their terms, before they&rsquo;re forced to rush. <strong>But some genuinely still need it today.</strong> An independent Certified ProAdvisor&rsquo;s read on Pro, Premier, Mac, and Enterprise &mdash; who still fits, what the sunset actually means, and how to plan the transition without panic. Independent firm, not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks-desktop", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>QuickBooks Desktop</strong> is Intuit&rsquo;s locally installed small-business accounting software &mdash; the traditional alternative to QuickBooks Online, sold in four US editions: <strong>Pro Plus, Premier Plus, Mac Plus, and Enterprise.</strong> Intuit has moved Desktop to subscription-only annual pricing, stopped selling several editions to new US subscribers, and concentrates new feature development in QBO. Older year-versions reach service-discontinuation on a rolling annual schedule &mdash; typically losing payroll, payments, and security updates while the software itself still runs and historical files remain accessible. For most US small and mid-sized businesses, the practical question is no longer whether to move off Desktop, but <strong>when</strong>. TechBrot ProAdvisors handle Desktop file cleanup, multi-user and hosting issues, version upgrades, ongoing Desktop bookkeeping, and Desktop-to-Online migration when the time is right.",
+    "source": "Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. No affiliate or referral commissions on Desktop or QBO subscriptions."
+  },
+  "ctaBand": {
+    "eyebrow": "Desktop starts here",
+    "heading": "Stay or migrate &mdash; get the honest read first.",
+    "lede": "Start with a free file review. A Certified ProAdvisor reviews your Desktop file, your year-version status, your CPA situation, and your integration stack &mdash; then tells you plainly whether staying or migrating is the right call right now, and scopes either path in writing within 3 business days. No commission, no upsell, no rush. Independent firm &mdash; earns no fees on QuickBooks subscriptions.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks-desktop", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section section--compact" id="qbd-byline">
+  <div class="container container--narrow">
+    <div class="byline-block">
+      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">Reviewed by a QuickBooks Desktop &amp; Enterprise ProAdvisor &middot; independent, no reseller incentive</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--compact section--tier-guide" id="qbd-credentials">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Certified by Intuit &middot; Desktop, Enterprise, Online (L2), Payroll</p>
+      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials.</h2>
+    </header>
+    <div class="stat-row">
+      {%- for s in credStats %}
+      <div><div class="stat__value">{{ s.value }}</div><div class="stat__label">{{ s.label }}</div></div>
+      {%- endfor %}
+    </div>
+    <ul class="checks-list">
+      {%- for c in credentials %}<li>{{ c | safe }}</li>{%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbd-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In plain terms</p>
+      <h2 class="section__heading">What QuickBooks Desktop is &mdash; and where it&rsquo;s going.</h2>
+    </header>
+    <div class="prose">
+      {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbd-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">QuickBooks Desktop, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbd-editions">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The four Desktop editions</p>
+      <h2 class="section__heading">Pro, Premier, Mac, Enterprise.</h2>
+      <p class="section__lede">Editions differ on user count, industry-specific features, and inventory depth. Enterprise sits in its own tier &mdash; it&rsquo;s effectively a different product and has its own positioning. For specific pricing, check Intuit directly &mdash; we don&rsquo;t publish their numbers because they change. Not sure which fits? <a href="/quickbooks/file-review/?intent=file-review">Start with a free file review</a> &mdash; no commission, an honest answer.</p>
+    </header>
+    <div class="grid-2">
+      {%- for e in editions %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ e.tier }}</p>
+        <h3>{{ e.name | safe }}</h3>
+        <p class="prose">{{ e.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbd-vs">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The editions, head to head</p>
+      <h2 class="section__heading">Pro Plus vs Premier Plus vs Mac Plus vs Enterprise.</h2>
+      <p class="section__lede">An honest comparison of the four Desktop editions &mdash; user counts, industry features, inventory depth, and where each stands in Intuit&rsquo;s wind-down. We hold no reseller incentive in any direction.</p>
+    </header>
+    <div class="vs-scroll">
+      <table class="vs-table">
+        <caption class="sr-only">QuickBooks Desktop editions compared — Pro Plus, Premier Plus, Mac Plus, and Enterprise</caption>
+        <thead><tr><th scope="col">Capability</th><th scope="col">Pro Plus</th><th scope="col">Premier Plus</th><th scope="col">Mac Plus</th><th scope="col" class="vs-table__us">Enterprise</th></tr></thead>
+        <tbody>
+          {%- for r in vsTable %}
+          <tr><th scope="row">{{ r.cap | safe }}</th>
+            <td>{% if r.pro == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.pro == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.pro | safe }}</span>{% endif %}</td>
+            <td>{% if r.premier == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.premier == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.premier | safe }}</span>{% endif %}</td>
+            <td>{% if r.mac == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.mac == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.mac | safe }}</span>{% endif %}</td>
+            <td class="vs-table__us">{% if r.ent == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.ent == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.ent | safe }}</span>{% endif %}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbd-sunset">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What the sunset actually means</p>
+      <h2 class="section__heading">Six things to understand about Intuit&rsquo;s Desktop wind-down.</h2>
+      <p class="section__lede">Most of what you&rsquo;ll read online about &ldquo;Desktop being killed&rdquo; is half-right. Here&rsquo;s the actual picture.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in sunset %}
+      <div class="stack-8">
+        <h3>{{ s.name | safe }}</h3>
+        <p class="prose">{{ s.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbd-stay">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Who genuinely still needs Desktop</p>
+      <h2 class="section__heading">When staying on Desktop is the right call today.</h2>
+      <p class="section__lede">Not everyone should migrate right now. These are the cases where Desktop is genuinely still the better answer &mdash; for now.</p>
+    </header>
+    <div class="grid-3">
+      {%- for n in stay %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ n.num }}</p>
+        <h3>{{ n.name | safe }}</h3>
+        <p class="prose">{{ n.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbd-go">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Who should plan the move now</p>
+      <h2 class="section__heading">When migration is the right call.</h2>
+      <p class="section__lede">Counterpart to &ldquo;who should stay&rdquo; &mdash; the situations where moving to QBO sooner rather than later is the genuinely correct decision.</p>
+    </header>
+    <div class="grid-2">
+      {%- for m in migrate %}
+      <div class="stack-8">
+        <h3>{{ m.name | safe }}</h3>
+        <p class="prose">{{ m.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbd-routing">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Your situation</p>
+      <h2 class="section__heading">Where are you with QuickBooks Desktop?</h2>
+    </header>
+    <div class="grid-3">
+      {%- for b in routing %}
+      <a class="buyer-card" href="{{ b.href }}"><p class="buyer-card__opener">{{ b.opener | safe }}</p><p class="buyer-card__body">{{ b.body | safe }}</p><span class="buyer-card__cta">{{ b.cta | safe }}</span></a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbd-services">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">How we support Desktop businesses</p>
+      <h2 class="section__heading">Through the Desktop years &mdash; and the migration when it&rsquo;s time.</h2>
+      <p class="section__lede">TechBrot ProAdvisors handle the full Desktop lifecycle &mdash; while you&rsquo;re on it, when problems develop, and when migration becomes the right call.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in services %}
+      <div class="stack-8">
+        <h3><a href="{{ s.href }}">{{ s.name | safe }}</a></h3>
+        <p class="prose">{{ s.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbd-operator">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Who performs the work</p>
+      <h2 class="section__heading">Certified on both sides of the Desktop-to-Online line.</h2>
+    </header>
+    <div class="prose">
+      <p>Supporting a Desktop business means being fluent in Desktop today and ready for the migration tomorrow. Every TechBrot ProAdvisor holds active certifications on both Desktop and Online (Level 2) plus Enterprise and Payroll &mdash; so the team that supports your Desktop file today is the same team that handles your migration when the time is right.</p>
+      <p>We earn nothing from your QuickBooks subscription &mdash; no Desktop license fees, no QBO referral commissions, no affiliate revenue. The recommendation you get reflects what fits your business, not what pays us. You can <a href="/quickbooks/proadvisor-team/">meet the ProAdvisor team</a> or read our <a href="/trust/">trust &amp; methodology standards</a>. Independent firm &mdash; not affiliated with Intuit Inc.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in operatorSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbd-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">QuickBooks Desktop questions</p>
+      <h2 class="section__heading">What people ask about QuickBooks Desktop.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbd-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="qbd-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-14</span><span>Updated: 2026-06-14</span><span>Reviewed: 2026-06-14 &middot; QuickBooks Desktop &amp; Enterprise ProAdvisor</span></p>
+  </div>
+</section>
+
+<section class="section" id="qbd-related">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Other QuickBooks products</p>
+      <h2 class="section__heading">Related QuickBooks options.</h2>
+    </header>
+    {%- for n in related %}
+    <div class="stack-8">
+      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+      <p class="prose">{{ n.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>

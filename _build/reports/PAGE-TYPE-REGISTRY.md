@@ -117,9 +117,14 @@ intro · proof-strip · intake-form (with Intuit-routing qualifier) · FAQ.
 /reviews/, /reviews/by-*. Verified Clutch reviews only; NO AggregateRating until 5+ real (rule 4).
 
 ═══════════════════════════════════════════════════════════════
-PART 3 — PER-PAGE TIER ASSIGNMENTS for the 104 (from blueprint Sheet 1 funnel + schema)
+PART 3 — PER-PAGE TIER ASSIGNMENTS for the 104  ⚠ PROPOSED, NOT DECIDED
 ═══════════════════════════════════════════════════════════════
-Tier proposed; build-to-floor. Some t-bofu/t-mofu calls are the founder's open item #5.
+**STATUS: PROPOSED — founder decides on preview (open item #5 is OPEN).** Every tier below is
+a proposal derived from blueprint Sheet 1 (funnel + schema), used only to build-to-FLOOR so
+the page passes the per-tier gate. NONE is a final decision. The **t-bofu-vs-t-mofu calls in
+particular are NOT settled** — the founder reviews each on preview and may re-tier. Do not
+treat any assignment here as hardened; do not cite this as the founder's decision. When the
+founder rules a tier on preview, move it to a separate DECIDED column with the date.
 
 QUICKBOOKS-16:
 - t-mofu (product/comparison/about): /quickbooks/desktop/, /enterprise/, /which-plan-is-right/,

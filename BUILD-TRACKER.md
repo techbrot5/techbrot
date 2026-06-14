@@ -13,8 +13,18 @@ and must be complete by cutover.
 children (no internal 404s); ranking-value weighted; the cross-linked /quickbooks/proadvisor-team/
 + /speak-to-a-quickbooks-expert/ are dependency-priority (already linked from shipped pages →
 currently broken on the new build). find-an-accountant last (orphan/lowest indexed + new tier).
-**Silo-1 batch-1 = proof page /quickbooks/desktop/** (t-mofu) to establish the migration recipe
-+ registry entry; replicate the rest of silo 1 on founder sign-off. STOP per batch (preview review).
+**Silo-1 batch-1 = proof page /quickbooks/desktop/ (t-mofu) — DONE + verified.** Migrated from
+the 1638-line static baseline: 48 baseline headings + 8 FAQ + 28 schema types all preserved
+(content-equity GREEN), CollectionPage/BreadcrumbList/ItemList/FAQPage schema kept, ItemList-of-4
+editions carried AS a vs-table, byline-block + buyer-card + meta-reviewed, file-review-primary CTA,
+honest QBD-sunset framing. Added `quickbooks-desktop` intent. axe 0 · overflow clean 360/390/768 ·
+LH CLS 0, a11y/BP/SEO 100. Recipe + registry entry ("t-mofu product page") established → replicate
+the rest of silo 1 on founder sign-off (enterprise/which-plan/proadvisor-team t-mofu next; then
+migration+payroll children; speak-to-expert honest-triage). STOP per batch (preview review).
+**`DESIGN-DIRECTION.md` created** (standalone creative brief for the post-cutover design reset:
+colder/lighter palette, richest fonts, mega-menu + per-type navbars, 3D/SVG/imagery where they
+earn it, best-in-niche ATF, mid-body CTAs, unique-hero-per-type + shared-mid-component library).
+Registry Part-3 tiers flagged **PROPOSED, not decided** (founder rules tiers on preview; #5 open).
 HELD: #4 research-log N=0 · #5 the-9 t-bofu/t-mofu decided on preview · #2 footer WCAG queued.
 
 Updated: 2026-06-14 · ROUND 21 DESIGN-FIDELITY DEBT **FULLY CLEARED** — /about/methodology/
