@@ -15,7 +15,7 @@
     { "name": "C-series Errors" }
   ],
   "hero": {
-    "eyebrow": "QuickBooks error reference · C-series",
+    "eyebrow": "QuickBooks error reference &middot; <span class=\"error-badge\">C-series</span>",
     "heading": "QuickBooks C-Series Errors: what C=224 actually means.",
     "subheading": "C-series errors &mdash; <code>C=224</code>, <code>C=43</code>, <code>C=51</code>, and dozens of others &mdash; are internal C++ runtime exceptions inside QuickBooks. The number identifies which operation failed; the cause is almost always upstream <strong>file corruption</strong>. C-series sits between 6000-series access errors and unrecoverable errors in the file-damage progression &mdash; a warning to catch now, while repair is still bounded. Below: what <code>C=</code> really means, the severity arc, the limited self-fix, and when to escalate. Independent firm, not affiliated with Intuit Inc.",
     "actions": [
@@ -44,6 +44,18 @@
   <div class="container container--narrow">
     <div class="disclosure">
       <strong>This is an independent Certified QuickBooks ProAdvisor reference &mdash; not Intuit, and not QuickBooks&rsquo; official support.</strong> For Intuit software-level issues (login, billing, subscription), Intuit&rsquo;s own support is the right path. We provide independent, operational help repairing file corruption inside QuickBooks. QuickBooks and Intuit are registered trademarks of Intuit Inc.
+    </div>
+  </div>
+</section>
+
+<section class="section section--compact" id="cseries-byline">
+  <div class="container container--narrow">
+    <div class="byline-block">
+      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; Desktop &amp; Enterprise certified</p>
+      </div>
     </div>
   </div>
 </section>
@@ -121,29 +133,28 @@
     </header>
     <div class="grid-3">
       {%- for p in progression %}
-      <article class="review-card">
-        <p class="review-card__role">{{ p.num }}</p>
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ p.num }}</p>
         <h3>{{ p.name | safe }}</h3>
-        <p class="review-card__fact">{{ p.body | safe }}</p>
-      </article>
+        <p class="prose">{{ p.body | safe }}</p>
+      </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
 <section class="section section--alt" id="cseries-self-fix">
-  <div class="container">
+  <div class="container container--narrow">
     <header class="section__header">
       <p class="section__eyebrow">Limited self-fix steps</p>
       <h2 class="section__heading">What you can try yourself &mdash; and what you can&rsquo;t.</h2>
       <p class="section__lede">Self-fix for C-series is more constrained than for other error families. The reason: <strong>repeated repair attempts on a corrupted file typically worsen the corruption</strong>. The steps below should be tried once each, in order. If they don&rsquo;t resolve the error, do not repeat them &mdash; escalate before damage progresses.</p>
     </header>
-    <ol class="process-diagram">
+    <ol class="fix-steps">
       {%- for s in fixSteps %}
-      <li class="process-step">
-        <p class="process-step__number">0{{ loop.index }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
+      <li>
+        <span class="n">{{ loop.index }}</span>
+        <div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       </li>
       {%- endfor %}
     </ol>
@@ -158,12 +169,24 @@
     </header>
     <div class="grid-3">
       {%- for p in proSignals %}
-      <article class="review-card">
-        <p class="review-card__role">{{ p.rank }}</p>
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ p.rank }}</p>
         <h3>{{ p.name | safe }}</h3>
-        <p class="review-card__fact">{{ p.body | safe }}</p>
-      </article>
+        <p class="prose">{{ p.body | safe }}</p>
+      </div>
       {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cseries-breakout">
+  <div class="container container--narrow">
+    <div class="call-breakout">
+      <div>
+        <p class="call-breakout__title">Built-in tools didn&rsquo;t clear the C-series error?</p>
+        <p class="call-breakout__sub">A Certified ProAdvisor repairs the file before the corruption progresses &mdash; typically a $2,500&ndash;$5,000 fixed-fee scope. Independent firm.</p>
+      </div>
+      <a class="btn btn--primary" href="/contact/?intent=qb-error-c-series">Book the discovery call</a>
     </div>
   </div>
 </section>
@@ -205,6 +228,7 @@
       </div>
       {%- endfor %}
     </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-14</span><span>Updated: 2026-06-14</span><span>Reviewed: 2026-06-14 &middot; Certified QuickBooks ProAdvisor</span></p>
     <p class="prose"><a href="/quickbooks/help/error-codes/">All QuickBooks error codes &rarr;</a></p>
   </div>
 </section>

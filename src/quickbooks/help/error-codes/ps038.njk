@@ -15,7 +15,7 @@
     { "name": "Error PS038" }
   ],
   "hero": {
-    "eyebrow": "QuickBooks error reference · PS038",
+    "eyebrow": "QuickBooks error reference &middot; <span class=\"error-badge\">PS038</span>",
     "heading": "QuickBooks Error PS038: paychecks stuck in &ldquo;Online to Send.&rdquo;",
     "subheading": "Error PS038 means paychecks are stuck in <strong>&ldquo;Online to Send&rdquo;</strong> status and won&rsquo;t transmit to Intuit&rsquo;s payroll service &mdash; blocking direct deposits and electronic tax filing. Two cause families drive nearly all of it: paychecks created while offline, or a payroll subscription validation issue (the trap most users miss). Below: both causes, the step-by-step fix, and why a payroll deadline changes the escalation math. Independent firm, not affiliated with Intuit Inc.",
     "actions": [
@@ -44,6 +44,18 @@
   <div class="container container--narrow">
     <div class="disclosure">
       <strong>This is an independent Certified QuickBooks ProAdvisor reference &mdash; not Intuit, and not QuickBooks&rsquo; official support.</strong> For Intuit software-level issues (payroll subscription, billing, account status), Intuit&rsquo;s own support is the right path &mdash; and the right first step for a subscription-caused PS038. We provide independent, operational help resolving the error inside QuickBooks. QuickBooks and Intuit are registered trademarks of Intuit Inc.
+    </div>
+  </div>
+</section>
+
+<section class="section section--compact" id="ps038-byline">
+  <div class="container container--narrow">
+    <div class="byline-block">
+      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">Reviewed by a Certified QuickBooks Payroll ProAdvisor &middot; Desktop &amp; Enterprise certified</p>
+      </div>
     </div>
   </div>
 </section>
@@ -113,18 +125,17 @@
 </section>
 
 <section class="section" id="ps038-self-fix">
-  <div class="container">
+  <div class="container container--narrow">
     <header class="section__header">
       <p class="section__eyebrow">The self-fix</p>
       <h2 class="section__heading">How to fix PS038 yourself.</h2>
       <p class="section__lede">This sequence resolves PS038 in most cases within 30 minutes. Run the steps in order &mdash; the subscription check (step 1) prevents hours of unnecessary paycheck work if subscription is the underlying issue.</p>
     </header>
-    <ol class="process-diagram">
+    <ol class="fix-steps">
       {%- for s in fixSteps %}
-      <li class="process-step">
-        <p class="process-step__number">0{{ loop.index }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
+      <li>
+        <span class="n">{{ loop.index }}</span>
+        <div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       </li>
       {%- endfor %}
     </ol>
@@ -139,12 +150,24 @@
     </header>
     <div class="grid-3">
       {%- for p in proSignals %}
-      <article class="review-card">
-        <p class="review-card__role">{{ p.rank }}</p>
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ p.rank }}</p>
         <h3>{{ p.name | safe }}</h3>
-        <p class="review-card__fact">{{ p.body | safe }}</p>
-      </article>
+        <p class="prose">{{ p.body | safe }}</p>
+      </div>
       {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ps038-breakout">
+  <div class="container container--narrow">
+    <div class="call-breakout">
+      <div>
+        <p class="call-breakout__title">Payroll deadline and PS038 won&rsquo;t clear?</p>
+        <p class="call-breakout__sub">A Certified Payroll ProAdvisor resolves it &mdash; often within hours &mdash; typically an $800&ndash;$2,500 fixed-fee scope. Independent firm.</p>
+      </div>
+      <a class="btn btn--primary" href="/contact/?intent=qb-error-ps038">Book the discovery call</a>
     </div>
   </div>
 </section>
@@ -186,6 +209,7 @@
       </div>
       {%- endfor %}
     </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-14</span><span>Updated: 2026-06-14</span><span>Reviewed: 2026-06-14 &middot; Certified QuickBooks ProAdvisor</span></p>
     <p class="prose"><a href="/quickbooks/help/error-codes/">All QuickBooks error codes &rarr;</a></p>
   </div>
 </section>

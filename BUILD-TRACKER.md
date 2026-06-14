@@ -1,4 +1,24 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
+Updated: 2026-06-14 · ROUND 21 REPLICATION **COMPLETE** — problem-pattern replicated
+to the 6 error children + the error-codes hub (founder-approved off the h202 proving
+page). Each page: `error-badge` in the hero eyebrow · `byline-block` (E-E-A-T, renders
+"Certified QuickBooks ProAdvisor team" — never a personal name) · the self-fix
+`process-diagram` → compact `fix-steps` · misused `review-card` grids (causes/signals/
+variants/progression/why-worse/engagement/families) → `stack-8` · `call-breakout` box
+before the operator section · `meta-reviewed` at the FAQ foot. The HUB (an index, not a
+single-error page) takes byline-block + call-breakout + meta-reviewed + families/signals
+→ stack-8; its genuine engagement-process `process-diagram` (Diagnostic→scope→fix→verify)
+stays. **Structural re-pattern ONLY — zero data-file edits; every baseline heading + FAQ +
+schema preserved** (content-equity GREEN on all 7; only the standing "The monthly brief."
+removal + the c-series whitespace artifact, both pre-justified). **DESIGN-FIDELITY GATE: all
+7 now pass on merit — debt 9→2** (only /about/methodology/ + /trust/ remain). Re-verify:
+battery GREEN · overflow 7/7 clean 360/390/768 · axe 7/7 zero violations (25 passes) · LH
+hub+c-series **CLS 0.0**, a11y/BP/SEO 100 (perf = host-throttle noise, benchmarkIndex
+180–195). New probe scripts: `overflow_errpages.ps1` · `axe_errpages.ps1`.
+**NEXT:** re-pattern /trust/ + /about/methodology/ (add a rich component → clear the last
+debt); resume the QB-remainder (desktop/enterprise/consulting/proadvisor-team/which-plan)
+on the approved fidelity patterns; research-log still N=0 pending founder seed.
+
 Updated: 2026-06-14 · ROUND 21 FOUNDATION-CORRECTION **COMPLETE** — 5 proving pages
 + rulings + design-fidelity GATE. Pushed for final review before any replication.
 **5 PROVING PAGES rebuilt to true handoff fidelity (founder-approved h202 + 4 more):**

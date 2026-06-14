@@ -47,6 +47,18 @@
   </div>
 </section>
 
+<section class="section section--compact" id="qec-byline">
+  <div class="container container--narrow">
+    <div class="byline-block">
+      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; Desktop &amp; Enterprise certified</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section--compact section--tier-guide" id="qec-credentials">
   <div class="container container--narrow">
     <header class="section__header">
@@ -100,11 +112,11 @@
     </header>
     <div class="grid-3">
       {%- for f in families %}
-      <article class="review-card">
-        <p class="review-card__role">{{ f.codes }}</p>
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ f.codes }}</p>
         <h3>{{ f.name | safe }}</h3>
-        <p class="review-card__fact">{{ f.body | safe }}</p>
-      </article>
+        <p class="prose">{{ f.body | safe }}</p>
+      </div>
       {%- endfor %}
     </div>
   </div>
@@ -227,11 +239,11 @@
     </header>
     <div class="grid-3">
       {%- for p in signals %}
-      <article class="review-card">
-        <p class="review-card__role">{{ p.rank }}</p>
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ p.rank }}</p>
         <h3>{{ p.name | safe }}</h3>
-        <p class="review-card__fact">{{ p.body | safe }}</p>
-      </article>
+        <p class="prose">{{ p.body | safe }}</p>
+      </div>
       {%- endfor %}
     </div>
   </div>
@@ -253,6 +265,18 @@
       </li>
       {%- endfor %}
     </ol>
+  </div>
+</section>
+
+<section class="section" id="qec-breakout">
+  <div class="container container--narrow">
+    <div class="call-breakout">
+      <div>
+        <p class="call-breakout__title">Can&rsquo;t find your code, or self-fix didn&rsquo;t clear it?</p>
+        <p class="call-breakout__sub">A Certified ProAdvisor identifies the real root cause and scopes the fix in writing &mdash; fixed-fee, no hourly billing. Independent firm.</p>
+      </div>
+      <a class="btn btn--primary" href="/contact/?intent=qb-error">Book the discovery call</a>
+    </div>
   </div>
 </section>
 
@@ -293,6 +317,7 @@
       </div>
       {%- endfor %}
     </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-14</span><span>Updated: 2026-06-14</span><span>Reviewed: 2026-06-14 &middot; Certified QuickBooks ProAdvisor</span></p>
     <p class="prose"><a href="/quickbooks/faq/">See all QuickBooks frequently asked questions &rarr;</a></p>
   </div>
 </section>

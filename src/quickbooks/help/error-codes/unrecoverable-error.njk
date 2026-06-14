@@ -15,7 +15,7 @@
     { "name": "Unrecoverable Error" }
   ],
   "hero": {
-    "eyebrow": "QuickBooks error reference · Unrecoverable",
+    "eyebrow": "QuickBooks error reference &middot; <span class=\"error-badge\">Unrecoverable</span>",
     "heading": "QuickBooks unrecoverable error: what to do right now.",
     "subheading": "An unrecoverable error means the company file has corruption serious enough that QuickBooks can&rsquo;t continue safely &mdash; typically &ldquo;QuickBooks has encountered a problem and needs to close,&rdquo; paired with a code pair like <code>00000 14775</code>. The single most important thing: <strong>stop using the file.</strong> Each open-and-close cycle risks spreading repairable damage into unrepairable damage. Below: the four steps to take right now, why continued use makes it worse, and what professional repair actually looks like. Independent firm, not affiliated with Intuit Inc.",
     "actions": [
@@ -44,6 +44,18 @@
   <div class="container container--narrow">
     <div class="disclosure">
       <strong>This is an independent Certified QuickBooks ProAdvisor reference &mdash; not Intuit, and not QuickBooks&rsquo; official support.</strong> For Intuit software-level issues (login, billing, subscription), Intuit&rsquo;s own support is the right path. We provide independent, operational help repairing corrupted company files inside QuickBooks. QuickBooks and Intuit are registered trademarks of Intuit Inc.
+    </div>
+  </div>
+</section>
+
+<section class="section section--compact" id="urec-byline">
+  <div class="container container--narrow">
+    <div class="byline-block">
+      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; Desktop &amp; Enterprise certified</p>
+      </div>
     </div>
   </div>
 </section>
@@ -95,18 +107,17 @@
 </section>
 
 <section class="section section--alt" id="urec-what-to-do">
-  <div class="container">
+  <div class="container container--narrow">
     <header class="section__header">
       <p class="section__eyebrow">What to do right now</p>
       <h2 class="section__heading">Four steps. In this order. No exceptions.</h2>
       <p class="section__lede">The sequence below is deliberately short. Unrecoverable errors are not a case where extended self-troubleshooting helps &mdash; it usually makes the file worse. The priority is <strong>protect the file, attempt one round of automated repair, and escalate</strong>.</p>
     </header>
-    <ol class="process-diagram">
+    <ol class="fix-steps">
       {%- for s in fixSteps %}
-      <li class="process-step">
-        <p class="process-step__number">0{{ loop.index }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
+      <li>
+        <span class="n">{{ loop.index }}</span>
+        <div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       </li>
       {%- endfor %}
     </ol>
@@ -122,11 +133,11 @@
     </header>
     <div class="grid-3">
       {%- for w in whyWorse %}
-      <article class="review-card">
-        <p class="review-card__role">{{ w.tag }}</p>
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ w.tag }}</p>
         <h3>{{ w.name | safe }}</h3>
-        <p class="review-card__fact">{{ w.body | safe }}</p>
-      </article>
+        <p class="prose">{{ w.body | safe }}</p>
+      </div>
       {%- endfor %}
     </div>
   </div>
@@ -159,12 +170,24 @@
     </header>
     <div class="grid-3">
       {%- for e in engagement %}
-      <article class="review-card">
-        <p class="review-card__role">{{ e.step }}</p>
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ e.step }}</p>
         <h3>{{ e.name | safe }}</h3>
-        <p class="review-card__fact">{{ e.body | safe }}</p>
-      </article>
+        <p class="prose">{{ e.body | safe }}</p>
+      </div>
       {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="urec-breakout">
+  <div class="container container--narrow">
+    <div class="call-breakout">
+      <div>
+        <p class="call-breakout__title">Tool Hub didn&rsquo;t resolve the unrecoverable error?</p>
+        <p class="call-breakout__sub">A Certified ProAdvisor repairs or extracts the file before the damage becomes permanent &mdash; typically a $2,500&ndash;$5,000 fixed-fee scope. Independent firm.</p>
+      </div>
+      <a class="btn btn--primary" href="/contact/?intent=qb-unrecoverable">Book the discovery call</a>
     </div>
   </div>
 </section>
@@ -206,6 +229,7 @@
       </div>
       {%- endfor %}
     </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-14</span><span>Updated: 2026-06-14</span><span>Reviewed: 2026-06-14 &middot; Certified QuickBooks ProAdvisor</span></p>
     <p class="prose"><a href="/quickbooks/help/error-codes/">All QuickBooks error codes &rarr;</a></p>
   </div>
 </section>
