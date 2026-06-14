@@ -15,7 +15,7 @@
     { "name": "Error H202" }
   ],
   "hero": {
-    "eyebrow": "QuickBooks error reference · H202",
+    "eyebrow": "QuickBooks error reference &middot; <span class=\"error-badge\">H202</span>",
     "heading": "QuickBooks Error H202: what it means &amp; how to fix it.",
     "subheading": "H202 means QuickBooks is in multi-user mode but a workstation can&rsquo;t reach the server hosting the company file &mdash; one of the most common multi-user errors in Desktop, Premier, and Enterprise, and one of the most consistently fixable. Below: the five causes in order of likelihood, the six-step self-fix, and when to call a Certified ProAdvisor. Independent firm, not affiliated with Intuit Inc.",
     "actions": [
@@ -48,10 +48,22 @@
   </div>
 </section>
 
+<section class="section section--compact" id="h202-byline">
+  <div class="container container--narrow">
+    <div class="byline-block">
+      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; Desktop &amp; Enterprise certified</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section--compact section--tier-guide" id="h202-credentials">
   <div class="container container--narrow">
     <header class="section__header">
-      <p class="section__eyebrow">Certified by Intuit · Desktop &amp; Enterprise specialists</p>
+      <p class="section__eyebrow">Certified by Intuit &middot; Desktop &amp; Enterprise specialists</p>
       <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials.</h2>
     </header>
     <div class="stat-row">
@@ -104,29 +116,28 @@
     </header>
     <div class="grid-2">
       {%- for c in causes %}
-      <article class="review-card">
-        <p class="review-card__role">{{ c.rank }}</p>
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ c.rank }}</p>
         <h3>{{ c.name | safe }}</h3>
-        <p class="review-card__fact">{{ c.body | safe }}</p>
-      </article>
+        <p class="prose">{{ c.body | safe }}</p>
+      </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
 <section class="section" id="h202-fix">
-  <div class="container">
+  <div class="container container--narrow">
     <header class="section__header">
       <p class="section__eyebrow">The self-fix</p>
       <h2 class="section__heading">How to fix H202 yourself.</h2>
       <p class="section__lede">Six steps, in order. Most H202 cases clear within the first two &mdash; if all six don&rsquo;t resolve it, stop and book a diagnostic.</p>
     </header>
-    <ol class="process-diagram">
+    <ol class="fix-steps">
       {%- for s in fixSteps %}
-      <li class="process-step">
-        <p class="process-step__number">0{{ loop.index }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
+      <li>
+        <span class="n">{{ loop.index }}</span>
+        <div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       </li>
       {%- endfor %}
     </ol>
@@ -150,7 +161,19 @@
   </div>
 </section>
 
-<section class="section" id="h202-operator">
+<section class="section" id="h202-breakout">
+  <div class="container container--narrow">
+    <div class="call-breakout">
+      <div>
+        <p class="call-breakout__title">Self-fix didn&rsquo;t clear H202?</p>
+        <p class="call-breakout__sub">A Certified ProAdvisor diagnoses the deeper cause &mdash; typically a $1,200&ndash;$3,000 fixed-fee scope. Independent firm.</p>
+      </div>
+      <a class="btn btn--primary" href="/contact/?intent=qb-error-h202">Book the discovery call</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="h202-operator">
   <div class="container container--narrow">
     <header class="section__header">
       <p class="section__eyebrow">Who diagnoses it</p>
@@ -168,7 +191,7 @@
   </div>
 </section>
 
-<section class="section section--alt" id="h202-related">
+<section class="section" id="h202-related">
   <div class="container container--narrow">
     <header class="section__header">
       <p class="section__eyebrow">Where errors lead next</p>
@@ -183,7 +206,7 @@
   </div>
 </section>
 
-<section class="section" id="h202-faq">
+<section class="section section--alt" id="h202-faq">
   <div class="container container--narrow">
     <header class="section__header">
       <p class="section__eyebrow">Common questions</p>
@@ -201,5 +224,6 @@
       </div>
       {%- endfor %}
     </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-14</span><span>Updated: 2026-06-14</span><span>Reviewed: 2026-06-14 &middot; Certified QuickBooks ProAdvisor</span></p>
   </div>
 </section>

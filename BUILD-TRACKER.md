@@ -1,4 +1,38 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
+Updated: 2026-06-14 · ROUND 21 CHECKPOINT 3 — FOUNDATION-CORRECTION (design fidelity).
+**DESIGN-FIDELITY AUDIT (founder-ordered at the /online/ stop) → systemic gap CONFIRMED.**
+Report: `_build/reports/round-21-design-audit.md`. Home implements the handoff; the
+round-16→21 elevation pages PASS the battery but carry old-HTML sequencing on ~5
+primitives (review-card/stack-8/grid/process-diagram/trust-row), UNDER-USING the
+handoff's tier components. **GREEN ≠ matches-the-design.** Founder DECISION: pause
+mass-production, re-pattern from the handoff, prove ONE true-fidelity page per tier,
+sign off, THEN replicate. Build nothing beyond the 5 proving pages this round.
+- **PART 1 DONE (`79f97b9`):** inventory found nearly ALL handoff components already
+  in the bundle (buyer-card+vs-table in 03-conversion · flow+pull-quote in 05-tiers ·
+  error-badge+fix-steps+call-breakout+proof-strip+stat__delta in 08-additions ·
+  intake-form). The gap was under-USE, not absence. Only the t-guide ARTICLE furniture
+  was missing (dropped round-10) → ported verbatim to 09-extensions: **toc · guide-grid
+  + .article · byline-block · meta-reviewed.** Bytes minified **53,819→55,703 / 58KB**
+  (+1,884, headroom 3,689 — no breach). css-drift/manifest GREEN.
+- **PROBLEM-PATTERN MARKUP (no handoff render exists; built from 08-additions CSS):**
+  `error-badge` = inline mono pill (the code) · `fix-steps` = `<ol class="fix-steps">`
+  `<li><span class="n">1</span><div>…</div></li>` (mono number circles, compact —
+  distinct from process-diagram) · `call-breakout` = `<div class="call-breakout">`
+  `<div><p class="call-breakout__title">…</p><p class="call-breakout__sub">…</p></div>`
+  `<a class="btn…">…</a></div>` (the "stuck? book a diagnostic" box before the CTA).
+- **PART 2 — 5 PROVING PAGES (founder-confirmed), full handoff fidelity + full re-verify:**
+  1. t-hub `/quickbooks/` — buyer-card routing · real vs-table · flow diagram · pull-quote · stat__delta.
+  2. t-mofu product `/quickbooks/online/` — vs-table (QBO vs alts + plan compare) · buyer-card · byline-block+meta-reviewed · stop generic review-card.
+  3. t-bofu `/accounting/payroll-management/` — **ADD the 24-key intake-form (founder ruling)** · proof-strip · one verified review-card · buyer-card.
+  4. error-silo PROBLEM pattern `/quickbooks/help/error-codes/h202/` — error-badge · fix-steps · call-breakout · byline-block (gates the ~40-page error silo).
+  5. t-guide ARTICLE `/quickbooks/help/error-codes/` hub — toc/guide-grid · article.prose · byline-block · pull-quote · meta-reviewed.
+  EQUITY MUST STAY GREEN on every rebuild (all baseline headings/FAQ preserved). review-card → verified quotes only.
+- **PART 3 — add a design-fidelity battery check** (per-tier handoff-component assertion
+  per PLACEMENT-MAP) as a STANDING gate alongside equity/axe/overflow. A page isn't
+  "done" until design-fidelity passes.
+- STOP after the 5 + the check → push → founder/strategy-Claude review each vs the
+  handoff → replicate to QB-remainder + re-pattern prior pages ONLY after sign-off.
+
 Updated: 2026-06-14 · ROUND 21 CHECKPOINT 2 — ERROR-CODES CLUSTER COMPLETE.
 **ERROR-CODES HUB + 6 CHILDREN DONE+VERIFIED** (t-guide, approved h202 pattern).
 Pages **29 → 36** (+7). All battery GREEN · axe 0 · overflow 360/375/753 ·
