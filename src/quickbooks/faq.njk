@@ -1,0 +1,132 @@
+---json
+{
+  "layout": "layouts/t-guide.njk",
+  "permalink": "/quickbooks/faq/",
+  "slug": "qbfaq",
+  "tierClass": "section--tier-guide",
+  "bodyClass": "page--mofu",
+  "title": "QuickBooks FAQ: 35 Questions Answered by ProAdvisors · TechBrot",
+  "description": "Thirty-five QuickBooks questions answered by an independent Certified ProAdvisor firm — product selection, setup, payroll, file cleanup, migration, pricing, and how working with a ProAdvisor actually works. Zero commission on Intuit products. Not affiliated with Intuit Inc.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "QuickBooks", "href": "/quickbooks/" },
+    { "name": "FAQ" }
+  ],
+  "hero": {
+    "eyebrow": "The QuickBooks reference &middot; maintained by Certified ProAdvisors",
+    "heading": "QuickBooks, answered.",
+    "subheading": "Thirty-five questions on QuickBooks product selection, setup, payroll, file cleanup, migration, pricing, and how working with a Certified ProAdvisor actually works. Written by an independent ProAdvisor firm with <strong>zero commission</strong> on QuickBooks subscriptions or any other Intuit product. Every answer reflects how we&rsquo;d actually advise a client &mdash; no hedging, no affiliate spin. Not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=qb-faq", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>QuickBooks, answered</strong> &mdash; 35 questions across 7 clusters (choosing a product, working with a ProAdvisor, setup, fixing problems, migration, payroll, and pricing &amp; engagement model), maintained by the Certified QuickBooks ProAdvisor team. Time-sensitive facts (Desktop sunset dates, the multi-state convenience-of-the-employer rule, Enterprise user limits) verified against current Intuit and industry sources; pricing reflects TechBrot&rsquo;s own fixed-fee ranges. Independent firm, zero commission on any Intuit product.",
+    "source": "Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Question not answered above?",
+    "heading": "Talk to a Certified ProAdvisor directly.",
+    "lede": "Thirty-five questions answer most of what businesses ask about QuickBooks. The remainder are specific to your situation &mdash; team size, industry, current configuration, the exact problem you&rsquo;re looking at. Book a 30-minute discovery call to get answers from a Certified ProAdvisor on your specific circumstances. Complimentary, no obligation, no hourly billing.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=qb-faq", "class": "btn--primary" },
+      { "label": "Explore Services", "href": "/quickbooks/", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section section--compact" id="qbfaq-popular">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Most asked</p>
+      <h2 class="section__heading">Six questions answered most often.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for p in popular %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ p.qid }} &middot; {{ p.cluster }}</p>
+        <p class="prose"><a href="#{{ p.anchor }}">{{ p.q | safe }} &rarr;</a></p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbfaq-body">
+  <div class="container">
+    <h2 class="sr-only">All QuickBooks questions, organized by topic</h2>
+    <div class="guide-grid">
+      <aside class="toc" aria-label="Topic clusters">
+        <p class="toc__label">Topic clusters</p>
+        <ol>
+          {%- for c in clusters %}
+          <li><a {% if loop.first %}class="is-active" {% endif %}href="#{{ c.id }}">{{ c.heading | safe }}</a></li>
+          {%- endfor %}
+        </ol>
+      </aside>
+      <article class="article prose">
+        <div class="byline-block" style="border-top:0;padding-top:0;margin-bottom:var(--space-6)">
+          <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+          <div>
+            <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+            <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; independent, zero Intuit commission</p>
+          </div>
+        </div>
+        <blockquote class="pull-quote">
+          <p>Every answer here reflects how we&rsquo;d actually advise a client &mdash; no hedging, no affiliate spin, and zero commission on any Intuit product.</p>
+        </blockquote>
+        {%- for c in clusters %}
+        <section id="{{ c.id }}" aria-labelledby="{{ c.id }}-h">
+          <h2 id="{{ c.id }}-h">{{ c.heading | safe }}</h2>
+          <p>{{ c.lede | safe }}</p>
+          {%- for it in c.items %}
+          <h3 id="{{ it.anchor }}">{{ it.q | safe }}</h3>
+          {{ it.a | safe }}
+          {%- endfor %}
+        </section>
+        {%- endfor %}
+        <p class="meta-reviewed"><span>Maintained by the Certified QuickBooks ProAdvisor team</span><span>35 questions &middot; 7 clusters</span><span>Last reviewed: 2026-06 &middot; Certified QuickBooks ProAdvisor</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbfaq-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    </header>
+    <div class="prose">
+      <p>{{ reviewBody | safe }}</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in reviewerCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.label | safe }}</p><p class="trust-row__label">{{ r.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbfaq-related">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related services</p>
+      <h2 class="section__heading">The full QuickBooks service universe.</h2>
+      <p class="section__lede">Every engagement type referenced across the FAQ, organized for quick navigation. Start where your question lives.</p>
+    </header>
+    <div class="grid-3">
+      {%- for n in related %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ n.cluster }}</p>
+        <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+        <p class="prose">{{ n.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
