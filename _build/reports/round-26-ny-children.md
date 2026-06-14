@@ -164,3 +164,29 @@ on first launch (recurring serve-warmup flake) → re-probed clean.
 sales-tax-help). Then wave 8 = the 4 sensitive honest-triage pages (business-tax-problems,
 state-tax-notice-help, urgent-bookkeeping, speak-to-a-proadvisor) — careful R5/Sheet-7 handling, possible
 founder stop.
+
+---
+
+## WAVE 7 — last 4 clean NY services · DONE · commit `f977382`
+| Page | Preview URL | Local content (citable) |
+|---|---|---|
+| QuickBooks migration | …/find-an-accountant/new-york/quickbooks-migration/ | **43-heading** Desktop-is-ending page — Desktop→Online + cross-platform (Xero/Wave/Sage/Bench), balance/list verification, NY sales-tax + payroll re-setup, validation vs the old file at cutover |
+| Cleanup bookkeeping | …/find-an-accountant/new-york/cleanup-bookkeeping/ | **44-heading** general books cleanup/catch-up (distinct from QB-specific cleanup) — multi-year reconstruction, A/R-A/P, opening-balance equity, NY sales-tax-liability cleanup |
+| Pricing | …/find-an-accountant/new-york/pricing/ | canonical fixed-fee figures carried verbatim (9-service range grid + 3 tiers), why-fixed-fee, NY drivers (volume/UBT/sales-tax/multi-entity), no hourly billing |
+| Sales tax help | …/find-an-accountant/new-york/sales-tax-help/ | NYS DTF registration (Cert of Authority/DTF-17), 8.875% broken out, economic nexus ($500K+100txn), $110 clothing exemption, Web File; sales-tax prep in-scope, income-tax/representation OUT |
+
+**Decisions/judgment calls:** **Honesty (R9/R5):** all 4 reframed the baseline named-reviewer line to
+firm-level; sales-tax-help keeps an explicit does-not-file-return / does-not-represent boundary (sales-tax
+tracking/prep is legitimate bookkeeper scope; income-tax + controversy is the CPA/EA). **Fixes:** 4
+newsletter exceptions; **pricing linked to a non-existent `/quickbooks-error-fixes/` page** (the
+"Emergency QB Fix" row) → repointed to the real `/quickbooks-cleanup/`; **pricing agent had repointed
+`reviewedBy` to `#organization`** → reverted to `#david-westgate` to keep the R9 E-E-A-T Person node
+consistent with the other 33 NY pages. **sales-tax-help H1** carries the em-flatten space artifact
+("sales tax , tracked") verbatim — matched baseline.json exactly, equity GREEN, no exception needed.
+**Probe note:** qbmigration overflow flaked empty on first launch → re-probed clean.
+**Verification (all 4):** equity GREEN · t-location · axe 0 · overflow clean 360/390/768 · CSS 55,933 B.
+
+**PROGRESS: 34 / 38 NY children done.** ALL cities (12), ALL industries (9), and ALL non-sensitive
+services (13) migrated + committed + verified across waves 1–7.
+**REMAINING: the 4 sensitive honest-triage pages** — business-tax-problems, state-tax-notice-help,
+urgent-bookkeeping, speak-to-a-proadvisor. **STOP for founder honesty decision** (see below).
