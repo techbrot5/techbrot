@@ -1,5 +1,17 @@
 # Cloudflare deploy fix — root cause + fix (read me first)
 
+## ✅ RESOLVED (Round 18) — via project separation
+The original Pages project published the repo ROOT and also carried production
+(techbrot.com / `main`), so fixing its output dir risked the live site. Founder
+created a SEPARATE project **`techbrot-preview`** (branch `preview-11ty`, output
+`_site`, no `ENVIRONMENT=production`). Live + rendering cobalt + noindex at
+**https://techbrot-preview.pages.dev** (verified: `/`→200, site.min.css→200
+text/css, meta noindex + robots.txt Disallow:/). The old `techbrot` project is
+untouched. The `7cc89e2` first-class CSS template fix below is correct and stays.
+The history below is retained as the diagnosis record.
+
+
+
 ## 🔴 ROUND 18 LIVE-DEPLOY DIAGNOSIS — THE REAL BLOCKER (dashboard config)
 Pushed `preview-11ty` (`21b6446`, carries the CF CSS fix `7cc89e2`). Cloudflare
 reported **✅ Deploy successful**, deployment URL **https://938f0c02.techbrot.pages.dev**
