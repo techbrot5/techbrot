@@ -62,7 +62,7 @@ runs) → `npm run build` → `npx serve _site` (plain static, NOT the dev serve
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | /accounting/payroll-management/ | bofu | multi-state payroll-tax handling | 48h/13faq GREEN | 0 (24) | 360/375/753 | 100/100/100 | 0.0 | **DONE — `baaea7d`** |
 | 2 | /accounting/sales-tax-compliance/ | bofu | post-Wayfair nexus framework | 44h/13faq GREEN | 0 (24) | 360/375/753 | 100/100/100 | 0.0 | **DONE — `0b765da`** |
-| 3 | /accounting/advisory/ | hub | judgment-layer thesis | — | — | — | — | — | queued (hub) |
+| 3 | /accounting/advisory/ | hub | judgment-layer thesis | 28h/10faq GREEN | 0 (24) | 360/375/753 | 100/100/100 | 0.0 | **DONE — `026e065`** |
 | 4 | /accounting/advisory/fractional-cfo/ | bofu | engagement model | — | — | — | — | — | queued |
 | 5 | /quickbooks/cleanup/ | bofu | Compounding Reconciliation Drift (reuse) | — | — | — | — | — | queued |
 | 6 | /quickbooks/help/ | mofu | diagnostic triage model | — | — | — | — | — | queued (hub) |
@@ -118,10 +118,10 @@ Compounding Reconciliation Drift · QB help → diagnostic triage model · qb-pa
    pushed). **UNPUSHED: `7cc89e2` + `baaea7d` — push both, then redeploy.** If CSS
    still 404s after that, it's CF-dashboard (build cmd `npm run build` / output
    `_site` / clear cache) — checklist in cloudflare-fix.md.
-2. **Round-17: 2 of 7 done** — `/accounting/payroll-management/` (`baaea7d`) +
-   `/accounting/sales-tax-compliance/` (`0b765da`), both fully verified +
-   committed. 5 clean elevations remain: advisory hub, fractional-cfo, qb-cleanup,
-   qb-help hub, qb-payroll. 1099 deferred (founder ruling).
+2. **Round-17: 3 of 7 done** — payroll-management (`baaea7d`), sales-tax-compliance
+   (`0b765da`), advisory hub (`026e065`), all fully verified + committed. 4 clean
+   elevations remain: fractional-cfo, qb-cleanup, qb-help hub, qb-payroll. 1099
+   deferred (founder ruling).
 3. **No page left half-built** — each committed page is complete.
 4. **Dev server RUNNING** at http://192.168.1.8:8080/ — left up as requested.
    Audit servers (8090 axe, 8125 prod) also up; only probe chrome cycled.
