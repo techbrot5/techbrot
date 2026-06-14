@@ -17,7 +17,35 @@ across 33 URLs (2369 hrefs resolve, css gate 53,773B). Every page: equity GREEN 
 axe 0 · overflow PASS · LH 100/100/100 · CLS 0 (qb-payroll 0.006 ≈ 0). CF CSS fix
 (7cc89e2) + all round-17 commits UNPUSHED — founder pushes preview-11ty. Dev
 server RUNNING http://192.168.1.8:8080/. Report: **round-17.md**.
-Elevated total: 25 of 139 + home + file-review.
+Elevated total: 25 of 139 + home + file-review. (Counts OLD-baseline pages
+elevated to the cobalt standard; the Sheet-5 200-page gate also counts the
+already-DONE industry/location/VS/legal sets — see Sheet 5.)
+
+## DEFERRED + RESTORE FLAGS
+- **/accounting/1099-preparation/ — DEFERRED (build-new).** No baseline, no root
+  HTML; founder ruling round 17 → future dedicated build-new round (with
+  /about/team/ + the switch silo).
+- **RESTORE when 1099 is built:** the payroll-management cross-sell card "1099
+  preparation" (baseline H3) was retargeted to "QuickBooks cleanup" to avoid a
+  dead link; logged in equity-exceptions.json (`/accounting/payroll-management/`).
+  Repoint it back to /accounting/1099-preparation/ once that page exists.
+
+## SIGN-OFF QUEUE (equity-exceptions.json — 25 flagged removals, all reported)
+Standing/founder-ruled (no per-page sign-off): "The monthly brief." newsletter
+removals + footer-chrome relocations (Accounting/QuickBooks/Company/Network under
+chrome:minimal). **Awaiting explicit founder sign-off:**
+- **QAPage → FAQPage** (FAQPage is the correct multi-Q type): monthly-bookkeeping,
+  cleanup-bookkeeping, catch-up-bookkeeping (R16) · payroll-management, sales-tax-
+  compliance, advisory, fractional-cfo (R17). 7 pages.
+- **Schema-only condensed FAQ variants retired** (substance carried verbatim by
+  the rendered Q): monthly-bookkeeping ×2 · payroll ×1 · sales-tax ×2 · advisory
+  ×2 · fractional-cfo ×4.
+- **R16 setup 4-vs-5 phase ruling** — baseline documents 4 setup phases; founder
+  asked for 5. Preserved 4 as the TechBrot Setup Protocol; awaiting ruling on
+  adding a 5th.
+- **R16 carryover:** /about/methodology/ "The Team" card retarget; /partners/ FAQ
+  schema-defect fixes (round 8). Still awaiting sign-off.
+- **R17:** the 1099 cross-sell removal (restore flag above).
 
 Updated: 2026-06-14 · ROUND 16 — accounting + quickbooks silo elevation batch
 **COMPLETE — all 7 pages DONE + FULLY VERIFIED.** Accounting silo (hub + 3
