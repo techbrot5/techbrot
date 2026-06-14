@@ -75,14 +75,28 @@
     </header>
     <div class="grid-3">
       {%- for e in engagements %}
-      <article class="review-card">
-        <p class="review-card__role">{{ e.num }} &middot; {{ e.tag }}</p>
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ e.num }} &middot; {{ e.tag }}</p>
         <h3>{{ e.name | safe }}</h3>
-        <p class="review-card__fact">{{ e.body | safe }}</p>
-        <p class="review-card__fact"><strong>For:</strong> {{ e.forWhom | safe }} &middot; <strong>{{ e.timeline | safe }}</strong> &middot; {{ e.price | safe }}</p>
-        <a class="review-card__link" href="{{ e.href }}">{{ e.cta | safe }} &rarr;</a>
-      </article>
+        <p class="prose">{{ e.body | safe }}</p>
+        <p class="prose"><strong>For:</strong> {{ e.forWhom | safe }} &middot; <strong>{{ e.timeline | safe }}</strong> &middot; {{ e.price | safe }}</p>
+        <p class="prose"><a href="{{ e.href }}">{{ e.cta | safe }} &rarr;</a></p>
+      </div>
       {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="quickbooks-routing">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Your situation</p>
+      <h2 class="section__heading">Where are you with QuickBooks?</h2>
+    </header>
+    <div class="grid-3">
+      <a class="buyer-card" href="/quickbooks/cleanup/"><p class="buyer-card__opener">&ldquo;I don&rsquo;t trust the numbers.&rdquo;</p><p class="buyer-card__body">File cleanup reconciles every account and documents what changed &mdash; the next close starts from truth.</p><span class="buyer-card__cta">QuickBooks cleanup</span></a>
+      <a class="buyer-card" href="/quickbooks/migration/desktop-to-online/"><p class="buyer-card__opener">&ldquo;We&rsquo;re on Desktop and the clock is ticking.&rdquo;</p><p class="buyer-card__body">Desktop-to-Online migration with integrity verification and reconciliation &mdash; the step Intuit&rsquo;s free tool skips.</p><span class="buyer-card__cta">QuickBooks migration</span></a>
+      <a class="buyer-card" href="/quickbooks/which-plan-is-right/"><p class="buyer-card__opener">&ldquo;I don&rsquo;t know which product I need.&rdquo;</p><p class="buyer-card__body">A complimentary plan-selection call sorts Online vs Desktop vs Enterprise &mdash; no commission, no upsell incentive.</p><span class="buyer-card__cta">Find the right plan</span></a>
     </div>
   </div>
 </section>
@@ -137,6 +151,32 @@
       </li>
       {%- endfor %}
     </ol>
+  </div>
+</section>
+
+<section class="section" id="quickbooks-standard">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The operating standard</p>
+      <h2 class="section__heading">One standard, every engagement.</h2>
+    </header>
+    <div class="grid-2">
+      <blockquote class="pull-quote">
+        <p>We earn nothing from your QuickBooks subscription &mdash; so the recommendation is the product, not the upsell.</p>
+        <footer>The case for independence &mdash; TechBrot methodology</footer>
+      </blockquote>
+      <figure style="margin:0" role="img" aria-label="The engagement standard: written scope, then a named operator, then platform-level quality review, then guaranteed continuity">
+        <div class="flow">
+          <div class="flow__step"><span class="flow__label">Written scope</span><span class="flow__sub">fixed fee, first</span></div>
+          <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+          <div class="flow__step flow__step--accent"><span class="flow__label">Named operator</span><span class="flow__sub">not a queue</span></div>
+          <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+          <div class="flow__step"><span class="flow__label">Quality review</span><span class="flow__sub">platform-level</span></div>
+          <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+          <div class="flow__step"><span class="flow__label">Continuity</span><span class="flow__sub">guaranteed</span></div>
+        </div>
+      </figure>
+    </div>
   </div>
 </section>
 
