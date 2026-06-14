@@ -65,8 +65,8 @@ runs) → `npm run build` → `npx serve _site` (plain static, NOT the dev serve
 | 3 | /accounting/advisory/ | hub | judgment-layer thesis | 28h/10faq GREEN | 0 (24) | 360/375/753 | 100/100/100 | 0.0 | **DONE — `026e065`** |
 | 4 | /accounting/advisory/fractional-cfo/ | bofu | engagement model | 54h/13faq GREEN | 0 (24) | 360/375/753 | 100/100/100 | 0.0 | **DONE — `10458cf`** |
 | 5 | /quickbooks/cleanup/ | bofu | Compounding Reconciliation Drift (reuse) | 43h/7faq GREEN | 0 (26) | 360/375/753 | 100/100/100 | 0.0 | **DONE — `32eff23`** |
-| 6 | /quickbooks/help/ | mofu | diagnostic triage model | — | — | — | — | — | queued (hub) |
-| 7 | /quickbooks/payroll/ | bofu | (QB-specific payroll) | — | — | — | — | — | queued |
+| 6 | /quickbooks/help/ | mofu | diagnostic triage model | 49h/8faq GREEN | 0 (24) | 360/375/753 | 100/100/100 | 0.0 | **DONE — `833bef5`** |
+| 7 | /quickbooks/payroll/ | bofu | QB-specific payroll (multi-state/local) | 33h/7faq GREEN | 0 (24) | 360/375/753 | 100/100/100 | 0.006 | **DONE — `0bb09a0`** |
 
 ## ✅ PAGE 1 — /accounting/payroll-management/ (t-bofu) — DONE + VERIFIED
 Sources read: baseline (48h/13faq) + old HTML. Citable: **multi-state payroll-tax
@@ -118,11 +118,20 @@ Compounding Reconciliation Drift · QB help → diagnostic triage model · qb-pa
    pushed). **UNPUSHED: `7cc89e2` + `baaea7d` — push both, then redeploy.** If CSS
    still 404s after that, it's CF-dashboard (build cmd `npm run build` / output
    `_site` / clear cache) — checklist in cloudflare-fix.md.
-2. **Round-17: 5 of 7 done** — payroll-management (`baaea7d`), sales-tax-compliance
-   (`0b765da`), advisory hub (`026e065`), fractional-cfo (`10458cf`), qb-cleanup
-   (`32eff23`), all fully verified + committed. 2 remain: qb-help hub (t-mofu),
-   qb-payroll. 1099 deferred (founder ruling).
-3. **No page left half-built** — each committed page is complete.
+2. **Round-17: 7 of 7 clean elevations DONE — BATCH COMPLETE.**
+   payroll-management (`baaea7d`), sales-tax-compliance (`0b765da`), advisory hub
+   (`026e065`), fractional-cfo (`10458cf`), qb-cleanup (`32eff23`), qb-help hub
+   (`833bef5`), qb-payroll (`0bb09a0`) — all fully verified + committed. Accounting
+   silo + QuickBooks spokes complete. **1099-preparation DEFERRED** (build-new,
+   founder ruling) → future dedicated round with /about/team/ + the switch silo.
+3. **Full battery GREEN across all 33 built URLs** (2369 hrefs resolve, css gate
+   53,773B holds). Every page: equity GREEN · axe ZERO · overflow 360/375/753 ·
+   Lighthouse 100/100/100 · CLS 0 (qb-payroll 0.006 ≈ 0, well within "good").
+4. **Sign-off carry-over:** QAPage→FAQPage + schema-only-FAQ-variant retirements
+   (payroll, sales-tax, advisory, fractional-cfo) all logged in
+   equity-exceptions.json, awaiting sign-off. Round-16 items still pending too.
+5. **UNPUSHED** on `preview-11ty` (founder pushes): the CF CSS fix `7cc89e2` +
+   all round-17 page + doc commits. Push, then redeploy.
 4. **Dev server RUNNING** at http://192.168.1.8:8080/ — left up as requested.
    Audit servers (8090 axe, 8125 prod) also up; only probe chrome cycled.
 5. **Tooling note (logged above):** a fresh `_site` needs
@@ -131,4 +140,5 @@ Compounding Reconciliation Drift · QB help → diagnostic triage model · qb-pa
 6. **Sign-off carry-over:** round-16 (setup 4-vs-5 phases, QAPage→FAQPage) +
    round-17 payroll exceptions (QAPage→FAQPage, software-Q variant, deferred-1099
    cross-sell) all logged in equity-exceptions.json, awaiting sign-off.
-STOPPED — CF CSS fix done + documented; batch resumes on your return.
+STOPPED — ROUND 17 COMPLETE: all 7 clean elevations done + verified + committed;
+CF CSS fix done; 1099 deferred. Awaiting your audit + the push of `preview-11ty`.
