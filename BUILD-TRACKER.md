@@ -1,4 +1,36 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
+Updated: 2026-06-14 · ROUND 20 — QB-silo completion batch (CHECKPOINT 1).
+Design reconcile CONFIRMED: handoff = the SAME cobalt #2B4FD6 system the 27 pages
+run (no migration). **PART A DONE+VERIFIED:** `/resources/research/` t-hub —
+**US QuickBooks Cleanup Benchmarks** (DefinedTerm + Dataset schema); honest **N=0
+collecting**, locked 8-field schema at `_build/data/cleanup-benchmarks.json`, NO
+fabricated numbers; battery GREEN · axe 0 · overflow 345/375/753. **PART B
+proving page DONE+VERIFIED:** `/quickbooks/help/error-codes/h202/` (t-guide, clean
+elevation, equity GREEN 36h) — establishes the error-child TechArticle+HowTo
+pattern (Sheet-7 honest-triage). **PART C fix 1 DONE:** QB hub body now links
+cleanup/help/payroll in-content → payroll orphan RESOLVED (inbound 1→2); zero
+in-content orphans. CSS gate 53,773B. Commits `23aebf8` (A) · `485d966` (h202) ·
+checkpoint (C+docs). **Pages: 27→29.** Full report: **round-20.md**.
+NEXT (gated on founder approval of the 2 proving patterns — research scaffold +
+h202 error-page): build error-codes hub + 6 remaining children as a cluster; one
+t-mofu product proving page (online) then desktop/enterprise; then consulting
+(t-bofu) · proadvisor-team · which-plan · faq; finish PART C (advisory/network +1
+inbound) + batch-end overflow/LH/interlink sweep. QB-remainder is ~70k words / 21
+substantial pages (3,000–5,350w each) — genuinely multi-session.
+**⚠ FOUNDER OWNERS NEEDED:** (1) who logs one anonymized row per cleanup close
+(research dataset cannot self-populate — calendar-bound); (2) research-hub CTA
+nuance ("Read the methodology" used where Sheet-9 names "Explore Services").
+**⚠ PROBE INFRA:** chrome-headless stalled mid-session (documented leak) — axe ran
+clean before the stall; overflow/LH calibrated sweep deferred to batch end.
+
+## STANDING RULE — HUB-REFRESH-ON-SPOKE-ADD (round 20)
+When a spoke ships, update the parent hub BODY **and** ≥1 topical sibling BODY to
+link it **in-content** (not just nav). Round-19 found later-built spokes (payroll,
+cleanup, help) carried in-content back-link debt because earlier hub/sibling
+bodies weren't updated when they shipped. Every new page this batch links into the
+hub + siblings on ship; the batch-end interlink audit must show 0 in-content
+orphans.
+
 Updated: 2026-06-14 · ROUND 18 — CLOSE: **CF DEPLOY RESOLVED via project
 separation.** New Pages project **`techbrot-preview`** (branch preview-11ty,
 output `_site`, no ENVIRONMENT=production) is **live + rendering cobalt + noindex
