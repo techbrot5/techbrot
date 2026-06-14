@@ -1,0 +1,22 @@
+{
+  "_dataset": "US QuickBooks Cleanup Benchmarks",
+  "_owner": "TechBrot Inc. — Certified QuickBooks ProAdvisor team",
+  "_status": "collecting",
+  "_started": "2026-06-14",
+  "_methodology": "One anonymized row is logged by the engaging ProAdvisor at the CLOSE of every completed QuickBooks cleanup engagement. No client-identifying data is ever stored. Figures are observed, never estimated or modeled. The published page reports the live N and never reports a statistic on a cell with N<20 for that breakdown.",
+  "_schema": {
+    "engagement_id": "string — anonymous opaque id, no client linkage",
+    "state": "string — US state (engagement billing state)",
+    "industry": "string — primary industry",
+    "months_behind_at_intake": "integer — months since last reconciled close at intake",
+    "primary_error_types": "array<string> — e.g. unreconciled-accounts, miscategorized, duplicate-transactions, opening-balance-equity, undeposited-funds, payroll-liability, sales-tax, file-corruption, bank-feed-gap",
+    "txn_volume_band": "string — one of: <500, 500-2000, 2000-10000, 10000+",
+    "cleanup_hours": "number — total ProAdvisor hours to CPA-ready",
+    "cost_band": "string — one of: <1500, 1500-3500, 3500-8000, 8000-15000, 15000+"
+  },
+  "_field_enums": {
+    "txn_volume_band": ["<500", "500-2000", "2000-10000", "10000+"],
+    "cost_band": ["<1500", "1500-3500", "3500-8000", "8000-15000", "15000+"]
+  },
+  "records": []
+}
