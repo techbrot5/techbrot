@@ -1,4 +1,32 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
+Updated: 2026-06-14 · ROUND 21 BOFU DEBT CLEARED — the 9 mis-tiered t-bofu pages
+re-patterned to BOFU signatures (proof-strip + full intake-form), founder-ordered.
+Each of fractional-cfo · catch-up/cleanup/monthly bookkeeping · sales-tax · qb
+cleanup/migration/payroll/setup got: (1) a `proof-strip` as the first body section
+(firm-level facts — 4&times; Certified ProAdvisor · fixed-fee · 1-business-day · the 2
+verified Clutch reviews [only review proof] · one honest per-page specialty line), and
+(2) the shared `intake-form.njk` partial in a conversion section before the FAQ, with
+per-page params (intent = each page's canonical intent; source_type bofu-conversion;
+submit "Send the Discovery Brief"). **Honesty note:** did NOT copy payroll-management's
+"checked by default" intake note — the JS only auto-checks a service when the page is
+loaded with `?intent=` in the URL (applyIntent reads the query string, not the hidden
+default), so a direct visitor sees nothing pre-checked; used truthful non-asserting notes
+instead. **(payroll-management's own note should be reconciled — flagged to founder.)**
+Existing buyer-card/vs-table/pull-quote left in place (open question whether conversion
+pages should route/compare at all, or are really t-mofu — deferred to founder; not
+blocking). Equity preserved (structural-add only, zero data-file edits; new H2s are
+additive). **Gate now: 30 pass per-tier on merit · 2 DEBT** (only /about/methodology/ +
+/trust/). Re-verify: battery GREEN · overflow 9/9 clean 360/390/768 · axe 9/9 zero
+violations · LH catch-up+setup **CLS 0**, BP/SEO 100. New probe scripts: overflow_bofu.ps1
+· axe_bofu.ps1.
+**CHROME TODO (NEW, site-wide — flagged, not fixed):** Lighthouse `target-size` (WCAG 2.2)
+fails on EVERY full-footer page — the footer `mailto:info@techbrot.com` + `tel:` links are
+spaced/sized under 24px on mobile (a11y 96-97). Pre-existing chrome, not a regression;
+fix = footer contact-link tap-target padding when the footer is finalized (footer is
+already a tracked chrome TODO). axe missed it (it ran WCAG 2.0/2.1, not 2.2).
+**NEXT:** founder reviewing patterns on preview; then /about/methodology/ + /trust/ (last
+2 debt), the footer target-size fix, and the QB-remainder.
+
 Updated: 2026-06-14 · ROUND 21 GATE TIGHTENED — design-fidelity #12 is now a REAL
 **PER-TIER** assertion (founder-ordered). Was a flat "≥1 rich component anywhere"
 check; now each tier layout emits `data-tier` on `<main>` (`pageTier` front-matter on

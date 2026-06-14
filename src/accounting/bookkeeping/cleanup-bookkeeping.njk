@@ -38,6 +38,18 @@
 }
 ---
 
+<section class="section section--compact" id="cleanup-bookkeeping-proof">
+  <div class="container">
+    <div class="proof-strip">
+      <span class="proof-strip__item"><b>4&times;</b> Certified QuickBooks ProAdvisor</span>
+      <span class="proof-strip__item"><b>Correct, current</b> books restored</span>
+      <span class="proof-strip__item"><b>Fixed-fee</b> written scope, first</span>
+      <span class="proof-strip__item"><b>1 business day</b> response</span>
+      <span class="proof-strip__item"><span class="proof-strip__rating">5.0</span> 2 verified Clutch reviews</span>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="cleanup-bookkeeping-definition">
   <div class="container container--narrow">
     <header class="section__header">
@@ -210,6 +222,27 @@
       <p class="prose">{{ n.body | safe }}</p>
     </div>
     {%- endfor %}
+  </div>
+</section>
+
+<section class="section" id="cleanup-bookkeeping-intake">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Start now</p>
+      <h2 class="section__heading">Scope your cleanup.</h2>
+      <p class="section__lede">Tell us the basics and a Certified ProAdvisor replies within one business day with a written fixed-fee scope. Prefer the full intake? The <a href="/contact/?intent=cleanup">complete contact form</a> captures every detail.</p>
+    </header>
+    {%- set intakePrefix = "clb" %}
+    {%- set intakeFormId = "cleanup-bookkeeping-intake-form" %}
+    {%- set intakeIntent = "cleanup" %}
+    {%- set intakeSourceType = "bofu-conversion" %}
+    {%- set intakeFunnelStage = "BOFU" %}
+    {%- set intakeLegend = "What we should look at" %}
+    {%- set intakeNote = "Bookkeeping cleanup is the common reason businesses reach this page &mdash; add anything else you want scoped in the same call." %}
+    {%- set intakeConsent = "I agree to be contacted by TechBrot regarding this bookkeeping cleanup inquiry." %}
+    {%- set intakeSubmit = "Send the Discovery Brief" %}
+    {%- set intakeReassurance = "No spam, no list, no obligation. A Certified ProAdvisor replies within one business day." %}
+    {% include "partials/intake-form.njk" %}
   </div>
 </section>
 
