@@ -1,4 +1,21 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
+Updated: 2026-06-14 · ROUND 21 DESIGN-FIDELITY DEBT **FULLY CLEARED** — /about/methodology/
++ /trust/ (the last 2 generic-primitive pages) re-patterned to their tier (both t-mofu).
+Each got mofu's by-rule signatures per PLACEMENT-MAP: `byline-block` at the top of the
+article (renders "By the Certified QuickBooks ProAdvisor team" — founder-name-zero holds) +
+`meta-reviewed` at the foot of the page-review section + one `pull-quote` elevating an
+existing thesis line (methodology: "The process is the product…"; trust: "A real review
+program is worth more than a hundred fabricated stars."). Also dropped the `review-card`
+MISUSE on both (standards/boundaries/navCards on methodology; certifications/scope/related
+on trust — review-card is "—" for mofu) to `stack-8`, consistent with the error/hub/bofu
+re-patterns. Equity preserved (all baseline headings kept through the conversion;
+content-equity GREEN — methodology 34 headings, trust 39). **GATE NOW: 32 content pages pass
+per-tier on merit · DEBT LIST EMPTY.** Re-verify: battery GREEN · overflow 2/2 clean
+360/390/768 · axe 2/2 zero violations · LH both **CLS 0**, a11y/BP/SEO 100.
+**NEXT:** founder review on preview; the QB-remainder (desktop/enterprise/consulting/
+proadvisor-team/which-plan) on the approved fidelity patterns; the footer target-size
+(WCAG 2.2) chrome fix when the footer is finalized; research-log N=0 pending founder seed.
+
 Updated: 2026-06-14 · ROUND 21 BOFU DEBT CLEARED — the 9 mis-tiered t-bofu pages
 re-patterned to BOFU signatures (proof-strip + full intake-form), founder-ordered.
 Each of fractional-cfo · catch-up/cleanup/monthly bookkeeping · sales-tax · qb

@@ -45,6 +45,18 @@
   </div>
 </section>
 
+<section class="section section--compact" id="methodology-byline">
+  <div class="container container--narrow">
+    <div class="byline-block">
+      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc. &middot; independent firm</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="methodology-ai-summary">
   <div class="container container--narrow">
     <header class="section__header">
@@ -88,6 +100,9 @@
       <p class="section__eyebrow">Why it&rsquo;s built this way</p>
       <h2 class="section__heading">Predictability is the point.</h2>
     </header>
+    <blockquote class="pull-quote">
+      <p>The process is the product. Consistency is what makes engaging TechBrot predictable rather than a gamble.</p>
+    </blockquote>
     <div class="legal-doc__body">
       <p>Most small businesses have a bad accounting story &mdash; the bookkeeper who vanished, the surprise invoice, the books that turned out to be wrong at tax time, the firm that rotated them through three account managers in a year. Those failures almost always trace back to the same root cause: <strong>no defined process</strong>.</p>
       <p>TechBrot&rsquo;s methodology exists to remove that risk. A written scope means you&rsquo;re never surprised by cost or deliverables. A named ProAdvisor means you&rsquo;re never re-explaining your business or wondering who&rsquo;s responsible. Working inside your own file means you never lose control of your data. CPA-ready books mean tax season is never a fire drill.</p>
@@ -104,10 +119,10 @@
     </header>
     <div class="grid-3">
       {%- for s in standards %}
-      <article class="review-card">
+      <div class="stack-8">
         <h3>{{ s.name | safe }}</h3>
-        <p class="review-card__fact">{{ s.body | safe }}</p>
-      </article>
+        <p class="prose">{{ s.body | safe }}</p>
+      </div>
       {%- endfor %}
     </div>
   </div>
@@ -121,10 +136,10 @@
     </header>
     <div class="grid-3">
       {%- for b in boundaries %}
-      <article class="review-card">
+      <div class="stack-8">
         <h3>{{ b.name | safe }}</h3>
-        <p class="review-card__fact">{{ b.body | safe }}</p>
-      </article>
+        <p class="prose">{{ b.body | safe }}</p>
+      </div>
       {%- endfor %}
     </div>
   </div>
@@ -160,6 +175,7 @@
     <div class="legal-doc__body">
       <p>This methodology is maintained and reviewed by the <strong>Certified QuickBooks ProAdvisor team</strong> at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm. The operating sequence is the same one applied to every engagement &mdash; direct or network &mdash; and is reviewed against the platform&rsquo;s standards. It connects directly to our <a href="/trust/">trust &amp; standards</a> and the canonical <a href="/pricing/">pricing</a> behind every scope.</p>
     </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-14</span><span>Updated: 2026-06-14</span><span>Reviewed: 2026-06-14 &middot; Certified QuickBooks ProAdvisor</span></p>
   </div>
 </section>
 
@@ -171,11 +187,11 @@
     </header>
     <div class="grid-2">
       {%- for card in navCards %}
-      <article class="review-card">
+      <div class="stack-8">
         <h3>{{ card.name | safe }}</h3>
-        <p class="review-card__fact">{{ card.body | safe }}</p>
-        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} &rarr;</a>
-      </article>
+        <p class="prose">{{ card.body | safe }}</p>
+        <p class="prose"><a href="{{ card.href }}">{{ card.cta }} &rarr;</a></p>
+      </div>
       {%- endfor %}
     </div>
   </div>
