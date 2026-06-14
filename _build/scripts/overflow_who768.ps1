@@ -19,7 +19,7 @@ f.onload = () => setTimeout(() => {
     const cn = String(el.className);
     if (/drawer|site-header|site-footer|util-bar|call-bar/.test(cn)) continue;
     const r = el.getBoundingClientRect();
-    if (r.right > 768.5 && r.right < 1000 && r.width > 0) {
+    if (r.right > 768.5 && r.right < 1200 && r.width > 0) {
       bad.push({ t: el.tagName + "." + (cn.split(" ").slice(0,2).join(".")||""),
                  w: Math.round(r.width), right: Math.round(r.right), ov: cs.overflowX });
     }

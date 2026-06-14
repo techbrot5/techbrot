@@ -33,6 +33,17 @@ Special-case pages get their OWN review, not batch-approval:
 **R4 — GIT HYGIENE (added 2026-06-15).** Stage explicit paths (`git add <path> …`), never
 `git add -A`, so an accidental working-tree deletion can't be auto-staged. (Round-23 a stray
 `git add -A` staged 9 report deletions; caught + restored.)
+**R6 — BEEP AT EVERY STOP (added 2026-06-15, founder preference).** Whenever the turn STOPS for
+founder input/review, the LAST action must play an audible alert so the founder knows it's
+waiting: `powershell [console]::beep(1000,500)` (fallback `[System.Media.SystemSounds]::Asterisk.Play()`).
+**R5 — LOCATION ILLUSTRATIVE-NOT-FABRICATED (added 2026-06-15, standing for EVERY state/location
+page).** Illustrative/representative scenarios are fine WHEN LABELED as such ("a representative
+cleanup engagement," "the kind of situation we handle"). NEVER assert a specific real client
+engagement, or "real engagement outcomes," the firm can't substantiate. Same discipline as #4
+research-log N=0 and the 2-real-reviews-only limit — no fabricated specifics anywhere. (NY-pillar
+ruling: the 4 "Recent New York results" figures, formerly "real engagement outcomes, anonymized by
+client request," are reframed to explicitly representative/illustrative; operational substance —
+patterns, problems, work — kept. Reviews on any page = only the 2 real Clutch reviews.)
 
 ## FIND-AN-ACCOUNTANT PHASE (spec 2026-06-15) — deploys AFTER QB silo 1 + vs + partners, BEFORE accounting; accounting silo LAST
 Scope: **NY is the only state built out** (pillar + 39-page tree). **CA/TX/FL/IL parked via

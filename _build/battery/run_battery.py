@@ -401,7 +401,7 @@ MANIFEST_WHITELIST = {
     "faq__list", "faq__list--nested", "section--faq-nested",
     "section--legal-doc", "legal-doc__list", "process-step__heading",
     "page--hub", "page--bofu", "page--legal", "page--trust",
-    "page--partners", "page--mofu", "has-call-bar",
+    "page--partners", "page--mofu", "page--location", "has-call-bar",
 }
 manifest_classes = set(re.findall(r"^([a-z][a-z0-9_-]*)$",
                                   MANIFEST_MD.read_text(encoding="utf-8"), re.M))
