@@ -99,3 +99,41 @@ the pillar; re-probed axe 0).
 **PROGRESS: 20 / 38 NY children done** (12 cities-tier + industries-hub + all 8 industries... restaurant
 still pending — it batches into wave 5 with the first service-children).
 **NEXT:** wave 5 — restaurant + first 4 NY service-children (continuing, no stop).
+
+> **NY universe confirmed against baseline.json:** 39 NY URLs = pillar + 38 children. Children =
+> cities-hub + 11 cities (12) + industries-hub + 8 industries (9) + **17 service-children**
+> (bookkeeping-services, monthly-bookkeeping, virtual-bookkeeper, small-business-accountant,
+> quickbooks-accountant, quickbooks-setup, quickbooks-cleanup, quickbooks-reconciliation,
+> quickbooks-training, quickbooks-migration, cleanup-bookkeeping, pricing, sales-tax-help,
+> business-tax-problems, state-tax-notice-help, urgent-bookkeeping, speak-to-a-proadvisor) = 38. The
+> last 4 (business-tax-problems, state-tax-notice-help, urgent-bookkeeping, speak-to-a-proadvisor) are
+> grouped into a final wave for careful R5/Sheet-7 honest-triage handling — possible founder stop.
+
+---
+
+## WAVE 5 — restaurant (last industry) + 4 core NY bookkeeping services · DONE · commit `827f2c0`
+| Page | Preview URL | Local content (citable) |
+|---|---|---|
+| Restaurant | …/find-an-accountant/new-york/industries/restaurant/ | prime cost (food+labor %), NYC 8.875% on prepared food (vs grocery exemption), tip-credit + 80/20 under NY Hospitality Wage Order, Toast/Square POS→QBO recon, COGS by category |
+| Bookkeeping services | …/find-an-accountant/new-york/bookkeeping-services/ | NY service overview, scope-split (TechBrot books / your CPA files), clean CoA, NYC 8.875% + UBT awareness, routes to deeper service pages |
+| Monthly bookkeeping | …/find-an-accountant/new-york/monthly-bookkeeping/ | days-1→15 close cadence, reconcile-every-account, 3 fixed-fee tiers ($400/$700/$1,400 floors), sales-tax-ready for NY filing periods |
+| Virtual bookkeeper | …/find-an-accountant/new-york/virtual-bookkeeper/ | fully-remote statewide (NYC→upstate, no on-site), cloud QBO, secure doc flow, video review, one named ProAdvisor (not a pool) |
+| Small business accountant | …/find-an-accountant/new-york/small-business-accountant/ | entity-aware (LLC/S-corp/partnership books, owner draws, reasonable comp), NYC UBT awareness, **explicit bookkeeper-not-CPA scope** (does not file returns/represent) |
+
+**Decisions/judgment calls:** restaurant completes all 8 NY industries. **Honesty (R9/R5):** all 5
+reframed the baseline named-reviewer line to firm-level; small-business-accountant carries explicit
+not-a-CPA / does-not-file-returns / does-not-represent scope (the "accountant" keyword honestly bounded).
+**Drift caught + fixed (monthly-bookkeeping):** the agent invented 3 non-manifest classes
+(`buyer-card__price`, `buyer-card__cadence`, `btn--text`) for the pricing tiers + an off-lexicon CTA
+("Talk to a ProAdvisor about your engagement →") → corrected to `buyer-card__body`+`<strong>`, plain
+`/month`, `btn--primary`, and the canonical "Book the discovery call". **small-business H1 normalization:**
+the live baseline H1 has a stray space before the comma ("accountant , starting") — preserved the H1
+verbatim word-for-word, normalized only the typo space to "accountant, starting"; logged as a
+`normalization` exception (NOT a removal — heading intact) and flagged here for founder awareness.
+Fixes: 5 newsletter exceptions. **Probe note:** restaurant's overflow probe flaked empty on first launch
+(same as ecommerce w4) → re-probed clean.
+**Verification (all 5):** equity GREEN · t-location · axe 0 · overflow clean 360/390/768 · CSS 55,933 B.
+
+**PROGRESS: 25 / 38 NY children done** (12 cities-tier + industries-hub + all 8 industries + 4 services).
+**NEXT:** wave 6 — 5 QuickBooks service-children (quickbooks-accountant, -setup, -cleanup,
+-reconciliation, -training) (continuing, no stop).
