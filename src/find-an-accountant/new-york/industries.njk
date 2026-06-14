@@ -1,0 +1,193 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/new-york/industries/",
+  "slug": "ny-ind-hub",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "title": "New York Industry Accounting & Bookkeeping · TechBrot",
+  "description": "Industry-specific accounting for New York businesses — construction, real estate, law firms (IOLTA), restaurants, healthcare, nonprofits. Certified ProAdvisors. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "New York", "href": "/find-an-accountant/new-york/" },
+    { "name": "Industries" }
+  ],
+  "hero": {
+    "eyebrow": "New York &middot; Industry Accounting &middot; Built Around How You Run",
+    "heading": "New York industry accounting &mdash; built around how your business runs.",
+    "subheading": "Industry-specific accounting for New York businesses &mdash; construction, real estate, law firms, restaurants, healthcare, and nonprofits &mdash; configured around the number that runs each business, with New York&rsquo;s rules (NYC sales tax, the UBT, IOLTA, CHAR500) built in. Same named ProAdvisor, same fixed fee.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=industry-index&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>industry-specific Certified QuickBooks ProAdvisor accounting</strong> to New York businesses &mdash; dedicated pages for construction, real estate, law firms, restaurants, healthcare, and nonprofits, plus professional-services agencies and ecommerce. Generic bookkeeping misses the number that runs your business; we configure your books around how your industry actually operates, with New York&rsquo;s layer &mdash; NYC sales tax, the UBT, IOLTA, CHAR500 &mdash; built in. Fixed-fee, in your own QuickBooks file. The full industry map is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. NY industry rules verified against NY DTF, the NY Attorney General Charities Bureau (CHAR500), and NY IOLTA Fund guidance."
+  },
+  "ctaBand": {
+    "eyebrow": "Find your New York industry accountant",
+    "heading": "Get accounting that fits your New York industry.",
+    "lede": "Book a free discovery call. We&rsquo;ll review your QuickBooks file and the way your industry actually runs &mdash; with New York&rsquo;s rules included &mdash; and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file NY/NYC taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=industry-index&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── INDUSTRY ACCOUNTING, PLAINLY · real H2 carrying the one-paragraph summary (right after the in-brief) ── #}
+<section class="section section--compact" id="ny-ind-hub-coverage">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In one paragraph</p>
+      <h2 class="section__heading">New York industry accounting, plainly.</h2>
+    </header>
+    <p class="prose" id="ny-ind-hub-in-brief-text">{{ coverage | safe }}</p>
+  </div>
+</section>
+
+{# ── AI SUMMARY · 5 entity-dense Q&As (H2: New York industry accounting, in five questions.) ── #}
+<section class="section section--alt" id="ny-ind-hub-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">New York industry accounting, in five questions.</h2>
+    </header>
+    <dl class="ai-summary ai-summary--ruled" id="ny-ind-hub-ai-summary-list">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
+        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+{# ── FEATURED INDUSTRIES · buyer-card grid; each H3 verbatim, each links to its industry page ──
+   (H2: Where we go deep in New York. + 6 H3s; stat card = grid-3 + stack-8) #}
+<section class="section" id="ny-ind-hub-featured">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">New York industry expertise</p>
+      <h2 class="section__heading">Where we go deep in New York.</h2>
+      <p class="section__lede">Six industries with dedicated New York pages &mdash; each built around the number that runs that business, with the state&rsquo;s rules included.</p>
+    </header>
+    <div class="grid-3">
+      {%- for c in featured %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ c.num }} &middot; {{ c.eyebrow | safe }}</p>
+        <h3 class="buyer-card__heading"><a href="{{ c.href }}">{{ c.heading | safe }}</a></h3>
+        <p class="buyer-card__body">{{ c.body | safe }}</p>
+        <div class="stack-8">
+          <p class="buyer-card__opener"><b>Focus</b> &middot; {{ c.focus | safe }}</p>
+        </div>
+        <a class="buyer-card__cta" href="{{ c.href }}">{{ c.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── WHY INDUSTRY · context prose (H2: Generic bookkeeping misses the number that runs your business — twice over in New York.) ── #}
+<section class="section section--alt" id="ny-ind-hub-why">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Why it matters</p>
+      <h2 class="section__heading">Generic bookkeeping misses the number that runs your business &mdash; twice over in New York.</h2>
+    </header>
+    {%- for p in why %}
+    <p class="prose">{{ p | safe }}</p>
+    {%- endfor %}
+  </div>
+</section>
+
+{# ── MORE INDUSTRIES · additional dedicated pages routing list (additive — NOT a frozen heading section) ── #}
+<section class="section" id="ny-ind-hub-more">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">More New York industries</p>
+      <h2 class="section__heading">We build for these New York industries too.</h2>
+      <p class="section__lede">The same operating standard and Certified ProAdvisor delivery, with each industry&rsquo;s real New York angle.</p>
+    </header>
+    <ul class="checks-list">
+      {%- for c in moreIndustries %}
+      <li><a href="{{ c.href }}">{{ c.name | safe }}</a> &mdash; {{ c.angle | safe }}</li>
+      {%- endfor %}
+    </ul>
+    <p class="prose"><small>{{ moreNote | safe }}</small></p>
+  </div>
+</section>
+
+{# ── FAQ · contract Q/A; visible = FAQPage schema (H2: New York industry accounting questions.) ── #}
+<section class="section section--alt" id="ny-ind-hub-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">New York industry accounting questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-ind-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="ny-ind-hub-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level, no founder name (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
+<section class="section" id="ny-ind-hub-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    </header>
+    <div class="byline-block">
+      <div class="byline-block__mark" aria-hidden="true"></div>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose">
+      <p>Maintained by the accounting team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent Certified QuickBooks ProAdvisor firm serving New York businesses across all 62 counties, and reviewed for technical accuracy across the industries represented here &mdash; including New York-specific rules (legal <a href="https://www.iola.org/" rel="noopener nofollow">IOLTA</a> trust accounting, nonprofit <a href="https://www.charitiesnys.com/" rel="noopener nofollow">CHAR500</a>, and NYC sales tax per the <a href="https://www.tax.ny.gov/" rel="noopener nofollow">NY Department of Taxation &amp; Finance</a>). TechBrot delivers the books and coordinates with your CPA, who files.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-07</span><span>Updated: 2026-06-07</span><span>Reviewed: 2026-06-07 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
+
+{# ── RELATED · next-step cards; each H3 verbatim (H2: Related New York services. + 4 H3s) ── #}
+<section class="section section--alt" id="ny-ind-hub-related">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Related New York services.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for r in related %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading"><a href="{{ r.href }}">{{ r.name | safe }}</a></h3>
+        <p class="buyer-card__body">{{ r.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
