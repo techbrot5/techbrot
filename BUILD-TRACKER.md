@@ -30,6 +30,22 @@ CAP ~5 pages** (never a full silo). Central battery gate before every commit is 
 Special-case pages get their OWN review, not batch-approval:
 `/quickbooks/speak-to-a-quickbooks-expert/` (Sheet-7 honest-triage), team/credentials pages
 (founder-name-zero), and the first `find-an-accountant/` t-location page (new tier).
+**R4 — GIT HYGIENE (added 2026-06-15).** Stage explicit paths (`git add <path> …`), never
+`git add -A`, so an accidental working-tree deletion can't be auto-staged. (Round-23 a stray
+`git add -A` staged 9 report deletions; caught + restored.)
+
+## FIND-AN-ACCOUNTANT PHASE (spec 2026-06-15) — deploys AFTER QB silo 1 + vs + partners, BEFORE accounting; accounting silo LAST
+Scope: **NY is the only state built out** (pillar + 39-page tree). **CA/TX/FL/IL parked via
+temporary 301** (no content build) — scheduled for full build-out POST-REDESIGN on the new
+system; redirects removed when the real pages ship. PHASE 0 dependency report:
+`_build/reports/round-24-phase0.md`. NY tree = 39 (pillar 1 · cities-hub 1 · cities 11 ·
+industries-hub 1 · industries 8 · service-children 17). t-location is a NEW unproven tier →
+**prove the NY pillar SOLO first (own review), then children in ~5-page protocol waves.** Every
+NY page: equity GREEN + enriched to goal + REAL NY local specificity (NY/NYC tax, not a mad-lib
+— NY is the template-quality bar for all future states), correct local schema, t-location
+design-fidelity, pillar↔children↔siblings + location↔service-silo interlinking. Report ends with
+an explicit t-location verdict. NY in-content links to /accounting/* (5 not-yet-built targets)
+will 404 on preview until the accounting silo (last) ships — founder accepts (not severe).
 
 Updated: 2026-06-14 · NEW PHASE — PATH B MIGRATION. Goal: migrate the 104 remaining
 baselines to the current cobalt system FAST (build-to-FLOOR, not polish — all 104 get
