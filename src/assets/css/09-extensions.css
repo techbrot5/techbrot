@@ -377,3 +377,27 @@
   border-block-end-color: var(--color-accent);
 }
 @media (max-width: 719px){.faq__children{padding-inline-start: var(--space-4);}}
+
+/* ── T-GUIDE ARTICLE FURNITURE (round-21 PART 1 — ported verbatim from the
+   handoff: 06-additions.SKIN.css (toc/byline-block/meta-reviewed) + the
+   t-guide.html inline render (.article/.guide-grid). These were dropped at the
+   round-10 changeover "until their pages build"; the design-fidelity audit
+   confirmed t-guide pages need them. Tokens all declared in 01-tokens. ── */
+.guide-grid{display:grid;grid-template-columns:1fr;gap:var(--space-6)}
+@media (min-width:920px){.guide-grid{grid-template-columns:200px minmax(0,680px);gap:var(--space-12);justify-content:center}}
+.article{max-width:680px}
+.article p{font-size:var(--fs-18);line-height:var(--lh-loose);color:var(--text-body);margin:0 0 var(--space-5)}
+.article h2{font-family:var(--font-serif);font-size:var(--fs-28);font-weight:var(--fw-semibold);font-variation-settings:var(--serif-heading-axes);letter-spacing:var(--ls-snug);line-height:var(--lh-snug);color:var(--text-primary);margin:var(--space-10) 0 var(--space-4)}
+.article h2:first-child{margin-top:0}
+.toc{position:sticky;top:calc(var(--header-height) + var(--space-5));font-size:var(--fs-13);align-self:start}
+.toc__label{font-size:var(--fs-12);font-weight:var(--fw-semibold);letter-spacing:var(--ls-wider);text-transform:uppercase;color:var(--text-eyebrow);margin:0 0 var(--space-3)}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:var(--space-2)}
+.toc a{color:var(--text-secondary);text-decoration:none}
+.toc a:hover{color:var(--text-primary)}
+.toc a.is-active{color:var(--color-accent-deep);font-weight:var(--fw-medium)}
+@media (max-width:919px){.toc{position:static;border:1px solid var(--border-hairline);border-radius:var(--radius-lg);padding:var(--space-4);margin-bottom:var(--space-6)}}
+.byline-block{display:flex;gap:var(--space-3);align-items:center;padding:var(--space-4) 0;border-top:1px solid var(--border-hairline);border-bottom:1px solid var(--border-hairline)}
+.byline-block__mark{width:36px;height:36px;flex:none}
+.byline-block__name{font-size:var(--fs-14);font-weight:var(--fw-semibold);color:var(--text-primary)}
+.byline-block__review{font-size:var(--fs-13);color:var(--text-secondary)}
+.meta-reviewed{font-family:var(--font-mono);font-size:var(--fs-12);color:var(--text-secondary);display:flex;gap:var(--space-5);flex-wrap:wrap}
