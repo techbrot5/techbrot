@@ -71,6 +71,23 @@ module.exports = {
     { tag: "Compliance", name: "Sales tax", body: "Native QBO sales tax for simpler U.S. cases; Avalara, TaxJar, and Anrok for multi-state and complex nexus situations &mdash; integrated as part of <a href=\"/accounting/sales-tax-compliance/\">sales tax compliance</a> engagements." },
     { tag: "Bank feeds", name: "Banking", body: "Bank feeds for virtually every U.S. bank and credit-card issuer, with most major business banks providing direct connections rather than third-party aggregators." },
   ],
+  // vs-table — honest head-to-head; concede cells where an alternative wins.
+  vsTable: [
+    { cap: "Cloud, browser &amp; mobile access", qbo: "yes", desktop: "local install", xero: "yes" },
+    { cap: "Real-time multi-user from anywhere", qbo: "yes", desktop: "network only", xero: "yes" },
+    { cap: "Native US payroll", qbo: "yes", desktop: "yes", xero: "via Gusto" },
+    { cap: "Deep inventory / industry workflows", qbo: "adequate", desktop: "Enterprise wins", xero: "adequate" },
+    { cap: "Significant multi-currency", qbo: "limited", desktop: "limited", xero: "Xero wins" },
+    { cap: "Unlimited users", qbo: "no", desktop: "per-license", xero: "Xero wins" },
+    { cap: "US accountant / ProAdvisor network", qbo: "yes", desktop: "yes", xero: "smaller in US" },
+    { cap: "New feature development", qbo: "yes", desktop: "mostly frozen", xero: "yes" },
+  ],
+  // buyer-card routing — t-mofu signature; routes to the lifecycle services.
+  routing: [
+    { opener: "&ldquo;We&rsquo;re on Desktop and need to move.&rdquo;", body: "Desktop-to-Online migration with integrity verification and reconciliation &mdash; the step Intuit&rsquo;s free tool skips.", cta: "QuickBooks migration", href: "/quickbooks/migration/desktop-to-online/" },
+    { opener: "&ldquo;We&rsquo;re setting up QBO fresh.&rdquo;", body: "Setup &amp; onboarding built right from day one &mdash; chart of accounts, bank feeds, sales tax, classes, integrations &mdash; so the file never needs cleanup.", cta: "QuickBooks setup", href: "/quickbooks/setup/" },
+    { opener: "&ldquo;Our QBO file is a mess.&rdquo;", body: "File cleanup reconciles every account and documents what changed &mdash; broken feeds, reconciliation drift, undeposited-funds backlog, duplicates.", cta: "QuickBooks cleanup", href: "/quickbooks/cleanup/" },
+  ],
   operatorSpec: [
     { value: "QBO L2", label: "the deepest QBO certification Intuit issues" },
     { value: "Zero", label: "commission — no affiliate, referral, or upsell incentive" },

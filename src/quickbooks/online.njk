@@ -39,10 +39,22 @@
 }
 ---
 
+<section class="section section--compact" id="qbo-byline">
+  <div class="container container--narrow">
+    <div class="byline-block">
+      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">Reviewed by a QuickBooks Online ProAdvisor (Level 2) &middot; independent, no reseller incentive</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section--compact section--tier-guide" id="qbo-credentials">
   <div class="container container--narrow">
     <header class="section__header">
-      <p class="section__eyebrow">Certified by Intuit · QBO Level 2</p>
+      <p class="section__eyebrow">Certified by Intuit &middot; QBO Level 2</p>
       <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials.</h2>
     </header>
     <div class="stat-row">
@@ -94,17 +106,42 @@
     </header>
     <div class="grid-2">
       {%- for p in plans %}
-      <article class="review-card">
-        <p class="review-card__role">{{ p.tier }}</p>
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ p.tier }}</p>
         <h3>{{ p.name | safe }}</h3>
-        <p class="review-card__fact">{{ p.body | safe }}</p>
-      </article>
+        <p class="prose">{{ p.body | safe }}</p>
+      </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbo-fit">
+<section class="section" id="qbo-vs">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Head to head</p>
+      <h2 class="section__heading">QuickBooks Online vs Desktop, Enterprise, and Xero.</h2>
+      <p class="section__lede">Where QBO wins and where it doesn&rsquo;t &mdash; honest cells. Where the other side wins, the table says so. We hold no reseller incentive in any direction.</p>
+    </header>
+    <div class="vs-scroll">
+      <table class="vs-table">
+        <caption class="sr-only">QuickBooks Online compared with QuickBooks Desktop/Enterprise and Xero</caption>
+        <thead><tr><th scope="col">Capability</th><th scope="col" class="vs-table__us">QuickBooks Online</th><th scope="col">Desktop / Enterprise</th><th scope="col">Xero</th></tr></thead>
+        <tbody>
+          {%- for r in vsTable %}
+          <tr><th scope="row">{{ r.cap | safe }}</th>
+            <td class="vs-table__us">{% if r.qbo == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.qbo == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.qbo | safe }}</span>{% endif %}</td>
+            <td>{% if r.desktop == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.desktop == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.desktop | safe }}</span>{% endif %}</td>
+            <td>{% if r.xero == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.xero == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.xero | safe }}</span>{% endif %}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbo-fit">
   <div class="container">
     <header class="section__header">
       <p class="section__eyebrow">Who QuickBooks Online fits</p>
@@ -122,7 +159,7 @@
   </div>
 </section>
 
-<section class="section section--alt" id="qbo-not-fit">
+<section class="section" id="qbo-not-fit">
   <div class="container">
     <header class="section__header">
       <p class="section__eyebrow">When QBO isn&rsquo;t the right call</p>
@@ -131,11 +168,25 @@
     </header>
     <div class="grid-3">
       {%- for n in notFit %}
-      <article class="review-card">
-        <p class="review-card__role">{{ n.alt }}</p>
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ n.alt }}</p>
         <h3>{{ n.name | safe }}</h3>
-        <p class="review-card__fact">{{ n.body | safe }}</p>
-      </article>
+        <p class="prose">{{ n.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbo-routing">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Your situation</p>
+      <h2 class="section__heading">Where are you with QuickBooks Online?</h2>
+    </header>
+    <div class="grid-3">
+      {%- for b in routing %}
+      <a class="buyer-card" href="{{ b.href }}"><p class="buyer-card__opener">{{ b.opener | safe }}</p><p class="buyer-card__body">{{ b.body | safe }}</p><span class="buyer-card__cta">{{ b.cta | safe }}</span></a>
       {%- endfor %}
     </div>
   </div>
@@ -168,11 +219,10 @@
     </header>
     <div class="grid-3">
       {%- for e in ecosystem %}
-      <article class="review-card">
-        <p class="review-card__role">{{ e.tag }}</p>
+      <div class="stack-8">
         <h3>{{ e.name | safe }}</h3>
-        <p class="review-card__fact">{{ e.body | safe }}</p>
-      </article>
+        <p class="prose">{{ e.body | safe }}</p>
+      </div>
       {%- endfor %}
     </div>
   </div>
@@ -215,7 +265,7 @@
       </div>
       {%- endfor %}
     </div>
-    <p class="prose"><a href="/quickbooks/faq/">See all QuickBooks frequently asked questions &rarr;</a></p>
+    <p class="meta-reviewed"><span>Published: 2026-06-14</span><span>Updated: 2026-06-14</span><span>Reviewed: 2026-06-14 &middot; QuickBooks Online ProAdvisor (L2)</span></p>
   </div>
 </section>
 
