@@ -36,4 +36,20 @@ Two hard stops only: an unfixable equity failure, or a genuine honesty doubt R5 
 t-location · design-fidelity PASS (hero__motif) · axe 0 · overflow clean 360/390/768 · CLS 0 (buffalo
 rep) · a11y/BP/SEO 100 · CSS 55,933 B.
 
-**NEXT:** wave 2 — cities manhattan, new-york-city, queens, rochester, staten-island (continuing, no stop).
+**NEXT:** wave 2 — cities manhattan, new-york-city, queens, rochester, staten-island.
+
+---
+
+## WAVE 2 — 5 cities (finishes the 11 cities + the NYC city-wide page) · DONE · commit `ab792ff`
+| Page | Preview URL | Local content (citable) |
+|---|---|---|
+| Manhattan | https://techbrot-preview.pages.dev/find-an-accountant/new-york/cities/manhattan/ | New York County, **3 NYC taxes** — 8.875% + 4% UBT + **Commercial Rent Tax** (Manhattan south of 96th St, ~3.9% on $250k+ rent) — the genuine Manhattan differentiator; finance/agencies(ASC 606)/law(IOLTA) |
+| New York City | https://techbrot-preview.pages.dev/find-an-accountant/new-york/cities/new-york-city/ | city-wide: 5 boroughs, 8.875% (4%+4.5%+0.375% MTA), 4% UBT ($95K floor / $3,400 credit), CRT; routes to the borough pages |
+| Queens | https://techbrot-preview.pages.dev/find-an-accountant/new-york/cities/queens/ | Queens County, most diverse US county, JFK/LGA air-cargo/logistics, LIC manufacturing, 8.875% + UBT, no CRT |
+| Rochester | https://techbrot-preview.pages.dev/find-an-accountant/new-york/cities/rochester/ | Monroe County ~8% (4%+4%), upstate — NO UBT/CRT, optics/photonics legacy (Kodak/Xerox/B&L), U of R/RIT |
+| Staten Island | https://techbrot-preview.pages.dev/find-an-accountant/new-york/cities/staten-island/ | Richmond County, 8.875% + UBT, **CRT does NOT apply**, trades/construction/suburban density |
+
+**Decisions/judgment calls:** zero class/CTA/intent drift (cobalt vocab + Brooklyn-sibling reference held). Each city is genuinely differentiated on its real tax stack (3-tax Manhattan vs no-UBT upstate vs no-CRT Staten Island) — not a mad-lib. Fixes: 5 newsletter exceptions; manhattan's "Financial Services" card linked to a non-existent `/industries/professional-services/` → repointed to the real `/industries/consulting/`. Honesty: no per-city reviews (the 2 Clutch stay on the pillar), no fabricated outcomes, no personal names. No honesty doubt → no hard stop.
+**Verification (all 5):** equity GREEN · t-location · axe 0 · overflow clean 360/390/768 · CSS 55,933 B.
+
+**PROGRESS: 10 / 38 NY children done** (all 11 cities + cities-hub). **NEXT:** wave 3 — syracuse, yonkers (last 2 cities) + industries-hub + construction + consulting (continuing, no stop).
