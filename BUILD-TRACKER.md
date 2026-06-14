@@ -33,6 +33,17 @@ Special-case pages get their OWN review, not batch-approval:
 **R4 — GIT HYGIENE (added 2026-06-15).** Stage explicit paths (`git add <path> …`), never
 `git add -A`, so an accidental working-tree deletion can't be auto-staged. (Round-23 a stray
 `git add -A` staged 9 report deletions; caught + restored.)
+**R7 — AUTONOMOUS WAVE RUN (added 2026-06-15; SCOPE EXTENDED to the WHOLE remaining migration —
+NY children now, AND QB-remainder, vs, partners, the 4 CA/TX/FL/IL landings, and accounting (39,
+LAST)).** Proceed wave-by-wave (~5 pages) WITHOUT waiting for founder approval
+between waves — keep moving; if the founder doesn't respond, continue with the best recommended
+choice. Each wave: full MIGRATION-PROTOCOL (contract injection, content-to-goal/visual-floor, full
+battery + probes before commit, equity GREEN REQUIRED to ship). Log every decision/judgment call
+(tier, honesty reframe wording per R5, local-content choices, deviations) in the round report + here.
+Report per R1 with URLs after EACH wave (no stop for sign-off). **TWO HARD STOPS — do NOT auto-proceed,
+beep + wait:** (1) a page the battery/contract fails on that can't be cleanly fixed to equity-GREEN
+(never ship degraded or guess); (2) a genuinely-unclear honesty/no-fabrication judgment R5 doesn't
+already cover (never guess on honesty). Otherwise run the full 38 NY children continuously.
 **R6 — BEEP AT EVERY STOP (added 2026-06-15, founder preference).** Whenever the turn STOPS for
 founder input/review, the LAST action must play an audible alert so the founder knows it's
 waiting: `powershell [console]::beep(1000,500)` (fallback `[System.Media.SystemSounds]::Asterisk.Play()`).

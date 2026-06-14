@@ -1,0 +1,194 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/new-york/cities/",
+  "slug": "ny-cities",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "title": "New York Cities We Serve · Bookkeeping & QuickBooks · TechBrot",
+  "description": "Certified QuickBooks ProAdvisor bookkeeping across New York — NYC and all five boroughs, Buffalo, Rochester, Albany, Yonkers, Syracuse, and all 62 counties. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "New York", "href": "/find-an-accountant/new-york/" },
+    { "name": "Cities" }
+  ],
+  "hero": {
+    "eyebrow": "New York &middot; Cities We Serve &middot; All 62 Counties",
+    "heading": "A New York bookkeeper for your city &mdash; all 62 counties.",
+    "subheading": "Certified QuickBooks ProAdvisor bookkeeping for businesses across New York &mdash; NYC and all five boroughs, Buffalo, Rochester, Albany, Yonkers, Syracuse, and everywhere between. Same named ProAdvisor, same fixed fee, wherever you are.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=city-index&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor bookkeeping</strong> to New York businesses in <strong>all 62 counties</strong> &mdash; dedicated pages for New York City and the five boroughs, Buffalo, Rochester, Albany, Yonkers, and Syracuse, and remote, fixed-fee service everywhere between. Your city doesn&rsquo;t change the service &mdash; it changes the tax. The full coverage map is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. NY rates verified against NY DTF and NYC Department of Finance."
+  },
+  "ctaBand": {
+    "eyebrow": "Find your New York bookkeeper",
+    "heading": "Find your New York bookkeeper &mdash; wherever you are.",
+    "lede": "Book a free discovery call. We&rsquo;ll review your QuickBooks file and the tax specifics of your New York city, and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file NY/NYC taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=city-index&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── COVERAGE, PLAINLY · real H2 carrying the one-paragraph summary (right after the in-brief) ── #}
+<section class="section section--compact" id="ny-cities-coverage">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In one paragraph</p>
+      <h2 class="section__heading">New York coverage, plainly.</h2>
+    </header>
+    <p class="prose" id="ny-cities-in-brief-text">{{ coverage | safe }}</p>
+  </div>
+</section>
+
+{# ── AI SUMMARY · 5 entity-dense Q&As (H2: New York coverage, in five questions.) ── #}
+<section class="section section--alt" id="ny-cities-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">New York coverage, in five questions.</h2>
+    </header>
+    <dl class="ai-summary ai-summary--ruled" id="ny-cities-ai-summary-list">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
+        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+{# ── FEATURED CITIES · buyer-card grid; each H3 verbatim, each links to its city page ──
+   (H2: Cities with dedicated pages. + 6 H3s) #}
+<section class="section" id="ny-cities-featured">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">New York markets</p>
+      <h2 class="section__heading">Cities with dedicated pages.</h2>
+      <p class="section__lede">Our largest New York markets, each built around the local tax realities and industries that define it.</p>
+    </header>
+    <div class="grid-3">
+      {%- for c in featured %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ c.num }} &middot; {{ c.eyebrow | safe }}</p>
+        <h3 class="buyer-card__heading"><a href="{{ c.href }}">{{ c.heading | safe }}</a></h3>
+        <p class="buyer-card__body">{{ c.body | safe }}</p>
+        <div class="proof-strip">
+          <span class="proof-strip__item"><b>Area</b> {{ c.area | safe }}</span>
+        </div>
+        <a class="buyer-card__cta" href="{{ c.href }}">{{ c.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── WHY LOCATION · context prose (H2: Your city doesn't change the service — it changes the tax.) ── #}
+<section class="section section--alt" id="ny-cities-why">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Why local context matters</p>
+      <h2 class="section__heading">Your city doesn&rsquo;t change the service &mdash; it changes the tax.</h2>
+    </header>
+    {%- for p in why %}
+    <p class="prose">{{ p | safe }}</p>
+    {%- endfor %}
+  </div>
+</section>
+
+{# ── MORE CITIES · additional dedicated pages + county context (H2: We serve these too — and everywhere between.) ── #}
+<section class="section" id="ny-cities-more">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">More New York cities</p>
+      <h2 class="section__heading">We serve these too &mdash; and everywhere between.</h2>
+      <p class="section__lede">The same operating standard and Certified ProAdvisor delivery, across every New York county.</p>
+    </header>
+    <ul class="checks-list">
+      {%- for c in moreCities %}
+      <li><a href="{{ c.href }}">{{ c.name | safe }}</a> &mdash; {{ c.county | safe }}</li>
+      {%- endfor %}
+    </ul>
+    <p class="prose">{{ countyProse | safe }}</p>
+    <p class="prose"><small>{{ moreNote | safe }}</small></p>
+  </div>
+</section>
+
+{# ── FAQ · 5 verbatim Q/A; visible = FAQPage schema (H2: New York coverage questions.) ── #}
+<section class="section section--alt" id="ny-cities-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">New York coverage questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-cities-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="ny-cities-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level, no founder name (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
+<section class="section" id="ny-cities-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    </header>
+    <div class="byline-block">
+      <div class="byline-block__mark" aria-hidden="true"></div>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose">
+      <p>Maintained by the accounting team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent Certified QuickBooks ProAdvisor firm serving New York businesses across all 62 counties. New York sales-tax rates and city-specific taxes (NYC 8.875% and UBT, Buffalo 8.75%) reflect rules current as of the date below and are reviewed periodically against current <a href="https://www.tax.ny.gov/" rel="noopener nofollow">NY Department of Taxation &amp; Finance</a> and <a href="https://www.nyc.gov/site/finance/index.page" rel="noopener nofollow">NYC Department of Finance</a> guidance. TechBrot delivers the books and coordinates with your CPA, who files.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-07</span><span>Updated: 2026-06-07</span><span>Reviewed: 2026-06-07 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
+
+{# ── RELATED · next-step cards; each H3 verbatim (H2: Where to go next. + 4 H3s) ── #}
+<section class="section section--alt" id="ny-cities-related">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Where to go next.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for r in related %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading"><a href="{{ r.href }}">{{ r.name | safe }}</a></h3>
+        <p class="buyer-card__body">{{ r.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

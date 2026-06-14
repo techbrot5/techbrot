@@ -1,0 +1,253 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/new-york/cities/albany/",
+  "slug": "ny-albany",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "title": "Albany Bookkeeper & QuickBooks Accountant · TechBrot",
+  "description": "QuickBooks ProAdvisor bookkeeping for Albany, NY businesses. Albany County 8% sales tax tracked, CPA-ready books, fixed-fee. Serving the Capital Region remotely.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "New York", "href": "/find-an-accountant/new-york/" },
+    { "name": "Cities", "href": "/find-an-accountant/new-york/cities/" },
+    { "name": "Albany" }
+  ],
+  "hero": {
+    "eyebrow": "Albany &middot; Albany County",
+    "heading": "Albany bookkeeper &amp; QuickBooks accountant.",
+    "subheading": "Certified QuickBooks ProAdvisor bookkeeping for Albany and Capital Region businesses &mdash; reconciled accounts, Albany County&rsquo;s 8% sales tax tracked, and CPA-ready statements every month, by a named bookkeeper on the same file.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&city=albany&source_type=location&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Send the Discovery Brief", "href": "#ny-albany-intake", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor bookkeeping</strong> for Albany and Capital Region businesses &mdash; monthly bookkeeping, cleanup, and QuickBooks management by a named bookkeeper on the same file. Albany&rsquo;s combined sales tax is 8% (4% New York State + 4% Albany County), with no NYC Unincorporated Business Tax or Commercial Rent Tax. The full Albany summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Albany rates verified against the NY Department of Taxation &amp; Finance."
+  },
+  "ctaBand": {
+    "eyebrow": "Albany businesses start here",
+    "heading": "Ready for an Albany bookkeeper who knows the Capital Region?",
+    "lede": "Book a free discovery call. We&rsquo;ll review your QuickBooks file and your Albany situation, and send a written fixed-fee quote within 3 business days. No pitch. Independent firm &mdash; does not file NY State taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&city=albany&source_type=location&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SHORT VERSION · real H2 carrying the TL;DR prose (right after the in-brief) ── #}
+<section class="section section--compact" id="ny-albany-summarized">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <h2 class="section__heading">The short version.</h2>
+    </header>
+    <p class="prose" id="ny-albany-tldr-body">{{ tldr | safe }}</p>
+  </div>
+</section>
+
+{# ── AI SUMMARY (H2: Albany bookkeeping, in five questions.) ── #}
+<section class="section" id="ny-albany-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Albany bookkeeping, in five questions.</h2>
+    </header>
+    <dl class="ai-summary ai-summary--ruled" id="ny-albany-ai-summary-list">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
+        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+{# ── LOCAL CONTEXT · the un-clonable band (H2: Why Capital Region books have their own character.) ── #}
+<section class="section section--alt" id="ny-albany-local">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Bookkeeping built for how Albany actually operates</p>
+      <h2 class="section__heading">Why Capital Region books have their own character.</h2>
+    </header>
+    <p class="prose"><strong>{{ localLead | safe }}</strong></p>
+    {%- for p in localBody %}
+    <p class="prose">{{ p | safe }}</p>
+    {%- endfor %}
+  </div>
+</section>
+
+{# ── AREAS (H2: Albany areas we serve.) ── #}
+<section class="section" id="ny-albany-areas">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Across the Capital Region</p>
+      <h2 class="section__heading">Albany areas we serve.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for a in areas %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ a.name | safe }}</p>
+        <p class="prose">{{ a.note | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── TAX CARD · single local fact, grid-3 (NOT stat-row) (H2: Albany sales tax, at a glance.) ── #}
+<section class="section section--alt" id="ny-albany-tax">
+  <div class="container">
+    <header class="section__header section__header--centered">
+      <p class="section__eyebrow">{{ taxEyebrow | safe }}</p>
+      <h2 class="section__heading">Albany sales tax, at a glance.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for t in tax %}
+      <div><div class="stat__value">{{ t.fig | safe }}</div><div class="stat__label">{{ t.desc | safe }}</div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── INDUSTRIES (H2: Industry-specific bookkeeping for Albany businesses.) ── #}
+<section class="section" id="ny-albany-industries">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Albany verticals we know</p>
+      <h2 class="section__heading">Industry-specific bookkeeping for Albany businesses.</h2>
+      <p class="section__lede">{{ industriesLede | safe }}</p>
+    </header>
+    <ul class="checks-list">
+      {%- for i in industries %}
+      <li><a href="{{ i.href }}">{{ i.name | safe }}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+{# ── VALUE STACK (H2: Complete bookkeeping, locally aware. + 4 H3s) ── #}
+<section class="section section--alt" id="ny-albany-services">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What we do for Albany businesses</p>
+      <h2 class="section__heading">Complete bookkeeping, locally aware.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for s in services %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ s.num }}</p>
+        <h3>{{ s.title | safe }}</h3>
+        <p class="prose">{{ s.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── ADVISORY · standing brand line (H2: Automation handles the data entry. We handle the judgment.) ── #}
+<section class="section" id="ny-albany-advisory">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The advisory line</p>
+      <h2 class="section__heading">Automation handles the data entry. We handle the judgment.</h2>
+    </header>
+    <p class="prose">{{ advisoryBody | safe }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary btn--lg" href="/contact/?intent=new-york&amp;state=new-york&amp;city=albany&amp;source_type=location&amp;funnel_stage=BOFU">Book the discovery call</a>
+    </div>
+    <p class="prose"><a href="/accounting/advisory/fractional-cfo/">Fractional CFO (New York)</a></p>
+  </div>
+</section>
+
+{# ── INTAKE · dual-path call + shared intake-form partial ── #}
+<section class="section section--alt" id="ny-albany-intake">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Talk to a Certified ProAdvisor</p>
+      <h2 class="section__heading">Two ways to start an Albany engagement.</h2>
+      <p class="section__lede">Both paths go to the same Certified ProAdvisor. Pick the one that fits how you work.</p>
+    </header>
+
+    <div class="grid-2">
+      <article class="buyer-card">
+        <p class="buyer-card__opener">Option 01</p>
+        <h3 class="buyer-card__heading">Call directly.</h3>
+        <p class="buyer-card__body">A Certified ProAdvisor answers &mdash; not a call center. Best for same-day diagnostics, behind-on-the-books situations, or a quick read on your Albany sales-tax setup.</p>
+        <a class="btn btn--primary btn--lg" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">Speak to a ProAdvisor</a>
+        <ul class="checks-list">{%- for a in callAssurance %}<li>{{ a | safe }}</li>{%- endfor %}</ul>
+      </article>
+      <div class="contact-form-wrap">
+        <h3 class="buyer-card__heading" id="ny-albany-intake-form-heading">Send a short discovery brief.</h3>
+        <p class="prose">Six fields. We respond by the next business day with a path forward &mdash; a scoping call or, if not a fit, a referral. <strong>Includes a free QuickBooks file review &mdash; we&rsquo;ll identify the top 3 issues in your file before any engagement begins.</strong></p>
+        {%- set intakePrefix = "ny-albany" %}
+        {%- set intakeFormId = "ny-albany-intake-form" %}
+        {%- set intakeIntent = "new-york" %}
+        {%- set intakeSourceType = "location" %}
+        {%- set intakeFunnelStage = "MOFU" %}
+        {%- set intakeLegend = "What we should discuss for your Albany business" %}
+        {%- set intakeSubmit = "Send the Discovery Brief" %}
+        {%- set intakeReassurance = "Same-day diagnostic for emergencies, 1 business day for scoping, written fixed-fee scope within 3 business days of the first call." %}
+        {% include "partials/intake-form.njk" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── FAQ · 8 verbatim Q/A; visible = FAQPage schema (H2: Albany bookkeeping questions.) ── #}
+<section class="section" id="ny-albany-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">Albany bookkeeping questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-albany-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="ny-albany-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level, no founder name. Reviews (2 real Clutch) render as proof.
+     (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
+<section class="section section--alt" id="ny-albany-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for r in reviews %}
+      <article class="review-card">
+        <blockquote class="review-card__quote">&ldquo;{{ r.quote | safe }}&rdquo;</blockquote>
+        <p class="review-card__fact">{{ r.context | safe }}</p>
+        <p class="review-card__role">{{ r.author }} &mdash; {{ r.role | safe }} &middot; {{ r.meta | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+    <div class="prose">
+      <p>{{ reviewBody | safe }}</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-07</span><span>Updated: 2026-06-07</span><span>Reviewed: 2026-06-07 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
