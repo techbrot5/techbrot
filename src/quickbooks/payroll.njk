@@ -1,0 +1,199 @@
+---json
+{
+  "layout": "layouts/t-bofu.njk",
+  "permalink": "/quickbooks/payroll/",
+  "slug": "payroll",
+  "tierClass": "section--tier-bofu",
+  "bodyClass": "page--bofu",
+  "title": "QuickBooks Payroll · Setup, Configuration & ProAdvisor Support · TechBrot",
+  "description": "QuickBooks Payroll setup, configuration, multi-state and local tax, plan selection, and troubleshooting by Certified Intuit Payroll ProAdvisors. Core, Premium, Elite, and Desktop Payroll. Independent firm — not affiliated with Intuit Inc.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "QuickBooks", "href": "/quickbooks/" },
+    { "name": "Payroll" }
+  ],
+  "hero": {
+    "eyebrow": "QuickBooks Payroll",
+    "heading": "QuickBooks Payroll, configured correctly the first time.",
+    "subheading": "Plan selection, setup, multi-state and local-tax configuration, migration, and troubleshooting &mdash; by Certified Intuit Payroll ProAdvisors. Most QuickBooks Payroll problems aren&rsquo;t software bugs; they&rsquo;re configuration errors that surface months later as state notices. We set it up right, or fix it if it&rsquo;s already wrong. Independent firm.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=qb-payroll-setup", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>QuickBooks Payroll</strong> comes in three Online tiers — Core, Premium, Elite — plus Desktop Payroll. The most common problem isn&rsquo;t a bug; it&rsquo;s <strong>misconfiguration</strong>: wrong work/residence state, missing local jurisdiction tax (CAGIT/COIT, RITA, PA PSD, NYC), un-applied reciprocity, or stale tables &mdash; which surface as state notices. Certified Intuit Payroll ProAdvisors handle plan selection, setup, multi-state/local-tax config, migration, and error correction. Fixed-fee, written scope.",
+    "source": "Certified Intuit Payroll ProAdvisors · multi-state & local-tax depth. Not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Configured right",
+    "heading": "Get QuickBooks Payroll configured right.",
+    "lede": "Book a free 30-minute discovery call. A Certified Payroll ProAdvisor reviews your setup, maps the right plan and the multi-state/local-tax configuration, and delivers a written fixed-fee scope within 3 business days &mdash; before any work begins.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=qb-payroll-setup", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="payroll-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The ProAdvisor read</p>
+      <h2 class="section__heading">QuickBooks Payroll, the ProAdvisor read.</h2>
+    </header>
+    <div class="prose">
+      <p>QuickBooks Payroll comes in three QuickBooks Online tiers &mdash; Core, Premium, and Elite &mdash; plus Desktop Payroll for businesses still on QuickBooks Desktop. The plans differ on direct-deposit speed, HR support, time tracking, workers&rsquo; comp administration, and tax-penalty protection; the right tier depends on employee count and multi-state complexity, not on which plan a sales page pushes.</p>
+      <p>The single most common QuickBooks Payroll problem isn&rsquo;t a software bug &mdash; it&rsquo;s <strong>misconfiguration</strong>: wrong work/residence state, missing local jurisdiction tax (Indiana CAGIT/COIT, Ohio RITA, Pennsylvania local PSD, NYC), un-applied reciprocity, or stale withholding tables. These surface months later as state notices. TechBrot&rsquo;s Certified Intuit Payroll ProAdvisors handle plan selection, full setup, multi-state and local-tax configuration, migration from Gusto/ADP/Paychex, and troubleshooting &mdash; as fixed-fee engagements with written scope. For ongoing managed payroll, see <a href="/accounting/payroll-management/?intent=payroll">payroll management</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="payroll-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">QuickBooks Payroll, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="payroll-plans">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The plans</p>
+      <h2 class="section__heading">QuickBooks Payroll plans, without the sales pitch.</h2>
+      <p class="section__lede">Plan names and inclusions reflect Intuit&rsquo;s QuickBooks Online Payroll structure; Intuit sets and may change features and pricing. A ProAdvisor confirms the current structure during the discovery call.</p>
+    </header>
+    <div class="grid-3">
+      {%- for p in plans %}
+      <article class="review-card">
+        {%- if p.note %}<p class="review-card__role">{{ p.note | safe }}</p>{%- endif %}
+        <h3>{{ p.name | safe }}</h3>
+        <p class="review-card__fact">{{ p.price | safe }}</p>
+        <ul class="checks-list">
+          {%- for b in p.bullets %}<li>{{ b | safe }}</li>{%- endfor %}
+        </ul>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="prose">Still on QuickBooks Desktop? Desktop Payroll remains available, but Intuit is steering most customers toward Online Payroll and Desktop is on a sunset timeline. If you&rsquo;re evaluating payroll while still on Desktop, it&rsquo;s usually worth scoping a <a href="/quickbooks/migration/?intent=quickbooks-migration">migration</a> at the same time &mdash; doing both together avoids configuring payroll twice.</p>
+  </div>
+</section>
+
+<section class="section section--alt" id="payroll-ways">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">How a ProAdvisor helps</p>
+      <h2 class="section__heading">Four ways a Payroll ProAdvisor helps.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for w in ways %}
+      <article class="review-card">
+        <p class="review-card__role">{{ w.num | safe }}</p>
+        <h3>{{ w.name | safe }}</h3>
+        <p class="review-card__fact">{{ w.body | safe }}</p>
+        <p class="review-card__fact"><strong>{{ w.fee | safe }}</strong> &middot; {{ w.eng | safe }}</p>
+        <a class="review-card__link" href="{{ w.href }}">{{ w.name | safe }} &rarr;</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="payroll-multistate">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Where it goes wrong</p>
+      <h2 class="section__heading">Multi-state &amp; local tax: the part QuickBooks Payroll won&rsquo;t fix for you.</h2>
+    </header>
+    <div class="prose">
+      <p>QuickBooks Payroll automates filing &mdash; but only based on how it&rsquo;s configured. The software files exactly what you tell it to, which means a configuration error becomes a filing error becomes a state notice. The failures cluster in predictable places: work state vs. residence state, reciprocity agreements between neighboring states, and &mdash; the deepest trap &mdash; local jurisdiction tax. Indiana has county income tax (CAGIT/COIT) tied to the employee&rsquo;s January-1 county of residence; Ohio has municipal tax through RITA and CCA; Pennsylvania has local earned-income tax keyed to PSD codes; New York City and Yonkers have resident taxes. QuickBooks supports all of these &mdash; but only if a human configures them correctly, and they&rsquo;re the single most common thing left unconfigured.</p>
+    </div>
+    <blockquote class="pull-quote">
+      <p>{{ multistate.body | safe }}</p>
+    </blockquote>
+  </div>
+</section>
+
+<section class="section section--alt" id="payroll-fixes">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What we fix</p>
+      <h2 class="section__heading">What we&rsquo;re called in to fix.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for f in fixes %}
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">{{ f.name | safe }}</h3>
+        <p class="buyer-card__body">{{ f.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="payroll-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Who delivers the work</p>
+      <h2 class="section__heading">Reviewed by Certified Payroll ProAdvisors.</h2>
+    </header>
+    <div class="prose">
+      <p>This page is maintained by the accounting team at TechBrot Inc., a Delaware-incorporated independent Certified QuickBooks ProAdvisor firm holding active QuickBooks Payroll certification. Plan structures reflect Intuit&rsquo;s current QuickBooks Online Payroll offering; Intuit sets and may change features and pricing. Where Intuit changes plan names, inclusions, or the Desktop Payroll timeline, this page is updated. Local-tax references (CAGIT/COIT, RITA, PA local PSD) reflect current jurisdiction requirements as configured in client engagements.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in reviewSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="in-brief__source">Page last reviewed: May 2026.</p>
+  </div>
+</section>
+
+<section class="section section--alt" id="payroll-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">Questions before you call.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="payroll-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="payroll-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="payroll-next">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Where to go next</p>
+      <h2 class="section__heading">Where to go next.</h2>
+    </header>
+    {%- for n in related %}
+    <div class="stack-8">
+      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+      <p class="prose">{{ n.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
