@@ -1,0 +1,217 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/new-york/bookkeeping-services/",
+  "slug": "ny-svc-bookkeeping",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "title": "New York Bookkeeping Services · TechBrot",
+  "description": "Fixed-fee bookkeeping services for New York businesses — monthly bookkeeping, cleanup, catch-up, NYC sales tax. Named bookkeeper, all 62 counties. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "New York", "href": "/find-an-accountant/new-york/" },
+    { "name": "Bookkeeping Services" }
+  ],
+  "hero": {
+    "eyebrow": "New York &middot; Bookkeeping Services",
+    "heading": "New York bookkeeping services &mdash; clean books, same bookkeeper, every month.",
+    "subheading": "Monthly bookkeeping, cleanup, and catch-up for New York businesses &mdash; every bank and card account reconciled, NYC sales tax tracked, and CPA-ready statements delivered monthly by a named Certified ProAdvisor in your own QuickBooks Online file. Fixed-fee, written scope, all 62 counties. We deliver the books; your CPA files.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-money&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>fixed-fee Certified QuickBooks ProAdvisor bookkeeping for New York businesses</strong> &mdash; transaction categorization and reconciliation, a clean chart of accounts, AR/AP, NYC and NY State sales tax tracking, and monthly CPA-ready financial statements &mdash; by a named ProAdvisor on the same QuickBooks file every month, across all 62 counties. The full New York bookkeeping summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. New York and NYC sales-tax references (including the NYC 8.875% combined rate) and NYC UBT references reflect rules current as of the review date and are reviewed periodically; TechBrot does not file NY State or NYC taxes."
+  },
+  "ctaBand": {
+    "eyebrow": "New York businesses start here",
+    "heading": "Ready for New York bookkeeping you don&rsquo;t have to think about?",
+    "lede": "Book a free books review. We&rsquo;ll tell you honestly whether you need cleanup, monthly service, or both, and send a written fixed-fee quote within 3 business days. No pitch. Independent firm &mdash; does not file NY/NYC taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-money&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY · real H2 carrying the bookkeeping summary prose (right after the in-brief). (H2: The short version.) ── #}
+<section class="section section--compact" id="ny-svc-bookkeeping-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <h2 class="section__heading">The short version.</h2>
+    </header>
+    <p class="prose">{{ summary | safe }}</p>
+  </div>
+</section>
+
+{# ── AI SUMMARY · five-question block. (H2: New York bookkeeping services, in five questions.) ── #}
+<section class="section" id="ny-svc-bookkeeping-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">New York bookkeeping services, in five questions.</h2>
+    </header>
+    <dl class="ai-summary ai-summary--ruled" id="ny-svc-bookkeeping-ai-summary-list">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
+        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+{# ── WHY · representative trust points (R5: reframed from baseline proof-band, no fabricated outcomes). (H2: Why New York businesses keep their books with us.) ── #}
+<section class="section section--alt" id="ny-svc-bookkeeping-why">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Why owners stay</p>
+      <h2 class="section__heading">Why New York businesses keep their books with us.</h2>
+      <p class="section__lede">{{ whyLede | safe }}</p>
+    </header>
+    <div class="trust-row">
+      {%- for w in why %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ w.value }}</p><p class="trust-row__label">{{ w.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── INCLUDED · what's in complete monthly bookkeeping (grid-3 buyer-cards). 5 frozen H3s verbatim. (H2: Complete monthly bookkeeping, not a partial service. + 5 H3s) ── #}
+<section class="section" id="ny-svc-bookkeeping-included">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What&rsquo;s included every month</p>
+      <h2 class="section__heading">Complete monthly bookkeeping, not a partial service.</h2>
+      <p class="section__lede">Every engagement is scoped to your business and delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in included %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ s.num }}</p>
+        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
+        <p class="buyer-card__body">{{ s.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ s.href }}">{{ s.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── SCOPE · honest do/don't split (grid-2; checks-list inside each col). 2 frozen H3s verbatim. (H2: What we do — and what we don't. + h3 TechBrot bookkeeping / h3 Your CPA) ── #}
+<section class="section section--alt" id="ny-svc-bookkeeping-scope">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Honest scope</p>
+      <h2 class="section__heading">What we do &mdash; and what we don&rsquo;t.</h2>
+    </header>
+    <div class="grid-2">
+      <div class="stack-8">
+        <h3>TechBrot bookkeeping</h3>
+        <ul class="checks-list">
+          {%- for d in scopeDo %}<li>{{ d | safe }}</li>{%- endfor %}
+        </ul>
+      </div>
+      <div class="stack-8">
+        <h3>Your CPA</h3>
+        <ul class="checks-list">
+          {%- for d in scopeDont %}<li>{{ d | safe }}</li>{%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── PROCESS · four steps to clean books (grid-2 stack-8; cobalt vocab). 4 frozen H3s verbatim. (H2: Four steps to clean books. + 4 H3s) ── #}
+<section class="section" id="ny-svc-bookkeeping-process">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">How it starts</p>
+      <h2 class="section__heading">Four steps to clean books.</h2>
+      <p class="section__lede">Every New York engagement follows the same rhythm &mdash; books accurate first, monthly cadence second, advisory third.</p>
+    </header>
+    <div class="grid-2">
+      {%- for p in process %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ p.phase }}</p>
+        <h3>{{ p.title | safe }}</h3>
+        <p class="prose">{{ p.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+    <div class="hero__actions">
+      <a class="btn btn--primary btn--lg" href="/contact/?intent=new-york&amp;state=new-york&amp;source_type=state-money&amp;funnel_stage=MOFU">Book the discovery call</a>
+    </div>
+  </div>
+</section>
+
+{# ── ADVISORY · standing brand line lives inside the body. (H2: Automation handles the data entry. We handle the judgment.) ── #}
+<section class="section section--alt" id="ny-svc-bookkeeping-advisory">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The advisory line</p>
+      <h2 class="section__heading">Automation handles the data entry. We handle the judgment.</h2>
+    </header>
+    <div class="stack-8">
+      {%- for p in advisoryBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── FAQ · 8 verbatim contract Q/A; visible faq__list = FAQPage schema (same array). (H2: New York bookkeeping services questions.) ── #}
+<section class="section" id="ny-svc-bookkeeping-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">New York bookkeeping services questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-svc-bookkeeping-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="ny-svc-bookkeeping-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level, no personal name (byline-block + trust-row + meta-reviewed). (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
+<section class="section section--alt" id="ny-svc-bookkeeping-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    </header>
+    <div class="byline-block">
+      <div class="byline-block__mark" aria-hidden="true"></div>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose">
+      <p>Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving New York businesses remotely across all 62 counties. Pricing reflects TechBrot&rsquo;s New York engagement ranges; New York and NYC sales-tax references &mdash; including the NYC 8.875% combined rate &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href="https://www.tax.ny.gov/" rel="noopener nofollow">NY Department of Taxation &amp; Finance</a> and the <a href="https://www.nyc.gov/site/finance/index.page" rel="noopener nofollow">NYC Department of Finance</a>. TechBrot provides bookkeeping and QuickBooks work and coordinates with your CPA, who files; we do not file NY State or NYC income-tax or UBT returns and do not represent clients before tax authorities.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-15</span><span>Updated: 2026-06-15</span><span>Reviewed: 2026-06-15 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
