@@ -49,7 +49,7 @@
 <a class="skip-link" href="#main">Skip to content</a>
 {% include "partials/site-header.njk" %}
 
-<main id="main">
+<main id="main"{% if pageTier %} data-tier="{{ pageTier }}"{% endif %}>
 {{ content | safe }}
 </main>
 

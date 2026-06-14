@@ -454,46 +454,79 @@ else:
                     (SITE / u.lstrip("/") / "index.html").read_text(encoding="utf-8"))
     ok("faq-flat", f"{faq_pages} FAQ page(s): flat prose answers, no nested Q/A, no lists in answers")
 
-# 12 ── DESIGN FIDELITY (round-21 standing gate, founder-ordered). GREEN on the
-#       checks above means "didn't break the rules," NOT "implements the handoff."
-#       The handoff PLACEMENT-MAP gives every tier RICH components; a content page
-#       that uses NONE of them is an old-structure carryover on generic primitives
-#       only (stack-8/grid/process-diagram/ai-summary/faq) — the design-fidelity
-#       audit's core finding. This gate hard-fails such pages unless they are
-#       listed as known re-pattern debt in design-fidelity-exceptions.json. A page
-#       isn't "done" until it's off the debt list and passing on merit.
+# 12 ── DESIGN FIDELITY — PER-TIER (round-21 standing gate, founder-ordered;
+#       tightened from a flat "≥1 rich component anywhere" check to a real
+#       per-tier assertion). GREEN on the checks above means "didn't break the
+#       rules," NOT "implements the handoff." The PLACEMENT-MAP assigns every
+#       component to specific tiers (✓ ships by rule · opt page-by-page · —
+#       never). This gate reads each page's data-tier (emitted by the tier
+#       layout onto <main>) and hard-fails any content page that carries NONE of
+#       the rich components ITS OWN tier permits — catching both generic-
+#       primitive-only pages AND mis-tiered pages whose only rich components
+#       belong to a different tier (e.g. a t-bofu page whose sole rich element
+#       is a pull-quote, which the map marks "—" for BOFU). Excluded:
+#       legal/404/standalone forms. Tolerated only if listed as known re-pattern
+#       debt. Source of truth: _design/.../handoff/PLACEMENT-MAP.md.
 RICH_COMPONENTS = [
     "buyer-card", "vs-table", "flow__step", "pull-quote", "toc__label",
     "guide-grid", "byline-block", "meta-reviewed", "intake-form", "proof-strip",
     "error-badge", "fix-steps", "call-breakout", "stat__delta", "diagram-figure",
     "hero__motif",
 ]
+# Per-tier rich components the PLACEMENT-MAP PERMITS on that tier (✓ or opt;
+# components marked "—" for the tier are deliberately absent so they do NOT
+# satisfy it). Transcribed directly from PLACEMENT-MAP.md.
+TIER_ALLOWED = {
+    "hub":      {"buyer-card", "flow__step", "pull-quote", "proof-strip", "stat__delta", "hero__motif"},
+    "location": {"buyer-card", "pull-quote", "intake-form", "proof-strip", "stat__delta", "hero__motif"},
+    "mofu":     {"buyer-card", "vs-table", "flow__step", "pull-quote", "byline-block",
+                 "meta-reviewed", "proof-strip", "error-badge", "fix-steps", "call-breakout", "stat__delta"},
+    "guide":    {"vs-table", "flow__step", "pull-quote", "toc__label", "guide-grid",
+                 "byline-block", "meta-reviewed", "stat__delta", "diagram-figure"},
+    "bofu":     {"flow__step", "intake-form", "proof-strip", "error-badge", "fix-steps", "call-breakout"},
+}
+TIER_RE = re.compile(r'<main[^>]*\bdata-tier="([a-z]+)"')
 df_exc = json.loads(
     (ROOT / "_build/battery/design-fidelity-exceptions.json").read_text(encoding="utf-8"))
 df_exclude = set(df_exc.get("exclude_urls", []))
 df_debt = set(df_exc.get("rich_component_debt", []))
-df_problems, df_debt_seen, df_ok = [], [], 0
+df_problems, df_debt_seen, df_ok, df_untiered = [], [], 0, []
 for url, lp in pages.items():
     if url.startswith("/dev/") or url in df_exclude:
         continue
     html = (SITE / url.lstrip("/") / "index.html").read_text(encoding="utf-8")
-    uses = [c for c in RICH_COMPONENTS if c in html]
-    if uses:
+    m = TIER_RE.search(html)
+    if not m:
+        df_untiered.append(url)            # no tier surface (non-tier layout) — not assessed
+        continue
+    tier = m.group(1)
+    allowed = TIER_ALLOWED.get(tier)
+    if allowed is None:
+        df_untiered.append(f"{url} (unknown tier '{tier}')")
+        continue
+    present = [c for c in RICH_COMPONENTS if c in html]
+    tier_hits = [c for c in present if c in allowed]
+    if tier_hits:
         df_ok += 1
     elif url in df_debt:
         df_debt_seen.append(url)
     else:
+        has = ", ".join(present) if present else "none"
         df_problems.append(
-            f"{url}: uses NO handoff rich component (only generic primitives) "
-            f"— re-pattern to the tier's handoff components (PLACEMENT-MAP) or list as debt")
+            f"{url} [tier={tier}]: no tier-correct handoff component "
+            f"(has: {has}; {tier} permits one of: {', '.join(sorted(allowed))})")
 if df_problems:
     for x in df_problems:
         fail("design-fidelity", x)
 else:
-    note = (f" · {len(df_debt_seen)} pages known re-pattern DEBT (design-fidelity-exceptions.json)"
-            if df_debt_seen else "")
+    bits = []
+    if df_debt_seen:
+        bits.append(f"{len(df_debt_seen)} known re-pattern DEBT")
+    if df_untiered:
+        bits.append(f"{len(df_untiered)} untiered (not assessed)")
+    note = (" · " + " · ".join(bits)) if bits else ""
     ok("design-fidelity",
-       f"{df_ok} content pages use handoff rich components{note}")
+       f"{df_ok} content pages carry a tier-correct handoff component (per-tier){note}")
 
 print()
 if FAILURES:

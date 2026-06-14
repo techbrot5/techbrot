@@ -1,4 +1,25 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
+Updated: 2026-06-14 · ROUND 21 GATE TIGHTENED — design-fidelity #12 is now a REAL
+**PER-TIER** assertion (founder-ordered). Was a flat "≥1 rich component anywhere"
+check; now each tier layout emits `data-tier` on `<main>` (`pageTier` front-matter on
+t-hub/location/mofu/guide/bofu → base.njk), and check #12 hard-fails any content page
+that carries NONE of the rich components ITS OWN tier permits per the handoff
+PLACEMENT-MAP (✓/opt allowed; "—" components do NOT satisfy a tier). `TIER_ALLOWED` map
+transcribed directly from PLACEMENT-MAP.md. **The teeth bit immediately:** it caught **9
+t-bofu service pages** (fractional-cfo · catch-up/cleanup/monthly bookkeeping · sales-tax ·
+qb cleanup/migration/payroll/setup) elevated round-16→18 with hub/mofu components
+(buyer-card/vs-table/pull-quote — all "—" for BOFU) but carrying NONE of BOFU's signatures
+(proof-strip/full intake-form/flow). Same finding-class the design audit named: GREEN ≠
+implements-the-tier. Recorded as **mis-tiered debt** in design-fidelity-exceptions.json
+(fix = the payroll-management pattern: proof-strip under hero + full intake-form; or
+reconcile whether they're really t-mofu). **Gate now: 21 pass per-tier on merit · 11 DEBT**
+(2 generic-primitive-only [/about/methodology/, /trust/] + the 9 mis-tiered bofu). Battery
+GREEN. css-drift/manifest unaffected (data-tier/pageTier add no classes). **A page isn't
+"done" until it passes design-fidelity PER-TIER.**
+**NEXT:** founder reviewing the 6 error patterns (faq + hub) on preview; then re-pattern the
+11 debt pages (9 bofu = proof-strip + intake-form; 2 = add any rich component) + resume the
+QB-remainder on the approved fidelity patterns.
+
 Updated: 2026-06-14 · ROUND 21 REPLICATION **COMPLETE** — problem-pattern replicated
 to the 6 error children + the error-codes hub (founder-approved off the h202 proving
 page). Each page: `error-badge` in the hero eyebrow · `byline-block` (E-E-A-T, renders
