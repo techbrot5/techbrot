@@ -1,4 +1,24 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
+Updated: 2026-06-14 · ROUND 21 CHECKPOINT 2 — QB-remainder build START.
+**ERROR-CODES HUB DONE+VERIFIED** `/quickbooks/help/error-codes/` (t-guide, 63
+baseline headings ALL carried + 7 FAQ verbatim + CollectionPage/BreadcrumbList/
+ItemList/FAQPage schema; only standing "monthly brief." removal). Codes without a
+dedicated page (H505/H101/H303/6190/6000-77/6000-301/PS036/PS077/80070057/15215)
+render as heading text only (equity preserved, zero preview 404s); 6000 sub-variants
+link the complete error-6000-series page. **Resolves h202's hub link.** Battery
+GREEN · axe 0 · overflow 360/375/753 · LH a11y/BP/SEO 100 · **CLS 0**.
+**ROOT-CAUSE CSS FIX (global, helps every page):** the hub's first real probe found
+**CLS 0.107** (h202 control = 0.001 same host → real, not host-noise). Cause: the
+global `img,svg{height:auto}` reset in 02-base let the **header logo SVG** recompute
+its height on decode (intrinsic aspect ≠ 116:30); on a heavy page the decode lands
+AFTER first paint → header/hero shift. Fix: `.site-header__logo img{height:30px;
+width:auto}` in 04-chrome (pins the box; **computed-style-neutral** — logo already
+rendered 30px, so zero element drift; +46B bundle). Re-probe **CLS 0.107→0.0**,
+perf 90. **15240 child DONE** (battery GREEN, per-page probes next). CSS gate 53,819B.
+Pages 29→30 (hub). NEW script `refresh_prod.ps1` (stop :8125 → npm run build:prod →
+restart). DESIGN NOTE added to the round-21 standing block. Order continues: 5 more
+error children → /online/ (STOP).
+
 Updated: 2026-06-14 · ROUND 20 — QB-silo completion batch (CHECKPOINT 1).
 Design reconcile CONFIRMED: handoff = the SAME cobalt #2B4FD6 system the 27 pages
 run (no migration). **PART A DONE+VERIFIED:** `/resources/research/` t-hub —
