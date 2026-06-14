@@ -454,6 +454,47 @@ else:
                     (SITE / u.lstrip("/") / "index.html").read_text(encoding="utf-8"))
     ok("faq-flat", f"{faq_pages} FAQ page(s): flat prose answers, no nested Q/A, no lists in answers")
 
+# 12 ── DESIGN FIDELITY (round-21 standing gate, founder-ordered). GREEN on the
+#       checks above means "didn't break the rules," NOT "implements the handoff."
+#       The handoff PLACEMENT-MAP gives every tier RICH components; a content page
+#       that uses NONE of them is an old-structure carryover on generic primitives
+#       only (stack-8/grid/process-diagram/ai-summary/faq) — the design-fidelity
+#       audit's core finding. This gate hard-fails such pages unless they are
+#       listed as known re-pattern debt in design-fidelity-exceptions.json. A page
+#       isn't "done" until it's off the debt list and passing on merit.
+RICH_COMPONENTS = [
+    "buyer-card", "vs-table", "flow__step", "pull-quote", "toc__label",
+    "guide-grid", "byline-block", "meta-reviewed", "intake-form", "proof-strip",
+    "error-badge", "fix-steps", "call-breakout", "stat__delta", "diagram-figure",
+    "hero__motif",
+]
+df_exc = json.loads(
+    (ROOT / "_build/battery/design-fidelity-exceptions.json").read_text(encoding="utf-8"))
+df_exclude = set(df_exc.get("exclude_urls", []))
+df_debt = set(df_exc.get("rich_component_debt", []))
+df_problems, df_debt_seen, df_ok = [], [], 0
+for url, lp in pages.items():
+    if url.startswith("/dev/") or url in df_exclude:
+        continue
+    html = (SITE / url.lstrip("/") / "index.html").read_text(encoding="utf-8")
+    uses = [c for c in RICH_COMPONENTS if c in html]
+    if uses:
+        df_ok += 1
+    elif url in df_debt:
+        df_debt_seen.append(url)
+    else:
+        df_problems.append(
+            f"{url}: uses NO handoff rich component (only generic primitives) "
+            f"— re-pattern to the tier's handoff components (PLACEMENT-MAP) or list as debt")
+if df_problems:
+    for x in df_problems:
+        fail("design-fidelity", x)
+else:
+    note = (f" · {len(df_debt_seen)} pages known re-pattern DEBT (design-fidelity-exceptions.json)"
+            if df_debt_seen else "")
+    ok("design-fidelity",
+       f"{df_ok} content pages use handoff rich components{note}")
+
 print()
 if FAILURES:
     print(f"BATTERY FAILED — {len(FAILURES)} problem(s):")

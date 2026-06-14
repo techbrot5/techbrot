@@ -1,4 +1,40 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
+Updated: 2026-06-14 · ROUND 21 FOUNDATION-CORRECTION **COMPLETE** — 5 proving pages
++ rulings + design-fidelity GATE. Pushed for final review before any replication.
+**5 PROVING PAGES rebuilt to true handoff fidelity (founder-approved h202 + 4 more):**
+h202 error-silo problem-pattern (`7ee1315`) · /online/ t-mofu vs-table+buyer-card
+(`9927de5`) · /quickbooks/ t-hub buyer-card+flow+pull-quote (`690426b`) · payroll
+t-bofu proof-strip+full intake-form (`75b242d`) · /quickbooks/faq/ t-guide ARTICLE
+guide-grid+toc+byline+pull-quote (`<faq commit>`). Each: battery GREEN · axe 0 ·
+overflow 360/375/753 · LH a11y/BP/SEO 100 · **CLS ~0**.
+- **RULING 1 (`abb31bc`):** shared `_includes/partials/intake-form.njk` — the locked
+  24-key contract in ONE place; contact/file-review/payroll `{% include %}` it with
+  per-page params; contract verified preserved; payroll upgraded to the FULL form.
+- **RULING 2 (`abb31bc`):** /online/ → file-review-primary (Sheet 9; applies to all
+  future t-mofu products).
+- **RULING 3:** research-log stays N=0 honest until the founder seeds (no fabrication).
+- **LOGO CLS FIX v2 (`47205e5`):** the checkpoint-2 fix pinned only height; `width:auto`
+  didn't reserve the box pre-decode, so the heaviest page (payroll full form) shifted
+  AFTER first paint (CLS 0.155, real — NOT throttle, confirmed at benchmarkIndex 231).
+  `.site-header__logo img{width:116px;height:30px}` fully reserves it → 0.0. Hardens
+  every page. (Corrects an earlier throttle misattribution.)
+- **PART 3 — DESIGN-FIDELITY GATE (`<part3 commit>`, STANDING):** run_battery.py #12.
+  Every content page must use ≥1 handoff RICH component (buyer-card/vs-table/flow/
+  pull-quote/toc/byline-block/meta-reviewed/intake-form/proof-strip/error-badge/
+  fix-steps/call-breakout/stat__delta/diagram-figure/hero__motif) — generic-primitive-
+  only pages hard-fail. GREEN ≠ matches-design; this is the gate the battery was missing.
+  Result: **23 pages pass on merit · 9 known re-pattern DEBT** (the 6 error children +
+  hub → replicate the h202 problem-pattern after sign-off; /trust/ + /about/methodology/
+  → add a rich component). Debt tracked in `_build/battery/design-fidelity-exceptions.json`;
+  remove each page from the list when re-patterned. **A page isn't "done" until it
+  passes design-fidelity.** CSS gate 55,933B / 58KB. Bylines all render "Certified
+  QuickBooks ProAdvisor team" (founder-name-zero holds). New: `extract_faq.py` +
+  `_build/data/faq-content.json` (the 35 Q/A source). Bench: 8090 axe server killed
+  during CLS diagnosis — restart before next axe run.
+**NEXT (after founder + strategy-Claude sign-off):** replicate the problem-pattern to the
+6 error children + hub; re-pattern /trust/ + /about/methodology/; resume the QB-remainder
+(desktop/enterprise/consulting/proadvisor-team/which-plan) on the approved fidelity patterns.
+
 Updated: 2026-06-14 · ROUND 21 CHECKPOINT 3 — FOUNDATION-CORRECTION (design fidelity).
 **DESIGN-FIDELITY AUDIT (founder-ordered at the /online/ stop) → systemic gap CONFIRMED.**
 Report: `_build/reports/round-21-design-audit.md`. Home implements the handoff; the
