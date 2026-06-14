@@ -1,4 +1,15 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
+Updated: 2026-06-14 · ROUND 18 — PUSHED + CF live-verified. **`preview-11ty`
+PUSHED to origin (21b6446 — carries CF CSS fix 7cc89e2 + all round-17).** CF
+deploy ✅ successful (https://938f0c02.techbrot.pages.dev) BUT all 3 gates FAIL:
+`/`→404, `/assets/css/site.min.css`→404, `/accounting/`→200 serving the OLD repo
+page (legacy Bootstrap CSS). **ROOT CAUSE (proven): Cloudflare is publishing the
+repo ROOT, not `_site` — a dashboard build-output-directory misconfig, not the
+build (the build is correct + pushed).** FOUNDER FIX (no dashboard access from
+here): CF → Pages → techbrot → Settings → Build output directory = `_site` (build
+cmd `npm run build`); retry deploy. Full detail + gate outputs:
+_build/reports/cloudflare-fix.md. STOP — no page work until preview renders styled.
+
 Updated: 2026-06-14 · ROUND 17 — elevation campaign + Cloudflare CSS fix.
 **CF CSS-404 FIXED** (commit 7cc89e2 — see _build/reports/cloudflare-fix.md):
 site.min.css was written by a side-effect `eleventy.before` fs.writeFileSync

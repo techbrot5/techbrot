@@ -1,5 +1,42 @@
 # Cloudflare deploy fix — root cause + fix (read me first)
 
+## 🔴 ROUND 18 LIVE-DEPLOY DIAGNOSIS — THE REAL BLOCKER (dashboard config)
+Pushed `preview-11ty` (`21b6446`, carries the CF CSS fix `7cc89e2`). Cloudflare
+reported **✅ Deploy successful**, deployment URL **https://938f0c02.techbrot.pages.dev**
+(project domain is `techbrot.pages.dev`, NOT `techbrot5`). Ran the three gates:
+- **Artifact:** `/assets/css/site.min.css` → **HTTP/1.1 404 Not Found**. ❌
+- **Wiring:** `/` → **404**; `/accounting/` → 200 but serves the **OLD repo page**,
+  linking `../assets/bootstrap/css/bootstrap.min.css`, `../assets/css/04-pages.css`,
+  `../assets/css/01-tokens.css` — the legacy Bootstrap CSS, NOT `/assets/css/site.min.css`. ❌
+- **Visual:** the served pages are the OLD Bootstrap design (home 404s) — not the
+  cobalt `_site`. ❌
+
+**Root cause (proven): Cloudflare is publishing the repository ROOT, not `_site`.**
+The repo root is the old Bootstrap site — it has no `index.html` (home deleted →
+`/` 404s), no `site.min.css` (→ CSS 404s), and old per-route folders that still
+serve with legacy CSS (→ `/accounting/` shows the old page). This is NOT the build
+(the fresh-clone `npm ci --omit=dev && npm run build` produces a complete, styled
+`_site`, and that build is now on origin). It is a **build-output-directory
+misconfiguration in the Cloudflare Pages dashboard.**
+
+### THE FIX (founder — Cloudflare dashboard; I have no dashboard access)
+Cloudflare → Pages → project **techbrot** → **Settings → Builds & deployments → Build configuration**:
+- **Build command:** `npm run build`
+- **Build output directory:** **`_site`**  ← almost certainly blank or `/` right now;
+  that is what makes CF publish the repo root. Set it to `_site`.
+- **Root directory:** `/` (leave default — the build runs at repo root and emits `_site`).
+- **Environment variable** `ENVIRONMENT=production` on the **Production** deployment only.
+Then **Retry deployment** (or push) and re-run the three gates against the new
+`<hash>.techbrot.pages.dev`. With output dir = `_site`, `/` and
+`/assets/css/site.min.css` will both 200 and pages render cobalt.
+
+(Tip to retrieve the deploy URL without the dashboard: the GitHub **check-runs**
+API for the pushed commit carries it — `https://api.github.com/repos/techbrot5/techbrot/commits/<sha>/check-runs`,
+"Cloudflare Pages" check → Preview URL.)
+
+---
+
+
 Two separate Cloudflare failures were diagnosed and fixed. Both are
 **build-pipeline only — no page content changed.** Commits are on `preview-11ty`.
 
