@@ -1,0 +1,177 @@
+---json
+{
+  "layout": "layouts/t-hub.njk",
+  "permalink": "/accounting/advisory/",
+  "slug": "advisory",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--hub",
+  "title": "Accounting Advisory & Fractional CFO Services · TechBrot",
+  "description": "Accounting advisory and fractional CFO services — cash flow, KPI reporting, budgeting and forecasting, and financial strategy from Certified ProAdvisors who turn clean books into decisions. Automation handles the data entry; we handle the judgment.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Accounting", "href": "/accounting/" },
+    { "name": "Advisory" }
+  ],
+  "hero": {
+    "eyebrow": "Accounting advisory & fractional CFO",
+    "heading": "Automation handles the data entry. We handle the judgment.",
+    "subheading": "Software can categorize a transaction. It can&rsquo;t tell you whether to hire, how much cash you&rsquo;ll have in ninety days, or which part of the business actually makes money. TechBrot&rsquo;s Certified ProAdvisors turn accurate books into the decisions that move a business &mdash; cash flow, KPIs, budgeting, strategy &mdash; up to and including fractional CFO.",
+    "actions": [
+      { "label": "Explore Services", "href": "#advisory-services", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=advisory", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>Accounting advisory</strong> turns accurate books into decisions &mdash; forecasting cash flow, tracking the KPIs that drive the business, building budgets, reviewing performance, and setting financial strategy, up to a full fractional CFO. Where bookkeeping records what happened, advisory interprets it and tells you what to do next. Delivered by Certified ProAdvisors, always built on books that are already correct.",
+    "source": "Independent Certified QuickBooks ProAdvisor firm &mdash; we handle operational &amp; strategic finance; your CPA files the taxes. Not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Ready when you are",
+    "heading": "Turn your numbers into decisions.",
+    "lede": "Book a free 30-minute discovery call. We&rsquo;ll review where you are, what decisions are in front of you, and whether advisory &mdash; or accurate books first &mdash; is the right next step. Written fixed-fee scope within 3 business days, no pitch.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=advisory", "class": "btn--primary" },
+      { "label": "Explore Services", "href": "/accounting/services/?intent=accounting", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="advisory-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Plainly</p>
+      <h2 class="section__heading">Accounting advisory, plainly.</h2>
+    </header>
+    <div class="prose">
+      <p>Accounting advisory is the work that turns accurate books into decisions &mdash; understanding and forecasting cash flow, tracking the KPIs that drive the business, building budgets and forecasts, reviewing performance, and setting financial strategy. Where <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">bookkeeping</a> records what happened, advisory interprets it and tells you what to do next.</p>
+      <p>As automation commoditizes routine data entry, this judgment layer is where the value now concentrates. TechBrot delivers advisory through Certified ProAdvisors &mdash; from lighter reporting added to monthly bookkeeping, up to <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">fractional CFO</a> engagements &mdash; always built on books that are already correct. We focus on operational and strategic finance; your CPA files the taxes, and we coordinate cleanly.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="advisory-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Accounting advisory, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="advisory-services">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What we deliver</p>
+      <h2 class="section__heading">Five ways we turn books into decisions &mdash; and a CFO when you need one.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for s in services %}
+      <article class="review-card">
+        <p class="review-card__role">{{ s.area | safe }}</p>
+        <h3>{{ s.name | safe }}</h3>
+        <p class="review-card__fact">{{ s.body | safe }}</p>
+        <p class="review-card__fact"><strong>Answers:</strong> {{ s.answers | safe }}</p>
+        <a class="review-card__link" href="{{ s.href }}">{{ s.name | safe }} &rarr;</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="advisory-judgment">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The shift</p>
+      <h2 class="section__heading">Basic bookkeeping is being automated. The judgment isn&rsquo;t.</h2>
+    </header>
+    <div class="prose">
+      <p>For a decade the value in accounting was getting the data in &mdash; categorizing, reconciling, closing. Software and AI are now very good at that, and getting better. The commodity line is moving up, and the firms that only do data entry are moving down with it.</p>
+      <p>What software can&rsquo;t do is sit across the table and tell you the truth: that the product line you love loses money, that you&rsquo;ll be tight on cash in March, that the second location isn&rsquo;t carrying its rent yet. That requires someone who understands both your numbers and your business &mdash; and is willing to say it plainly. That&rsquo;s advisory, and it&rsquo;s deliberately where TechBrot is built to compete. Accurate books first; judgment on top.</p>
+    </div>
+    <blockquote class="pull-quote">
+      <p>{{ judgment.body | safe }}</p>
+    </blockquote>
+  </div>
+</section>
+
+<section class="section" id="advisory-scope">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Honest scope</p>
+      <h2 class="section__heading">What advisory is, isn&rsquo;t, and who we coordinate with.</h2>
+    </header>
+    {%- for b in scope %}
+    <div class="stack-8">
+      <h3>{{ b.name | safe }}</h3>
+      <p class="prose">{{ b.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section section--alt" id="advisory-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">Advisory questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="advisory-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="advisory-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="advisory-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
+    </header>
+    <div class="prose">
+      <p>This page reflects how TechBrot approaches accounting advisory. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on the scope and boundaries of advisory work. Where our approach or scope changes, this page is updated. Advisory is delivered on accurate books and coordinated with your CPA or EA for anything requiring a license.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in reviewSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="in-brief__source">Page last reviewed: May 2026.</p>
+  </div>
+</section>
+
+<section class="section section--alt" id="advisory-related">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related services</p>
+      <h2 class="section__heading">Related services.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for n in related %}
+      <article class="review-card">
+        <h3>{{ n.title | safe }}</h3>
+        <p class="review-card__fact">{{ n.body | safe }}</p>
+        <a class="review-card__link" href="{{ n.href }}">{{ n.title | safe }} &rarr;</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
