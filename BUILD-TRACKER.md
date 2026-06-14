@@ -1,23 +1,37 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
-Updated: 2026-06-14 · ROUND 21 CHECKPOINT 2 — QB-remainder build START.
-**ERROR-CODES HUB DONE+VERIFIED** `/quickbooks/help/error-codes/` (t-guide, 63
-baseline headings ALL carried + 7 FAQ verbatim + CollectionPage/BreadcrumbList/
-ItemList/FAQPage schema; only standing "monthly brief." removal). Codes without a
-dedicated page (H505/H101/H303/6190/6000-77/6000-301/PS036/PS077/80070057/15215)
-render as heading text only (equity preserved, zero preview 404s); 6000 sub-variants
-link the complete error-6000-series page. **Resolves h202's hub link.** Battery
-GREEN · axe 0 · overflow 360/375/753 · LH a11y/BP/SEO 100 · **CLS 0**.
+Updated: 2026-06-14 · ROUND 21 CHECKPOINT 2 — ERROR-CODES CLUSTER COMPLETE.
+**ERROR-CODES HUB + 6 CHILDREN DONE+VERIFIED** (t-guide, approved h202 pattern).
+Pages **29 → 36** (+7). All battery GREEN · axe 0 · overflow 360/375/753 ·
+LH a11y/BP/SEO 100 · CLS ≤0.002. Per-page commits: hub `862c9b3` · 15240 `3c30f39`
+· 3371 `c4bb264` · ps038 `baee48c` · c-series `2bc8af9` · 6000-series `7efcad9` ·
+unrecoverable `dc96eb4`.
+- **Hub** `/quickbooks/help/error-codes/` (63 headings, 7 FAQ, CollectionPage+
+  BreadcrumbList+ItemList+FAQPage). Codes without a dedicated page (H505/H101/H303/
+  6190/6000-77/6000-301/PS036/PS077/80070057/15215) render as heading text only
+  (equity preserved, zero preview 404s); 6000 sub-variants link the error-6000-series
+  page. **Resolves h202's hub link.**
+- **6 children** each: TechArticle+HowTo+HowToStep+HowToTool+Service+FAQPage+WebPage+
+  BreadcrumbList · honest-triage (disclosure above fold, first FAQ "official?"→No
+  ADDITIVE, provider #organization) · SHORT stat-row values (768 lesson) · conversion
+  seam · the per-code intents (qb-error-{15240,3371,ps038,c-series,6000,unrecoverable}).
+  15240 41h · 3371 35h · ps038 33h/8faq · c-series 39h · 6000 41h/8faq · unrecoverable 40h/8faq.
+- **⚠ EQUITY ARTIFACT (c-series):** baseline captured one H3 with a tag-strip
+  whitespace artifact ("operation , not"); heading present VERBATIM, logged
+  type:"artifact" (NOT a removal) in equity-exceptions.json. No founder sign-off
+  needed — content is fully there.
 **ROOT-CAUSE CSS FIX (global, helps every page):** the hub's first real probe found
 **CLS 0.107** (h202 control = 0.001 same host → real, not host-noise). Cause: the
 global `img,svg{height:auto}` reset in 02-base let the **header logo SVG** recompute
 its height on decode (intrinsic aspect ≠ 116:30); on a heavy page the decode lands
 AFTER first paint → header/hero shift. Fix: `.site-header__logo img{height:30px;
 width:auto}` in 04-chrome (pins the box; **computed-style-neutral** — logo already
-rendered 30px, so zero element drift; +46B bundle). Re-probe **CLS 0.107→0.0**,
-perf 90. **15240 child DONE** (battery GREEN, per-page probes next). CSS gate 53,819B.
-Pages 29→30 (hub). NEW script `refresh_prod.ps1` (stop :8125 → npm run build:prod →
-restart). DESIGN NOTE added to the round-21 standing block. Order continues: 5 more
-error children → /online/ (STOP).
+rendered 30px, so zero element drift; +46B bundle). Re-probe **CLS 0.107→0.0**.
+CSS gate **53,819B / 58KB**. NEW script `refresh_prod.ps1` (stop :8125 → npm run
+build:prod → restart). PROBE NOTE: under extreme host throttle (benchmarkIndex
+~90–120, e.g. 3 back-to-back LH runs) font-swap CLS inflates on long pages; re-run
+on a settled host (benchmarkIndex ≥170) confirms ~0 — verified on hub + unrecoverable.
+**NEXT:** `/quickbooks/online/` (t-mofu product PROVING PAGE) → **STOP** for founder
+approval of the product pattern before desktop/enterprise replicate. Then report + push.
 
 Updated: 2026-06-14 · ROUND 20 — QB-silo completion batch (CHECKPOINT 1).
 Design reconcile CONFIRMED: handoff = the SAME cobalt #2B4FD6 system the 27 pages
@@ -63,6 +77,22 @@ DESIGN NOTE (round 21): `.stat-row` becomes `display:flex` with large gaps at
 ≥768px — `stat__value` is for SHORT numeric metrics only (e.g. "4", "L2", "48hr").
 Long word-values ("Enterprise") overflow the container at 768. (Caught + fixed on
 h202.)
+
+## STANDING RULE — RESEARCH-LOG CAPTURE (founder, round 21 — owner SET)
+**Owner: the FOUNDER logs one anonymized row at each cleanup-engagement close**
+(moment of capture = engagement close). Rows go into `_build/data/cleanup-
+benchmarks.json` under the LOCKED 8-field schema (engagement_id · state · industry
+· months_behind_at_intake · primary_error_types · txn_volume_band · cleanup_hours ·
+cost_band). The founder hands raw facts; Claude writes clean rows. **Anonymization/
+integrity (HARD — this becomes publicly citable):** engagement_id is an opaque token
+(ENG-0001…), NEVER a client name/initials/re-identifying detail; no city granularity
+finer than state; bands (txn_volume_band, cost_band) use fixed ranges, never exact
+figures; every value REAL from an actual closed engagement (no estimates, no
+rounding-to-look-good, no fabricated fills — a blank field stays blank). The live
+`/resources/research/` page reads N and publishes NO breakdown statistic until N≥20,
+so seeding (<20) updates only the honest live count. **⚠ AWAITING:** the founder's
+raw engagement facts to seed the first rows (requested in round-21 report — NOT
+invented). Until provided, dataset stays N=0, honest. See [[research scaffold]] (PART A).
 
 ## STANDING RULE — HUB-REFRESH-ON-SPOKE-ADD (round 20)
 When a spoke ships, update the parent hub BODY **and** ≥1 topical sibling BODY to

@@ -1,0 +1,235 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/quickbooks/online/",
+  "slug": "qbo",
+  "tierClass": "section--tier-guide",
+  "bodyClass": "page--mofu",
+  "callBar": true,
+  "title": "QuickBooks Online: Plans, Fit &amp; ProAdvisor Help · TechBrot",
+  "description": "QuickBooks Online read honestly by a Certified ProAdvisor — what QBO is, the four plan tiers, who it genuinely fits and who it doesn't, the integrations, and the full lifecycle (plan selection, setup, migration, cleanup, monthly). Independent firm, not affiliated with Intuit Inc.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "QuickBooks", "href": "/quickbooks/" },
+    { "name": "QuickBooks Online" }
+  ],
+  "hero": {
+    "eyebrow": "QuickBooks products · Online",
+    "heading": "QuickBooks Online, read by a ProAdvisor.",
+    "subheading": "<strong>QuickBooks Online (QBO)</strong> is Intuit&rsquo;s cloud accounting platform &mdash; the browser- and mobile-accessible successor to QuickBooks Desktop, sold in four plan tiers. It fits most U.S. small and mid-sized businesses well, but not all. This page is the honest read: what QBO actually is, which tier fits, where another product fits better, and the full lifecycle a Level 2 ProAdvisor handles &mdash; with no commission on your subscription. Independent firm, not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=qbo-advisory", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>QuickBooks Online</strong> is Intuit&rsquo;s cloud-based small-business accounting platform &mdash; double-entry bookkeeping, bank-feed reconciliation, invoicing, bill pay, expenses, reporting, sales tax, and (with add-ons) payroll, payments, and inventory &mdash; sold by subscription in four tiers (Simple Start, Essentials, Plus, Advanced). It&rsquo;s the default Intuit product for new customers and where new features land first. It fits most U.S. small businesses, but deep-inventory or significant multi-currency/unlimited-user cases sometimes fit Desktop, Enterprise, or Xero better. TechBrot operators hold QBO ProAdvisor Level 2 and handle the full lifecycle &mdash; with zero commission on your subscription.",
+    "source": "Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "QuickBooks Online starts here",
+    "heading": "Talk to an independent QBO ProAdvisor.",
+    "lede": "Book a 30-minute call. A Certified ProAdvisor reviews your situation, recommends the right plan tier (or the right alternative product if QBO isn&rsquo;t the call), and scopes any setup, migration, or cleanup work in writing &mdash; within 3 business days. No pitch, no commission, no upsell. Independent firm &mdash; earns no fees on QuickBooks Online subscriptions.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=qbo-advisory", "class": "btn--primary" },
+      { "label": "Explore Services", "href": "/quickbooks/", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section section--compact section--tier-guide" id="qbo-credentials">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Certified by Intuit · QBO Level 2</p>
+      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials.</h2>
+    </header>
+    <div class="stat-row">
+      {%- for s in credStats %}
+      <div><div class="stat__value">{{ s.value }}</div><div class="stat__label">{{ s.label }}</div></div>
+      {%- endfor %}
+    </div>
+    <ul class="checks-list">
+      {%- for c in credentials %}<li>{{ c | safe }}</li>{%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbo-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In plain terms</p>
+      <h2 class="section__heading">What QuickBooks Online actually is.</h2>
+    </header>
+    <div class="prose">
+      {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbo-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">QuickBooks Online, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbo-plans">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The four plan tiers</p>
+      <h2 class="section__heading">Simple Start, Essentials, Plus, Advanced.</h2>
+      <p class="section__lede">Plans differ on user count, inventory, class/location tracking, and reporting depth. Below is the honest read on what each tier actually does and who it fits. For specific pricing, check Intuit directly &mdash; we don&rsquo;t publish their numbers because they change. Not sure which fits? <a href="/quickbooks/which-plan-is-right/">Use the plan selector</a> or <a href="/contact/?intent=qbo-plan-selection">book a complimentary plan-selection call</a> &mdash; no commission, no upsell incentive.</p>
+    </header>
+    <div class="grid-2">
+      {%- for p in plans %}
+      <article class="review-card">
+        <p class="review-card__role">{{ p.tier }}</p>
+        <h3>{{ p.name | safe }}</h3>
+        <p class="review-card__fact">{{ p.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbo-fit">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Who QuickBooks Online fits</p>
+      <h2 class="section__heading">The businesses QBO genuinely serves well.</h2>
+      <p class="section__lede">QBO is the right call for the large majority of U.S. small and mid-sized businesses. These are the situations where it&rsquo;s a clear win. <a href="/contact/?intent=qbo-advisory">Get an honest fit assessment</a> if you&rsquo;re unsure.</p>
+    </header>
+    <div class="grid-3">
+      {%- for f in fit %}
+      <div class="stack-8">
+        <h3>{{ f.name | safe }}</h3>
+        <p class="prose">{{ f.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbo-not-fit">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">When QBO isn&rsquo;t the right call</p>
+      <h2 class="section__heading">Where another option genuinely fits better.</h2>
+      <p class="section__lede">Independence means saying so when QBO isn&rsquo;t right. These are the most common cases.</p>
+    </header>
+    <div class="grid-3">
+      {%- for n in notFit %}
+      <article class="review-card">
+        <p class="review-card__role">{{ n.alt }}</p>
+        <h3>{{ n.name | safe }}</h3>
+        <p class="review-card__fact">{{ n.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbo-services">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">How we work in QuickBooks Online</p>
+      <h2 class="section__heading">The full QBO lifecycle, one ProAdvisor firm.</h2>
+      <p class="section__lede">From the file&rsquo;s first day to its hundredth month, every TechBrot QuickBooks Online engagement is delivered by a Certified ProAdvisor against a written fixed-fee scope.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in services %}
+      <div class="stack-8">
+        <h3><a href="{{ s.href }}">{{ s.name | safe }}</a></h3>
+        <p class="prose">{{ s.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbo-ecosystem">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">QBO ecosystem</p>
+      <h2 class="section__heading">What plugs into QuickBooks Online.</h2>
+      <p class="section__lede">QBO&rsquo;s integration ecosystem is one of its biggest advantages. These are the most common ones we configure for clients.</p>
+    </header>
+    <div class="grid-3">
+      {%- for e in ecosystem %}
+      <article class="review-card">
+        <p class="review-card__role">{{ e.tag }}</p>
+        <h3>{{ e.name | safe }}</h3>
+        <p class="review-card__fact">{{ e.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qbo-operator">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Who performs the work</p>
+      <h2 class="section__heading">QBO Level 2 ProAdvisor. Independent. No commissions.</h2>
+    </header>
+    <div class="prose">
+      <p>Every TechBrot QuickBooks Online engagement is delivered by a Certified ProAdvisor at Level 2 &mdash; the deepest QBO certification Intuit issues. Our independence isn&rsquo;t cosmetic: we earn nothing from your QBO subscription, hold no affiliate or referral relationship with Intuit, and have no incentive to push you onto a higher tier than you need.</p>
+      <p>Platform-level quality review backs every engagement, and continuity is guaranteed if the relationship ever needs to transition &mdash; your file context is never held by one person alone. You can <a href="/quickbooks/proadvisor-team/">meet the ProAdvisor team</a> or read our <a href="/trust/">trust &amp; methodology standards</a>. Independent firm &mdash; not affiliated with Intuit Inc.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in operatorSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qbo-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">QuickBooks Online questions</p>
+      <h2 class="section__heading">What people ask about QuickBooks Online.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbo-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="qbo-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+    <p class="prose"><a href="/quickbooks/faq/">See all QuickBooks frequently asked questions &rarr;</a></p>
+  </div>
+</section>
+
+<section class="section" id="qbo-related">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Other QuickBooks products</p>
+      <h2 class="section__heading">If QBO isn&rsquo;t the right answer.</h2>
+    </header>
+    {%- for n in related %}
+    <div class="stack-8">
+      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+      <p class="prose">{{ n.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
