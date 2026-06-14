@@ -37,6 +37,18 @@
 }
 ---
 
+<section class="section section--compact" id="payroll-management-proof">
+  <div class="container">
+    <div class="proof-strip">
+      <span class="proof-strip__item"><b>4&times;</b> Certified ProAdvisor &mdash; incl. Payroll</span>
+      <span class="proof-strip__item"><b>Multi-state</b> capable</span>
+      <span class="proof-strip__item"><b>Fixed-fee</b> written scope, first</span>
+      <span class="proof-strip__item"><b>1 business day</b> response</span>
+      <span class="proof-strip__item"><span class="proof-strip__rating">5.0</span> 2 verified Clutch reviews</span>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="payroll-management-definition">
   <div class="container container--narrow">
     <header class="section__header">
@@ -138,16 +150,16 @@
     </header>
     <div class="grid-3">
       {%- for t in tiers %}
-      <article class="review-card">
-        {%- if t.note %}<p class="review-card__role">{{ t.note | safe }}</p>{%- endif %}
+      <div class="stack-8">
+        {%- if t.note %}<p class="section__eyebrow">{{ t.note | safe }}</p>{%- endif %}
         <h3>{{ t.name | safe }}</h3>
-        <p class="review-card__fact"><strong>{{ t.price | safe }}</strong>{{ t.per | safe }}</p>
-        <p class="review-card__fact"><strong>For:</strong> {{ t.forWhom | safe }}</p>
+        <p class="prose"><strong>{{ t.price | safe }}</strong>{{ t.per | safe }}</p>
+        <p class="prose"><strong>For:</strong> {{ t.forWhom | safe }}</p>
         <ul class="checks-list">
           {%- for b in t.bullets %}<li>{{ b | safe }}</li>{%- endfor %}
         </ul>
-        <a class="review-card__link" href="/contact/?intent=payroll">{{ t.cta | safe }} &rarr;</a>
-      </article>
+        <p class="prose"><a href="/contact/?intent=payroll">{{ t.cta | safe }} &rarr;</a></p>
+      </div>
       {%- endfor %}
     </div>
   </div>
@@ -230,6 +242,33 @@
       <p class="prose">{{ n.body | safe }}</p>
     </div>
     {%- endfor %}
+  </div>
+</section>
+
+<section class="section" id="payroll-management-intake">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Start now</p>
+      <h2 class="section__heading">Scope your payroll engagement.</h2>
+      <p class="section__lede">Tell us the basics and a Certified Payroll ProAdvisor replies within one business day with next steps and a written fixed-fee scope. Prefer the full intake? The <a href="/contact/?intent=payroll">complete contact form</a> captures every detail.</p>
+    </header>
+    <form class="intake-form" method="POST" action="/contact/submit" novalidate>
+      <div class="intake-grid">
+        <div class="intake-field"><label class="intake-field__label" for="pm-name">Name</label><input id="pm-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="intake-field"><label class="intake-field__label" for="pm-company">Company</label><input id="pm-company" name="company" type="text" autocomplete="organization" required></div>
+        <div class="intake-field"><label class="intake-field__label" for="pm-email">Email</label><input id="pm-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="intake-field"><label class="intake-field__label" for="pm-employees">Employees</label><select id="pm-employees" name="employee_count"><option>1&ndash;5</option><option>6&ndash;25</option><option>26&ndash;100</option><option>100+</option></select></div>
+        <div class="intake-field"><label class="intake-field__label" for="pm-states">States with employees</label><select id="pm-states" name="state_coverage"><option>Single state</option><option>2&ndash;5 states</option><option>6+ states</option></select></div>
+      </div>
+      <div class="intake-consent"><label class="intake-checkbox"><input type="checkbox" name="consent" value="agreed" required><span>I agree to be contacted about my payroll inquiry.</span></label></div>
+      <input type="hidden" name="intent" data-meta="intent" value="payroll">
+      <input type="hidden" name="source_type" data-meta="source_type" value="bofu-conversion">
+      <input type="hidden" name="funnel_stage" data-meta="funnel_stage" value="BOFU">
+      <div>
+        <button class="btn btn--primary btn--lg" type="submit">Send the Discovery Brief</button>
+        <p class="intake-form__reassurance">No spam, no list, no obligation. A Certified Payroll ProAdvisor replies within one business day.</p>
+      </div>
+    </form>
   </div>
 </section>
 
