@@ -1,0 +1,135 @@
+---json
+{
+  "layout": "layouts/t-guide.njk",
+  "permalink": "/partners/faq/",
+  "slug": "partners-faq",
+  "tierClass": "section--tier-guide",
+  "pageTier": "guide",
+  "bodyClass": "page--mofu",
+  "title": "Operator Network FAQ: For Certified ProAdvisors · TechBrot",
+  "description": "Twenty-six questions on TechBrot's vetted operator network for Certified QuickBooks ProAdvisors, EAs, and experienced bookkeepers. Application process, compensation model, what TechBrot provides operators, work standards, geographic coverage, and exit terms. Independent firm; not affiliated with Intuit Inc.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Partners", "href": "/partners/" },
+    { "name": "FAQ" }
+  ],
+  "hero": {
+    "eyebrow": "The operator network reference &middot; For ProAdvisors considering partnership",
+    "heading": "The operator network, answered.",
+    "subheading": "Twenty-six questions for Certified QuickBooks ProAdvisors, EAs, and experienced independent bookkeepers considering TechBrot&rsquo;s vetted operator network. The network is built for credentialed practitioners who want to focus on client work without running a full firm &mdash; TechBrot handles the lead generation, brand, platform, billing, contracts, and operational overhead; operators handle the work. Every answer reflects the actual engagement model, not idealized recruitment language. Independent firm, not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=partner-apply", "class": "btn--primary" },
+      { "label": "Ask a Question First", "href": "/contact/?intent=partner-question", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>The operator network, answered</strong> &mdash; 26 questions across 7 clusters (who the network is for, what TechBrot provides, what operators provide, compensation, application &amp; vetting, engagement mechanics, and operating independence &amp; exit), for credentialed ProAdvisors, EAs, and experienced bookkeepers. Every answer reflects the actual operator engagement model &mdash; fee-split compensation, written-scope fixed-fee delivery, named-ProAdvisor accountability, work in the client&rsquo;s own QuickBooks file. Operators contract as independent contractors (1099-NEC); the network is additive to an operator&rsquo;s own practice, not exclusive.",
+    "source": "Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Ready to apply?",
+    "heading": "Apply to the operator network.",
+    "lede": "Twenty-six questions cover the structural mechanics of the network. The remaining questions are specific to your practice &mdash; current client mix, industry depth, geographic coverage, capacity, and how TechBrot&rsquo;s engagement model fits your operating style. Start the application and we&rsquo;ll respond with next steps. The application is complimentary; vetting is honest; commitment happens only after both sides confirm fit in writing.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=partner-apply", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section section--compact" id="partners-faq-popular">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Most asked</p>
+      <h2 class="section__heading">Six questions ProAdvisors ask first.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for p in popular %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ p.qid }} &middot; {{ p.cluster }}</p>
+        <p class="prose"><a href="#{{ p.anchor }}">{{ p.q | safe }} &rarr;</a></p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="partners-faq-body">
+  <div class="container">
+    <h2 class="sr-only">All operator network questions, organized by topic</h2>
+    <div class="guide-grid">
+      <aside class="toc" aria-label="Topic clusters">
+        <p class="toc__label">Topic clusters</p>
+        <ol>
+          {%- for c in clusters %}
+          <li><a {% if loop.first %}class="is-active" {% endif %}href="#{{ c.id }}">{{ c.heading | safe }}</a></li>
+          {%- endfor %}
+        </ol>
+      </aside>
+      <article class="article prose">
+        <div class="byline-block" style="border-top:0;padding-top:0;margin-bottom:var(--space-6)">
+          <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+          <div>
+            <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+            <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; independent firm, not affiliated with Intuit Inc.</p>
+          </div>
+        </div>
+        <blockquote class="pull-quote">
+          <p>Every answer reflects the actual operator engagement model &mdash; how the network is structured, what each side provides, and the honest economics &mdash; not idealized recruitment language.</p>
+        </blockquote>
+        {%- for c in clusters %}
+        <section id="{{ c.id }}" aria-labelledby="{{ c.id }}-h">
+          <h2 id="{{ c.id }}-h">{{ c.heading | safe }}</h2>
+          <p>{{ c.lede | safe }}</p>
+          {%- for it in c.items %}
+          <h3 id="{{ it.anchor }}">{{ it.q | safe }}</h3>
+          {{ it.a | safe }}
+          {%- endfor %}
+        </section>
+        {%- endfor %}
+        <p class="meta-reviewed"><span>Maintained by the Certified QuickBooks ProAdvisor team</span><span>26 questions &middot; 7 clusters</span><span>Last reviewed: 2026-06 &middot; Certified QuickBooks ProAdvisor</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="partners-faq-structured">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Quick answers</p>
+      <h2 class="section__heading">The seven questions ProAdvisors ask most.</h2>
+      <p class="section__lede">The structural mechanics of the operator network, condensed. Each answer carries the full detail from the clusters above.</p>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="partners-faq-a-{{ loop.index }}" id="partners-faq-q-{{ loop.index }}">{{ item.q | safe }}</button></h3>
+        <div class="faq__answer" id="partners-faq-a-{{ loop.index }}" data-open="false" role="region" aria-labelledby="partners-faq-q-{{ loop.index }}">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="partners-faq-related">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Learn more about the firm and the engagement model.</h2>
+      <p class="section__lede">For ProAdvisors evaluating fit, the broader firm context matters. These pages cover how TechBrot operates from the client perspective &mdash; the engagement model network operators deliver against.</p>
+    </header>
+    <div class="grid-3">
+      {%- for n in related %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ n.cluster }}</p>
+        <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+        <p class="prose">{{ n.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
