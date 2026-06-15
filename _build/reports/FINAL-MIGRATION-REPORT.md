@@ -118,6 +118,21 @@ head). So baseline.json froze ~34 **e-commerce** headings for a virtual-accounti
   headings as a "data-defect" equity exception [RECOMMENDED — matches the page's own head/FAQ/schema];
   (B) supply a true virtual-accounting heading contract if one exists elsewhere. Pending the ruling,
   /accounting/services/virtual-accounting/ is the ONE accounting child not shipped.
+  **RESOLVED 2026-06-15:** founder chose (A) — coherent VA page shipped (`116df1f`); e-commerce headings
+  logged as data-defect exceptions. The displaced e-commerce content is the source for
+  /accounting/industries/ecommerce/ when the industries wave reaches it.
+
+### D5 — Wave 5: first 5 industry children (commit `74b1120`) — tier CORRECT (t-mofu)
+construction, real-estate, healthcare, legal, restaurant — built t-mofu (industry landing/consideration);
+national scope (NY-specific tax dropped from the NY analogs). Correct tier, no re-tiering flag.
+
+### D6 — ACCOUNTING REMAINING (17 of 39 — next waves under R7 autonomy)
+- **3 standalones** (t-mofu, BOFU-review-flag like wave 4): /accounting/chart-of-accounts-setup/,
+  /accounting/financial-statements/, /accounting/job-costing/.
+- **14 industries** (t-mofu): agency, auto-repair, dental, **ecommerce (SPECIAL — source content is the
+  VA-displaced e-commerce body)**, fitness, franchise, home-services, landscaping, manufacturing,
+  nonprofit, professional-services, retail, saas, trucking.
+- After these 17, accounting (39) is done and Path B (139 baselines) reaches cutover parity.
 
 ---
 _This report is appended as each remaining silo (partners, accounting) is migrated. Re-tiering happens
