@@ -113,8 +113,10 @@ steps — gated, not autonomous. Do NOT batch or run ahead.
 - **0. Reconcile all governing docs** — bring BUILD-TRACKER, PAGE-TYPE-REGISTRY, DESIGN-DIRECTION,
   FINAL-MIGRATION-REPORT, equity-exceptions current + mutually consistent; flag/resolve contradictions to
   the latest founder rulings. *(in progress this turn, then STOP)*
-- **1. Complete the redesign review queue** (+ resolve FINAL-MIGRATION-REPORT A4 hero check: confirm only
-  the NY pillar renders the t-location hero).
+- **1. Complete the redesign review queue** (+ A4 hero check). ✅ DONE 2026-06-15, pending founder gate:
+  A4 RESOLVED (all 38 NY children clone the pillar's full t-location hero unconditionally → reinforces
+  t-bofu re-tier for conversion children); DECISION-READY re-tiering queue built at the top of
+  FINAL-MIGRATION-REPORT (① 20 high-confidence re-tier · ② 26 review · ③ rest keep). Awaiting founder GO.
 - **2. v5 blueprint.**
 - **4. Gap analysis** (redesign scope + proving set).
 - **3. Verify + delete the old Bootstrap-Studio per-route folders.**

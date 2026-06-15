@@ -9,6 +9,35 @@ in Deliverable 0.)
 
 ---
 
+## ★ RE-TIERING REVIEW QUEUE — DECISION-READY (Deliverable 1 output, 2026-06-15)
+Consolidated from Sections A + D + the A4 hero finding. The redesign executes this (it is a SKIN/visual
+re-tier — equity/content stays). **Founder gate: confirm/adjust the recommended final tier per group.**
+Details + URLs in Sections A (NY) and D (accounting) below.
+
+### ① RE-TIER — high confidence (as-built tier ≠ correct tier) → 20 pages
+| Group | # | As-built | → Final | Why |
+|---|---|---|---|---|
+| NY **service** children (bookkeeping-services, monthly-bookkeeping, virtual-bookkeeper, small-business-accountant, quickbooks-accountant/-setup/-cleanup/-reconciliation/-training/-migration, cleanup-bookkeeping, pricing, sales-tax-help) | 13 | t-location | **t-bofu** | conversion pages; A4 proved they wear the pillar's location hero + state-contour motif + sticky call-bar — wrong for conversion (want compact hero + proof-strip + intake-form) |
+| NY **honest-triage** children (urgent-bookkeeping, business-tax-problems, state-tax-notice-help, speak-to-a-proadvisor) | 4 | t-location | **t-bofu + honest-triage** | conversion/triage; Sheet-7 disclosure already present; same A4 hero mismatch |
+| Accounting **services** children (controller-services, outsourced-accounting, virtual-accounting) | 3 | t-mofu | **t-bofu** | discrete paid engagements, strong conversion intent (Section D2) |
+
+### ② REVIEW — borderline, founder call → 26 pages
+| Group | # | As-built | Question | Lean |
+|---|---|---|---|---|
+| NY cities-hub + 11 cities | 12 | t-location (full pillar hero) | keep location tier but as the **lighter "state-child" hero** (drop the full pillar motif + sticky call-bar)? | lighter t-location-child |
+| NY industries-hub + 8 industries | 9 | t-location | hub stays a routing layer; industry landings → **t-mofu** (consideration)? | hub=t-location-child; industries=t-mofu |
+| Accounting standalones (chart-of-accounts-setup, financial-statements, month-end-close, reconciliation-services, job-costing) | 5 | t-mofu | discrete services → **t-bofu**, or keep t-mofu (some carry heavy consideration content)? | mixed — review per page |
+
+### ③ KEEP — tier correct as-built → no re-tier
+- **Pillars (5):** NY pillar + CA/TX/FL/IL landings = t-location (the ONLY place t-location belongs). ✓
+- **Accounting:** 3 hubs (t-hub) · 5 advisory children (t-mofu) · 19 industry children (t-mofu) · 4 FAQs (t-guide). ✓
+- **QuickBooks silo · vs (5) · partners (2):** tiers correct (t-mofu/t-bofu/t-guide/t-hub as built). ✓
+
+**Totals:** 20 high-confidence re-tier · 26 review · rest keep. Whole site (139) accounted for. Equity is
+permanent regardless of tier — this is purely the redesign's visual re-skin assignment.
+
+---
+
 ## SECTION A — NY CHILDREN TIER REVIEW (find-an-accountant/new-york/*)
 All 38 NY children were built on **t-location** (the one proven tier, build-to-floor). The PILLAR
 `/find-an-accountant/new-york/` is the only page that SHOULD carry the t-location hero (state-contour
@@ -50,15 +79,24 @@ Already carry Sheet-7 disclosures; structurally they are conversion/triage, not 
 - https://techbrot.com/find-an-accountant/new-york/state-tax-notice-help/
 - https://techbrot.com/find-an-accountant/new-york/speak-to-a-proadvisor/
 
-**A2 + A3 = ~17 NY children flagged for t-bofu re-tiering review.** (Equity/content is correct and
-permanent; this is a VISUAL-TIER/skin re-categorization, which is exactly what the post-cutover redesign
-pass is for.) Founder to confirm the final tier per page.
+**A2 (13 services) + A3 (4 honest-triage) = 17 NY children → t-bofu** (high-confidence re-tier; see the
+consolidated DECISION-READY QUEUE ① at the top of this report). Equity/content is permanent; this is a
+VISUAL-TIER/skin re-categorization the redesign performs (on preview, before cutover). Founder confirms at
+the Deliverable 1 gate.
 
-### A4 — t-location hero audit (founder ask)
-**TODO (verify before sign-off):** confirm only the NY PILLAR renders the t-location hero (hero--location
-+ hero__motif state-contour + sticky call-bar). The children use the same layout — confirm whether the
-hero treatment differs by page or whether the children are visually cloning the pillar hero. If children
-clone the pillar hero, that reinforces the A2/A3 re-tiering need. (To be filled in during the review pass.)
+### A4 — t-location hero audit  ✅ RESOLVED 2026-06-15 (Deliverable 1)
+**FINDING (empirical):** the `layouts/t-location.njk` hero renders `hero--location` + `hero__motif`
+(state-contour) **unconditionally** (no per-page guard), and **all 43 find-an-accountant pages**
+(5 pillars + 38 NY children) use that layout with `callBar: true`. Verified in the BUILT HTML — the
+pillar `/find-an-accountant/new-york/`, a service child `/…/monthly-bookkeeping/`, a city
+`/…/cities/brooklyn/`, and an honest-triage page `/…/business-tax-problems/` all emit the SAME
+`hero--location` + `hero__motif` + sticky `call-bar`. **So every NY child clones the pillar hero exactly**
+(build-to-floor used one layout for all). **Implication:** the conversion children (services + honest-
+triage) wear a state-contour location hero + a sticky location call-bar that belong to a location PILLAR,
+not a conversion page — this directly REINFORCES the A2/A3 t-bofu re-tiering (a t-bofu page wants a compact
+hero + proof-strip + intake-form, no location motif and no sticky call-bar). The redesign re-tiers them off
+the location layout. Cities/industry landings are debatable (a location hero can suit a location landing,
+but likely the lighter "state-child" hero, not the full pillar hero) — flagged for founder call below.
 
 ---
 
