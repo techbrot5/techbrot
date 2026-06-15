@@ -1,0 +1,579 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/florida/",
+  "slug": "fl-pillar",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "heroMotif": "partials/motif-align-full.svg",
+  "title": "Florida QuickBooks ProAdvisors & Bookkeeping · TechBrot",
+  "description": "Certified QuickBooks ProAdvisors & bookkeeping for Florida businesses, all 67 counties. Tax on services, county surtax, no income tax. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Florida" }
+  ],
+  "hero": {
+    "eyebrow": "Florida &middot; Miami to Jacksonville &middot; All 67 Counties",
+    "heading": "QuickBooks ProAdvisors &amp; Bookkeeping for Florida Businesses.",
+    "subheading": "Professional bookkeeping, QuickBooks setup and cleanup, payroll, and sales tax compliance &mdash; delivered directly by TechBrot, with trusted partner practices in Florida where in-city presence adds value. Built around Florida&rsquo;s no state income tax, 6% sales tax applied to many services, the 2025 repeal of the commercial-rent tax, and hurricane/casualty accounting &mdash; and the operational realities of running a business in Miami, Orlando, Tampa, Jacksonville, and across all 67 Florida counties.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=florida&state=florida&source_type=location&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Send the Discovery Brief", "href": "#fl-intake", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor services</strong>, Florida bookkeeping, QuickBooks setup, cleanup, migration, Florida sales tax compliance, and fractional CFO engagements to Florida businesses across <strong>all 67 counties</strong> &mdash; from Miami and Fort Lauderdale to Orlando, Tampa, and Jacksonville. The full Florida summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. FL rates verified against the Florida Department of Revenue."
+  },
+  "ctaBand": {
+    "eyebrow": "Florida businesses start here",
+    "heading": "Book a Florida discovery call.",
+    "lede": "30 minutes. We review where your books are, your Florida operational context &mdash; sales tax on services, county surtax, number of locations, industry specifics &mdash; and recommend the right engagement. <strong>Written fixed-fee scope within 3 business days.</strong> No pitch. Independent firm &mdash; does not file Florida/federal taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=florida&state=florida&source_type=location&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY · real H2 carrying the Florida summary prose (right after the in-brief) ── #}
+<section class="section section--compact" id="fl-summarized">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <h2 class="section__heading">TechBrot in Florida, summarized.</h2>
+    </header>
+    <p class="prose">{{ summarized | safe }}</p>
+  </div>
+</section>
+
+{# ── CREDENTIALS · proof-strip + cert line (H2: Certified QuickBooks ProAdvisor credentials) ── #}
+<section class="section section--compact section--tier-hub" id="fl-credentials">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Certified by Intuit</p>
+      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials</h2>
+    </header>
+    <p class="prose">{{ credLede | safe }}</p>
+    <ul class="proof-strip" role="list">
+      {%- for b in credBadges %}
+      <li class="proof-strip__item"><b>{{ b.label }}</b> <span class="sr-only">{{ b.name }}</span></li>
+      {%- endfor %}
+    </ul>
+    <div class="trust-row">
+      {%- for r in trustRow %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── STATE BY THE NUMBERS · proof-strip stat row (H2: The state by the numbers.) ── #}
+<section class="section section--alt" id="fl-stats">
+  <div class="container">
+    <header class="section__header section__header--centered">
+      <p class="section__eyebrow">Florida at a glance</p>
+      <h2 class="section__heading">The state by the numbers.</h2>
+      <p class="section__lede">A short read on the operational profile that shapes how accounting is done in Florida &mdash; from the Miami and Tampa metros to the Panhandle and everywhere in between.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in stats %}
+      <div><div class="stat__value">{{ s.figure | safe }}</div><div class="stat__label">{{ s.label | safe }}</div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── AI SUMMARY (H2: TechBrot in Florida, in five questions.) ── #}
+<section class="section" id="fl-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">TechBrot in Florida, in five questions.</h2>
+    </header>
+    <dl class="ai-summary ai-summary--ruled" id="fl-ai-summary-list">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
+        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+{# ── GLOSSARY (H2: The Florida terms that matter for QuickBooks & bookkeeping.) ── #}
+<section class="section section--alt" id="fl-glossary">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Florida accounting glossary</p>
+      <h2 class="section__heading">The Florida terms that matter for QuickBooks &amp; bookkeeping.</h2>
+      <p class="section__lede">Short, specific, definitional. These are the terms that come up in nearly every Florida engagement &mdash; and the ones AI engines and search engines reach for when answering Florida accounting questions.</p>
+    </header>
+    <div class="grid-2">
+      {%- for g in glossary %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ g.term | safe }}</p>
+        <p class="prose">{{ g.def | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+    <p class="prose"><small>Always confirm current rates and thresholds against the <a href="https://floridarevenue.com/" rel="noopener nofollow">Florida Department of Revenue</a>.</small></p>
+  </div>
+</section>
+
+{# ── DELIVERY · direct vs partners (H2: What we deliver in Florida. + 2 H3s) ── #}
+<section class="section" id="fl-delivery">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Service coverage</p>
+      <h2 class="section__heading">What we deliver in Florida.</h2>
+      <p class="section__lede">Two delivery modes, one operating standard. Engagements route to direct or network based on the work required, your location in the state, and industry specialization.</p>
+    </header>
+    <div class="grid-2">
+      {%- for d in delivery %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ d.eyebrow | safe }}</p>
+        <h3 class="buyer-card__heading">{{ d.heading | safe }}</h3>
+        <p class="buyer-card__body">{{ d.lede | safe }}</p>
+        <ul class="checks-list">{%- for li in d.list %}<li>{{ li | safe }}</li>{%- endfor %}</ul>
+        <a class="buyer-card__cta" href="{{ d.href }}">{{ d.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="prose"><small>{{ deliveryNote | safe }}</small></p>
+  </div>
+</section>
+
+{# ── CONTEXT (H2: What makes Florida accounting different. + 4 H3s) ── #}
+<section class="section section--alt" id="fl-context">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Why Florida is different</p>
+      <h2 class="section__heading">What makes Florida accounting different.</h2>
+      <p class="section__lede">Florida&rsquo;s tax structure, industry concentration, and operational profile create accounting requirements that don&rsquo;t look like any other state. Generic out-of-state bookkeeping &mdash; or bookkeepers unfamiliar with taxable services and county surtaxes &mdash; misses what matters most.</p>
+    </header>
+    <div class="grid-2">
+      {%- for c in context %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ c.category | safe }}</p>
+        <h3>{{ c.heading | safe }}</h3>
+        {%- for p in c.body %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+      </div>
+      {%- endfor %}
+    </div>
+    <p class="prose"><small>{{ contextNote | safe }}</small></p>
+  </div>
+</section>
+
+{# ── SCENARIOS · honestly-labeled composites (H2: What a Florida engagement actually looks like. + 3 H3s) ── #}
+<section class="section" id="fl-scenarios">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Florida scenarios</p>
+      <h2 class="section__heading">What a Florida engagement actually looks like.</h2>
+      <p class="section__lede">{{ scenariosNote | safe }}</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in scenarios %}
+      <article class="stack-8">
+        <p class="section__eyebrow">{{ s.tag | safe }}</p>
+        <h3>{{ s.heading | safe }}</h3>
+        {%- for p in s.body %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+        <a class="buyer-card__cta" href="{{ s.href }}">{{ s.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── RECENT FLORIDA RESULTS · REFRAMED representative (H2: Recent Florida results.) ── #}
+<section class="section section--alt" id="fl-outcomes">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Outcomes</p>
+      <h2 class="section__heading">Recent Florida results.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for o in outcomes %}
+      <div><div class="stat__value">{{ o.figure | safe }}</div><div class="stat__label">{{ o.detail | safe }}<br><small>{{ o.meta | safe }}</small></div></div>
+      {%- endfor %}
+    </div>
+    <p class="prose"><small>{{ outcomesNote | safe }}</small></p>
+  </div>
+</section>
+
+{# ── ADVISORY · standing brand line (H2: Automation handles the data entry. We handle the judgment.) ── #}
+<section class="section section--alt" id="fl-advisory">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Beyond bookkeeping</p>
+      <h2 class="section__heading">Automation handles the data entry. We handle the judgment.</h2>
+    </header>
+    <p class="prose">{{ advisoryBody | safe }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary btn--lg" href="/contact/?intent=florida-advisory&amp;state=florida&amp;source_type=location&amp;funnel_stage=BOFU">Book the discovery call</a>
+    </div>
+    <p class="prose"><a href="/accounting/advisory/fractional-cfo/">Fractional CFO (Florida)</a></p>
+  </div>
+</section>
+
+{# ── INDUSTRIES (H2: Industry-specific accounting for Florida's economy. + 6 H3s) ── #}
+{# NO-CHILDREN: industry names are PLAIN headings — no FL industry child pages exist. #}
+<section class="section" id="fl-industries">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Florida industries we serve</p>
+      <h2 class="section__heading">Industry-specific accounting for Florida&rsquo;s economy.</h2>
+      <p class="section__lede">Florida&rsquo;s industry mix is unlike any other state. Our engagements concentrate in the sectors that drive Florida&rsquo;s economy &mdash; each with its own QuickBooks configuration, tax treatment, and compliance requirements.</p>
+    </header>
+    <div class="grid-3">
+      {%- for i in industries %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ i.num }}</p>
+        <h3>{{ i.name | safe }}</h3>
+        <p class="prose">{{ i.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+    <p class="prose"><small>{{ industriesNote | safe }}</small></p>
+  </div>
+</section>
+
+{# ── SERVICES · buyer-card routing (H2: Find the right service for your Florida business. + 6 H3s) ── #}
+{# NO-CHILDREN: service names are PLAIN headings; only REAL global overviews link out; card CTA → /contact/. #}
+<section class="section section--alt" id="fl-services">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Services for Florida businesses</p>
+      <h2 class="section__heading">Find the right service for your Florida business.</h2>
+      <p class="section__lede">Each Florida engagement is scoped on the discovery call against a written fixed fee. The lines below are the primary Florida engagement types, with their national service overviews linked for detail.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in services %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ s.eyebrow }}</p>
+        <h3 class="buyer-card__heading">{{ s.name | safe }}</h3>
+        <p class="buyer-card__body">{{ s.body | safe }}</p>
+        <div class="proof-strip">
+          <span class="proof-strip__item"><b>Starting</b> {{ s.starting | safe }}</span>
+          <span class="proof-strip__item"><b>Cadence</b> {{ s.cadence | safe }}</span>
+        </div>
+        <a class="buyer-card__cta" href="/contact/?intent=florida">{{ s.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="prose"><small>{{ servicesNote | safe }}</small></p>
+  </div>
+</section>
+
+{# ── ECOSYSTEM (H2: Every Florida page in one place. + 6 cluster H3s) ── #}
+{# NO-CHILDREN: clusters render as PLAIN-TEXT coverage lists (no <a>) — Florida has only this pillar. #}
+<section class="section" id="fl-ecosystem">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The full Florida ecosystem</p>
+      <h2 class="section__heading">Every Florida page in one place.</h2>
+      <p class="section__lede">Florida is a complete authority area &mdash; every service, industry, city, and tax topic Florida business owners search for, all delivered today under one statewide engagement. Below is the full map of what that covers.</p>
+    </header>
+    <div class="grid-3">
+      {%- for cl in ecosystem %}
+      <article class="stack-8">
+        <p class="section__eyebrow">{{ cl.eyebrow }}</p>
+        <h3>{{ cl.heading | safe }}</h3>
+        <p class="prose">{{ cl.lede | safe }}</p>
+        <ul class="checks-list">
+          {%- for li in cl.items %}<li>{{ li | safe }}</li>{%- endfor %}
+        </ul>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="prose"><small>{{ ecosystemNote | safe }}</small></p>
+  </div>
+</section>
+
+{# ── PRICING (H2: Fixed-fee starting ranges for Florida engagements.) ── #}
+<section class="section section--alt" id="fl-pricing">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Florida pricing</p>
+      <h2 class="section__heading">Fixed-fee starting ranges for Florida engagements.</h2>
+      <p class="section__lede">Every Florida engagement is quoted as a fixed fee against a written scope before any work begins &mdash; no hourly billing. Final scope and fee are delivered in writing within 3 business days of the discovery call.</p>
+    </header>
+    <div class="vs-scroll">
+      <table class="vs-table" aria-describedby="fl-pricing-note">
+        <caption class="sr-only">Indicative fixed-fee starting ranges for Florida QuickBooks and bookkeeping engagements.</caption>
+        <thead><tr><th scope="col">Engagement</th><th scope="col">Starting range</th><th scope="col">Cadence</th><th scope="col">Florida notes</th></tr></thead>
+        <tbody>
+          {%- for r in pricing %}
+          <tr><th scope="row">{{ r.svc | safe }}</th><td><strong>{{ r.range | safe }}</strong></td><td>{{ r.cadence | safe }}</td><td>{{ r.notes | safe }}</td></tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p class="prose" id="fl-pricing-note"><small>{{ pricingNote | safe }}</small></p>
+  </div>
+</section>
+
+{# ── CITIES + COUNTIES (H2: Serving Florida businesses statewide. + 2 H3s) ── #}
+{# NO-CHILDREN: city names are PLAIN text (no FL city child pages exist). #}
+<section class="section" id="fl-cities">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Cities &amp; boroughs</p>
+      <h2 class="section__heading">Serving Florida businesses statewide.</h2>
+      <p class="section__lede">TechBrot serves Florida businesses across <strong>all 67 counties</strong>. Below are the primary Florida metros we serve directly, plus a representative sample of the counties served.</p>
+    </header>
+    <h3>Top Florida cities &mdash; each has a dedicated city page</h3>
+    <ul class="checks-list">
+      {%- for c in cities %}
+      <li>{{ c.name | safe }} &mdash; {{ c.county | safe }}</li>
+      {%- endfor %}
+    </ul>
+    <h3>Florida counties served &mdash; representative sample</h3>
+    <p class="prose">{{ countyProse | safe }}</p>
+    <p class="prose"><small>{{ citiesNote | safe }}</small></p>
+  </div>
+</section>
+
+{# ── INTAKE · dual-path call + shared intake-form partial (H2: Two ways to start... + 2 H3s) ── #}
+<section class="section section--alt" id="fl-intake">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Talk to a Certified ProAdvisor</p>
+      <h2 class="section__heading">Two ways to start a Florida engagement.</h2>
+      <p class="section__lede">Both paths go to the same Certified ProAdvisor. Pick the one that fits how you work.</p>
+    </header>
+
+    <div class="grid-2">
+      <div class="stack-8">
+        <div class="byline-block">
+          <div class="byline-block__mark" aria-hidden="true"></div>
+          <div>
+            <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+            <p class="byline-block__review">{{ teamDavid.name }} &middot; {{ teamDavid.role }}</p>
+          </div>
+        </div>
+        <p class="section__eyebrow">{{ teamDavid.creds | safe }}</p>
+        <p class="prose">{{ teamDavid.line | safe }}</p>
+        <a class="buyer-card__cta" href="https://proadvisor.intuit.com/" rel="noopener nofollow">Verify on Intuit&rsquo;s ProAdvisor directory &rarr;</a>
+      </div>
+      <div class="stack-8">
+        <div class="byline-block">
+          <div class="byline-block__mark" aria-hidden="true"></div>
+          <div>
+            <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+            <p class="byline-block__review">{{ teamIntake.name | safe }} &middot; {{ teamIntake.role }}</p>
+          </div>
+        </div>
+        <p class="section__eyebrow">{{ teamIntake.creds | safe }}</p>
+        <p class="prose">{{ teamIntake.line | safe }}</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <article class="buyer-card">
+        <p class="buyer-card__opener">Option 01</p>
+        <h3 class="buyer-card__heading">Call directly.</h3>
+        <p class="buyer-card__body">A Certified ProAdvisor answers &mdash; not a call center. Best for same-day diagnostics, behind-on-the-books situations, or Florida sales-tax compliance urgencies.</p>
+        <a class="btn btn--primary btn--lg" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">Speak to a ProAdvisor</a>
+        <ul class="checks-list">{%- for a in callAssurance %}<li>{{ a | safe }}</li>{%- endfor %}</ul>
+      </article>
+      <div class="contact-form-wrap">
+        <h3 class="buyer-card__heading" id="fl-intake-form-heading">Send a short discovery brief.</h3>
+        <p class="prose">Six fields. We respond by the next business day with a path forward &mdash; a scoping call or, if not a fit, a referral. <strong>Includes a free QuickBooks file review &mdash; we&rsquo;ll identify the top 3 issues in your file before any engagement begins.</strong> <a href="/quickbooks/file-review/?intent=file-review">Get the free file review &rarr;</a></p>
+        {%- set intakePrefix = "fl" %}
+        {%- set intakeFormId = "fl-intake-form" %}
+        {%- set intakeIntent = "florida" %}
+        {%- set intakeSourceType = "location" %}
+        {%- set intakeFunnelStage = "MOFU" %}
+        {%- set intakeLegend = "What we should discuss for your Florida business" %}
+        {%- set intakeSubmit = "Send the Discovery Brief" %}
+        {%- set intakeReassurance = "Same-day diagnostic for emergencies, 1 business day for scoping, written fixed-fee scope within 3 business days of the first call." %}
+        {% include "partials/intake-form.njk" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── OPERATORS · partner placeholder + vetting standards (H2: Trusted Florida partner practices. + 2 H3s) ── #}
+<section class="section" id="fl-operators">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Florida partner practices</p>
+      <h2 class="section__heading">Trusted Florida partner practices.</h2>
+      <p class="section__lede">When metro presence, high-volume hospitality, healthcare/dental-practice depth, or multi-location retail matters, engagements route to a vetted Florida operator.</p>
+    </header>
+    <div class="grid-2">
+      <article class="buyer-card">
+        <p class="buyer-card__opener">Partner practice &middot; Onboarding 2026</p>
+        <h3 class="buyer-card__heading">Florida partner practice slot open</h3>
+        <p class="buyer-card__body">We&rsquo;re onboarding a vetted Florida accounting practice as the lead partner practice for the state. Until that operator goes live, <strong>TechBrot delivers all Florida engagements directly</strong> &mdash; same standards, same fixed-fee scoping, same Certified ProAdvisor credentials. If you&rsquo;re a Florida accounting practice interested in joining the TechBrot partner practices: <a href="/partners/">apply here</a>.</p>
+        <a class="buyer-card__cta" href="/partners/">Apply to partner practices &rarr;</a>
+      </article>
+      <div class="stack-8">
+        <p class="section__eyebrow">The vetting standard</p>
+        <h3>What a Florida partner practice must meet.</h3>
+        <p class="prose">Every operator runs under the same standard TechBrot delivers directly. The bar to carry the brand in Florida:</p>
+        <ul class="checks-list">
+          {%- for o in operatorStandards %}
+          <li><strong>{{ o.term | safe }}.</strong> {{ o.detail | safe }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── WHY TECHBROT (H2: What separates us from generic remote bookkeeping. + 4 H3s) ── #}
+<section class="section section--alt" id="fl-why">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Why Florida businesses choose TechBrot</p>
+      <h2 class="section__heading">What separates us from generic remote bookkeeping.</h2>
+      <p class="section__lede">Florida has no shortage of bookkeeping options. What TechBrot brings: actual Florida operational depth &mdash; sales tax on services, county discretionary surtax, the commercial-rent repeal, hospitality and healthcare accounting &mdash; real Certified ProAdvisor credentials, and a structurally accountable engagement model.</p>
+    </header>
+    <div class="grid-2">
+      {%- for w in why %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ w.num }}</p>
+        <h3>{{ w.name | safe }}</h3>
+        <p class="prose">{{ w.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── REVIEWS · ONLY the 2 real Clutch reviews (H2: Verified client reviews.) ── #}
+<section class="section" id="fl-reviews">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What clients say</p>
+      <h2 class="section__heading">Verified client reviews.</h2>
+      <p class="section__lede">Independently collected and verified on Clutch &mdash; real engagements, real names, unedited. 5.0 overall from 2 verified reviews. <a href="{{ site.clutchProfile }}#reviews" rel="noopener nofollow">See all reviews on Clutch &rarr;</a></p>
+    </header>
+    <div class="grid-2">
+      {%- for r in reviews %}
+      <article class="review-card">
+        <blockquote class="review-card__quote">&ldquo;{{ r.quote | safe }}&rdquo;</blockquote>
+        <p class="review-card__fact">{{ r.context | safe }}</p>
+        <p class="review-card__role">{{ r.author }} &mdash; {{ r.role | safe }} &middot; {{ r.meta | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── COMPARISON (H2: TechBrot vs. the alternatives for Florida businesses.) ── #}
+<section class="section section--alt" id="fl-comparison">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">How we compare</p>
+      <h2 class="section__heading">TechBrot vs. the alternatives for Florida businesses.</h2>
+      <p class="section__lede">An honest read on where TechBrot fits and where it doesn&rsquo;t. Most Florida businesses end up using TechBrot <em>and</em> a local Florida CPA together &mdash; TechBrot handles the QuickBooks operations; the CPA handles tax filing and strategy.</p>
+    </header>
+    <div class="vs-scroll">
+      <table class="vs-table">
+        <caption class="sr-only">TechBrot vs. local Florida CPA vs. national remote bookkeeping for Florida businesses.</caption>
+        <thead><tr><th scope="col">Dimension</th><th scope="col" class="vs-table__us">TechBrot</th><th scope="col">Local Florida CPA</th><th scope="col">National remote bookkeeping</th></tr></thead>
+        <tbody>
+          {%- for r in comparison %}
+          <tr><th scope="row">{{ r.dim | safe }}</th>
+            <td class="vs-table__us"{% if r.winner == 'us' %} data-winner="us"{% endif %}>{{ r.us | safe }}</td>
+            <td{% if r.winner == 'them' %} data-winner="them"{% endif %}>{{ r.cpa | safe }}</td>
+            <td>{{ r.remote | safe }}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p class="prose">{{ comparisonVerdict | safe }}</p>
+    <p class="prose"><small>{{ comparisonRelated | safe }}</small></p>
+  </div>
+</section>
+
+{# ── AUTHORITY (H2: Verify everything on this page.) ── #}
+<section class="section" id="fl-authority">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Authority sources &amp; verification</p>
+      <h2 class="section__heading">Verify everything on this page.</h2>
+      <p class="section__lede">Florida tax rates, thresholds, and program details change. The sources below are authoritative; confirm any specific figure or rule before relying on it.</p>
+    </header>
+    {%- for a in authority %}
+    <div class="stack-8">
+      <h3><a href="{{ a.href }}" rel="noopener nofollow">{{ a.name | safe }}</a></h3>
+      <p class="prose">{{ a.detail | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+{# ── FAQ · 17 verbatim Q/A; visible = FAQPage schema (H2: Florida QuickBooks & accounting questions.) ── #}
+<section class="section section--alt" id="fl-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Florida FAQ</p>
+      <h2 class="section__heading">Florida QuickBooks &amp; accounting questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="fl-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="fl-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level, no founder name (H2: Reviewed by Certified QuickBooks ProAdvisors.) ── #}
+<section class="section" id="fl-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by Certified QuickBooks ProAdvisors.</h2>
+    </header>
+    <div class="prose">
+      <p>The content on this page is reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent Certified QuickBooks ProAdvisor firm. Florida&ndash;specific statutory references, tax rates, and operational context reflect direct operational knowledge and are reviewed against current <a href="https://floridarevenue.com/" rel="noopener nofollow">Florida Department of Revenue</a> guidance.</p>
+      <p>Where Florida tax rates or regulatory thresholds are subject to revision (county discretionary surtax rates, taxable-services rules, corporate income tax), this page is updated as changes take effect.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-07</span><span>Updated: 2026-06-07</span><span>Reviewed: 2026-06-07 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
+
+{# ── RELATED STATES (H2: Multi-state Florida businesses. + 4 H3s) ── #}
+<section class="section section--alt" id="fl-related">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Neighboring states</p>
+      <h2 class="section__heading">Multi-state Florida businesses.</h2>
+      <p class="section__lede">Many Florida businesses operate across state lines &mdash; particularly into Georgia and Alabama, and for seasonal owners, the Northeast. Multi-state engagement scoping is part of every applicable Florida engagement.</p>
+    </header>
+    <div class="grid-2">
+      {%- for r in related %}
+      <article class="stack-8">
+        <h3>{{ r.name | safe }}</h3>
+        <p class="prose">{{ r.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="prose"><small>{{ relatedNote | safe }}</small></p>
+  </div>
+</section>
