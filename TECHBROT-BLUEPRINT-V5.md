@@ -45,15 +45,29 @@ parity. By top-level silo:
 |---|---|---|
 | `/accounting/` | 47 | hub + advisory(hub+5+faq) + bookkeeping(hub+3+faq) + services(hub+3) + 5 standalones + 19 industries(+hub+faq) + faq |
 | `/find-an-accountant/` | 43 | NY full tree (pillar + 38 children) + CA/TX/FL/IL landings |
-| `/quickbooks/` | 32 | hub + product/comparison pages + migration(hub+5) + payroll(hub+5) + help/error-codes(hub+7) + speak-to-expert + faq + file-review |
+| `/quickbooks/` | 32 | hub + 8 product/consideration (cleanup·consulting·desktop·enterprise·online·proadvisor-team·setup·which-plan-is-right) + migration(hub+5) + payroll(hub+5) + help(hub) + error-codes(hub+7) + speak-to-expert (honest-triage) + faq |
 | `/vs/` | 5 | hub + bookkeeper-vs-accountant + techbrot-vs-bench/pilot/quickbooks-live |
 | `/legal/` | 4 | disclaimer, dpa, privacy, terms (t-guide legal-doc) |
-| `/about/` | 3 | about (hub) + methodology + (1 more) |
+| `/about/` | 3 | about (hub) + methodology + network |
 | `/partners/` | 2 | partners (hub) + faq |
 | `/contact/` `/pricing/` `/trust/` | 1 each | intake form · pricing · trust |
 
-Home (index) was DELETED INTENTIONALLY by the founder — new home builds fresh on T-HUB in the redesign.
-`/find-an-accountant/find-an-accountant/`… (the find-an-accountant landing orphan) is included in baseline.
+**Home (index):** the founder deleted the ORIGINAL Bootstrap home; a NEW home ALREADY EXISTS and is live on
+the cobalt floor (`src/index.njk`, t-hub, permalink `/`). It is NOT part of the 139 equity baseline (net-new),
+and the redesign RE-SKINS it — it is not rebuilt from scratch.
+
+**`/find-an-accountant/` bare national landing — RULING (founder, 2026-06-15):** intentionally removed for
+quality; NOT a gap to restore now. Rebuilt FRESH post-redesign as a proper net-new t-hub national landing on the
+new system. State pillars (CA/FL/IL/NY/TX) top the silo until then. **CUTOVER NOTE:** this URL is currently LIVE
+(HTTP 200) on production techbrot.com (a "50-state coverage" landing) but is ABSENT from baseline.json — so a
+temporary 301 (`/find-an-accountant/` → `/accounting/`, recommended; founder to confirm target) MUST be staged
+at cutover so it does not 404 between cutover and the post-redesign rebuild; remove the 301 when the real landing
+ships (see §9).
+
+**Net-new live pages OUTSIDE the 139 equity baseline:** home (`/`) · `/resources/research/` (N=0 research hub) ·
+`/quickbooks/file-review/`. The 139 count in the table = the FROZEN equity baseline only; the live build also
+serves these 3 net-new pages.
+
 State strategy detail in §3.
 
 ═══════════════════════════════════════════════════════════════
@@ -177,6 +191,13 @@ The growth gate is funnel/intent coverage + honesty, NOT a page-count target ("2
 ═══════════════════════════════════════════════════════════════
 §9 — OPEN ITEMS / TODOs (carry into the redesign + growth)
 ═══════════════════════════════════════════════════════════════
+- **`/find-an-accountant/` bare national landing** — deferred NET-NEW build, post-redesign (founder ruling
+  2026-06-15: removed for quality; state pillars top the silo until then). **CUTOVER-PREP:** stage a temporary
+  301 `/find-an-accountant/` → `/accounting/` (recommended; founder to confirm vs NY pillar / `/contact/`) — it
+  is live (200) on prod but not in the 139 baseline; remove the 301 when the real landing ships.
+- **Baseline-coverage gap (flagged):** `/find-an-accountant/` is live on prod yet absent from baseline.json
+  (the round-24-phase0 record wrongly called it "not built"). **Before cutover, re-verify the 139 baseline ==
+  the full live-prod URL set** — there may be other uncaptured live orphans that would 404 at cutover.
 - Nav + footer chrome — no canonical design yet (the mega-menu + per-type navbars land in the redesign, §4).
 - Vector logo — pending.
 - Re-tier provisionals — the 5 accounting standalones (t-bofu provisional, confirm in redesign); NY cities/

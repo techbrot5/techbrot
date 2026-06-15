@@ -132,6 +132,16 @@ The latest founder rulings the docs must agree with: hubs route = **t-hub**; con
 **NY full + CA/TX/FL/IL landings now, other states' children post-redesign**; **cutover LAST, after the
 signed-off redesign**.
 
+**RULING — `/find-an-accountant/` bare national landing (founder, 2026-06-15):** intentionally removed for
+quality; **NOT a gap to restore now.** Rebuilt FRESH post-redesign as a proper net-new t-hub national landing.
+State pillars (CA/FL/IL/NY/TX) top the silo until then. **CUTOVER CHECK (verified this turn): the URL is LIVE
+(HTTP 200) on production techbrot.com today** (a "50-state coverage" landing) but is ABSENT from baseline.json.
+→ **CUTOVER-PREP action: stage a temporary 301 `/find-an-accountant/` → `/accounting/`** (Claude's recommended
+target — national + topical; founder to confirm vs NY pillar / `/contact/`); **remove the 301 when the real
+landing ships.** NOT creating the `_redirects` file now (cutover is LAST; the redesign owns routing) — recorded
+as a locked cutover-prep action in v5 §9. **⚠ Also flagged: a live prod URL was missing from the 139 baseline —
+re-verify before cutover that baseline == the full live-prod URL set (possible other uncaptured live orphans).**
+
 ### ▶ CURRENT RESUME POINT (recovery anchor — keep current; founder may resume via `claude -c` after power loss)
 **As of commit `a40edfc` (2026-06-15, round 26):** Path B migration status —
 - find-an-accountant (43) ✓ · QuickBooks silo ✓ · vs (5) ✓ · **partners (2) ✓** (hub pre-built + /partners/faq/ `6a4fd70`).
