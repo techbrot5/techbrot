@@ -132,13 +132,14 @@ steps — gated, not autonomous. Do NOT batch or run ahead.
 - **0. Reconcile all governing docs** — bring BUILD-TRACKER, PAGE-TYPE-REGISTRY, DESIGN-DIRECTION,
   FINAL-MIGRATION-REPORT, equity-exceptions current + mutually consistent; flag/resolve contradictions to
   the latest founder rulings. *(in progress this turn, then STOP)*
-- **1. Complete the redesign review queue** (+ A4 hero check). ✅ DONE 2026-06-15, pending founder gate:
+- **1. Complete the redesign review queue** (+ A4 hero check). ✅ DONE 2026-06-15 · **✅ GO (founder 2026-06-16)** —
   A4 RESOLVED (all 38 NY children clone the pillar's full t-location hero unconditionally → reinforces
-  t-bofu re-tier for conversion children); DECISION-READY re-tiering queue built at the top of
-  FINAL-MIGRATION-REPORT (① 20 high-confidence re-tier · ② 26 review · ③ rest keep). Awaiting founder GO.
+  t-bofu re-tier for conversion children); DECISION-READY re-tiering queue at the top of
+  FINAL-MIGRATION-REPORT (① 20 high-confidence re-tier · ② 26 review · ③ rest keep). **Queue executes INSIDE the
+  redesign phase (before cutover), per plan.**
 - **2. ARCHITECTURE-TRUTH** — `ARCHITECTURE-TRUTH.md` (repo root; was `TECHBROT-BLUEPRINT-V5.md`, RENAMED
-  2026-06-15). ✅ DRAFTED 2026-06-15, post-review corrections applied (`226fb74`), AWAITING FOUNDER RE-APPROVAL
-  before Deliverable 4 (founder: build carefully, STOP before anything depends on it). The source-of-truth
+  2026-06-15). ✅ DRAFTED 2026-06-15, post-review corrections (`226fb74`), **✅ RE-APPROVED (founder 2026-06-16 —
+  corrected v5 is good)**. The source-of-truth
   architecture doc (§0 identity/non-negotiables · §1 URL+silo 139 · §2 type/tier DECIDED · §3 state strategy ·
   §4 design · §5 sequence/governance · §6 factory · §7 growth backlog · §8 honesty · §9 opens · §10 doc map).
   Supersedes v4/v3.xlsx + design-brief where they disagree. Nothing depends on it until founder-approved.
@@ -193,18 +194,19 @@ live orphans that would 404 at cutover).
 ### ▶ CURRENT RESUME POINT (recovery anchor — keep current; founder may resume via `claude -c` after power loss)
 **As of the 2026-06-16 brief-FINAL commit (latest on `preview-11ty`):** ✅✅ PATH B MIGRATION COMPLETE
 (139/139, cutover parity) — gated POST-MIGRATION SEQUENCE, all desk-work deliverables DONE. Deliverable status:
-- **D0 reconcile docs ✅** · **D1 redesign review queue + A4 ✅** (pending founder GO on the re-tier queue) ·
-  **D2 ARCHITECTURE-TRUTH ✅** (`226fb74`, renamed from v5; **AWAITING FOUNDER RE-APPROVAL**) · **D3 verify+delete
-  old folders ✅** (`2393e16`) · **D4 gap analysis ✅ COMPLETE — REDESIGN-BRIEF.md is FINAL** (founder 2026-06-16;
-  §13 reconciliation; triage wording signed off §13.4; design-quality rules folded in §4/§6/§9/§13.9).
+- **D0 reconcile docs ✅** · **D1 redesign review queue + A4 ✅ + ✅ re-tier queue GO (founder 2026-06-16)** —
+  executes inside the redesign · **D2 ARCHITECTURE-TRUTH ✅ RE-APPROVED (founder 2026-06-16)** (`226fb74`) ·
+  **D3 verify+delete old folders ✅** (`2393e16`) · **D4 gap analysis ✅ COMPLETE — REDESIGN-BRIEF.md is FINAL**
+  (founder 2026-06-16; §13 reconciliation; triage wording signed off §13.4; design-quality rules §4/§6/§9/§13.9;
+  pre-design readiness check done — kit/type/proving-set gaps closed).
 - **301 STAGED ✅** — `src/redirects.njk` → `/find-an-accountant/  /accounting/  301` (`939fffa`); remove when
   the real national landing ships post-redesign.
 - **Doc system:** canonical creative truth = REDESIGN-BRIEF.md; **DESIGN-DIRECTION.md DELETED** (`d9c4f94`).
 - **▶ NEXT = founder takes REDESIGN-BRIEF.md to CLAUDE DESIGN** — generate the visual system as OPTIONS
   (palette/type/signature + the §13.6 proving pages mocked), founder PICKS the look. **Then the Code phase**
   implements the approved system (incl. forms propagation §13.3, the §2/A re-tiering, the §13.9 gate checks) →
-  re-pattern all 148 on preview → founder sign-off → **CUTOVER (LAST)**. ARCHITECTURE-TRUTH re-approval still
-  pending (carries into the redesign). NOT Code building yet — design-options step is next.
+  re-pattern all 148 on preview → founder sign-off → **CUTOVER (LAST)**. ARCHITECTURE-TRUTH ✅ re-approved +
+  D1 re-tier queue ✅ GO (both carry into the redesign). NOT Code building yet — design-options step is next.
 - **⚠ Carry-open:** before cutover, re-verify baseline.json == the full live-prod URL set (a live prod URL —
   `/find-an-accountant/` — was missing from the 139 baseline; there may be other uncaptured live orphans).
 - The tier RE-TIERING pass (NY ~17 conversion children → t-bofu, FINAL-MIGRATION-REPORT Section A; accounting

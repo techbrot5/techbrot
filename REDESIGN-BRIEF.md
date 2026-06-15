@@ -373,6 +373,16 @@ NET-NEW = must be built in the redesign.
 | custom icon system | **NET-NEW** | only `src/_includes/icons/*.svg` (phone etc.) | §5 cohesive custom icon set |
 | OG image system | **NET-NEW** | base.njk has og:title/desc/type only; **NO `og:image`**, twitter `summary` (not large) | §5/§10 per-type templated OG image |
 
+**§13.1b — TYPE-SPECIFIC NET-NEW components (NOT in the shared mid-body kit — built WITH their not-yet-built
+types; added 2026-06-16 readiness pass so the kit is complete before Design):**
+| Component family | Class(es) (from PLACEMENT-MAP/registry) | Used by TYPE | Status |
+|---|---|---|---|
+| Calculator / tool | `tool-panel` `radio-tiles` `stepper` `tool-result` `tool-cta` | tool/calculator (t-mofu tool) | **NET-NEW** (result always hands off to CALL/file-review) |
+| Editorial listing / index | `post-card` `filter-chips` `pagination` | blog index · `/resources/` index · reviews listing (t-guide/t-mofu index) | **NET-NEW** |
+| Research dress | `dataset-header` `stat-cite` (≤2/page) `fig-caption` | research/dataset article (t-guide) | **NET-NEW** (`stat-cite` noted in §9; header/caption added here) |
+These were in the handoff PLACEMENT-MAP/registry but were NOT enumerated in the §9 shared kit; listing them here
+closes that gap. Each is represented in the proving-set mocks (§13.6) so Design mocks one of every kind.
+
 ─────────────────────────────────────────────
 §13.2 — THE 3 COMPONENT-KIT CHANGES (APPROVED — recommended; founder ratifies)
 ─────────────────────────────────────────────
@@ -526,10 +536,24 @@ exact real URL (all built today):
 | 11 | conversion-form page (§13.8) | `/contact/` **and** `/quickbooks/file-review/` | the premium full-form TYPE — hero + form-as-centerpiece + conversion support |
 
 **Not-yet-built TYPES — Design MOCKS a representative hero (no real URL yet) so the system is complete before
-any are built post-cutover:** tool/calculator (t-mofu tool — interactive panel hero) · glossary (t-guide
-compact — definition-first hero) · case study (t-mofu proof — outcome-forward hero, REAL only) · switch
-(t-bofu — "switching from {competitor}", no form). *(Blog ≈ the t-guide article hero (#7); research/dataset ≈
-t-guide with a `dataset-header` variant — mock only if Design judges the hero materially different.)*
+any are built post-cutover (expanded 2026-06-16 readiness pass — one of EVERY distinct hero):**
+- tool/calculator (t-mofu tool — interactive panel hero; exercises the `tool-panel`/`tool-result`/`tool-cta` family).
+- glossary (t-guide compact — definition-first/speakable hero + related-terms).
+- case study (t-mofu proof — outcome-forward hero, REAL engagements only; exercises `stat__delta` + pull-quote).
+- switch (t-bofu — "switching from {competitor}" hero, no form, call block).
+- **editorial listing / INDEX** (the blog index · `/resources/` index · reviews listing) — distinct hero +
+  the `post-card`/`filter-chips`/`pagination` family. *(Added — was not represented before.)*
+- **research / dataset article** (t-guide research dress — data-forward hero + `dataset-header`/`stat-cite`/
+  `fig-caption` + the live-SVG data-figure; the "expertise visible" signature). *(Added — material enough to mock.)*
+- **legal-doc** (t-guide legal variant — minimal legal-prose template, no marketing furniture). *(Added — low-design
+  but a distinct template; mock once so it's not improvised.)*
+*(Blog post ≈ the t-guide article hero (#7) — no separate mock needed.)*
+
+**COMPONENT-COVERAGE ASSERTION (every kit component appears in ≥1 proving page/mock):** the §9 shared kit +
+the §13.1b type-specific families are each exercised by at least one proving page (#1–#11) or one mock above —
+including `review-card` (proving #4/#6 + reviews-listing mock), animated `data-figure`/graph (research mock +
+#3/#4), the custom icon set (every hero/nav), and the OG image template (per-type, all 11). So when Code
+mass-applies across the 142, no pattern is first-seen in production.
 
 ─────────────────────────────────────────────
 §13.7 — DOC-SYSTEM RECONCILIATION (✅ RULED — founder 2026-06-15/16)
