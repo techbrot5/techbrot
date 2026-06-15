@@ -106,13 +106,12 @@ published pricing + re-verify QB-Live current status before go-live.
 ### ▶ CURRENT RESUME POINT (recovery anchor — keep current; founder may resume via `claude -c` after power loss)
 **As of commit `a40edfc` (2026-06-15, round 26):** Path B migration status —
 - find-an-accountant (43) ✓ · QuickBooks silo ✓ · vs (5) ✓ · **partners (2) ✓** (hub pre-built + /partners/faq/ `6a4fd70`).
-- **accounting: 30 of 39 done.** Waves: 1 hubs `d77b871` · 2 FAQs `754369b` · 3 advisory `a80257f` ·
+- **accounting: 35 of 39 done.** Waves: 1 hubs `d77b871` · 2 FAQs `754369b` · 3 advisory `a80257f` ·
   4 services/standalones `3d6390f` · VA `116df1f` · 5 industries `74b1120` · 6 standalones `5f3c7d1` ·
-  7 industries(agency/professional-services/saas/ecommerce/nonprofit) `03a43ff`.
-- **RESUME = accounting wave 8+: the 9 remaining children — all industries** (auto-repair, dental,
-  fitness, franchise, home-services, landscaping, manufacturing, retail, trucking). Reference:
-  quickbooks/online (t-mofu) + any built accounting industry page (e.g. construction, restaurant) for the
-  pattern. (ecommerce — the SPECIAL one — is DONE, `03a43ff`; built from its own correct baseline.)
+  7 industries `03a43ff` · 8 industries(auto-repair/dental/fitness/home-services/landscaping) `e0ef8eb`.
+- **RESUME = accounting wave 9 (FINAL): the 4 remaining industries** — franchise, manufacturing, retail,
+  trucking. Reference: quickbooks/online (t-mofu) + any built accounting industry page (construction).
+  After this wave, accounting (39) is DONE → Path B 139-baseline cutover parity reached.
 - Method (proven): per child, `equity_contract.py <url>` → frozen contract; t-mofu (industries +
   standalones) on the quickbooks/online + cash-flow-management reference; carry full schema (QAPage +
   ItemList + FAQPage no-dedup); newsletter exception per page; battery GREEN + axe 0 + overflow clean
