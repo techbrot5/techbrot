@@ -106,12 +106,14 @@ published pricing + re-verify QB-Live current status before go-live.
 ### ▶ CURRENT RESUME POINT (recovery anchor — keep current; founder may resume via `claude -c` after power loss)
 **As of commit `a40edfc` (2026-06-15, round 26):** Path B migration status —
 - find-an-accountant (43) ✓ · QuickBooks silo ✓ · vs (5) ✓ · **partners (2) ✓** (hub pre-built + /partners/faq/ `6a4fd70`).
-- **accounting: 22 of 39 done.** Waves: 1 hubs `d77b871` · 2 FAQs `754369b` · 3 advisory `a80257f` ·
-  4 services/standalones `3d6390f` · VA `116df1f` · 5 industries(construction/real-estate/healthcare/legal/restaurant) `74b1120`.
-- **RESUME = accounting wave 6+: the 17 remaining children** — 3 standalones (chart-of-accounts-setup,
-  financial-statements, job-costing) + 14 industries (agency, auto-repair, dental, **ecommerce [SPECIAL:
-  source = the VA-displaced e-commerce body, see FINAL-MIGRATION-REPORT D4]**, fitness, franchise,
-  home-services, landscaping, manufacturing, nonprofit, professional-services, retail, saas, trucking).
+- **accounting: 25 of 39 done.** Waves: 1 hubs `d77b871` · 2 FAQs `754369b` · 3 advisory `a80257f` ·
+  4 services/standalones `3d6390f` · VA `116df1f` · 5 industries(construction/real-estate/healthcare/legal/restaurant) `74b1120` ·
+  6 standalones(chart-of-accounts-setup/financial-statements/job-costing) `5f3c7d1`.
+- **RESUME = accounting wave 7+: the 14 remaining children — all industries** (agency, auto-repair,
+  dental, **ecommerce [SPECIAL: source = the VA-displaced e-commerce body, see FINAL-MIGRATION-REPORT
+  D4]**, fitness, franchise, home-services, landscaping, manufacturing, nonprofit, professional-services,
+  retail, saas, trucking). Reference: quickbooks/online (t-mofu) + the 5 built accounting industry pages
+  (construction/real-estate/healthcare/legal/restaurant) for the pattern.
 - Method (proven): per child, `equity_contract.py <url>` → frozen contract; t-mofu (industries +
   standalones) on the quickbooks/online + cash-flow-management reference; carry full schema (QAPage +
   ItemList + FAQPage no-dedup); newsletter exception per page; battery GREEN + axe 0 + overflow clean
