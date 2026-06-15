@@ -13,7 +13,7 @@ PAGE-TYPE-REGISTRY.md is the structural truth (which page is which type + its se
 BOTH: this for look/feel, the registry for per-type composition.
 
 Do not implement from this yet — the redesign is gated behind the post-migration deliverables (0 reconcile
-docs · 1 redesign review queue · 2 v5 blueprint · 4 gap analysis · 3 delete old folders), each with a
+docs · 1 redesign review queue · 2 ARCHITECTURE-TRUTH · 4 gap analysis · 3 delete old folders), each with a
 founder gate. It is recorded so the reset covers every direction the founder has set, and so nothing in
 the migration hardened a choice this brief will override.
 
@@ -101,7 +101,7 @@ the migration hardened a choice this brief will override.
 9. SEQUENCE  (CORRECTED 2026-06-15 — redesign BEFORE cutover; cutover LAST)
 ═══════════════════════════════════════════════════════════════
 Migration (build-to-floor on current cobalt) → all-139 parity ✅ DONE → **gated post-migration
-deliverables** (0 reconcile docs · 1 redesign review queue + A4 hero check · 2 v5 blueprint · 4 gap
+deliverables** (0 reconcile docs · 1 redesign review queue + A4 hero check · 2 ARCHITECTURE-TRUTH · 4 gap
 analysis · 3 verify+delete old Bootstrap folders), each one-at-a-time with a founder GO →
 **THIS design reset on PREVIEW** (new system from Claude Design implementing this brief, re-skinning by
 TYPE per the registry; includes the re-tiering pass from FINAL-MIGRATION-REPORT Sections A + D) →

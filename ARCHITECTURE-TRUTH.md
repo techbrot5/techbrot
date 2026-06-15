@@ -1,8 +1,9 @@
-# TECHBROT BLUEPRINT v5 — source-of-truth architecture
-Status: DRAFT for founder review (post-migration Deliverable 2) · Created 2026-06-15 · Supersedes
-techbrot-blueprint-v3.xlsx + the v4 working references. This is the canonical ARCHITECTURE truth for the
-post-migration → redesign → growth phases. It consolidates and points to the other governing docs (see §10);
-where they disagree, v5 + the latest founder ruling win.
+# ARCHITECTURE-TRUTH.md — source-of-truth architecture
+Status: DRAFT for founder review (post-migration Deliverable 2) · Created 2026-06-15 (as TECHBROT-BLUEPRINT-V5.md)
+· Renamed to ARCHITECTURE-TRUTH.md 2026-06-15. Supersedes techbrot-blueprint-v3.xlsx + the v4 working references
+(now legacy/historical). This is the canonical ARCHITECTURE truth for the post-migration → redesign → growth
+phases. It consolidates and points to the other governing docs (see §10); where they disagree, ARCHITECTURE-TRUTH
++ the latest founder ruling win.
 
 DO NOT let anything depend on this until the founder has reviewed and approved it (founder instruction).
 
@@ -122,7 +123,7 @@ cutover** (see §5).
 §5 — BUILD SEQUENCE + GOVERNANCE
 ═══════════════════════════════════════════════════════════════
 **Migration (build-to-floor) ✅ DONE → 139 parity ✅** → **gated post-migration deliverables** (one at a
-time, founder GO at each): 0 reconcile docs ✅ · 1 redesign review queue + A4 ✅ · **2 v5 blueprint (THIS
+time, founder GO at each): 0 reconcile docs ✅ · 1 redesign review queue + A4 ✅ · **2 ARCHITECTURE-TRUTH (THIS
 doc)** · 4 gap analysis · 3 verify+delete old Bootstrap folders → **REDESIGN on preview** (new system per
 §4; includes re-tiering) → re-pattern all pages on preview → founder sign-off → **CUTOVER (LAST step — go
 live)** → resume **build-new growth** (§7) in small batches.
@@ -208,15 +209,20 @@ The growth gate is funnel/intent coverage + honesty, NOT a page-count target ("2
 - Research-log seed (N=0).
 
 ═══════════════════════════════════════════════════════════════
-§10 — DOCUMENT MAP (which doc is truth for what)
+§10 — DOCUMENT MAP (the LOCKED canonical doc set — one file per role, no overlap)
 ═══════════════════════════════════════════════════════════════
-- **THIS (TECHBROT-BLUEPRINT-V5.md)** — architecture source-of-truth (URL/silo/tier/state/sequence/growth).
-- **BUILD-TRACKER.md** — LIVING operational truth (current status, resume anchor, governing rules). Overrides
-  the blueprint between revisions for operational state.
-- **_build/reports/PAGE-TYPE-REGISTRY.md** — STRUCTURAL truth (type → tier → ordered sections → components).
-- **DESIGN-DIRECTION.md** — CREATIVE truth (palette/type/nav/assets/hero/components for the redesign).
-- **_build/reports/FINAL-MIGRATION-REPORT.md** — migration record + the re-tiering review queue (gate decisions).
-- **_build/baseline/baseline.json** — FROZEN content-equity contract (139 pages). **_build/battery/
-  equity-exceptions.json** — the justified differ exceptions.
-- Legacy: techbrot-blueprint-v3.xlsx (architecture origin), techbrot-design-brief.md — SUPERSEDED by v5 +
-  DESIGN-DIRECTION for anything they disagree on.
+**STANDING RULE:** when something changes, UPDATE the owning file below — never spawn a new overlapping doc. If
+two docs ever disagree, **THIS (ARCHITECTURE-TRUTH) + the latest founder ruling win**, and reconcile immediately.
+
+**Canonical (authoritative, update-don't-spawn):**
+1. **BUILD-TRACKER.md** — OPERATIONAL truth (current status, resume anchor, governing rules). **Read first.**
+2. **THIS (ARCHITECTURE-TRUTH.md)** — ARCHITECTURE truth (URLs/silo, tiers, state strategy, sequence, growth).
+3. **_build/reports/PAGE-TYPE-REGISTRY.md** — STRUCTURAL truth (type → tier → ordered sections → components).
+4. **DESIGN-DIRECTION.md** — CREATIVE truth (the redesign aesthetic: palette/type/nav/assets/hero/components).
+5. **_build/baseline/baseline.json + _build/battery/equity-exceptions.json** — FROZEN machine contract
+   (139-page content-equity + justified differ exceptions). NOT hand-edited.
+
+**Legacy / archive (superseded; kept for history; NOT authoritative):** techbrot-blueprint-v4.xlsx,
+techbrot-blueprint-v3.xlsx, techbrot-design-brief.md, the round-NN reports, and
+_build/reports/FINAL-MIGRATION-REPORT.md (its live job — the re-tier queue — folds into the redesign).
+Anything in this group is SUPERSEDED by ARCHITECTURE-TRUTH + DESIGN-DIRECTION where they disagree.

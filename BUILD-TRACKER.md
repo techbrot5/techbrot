@@ -56,6 +56,22 @@ ruling: the 4 "Recent New York results" figures, formerly "real engagement outco
 client request," are reframed to explicitly representative/illustrative; operational substance —
 patterns, problems, work — kept. Reviews on any page = only the 2 real Clutch reviews.)
 
+## ⭐ CANONICAL DOC SYSTEM (founder, 2026-06-15 — LOCKED standing file structure)
+ONE file per role, no overlap, **update-don't-spawn**. These are the only authoritative docs:
+1. **BUILD-TRACKER.md** — OPERATIONAL truth (status, resume anchor, governing rules). **Read first.**
+2. **ARCHITECTURE-TRUTH.md** (was `TECHBROT-BLUEPRINT-V5.md`, renamed 2026-06-15) — ARCHITECTURE truth
+   (URLs, tiers, state strategy, sequence, growth).
+3. **_build/reports/PAGE-TYPE-REGISTRY.md** — STRUCTURAL truth (type → tier → sections → components).
+4. **DESIGN-DIRECTION.md** — CREATIVE truth (the redesign aesthetic).
+5. **_build/baseline/baseline.json + _build/battery/equity-exceptions.json** — FROZEN machine contract
+   (not hand-edited).
+**Legacy/archive (superseded, kept for history, NOT authoritative):** the v4 blueprint
+(`techbrot-blueprint-v4.xlsx`), v3 (`techbrot-blueprint-v3.xlsx`), `techbrot-design-brief.md`, the round-NN
+reports, and `_build/reports/FINAL-MIGRATION-REPORT.md` (its live job — the re-tier queue — folds into the
+redesign).
+**STANDING RULE:** when something changes, UPDATE the owning file above — **never spawn a new overlapping doc.**
+If two docs ever disagree, **ARCHITECTURE-TRUTH + the latest founder ruling win**, and reconcile immediately.
+
 ## FIND-AN-ACCOUNTANT PHASE (spec 2026-06-15) — deploys AFTER QB silo 1 + vs + partners, BEFORE accounting; accounting silo LAST
 Scope: **NY is the only state built out** (pillar + 39-page tree). **CA/TX/FL/IL parked via
 temporary 301** (no content build) — scheduled for full build-out POST-REDESIGN on the new
@@ -117,11 +133,12 @@ steps — gated, not autonomous. Do NOT batch or run ahead.
   A4 RESOLVED (all 38 NY children clone the pillar's full t-location hero unconditionally → reinforces
   t-bofu re-tier for conversion children); DECISION-READY re-tiering queue built at the top of
   FINAL-MIGRATION-REPORT (① 20 high-confidence re-tier · ② 26 review · ③ rest keep). Awaiting founder GO.
-- **2. v5 blueprint** — `TECHBROT-BLUEPRINT-V5.md` (repo root). ✅ DRAFTED 2026-06-15, AWAITING FOUNDER
-  REVIEW (founder: build carefully, STOP before anything depends on it). The source-of-truth architecture
-  doc (§0 identity/non-negotiables · §1 URL+silo 139 · §2 type/tier DECIDED · §3 state strategy · §4 design ·
-  §5 sequence/governance · §6 factory · §7 growth backlog · §8 honesty · §9 opens · §10 doc map). Supersedes
-  v3.xlsx + design-brief where they disagree. Nothing depends on it until founder-approved.
+- **2. ARCHITECTURE-TRUTH** — `ARCHITECTURE-TRUTH.md` (repo root; was `TECHBROT-BLUEPRINT-V5.md`, RENAMED
+  2026-06-15). ✅ DRAFTED 2026-06-15, post-review corrections applied (`226fb74`), AWAITING FOUNDER RE-APPROVAL
+  before Deliverable 4 (founder: build carefully, STOP before anything depends on it). The source-of-truth
+  architecture doc (§0 identity/non-negotiables · §1 URL+silo 139 · §2 type/tier DECIDED · §3 state strategy ·
+  §4 design · §5 sequence/governance · §6 factory · §7 growth backlog · §8 honesty · §9 opens · §10 doc map).
+  Supersedes v4/v3.xlsx + design-brief where they disagree. Nothing depends on it until founder-approved.
 - **4. Gap analysis** (redesign scope + proving set).
 - **3. Verify + delete the old Bootstrap-Studio per-route folders.**
 - **→ then the REDESIGN** (separate phase, per DESIGN-DIRECTION.md; includes the re-tiering pass).
@@ -139,7 +156,7 @@ State pillars (CA/FL/IL/NY/TX) top the silo until then. **CUTOVER CHECK (verifie
 → **CUTOVER-PREP action: stage a temporary 301 `/find-an-accountant/` → `/accounting/`** (Claude's recommended
 target — national + topical; founder to confirm vs NY pillar / `/contact/`); **remove the 301 when the real
 landing ships.** NOT creating the `_redirects` file now (cutover is LAST; the redesign owns routing) — recorded
-as a locked cutover-prep action in v5 §9. **⚠ Also flagged: a live prod URL was missing from the 139 baseline —
+as a locked cutover-prep action in ARCHITECTURE-TRUTH §9. **⚠ Also flagged: a live prod URL was missing from the 139 baseline —
 re-verify before cutover that baseline == the full live-prod URL set (possible other uncaptured live orphans).**
 
 ### ▶ CURRENT RESUME POINT (recovery anchor — keep current; founder may resume via `claude -c` after power loss)
