@@ -190,3 +190,47 @@ consistent with the other 33 NY pages. **sales-tax-help H1** carries the em-flat
 services (13) migrated + committed + verified across waves 1–7.
 **REMAINING: the 4 sensitive honest-triage pages** — business-tax-problems, state-tax-notice-help,
 urgent-bookkeeping, speak-to-a-proadvisor. **STOP for founder honesty decision** (see below).
+
+> **FOUNDER RULING (2026-06-15):** proceed autonomously on the sensitive 4 with full Sheet-7 honest-
+> triage; founder reviews on preview after. Built as wave 8 below.
+
+---
+
+## WAVE 8 — 4 sensitive honest-triage pages · DONE · commit `b21f80d` · NY SILO COMPLETE
+| Page | Preview URL | Honest-triage framing |
+|---|---|---|
+| Business tax problems | …/find-an-accountant/new-york/business-tax-problems/ | NOT a CPA/EA/attorney, NOT affiliated w/ IRS/NYS DTF; we reconstruct/reconcile the books + assemble an audit-ready package; the client's licensed pro files/negotiates/represents |
+| State tax notice help | …/find-an-accountant/new-york/state-tax-notice-help/ | **NOT the NYS Dept of Taxation and Finance**; we explain the notice + reconcile the underlying records; the CPA/EA/attorney responds & represents (reused the real `.disclosure` class) |
+| Urgent bookkeeping | …/find-an-accountant/new-york/urgent-bookkeeping/ | "urgent" = a scoped fast catch-up sprint, NOT emergency tax filing / representation / a deadline guarantee; dropped a fabricated same-day SLA strip, reframed turnaround to scope-dependent |
+| Speak to a ProAdvisor | …/find-an-accountant/new-york/speak-to-a-proadvisor/ | **NOT Intuit / NOT QuickBooks support / NOT Intuit's referral line**; certification ≠ affiliation; redirects Intuit account/billing/login intent to Intuit |
+
+**Sheet-7 handling:** every page leads above the fold (in-brief, under the hero) with a plain NOT-affiliated
+disclosure; each agent reframed baseline overclaims to honest scope and FLAGGED every reframe (full reframe
+logs in the agent returns). speak-to-a-proadvisor added **2 net-new H2s** ("Is a ProAdvisor call the right
+call?", "What the call covers — and what it does not.") to carry the Intuit split — additive enrichment, no
+baseline heading removed. All 4 reframed named reviewers to firm-level (R9).
+**Fix:** state-tax-notice-help linked a non-existent `/vs/cpa-vs-ea/` → replaced with a plain
+CPA/EA/attorney coordination line.
+**OPEN ITEM FOR FOUNDER (honesty, your call):** a few FROZEN baseline `meta_description`s still brush the
+SLA/options line — most notably **urgent-bookkeeping** ("Same-day response, CPA-ready in days.") and
+**business-tax-problems** ("…see your options…"). The agents preserved them verbatim per the frozen
+contract (SEO equity); the VISIBLE pages are reframed and honest. **Decision needed:** keep the metas as
+frozen SEO equity, or reframe them too (a deliberate content-equity change to the meta only — won't trip
+the battery, which checks headings/FAQ/schema, not meta).
+**Verification (all 4):** equity GREEN · t-location · axe 0 · overflow clean 360/390/768 · CSS 55,933 B.
+
+---
+
+## ✅ NY SILO COMPLETE — pillar + 38 children (39 URLs), 8 waves, round 26
+- **12 cities-tier:** cities-hub + albany, bronx, brooklyn, buffalo, manhattan, new-york-city, queens, rochester, staten-island, syracuse, yonkers
+- **9 industries:** industries-hub + construction, consulting, ecommerce, healthcare, legal, nonprofit, real-estate, restaurant
+- **13 standard services:** bookkeeping-services, monthly-bookkeeping, virtual-bookkeeper, small-business-accountant, quickbooks-accountant, quickbooks-setup, quickbooks-cleanup, quickbooks-reconciliation, quickbooks-training, quickbooks-migration, cleanup-bookkeeping, pricing, sales-tax-help
+- **4 honest-triage services:** business-tax-problems, state-tax-notice-help, urgent-bookkeeping, speak-to-a-proadvisor
+- **Pillar:** new-york (the t-location proving page, round 25)
+
+Every page: equity GREEN · t-location tier · axe 0 · overflow clean 360/390/768 · CSS budget held 55,933 B.
+Commits: `9056d8a` `ab792ff` `bdd253b` `9f85efb` `827f2c0` `40f82ac` `f977382` `b21f80d` (+ report commits).
+
+**NEXT in the migration (same R7 autonomy):** the 4 state landing pages CA/TX/FL/IL (real per-state tax
+content, t-location, NO children yet), then QB-remainder (6) + vs (5) + partners (1), then accounting (39,
+LAST). Deploy order unchanged: find-an-accountant deploys AFTER QB silo 1 + vs + partners.

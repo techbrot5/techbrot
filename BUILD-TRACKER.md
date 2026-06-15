@@ -69,6 +69,19 @@ design-fidelity, pillar↔children↔siblings + location↔service-silo interlin
 an explicit t-location verdict. NY in-content links to /accounting/* (5 not-yet-built targets)
 will 404 on preview until the accounting silo (last) ships — founder accepts (not severe).
 
+**✅ NY SILO COMPLETE (2026-06-15, round 26) — pillar + all 38 children migrated, committed,
+verified.** 8 waves on the proven t-location tier: 12 cities-tier · 9 industries · 13 standard
+services · 4 honest-triage services (business-tax-problems, state-tax-notice-help, urgent-bookkeeping,
+speak-to-a-proadvisor — founder-approved autonomous Sheet-7 build, disclosure-above-fold,
+overclaims reframed). Every page equity GREEN · axe 0 · overflow clean 360/390/768 · CSS 55,933 B.
+Full log: `_build/reports/round-26-ny-children.md`. Commits `9056d8a`→`b21f80d`. **OPEN (founder):**
+a few frozen baseline meta_descriptions on the honest-triage pages brush the SLA/options line
+(urgent "Same-day response, CPA-ready in days"; biztax "see your options") — kept verbatim as SEO
+equity, visible pages reframed/honest; founder to decide keep-vs-reframe. **NEXT:** the 4 state
+landings CA/TX/FL/IL (real per-state tax content, t-location, no children yet), same R7 autonomy.
+NOTE: the FIND-AN-ACCOUNTANT PHASE spec above said CA/TX/FL/IL were "parked via 301" — SUPERSEDED by
+the revised spec (no redirects; CA/TX/FL/IL ship as real landing pages now, children post-redesign).
+
 Updated: 2026-06-14 · NEW PHASE — PATH B MIGRATION. Goal: migrate the 104 remaining
 baselines to the current cobalt system FAST (build-to-FLOOR, not polish — all 104 get
 re-patterned on the new design system after cutover), reach all-139-baselines parity, then
