@@ -93,6 +93,17 @@ intents (battery intent check is static). Pricing/comparison tables MUST use `vs
 `proof-strip__item` buyer-cards (nowrap → mobile overflow; caught + fixed on CA). **NEXT (R7 autonomy):**
 QB-remainder (6) → vs (5) → partners (1) → accounting (39, LAST). Deploy order unchanged.
 
+**✅ QB-REMAINDER + VS SILO COMPLETE (2026-06-15, round 26).** QB-remainder (6): 5 migration children
+(desktop-to-online, migration-cleanup, other-software-to-qb, quickbooks-to-xero t-bofu, balances-wrong-
+after-conversion t-guide HowTo — commit `5739ddd`) + speak-to-a-quickbooks-expert (t-bofu honest-triage,
+founder-approved solo, `28cf794`/`f032703`, wired to the existing quickbooks-speak-expert intent). vs silo
+(5): hub + bookkeeper-vs-accountant + techbrot-vs-bench/pilot/quickbooks-live (t-mofu, `66f0e42`). All
+equity GREEN · axe 0 · overflow clean 360/390/768 · CSS 55,933 B. vs honesty: fair vs-table (where they
+win); Bench Dec-2024 shutdown reflected; Pilot unverifiable stats dropped (qualitative); QB-Live 2024
+restructure + not-Intuit independence stated, fabricated pricing removed. OPEN (low-risk, founder): Pilot
+published pricing + re-verify QB-Live current status before go-live. **REMAINING: partners (1) →
+accounting (39, LAST + largest).**
+
 Updated: 2026-06-14 · NEW PHASE — PATH B MIGRATION. Goal: migrate the 104 remaining
 baselines to the current cobalt system FAST (build-to-FLOOR, not polish — all 104 get
 re-patterned on the new design system after cutover), reach all-139-baselines parity, then
