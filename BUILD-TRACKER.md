@@ -101,8 +101,27 @@ founder-approved solo, `28cf794`/`f032703`, wired to the existing quickbooks-spe
 equity GREEN · axe 0 · overflow clean 360/390/768 · CSS 55,933 B. vs honesty: fair vs-table (where they
 win); Bench Dec-2024 shutdown reflected; Pilot unverifiable stats dropped (qualitative); QB-Live 2024
 restructure + not-Intuit independence stated, fabricated pricing removed. OPEN (low-risk, founder): Pilot
-published pricing + re-verify QB-Live current status before go-live. **REMAINING: partners (1) →
-accounting (39, LAST + largest).**
+published pricing + re-verify QB-Live current status before go-live.
+
+### ▶ CURRENT RESUME POINT (recovery anchor — keep current; founder may resume via `claude -c` after power loss)
+**As of commit `a40edfc` (2026-06-15, round 26):** Path B migration status —
+- find-an-accountant (43) ✓ · QuickBooks silo ✓ · vs (5) ✓ · **partners (2) ✓** (hub pre-built + /partners/faq/ `6a4fd70`).
+- **accounting: 22 of 39 done.** Waves: 1 hubs `d77b871` · 2 FAQs `754369b` · 3 advisory `a80257f` ·
+  4 services/standalones `3d6390f` · VA `116df1f` · 5 industries(construction/real-estate/healthcare/legal/restaurant) `74b1120`.
+- **RESUME = accounting wave 6+: the 17 remaining children** — 3 standalones (chart-of-accounts-setup,
+  financial-statements, job-costing) + 14 industries (agency, auto-repair, dental, **ecommerce [SPECIAL:
+  source = the VA-displaced e-commerce body, see FINAL-MIGRATION-REPORT D4]**, fitness, franchise,
+  home-services, landscaping, manufacturing, nonprofit, professional-services, retail, saas, trucking).
+- Method (proven): per child, `equity_contract.py <url>` → frozen contract; t-mofu (industries +
+  standalones) on the quickbooks/online + cash-flow-management reference; carry full schema (QAPage +
+  ItemList + FAQPage no-dedup); newsletter exception per page; battery GREEN + axe 0 + overflow clean
+  360/390/768 before commit. **COMMIT + PUSH AFTER EVERY WAVE (founder rule, power-loss safety).**
+- After the 17, accounting (39) done → Path B 139-baseline cutover parity → post-cutover re-tiering pass
+  (FINAL-MIGRATION-REPORT Sections A + D queue) + redesign.
+
+**STANDING (founder, 2026-06-15):** commit+push after EVERY wave (never batch waves uncommitted); keep
+BUILD-TRACKER + `_build/reports/FINAL-MIGRATION-REPORT.md` + `round-26-ny-children.md` current so a fresh
+session can read them + the last commit and continue from the last committed wave.
 
 ### ⚠️ POST-MIGRATION REVIEW (founder-requested 2026-06-15) — TIER RE-CATEGORIZATION
 Founder directive: the 38 NY children were ALL built on **t-location** (build-to-floor, one proven tier
