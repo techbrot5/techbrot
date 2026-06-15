@@ -147,7 +147,15 @@ steps — gated, not autonomous. Do NOT batch or run ahead.
   links 15667 resolve, zero broken refs). `contact/` added to the delete list per founder (I flagged it as the
   one unlisted old folder). Removes the repo-root-serving fallback risk before cutover. src/ untouched;
   recoverable via git + founder backup.
-- **4. Gap analysis** (redesign scope + proving set). ← **NEXT (awaiting founder GO + ARCHITECTURE-TRUTH re-approval)**
+- **4. Gap analysis** (redesign scope + proving set). ✅ DRAFTED 2026-06-15 (`REDESIGN-BRIEF.md` §13, reconciled
+  with the as-built system). AWAITING FOUNDER REVIEW. Read the founder's strategy brief (`REDESIGN-BRIEF.md`
+  §0–§12) + grounded it: §13.1 as-built component map (EXISTS vs NET-NEW, real classes) · §13.2 the 3 approved
+  component-kit changes (call-breakout→PRIMARY · net-new minimal state-pillar form · PLACEMENT-MAP rewrite) ·
+  §13.3 forms-ruling registry/placement-map delta · §13.4 honest-triage compliance re-spec (⚠ FOUNDER SIGN-OFF) ·
+  §13.5 gap-analysis checklist · §13.6 grounded proving set (real URLs) · §13.7 doc-system flag. **No code/registry
+  edits (specs only); the registry/PLACEMENT-MAP propagation is deferred to founder approval / the Code phase.**
+  **OPEN FOUNDER RULINGS:** (1) ratify the 3 component changes; (2) sign off the honest-triage compliance approach;
+  (3) doc-system — promote REDESIGN-BRIEF to canonical CREATIVE truth, retire DESIGN-DIRECTION to legacy?
 - **→ then the REDESIGN** (separate phase, per DESIGN-DIRECTION.md; includes the re-tiering pass).
 - **→ CUTOVER is the LAST step** — nothing goes live until the redesign is done and founder-signed-off.
 
@@ -177,8 +185,11 @@ gated POST-MIGRATION SEQUENCE. Deliverable status:
   139 files removed, battery GREEN post-delete).
 - **301 STAGED ✅** — `src/redirects.njk` → `/find-an-accountant/  /accounting/  301` (`939fffa`); remove when
   the real national landing ships post-redesign.
-- **NEXT = Deliverable 4 — GAP ANALYSIS** (redesign scope + proving set). **GATED:** needs founder GO **and**
-  ARCHITECTURE-TRUTH re-approval first. Then → REDESIGN (incl. the re-tiering pass) → CUTOVER (LAST).
+- **D4 gap analysis ✅ DRAFTED** (`REDESIGN-BRIEF.md` §13, reconciled with as-built; commit below) — AWAITING
+  FOUNDER REVIEW + 3 open rulings (component changes · honest-triage compliance · doc-system promotion).
+- **NEXT after D4 review = the REDESIGN** (Claude Design generates the visual system as options → founder
+  picks → Code implements; incl. forms propagation §13.3 + re-tiering) → re-pattern all pages on preview →
+  founder sign-off → **CUTOVER (LAST)**. ARCHITECTURE-TRUTH re-approval still pending (carries into the redesign).
 - **⚠ Carry-open:** before cutover, re-verify baseline.json == the full live-prod URL set (a live prod URL —
   `/find-an-accountant/` — was missing from the 139 baseline; there may be other uncaptured live orphans).
 - The tier RE-TIERING pass (NY ~17 conversion children → t-bofu, FINAL-MIGRATION-REPORT Section A; accounting
