@@ -104,6 +104,25 @@ restructure + not-Intuit independence stated, fabricated pricing removed. OPEN (
 published pricing + re-verify QB-Live current status before go-live. **REMAINING: partners (1) →
 accounting (39, LAST + largest).**
 
+### ⚠️ POST-MIGRATION REVIEW (founder-requested 2026-06-15) — TIER RE-CATEGORIZATION
+Founder directive: the 38 NY children were ALL built on **t-location** (build-to-floor, one proven tier
+for speed). That is architecturally wrong for the **conversion/BOFU** children, which are flat location
+clones today but should be **t-bofu** (proof-strip + intake-form + vs-table conversion structure), not
+location landings. The pillar `/find-an-accountant/new-york/` is the ONLY page that should carry the
+t-location hero (state-contour motif + sticky call-bar location chrome).
+- **Verify post-migration:** only the NY PILLAR carries the t-location hero; the cities (11) + cities-hub
+  + industries (8) + industries-hub are legitimately location/MOFU and may stay t-location; but the
+  SERVICE + HONEST-TRIAGE children are BOFU and likely need re-tiering to t-bofu.
+- **Founder-named t-bofu candidates:** cleanup-bookkeeping, monthly-bookkeeping, urgent-bookkeeping,
+  business-tax-problems, quickbooks-cleanup.
+- **Deliverable:** the FINAL MIGRATION REPORT must list, with full URLs, every NY child that may need
+  re-tiering (location-clone → t-bofu), for founder review AFTER migration completes. Do NOT re-tier now
+  — finish the migration first; this is a post-cutover-prep cleanup pass.
+- **Same care on ACCOUNTING (39):** as each accounting page is migrated, note in the final report any
+  industry/service page that is really **BOFU** (conversion: cleanup, catch-up, a specific paid service)
+  vs **MOFU** (consideration: hub, overview, comparison) so the tier choice is flagged, not assumed.
+This re-tiering pass is tracked here so it is not lost; it runs after the 139-baseline cutover-parity gate.
+
 Updated: 2026-06-14 · NEW PHASE — PATH B MIGRATION. Goal: migrate the 104 remaining
 baselines to the current cobalt system FAST (build-to-FLOOR, not polish — all 104 get
 re-patterned on the new design system after cutover), reach all-139-baselines parity, then
