@@ -14,7 +14,12 @@ Consolidated from Sections A + D + the A4 hero finding. The redesign executes th
 re-tier — equity/content stays). **Founder gate: confirm/adjust the recommended final tier per group.**
 Details + URLs in Sections A (NY) and D (accounting) below.
 
-### ① RE-TIER — high confidence (as-built tier ≠ correct tier) → 20 pages
+> **✅ FOUNDER GATE 2026-06-15:** ① all approved → **t-bofu (CONFIRMED, execute in redesign)**.
+> ② accounting standalones (5) → **t-bofu PROVISIONAL — confirm when rendered in the redesign** (not
+> hard-locked). ② NY cities (12) + NY industries (9) → remain REVIEW, resolved in the redesign (re-tiering
+> happens there anyway). ③ keep-as-is → CONFIRMED.
+
+### ① RE-TIER — high confidence (as-built tier ≠ correct tier) → 20 pages  · ✅ CONFIRMED → t-bofu
 | Group | # | As-built | → Final | Why |
 |---|---|---|---|---|
 | NY **service** children (bookkeeping-services, monthly-bookkeeping, virtual-bookkeeper, small-business-accountant, quickbooks-accountant/-setup/-cleanup/-reconciliation/-training/-migration, cleanup-bookkeeping, pricing, sales-tax-help) | 13 | t-location | **t-bofu** | conversion pages; A4 proved they wear the pillar's location hero + state-contour motif + sticky call-bar — wrong for conversion (want compact hero + proof-strip + intake-form) |
@@ -26,7 +31,7 @@ Details + URLs in Sections A (NY) and D (accounting) below.
 |---|---|---|---|---|
 | NY cities-hub + 11 cities | 12 | t-location (full pillar hero) | keep location tier but as the **lighter "state-child" hero** (drop the full pillar motif + sticky call-bar)? | lighter t-location-child |
 | NY industries-hub + 8 industries | 9 | t-location | hub stays a routing layer; industry landings → **t-mofu** (consideration)? | hub=t-location-child; industries=t-mofu |
-| Accounting standalones (chart-of-accounts-setup, financial-statements, month-end-close, reconciliation-services, job-costing) | 5 | t-mofu | discrete services → **t-bofu**, or keep t-mofu (some carry heavy consideration content)? | mixed — review per page |
+| Accounting standalones (chart-of-accounts-setup, financial-statements, month-end-close, reconciliation-services, job-costing) | 5 | t-mofu | discrete services → **t-bofu**, or keep t-mofu? | **t-bofu PROVISIONAL — confirm in redesign (founder gate)** |
 
 ### ③ KEEP — tier correct as-built → no re-tier
 - **Pillars (5):** NY pillar + CA/TX/FL/IL landings = t-location (the ONLY place t-location belongs). ✓

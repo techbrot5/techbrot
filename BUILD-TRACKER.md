@@ -117,7 +117,11 @@ steps — gated, not autonomous. Do NOT batch or run ahead.
   A4 RESOLVED (all 38 NY children clone the pillar's full t-location hero unconditionally → reinforces
   t-bofu re-tier for conversion children); DECISION-READY re-tiering queue built at the top of
   FINAL-MIGRATION-REPORT (① 20 high-confidence re-tier · ② 26 review · ③ rest keep). Awaiting founder GO.
-- **2. v5 blueprint.**
+- **2. v5 blueprint** — `TECHBROT-BLUEPRINT-V5.md` (repo root). ✅ DRAFTED 2026-06-15, AWAITING FOUNDER
+  REVIEW (founder: build carefully, STOP before anything depends on it). The source-of-truth architecture
+  doc (§0 identity/non-negotiables · §1 URL+silo 139 · §2 type/tier DECIDED · §3 state strategy · §4 design ·
+  §5 sequence/governance · §6 factory · §7 growth backlog · §8 honesty · §9 opens · §10 doc map). Supersedes
+  v3.xlsx + design-brief where they disagree. Nothing depends on it until founder-approved.
 - **4. Gap analysis** (redesign scope + proving set).
 - **3. Verify + delete the old Bootstrap-Studio per-route folders.**
 - **→ then the REDESIGN** (separate phase, per DESIGN-DIRECTION.md; includes the re-tiering pass).
