@@ -1,0 +1,233 @@
+---json
+{
+  "layout": "layouts/t-hub.njk",
+  "permalink": "/accounting/services/",
+  "slug": "acct-svc-hub",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--hub",
+  "title": "Accounting Services · Bookkeeping, QuickBooks, Payroll, Sales Tax, Fractional CFO · TechBrot",
+  "description": "The full TechBrot service catalog — monthly bookkeeping, QuickBooks setup and cleanup, QuickBooks migration, payroll management, sales tax compliance, fractional CFO. Fixed-fee engagements delivered by Certified ProAdvisors. Independent firm. Not affiliated with Intuit Inc.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Accounting", "href": "/accounting/" },
+    { "name": "Services" }
+  ],
+  "hero": {
+    "eyebrow": "Service catalog",
+    "heading": "Accounting services, scoped properly. Priced honestly.",
+    "subheading": "Seven core service tracks &mdash; monthly bookkeeping, QuickBooks setup and cleanup, migration, payroll management, sales tax compliance, and fractional CFO. Every engagement is fixed-fee with a written scope before any work begins, delivered by Certified Intuit ProAdvisors. Independent firm.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>The TechBrot service catalog:</strong> monthly &middot; cleanup &middot; catch-up bookkeeping &middot; QuickBooks (setup, cleanup, migration) &middot; payroll management &middot; multi-state sales tax compliance &middot; fractional CFO &mdash; seven engagement types, each fixed-fee with a written scope before any work begins, delivered by Certified Intuit ProAdvisors across all 50 states.",
+    "source": "Independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books; your CPA files. Not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Start here",
+    "heading": "Scope your engagement.",
+    "lede": "A free 30-minute discovery call, then a written fixed-fee scope within 3 business days &mdash; the right engagement and the exact fee, in writing, before you commit. If we&rsquo;re not the right fit, we&rsquo;ll say so.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section section--compact section--tier-hub" id="acct-svc-hub-tldr">
+  <div class="container">
+    <div class="tldr">
+      <p class="tldr__label">In one paragraph</p>
+      <h2 class="tldr__heading">The TechBrot service catalog, summarized.</h2>
+      <p class="tldr__body" id="acct-svc-hub-tldr-body">TechBrot delivers seven core service tracks for U.S. small and mid-sized businesses: <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> ($400&ndash;$2,500+/month), <a href="/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup">cleanup bookkeeping</a> ($1,500&ndash;$15,000+), <a href="/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up">catch-up bookkeeping</a> ($2,000&ndash;$20,000+), <a href="/quickbooks/?intent=quickbooks">QuickBooks services</a> (setup, cleanup, migration &mdash; $750&ndash;$15,000+), <a href="/accounting/payroll-management/?intent=payroll">payroll management</a> ($150&ndash;$800+/month), <a href="/accounting/sales-tax-compliance/?intent=sales-tax">sales tax compliance</a> ($250&ndash;$1,500+/month), and <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">fractional CFO</a> ($3,000&ndash;$8,000+/month, by application). <strong>Every engagement is fixed-fee with a written scope before any work begins</strong> &mdash; no hourly billing &mdash; delivered by Certified Intuit ProAdvisors across all four core QuickBooks platforms. National coverage with state-specific operational depth.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-svc-hub-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">The service catalog, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-svc-hub-tracks">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The service tracks</p>
+      <h2 class="section__heading">Seven engagement types. Distinct work, distinct outcomes.</h2>
+      <p class="section__lede">Each track links to full scope, deliverables, cadence, and pricing detail. Or use the diagnostic below if you&rsquo;re not sure which engagement fits your situation.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in tracks %}
+      <article class="review-card">
+        <p class="team-card__role">{{ s.eyebrow | safe }}</p>
+        <h3>{{ s.name | safe }}</h3>
+        <p class="review-card__fact">{{ s.body | safe }}</p>
+        <p class="review-card__fact"><strong>{{ s.fee | safe }}</strong> &middot; {{ s.eng | safe }}</p>
+        <p class="review-card__fact">Best for: {{ s.best | safe }}</p>
+        <a class="review-card__link" href="{{ s.href }}">{{ s.name | safe }} &rarr;</a>
+      </article>
+      {%- endfor %}
+    </div>
+    <article class="review-card">
+      <p class="team-card__role">{{ cfo.eyebrow | safe }}</p>
+      <h3>{{ cfo.name | safe }}</h3>
+      <p class="review-card__fact">{{ cfo.lede | safe }}</p>
+      <p class="review-card__fact"><strong>{{ cfo.fee | safe }}</strong> &middot; {{ cfo.eng | safe }}</p>
+      <p class="review-card__fact">Best for: {{ cfo.best | safe }}</p>
+      <a class="review-card__link" href="{{ cfo.href }}">{{ cfo.name | safe }} &rarr;</a>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="acct-svc-hub-diagnostic">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Find your situation</p>
+      <h2 class="section__heading">Which engagement do you actually need?</h2>
+      <p class="section__lede">Most buyers don&rsquo;t know exactly which service fits &mdash; they know something&rsquo;s wrong. Below are the six most common situations and the engagement that fits each.</p>
+    </header>
+    <div class="grid-3">
+      {%- for d in diagnostic %}
+      <article class="review-card">
+        <h3>{{ d.q | safe }}</h3>
+        <p class="review-card__fact"><strong>Diagnosis:</strong> {{ d.diagnosis | safe }}</p>
+        <p class="review-card__fact"><strong>Right path:</strong> {{ d.path | safe }}</p>
+        <p class="review-card__fact"><strong>Typical fee:</strong> {{ d.fee | safe }}</p>
+        <a class="review-card__link" href="{{ d.href }}">{{ d.cta | safe }} &rarr;</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-svc-hub-pricing">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Pricing at a glance</p>
+      <h2 class="section__heading">All engagement pricing in one view.</h2>
+      <p class="section__lede">Every TechBrot engagement is fixed-fee with a written scope before any work begins. No hourly billing. Specific quotes follow the free discovery call.</p>
+    </header>
+    <div class="vs-scroll">
+      <table class="vs-table">
+        <caption class="sr-only">TechBrot accounting service pricing summary across all engagement tracks.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Service track</th>
+            <th scope="col">Engagement type</th>
+            <th scope="col" class="vs-table__us">Fee range</th>
+            <th scope="col">Cadence</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for row in pricing %}
+          <tr>
+            <th scope="row"><a href="{{ row.href }}">{{ row.service | safe }}</a></th>
+            <td class="vs-table__concede">{{ row.type | safe }}</td>
+            <td class="vs-table__us"><strong>{{ row.fee | safe }}</strong></td>
+            <td class="vs-table__concede">{{ row.cadence | safe }}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p class="in-brief__source">All engagements: fixed fee, written scope before any work begins, no hourly billing. Specific quotes are produced within 3 business days of the free, no-obligation discovery call.</p>
+  </div>
+</section>
+
+<section class="section" id="acct-svc-hub-delivery">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">How we deliver</p>
+      <h2 class="section__heading">Direct service or curated network.</h2>
+      <p class="section__lede">Two delivery modes, one operating standard. Engagements route based on what the work requires &mdash; your location, industry, and the specific service needed.</p>
+    </header>
+    <div class="grid-2">
+      {%- for m in modes %}
+      <article class="review-card">
+        <p class="team-card__role">{{ m.eyebrow | safe }}</p>
+        <h3>{{ m.name | safe }}</h3>
+        <p class="review-card__fact">{{ m.lede | safe }}</p>
+        <ul class="checks-list">
+          {%- for p in m.points %}
+          <li>{{ p | safe }}</li>
+          {%- endfor %}
+        </ul>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-svc-hub-standards">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Engagement standards</p>
+      <h2 class="section__heading">What every TechBrot engagement includes.</h2>
+      <p class="section__lede">Regardless of service track, every engagement runs to the same operating standards. The standards are the platform; the services are the application of them.</p>
+    </header>
+    <ol class="process-diagram">
+      {%- for s in standards %}
+      <li class="process-step">
+        <p class="process-step__number">0{{ loop.index }}</p>
+        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
+        <p class="process-step__body">{{ s.body | safe }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="acct-svc-hub-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Services FAQ</p>
+      <h2 class="section__heading">Questions about the catalog.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-svc-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="acct-svc-hub-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-svc-hub-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Catalog standards</p>
+      <h2 class="section__heading">Service catalog maintained by the TechBrot platform team.</h2>
+    </header>
+    <div class="prose">
+      <p>This catalog is maintained by the platform team at TechBrot Inc., a Delaware-incorporated independent Certified QuickBooks ProAdvisor firm. Pricing ranges, engagement structures, and service descriptions reflect current operational practice. Pricing is reviewed quarterly; service-track definitions update as the firm&rsquo;s capabilities expand. For a current quote on any specific engagement, the 30-minute discovery call is the right path &mdash; specific quotes are delivered within three business days of the call.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in reviewSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="in-brief__source">Catalog last reviewed: May 2026.</p>
+  </div>
+</section>

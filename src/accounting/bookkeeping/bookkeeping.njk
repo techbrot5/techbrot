@@ -1,0 +1,222 @@
+---json
+{
+  "layout": "layouts/t-hub.njk",
+  "permalink": "/accounting/bookkeeping/",
+  "slug": "bookkeeping",
+  "pageTier": "hub",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--hub",
+  "title": "Bookkeeping Services for U.S. Small Businesses · TechBrot",
+  "description": "Professional bookkeeping services for U.S. small and mid-sized businesses. Monthly bookkeeping, cleanup, catch-up, and multi-year historical bookkeeping — delivered by vetted Certified QuickBooks ProAdvisors with platform-level quality standards.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Accounting", "href": "/accounting/" },
+    { "name": "Bookkeeping" }
+  ],
+  "hero": {
+    "eyebrow": "Bookkeeping",
+    "heading": "Bookkeeping services built for U.S. small businesses.",
+    "subheading": "Whatever shape your books are in &mdash; behind, messy, or up to date &mdash; TechBrot operators deliver the engagement that fits: monthly bookkeeping, cleanup, catch-up, and multi-year historical work. Vetted Certified QuickBooks ProAdvisors, fixed-fee scopes against a written engagement, platform-level quality standards, all 50 states. We keep the books right; your CPA files from them.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=bookkeeping", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot bookkeeping</strong> is professional accounting work delivered through a curated network of vetted local Certified QuickBooks ProAdvisors for U.S. small and mid-sized businesses. The silo covers four engagement types &mdash; monthly bookkeeping, cleanup, catch-up, and multi-year historical cleanup. Every engagement is fixed-fee against a written scope, delivered by a named local operator, reviewed at the platform level, and run inside your own QuickBooks file. We keep the books right; your CPA files from them.",
+    "source": "Independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Bookkeeping starts here",
+    "heading": "Let&rsquo;s see what your books actually need.",
+    "lede": "Book a free 30-minute diagnostic call. A Certified ProAdvisor reviews your file, determines which engagement fits, and produces a written fixed-fee scope within 3 business days. No pitch, no obligation &mdash; if TechBrot isn&rsquo;t the right fit, the team will say so.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=bookkeeping", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{#- ── WHAT TECHBROT BOOKKEEPING IS (tldr) — h2 -#}
+<section class="section section--compact" id="bookkeeping-tldr">
+  <div class="container">
+    <div class="tldr">
+      <p class="tldr__label">In one paragraph</p>
+      <h2 class="tldr__heading">What TechBrot bookkeeping is.</h2>
+      <p class="tldr__body" id="bookkeeping-tldr-body">TechBrot bookkeeping is professional accounting work delivered through a curated network of vetted local Certified QuickBooks ProAdvisors, serving U.S. small and mid-sized businesses. The bookkeeping silo covers four distinct engagement types: <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> for an ongoing partnership, <a href="/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup">cleanup bookkeeping</a> for messy or inaccurate books, <a href="/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up">catch-up bookkeeping</a> for backlogged but structured books, and multi-year historical cleanup for businesses with 3+ years of complex backlog. Every engagement is <strong>fixed-fee against a written scope</strong>, delivered by a named local operator, run inside your own QuickBooks file, and reviewed at the platform level. Bookkeeping records and categorizes the transactions; <a href="/accounting/advisory/">accounting advisory</a> interprets them, and your CPA files the taxes. TechBrot operates as an independent ProAdvisor firm and is not affiliated with Intuit Inc.</p>
+    </div>
+  </div>
+</section>
+
+{#- ── FOUR ENGAGEMENTS (router) — h2 + 4×h3 -#}
+<section class="section section--alt" id="bookkeeping-engagements">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Bookkeeping services</p>
+      <h2 class="section__heading">Four engagements. Pick the one that fits.</h2>
+      <p class="section__lede">Most owners aren&rsquo;t sure which engagement they need &mdash; the diagnostic call sorts that. But here is how each is shaped, what it costs, and when it&rsquo;s the right fit. Canonical price ranges shown; your exact fixed fee follows the call.</p>
+    </header>
+    <div class="grid-2">
+      {%- for e in engagements %}
+      <article class="review-card">
+        <p class="team-card__role">{{ e.area | safe }}</p>
+        <h3><a class="review-card__link" href="{{ e.href }}">{{ e.name | safe }}</a></h3>
+        <p class="review-card__fact">{{ e.body | safe }}</p>
+        <p class="review-card__fact"><strong>For:</strong> {{ e.forWho | safe }} &middot; {{ e.cadence | safe }}</p>
+        <p class="review-card__fact"><strong>{{ e.fee | safe }}</strong></p>
+        <a class="review-card__link" href="{{ e.href }}">{{ e.cta | safe }} &rarr;</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- ── MATCH YOUR SITUATION (decision matrix → vs-table) — h2 -#}
+<section class="section" id="bookkeeping-routing">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Which engagement</p>
+      <h2 class="section__heading">Match your situation to the right engagement.</h2>
+      <p class="section__lede">If you&rsquo;re not sure, the diagnostic sorts it. But most starting points fall into one of these patterns.</p>
+    </header>
+    <div class="vs-scroll">
+      <table class="vs-table">
+        <caption class="sr-only">Which bookkeeping engagement to start with, by the current state of your books, and what follows.</caption>
+        <thead>
+          <tr>
+            <th scope="col">If you&hellip;</th>
+            <th scope="col">{{ routing.cols[0] | safe }}</th>
+            <th scope="col">{{ routing.cols[1] | safe }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for row in routing.rows %}
+          <tr>
+            <th scope="row">{{ row.dim | safe }}</th>
+            <td class="vs-table__us"><strong>{{ row.start | safe }}</strong></td>
+            <td>{{ row.then | safe }}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{#- ── QUICK-5 (AI summary) — h2 -#}
+<section class="section section--alt" id="bookkeeping-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">TechBrot bookkeeping, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- ── OPERATOR ACCOUNTABILITY, PLATFORM STANDARDS — h2 + 6×h3 -#}
+<section class="section" id="bookkeeping-standards">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Why TechBrot bookkeeping</p>
+      <h2 class="section__heading">Operator accountability, platform standards.</h2>
+      <p class="section__lede">Bookkeeping is delivered by independent local practices &mdash; not by anonymous offshore teams or rotating remote subscriptions.</p>
+    </header>
+    <ol class="process-diagram">
+      {%- for s in standards %}
+      <li class="process-step">
+        <p class="process-step__number">0{{ loop.index }}</p>
+        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
+        <p class="process-step__body">{{ s.body | safe }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+{#- ── INDUSTRIES — h2 -#}
+<section class="section section--alt" id="bookkeeping-industries">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Industries served</p>
+      <h2 class="section__heading">Bookkeeping that understands your industry.</h2>
+      <p class="section__lede">Bookkeeping done well requires understanding how the business actually runs. Our operators bring vertical depth across the industries we serve most.</p>
+    </header>
+    <div class="grid-3">
+      {%- for ind in industries %}
+      <article class="review-card">
+        <h3><a class="review-card__link" href="{{ ind.href }}">{{ ind.label | safe }}</a></h3>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- ── A NAMED, CREDENTIALED LOCAL OPERATOR — h2 -#}
+<section class="section" id="bookkeeping-operator">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Who performs the work</p>
+      <h2 class="section__heading">A named, credentialed local operator.</h2>
+    </header>
+    <div class="prose">
+      <p>Every TechBrot bookkeeping engagement is delivered by a vetted local operator &mdash; an independent accounting practice running under TechBrot&rsquo;s brand, standards, and infrastructure. You know who is closing your books, how to reach them, and what credentials they hold. Platform-level quality review backs every engagement, and continuity is guaranteed if the relationship ever needs to transition.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in operator %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.label | safe }}</p><p class="trust-row__label">{{ r.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- ── BOOKKEEPING IS OFTEN PART OF A LARGER ENGAGEMENT — h2 + 4×h3 -#}
+<section class="section section--alt" id="bookkeeping-adjacent">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Adjacent services</p>
+      <h2 class="section__heading">Bookkeeping is often part of a larger engagement.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for n in adjacent %}
+      <article class="review-card">
+        <h3><a class="review-card__link" href="{{ n.href }}">{{ n.name | safe }}</a></h3>
+        <p class="review-card__fact">{{ n.body | safe }}</p>
+        <a class="review-card__link" href="{{ n.href }}">{{ n.name | safe }} &rarr;</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- ── FAQ — h2 + 11 contract Q/A (faq__list, flat) -#}
+<section class="section" id="bookkeeping-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Bookkeeping questions</p>
+      <h2 class="section__heading">What people ask about bookkeeping engagements.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="bookkeeping-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="bookkeeping-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+    <p class="faq__more"><a href="/accounting/bookkeeping/faq/">See all bookkeeping FAQs &rarr;</a></p>
+  </div>
+</section>
