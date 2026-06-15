@@ -221,11 +221,13 @@ two docs ever disagree, **THIS (ARCHITECTURE-TRUTH) + the latest founder ruling 
 1. **BUILD-TRACKER.md** — OPERATIONAL truth (current status, resume anchor, governing rules). **Read first.**
 2. **THIS (ARCHITECTURE-TRUTH.md)** — ARCHITECTURE truth (URLs/silo, tiers, state strategy, sequence, growth).
 3. **_build/reports/PAGE-TYPE-REGISTRY.md** — STRUCTURAL truth (type → tier → ordered sections → components).
-4. **DESIGN-DIRECTION.md** — CREATIVE truth (the redesign aesthetic: palette/type/nav/assets/hero/components).
+4. **REDESIGN-BRIEF.md** — CREATIVE truth (the redesign: goal/aesthetic/nav/assets/motion/heroes/components +
+   the §13 as-built reconciliation). *(Promoted to this slot 2026-06-15; supersedes DESIGN-DIRECTION.md.)*
 5. **_build/baseline/baseline.json + _build/battery/equity-exceptions.json** — FROZEN machine contract
    (139-page content-equity + justified differ exceptions). NOT hand-edited.
 
-**Legacy / archive (superseded; kept for history; NOT authoritative):** techbrot-blueprint-v4.xlsx,
+**Legacy / archive (superseded; kept for history; NOT authoritative):** **DESIGN-DIRECTION.md** (the earlier
+creative direction — absorbed + expanded by REDESIGN-BRIEF.md 2026-06-15), techbrot-blueprint-v4.xlsx,
 techbrot-blueprint-v3.xlsx, techbrot-design-brief.md, the round-NN reports, and
 _build/reports/FINAL-MIGRATION-REPORT.md (its live job — the re-tier queue — folds into the redesign).
 Anything in this group is SUPERSEDED by ARCHITECTURE-TRUTH + DESIGN-DIRECTION where they disagree.

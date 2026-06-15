@@ -62,10 +62,12 @@ ONE file per role, no overlap, **update-don't-spawn**. These are the only author
 2. **ARCHITECTURE-TRUTH.md** (was `TECHBROT-BLUEPRINT-V5.md`, renamed 2026-06-15) — ARCHITECTURE truth
    (URLs, tiers, state strategy, sequence, growth).
 3. **_build/reports/PAGE-TYPE-REGISTRY.md** — STRUCTURAL truth (type → tier → sections → components).
-4. **DESIGN-DIRECTION.md** — CREATIVE truth (the redesign aesthetic).
+4. **REDESIGN-BRIEF.md** — CREATIVE truth (the redesign: goal/aesthetic/nav/assets/motion/heroes/components +
+   §13 as-built reconciliation). *(Promoted to this slot 2026-06-15; supersedes DESIGN-DIRECTION.md.)*
 5. **_build/baseline/baseline.json + _build/battery/equity-exceptions.json** — FROZEN machine contract
    (not hand-edited).
-**Legacy/archive (superseded, kept for history, NOT authoritative):** the v4 blueprint
+**Legacy/archive (superseded, kept for history, NOT authoritative):** **`DESIGN-DIRECTION.md`** (earlier
+creative direction — absorbed + expanded by REDESIGN-BRIEF.md 2026-06-15), the v4 blueprint
 (`techbrot-blueprint-v4.xlsx`), v3 (`techbrot-blueprint-v3.xlsx`), `techbrot-design-brief.md`, the round-NN
 reports, and `_build/reports/FINAL-MIGRATION-REPORT.md` (its live job — the re-tier queue — folds into the
 redesign).
@@ -153,10 +155,17 @@ steps — gated, not autonomous. Do NOT batch or run ahead.
   component-kit changes (call-breakout→PRIMARY · net-new minimal state-pillar form · PLACEMENT-MAP rewrite) ·
   §13.3 forms-ruling registry/placement-map delta · §13.4 honest-triage compliance re-spec (⚠ FOUNDER SIGN-OFF) ·
   §13.5 gap-analysis checklist · §13.6 grounded proving set (real URLs) · §13.7 doc-system flag. **No code/registry
-  edits (specs only); the registry/PLACEMENT-MAP propagation is deferred to founder approval / the Code phase.**
-  **OPEN FOUNDER RULINGS:** (1) ratify the 3 component changes; (2) sign off the honest-triage compliance approach;
-  (3) doc-system — promote REDESIGN-BRIEF to canonical CREATIVE truth, retire DESIGN-DIRECTION to legacy?
-- **→ then the REDESIGN** (separate phase, per DESIGN-DIRECTION.md; includes the re-tiering pass).
+  edits (specs only); the registry/PLACEMENT-MAP propagation is deferred to brief-final / the Code phase.**
+  **FOUNDER RULINGS 2026-06-15 — FOLDED IN:** ✅ 3 component changes RATIFIED (§13.2) · ✅ honest-triage approach
+  APPROVED, PROPOSED WORDING drafted (§13.4) — **awaiting founder WORD-LEVEL SIGN-OFF = the LAST blocker to
+  brief-final** · ✅ doc-system: REDESIGN-BRIEF promoted to canonical CREATIVE truth, DESIGN-DIRECTION retired to
+  legacy (applied: §10 doc map + canonical-doc block + DESIGN-DIRECTION legacy banner) · ✅ `/contact/` +
+  `/file-review/` = premium conversion-form page TYPE (§13.8) · ✅ proving set FINAL (one-per-type, real URLs, §13.6).
+  **⚠ NOTE:** `DESIGN-DIRECTION.md` had been deleted from the working tree (unstaged — R4 explicit-add hygiene kept
+  it out of every commit); RESTORED from HEAD this turn + given the legacy banner. **NEXT (after wording sign-off):
+  brief is FINAL → founder takes it to Claude Design** (visual system as OPTIONS — palette/type/signature + the
+  §13.6 proving pages mocked); NOT Code building yet.
+- **→ then the REDESIGN** (separate phase, per REDESIGN-BRIEF.md; includes the re-tiering pass).
 - **→ CUTOVER is the LAST step** — nothing goes live until the redesign is done and founder-signed-off.
 
 The latest founder rulings the docs must agree with: hubs route = **t-hub**; conversion children =

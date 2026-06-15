@@ -1,3 +1,8 @@
+> ⚠️ **LEGACY / HISTORICAL — NOT AUTHORITATIVE (founder ruling 2026-06-15).** This earlier creative direction
+> has been **absorbed + expanded by `REDESIGN-BRIEF.md`, which is now the canonical CREATIVE truth** (canonical
+> doc set, slot 4). Kept for history only. For anything that disagrees, REDESIGN-BRIEF.md + the latest founder
+> ruling win. Do not edit this as a source of truth — update REDESIGN-BRIEF.md instead.
+
 # DESIGN-DIRECTION.md — creative brief for the PRE-CUTOVER design reset
 Owner: founder · Status: DIRECTION SET, not yet implemented · Implemented by: Design (Claude Design)
 Created: 2026-06-14 · Reconciled 2026-06-15 (Deliverable 0): sequence corrected to **redesign BEFORE

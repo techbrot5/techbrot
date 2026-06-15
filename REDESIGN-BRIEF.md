@@ -1,5 +1,5 @@
 # REDESIGN-BRIEF.md — the pre-cutover design reset (creative + technical source of truth)
-Owner: founder · Strategy by strategy-Claude · **RECONCILED with the as-built system 2026-06-15 (Deliverable 4, Code/Claude)** · Status: DRAFT — review, refine, then it governs the reset
+Owner: founder · Strategy by strategy-Claude · **RECONCILED with the as-built system 2026-06-15 (Deliverable 4, Code/Claude)** · **NOW THE CANONICAL CREATIVE TRUTH (founder ruling 2026-06-15; DESIGN-DIRECTION.md retired to legacy)** · Status: NEAR-FINAL — only the §13.4 triage WORDING awaits founder word-level sign-off; on sign-off it is FINAL and goes to Claude Design
 Pairs with: ARCHITECTURE-TRUTH.md (what the site is) · PAGE-TYPE-REGISTRY.md (per-type sections) · DESIGN-DIRECTION.md (the founder's direction, which this expands)
 Consumed by: **Claude Design** (creative — generates the visual system + options) → **Code** (implements the approved system in 11ty)
 
@@ -13,11 +13,12 @@ Consumed by: **Claude Design** (creative — generates the visual system + optio
 > as-built reconciliation layer** (Code/Claude): the gap-analysis checklist, the exact EXISTS-vs-NET-NEW
 > component map (real class names), the 3 approved component-kit changes, the forms-ruling registry/
 > placement-map delta, the honest-triage compliance spec (⚠ founder sign-off), and the grounded proving set.
-> Inline `[→ §13.x]` pointers in §7/§9 link the strategy to the technical reconciliation. **DOC-SYSTEM FLAG
-> (founder ruling needed):** this brief and DESIGN-DIRECTION.md both occupy the CREATIVE-truth slot of the
-> canonical doc set. Recommend this (the more specific, implementable doc) becomes the canonical CREATIVE
-> truth and DESIGN-DIRECTION.md retires to legacy/historical (its direction is absorbed + expanded here) —
-> see §13.7.
+> Inline `[→ §13.x]` pointers in §7/§9 link the strategy to the technical reconciliation. **DOC-SYSTEM (✅ RULED
+> 2026-06-15):** this brief is now the canonical CREATIVE truth; DESIGN-DIRECTION.md is retired to legacy
+> (its direction is absorbed + expanded here) — see §13.7. **FOUNDER RULINGS FOLDED IN 2026-06-15:** the 3
+> component changes RATIFIED (§13.2) · honest-triage approach APPROVED with PROPOSED WORDING pending word-level
+> sign-off (§13.4 — the last blocker to FINAL) · conversion-form page TYPE added (§13.8) · proving set FINAL,
+> one-per-type (§13.6).
 
 ═══════════════════════════════════════════════════════════════
 §0 — THE ONE GOAL (everything below serves this)
@@ -364,6 +365,9 @@ mode of the shared partial (one source of truth) rather than a fork. **VERDICT: 
 rewritten (delta in §13.3). **VERDICT: approve.** *NOT yet edited on disk — propagates on approval of this
 brief (or in the Code phase) to avoid rework if you refine.*
 
+**✅ ALL 3 RATIFIED (founder 2026-06-15):** call-breakout → primary money-page conversion block · minimal
+state-pillar form as a MODE of the shared partial (not a fork) · placement-map rewrite. Locked for the Code phase.
+
 ─────────────────────────────────────────────
 §13.3 — FORMS RULING: REGISTRY + PLACEMENT-MAP DELTA (the exact propagation)
 ─────────────────────────────────────────────
@@ -407,8 +411,26 @@ qualification must NOT be lost — it moves to THREE non-form surfaces:
   for QuickBooks cleanup/setup/bookkeeping, a Certified ProAdvisor helps on the call."*
 
 **Standing triage rules unchanged:** disclosure above the fold · never "official" · never imply Intuit
-affiliation · never overclaim resolution/representation (the licensed CPA/EA/attorney does that). **This is a
-compliance re-spec, not cosmetic — founder must sign off on the wording approach before it ships.**
+affiliation · never overclaim resolution/representation (the licensed CPA/EA/attorney does that).
+
+**APPROACH APPROVED (founder 2026-06-15).** **PROPOSED WORDING — pending founder word-level sign-off (the
+LAST blocker to brief-final):**
+- **(a) Disclosure banner** (`.disclosure`, above the fold, before any call CTA): *"TechBrot is an independent
+  firm of Certified QuickBooks ProAdvisors — we are not Intuit, and we are not affiliated with Intuit. For
+  QuickBooks billing, subscription, payment, or account-login problems, contact Intuit directly. We help with
+  the bookkeeping, cleanup, setup, and accounting work inside your QuickBooks file."*
+- **(b) Triage intro copy** (hero/intro prose): *"Talk to a Certified QuickBooks ProAdvisor. We're an
+  independent accounting firm — not Intuit, and not Intuit support. If you need help with your QuickBooks
+  billing, subscription, or login, Intuit handles that directly. If your books are behind, broken, or set up
+  wrong — cleanup, catch-up, migration, or a fresh setup — that's our work, and a Certified ProAdvisor walks
+  through it with you on the call. For income-tax filing or a dispute with a tax authority, we coordinate with
+  your CPA, EA, or attorney — we don't file or represent."*
+- **(c) Call-block copy** (primary conversion block on triage pages): TITLE *"Speak to a Certified
+  ProAdvisor"* · WHAT-HAPPENS *"Call and a Certified QuickBooks ProAdvisor — not a call center — talks through
+  your situation and the fixed-fee scope before any work begins. Typical response the same business day."* ·
+  QUALIFIER *"If your question is about Intuit billing or account access, we'll point you to Intuit. For
+  QuickBooks cleanup, setup, migration, or bookkeeping, we can help on the call."* · TRUST MICRO-ROW
+  *"Independent firm · 4× Certified ProAdvisor · fixed-fee scope first."*
 
 ─────────────────────────────────────────────
 §13.5 — GAP ANALYSIS: "THE REDESIGN MUST COVER" CHECKLIST (grounded)
@@ -452,22 +474,29 @@ compliance re-spec, not cosmetic — founder must sign off on the wording approa
   BOFU services → t-bofu — FINAL-MIGRATION-REPORT Sections A/D) · honest-triage compliance re-spec (§13.4).
 
 ─────────────────────────────────────────────
-§13.6 — THE PROVING SET (grounded — exact real URLs)
+§13.6 — THE PROVING SET (FINAL — founder ruling 2026-06-15: ONE page per TIER/TYPE)
 ─────────────────────────────────────────────
-Six representative pages that exercise most of the system; nail these, the rest inherits (§12). Recommended
-real URLs (all built today):
-| Slot | Recommended URL | Why |
-|---|---|---|
-| home (t-hub) | `/` | flagship ATF + signature + silo routing |
-| t-bofu money | `/accounting/bookkeeping/cleanup-bookkeeping/` | rich money page (coined term, pricing, proof) — proves the no-form CALL block |
-| t-mofu product | `/quickbooks/online/` | the established product proving page (vs-table + buyer-card + byline) |
-| t-guide long-form | `/quickbooks/faq/` | the t-guide ARTICLE (guide-grid + sticky TOC + byline + meta-reviewed) |
-| t-location pillar | `/find-an-accountant/new-york/` | the pillar hero + minimal bottom form (CHANGE 2) |
-| location child (non-pillar hero) | `/find-an-accountant/new-york/cities/manhattan/` | proves the LIGHTER location-child hero (fixes the A4 clone issue) |
-**Plus two single-page validators** (small but prove critical patterns): one **error/problem** page
-`/quickbooks/help/error-codes/h202/` (error hero + fix-steps + inline call-breakout) and one **honest-triage**
-page `/quickbooks/speak-to-a-quickbooks-expert/` (proves §13.4 compliance without a form). Recommend adding
-these two to the proving set so the problem-pattern and the compliance re-spec are validated before mass re-skin.
+Every distinct hero + the full kit is proven on a REAL page before mass re-skin of the 148. Each TYPE → an
+exact real URL (all built today):
+| # | TYPE (tier) | Exact URL | Proves |
+|---|---|---|---|
+| 1 | home (t-hub) | `/` | flagship ATF + the signature visual + silo routing |
+| 2 | silo hub (t-hub) | `/quickbooks/` | routing hero + buyer-card + flow + pull-quote (alt: `/accounting/`) |
+| 3 | product (t-mofu) | `/quickbooks/online/` | product hero + vs-table + buyer-card + byline-block |
+| 4 | comparison (t-mofu) | `/vs/techbrot-vs-bench/` | comparison hero + vs-table + verdict + "where they win" fairness (Bench-shutdown honesty) |
+| 5 | conversion/money (t-bofu) | `/accounting/bookkeeping/cleanup-bookkeeping/` | money hero + proof-strip + **the no-form CALL block** |
+| 6 | honest-triage (t-bofu) | `/quickbooks/speak-to-a-quickbooks-expert/` | triage hero + **§13.4 compliance (banner+intro+call-block), no form** |
+| 7 | long-form (t-guide) | `/quickbooks/faq/` | article hero + guide-grid + sticky TOC + byline + meta-reviewed |
+| 8 | error/problem (t-guide) | `/quickbooks/help/error-codes/h202/` | problem hero + error-badge + fix-steps + inline call-breakout |
+| 9 | state PILLAR (t-location) | `/find-an-accountant/new-york/` | pillar hero (state contour motif) + **minimal bottom form (CHANGE 2)** + sticky call-bar |
+| 10 | location CHILD (non-pillar) | `/find-an-accountant/new-york/cities/manhattan/` | the LIGHTER location-child hero (fixes the A4 clone issue) |
+| 11 | conversion-form page (§13.8) | `/contact/` **and** `/quickbooks/file-review/` | the premium full-form TYPE — hero + form-as-centerpiece + conversion support |
+
+**Not-yet-built TYPES — Design MOCKS a representative hero (no real URL yet) so the system is complete before
+any are built post-cutover:** tool/calculator (t-mofu tool — interactive panel hero) · glossary (t-guide
+compact — definition-first hero) · case study (t-mofu proof — outcome-forward hero, REAL only) · switch
+(t-bofu — "switching from {competitor}", no form). *(Blog ≈ the t-guide article hero (#7); research/dataset ≈
+t-guide with a `dataset-header` variant — mock only if Design judges the hero materially different.)*
 
 ─────────────────────────────────────────────
 §13.7 — DOC-SYSTEM RECONCILIATION (founder ruling needed)
@@ -476,5 +505,28 @@ The canonical doc set (BUILD-TRACKER §"CANONICAL DOC SYSTEM") names **DESIGN-DI
 truth. This brief now expands it into the implementable creative+technical spec — they overlap on one role.
 **Recommendation:** promote **REDESIGN-BRIEF.md to the canonical CREATIVE-truth slot** (most specific,
 implementable, reconciled with as-built); retire **DESIGN-DIRECTION.md to legacy/historical** (its direction
-is absorbed + expanded here). Update the canonical doc set in BUILD-TRACKER + ARCHITECTURE-TRUTH §10
-accordingly. *Awaiting founder ruling — not yet applied.*
+is absorbed + expanded here). **✅ RULED (founder 2026-06-15): YES.** REDESIGN-BRIEF.md is now the canonical
+CREATIVE truth; DESIGN-DIRECTION.md → legacy. **APPLIED this turn:** BUILD-TRACKER canonical-doc-system block
++ ARCHITECTURE-TRUTH §10 doc map updated; DESIGN-DIRECTION.md carries a legacy/superseded banner.
+
+─────────────────────────────────────────────
+§13.8 — CONVERSION-FORM PAGE TYPE (`/contact/` + `/file-review/`) — founder ruling 2026-06-15
+─────────────────────────────────────────────
+**RULING:** `/contact/` and `/quickbooks/file-review/` are NOT bare forms — they are **full premium
+conversion pages**, their own page TYPE, and the most important conversion destinations (everything funnels
+here or to a CALL). Today the REGISTRY tags them "standalone form / legal — EXCLUDED from the design-fidelity
+gate (own patterns)"; this ELEVATES them to a designed, gated, premium type. **Tier:** own type (form-centric;
+chrome present but conversion-focused). **Section spec (designed like the money moment they are):**
+- **Own designed hero** — premium, type-specific (contact = "book the discovery call"; file-review = "the free
+  QuickBooks file review" offer framing). Editorial, mobile-first, CLS 0.
+- **The form as CENTERPIECE** — the full 24-key `intake-form` (the only two full-form surfaces), but WRAPPED
+  in conversion support, not naked:
+  - trust / credential signals (4× Certified ProAdvisor · independent firm · the 2 real Clutch reviews).
+  - **"what happens after you submit / when you'll hear back"** (set the response expectation — same/1 business day).
+  - ProAdvisor credibility + why-us micro-content.
+  - **"or call now" secondary** (tap-to-call) — the call path always available alongside the form.
+  - independence signals (independent firm; honest-triage disclosure where relevant on file-review).
+- GA4: `lead_submit` (the form) + `phone_click` (the "or call" secondary).
+**REGISTRY:** add this TYPE with the section list above; **remove `/contact/` + `/file-review/` from the
+design-fidelity gate exclusion** (they now follow a designed pattern). *Registry edit deferred to brief-final /
+Code phase per "specs only."*
