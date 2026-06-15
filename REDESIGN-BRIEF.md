@@ -176,6 +176,8 @@ reserved space.
 - **Motion reinforces SECTION RHYTHM, never uniformity** (ties to §9): reveals are varied and section-aware
   (a stat block counts up, a diagram draws on, a quote fades) — NOT the same fade-up applied identically to
   every section (that reads templated/AI-generated). One coherent motion language, varied in expression.
+- **Motion FITS THE PAGE'S JOB** (ties to §8 fit-to-purpose): rich on money/pillar ATF; **minimal/none on
+  legal + utility pages** (a legal page is a serious document, not a showcase — motion there is wrong).
 - **3D**: only where reserved (§5); lazy-loaded, mobile-reduced, never blocks LCP.
 
 ═══════════════════════════════════════════════════════════════
@@ -210,6 +212,19 @@ Each page TYPE gets its OWN hero treatment (distinct, owned, unmistakable). Desi
 type; the brief sets intent + the conversion action. ALL heroes: editorial, mobile-first, CLS 0, the CALL
 action present (except where a type genuinely shouldn't push it).
 
+**⭐ FIT-TO-PURPOSE RULE (founder 2026-06-16 — heroes AND components must match the page's JOB; gated §13.9).**
+NO single hero language applied uniformly across types — **money sells, guide teaches, tool is interactive,
+location is local, legal reassures.** A page wears the hero + components that fit its job and its
+industry-standard pattern; the wrong-but-pretty hero on the wrong page is a defect, not a style choice.
+- **NEVER apply the t-hub (or any one) hero uniformly** — the A4 clone failure (every NY child wearing the
+  pillar hero) is the exact anti-pattern this rule prevents.
+- **LEGAL pages (disclaimer / DPA / privacy / terms) get their OWN simple, clean, AUTHORITATIVE treatment —
+  NOT a rich editorial/marketing hero.** Powerful UX here = excellent readability, a clear TOC, easy scanning,
+  a serious-document feel (last-updated, defined sections). A flashy marketing hero on a legal page is WRONG.
+  Minimal/no motion (ties to §6). The CALL action is de-emphasized or absent — legal isn't a conversion surface.
+- Match each TYPE to its best-fit / industry-standard pattern. The design-fidelity gate (§13.9) flags a type
+  wearing a hero/treatment that doesn't fit its job (esp. a legal/utility page with a marketing hero).
+
 - **Home (t-hub)**: the flagship — best-in-niche ATF, the signature visual, the authority thesis, primary
   CALL + routing into silos.
 - **Silo hubs (t-hub)**: editorial routing hero — what this silo solves, visual routing to children, CALL.
@@ -223,6 +238,11 @@ action present (except where a type genuinely shouldn't push it).
 - **t-location (state pillar)**: the location hero — state identity, local credibility, the call + (bottom)
   the one small form. (NOTE: location CHILDREN are NOT pillars — they get the lighter conversion/mofu hero
   per their re-tier, NOT the pillar hero. This fixes the A4 clone issue.)
+- **legal-doc (`/legal/*`)**: NO marketing hero — a clean, authoritative document header (title · last-updated ·
+  defined sections) + sticky/clear TOC + high-readability prose. Serious-document feel; minimal/no motion;
+  CALL de-emphasized or absent (not a conversion surface). Per the FIT-TO-PURPOSE rule above.
+- **`/pricing/` (own TYPE, t-bofu-style — §13.10)**: fixed-fee scope + transparency hero, no form, "a ProAdvisor
+  walks you through it on the call" → call block; grows into a pricing hub + 5 service children.
 - **Not-yet-built types** (built post-cutover, but designed NOW so the system is complete):
   - **Blog (t-guide article)**: editorial article hero, author=firm, category, reading time.
   - **Glossary (t-guide compact)**: definition-first hero, the term + speakable definition + related.
@@ -611,6 +631,10 @@ calls.
 - **#12c — variety floor (design-review, not fully automatable):** a long money/guide page should exhibit
   deliberate variety (column counts, full-bleed vs contained, text-led vs visual-led, light vs tonal surface).
   Codify as a reviewer checklist item; the battery reports the section-signature sequence to make review fast.
+- **#12d — hero/treatment FITS THE JOB (§8 fit-to-purpose):** FLAG any TYPE wearing a hero/treatment that
+  doesn't fit its purpose — especially a **legal/utility page carrying a marketing/editorial hero** (legal must
+  use the clean authoritative document treatment), or any type uniformly inheriting the t-hub/pillar hero (the
+  A4 anti-pattern). Each `data-tier`/type must carry ITS hero, not a borrowed one. Heuristic + design-review.
 - **Chrome checks:** footer mobile-accordion present + its tap targets ≥24px (closes the queued WCAG 2.2
   finding); breadcrumb present + correctly slotted (below hero) + `BreadcrumbList` schema pairs, on every page
   below home.
@@ -639,8 +663,8 @@ of the 99 built global pages match v4; 330 v4 URLs are not-built (the growth bac
   URLs (`/legal/`, `/quickbooks/cleanup/{complex,focused,standard}/`) are **soft-404s** — prod serves HOME
   content (200) for them, so they are NOT real pages. → cutover-prep 301s recorded in ARCHITECTURE-TRUTH §9.
 
-**`/pricing/` TYPE ruling (founder lean 2026-06-16, confirmed sound — recommend ADOPT):** `/pricing/` is
-high-intent and converts by **CALL** (no form, per §7). It becomes its **own TYPE** — **t-bofu-style** hero:
+**`/pricing/` TYPE — ✅ LOCKED (founder 2026-06-16):** `/pricing/` is
+high-intent and converts by **CALL** (no form, per §7). It is its **own TYPE** — **t-bofu-style** hero:
 **fixed-fee scope + transparency** + *"a Certified ProAdvisor walks you through it on the call,"* driving to the
 call block. v4 confirms it grows into a **pricing hub + per-service children** (`/pricing/{bookkeeping,cfo,
 cleanup,payroll,quickbooks-setup}/`, post-cutover), so the pricing hero/template should be designed to support

@@ -10,3 +10,12 @@ eleventyExcludeFromCollections: true
 # 301 to the national /accounting/ hub prevents a 404 at cutover. REMOVE this line
 # when the real find-an-accountant national landing ships. See ARCHITECTURE-TRUTH sec 9.
 /find-an-accountant/  /accounting/  301
+
+# Interim 301s -- two uncaptured-live orphans found by the v4.xlsx diff (2026-06-16):
+# both are LIVE (200, distinct content) on production but were never in baseline/built.
+# Founder rulings: NO standalone /reviews/ until 5+ real reviews (honesty); NO individual
+# /about/team/ page (founder-name-zero). So both redirect (not rebuilt as-is).
+# REMOVE /reviews/ when a reviews listing ships (5+ reviews). See ARCHITECTURE-TRUTH sec 9.
+/reviews/      /trust/   301
+/about/team/   /about/   301
+

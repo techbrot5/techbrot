@@ -211,13 +211,14 @@ The growth gate is funnel/intent coverage + honesty, NOT a page-count target ("2
   the full live-prod URL set** — there may be other uncaptured live orphans that would 404 at cutover.
 - **TWO MORE uncaptured-live orphans (found by the v4.xlsx diff, 2026-06-16; verified 200 + DISTINCT content on
   prod):** **`/about/team/`** ("The Team — Named Certified ProAdvisors") and **`/reviews/`** ("Client Reviews ·
-  Verified on Clutch"). Live on prod, never in baseline/built. **CUTOVER-PREP 301s needed** (founder to confirm
-  targets): `/about/team/` → `/quickbooks/proadvisor-team/` (the built team page; also resolves the live page's
-  founder-name exposure) · `/reviews/` → `/trust/` (the review-program page) — until each is built as growth
-  (about-team page / reviews-listing t-mofu). **NOT design-blocking** (both are existing types). The 4 other
-  v4-LIVE URLs (`/legal/`, `/quickbooks/cleanup/{complex,focused,standard}/`) are **soft-404s** — prod serves
-  HOME content (200) for them, so they are NOT real pages and need no redirect (the old host catch-alls to home;
-  this is why a bare 200 isn't proof of a real page — require distinct content).
+  Verified on Clutch"). Live on prod, never in baseline/built. **301s STAGED ✅ (founder-ruled 2026-06-16, in
+  `src/redirects.njk`):** `/reviews/  /trust/  301` (NO standalone reviews page until 5+ real reviews — honesty
+  rule; `/trust/` holds the 2 Clutch reviews) · `/about/team/  /about/  301` (NO individual team page —
+  founder-name-zero). Both verified emitting in `_site/_redirects`. **REMOVE `/reviews/` when a reviews listing
+  ships (5+).** **NOT design-blocking** (both existing types). The 4 other v4-LIVE URLs (`/legal/`,
+  `/quickbooks/cleanup/{complex,focused,standard}/`) are **soft-404s** — prod serves HOME content (200), so they
+  are NOT real pages and need no redirect (the old host catch-alls to home; a bare 200 isn't proof — require
+  distinct content).
 - **Old Bootstrap per-route folders DELETED ✅** (Deliverable 3, commit `2393e16`) — 10 root folders / 139 files
   removed; the live site builds from `src/` only. Removes the repo-root-serving fallback risk before cutover.
 - Nav + footer chrome — no canonical design yet (the mega-menu + per-type navbars land in the redesign, §4).

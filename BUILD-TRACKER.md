@@ -220,10 +220,13 @@ live orphans that would 404 at cutover).
   ARCHITECTURE-TRUTH §7 (support silo corrected ~20→~67). `/pricing/` ruled its own call-converting TYPE
   (REDESIGN-BRIEF §13.10). Code-phase **design-ownership rule** recorded (§12 + standing rule above).
 - **⚠ Carry-open (cutover-prep):** re-verify baseline.json == the full live-prod URL set. **THREE uncaptured-live
-  orphans now found** (live 200 + distinct content on prod, not in baseline/built): `/find-an-accountant/`
-  (301→/accounting/ STAGED), **`/about/team/`** (301→/quickbooks/proadvisor-team/ — founder to confirm),
-  **`/reviews/`** (301→/trust/ — founder to confirm). The old host SOFT-404s to home (200), so a bare 200 isn't
-  proof — require distinct content. (`/legal/`, qb cleanup-tiers = soft-404, no action.)
+  orphans found, all 301-STAGED ✅** in `src/redirects.njk` (live 200 + distinct content on prod, not in
+  baseline/built): `/find-an-accountant/ → /accounting/` · `/reviews/ → /trust/` (no standalone reviews page
+  until 5+ real — honesty) · `/about/team/ → /about/` (no individual team page — founder-name-zero). All 3
+  verified emitting. Old host SOFT-404s to home (200), so a bare 200 isn't proof — require distinct content.
+  (`/legal/`, qb cleanup-tiers = soft-404, no action.) **Pre-cutover: still do the full baseline-vs-prod re-crawl.**
+- **`/pricing/` ✅ LOCKED** as its own call-converting TYPE (REDESIGN-BRIEF §13.10) · **FIT-TO-PURPOSE hero rule
+  ✅ added** (§8/§6 + gate §13.9 #12d: each type wears ITS hero; legal = clean authoritative doc, no marketing hero).
 - The tier RE-TIERING pass (NY ~17 conversion children → t-bofu, FINAL-MIGRATION-REPORT Section A; accounting
   BOFU services → t-bofu, Section D2) runs INSIDE the redesign phase — BEFORE cutover, not after.
 
