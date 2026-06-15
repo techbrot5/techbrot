@@ -69,8 +69,28 @@ speak-to-a-quickbooks-expert = t-bofu honest-triage; vs hub + 4 comparisons = t-
 at this time.
 
 ## SECTION D — ACCOUNTING SILO (39) — BOFU vs MOFU NOTES
-(To be filled in as the accounting silo is migrated. Per founder: note any industry/service page that is
-really BOFU conversion vs MOFU consideration, so the tier is flagged not assumed.)
+Per founder: note any industry/service page that is really BOFU conversion vs MOFU consideration, so the
+tier is flagged not assumed. Filled in per wave as accounting is migrated.
+
+### D1 — Hubs (wave 1, DONE, commit `d77b871`) — tier CORRECT
+- https://techbrot.com/accounting/bookkeeping/  (t-hub) — MOFU routing layer. Correct.
+- https://techbrot.com/accounting/industries/  (t-hub) — MOFU routing layer. Correct.
+- https://techbrot.com/accounting/services/  (t-hub) — MOFU routing layer. Correct.
+No re-tiering flag — hubs are genuine consideration/routing pages.
+
+### D2 — Children (PENDING migration) — provisional BOFU/MOFU read to confirm as each is built
+Registry proposes **t-mofu** for ALL of these; flagging which are really **BOFU** (specific paid service,
+strong conversion intent) and should be reviewed for t-bofu:
+- **Likely BOFU (review for t-bofu):** /accounting/services/controller-services/,
+  /accounting/services/outsourced-accounting/, /accounting/services/virtual-accounting/,
+  /accounting/reconciliation-services/, /accounting/month-end-close/, /accounting/job-costing/,
+  /accounting/chart-of-accounts-setup/, /accounting/financial-statements/. (These are discrete paid
+  engagements, not consideration topics.)
+- **Plausibly MOFU (t-mofu likely OK):** the 5 advisory children (cash-flow-management,
+  budgeting-forecasting, kpi-reporting, business-performance-review, financial-strategy) — advisory is a
+  consideration sell; and the 19 industry pages (industry landings = consideration). Confirm per page.
+- **t-guide:** the 4 FAQ pages — correct.
+(Each row gets a built/verified note + final tier recommendation as the waves complete.)
 
 ---
 _This report is appended as each remaining silo (partners, accounting) is migrated. Re-tiering happens
