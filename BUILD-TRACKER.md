@@ -204,9 +204,11 @@ live orphans that would 404 at cutover).
 (139/139, cutover parity) — gated POST-MIGRATION SEQUENCE, all desk-work deliverables DONE. Deliverable status:
 - **D0 reconcile docs ✅** · **D1 redesign review queue + A4 ✅ + ✅ re-tier queue GO (founder 2026-06-16)** —
   executes inside the redesign · **D2 ARCHITECTURE-TRUTH ✅ RE-APPROVED (founder 2026-06-16)** (`226fb74`) ·
-  **D3 verify+delete old folders ✅** (`2393e16`) · **D4 gap analysis ✅ COMPLETE — REDESIGN-BRIEF.md is FINAL**
-  (founder 2026-06-16; §13 reconciliation; triage wording signed off §13.4; design-quality rules §4/§6/§9/§13.9;
-  pre-design readiness check done — kit/type/proving-set gaps closed).
+  **D3 verify+delete old folders ✅** (`2393e16`) · **D4 gap analysis ✅ COMPLETE — REDESIGN-BRIEF.md RE-CONFIRMED
+  FINAL** (founder 2026-06-16; §13 reconciliation; triage wording signed off §13.4; design-quality rules
+  §4/§6/§9/§13.9; v4.xlsx source diff done; `/pricing/` type + fit-to-purpose hero rule; **+10 founder additions
+  woven in 2026-06-16 — logo · maturity benchmark · anti-trust-killer · illustration library · utility states ·
+  conversion psychology · trust architecture · full tokens · AI-era UX · MUST-deliver signature, index §13.11**).
 - **301 STAGED ✅** — `src/redirects.njk` → `/find-an-accountant/  /accounting/  301` (`939fffa`); remove when
   the real national landing ships post-redesign.
 - **Doc system:** canonical creative truth = REDESIGN-BRIEF.md; **DESIGN-DIRECTION.md DELETED** (`d9c4f94`).

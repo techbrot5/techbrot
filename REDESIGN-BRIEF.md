@@ -19,7 +19,10 @@ Consumed by: **Claude Design** (creative — generates the visual system + optio
 > component changes RATIFIED (§13.2) · honest-triage wording **SIGNED OFF 2026-06-16** (§13.4) · conversion-form
 > page TYPE added (§13.8) · proving set FINAL, one-per-type (§13.6) · **section-rhythm / anti-monotony + chrome
 > design-quality rules folded in 2026-06-16** (§9 rhythm · §6 motion · §4 breadcrumb+footer accordion · §13.9
-> gate). **✅ BRIEF FINAL 2026-06-16.**
+> gate) · `/pricing/` locked as its own TYPE (§13.10) + FIT-TO-PURPOSE hero rule (§8) · **TEN founder additions
+> woven in 2026-06-16** (logo · maturity benchmark · anti-trust-killer · illustration library · utility states ·
+> conversion psychology · trust architecture · full tokens · AI-era UX · MUST-deliver signature — index §13.11).
+> **✅ BRIEF RE-CONFIRMED FINAL 2026-06-16 — ready for Claude Design.**
 
 ═══════════════════════════════════════════════════════════════
 §0 — THE ONE GOAL (everything below serves this)
@@ -48,9 +51,13 @@ the design against, point by point:
 3. **AI-citation engineered.** Clean semantic structure, rich schema (already built), speakable summaries,
    defined entities/frameworks, answer-shaped sections — so AI engines lift TechBrot as the answer. The
    design must preserve and visually support the ai-summary / Q&A / definition blocks.
-4. **Trust without fabrication.** The honesty discipline (§ non-negotiables) is a feature, not a
-   constraint: real credentials, real reviews (2 Clutch), honest-triage, "where competitors win" fairness.
-   The design signals trustworthiness through restraint and precision, never fake badges/stats.
+4. **Trust without fabrication — TRUST IS THE PRIMARY DESIGN ASSET (anti-trust-killer rule).** The honesty
+   discipline (§11) is not a constraint, it's the core visual strategy: real credentials, real reviews (2
+   Clutch), honest-triage, "where competitors win" fairness. **The design may NEVER fake** trust signals —
+   no invented counters/stats/client-counts, no false urgency, no stock team photos or office imagery, no
+   fabricated testimonials or badges. (One faked element destroys the trust the whole site is built to earn
+   → fewer calls.) Trust is signaled through restraint, precision, and real proof — see the TRUST ARCHITECTURE
+   (§9) for the distinct mechanisms. This is a DESIGN rule, not just a content rule.
 5. **Conversion clarity.** One obvious action everywhere: CALL. No competing CTAs, no form friction, no
    funnel leakage on conversion pages. The path from "I have a problem" to "I'm on the phone" is short,
    premium, and frictionless.
@@ -61,6 +68,22 @@ the design against, point by point:
    phone first, desktop second.
 8. **Coherent system.** Distinct hero per page type (unmistakable, owned) + a shared premium mid-body kit
    (coherent, systematic). Looks bespoke per page, behaves like one disciplined system.
+9. **AI-ERA UX — the load-bearing principle (THIS is the #1 strategy, not an addendum).** Most high-value
+   visitors now arrive from ChatGPT / Claude / Gemini / Perplexity **already knowing the answer — they came to
+   VALIDATE THE SOURCE, not to learn.** So the design's first job is to **prove expertise IMMEDIATELY** — the
+   ATF must signal "these are the experts" within 2 seconds (credentials, real specifics, the signature
+   diagram language), not educate from scratch or bury proof below a marketing pitch. This is a different UX
+   thesis from traditional SEO funnels: optimize the first screen for *source-validation*, which is what
+   converts an AI-referred, high-intent visitor into a call. Every hero is judged against it.
+10. **Conversion psychology — reduce anxiety BEFORE increasing conversion.** The visitor is often a stressed
+    business owner, a confused QuickBooks user, or a buyer about to spend thousands and afraid of being
+    burned. In accounting, calm + clarity + competence convert better than pressure. Design to *lower
+    anxiety* (transparency, fixed-fee clarity, "what happens when you call," no dark patterns) — the call
+    follows. NEVER manufacture urgency (ties to #4).
+11. **Design maturity benchmark — the explicit quality bar.** The system must be **better than 99% of
+    accounting/bookkeeping firms** and sit comfortably **alongside Notion / Linear / Mercury / Ramp /
+    Stripe** in craft — and be **timeless: still modern in 2035** (10+ years), not trend-chasing. Design is
+    judged against this bar, not against accounting-industry norms.
 
 ═══════════════════════════════════════════════════════════════
 §2 — AESTHETIC DIRECTION (founder-set: EDITORIAL & RICH, magazine-grade, serif-led)
@@ -88,10 +111,15 @@ hierarchy, real visual moments. NOT minimal-SaaS, NOT cream-paper-terracotta def
 - Fluid type scale, intentional weights/widths, strong hierarchy. Equity headings preserved, restyled.
 - Design delivers 2-3 PAIRING OPTIONS with the heroes mocked, founder picks.
 
-**The SIGNATURE (the one thing the site is remembered by):** Design proposes — but the brief's intent is
-an editorial "expertise made visible" signature: e.g. a recurring data/diagram visual language (live SVG
-financial diagrams, a distinctive way numbers/stats are set, a signature hero composition) that says
-"these people know accounting cold." Spend the boldness HERE; keep everything else disciplined.
+**The SIGNATURE — MUST-DELIVER (not "Design proposes"; founder 2026-06-16).** The system **MUST** include ONE
+unforgettable, **ownable** visual signature that appears throughout, is impossible to confuse with another
+firm, and communicates **ACCOUNTING-SYSTEMS EXPERTISE** (Notion = blocks · Linear = grids · Stripe = gradients
+→ TechBrot needs its own). **STRONG STEER:** the signature should **BE the proprietary accounting-diagram
+visual language** (the §5 illustration library) — a recurring, system-coherent way of drawing accounting
+workflows / reconciliation / migration / decision logic. That is far more ownable than a decorative motif,
+and it does double duty: it IS "expertise made visible" (§1.2) and the instant source-validation signal for
+AI-era visitors (§1.9). Spend the boldness HERE; keep everything else disciplined. This signature is also the
+**maturity benchmark (§1.11)** made concrete — the thing that puts TechBrot alongside Notion/Linear/Stripe.
 
 ═══════════════════════════════════════════════════════════════
 §3 — RESPONSIVE / MOBILE-FIRST (the primary experience)
@@ -136,10 +164,22 @@ financial diagrams, a distinctive way numbers/stats are set, a signature hero co
 Founder-set: RICH motion + assets where ATF/money pages earn it; subtle elsewhere. Every asset justifies
 its bytes against the performance budget.
 
+- **LOGO SYSTEM (new — Design delivers):** a complete identity — wordmark · monogram · favicon · social
+  avatar · certification-badge lockup · dark/light variants · SVG specs · clear-space + min-size rules.
+  Brief to Design: *"5 radically different T-monogram concepts; avoid generic accounting symbolism (no
+  calculators/dollar-signs/checkmarks); memorable at 16×16 favicon AND premium at billboard size."*
+  **NOTE:** logo concepts are a STARTING point — founder picks/refines; **do NOT block the rest of the design
+  phase on locking the logo** (palette/type/signature/heroes proceed in parallel).
 - **Live SVG diagrams** (the workhorse — preferred over raster): explanatory accounting/QB process
   diagrams, reconciliation flows, decision trees, before/after cleanup visuals, funnel/timeline figures.
   Lightweight, crisp at any DPI, animatable, themeable via CSS vars. THIS is the core "expertise visible"
-  asset class.
+  asset class — and the seed of the SIGNATURE (§2) + the illustration library below.
+- **PREMIUM ILLUSTRATION LIBRARY (the signature at scale — §2, §10):** a single, ownable illustration
+  LANGUAGE rendered as **20–30 reusable patterns** — accounting workflow diagrams, decision trees, process
+  maps, migration flows, research/data visuals, system-architecture + framework diagrams. One coherent
+  visual grammar (stroke, geometry, color roles) so any new page composes "expertise made visible" from the
+  library instead of one-off art. This IS the signature (§2) and the AI-era source-validation cue (§1.9);
+  it must be a defined, documented set in the captured design system (§10), not improvised per page.
 - **Animated graphs / data figures**: real data only (honesty — no fabricated stats). Tasteful
   scroll-triggered draw-on for charts where the page has genuine numbers (e.g. tax rates, deadlines,
   comparison data). CLS 0 — reserve space, animate within it.
@@ -148,9 +188,10 @@ its bytes against the performance budget.
   decoration — a focal "wow" that signals premium on the pages that bring clients.
 - **Custom icon system**: ONE cohesive, premium, custom-drawn icon set (geometric, optically balanced,
   consistent stroke) — NOT a generic icon pack. Used for service categories, trust signals, nav.
-- **Imagery**: via the sharp pipeline ({% photo %}: AVIF/WebP/JPEG, explicit dims). Honest imagery only —
-  no fake team photos, no stock-cliché "diverse team high-fiving." Prefer abstract/editorial/diagrammatic
-  over fake-human stock. Real credential/cert visuals where genuine.
+- **Imagery**: via the sharp pipeline ({% photo %}: AVIF/WebP/JPEG, explicit dims). **Honest imagery only —
+  the §1.4 anti-trust-killer rule applies to assets:** NO fake team photos, NO stock-cliché "diverse team
+  high-fiving," NO fabricated office imagery. Prefer abstract/editorial/diagrammatic (the illustration
+  library) over fake-human stock. Real credential/cert visuals only where genuine.
 - **OG / social images**: a per-page OG image SYSTEM (templated, on-brand, auto-generated per page) — on
   EVERY important money/client page (money pages, pillars, hubs, key guides). Editorial OG treatment that
   reinforces authority when shared/surfaced. (Build: an OG image template per type, populated per page.)
@@ -294,6 +335,22 @@ authority-on-sight → trust → calls. Hard rules:
 - **CARRIED RULES:** pricing/comparison = vs-table never proof-strip cards (nowrap → mobile overflow) · CTAs =
   canonical lexicon only.
 
+**TRUST ARCHITECTURE (founder 2026-06-16 — NOT one "trust section"; distinct mechanisms, since trust is the
+primary design asset, §1.4).** Trust is presented through SEPARATE, purpose-built systems, each its own
+component family — never collapsed into a single generic "trust" block:
+- **Credentials** — the 4× Certified ProAdvisor / Intuit-certified stack (proof-strip / trust-row; real only).
+- **Reviews** — the 2 verified Clutch reviews (review-card; NO AggregateRating until 5+; no fabrication).
+- **Methodology** — how the work is done (process-diagram / fix-steps; the named protocols).
+- **Comparison** — fair "where they win" (vs-table / verdict).
+- **Transparency** — fixed-fee scope, pricing clarity, "what happens when you call" (call-band / pricing type).
+- **Independence** — independent firm, not Intuit, no affiliate commissions (disclosure / honest-triage).
+Each reads as a deliberate, distinct mechanism. Together they reduce buyer anxiety (§1.10) → calls.
+
+**EMPTY / UTILITY STATES (designed, not afterthoughts — premium brands feel complete here).** First-class
+designed states for: 404 · search-empty · no-results (filtered listings) · form-submission success/
+confirmation · generic error · maintenance. On-brand, helpful, route back to value (CALL or relevant silo);
+the 404 already exists and is re-skinned to the system. Tracked in the design-fidelity scope (§13.5).
+
 **[→ §13.1]** for the exact EXISTS-vs-NET-NEW status of every component above (real class names + what's a
 restyle vs net-new build). **[→ §13.2]** for the 3 approved component-kit changes (call-breakout → PRIMARY,
 the net-new minimal state-pillar form, the PLACEMENT-MAP rewrite). **[→ §13.9]** for the section-rhythm
@@ -307,6 +364,12 @@ design-fidelity GATE additions that enforce the rules above.
 - **CSS**: ONE bundled site.min.css, byte gate (re-set for the new system from the current 59,392 B — set a
   new sane ceiling and hold it; reuse the component kit to stay lean). Token-driven (CSS custom properties)
   so palette/type swap cleanly.
+- **DESIGN TOKENS — FULL SYSTEM, beyond color (founder 2026-06-16):** the captured design system defines token
+  scales for **color · type · spacing · radius · shadow/elevation · motion (durations/easings) · icon (sizes/
+  stroke) · illustration · content-width/measure**. Everything visual is a token; components reference tokens,
+  never hard-coded values. This is what makes the system swappable, consistent, and **drift-proof** — and it's
+  exactly what Code CAPTURES at handoff as the locked source (§12 design-ownership rule). The css-drift battery
+  check enforces zero hard-coded hex / undeclared custom properties against this token set.
 - **Performance floor (hard gates)**: CLS 0 · Lighthouse ≥95 (target 100) · LCP fast · a11y AA incl. WCAG
   2.2 target-size (incl. the footer accordion's tap targets) · zero horizontal overflow 360/390/768. The
   battery enforces these every change.
@@ -506,13 +569,17 @@ without weakening). The three pieces are LOCKED shipping copy:
 ─────────────────────────────────────────────
 §13.5 — GAP ANALYSIS: "THE REDESIGN MUST COVER" CHECKLIST (grounded)
 ─────────────────────────────────────────────
-**A. Conversion / components (net-new or promote):**
+**A. Conversion / components / brand (net-new or promote):**
 - [ ] call-conversion block (PRIMARY) — CHANGE 1 (net-new variant of `.call-breakout`).
 - [ ] minimal state-pillar form — CHANGE 2 (net-new mode of `intake-form.njk`).
-- [ ] live-SVG diagram system (the §2 SIGNATURE) — largely net-new; the "expertise visible" asset class.
+- [ ] **logo system** — net-new (§5): wordmark/monogram/favicon/avatar/badge, dark-light, SVG specs (Design delivers; founder picks; non-blocking).
+- [ ] **premium illustration library** (20–30 patterns) = the SIGNATURE — net-new (§5/§2); the "expertise visible" language.
+- [ ] live-SVG diagram system (seeds the library above) — largely net-new.
 - [ ] animated data-figures / graphs — net-new (real data only; CLS 0).
 - [ ] custom icon set — net-new (only a few raw SVGs today).
 - [ ] editorial-break device — net-new (§9 rhythm).
+- [ ] **trust-architecture mechanisms** (credential/review/methodology/comparison/transparency/independence) — distinct systems (§9).
+- [ ] **empty/utility states** — designed (§9): 404 (re-skin) · search-empty · no-results · success/confirmation · error · maintenance.
 
 **B. Structure / navigation / UX (net-new — confirmed absent today):**
 - [ ] MEGA-MENU primary nav — net-new (nav/chrome is minimal/TODO; no canonical nav exists). Mobile drawer mega-menu.
@@ -537,7 +604,7 @@ without weakening). The three pieces are LOCKED shipping copy:
 
 **E. Performance / build:**
 - [ ] re-set the CSS byte gate for the new system (was 59,392 B) — set a new sane ceiling, hold it.
-- [ ] token-driven palette/type swap (CSS custom properties) so the cold-light system swaps cleanly.
+- [ ] **FULL token system (§10): color · type · spacing · radius · shadow · motion · icon · illustration · content-width** — token-driven so palette/type swap cleanly + drift-proof; the captured locked source (§12).
 - [ ] battery gates carry over: CLS 0 · LH ≥95 · overflow 360/390/768 · WCAG 2.2 target-size · equity GREEN vs baseline.json.
 
 **F. Folded into the redesign (already decided, executed in the reset, BEFORE cutover):**
@@ -670,3 +737,31 @@ call block. v4 confirms it grows into a **pricing hub + per-service children** (
 cleanup,payroll,quickbooks-setup}/`, post-cutover), so the pricing hero/template should be designed to support
 a hub + children. *(This supersedes the earlier "/pricing/ = t-hub" as-built classification.)* **Add to the
 proving-set as the pricing TYPE exemplar (real URL `/pricing/`).**
+
+─────────────────────────────────────────────
+§13.11 — TEN FOUNDER ADDITIONS (2026-06-16) — woven in, with where each landed
+─────────────────────────────────────────────
+All 10 approved additions are woven into the strategy sections (not appended), each tied back to the goal
+(#1-in-niche + calls). Index for traceability:
+1. **Logo system** → §5 (full identity spec + the "5 T-monogram concepts" Design brief + the do-NOT-block note).
+2. **Design maturity benchmark** (>99% of accounting firms · Notion/Linear/Mercury/Ramp/Stripe · timeless 2035)
+   → §1.11 (explicit quality bar) + §2 (signature = the benchmark made concrete).
+3. **Anti-trust-killer** (honesty as a DESIGN rule; no fake counters/stats/photos/badges) → §1.4 (trust = the
+   primary design asset) + §5 imagery + the TRUST ARCHITECTURE block (§9).
+4. **Premium illustration library** (20–30 reusable accounting-diagram patterns) → §5 + tied to the signature
+   (§2) and the token system (§10) and §13.1 `diagram-figure`.
+5. **Empty/utility states** (404 · search-empty · no-results · success · error · maintenance) → §9 EMPTY/UTILITY
+   STATES block + §13.5 scope.
+6. **Conversion psychology** (reduce anxiety BEFORE conversion; stressed owners) → §1.10 + reinforced by TRUST
+   ARCHITECTURE (§9) and §0 (call-first, frictionless).
+7. **Trust architecture** (distinct mechanisms: credential/review/methodology/comparison/transparency/
+   independence) → §9 TRUST ARCHITECTURE block.
+8. **Design tokens beyond color** (spacing/radius/shadow/motion/icon/illustration/content-width) → §10 full
+   token system + the §12 design-ownership capture rule.
+9. **AI-era UX** (visitors VALIDATING the source; prove expertise in 2s) → §1.9 (load-bearing principle) +
+   §1.1/§1.3 + the signature (§2) as the instant validation cue.
+10. **Signature element** (MUST-deliver, ownable, = the accounting-diagram language) → §2 (strengthened to
+    MUST-DELIVER) + §5 illustration library.
+**No contradictions introduced; goal kept central. ✅ BRIEF RE-CONFIRMED FINAL (2026-06-16) — ready for Claude
+Design.** (Logo locking is the one explicitly-deferrable piece — §5; it does not block palette/type/signature/
+heroes.)
