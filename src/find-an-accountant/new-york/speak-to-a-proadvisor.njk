@@ -1,0 +1,202 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/new-york/speak-to-a-proadvisor/",
+  "slug": "ny-svc-speak",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "title": "Speak to a New York QuickBooks ProAdvisor &middot; TechBrot",
+  "description": "Speak to a Certified QuickBooks ProAdvisor for New York businesses — free, no-obligation call. A real ProAdvisor reviews your file, not a salesperson. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "New York", "href": "/find-an-accountant/new-york/" },
+    { "name": "Speak to a ProAdvisor" }
+  ],
+  "hero": {
+    "eyebrow": "New York &middot; Talk to a ProAdvisor",
+    "heading": "Speak to a New York QuickBooks ProAdvisor &mdash; free, no sales pitch.",
+    "subheading": "Book a call with an actual Certified QuickBooks ProAdvisor who works with New York businesses. We review your own QuickBooks file, answer your questions, and tell you honestly what you need &mdash; bookkeeping setup, cleanup, monthly management, or advisory. No obligation, no call-center. This is an independent firm&rsquo;s advisory line, not Intuit or QuickBooks product support.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-money&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>You are reaching TechBrot &mdash; an independent Certified QuickBooks ProAdvisor firm. This is NOT Intuit, NOT QuickBooks support, and NOT Intuit&rsquo;s ProAdvisor referral line.</strong> &ldquo;Certified QuickBooks ProAdvisor&rdquo; is a certification this firm holds from Intuit; it does <strong>not</strong> mean Intuit affiliation. If you need help with an <strong>Intuit account, billing, subscription, login, or QuickBooks product support</strong>, contact Intuit directly &mdash; this team cannot access your Intuit account. What this team does: <strong>bookkeeping and accounting advisory on your own books</strong> &mdash; QuickBooks setup, cleanup, monthly management, and CFO-level advisory for New York businesses. The full picture is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with, endorsed by, or sponsored by Intuit Inc. QuickBooks and Intuit are registered trademarks of Intuit Inc. TechBrot does not provide Intuit account, billing, or product support and does not file New York tax returns."
+  },
+  "ctaBand": {
+    "eyebrow": "New York businesses start here",
+    "heading": "Talk to a New York ProAdvisor today.",
+    "lede": "Free, no obligation, and you&rsquo;ll speak with an actual Certified QuickBooks ProAdvisor &mdash; not a salesperson, and not Intuit product support. Book the call or pick up the phone. Independent firm &mdash; does not file NY taxes; coordinates with your CPA. For Intuit account or billing issues, contact Intuit directly.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-money&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY · real H2 carrying the short-version prose (right after the in-brief). (H2: The short version.) ── #}
+<section class="section section--compact" id="ny-svc-speak-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In short</p>
+      <h2 class="section__heading">The short version.</h2>
+    </header>
+    <div class="stack-8">
+      {%- for p in summary %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── WHO + SPLIT · who should talk to a ProAdvisor vs. who Intuit should handle (grid-2 buyer-cards). Sheet-7 intent-split, ABOVE the funnel content. (H2: Is a ProAdvisor call the right call?) ── #}
+<section class="section section--alt" id="ny-svc-speak-split">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Who should call &mdash; and who Intuit should handle</p>
+      <h2 class="section__heading">Is a ProAdvisor call the right call?</h2>
+      <p class="section__lede">A discovery call with this team is about <strong>your own books</strong> &mdash; how your QuickBooks file is set up and run. It is not Intuit support. The split below tells you where to go.</p>
+    </header>
+    <div class="grid-2">
+      {%- for s in split %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ s.tag | safe }}</p>
+        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
+        <p class="buyer-card__body">{{ s.body | safe }}</p>
+        <ul class="checks-list">{%- for li in s.list %}<li>{{ li | safe }}</li>{%- endfor %}</ul>
+        {%- if s.cta %}<a class="buyer-card__cta" href="{{ s.href }}"{% if s.rel %} rel="{{ s.rel }}"{% endif %}>{{ s.cta | safe }}</a>{%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="prose">{{ splitNote | safe }}</p>
+  </div>
+</section>
+
+{# ── AI SUMMARY · five-question block. (H2: Talking to a New York ProAdvisor, in five questions.) ── #}
+<section class="section" id="ny-svc-speak-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Talking to a New York ProAdvisor, in five questions.</h2>
+    </header>
+    <dl class="ai-summary ai-summary--ruled" id="ny-svc-speak-ai-summary-list">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
+        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+{# ── CONVERSATION · how the call runs (grid-3 buyer-cards). 3 frozen H3s verbatim. (H2 + 3 H3s) ── #}
+<section class="section section--alt" id="ny-svc-speak-conversation">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What to expect on the call</p>
+      <h2 class="section__heading">A real conversation, not a sales funnel.</h2>
+      <p class="section__lede">You speak with a Certified ProAdvisor &mdash; the kind of person who would do or oversee the work &mdash; not a salesperson and not a product-support queue. Here is how it goes.</p>
+    </header>
+    <div class="grid-3">
+      {%- for c in conversation %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ c.num | safe }}</p>
+        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
+        <p class="buyer-card__body">{{ c.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── COVERS vs NOT · what the call covers and what it is NOT (Intuit support) (grid-2 buyer-cards). Sheet-7 boundary restated explicitly. (H2: What the call covers — and what it does not.) ── #}
+<section class="section" id="ny-svc-speak-covers">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The boundary, stated plainly</p>
+      <h2 class="section__heading">What the call covers &mdash; and what it does not.</h2>
+      <p class="section__lede">So no one wastes a call: here is exactly what a ProAdvisor can help with, and what only Intuit can.</p>
+    </header>
+    <div class="grid-2">
+      {%- for c in covers %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ c.tag | safe }}</p>
+        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
+        <ul class="checks-list">{%- for li in c.list %}<li>{{ li | safe }}</li>{%- endfor %}</ul>
+        {%- if c.note %}<p class="buyer-card__body">{{ c.note | safe }}</p>{%- endif %}
+        {%- if c.cta %}<a class="buyer-card__cta" href="{{ c.href }}"{% if c.rel %} rel="{{ c.rel }}"{% endif %}>{{ c.cta | safe }}</a>{%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── ADVISORY · standing brand line carried as section prose. (H2: Automation handles the data entry. We handle the judgment.) ── #}
+<section class="section section--alt" id="ny-svc-speak-advisory">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The advisory line</p>
+      <h2 class="section__heading">Automation handles the data entry. We handle the judgment.</h2>
+    </header>
+    <div class="stack-8">
+      {%- for p in advisoryBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+    </div>
+    <div class="hero__actions">
+      <a class="btn btn--primary btn--lg" href="/contact/?intent=new-york&amp;state=new-york&amp;source_type=state-money&amp;funnel_stage=BOFU">Book the discovery call</a>
+    </div>
+  </div>
+</section>
+
+{# ── FAQ · 8 verbatim contract Q/A; visible faq__list = FAQPage schema (same array). (H2: Questions about speaking with a ProAdvisor.) ── #}
+<section class="section" id="ny-svc-speak-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">Questions about speaking with a ProAdvisor.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-svc-speak-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="ny-svc-speak-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level, no founder name (byline-block + meta-reviewed). (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
+<section class="section section--alt" id="ny-svc-speak-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    </header>
+    <div class="byline-block">
+      <div class="byline-block__mark" aria-hidden="true"></div>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose">
+      <p>Reviewed and maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm serving New York businesses across all 62 counties. Discovery calls are conducted by Certified ProAdvisors. TechBrot is an independent firm &mdash; not affiliated with, endorsed by, or sponsored by <a href="https://www.intuit.com/" rel="noopener nofollow">Intuit Inc.</a>; it provides no Intuit account, billing, or QuickBooks product support. TechBrot performs bookkeeping and QuickBooks work and coordinates with your CPA, who files; it does not file New York tax returns or represent clients before the tax authorities.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-07</span><span>Updated: 2026-06-07</span><span>Reviewed: 2026-06-07 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
