@@ -1,21 +1,21 @@
 # REDESIGN-BRIEF.md — the pre-cutover design reset (creative + technical source of truth)
-Owner: founder · Strategy by strategy-Claude · **RECONCILED with the as-built system 2026-06-15 (Deliverable 4, Code/Claude)** · **NOW THE CANONICAL CREATIVE TRUTH (founder ruling 2026-06-15; DESIGN-DIRECTION.md retired to legacy)** · Status: NEAR-FINAL — only the §13.4 triage WORDING awaits founder word-level sign-off; on sign-off it is FINAL and goes to Claude Design
-Pairs with: ARCHITECTURE-TRUTH.md (what the site is) · PAGE-TYPE-REGISTRY.md (per-type sections) · DESIGN-DIRECTION.md (the founder's direction, which this expands)
+Owner: founder · Strategy by strategy-Claude · **RECONCILED with the as-built system 2026-06-15 (Deliverable 4, Code/Claude)** · **THE CANONICAL CREATIVE TRUTH (founder ruling 2026-06-15; it absorbed DESIGN-DIRECTION.md, which was DELETED 2026-06-16 — one file per role)** · Status: NEAR-FINAL — only the §13.4 triage WORDING awaits founder word-level sign-off; on sign-off it is FINAL and goes to Claude Design
+Pairs with: ARCHITECTURE-TRUTH.md (what the site is) · PAGE-TYPE-REGISTRY.md (per-type sections)
 Consumed by: **Claude Design** (creative — generates the visual system + options) → **Code** (implements the approved system in 11ty)
 
-> READ FIRST: This brief expands DESIGN-DIRECTION.md into an implementable spec. It does NOT replace
-> ARCHITECTURE-TRUTH (URLs/tiers) or the REGISTRY (per-type sections) — it adds the LOOK, FEEL, MOTION,
-> COMPONENTS, and TECHNICAL RULES. Where this and DESIGN-DIRECTION agree, both stand; where this is more
-> specific, this wins for execution. Nothing here may break the §0 non-negotiables (URL/content/honesty/
-> founder-name-zero/performance). The redesign RESTYLES; it never guts equity.
+> READ FIRST: This is the SINGLE creative truth — it absorbed the earlier DESIGN-DIRECTION.md (now deleted)
+> and expands it into an implementable spec. It does NOT replace ARCHITECTURE-TRUTH (URLs/tiers) or the
+> REGISTRY (per-type sections) — it adds the LOOK, FEEL, MOTION, COMPONENTS, and TECHNICAL RULES. Nothing here
+> may break the §0 non-negotiables (URL/content/honesty/founder-name-zero/performance). The redesign RESTYLES;
+> it never guts equity.
 >
 > **⟳ RECONCILED 2026-06-15 (Deliverable 4).** §0–§12 are the founder's strategy (verbatim). **§13 is the
 > as-built reconciliation layer** (Code/Claude): the gap-analysis checklist, the exact EXISTS-vs-NET-NEW
 > component map (real class names), the 3 approved component-kit changes, the forms-ruling registry/
 > placement-map delta, the honest-triage compliance spec (⚠ founder sign-off), and the grounded proving set.
 > Inline `[→ §13.x]` pointers in §7/§9 link the strategy to the technical reconciliation. **DOC-SYSTEM (✅ RULED
-> 2026-06-15):** this brief is now the canonical CREATIVE truth; DESIGN-DIRECTION.md is retired to legacy
-> (its direction is absorbed + expanded here) — see §13.7. **FOUNDER RULINGS FOLDED IN 2026-06-15:** the 3
+> 2026-06-15/16):** this brief is the canonical CREATIVE truth; DESIGN-DIRECTION.md was absorbed here and
+> **DELETED 2026-06-16** (git history preserves it) — see §13.7. **FOUNDER RULINGS FOLDED IN 2026-06-15:** the 3
 > component changes RATIFIED (§13.2) · honest-triage approach APPROVED with PROPOSED WORDING pending word-level
 > sign-off (§13.4 — the last blocker to FINAL) · conversion-form page TYPE added (§13.8) · proving set FINAL,
 > one-per-type (§13.6).
@@ -190,7 +190,7 @@ spec — t-bofu pages now convert via CALL, not a form.**
   copy — COMPLIANCE-CRITICAL, founder sign-off required).
 
 ═══════════════════════════════════════════════════════════════
-§8 — HERO SYSTEM (unique per TYPE — the §5 DESIGN-DIRECTION mandate, specified)
+§8 — HERO SYSTEM (unique per TYPE — the founder's hero-per-type mandate, specified)
 ═══════════════════════════════════════════════════════════════
 Each page TYPE gets its OWN hero treatment (distinct, owned, unmistakable). Design proposes the look per
 type; the brief sets intent + the conversion action. ALL heroes: editorial, mobile-first, CLS 0, the CALL
@@ -499,15 +499,14 @@ compact — definition-first hero) · case study (t-mofu proof — outcome-forwa
 t-guide with a `dataset-header` variant — mock only if Design judges the hero materially different.)*
 
 ─────────────────────────────────────────────
-§13.7 — DOC-SYSTEM RECONCILIATION (founder ruling needed)
+§13.7 — DOC-SYSTEM RECONCILIATION (✅ RULED — founder 2026-06-15/16)
 ─────────────────────────────────────────────
-The canonical doc set (BUILD-TRACKER §"CANONICAL DOC SYSTEM") names **DESIGN-DIRECTION.md** as the CREATIVE
-truth. This brief now expands it into the implementable creative+technical spec — they overlap on one role.
-**Recommendation:** promote **REDESIGN-BRIEF.md to the canonical CREATIVE-truth slot** (most specific,
-implementable, reconciled with as-built); retire **DESIGN-DIRECTION.md to legacy/historical** (its direction
-is absorbed + expanded here). **✅ RULED (founder 2026-06-15): YES.** REDESIGN-BRIEF.md is now the canonical
-CREATIVE truth; DESIGN-DIRECTION.md → legacy. **APPLIED this turn:** BUILD-TRACKER canonical-doc-system block
-+ ARCHITECTURE-TRUTH §10 doc map updated; DESIGN-DIRECTION.md carries a legacy/superseded banner.
+The canonical doc set (BUILD-TRACKER §"CANONICAL DOC SYSTEM") formerly named DESIGN-DIRECTION.md as the
+CREATIVE truth; this brief expanded it into the implementable creative+technical spec — they overlapped on one
+role. **✅ RULED (founder): promote REDESIGN-BRIEF.md to the canonical CREATIVE-truth slot; DELETE
+DESIGN-DIRECTION.md entirely** (one file per role, no duplicate — git history preserves the old one).
+**APPLIED:** BUILD-TRACKER canonical-doc-system block + ARCHITECTURE-TRUTH §10 doc map updated to name
+REDESIGN-BRIEF as the creative truth; **DESIGN-DIRECTION.md deleted 2026-06-16.**
 
 ─────────────────────────────────────────────
 §13.8 — CONVERSION-FORM PAGE TYPE (`/contact/` + `/file-review/`) — founder ruling 2026-06-15

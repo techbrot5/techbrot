@@ -66,8 +66,9 @@ ONE file per role, no overlap, **update-don't-spawn**. These are the only author
    §13 as-built reconciliation). *(Promoted to this slot 2026-06-15; supersedes DESIGN-DIRECTION.md.)*
 5. **_build/baseline/baseline.json + _build/battery/equity-exceptions.json** — FROZEN machine contract
    (not hand-edited).
-**Legacy/archive (superseded, kept for history, NOT authoritative):** **`DESIGN-DIRECTION.md`** (earlier
-creative direction — absorbed + expanded by REDESIGN-BRIEF.md 2026-06-15), the v4 blueprint
+**Legacy/archive (superseded, NOT authoritative):** **`DESIGN-DIRECTION.md`** — earlier creative direction,
+absorbed + expanded by REDESIGN-BRIEF.md and **DELETED 2026-06-16** (founder ruling; git history preserves it);
+the v4 blueprint
 (`techbrot-blueprint-v4.xlsx`), v3 (`techbrot-blueprint-v3.xlsx`), `techbrot-design-brief.md`, the round-NN
 reports, and `_build/reports/FINAL-MIGRATION-REPORT.md` (its live job — the re-tier queue — folds into the
 redesign).
@@ -158,11 +159,13 @@ steps — gated, not autonomous. Do NOT batch or run ahead.
   edits (specs only); the registry/PLACEMENT-MAP propagation is deferred to brief-final / the Code phase.**
   **FOUNDER RULINGS 2026-06-15 — FOLDED IN:** ✅ 3 component changes RATIFIED (§13.2) · ✅ honest-triage approach
   APPROVED, PROPOSED WORDING drafted (§13.4) — **awaiting founder WORD-LEVEL SIGN-OFF = the LAST blocker to
-  brief-final** · ✅ doc-system: REDESIGN-BRIEF promoted to canonical CREATIVE truth, DESIGN-DIRECTION retired to
-  legacy (applied: §10 doc map + canonical-doc block + DESIGN-DIRECTION legacy banner) · ✅ `/contact/` +
-  `/file-review/` = premium conversion-form page TYPE (§13.8) · ✅ proving set FINAL (one-per-type, real URLs, §13.6).
-  **⚠ NOTE:** `DESIGN-DIRECTION.md` had been deleted from the working tree (unstaged — R4 explicit-add hygiene kept
-  it out of every commit); RESTORED from HEAD this turn + given the legacy banner. **NEXT (after wording sign-off):
+  brief-final** · ✅ doc-system: REDESIGN-BRIEF promoted to canonical CREATIVE truth, **DESIGN-DIRECTION.md DELETED
+  entirely** (founder ruling 2026-06-16 — one file per role; git history preserves it; applied: §10 doc map +
+  canonical-doc block) · ✅ `/contact/` + `/file-review/` = premium conversion-form page TYPE (§13.8) · ✅ proving
+  set FINAL (one-per-type, real URLs, §13.6).
+  **⚠ NOTE:** `DESIGN-DIRECTION.md` had earlier been deleted from the working tree (unstaged — R4 explicit-add
+  hygiene kept it out of every commit); confirmed by founder + now deleted intentionally as part of the doc-system
+  consolidation. **NEXT (after wording sign-off):
   brief is FINAL → founder takes it to Claude Design** (visual system as OPTIONS — palette/type/signature + the
   §13.6 proving pages mocked); NOT Code building yet.
 - **→ then the REDESIGN** (separate phase, per REDESIGN-BRIEF.md; includes the re-tiering pass).

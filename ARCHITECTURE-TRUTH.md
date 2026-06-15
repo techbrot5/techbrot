@@ -113,7 +113,7 @@ The design-fidelity battery gate (#12) asserts each page carries ≥1 rich compo
 §4 — DESIGN SYSTEM (migration floor → redesign)
 ═══════════════════════════════════════════════════════════════
 Current = the cobalt MIGRATION FLOOR (warm-paper/Fraunces/cobalt; ONE site.min.css). The redesign replaces
-it per `DESIGN-DIRECTION.md` (the creative truth): colder/lighter palette · richest font pairing ·
+it per `REDESIGN-BRIEF.md` (the creative truth): colder/lighter palette · richest font pairing ·
 mega-menu primary nav + per-type navbars · 3D/SVG/imagery where it earns ranking+UX · best-in-niche ATF ·
 UNIQUE hero per TYPE + a SHARED mid-body component library · mid-body CTAs on long types. The redesign
 re-skins by TYPE per the registry and performs the §2 re-tiering. **The redesign happens ON PREVIEW, BEFORE
@@ -226,8 +226,9 @@ two docs ever disagree, **THIS (ARCHITECTURE-TRUTH) + the latest founder ruling 
 5. **_build/baseline/baseline.json + _build/battery/equity-exceptions.json** — FROZEN machine contract
    (139-page content-equity + justified differ exceptions). NOT hand-edited.
 
-**Legacy / archive (superseded; kept for history; NOT authoritative):** **DESIGN-DIRECTION.md** (the earlier
-creative direction — absorbed + expanded by REDESIGN-BRIEF.md 2026-06-15), techbrot-blueprint-v4.xlsx,
-techbrot-blueprint-v3.xlsx, techbrot-design-brief.md, the round-NN reports, and
-_build/reports/FINAL-MIGRATION-REPORT.md (its live job — the re-tier queue — folds into the redesign).
-Anything in this group is SUPERSEDED by ARCHITECTURE-TRUTH + DESIGN-DIRECTION where they disagree.
+**Legacy / archive (superseded; NOT authoritative):** **DESIGN-DIRECTION.md** — the earlier creative direction,
+absorbed + expanded by REDESIGN-BRIEF.md and **DELETED 2026-06-16** (founder ruling: one file per role, no
+duplicate; git history preserves it). Also: techbrot-blueprint-v4.xlsx, techbrot-blueprint-v3.xlsx,
+techbrot-design-brief.md, the round-NN reports, and _build/reports/FINAL-MIGRATION-REPORT.md (its live job — the
+re-tier queue — folds into the redesign).
+Anything in this group is SUPERSEDED by ARCHITECTURE-TRUTH + REDESIGN-BRIEF where they disagree.
