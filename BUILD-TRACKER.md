@@ -103,6 +103,29 @@ win); Bench Dec-2024 shutdown reflected; Pilot unverifiable stats dropped (quali
 restructure + not-Intuit independence stated, fabricated pricing removed. OPEN (low-risk, founder): Pilot
 published pricing + re-verify QB-Live current status before go-live.
 
+## ⛔ POST-MIGRATION GOVERNING RULE (founder, 2026-06-15) — STEP-BY-STEP, GATED, NOT AUTONOMOUS
+Migration is COMPLETE (139/139, cutover parity). **The R7 autonomy rule was MIGRATION-ONLY and no longer
+applies.** From here, work proceeds ONE DELIVERABLE AT A TIME: after EACH deliverable, STOP, report, and
+WAIT for the founder's explicit GO before starting the next. These are high-stakes / low-volume judgment
+steps — gated, not autonomous. Do NOT batch or run ahead.
+
+**POST-MIGRATION SEQUENCE (roadmap; execute one-at-a-time with a founder gate at each):**
+- **0. Reconcile all governing docs** — bring BUILD-TRACKER, PAGE-TYPE-REGISTRY, DESIGN-DIRECTION,
+  FINAL-MIGRATION-REPORT, equity-exceptions current + mutually consistent; flag/resolve contradictions to
+  the latest founder rulings. *(in progress this turn, then STOP)*
+- **1. Complete the redesign review queue** (+ resolve FINAL-MIGRATION-REPORT A4 hero check: confirm only
+  the NY pillar renders the t-location hero).
+- **2. v5 blueprint.**
+- **4. Gap analysis** (redesign scope + proving set).
+- **3. Verify + delete the old Bootstrap-Studio per-route folders.**
+- **→ then the REDESIGN** (separate phase, per DESIGN-DIRECTION.md; includes the re-tiering pass).
+- **→ CUTOVER is the LAST step** — nothing goes live until the redesign is done and founder-signed-off.
+
+The latest founder rulings the docs must agree with: hubs route = **t-hub**; conversion children =
+**t-bofu**; **t-location only the pillar**; honesty = illustrative-not-fabricated (R5); state strategy =
+**NY full + CA/TX/FL/IL landings now, other states' children post-redesign**; **cutover LAST, after the
+signed-off redesign**.
+
 ### ▶ CURRENT RESUME POINT (recovery anchor — keep current; founder may resume via `claude -c` after power loss)
 **As of commit `a40edfc` (2026-06-15, round 26):** Path B migration status —
 - find-an-accountant (43) ✓ · QuickBooks silo ✓ · vs (5) ✓ · **partners (2) ✓** (hub pre-built + /partners/faq/ `6a4fd70`).
@@ -110,17 +133,10 @@ published pricing + re-verify QB-Live current status before go-live.
 - **✅✅ PATH B MIGRATION COMPLETE — 139 / 139 baselines built, 0 missing (verified 2026-06-15).**
   Cutover parity reached: every live baseline URL is a real 11ty page on the cobalt system; no 404s at
   cutover. find-an-accountant (43) · QuickBooks silo · vs (5) · partners (2) · accounting (39) all done.
-- **NEXT (post-cutover, NOT migration): (1)** the tier RE-TIERING pass — FINAL-MIGRATION-REPORT Sections
-  A (NY ~17 conversion children → t-bofu) + D2 (accounting BOFU services → t-bofu); a skin/visual change,
-  folds into the redesign. **(2)** the DESIGN RESET / re-pattern per DESIGN-DIRECTION.md. **(3)** open
-  low-risk items: Pilot published pricing, re-verify QB-Live status, honest-triage metas already done.
-  **(4)** held TODOs: nav/footer chrome, vector logo, research-log N=0, footer WCAG target-size.
-- Method (proven): per child, `equity_contract.py <url>` → frozen contract; t-mofu (industries +
-  standalones) on the quickbooks/online + cash-flow-management reference; carry full schema (QAPage +
-  ItemList + FAQPage no-dedup); newsletter exception per page; battery GREEN + axe 0 + overflow clean
-  360/390/768 before commit. **COMMIT + PUSH AFTER EVERY WAVE (founder rule, power-loss safety).**
-- After the 17, accounting (39) done → Path B 139-baseline cutover parity → post-cutover re-tiering pass
-  (FINAL-MIGRATION-REPORT Sections A + D queue) + redesign.
+- **NEXT = the POST-MIGRATION GOVERNING SEQUENCE above (gated, one-at-a-time).** Currently at Deliverable 0
+  (reconcile docs). Cutover is the LAST step, after the signed-off redesign. The tier RE-TIERING pass (NY
+  ~17 conversion children → t-bofu, FINAL-MIGRATION-REPORT Section A; accounting BOFU services → t-bofu,
+  Section D2) is a skin/visual change that runs INSIDE the redesign phase — BEFORE cutover, not after.
 
 **STANDING (founder, 2026-06-15):** commit+push after EVERY wave (never batch waves uncommitted); keep
 BUILD-TRACKER + `_build/reports/FINAL-MIGRATION-REPORT.md` + `round-26-ny-children.md` current so a fresh
@@ -145,12 +161,14 @@ t-location hero (state-contour motif + sticky call-bar location chrome).
   vs **MOFU** (consideration: hub, overview, comparison) so the tier choice is flagged, not assumed.
 This re-tiering pass is tracked here so it is not lost; it runs after the 139-baseline cutover-parity gate.
 
-Updated: 2026-06-14 · NEW PHASE — PATH B MIGRATION. Goal: migrate the 104 remaining
-baselines to the current cobalt system FAST (build-to-FLOOR, not polish — all 104 get
-re-patterned on the new design system after cutover), reach all-139-baselines parity, then
-cutover techbrot.com, THEN design reset + re-pattern live. 200 is NOT a target; the gate is
-"all 139 baselines migrated." Floor per page: equity GREEN · axe 0 · overflow clean · correct
-tier + CTA · honest-triage where it applies · design-fidelity per-tier pass. Speed over polish.
+Updated: 2026-06-14 · NEW PHASE — PATH B MIGRATION. **✅ COMPLETE 2026-06-15 (139/139). This block is
+historical planning; the live status is the POST-MIGRATION GOVERNING RULE block above.** Goal (as run):
+migrate the 104 remaining baselines to the current cobalt system FAST (build-to-FLOOR, not polish — all get
+re-patterned on the new design system in the redesign phase), reach all-139-baselines parity. ~~then
+cutover, THEN design reset~~ → **SEQUENCE CORRECTED 2026-06-15: redesign happens BEFORE cutover; cutover is
+the LAST step (nothing goes live until the redesign is signed off).** 200 was NOT a target; the gate was
+"all 139 baselines migrated" — MET. Floor per page (all met): equity GREEN · axe 0 · overflow clean ·
+correct tier + CTA · honest-triage where it applies · design-fidelity per-tier pass.
 **MANDATORY: maintain `_build/reports/PAGE-TYPE-REGISTRY.md`** (every page tagged to type/tier
 + exact section list per type, incl. not-yet-built types) — it is the input to the design reset
 and must be complete by cutover.

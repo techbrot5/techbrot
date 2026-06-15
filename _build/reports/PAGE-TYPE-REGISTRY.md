@@ -1,10 +1,23 @@
 # PAGE-TYPE-REGISTRY — living truth for the migration + design reset
-Updated: 2026-06-14 · maintained every migration round · MUST be complete by cutover.
+Updated: 2026-06-15 (Deliverable 0 reconcile) · MUST stay complete through the redesign (now BEFORE cutover).
 
 This registry is the **input to the design reset**. Every page is tagged to a TYPE; every
 TYPE has an exact ordered section list + the components each section uses. The design reset
 re-skins by TYPE, so the registry must cover EVERY type — including types that don't exist
 yet (blogs, research, switch, state children) so the reset covers them too.
+
+> **⟳ RECONCILED 2026-06-15 (post-migration Deliverable 0).** Path B migration is COMPLETE (139/139
+> baselines). Part 1's "Built" lists below were captured mid-migration and are now NON-EXHAUSTIVE (every
+> baseline is built); treat Part 1 as the per-TYPE **section/component spec** (still accurate), not a
+> build-status inventory — for build status see git + FINAL-MIGRATION-REPORT. **TIER RULINGS NOW DECIDED
+> (founder, supersede Part 3's "PROPOSED" caveat):** (a) routing **hubs = t-hub**; (b) **conversion
+> children = t-bofu** (specific paid services + honest-triage); (c) **t-location ONLY the state PILLAR**
+> (state landing); state cities/industries = t-location landings OK, but state SERVICE/conversion children
+> are t-bofu; (d) consideration/product/comparison = t-mofu; (e) FAQ/reference = t-guide; (f) honesty =
+> illustrative-not-fabricated (R5). **AS-BUILT vs RULED:** build-to-floor used ONE proven tier per silo,
+> so some conversion children shipped on t-location (NY children) or t-mofu (accounting services) and are
+> queued for **t-bofu re-tiering in the redesign phase (before cutover)** — the per-URL queue lives in
+> FINAL-MIGRATION-REPORT Sections A + D. Do NOT re-tier here yet; the redesign does it.
 
 Tier→layout: t-hub=layouts/t-hub.njk · t-mofu=t-mofu.njk · t-bofu=t-bofu.njk ·
 t-guide=t-guide.njk · t-location=t-location.njk. The design-fidelity gate (battery #12)
@@ -64,16 +77,19 @@ PART 2 — NOT-YET-BUILT PAGE TYPES (intended sections — design reset MUST cov
 ═══════════════════════════════════════════════════════════════
 (from v4 Sheet 1/7/8; sections are intended, refined when first built)
 
-### TYPE: state landing  → tier t-location  [NOT YET BUILT — first new tier to prove]
-/find-an-accountant/{state}/. Sections: hero--location + hero__motif (state contour ledger
-motif) · proof-strip--dark · state-specific intro · buyer-card routing to services ·
-trust-row · **intake-form (state variant)** · sticky call-bar (mobile) · FAQ · cta-band.
-Rich: hero__motif · proof-strip · intake-form · buyer-card.
+### TYPE: state landing (PILLAR)  → tier t-location  [✅ BUILT — NY pillar + CA/TX/FL/IL landings; tier PROVEN]
+/find-an-accountant/{state}/. **t-location is for the PILLAR ONLY** (founder ruling). Sections:
+hero--location + hero__motif (state contour ledger; NY contour for NY, neutral motif-align-full for
+CA/TX/FL/IL via the `heroMotif` override) · in-brief · buyer-card routing · trust-row · intake-form ·
+sticky call-bar · FAQ · cta-band. Rich: hero__motif · proof-strip · intake-form · buyer-card.
+State strategy (founder): NY built full (pillar + 38 children); CA/TX/FL/IL = landings only (no children);
+other states' children build POST-REDESIGN.
 
-### TYPE: state child (city / industry / service)  → tier t-location  [NOT BUILT]
-/find-an-accountant/{state}/{city|industry|service}/. Lighter t-location: compact hero ·
-local intro · service routing · intake-form (state) · FAQ. The NY orphan tree (~43) is the
-existing template/source content.
+### TYPE: state child (city / industry / service)  → see ruling  [✅ NY's 38 BUILT (t-location, build-to-floor)]
+/find-an-accountant/{state}/{city|industry|service}/. **FINAL tiers per founder ruling:** cities + industry
+landings = t-location (consideration, OK as built); **service + honest-triage children = t-bofu** (conversion
+— currently shipped t-location, in the re-tiering queue: FINAL-MIGRATION-REPORT Section A2/A3). The NY tree
+(38 children) is the built template/source content; non-NY states' children build post-redesign.
 
 ### TYPE: research / dataset article  → tier t-guide (research dress)  [1 built: /resources/research/]
 /resources/research/{study}/. Sections: hero--compact · byline-block · **dataset-header** ·
@@ -103,11 +119,11 @@ related terms · CTA. Rich: byline-block or pull-quote (light).
 /switch/from-{competitor}/. Sections: hero--rule · proof-strip · vs-table (us vs them, fair)
 · migration steps (flow) · intake-form · FAQ. Conversion-tier.
 
-### TYPE: comparison (vs)  → tier t-mofu  [baseline: 5 to migrate; expansion: more]
+### TYPE: comparison (vs)  → tier t-mofu  [✅ BUILT — 5 baseline (hub + bookkeeper-vs-accountant + bench/pilot/qb-live); expansion: more]
 /vs/{a-vs-b}/. Sections: hero--compact · byline-block · **vs-table** (fair, "where they
-win") · verdict · buyer-card · FAQ · meta-reviewed. The /vs/ hub = t-mofu/t-hub ItemList routing.
+win") · verdict · buyer-card · FAQ · meta-reviewed. The /vs/ hub = t-mofu ItemList routing.
 
-### TYPE: support / speak page  → tier t-bofu + HONEST-TRIAGE (Sheet 7)  [baseline: speak-to-expert; expansion: support silo ~20]
+### TYPE: support / speak page  → tier t-bofu + HONEST-TRIAGE (Sheet 7)  [✅ speak-to-expert BUILT (national) + NY speak-to-a-proadvisor + the 4 NY honest-triage; expansion: support silo ~20]
 /quickbooks/speak-to-a-quickbooks-expert/, /quickbooks/support/*. MANDATORY honest-triage:
 disclosure banner ABOVE THE FOLD · never "official" · intake qualifies Intuit billing/account
 intent AWAY · never implies Intuit affiliation. Sections: disclosure banner · hero · triage
@@ -117,14 +133,21 @@ intro · proof-strip · intake-form (with Intuit-routing qualifier) · FAQ.
 /reviews/, /reviews/by-*. Verified Clutch reviews only; NO AggregateRating until 5+ real (rule 4).
 
 ═══════════════════════════════════════════════════════════════
-PART 3 — PER-PAGE TIER ASSIGNMENTS for the 104  ⚠ PROPOSED, NOT DECIDED
+PART 3 — PER-PAGE TIER ASSIGNMENTS  ✅ ALL BUILT (139/139) · tiers below are AS-BUILT (build-to-floor)
 ═══════════════════════════════════════════════════════════════
-**STATUS: PROPOSED — founder decides on preview (open item #5 is OPEN).** Every tier below is
-a proposal derived from blueprint Sheet 1 (funnel + schema), used only to build-to-FLOOR so
-the page passes the per-tier gate. NONE is a final decision. The **t-bofu-vs-t-mofu calls in
-particular are NOT settled** — the founder reviews each on preview and may re-tier. Do not
-treat any assignment here as hardened; do not cite this as the founder's decision. When the
-founder rules a tier on preview, move it to a separate DECIDED column with the date.
+**STATUS (reconciled 2026-06-15): every page is BUILT.** The tiers below are the AS-BUILT (build-to-floor)
+tier each page shipped on. Open item #5 is now resolved by the founder TIER RULINGS in the header reconcile
+block. **The FINAL tier (for the redesign) follows those rulings; where the as-built tier differs, the page
+is in the re-tiering queue:**
+- **DECIDED FINAL tiers:** hubs = t-hub · consideration/product/comparison = t-mofu · conversion children
+  (paid services + honest-triage) = t-bofu · state PILLAR only = t-location · FAQ/reference = t-guide.
+- **RE-TIER QUEUE (as-built ≠ final; fixed in the redesign, before cutover — see FINAL-MIGRATION-REPORT):**
+  · NY service + honest-triage children (~17) shipped t-location → **t-bofu** (Report Section A2/A3).
+  · accounting services children (controller/outsourced/virtual-accounting) + standalones (financial-
+    statements, job-costing, month-end-close, reconciliation-services, chart-of-accounts-setup) shipped
+    t-mofu → review for **t-bofu** (Report Section D2).
+  · NY cities/industries + accounting industry landings stay t-location / t-mofu respectively (consideration
+    — no re-tier).
 
 QUICKBOOKS-16:
 - t-mofu (product/comparison/about): /quickbooks/desktop/, /enterprise/, /which-plan-is-right/,

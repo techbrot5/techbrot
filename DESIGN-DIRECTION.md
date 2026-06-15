@@ -1,16 +1,21 @@
-# DESIGN-DIRECTION.md — creative brief for the post-cutover design reset
+# DESIGN-DIRECTION.md — creative brief for the PRE-CUTOVER design reset
 Owner: founder · Status: DIRECTION SET, not yet implemented · Implemented by: Design (Claude Design)
-Created: 2026-06-14
+Created: 2026-06-14 · Reconciled 2026-06-15 (Deliverable 0): sequence corrected to **redesign BEFORE
+cutover** per the founder ruling — see §9.
 
-This is the standalone creative brief for the **design reset** that happens AFTER the Path B
-migration reaches all-139-baseline parity and techbrot.com cuts over to the new build. The
-current cobalt system is the *migration floor* — every page is built to floor on it now and
-**re-patterned onto this new system later**. This brief governs that reset. It is the creative
-truth; the PAGE-TYPE-REGISTRY.md is the structural truth (which page is which type + its
-sections). Design consumes BOTH: this for look/feel, the registry for per-type composition.
+This is the standalone creative brief for the **design reset**. Path B migration is COMPLETE (139/139
+baselines, cutover parity). **SEQUENCE RULING (founder 2026-06-15): the redesign now happens on PREVIEW,
+BEFORE cutover — cutover is the LAST step, and nothing goes live until the redesign is done and
+founder-signed-off.** (This reverses the earlier "cut over first, re-pattern live" plan.) The current
+cobalt system is the *migration floor* — every page is built to floor on it now and **re-patterned onto
+this new system on preview, then cut over**. This brief governs that reset. It is the creative truth; the
+PAGE-TYPE-REGISTRY.md is the structural truth (which page is which type + its sections). Design consumes
+BOTH: this for look/feel, the registry for per-type composition.
 
-Do not implement from this yet — it is recorded so the reset covers every direction the
-founder has set, and so nothing in the migration hardens a choice this brief will override.
+Do not implement from this yet — the redesign is gated behind the post-migration deliverables (0 reconcile
+docs · 1 redesign review queue · 2 v5 blueprint · 4 gap analysis · 3 delete old folders), each with a
+founder gate. It is recorded so the reset covers every direction the founder has set, and so nothing in
+the migration hardened a choice this brief will override.
 
 ═══════════════════════════════════════════════════════════════
 1. PALETTE — colder + lighter (replace the warm base)
@@ -93,9 +98,14 @@ founder has set, and so nothing in the migration hardens a choice this brief wil
 - CSS budget discipline (a bundled min.css with a byte gate; re-set the gate for the new system).
 
 ═══════════════════════════════════════════════════════════════
-9. SEQUENCE
+9. SEQUENCE  (CORRECTED 2026-06-15 — redesign BEFORE cutover; cutover LAST)
 ═══════════════════════════════════════════════════════════════
-Migration (build-to-floor on current cobalt) → all-139 parity → CUTOVER → THIS design reset
-(new system from Claude Design implementing this brief, re-skinning by TYPE per the registry)
-→ re-pattern all pages live → resume build-new in small batches. Design reset does NOT start
-until cutover; nothing in migration should harden a choice this brief overrides.
+Migration (build-to-floor on current cobalt) → all-139 parity ✅ DONE → **gated post-migration
+deliverables** (0 reconcile docs · 1 redesign review queue + A4 hero check · 2 v5 blueprint · 4 gap
+analysis · 3 verify+delete old Bootstrap folders), each one-at-a-time with a founder GO →
+**THIS design reset on PREVIEW** (new system from Claude Design implementing this brief, re-skinning by
+TYPE per the registry; includes the re-tiering pass from FINAL-MIGRATION-REPORT Sections A + D) →
+re-pattern all pages on preview → founder sign-off → **CUTOVER (LAST step — site goes live on the new
+build)** → resume build-new in small batches.
+**Nothing goes live until the redesign is done and signed off.** (Earlier drafts said "cutover → reset →
+re-pattern live"; that is SUPERSEDED — the redesign happens on preview before cutover.)

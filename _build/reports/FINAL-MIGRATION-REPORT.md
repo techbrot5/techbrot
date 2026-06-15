@@ -1,8 +1,11 @@
 # FINAL MIGRATION REPORT — Path B (139-baseline cutover parity)
-Living deliverable. Seeded 2026-06-15 (round 26). Finalized when all 139 baselines are migrated.
+✅ **MIGRATION COMPLETE 2026-06-15 — 139/139 baselines built, 0 missing, cutover parity reached.**
 Founder-requested focus: **tier re-categorization** — flag pages built on the wrong tier (build-to-floor
-used one proven tier per silo for speed) for a post-cutover re-tiering pass. Do NOT re-tier during
-migration; this report is the review queue.
+used one proven tier per silo for speed) for the re-tiering pass. That pass runs INSIDE the redesign phase
+(on preview), which is BEFORE cutover (cutover is LAST, per the 2026-06-15 sequence ruling) — NOT
+"post-cutover". This report's Sections A + D are the review queue, consumed by post-migration Deliverable 1
+(redesign review queue) and the redesign itself. (Earlier drafts said "post-cutover re-tiering"; corrected
+in Deliverable 0.)
 
 ---
 
