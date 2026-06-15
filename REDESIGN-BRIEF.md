@@ -1,5 +1,5 @@
 # REDESIGN-BRIEF.md — the pre-cutover design reset (creative + technical source of truth)
-Owner: founder · Strategy by strategy-Claude · **RECONCILED with the as-built system 2026-06-15 (Deliverable 4, Code/Claude)** · **THE CANONICAL CREATIVE TRUTH (founder ruling 2026-06-15; it absorbed DESIGN-DIRECTION.md, which was DELETED 2026-06-16 — one file per role)** · Status: NEAR-FINAL — only the §13.4 triage WORDING awaits founder word-level sign-off; on sign-off it is FINAL and goes to Claude Design
+Owner: founder · Strategy by strategy-Claude · **RECONCILED with the as-built system 2026-06-15 (Deliverable 4, Code/Claude)** · **THE CANONICAL CREATIVE TRUTH (founder ruling 2026-06-15; it absorbed DESIGN-DIRECTION.md, which was DELETED 2026-06-16 — one file per role)** · **Status: ✅ FINAL (founder 2026-06-16) — triage wording signed off (§13.4) + design-quality rules folded in (§4/§6/§9/§13.9); ready for Claude Design (visual system as OPTIONS).**
 Pairs with: ARCHITECTURE-TRUTH.md (what the site is) · PAGE-TYPE-REGISTRY.md (per-type sections)
 Consumed by: **Claude Design** (creative — generates the visual system + options) → **Code** (implements the approved system in 11ty)
 
@@ -15,10 +15,11 @@ Consumed by: **Claude Design** (creative — generates the visual system + optio
 > placement-map delta, the honest-triage compliance spec (⚠ founder sign-off), and the grounded proving set.
 > Inline `[→ §13.x]` pointers in §7/§9 link the strategy to the technical reconciliation. **DOC-SYSTEM (✅ RULED
 > 2026-06-15/16):** this brief is the canonical CREATIVE truth; DESIGN-DIRECTION.md was absorbed here and
-> **DELETED 2026-06-16** (git history preserves it) — see §13.7. **FOUNDER RULINGS FOLDED IN 2026-06-15:** the 3
-> component changes RATIFIED (§13.2) · honest-triage approach APPROVED with PROPOSED WORDING pending word-level
-> sign-off (§13.4 — the last blocker to FINAL) · conversion-form page TYPE added (§13.8) · proving set FINAL,
-> one-per-type (§13.6).
+> **DELETED 2026-06-16** (git history preserves it) — see §13.7. **FOUNDER RULINGS FOLDED IN:** the 3
+> component changes RATIFIED (§13.2) · honest-triage wording **SIGNED OFF 2026-06-16** (§13.4) · conversion-form
+> page TYPE added (§13.8) · proving set FINAL, one-per-type (§13.6) · **section-rhythm / anti-monotony + chrome
+> design-quality rules folded in 2026-06-16** (§9 rhythm · §6 motion · §4 breadcrumb+footer accordion · §13.9
+> gate). **✅ BRIEF FINAL 2026-06-16.**
 
 ═══════════════════════════════════════════════════════════════
 §0 — THE ONE GOAL (everything below serves this)
@@ -116,9 +117,18 @@ financial diagrams, a distinctive way numbers/stats are set, a signature hero co
   - t-bofu (conversion): MINIMAL / no secondary nav — avoid funnel leakage; the action is CALL.
   - t-hub: routing nav surfacing children.
   - t-mofu: standard global + breadcrumb.
+- **Breadcrumbs (every page below home):** a consistent, deliberately-placed breadcrumb per type — **directly
+  below the hero, above the body content** (the same slot on every type; never floating/awkward), paired with
+  `BreadcrumbList` schema (already built). Mobile: compact/truncated (home › … › current), tap targets ≥24px.
+  Editorial styling, not a default crumb trail.
 - Persistent, accessible CALL affordance in the nav on every page (tap-to-call on mobile).
-- Footer: editorial, organized by silo; WCAG 2.2 target-size fixed; firm/ProAdvisor-team identity (no
-  founder name in visible content); legal links; the trust/credential row.
+- **Nav (mega-menu) + footer = best-in-class, INTERACTIVE, premium** — they are chrome the whole niche judges
+  the firm by; treat them as designed surfaces, not boilerplate.
+- **Footer:** editorial, organized by silo; firm/ProAdvisor-team identity (no founder name in visible content);
+  legal links; the trust/credential row. **On small screens the footer is an ACCORDION** — sections collapsed
+  by default, expand on tap (`<details>`/ARIA-driven, not a long scroll of stacked links); thumb-friendly, tap
+  targets ≥24px (this is the fix for the queued WCAG 2.2 footer mailto/tel finding). Everything in the chrome is
+  interactive, mobile-first, AA + WCAG 2.2 target-size.
 
 ═══════════════════════════════════════════════════════════════
 §5 — ASSETS: 3D / LIVE-SVG / GRAPHS / ICONS / IMAGERY (where they EARN ranking + calls)
@@ -161,7 +171,11 @@ reserved space.
   fast (≤200ms). Tap-friendly (no hover-dependent reveals on mobile).
 - **JS philosophy: minimal, vanilla, lightweight.** No heavy framework for the marketing site. Vanilla JS
   / tiny modules for: mega-menu, sticky TOC, scroll reveals, call-tracking events (GA4), accordion FAQ,
-  mobile nav, any interactive tool/calculator. Progressive enhancement — content + calls work with JS off.
+  **footer accordion (mobile, §4)**, mobile nav, any interactive tool/calculator. Progressive enhancement —
+  content + calls work with JS off.
+- **Motion reinforces SECTION RHYTHM, never uniformity** (ties to §9): reveals are varied and section-aware
+  (a stat block counts up, a diagram draws on, a quote fades) — NOT the same fade-up applied identically to
+  every section (that reads templated/AI-generated). One coherent motion language, varied in expression.
 - **3D**: only where reserved (§5); lazy-loaded, mobile-reduced, never blocks LCP.
 
 ═══════════════════════════════════════════════════════════════
@@ -245,12 +259,25 @@ The kit (each: editorial styling, mobile-first, CLS 0, AA, themeable via tokens)
 - **error-badge** — error/problem pages.
 - **intake-form** — RESTRICTED: /contact/, /file-review/ (full) + state-pillar (small, bottom) ONLY.
 - **stack-8 / grid-2/3** — layout primitives.
-RULE (carried): pricing/comparison = vs-table never proof-strip cards (nowrap → mobile overflow). CTAs =
-canonical lexicon only. No two adjacent sections identical (editorial rhythm).
+
+**SECTION RHYTHM / ANTI-MONOTONY (founder ruling 2026-06-16 — the premium tell; gated, see §13.9).** The
+shared kit must compose into visibly DIFFERENT section layouts down a page — never the same card-grid repeated.
+This is what separates ultra-premium editorial from a templated/AI-generated page, and it serves the goal:
+authority-on-sight → trust → calls. Hard rules:
+- **Only ONE numbered system per page.** At most one section uses numbered cards/steps (process-diagram /
+  fix-steps / numbered flow). **NEVER two numbered sections on the same page.**
+- **No two ADJACENT sections may look the same** — consecutive sections must differ in layout/component AND
+  rhythm (not e.g. a 3-card grid followed by another 3-card grid).
+- **Deliberate variety down the page:** alternate column counts (1 / 2 / 3) · full-bleed vs contained ·
+  text-led vs visual-led · light surface vs tonal surface (the tier-surface tokens). Every section earns a
+  distinct treatment; nothing repeats lazily.
+- **CARRIED RULES:** pricing/comparison = vs-table never proof-strip cards (nowrap → mobile overflow) · CTAs =
+  canonical lexicon only.
 
 **[→ §13.1]** for the exact EXISTS-vs-NET-NEW status of every component above (real class names + what's a
 restyle vs net-new build). **[→ §13.2]** for the 3 approved component-kit changes (call-breakout → PRIMARY,
-the net-new minimal state-pillar form, the PLACEMENT-MAP rewrite).
+the net-new minimal state-pillar form, the PLACEMENT-MAP rewrite). **[→ §13.9]** for the section-rhythm
+design-fidelity GATE additions that enforce the rules above.
 
 ═══════════════════════════════════════════════════════════════
 §10 — TECHNICAL / PERFORMANCE / SEO CONTRACT (Code's hard rules)
@@ -261,7 +288,11 @@ the net-new minimal state-pillar form, the PLACEMENT-MAP rewrite).
   new sane ceiling and hold it; reuse the component kit to stay lean). Token-driven (CSS custom properties)
   so palette/type swap cleanly.
 - **Performance floor (hard gates)**: CLS 0 · Lighthouse ≥95 (target 100) · LCP fast · a11y AA incl. WCAG
-  2.2 target-size · zero horizontal overflow 360/390/768. The battery enforces these every change.
+  2.2 target-size (incl. the footer accordion's tap targets) · zero horizontal overflow 360/390/768. The
+  battery enforces these every change.
+- **Design-fidelity gate additions (§13.9)**: per-tier rich-component check (existing #12) PLUS the
+  section-rhythm checks — ≤1 numbered system per page · no two adjacent same-signature sections. The battery
+  automates what it can; the rest is a design-review checklist item.
 - **Schema preserved + enhanced**: all existing JSON-LD (WebPage/CollectionPage/Breadcrumb/Service/
   ItemList/FAQPage/QAPage/Article/Person/Org) carries through the restyle untouched; the design supports
   (never hides) the speakable/ai-summary/Q&A blocks.
@@ -413,8 +444,10 @@ qualification must NOT be lost — it moves to THREE non-form surfaces:
 **Standing triage rules unchanged:** disclosure above the fold · never "official" · never imply Intuit
 affiliation · never overclaim resolution/representation (the licensed CPA/EA/attorney does that).
 
-**APPROACH APPROVED (founder 2026-06-15).** **PROPOSED WORDING — pending founder word-level sign-off (the
-LAST blocker to brief-final):**
+**APPROACH APPROVED (founder 2026-06-15).** **✅ WORDING SIGNED OFF (founder 2026-06-16)** — Sheet-7 compliance
+confirmed correct (independent/not-Intuit clear · Intuit billing/account/login intent routed to Intuit · no
+"official"/no implied affiliation · tax controversy → CPA/EA/attorney · qualification moved from form into copy
+without weakening). The three pieces are LOCKED shipping copy:
 - **(a) Disclosure banner** (`.disclosure`, above the fold, before any call CTA): *"TechBrot is an independent
   firm of Certified QuickBooks ProAdvisors — we are not Intuit, and we are not affiliated with Intuit. For
   QuickBooks billing, subscription, payment, or account-login problems, contact Intuit directly. We help with
@@ -529,3 +562,26 @@ chrome present but conversion-focused). **Section spec (designed like the money 
 **REGISTRY:** add this TYPE with the section list above; **remove `/contact/` + `/file-review/` from the
 design-fidelity gate exclusion** (they now follow a designed pattern). *Registry edit deferred to brief-final /
 Code phase per "specs only."*
+
+─────────────────────────────────────────────
+§13.9 — DESIGN-FIDELITY GATE ADDITIONS (section rhythm + chrome — founder ruling 2026-06-16)
+─────────────────────────────────────────────
+The standing design-fidelity gate (battery check #12 = each page carries ≥1 tier-correct rich component) gains
+the **§9 SECTION-RHYTHM rules** as enforced checks, so the anti-templated/premium discipline is verified, not
+just hoped for. The gate serves the goal: a page that looks templated undercuts authority-on-sight → fewer
+calls.
+- **#12a — one-numbered-system:** hard-FAIL any page rendering **more than one numbered-system component**
+  (process-diagram / fix-steps / numbered flow). Fully automatable — count the numbered-system component
+  signatures per built page.
+- **#12b — no-adjacent-twins:** FLAG any page where **two consecutive body sections share the same component
+  signature** (e.g. grid-3 → grid-3, or two buyer-card grids back to back). Automatable as a heuristic on the
+  ordered section component-classes; borderline cases escalate to design review.
+- **#12c — variety floor (design-review, not fully automatable):** a long money/guide page should exhibit
+  deliberate variety (column counts, full-bleed vs contained, text-led vs visual-led, light vs tonal surface).
+  Codify as a reviewer checklist item; the battery reports the section-signature sequence to make review fast.
+- **Chrome checks:** footer mobile-accordion present + its tap targets ≥24px (closes the queued WCAG 2.2
+  finding); breadcrumb present + correctly slotted (below hero) + `BreadcrumbList` schema pairs, on every page
+  below home.
+**Honest engineering note:** #12a + the #12b heuristic + the chrome checks are automatable in `run_battery.py`;
+#12c is a structured design-review checklist (the battery emits the per-page section-signature list to drive
+it). Implemented in the Code phase alongside the re-skin.

@@ -150,24 +150,26 @@ steps — gated, not autonomous. Do NOT batch or run ahead.
   links 15667 resolve, zero broken refs). `contact/` added to the delete list per founder (I flagged it as the
   one unlisted old folder). Removes the repo-root-serving fallback risk before cutover. src/ untouched;
   recoverable via git + founder backup.
-- **4. Gap analysis** (redesign scope + proving set). ✅ DRAFTED 2026-06-15 (`REDESIGN-BRIEF.md` §13, reconciled
-  with the as-built system). AWAITING FOUNDER REVIEW. Read the founder's strategy brief (`REDESIGN-BRIEF.md`
+- **4. Gap analysis** (redesign scope + proving set). ✅✅ **COMPLETE — REDESIGN-BRIEF.md is FINAL (founder
+  2026-06-16).** All Deliverable-4 specs live in `REDESIGN-BRIEF.md` §13 (reconciled with the as-built system).
+  Read the founder's strategy brief (`REDESIGN-BRIEF.md`
   §0–§12) + grounded it: §13.1 as-built component map (EXISTS vs NET-NEW, real classes) · §13.2 the 3 approved
   component-kit changes (call-breakout→PRIMARY · net-new minimal state-pillar form · PLACEMENT-MAP rewrite) ·
   §13.3 forms-ruling registry/placement-map delta · §13.4 honest-triage compliance re-spec (⚠ FOUNDER SIGN-OFF) ·
   §13.5 gap-analysis checklist · §13.6 grounded proving set (real URLs) · §13.7 doc-system flag. **No code/registry
   edits (specs only); the registry/PLACEMENT-MAP propagation is deferred to brief-final / the Code phase.**
-  **FOUNDER RULINGS 2026-06-15 — FOLDED IN:** ✅ 3 component changes RATIFIED (§13.2) · ✅ honest-triage approach
-  APPROVED, PROPOSED WORDING drafted (§13.4) — **awaiting founder WORD-LEVEL SIGN-OFF = the LAST blocker to
-  brief-final** · ✅ doc-system: REDESIGN-BRIEF promoted to canonical CREATIVE truth, **DESIGN-DIRECTION.md DELETED
-  entirely** (founder ruling 2026-06-16 — one file per role; git history preserves it; applied: §10 doc map +
-  canonical-doc block) · ✅ `/contact/` + `/file-review/` = premium conversion-form page TYPE (§13.8) · ✅ proving
-  set FINAL (one-per-type, real URLs, §13.6).
+  **FOUNDER RULINGS FOLDED IN:** ✅ 3 component changes RATIFIED (§13.2) · ✅ honest-triage wording **SIGNED OFF
+  2026-06-16** (§13.4, Sheet-7 compliant) · ✅ doc-system: REDESIGN-BRIEF = canonical CREATIVE truth,
+  **DESIGN-DIRECTION.md DELETED** (2026-06-16; git history preserves it) · ✅ `/contact/` + `/file-review/` =
+  premium conversion-form page TYPE (§13.8) · ✅ proving set FINAL one-per-type (§13.6) · ✅ **design-quality rules
+  folded in 2026-06-16** — section rhythm/anti-monotony (only 1 numbered system/page · no adjacent same-looking
+  sections · deliberate variety) woven into §9 + motion §6 + nav/breadcrumb/mobile-footer-accordion §4 + the
+  section-rhythm design-fidelity GATE additions §13.9. **No code/registry edits (specs only); registry/PLACEMENT-MAP
+  propagation + the §13.9 gate checks land in the Code phase.**
   **⚠ NOTE:** `DESIGN-DIRECTION.md` had earlier been deleted from the working tree (unstaged — R4 explicit-add
   hygiene kept it out of every commit); confirmed by founder + now deleted intentionally as part of the doc-system
-  consolidation. **NEXT (after wording sign-off):
-  brief is FINAL → founder takes it to Claude Design** (visual system as OPTIONS — palette/type/signature + the
-  §13.6 proving pages mocked); NOT Code building yet.
+  consolidation. **NEXT: the brief is FINAL → founder takes it to Claude Design** (generate the visual system as
+  OPTIONS — palette/type/signature + the §13.6 proving pages mocked); NOT Code building yet.
 - **→ then the REDESIGN** (separate phase, per REDESIGN-BRIEF.md; includes the re-tiering pass).
 - **→ CUTOVER is the LAST step** — nothing goes live until the redesign is done and founder-signed-off.
 
@@ -189,19 +191,20 @@ baseline, so **before cutover re-verify baseline == the full live-prod URL set**
 live orphans that would 404 at cutover).
 
 ### ▶ CURRENT RESUME POINT (recovery anchor — keep current; founder may resume via `claude -c` after power loss)
-**As of commit `2393e16` (2026-06-15):** ✅✅ PATH B MIGRATION COMPLETE (139/139, cutover parity) — now in the
-gated POST-MIGRATION SEQUENCE. Deliverable status:
+**As of the 2026-06-16 brief-FINAL commit (latest on `preview-11ty`):** ✅✅ PATH B MIGRATION COMPLETE
+(139/139, cutover parity) — gated POST-MIGRATION SEQUENCE, all desk-work deliverables DONE. Deliverable status:
 - **D0 reconcile docs ✅** · **D1 redesign review queue + A4 ✅** (pending founder GO on the re-tier queue) ·
-  **D2 ARCHITECTURE-TRUTH ✅** (drafted + post-review corrections `226fb74`, renamed from v5; **AWAITING FOUNDER
-  RE-APPROVAL** before D4) · **D3 verify+delete old folders ✅** (pulled forward — `2393e16`, 10 root folders /
-  139 files removed, battery GREEN post-delete).
+  **D2 ARCHITECTURE-TRUTH ✅** (`226fb74`, renamed from v5; **AWAITING FOUNDER RE-APPROVAL**) · **D3 verify+delete
+  old folders ✅** (`2393e16`) · **D4 gap analysis ✅ COMPLETE — REDESIGN-BRIEF.md is FINAL** (founder 2026-06-16;
+  §13 reconciliation; triage wording signed off §13.4; design-quality rules folded in §4/§6/§9/§13.9).
 - **301 STAGED ✅** — `src/redirects.njk` → `/find-an-accountant/  /accounting/  301` (`939fffa`); remove when
   the real national landing ships post-redesign.
-- **D4 gap analysis ✅ DRAFTED** (`REDESIGN-BRIEF.md` §13, reconciled with as-built; commit below) — AWAITING
-  FOUNDER REVIEW + 3 open rulings (component changes · honest-triage compliance · doc-system promotion).
-- **NEXT after D4 review = the REDESIGN** (Claude Design generates the visual system as options → founder
-  picks → Code implements; incl. forms propagation §13.3 + re-tiering) → re-pattern all pages on preview →
-  founder sign-off → **CUTOVER (LAST)**. ARCHITECTURE-TRUTH re-approval still pending (carries into the redesign).
+- **Doc system:** canonical creative truth = REDESIGN-BRIEF.md; **DESIGN-DIRECTION.md DELETED** (`d9c4f94`).
+- **▶ NEXT = founder takes REDESIGN-BRIEF.md to CLAUDE DESIGN** — generate the visual system as OPTIONS
+  (palette/type/signature + the §13.6 proving pages mocked), founder PICKS the look. **Then the Code phase**
+  implements the approved system (incl. forms propagation §13.3, the §2/A re-tiering, the §13.9 gate checks) →
+  re-pattern all 148 on preview → founder sign-off → **CUTOVER (LAST)**. ARCHITECTURE-TRUTH re-approval still
+  pending (carries into the redesign). NOT Code building yet — design-options step is next.
 - **⚠ Carry-open:** before cutover, re-verify baseline.json == the full live-prod URL set (a live prod URL —
   `/find-an-accountant/` — was missing from the 139 baseline; there may be other uncaptured live orphans).
 - The tier RE-TIERING pass (NY ~17 conversion children → t-bofu, FINAL-MIGRATION-REPORT Section A; accounting
