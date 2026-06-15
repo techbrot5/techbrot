@@ -106,12 +106,15 @@ published pricing + re-verify QB-Live current status before go-live.
 ### ▶ CURRENT RESUME POINT (recovery anchor — keep current; founder may resume via `claude -c` after power loss)
 **As of commit `a40edfc` (2026-06-15, round 26):** Path B migration status —
 - find-an-accountant (43) ✓ · QuickBooks silo ✓ · vs (5) ✓ · **partners (2) ✓** (hub pre-built + /partners/faq/ `6a4fd70`).
-- **accounting: 35 of 39 done.** Waves: 1 hubs `d77b871` · 2 FAQs `754369b` · 3 advisory `a80257f` ·
-  4 services/standalones `3d6390f` · VA `116df1f` · 5 industries `74b1120` · 6 standalones `5f3c7d1` ·
-  7 industries `03a43ff` · 8 industries(auto-repair/dental/fitness/home-services/landscaping) `e0ef8eb`.
-- **RESUME = accounting wave 9 (FINAL): the 4 remaining industries** — franchise, manufacturing, retail,
-  trucking. Reference: quickbooks/online (t-mofu) + any built accounting industry page (construction).
-  After this wave, accounting (39) is DONE → Path B 139-baseline cutover parity reached.
+- **✅ accounting: 39 of 39 DONE** (wave 9 final — franchise/manufacturing/retail/trucking `b3f19a8`).
+- **✅✅ PATH B MIGRATION COMPLETE — 139 / 139 baselines built, 0 missing (verified 2026-06-15).**
+  Cutover parity reached: every live baseline URL is a real 11ty page on the cobalt system; no 404s at
+  cutover. find-an-accountant (43) · QuickBooks silo · vs (5) · partners (2) · accounting (39) all done.
+- **NEXT (post-cutover, NOT migration): (1)** the tier RE-TIERING pass — FINAL-MIGRATION-REPORT Sections
+  A (NY ~17 conversion children → t-bofu) + D2 (accounting BOFU services → t-bofu); a skin/visual change,
+  folds into the redesign. **(2)** the DESIGN RESET / re-pattern per DESIGN-DIRECTION.md. **(3)** open
+  low-risk items: Pilot published pricing, re-verify QB-Live status, honest-triage metas already done.
+  **(4)** held TODOs: nav/footer chrome, vector logo, research-log N=0, footer WCAG target-size.
 - Method (proven): per child, `equity_contract.py <url>` → frozen contract; t-mofu (industries +
   standalones) on the quickbooks/online + cash-flow-management reference; carry full schema (QAPage +
   ItemList + FAQPage no-dedup); newsletter exception per page; battery GREEN + axe 0 + overflow clean

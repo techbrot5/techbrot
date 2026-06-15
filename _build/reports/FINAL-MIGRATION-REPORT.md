@@ -134,6 +134,18 @@ national scope (NY-specific tax dropped from the NY analogs). Correct tier, no r
   nonprofit, professional-services, retail, saas, trucking.
 - After these 17, accounting (39) is done and Path B (139 baselines) reaches cutover parity.
 
+### D7 — ✅ ACCOUNTING COMPLETE (39/39) + PATH B MIGRATION COMPLETE (2026-06-15)
+Wave 6 standalones `5f3c7d1` · wave 7 industries `03a43ff` · wave 8 industries `e0ef8eb` · wave 9 FINAL
+industries (franchise/manufacturing/retail/trucking) `b3f19a8`. **Verified: 139 baseline URLs, 139 built,
+0 missing — cutover parity reached.** All accounting children equity GREEN · axe 0 · overflow clean ·
+CSS 55,933 B. Industry landings (19) = t-mofu (correct); standalones + services = t-mofu (BOFU-review-
+flagged, Section D2); advisory = t-mofu; hubs = t-hub; FAQs = t-guide.
+
+## ✅ MIGRATION DONE — re-tiering queue (this report) is the post-cutover follow-up
+The re-tiering pass (NY conversion children → t-bofu, Section A2/A3; accounting BOFU services → t-bofu,
+Section D2) is a VISUAL/skin change that folds into the post-cutover redesign — NOT done during migration
+(founder ruling). This report's Sections A + D are the review queue for that pass.
+
 ---
 _This report is appended as each remaining silo (partners, accounting) is migrated. Re-tiering happens
 AFTER 139-baseline cutover parity, on founder review of this queue._
