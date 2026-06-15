@@ -160,19 +160,28 @@ done and signed off.**
 §7 — GROWTH BACKLOG (build-new, AFTER cutover) — from v3/v4 Sheets 1/7/8 + registry Part 2
 ═══════════════════════════════════════════════════════════════
 Migration restored the 139 ranking-equity baselines. GROWTH is additive build-new on the new system, in
-small batches, after cutover. NOT-yet-built TYPES + indicative scope (targets re-confirmed before each
-batch — do not hard-lock counts here):
-- **Glossary** (~45) — t-guide compact; definition/speakable/related.
-- **Tools / calculators** (~9) — t-mofu tool variant; tool-panel/result; always hands off to file-review.
-- **Guides** (~16, 3 are go-remote-blocker priority) — t-guide; toc/guide-grid.
-- **Research / datasets** (1 built) — t-guide research dress; stat-cite (max 2/page), real data only.
-- **Case studies** (~12) — t-mofu proof; REAL engagements only, no fabrication (honesty §8).
+small batches, after cutover. NOT-yet-built TYPES + scope — **reconciled 2026-06-16 against the v4.xlsx Sheet-1
+source (the 427-URL full site vision; `_build/scripts/v4_diff.py`). The diff confirmed NO new page TYPE in the
+330 not-built v4 URLs — every one maps to a type already in the system, so growth is NOT design-blocking.**
+Counts below are the v4 not-built tallies (targets re-confirmed before each batch — not hard-locked):
+- **Glossary** (46) — t-guide compact; definition/speakable/related.
+- **Tools / calculators** (10) — t-mofu tool variant; tool-panel/result; always hands off to CALL/file-review.
+- **Guides** (16, 3 are go-remote-blocker priority) — t-guide; toc/guide-grid.
+- **Research / datasets** (1 built + more) — t-guide research dress; stat-cite (max 2/page), real data only.
+- **Case studies** (8) — t-mofu proof; REAL engagements only, no fabrication (honesty §8).
 - **Switch pages** (4) — t-bofu conversion; /switch/from-{competitor}/.
-- **Support silo** (~20) — t-bofu + honest-triage (Sheet-7 mandatory).
-- **Reviews listing** — t-mofu; verified Clutch only; no AggregateRating until 5+.
-- **Blog silo** — t-guide article.
-- **More states** (find-an-accountant) + **more industries** (accounting) — on the NY/industry templates.
+- **Support / help silo** (**~67 in v4 — NOT ~20; the registry under-counted, corrected here**) — t-bofu +
+  honest-triage (Sheet-7 mandatory). The single largest growth area alongside QB-help.
+- **QuickBooks (more)** (~86) — more product/help/error-code pages on existing QB types.
+- **Reviews listing** (4 — `/reviews/` + by-service/industry filters) — t-mofu; verified Clutch only; no
+  AggregateRating until 5+. **NOTE: `/reviews/` is LIVE on prod but not built — see §9 (cutover 301).**
+- **Blog silo** (10) — t-guide article.
+- **`/pricing/` children** (5: bookkeeping/cfo/cleanup/payroll/quickbooks-setup) — pricing TYPE (call-converts;
+  REDESIGN-BRIEF §13.10) · **`/partners/` children** (10) · **`/trust/` children** (4) · **`/legal/` docs** (8,
+  incl. cookie/SLA/imprint/etc.) · **`/careers/`** (1) · **`/about/team/`** (LIVE on prod, not built — §9).
+- **More states** (find-an-accountant) + **more industries / bookkeeping verticals** — on the NY/industry templates.
 The growth gate is funnel/intent coverage + honesty, NOT a page-count target ("200" was never a target).
+**Full per-URL list: v4.xlsx Sheet 1 (330 not-built) — re-run `_build/scripts/v4_diff.py` to regenerate.**
 
 ═══════════════════════════════════════════════════════════════
 §8 — HONESTY + COMPLIANCE CONTRACT (absolute)
@@ -200,6 +209,15 @@ The growth gate is funnel/intent coverage + honesty, NOT a page-count target ("2
 - **Baseline-coverage gap (flagged, OPEN):** `/find-an-accountant/` is live on prod yet absent from baseline.json
   (the round-24-phase0 record wrongly called it "not built"). **Before cutover, re-verify the 139 baseline ==
   the full live-prod URL set** — there may be other uncaptured live orphans that would 404 at cutover.
+- **TWO MORE uncaptured-live orphans (found by the v4.xlsx diff, 2026-06-16; verified 200 + DISTINCT content on
+  prod):** **`/about/team/`** ("The Team — Named Certified ProAdvisors") and **`/reviews/`** ("Client Reviews ·
+  Verified on Clutch"). Live on prod, never in baseline/built. **CUTOVER-PREP 301s needed** (founder to confirm
+  targets): `/about/team/` → `/quickbooks/proadvisor-team/` (the built team page; also resolves the live page's
+  founder-name exposure) · `/reviews/` → `/trust/` (the review-program page) — until each is built as growth
+  (about-team page / reviews-listing t-mofu). **NOT design-blocking** (both are existing types). The 4 other
+  v4-LIVE URLs (`/legal/`, `/quickbooks/cleanup/{complex,focused,standard}/`) are **soft-404s** — prod serves
+  HOME content (200) for them, so they are NOT real pages and need no redirect (the old host catch-alls to home;
+  this is why a bare 200 isn't proof of a real page — require distinct content).
 - **Old Bootstrap per-route folders DELETED ✅** (Deliverable 3, commit `2393e16`) — 10 root folders / 139 files
   removed; the live site builds from `src/` only. Removes the repo-root-serving fallback risk before cutover.
 - Nav + footer chrome — no canonical design yet (the mega-menu + per-type navbars land in the redesign, §4).

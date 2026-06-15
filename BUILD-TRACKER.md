@@ -75,6 +75,14 @@ redesign).
 **STANDING RULE:** when something changes, UPDATE the owning file above — **never spawn a new overlapping doc.**
 If two docs ever disagree, **ARCHITECTURE-TRUTH + the latest founder ruling win**, and reconcile immediately.
 
+## ⭐ CODE-PHASE DESIGN-OWNERSHIP RULE (founder 2026-06-16 — authoritative text in REDESIGN-BRIEF §12)
+**Claude Design OWNS the visual design.** At the Design handoff, **Code's FIRST job = CAPTURE the complete
+design system into the repo as the locked authoritative source** (tokens: color/type/spacing/motion · every
+component's styling · every per-type hero). **Then Code BUILDS all pages by referencing that captured system.**
+Code does NOT author/invent CSS or visual design afterward — it implements what Design produced. Minor
+adjustments OK; **wholesale CSS/design changes go back through Design, never invented by Code.** Capture
+everything at handoff so the build is pure implementation, not redesign-as-you-go.
+
 ## FIND-AN-ACCOUNTANT PHASE (spec 2026-06-15) — deploys AFTER QB silo 1 + vs + partners, BEFORE accounting; accounting silo LAST
 Scope: **NY is the only state built out** (pillar + 39-page tree). **CA/TX/FL/IL parked via
 temporary 301** (no content build) — scheduled for full build-out POST-REDESIGN on the new
@@ -207,8 +215,15 @@ live orphans that would 404 at cutover).
   implements the approved system (incl. forms propagation §13.3, the §2/A re-tiering, the §13.9 gate checks) →
   re-pattern all 148 on preview → founder sign-off → **CUTOVER (LAST)**. ARCHITECTURE-TRUTH ✅ re-approved +
   D1 re-tier queue ✅ GO (both carry into the redesign). NOT Code building yet — design-options step is next.
-- **⚠ Carry-open:** before cutover, re-verify baseline.json == the full live-prod URL set (a live prod URL —
-  `/find-an-accountant/` — was missing from the 139 baseline; there may be other uncaptured live orphans).
+- **✅ v4.xlsx DIFF DONE (2026-06-16, `_build/scripts/v4_diff.py`):** 427-URL full vision; 96/99 built-global
+  match; 330 not-built growth backlog — **NO new page type (NOT design-blocking)**; counts reconciled into
+  ARCHITECTURE-TRUTH §7 (support silo corrected ~20→~67). `/pricing/` ruled its own call-converting TYPE
+  (REDESIGN-BRIEF §13.10). Code-phase **design-ownership rule** recorded (§12 + standing rule above).
+- **⚠ Carry-open (cutover-prep):** re-verify baseline.json == the full live-prod URL set. **THREE uncaptured-live
+  orphans now found** (live 200 + distinct content on prod, not in baseline/built): `/find-an-accountant/`
+  (301→/accounting/ STAGED), **`/about/team/`** (301→/quickbooks/proadvisor-team/ — founder to confirm),
+  **`/reviews/`** (301→/trust/ — founder to confirm). The old host SOFT-404s to home (200), so a bare 200 isn't
+  proof — require distinct content. (`/legal/`, qb cleanup-tiers = soft-404, no action.)
 - The tier RE-TIERING pass (NY ~17 conversion children → t-bofu, FINAL-MIGRATION-REPORT Section A; accounting
   BOFU services → t-bofu, Section D2) runs INSIDE the redesign phase — BEFORE cutover, not after.
 

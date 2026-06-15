@@ -330,6 +330,14 @@ design-fidelity GATE additions that enforce the rules above.
 5. **Re-pattern all pages on preview**, founder sign-off, → **CUTOVER (last)**.
 6. Then build-new growth types on the now-complete system.
 
+**⭐ DESIGN-OWNERSHIP STANDING RULE (founder 2026-06-16 — governs the Code phase).** Claude Design OWNS the
+visual design. At the Design handoff, **Code's FIRST job is to CAPTURE the complete design system into the repo
+as the authoritative, locked source-of-truth** — tokens (color / type / spacing / motion), every component's
+styling, every per-type hero — a captured design-system spec. **Then Code BUILDS all pages by referencing that
+captured system.** Code does NOT author or invent CSS / visual design afterward; it implements what Design
+produced. Minor adjustments later are fine; **wholesale CSS/design changes go back through Design, never
+invented by Code.** Capture everything at handoff so the build is pure implementation, not redesign-as-you-go.
+
 THE PROVING SET (design + build these FIRST to validate the whole system before mass re-skin):
 home (t-hub) · one t-bofu money page · one t-mofu product · one t-guide long-form · the NY pillar
 (t-location) · one location child (proves the non-pillar hero). Nail these → the rest inherits.
@@ -609,3 +617,32 @@ calls.
 **Honest engineering note:** #12a + the #12b heuristic + the chrome checks are automatable in `run_battery.py`;
 #12c is a structured design-review checklist (the battery emits the per-page section-signature list to drive
 it). Implemented in the Code phase alongside the re-skin.
+
+─────────────────────────────────────────────
+§13.10 — v4.xlsx DIFF OUTCOME (against the original source, 2026-06-16) + the `/pricing/` TYPE ruling
+─────────────────────────────────────────────
+Diffed v4 Sheet-1 (the 427-URL full site vision) against the built site (`_build/scripts/v4_diff.py`). **96
+of the 99 built global pages match v4; 330 v4 URLs are not-built (the growth backlog); 3 built FAQ pages
+(`/accounting/advisory/faq/`, `/accounting/industries/faq/`, `/quickbooks/payroll/faq/`) aren't in v4 Sheet-1
+(v4 under-listed — fine, real built pages).**
+- **DESIGN-BLOCKING: NONE.** Every one of the 330 not-built URLs is **another instance of an EXISTING type**
+  (glossary/tools/guides/case-studies/switch/blog/reviews/support · more quickbooks/accounting/industries/
+  bookkeeping/vs · `/partners/*` ×10 · `/pricing/*` ×5 · `/trust/*` ×4 · `/legal/*` ×8 · `/careers/`). **No new
+  page TYPE hides in v4.** All have a hero/template in the proving set (§13.6) or the type list.
+- **GROWTH counts reconciled into ARCHITECTURE-TRUTH §7** so nothing's lost — notably the **support/help silo
+  is ~67 URLs in v4, not the registry's ~20** (corrected); plus blog 10, glossary 46, guides 16, tools 10,
+  case-studies 8, switch 4, reviews 4, `/pricing/` children 5, `/partners/` children 10, `/trust/` children 4,
+  `/legal/` docs 8, `/careers/` 1. All POST-CUTOVER build-new.
+- **TWO uncaptured-live orphans found** (v4 marked LIVE/port; verified 200 with DISTINCT content on prod):
+  **`/about/team/`** ("The Team — Named Certified ProAdvisors") and **`/reviews/`** ("Client Reviews · Verified
+  on Clutch"). Neither is in baseline.json/built (same class as `/find-an-accountant/`). The other 4 v4-LIVE
+  URLs (`/legal/`, `/quickbooks/cleanup/{complex,focused,standard}/`) are **soft-404s** — prod serves HOME
+  content (200) for them, so they are NOT real pages. → cutover-prep 301s recorded in ARCHITECTURE-TRUTH §9.
+
+**`/pricing/` TYPE ruling (founder lean 2026-06-16, confirmed sound — recommend ADOPT):** `/pricing/` is
+high-intent and converts by **CALL** (no form, per §7). It becomes its **own TYPE** — **t-bofu-style** hero:
+**fixed-fee scope + transparency** + *"a Certified ProAdvisor walks you through it on the call,"* driving to the
+call block. v4 confirms it grows into a **pricing hub + per-service children** (`/pricing/{bookkeeping,cfo,
+cleanup,payroll,quickbooks-setup}/`, post-cutover), so the pricing hero/template should be designed to support
+a hub + children. *(This supersedes the earlier "/pricing/ = t-hub" as-built classification.)* **Add to the
+proving-set as the pricing TYPE exemplar (real URL `/pricing/`).**
