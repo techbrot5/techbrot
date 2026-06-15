@@ -1,0 +1,226 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/accounting/financial-statements/",
+  "slug": "acct-finstmt",
+  "tierClass": "section--tier-guide",
+  "bodyClass": "page--mofu",
+  "callBar": true,
+  "title": "Financial Statements: P&amp;L, Balance Sheet &amp; Cash Flow · TechBrot",
+  "description": "Monthly financial statements by Certified ProAdvisors — income statement, balance sheet, and cash flow statement built from reconciled QuickBooks books, CPA-ready, with plain-language commentary.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Accounting", "href": "/accounting/" },
+    { "name": "Financial Statements" }
+  ],
+  "hero": {
+    "eyebrow": "Accounting · Financial statements",
+    "heading": "Three statements. One real picture of the business.",
+    "subheading": "Most owners get a P&amp;L and call it &ldquo;the books.&rdquo; A complete picture takes all three statements &mdash; income, balance sheet, cash flow &mdash; reconciled, in agreement, and read together. TechBrot&rsquo;s Certified ProAdvisors prepare them monthly from your QuickBooks file, CPA-ready, with plain-language commentary. Independent firm, not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "The three financial statements report a business from three angles &mdash; the <strong>income statement (P&amp;L)</strong> over a period, the <strong>balance sheet</strong> at a moment in time, and the <strong>cash flow statement</strong> reconciling profit to cash. Read separately, each is incomplete. TechBrot&rsquo;s Certified ProAdvisors prepare all three monthly from a reconciled QuickBooks file, deliver them CPA-ready, and pair them with plain-language commentary so the numbers become decisions. Internal management and CPA-ready reporting &mdash; not audit, review, or compilation, which are licensed CPA engagements we coordinate with.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. We prepare statements from clean books; audit, review, compilation, and tax filing stay with your licensed CPA."
+  },
+  "ctaBand": {
+    "eyebrow": "Ready when you are",
+    "heading": "Get all three statements, every month.",
+    "lede": "Book a 30-minute discovery call. We&rsquo;ll review where your books stand, what your statements should look like, and the right next step &mdash; written fixed-fee scope within 3 business days. No pitch.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
+      { "label": "Explore Services", "href": "/accounting/", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="acct-finstmt-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In plain terms</p>
+      <h2 class="section__heading">Financial statements, plainly.</h2>
+    </header>
+    <div class="prose">
+      {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-finstmt-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Financial statements, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <p class="ai-summary__question">{{ item.q | safe }}</p>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-finstmt-three">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The three statements</p>
+      <h2 class="section__heading">What each one tells you &mdash; and what it doesn&rsquo;t.</h2>
+      <p class="section__lede">Each statement answers a different question. Used alone, each one misleads. Read together, they tell the truth.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in statements %}
+      <div class="stack-8">
+        <p class="num">{{ s.num }}</p>
+        <h3>{{ s.name | safe }}</h3>
+        <p class="prose">{{ s.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-finstmt-signals">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">When real financial statements earn their keep</p>
+      <h2 class="section__heading">If any of these sound familiar, the answer is yes.</h2>
+      <p class="section__lede">Most owners reach for proper monthly statements when a single P&amp;L stops answering the questions they&rsquo;re asking.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in signals %}
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
+        <p class="buyer-card__body">{{ s.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-finstmt-delivers">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What&rsquo;s included</p>
+      <h2 class="section__heading">What financial statement preparation actually delivers.</h2>
+      <p class="section__lede">Included in monthly bookkeeping engagements. Stand-alone historical preparation quoted as fixed-fee project work.</p>
+    </header>
+    <div class="grid-3">
+      {%- for d in deliverables %}
+      <div class="stack-8">
+        <p class="num">{{ d.num }}</p>
+        <h3>{{ d.name | safe }}</h3>
+        <p class="prose">{{ d.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-finstmt-scope">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Honest scope</p>
+      <h2 class="section__heading">Management statements vs CPA engagements.</h2>
+      <p class="section__lede">We prepare the statements from clean books. External attestation and tax returns are a licensed CPA&rsquo;s work &mdash; the boundary, drawn plainly.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in scope %}
+      <div class="stack-8">
+        <h3>{{ s.name | safe }}</h3>
+        <p class="prose">{{ s.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+    <div class="vs-scroll">
+      <table class="vs-table">
+        <caption class="sr-only">What financial statement preparation covers vs what a licensed CPA engagement covers</caption>
+        <thead><tr><th scope="col">Capability</th><th scope="col" class="vs-table__us">Statement preparation</th><th scope="col">Licensed CPA engagement</th></tr></thead>
+        <tbody>
+          {%- for r in boundary %}
+          <tr><th scope="row">{{ r.cap | safe }}</th>
+            <td class="vs-table__us">{% if r.us == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.us == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.us | safe }}</span>{% endif %}</td>
+            <td>{% if r.cpa == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.cpa == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.cpa | safe }}</span>{% endif %}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-finstmt-beyond">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Beyond the statements</p>
+      <h2 class="section__heading">Reliable statements are the floor, not the ceiling.</h2>
+    </header>
+    <div class="prose">
+      <p>Producing the three statements accurately every month is the foundation. The real value starts when someone who understands them tells you what to do about what they show: where margin is leaking, why cash is tight, which segment is carrying the business, when to hire. That&rsquo;s where reporting becomes <strong>advisory</strong>.</p>
+      <p>TechBrot layers <a href="/accounting/advisory/kpi-reporting/?intent=advisory">KPI reporting</a>, <a href="/accounting/advisory/cash-flow-management/?intent=advisory">cash flow management</a>, and performance reviews on top of reliable statements &mdash; up to a <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">fractional CFO</a> seat when the work becomes continuous. As automation handles the routine, this interpretation layer is where the real value now lives.</p>
+      <p><strong>Can we rebuild statements for prior periods?</strong> Yes. If past periods have unreliable or missing statements &mdash; for a lender, board, sale, or tax filing &mdash; we rebuild them as part of a <a href="/accounting/bookkeeping/cleanup-bookkeeping/">cleanup</a> or <a href="/accounting/bookkeeping/catch-up-bookkeeping/">catch-up</a> engagement, quoted as fixed-fee project work. <a href="/accounting/advisory/?intent=advisory">Explore advisory &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-finstmt-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">Financial statement questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-finstmt-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="acct-finstmt-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-finstmt-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
+    </header>
+    <div class="prose">
+      <p>This page reflects how TechBrot prepares financial statements. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on statement-preparation methodology, reconciliation standards, and the boundary with licensed CPA engagements (audit, review, compilation). Where our approach or scope changes, this page is updated. Statements are delivered CPA-ready and coordinated with your tax professional for filing and any formal CPA engagement.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in reviewSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="in-brief__source">Page last reviewed: May 2026.</p>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-finstmt-related">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Related services.</h2>
+    </header>
+    {%- for n in related %}
+    <div class="stack-8">
+      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+      <p class="prose">{{ n.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
