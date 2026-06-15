@@ -1,0 +1,154 @@
+---json
+{
+  "layout": "layouts/t-guide.njk",
+  "permalink": "/accounting/bookkeeping/faq/",
+  "slug": "acct-bk-faq",
+  "tierClass": "section--tier-guide",
+  "pageTier": "guide",
+  "bodyClass": "page--mofu",
+  "title": "Bookkeeping FAQ: Monthly, Cleanup, Catch-Up, Software, Switching · TechBrot",
+  "description": "Thirty-five questions on monthly bookkeeping, cleanup, catch-up, QuickBooks software, pricing, switching providers, and what working with an independent ProAdvisor firm actually looks like. Fixed-fee, no hourly billing, zero affiliate commission.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Accounting", "href": "/accounting/" },
+    { "name": "Bookkeeping", "href": "/accounting/bookkeeping/" },
+    { "name": "FAQ" }
+  ],
+  "hero": {
+    "eyebrow": "The bookkeeping reference &middot; maintained by Certified ProAdvisors",
+    "heading": "Bookkeeping, answered.",
+    "subheading": "Questions on what bookkeeping covers, monthly bookkeeping in practice, cleanup and catch-up engagements, pricing and the engagement model, software and technology, and how switching providers actually works. Written by an independent Certified QuickBooks ProAdvisor firm with zero commission on QuickBooks or any other platform. Every answer reflects how we&rsquo;d actually advise a client &mdash; no hedging, no affiliate spin. We keep the books right; your CPA files from them. Not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=bookkeeping", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>Bookkeeping, answered</strong> &mdash; the bookkeeping reference organized into seven topic clusters (what bookkeeping covers, monthly bookkeeping in practice, cleanup engagements, catch-up engagements, pricing &amp; engagement model, software &amp; technology, and switching &amp; onboarding), maintained by the Certified QuickBooks ProAdvisor team. Pricing reflects TechBrot&rsquo;s own fixed-fee ranges; every engagement is fixed-fee against a written scope, with no hourly billing. We perform operational bookkeeping and QuickBooks work and coordinate with your CPA, who files. Independent firm, zero commission on any Intuit product.",
+    "source": "Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Question not answered above?",
+    "heading": "Talk to a Certified ProAdvisor directly.",
+    "lede": "These clusters answer most of what businesses ask about bookkeeping engagements. The remainder are specific to your situation &mdash; the current state of your books, your industry, transaction volume, the exact problem you&rsquo;re looking at. Book a 30-minute discovery call to get answers from a Certified ProAdvisor on your specific circumstances. Complimentary, no obligation, no hourly billing.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=bookkeeping", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section section--compact" id="acct-bk-faq-popular">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Most asked</p>
+      <h2 class="section__heading">Six questions answered most often.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for p in popular %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ p.qid }} &middot; {{ p.cluster }}</p>
+        <p class="prose"><a href="#{{ p.anchor }}">{{ p.q | safe }} &rarr;</a></p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-bk-faq-body">
+  <div class="container">
+    <h2 class="sr-only">All bookkeeping questions, organized by topic</h2>
+    <div class="guide-grid">
+      <aside class="toc" aria-label="Topic clusters">
+        <p class="toc__label">Topic clusters</p>
+        <ol>
+          {%- for c in clusters %}
+          <li><a {% if loop.first %}class="is-active" {% endif %}href="#{{ c.id }}">{{ c.heading | safe }}</a></li>
+          {%- endfor %}
+        </ol>
+      </aside>
+      <article class="article prose">
+        <div class="byline-block" style="border-top:0;padding-top:0;margin-bottom:var(--space-6)">
+          <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+          <div>
+            <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+            <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; independent firm, not affiliated with Intuit Inc.</p>
+          </div>
+        </div>
+        <blockquote class="pull-quote">
+          <p>Every answer here reflects how we&rsquo;d actually advise a client &mdash; no hedging, no affiliate spin, and zero commission on any Intuit product. We keep the books right; your CPA files from them.</p>
+        </blockquote>
+        {%- for c in clusters %}
+        <section id="{{ c.id }}" aria-labelledby="{{ c.id }}-h">
+          <h2 id="{{ c.id }}-h">{{ c.heading | safe }}</h2>
+          <p>{{ c.lede | safe }}</p>
+          {%- for it in c.items %}
+          <h3 id="{{ it.anchor }}">{{ it.q | safe }}</h3>
+          {{ it.a | safe }}
+          {%- endfor %}
+        </section>
+        {%- endfor %}
+        <p class="meta-reviewed"><span>Maintained by the Certified QuickBooks ProAdvisor team</span><span>7 topic clusters</span><span>Last reviewed: 2026-06 &middot; Certified QuickBooks ProAdvisor</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-bk-faq-structured">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Quick answers</p>
+      <h2 class="section__heading">The seven questions businesses ask most.</h2>
+      <p class="section__lede">The core of the bookkeeping reference, condensed. Each answer carries the full detail from the clusters above.</p>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-bk-faq-a-{{ loop.index }}" id="acct-bk-faq-q-{{ loop.index }}">{{ item.q | safe }}</button></h3>
+        <div class="faq__answer" id="acct-bk-faq-a-{{ loop.index }}" data-open="false" role="region" aria-labelledby="acct-bk-faq-q-{{ loop.index }}">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-bk-faq-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    </header>
+    <div class="prose">
+      <p>{{ reviewBody | safe }}</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in reviewerCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.label | safe }}</p><p class="trust-row__label">{{ r.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-bk-faq-related">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related services</p>
+      <h2 class="section__heading">The full bookkeeping service universe.</h2>
+      <p class="section__lede">Every engagement type referenced across the FAQ, organized for quick navigation. Start where your question lives.</p>
+    </header>
+    <div class="grid-3">
+      {%- for n in related %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ n.cluster }}</p>
+        <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+        <p class="prose">{{ n.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

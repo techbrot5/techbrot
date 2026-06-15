@@ -1,0 +1,136 @@
+---json
+{
+  "layout": "layouts/t-guide.njk",
+  "permalink": "/accounting/industries/faq/",
+  "slug": "acct-ind-faq",
+  "tierClass": "section--tier-guide",
+  "pageTier": "guide",
+  "bodyClass": "page--mofu",
+  "title": "Industry Accounting FAQ: Why Specialization Matters · TechBrot",
+  "description": "Industry-specific accounting answered by Certified ProAdvisors — why specialization matters, how to choose your industry fit, cross-industry patterns, the 17 industries we serve, technology by industry, and how engagements actually work. Independent firm; not affiliated with Intuit Inc.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Accounting", "href": "/accounting/" },
+    { "name": "Industries", "href": "/accounting/industries/" },
+    { "name": "FAQ" }
+  ],
+  "hero": {
+    "eyebrow": "The industry-specialization reference &middot; Maintained by Certified ProAdvisors",
+    "heading": "Industry-specific accounting, answered.",
+    "subheading": "Why industry-specific accounting matters, how to know which industry fits your business, the cross-industry patterns we see most often, the 17 industries TechBrot serves with specialist depth, what we don&rsquo;t cover, and how industry-aware engagements actually work. Written by an independent firm of Certified QuickBooks ProAdvisors with zero commission on QuickBooks or any other platform. Industry specialization is what separates competent operational accounting from generic bookkeeping. Not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>Industry-specific accounting, answered</strong> &mdash; the questions businesses ask most across 7 topics (why industry matters, choosing the right industry fit, cross-industry patterns, the 17 industries we cover, switching industries &amp; new ventures, technology by industry, and engagement &amp; next steps), maintained by the Certified QuickBooks ProAdvisor team. Each answer reflects how we&rsquo;d actually configure and scope the work &mdash; industry-specific chart of accounts, the operational platform integration, ASC 606 revenue recognition, and the KPI that runs the business. We deliver the books; your CPA files the taxes. Independent firm, zero commission on any Intuit product.",
+    "source": "Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Question not answered above?",
+    "heading": "Talk to an industry-specialist ProAdvisor directly.",
+    "lede": "These questions answer most of what businesses ask about industry-specific accounting. The remainder are specific to your situation &mdash; industry, sub-vertical, current configuration, multi-industry mix, platform stack. Book a 30-minute discovery call to discuss industry fit for your specific business. Complimentary, no obligation, no hourly billing.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section section--compact" id="acct-ind-faq-popular">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Most asked</p>
+      <h2 class="section__heading">Six questions answered most often.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for p in popular %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ p.qid }} &middot; {{ p.cluster }}</p>
+        <p class="prose"><a href="#{{ p.anchor }}">{{ p.q | safe }} &rarr;</a></p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-ind-faq-body">
+  <div class="container">
+    <h2 class="sr-only">All industry-specialization questions, organized by topic</h2>
+    <div class="guide-grid">
+      <aside class="toc" aria-label="Topic clusters">
+        <p class="toc__label">Topic clusters</p>
+        <ol>
+          {%- for c in clusters %}
+          <li><a {% if loop.first %}class="is-active" {% endif %}href="#{{ c.id }}">{{ c.heading | safe }}</a></li>
+          {%- endfor %}
+        </ol>
+      </aside>
+      <article class="article prose">
+        <div class="byline-block" style="border-top:0;padding-top:0;margin-bottom:var(--space-6)">
+          <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+          <div>
+            <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+            <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; independent firm, not affiliated with Intuit Inc.</p>
+          </div>
+        </div>
+        <blockquote class="pull-quote">
+          <p>Industry specialization is what separates competent operational accounting from generic bookkeeping &mdash; the configuration, the integration, and the one number that actually runs your business.</p>
+        </blockquote>
+        {%- for c in clusters %}
+        <section id="{{ c.id }}" aria-labelledby="{{ c.id }}-h">
+          <h2 id="{{ c.id }}-h">{{ c.heading | safe }}</h2>
+          <p>{{ c.lede | safe }}</p>
+          {%- for it in c.items %}
+          <h3 id="{{ it.anchor }}">{{ it.q | safe }}</h3>
+          {{ it.a | safe }}
+          {%- endfor %}
+        </section>
+        {%- endfor %}
+        <p class="meta-reviewed"><span>Maintained by the Certified QuickBooks ProAdvisor team</span><span>7 topics &middot; industry specialization</span><span>Last reviewed: 2026-06 &middot; Certified QuickBooks ProAdvisor</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-ind-faq-structured">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Quick answers</p>
+      <h2 class="section__heading">Seven questions businesses ask most.</h2>
+      <p class="section__lede">The core of industry-specific accounting, condensed. Each answer carries the full detail from the topics above.</p>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-ind-faq-a-{{ loop.index }}" id="acct-ind-faq-q-{{ loop.index }}">{{ item.q | safe }}</button></h3>
+        <div class="faq__answer" id="acct-ind-faq-a-{{ loop.index }}" data-open="false" role="region" aria-labelledby="acct-ind-faq-q-{{ loop.index }}">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-ind-faq-related">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Explore the 17 industries we cover.</h2>
+      <p class="section__lede">Every industry has a dedicated page with sub-vertical depth, integration platforms, KPI frameworks, and engagement model. Start where your business lives.</p>
+    </header>
+    <div class="grid-3">
+      {%- for n in related %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ n.cluster }}</p>
+        <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+        <p class="prose">{{ n.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
