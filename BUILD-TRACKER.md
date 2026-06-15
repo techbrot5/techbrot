@@ -139,8 +139,15 @@ steps — gated, not autonomous. Do NOT batch or run ahead.
   architecture doc (§0 identity/non-negotiables · §1 URL+silo 139 · §2 type/tier DECIDED · §3 state strategy ·
   §4 design · §5 sequence/governance · §6 factory · §7 growth backlog · §8 honesty · §9 opens · §10 doc map).
   Supersedes v4/v3.xlsx + design-brief where they disagree. Nothing depends on it until founder-approved.
-- **4. Gap analysis** (redesign scope + proving set).
-- **3. Verify + delete the old Bootstrap-Studio per-route folders.**
+- **3. Verify + delete the old Bootstrap-Studio per-route folders.** ✅ DONE 2026-06-15 (pulled forward, founder
+  GO). Verified safety (139/139; baseline.json holds equity independent of old HTML; battery reads
+  baseline.json + _site + src, never old folders; build input=src only), deleted 10 root folders / 139 files
+  (about·accounting·contact·find-an-accountant·legal·partners·pricing·quickbooks·trust·vs) via `git rm`,
+  commit `2393e16`. Post-delete: clean build → _site (148 pages) + _redirects intact; battery GREEN (exit 0,
+  links 15667 resolve, zero broken refs). `contact/` added to the delete list per founder (I flagged it as the
+  one unlisted old folder). Removes the repo-root-serving fallback risk before cutover. src/ untouched;
+  recoverable via git + founder backup.
+- **4. Gap analysis** (redesign scope + proving set). ← **NEXT (awaiting founder GO + ARCHITECTURE-TRUTH re-approval)**
 - **→ then the REDESIGN** (separate phase, per DESIGN-DIRECTION.md; includes the re-tiering pass).
 - **→ CUTOVER is the LAST step** — nothing goes live until the redesign is done and founder-signed-off.
 
@@ -153,23 +160,29 @@ signed-off redesign**.
 quality; **NOT a gap to restore now.** Rebuilt FRESH post-redesign as a proper net-new t-hub national landing.
 State pillars (CA/FL/IL/NY/TX) top the silo until then. **CUTOVER CHECK (verified this turn): the URL is LIVE
 (HTTP 200) on production techbrot.com today** (a "50-state coverage" landing) but is ABSENT from baseline.json.
-→ **CUTOVER-PREP action: stage a temporary 301 `/find-an-accountant/` → `/accounting/`** (Claude's recommended
-target — national + topical; founder to confirm vs NY pillar / `/contact/`); **remove the 301 when the real
-landing ships.** NOT creating the `_redirects` file now (cutover is LAST; the redesign owns routing) — recorded
-as a locked cutover-prep action in ARCHITECTURE-TRUTH §9. **⚠ Also flagged: a live prod URL was missing from the 139 baseline —
-re-verify before cutover that baseline == the full live-prod URL set (possible other uncaptured live orphans).**
+→ **301 STAGED ✅ (founder confirmed target `/accounting/`, 2026-06-15):** `src/redirects.njk` emits
+`/_redirects` with `/find-an-accountant/  /accounting/  301` (commit `939fffa`); verified the bundle writes
+`_site/_redirects` on clean build. National + topical interim target (chosen over the NY pillar to avoid a
+national→single-state geo-mismatch). **REMOVE this rule when the real find-an-accountant national landing ships
+post-redesign.** **⚠ STILL OPEN — baseline-coverage re-verify:** a live prod URL was missing from the 139
+baseline, so **before cutover re-verify baseline == the full live-prod URL set** (possible other uncaptured
+live orphans that would 404 at cutover).
 
 ### ▶ CURRENT RESUME POINT (recovery anchor — keep current; founder may resume via `claude -c` after power loss)
-**As of commit `a40edfc` (2026-06-15, round 26):** Path B migration status —
-- find-an-accountant (43) ✓ · QuickBooks silo ✓ · vs (5) ✓ · **partners (2) ✓** (hub pre-built + /partners/faq/ `6a4fd70`).
-- **✅ accounting: 39 of 39 DONE** (wave 9 final — franchise/manufacturing/retail/trucking `b3f19a8`).
-- **✅✅ PATH B MIGRATION COMPLETE — 139 / 139 baselines built, 0 missing (verified 2026-06-15).**
-  Cutover parity reached: every live baseline URL is a real 11ty page on the cobalt system; no 404s at
-  cutover. find-an-accountant (43) · QuickBooks silo · vs (5) · partners (2) · accounting (39) all done.
-- **NEXT = the POST-MIGRATION GOVERNING SEQUENCE above (gated, one-at-a-time).** Currently at Deliverable 0
-  (reconcile docs). Cutover is the LAST step, after the signed-off redesign. The tier RE-TIERING pass (NY
-  ~17 conversion children → t-bofu, FINAL-MIGRATION-REPORT Section A; accounting BOFU services → t-bofu,
-  Section D2) is a skin/visual change that runs INSIDE the redesign phase — BEFORE cutover, not after.
+**As of commit `2393e16` (2026-06-15):** ✅✅ PATH B MIGRATION COMPLETE (139/139, cutover parity) — now in the
+gated POST-MIGRATION SEQUENCE. Deliverable status:
+- **D0 reconcile docs ✅** · **D1 redesign review queue + A4 ✅** (pending founder GO on the re-tier queue) ·
+  **D2 ARCHITECTURE-TRUTH ✅** (drafted + post-review corrections `226fb74`, renamed from v5; **AWAITING FOUNDER
+  RE-APPROVAL** before D4) · **D3 verify+delete old folders ✅** (pulled forward — `2393e16`, 10 root folders /
+  139 files removed, battery GREEN post-delete).
+- **301 STAGED ✅** — `src/redirects.njk` → `/find-an-accountant/  /accounting/  301` (`939fffa`); remove when
+  the real national landing ships post-redesign.
+- **NEXT = Deliverable 4 — GAP ANALYSIS** (redesign scope + proving set). **GATED:** needs founder GO **and**
+  ARCHITECTURE-TRUTH re-approval first. Then → REDESIGN (incl. the re-tiering pass) → CUTOVER (LAST).
+- **⚠ Carry-open:** before cutover, re-verify baseline.json == the full live-prod URL set (a live prod URL —
+  `/find-an-accountant/` — was missing from the 139 baseline; there may be other uncaptured live orphans).
+- The tier RE-TIERING pass (NY ~17 conversion children → t-bofu, FINAL-MIGRATION-REPORT Section A; accounting
+  BOFU services → t-bofu, Section D2) runs INSIDE the redesign phase — BEFORE cutover, not after.
 
 **STANDING (founder, 2026-06-15):** commit+push after EVERY wave (never batch waves uncommitted); keep
 BUILD-TRACKER + `_build/reports/FINAL-MIGRATION-REPORT.md` + `round-26-ny-children.md` current so a fresh

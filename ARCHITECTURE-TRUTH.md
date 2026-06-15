@@ -193,12 +193,15 @@ The growth gate is funnel/intent coverage + honesty, NOT a page-count target ("2
 §9 — OPEN ITEMS / TODOs (carry into the redesign + growth)
 ═══════════════════════════════════════════════════════════════
 - **`/find-an-accountant/` bare national landing** — deferred NET-NEW build, post-redesign (founder ruling
-  2026-06-15: removed for quality; state pillars top the silo until then). **CUTOVER-PREP:** stage a temporary
-  301 `/find-an-accountant/` → `/accounting/` (recommended; founder to confirm vs NY pillar / `/contact/`) — it
-  is live (200) on prod but not in the 139 baseline; remove the 301 when the real landing ships.
-- **Baseline-coverage gap (flagged):** `/find-an-accountant/` is live on prod yet absent from baseline.json
+  2026-06-15: removed for quality; state pillars top the silo until then). **301 STAGED ✅** — `src/redirects.njk`
+  emits `/_redirects` with `/find-an-accountant/  /accounting/  301` (commit `939fffa`; target `/accounting/`
+  founder-confirmed — national + topical, chosen over the NY pillar to avoid a national→single-state
+  geo-mismatch). **REMOVE this rule when the real national landing ships.**
+- **Baseline-coverage gap (flagged, OPEN):** `/find-an-accountant/` is live on prod yet absent from baseline.json
   (the round-24-phase0 record wrongly called it "not built"). **Before cutover, re-verify the 139 baseline ==
   the full live-prod URL set** — there may be other uncaptured live orphans that would 404 at cutover.
+- **Old Bootstrap per-route folders DELETED ✅** (Deliverable 3, commit `2393e16`) — 10 root folders / 139 files
+  removed; the live site builds from `src/` only. Removes the repo-root-serving fallback risk before cutover.
 - Nav + footer chrome — no canonical design yet (the mega-menu + per-type navbars land in the redesign, §4).
 - Vector logo — pending.
 - Re-tier provisionals — the 5 accounting standalones (t-bofu provisional, confirm in redesign); NY cities/
