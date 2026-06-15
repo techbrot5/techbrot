@@ -234,3 +234,29 @@ Commits: `9056d8a` `ab792ff` `bdd253b` `9f85efb` `827f2c0` `40f82ac` `f977382` `
 **NEXT in the migration (same R7 autonomy):** the 4 state landing pages CA/TX/FL/IL (real per-state tax
 content, t-location, NO children yet), then QB-remainder (6) + vs (5) + partners (1), then accounting (39,
 LAST). Deploy order unchanged: find-an-accountant deploys AFTER QB silo 1 + vs + partners.
+
+---
+
+## ✅ STATE LANDINGS — CA / TX / FL / IL · DONE · commit `de3df13` · FIND-AN-ACCOUNTANT SILO COMPLETE (43/43)
+4 state landing pages on the validated NY-pillar template (72 headings · 17 FAQ · 5-node schema), built-to-floor, landing-only (children deferred to post-redesign).
+| State | Preview URL | Real per-state tax content (citable) |
+|---|---|---|
+| California | …/find-an-accountant/california/ | CDTFA sales tax 7.25% + district (to ~10.75%), $800 min LLC franchise tax + gross-receipts fee, 13.3% income tax, PTE elective (AB 150), AB5 ABC test, $500K sales-only nexus |
+| Texas | …/find-an-accountant/texas/ | NO state income tax, franchise/margin tax (~$2.47M no-tax-due, EZ/COGS/comp methods, PIR), origin-based sales tax 6.25% + local to 8.25%, SaaS 80% taxable |
+| Florida | …/find-an-accountant/florida/ | NO state income tax, 6% + county discretionary surtax, 5.5% corporate (C-corps only), reemployment tax, Oct-2025 commercial-rent CST repeal |
+| Illinois | …/find-an-accountant/illinois/ | flat 4.95% income tax, PPRT (~9.5% effective on corps), sales tax 6.25% + local (Chicago 10.25%), Chicago lease-transaction tax on SaaS ~9%, amusement tax |
+
+**Decisions/judgment calls:** **NO CHILDREN** — landing-only; zero links to non-existent state child pages
+(coverage/cities/industries rendered as content; explore CTAs → `/contact/?intent=<state>`). **R5:** all
+state-outcome figures explicitly representative/illustrative; only the 2 real Clutch reviews; named
+reviewers firm-level. **Layout:** t-location hero motif now overridable via `heroMotif` front-matter (NY
+pillar keeps its contour default); the 4 states use the neutral `motif-align-full` (honest — not a
+wrong-state silhouette). Added **8 state intents** (`california`/`-advisory`, `texas`, `florida`,
+`illinois`) — the battery intent check is static. **Overflow fix (CA only):** CA's pricing section
+rendered as `proof-strip` buyer-cards (the `proof-strip__item` `white-space:nowrap` on the wide
+"$2,000–$20,000+" ranges forced the card to 414px at mobile) → switched to the `vs-scroll`+`vs-table`
+pattern the other 3 states + NY pillar use (scrolls safely). TX/FL/IL were clean as built.
+**Verification (all 4):** equity GREEN · t-location · axe 0 · overflow clean 360/390/768 · CSS 55,933 B.
+
+**FIND-AN-ACCOUNTANT SILO COMPLETE — 43/43 baselines** (NY pillar + 38 NY children + 4 state landings).
+**NEXT (R7 autonomy):** QB-remainder (6) → vs (5) → partners (1) → accounting (39, LAST).

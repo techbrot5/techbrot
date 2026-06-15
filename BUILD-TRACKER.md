@@ -82,6 +82,17 @@ landings CA/TX/FL/IL (real per-state tax content, t-location, no children yet), 
 NOTE: the FIND-AN-ACCOUNTANT PHASE spec above said CA/TX/FL/IL were "parked via 301" — SUPERSEDED by
 the revised spec (no redirects; CA/TX/FL/IL ship as real landing pages now, children post-redesign).
 
+**✅ FIND-AN-ACCOUNTANT SILO COMPLETE (2026-06-15, round 26) — 43/43 baselines migrated.** NY (pillar +
+38 children, 8 waves) + CA/TX/FL/IL state landings (landing-only; children post-redesign). All on the
+validated t-location tier: equity GREEN · axe 0 · overflow clean 360/390/768 · CSS 55,933 B. Commits
+`9056d8a`→`de3df13`. Honest-triage metas reframed per founder (commit `e5e0c21`). **Patterns banked:**
+state landing = clone NY pillar + `heroMotif: motif-align-full.svg` (t-location layout now takes a
+`heroMotif` override; neutral motif, not a wrong-state contour) + real per-state tax content + NO links
+to non-existent children (route to `/contact/?intent=<state>`) + explicit `<state>`/`<state>-advisory`
+intents (battery intent check is static). Pricing/comparison tables MUST use `vs-scroll`+`vs-table`, never
+`proof-strip__item` buyer-cards (nowrap → mobile overflow; caught + fixed on CA). **NEXT (R7 autonomy):**
+QB-remainder (6) → vs (5) → partners (1) → accounting (39, LAST). Deploy order unchanged.
+
 Updated: 2026-06-14 · NEW PHASE — PATH B MIGRATION. Goal: migrate the 104 remaining
 baselines to the current cobalt system FAST (build-to-FLOOR, not polish — all 104 get
 re-patterned on the new design system after cutover), reach all-139-baselines parity, then
