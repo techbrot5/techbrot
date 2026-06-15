@@ -1,0 +1,227 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/accounting/month-end-close/",
+  "slug": "acct-monthend",
+  "tierClass": "section--tier-guide",
+  "bodyClass": "page--mofu",
+  "callBar": true,
+  "title": "Month-End Close Process &amp; Services · TechBrot",
+  "description": "Month-end close services by Certified ProAdvisors — bank and balance-sheet reconciliations, accruals, journal entries, and CPA-ready financial statements delivered on a published monthly close calendar.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Accounting", "href": "/accounting/" },
+    { "name": "Month-End Close" }
+  ],
+  "hero": {
+    "eyebrow": "Accounting · Month-end close",
+    "heading": "Close the books the same way every month. Then they&rsquo;re finally usable.",
+    "subheading": "Most small businesses don&rsquo;t close &mdash; they leave the books open all year and panic in January. TechBrot&rsquo;s Certified ProAdvisors run a real month-end close: every account reconciled, every accrual posted, every statement delivered on a published calendar &mdash; so the numbers for each month are locked, verifiable, and ready for decisions and your CPA. Independent firm, not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=month-end-close", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>Month-end close</strong> is the recurring discipline of finalizing the books for a completed month &mdash; every bank, credit card, and balance-sheet account reconciled, accruals and prepaids recorded, depreciation and amortization posted, payroll liabilities reconciled, and the period&rsquo;s financial statements delivered. A clean close means the numbers for that month are locked, verifiable, and won&rsquo;t change &mdash; the foundation every report, forecast, and tax return is built on. TechBrot&rsquo;s Certified ProAdvisors run the close as a structured chapter inside monthly bookkeeping, on a published close calendar so the cadence is predictable for your team and CPA. Internal management and CPA-ready &mdash; not audit, review, or compilation, which are licensed CPA engagements.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Delivers internal management and CPA-ready statements; coordinated with your CPA for filing and any formal engagement."
+  },
+  "ctaBand": {
+    "eyebrow": "Ready when you are",
+    "heading": "Close the books on a calendar &mdash; every month.",
+    "lede": "Book a 30-minute discovery call. A Certified ProAdvisor reviews how your books close today, what a real cadence would look like, and the right next step &mdash; written fixed-fee scope within 3 business days. No pitch.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=month-end-close", "class": "btn--primary" },
+      { "label": "Explore Services", "href": "/accounting/?intent=accounting", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="acct-monthend-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In plain terms</p>
+      <h2 class="section__heading">Month-end close, plainly.</h2>
+    </header>
+    <div class="prose">
+      {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-monthend-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Month-end close, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <p class="ai-summary__question">{{ item.q | safe }}</p>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-monthend-included">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What&rsquo;s included</p>
+      <h2 class="section__heading">What a real close actually covers.</h2>
+      <p class="section__lede">Six workstreams, every month, every engagement &mdash; not just a bank reconciliation called &ldquo;the close.&rdquo;</p>
+    </header>
+    <div class="grid-3">
+      {%- for d in included %}
+      <div class="stack-8">
+        <p class="num">{{ d.num }}</p>
+        <h3>{{ d.name | safe }}</h3>
+        <p class="prose">{{ d.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-monthend-signals">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">When a real close earns its keep</p>
+      <h2 class="section__heading">If any of these sound familiar, the answer is yes.</h2>
+      <p class="section__lede">Most owners reach for a structured close when &ldquo;the books are pretty much done&rdquo; stops being good enough.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in signals %}
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
+        <p class="buyer-card__body">{{ s.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-monthend-process">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The close calendar</p>
+      <h2 class="section__heading">A predictable cadence every month.</h2>
+      <p class="section__lede">The published close calendar makes the process visible to your team and your CPA &mdash; same shape, every month.</p>
+    </header>
+    <ol class="process-diagram">
+      {%- for s in process %}
+      <li class="process-step">
+        <p class="process-step__number">{{ s.num | safe }}</p>
+        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
+        <p class="process-step__body">{{ s.body | safe }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-monthend-cadence-table">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The published calendar, day by day</p>
+      <h2 class="section__heading">When each step happens after month-end.</h2>
+      <p class="section__lede">A typical close runs 5&ndash;10 business days after month-end. The windows below are the same every month, so your team and CPA know what lands when.</p>
+    </header>
+    <div class="vs-scroll">
+      <table class="vs-table">
+        <caption class="sr-only">Month-end close calendar — window, workstream, and what is delivered</caption>
+        <thead><tr><th scope="col">Window</th><th scope="col">Workstream</th><th scope="col">What happens</th></tr></thead>
+        <tbody>
+          {%- for r in cadenceTable %}
+          <tr><th scope="row">{{ r.window | safe }}</th><td>{{ r.work | safe }}</td><td>{{ r.detail | safe }}</td></tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-monthend-boundary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Where the close stops</p>
+      <h2 class="section__heading">Bookkeeping and close &mdash; coordinated with your CPA, not replacing one.</h2>
+    </header>
+    <div class="prose">
+      <p>Month-end close is <strong>bookkeeping and management accounting</strong>: reconciliations, accruals, journal entries, and internal financial statements delivered on a calendar. It is <strong>not</strong> an external <a href="/legal/disclaimer/">audit, review, or compilation</a> &mdash; those are licensed CPA engagements with their own independence and reporting standards. TechBrot delivers internal management and CPA-ready statements; we coordinate with your CPA or EA for tax filing and any formal engagement.</p>
+      <p>That boundary is what keeps the work honest. A clean close hands your CPA reconciled, locked books so January is a filing exercise &mdash; not a reconstruction. Where a past period was never closed, that&rsquo;s a <a href="/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up">catch-up</a> or <a href="/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup">cleanup</a> engagement first; once the past is rebuilt and reconciled, you transition into a recurring monthly close on a published calendar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-monthend-beyond">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Beyond the close</p>
+      <h2 class="section__heading">A clean close is what makes every other report worth anything.</h2>
+    </header>
+    <div class="prose">
+      <p>Forecasts, KPIs, performance reviews, budgets &mdash; none of it works on unreconciled books. The close is the discipline that makes the whole reporting and advisory layer trustworthy. Skip the close and every number above it is provisional; do the close right and the rest of the practice has a real foundation.</p>
+      <p>Most TechBrot clients run the close inside <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> and then layer <a href="/accounting/advisory/?intent=advisory">advisory</a> on top &mdash; <a href="/accounting/advisory/kpi-reporting/?intent=advisory">KPI reporting</a>, <a href="/accounting/advisory/cash-flow-management/?intent=cash-flow">cash flow</a>, performance reviews, up to a <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">fractional CFO</a> seat. As automation handles the routine, the close is the operational discipline that earns the right to do everything else.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-monthend-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">Month-end close questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-monthend-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="acct-monthend-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-monthend-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
+    </header>
+    <div class="prose">
+      <p>This page reflects how TechBrot runs the month-end close. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on close methodology, reconciliation standards, accrual treatment, and the boundary with licensed CPA engagements. Where our approach or scope changes, this page is updated. The close is delivered on a published calendar inside monthly bookkeeping and coordinated with your CPA for filing and any formal engagement.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in reviewSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="in-brief__source">Page last reviewed: May 2026.</p>
+  </div>
+</section>
+
+<section class="section" id="acct-monthend-related">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Related services.</h2>
+    </header>
+    {%- for n in related %}
+    <div class="stack-8">
+      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+      <p class="prose">{{ n.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>

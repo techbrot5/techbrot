@@ -1,0 +1,211 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/accounting/reconciliation-services/",
+  "slug": "acct-recon",
+  "tierClass": "section--tier-guide",
+  "bodyClass": "page--mofu",
+  "callBar": true,
+  "title": "Account Reconciliation Services for QuickBooks &middot; TechBrot",
+  "description": "Account reconciliation services by Certified ProAdvisors — bank, credit card, loan, payroll, and balance-sheet reconciliations performed every month so your QuickBooks file actually agrees with reality.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Accounting", "href": "/accounting/" },
+    { "name": "Reconciliation Services" }
+  ],
+  "hero": {
+    "eyebrow": "Accounting · Reconciliation services",
+    "heading": "Reconciliation is what makes books real.",
+    "subheading": "A QuickBooks file isn&rsquo;t accurate just because transactions are entered &mdash; it&rsquo;s accurate when every account agrees with its statement, schedule, or filing. TechBrot&rsquo;s Certified ProAdvisors reconcile every bank, credit card, loan, and balance-sheet account every month, so the books prove out instead of being assumed correct. Independent firm, not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=reconciliation", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>Account reconciliation</strong> is the monthly process of confirming that an account&rsquo;s balance in the books matches the balance reported by its source &mdash; the bank statement, the credit card statement, the loan amortization schedule, the payroll filing, the merchant processor report. When the two agree, the account is reconciled; when they don&rsquo;t, the difference is investigated and resolved. Done monthly, it&rsquo;s what proves the books are real rather than assumed; skipped, it&rsquo;s why files look fine and aren&rsquo;t. TechBrot&rsquo;s Certified ProAdvisors reconcile every bank, credit card, loan, payroll, merchant, and balance-sheet account as a chapter of month-end close, inside recurring monthly bookkeeping. Reconciliation is bookkeeping verification, not external audit or tax filing &mdash; those stay with your CPA.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Delivered inside monthly bookkeeping; not audit, review, or compilation, which are licensed CPA engagements."
+  },
+  "ctaBand": {
+    "eyebrow": "Ready when you are",
+    "heading": "Get books that reconcile — every month.",
+    "lede": "Book a 30-minute discovery call. A Certified ProAdvisor reviews where your reconciliation stands, what catch-up or cleanup work might be needed, and the right next step &mdash; written fixed-fee scope within 3 business days. No pitch.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=reconciliation", "class": "btn--primary" },
+      { "label": "Explore Services", "href": "/accounting/services/", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="acct-recon-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In plain terms</p>
+      <h2 class="section__heading">Reconciliation, plainly.</h2>
+    </header>
+    <div class="prose">
+      {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-recon-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Reconciliation, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <p class="ai-summary__question">{{ item.q | safe }}</p>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-recon-accounts">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What gets reconciled</p>
+      <h2 class="section__heading">Every account that should agree with something external.</h2>
+      <p class="section__lede">Skipping any of these is how books pass a glance and fail a real review.</p>
+    </header>
+    <div class="grid-3">
+      {%- for d in deliverables %}
+      <div class="stack-8">
+        <p class="num">{{ d.num }}</p>
+        <h3>{{ d.name | safe }}</h3>
+        <p class="prose">{{ d.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-recon-signals">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">When real reconciliation earns its keep</p>
+      <h2 class="section__heading">If any of these sound familiar, the answer is yes.</h2>
+      <p class="section__lede">Most owners reach for professional reconciliation when &ldquo;the bank feeds match&rdquo; stops being good enough.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in signals %}
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
+        <p class="buyer-card__body">{{ s.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-recon-process">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The monthly reconciliation rhythm</p>
+      <h2 class="section__heading">How reconciliation actually happens.</h2>
+      <p class="section__lede">Same shape every month &mdash; not a once-a-year scramble.</p>
+    </header>
+    <ol class="process-diagram">
+      {%- for s in process %}
+      <li class="process-step">
+        <p class="process-step__number">{{ s.num | safe }}</p>
+        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
+        <p class="process-step__body">{{ s.body | safe }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-recon-scope">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Honest scope</p>
+      <h2 class="section__heading">Reconciliation vs audit, vs feeds, vs hope.</h2>
+      <p class="section__lede">What reconciliation is, what it isn&rsquo;t, and what stays with licensed professionals.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in scope %}
+      <div class="stack-8">
+        <h3>{{ s.label | safe }}</h3>
+        <p class="prose">{{ s.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-recon-floor">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Beyond reconciliation</p>
+      <h2 class="section__heading">Reconciliation is the floor every other report stands on.</h2>
+    </header>
+    <div class="prose">
+      <p>Once accounts reconcile each month, the rest of the practice can do its job: <a href="/accounting/financial-statements/">financial statements</a> become trustworthy, <a href="/accounting/advisory/kpi-reporting/">KPI reports</a> show what&rsquo;s really happening, <a href="/accounting/advisory/cash-flow-management/">cash flow forecasts</a> sit on real numbers, and your CPA stops doing bookkeeping at tax time. A reconciled file is the one that survives an audit, a lender&rsquo;s review, or a buyer&rsquo;s diligence without a scramble.</p>
+      <p>Most TechBrot clients run reconciliation inside <a href="/accounting/bookkeeping/monthly-bookkeeping/">monthly bookkeeping</a> and then layer <a href="/accounting/advisory/?intent=advisory">advisory</a> on top &mdash; up to a <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">fractional CFO</a> seat when the work becomes continuous. As automation handles the routine, reliable reconciliation is the operational discipline that earns the right to do everything else. <a href="/accounting/advisory/?intent=advisory">Explore advisory &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-recon-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">Reconciliation questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-recon-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="acct-recon-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acct-recon-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
+    </header>
+    <div class="prose">
+      <p>This page reflects how TechBrot performs account reconciliation. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on reconciliation methodology, source-document standards, and the boundary with licensed CPA engagements. Where our approach or scope changes, this page is updated. Reconciliation is delivered inside <a href="/accounting/bookkeeping/monthly-bookkeeping/">monthly bookkeeping</a> on a published close calendar and coordinated with your CPA for filing and any formal engagement.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in reviewSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="in-brief__source">Page last reviewed: May 2026.</p>
+  </div>
+</section>
+
+<section class="section section--alt" id="acct-recon-related">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Related services.</h2>
+    </header>
+    {%- for n in related %}
+    <div class="stack-8">
+      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+      <p class="prose">{{ n.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
