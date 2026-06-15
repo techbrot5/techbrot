@@ -92,6 +92,33 @@ strong conversion intent) and should be reviewed for t-bofu:
 - **t-guide:** the 4 FAQ pages — correct.
 (Each row gets a built/verified note + final tier recommendation as the waves complete.)
 
+### D3 — Built so far + tier confirmations
+- **Wave 2 — 4 FAQs** (accounting/faq, advisory/faq, bookkeeping/faq, industries/faq): t-guide. CORRECT.
+- **Wave 3 — 5 advisory children** (cash-flow-management, budgeting-forecasting, kpi-reporting,
+  business-performance-review, financial-strategy): built t-mofu. Consideration sell — t-mofu CORRECT
+  (no re-tiering flag).
+- **Wave 4 — 4 BOFU-flagged services** (controller-services, outsourced-accounting [services children];
+  reconciliation-services, month-end-close [standalones]): built t-mofu per proposed tier, but these are
+  **discrete paid engagements with strong conversion intent → REVIEW for t-bofu** in the redesign pass.
+  Confirmed BOFU read; kept t-mofu floor per founder directive (don't re-tier during migration).
+
+### D4 — ⚠️ DATA DEFECT (founder ruling needed) — /accounting/services/virtual-accounting/
+The LIVE baseline page is **mis-assembled**: its `<head>` is virtual-accounting (correct title, meta, OG,
+6 FAQ, schema) but its `<body>` is the **e-commerce industry page** (wrong body pasted under the right
+head). So baseline.json froze ~34 **e-commerce** headings for a virtual-accounting URL.
+- The wave-4 agent correctly REFUSED to ship incoherent e-commerce headings under a virtual-accounting
+  title (standing rules #6 root-cause, #7 push-back) and built a **coherent real virtual-accounting page**
+  instead. That page is **HELD** at `$CLAUDE_JOB_DIR/tmp/HOLD-virtual-accounting.{njk,11tydata.js}`
+  (NOT in src, NOT shipped) pending founder sign-off, because replacing ~34 frozen baseline headings is a
+  **wholesale content replacement** = risk-hierarchy #2 founder sign-off.
+- **Knock-on:** the real e-commerce content currently mis-living at this URL almost certainly belongs at
+  **/accounting/industries/ecommerce/** (one of the 19 unbuilt industry children — its own breadcrumb says
+  Industries → E-commerce). When the industries wave builds ecommerce, that content is the source.
+- **Founder options:** (A) approve shipping the coherent virtual-accounting page + log the e-commerce
+  headings as a "data-defect" equity exception [RECOMMENDED — matches the page's own head/FAQ/schema];
+  (B) supply a true virtual-accounting heading contract if one exists elsewhere. Pending the ruling,
+  /accounting/services/virtual-accounting/ is the ONE accounting child not shipped.
+
 ---
 _This report is appended as each remaining silo (partners, accounting) is migrated. Re-tiering happens
 AFTER 139-baseline cutover parity, on founder review of this queue._
