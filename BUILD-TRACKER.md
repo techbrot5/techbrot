@@ -203,6 +203,27 @@ baseline, so **before cutover re-verify baseline == the full live-prod URL set**
 live orphans that would 404 at cutover).
 
 ### ▶ CURRENT RESUME POINT (recovery anchor — keep current; founder may resume via `claude -c` after power loss)
+**🟢 CODE PHASE LIVE — design captured, re-skin underway (2026-06-16).** Founder fetched the Claude
+Design "TechBrot Design System Elevation" handoff; we are in PURE IMPLEMENTATION per it (design-ownership
+rule). Locked design source: `_build/design-capture/extracted/`. Full plan + execution log:
+`_build/reports/round-27-capture-plan.md`.
+- **Direction (locked, founder chat):** cold/light · accent **Ledger Ink #1E3A70** · **Fraunces + Geist +
+  Geist Mono** · whisper tonal `--surface-subtle #F7FAFD` · 4 signature ledger diagrams · CALL conversion ·
+  honesty rules · section-variety engine (#12a–d) · forms ONLY on /contact/ + /file-review/ + minimal pillar.
+- **⚠ Recorded finding:** the handoff bundle ships TWO directions; the `_ds/` snapshot (cobalt + Geist-only)
+  is an EARLIER iteration, **intentionally SUPERSEDED**. Capture from the templates + galleries + handoff.
+- **✅ COMMIT 1 — token + font re-cut (`a2be13b`, pushed):** 00-fonts (Geist + Geist Mono self-hosted, retire
+  Public Sans/IBM Plex; Fraunces kept) · 01-tokens (full cold/light re-cut, all enforced names preserved so
+  the tokenised 02–09 layers inherit the skin; new groups surface/diagram/illus/measure/icon/motion-stagger;
+  muted ink #5C6A82 for AA) · base.njk Geist preload + theme-color · **CSS gate re-set 58→82KB** (battery +
+  bundle). **Battery GREEN** (equity 139/139, css-drift, manifest, design-fidelity; min 57,809B/82KB). Every
+  existing page now wears the elevated skin (content/equity untouched). Dev server: `http://192.168.1.7:8080/`.
+- **▶ NEXT — COMMIT 2 (the founder's review gate):** prove the money page
+  `/accounting/bookkeeping/cleanup-bookkeeping/` end-to-end on the elevated system (section--* macros, the 4
+  diagrams, premium call-band, dark final band, sticky call-bar) with FROZEN baseline content → battery GREEN
+  + overflow 360/390/768 + axe 0 + CLS 0 → STOP + report with preview URL. **No mass apply until the founder
+  approves the proven page.**
+
 **As of the 2026-06-16 brief-FINAL commit (latest on `preview-11ty`):** ✅✅ PATH B MIGRATION COMPLETE
 (139/139, cutover parity) — gated POST-MIGRATION SEQUENCE, all desk-work deliverables DONE. Deliverable status:
 - **D0 reconcile docs ✅** · **D1 redesign review queue + A4 ✅ + ✅ re-tier queue GO (founder 2026-06-16)** —

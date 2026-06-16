@@ -82,3 +82,50 @@ CURRENT cobalt floor until capture begins.
 ## 8 · STOP — awaiting founder GO
 Confirm: (a) capture-from-templates ruling OK; (b) proceed to Step 1 (read-in-full) → Step 2
 (token re-cut) → prove the cleanup-bookkeeping money page → STOP for review.
+
+---
+
+# EXECUTION LOG (founder GO'd 2026-06-16)
+
+## ✅ Step 1 — read everything in full
+Read in full: README · Handoff — Claude Code · design-system readme · _ds_manifest (full token
+dump) · Foundations & Direction · QuickBooks Cleanup money page · Galleries 01–07 · the intent
+chat (chat1.md). All decisions confirmed (see §1 finding + below). NOT yet read (deferred to
+mass-apply): the per-type template HTML (Home/Hub/Guide/State Pillar/Contact/File Review/Honest
+Triage/Legal) — captured as registry lines for now.
+
+**Second discrepancy found + resolved:** only the Foundations board uses IBM Plex Mono; every
+template + gallery + the money page + the Handoff + the founder's chat use **Geist Mono**.
+Foundations was the early concept board (it also holds the accent "pick one" study). Mono = Geist
+Mono, settled.
+
+## ✅ Step 2 — token + font re-cut  ·  COMMIT 1 (a2be13b, pushed preview-11ty)
+- **00-fonts.css**: self-host Geist + Geist Mono (variable woff2, downloaded via
+  `_build/scripts/download_fonts.ps1`); retire Public Sans + IBM Plex Mono; Fraunces kept; metric
+  fallbacks for CLS 0.
+- **01-tokens.css**: full cold/light re-cut. Accent Ledger Ink `#1E3A70`, cool ramp, cool shadows,
+  card radius 14, new token groups `--surface-* / --diagram-* / --illus-* / --measure-* / --icon-*
+  / --motion-stagger`. **Every enforced legacy token name preserved** → the tokenised component
+  layers (02–09, zero hardcoded hex) inherit the new skin with no class churn. AA: `--color-ink-mute`
+  nudged spec `#62708A` → `#5C6A82` so eyebrows clear 4.5:1 on every tonal tier (permitted minor
+  adjustment); `--text-faint #8A98AD` stays NON-TEXT only.
+- **base.njk**: Geist preload + theme-color `#FBFCFE`.
+- **CSS byte gate RE-SET** 58 → 82KB minified (bundle template + battery); source soft-cap 120KB;
+  battery soft-cap note made cp1252-safe (was crashing on the ⚠ glyph under Windows).
+- **Locked design source** committed under `_build/design-capture/extracted/`.
+
+**Battery: GREEN** — equity all 139 pages · css-drift (zero hardcoded hex / zero undeclared
+properties) · manifest · cta-lexicon · design-fidelity per-tier. Minified **57,809B / 82KB gate**.
+Geist + Geist Mono served 200; CSS carries `#1E3A70` + `#FBFCFE` + Geist.
+
+**Effect:** every EXISTING page is now restyled to the elevated skin (color/type/surface/shadow/
+radius) with content/headings/FAQ/schema/URLs untouched — equity-GREEN holds. Visible now on the
+dev server. Component STRUCTURE is still the cobalt-floor vocabulary; the elevated component
+library (section-layout engine, signature diagrams, call-band, mid-mega) lands with the money-page
+prove (commit 2).
+
+## ▶ NEXT — Step 3: prove the money page (commit 2, then STOP for founder review)
+Re-skin `/accounting/bookkeeping/cleanup-bookkeeping/` end-to-end on the elevated system
+(section--* macros, 4 signature diagrams, premium call-band, pricing/review/vs/faq, dark final
+band, mobile sticky call-bar) using the FROZEN baseline content. Battery GREEN + overflow
+360/390/768 + axe 0 + CLS 0 + CSS gate → STOP + report with the preview URL (founder's review gate).
