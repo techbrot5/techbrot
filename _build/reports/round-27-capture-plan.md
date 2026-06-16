@@ -158,9 +158,9 @@ still GREEN (no baseline heading dropped).
   real layout gate)
 - CSS: minified **63,522B / 82KB gate** · source 91KB / 120KB soft-cap
 
-**⚠ OPEN for founder (flag, not resolved):** `site.json` ships `+18777515575` / `(877) 751-5575`
-site-wide; the design chat flagged that exact number as "not the real founder number." The
-call-block (and all CTAs) use the central `site.phone` token — confirm the real number; it's a
-one-line `site.json` change that propagates everywhere.
+**✅ RESOLVED (founder 2026-06-17):** `(877) 751-5575` / `tel:+18777515575` is TechBrot's REAL
+toll-free line — NOT a placeholder. Locked as the live number via the central `site.phone` token
+in `site.json`; cutover gate #1 CLEARED. (The "not real" note came only from the design chat;
+the founder authoritatively confirmed it.)
 
 **STOP — founder review gate.** No mass apply until the proven page is approved.

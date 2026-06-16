@@ -128,9 +128,12 @@ canonical doc above.**
 
 ## ⛳ CUTOVER GATE — FLIP-TO-LIVE PRE-FLIGHT (founder 2026-06-17; flip is NOT just a page count)
 Before techbrot.com is pointed at this build, ALL must clear:
-1. **Real phone number** swapped in `src/_data/site.json` — the 877 placeholder must NOT go live
-   (calls would route to a stranger). Founder supplies. (877-751-5575 is in site.json now, founder
-   confirmed for the build; treat as PLACEHOLDER until re-confirmed at flip.)
+1. ✅ **CLEARED — real phone number locked (founder confirmed 2026-06-17).** (877) 751-5575 /
+   `tel:+18777515575` is TechBrot's REAL toll-free line — NOT a placeholder. Central token
+   `site.phone` in `src/_data/site.json`; chrome (header/footer/nav/drawer/call-bar) + tier
+   layouts + the elevated call-block all reference the token. No wrong/old number anywhere
+   (the only non-token tel: are contact.njk + tb-forms.js — SAME real number; dev/* samples use a
+   fictional 555 number, preview-only/not shipped). Tokenize contact at its proof for single-source.
 2. **Real Intuit ProAdvisor badge artwork** in (no stand-ins live).
 3. **baseline-vs-live-prod re-crawl** done — `/find-an-accountant/` orphan blind spot + any other
    uncaptured live URL → 301s confirmed so nothing 404s at cutover.

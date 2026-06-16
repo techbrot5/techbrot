@@ -9,10 +9,14 @@ pageTier: hub
     take the inverted variants on the dark band. Content machinery
     (quick-5, FAQ, intents, schema, section IDs) is page-owned — FENCED. -#}
 
+{#- Hub fan-out (founder 2026-06-17): the elevated light split hero is the t-hub
+    DEFAULT (signature = T-account unless a page sets its own heroFigure). The
+    legacy dark hub hero is retired but kept below for any page that opts out via
+    heroFigure: false. -#}
+{%- set heroFigure = heroFigure if heroFigure is defined else "taccount" -%}
 {%- if heroFigure %}
-{#- Elevated light editorial hero (opt-in) — split text + signature figure; the
-    earned dark moment moves to the final CTA (ctaBand.dark). Pages without
-    heroFigure keep the legacy dark hub hero below (back-compat for the wave). -#}
+{#- Elevated light editorial hero — split text + signature figure; the earned
+    dark moment moves to the final CTA (dark by default for hubs). -#}
 <section class="section hero-tier hero--compact hero--rule hero--split" id="{{ slug }}-hero">
   <div class="container">
     <div class="hero-split">
@@ -69,7 +73,7 @@ pageTier: hub
 {{ content | safe }}
 
 {%- if ctaBand %}
-<section class="section section--cta-band section--cta-band--{% if ctaBand.dark %}dark{% else %}light{% endif %} {{ tierClass }}" id="{{ slug }}-cta">
+<section class="section section--cta-band section--cta-band--{% if ctaBand.dark == false %}light{% else %}dark{% endif %} {{ tierClass }}" id="{{ slug }}-cta">
   <div class="cta-band__motif" aria-hidden="true">{% include "partials/motif-align-single.svg" %}</div>
   <div class="container">
     <div class="final-cta">
