@@ -476,18 +476,25 @@ RICH_COMPONENTS = [
     "guide-grid", "byline-block", "meta-reviewed", "intake-form", "proof-strip",
     "error-badge", "fix-steps", "call-breakout", "stat__delta", "diagram-figure",
     "hero__motif",
+    # ── elevated library (2026-06-16 re-skin): the signature hero diagram, the
+    #    premium CALL conversion block, and the non-numbered deliverable cards. ──
+    "hero-figure", "call-block", "deliver-card",
 ]
 # Per-tier rich components the PLACEMENT-MAP PERMITS on that tier (✓ or opt;
 # components marked "—" for the tier are deliberately absent so they do NOT
-# satisfy it). Transcribed directly from PLACEMENT-MAP.md.
+# satisfy it). Transcribed from PLACEMENT-MAP.md + elevated library additions.
 TIER_ALLOWED = {
-    "hub":      {"buyer-card", "flow__step", "pull-quote", "proof-strip", "stat__delta", "hero__motif"},
-    "location": {"buyer-card", "pull-quote", "intake-form", "proof-strip", "stat__delta", "hero__motif"},
+    "hub":      {"buyer-card", "flow__step", "pull-quote", "proof-strip", "stat__delta", "hero__motif",
+                 "hero-figure", "call-block"},
+    "location": {"buyer-card", "pull-quote", "intake-form", "proof-strip", "stat__delta", "hero__motif",
+                 "hero-figure"},
     "mofu":     {"buyer-card", "vs-table", "flow__step", "pull-quote", "byline-block",
-                 "meta-reviewed", "proof-strip", "error-badge", "fix-steps", "call-breakout", "stat__delta"},
+                 "meta-reviewed", "proof-strip", "error-badge", "fix-steps", "call-breakout", "stat__delta",
+                 "hero-figure", "call-block"},
     "guide":    {"vs-table", "flow__step", "pull-quote", "toc__label", "guide-grid",
-                 "byline-block", "meta-reviewed", "stat__delta", "diagram-figure"},
-    "bofu":     {"flow__step", "intake-form", "proof-strip", "error-badge", "fix-steps", "call-breakout"},
+                 "byline-block", "meta-reviewed", "stat__delta", "diagram-figure", "hero-figure"},
+    "bofu":     {"flow__step", "intake-form", "proof-strip", "error-badge", "fix-steps", "call-breakout",
+                 "hero-figure", "call-block", "deliver-card"},
 }
 TIER_RE = re.compile(r'<main[^>]*\bdata-tier="([a-z]+)"')
 df_exc = json.loads(

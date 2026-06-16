@@ -126,6 +126,25 @@ items** (the `_build/design-capture/extracted/` bundle once fully captured, stal
 regenerated) — list + reason, founder confirms. **NEVER touch `/src/`, `_site`, `assets`, config, or any
 canonical doc above.**
 
+## ⛳ CUTOVER GATE — FLIP-TO-LIVE PRE-FLIGHT (founder 2026-06-17; flip is NOT just a page count)
+Before techbrot.com is pointed at this build, ALL must clear:
+1. **Real phone number** swapped in `src/_data/site.json` — the 877 placeholder must NOT go live
+   (calls would route to a stranger). Founder supplies. (877-751-5575 is in site.json now, founder
+   confirmed for the build; treat as PLACEHOLDER until re-confirmed at flip.)
+2. **Real Intuit ProAdvisor badge artwork** in (no stand-ins live).
+3. **baseline-vs-live-prod re-crawl** done — `/find-an-accountant/` orphan blind spot + any other
+   uncaptured live URL → 301s confirmed so nothing 404s at cutover.
+4. **/resources/ interim repoint** resolved or confirmed safe (nav "Resources" → /resources/research/
+   until the /resources/ hub ships).
+5. **Full re-skin complete + equity-GREEN site-wide + battery green.**
+
+## ⚡ PACE — PER-TYPE PROOF, THEN AUTOMATE FAN-OUT (founder 2026-06-17)
+Move fast. Prove ONE page of each remaining type → founder glances fast → then AUTOMATE the fan-out
+of that whole type (founder reviews ~one page per type, NOT every page). After a type's proof is
+OK'd, fan it out automatically; report URLs in the round block; keep moving toward ~200. State
+pillar: prove the **NY pillar + one NY child** specifically (NY is the only built-out state).
+Sequence: nav nowrap fix → hub proof → guide → NY pillar + NY child → contact → triage. Commit per step.
+
 ## FIND-AN-ACCOUNTANT PHASE (spec 2026-06-15) — deploys AFTER QB silo 1 + vs + partners, BEFORE accounting; accounting silo LAST
 Scope: **NY is the only state built out** (pillar + 39-page tree). **CA/TX/FL/IL parked via
 temporary 301** (no content build) — scheduled for full build-out POST-REDESIGN on the new
