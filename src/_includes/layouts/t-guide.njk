@@ -26,7 +26,38 @@ pageTier: guide
 </nav>
 {%- endif %}
 
+{#- Guide hero. OPT-IN split article-hero + signature figure (heroFigure), per the
+    locked Guide template: text column + ledger figure card. Default OFF — fit-to-purpose
+    (legal/error keep the clean compact hero). hero.trust chips render in both variants. -#}
+{%- set heroFigure = heroFigure if heroFigure is defined else false -%}
 {%- if hero %}
+{%- if heroFigure %}
+<section class="section hero-tier hero--compact hero--split" id="{{ slug }}-hero">
+  <div class="container">
+    <div class="hero-split">
+      <div class="hero">
+        <p class="hero__eyebrow">{{ hero.eyebrow | safe }}</p>
+        <h1 class="hero__heading">{{ hero.heading | safe }}</h1>
+        <p class="hero__subheading">{{ hero.subheading | safe }}</p>
+        {%- if hero.actions %}
+        <div class="hero__actions">
+          {%- for action in hero.actions %}
+          <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
+            {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+          {%- endfor %}
+        </div>
+        {%- endif %}
+        {%- if hero.trust %}
+        <ul class="hero__trust">
+          {%- for t in hero.trust %}<li class="hero__trust-item">{{ t | safe }}</li>{%- endfor %}
+        </ul>
+        {%- endif %}
+      </div>
+      <div class="hero__figure">{% include "partials/figure-" + heroFigure + ".svg" %}</div>
+    </div>
+  </div>
+</section>
+{%- else %}
 <section class="section hero-tier hero--compact" id="{{ slug }}-hero">
   <div class="container">
     <div class="hero">
@@ -41,9 +72,15 @@ pageTier: guide
         {%- endfor %}
       </div>
       {%- endif %}
+      {%- if hero.trust %}
+      <ul class="hero__trust">
+        {%- for t in hero.trust %}<li class="hero__trust-item">{{ t | safe }}</li>{%- endfor %}
+      </ul>
+      {%- endif %}
     </div>
   </div>
 </section>
+{%- endif %}
 {%- endif %}
 
 {%- if inBrief %}

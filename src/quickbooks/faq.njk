@@ -12,6 +12,7 @@
     { "name": "QuickBooks", "href": "/quickbooks/" },
     { "name": "FAQ" }
   ],
+  "heroFigure": "taccount",
   "hero": {
     "eyebrow": "The QuickBooks reference &middot; maintained by Certified ProAdvisors",
     "heading": "QuickBooks, answered.",
@@ -20,6 +21,11 @@
       { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
       { "label": "Book the discovery call", "href": "/contact/?intent=qb-faq", "class": "btn--ghost" },
       { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Independent &middot; zero Intuit commission",
+      "35 questions &middot; maintained current"
     ]
   },
   "inBrief": {
@@ -82,11 +88,25 @@
         <section id="{{ c.id }}" aria-labelledby="{{ c.id }}-h">
           <h2 id="{{ c.id }}-h">{{ c.heading | safe }}</h2>
           <p>{{ c.lede | safe }}</p>
+          {%- if c.id == "cluster-fixing" %}
+          {% include "partials/figure-reconcile-flow.svg" %}
+          {%- endif %}
           {%- for it in c.items %}
           <h3 id="{{ it.anchor }}">{{ it.q | safe }}</h3>
           {{ it.a | safe }}
           {%- endfor %}
         </section>
+        {%- if loop.index == 4 %}
+        {#- Lead-magnet (locked Guide template) — the one dark mid-article offer.
+            Honest: links to the REAL free file review, not a fabricated download. -#}
+        <div class="lead-magnet">
+          <div class="lead-magnet__text">
+            <p class="lead-magnet__title">Still have a question about your own file?</p>
+            <p class="lead-magnet__sub">A Certified ProAdvisor reviews your QuickBooks file and answers it directly &mdash; free, no obligation.</p>
+          </div>
+          <a class="lead-magnet__cta" href="/quickbooks/file-review/?intent=file-review">Get the free file review &rarr;</a>
+        </div>
+        {%- endif %}
         {%- endfor %}
         <p class="meta-reviewed"><span>Maintained by the Certified QuickBooks ProAdvisor team</span><span>35 questions &middot; 7 clusters</span><span>Last reviewed: 2026-06 &middot; Certified QuickBooks ProAdvisor</span></p>
       </article>

@@ -586,3 +586,32 @@
 .util-hero--left .util-hero__eyebrow { justify-content: flex-start; }
 .util-hero--left .util-hero__lede { margin-left: 0; }
 .util-hero--left .util-hero__actions { justify-content: flex-start; }
+
+/* ============================================================================
+   GUIDE ELEVATION (capture round 2026-06-17) — token-only. From the locked
+   Guide template (Guide - Template.dc.html): the in-article carded diagram
+   feature + the mid-body lead-magnet. Proven on /quickbooks/faq/.
+   ============================================================================ */
+/* In-article diagram FEATURE — a carded signature diagram inside prose (distinct
+   from the plain centered .diagram-figure). Ledger-tick eyebrow + mono label. */
+.diagram-feature { margin: var(--space-8) 0; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6); }
+.diagram-feature__cap { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4); }
+.diagram-feature__ticks { display: inline-flex; gap: 4px; flex: none; }
+.diagram-feature__ticks span { height: 3px; background: var(--accent); display: block; }
+.diagram-feature__ticks span:first-child { width: 30px; }
+.diagram-feature__ticks span:last-child { width: 14px; }
+.diagram-feature__label { font-family: var(--font-mono); font-size: var(--fs-11); letter-spacing: var(--ls-wider); text-transform: uppercase; color: var(--text-eyebrow); }
+
+/* Mid-body lead-magnet — the ONE dark inline offer on a long guide (once,
+   mid-article). Honest offer only: points to a real destination (file review),
+   never a fabricated download. */
+.lead-magnet { background: var(--surface-ink); border-radius: var(--radius-lg); padding: var(--space-6) var(--space-6); display: flex; align-items: center; gap: var(--space-5); flex-wrap: wrap; margin: var(--space-8) 0; }
+.lead-magnet__text { flex: 1; min-width: 220px; }
+/* specificity: 0,2,0 so the dark-band text colors win inside .article/.prose
+   (which set `.article p`/`.prose p` body color at 0,1,1 — would otherwise tint
+   these to #2d384e on #0A0F1C and fail AA). */
+.lead-magnet .lead-magnet__title { font-family: var(--font-serif); font-variation-settings: var(--serif-small-axes); font-weight: var(--fw-semibold); font-size: var(--fs-18); line-height: var(--lh-snug); color: var(--color-ink-inverted); margin: 0; }
+.lead-magnet .lead-magnet__sub { font-size: var(--fs-13); line-height: var(--lh-base); color: var(--color-ink-inverted-soft); margin: var(--space-1) 0 0; }
+.lead-magnet__cta { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 44px; padding: 0 var(--space-5); background: var(--surface-card); color: var(--color-ink); border-radius: var(--radius-md); font-size: var(--fs-14); font-weight: var(--fw-medium); flex: none; transition: transform var(--motion-fast) var(--ease-out); }
+.lead-magnet__cta:hover { background: var(--color-ink-inverted); }
+.lead-magnet__cta:active { transform: translateY(1px); }
