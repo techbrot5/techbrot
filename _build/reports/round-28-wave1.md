@@ -72,5 +72,46 @@ Final-band tightened (96→64px) + bottom-right motif removed, site-wide.
 - Verification: battery GREEN throughout (equity all 139, variety-12a, design-fidelity, cta-lexicon, manifest);
   probed pages overflow clean 360/390/768 · axe 0 · CLS 0 · a11y/BP/SEO 100. CSS ~71KB/82KB.
 
-**▶ NEXT (autonomous): GUIDE proof** → fan out · then **NY pillar + 1 NY child (STOP-GATE #1)** · honest-triage
-(STOP-GATE #2) · Wave-2 registry types. Resume from the "🔵 FRESH-SESSION RESUME" block in BUILD-TRACKER.
+## Update 2026-06-17 (session 2 — GUIDE proof + site-wide link-underline)
+**✅ GUIDE PROOF (`792ba59`) — `/quickbooks/faq/`** (registry's canonical reference/long-form guide).
+Read the locked `Guide - Template.dc.html`; the elevated guide article = split article-hero + signature
+figure · byline · sticky TOC · prose w/ embedded diagram-feature · mid-article lead-magnet (dark, once).
+The faq page already carried guide-grid + sticky TOC + byline + pull-quote + meta-reviewed; added the 3
+missing elevated elements:
+- **t-guide layout** now supports an OPT-IN split article-hero + signature figure (`heroFigure`, DEFAULT
+  OFF — fit-to-purpose: legal/error keep the clean compact hero). hero.trust chips render in both variants.
+  Mirrors the proven t-hub heroFigure pattern. faq set `heroFigure: "taccount"` + 3 trust chips.
+- **`.diagram-feature`** (NEW token-only component, from the locked template) — a carded in-article
+  signature diagram (distinct from the plain `.diagram-figure`). Partial `figure-reconcile-flow.svg`
+  (book balance → 3 adjustments → bank reconciled, draw-on) placed in the **cluster-fixing** section
+  (content-true: that cluster covers cleanup/reconciliation).
+- **`.lead-magnet`** (NEW token-only component) — the one dark mid-article offer (after cluster 4).
+  HONESTY (R5): the locked template offers a "one-page PDF" at `/resources/cleanup-checklist/` which does
+  NOT exist → reframed to point at the REAL free file review (no fabricated download). Applying R5, not a
+  new gate.
+- VERIFY: equity GREEN (26 baseline headings · 35 FAQ · 26 schema) · axe 0/27 · overflow clean
+  360/390/768 (sw 360/375/753) · CLS 0 (fixed-viewBox SVG) · design-fidelity PASS · variety-12a PASS ·
+  css-drift PASS · CSS 74,714B→ (after underline) 75,939B / 83,968B gate. axe caught a contrast bug on the
+  first pass (lead-magnet text inheriting `.article p` body color #2d384e on #0A0F1C = 1.62) → fixed by
+  bumping `.lead-magnet .__title/.__sub` specificity to 0,2,0 + `--color-ink-inverted-soft` (~9:1). Re-axe 0.
+
+**✅ LINK UNDERLINE — single site-wide source (`5c07840`)** (founder directive this session).
+Unified ALL text-link underlines to the buyer-card treatment: short PARTIAL rule by default → animates to
+FULL on hover/focus (faint ink → accent, 1.5px). **ONE source** = a consolidated `:is(...)` block in
+`09-extensions.css` using a **background-gradient** underline (NOT a `::after` pseudo — a pseudo only
+underlines a single-line box; the gradient also works on WRAPPING inline prose links). `02-base`
+(`main a:not([class])`) + the prose-link color rules now carry ONLY colour, never the underline, so it is
+never doubled. Covers: prose/inline, "Explore →" card links, heading-links, footer column links,
+breadcrumb, TOC. **NAV primary links kept the captured pill-hover chrome** (the locked Guide-template nav
+is pill-hover, no underline; underlining it would contradict design-ownership) — JUDGMENT CALL flagged for
+a 5-sec founder confirm. Reduced-motion: width snaps, no animation.
+- Fixed the founder's exact complaints on /quickbooks/: "Explore file cleanup →" (was full border-bottom)
+  + "QuickBooks Payroll management" inline + "Monthly bookkeeping" heading-links → all now `45% 1.5px`
+  partial → `100%` accent on hover (computed-style probe confirmed). axe /quickbooks/ 0/28.
+- Source of truth: the block headed `LINK UNDERLINE — SINGLE SITE-WIDE SOURCE` in
+  `src/assets/css/09-extensions.css`. Edit there to change link underlines anywhere.
+
+**▶ NEXT (autonomous): fan out the GUIDE type** (heroFigure per page; legal `heroFigure:false`
+fit-to-purpose; error pages keep error-badge hero / figure-judgment TBD; diagram-feature where content
+supports) → then **NY pillar + 1 NY child (STOP-GATE #1)** · honest-triage (STOP-GATE #2) · Wave-2 registry
+types. Resume from the "🔵 FRESH-SESSION RESUME" block in BUILD-TRACKER.

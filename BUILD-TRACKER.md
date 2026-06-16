@@ -292,11 +292,27 @@ nav ONLY on /contact/ + /file-review/; 16 wrong pages fixed; 404 now full). Phon
 (#contact-promise "How to reach us & what to expect"); only the 5-Q AI Q&A + numbered process + breadcrumb
 were stripped. Form stays centerpiece below the hero.
 
-**▶ NEXT (autonomous):** GUIDE proof (real t-guide page: article hero + byline + sticky TOC + diagram-feature +
-lead-magnet) → battery → fan out guides. Then **NY pillar + 1 NY child (STOP-GATE #1)**. Then honest-triage
+**✅ GUIDE PROOF DONE (`792ba59`, 2026-06-17) — `/quickbooks/faq/`.** t-guide layout gained an OPT-IN split
+article-hero + signature figure (`heroFigure`, DEFAULT OFF — fit-to-purpose). NEW token-only components from
+the locked Guide template: `.diagram-feature` (carded in-article diagram; partial `figure-reconcile-flow.svg`
+in cluster-fixing) + `.lead-magnet` (one dark mid-article offer; HONEST → real free file review, NOT a
+fabricated PDF, per R5). faq: equity GREEN (26h·35faq·26schema) · axe 0/27 · overflow clean 360/390/768 · CLS 0
+· CSS 75,939B/83,968B. Full detail: round-28-wave1.md.
+**✅ LINK UNDERLINE — single site-wide source (`5c07840`, founder directive 2026-06-17).** All text-link
+underlines unified to the buyer-card look (short PARTIAL rule default → FULL on hover/focus; faint ink →
+accent, 1.5px). ONE source = the `LINK UNDERLINE — SINGLE SITE-WIDE SOURCE` block in `09-extensions.css`
+(background-gradient, works on wrapping prose links — a `::after` pseudo can't). Covers prose/inline,
+Explore→ card links, heading-links, footer, breadcrumb, TOC. **NAV kept pill-hover (captured chrome) — JUDGMENT
+CALL, awaiting a 5-sec founder confirm.** axe /quickbooks/ 0/28.
+
+**▶ NEXT (autonomous):** FAN OUT the GUIDE type — apply `heroFigure` per page (legal `heroFigure:false`
+fit-to-purpose; error pages keep error-badge hero, figure choice TBD; diagram-feature/lead-magnet only where
+content supports), equity-GREEN each. Then **NY pillar + 1 NY child (STOP-GATE #1)**. Then honest-triage
 (STOP-GATE #2). Then Wave-2 registry types (product/mofu · comparison · pricing · legal · location-child).
-CUTOVER GATE (flip-to-live pre-flight) tracked above; gate #1 (phone) CLEARED. Old→handoff component map +
-RS1–RS4 + PACE rules above govern.
+CUTOVER GATE tracked above; gate #1 (phone) CLEARED. Old→handoff component map + RS1–RS4 + PACE govern.
+**DEV-SERVER NOTE:** `npm run serve` binds the LAN; this session = http://192.168.1.7:8080/. Probe servers
+must be hit via 127.0.0.1 (the scripts' hardcoded `localhost` resolves to IPv6 ::1 while python http.server
+binds IPv4 only → empty probes; run chrome against 127.0.0.1:8125/_site-prod + 127.0.0.1:8090/_site).
 
 **🟢 CODE PHASE LIVE — design captured, re-skin underway (2026-06-16).** Founder fetched the Claude
 Design "TechBrot Design System Elevation" handoff; we are in PURE IMPLEMENTATION per it (design-ownership
