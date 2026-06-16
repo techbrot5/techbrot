@@ -111,7 +111,26 @@ a 5-sec founder confirm. Reduced-motion: width snaps, no animation.
 - Source of truth: the block headed `LINK UNDERLINE — SINGLE SITE-WIDE SOURCE` in
   `src/assets/css/09-extensions.css`. Edit there to change link underlines anywhere.
 
-**▶ NEXT (autonomous): fan out the GUIDE type** (heroFigure per page; legal `heroFigure:false`
-fit-to-purpose; error pages keep error-badge hero / figure-judgment TBD; diagram-feature where content
-supports) → then **NY pillar + 1 NY child (STOP-GATE #1)** · honest-triage (STOP-GATE #2) · Wave-2 registry
-types. Resume from the "🔵 FRESH-SESSION RESUME" block in BUILD-TRACKER.
+## Update 2026-06-17 (session 2 cont. — breadcrumbs site-wide + nav underline + guide fan-out)
+**✅ BREADCRUMBS on every page EXCEPT /contact/ (`0beee05`, founder directive).** t-hub layout now renders
+the breadcrumb block (the 8 hubs already carried breadcrumb DATA → all 8 fixed at once: /accounting/ +
+4 sub-hubs · /quickbooks/ · /about/ · /resources/research/). util-hero renders a gated breadcrumb; added
+breadcrumb data to **file-review** + **404**; **contact** deliberately omits it. **Home (`/`) left without** —
+a single-item "Home" crumb is meaningless (root); FLAGGED for founder (one line to add if wanted). Verified:
+all hubs + file-review + 404 = breadcrumb present; contact = none; home = none.
+**✅ NAV underline (`0beee05`, founder re-confirmed "nav" in the underline list).** Primary `.nav__link`s now
+carry the SAME partial→full underline as everything else — single-line padded pills, so the EXACT buyer-card
+`::after` pseudo is used (positions the rule under the text where the gradient can't); pill-hover dropped on
+plain links to match the buyer-card; dropdown TRIGGERS keep their chevron + pill (they open menus). Computed
+probe: nav `::after` width 59.9px partial (faint ink) → full accent on hover. axe /accounting/ 0/26, /quickbooks/ 0/28.
+**✅ GUIDE FAN-OUT — reference sub-type (`bd23320`).** Elevated split article-hero + signature T-account figure
++ tailored honest trust chips on the 6 reference FAQ guides: /accounting/faq/ · /accounting/advisory/faq/ ·
+/accounting/bookkeeping/faq/ · /accounting/industries/faq/ · /quickbooks/payroll/faq/ · /partners/faq/ (all
+already carried guide-grid + byline + meta-reviewed). **Fit-to-purpose boundary:** error pages + the migration
+HowTo + legal docs KEEP their compact/clean heroes (no marketing figure). equity GREEN all 6 · overflow clean
+360/390/768 (/accounting/faq/ sw 360/375/753) · battery green · CSS 76,515B/83,968B.
+
+**▶ NEXT: STOP-GATE #1 — NY pillar (`/find-an-accountant/new-york/`) + 1 NY child.** t-location is the only
+state built out; the pillar is the template-quality bar → prove it elevated SOLO, founder reviews, then fan
+out NY children. Then honest-triage (STOP-GATE #2) · Wave-2 registry types. Resume from the "🔵 FRESH-SESSION
+RESUME" block in BUILD-TRACKER.

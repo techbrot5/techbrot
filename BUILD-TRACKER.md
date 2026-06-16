@@ -305,11 +305,19 @@ accent, 1.5px). ONE source = the `LINK UNDERLINE — SINGLE SITE-WIDE SOURCE` bl
 Explore→ card links, heading-links, footer, breadcrumb, TOC. **NAV kept pill-hover (captured chrome) — JUDGMENT
 CALL, awaiting a 5-sec founder confirm.** axe /quickbooks/ 0/28.
 
-**▶ NEXT (autonomous):** FAN OUT the GUIDE type — apply `heroFigure` per page (legal `heroFigure:false`
-fit-to-purpose; error pages keep error-badge hero, figure choice TBD; diagram-feature/lead-magnet only where
-content supports), equity-GREEN each. Then **NY pillar + 1 NY child (STOP-GATE #1)**. Then honest-triage
-(STOP-GATE #2). Then Wave-2 registry types (product/mofu · comparison · pricing · legal · location-child).
-CUTOVER GATE tracked above; gate #1 (phone) CLEARED. Old→handoff component map + RS1–RS4 + PACE govern.
+**✅ BREADCRUMBS site-wide except /contact/ (`0beee05`).** t-hub + util-hero now render breadcrumbs; 8 hubs +
+file-review + 404 covered; contact omits (founder); HOME (`/`) left without (root — single-item crumb is
+meaningless; FLAGGED). **✅ NAV underline (`0beee05`):** `.nav__link` adopts the partial→full underline (exact
+buyer-card `::after` pseudo; pill dropped on plain links; triggers keep chevron+pill). **✅ GUIDE FAN-OUT,
+reference sub-type (`bd23320`):** elevated split hero + T-account figure + trust on the 6 reference FAQ guides
+(/accounting/faq, /accounting/advisory/faq, /accounting/bookkeeping/faq, /accounting/industries/faq,
+/quickbooks/payroll/faq, /partners/faq). Error/legal/HowTo guides KEEP fit-to-purpose heroes. All equity GREEN,
+overflow clean, axe 0, CSS 76,515B/83,968B.
+
+**▶ NEXT — STOP-GATE #1: NY pillar (`/find-an-accountant/new-york/`) + 1 NY child.** t-location is the only
+state built out + the template-quality bar → prove the pillar elevated SOLO, founder reviews, THEN fan out the
+NY children. Then honest-triage (STOP-GATE #2). Then Wave-2 registry types (product/mofu · comparison · pricing ·
+legal · location-child). CUTOVER GATE tracked above; gate #1 (phone) CLEARED. Old→handoff map + RS1–RS4 + PACE govern.
 **DEV-SERVER NOTE:** `npm run serve` binds the LAN; this session = http://192.168.1.7:8080/. Probe servers
 must be hit via 127.0.0.1 (the scripts' hardcoded `localhost` resolves to IPv6 ::1 while python http.server
 binds IPv4 only → empty probes; run chrome against 127.0.0.1:8125/_site-prod + 127.0.0.1:8090/_site).
