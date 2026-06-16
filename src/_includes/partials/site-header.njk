@@ -1,18 +1,15 @@
-{#- Site header chrome — NEW SKIN (changeover round 10, 03-chrome.SKIN).
-    chrome: "full" (default) | "minimal" (T-BOFU conversion endpoints —
-    logo + phone only, no nav = no funnel leakage). Link set carried
-    verbatim from the old chrome (content equity); markup re-cut to the
-    new class vocabulary. Behavior contract = tb-nav.js (aria-expanded
-    toggles, data-open panels, Escape/outside close, drawer focus). -#}
+{#- Site header chrome — ELEVATED SKIN (Gallery 04 mid-mega capture, 2026-06-16).
+    chrome: "full" (default) | "minimal" (BOFU endpoints — logo + phone only).
+    Contained mid-mega panels (~50%, anchored under trigger, descriptive 2-col +
+    mega-call), find-an-accountant = DIRECT link, real crawlable hrefs (no #).
+    JS hooks unchanged (tb-nav.js): .nav__trigger / .nav__dropdown[data-open] /
+    .nav__hamburger / .drawer / .drawer__trigger / .drawer__panel. Link set carried
+    from the prior chrome (content equity); markup recomposed to the mid-mega. -#}
 {%- if chrome != "minimal" %}
 <div class="util-bar" role="region" aria-label="Secondary">
   <div class="container">
-    <span>Independent Certified QuickBooks ProAdvisor firm &middot; U.S.-based</span>
-    <nav aria-label="For accountants and partners">
-      <a href="/find-an-accountant/">Find an Accountant</a>
-      &nbsp;&middot;&nbsp;
-      <a href="/partners/">For Accountants &rarr;</a>
-    </nav>
+    <span>Independent firm &middot; Certified QuickBooks ProAdvisors</span>
+    <span class="util-bar__reply">We reply the same business day</span>
   </div>
 </div>
 {%- endif %}
@@ -25,44 +22,55 @@
 
     {%- if chrome != "minimal" %}
     <ul class="site-nav" aria-label="Primary navigation" id="primary-nav">
+      <li class="nav__item"><a class="nav__link" href="/find-an-accountant/">Find an accountant</a></li>
       <li class="nav__item">
         <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-accounting" aria-haspopup="true">Accounting</button>
-        <div class="nav__dropdown" id="nav-menu-accounting" role="region" aria-label="Accounting services" data-open="false">
-          <a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping<span>Recurring close, weekly cadence</span></a>
-          <a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup bookkeeping<span>Books out of order, rebuilt</span></a>
-          <a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping<span>Months or years behind</span></a>
-          <a href="/accounting/payroll-management/">Payroll management</a>
-          <a href="/accounting/sales-tax-compliance/">Sales tax compliance</a>
-          <a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a>
-          <a href="/accounting/services/">All services &rarr;</a>
-          <a href="/accounting/">Accounting overview &rarr;</a>
+        <div class="nav__dropdown nav__dropdown--mega" id="nav-menu-accounting" role="region" aria-label="Accounting" data-open="false">
+          <div class="nav__mega">
+            <div class="nav__mega-col">
+              <p class="nav__mega-head">Core services</p>
+              <a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping<span>Reconciled monthly, fixed fee</span></a>
+              <a href="/accounting/advisory/">Fractional CFO &amp; advisory<span>Judgment, not just data entry</span></a>
+              <a href="/accounting/sales-tax-compliance/">Sales tax &amp; payroll<span>Filed and reconciled monthly</span></a>
+            </div>
+            <div class="nav__mega-col">
+              <p class="nav__mega-head">Start here</p>
+              <a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup &amp; catch-up<span>Bring a behind file current</span></a>
+              <a href="/quickbooks/file-review/">Free file review<span>We look before we scope</span></a>
+              <a href="/pricing/">Pricing<span>Fixed fee, in writing first</span></a>
+            </div>
+          </div>
+          <div class="nav__mega-call">
+            <span>Not sure which fits? A 15-minute call sorts it.</span>
+            <a href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">{% include "icons/phone.svg" %}{{ site.phone.display }}</a>
+          </div>
         </div>
       </li>
       <li class="nav__item">
         <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-quickbooks" aria-haspopup="true">QuickBooks</button>
-        <div class="nav__dropdown" id="nav-menu-quickbooks" role="region" aria-label="QuickBooks services" data-open="false">
-          <a href="/quickbooks/setup/">Setup &amp; onboarding</a>
-          <a href="/quickbooks/cleanup/">File cleanup</a>
-          <a href="/quickbooks/migration/">Desktop &rarr; Online migration</a>
-          <a href="/quickbooks/help/">QuickBooks help</a>
-          <a href="/quickbooks/payroll/">QuickBooks Payroll</a>
-          <a href="/quickbooks/proadvisor-team/">Our ProAdvisor team</a>
-          <a href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a>
-          <a href="/quickbooks/">QuickBooks overview &rarr;</a>
+        <div class="nav__dropdown nav__dropdown--mega" id="nav-menu-quickbooks" role="region" aria-label="QuickBooks" data-open="false">
+          <div class="nav__mega">
+            <div class="nav__mega-col">
+              <p class="nav__mega-head">Fix &amp; set up</p>
+              <a href="/quickbooks/cleanup/">Cleanup &amp; catch-up<span>Behind, broken, or messy books</span></a>
+              <a href="/quickbooks/setup/">Setup &amp; migration<span>Set up right; Desktop &rarr; Online</span></a>
+              <a href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert<span>Independent &middot; not Intuit</span></a>
+            </div>
+            <div class="nav__mega-col">
+              <p class="nav__mega-head">Keep it clean</p>
+              <a href="/accounting/bookkeeping/">Ongoing bookkeeping<span>Monthly, reconciled to the bank</span></a>
+              <a href="/quickbooks/payroll/">QuickBooks Payroll<span>Filed and tied out</span></a>
+              <a href="/quickbooks/help/">Help &amp; error codes<span>How the work actually goes</span></a>
+            </div>
+          </div>
+          <div class="nav__mega-call">
+            <span>Free file review &mdash; written scope in 3 business days.</span>
+            <a href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">{% include "icons/phone.svg" %}{{ site.phone.display }}</a>
+          </div>
         </div>
       </li>
-      <li class="nav__item"><a class="nav__link" href="/find-an-accountant/">Find an Accountant</a></li>
-      <li class="nav__item"><a class="nav__link" href="/pricing/">Pricing</a></li>
-      <li class="nav__item">
-        <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="nav-menu-why" aria-haspopup="true">Why TechBrot</button>
-        <div class="nav__dropdown" id="nav-menu-why" role="region" aria-label="Why TechBrot" data-open="false">
-          <a href="/trust/">Trust &amp; standards</a>
-          <a href="/about/methodology/">Our methodology</a>
-          <a href="/reviews/">Client reviews</a>
-          <a href="/vs/">Comparisons</a>
-          <a href="/about/">About &amp; team</a>
-        </div>
-      </li>
+      <li class="nav__item"><a class="nav__link" href="/vs/">Compare</a></li>
+      <li class="nav__item"><a class="nav__link" href="/resources/research/">Resources</a></li>
     </ul>
     {%- endif %}
 
@@ -92,16 +100,16 @@
     </button>
   </div>
   <nav aria-label="Mobile primary navigation">
+    <div class="drawer__group"><a class="drawer__link" href="/find-an-accountant/">Find an accountant</a></div>
     <div class="drawer__group">
       <button class="drawer__trigger" type="button" aria-expanded="false" aria-controls="drawer-accounting">Accounting</button>
       <div class="drawer__panel" id="drawer-accounting" data-open="false">
         <ul>
           <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
-          <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup bookkeeping</a></li>
-          <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></li>
-          <li><a href="/accounting/payroll-management/">Payroll management</a></li>
-          <li><a href="/accounting/sales-tax-compliance/">Sales tax compliance</a></li>
-          <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+          <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup &amp; catch-up</a></li>
+          <li><a href="/accounting/advisory/">Fractional CFO &amp; advisory</a></li>
+          <li><a href="/accounting/sales-tax-compliance/">Sales tax &amp; payroll</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
           <li><a href="/accounting/">Accounting overview &rarr;</a></li>
         </ul>
       </div>
@@ -110,34 +118,21 @@
       <button class="drawer__trigger" type="button" aria-expanded="false" aria-controls="drawer-quickbooks">QuickBooks</button>
       <div class="drawer__panel" id="drawer-quickbooks" data-open="false">
         <ul>
-          <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
-          <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
-          <li><a href="/quickbooks/migration/">Migration</a></li>
-          <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+          <li><a href="/quickbooks/cleanup/">Cleanup &amp; catch-up</a></li>
+          <li><a href="/quickbooks/setup/">Setup &amp; migration</a></li>
+          <li><a href="/quickbooks/speak-to-a-quickbooks-expert/">Speak to an expert</a></li>
           <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+          <li><a href="/quickbooks/help/">Help &amp; error codes</a></li>
           <li><a href="/quickbooks/">QuickBooks overview &rarr;</a></li>
         </ul>
       </div>
     </div>
-    <div class="drawer__group"><a class="drawer__link" href="/find-an-accountant/">Find an Accountant</a></div>
-    <div class="drawer__group"><a class="drawer__link" href="/pricing/">Pricing</a></div>
-    <div class="drawer__group">
-      <button class="drawer__trigger" type="button" aria-expanded="false" aria-controls="drawer-why">Why TechBrot</button>
-      <div class="drawer__panel" id="drawer-why" data-open="false">
-        <ul>
-          <li><a href="/trust/">Trust &amp; standards</a></li>
-          <li><a href="/about/methodology/">Our methodology</a></li>
-          <li><a href="/reviews/">Client reviews</a></li>
-          <li><a href="/vs/">Comparisons</a></li>
-          <li><a href="/about/">About &amp; team</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="drawer__group"><a class="drawer__link" href="/partners/">For Accountants</a></div>
+    <div class="drawer__group"><a class="drawer__link" href="/vs/">Compare</a></div>
+    <div class="drawer__group"><a class="drawer__link" href="/resources/research/">Resources</a></div>
   </nav>
   <div class="drawer__foot">
-    <a class="btn btn--primary btn--lg" href="/contact/?intent=home">Book the discovery call</a>
-    <a class="phone-cta" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">{% include "icons/phone.svg" %} {{ site.phone.display }}</a>
+    <a class="btn btn--primary btn--lg" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">{% include "icons/phone.svg" %} Speak to a ProAdvisor</a>
+    <a class="btn btn--ghost" href="/contact/?intent=home">Book the discovery call</a>
   </div>
 </div>
 {%- endif %}

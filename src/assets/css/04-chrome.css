@@ -92,3 +92,63 @@
 @media (max-width:920px){.util-bar{display:none}}
 .drawer{visibility:hidden;transition:transform var(--motion-slow) var(--ease-out),visibility 0s var(--motion-slow)}.drawer[data-open="true"]{visibility:visible;transition:transform var(--motion-slow) var(--ease-out),visibility 0s 0s}
 .site-footer strong{color:var(--color-ink-inverted)}.site-footer__disclosure a{color:var(--color-ink-inverted);text-decoration:underline;text-underline-offset:0.16em}.site-footer__slim a{color:var(--color-ink-inverted-mute)}.site-footer__slim a:hover{color:var(--color-ink-inverted)}
+
+/* ============================================================================
+   ELEVATED CHROME (Gallery 04 capture, 2026-06-16) — mid-mega nav + light
+   footer. Override-by-source-order; token-only. JS hooks unchanged.
+   ============================================================================ */
+/* util bar — same-business-day dot */
+.util-bar__reply::before{content:"";display:inline-block;width:6px;height:6px;border-radius:var(--radius-pill);background:var(--tie);margin-right:var(--space-2);vertical-align:middle}
+
+/* contained mid-mega panel (~50%, anchored under trigger, descriptive 2-col + call) */
+.nav__dropdown--mega{width:min(660px,94vw);min-width:0;left:0;padding:var(--space-6);box-shadow:var(--shadow-pop)}
+.nav__mega{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5) var(--space-8)}
+.nav__mega-head{font-family:var(--font-mono);font-size:var(--fs-11);font-weight:var(--fw-semibold);letter-spacing:var(--ls-wider);text-transform:uppercase;color:var(--text-muted);margin:0 0 var(--space-2)}
+.nav__mega-col a{display:block;padding:var(--space-2) 0;border-radius:0;font-size:var(--fs-14);font-weight:var(--fw-medium);color:var(--text-strong);text-decoration:none}
+.nav__mega-col a span{display:block;font-size:var(--fs-12);font-weight:var(--fw-regular);color:var(--text-muted);margin-top:1px}
+.nav__mega-col a:hover{background:none;color:var(--accent)}
+.nav__mega-call{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-4);padding-top:var(--space-4);border-top:1px solid var(--border-subtle);font-size:var(--fs-13);color:var(--text-muted)}
+.nav__mega-call a{display:inline-flex;align-items:center;gap:var(--space-2);font-family:var(--font-mono);font-size:var(--fs-13);font-weight:var(--fw-medium);color:var(--accent);text-decoration:none}
+.nav__mega-call a svg{width:15px;height:15px}
+.nav__mega-call a svg *{stroke:var(--accent)}
+@media (max-width:560px){.nav__mega{grid-template-columns:1fr}}
+
+/* footer → light/editorial + native <details> accordion (open desktop / mobile) */
+.site-footer{background:var(--surface-muted);border-top:1px solid var(--border-subtle);color:var(--text-muted)}
+.site-footer__brand ul{list-style:none;margin:var(--space-4) 0 0;padding:0;display:grid;gap:var(--space-2)}
+.site-footer__brand a{color:var(--text-body);text-decoration:none}
+.site-footer__brand a:hover{color:var(--accent)}
+.site-footer__note{color:var(--text-body)}
+.site-footer__col{border:0}
+.site-footer__col summary{list-style:none;display:flex;align-items:center;justify-content:space-between;cursor:default}
+.site-footer__col summary::-webkit-details-marker{display:none}
+.site-footer__col h2{font-family:var(--font-mono);font-size:var(--fs-11);font-weight:var(--fw-semibold);letter-spacing:var(--ls-wider);text-transform:uppercase;color:var(--text-strong);margin:0 0 var(--space-4)}
+.site-footer__chev{display:none;color:var(--text-muted);flex:none}
+.site-footer__col a{color:var(--text-body);text-decoration:none}
+.site-footer__col a:hover{color:var(--accent)}
+@media (max-width:760px){
+  .site-footer__col{border-top:1px solid var(--border-subtle)}
+  .site-footer__col summary{cursor:pointer;padding:var(--space-3) 0}
+  .site-footer__col h2{margin:0}
+  .site-footer__chev{display:inline-block;transition:transform var(--motion-base) var(--ease-out)}
+  .site-footer__col[open] .site-footer__chev{transform:rotate(180deg)}
+  .site-footer__col > div{padding-bottom:var(--space-3)}
+}
+.site-footer strong{color:var(--text-strong)}
+.site-footer__disclosure{border-top-color:var(--border-subtle);color:var(--text-muted)}
+.site-footer__disclosure::before{background:linear-gradient(90deg,var(--accent) 0 30px,transparent 30px 34px,var(--accent) 34px 48px)}
+.site-footer__disclosure a{color:var(--accent)}
+.site-footer__legal{border-top-color:var(--border-subtle);color:var(--text-muted)}
+.site-footer__legal a{color:var(--text-muted)}
+.site-footer__legal a:hover{color:var(--accent)}
+.site-footer__slim a{color:var(--text-body)}
+.site-footer__slim a:hover{color:var(--accent)}
+
+/* WCAG 2.2 target-size — footer is being finalized this round, so the long-
+   standing footer tap-target debt is cleared here: link rows get >=24px pitch. */
+.site-footer__brand li a, .site-footer__col li a { display: inline-block; padding: 5px 0; }
+.site-footer__brand ul, .site-footer__col ul { gap: var(--space-2); }
+.site-footer__disclosure a { display: inline-block; padding: 4px 0; }
+.site-footer__legal a { display: inline-block; padding: 6px 0; }
+.site-footer__legal p { margin: 0; }
+.site-footer__legal { row-gap: var(--space-1); }

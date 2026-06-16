@@ -1,15 +1,15 @@
-{#- Site footer chrome — NEW SKIN (changeover round 10, 03-chrome.SKIN).
-    Carries the MANDATORY trademark disclaimer (chrome exempt from the
-    two-mention ceiling, round-4 ruling). Link set carried verbatim
-    (content equity); aligned-segment disclosure mark per the new motif
-    grammar. Newsletter band stays EXCLUDED (no dead forms). -#}
+{#- Site footer chrome — ELEVATED SKIN (Gallery 04 light footer, 2026-06-16).
+    Light/editorial; silo columns are native <details> (open on desktop, collapsible
+    accordion on mobile — no JS). The column headings stay <h2> (equity-relocated
+    baseline headings) nested in <summary> (valid: summary permits one heading).
+    Carries the MANDATORY trademark disclosure. Link set carried verbatim. -#}
 <footer class="site-footer{% if chrome == "minimal" %} site-footer--minimal{% endif %}" role="contentinfo">
   <div class="container">
     {%- if chrome != "minimal" %}
     <div class="site-footer__grid">
-      <div class="site-footer__col">
+      <div class="site-footer__brand">
         <a class="site-header__logo" href="/" aria-label="TechBrot home">
-          <img src="/assets/img/brand/logo-horizontal-dark.svg" alt="TechBrot" width="116" height="30">
+          <img src="/assets/img/brand/logo-horizontal.svg" alt="TechBrot" width="116" height="30">
         </a>
         <p class="site-footer__note">{{ site.tagline }}.</p>
         <ul>
@@ -19,55 +19,63 @@
           <li><a href="/contact/?intent=home">Book the discovery call &rarr;</a></li>
         </ul>
       </div>
-      <nav class="site-footer__col" aria-label="Accounting">
-        <h2>Accounting</h2>
-        <ul>
-          <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
-          <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup</a></li>
-          <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up</a></li>
-          <li><a href="/accounting/payroll-management/">Payroll</a></li>
-          <li><a href="/accounting/sales-tax-compliance/">Sales tax</a></li>
-          <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
-          <li><a href="/accounting/services/">All services</a></li>
-        </ul>
-      </nav>
-      <nav class="site-footer__col" aria-label="QuickBooks">
-        <h2>QuickBooks</h2>
-        <ul>
-          <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
-          <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
-          <li><a href="/quickbooks/migration/">Migration</a></li>
-          <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
-          <li><a href="/quickbooks/help/">QuickBooks help</a></li>
-          <li><a href="/quickbooks/">QuickBooks overview</a></li>
-        </ul>
-      </nav>
-      <nav class="site-footer__col" aria-label="Company">
-        <h2>Company</h2>
-        <ul>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/about/methodology/">Methodology</a></li>
-          <li><a href="/about/team/">Team</a></li>
-          <li><a href="/trust/">Trust &amp; standards</a></li>
-          <li><a href="/reviews/">Reviews</a></li>
-          <li><a href="/pricing/">Pricing</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
-      </nav>
-      <nav class="site-footer__col" aria-label="Network">
-        <h2>Network</h2>
-        <ul>
-          <li><a href="/find-an-accountant/">Find an Accountant</a></li>
-          <li><a href="/partners/">For Accountants</a></li>
-          <li><a href="/about/network/">How it works</a></li>
-          <li><a href="/vs/">Comparisons</a></li>
-        </ul>
-      </nav>
+      <details class="site-footer__col" open>
+        <summary><h2>Accounting</h2><svg class="site-footer__chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M5 9l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <div>
+          <ul>
+            <li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li>
+            <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup</a></li>
+            <li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up</a></li>
+            <li><a href="/accounting/payroll-management/">Payroll</a></li>
+            <li><a href="/accounting/sales-tax-compliance/">Sales tax</a></li>
+            <li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li>
+            <li><a href="/accounting/services/">All services</a></li>
+          </ul>
+        </div>
+      </details>
+      <details class="site-footer__col" open>
+        <summary><h2>QuickBooks</h2><svg class="site-footer__chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M5 9l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <div>
+          <ul>
+            <li><a href="/quickbooks/setup/">Setup &amp; onboarding</a></li>
+            <li><a href="/quickbooks/cleanup/">File cleanup</a></li>
+            <li><a href="/quickbooks/migration/">Migration</a></li>
+            <li><a href="/quickbooks/payroll/">QuickBooks Payroll</a></li>
+            <li><a href="/quickbooks/help/">QuickBooks help</a></li>
+            <li><a href="/quickbooks/">QuickBooks overview</a></li>
+          </ul>
+        </div>
+      </details>
+      <details class="site-footer__col" open>
+        <summary><h2>Company</h2><svg class="site-footer__chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M5 9l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <div>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/about/methodology/">Methodology</a></li>
+            <li><a href="/about/team/">Team</a></li>
+            <li><a href="/trust/">Trust &amp; standards</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+      </details>
+      <details class="site-footer__col" open>
+        <summary><h2>Network</h2><svg class="site-footer__chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M5 9l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <div>
+          <ul>
+            <li><a href="/find-an-accountant/">Find an Accountant</a></li>
+            <li><a href="/partners/">For Accountants</a></li>
+            <li><a href="/about/network/">How it works</a></li>
+            <li><a href="/vs/">Comparisons</a></li>
+          </ul>
+        </div>
+      </details>
     </div>
     {%- else %}
     <div class="site-footer__slim">
       <a class="site-header__logo" href="/" aria-label="TechBrot home">
-        <img src="/assets/img/brand/logo-horizontal-dark.svg" alt="TechBrot" width="116" height="30">
+        <img src="/assets/img/brand/logo-horizontal.svg" alt="TechBrot" width="116" height="30">
       </a>
       <ul>
         <li><a href="mailto:{{ site.emails.info }}">{{ site.emails.info }}</a></li>
