@@ -28,7 +28,7 @@ module.exports = {
     "CPA handoff coordination",
   ],
   // quick-5 — distinct from FAQ (FAQ = what is / cost / includes / when / cleanup-first / who / switch)
-  aiSummary: [
+  "override:aiSummary": [
     { q: "Is monthly bookkeeping fixed-fee or hourly?", a: "<strong>Fixed monthly fee against a written scope</strong> — agreed before any work begins. No hourly billing, no per-call meter. If scope genuinely expands, the fee is re-quoted and re-approved in writing first." },
     { q: "When are my books actually closed each month?", a: "On the <strong>monthly close cadence</strong>: documents flow in days 1–5, reconciliation days 6–10, close and review days 11–14, and your financial package is delivered <strong>by the 15th</strong> of the following month. Complex multi-entity or inventory files close by the 20th." },
     { q: "Will I have one person I can actually reach?", a: "Yes — a <strong>named, credentialed local operator</strong> closes your books and is your point of contact, backed by platform-level quality review. No anonymous offshore team, no rotating inbox." },

@@ -22,7 +22,7 @@ module.exports = {
     { opener: "You want to start monthly bookkeeping from a known-current state.", body: "Monthly engagements start from a current baseline. Catch-up gets you to that baseline, then the same operator continues with monthly — seamless transition." },
   ],
   // quick-5 — distinct from FAQ (what is / how long / how much / vs cleanup / before tax season / before monthly / who)
-  aiSummary: [
+  "override:aiSummary": [
     { q: "Is catch-up fixed-fee or priced by the hour?", a: "<strong>Fixed fee, priced per month of backlog</strong> — never hourly. The diagnostic quantifies the backlog and produces the deliverables, timeline, and total price in writing before any work begins." },
     { q: "What is “historical accounting debt”?", a: "The <strong>accumulated liability of un-entered, unreconciled periods</strong>. Like an unpaid balance accruing interest, the principal is the months of backlog and the interest is the rising complexity of clearing them — the longer it sits, the more it costs. Catch-up pays it down, oldest period first." },
     { q: "Do you catch up inside my own QuickBooks file?", a: "Yes. Your operator works as an authorized accountant-user inside <strong>your own QuickBooks file</strong>, backfilling the missing periods from bank, credit-card, and payroll statements. Your data stays yours and the audit trail is visible to you." },

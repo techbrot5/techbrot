@@ -24,7 +24,7 @@ module.exports = {
     { opener: "You ran the books yourself and need a professional reset.", body: "Many owners start with their own books, run a year or two, then realize the structure isn’t holding. Cleanup gives you a clean foundation and a real chart of accounts to grow into." },
   ],
   // quick-5 — distinct from FAQ (what is / how long / how much / fixable-after-years / vs catch-up / who / CPA-accept)
-  aiSummary: [
+  "override:aiSummary": [
     { q: "Is a cleanup fixed-fee or priced by the hour?", a: "<strong>Fixed fee against a written scope</strong>, never hourly. The diagnostic produces deliverables, timeline, and price in writing before any work begins &mdash; so an open-ended mess doesn’t become an open-ended invoice." },
     { q: "Why do books drift out of reconciliation in the first place?", a: "<strong>Compounding reconciliation drift</strong>: each unreconciled period inherits and amplifies the prior period’s miscategorizations and unmatched transactions, so the gap between the books and the bank widens month over month. A cleanup unwinds that accumulated drift back to a reconciled baseline." },
     { q: "Do you clean up inside my own QuickBooks file?", a: "Yes. Your operator works as an authorized accountant-user inside <strong>your own QuickBooks file</strong> &mdash; Online, Desktop, or Enterprise. Your data stays yours, every adjustment is documented, and access is revocable at any time." },
