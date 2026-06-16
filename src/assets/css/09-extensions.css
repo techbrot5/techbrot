@@ -520,3 +520,50 @@
    bottom-right motif dashes (read as a stray artifact). Clean band, text+CTAs. */
 .section--cta-band { padding: var(--space-16) 0; }
 .cta-band__motif { display: none; }
+
+/* ============================================================================
+   VISUAL POLISH (founder spot-check 2026-06-17) — component-level, site-wide.
+   ============================================================================ */
+/* 2 — breadcrumb breathing room */
+.breadcrumb { padding-block: var(--space-5); }
+
+/* 3 — prose/editorial inline links: premium handoff treatment (accent + soft
+   underline rule), not a raw browser underline. */
+.prose a,
+:is(.in-brief__text, .section__lede, .ai-summary__answer, .faq__answer,
+    .process-step__body, .buyer-card__body, .review-card__fact,
+    .service-card__body, .tldr__body, .legal-doc__body, .deliver-card p) a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--accent-border);
+  padding-bottom: 1px;
+  transition: border-color var(--motion-fast) var(--ease-out), color var(--motion-fast) var(--ease-out);
+}
+.prose a:hover, .prose a:focus-visible,
+:is(.in-brief__text, .section__lede, .ai-summary__answer, .faq__answer,
+    .process-step__body, .buyer-card__body, .review-card__fact,
+    .service-card__body, .tldr__body, .legal-doc__body, .deliver-card p) a:hover {
+  color: var(--accent-hover);
+  border-color: var(--accent);
+}
+
+/* 4 — prose section breathing room (was cramped); generous paragraph rhythm +
+   space before a following pull-quote. */
+.prose p { margin: 0 0 var(--space-5); }
+.prose p:last-child { margin-bottom: 0; }
+.prose + .pull-quote, .prose + .diagram-figure { margin-top: var(--space-10); }
+
+/* 5a — operator trust-row: elevate to a deliberate proof row (top rule, more air,
+   stronger mono-style values). */
+.trust-row { padding-top: var(--space-6); border-top: 1px solid var(--border-subtle); }
+@media (min-width: 769px) { .trust-row { gap: var(--space-8); } }
+.trust-row__value { font-size: var(--fs-22); }
+
+/* 5b — "around the cleanup" related links → premium cards (handoff card treatment). */
+.related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+@media (max-width: 640px) { .related-grid { grid-template-columns: 1fr; } }
+.related-card { display: block; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-6); box-shadow: var(--shadow-card); transition: border-color var(--motion-base) var(--ease-out), box-shadow var(--motion-base) var(--ease-out), transform var(--motion-base) var(--ease-out); }
+.related-card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.related-card h3 { font-family: var(--font-serif); font-variation-settings: var(--serif-small-axes); font-size: var(--fs-18); font-weight: var(--fw-semibold); color: var(--text-strong); margin: 0 0 var(--space-2); line-height: var(--lh-snug); }
+.related-card p { font-size: var(--fs-14); line-height: var(--lh-base); color: var(--text-secondary); margin: 0; }
+.related-card::after { content: "\2192"; display: inline-block; margin-top: var(--space-4); font-size: var(--fs-18); font-weight: var(--fw-medium); color: var(--accent); }

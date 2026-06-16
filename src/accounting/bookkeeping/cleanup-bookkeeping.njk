@@ -225,12 +225,14 @@
       <p class="section__eyebrow">Around the cleanup</p>
       <h2 class="section__heading">Cleanup is often part of a larger engagement.</h2>
     </header>
-    {%- for n in nextSteps %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+    <div class="related-grid">
+      {%- for n in nextSteps %}
+      <a class="related-card" href="{{ n.href }}">
+        <h3>{{ n.title | safe }}</h3>
+        <p>{{ n.body | safe }}</p>
+      </a>
+      {%- endfor %}
     </div>
-    {%- endfor %}
   </div>
 </section>
 
