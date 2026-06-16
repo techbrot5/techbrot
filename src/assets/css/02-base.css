@@ -167,17 +167,16 @@ a {
   color: var(--text-primary);
 }
 
+/* Underline for classless text links (heading-links, bare inline links) is drawn
+   by the SINGLE site-wide link-underline source in 09-extensions (partial -> full,
+   matching the buyer-card). Only the colour lives here; the rule there draws the
+   rule so it is never doubled. */
 main a:not([class]) {
-  text-decoration: underline;
-  text-decoration-thickness: .5px;
-  text-underline-offset: 5px;
-  text-decoration-color: var(--color-ink-soft);
-  transition: text-decoration-color var(--motion-base) var(--ease-out), color var(--motion-base) var(--ease-out);
+  color: var(--text-primary);
 }
 
 main a:not([class]):hover {
   color: var(--color-accent);
-  text-decoration-color: var(--color-accent);
 }
 
 /* --------------------------------------------------------------------------

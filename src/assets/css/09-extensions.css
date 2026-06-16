@@ -527,24 +527,75 @@
 /* 2 — breadcrumb breathing room */
 .breadcrumb { padding-block: var(--space-5); }
 
-/* 3 — prose/editorial inline links: premium handoff treatment (accent + soft
-   underline rule), not a raw browser underline. */
+/* 3 — prose/editorial inline links: accent text colour. The UNDERLINE itself is
+   drawn by the single site-wide source below (partial -> full), not here. */
 .prose a,
 :is(.in-brief__text, .section__lede, .ai-summary__answer, .faq__answer,
     .process-step__body, .buyer-card__body, .review-card__fact,
     .service-card__body, .tldr__body, .legal-doc__body, .deliver-card p) a {
   color: var(--accent);
   text-decoration: none;
-  border-bottom: 1.5px solid var(--accent-border);
-  padding-bottom: 1px;
-  transition: border-color var(--motion-fast) var(--ease-out), color var(--motion-fast) var(--ease-out);
 }
 .prose a:hover, .prose a:focus-visible,
 :is(.in-brief__text, .section__lede, .ai-summary__answer, .faq__answer,
     .process-step__body, .buyer-card__body, .review-card__fact,
     .service-card__body, .tldr__body, .legal-doc__body, .deliver-card p) a:hover {
   color: var(--accent-hover);
-  border-color: var(--accent);
+}
+
+/* ============================================================================
+   LINK UNDERLINE — SINGLE SITE-WIDE SOURCE (founder 2026-06-17). THE place that
+   controls text-link underlines everywhere. Partial short rule by default →
+   animates to FULL on hover/focus, matching the buyer-card __cta treatment
+   (faint ink → accent, 1.5px). Uses a background gradient (not a ::after pseudo)
+   so it also works on WRAPPING inline prose links — a pseudo only underlines a
+   single-line box. Each context keeps its own text colour; this draws the rule.
+   Reduced-motion: the width snaps (no animation). Edit HERE to change link
+   underlines site-wide.  (Nav primary links keep the captured pill-hover chrome;
+   buttons / buyer-card / link-standalone keep their own treatments.)
+   ============================================================================ */
+:is(
+  main a:not([class]),
+  .prose a,
+  .in-brief__text a, .section__lede a, .ai-summary__answer a, .faq__answer a,
+  .process-step__body a, .buyer-card__body a, .review-card__fact a,
+  .service-card__body a, .tldr__body a, .legal-doc__body a, .deliver-card p a,
+  .site-footer__col a, .breadcrumb a, .toc a
+) {
+  text-decoration: none;
+  background-image: linear-gradient(var(--color-ink-faint), var(--color-ink-faint));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 45% 1.5px;
+  transition: background-size var(--motion-base) var(--ease-out), color var(--motion-base) var(--ease-out);
+}
+:is(
+  main a:not([class]),
+  .prose a,
+  .in-brief__text a, .section__lede a, .ai-summary__answer a, .faq__answer a,
+  .process-step__body a, .buyer-card__body a, .review-card__fact a,
+  .service-card__body a, .tldr__body a, .legal-doc__body a, .deliver-card p a,
+  .site-footer__col a, .breadcrumb a, .toc a
+):hover,
+:is(
+  main a:not([class]),
+  .prose a,
+  .in-brief__text a, .section__lede a, .ai-summary__answer a, .faq__answer a,
+  .process-step__body a, .buyer-card__body a, .review-card__fact a,
+  .service-card__body a, .tldr__body a, .legal-doc__body a, .deliver-card p a,
+  .site-footer__col a, .breadcrumb a, .toc a
+):focus-visible {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 100% 1.5px;
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(
+    main a:not([class]), .prose a, .in-brief__text a, .section__lede a,
+    .ai-summary__answer a, .faq__answer a, .process-step__body a,
+    .buyer-card__body a, .review-card__fact a, .service-card__body a,
+    .tldr__body a, .legal-doc__body a, .deliver-card p a,
+    .site-footer__col a, .breadcrumb a, .toc a
+  ) { transition: color var(--motion-base) var(--ease-out); }
 }
 
 /* 4 — prose section breathing room (was cramped); generous paragraph rhythm +
