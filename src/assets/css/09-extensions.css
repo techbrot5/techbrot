@@ -483,3 +483,34 @@
 .section--cta-band--dark .btn--primary:hover { background: var(--color-ink-inverted); }
 .section--cta-band--dark .btn--ghost { background: transparent; color: var(--color-ink-inverted); border-color: rgba(245, 247, 251, 0.35); }
 .section--cta-band--dark .btn--ghost:hover { border-color: rgba(245, 247, 251, 0.6); }
+
+/* ============================================================================
+   PREMIUM NUMBERED PROCESS + variety re-pattern (capture round 2026-06-16,
+   founder directives 1+2). Token-only.
+   ============================================================================ */
+/* Item 1 — the numbered process is the elite numbered system: drop the grey top
+   hairline; the number becomes a premium circle (mono, accent-soft well). */
+.process-diagram .process-step::before { content: none; }
+.process-diagram .process-step { padding-block-start: 0; }
+.process-diagram .process-step__number {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: var(--radius-pill);
+  border: 1px solid var(--accent-border); background: var(--accent-soft);
+  font-family: var(--font-mono); font-size: var(--fs-14); font-weight: var(--fw-medium);
+  font-variant-numeric: tabular-nums; color: var(--accent); letter-spacing: 0;
+  margin: 0 0 var(--space-4);
+}
+.process-diagram .process-step__heading {
+  font-family: var(--font-serif); font-variation-settings: var(--serif-small-axes);
+  font-size: var(--fs-18); font-weight: var(--fw-semibold); line-height: var(--lh-snug);
+  letter-spacing: var(--ls-snug); color: var(--text-strong); margin: 0 0 var(--space-2);
+}
+.process-diagram .process-step__body { font-size: var(--fs-14); line-height: var(--lh-base); color: var(--text-secondary); margin: 0; }
+
+/* Item 2 — deliverable cards: the SECOND dataset on a page becomes CARDS (not a
+   second numbered grid), per variety gate #12a. Brand tie-tick, never a number. */
+.deliver-card { display: flex; gap: var(--space-3); align-items: flex-start; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-5); }
+.deliver-card__tick { flex: none; width: 22px; height: 22px; margin-top: 2px; border-radius: var(--radius-pill); background: var(--tie-soft); display: inline-flex; align-items: center; justify-content: center; }
+.deliver-card__tick::before { content: ""; width: 11px; height: 6px; border-left: 2px solid var(--tie); border-bottom: 2px solid var(--tie); transform: rotate(-45deg); margin-top: -2px; }
+.deliver-card h3 { font-family: var(--font-serif); font-variation-settings: var(--serif-small-axes); font-size: var(--fs-17); font-weight: var(--fw-semibold); color: var(--text-strong); margin: 0 0 var(--space-1); line-height: var(--lh-snug); }
+.deliver-card p { margin: 0; }

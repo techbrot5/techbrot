@@ -9,6 +9,34 @@ pageTier: hub
     take the inverted variants on the dark band. Content machinery
     (quick-5, FAQ, intents, schema, section IDs) is page-owned — FENCED. -#}
 
+{%- if heroFigure %}
+{#- Elevated light editorial hero (opt-in) — split text + signature figure; the
+    earned dark moment moves to the final CTA (ctaBand.dark). Pages without
+    heroFigure keep the legacy dark hub hero below (back-compat for the wave). -#}
+<section class="section hero-tier hero--compact hero--rule hero--split" id="{{ slug }}-hero">
+  <div class="container">
+    <div class="hero-split">
+      <div class="hero">
+        <p class="hero__eyebrow">{{ hero.eyebrow | safe }}</p>
+        <h1 class="hero__heading">{{ hero.heading | safe }}</h1>
+        <p class="hero__subheading">{{ hero.subheading | safe }}</p>
+        <div class="hero__actions">
+          {%- for action in hero.actions %}
+          <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
+            {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+          {%- endfor %}
+        </div>
+        {%- if hero.trust %}
+        <ul class="hero__trust">
+          {%- for t in hero.trust %}<li class="hero__trust-item">{{ t | safe }}</li>{%- endfor %}
+        </ul>
+        {%- endif %}
+      </div>
+      <div class="hero__figure">{% include "partials/figure-" + heroFigure + ".svg" %}</div>
+    </div>
+  </div>
+</section>
+{%- else %}
 <section class="section hero-tier hero--hub" id="{{ slug }}-hero">
   <div class="hero__motif" aria-hidden="true">{% include "partials/motif-align-full.svg" %}</div>
   <div class="container">
@@ -25,6 +53,7 @@ pageTier: hub
     </div>
   </div>
 </section>
+{%- endif %}
 
 {%- if inBrief %}
 <section class="section section--compact" id="{{ slug }}-in-brief">
@@ -40,7 +69,7 @@ pageTier: hub
 {{ content | safe }}
 
 {%- if ctaBand %}
-<section class="section section--cta-band section--cta-band--light {{ tierClass }}" id="{{ slug }}-cta">
+<section class="section section--cta-band section--cta-band--{% if ctaBand.dark %}dark{% else %}light{% endif %} {{ tierClass }}" id="{{ slug }}-cta">
   <div class="cta-band__motif" aria-hidden="true">{% include "partials/motif-align-single.svg" %}</div>
   <div class="container">
     <div class="final-cta">

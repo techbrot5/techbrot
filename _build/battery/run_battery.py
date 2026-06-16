@@ -532,6 +532,46 @@ else:
     ok("design-fidelity",
        f"{df_ok} content pages carry a tier-correct handoff component (per-tier){note}")
 
+# 13 ── Variety gate (founder directive 2026-06-16). #12a: at most ONE numbered
+#       system per page (process-diagram / fix-steps / legacy num-grid) — the
+#       second numbered dataset must become a different component (cards/flow).
+#       Pre-elevation debt is exempted via variety-exceptions.json and removed as
+#       each TYPE is re-skinned in-wave (the gate then enforces the fix). #12b:
+#       adjacent same-signature sections are REPORTED (hardens as pages adopt the
+#       section--* sequence).
+var_exc = set(json.loads(
+    (ROOT / "_build/battery/variety-exceptions.json").read_text(encoding="utf-8")
+).get("exclude_urls", []))
+NUM_MARKERS = ("process-diagram", "fix-steps", 'class="num"')
+SIG_CLASSES = ("process-diagram", "vs-table", "call-block", "proof-strip", "deliver-card",
+               "buyer-card", "review-card", "ai-summary", "trust-row", "faq__list",
+               "grid-3", "grid-2")
+var_problems, adj_flag = [], 0
+for url, lp in pages.items():
+    if url.startswith("/dev/") or url in var_exc:
+        continue
+    html = (SITE / url.lstrip("/") / "index.html").read_text(encoding="utf-8")
+    secs = html.split("<section")
+    n_numbered = sum(1 for s in secs if any(m in s for m in NUM_MARKERS))
+    if n_numbered > 1:
+        var_problems.append(
+            f"{url}: {n_numbered} numbered systems (#12a allows 1) — "
+            f"make the 2nd dataset a different component (cards/flow/editorial)")
+    sigs = []
+    for s in secs[1:]:
+        hit = next((c for c in SIG_CLASSES if c in s), None)
+        if hit:
+            sigs.append(hit)
+    if any(a == b for a, b in zip(sigs, sigs[1:])):
+        adj_flag += 1
+if var_problems:
+    for x in var_problems:
+        fail("variety-12a", x)
+else:
+    ok("variety-12a",
+       f"all pages carry <=1 numbered system ({len(var_exc)} pre-elevation pages exempted, "
+       f"fixed in-wave) · #12b adjacency reported on {adj_flag} page(s)")
+
 print()
 if FAILURES:
     print(f"BATTERY FAILED — {len(FAILURES)} problem(s):")

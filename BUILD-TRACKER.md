@@ -86,6 +86,46 @@ Code does NOT author/invent CSS or visual design afterward — it implements wha
 adjustments OK; **wholesale CSS/design changes go back through Design, never invented by Code.** Capture
 everything at handoff so the build is pure implementation, not redesign-as-you-go.
 
+## ⭐ CODE-PHASE RE-SKIN RULES (founder 2026-06-16 — apply on EVERY page of the re-skin)
+**RS1 — STRUCTURAL UPGRADE, NOT RECOLOR.** Where a page uses an OLD/weak cobalt-floor component,
+REPLACE it with the BETTER component the HANDOFF already provides. Use **only** handoff
+components/structures — never invent or "improve" the design. If a page needs something the handoff
+doesn't cover, **STOP and flag** (don't design it). Map old→handoff **consistently** (same old
+component always → same handoff upgrade) so the swap is systematic, not page-by-page.
+**Old → handoff component map (extend as types are proven):**
+- full intake-form (non-baseline) → **call-block** (CALL conversion). Forms stay ONLY on `/contact/`
+  + `/file-review/` (full) + state-pillar bottom (minimal 4–5). Everything else converts by CALL.
+- legacy `.num` numbered grid (deliverables etc.) → **deliver-card** (non-numbered, brand tie-tick);
+  the ONE numbered system per page stays the **process** (premium numbered).
+- `.process-diagram` → **premium numbered process** (circle numbers, no grey top rule).
+- plain centered hero → **split hero + signature figure** (`heroFigure`) where a signature diagram
+  fits the type (t-account home/hub · before/after cleanup/bofu · reconciliation/migration where apt).
+- light final CTA → **dark final band** (`ctaBand.dark`) — the ONE earned dark moment.
+- review-card misused as pricing → **featured pricing tier** highlight.
+- old dropdown nav/footer → **mid-mega nav + light footer accordion** (Gallery 04) — site-wide chrome (PENDING, item 3).
+**RS2 — VARIETY GATE (battery `variety-12a`, STANDING).** #12a hard: ≤1 numbered system/page (the 2nd
+numbered dataset becomes cards/flow). Pre-elevation debt exempted in `_build/battery/variety-exceptions.json`
+(40 pages as of 2026-06-16) — **remove each URL as its TYPE is re-skinned**; the gate then enforces the fix.
+#12b adjacency reported (hardens as pages adopt the section--* sequence). Regenerate exceptions:
+`python _build/scripts/variety_gen_exceptions.py`; audit: `variety_scan.py`.
+**RS3 — RESTYLE/RECOMPOSE ONLY.** Never change heading text, FAQ, intent, URLs, or schema. Equity-GREEN
+vs baseline.json on every page. Variety + honesty + forms gates fire on every page.
+**RS4 — TYPE WAVES, STOP BETWEEN.** Wave 1 = one real page each of home·hub·guide·state-pillar·contact·
+honest-triage → battery GREEN → report URLs → founder spot-check → fan out that type. Wave 2+ =
+registry-composed types (product/mofu·comparison·pricing·legal·location-child·file-review). Commit+push per wave.
+
+## ⏳ QUEUED — REPO CLEANUP (founder 2026-06-16; ONLY after re-skin COMPLETE + APPROVED, not during)
+Founder has a backup; git history preserves all. **Verify-first → dry-run → list EXACT paths → founder
+confirms → delete as its own commit (`clean _build/reports archive`) → confirm clean build → report.**
+**DELETE (superseded round logs in `_build/reports/`):** round-7 … round-26-ny-children, round-10-step3,
+round-10-step6, round-21-design-audit, round-21-fidelity-replication, round-24-phase0, cloudflare-fix +
+any other stale round-NN. **KEEP (LIVE):** PAGE-TYPE-REGISTRY.md, FINAL-MIGRATION-REPORT.md,
+MIGRATION-PROTOCOL.md, round-27-capture-plan.md + current-round report, BUILD-TRACKER, ARCHITECTURE-TRUTH,
+REDESIGN-BRIEF, baseline.json, equity-exceptions.json. **ALSO propose (don't delete) other now-unneeded
+items** (the `_build/design-capture/extracted/` bundle once fully captured, stale scripts, the old bundle if
+regenerated) — list + reason, founder confirms. **NEVER touch `/src/`, `_site`, `assets`, config, or any
+canonical doc above.**
+
 ## FIND-AN-ACCOUNTANT PHASE (spec 2026-06-15) — deploys AFTER QB silo 1 + vs + partners, BEFORE accounting; accounting silo LAST
 Scope: **NY is the only state built out** (pillar + 39-page tree). **CA/TX/FL/IL parked via
 temporary 301** (no content build) — scheduled for full build-out POST-REDESIGN on the new

@@ -115,10 +115,12 @@
     </header>
     <div class="grid-2">
       {%- for d in deliverables %}
-      <div class="stack-8">
-        <p class="num">{{ d.num }}</p>
-        <h3>{{ d.name | safe }}</h3>
-        <p class="prose">{{ d.body | safe }}</p>
+      <div class="deliver-card">
+        <span class="deliver-card__tick" aria-hidden="true"></span>
+        <div>
+          <h3>{{ d.name | safe }}</h3>
+          <p class="prose">{{ d.body | safe }}</p>
+        </div>
       </div>
       {%- endfor %}
     </div>
