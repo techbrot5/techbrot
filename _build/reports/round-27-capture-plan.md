@@ -124,8 +124,43 @@ dev server. Component STRUCTURE is still the cobalt-floor vocabulary; the elevat
 library (section-layout engine, signature diagrams, call-band, mid-mega) lands with the money-page
 prove (commit 2).
 
-## ▶ NEXT — Step 3: prove the money page (commit 2, then STOP for founder review)
-Re-skin `/accounting/bookkeeping/cleanup-bookkeeping/` end-to-end on the elevated system
-(section--* macros, 4 signature diagrams, premium call-band, pricing/review/vs/faq, dark final
-band, mobile sticky call-bar) using the FROZEN baseline content. Battery GREEN + overflow
-360/390/768 + axe 0 + CLS 0 + CSS gate → STOP + report with the preview URL (founder's review gate).
+## ✅ Step 3 — PROVEN MONEY PAGE · COMMIT 2 (73c5d54, pushed) · STOP for founder review
+**Page:** `/accounting/bookkeeping/cleanup-bookkeeping/` — re-skinned end-to-end on the elevated
+system. **Preview (phone):** `http://192.168.1.7:8080/accounting/bookkeeping/cleanup-bookkeeping/`
+
+**Restyle only — equity untouched:** `.11tydata.js` NOT modified (all content arrays + the full
+schema graph — WebPage+speakable, BreadcrumbList, Service+OfferCatalog, HowTo, ItemList, FAQPage —
+preserved). Every baseline H1/H2/H3 + the 12 FAQ verbatim. The ctaBand baseline heading "Let's see
+what your file actually needs." kept (now the dark final band).
+
+**Captured library applied (composed, not invented):**
+- t-bofu layout (back-compat, opt-in): `heroFigure` → split hero with the signature figure;
+  `ctaBand.dark` → the one earned dark final band. Pages not setting these are unchanged.
+- New partial `figure-cleanup-beforeafter.svg`: the signature before/after ledger diagram
+  (illustrative, draw-on, CLS-0 reserved viewBox, aria-label).
+- New money/BOFU CSS in `09-extensions.css` (token-only): hero split + figure card · draw-on
+  motion (reduced-motion zeroed) · premium no-form **call-block** · hero trust chips · featured
+  pricing tier · dark-band eyebrow + inverted buttons.
+
+**Forms ruling enforced (documented, not silent):** the migration-era full intake form (heading
+"Scope your cleanup." — NOT a baseline heading, verified via the frozen contract) is replaced by
+the premium CALL **call-block**. Conversion is now CALL, per the design money/BOFU spec. Equity
+still GREEN (no baseline heading dropped).
+
+**VERIFICATION — all GREEN:**
+- equity: 42 baseline headings · 12 FAQ · 31 schema types accounted for (only pre-existing
+  justified removals: "The monthly brief.", QAPage, chrome-relocated Company/Network)
+- axe-core: **0 violations**, 28 passes (fixed 2 contrast issues found mid-build: faint
+  `.hero-figure__tag` + faint SVG labels → muted; dark-band eyebrow → light)
+- overflow: **none** at 360 / 390 / 768
+- CLS: **0** · Lighthouse a11y **100** · best-practices **100** · SEO **100**
+  (Lighthouse performance = local host-throttle noise — 3 servers + 4× CPU throttle; CLS is the
+  real layout gate)
+- CSS: minified **63,522B / 82KB gate** · source 91KB / 120KB soft-cap
+
+**⚠ OPEN for founder (flag, not resolved):** `site.json` ships `+18777515575` / `(877) 751-5575`
+site-wide; the design chat flagged that exact number as "not the real founder number." The
+call-block (and all CTAs) use the central `site.phone` token — confirm the real number; it's a
+one-line `site.json` change that propagates everywhere.
+
+**STOP — founder review gate.** No mass apply until the proven page is approved.

@@ -218,11 +218,21 @@ rule). Locked design source: `_build/design-capture/extracted/`. Full plan + exe
   muted ink #5C6A82 for AA) · base.njk Geist preload + theme-color · **CSS gate re-set 58→82KB** (battery +
   bundle). **Battery GREEN** (equity 139/139, css-drift, manifest, design-fidelity; min 57,809B/82KB). Every
   existing page now wears the elevated skin (content/equity untouched). Dev server: `http://192.168.1.7:8080/`.
-- **▶ NEXT — COMMIT 2 (the founder's review gate):** prove the money page
-  `/accounting/bookkeeping/cleanup-bookkeeping/` end-to-end on the elevated system (section--* macros, the 4
-  diagrams, premium call-band, dark final band, sticky call-bar) with FROZEN baseline content → battery GREEN
-  + overflow 360/390/768 + axe 0 + CLS 0 → STOP + report with preview URL. **No mass apply until the founder
-  approves the proven page.**
+- **✅ COMMIT 2 — PROVEN MONEY PAGE (`73c5d54`, pushed) — STOP at founder review gate.**
+  `/accounting/bookkeeping/cleanup-bookkeeping/` re-skinned end-to-end on the elevated system. RESTYLE ONLY:
+  `.11tydata.js` untouched (all content + full schema graph preserved); every baseline heading + 12 FAQ +
+  intent + URL kept. Captured library applied: t-bofu hero `heroFigure` split + signature before/after diagram
+  partial · `ctaBand.dark` (one earned dark band) · premium no-form **call-block** (forms ruling: the
+  migration-era intake form — non-baseline heading "Scope your cleanup." — replaced by CALL) · hero trust chips
+  · featured pricing tier · draw-on motion. All NEW CSS token-only in `09-extensions.css` (css-drift green).
+  **Battery GREEN:** equity 42h/12faq/31 schema · axe 0/28 · overflow none 360/390/768 · CLS 0 · LH a11y/BP/SEO
+  100 · CSS 63,522B/82KB. Preview: `http://192.168.1.7:8080/accounting/bookkeeping/cleanup-bookkeeping/`.
+  Full report: `_build/reports/round-27-capture-plan.md` (Step 3).
+  **⚠ OPEN (founder):** `site.json` ships `+18777515575` which the design chat flagged as not the real founder
+  number — confirm the real number (one-line change, propagates site-wide).
+  **▶ NEXT (after founder approval of the proven page):** re-skin the rest by type, wave-by-wave, from the
+  captured library (build out the remaining section-layout macros + per-type heroes as needed). **No mass apply
+  until the founder signs off on this page.**
 
 **As of the 2026-06-16 brief-FINAL commit (latest on `preview-11ty`):** ✅✅ PATH B MIGRATION COMPLETE
 (139/139, cutover parity) — gated POST-MIGRATION SEQUENCE, all desk-work deliverables DONE. Deliverable status:
