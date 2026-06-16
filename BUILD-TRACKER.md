@@ -64,7 +64,10 @@ ONE file per role, no overlap, **update-don't-spawn**. These are the only author
 3. **_build/reports/PAGE-TYPE-REGISTRY.md** — STRUCTURAL truth (type → tier → sections → components).
 4. **REDESIGN-BRIEF.md** — CREATIVE truth (the redesign: goal/aesthetic/nav/assets/motion/heroes/components +
    §13 as-built reconciliation). *(Promoted to this slot 2026-06-15; supersedes DESIGN-DIRECTION.md.)*
-5. **_build/baseline/baseline.json + _build/battery/equity-exceptions.json** — FROZEN machine contract
+5. **PREMIUM-UPGRADE-PLAN.md** — EXECUTION/BUILD truth (founder 2026-06-16: upgrade the current CSS to premium
+   WITH CODE, not a separate Design round). Honest audit + token re-cut + section-layout engine + visual layer +
+   gated build steps. Operationalizes REDESIGN-BRIEF against `src/assets/css`.
+6. **_build/baseline/baseline.json + _build/battery/equity-exceptions.json** — FROZEN machine contract
    (not hand-edited).
 **Legacy/archive (superseded, NOT authoritative):** **`DESIGN-DIRECTION.md`** — earlier creative direction,
 absorbed + expanded by REDESIGN-BRIEF.md and **DELETED 2026-06-16** (founder ruling; git history preserves it);
@@ -212,11 +215,17 @@ live orphans that would 404 at cutover).
 - **301 STAGED ✅** — `src/redirects.njk` → `/find-an-accountant/  /accounting/  301` (`939fffa`); remove when
   the real national landing ships post-redesign.
 - **Doc system:** canonical creative truth = REDESIGN-BRIEF.md; **DESIGN-DIRECTION.md DELETED** (`d9c4f94`).
-- **▶ NEXT = founder takes REDESIGN-BRIEF.md to CLAUDE DESIGN** — generate the visual system as OPTIONS
-  (palette/type/signature + the §13.6 proving pages mocked), founder PICKS the look. **Then the Code phase**
-  implements the approved system (incl. forms propagation §13.3, the §2/A re-tiering, the §13.9 gate checks) →
-  re-pattern all 148 on preview → founder sign-off → **CUTOVER (LAST)**. ARCHITECTURE-TRUTH ✅ re-approved +
-  D1 re-tier queue ✅ GO (both carry into the redesign). NOT Code building yet — design-options step is next.
+- **⚙ EXECUTION-PATH DECISION (founder 2026-06-16): upgrade the current cobalt CSS to premium WITH CODE** (no
+  separate Claude Design round). Plan = **`PREMIUM-UPGRADE-PLAN.md`** (DRAFT, awaiting founder review): honest
+  audit (foundation strong; gaps = warm→cold/ink-blue palette re-cut, the SECTION-LAYOUT engine that fixes
+  same-looking sections, the signature ledger-diagram + icon system, CallBand-primary, premium components, nav
+  mid-mega + footer accordion, section-aware motion; pipeline lock so `src/assets/css` is authoritative). Gated
+  8-step build → prove the ~11 proving-set types FIRST → founder sign-off → mass-apply wave-by-wave. **NEXT:
+  founder reviews the plan; then execute Step 0.** REDESIGN-BRIEF §12 Design-options path SUPERSEDED by this.
+- **After the plan is approved:** execute PREMIUM-UPGRADE-PLAN steps 0→8 (gated), folding in forms propagation
+  §13.3 + the §2/A re-tiering + the §13.9/variety gate → prove the ~11 proving-set types → founder sign-off →
+  re-pattern the rest wave-by-wave → **CUTOVER (LAST)**. ARCHITECTURE-TRUTH ✅ re-approved + D1 re-tier queue ✅ GO.
+  **NOT building yet — plan review is next.**
 - **✅ v4.xlsx DIFF DONE (2026-06-16, `_build/scripts/v4_diff.py`):** 427-URL full vision; 96/99 built-global
   match; 330 not-built growth backlog — **NO new page type (NOT design-blocking)**; counts reconciled into
   ARCHITECTURE-TRUTH §7 (support silo corrected ~20→~67). `/pricing/` ruled its own call-converting TYPE

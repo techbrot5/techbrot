@@ -402,6 +402,13 @@ design-fidelity GATE additions that enforce the rules above.
 ═══════════════════════════════════════════════════════════════
 §12 — PROCESS (Brief → Design → Code, gated; founder picks the look)
 ═══════════════════════════════════════════════════════════════
+> **⚠ EXECUTION PATH CHANGED (founder 2026-06-16):** we are **upgrading the current cobalt CSS to premium WITH
+> CODE**, NOT commissioning a separate Claude Design options round. The creative rulings in this brief still
+> govern (cold/light · ink-blue · signature ledger-diagrams · fit-to-purpose · forms · honesty · the 10
+> additions). **The execution plan is `PREMIUM-UPGRADE-PLAN.md`** (audit + token re-cut + section-layout engine
+> + visual layer + gated steps). Steps 2–3 below ("Claude Design generates options") are SUPERSEDED by that
+> plan's gated Code steps. Steps 1, 4, 5, 6 (founder approval · implement · re-pattern on preview → cutover ·
+> growth) still stand.
 1. **Founder approves this brief** (refine first).
 2. **Claude Design generates the VISUAL SYSTEM as OPTIONS**: 2-3 palette options, 2-3 type pairings, the
    signature concept, and the PROVING-SET heroes mocked (home + one money page + one guide + one location).
