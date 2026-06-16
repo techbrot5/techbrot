@@ -567,3 +567,22 @@
 .related-card h3 { font-family: var(--font-serif); font-variation-settings: var(--serif-small-axes); font-size: var(--fs-18); font-weight: var(--fw-semibold); color: var(--text-strong); margin: 0 0 var(--space-2); line-height: var(--lh-snug); }
 .related-card p { font-size: var(--fs-14); line-height: var(--lh-base); color: var(--text-secondary); margin: 0; }
 .related-card::after { content: "\2192"; display: inline-block; margin-top: var(--space-4); font-size: var(--fs-18); font-weight: var(--fw-medium); color: var(--accent); }
+
+/* ============================================================================
+   UTILITY HERO (endpoints: 404 / contact / file-review) — founder 2026-06-17.
+   Clean centered, bottom-bordered; the 404 treatment as a shared variant.
+   ============================================================================ */
+.util-hero { text-align: center; border-bottom: 1px solid var(--border-subtle); padding-block: var(--section-y-tight); }
+.util-hero .container { max-width: var(--measure-prose); }
+.util-hero__eyebrow { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3); font-family: var(--font-mono); font-size: var(--fs-12); letter-spacing: var(--ls-wider); text-transform: uppercase; color: var(--text-muted); margin: 0 0 var(--space-5); }
+.util-hero__heading { font-family: var(--font-serif); font-variation-settings: var(--serif-display-axes); font-weight: var(--fw-medium); font-size: var(--display-sm); letter-spacing: var(--ls-tight); line-height: var(--lh-tight); color: var(--text-strong); margin: 0 0 var(--space-5); text-wrap: balance; }
+.util-hero__lede { font-size: var(--fs-18); line-height: var(--lh-base); color: var(--text-body); max-width: 48ch; margin: 0 auto var(--space-8); }
+.util-hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-6); justify-content: center; align-items: center; }
+
+/* util-hero LEFT variant (founder 2026-06-17): contact is left-aligned at content
+   width (the 404 treatment, but left, not centered). 404/file-review stay centered. */
+.util-hero--left { text-align: left; }
+.util-hero--left .container { max-width: var(--measure-content); }
+.util-hero--left .util-hero__eyebrow { justify-content: flex-start; }
+.util-hero--left .util-hero__lede { margin-left: 0; }
+.util-hero--left .util-hero__actions { justify-content: flex-start; }

@@ -1,9 +1,12 @@
 ---
-layout: layouts/t-bofu.njk
+layout: layouts/base.njk
 permalink: /contact/
 slug: contact
-bodyClass: page--bofu
+chrome: minimal
+heroAlign: left
+callBar: true
 includeFormJs: true
+bodyClass: page--bofu
 title: "Book a Free Discovery Call · TechBrot"
 description: "Book a free 30-min discovery call with a Certified QuickBooks ProAdvisor — written fixed-fee scope in 3 business days, no pitch. Call (877) 751-5575."
 hero:
@@ -13,27 +16,6 @@ hero:
   actions:
     - { label: "Book the discovery call", href: "#contact-main", class: "btn--primary" }
     - { label: "Speak to a ProAdvisor", href: "tel:+18777515575", class: "btn--ghost" }
-inBrief:
-  text: "Send the discovery brief on this page and a Certified QuickBooks ProAdvisor responds within one business day &mdash; or call (877) 751-5575, Mon&ndash;Fri 9&nbsp;AM&ndash;6&nbsp;PM ET. A 30-minute discovery call, then a written fixed-fee scope within 3 business days. No pitch, no marketing list."
-  source: "TechBrot &middot; Certified QuickBooks ProAdvisor team"
-ctaBand:
-  eyebrow: "Ready when you are"
-  heading: "Tell us about your books."
-  lede: "Six minutes of form, one business day to a ProAdvisor&rsquo;s response, a written fixed-fee scope within 3 business days of the call. Or skip all of it and pick up the phone."
-  actions:
-    - { label: "Book the discovery call", href: "#contact-main", class: "btn--primary" }
-    - { label: "Speak to a ProAdvisor", href: "tel:+18777515575", class: "btn--ghost" }
-aiSummary:
-  - q: "How fast does TechBrot respond?"
-    a: "<strong>Within one business day, from a Certified ProAdvisor.</strong> Every discovery-brief submission gets a human response &mdash; no auto-responder. Discovery calls are scheduled within 3&ndash;5 business days, and written fixed-fee scopes are delivered within 3 business days of the call."
-  - q: "What happens after I send the discovery brief?"
-    a: "<strong>Three steps.</strong> A confirmation email within one business day with discovery-call slots; a 30-minute discovery call with a Certified ProAdvisor &mdash; no pitch, just review; then a written fixed-fee scope within 3 business days, or an honest &ldquo;not the right fit.&rdquo;"
-  - q: "Do I have to commit to anything on the call?"
-    a: "<strong>No.</strong> The discovery call is complimentary and the written scope is non-binding &mdash; it binds us to the fee and deliverables, not you to anything. An engagement starts only when you commit in writing."
-  - q: "What should I put in the brief?"
-    a: "<strong>Six fields, six minutes.</strong> Who you are, which services look relevant (pick more than one if more than one fits), and the business context &mdash; revenue range, industry, QuickBooks status, timeline. The more context, the better the diagnostic call."
-  - q: "Where is TechBrot headquartered?"
-    a: "<strong>Middletown, Delaware.</strong> TechBrot Inc., 651 N Broad St, Suite 201, Middletown, DE 19709. Engagements are delivered by Certified ProAdvisors and vetted local operators for businesses across the U.S."
 whyBullets:
   - "Certified QuickBooks ProAdvisors &times;4 (Online L2, Desktop, Enterprise, Payroll)"
   - "Fixed-fee scopes, written before any work begins"
@@ -57,61 +39,49 @@ faq:
     a: "Yes. Call <a href=\"tel:+18777515575\" data-tb-event=\"phone_click\">(877) 751-5575</a>, Mon&ndash;Fri 9&nbsp;AM&ndash;6&nbsp;PM ET &mdash; a ProAdvisor answers during business hours. Or book directly on <a href=\"https://calendly.com/techbrot/discovery\" rel=\"noopener\">our calendar</a> without filling the form. Same operator, same outcome; the form just gets us the details before the call."
     phone: true
 ---
+{#- CONTACT — endpoint type (founder 2026-06-17). Shared util-hero (404 treatment)
+    + the form as the centerpiece below it. Discovery furniture stripped: no AI Q&A,
+    no numbered process, no breadcrumb. Equity-GREEN: every baseline heading kept
+    (h1 in the hero; "How to reach us…", "Send us your situation.", "If the form
+    isn’t the right path." + the 4 alt h3s); #contact-promise (speakable target)
+    preserved; schema lives in contact.11tydata.js (untouched). -#}
 
-<section class="section section--compact section--tier-bofu" id="contact-tldr">
-  <div class="container">
-    <div class="tldr">
-      <p class="tldr__label">Our response promise</p>
-      <h2 class="tldr__heading">How to reach us &amp; what to expect</h2>
-      <p class="tldr__body" id="contact-promise">Every discovery-brief submission gets a response from a Certified ProAdvisor within 1 business day. Discovery calls are scheduled within 3&ndash;5 business days, and written fixed-fee scopes are delivered within 3 business days of the call. Prefer to talk first? Call <a href="tel:+18777515575" data-tb-event="phone_click">(877) 751-5575</a>, Mon&ndash;Fri 9&nbsp;AM&ndash;6&nbsp;PM ET, or email <a href="mailto:{{ site.emails.hello }}">{{ site.emails.hello }}</a> &mdash; replied within 1 business day. If you&rsquo;d rather have the actual file looked at before anyone talks, start with the <a href="/quickbooks/file-review/?intent=file-review">free QuickBooks file review</a>. Canonical pricing for every engagement is published on the <a href="/pricing/">pricing page</a>.</p>
-    </div>
-  </div>
-</section>
+{% include "partials/util-hero.njk" %}
 
-<section class="section" id="contact-ai-summary">
+<section class="section section--alt" id="contact-main">
   <div class="container container--narrow">
     <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Five questions, answered plainly.</h2>
+      <p class="section__eyebrow" data-intent-headline>Discovery brief</p>
+      <h2 class="section__heading" id="contact-main-heading">Send us your situation.</h2>
+      <p class="section__lede" data-intent-lede>Six minutes. Six fields. We&rsquo;ll respond within one business day with discovery call slots and a sense of where we&rsquo;d start.</p>
     </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
+    <div class="contact-form-wrap">
+      {%- set intakePrefix = "contact" %}
+      {%- set intakeFormId = "contact-discovery-form" %}
+      {%- set intakeIntent = "" %}
+      {%- set intakeSourceType = "" %}
+      {%- set intakeFunnelStage = "" %}
+      {%- set intakeLegend = "What we should discuss" %}
+      {%- set intakeNote = "Pick what fits. Pick more than one if more than one fits." %}
+      {%- set intakeConsent = "I agree to be contacted by TechBrot regarding this inquiry." %}
+      {%- set intakeSubmit = "Send the Discovery Brief" %}
+      {%- set intakeReassurance = "Response within 1 business day. No marketing list. No sales follow-up sequence." %}
+      {% include "partials/intake-form.njk" %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="contact-expect">
-  <div class="container">
+<section class="section" id="contact-promise-section">
+  <div class="container container--narrow">
     <header class="section__header">
-      <p class="section__eyebrow">What to expect</p>
-      <h2 class="section__heading">From discovery brief to written scope.</h2>
+      <p class="section__eyebrow">Our response promise</p>
+      <h2 class="section__heading">How to reach us &amp; what to expect</h2>
     </header>
-    <ol class="process-diagram">
-      <li class="process-step">
-        <p class="process-step__number">01</p>
-        <h3 class="process-step__heading">Confirmation</h3>
-        <p class="process-step__body">Confirmation email within 1 business day with discovery call slots.</p>
-      </li>
-      <li class="process-step">
-        <p class="process-step__number">02</p>
-        <h3 class="process-step__heading">Discovery call</h3>
-        <p class="process-step__body">30-minute discovery call with a Certified ProAdvisor &mdash; no pitch, just review.</p>
-      </li>
-      <li class="process-step">
-        <p class="process-step__number">03</p>
-        <h3 class="process-step__heading">Written scope</h3>
-        <p class="process-step__body">Written fixed-fee scope within 3 business days &mdash; or an honest &ldquo;not the right fit.&rdquo;</p>
-      </li>
-    </ol>
+    <p class="prose" id="contact-promise">Every discovery-brief submission gets a response from a Certified ProAdvisor within 1 business day. Discovery calls are scheduled within 3&ndash;5 business days, and written fixed-fee scopes are delivered within 3 business days of the call. Prefer to talk first? Call <a href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">(877) 751-5575</a>, Mon&ndash;Fri 9&nbsp;AM&ndash;6&nbsp;PM ET, or email <a href="mailto:{{ site.emails.hello }}">{{ site.emails.hello }}</a> &mdash; replied within 1 business day. If you&rsquo;d rather have the actual file looked at before anyone talks, start with the <a href="/quickbooks/file-review/?intent=file-review">free QuickBooks file review</a>. Canonical pricing for every engagement is published on the <a href="/pricing/">pricing page</a>.</p>
   </div>
 </section>
 
-<section class="section" id="contact-trust">
+<section class="section section--alt" id="contact-trust">
   <div class="container container--narrow">
     <header class="section__header">
       <p class="section__eyebrow">Before you decide</p>
@@ -125,39 +95,13 @@ faq:
     <div class="grid-2 stack-8">
       <article class="review-card">
         <h3>Direct contact</h3>
-        <p class="review-card__fact"><strong>Phone:</strong> <a href="tel:+18777515575" data-tb-event="phone_click">+1 (877) 751-5575</a> &mdash; Mon&ndash;Fri, 9&nbsp;AM&ndash;6&nbsp;PM ET</p>
+        <p class="review-card__fact"><strong>Phone:</strong> <a href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">+1 (877) 751-5575</a> &mdash; Mon&ndash;Fri, 9&nbsp;AM&ndash;6&nbsp;PM ET</p>
         <p class="review-card__fact"><strong>Email:</strong> <a href="mailto:{{ site.emails.hello }}">{{ site.emails.hello }}</a> &mdash; replied within 1 business day</p>
       </article>
       <article class="review-card">
         <h3>Headquartered</h3>
         <p class="review-card__fact">{{ site.legalName }}<br>{{ site.address.streetAddress }}<br>{{ site.address.addressLocality }}, {{ site.address.addressRegion }} {{ site.address.postalCode }}<br>United States</p>
       </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="contact-main">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow" data-intent-headline>Discovery brief</p>
-      <h2 class="section__heading" id="contact-main-heading">Send us your situation.</h2>
-      <p class="section__lede" data-intent-lede>Six minutes. Six fields. We&rsquo;ll respond within one business day with discovery call slots and a sense of where we&rsquo;d start.</p>
-    </header>
-    <div class="contact-form-wrap">
-      {# NEW-SKIN form shell (handoff pages render). The render is a SHELL:
-         every locked contract detail is OURS — services[] names, full
-         option sets + values, hidden meta, trackers, honeypot. FENCED. #}
-      {%- set intakePrefix = "contact" %}
-      {%- set intakeFormId = "contact-discovery-form" %}
-      {%- set intakeIntent = "" %}
-      {%- set intakeSourceType = "" %}
-      {%- set intakeFunnelStage = "" %}
-      {%- set intakeLegend = "What we should discuss" %}
-      {%- set intakeNote = "Pick what fits. Pick more than one if more than one fits." %}
-      {%- set intakeConsent = "I agree to be contacted by TechBrot regarding this inquiry." %}
-      {%- set intakeSubmit = "Send the Discovery Brief" %}
-      {%- set intakeReassurance = "Response within 1 business day. No marketing list. No sales follow-up sequence." %}
-      {% include "partials/intake-form.njk" %}
     </div>
   </div>
 </section>
@@ -177,7 +121,7 @@ faq:
       <article class="review-card">
         <h3>Call us</h3>
         <p class="review-card__fact">Speak with a ProAdvisor directly during business hours. We answer the phone &mdash; this isn&rsquo;t routed through an offshore queue.</p>
-        <a class="review-card__link" href="tel:+18777515575" data-tb-event="phone_click">+1 (877) 751-5575 &rarr;</a>
+        <a class="review-card__link" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">+1 (877) 751-5575 &rarr;</a>
       </article>
       <article class="review-card">
         <h3>Partner inquiry</h3>

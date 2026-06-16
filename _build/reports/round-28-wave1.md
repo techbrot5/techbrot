@@ -50,3 +50,27 @@ Battery GREEN: equity all 139 (fanned hubs: about 48h, advisory 28h, bookkeeping
 services 37h, quickbooks 36h) · variety-12a · design-fidelity 136 · cta-lexicon · manifest · CSS 69,671B/82KB.
 Probes: /quickbooks/ (representative fanned hub) overflow clean 360/390/768 · axe 0 (28) · CLS 0 · a11y/BP/SEO 100.
 Final-band tightened (96→64px) + bottom-right motif removed, site-wide.
+
+---
+## Update 2026-06-17 (autonomous run + pre-/clear checkpoint)
+- **Q&A split (approved):** bookkeeping children (cleanup/catch-up/monthly) 10→5 intent Q&A via 11ty
+  `override:aiSummary` (page 5 replaces the cascaded directory 5; generic 5 stay on the hub). Equity GREEN.
+  `/vs/` inspected → NOT the bug (two intentional, correctly-headed blocks: aiSummary 4 + libraryQs 5). Left as-is.
+  NOTE: dev server caches data modules — a clean `npx @11ty/eleventy` reflects the 5.
+- **Endpoint type proof + fan-out:** new shared `partials/util-hero.njk` (eyebrow + H1 + lede + single CTA +
+  phone, bordered). Applied to **contact** (proof), **file-review** (fan-out), **404** (refactored to share it).
+  Stripped on endpoints: the 5-Q AI Q&A + numbered process + breadcrumb. Form stays centerpiece. contact equity
+  GREEN (13 baseline headings; ai-summary/process/FAQ were additive; #contact-promise speakable preserved).
+  CONTACT corrections (founder): hero LEFT-aligned (`heroAlign: left` → `.util-hero--left`); BRIEF/TLDR retained.
+- **NAV-SCOPE fix (founder):** removed the blanket `chrome: minimal` from `t-bofu.njk` → FULL mega-nav is the
+  default everywhere; MINIMAL nav (logo+phone) is now ENDPOINT-ONLY (/contact/ + /file-review/). 404 → full.
+  AUDIT: 19 pages were minimal before; after, only contact + file-review (+ /dev/form-test, preview-only).
+  **16 non-endpoint pages fixed** (money/BOFU: quickbooks/*, accounting/bookkeeping/*, advisory, migration/*).
+  One source: chrome defaults to FULL (base.njk site-header `chrome != minimal`); endpoints opt into minimal.
+- **Visual polish (founder spot-check):** nav warm→cold, breadcrumb spacing, premium prose inline-links,
+  prose rhythm, trust-row elevation, related-cards (cleanup "around" → cards).
+- Verification: battery GREEN throughout (equity all 139, variety-12a, design-fidelity, cta-lexicon, manifest);
+  probed pages overflow clean 360/390/768 · axe 0 · CLS 0 · a11y/BP/SEO 100. CSS ~71KB/82KB.
+
+**▶ NEXT (autonomous): GUIDE proof** → fan out · then **NY pillar + 1 NY child (STOP-GATE #1)** · honest-triage
+(STOP-GATE #2) · Wave-2 registry types. Resume from the "🔵 FRESH-SESSION RESUME" block in BUILD-TRACKER.

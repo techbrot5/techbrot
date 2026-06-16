@@ -1,8 +1,10 @@
 ---
-layout: layouts/t-bofu.njk
+layout: layouts/base.njk
 permalink: /quickbooks/file-review/
 slug: file-review
 intent: file-review
+chrome: minimal
+callBar: true
 bodyClass: page--bofu
 includeFormJs: true
 title: "Free QuickBooks File Review · TechBrot"
@@ -14,17 +16,7 @@ hero:
   actions:
     - { label: "Get the free file review", href: "#file-review-form", class: "btn--primary" }
     - { label: "Speak to a ProAdvisor", href: "tel:+18777515575", class: "btn--ghost" }
-inBrief:
-  text: "A free QuickBooks file review by a Certified ProAdvisor &mdash; diagnostic only, not the fix. We check reconciliation status, uncategorized and duplicate transactions, Undeposited Funds and Opening Balance Equity buildup, A/R-A/P aging integrity, payroll and sales-tax liability accounts, and file/version health. Plain-English findings, optional written fixed-fee scope within 3 business days, no obligation."
-  source: "TechBrot &middot; Certified QuickBooks ProAdvisor team"
-ctaBand:
-  eyebrow: "Last call"
-  heading: "Send the file. We&rsquo;ll tell you what it needs."
-  lede: "Free diagnostic by a Certified ProAdvisor. Written fixed-fee scope within 3 business days if you want it fixed. No obligation."
-  actions:
-    - { label: "Get the free file review", href: "#file-review-form", class: "btn--primary" }
-    - { label: "Speak to a ProAdvisor", href: "tel:+18777515575", class: "btn--ghost" }
-aiSummary:
+_unused_aiSummary:
   - q: "What is a QuickBooks file review?"
     a: "<strong>A diagnostic, not a fix.</strong> A Certified ProAdvisor opens the actual file (Online or Desktop), runs a structured check across reconciliation, undeposited funds, A/R-A/P aging, liability accounts, and file health, and tells you in plain English what&rsquo;s working and what isn&rsquo;t. The review itself doesn&rsquo;t change a thing in your file &mdash; it&rsquo;s a read."
   - q: "What does the review cost?"
@@ -66,29 +58,14 @@ trustRow:
   - { value: "1 day", label: "Response within one business day" }
 ---
 
+{% include "partials/util-hero.njk" %}
+
 <section class="section section--compact section--tier-bofu" id="file-review-tldr">
   <div class="container">
     <div class="tldr">
       <p class="tldr__label">The short version</p>
       <h2 class="tldr__heading">What the free file review is &mdash; in one paragraph.</h2>
       <p class="tldr__body" id="file-review-tldr-body">Submit your QuickBooks file for a free Certified ProAdvisor review. We open the file, run a structured diagnostic across six areas &mdash; reconciliation, uncategorized and duplicate transactions, Undeposited Funds and Opening Balance Equity, A/R-A/P aging, payroll and sales-tax liability accounts, and file health &mdash; and tell you in plain English what we found and what it would take to fix. If you want it fixed, you get a written fixed-fee scope within 3 business days &mdash; from a <a href="/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup">cleanup</a> to a <a href="/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up">catch-up</a> to ongoing <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a>, depending on what the file actually needs. No obligation. A review is diagnostic, not the fix &mdash; complex multi-entity or multi-year files may need a paid deep diagnostic, and we&rsquo;ll tell you that before anything costs money. The rest of <a href="/quickbooks/">our QuickBooks work</a> picks up after the diagnostic.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="file-review-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Five questions, answered plainly.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
     </div>
   </div>
 </section>
@@ -105,37 +82,6 @@ trustRow:
       <li><strong>{{ item.title | safe }}</strong>{{ item.body | safe }}</li>
       {%- endfor %}
     </ul>
-  </div>
-</section>
-
-<section class="section" id="file-review-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How the review works</p>
-      <h2 class="section__heading">From form submission to plain-English findings.</h2>
-    </header>
-    <ol class="process-diagram">
-      <li class="process-step">
-        <p class="process-step__number">01</p>
-        <h3 class="process-step__heading">Submit</h3>
-        <p class="process-step__body">Short form. No credit card. Tell us the QuickBooks version and what you&rsquo;re seeing.</p>
-      </li>
-      <li class="process-step">
-        <p class="process-step__number">02</p>
-        <h3 class="process-step__heading">ProAdvisor review</h3>
-        <p class="process-step__body">A Certified ProAdvisor opens the file (via accountant access) and runs the structured diagnostic &mdash; typically within 2&ndash;3 business days.</p>
-      </li>
-      <li class="process-step">
-        <p class="process-step__number">03</p>
-        <h3 class="process-step__heading">Plain-English findings</h3>
-        <p class="process-step__body">A short call, then a written summary. What&rsquo;s working, what isn&rsquo;t, what&rsquo;s at risk, and what it would take to fix.</p>
-      </li>
-      <li class="process-step">
-        <p class="process-step__number">04</p>
-        <h3 class="process-step__heading">Optional written scope</h3>
-        <p class="process-step__body">Fixed-fee, in writing, within 3 business days of the diagnostic call &mdash; if you want it fixed. No obligation, no pitch.</p>
-      </li>
-    </ol>
   </div>
 </section>
 

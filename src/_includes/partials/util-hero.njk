@@ -1,0 +1,23 @@
+{#- Shared utility hero (endpoints: 404 / contact / file-review) — founder 2026-06-17.
+    Clean centered, bordered: eyebrow + H1 + lede + single primary CTA (+ optional
+    phone-cta in the 404 style). Renders from `hero` front-matter. NO marketing
+    figure / Q&A / process — endpoints point straight at the action. -#}
+<section class="section util-hero{% if heroAlign == 'left' %} util-hero--left{% endif %}" id="{{ slug }}-hero">
+  <div class="container">
+    <p class="util-hero__eyebrow"><span class="rule-mark" aria-hidden="true"></span>{{ hero.eyebrow | safe }}</p>
+    <h1 class="util-hero__heading">{{ hero.heading | safe }}</h1>
+    {%- if hero.subheading %}<p class="util-hero__lede">{{ hero.subheading | safe }}</p>{%- endif %}
+    <div class="util-hero__actions">
+      {%- for action in hero.actions %}
+      {%- if action.tel or (action.href and action.href.startsWith("tel:")) %}
+      <a class="phone-cta" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">
+        <span class="phone-cta__icon">{% include "icons/phone.svg" %}</span>
+        <span><span class="phone-cta__number">{{ site.phone.display }}</span><span class="phone-cta__note">a ProAdvisor answers</span></span>
+      </a>
+      {%- else %}
+      <a class="btn {{ action.class }} btn--lg" href="{{ action.href }}">{{ action.label }}</a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>

@@ -265,6 +265,39 @@ baseline, so **before cutover re-verify baseline == the full live-prod URL set**
 live orphans that would 404 at cutover).
 
 ### ▶ CURRENT RESUME POINT (recovery anchor — keep current; founder may resume via `claude -c` after power loss)
+
+## 🔵 FRESH-SESSION RESUME (2026-06-17 — founder about to /clear; read THIS first, then round-28-wave1.md)
+**MODE: AUTONOMOUS.** Run non-stop: prove a type → battery GREEN → report URL → auto-fan-out that type
+→ next. Commit per step, round-report block every turn (every page URL), full detail in
+`_build/reports/round-28-wave1.md`. Do NOT wait for OK except the **5 STOP-GATES**: (1) NY pillar + 1 NY
+child, (2) honest-triage compliance copy, (3) handoff doesn't cover it, (4) page can't go equity-GREEN
+without a content change, (5) any NEW content/structure decision. Battery can't cleanly go green → hard STOP.
+GATES every page: variety #12a/#12b · honesty · forms · equity-GREEN · CLS 0 · axe · overflow.
+
+**LAST COMMIT before /clear: (this turn's checkpoint commit — see `git log -1`).** Working tree must be clean.
+Dev server: `npm run serve` → http://192.168.1.7:8080/ (data-file edits need a server restart — it caches
+data modules; a clean `npx @11ty/eleventy` always reflects them).
+
+**DONE (elevated re-skin):** token+font re-cut · money-page proof (/accounting/bookkeeping/cleanup-bookkeeping/)
+· home · global chrome (mid-mega nav + light footer + nowrap) · premium numbered process · variety gate
+(variety-12a, 40 legacy exempted in variety-exceptions.json) · **hub proof + FANNED OUT (9 t-hub pages)** ·
+visual polish (cold nav, breadcrumb, prose links, related-cards) · **Q&A split** (bookkeeping children 10→5 via
+`override:aiSummary`; /vs/ inspected = NOT the bug, 2 intentional blocks) · **endpoint type** (contact +
+file-review + 404 share `partials/util-hero.njk`; ai-summary + numbered-process + breadcrumb stripped; form
+centerpiece) · **NAV-SCOPE fix** (t-bofu no longer forces chrome:minimal → FULL mega-nav everywhere; MINIMAL
+nav ONLY on /contact/ + /file-review/; 16 wrong pages fixed; 404 now full). Phone CLEARED (real 877 number).
+
+**⚑ CONTACT corrections APPLIED this turn (verify on resume):** (a) contact hero is LEFT-aligned
+(`heroAlign: left` → `.util-hero--left`); 404/file-review stay centered. (b) the BRIEF/TL;DR block is RETAINED
+(#contact-promise "How to reach us & what to expect"); only the 5-Q AI Q&A + numbered process + breadcrumb
+were stripped. Form stays centerpiece below the hero.
+
+**▶ NEXT (autonomous):** GUIDE proof (real t-guide page: article hero + byline + sticky TOC + diagram-feature +
+lead-magnet) → battery → fan out guides. Then **NY pillar + 1 NY child (STOP-GATE #1)**. Then honest-triage
+(STOP-GATE #2). Then Wave-2 registry types (product/mofu · comparison · pricing · legal · location-child).
+CUTOVER GATE (flip-to-live pre-flight) tracked above; gate #1 (phone) CLEARED. Old→handoff component map +
+RS1–RS4 + PACE rules above govern.
+
 **🟢 CODE PHASE LIVE — design captured, re-skin underway (2026-06-16).** Founder fetched the Claude
 Design "TechBrot Design System Elevation" handoff; we are in PURE IMPLEMENTATION per it (design-ownership
 rule). Locked design source: `_build/design-capture/extracted/`. Full plan + execution log:
