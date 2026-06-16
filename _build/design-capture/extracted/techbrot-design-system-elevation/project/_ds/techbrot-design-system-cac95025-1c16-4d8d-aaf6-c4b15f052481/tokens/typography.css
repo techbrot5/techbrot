@@ -1,0 +1,55 @@
+/* ============================================================
+   TechBrot — Typography tokens
+   Sleek modern grotesque (Geist) + mono for figures (Geist Mono).
+   The body voice is the brand voice: calm, precise, contemporary.
+   ============================================================ */
+
+:root {
+  /* ---- Families ---- */
+  --font-sans: "Geist", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  --font-display: var(--font-sans); /* display uses the same grotesque, tightened */
+
+  /* ---- Weights ---- */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* ---- Type scale (rem, 16px base) ---- */
+  --text-xs:   0.75rem;   /* 12 — micro labels, legal */
+  --text-sm:   0.875rem;  /* 14 — captions, meta, eyebrows */
+  --text-base: 1rem;      /* 16 — UI default */
+  --text-md:   1.0625rem; /* 17 — body copy */
+  --text-lg:   1.25rem;   /* 20 — lead paragraphs */
+  --text-xl:   1.5rem;    /* 24 — small headings */
+  --text-2xl:  1.875rem;  /* 30 — H3 / card titles */
+  --text-3xl:  2.375rem;  /* 38 — H2 */
+  --text-4xl:  3rem;      /* 48 — H1 (interior) */
+
+  /* ---- Fluid display sizes (heroes) ---- */
+  --display-sm: clamp(2.5rem, 1.6rem + 3.6vw, 3.5rem); /* @kind other */
+  --display-md: clamp(3rem, 1.7rem + 5.2vw, 4.5rem); /* @kind other */
+  --display-lg: clamp(3.25rem, 1.4rem + 7.4vw, 5.75rem); /* @kind other */
+
+  /* ---- Line heights ---- */
+  --leading-none:    1;
+  --leading-tight:   1.1;
+  --leading-snug:    1.22;
+  --leading-normal:  1.4;
+  --leading-relaxed: 1.6;
+  --leading-prose:   1.65;
+
+  /* ---- Letter spacing ---- */
+  --tracking-tighter: -0.03em; /* large display */
+  --tracking-tight:   -0.018em; /* headings */
+  --tracking-normal:  -0.006em; /* body — Geist reads best slightly tight */
+  --tracking-wide:    0.02em;
+  --tracking-eyebrow: 0.09em;   /* uppercase eyebrows */
+
+  /* ---- Numeric / figures (mono) ---- */
+  --tracking-mono: 0.01em;
+}
+
+/* Tabular figures helper — used in data-figures & ledger diagrams */
+.tnum { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }

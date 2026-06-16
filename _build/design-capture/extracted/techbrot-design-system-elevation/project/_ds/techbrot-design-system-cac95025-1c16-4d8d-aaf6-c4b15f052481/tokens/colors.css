@@ -1,0 +1,128 @@
+/* ============================================================
+   TechBrot — Color tokens
+   Cold / light foundation · deep ink-blue accent.
+   Every semantic token is AA on its intended surface.
+   ============================================================ */
+
+:root {
+  /* ---- Base neutrals (cool-tinted ink) ---- */
+  --c-white:    #FFFFFF;
+  --c-ink-25:   #FBFCFE; /* page background — cool near-white */
+  --c-ink-50:   #F5F8FC;
+  --c-ink-100:  #EDF1F7;
+  --c-ink-150:  #E3E9F1;
+  --c-ink-200:  #D4DCE7;
+  --c-ink-300:  #B5C0D0;
+  --c-ink-400:  #8A98AD;
+  --c-ink-500:  #62708A; /* muted text — AA on white */
+  --c-ink-600:  #45516B;
+  --c-ink-700:  #2D384E;
+  --c-ink-800:  #1A2236;
+  --c-ink-900:  #111827;
+  --c-ink-950:  #0A0F1C; /* primary text — cool near-black */
+
+  /* ---- Accent: cobalt (the firm's signature blue) ---- */
+  --c-blue-50:  #EEF2FE;
+  --c-blue-100: #DBE4FD;
+  --c-blue-200: #BAC9FB;
+  --c-blue-300: #8FA8F7;
+  --c-blue-400: #5E80F0;
+  --c-blue-500: #3D63E8; /* accent-soft / bright interactive */
+  --c-blue-600: #2B4FD6; /* PRIMARY accent — cobalt */
+  --c-blue-700: #1D3EB8; /* hover / deep */
+  --c-blue-800: #18329A;
+  --c-blue-900: #14276F;
+
+  /* ---- Semantic hues (used by the ledger diagrams) ---- */
+  --c-green-50:  #E7F5EE;
+  --c-green-100: #CFEADF;
+  --c-green-500: #1E9266;
+  --c-green-600: #157A52; /* reconciled / tie-out / credit-positive */
+  --c-green-700: #0F5E3F;
+
+  --c-red-50:   #FCEDEC;
+  --c-red-100:  #F9DAD8;
+  --c-red-500:  #D6453F;
+  --c-red-600:  #C0322C; /* out-of-balance / discrepancy */
+  --c-red-700:  #9A2722;
+
+  --c-amber-50:  #FBF2E0;
+  --c-amber-100: #F6E3BE;
+  --c-amber-500: #C9870F;
+  --c-amber-600: #A4660A; /* needs review / caution */
+  --c-amber-700: #7E4D06;
+
+  /* Brass — editorial garnish + rating stars on dark surfaces */
+  --c-brass:        #7E5A1E;
+  --c-brass-bright: #C9A961;
+
+  /* ============================================================
+     Semantic aliases — components reference THESE, not base scale
+     ============================================================ */
+
+  /* Surfaces */
+  --surface-page:    var(--c-ink-25);
+  --surface-card:    var(--c-white);
+  --surface-subtle:  var(--c-ink-50);
+  --surface-inset:   var(--c-ink-100);
+  --surface-sunken:  var(--c-ink-150);
+  --surface-ink:     var(--c-ink-950); /* dark sections */
+  --surface-ink-2:   var(--c-ink-900);
+
+  /* Tier-coded section surfaces (cool, very light) */
+  --surface-tier-hub:   #F3F6FD; /* hub silos — faint cobalt */
+  --surface-tier-guide: #F5F8FC; /* guides — neutral cool */
+  --surface-tier-bofu:  #EDF1F8; /* money/conversion — deeper cool */
+
+  /* Text */
+  --text-strong:     var(--c-ink-950);
+  --text-body:       var(--c-ink-700);
+  --text-muted:      var(--c-ink-500);
+  --text-faint:      var(--c-ink-400);
+  --text-accent:     var(--c-blue-700);
+  --text-on-ink:     var(--c-ink-100);
+  --text-on-ink-mut: var(--c-ink-400);
+  --text-on-accent:  var(--c-white);
+
+  /* Borders / hairlines */
+  --border-subtle:   var(--c-ink-150);
+  --border-default:  var(--c-ink-200);
+  --border-strong:   var(--c-ink-300);
+  --border-ink:      rgba(255, 255, 255, 0.12);
+
+  /* Accent system */
+  --accent:          var(--c-blue-600);
+  --accent-hover:    var(--c-blue-700);
+  --accent-press:    var(--c-blue-800);
+  --accent-bright:   var(--c-blue-500);
+  --accent-soft:     var(--c-blue-50);
+  --accent-soft-2:   var(--c-blue-100);
+  --accent-border:   var(--c-blue-200);
+  --accent-on-ink:   var(--c-blue-300); /* accent legible on dark */
+
+  /* Status */
+  --positive:        var(--c-green-600);
+  --positive-soft:   var(--c-green-50);
+  --positive-border: var(--c-green-100);
+  --negative:        var(--c-red-600);
+  --negative-soft:   var(--c-red-50);
+  --negative-border: var(--c-red-100);
+  --caution:         var(--c-amber-600);
+  --caution-soft:    var(--c-amber-50);
+  --caution-border:  var(--c-amber-100);
+  --brass:           var(--c-brass);
+  --brass-on-ink:    var(--c-brass-bright);
+
+  /* Focus — teal, never confusable with cobalt links (a11y) */
+  --focus-ring:      #118A7E;
+  --focus-ring-soft: rgba(17, 138, 126, 0.30);
+
+  /* Ledger diagram roles (the signature visual language) */
+  --ledger-rule:     var(--c-ink-300);  /* T-account rules / grid lines */
+  --ledger-debit:    var(--c-ink-800);  /* debit column ink */
+  --ledger-credit:   var(--c-blue-700); /* credit column accent */
+  --ledger-tie:      var(--c-green-600); /* the reconciliation tick */
+  --ledger-flag:     var(--c-red-600);  /* discrepancy */
+  --ledger-paper:    var(--c-white);
+  --ledger-field:    var(--c-ink-50);
+}

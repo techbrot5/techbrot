@@ -29,8 +29,12 @@ const CSS_ORDER = [
   "08-additions.css",
   "09-extensions.css",
 ];
-const CSS_BUDGET_MIN = 58 * 1024; // minified, hard build gate (ceiling — final)
-const CSS_BUDGET_SRC = 70 * 1024; // source soft-cap, flagged only
+// Re-set for the elevated design system (capture round, 2026-06-16). The cobalt
+// floor used 58KB; the elevated library adds the section-layout engine, the 4
+// signature diagrams, call-band, mid-mega nav and per-type heroes. New ceiling
+// set with headroom; tighten after the full re-skin lands.
+const CSS_BUDGET_MIN = 82 * 1024; // minified, hard build gate (ceiling)
+const CSS_BUDGET_SRC = 120 * 1024; // source soft-cap, flagged only
 
 module.exports = class {
   data() {

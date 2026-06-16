@@ -1,21 +1,13 @@
-/* 00-fonts.css — INSTALLED from handoff/00-fonts.SKIN.css by _build/extract_css.py (changeover round 10) · R1 re-tokenized. Edit the handoff source, not this file. */
-/* ============================================================================
-   TechBrot · NEW SKIN · 00 — FONTS (self-hosted, Stage 2)
-   ----------------------------------------------------------------------------
-   Replaces the Google @import. Files to place in /assets/fonts/ (latin
-   subsets, woff2). Download via google-webfonts-helper (gwfh.mranftl.com)
-   or fonttools subsetting:
-     fraunces-var-latin.woff2          Fraunces variable  opsz 9..144, wght 300..700, normal
-     fraunces-italic-var-latin.woff2   Fraunces variable italic (editorial pull-quotes, buyer-signal openers)
-     publicsans-var-latin.woff2        Public Sans variable wght 400..800, normal
-     publicsans-italic-var-latin.woff2 OPTIONAL — only if italics appear in body copy
-     ibmplexmono-400-latin.woff2 / -500 / -600
-   base.njk preload change: keep fraunces-var-latin.woff2, swap
-   inter-var-latin.woff2 → publicsans-var-latin.woff2. theme-color → #FBFAF7.
-   Metric-override values below are computed against Georgia/Arial reference
-   metrics; re-verify with fontaine or capsize at build time before cutover.
-   ============================================================================ */
+/* 00-fonts.css — RE-CUT to the elevated design system (capture round, 2026-06-16).
+   Source of truth: the Claude Design "TechBrot Design System Elevation" handoff.
+   Family locked by the founder in chat: Fraunces (display/headings) · Geist
+   (body/UI) · Geist Mono (figures/labels/diagrams). Public Sans + IBM Plex Mono
+   are RETIRED here (superseded — the elevation tightened the family). Self-hosted
+   woff2 (latin, variable) downloaded via _build/scripts/download_fonts.ps1
+   (@fontsource-variable/geist + geist-mono). Metric fallbacks keep CLS 0 during
+   swap; re-verify with fontaine/capsize before cutover. */
 
+/* ---- Fraunces — display & headings (kept) ---- */
 @font-face {
   font-family: "Fraunces";
   src: url("/assets/fonts/fraunces-var-latin.woff2") format("woff2-variations");
@@ -32,37 +24,28 @@
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2010-2027, U+2030-205E, U+20AC, U+2122;
 }
+
+/* ---- Geist — body & UI (variable) ---- */
 @font-face {
-  font-family: "Public Sans";
-  src: url("/assets/fonts/publicsans-var-latin.woff2") format("woff2-variations");
-  font-weight: 400 800;
+  font-family: "Geist";
+  src: url("/assets/fonts/geist-var-latin.woff2") format("woff2-variations");
+  font-weight: 300 700;
   font-style: normal;
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2010-2027, U+2030-205E, U+20AC, U+2122;
 }
+
+/* ---- Geist Mono — figures, labels, diagram numbers (variable) ---- */
 @font-face {
-  font-family: "IBM Plex Mono";
-  src: url("/assets/fonts/ibmplexmono-400-latin.woff2") format("woff2");
-  font-weight: 400;
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/geist-mono-var-latin.woff2") format("woff2-variations");
+  font-weight: 400 700;
   font-style: normal;
   font-display: swap;
-}
-@font-face {
-  font-family: "IBM Plex Mono";
-  src: url("/assets/fonts/ibmplexmono-500-latin.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "IBM Plex Mono";
-  src: url("/assets/fonts/ibmplexmono-600-latin.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2010-2027, U+2030-205E, U+20AC, U+2122;
 }
 
-/* Metric-matched fallbacks — CLS 0 during swap (verify with fontaine) */
+/* ---- Metric-matched fallbacks — CLS 0 during swap (verify with fontaine) ---- */
 @font-face {
   font-family: "Fraunces-fallback";
   src: local("Georgia");
@@ -72,10 +55,12 @@
   line-gap-override: 0%;
 }
 @font-face {
-  font-family: "PublicSans-fallback";
+  /* Geist → Arial reference (grotesque). Values approximate Geist metrics
+     (upm 1000, asc ~1005, desc ~251, xHeight ~0.51). Re-verify with fontaine. */
+  font-family: "Geist-fallback";
   src: local("Arial");
-  size-adjust: 102.9%;
+  size-adjust: 98.5%;
   ascent-override: 95%;
-  descent-override: 22.5%;
+  descent-override: 24%;
   line-gap-override: 0%;
 }

@@ -1,71 +1,127 @@
-/* 01-tokens.css — INSTALLED from handoff/01-tokens.SKIN.css by _build/extract_css.py (changeover round 10). Edit the handoff source, not this file. */
-/* ============================================================================
-   TechBrot · NEW SKIN · 01 — DESIGN TOKENS (complete re-skin, Stage 2)
+/* 01-tokens.css — RE-CUT to the elevated design system (capture round, 2026-06-16).
+   ============================================================================
+   TechBrot · ELEVATED SKIN · 01 — DESIGN TOKENS
+   Source of truth: Claude Design "TechBrot Design System Elevation" handoff
+   (Foundations board + Galleries 01–07 + Handoff doc). Founder-locked:
+   COLD + LIGHT palette · accent = Ledger Ink #1E3A70 (the #6005f5 was a paste
+   slip) · Fraunces + Geist + Geist Mono · whisper tonal --surface-subtle #F7FAFD.
    ----------------------------------------------------------------------------
-   Drop-in replacement for 01-tokens.css: every enforced name preserved,
-   values re-cut to the new system (cobalt accent, warm four-step paper ramp,
-   Fraunces / Public Sans / IBM Plex Mono). New names ONLY for genuinely new
-   concepts — marked NEW-CONCEPT. AA matrix computed 2026-06-13 (WCAG relative
-   luminance): every text token ≥4.9:1 on its worst-case tier tint unless
-   marked non-text. Load order unchanged: tokens → base → components → pages.
+   CAPTURE RULE (design-ownership): every ENFORCED legacy token NAME is preserved
+   and only its VALUE re-cut, so the component layers (02–09, fully tokenised,
+   zero hardcoded hex) inherit the new skin with no class churn and the css-drift
+   gate stays GREEN. New concepts are NEW names (marked NEW), namely the handoff
+   groups --surface-* / --diagram-* / --illus-* / --measure-* / --icon-* /
+   --motion-stagger. AA: muted ink nudged a hair deeper than the spec #62708A →
+   #5C6A82 so eyebrows clear 4.5:1 on every tonal tier surface (permitted minor
+   adjustment; faint #8A98AD stays NON-TEXT only, per the handoff "faint = non-text").
    ============================================================================ */
 
 :root {
-  /* Paper ramp (warm). Ratios below are vs --color-ink. */
-  --color-paper: #FBFAF7;        /* page                                  */
-  --color-paper-warm: #F4F2EC;   /* tier: guide/mofu · ink 15.71:1        */
-  --color-paper-deep: #EDEAE1;   /* tier: bofu        · ink 14.62:1      */
-  --color-paper-edge: #DCD8CC;   /* hairlines, input borders (non-text)   */
-  --color-ink: #1A1915;          /* 16.85:1 on paper                      */
-  --color-ink-soft: #45433C;     /* body · 9.49 paper / 8.23 deep         */
-  --color-ink-mute: #5F5B52;     /* secondary+eyebrow · 6.48 / 5.62 deep  */
-  --color-ink-faint: #908C80;    /* NON-TEXT ONLY (3.2:1) — hairmarks, placeholders */
-  --color-accent: #2B4FD6;       /* cobalt · 6.30 paper / 5.47 deep       */
-  --color-accent-deep: #1D3EB8;  /* hover/active · 8.27 / 7.17            */
-  --color-accent-soft: #3D63E8;  /* dark-surface motif + focus duty (non-text on light) */
-  --color-ink-inverted: #F5F3EC; /* 16.17:1 on surface-dark               */
-  --color-ink-inverted-soft: rgba(245, 243, 236, 0.78); /* 10.16:1 composited */
-  --color-ink-inverted-mute: rgba(245, 243, 236, 0.55); /* 5.62:1 composited — ≥14px only */
-  --color-surface-dark: #181711;
-  --color-surface-dark-2: #23211A;
-  /* Tier-coded section surfaces (ruling B table preserved).
-     --color-paper-mist interpolated inside the new ramp. */
-  --color-paper-mist: #F6F4EF;   /* ink 16.00:1 */
-  --surface-tier-hub: var(--color-paper-mist);
-  --surface-tier-bofu: var(--color-paper-deep);
-  --surface-tier-guide: var(--color-paper-warm);
-  --color-focus: #118A7E;        /* RECUT (2A ruling 3): teal — never confusable with cobalt links. Ring ≥3:1 everywhere: 4.06 paper / 3.85 mist / 3.78 warm / 3.52 deep / 4.24 dark */
-  --color-success: #29714A;      /* 5.66 paper / 4.91 deep */
-  --color-warning: #8E5603;      /* 5.78 paper / 5.01 deep */
-  /* NEW-CONCEPT: form/validation red — the old skin reused oxblood accent
-     for error duty; cobalt cannot. 5.83 paper / 5.06 deep. */
-  --color-critical: #B0382C;
-  /* NEW-CONCEPT: brass — editorial garnish (eyebrows on light surfaces,
-     highlighted figures, diagram secondaries). 5.97 paper / 5.18 deep. */
-  /* NEW-CONCEPT: brass on dark surfaces (rating stars, dark-band garnish) — base brass fails AA on ink. 7.6:1 on #181711. */
-  --color-brass-bright: #C9A961;
-  --color-brass: #7E5A1E;
+  /* ===== Cool neutral ramp (legacy "paper" names re-cut cold) ===== */
+  --color-paper: #FBFCFE;        /* page                                        */
+  --color-paper-warm: #F7FAFD;   /* whisper tonal (variety engine) — now cold   */
+  --color-paper-deep: #EDF1F7;   /* deeper inset band (tier: bofu)              */
+  --color-paper-edge: #D4DCE7;   /* hairlines / input borders (non-text)        */
+  --color-paper-mist: #F5F8FC;   /* subtle tonal section / hover (tier: hub/guide) */
+  --color-ink: #0A0F1C;          /* strong ink · ~18:1 on page                  */
+  --color-ink-soft: #2D384E;     /* body default · ~11:1                        */
+  --color-ink-mute: #5C6A82;     /* muted / eyebrow · AA on every tonal tier    */
+  --color-ink-faint: #8A98AD;    /* NON-TEXT ONLY — placeholders, hairmarks     */
+  --color-accent: #1E3A70;       /* Ledger Ink · ~9:1 on page                   */
+  --color-accent-deep: #15294F;  /* hover / active                              */
+  --color-accent-soft: #2E55C8;  /* bright accent (emphasis; non-text/large)    */
+  --color-ink-inverted: #F5F7FB; /* on dark                                     */
+  --color-ink-inverted-soft: rgba(245, 247, 251, 0.74);
+  --color-ink-inverted-mute: rgba(245, 247, 251, 0.5);
+  --color-surface-dark: #0A0F1C;
+  --color-surface-dark-2: #111A30;
+  /* Tier-coded section surfaces (cool, very light) */
+  --surface-tier-hub: #F3F6FD;
+  --surface-tier-bofu: #EDF1F8;
+  --surface-tier-guide: #F5F8FC;
+  --color-focus: #118A7E;        /* teal — never confusable with ink-blue links */
+  --color-success: #157A52;      /* tie-out / reconciled                        */
+  --color-warning: #A4660A;      /* needs-review / caution                      */
+  --color-critical: #C0322C;     /* out-of-balance / form error                 */
+  --color-brass-bright: #C9A961; /* dark-surface garnish                        */
+  --color-brass: #7E5A1E;        /* editorial garnish                           */
   --bg-page: var(--color-paper);
   --bg-section-alt: var(--color-paper-warm);
-  --bg-card: #FFFFFF;            /* cards step UP to white off the warm page */
+  --bg-card: #FFFFFF;            /* cards step up to white                       */
   --bg-card-on-warm: #FFFFFF;
   --text-primary: var(--color-ink);
   --text-body: var(--color-ink-soft);
   --text-secondary: var(--color-ink-mute);
-  --text-eyebrow: var(--color-ink-mute); /* AA fix inherited: ink-mute, never ink-faint */
+  --text-eyebrow: var(--color-ink-mute);
   --border-hairline: var(--color-paper-edge);
   --accent: var(--color-accent);
+
+  /* ===== NEW: handoff --surface-* group (cold/light system) ===== */
+  --surface-page: var(--color-paper);
+  --surface-subtle: #F7FAFD;     /* whisper-quiet — chat-locked variety tint     */
+  --surface-muted: #F5F8FC;
+  --surface-inset: #EDF1F7;
+  --surface-card: #FFFFFF;
+  --surface-ink: #0A0F1C;        /* the one earned dark band + footer mark well   */
+  --surface-ink-2: #111A30;
+  --border-subtle: #E3E9F1;
+  --border-default: #D4DCE7;
+  --border-strong: #B5C0D0;
+  --text-strong: #0A0F1C;
+  --text-muted: var(--color-ink-mute);
+  --text-faint: #8A98AD;         /* NON-TEXT ONLY */
+  --text-on-ink: #EDF1F7;
+  --text-on-ink-mut: #8A98AD;
+  /* accent system */
+  --accent-hover: #15294F;
+  --accent-press: #102043;
+  --accent-bright: #2E55C8;
+  --accent-soft: #EEF2FB;        /* soft tint fill / chip bg                     */
+  --accent-border: #C9D6F0;
+  --accent-on-ink: #6E83F0;      /* bright ink-blue for dark surfaces            */
+  /* ledger semantic (component aliases) */
+  --tie: #157A52;  --tie-deep: #0F5E3F;  --tie-soft: #E7F5EE;  --tie-border: #CFEADF;
+  --flag: #C0322C; --flag-deep: #9A2722; --flag-soft: #FCEDEC; --flag-border: #F9DAD8;
+  --caution: #A4660A; --caution-deep: #7E4D06; --caution-soft: #FBF2E0; --caution-border: #F6E3BE;
+
+  /* ===== NEW: signature diagram roles (--diagram-*) ===== */
+  --diagram-rule: #B5C0D0;       /* the T / ledger rules · stroke 1.5            */
+  --diagram-debit: #0A0F1C;      /* debit column ink                            */
+  --diagram-credit: #1E3A70;     /* credit column ink-blue                      */
+  --diagram-tie: #157A52;        /* the green tie-out tick                       */
+  --diagram-flag: #C0322C;       /* out-of-balance                              */
+  --diagram-grid: #E3E9F1;       /* faint backing grid                          */
+  --diagram-node: #F5F8FC;       /* node fill                                   */
+  --diagram-paper: #FFFFFF;      /* figure surface                              */
+
+  /* ===== NEW: isometric 3D-look illustration palette (on dark) (--illus-*) ===== */
+  --illus-ink: #0A0F1C;
+  --illus-face-1: #111A30;
+  --illus-face-2: #1A2236;
+  --illus-edge: #2D384E;
+  --illus-edge-2: #3A476B;
+  --illus-accent: #2E55C8;
+  --illus-accent-line: #6E83F0;
+  --illus-tie: #3DBB85;
+  --illus-tie-deep: #0F2E22;
+  --illus-tie-stroke: #1E9266;
+
+  /* ===== Fonts ===== */
   --font-serif: "Fraunces", "Fraunces-fallback", Georgia, "Times New Roman", serif;
-  --font-sans: "Public Sans", "PublicSans-fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", "SF Mono", Consolas, monospace;
-  /* NEW-CONCEPT: Fraunces variable axes — display vs heading voice */
-  --serif-display-axes: "opsz" 90, "SOFT" 0, "WONK" 0;
-  --serif-heading-axes: "opsz" 40, "SOFT" 0, "WONK" 0;
-  /* NEW-CONCEPT: motif constants (Stage-1 ruling). REFERENCE values — usages
-     inline the literal gradient (capture/render engines mishandle gradient-
-     holding custom properties on pseudo-elements). */
+  --font-sans: "Geist", "Geist-fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Geist Mono", "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  /* Fraunces variable axes — display vs heading vs small voice */
+  --serif-display-axes: "opsz" 110, "SOFT" 0, "WONK" 0;
+  --serif-heading-axes: "opsz" 60, "SOFT" 0, "WONK" 0;
+  --serif-small-axes: "opsz" 40, "SOFT" 0, "WONK" 0;
+
+  /* Brand mark — the gapped rule (30 / gap / 14), re-cut to Ledger Ink.
+     REFERENCE values; usages inline the literal gradient (render engines
+     mishandle gradient-holding custom properties on pseudo-elements). */
   --rule-aligned: linear-gradient(90deg, var(--accent) 0 30px, transparent 30px 34px, var(--accent) 34px 48px);
   --rule-aligned-sm: linear-gradient(90deg, var(--accent) 0 16px, transparent 16px 19px, var(--accent) 19px 26px);
+
+  /* ===== Type scale (names kept; rem-based) ===== */
   --fs-11: 0.6875rem;
   --fs-12: 0.75rem;
   --fs-13: 0.8125rem;
@@ -83,19 +139,27 @@
   --fs-44: 2.75rem;
   --fs-52: 3.25rem;
   --fs-68: 4.25rem;
+  /* Fluid display clamps (heroes) */
+  --display-sm: clamp(2.25rem, 1.6rem + 2.6vw, 3.25rem);
+  --display-md: clamp(2.5rem, 1.5rem + 3.4vw, 3.75rem);
+  --display-lg: clamp(2.75rem, 1.4rem + 5vw, 4.25rem);
+
   --lh-tight: 1.05; /* @kind other */
   --lh-snug: 1.15; /* @kind other */
   --lh-base: 1.55; /* @kind other */
   --lh-loose: 1.7; /* @kind other */
-  --ls-tight: -0.02em;
-  --ls-snug: -0.012em;
-  --ls-base: -0.005em;
+  --lh-prose: 1.65; /* @kind other */
+  --ls-tight: -0.022em;
+  --ls-snug: -0.018em;
+  --ls-base: -0.004em;
   --ls-wide: 0.08em;
-  --ls-wider: 0.14em;
+  --ls-wider: 0.13em;   /* eyebrow tracking */
   --fw-regular: 400; /* @kind font */
   --fw-medium: 500; /* @kind font */
   --fw-semibold: 600; /* @kind font */
   --fw-bold: 700; /* @kind font */
+
+  /* ===== Spacing (4px grid) ===== */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -111,32 +175,65 @@
   --space-24: 6rem;
   --space-32: 8rem;
   --space-40: 10rem;
-  --container-max: 1240px;
+  /* rhythm */
+  --section-y: clamp(3.5rem, 2.5rem + 5vw, 6.5rem);
+  --section-y-tight: clamp(2.75rem, 2rem + 3vw, 4rem);
+
+  /* ===== Layout measures ===== */
+  --container-max: 1240px;       /* existing content column (kept for current pages) */
   --container-narrow: 820px;
   --container-wide: 1440px;
   --container-padding: 1.25rem;
   --container-padding-lg: 2rem;
-  --header-height: 72px;
-  --header-height-scrolled: 60px;
+  --header-height: 64px;
+  --header-height-scrolled: 56px;
+  /* NEW: handoff measures */
+  --measure-prose: 680px;
+  --measure-wide: 1240px;
+  --measure-content: 1160px;     /* elevated content column (money page etc.)    */
+  --container-mega: 660px;       /* mid-mega nav panel                          */
+
+  /* ===== Radius (re-cut to the elevated language) ===== */
   --radius-none: 0;
-  --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 10px;  /* re-cut: cards round to 10 in the new language */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;   /* controls */
+  --radius-lg: 14px;   /* cards */
+  --radius-xl: 20px;   /* panels */
+  --radius-2xl: 28px;
   --radius-pill: 999px;
-  /* Elevation — warm-tinted, fainter than the old skin; rest state is FLAT */
-  --shadow-xs: 0 1px 2px rgba(26, 25, 21, 0.06);
-  --shadow-sm: 0 1px 2px rgba(26, 25, 21, 0.05), 0 2px 8px rgba(26, 25, 21, 0.05);
-  --shadow-md: 0 2px 4px rgba(26, 25, 21, 0.05), 0 8px 24px rgba(26, 25, 21, 0.08);
-  --shadow-lg: 0 4px 8px rgba(26, 25, 21, 0.06), 0 16px 48px rgba(26, 25, 21, 0.12);
-  --shadow-focus: 0 0 0 3px rgba(17, 138, 126, 0.32);
+
+  /* ===== Elevation — cool-tinted (blue-grey), low-spread; rest state is FLAT ===== */
+  --shadow-xs: 0 1px 2px rgba(10, 15, 28, 0.05);
+  --shadow-sm: 0 1px 3px rgba(10, 15, 28, 0.06), 0 1px 2px rgba(10, 15, 28, 0.04);
+  --shadow-md: 0 4px 12px -2px rgba(10, 15, 28, 0.08), 0 2px 6px -3px rgba(10, 15, 28, 0.05);
+  --shadow-lg: 0 14px 30px -8px rgba(10, 15, 28, 0.12), 0 4px 10px -4px rgba(10, 15, 28, 0.06);
+  /* NEW: card ring+drop · menu pop · 3D feature depth */
+  --shadow-card: 0 0 0 1px rgba(10, 15, 28, 0.04), 0 4px 12px -2px rgba(10, 15, 28, 0.07);
+  --shadow-pop: 0 0 0 1px rgba(10, 15, 28, 0.06), 0 18px 40px -12px rgba(10, 15, 28, 0.20);
+  --shadow-feature: 0 2px 4px rgba(10, 15, 28, 0.06), 0 22px 50px rgba(10, 15, 28, 0.16);
+  --shadow-focus: 0 0 0 3px rgba(17, 138, 126, 0.28);
+
+  /* ===== Icon (NEW group) ===== */
+  --icon-stroke: 1.75; /* @kind other */
+  --icon-xs: 14px;
+  --icon-sm: 16px;
+  --icon-md: 20px;
+  --icon-lg: 24px;
+  --icon-xl: 32px;
+
+  /* ===== Motion ===== */
   --motion-fast: 120ms; /* @kind other */
   --motion-base: 200ms; /* @kind other */
   --motion-slow: 360ms; /* @kind other */
-  --motion-slower: 600ms; /* @kind other */
+  --motion-slower: 560ms; /* @kind other */
+  --motion-draw: 1600ms; /* @kind other — diagram draw-on */
+  --motion-stagger: 60ms; /* @kind other — NEW: section-reveal stagger */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
   --ease-spring: cubic-bezier(0.5, 1.2, 0.4, 1); /* @kind other */
+
+  /* ===== z-index ===== */
   --z-base: 1; /* @kind other */
   --z-sticky: 50; /* @kind other */
   --z-header: 100; /* @kind other */
@@ -146,7 +243,7 @@
   --z-toast: 500; /* @kind other */
 }
 
-/* DARK MODE — opt-in via [data-theme="dark"], future-ready (unchanged shape) */
+/* DARK MODE — opt-in via [data-theme="dark"] (future-ready; light-mode-only ships) */
 [data-theme="dark"] {
   --bg-page: var(--color-surface-dark);
   --bg-section-alt: var(--color-surface-dark-2);
@@ -154,7 +251,7 @@
   --text-body: var(--color-ink-inverted-soft);
   --text-secondary: var(--color-ink-inverted-mute);
   --text-eyebrow: var(--color-ink-inverted-mute);
-  --border-hairline: rgba(245, 243, 236, 0.12);
+  --border-hairline: rgba(245, 247, 251, 0.12);
 }
 
 /* REDUCED MOTION — token-level zeroing (contract preserved) */
@@ -164,5 +261,7 @@
     --motion-base: 0ms; /* @kind other */
     --motion-slow: 0ms; /* @kind other */
     --motion-slower: 0ms; /* @kind other */
+    --motion-draw: 0ms; /* @kind other */
+    --motion-stagger: 0ms; /* @kind other */
   }
 }

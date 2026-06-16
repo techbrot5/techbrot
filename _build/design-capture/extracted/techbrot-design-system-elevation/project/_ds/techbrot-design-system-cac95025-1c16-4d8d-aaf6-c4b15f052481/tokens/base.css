@@ -1,0 +1,93 @@
+/* ============================================================
+   TechBrot — Base / element defaults
+   Minimal reset + brand-default element styling.
+   Token-driven; consumers can override per component.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
+  font-weight: var(--weight-regular);
+}
+
+/* ---- Headings ---- */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: var(--text-strong);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+}
+h1 { font-size: var(--text-4xl); letter-spacing: var(--tracking-tighter); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+
+p { margin: 0; text-wrap: pretty; }
+
+/* ---- Links ---- */
+a {
+  color: var(--text-accent);
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+a:hover { text-decoration: underline; }
+
+/* ---- Numeric figures use mono + tabular by default ---- */
+.figure, .tabular { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+/* ---- Selection ---- */
+::selection { background: var(--accent-soft-2); color: var(--text-strong); }
+
+/* ---- Focus visibility ---- */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* ---- Media defaults ---- */
+img, svg, video { display: block; max-width: 100%; }
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   Utility helpers (used across cards, kits, components)
+   ============================================================ */
+.tb-eyebrow {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+.tb-mono {
+  font-family: var(--font-mono);
+  letter-spacing: var(--tracking-mono);
+  font-variant-numeric: tabular-nums;
+}
+.tb-measure { max-width: var(--width-prose); }
