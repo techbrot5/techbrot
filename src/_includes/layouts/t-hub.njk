@@ -9,6 +9,23 @@ pageTier: hub
     take the inverted variants on the dark band. Content machinery
     (quick-5, FAQ, intents, schema, section IDs) is page-owned — FENCED. -#}
 
+{%- if breadcrumb %}
+<nav class="breadcrumb" aria-label="Breadcrumb" id="{{ slug }}-breadcrumb">
+  <div class="container">
+    <ol>
+      {%- for item in breadcrumb %}
+      {%- if item.href %}
+      <li><a href="{{ item.href }}">{{ item.name }}</a></li>
+      <li class="sep" aria-hidden="true">/</li>
+      {%- else %}
+      <li aria-current="page">{{ item.name }}</li>
+      {%- endif %}
+      {%- endfor %}
+    </ol>
+  </div>
+</nav>
+{%- endif %}
+
 {#- Hub fan-out (founder 2026-06-17): the elevated light split hero is the t-hub
     DEFAULT (signature = T-account unless a page sets its own heroFigure). The
     legacy dark hub hero is retired but kept below for any page that opts out via

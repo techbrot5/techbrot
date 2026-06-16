@@ -2,6 +2,24 @@
     Clean centered, bordered: eyebrow + H1 + lede + single primary CTA (+ optional
     phone-cta in the 404 style). Renders from `hero` front-matter. NO marketing
     figure / Q&A / process — endpoints point straight at the action. -#}
+{#- Breadcrumb on every page EXCEPT /contact/ (founder 2026-06-17): file-review +
+    404 supply `breadcrumb` data; contact deliberately omits it. -#}
+{%- if breadcrumb %}
+<nav class="breadcrumb" aria-label="Breadcrumb" id="{{ slug }}-breadcrumb">
+  <div class="container">
+    <ol>
+      {%- for item in breadcrumb %}
+      {%- if item.href %}
+      <li><a href="{{ item.href }}">{{ item.name }}</a></li>
+      <li class="sep" aria-hidden="true">/</li>
+      {%- else %}
+      <li aria-current="page">{{ item.name }}</li>
+      {%- endif %}
+      {%- endfor %}
+    </ol>
+  </div>
+</nav>
+{%- endif %}
 <section class="section util-hero{% if heroAlign == 'left' %} util-hero--left{% endif %}" id="{{ slug }}-hero">
   <div class="container">
     <p class="util-hero__eyebrow"><span class="rule-mark" aria-hidden="true"></span>{{ hero.eyebrow | safe }}</p>

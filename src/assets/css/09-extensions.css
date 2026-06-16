@@ -551,8 +551,11 @@
    so it also works on WRAPPING inline prose links — a pseudo only underlines a
    single-line box. Each context keeps its own text colour; this draws the rule.
    Reduced-motion: the width snaps (no animation). Edit HERE to change link
-   underlines site-wide.  (Nav primary links keep the captured pill-hover chrome;
-   buttons / buyer-card / link-standalone keep their own treatments.)
+   underlines site-wide. (Nav primary links carry the SAME partial->full underline
+   via an ::after pseudo in 04-chrome.css — they are single-line padded pills, so a
+   pseudo positions the rule under the text where the gradient cannot; dropdown
+   triggers keep their chevron + pill; buttons / buyer-card / link-standalone keep
+   their own treatments.)
    ============================================================================ */
 :is(
   main a:not([class]),
