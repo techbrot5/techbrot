@@ -405,3 +405,81 @@
    so the problem-pattern list stays tight, not a process-diagram. */
 .fix-steps h3{font-family:var(--font-serif);font-size:var(--fs-16);font-weight:var(--fw-semibold);line-height:var(--lh-snug);letter-spacing:var(--ls-snug);margin:0 0 var(--space-1);color:var(--text-primary)}
 .fix-steps p{margin:0}
+
+/* ============================================================================
+   ELEVATED MONEY/BOFU COMPONENTS (capture round 2026-06-16) — token-only.
+   Proven on /accounting/bookkeeping/cleanup-bookkeeping/; generalises to bofu.
+   Hero split + signature figure · draw-on motion · premium call-block ·
+   hero trust chips · featured pricing tier. Restyle only — no content/equity.
+   ============================================================================ */
+
+/* ---- Hero: text + signature figure split (opt-in via heroFigure) ---- */
+.hero-split { display: block; }
+.hero__figure { margin-top: var(--space-8); }
+@media (min-width: 900px) {
+  .hero--split .hero-split { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: var(--space-12); align-items: center; }
+  .hero--split .hero { max-width: none; }
+  .hero__figure { margin-top: 0; }
+}
+.hero__trust { list-style: none; margin: var(--space-6) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); }
+.hero__trust-item { font-size: var(--fs-13); color: var(--text-body); display: inline-flex; align-items: center; gap: var(--space-2); }
+.hero__trust-item::before { content: ""; width: 13px; height: 7px; border-left: 1.75px solid var(--accent); border-bottom: 1.75px solid var(--accent); transform: rotate(-45deg); flex: none; }
+
+/* ---- Signature figure card ---- */
+.hero-figure { margin: 0; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); box-shadow: var(--shadow-feature); padding: var(--space-6) var(--space-6) var(--space-5); }
+.hero-figure__cap { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-4); }
+.hero-figure__title { font-family: var(--font-serif); font-variation-settings: var(--serif-small-axes); font-weight: var(--fw-semibold); font-size: var(--fs-17); color: var(--text-strong); }
+.hero-figure__tag { font-family: var(--font-mono); font-size: var(--fs-11); letter-spacing: 0.04em; color: var(--text-muted); padding: 2px 7px; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); }
+
+/* ---- Signature draw-on motion (CLS 0; zeroed under reduced-motion) ---- */
+@keyframes dgmDraw { to { stroke-dashoffset: 0; } }
+@keyframes dgmTick { 0% { stroke-dashoffset: 26; opacity: 0; } 55% { opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 1; } }
+@keyframes dgmFade { to { opacity: 1; } }
+.dgm-draw { stroke-dasharray: 900; stroke-dashoffset: 900; animation: dgmDraw var(--motion-draw) var(--ease-out) .2s forwards; }
+.dgm-draw2 { stroke-dasharray: 400; stroke-dashoffset: 400; animation: dgmDraw var(--motion-slower) var(--ease-out) .5s forwards; }
+.dgm-tick { stroke-dasharray: 26; stroke-dashoffset: 26; opacity: 0; animation: dgmTick var(--motion-slow) var(--ease-out) 1.3s forwards; }
+.dgm-fade { opacity: 0; animation: dgmFade var(--motion-slow) ease-out 1s forwards; }
+@media (prefers-reduced-motion: reduce) {
+  .dgm-draw, .dgm-draw2, .dgm-tick, .dgm-fade { animation: none; stroke-dashoffset: 0; opacity: 1; }
+}
+
+/* ---- Premium call-block (no-form CALL conversion; replaces the form) ---- */
+.call-block { background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-xl); box-shadow: var(--shadow-feature); overflow: hidden; display: grid; grid-template-columns: 1fr; }
+@media (min-width: 860px) { .call-block { grid-template-columns: 1.1fr 0.9fr; } }
+.call-block__main { padding: var(--space-8) var(--space-6); }
+@media (min-width: 768px) { .call-block__main { padding: var(--space-12); } }
+.call-block__heading { font-family: var(--font-serif); font-variation-settings: var(--serif-heading-axes); font-weight: var(--fw-semibold); font-size: clamp(1.5rem, 1.3rem + 1vw, 1.9rem); line-height: var(--lh-snug); letter-spacing: var(--ls-snug); color: var(--text-strong); margin: var(--space-3) 0; max-width: 18em; }
+.call-block__lede { font-size: var(--fs-16); line-height: var(--lh-base); color: var(--text-body); margin: 0 0 var(--space-6); max-width: 44ch; }
+.call-block__cta { display: inline-flex; align-items: center; gap: var(--space-3); min-height: 60px; padding: var(--space-3) var(--space-6); background: var(--accent); color: var(--color-ink-inverted); border-radius: var(--radius-lg); margin-bottom: var(--space-5); transition: background var(--motion-fast) var(--ease-out), transform var(--motion-fast) var(--ease-out); }
+.call-block__cta:hover { background: var(--accent-hover); }
+.call-block__cta:active { transform: translateY(1px); }
+.call-block__cta svg { width: 22px; height: 22px; flex: none; }
+.call-block__num { display: flex; flex-direction: column; font-family: var(--font-mono); font-size: var(--fs-22); font-weight: var(--fw-medium); line-height: 1.1; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.call-block__sub { font-family: var(--font-sans); font-size: var(--fs-12); font-weight: var(--fw-regular); letter-spacing: 0; color: var(--color-ink-inverted-soft); margin-top: 3px; }
+.call-block__trust { list-style: none; margin: 0 0 var(--space-4); padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); }
+.call-block__trust li { font-size: var(--fs-13); color: var(--text-body); display: inline-flex; align-items: center; gap: var(--space-2); }
+.call-block__trust li::before { content: ""; width: 13px; height: 7px; border-left: 1.75px solid var(--tie); border-bottom: 1.75px solid var(--tie); transform: rotate(-45deg); flex: none; }
+.call-block__alt { font-size: var(--fs-13); color: var(--text-secondary); margin: 0; }
+.call-block__alt a { color: var(--accent); }
+.call-block__aside { background: var(--surface-ink); padding: var(--space-8) var(--space-6); display: flex; flex-direction: column; justify-content: center; }
+@media (min-width: 768px) { .call-block__aside { padding: var(--space-12); } }
+.call-block__aside-label { font-family: var(--font-mono); font-size: var(--fs-12); letter-spacing: var(--ls-wider); text-transform: uppercase; color: var(--color-ink-inverted-mute); margin: 0 0 var(--space-6); }
+.call-block__steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-5); }
+.call-block__steps li { display: flex; gap: var(--space-4); align-items: flex-start; }
+.call-block__steps li > span:last-child { font-size: var(--fs-14); line-height: var(--lh-base); color: var(--color-ink-inverted-mute); }
+.call-block__steps b { display: block; font-size: var(--fs-15); font-weight: var(--fw-semibold); color: var(--color-ink-inverted); margin-bottom: 2px; }
+.call-block__mark { flex: none; margin-top: 8px; width: 22px; height: 0; border-top: 2.5px solid var(--accent-on-ink); position: relative; }
+.call-block__mark::after { content: ""; position: absolute; left: 0; top: 5px; width: 10px; height: 0; border-top: 2.5px solid var(--accent-on-ink); }
+.call-block__mark--tie, .call-block__mark--tie::after { border-color: var(--illus-tie); }
+
+/* ---- Featured pricing tier (the "Most common" highlight) ---- */
+.review-card--featured { border-color: var(--accent); border-width: 1.5px; box-shadow: var(--shadow-md); }
+.review-card--featured .review-card__role { color: var(--accent); }
+
+/* ---- Dark final CTA band (ctaBand.dark): eyebrow + inverted buttons (the
+   design's earned dark moment — white primary, outlined-white ghost). ---- */
+.section--cta-band--dark .section__eyebrow { color: var(--text-on-ink-mut); }
+.section--cta-band--dark .btn--primary { background: var(--surface-card); color: var(--color-ink); border-color: var(--surface-card); }
+.section--cta-band--dark .btn--primary:hover { background: var(--color-ink-inverted); }
+.section--cta-band--dark .btn--ghost { background: transparent; color: var(--color-ink-inverted); border-color: rgba(245, 247, 251, 0.35); }
+.section--cta-band--dark .btn--ghost:hover { border-color: rgba(245, 247, 251, 0.6); }
