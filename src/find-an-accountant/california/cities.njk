@@ -1,0 +1,100 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/california/cities/",
+  "slug": "ca-cities",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "heroLight": true,
+  "title": "California Cities We Serve · Bookkeeping & QuickBooks · TechBrot",
+  "description": "Certified QuickBooks ProAdvisor bookkeeping across California — Los Angeles, San Francisco, San Diego, San Jose, Sacramento, Oakland, Fresno, Long Beach, Anaheim, Riverside, Bakersfield, and all 58 counties. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "California", "href": "/find-an-accountant/california/" },
+    { "name": "Cities" }
+  ],
+  "hero": {
+    "eyebrow": "California · Cities We Serve",
+    "heading": "A California bookkeeper for your city — and your city's taxes.",
+    "subheading": "California taxes businesses differently city by city — San Francisco's Gross Receipts Tax, the LA City Business Tax, San Jose's per-employee tax, Oakland's progressive Measure T. We have a dedicated bookkeeper for the major metros and serve all 58 counties remotely, by a named Certified ProAdvisor. We deliver the books; your CPA files.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=california&state=california&source_type=cities-hub&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "California · all 58 counties",
+      "Fixed-fee · written scope in 3 days"
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> provides <strong>Certified QuickBooks ProAdvisor bookkeeping across California</strong> — dedicated city pages for the major metros (each built around that city's actual business taxes) plus remote service in all 58 counties, by a named bookkeeper on the same file every month. The full list is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not affiliated with Intuit Inc. California city and state tax figures reflect rules current as of the review date; TechBrot does not file California taxes."
+  },
+  "ctaBand": {
+    "eyebrow": "California businesses start here",
+    "heading": "Find your city — or just call.",
+    "lede": "Don't see your city? We serve all 58 California counties remotely on QuickBooks. Book a free discovery call and we'll scope the right books for your business and your city's taxes — written fixed-fee scope within 3 business days. Independent firm — does not file CA taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=california&state=california&source_type=cities-hub&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY ── #}
+<section class="section section--compact" id="ca-cities-summary-sec">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In short</p>
+      <h2 class="section__heading">California bookkeeping, city by city.</h2>
+    </header>
+    <p class="prose" id="ca-cities-summary">{{ summary | safe }}</p>
+  </div>
+</section>
+
+{# ── CITIES GRID · the dedicated metro pages (buyer-cards) ── #}
+<section class="section" id="ca-cities-grid">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Dedicated city pages</p>
+      <h2 class="section__heading">California metros we serve.</h2>
+      <p class="section__lede">Each city page is built around that city&rsquo;s real business taxes &mdash; not a name swap.</p>
+    </header>
+    <div class="grid-3">
+      {%- for c in cities %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading">{{ c.name | safe }}</h3>
+        <p class="buyer-card__body">{{ c.note | safe }}</p>
+        <a class="buyer-card__cta" href="{{ c.href }}">{{ c.name | safe }} bookkeeper &rarr;</a>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="prose">{{ citiesNote | safe }}</p>
+  </div>
+</section>
+
+{# ── FAQ ── #}
+<section class="section section--alt" id="ca-cities-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">California cities &amp; coverage questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ca-cities-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="ca-cities-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

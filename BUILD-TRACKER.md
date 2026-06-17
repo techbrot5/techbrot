@@ -322,10 +322,10 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 216 · re-skinned (142) + growth = 74 · LAST COMMIT = round-37 CA-industries
-(6 industry children + hub + NEW shared state-industry template). Working tree clean on `preview-11ty`.
-CA = pillar + 11 cities + 15 services + 6 industries + industries-hub. THREE state child templates now exist
-(city-child · state-service · state-triage · state-industry). PHASE = DEPTH BUILD-OUT (NY/CA/TX/FL/IL per v4).
+**COUNT: total pages live = 219 · re-skinned (142) + growth = 77 · LAST COMMIT = round-38 CA-bkgspokes+cities-hub
+(2 bkg spokes + cities-hub). Working tree clean on `preview-11ty`. CA = pillar + 11 cities + cities-hub +
+17 services + 6 industries + industries-hub. CA REMAINING = 3: speak-to-a-proadvisor, pricing, pillar re-link.
+FOUR state child templates (city-child · state-service · state-triage · state-industry). PHASE = DEPTH (NY/CA/TX/FL/IL).
 ⚑ FOUNDER SPOT-CHECK PENDING: the 2 CA honest-triage disclosures (round-36 §HONESTY REVIEW).** Dev server: `npm run serve` → http://192.168.1.7:8080/
 (data-file edits need a server restart; a clean `npx @11ty/eleventy` reflects them). PROBE via 127.0.0.1 (8125 =
 _site-prod, 8090 = _site + axe.min.js) — the probe scripts' hardcoded `localhost` resolves to IPv6 → empty output.
@@ -420,6 +420,9 @@ body = TODO). NY = master, DONE (39). Remaining ≈ **CA 22 · TX 26 · FL 26 ·
   real-estate, professional-services, construction. Each CA×industry (district-tax-by-ship-to, ASC 606, uncapped
   SDI, Prop 13, IOLTA, CA prevailing wage, AB5). Trust-fund boundaries explicit (we keep records, don't hold funds).
   Battery GREEN; founder-zero PASS. Detail: `_build/reports/round-37-ca-industries.md`.
+✅ **ROUND 38 — CA BKG-SPOKES + CITIES-HUB** (cleanup-bookkeeping, urgent-bookkeeping + cities-hub). cleanup =
+  behind-books catch-up (distinct from QB-spoke quickbooks-cleanup); urgent = deadline-driven (honest, no false
+  urgency). cities-hub = t-location, ItemList of the 11 city children. Battery GREEN. Detail: `round-38-ca-bkgspokes-citieshub.md`.
 
 **▶ NEXT — FAN OUT THE STATE CLUSTER, FULLY AUTONOMOUS, ALL 50 STATES CONTINUOUSLY:**
 order = **CA cities + industries → TX → FL → IL → then the remaining states.** Patterns PROVEN, reuse them:
