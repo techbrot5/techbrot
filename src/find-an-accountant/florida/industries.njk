@@ -1,0 +1,97 @@
+---json
+{
+  "layout": "layouts/t-hub.njk",
+  "permalink": "/find-an-accountant/florida/industries/",
+  "slug": "fl-industries-hub",
+  "title": "Florida Industry-Specific Accounting · TechBrot",
+  "description": "Industry-specific accounting for Florida businesses — hospitality, real estate, construction, marine, healthcare, and professional services, each built around Florida's tax rules. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Florida", "href": "/find-an-accountant/florida/" },
+    { "name": "Industries" }
+  ],
+  "heroFigure": false,
+  "hero": {
+    "eyebrow": "Florida · Industry Accounting",
+    "heading": "Florida accounting, built for your industry.",
+    "subheading": "Florida's tax rules hit every industry differently — the Tourist Development Tax for hospitality and short-term rentals, the vessel sales-tax cap for marine, the real-property-improvement rule for construction, trust records for real estate and law firms, and the 5.5% corporate tax for professional firms. We build the books around what your industry actually needs, by a named Certified ProAdvisor. We deliver the books; your CPA files.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=florida&state=florida&source_type=industry-hub&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Independent · not Intuit",
+      "Fixed-fee · written scope in 3 days"
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>industry-specific accounting for Florida businesses</strong> — six Florida-weighted verticals (hospitality, real estate, construction, marine, healthcare, and professional services), each built around the Florida tax rules that actually shape the books. Industries not listed are served through our <a href=\"/accounting/industries/\">global industry pages</a>. The full list is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not affiliated with Intuit Inc. Florida tax references reflect Department of Revenue and county rules current as of the review date; TechBrot does not file Florida taxes."
+  },
+  "ctaBand": {
+    "eyebrow": "Florida businesses start here",
+    "heading": "Tell us your industry — we'll scope the right books.",
+    "lede": "Book a free discovery call. We'll review where your books stand against your industry's Florida requirements and send a written fixed-fee scope within 3 business days. No pitch. Independent firm — does not file FL taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=florida&state=florida&source_type=industry-hub&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY ── #}
+<section class="section section--compact" id="fl-industries-hub-summary-sec">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In short</p>
+      <h2 class="section__heading">Industry-specific Florida accounting.</h2>
+    </header>
+    <p class="prose" id="fl-industries-hub-summary">{{ summary | safe }}</p>
+  </div>
+</section>
+
+{# ── INDUSTRIES GRID · the 6 FL state-weighted verticals (buyer-cards) ── #}
+<section class="section" id="fl-industries-hub-grid">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Florida-weighted verticals</p>
+      <h2 class="section__heading">Six Florida industries we build books for.</h2>
+      <p class="section__lede">Each page is built around that industry's Florida-specific accounting &mdash; not a keyword swap.</p>
+    </header>
+    <div class="grid-3">
+      {%- for i in industries %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading">{{ i.title | safe }}</h3>
+        <p class="buyer-card__body">{{ i.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ i.href }}">{{ i.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="prose">{{ industriesNote | safe }}</p>
+  </div>
+</section>
+
+{# ── FAQ ── #}
+<section class="section section--alt" id="fl-industries-hub-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">Florida industry accounting questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="fl-industries-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="fl-industries-hub-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

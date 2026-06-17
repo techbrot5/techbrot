@@ -1,0 +1,131 @@
+/* /find-an-accountant/florida/cleanup-bookkeeping/ — FL SERVICE CHILD (bkg spoke).
+ * t-bofu · partials/state-service-body.njk. The bookkeeping BACKLOG catch-up (months/years behind),
+ * distinct intent from quickbooks-cleanup (file mechanics). FL-localized. HONESTY: FL DOR + CPA; not Intuit. */
+const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
+const FL_FACTS = [
+  { fig: "6% + surtax", title: "Uncollected sales tax piles up while behind", body: "Every month the books sit untouched, sales-tax periods come and go &mdash; and a return that doesn&rsquo;t tie compounds. Catch-up reconstructs the 6% + county surtax liability by location so your CPA can address any prior-period exposure." },
+  { fig: "Commercial rent", title: "The commercial-rent tax that was never recorded", body: "A behind Florida file usually never recorded the <strong>commercial-rent tax</strong> on leased space at all. Catch-up adds it for the missing periods so your CPA can address it; the rate is phasing down, so the DOR&rsquo;s rules and your CPA confirm." },
+  { fig: "TPP", title: "Rebuilding the fixed-asset history", body: "A behind file usually never tracked fixed assets &mdash; so the annual <strong>tangible personal property</strong> return (DR-405) has nothing to render from. Catch-up reconstructs the schedule from the records. Valuation stays with your CPA." },
+];
+const FL_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Florida businesses remotely across all 67 counties. Florida tax figures &mdash; no personal income tax, the 5.5% corporate income tax, 6% sales tax plus discretionary county surtax, the commercial-rent tax, and the tangible personal property return &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://floridarevenue.com/\" rel=\"noopener nofollow\">Florida Department of Revenue</a>. Rates change; confirm current figures with the Department and your CPA. TechBrot catches up and maintains bookkeeping and coordinates with your CPA, who files; we do not file Florida returns or represent clients before the Department.";
+const FL_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the Florida Department of Revenue &middot; No tax-filing or representation claims (out of scope) &middot; Rates change &mdash; confirm current figures &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-bofu.njk",
+  permalink: "/find-an-accountant/florida/cleanup-bookkeeping/",
+  slug: "fl-svc-cleanupbk",
+  tierClass: "section--tier-bofu",
+  bodyClass: "page--bofu",
+  callBar: true,
+  heroFigure: "taccount",
+  title: "Florida Cleanup & Catch-Up Bookkeeping · TechBrot",
+  description: "Catch-up bookkeeping for Florida businesses behind by months or years — reconstruct the books, rebuild sales-tax and commercial-rent figures, get CPA-ready. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "Florida", href: "/find-an-accountant/florida/" },
+    { name: "Cleanup & Catch-Up Bookkeeping" },
+  ],
+  bookHref: "/contact/?intent=florida&state=florida&source_type=state-bkg&funnel_stage=MOFU",
+  hero: {
+    eyebrow: "Florida &middot; Cleanup &amp; Catch-Up Bookkeeping",
+    heading: "Months &mdash; or years &mdash; behind on the books? We&rsquo;ll catch you up.",
+    subheading: "A Certified QuickBooks ProAdvisor reconstructs a Florida file that&rsquo;s fallen behind &mdash; categorizing the backlog, rebuilding the 6%+surtax sales-tax and commercial-rent figures, and reconstructing the fixed-asset schedule &mdash; until the books are current and CPA-ready. Fixed-fee, all 67 counties. We catch them up; your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=state-bkg&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> provides <strong>cleanup and catch-up bookkeeping for Florida businesses</strong> that have fallen behind &mdash; a Certified ProAdvisor categorizes the backlog, reconstructs the 6%+surtax sales-tax and commercial-rent figures, rebuilds the fixed-asset schedule, and reconciles every account until the file is current and CPA-ready. Fixed-fee, all 67 counties. The full Florida catch-up summary is below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Florida tax references reflect Department of Revenue rules current as of the review date; TechBrot does not file Florida taxes.",
+  },
+  ctaBand: {
+    eyebrow: "Florida businesses start here",
+    heading: "Behind on the books? Let&rsquo;s get you current.",
+    lede: "Book a free discovery call. We&rsquo;ll review how far behind the file is, tell you honestly what catch-up takes, and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file FL taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=state-bkg&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  stateName: "Florida",
+  copy: {
+    aiHeading: "Florida catch-up bookkeeping, in five questions.",
+    valueEyebrow: "What catch-up bookkeeping covers",
+    valueHeading: "From a backlog to current and CPA-ready.",
+    valueLede: "We reconstruct the books period by period until the file is caught up &mdash; with the Florida figures rebuilt.",
+    factsEyebrow: "Why a Florida backlog is more than messy",
+    factsHeading: "Three Florida deadlines a backlog puts at risk.",
+    factsLede: "Falling behind in Florida isn&rsquo;t just untidy &mdash; these three obligations keep running whether the books are current or not.",
+    faqHeading: "Florida catch-up bookkeeping questions.",
+  },
+  summary: "<strong>TechBrot</strong> provides <strong>cleanup and catch-up bookkeeping for Florida businesses</strong> that are behind by months or years &mdash; distinct from a <a href=\"/find-an-accountant/florida/quickbooks-cleanup/\">QuickBooks file cleanup</a> (which fixes how the file is configured), this is reconstructing the actual <strong>bookkeeping backlog</strong>. A Certified ProAdvisor categorizes every untouched transaction, rebuilds the <strong>6% + county surtax</strong> liability by location and the <a href=\"/find-an-accountant/florida/corporate-tax-help/\">commercial-rent tax</a>, reconstructs the fixed-asset schedule for the <strong>TPP</strong> return, and reconciles every account until the file is current and CPA-ready. Fixed-fee against a written scope (typically $2,000&ndash;$20,000+ by how far behind). Independent firm &mdash; not affiliated with Intuit Inc.",
+  aiSummary: [
+    { q: "What is catch-up bookkeeping in Florida?", a: "<strong>Reconstructing a bookkeeping backlog &mdash; categorizing months or years of untouched transactions, rebuilding the 6%+surtax sales-tax and commercial-rent figures, reconstructing the fixed-asset schedule, and reconciling every account &mdash; until the file is current and CPA-ready.</strong> We catch them up; your CPA files." },
+    { q: "How is this different from QuickBooks cleanup?", a: "A <a href=\"/find-an-accountant/florida/quickbooks-cleanup/\">QuickBooks cleanup</a> fixes how the file is configured (sales-tax setup, the commercial-rent tax, the chart of accounts). <strong>Catch-up bookkeeping reconstructs the missing work</strong> &mdash; the months or years of transactions that were never recorded. Many Florida engagements need both." },
+    { q: "How far behind can you catch up?", a: "Any distance &mdash; a few months or several years. The further behind, the bigger the scope, but we&rsquo;ve reconstructed multi-year Florida files back to current and CPA-ready." },
+    { q: "What does catch-up cost?", a: "Fixed-fee against a written scope, typically <strong>$2,000&ndash;$20,000+</strong> depending on how many months or years and the transaction volume. Exact fee in writing within 3 business days." },
+    { q: "What happens after I'm caught up?", a: "Most Florida businesses move into <a href=\"/find-an-accountant/florida/monthly-bookkeeping/\">monthly bookkeeping</a> with the same named ProAdvisor so the file never falls behind again." },
+  ],
+  value: [
+    { num: "01", title: "The backlog categorized", body: "Every untouched transaction across the missing months or years categorized to a Florida-correct chart of accounts.", href: "/find-an-accountant/florida/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
+    { num: "02", title: "Sales-tax figures rebuilt", body: "The 6% + county surtax liability reconstructed by location so your CPA can address any prior-period exposure.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "03", title: "Commercial-rent figures reconstructed", body: "The commercial-rent tax rebuilt for the missing periods so your CPA can address it.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate &amp; rent tax &rarr;" },
+    { num: "04", title: "Fixed-asset schedule rebuilt", body: "Equipment and furniture reconstructed into a schedule so the tangible personal property return has something to render from.", href: "/find-an-accountant/florida/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "05", title: "Every account reconciled", body: "Bank, credit-card, and loan accounts reconciled across the caught-up periods so the file actually ties.", href: "/find-an-accountant/florida/quickbooks-reconciliation/", cta: "Reconciliation &rarr;" },
+    { num: "06", title: "Stays current after", body: "Move into monthly bookkeeping with the same ProAdvisor so the backlog never builds again.", href: "/find-an-accountant/florida/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+  ],
+  facts: FL_FACTS,
+  scopeDo: [
+    "Categorize months or years of backlog to a Florida-correct chart of accounts",
+    "Reconstruct the 6% + county surtax sales-tax liability by location",
+    "Rebuild the commercial-rent tax for the missing periods",
+    "Reconstruct the fixed-asset schedule for the TPP return",
+    "Reconcile bank, credit-card, and loan accounts across the caught-up periods",
+    "Hand a current, CPA-ready file to your CPA",
+  ],
+  scopeDont: [
+    "File the Florida sales tax, corporate income tax, or commercial-rent tax",
+    "File or amend prior-period returns or the TPP return",
+    "Represent you before the Florida Department of Revenue",
+    "Provide legal or tax advice",
+  ],
+  process: [
+    { phase: "Step 1", title: "Free file review", body: "A Certified ProAdvisor reviews how far behind the file is and what catch-up requires." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days, with the timeline and periods listed." },
+    { phase: "Step 3", title: "Reconstruct period by period", body: "We categorize the backlog, rebuild the Florida figures, and reconcile each period back to clean." },
+    { phase: "Step 4", title: "Current &amp; CPA-ready", body: "A current, reconciled file handed to your CPA &mdash; or straight into monthly bookkeeping so it stays current." },
+  ],
+  advisoryBody: [
+    "A Florida bookkeeping backlog is a quiet liability: sales-tax periods keep closing, the commercial-rent tax keeps accruing, the corporate-tax deadline still lands, and the TPP return still comes due &mdash; all while the records to support them don&rsquo;t exist yet. Catch-up reconstructs the work so your CPA can file accurately for the missing years.",
+    "Once you&rsquo;re current, the same named ProAdvisor keeps it that way in <a href=\"/find-an-accountant/florida/monthly-bookkeeping/\">monthly bookkeeping</a> &mdash; so you never need a second catch-up.",
+  ],
+  faq: [
+    { q: "What does Florida catch-up bookkeeping include?", a: "A Certified ProAdvisor categorizes months or years of untouched transactions to a Florida-correct chart of accounts, reconstructs the 6% + county surtax liability by location and the commercial-rent tax, rebuilds the fixed-asset schedule for the TPP return, and reconciles every account &mdash; until the file is current and CPA-ready. We catch them up; your CPA files." },
+    { q: "How is catch-up bookkeeping different from a QuickBooks cleanup?", a: "A QuickBooks cleanup fixes how the file is configured &mdash; sales-tax setup, the commercial-rent tax, the chart of accounts. Catch-up bookkeeping reconstructs the missing work itself: the months or years of transactions that were never recorded. They&rsquo;re complementary, and many behind Florida files need both &mdash; we scope whichever (or both) the file needs." },
+    { q: "How many years behind can you catch up?", a: "Any distance &mdash; from a few months to several years. The further behind, the larger the scope and timeline, but we&rsquo;ve reconstructed multi-year Florida files back to current and CPA-ready. We confirm the exact periods and timeline during a free file review." },
+    { q: "Will catching up create a tax bill?", a: "Catch-up itself doesn&rsquo;t create tax &mdash; it produces the accurate records your CPA needs to determine what was actually owed for the missing periods. If prior-period sales tax, commercial-rent tax, or corporate tax was under-reported, your CPA addresses the filing; we make sure the books behind it are right. We don&rsquo;t file or amend returns ourselves." },
+    { q: "How much does Florida catch-up bookkeeping cost?", a: "Fixed-fee against a written scope, never hourly &mdash; typically $2,000&ndash;$20,000+ depending on how many months or years are behind and the transaction volume. You get the exact fee in writing within 3 business days of a free file review." },
+    { q: "Do you file my back taxes after catching up?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we reconstruct the books to CPA-ready and coordinate with your CPA, who files or amends the sales tax, corporate income tax, commercial-rent tax, and TPP return. We are not affiliated with Intuit Inc." },
+  ],
+  reviewProse: FL_REVIEW_PROSE,
+  reviewCreds: FL_REVIEW_CREDS,
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/florida/cleanup-bookkeeping/",
+    name: "Florida Cleanup & Catch-Up Bookkeeping",
+    description: "Catch-up bookkeeping for Florida businesses behind by months or years — reconstruct the backlog, rebuild the 6%+surtax sales-tax and commercial-rent figures and the fixed-asset schedule, reconcile to CPA-ready. Independent firm; does not file Florida taxes.",
+    serviceName: "Florida Cleanup & Catch-Up Bookkeeping",
+    serviceType: "Catch-up and cleanup bookkeeping",
+    serviceDesc: "Reconstruction of a bookkeeping backlog for Florida businesses behind by months or years — categorizing untouched transactions, rebuilding the 6% + county surtax liability by location and the commercial-rent tax, reconstructing the fixed-asset schedule for the tangible personal property return, and reconciling all accounts to current and CPA-ready. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
+    areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
+    audienceType: "Florida businesses behind on bookkeeping across all 67 counties",
+    offerPrice: "2000",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};

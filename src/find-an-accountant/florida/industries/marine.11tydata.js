@@ -1,0 +1,141 @@
+/* /find-an-accountant/florida/industries/marine/ — FL INDUSTRY CHILD.
+ * t-location + heroLight. partials/state-industry-body.njk. GENUINELY FL×marine (un-clonable):
+ * the Florida sales-tax CAP on a single boat/vessel sale, boat-dealer inventory, marina slip rental
+ * + fuel + storage + repair, yacht-brokerage trust-RECORD keeping (never hold funds), use-tax/decal
+ * rules on vessels, no income tax. HONESTY: DOR + FWC + CPA; trust boundary explicit; not Intuit. */
+const { stripTags, buildCityGraph } = require("../../../../_build/lib/city-child.js");
+const FL_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the Florida Department of Revenue &middot; No tax-filing, taxability-determination, fund-custody, or representation claims (out of scope) &middot; The vessel sales-tax cap and use-tax rules change &mdash; confirm current figures &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-location.njk",
+  permalink: "/find-an-accountant/florida/industries/marine/",
+  slug: "fl-ind-marine",
+  tierClass: "section--tier-hub",
+  bodyClass: "page--location page--industry",
+  callBar: true,
+  heroLight: true,
+  title: "Florida Marine & Boating Accounting · TechBrot",
+  description: "Accounting for Florida boat dealers, marinas & yacht brokers — the vessel sales-tax cap, dealer inventory, slip/fuel/storage/repair, brokerage trust records, use-tax rules. Fixed-fee. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "Florida", href: "/find-an-accountant/florida/" },
+    { name: "Industries", href: "/find-an-accountant/florida/industries/" },
+    { name: "Marine" },
+  ],
+  bookHref: "/contact/?intent=florida&state=florida&source_type=industry&funnel_stage=BOFU",
+  hero: {
+    eyebrow: "Florida &middot; Marine &amp; Boating Accounting",
+    heading: "Florida marine accounting that knows the vessel sales-tax cap cold.",
+    subheading: "Florida is the boating capital of the country, and its marine taxes are unlike anywhere else &mdash; a cap on the sales tax for a single vessel sale, use-tax and decal rules on boats brought into the state, and slip, fuel, storage, and repair all taxed differently. We keep boat-dealer inventory, marina revenue, and yacht-brokerage records straight &mdash; by a named Certified ProAdvisor. We keep the records; we never hold brokerage or escrow funds, and your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=industry&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "We keep records &middot; never hold client funds"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor accounting for Florida boat dealers, marinas, and yacht brokers</strong> &mdash; the vessel sales-tax cap, dealer inventory, marina slip/fuel/storage/repair revenue, yacht-brokerage trust records, and use-tax handling, in your own QuickBooks file. We keep the records; we never hold brokerage or escrow funds. The full Florida marine summary is below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Florida marine references (the vessel sales-tax cap; use-tax and decal rules; differing taxability of slip, fuel, storage, and repair) reflect rules current as of the review date and change; confirm with the Department of Revenue and your CPA. TechBrot keeps books only; it does not hold brokerage/escrow funds, make taxability determinations, or file Florida taxes.",
+  },
+  ctaBand: {
+    eyebrow: "Florida marine businesses start here",
+    heading: "Get the vessel sales-tax cap and use tax right.",
+    lede: "Book a free discovery call. We&rsquo;ll review your dealer inventory, marina revenue, brokerage records, and sales/use-tax handling, and send a written fixed-fee scope within 3 business days. No pitch. Independent firm &mdash; keeps records only, never holds client funds; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=industry&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  copy: {
+    summaryHeading: "Florida marine accounting, plainly.",
+    aiHeading: "Florida marine accounting, in five questions.",
+    challengesEyebrow: "Why Florida marine books break",
+    challengesHeading: "Three places Florida marine businesses lose the numbers.",
+    challengesLede: "The vessel tax cap, mixed revenue, and brokerage funds are where it goes wrong. Knowing which one you&rsquo;re in tells us where to start.",
+    handleHeading: "Florida marine accounting, done by an expert.",
+    handleLede: "Every engagement is scoped to your dealership, marina, or brokerage, delivered in your own QuickBooks file by a named Certified ProAdvisor.",
+    integrationsHeading: "Connected to how you run the waterfront.",
+    processHeading: "From mixed revenue to clean margin.",
+    processLede: "Every Florida marine engagement follows the same rhythm &mdash; books accurate first, margin visibility second, advisory third.",
+    advisoryHeading: "Clean margin is the start. Inventory and pricing are the point.",
+    faqHeading: "Florida marine accounting questions.",
+    relatedHeading: "Related Florida services &amp; industries.",
+  },
+  summary: [
+    "<strong>TechBrot provides accounting for Florida boat dealers, marinas, and yacht brokers</strong> &mdash; in your own QuickBooks file by a named Certified ProAdvisor. The job is to keep the books straight across Florida&rsquo;s genuinely unusual marine tax stack and the mixed revenue a waterfront business runs on.",
+    "Florida&rsquo;s marine taxes are unlike anywhere else. Sales tax on a single vessel sale is <strong>capped</strong> &mdash; above a threshold the tax stops climbing &mdash; which changes how dealers invoice and how the books have to record each sale. Boats brought into Florida raise <strong>use-tax and decal</strong> questions, and a waterfront business mixes revenue taxed differently: <strong>slip rental, fuel, dry storage, parts, and repair labor</strong>. Yacht brokers handle <strong>client funds in escrow</strong>; we keep the brokerage trust records accurate but never hold those funds. There&rsquo;s no state income tax, but the books still feed the corporate tax and the tangible personal property return on dealer and marina equipment. We keep all of it clean &mdash; CPA-ready. We keep the books; your CPA confirms taxability and files. Independent firm &mdash; not affiliated with Intuit Inc.",
+  ],
+  aiSummary: [
+    { q: "What is Florida marine accounting?", a: "<strong>Boat-dealer inventory and the vessel sales-tax cap, marina slip/fuel/storage/repair revenue separated for tax, yacht-brokerage trust records, and use-tax handling</strong> &mdash; for Florida boat dealers, marinas, and brokers, in your own QuickBooks file. We keep the records; we never hold brokerage funds; your CPA files." },
+    { q: "What is the Florida boat sales-tax cap?", a: "Florida <strong>caps the sales tax on a single vessel sale</strong> &mdash; above a threshold, the tax on the boat stops increasing rather than applying to the full price. It&rsquo;s a genuinely Florida feature that changes how dealers invoice and how the books record each sale. The specific cap and rules change, so we set the books up correctly and your CPA and the Department confirm the current figure." },
+    { q: "How do you handle mixed marina revenue?", a: "A marina mixes revenue that&rsquo;s taxed differently &mdash; <strong>slip rental, fuel, dry storage, parts, and repair labor</strong> all have their own treatment. We separate them in the books so 6% + county surtax (and any commercial-rent treatment on slips) is applied correctly to each stream." },
+    { q: "Do you hold yacht-brokerage escrow funds?", a: "<strong>No.</strong> We keep the brokerage trust/escrow records accurate and reconciled, but we never take custody of, hold, or disburse client funds. Those stay in the brokerage&rsquo;s escrow account under its control and its bank; we keep the books behind them clean." },
+    { q: "Do you file Florida taxes or determine vessel taxability?", a: "No &mdash; we keep the books CPA-ready and set them up to match the cap and use-tax rules; your CPA confirms taxability and files. We&rsquo;re independent, don&rsquo;t hold funds or represent clients, and aren&rsquo;t affiliated with Intuit." },
+  ],
+  challenges: [
+    { signal: "Tax cap", title: "The vessel sales-tax cap mishandled", body: "Florida caps the tax on a single boat sale &mdash; invoice it like ordinary retail and you over-collect; ignore the cap rules and you under-collect. Either way the books and the return don&rsquo;t tie." },
+    { signal: "Mixed revenue", title: "Slip, fuel, storage &amp; repair blended", body: "A marina&rsquo;s revenue streams are taxed differently. Blended into one income account, sales tax is applied wrong and margin by service is invisible." },
+    { signal: "Escrow", title: "Brokerage funds and trust records", body: "Yacht brokers move large client deposits through escrow under FREC-style rules &mdash; sloppy trust records are a compliance risk, even though the funds stay in the brokerage&rsquo;s hands, not ours." },
+  ],
+  handle: [
+    { num: "01", title: "Vessel sales-tax cap configured", body: "The books set up so each boat sale records the capped sales tax correctly &mdash; your CPA confirms the current cap and rules.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "02", title: "Dealer inventory &amp; floor plan", body: "New and brokered-boat inventory and floor-plan financing tracked so unit margin and carrying cost are visible.", href: "/find-an-accountant/florida/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
+    { num: "03", title: "Marina revenue separated", body: "Slip rental, fuel, dry storage, parts, and repair labor separated so each is taxed correctly and margin shows per stream.", href: "/find-an-accountant/florida/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
+    { num: "04", title: "Brokerage trust records", body: "Yacht-brokerage escrow records kept accurate and reconciled &mdash; we keep records, never hold the funds.", href: "/find-an-accountant/florida/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { num: "05", title: "Use tax &amp; equipment", body: "Use-tax positions on vessels and the tangible personal property schedule on dealer and marina equipment kept ready for your CPA.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate &amp; TPP tax &rarr;" },
+    { num: "06", title: "CPA-ready statements", body: "Margin by department and unit, CPA-ready and decision-ready for pricing and inventory.", href: "/accounting/financial-statements/", cta: "Financial statements &rarr;" },
+  ],
+  integrations: [
+    "Dealer management systems (DMS) for boat dealers",
+    "QuickBooks Online or hosted Desktop &mdash; your file",
+    "Marina-management and slip-billing platforms",
+    "Fuel-dock and POS systems",
+    "Gusto, ADP, and payroll providers",
+    "Bill.com for vendor and parts AP",
+  ],
+  integrationsNote: "We reconcile alongside the dealer-management and marina systems you already run &mdash; the books read from how you run the waterfront. We never take custody of brokerage or escrow funds.",
+  process: [
+    { phase: "Step 1", title: "Free revenue &amp; tax review", body: "A Certified ProAdvisor reviews your inventory, marina revenue, brokerage records, and sales/use-tax handling &mdash; at no cost." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days &mdash; setup, cleanup, or monthly." },
+    { phase: "Step 3", title: "Configure &amp; separate", body: "The vessel tax cap configured, marina revenue separated, inventory and brokerage records cleaned." },
+    { phase: "Step 4", title: "Monthly margin close", body: "A monthly close showing unit and departmental margin, CPA-ready." },
+  ],
+  advisoryBody: [
+    "When the tax cap is right, inventory ties, and the revenue streams are separated, the decisions get real: which boat lines and services make money, how much floor-plan carry you can afford, whether to add storage or repair capacity &mdash; answered from numbers that hold.",
+    "That&rsquo;s where <a href=\"/accounting/advisory/fractional-cfo/\">fractional-CFO advisory</a> picks up, in coordination with your CPA. We keep the books and records; your CPA files; we never hold your clients&rsquo; funds.",
+  ],
+  faq: [
+    { q: "What does Florida marine accounting include?", a: "Boat-dealer inventory and floor-plan tracking with the vessel sales-tax cap configured, marina revenue (slip rental, fuel, dry storage, parts, repair labor) separated for correct tax, yacht-brokerage trust/escrow record-keeping, use-tax positions on vessels, and the tangible personal property schedule on equipment &mdash; in your own QuickBooks file. We keep the books and records; we never hold brokerage funds; your CPA confirms taxability and files." },
+    { q: "How does the Florida boat sales-tax cap work?", a: "Florida caps the sales tax on a single vessel sale &mdash; above a threshold, the tax on the boat stops climbing rather than applying to the full purchase price. This is unusual and changes how dealers invoice and how each sale is recorded. The specific cap amount and the rules around it change over time, so we configure the books to apply it correctly and your CPA and the Department of Revenue confirm the current figure. We don&rsquo;t make the taxability determination ourselves." },
+    { q: "How do you handle a marina's mixed revenue?", a: "A marina mixes streams that are taxed differently &mdash; slip rental (which can carry commercial-rent treatment), fuel, dry storage, parts, and repair labor. We separate them in the books so the right tax is applied to each and so you can see margin by department, instead of a blended number that hides which part of the operation makes money." },
+    { q: "Do you hold or disburse yacht-brokerage escrow funds?", a: "No &mdash; this is a firm boundary. We keep the brokerage&rsquo;s trust and escrow records accurate and reconciled so they support its compliance obligations, but we never take custody of, hold, or disburse client funds. Those large deposits stay in the brokerage&rsquo;s escrow account, under its control and its bank. We keep the books behind them clean; the custody is the brokerage&rsquo;s." },
+    { q: "What about use tax on boats brought into Florida?", a: "Boats purchased elsewhere and brought into Florida can raise use-tax and decal/registration questions with their own timing rules. We keep the records and the use-tax position clean for your CPA, who determines what&rsquo;s owed and files. We track it; we don&rsquo;t make the determination or file the return." },
+    { q: "Do you work in my own QuickBooks file?", a: "Yes &mdash; your file, your data, in QuickBooks Online or hosted Desktop, with a named ProAdvisor on the same file every month, connected to your dealer-management or marina systems rather than proprietary software." },
+    { q: "Do you file my Florida taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books CPA-ready and coordinate with your CPA, who confirms vessel taxability and files the sales tax, use tax, and corporate income tax. We don&rsquo;t hold brokerage funds, make taxability determinations, or represent clients before the Department, and we are not affiliated with Intuit Inc." },
+  ],
+  reviewProse: "This page reflects how TechBrot handles Florida marine engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on boat-dealer inventory, the Florida vessel sales-tax cap, mixed marina revenue, use tax, and brokerage trust records against <a href=\"https://floridarevenue.com/\" rel=\"noopener nofollow\">Florida Department of Revenue</a> guidance current as of the date below. The vessel sales-tax cap and use-tax rules change; confirm with the Department and your CPA. TechBrot keeps books and records only; it never holds, controls, or disburses brokerage or escrow funds, does not make taxability determinations, file Florida taxes, or represent clients before tax authorities.",
+  reviewCreds: FL_REVIEW_CREDS,
+  related: [
+    { title: "Florida sales tax help", body: "Configure the vessel sales-tax cap and the differing taxability of marina revenue in QuickBooks.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { title: "Florida monthly bookkeeping", body: "Keep inventory, marina revenue, and brokerage records current with a recurring monthly close.", href: "/find-an-accountant/florida/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { title: "Florida QuickBooks setup", body: "Set up the vessel tax cap, dealer inventory, and revenue separation from day one.", href: "/find-an-accountant/florida/quickbooks-setup/", cta: "QuickBooks setup &rarr;" },
+    { title: "Florida hospitality accounting", body: "Marinas with restaurants or rentals &mdash; the hospitality tax stack alongside.", href: "/find-an-accountant/florida/industries/hospitality/", cta: "Hospitality accounting &rarr;" },
+  ],
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/florida/industries/marine/",
+    name: "Florida Marine & Boating Accounting",
+    description: "Accounting for Florida boat dealers, marinas, and yacht brokers — the vessel sales-tax cap, dealer inventory, slip/fuel/storage/repair revenue, brokerage trust records, and use-tax handling. Keeps records only, never holds brokerage funds; does not file Florida taxes.",
+    serviceName: "Florida Marine & Boating Accounting",
+    serviceType: "Marine industry bookkeeping services",
+    serviceDesc: "Bookkeeping for Florida boat dealers, marinas, and yacht brokers — dealer inventory and floor-plan tracking with the vessel sales-tax cap configured, marina slip/fuel/storage/repair revenue separated for tax, yacht-brokerage trust/escrow record-keeping (records only; no fund custody), use-tax positions, and equipment on the tangible personal property return, kept CPA-ready. Independent Certified QuickBooks ProAdvisor firm; does not hold brokerage/escrow funds, make taxability determinations, file Florida taxes, or represent clients — coordinates with the client's CPA or EA.",
+    areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
+    audienceType: "Florida boat dealers, marinas, yacht brokers, and marine-repair businesses across all 67 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};
