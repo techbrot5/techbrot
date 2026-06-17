@@ -40,10 +40,15 @@ body{margin:0;background:var(--bg-page);font-family:var(--font-sans);color:var(-
 .hero--compact .hero__subheading{color:var(--text-body)}
 .hero--rule .hero__heading::before{content:"";display:block;width:4px;height:3px;margin-bottom:var(--space-6);border-left:30px solid var(--accent);border-right:14px solid var(--accent)}/* border-built gapped rule: see motif note in 02-conversion */
 
-/* ---- in-brief / tldr ---- */
-.in-brief{max-width:var(--container-narrow)}
-.in-brief__text{font-size:clamp(1.0625rem,0.98rem + 0.5vw,1.25rem);line-height:var(--lh-base);color:var(--text-body);margin:0}
-.in-brief__source{font-size:var(--fs-13);color:var(--text-secondary);margin:var(--space-3) 0 0}
+/* ---- in-brief / tldr ----
+   in-brief = the standard INTRO/LEDE block after the hero (every tier). Founder
+   2026-06-17: read it as its own premium editorial section, not body text floating
+   under the hero CTAs — a subtle hairline separator + generous top air above the
+   lede + a refined reading measure + a quiet sourced caption. ONE source; every
+   page type that renders `.in-brief` inherits it site-wide. */
+.in-brief{max-width:var(--container-narrow);border-top:1px solid var(--border-hairline);padding-top:var(--space-8)}
+.in-brief__text{font-size:clamp(1.0625rem,0.98rem + 0.55vw,1.3125rem);line-height:var(--lh-base);letter-spacing:var(--ls-snug);color:var(--text-body);max-width:62ch;margin:0;text-wrap:pretty}
+.in-brief__source{font-size:var(--fs-13);line-height:var(--lh-base);color:var(--text-secondary);max-width:62ch;margin:var(--space-5) 0 0}
 .tldr{border:1px solid var(--border-hairline);border-radius:var(--radius-lg);padding:var(--space-6)}
 .tldr__label{font-size:var(--fs-12);font-weight:var(--fw-semibold);letter-spacing:var(--ls-wider);text-transform:uppercase;color:var(--text-eyebrow);margin:0 0 var(--space-3)}
 .tldr__body{font-size:var(--fs-16);line-height:var(--lh-base);color:var(--text-body);margin:0;max-width:62em}

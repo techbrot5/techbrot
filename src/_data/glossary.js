@@ -262,4 +262,236 @@ module.exports = [
     faq: null,
     published: "2026-06-17", updated: "2026-06-17",
   },
+
+  {
+    slug: "accounts-receivable",
+    term: "Accounts receivable",
+    title: "Accounts Receivable (AR) — Definition & Why It Matters · TechBrot",
+    description: "Accounts receivable (AR): the money customers owe you for work delivered but not yet paid. What it is, how it sits on the balance sheet, and why aging AR is a cash-flow early-warning. By Certified QuickBooks ProAdvisors.",
+    shortDef: "The money your customers owe you for goods or services already delivered but not yet paid &mdash; an asset on your balance sheet until the cash arrives.",
+    blurb: "Money customers owe you for work already delivered &mdash; an asset until it&rsquo;s collected.",
+    definition: [
+      "<strong>Accounts receivable</strong> (AR) is the total amount your customers owe you for goods or services you have already delivered or invoiced but not yet been paid for. It is recorded as a current asset on the balance sheet, because it represents cash you expect to collect.",
+      "On accrual-basis books, revenue is recorded when you invoice (earn) it &mdash; which creates the receivable &mdash; and the receivable clears when the customer pays. AR is tracked per customer and per invoice, and grouped by how overdue it is in an &ldquo;aging&rdquo; report.",
+    ],
+    why: {
+      heading: "AR aging is a cash-flow early-warning.",
+      paras: [
+        "A growing or aging accounts-receivable balance is one of the earliest signals of a cash problem: the business is profitable on paper but the money is stuck in unpaid invoices. The AR aging report &mdash; current, 1&ndash;30, 31&ndash;60, 61&ndash;90, 90+ days &mdash; tells you exactly which customers are slow and how much cash is tied up.",
+        "Accurate AR depends on accurate books: if invoices and payments aren&rsquo;t recorded and matched correctly, the aging report lies. That&rsquo;s why AR clean-up &mdash; matching payments to invoices, writing off truly uncollectible balances &mdash; is a common part of a <a href=\"/accounting/bookkeeping/cleanup-bookkeeping/\">cleanup</a>.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "Accounts receivable vs. accounts payable.",
+      paras: [
+        "They are mirror images. <strong>Accounts receivable</strong> is money owed <em>to</em> you (an asset). <a href=\"/glossary/accounts-payable/\">Accounts payable</a> is money <em>you</em> owe others (a liability). One customer&rsquo;s receivable is its vendor&rsquo;s payable.",
+      ],
+    },
+    related: [
+      { href: "/glossary/accounts-payable/", title: "Accounts payable", blurb: "The mirror of AR &mdash; money you owe vendors." },
+      { href: "/glossary/balance-sheet/", title: "Balance sheet", blurb: "Where AR sits as a current asset." },
+      { href: "/accounting/bookkeeping/", title: "Bookkeeping services", blurb: "Invoices and payments recorded and matched so the AR aging report is true." },
+    ],
+    call: { title: "Is your AR aging report trustworthy?", sub: "A Certified ProAdvisor checks whether payments are matched to invoices and what&rsquo;s really collectible &mdash; with a written fixed-fee scope to clean it up." },
+    faq: null,
+    published: "2026-06-17", updated: "2026-06-17",
+  },
+
+  {
+    slug: "accounts-payable",
+    term: "Accounts payable",
+    title: "Accounts Payable (AP) — Definition & Why It Matters · TechBrot",
+    description: "Accounts payable (AP): the money your business owes vendors for bills received but not yet paid. What it is, how it sits on the balance sheet, and why managing AP protects cash and credit. By Certified QuickBooks ProAdvisors.",
+    shortDef: "The money your business owes vendors and suppliers for bills received but not yet paid &mdash; a liability on your balance sheet until you settle it.",
+    blurb: "Money you owe vendors for bills received but not yet paid &mdash; a liability until settled.",
+    definition: [
+      "<strong>Accounts payable</strong> (AP) is the total your business owes its vendors and suppliers for goods or services received and invoiced but not yet paid. It is recorded as a current liability on the balance sheet.",
+      "On accrual-basis books, an expense and the payable are recorded when you receive the bill (incur the cost); the payable clears when you pay it. AP is tracked per vendor and per bill, and aged the same way receivables are.",
+    ],
+    why: {
+      heading: "Managing AP protects cash and relationships.",
+      paras: [
+        "Accounts payable is a lever on cash flow: paying too early drains cash you may need; paying too late risks late fees, lost early-payment discounts, and strained vendor relationships. A clean AP aging report lets you time payments deliberately instead of reacting.",
+        "It is also a common source of book errors &mdash; bills entered twice, payments not matched to bills, or expenses recorded on payment instead of on receipt &mdash; all of which distort both the expense reports and the liability balance until corrected in a <a href=\"/accounting/bookkeeping/cleanup-bookkeeping/\">cleanup</a>.",
+      ],
+    },
+    how: null,
+    clarify: null,
+    related: [
+      { href: "/glossary/accounts-receivable/", title: "Accounts receivable", blurb: "The mirror of AP &mdash; money owed to you." },
+      { href: "/glossary/balance-sheet/", title: "Balance sheet", blurb: "Where AP sits as a current liability." },
+      { href: "/accounting/bookkeeping/", title: "Bookkeeping services", blurb: "Bills and payments recorded correctly so AP and your expenses are both right." },
+    ],
+    call: { title: "Vendor balances that don&rsquo;t look right?", sub: "A Certified ProAdvisor finds duplicate bills, unmatched payments, and timing errors in your AP &mdash; scoped in writing, fixed-fee." },
+    faq: null,
+    published: "2026-06-17", updated: "2026-06-17",
+  },
+
+  {
+    slug: "trial-balance",
+    term: "Trial balance",
+    title: "Trial Balance — Definition & Role in Closing the Books · TechBrot",
+    description: "Trial balance: a report listing every account's ending balance to confirm total debits equal total credits. What it is, what it does and doesn't catch, and how it fits the month-end close. By Certified QuickBooks ProAdvisors.",
+    shortDef: "A report listing the ending balance of every account so you can confirm total debits equal total credits &mdash; the first check that the books are internally consistent.",
+    blurb: "A list of every account&rsquo;s balance confirming total debits equal total credits &mdash; the books&rsquo; internal-consistency check.",
+    definition: [
+      "A <strong>trial balance</strong> is a report that lists the ending balance of every account in the <a href=\"/glossary/general-ledger/\">general ledger</a> at a point in time, with debits in one column and credits in the other. Because the books are kept on <a href=\"/glossary/double-entry-accounting/\">double entry</a>, the two columns must total to the same number.",
+      "It is the first thing an accountant runs when closing a period: if the columns don&rsquo;t match, something is structurally wrong and must be found before the financial statements mean anything.",
+    ],
+    why: {
+      heading: "What it catches &mdash; and what it doesn&rsquo;t.",
+      paras: [
+        "A balanced trial balance proves the books are <em>internally consistent</em> &mdash; every entry had equal debits and credits. That is necessary but not sufficient: a trial balance can balance perfectly and still be wrong if a transaction was posted to the wrong account, recorded at the wrong (but equal) amount, or missed entirely.",
+        "That is why a real <a href=\"/glossary/month-end-close/\">month-end close</a> goes beyond the trial balance to reconciliation and review &mdash; the trial balance confirms the math holds, reconciliation confirms it matches reality.",
+      ],
+    },
+    how: null,
+    clarify: null,
+    related: [
+      { href: "/glossary/month-end-close/", title: "Month-end close", blurb: "The routine the trial balance kicks off." },
+      { href: "/glossary/general-ledger/", title: "General ledger", blurb: "The record the trial balance summarizes." },
+      { href: "/glossary/bank-reconciliation/", title: "Bank reconciliation", blurb: "The check that the balanced books also match the bank." },
+    ],
+    call: { title: "Books that won&rsquo;t balance at close?", sub: "A Certified ProAdvisor finds why the trial balance is off and corrects the underlying entries &mdash; written fixed-fee scope." },
+    faq: null,
+    published: "2026-06-17", updated: "2026-06-17",
+  },
+
+  {
+    slug: "profit-and-loss-statement",
+    term: "Profit and loss statement",
+    title: "Profit and Loss Statement (P&L) — Definition & How to Read It · TechBrot",
+    description: "The profit and loss statement (P&L / income statement): revenue minus expenses over a period, showing whether you made money. What it includes, how to read it, and how it differs from cash. By Certified QuickBooks ProAdvisors.",
+    shortDef: "The report that shows revenue minus expenses over a period of time &mdash; whether the business made or lost money, and where the money came from and went.",
+    blurb: "Revenue minus expenses over a period &mdash; whether you made money, and where it came from and went.",
+    definition: [
+      "The <strong>profit and loss statement</strong> (P&amp;L), also called the income statement, reports your revenue, your expenses, and the resulting profit or loss over a period of time &mdash; a month, a quarter, a year. In simple form: revenue &minus; cost of goods sold = gross profit; gross profit &minus; operating expenses = net profit.",
+      "Unlike the <a href=\"/glossary/balance-sheet/\">balance sheet</a>, which is a snapshot at a single moment, the P&amp;L covers a span of time and resets each period.",
+    ],
+    why: {
+      heading: "It only tells the truth if the books do.",
+      paras: [
+        "The P&amp;L is the report owners read most &mdash; but it is only as accurate as the bookkeeping under it. Miscategorized expenses, revenue recorded in the wrong period, or personal spending mixed into the business all distort it directly. A P&amp;L built on unreconciled books is a confident-looking guess.",
+        "It also depends on which <a href=\"/glossary/accrual-vs-cash-basis-accounting/\">basis</a> you read it on: the same period can show a different profit on cash vs. accrual. Reading the P&amp;L on the right basis, with categories that map to how you actually run the business, is what makes it a decision tool rather than a tax artifact.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "Profit is not cash.",
+      paras: [
+        "A profitable P&amp;L does not mean money in the bank. Profit can be tied up in unpaid <a href=\"/glossary/accounts-receivable/\">receivables</a>, inventory, or loan principal that never touches the P&amp;L. This is the single most common surprise for owners &mdash; and the reason the P&amp;L is read alongside the balance sheet and cash, not alone.",
+      ],
+    },
+    related: [
+      { href: "/glossary/balance-sheet/", title: "Balance sheet", blurb: "The snapshot the P&L is read alongside." },
+      { href: "/glossary/accrual-vs-cash-basis-accounting/", title: "Accrual vs. cash basis", blurb: "Which basis you read the P&L on changes the number." },
+      { href: "/accounting/advisory/", title: "Advisory & fractional CFO", blurb: "Turning an accurate P&L into decisions, not just a report." },
+    ],
+    call: { title: "Does your P&amp;L match reality?", sub: "A Certified ProAdvisor checks whether your categories and basis make the P&amp;L a real decision tool &mdash; or whether a cleanup is needed first. Written fixed-fee scope." },
+    faq: null,
+    published: "2026-06-17", updated: "2026-06-17",
+  },
+
+  {
+    slug: "balance-sheet",
+    term: "Balance sheet",
+    title: "Balance Sheet — Definition & How to Read It · TechBrot",
+    description: "The balance sheet: a snapshot of what a business owns, owes, and is worth at a single moment. What it includes, why assets = liabilities + equity, and what it reveals that the P&L can't. By Certified QuickBooks ProAdvisors.",
+    shortDef: "A snapshot, at a single moment, of what the business owns (assets), owes (liabilities), and is worth to its owners (equity) &mdash; where assets always equal liabilities plus equity.",
+    blurb: "A point-in-time snapshot of what you own, owe, and are worth &mdash; assets = liabilities + equity.",
+    definition: [
+      "The <strong>balance sheet</strong> reports, at a single point in time, what a business owns (<strong>assets</strong>), what it owes (<strong>liabilities</strong>), and the difference between them, which belongs to the owners (<strong>equity</strong>). It is governed by the accounting equation: assets = liabilities + equity, which is always true on properly kept books.",
+      "Where the <a href=\"/glossary/profit-and-loss-statement/\">profit and loss statement</a> covers a span of time, the balance sheet is a snapshot &mdash; the financial position on one date.",
+    ],
+    why: {
+      heading: "What the balance sheet reveals.",
+      paras: [
+        "The balance sheet answers questions the P&amp;L can&rsquo;t: how much cash you actually have, how much customers owe you (<a href=\"/glossary/accounts-receivable/\">AR</a>), how much you owe others (<a href=\"/glossary/accounts-payable/\">AP</a>) and to lenders, and what the business is worth on the books. Lenders and buyers read it first.",
+        "A balance sheet that doesn&rsquo;t balance, or that carries stale balances &mdash; an old uncleared loan, negative cash, an AR balance for a customer who paid years ago &mdash; is the clearest sign the books need a <a href=\"/accounting/bookkeeping/cleanup-bookkeeping/\">cleanup</a>. Real bookkeeping keeps every balance-sheet account reconciled, not just the bank.",
+      ],
+    },
+    how: null,
+    clarify: null,
+    related: [
+      { href: "/glossary/profit-and-loss-statement/", title: "Profit and loss statement", blurb: "The over-time report the balance sheet complements." },
+      { href: "/glossary/bank-reconciliation/", title: "Bank reconciliation", blurb: "Reconciliation keeps balance-sheet accounts true, not just cash." },
+      { href: "/accounting/bookkeeping/cleanup-bookkeeping/", title: "Bookkeeping cleanup", blurb: "Stale or unbalanced balance-sheet accounts are the classic cleanup finding." },
+    ],
+    call: { title: "Stale balances on your balance sheet?", sub: "A Certified ProAdvisor reconciles every balance-sheet account &mdash; not just the bank &mdash; and scopes the cleanup in writing, fixed-fee." },
+    faq: null,
+    published: "2026-06-17", updated: "2026-06-17",
+  },
+
+  {
+    slug: "fractional-cfo",
+    term: "Fractional CFO",
+    title: "Fractional CFO — What It Is & When You Need One · TechBrot",
+    description: "A fractional CFO: senior financial leadership on a part-time, fixed-fee basis — forecasting, cash strategy, and decision support without a full-time hire. What it is, what it isn't, and when it fits. By Certified QuickBooks ProAdvisors.",
+    shortDef: "Senior financial leadership &mdash; forecasting, cash strategy, KPIs, and decision support &mdash; on a part-time, fixed-fee basis, for businesses that need CFO judgment but not a full-time CFO salary.",
+    blurb: "Senior financial leadership part-time &mdash; the forecasting and judgment a full-time CFO gives, without the full-time cost.",
+    definition: [
+      "A <strong>fractional CFO</strong> is an experienced financial executive who works with a business part-time &mdash; a fraction of a full-time role &mdash; providing the forward-looking financial leadership a Chief Financial Officer would, without the cost of a full-time hire. The work is forward-looking: cash-flow forecasting, budgeting, pricing and margin analysis, scenario planning, KPI reporting, and financial decision support.",
+      "It is distinct from bookkeeping, which records what already happened, and from tax, which a CPA or EA handles. A fractional CFO uses the books to help decide what happens next.",
+    ],
+    why: {
+      heading: "When a fractional CFO fits.",
+      paras: [
+        "Most small businesses don&rsquo;t need &mdash; or can&rsquo;t justify &mdash; a full-time CFO, but they do hit decisions where bookkeeping alone isn&rsquo;t enough: a growth inflection, a cash crunch, a financing round, a pricing overhaul, a possible sale. A fractional CFO supplies the senior judgment for those moments on a fixed monthly fee.",
+        "It only works on a foundation of accurate, closed books &mdash; forecasting on unreconciled data is guesswork. That is why advisory sits on top of solid <a href=\"/accounting/bookkeeping/monthly-bookkeeping/\">monthly bookkeeping</a>: automation handles the data entry; the fractional CFO handles the judgment.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "Fractional CFO vs. bookkeeper vs. controller.",
+      paras: [
+        "A <strong>bookkeeper</strong> records and reconciles transactions. A <strong>controller</strong> owns the accuracy of the books and the close. A <strong>fractional CFO</strong> is forward-looking &mdash; strategy, forecasting, and decisions. Many small businesses need the first two consistently and the third at key moments.",
+      ],
+    },
+    related: [
+      { href: "/accounting/advisory/", title: "Advisory & fractional CFO", blurb: "Forward-looking financial leadership on a fixed fee." },
+      { href: "/accounting/bookkeeping/monthly-bookkeeping/", title: "Monthly bookkeeping", blurb: "The accurate, closed books advisory has to sit on." },
+      { href: "/glossary/profit-and-loss-statement/", title: "Profit and loss statement", blurb: "One of the reports a fractional CFO reads forward, not just back." },
+    ],
+    call: { title: "Facing a decision the books alone can&rsquo;t answer?", sub: "A Certified ProAdvisor talks through whether fractional-CFO advisory fits your situation &mdash; honest about when you need it and when you don&rsquo;t." },
+    faq: null,
+    published: "2026-06-17", updated: "2026-06-17",
+  },
+
+  {
+    slug: "sales-tax-nexus",
+    term: "Sales tax nexus",
+    title: "Sales Tax Nexus — Definition, Economic Nexus & Why It Matters · TechBrot",
+    description: "Sales tax nexus: the connection to a state that requires you to collect and remit its sales tax. Physical vs. economic nexus, the post-Wayfair thresholds, and why it's a top compliance risk. By Certified QuickBooks ProAdvisors.",
+    shortDef: "The connection between your business and a state that legally obligates you to register, collect, and remit that state&rsquo;s sales tax &mdash; created by physical presence or, since 2018, by economic activity alone.",
+    blurb: "The connection to a state that requires you to collect its sales tax &mdash; physical or, post-Wayfair, economic.",
+    definition: [
+      "<strong>Sales tax nexus</strong> is the legal connection between a business and a state that requires the business to register for, collect, and remit that state&rsquo;s sales tax. Without nexus in a state, you generally have no obligation to collect its sales tax; with nexus, you do.",
+      "Nexus comes in two main forms. <strong>Physical nexus</strong> is created by a physical presence &mdash; an office, employees, inventory (including inventory held in a marketplace&rsquo;s warehouse), or sometimes traveling sales staff. <strong>Economic nexus</strong>, established by the U.S. Supreme Court&rsquo;s 2018 <em>South Dakota v. Wayfair</em> decision, is created by sales volume alone &mdash; exceeding a state&rsquo;s dollar or transaction threshold even with no physical presence there.",
+    ],
+    why: {
+      heading: "Why nexus is a top compliance risk.",
+      paras: [
+        "Since <em>Wayfair</em>, a business selling online can trigger sales-tax obligations in dozens of states without ever setting foot in them &mdash; each state setting its own threshold (commonly $100,000 in sales or 200 transactions, though specifics vary and change). Many growing businesses cross these thresholds without realizing it, and unremitted sales tax plus penalties can accumulate quietly into a serious liability.",
+        "Determining where you have nexus, registering, configuring QuickBooks to charge the right rates, and filing on each state&rsquo;s schedule is operational work TechBrot does in your books. The legal determination of nexus and any tax filings or controversy are confirmed with your CPA, EA, or a sales-tax specialist &mdash; we keep the books and the collection right; the licensed professional advises and files where required.",
+      ],
+    },
+    how: null,
+    clarify: null,
+    related: [
+      { href: "/accounting/sales-tax-compliance/", title: "Sales tax services", blurb: "Sales tax set up, collected, and reconciled in your books." },
+      { href: "/accounting/bookkeeping/", title: "Bookkeeping services", blurb: "Sales-tax liability tracked and reconciled every month." },
+      { href: "/accounting/industries/ecommerce/", title: "E-commerce accounting", blurb: "Where multi-state economic nexus bites hardest." },
+    ],
+    call: { title: "Selling into multiple states?", sub: "A Certified ProAdvisor reviews where your sales may be creating nexus and gets your books and collection right &mdash; coordinating with your CPA on the filings. Written fixed-fee scope." },
+    faq: [
+      { q: "What is sales tax nexus?", a: "Sales tax nexus is the connection between your business and a state that legally requires you to register, collect, and remit that state&rsquo;s sales tax. It is created either by physical presence in the state or, since 2018, by economic activity above the state&rsquo;s threshold." },
+      { q: "What is the difference between physical and economic nexus?", a: "Physical nexus comes from a physical presence &mdash; an office, employees, or inventory in the state. Economic nexus comes from sales volume alone: exceeding a state&rsquo;s dollar or transaction threshold even with no physical presence there. A business can have both, in different states." },
+      { q: "What did South Dakota v. Wayfair change?", a: "The 2018 Supreme Court decision in South Dakota v. Wayfair allowed states to require out-of-state sellers to collect sales tax based on economic activity alone, ending the prior rule that required a physical presence. It is why online sellers now face sales-tax obligations in many states at once." },
+      { q: "What are typical economic nexus thresholds?", a: "Thresholds are set per state and commonly sit around $100,000 in sales or 200 transactions into the state in a year, but the exact dollar amount, whether transactions count, and the measurement period vary by state and change over time. Each state must be checked individually." },
+      { q: "Does selling on Amazon or another marketplace create nexus?", a: "It can. Inventory stored in a marketplace&rsquo;s warehouse in a state can create physical nexus, and your sales can count toward economic nexus. Many states now have marketplace-facilitator laws that shift collection to the marketplace, but your registration and filing obligations still need to be assessed." },
+      { q: "Does TechBrot determine my nexus or file my sales tax returns?", a: "TechBrot does the operational work &mdash; reviewing where sales may be creating nexus, configuring QuickBooks to collect the right rates, and reconciling the sales-tax liability in your books. The legal nexus determination and any required filings are confirmed with your CPA, EA, or a sales-tax specialist. We are an independent firm and do not provide legal or tax advice." },
+    ],
+    published: "2026-06-17", updated: "2026-06-17",
+  },
 ];
