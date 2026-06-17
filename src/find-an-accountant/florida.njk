@@ -293,7 +293,7 @@
         <h3>{{ cl.heading | safe }}</h3>
         <p class="prose">{{ cl.lede | safe }}</p>
         <ul class="checks-list">
-          {%- for li in cl.items %}<li>{{ li | safe }}</li>{%- endfor %}
+          {%- for li in cl.items %}<li>{% if li.href %}<a href="{{ li.href }}">{{ li.label | safe }}</a>{% elif li.label %}{{ li.label | safe }}{% else %}{{ li | safe }}{% endif %}</li>{%- endfor %}
         </ul>
       </article>
       {%- endfor %}

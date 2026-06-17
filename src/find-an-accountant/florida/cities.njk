@@ -1,0 +1,100 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/florida/cities/",
+  "slug": "fl-cities",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "heroLight": true,
+  "title": "Florida Cities We Serve · Bookkeeping & QuickBooks · TechBrot",
+  "description": "Certified QuickBooks ProAdvisor bookkeeping across Florida — Miami, Orlando, Tampa, Jacksonville, Fort Lauderdale, St. Petersburg, and all 67 counties. No income tax; the 5.5% corporate tax, 6%+surtax sales tax, and tax on services handled. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Florida", "href": "/find-an-accountant/florida/" },
+    { "name": "Cities" }
+  ],
+  "hero": {
+    "eyebrow": "Florida · Cities We Serve",
+    "heading": "A Florida bookkeeper for your city — and your city's economy.",
+    "subheading": "Florida has no state income tax and no city income or gross-receipts taxes — so what makes each metro's books distinct is its economy: Miami's international trade and finance, Orlando's tourism, Tampa's finance and port, Jacksonville's logistics and insurance, Fort Lauderdale's marine industry, St. Petersburg's tech and marine science. We have a dedicated bookkeeper for the major metros and serve all 67 counties remotely, by a named Certified ProAdvisor. We deliver the books; your CPA files.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=florida&state=florida&source_type=cities-hub&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Florida · all 67 counties",
+      "Fixed-fee · written scope in 3 days"
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> provides <strong>Certified QuickBooks ProAdvisor bookkeeping across Florida</strong> — dedicated city pages for the major metros (each built around that city's actual economy) plus remote service in all 67 counties, by a named bookkeeper on the same file every month, with Florida's 5.5% corporate tax, 6% + county surtax sales tax, and tax on services handled. The full list is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not affiliated with Intuit Inc. Florida tax figures reflect Department of Revenue rules current as of the review date; the commercial-rent tax was repealed Oct 2025; TechBrot does not file Florida taxes."
+  },
+  "ctaBand": {
+    "eyebrow": "Florida businesses start here",
+    "heading": "Find your city — or just call.",
+    "lede": "Don't see your city? We serve all 67 Florida counties remotely on QuickBooks. Book a free discovery call and we'll scope the right books for your business and your city's economy — written fixed-fee scope within 3 business days. Independent firm — does not file FL taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=florida&state=florida&source_type=cities-hub&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY ── #}
+<section class="section section--compact" id="fl-cities-summary-sec">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In short</p>
+      <h2 class="section__heading">Florida bookkeeping, city by city.</h2>
+    </header>
+    <p class="prose" id="fl-cities-summary">{{ summary | safe }}</p>
+  </div>
+</section>
+
+{# ── CITIES GRID · the dedicated metro pages (buyer-cards) ── #}
+<section class="section" id="fl-cities-grid">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Dedicated city pages</p>
+      <h2 class="section__heading">Florida metros we serve.</h2>
+      <p class="section__lede">Each city page is built around that city&rsquo;s real economy &mdash; not a name swap.</p>
+    </header>
+    <div class="grid-3">
+      {%- for c in cities %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading">{{ c.name | safe }}</h3>
+        <p class="buyer-card__body">{{ c.note | safe }}</p>
+        <a class="buyer-card__cta" href="{{ c.href }}">{{ c.name | safe }} bookkeeper &rarr;</a>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="prose">{{ citiesNote | safe }}</p>
+  </div>
+</section>
+
+{# ── FAQ ── #}
+<section class="section section--alt" id="fl-cities-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">Florida cities &amp; coverage questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="fl-cities-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="fl-cities-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

@@ -322,8 +322,11 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 271 · re-skinned (142) + growth = 129 · LAST COMMIT = round-47 FL-bkg+industries
-(9 pages: bkg-spokes 2 + industries hub+6). FL bkg 3/3 ✅ · industries hub+6/6 ✅. Working tree clean on `preview-11ty`.
+**COUNT: total pages live = 274 · re-skinned (142) + growth = 132 · LAST COMMIT = round-49 FL-COMPLETE
+(3 pages: st-petersburg + cities-hub + pricing + pillar re-link). Working tree clean on `preview-11ty`.
+✅ FLORIDA COMPLETE (31 FL pages: pillar + 6 money + 6 QB + 3 bkg + 2 tax + industries hub+6 + cities hub+6, incl. triage), on the CORRECTED FL stack.
+✅ FOUR STATES COMPLETE: NY · CA (39) · TX (32) · FL (31). NEXT = ILLINOIS depth (5th/last); build IL triage normally (approved pattern, IL Dept of Revenue + IRS). IL stack = flat 4.95% income + PPRT + Chicago taxes.
+⚑ AFTER IL: flag breadth-vs-more-depth decision. ⚑ LESSON (rd-48): check each state's pillar tax facts BEFORE building children.
 ✅ FL ACCURACY CORRECTION COMPLETE (round 48, commits 7fe4c19 + this): the FL COMMERCIAL-RENT ("business rent")
 sales tax was REPEALED effective Oct 1, 2025 (HB 7031). The ~18 FL pages built rounds 44/46/47 had wrongly
 described it as current; ALL corrected site-wide (3 scripts in _build/scripts/fix-fl-commercial-rent*.py +
