@@ -313,10 +313,22 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 169 · re-skinned (142) + growth = 27 · LAST COMMIT `346fb99` (find-an-accountant hub
-re-composed). Working tree clean on `preview-11ty`.** Dev server: `npm run serve` → http://192.168.1.7:8080/
+**COUNT: total pages live = 174 · re-skinned (142) + growth = 32 · LAST COMMIT = round-29 CA-cities-wave-1
+(5 CA city children). Working tree clean on `preview-11ty`.** Dev server: `npm run serve` → http://192.168.1.7:8080/
 (data-file edits need a server restart; a clean `npx @11ty/eleventy` reflects them). PROBE via 127.0.0.1 (8125 =
 _site-prod, 8090 = _site + axe.min.js) — the probe scripts' hardcoded `localhost` resolves to IPv6 → empty output.
+**⚠ HEADLESS-CHROME PROBES NON-FUNCTIONAL THIS MACHINE** — `chrome --headless=new --dump-dom` returns 0-length DOM
+even on `127.0.0.1` directly (not the localhost/IPv6 quirk; genuine chrome stall, see chrome-headless-leak memory).
+axe/overflow verified instead via **static proxy** (heading-order/alt/long-token parse) + **byte-equivalence to the
+axe-0/27 founder-approved SF page** (identical components/chrome). Run live axe_page.ps1/overflow_probe.ps1 on the
+founder's own machine to confirm. **NEVER `Get-Process chrome | Stop-Process`** (round-21 rule) — use kill_probe.ps1 only.
+
+**CITY-CHILD ARCHITECTURE (round 29, RS8 one-source — like glossary):** every city child = a one-line `.njk`
+(`{% include "partials/city-child-body.njk" %}`) + a rich `.11tydata.js`. Shared body
+`src/_includes/partials/city-child-body.njk` (DOM proven-equivalent to the approved SF proof; IDs from `slug`,
+headings from `cityName`, section eyebrows from `copy.*`). Shared schema helper `_build/lib/city-child.js` assembles
+WebPage+BreadcrumbList+Service+FAQPage+speakable from `data.cityMeta`. SF left as its own standalone pair (approved,
+untouched). **Add a city = 1 data file + 1 one-line njk + a build-new-queue.json entry.** Reuse for ALL states.
 
 **DONE this phase:** ✅ GLOSSARY COMPLETE (24 terms + index; DefinedTerm/speakable/CALL; real-or-skip held) ·
 ✅ find-an-accountant national HUB built + RE-COMPOSED (elevated 50-state router: pick-your-state selector +
@@ -324,7 +336,12 @@ buyer-card state grid + premium numbered process + deliver-card network + by-nee
 `/find-an-accountant/ → /accounting/` 301 PULLED (resolves to itself) · ✅ CA **San Francisco** child PROOF
 (`/find-an-accountant/california/cities/san-francisco/`) built + **founder-APPROVED** (localization confirmed
 genuinely SF-specific) · ✅ site-wide UX locked (link-TYPE underlines + animated arrow, elevated in-brief,
-hero+intro width = --measure-prose, triage amber disclosure, standing rules R8 UX-one-source + R9 count-line).
+hero+intro width = --measure-prose, triage amber disclosure, standing rules R8 UX-one-source + R9 count-line) ·
+✅ **CA CITIES WAVE 1 (round 29, 5 children: LA · San Diego · San Jose · Sacramento · Oakland)** — each a distinct
+city-tax mechanism (mad-libs FAILS): LA gross-receipts LABT+Measure ULA · SD employee-certificate (no GR tax) ·
+SJ per-employee · Sacramento gross-receipts BOT + capital econ · Oakland progressive Measure T + cannabis §280E.
+Built on the new shared city-child architecture; battery GREEN; honesty held (deferred to authorities/CPA,
+founder-name-zero). Detail: `_build/reports/round-29-ca-cities-w1.md`.
 
 **▶ NEXT — FAN OUT THE STATE CLUSTER, FULLY AUTONOMOUS, ALL 50 STATES CONTINUOUSLY:**
 order = **CA cities + industries → TX → FL → IL → then the remaining states.** Patterns PROVEN, reuse them:
