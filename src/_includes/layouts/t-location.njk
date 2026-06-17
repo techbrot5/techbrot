@@ -59,6 +59,31 @@ callBar: true
     </div>
   </div>
 </section>
+{%- elif heroLight %}
+{#- LOCATION CHILD (founder ruling 2026-06-17, Gallery 06 A4 fix): cities &
+    industries get a LIGHTER, conversion-focused compact hero — clearly
+    subordinate to the pillar, NEVER the pillar's heavy figure-split hero. No
+    figure, no dark contour, no motif. -#}
+<section class="section hero-tier hero--compact hero--rule" id="{{ slug }}-hero">
+  <div class="container">
+    <div class="hero">
+      <p class="hero__eyebrow">{{ hero.eyebrow | safe }}</p>
+      <h1 class="hero__heading">{{ hero.heading | safe }}</h1>
+      <p class="hero__subheading">{{ hero.subheading | safe }}</p>
+      <div class="hero__actions">
+        {%- for action in hero.actions.slice(0, 2) %}
+        <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
+          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+        {%- endfor %}
+      </div>
+      {%- if hero.trust %}
+      <ul class="hero__trust">
+        {%- for t in hero.trust %}<li class="hero__trust-item">{{ t | safe }}</li>{%- endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+  </div>
+</section>
 {%- else %}
 <section class="section hero-tier hero--location" id="{{ slug }}-hero">
   <div class="hero__motif" aria-hidden="true">{% include heroMotif or "partials/motif-align-ny.svg" %}</div>
