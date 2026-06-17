@@ -41,14 +41,29 @@
 }
 ---
 
-{# ── STATE ROUTING · buyer-cards to the state pillars/landings. (H2: Find an accountant by state.) ── #}
+{# ── STATE ROUTING SYSTEM · selector (pick-your-state, routes built-out → state page,
+     else → contact) + premium routing-card grid. Data-driven (allStates/states), scales
+     to 50 states. (H2: Find an accountant by state.) ── #}
 <section class="section" id="faa-states">
   <div class="container">
     <header class="section__header">
       <p class="section__eyebrow">Routing by state</p>
       <h2 class="section__heading">Find an accountant by state.</h2>
-      <p class="section__lede">Each state page is built around what&rsquo;s actually different there &mdash; the local taxes, the filing realities, the industries. Don&rsquo;t see your state? We serve it remotely &mdash; just reach out.</p>
+      <p class="section__lede">Pick your state to route straight to the right page &mdash; or browse the built-out states below. Each state page is built around what&rsquo;s actually different there: the local taxes, the filing realities, the industries.</p>
     </header>
+    <div class="state-router">
+      <div class="intake-field state-router__field">
+        <label class="intake-field__label" for="faa-state-select">Pick your state</label>
+        <select id="faa-state-select" aria-label="Choose your state to find an accountant">
+          <option value="" selected>Choose your state&hellip;</option>
+          {%- for s in allStates %}
+          <option value="{{ s.href }}">{{ s.name }}{% if s.built %} &mdash; dedicated page{% endif %}</option>
+          {%- endfor %}
+        </select>
+      </div>
+      <button type="button" class="btn btn--primary btn--lg" id="faa-state-go" data-tb-state-go>Find my accountant</button>
+    </div>
+    <p class="section__eyebrow" style="margin-bottom:var(--space-4)">Built-out states</p>
     <div class="grid-3">
       {%- for s in states %}
       <article class="buyer-card">
@@ -60,44 +75,71 @@
       {%- endfor %}
       <article class="buyer-card">
         <p class="buyer-card__opener">Every other state</p>
-        <h3 class="buyer-card__heading"><a href="/contact/?intent=find-an-accountant">Your state isn&rsquo;t listed yet</a></h3>
-        <p class="buyer-card__body">We serve businesses in every state remotely on QuickBooks &mdash; tell us where you are and what you need, and a Certified ProAdvisor will route you.</p>
+        <h3 class="buyer-card__heading"><a href="/contact/?intent=find-an-accountant">Served remotely &mdash; tell us where you are</a></h3>
+        <p class="buyer-card__body">We serve businesses in every state remotely on QuickBooks. Tell us your state and what you need, and a Certified ProAdvisor will route you.</p>
         <a class="buyer-card__cta" href="/contact/?intent=find-an-accountant">Tell us where you are &rarr;</a>
       </article>
     </div>
   </div>
 </section>
 
-{# ── VALUE PROP. (H2: What you get, in any state.) ── #}
+{# ── WHAT YOU GET · premium numbered process (the ONE numbered system, variety #12a). (H2: What you get, in any state.) ── #}
 <section class="section section--alt" id="faa-value">
   <div class="container">
     <header class="section__header">
       <p class="section__eyebrow">What you get</p>
       <h2 class="section__heading">What you get, in any state.</h2>
     </header>
-    <div class="grid-2">
+    <ol class="process-diagram">
       {%- for v in valueProps %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ v.num }}</p>
-        <h3>{{ v.title | safe }}</h3>
-        <p class="prose">{{ v.body | safe }}</p>
-      </div>
+      <li class="process-step">
+        <p class="process-step__number">0{{ loop.index }}</p>
+        <h3 class="process-step__heading">{{ v.name | safe }}</h3>
+        <p class="process-step__body">{{ v.body | safe }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+{# ── ROUTE BY NEED · silo routing (QuickBooks → /quickbooks/, accounting → /accounting/,
+     start → file-review). The hub routes to the RIGHT silo. (H2: Or start with what you need.) ── #}
+<section class="section" id="faa-needs">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Routing by need</p>
+      <h2 class="section__heading">Or start with what you need.</h2>
+      <p class="section__lede">Know the work already? Go straight to the right silo.</p>
+    </header>
+    <div class="grid-2">
+      {%- for n in needs %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ n.opener | safe }}</p>
+        <h3 class="buyer-card__heading"><a href="{{ n.href }}">{{ n.name | safe }}</a></h3>
+        <p class="buyer-card__body">{{ n.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ n.href }}">{{ n.cta | safe }}</a>
+      </article>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── NETWORK · the real model (honest). (H2: How the network works.) ── #}
-<section class="section" id="faa-network">
-  <div class="container container--narrow">
+{# ── NETWORK · deliver-card feature cards (the honest model, not a wall of text). (H2: How the network works.) ── #}
+<section class="section section--alt" id="faa-network">
+  <div class="container">
     <header class="section__header">
       <p class="section__eyebrow">Direct delivery + vetted partners</p>
       <h2 class="section__heading">How the network works.</h2>
     </header>
-    <div class="stack-8">
-      {%- for p in network %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+    <div class="grid-3">
+      {%- for n in network %}
+      <div class="deliver-card">
+        <span class="deliver-card__tick" aria-hidden="true"></span>
+        <div><h3>{{ n.title | safe }}</h3><p class="prose">{{ n.body | safe }}</p></div>
+      </div>
+      {%- endfor %}
     </div>
-    <p class="prose"><small>{{ networkNote | safe }}</small></p>
+    <p class="prose"><small>TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc. It provides bookkeeping and operational accounting and coordinates with your CPA or EA, who files tax returns and represents you before tax authorities.</small></p>
   </div>
 </section>
 
@@ -135,3 +177,15 @@
     </div>
   </div>
 </section>
+
+{# State router: route to the selected state's destination. Progressive enhancement —
+   the built-out grid above covers no-JS users. #}
+<script>
+(function(){
+  var s=document.getElementById("faa-state-select"),b=document.getElementById("faa-state-go");
+  if(!s||!b)return;
+  function go(){ if(s.value){ window.location.href=s.value; } }
+  b.addEventListener("click",go);
+  s.addEventListener("keydown",function(e){ if(e.key==="Enter"){ go(); } });
+})();
+</script>

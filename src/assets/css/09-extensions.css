@@ -706,3 +706,10 @@ a:is(:hover, :focus-visible) .lnk-arrow { transform: translateX(0.22em); }
 .disclosure--warn .disclosure__body { min-width: 0; }
 .disclosure--warn strong { color: var(--caution-deep); }
 .disclosure--warn a { color: var(--caution-deep); text-decoration: underline; }
+
+/* ---- State router (find-an-accountant hub): pick-your-state selector composed from
+   the handoff form field + primary button; scales to 50 states. Sits above the
+   built-out routing-card grid. Token-only. ---- */
+.state-router { display: flex; gap: var(--space-4); align-items: flex-end; flex-wrap: wrap; max-width: var(--measure-prose); margin: 0 0 var(--space-10); }
+.state-router__field { flex: 1 1 260px; margin: 0; }
+@media (max-width: 520px) { .state-router .btn { width: 100%; } }
