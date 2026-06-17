@@ -371,3 +371,23 @@ COUNT: total pages live = 167 · re-skinned (142) + growth this phase = 25 · pa
 certified-quickbooks-proadvisor, retained-earnings, deferred-revenue, opening-balance, 1099-vs-w2,
 journal-entry}/ (10 terms) · remaining in current cluster = 0 (GLOSSARY COMPLETE at 24 terms) · next cluster =
 CA/TX/FL/IL state children — **NEW-TYPE PROOF: build ONE CA child → STOP for founder glance before fan-out.**
+
+## Update 2026-06-17 (CA STATE-CHILD PROOF — STOP for founder glance)
+**⏸ CA STATE-CHILD PROOF (`fd6a898`) — `/find-an-accountant/california/cities/san-francisco/` — AWAITING FOUNDER GLANCE.**
+Treated as the make-or-break new-type proof for the whole state cluster. GENUINELY localized SF/CA content, NOT a
+name-swapped NY clone — the un-clonable hook is the **SF Gross Receipts Tax (taxed on gross receipts, not net
+income → can owe at a loss)**, layered on California's **$800 minimum franchise tax** (FTB, owed regardless of
+profit) + income-based LLC fee, **CDTFA** sales/use tax (7.25% base, ~8.625% in SF), and **AB5** worker
+classification. Plus SF-specific local context, areas (SoMa/FiDi/Mission/etc.), tax stack, SF verticals
+(tech/SaaS → /accounting/industries/saas/, restaurants, etc.), and 8 SF FAQ. **Find-replace test: CA→TX reads
+false at every line** (TX has no state income tax, no $800 franchise-on-existence, no SF-style city
+gross-receipts tax, no AB5). Honesty held: real facts, deferred to FTB/CDTFA/SF Treasurer/CPA; no fabricated
+stats/clients; firm byline; the 2 real Clutch reviews not duplicated. Lighter city-child hero (heroLight),
+CALL conversion, WebPage/BreadcrumbList/Service/FAQPage schema + speakable, glossary cross-links
+(sales-tax-nexus, deferred-revenue, 1099-vs-w2). battery green · design-fidelity 162 · url-set 174 · overflow
+clean 360/390/768 · axe 0/27 · CLS 0. **FOUNDER: review the localization → approve to fan out the state children.**
+
+COUNT: total pages live = 168 · re-skinned (142) + growth this phase = 26 · pages added THIS turn =
+/find-an-accountant/california/cities/san-francisco/ (1 — CA state-child proof) · remaining in current cluster =
+state children fan-out PENDING founder approval of this proof · next cluster (after approval) = CA cities/
+industries fan-out, then TX/FL/IL.
