@@ -305,17 +305,56 @@ live orphans that would 404 at cutover).
 
 ### ▶ CURRENT RESUME POINT (recovery anchor — keep current; founder may resume via `claude -c` after power loss)
 
-## 🔵 FRESH-SESSION RESUME (2026-06-17 — founder about to /clear; read THIS first, then round-28-wave1.md)
-**MODE: AUTONOMOUS.** Run non-stop: prove a type → battery GREEN → report URL → auto-fan-out that type
-→ next. Commit per step, round-report block every turn (every page URL), full detail in
-`_build/reports/round-28-wave1.md`. Do NOT wait for OK except the **5 STOP-GATES**: (1) NY pillar + 1 NY
-child, (2) honest-triage compliance copy, (3) handoff doesn't cover it, (4) page can't go equity-GREEN
-without a content change, (5) any NEW content/structure decision. Battery can't cleanly go green → hard STOP.
-GATES every page: variety #12a/#12b · honesty · forms · equity-GREEN · CLS 0 · axe · overflow.
+## 🔵 FRESH-SESSION RESUME (2026-06-17 v2 — founder /clear; read THIS first, then round-28-wave1.md)
+**PHASE: GROWTH (flip HELD — build broad coverage first, then flip). RE-SKIN COMPLETE 142/142.**
+**MODE: FULLY AUTONOMOUS.** Run non-stop; commit per wave; round report + COUNT line + every URL each turn.
+**RECORD-DON'T-STOP:** flag decisions/judgment calls to a list in the round report and KEEP GOING; only HARD-STOP
+on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate breach. (The earlier 5 per-type
+STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
+GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**LAST COMMIT before /clear: (this turn's checkpoint commit — see `git log -1`).** Working tree must be clean.
-Dev server: `npm run serve` → http://192.168.1.7:8080/ (data-file edits need a server restart — it caches
-data modules; a clean `npx @11ty/eleventy` always reflects them).
+**COUNT: total pages live = 169 · re-skinned (142) + growth = 27 · LAST COMMIT `346fb99` (find-an-accountant hub
+re-composed). Working tree clean on `preview-11ty`.** Dev server: `npm run serve` → http://192.168.1.7:8080/
+(data-file edits need a server restart; a clean `npx @11ty/eleventy` reflects them). PROBE via 127.0.0.1 (8125 =
+_site-prod, 8090 = _site + axe.min.js) — the probe scripts' hardcoded `localhost` resolves to IPv6 → empty output.
+
+**DONE this phase:** ✅ GLOSSARY COMPLETE (24 terms + index; DefinedTerm/speakable/CALL; real-or-skip held) ·
+✅ find-an-accountant national HUB built + RE-COMPOSED (elevated 50-state router: pick-your-state selector +
+buyer-card state grid + premium numbered process + deliver-card network + by-need silo routing) + the interim
+`/find-an-accountant/ → /accounting/` 301 PULLED (resolves to itself) · ✅ CA **San Francisco** child PROOF
+(`/find-an-accountant/california/cities/san-francisco/`) built + **founder-APPROVED** (localization confirmed
+genuinely SF-specific) · ✅ site-wide UX locked (link-TYPE underlines + animated arrow, elevated in-brief,
+hero+intro width = --measure-prose, triage amber disclosure, standing rules R8 UX-one-source + R9 count-line).
+
+**▶ NEXT — FAN OUT THE STATE CLUSTER, FULLY AUTONOMOUS, ALL 50 STATES CONTINUOUSLY:**
+order = **CA cities + industries → TX → FL → IL → then the remaining states.** Patterns PROVEN, reuse them:
+- **CITY child** = `layout: t-location` + `heroLight: true` (lighter city-child hero, the locked standard). Mirror
+  `src/find-an-accountant/california/cities/san-francisco.{njk,11tydata.js}` (the approved template): sections =
+  summary · ai-summary (5 Q) · LOCAL CONTEXT (the un-clonable band) · areas · tax stack (grid-3) · industries
+  (→ real `/accounting/industries/*` pages) · services (→ real `/accounting/*` + `/quickbooks/*` silo pages) ·
+  advisory · expert review · 8 FAQ. Schema: WebPage + BreadcrumbList + Service + FAQPage + speakable; reviewedBy
+  `#david-westgate`. Breadcrumb Home / Find an Accountant / <State> / <City> (skip a Cities crumb — no cities hub).
+- **INDUSTRY child** = same tier, industry×state localized.
+- **HARD BAR — REAL local substance per page:** actual city/state tax facts + real local economy; the **mad-libs
+  test MUST fail** (swap the place name → it reads false). A page that can't carry genuine distinct substance →
+  **SKIP or flag, never ship thin/templated** (Google suppresses thin local pages). Top-0.01%: speakable + rich
+  schema + CALL conversion, elevated system, mobile clean.
+- **HONESTY HARD-GATE:** real facts only; defer nexus/filing/return specifics to the CPA/EA (as on sales-tax-nexus
+  + SF); founder-name-zero; never imply Intuit affiliation; NO fabricated stats/counts/clients/reviews.
+- **Per page:** register the URL in `_build/build-new-queue.json`; new CTA intents → `src/_data/intents.json`;
+  new CTA labels → `src/_data/ctaLexicon.json`; every link must resolve (links gate). Build → battery GREEN →
+  overflow 360/390/768 + axe on a sample of the wave → commit per wave → round report + COUNT + URLs.
+- **After the state cluster** (growth order): support silo → more-QB → tools (NEW type — prove first) → guides →
+  pricing + blog → trust/reviews/etc. (reviews HONESTY-GATED: only 2 real Clutch reviews; no AggregateRating <5).
+
+**OPEN for flip (NOT blocking growth; flip is LAST after growth + founder sign-off):** form POST handler
+(Cloudflare Pages Function — forms POST to /contact/submit + /api/pillar-lead, no handler in repo yet) · per-type
+OG images (base head has no og:image) · real Intuit ProAdvisor badge artwork (FOUNDER supplies) · full
+baseline-vs-prod re-crawl.
+
+---
+**(↓ historical log — SUPERSEDED by the block above; kept for context ↓)**
+**MODE was AUTONOMOUS (round 28).** Original 5 STOP-GATES + re-skin detail below are historical.
 
 **DONE (elevated re-skin):** token+font re-cut · money-page proof (/accounting/bookkeeping/cleanup-bookkeeping/)
 · home · global chrome (mid-mega nav + light footer + nowrap) · premium numbered process · variety gate

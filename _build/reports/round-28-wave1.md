@@ -409,3 +409,23 @@ Approve → fan out the rest of the state children.
 COUNT: total pages live = 169 · re-skinned (142) + growth this phase = 27 · pages added THIS turn =
 /find-an-accountant/ (national routing hub) · remaining in current cluster = state-children fan-out PENDING
 founder approval (hub + CA child shown) · next cluster (after approval) = CA cities/industries → TX/FL/IL.
+
+## Update 2026-06-17 (hub RE-COMPOSED + founder APPROVED SF child & hub; checkpoint for /clear)
+**✅ FOUNDER APPROVED** the SF child localization (genuinely SF-specific) + the hub routing/components.
+**✅ /find-an-accountant/ HUB RE-COMPOSED (`346fb99`)** with elevated components (founder critique fix — the
+generic sections were replaced): pick-your-state **selector** (50 states, data-driven, built-out → state page /
+others → contact, no-JS fallback to the grid) + premium **buyer-card** routing grid · **premium numbered process**
+("what you get", the ONE numbered system) · **deliver-card** feature cards ("how the network works", no wall of
+text) · NEW **by-need silo routing** (QuickBooks → /quickbooks/, bookkeeping → /accounting/bookkeeping/, accounting
+& advisory → /accounting/, file review → /quickbooks/file-review/ — routes to the RIGHT silo, never dead-ends).
+`.state-router` CSS + selector JS (progressive enhancement); "Find my accountant" added to the CTA lexicon.
+battery green · variety one-numbered-system · manifest · cta-lexicon · design-fidelity 163 · overflow clean
+360/390/768 · axe 0/29 · CLS 0 · CSS 77,931B. Tree clean on preview-11ty.
+
+COUNT: total pages live = 169 · re-skinned (142) + growth this phase = 27 · pages added THIS turn = none
+(hub re-composition — existing page improved, no new URL) · remaining in current cluster = state cluster fan-out
+NOW UNBLOCKED (founder approved) · next = CA cities/industries → TX/FL/IL → all 50 states (fully autonomous).
+
+**▶ CHECKPOINT for /clear — fresh session resumes from the BUILD-TRACKER "🔵 FRESH-SESSION RESUME (v2)" block:
+fan out the state cluster, all 50 states, real-local-substance / mad-libs-must-fail / skip-don't-pad, honesty
+hard-gate, RECORD-DON'T-STOP, COUNT + every URL each turn.**
