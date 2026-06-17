@@ -335,12 +335,20 @@ equity GREEN · battery green · overflow clean 360/390/768 · axe 0/36 (TX spot
 **▶ The ENTIRE find-an-accountant silo (43: NY pillar + 38 NY children + 4 state landings) now wears the elevated
 state hero.**
 
-**▶ NEXT (autonomous):** (a) **FLAGGED FOLLOW-UP — formal t-location→t-bofu tier-TAGGING re-tier** for the 13
-service + 4 honest-triage NY children (data-tier/tint only; the hero is already identical → low-visible-impact;
-needs per-page tierClass/bodyClass reconciliation; do as its own clean pass). (b) **STOP-GATE #2: honest-triage
-compliance copy** (separate from the hero re-skin). (c) Wave-2 registry types (product/mofu · comparison ·
-pricing · legal · location-child). CUTOVER GATE tracked above; gate #1 (phone) CLEARED. Old→handoff map +
-RS1–RS4 + PACE govern.
+**✅ HEROES CAPPED AT 2 CTAs (`9aee383`, founder 2026-06-17).** Enforced in every layout hero loop via
+`hero.actions.slice(0,2)` (t-hub/t-mofu/t-bofu/t-guide/t-location + util-hero) — site-wide, future-proof; the
+redundant 3rd CTA (usually the tel, covered by header + call-bar) dropped. ctaBand unaffected. Verified exactly
+2 hero CTAs across samples; kept pairs sensible (primary + ghost).
+**✅ TIER RE-TAG DONE (`e134674`).** 13 NY service + 4 honest-triage children t-location→t-bofu via
+`_build/scripts/ny_retier_bofu.py` (layout + section--tier-hub→bofu + bodyClass page--bofu). data-tier=bofu
+confirmed; cities/industries stay location. design-fidelity PASS (bofu via proof-strip/intake-form/hero-figure),
+equity GREEN, overflow clean, axe 0/29. **Honest-triage compliance copy UNTOUCHED** (copy-based disclosure in
+hero subheading + scope-split section — verified intact; STOP-GATE #2 preserved).
+**⚠ Housekeeping:** an empty commit `c5b78d1` titled "_" slipped between the two (no tree impact; squash later).
+
+**▶ NEXT (founder-gated):** **STOP-GATE #2** — review/finalize honest-triage compliance copy if any change wanted
+(currently preserved as-built, compliant). Then **Wave-2 registry types** (product/mofu · comparison · pricing ·
+legal · location-child). CUTOVER GATE tracked above; gate #1 (phone) CLEARED. Old→handoff map + RS1–RS4 + PACE govern.
 **DEV-SERVER NOTE:** `npm run serve` binds the LAN; this session = http://192.168.1.7:8080/. Probe servers
 must be hit via 127.0.0.1 (the scripts' hardcoded `localhost` resolves to IPv6 ::1 while python http.server
 binds IPv4 only → empty probes; run chrome against 127.0.0.1:8125/_site-prod + 127.0.0.1:8090/_site).

@@ -171,7 +171,36 @@ equity GREEN · battery green (css 76,515B) · overflow clean 360/390/768 · axe
 **The ENTIRE find-an-accountant silo (43 pages: NY pillar + 38 NY children + 4 state landings) now wears the
 elevated state hero — visually consistent end to end.**
 
-**▶ NEXT (autonomous):** (a) the flagged t-location→t-bofu tier-tagging re-tier follow-up (service + honest-triage
-children; data-tier/tint only). (b) STOP-GATE #2 honest-triage compliance copy. (c) Wave-2 registry types
-(product/mofu · comparison · pricing · legal · location-child). Resume from the "🔵 FRESH-SESSION RESUME" block
-in BUILD-TRACKER.
+## Update 2026-06-17 (session 2 cont. — autonomous: 2-CTA hero cap + tier re-tag) + REVIEW REPORT
+**✅ HEROES CAPPED AT 2 CTAs (`9aee383`).** Founder: heroes show ≤2 action buttons. Enforced once per layout via
+`hero.actions.slice(0,2)` (t-hub/t-mofu/t-bofu/t-guide/t-location + util-hero) — site-wide + future-proof; the 3rd
+CTA (usually the tel "Speak to a ProAdvisor", already in the header + sticky call-bar) is dropped. ctaBand (final
+CTA) untouched. Verified exactly 2 hero CTAs; kept pairs sensible — e.g. NY pillar [Book the discovery call · Send
+the Discovery Brief], faq [Get the free file review · Book the discovery call].
+**✅ TIER RE-TAG (`e134674`).** 13 NY service + 4 honest-triage children t-location→t-bofu via
+`_build/scripts/ny_retier_bofu.py` (layout swap + `section--tier-hub`→`section--tier-bofu` + bodyClass `page--bofu`;
+bodyClass is cosmetic, unused in CSS). data-tier=bofu confirmed; cities/industries stay location. design-fidelity
+PASS (bofu via proof-strip/intake-form/hero-figure) · equity GREEN · overflow clean 360/390/768 · axe 0/29 (urgent-
+bookkeeping). **Honest-triage compliance copy UNTOUCHED** — these pages use copy-based disclosure (hero subheading
+"…not emergency tax filing or representation. We deliver the books; your CPA files." + the "what we can do / won't
+pretend" scope-split section), not a `.disclosure` component; re-tag changed only 6 front-matter/class lines.
+
+### ⚑ REVIEW REPORT (founder-requested — items to glance at)
+1. **2-CTA cap — what got dropped.** Every hero with 3 CTAs lost its 3rd (the tel "Speak to a ProAdvisor" in
+   nearly all cases). Heroes now have NO direct phone button on pages that previously did; the phone remains in the
+   header, the mobile sticky call-bar, the call-block/call-breakout sections, and final CTA bands. If you want the
+   PHONE to be one of the 2 kept on any specific type, say which and I'll reorder that type's hero actions.
+2. **Tier re-tag is tagging/tint only.** The 17 pages now render as t-bofu (correct conversion tier) but their
+   BODIES are still the as-built location-clone content (same sections). No content rewrite was done (out of scope +
+   equity). If you want these conversion pages restructured to the leaner t-bofu money-page shape (proof-strip →
+   intake/call → FAQ), that's a separate content pass — flag it.
+3. **Empty commit `c5b78d1` ("_")** slipped into history between the two commits (my mistake; zero tree impact).
+   Left in place (rewriting pushed history is riskier than a harmless empty commit) — can squash on the next
+   housekeeping pass. Flagging for transparency.
+4. **STOP-GATE #2 (honest-triage) — currently preserved, not re-opened.** Compliance copy is intact as-built. No
+   change made. If you want the honest-triage copy re-reviewed/tightened, that's the gate to open next.
+5. **`heroMotif` now unused** on CA/TX/FL/IL + NY pillar (the dark-hero else-branch only). Harmless; can be removed
+   in cleanup.
+
+**▶ NEXT (founder-gated):** STOP-GATE #2 (honest-triage copy, if any change wanted) · Wave-2 registry types
+(product/mofu · comparison · pricing · legal · location-child). Resume from the "🔵 FRESH-SESSION RESUME" block.
