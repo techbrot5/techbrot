@@ -179,6 +179,15 @@ Before techbrot.com is pointed at this build, ALL must clear:
 4. **/resources/ interim repoint** resolved or confirmed safe (nav "Resources" → /resources/research/
    until the /resources/ hub ships).
 5. **Full re-skin complete + equity-GREEN site-wide + battery green.**
+6. ⛔ **LIVE axe + overflow probes on ALL growth-phase children (founder 2026-06-17 — HARD flip blocker).**
+   Headless-chrome probes are ENV-BLOCKED in the autonomous build sessions (`chrome --headless --dump-dom`
+   returns 0-length DOM on this machine), so the growth-phase city children + glossary were verified by
+   **static-proxy + byte-equivalence to the axe-0/27 SF proof**, NOT live. Before flip, axe (`axe_page.ps1`)
+   and overflow (`overflow_probe.ps1`) MUST be run LIVE on the founder's machine across **every** growth
+   child — all find-an-accountant city children (CA/TX/FL/IL/… as they ship) + the 24 glossary terms — to
+   confirm 0 violations / clean 360·390·768. **Do not let inferred-clean stack unverified to flip.** Track the
+   running list of inferred-only pages in each round report; this gate clears only when the full set is
+   live-confirmed. (Per round 29–32: 21 city children + 24 glossary so far are inferred-clean, pending live run.)
 
 ## ⚡ PACE — PER-TYPE PROOF, THEN AUTOMATE FAN-OUT (founder 2026-06-17)
 Move fast. Prove ONE page of each remaining type → founder glances fast → then AUTOMATE the fan-out
@@ -313,9 +322,9 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 189 · re-skinned (142) + growth = 47 · LAST COMMIT = round-32 FL-cities-wave-1
-(5 FL city children: miami, orlando, tampa, jacksonville, fort-lauderdale). Working tree clean on `preview-11ty`.
-State coverage: NY full tree · CA 11 cities · TX 5 cities · FL 5 cities · CA/TX/FL/IL/NY landings. City children = 21.** Dev server: `npm run serve` → http://192.168.1.7:8080/
+**COUNT: total pages live = 194 · re-skinned (142) + growth = 52 · LAST COMMIT = round-33 IL-cities-wave-1
+(5 IL city children: chicago, aurora, naperville, joliet, rockford). Working tree clean on `preview-11ty`.
+State coverage: NY full tree · CA 11 · TX 5 · FL 5 · IL 5 · CA/TX/FL/IL/NY landings. City children = 26. ~6 from 200.** Dev server: `npm run serve` → http://192.168.1.7:8080/
 (data-file edits need a server restart; a clean `npx @11ty/eleventy` reflects them). PROBE via 127.0.0.1 (8125 =
 _site-prod, 8090 = _site + axe.min.js) — the probe scripts' hardcoded `localhost` resolves to IPv6 → empty output.
 **⚠ HEADLESS-CHROME PROBES NON-FUNCTIONAL THIS MACHINE** — `chrome --headless=new --dump-dom` returns 0-length DOM
@@ -359,7 +368,15 @@ FL = no personal income tax BUT 5.5% C-corp income tax (distinct from TX); Flori
 economy + a different FL-specific tax item each: Miami commercial-rent sales tax · Orlando Tourist Development Tax ·
 Tampa tangible-personal-property (DR-405) · Jacksonville reemployment (RT-6) tax · Fort Lauderdale boat sales-tax cap.
 Battery GREEN; honesty held (deferred to FL DOR/county/CPA). Detail: `_build/reports/round-32-fl-cities-w1.md`.
-**City children now = 21 (11 CA + 5 TX + 5 FL).**
+**City children now = 21 (11 CA + 5 TX + 5 FL).** ·
+✅ **IL CITIES WAVE 1 (round 33, 5 children: Chicago · Aurora · Naperville · Joliet · Rockford)** — NEW STATE,
+completes CA/TX/FL/IL. IL = flat 4.95%/7% income tax + the IL-unique Personal Property Replacement Tax (hits
+pass-throughs) + Chicago's local stack. Chicago = lease transaction tax on SaaS/cloud + amusement tax on
+streaming + 10.25% sales; Aurora/Rockford = manufacturing machinery exemption; Naperville = high property tax;
+Joliet = intermodal logistics + multi-state nexus. Battery GREEN; honesty held (deferred to IDOR/Chicago Dept
+of Finance/CPA). Detail: `_build/reports/round-33-il-cities-w1.md`. **City children now = 26 (11 CA + 5 TX + 5 FL + 5 IL).**
+**⛔ FLIP-BLOCKER (cutover gate #6): 26 city children + 24 glossary = 50 pages are inferred-clean (static-proxy +
+SF-equivalence), pending LIVE axe/overflow on the founder's machine before flip.**
 
 **▶ NEXT — FAN OUT THE STATE CLUSTER, FULLY AUTONOMOUS, ALL 50 STATES CONTINUOUSLY:**
 order = **CA cities + industries → TX → FL → IL → then the remaining states.** Patterns PROVEN, reuse them:
