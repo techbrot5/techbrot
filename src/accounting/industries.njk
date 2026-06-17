@@ -81,7 +81,7 @@
         <h3>{{ s.name | safe }}</h3>
         <p class="review-card__fact">{{ s.body | safe }}</p>
         <p class="review-card__fact"><strong>Focus:</strong> {{ s.focus | safe }}</p>
-        <a class="review-card__link" href="{{ s.href }}">{{ s.name | safe }} &rarr;</a>
+        <a class="review-card__link" href="{{ s.href }}">{{ s.name | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
       </article>
       {%- endfor %}
     </div>
@@ -97,7 +97,7 @@
     <div class="prose">
       <p>Most bookkeepers treat every business the same: categorize, reconcile, produce a P&amp;L. That&rsquo;s fine until you need to know the thing your industry actually turns on &mdash; job profitability on a build, prime cost on a Friday night, collection rate against what you billed, whether trust funds reconcile to the penny. Those numbers don&rsquo;t appear by accident; the books have to be built to surface them.</p>
       <p>TechBrot configures QuickBooks and your monthly process around how your industry operates, so the financials answer the questions you actually ask &mdash; and so the work is ready the moment you want advisory on top of it. As automation commoditizes routine data entry, that industry judgment is exactly where the value now lives.</p>
-      <p><a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">Explore fractional CFO &amp; advisory &rarr;</a></p>
+      <p><a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">Explore fractional CFO &amp; advisory <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
     </div>
   </div>
 </section>
@@ -124,7 +124,7 @@
           <tr>
             <th scope="row">{{ row.dim | safe }}</th>
             <td>{{ row.turns | safe }}</td>
-            <td class="vs-table__us"><a href="{{ row.href }}">{{ row.page | safe }} &rarr;</a></td>
+            <td class="vs-table__us"><a href="{{ row.href }}">{{ row.page | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></td>
           </tr>
           {%- endfor %}
         </tbody>
@@ -184,7 +184,7 @@
       <article class="review-card">
         <h3>{{ n.title | safe }}</h3>
         <p class="review-card__fact">{{ n.body | safe }}</p>
-        <a class="review-card__link" href="{{ n.href }}">{{ n.title | safe }} &rarr;</a>
+        <a class="review-card__link" href="{{ n.href }}">{{ n.title | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
       </article>
       {%- endfor %}
     </div>

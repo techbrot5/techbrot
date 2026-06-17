@@ -56,6 +56,14 @@ ruling: the 4 "Recent New York results" figures, formerly "real engagement outco
 client request," are reframed to explicitly representative/illustrative; operational substance —
 patterns, problems, work — kept. Reviews on any page = only the 2 real Clutch reviews.)
 
+## ⭐ STANDING UX RULE (founder 2026-06-17 — R8) — COMPONENT/TOKEN LEVEL, ONE SOURCE, SITE-WIDE
+**Every UX fix lands at the COMPONENT/TOKEN level in base CSS, ONE source, site-wide — never page-by-page.**
+Best/futuristic/logical UX, every fix serving the north star (top-0.01% AI citations + Google rank + calls +
+dominate every cluster) as #1 priority. Examples in place: the LINK-TYPE underline system (action/contact =
+partial→full; nav/list = clean→hover) + animated `.lnk-arrow` — all defined once in `09-extensions.css` /
+`04-chrome.css` and inherited by every page. WCAG: nav links with no resting underline keep a visible focus
+state (axe stays green). When a new UX need appears, add/extend the component rule — do not hand-edit pages.
+
 ## ⭐ CANONICAL DOC SYSTEM (founder, 2026-06-15 — LOCKED standing file structure)
 ONE file per role, no overlap, **update-don't-spawn**. These are the only authoritative docs:
 1. **BUILD-TRACKER.md** — OPERATIONAL truth (status, resume anchor, governing rules). **Read first.**
@@ -370,7 +378,16 @@ clone the pillar. New t-location `heroLight` branch = lighter compact conversion
 `ny_children_lighten.py`. Pillar keeps figure; t-bofu service children keep theirs. equity GREEN · battery green ·
 overflow clean 360/390/768 · axe 0/27. (Sub-hubs cities.njk/industries.njk still figure — leave or lighten later.)
 
-**⏸ STOP-GATE #2 — HONEST-TRIAGE PROOF (`52de277`) — AWAITING FOUNDER OK before triage fan-out.**
+**✅ STOP-GATE #2 CLEARED + TRIAGE FANNED OUT (`d55bc0b`, founder OK 2026-06-17).** All 5 triage pages carry the
+amber `.disclosure--warn` ATF banner (not-Intuit/route-to-Intuit or not-CPA/EA/tax-authority, reusing established
+copy — no new claims); the 4 NY triage lightened to the compact triage hero + a call-breakout CALL conversion.
+**✅ LINK-TYPE UX SYSTEM + ANIMATED ARROW (`<this round>`).** Two logical link types, ONE source (09-extensions +
+04-chrome): ACTION/CONTACT (prose/content/footer-email) = partial→full on hover/focus/active/current; NAV/LIST
+(footer cols + utility + breadcrumb + TOC + primary nav) = clean rest → rule on hover/focus/current. Animated
+`.lnk-arrow` (118 trailing arrows wrapped site-wide via `wrap_link_arrows.py`). axe 0v/28p, reduced-motion safe,
+WCAG focus intact. **✅ RE-SKIN ESSENTIALLY COMPLETE — 142/142 built pages on the elevated system.**
+
+**(historical) STOP-GATE #2 — HONEST-TRIAGE PROOF (`52de277`) — was awaiting OK; now cleared above.**
 `/quickbooks/speak-to-a-quickbooks-expert/` now carries the captured amber disclosure ATF banner (`.disclosure--warn`,
 --caution-* tokens, warning icon) — the unmissable not-Intuit + route-billing/login-to-Intuit signal. Compliance COPY
 kept verbatim (thorough round-26 founder-approved disclosure). equity GREEN (36h/7faq/27schema) · axe 0/31 (amber AA)

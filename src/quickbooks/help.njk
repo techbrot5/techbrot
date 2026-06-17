@@ -87,7 +87,7 @@
       <div class="buyer-card">
         <h3 class="buyer-card__opener">{{ t.opener | safe }}</h3>
         <p class="buyer-card__body">{{ t.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ t.href }}">{{ t.cta | safe }} &rarr;</a>
+        <a class="buyer-card__cta" href="{{ t.href }}">{{ t.cta | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
       </div>
       {%- endfor %}
     </div>
@@ -156,7 +156,7 @@
         <h3>{{ s.name | safe }}</h3>
         <p class="review-card__fact">{{ s.body | safe }}</p>
         <p class="review-card__fact"><strong>{{ s.fee | safe }}</strong> &middot; {{ s.eng | safe }}</p>
-        <a class="review-card__link" href="{{ s.href }}">{{ s.name | safe }} &rarr;</a>
+        <a class="review-card__link" href="{{ s.href }}">{{ s.name | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
       </article>
       {%- endfor %}
     </div>

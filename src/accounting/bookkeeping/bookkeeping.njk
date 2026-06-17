@@ -65,7 +65,7 @@
         <p class="review-card__fact">{{ e.body | safe }}</p>
         <p class="review-card__fact"><strong>For:</strong> {{ e.forWho | safe }} &middot; {{ e.cadence | safe }}</p>
         <p class="review-card__fact"><strong>{{ e.fee | safe }}</strong></p>
-        <a class="review-card__link" href="{{ e.href }}">{{ e.cta | safe }} &rarr;</a>
+        <a class="review-card__link" href="{{ e.href }}">{{ e.cta | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
       </article>
       {%- endfor %}
     </div>
@@ -191,7 +191,7 @@
       <article class="review-card">
         <h3><a class="review-card__link" href="{{ n.href }}">{{ n.name | safe }}</a></h3>
         <p class="review-card__fact">{{ n.body | safe }}</p>
-        <a class="review-card__link" href="{{ n.href }}">{{ n.name | safe }} &rarr;</a>
+        <a class="review-card__link" href="{{ n.href }}">{{ n.name | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
       </article>
       {%- endfor %}
     </div>
@@ -217,6 +217,6 @@
       </div>
       {%- endfor %}
     </div>
-    <p class="faq__more"><a href="/accounting/bookkeeping/faq/">See all bookkeeping FAQs &rarr;</a></p>
+    <p class="faq__more"><a href="/accounting/bookkeeping/faq/">See all bookkeeping FAQs <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
   </div>
 </section>

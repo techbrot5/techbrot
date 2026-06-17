@@ -544,62 +544,86 @@
 }
 
 /* ============================================================================
-   LINK UNDERLINE — SINGLE SITE-WIDE SOURCE (founder 2026-06-17). THE place that
-   controls text-link underlines everywhere. Partial short rule by default →
-   animates to FULL on hover/focus, matching the buyer-card __cta treatment
-   (faint ink → accent, 1.5px). Uses a background gradient (not a ::after pseudo)
-   so it also works on WRAPPING inline prose links — a pseudo only underlines a
-   single-line box. Each context keeps its own text colour; this draws the rule.
-   Reduced-motion: the width snaps (no animation). Edit HERE to change link
-   underlines site-wide. (Nav primary links carry the SAME partial->full underline
-   via an ::after pseudo in 04-chrome.css — they are single-line padded pills, so a
-   pseudo positions the rule under the text where the gradient cannot; dropdown
-   triggers keep their chevron + pill; buttons / buyer-card / link-standalone keep
-   their own treatments.)
+   LINK-TYPE UNDERLINE SYSTEM — SINGLE SITE-WIDE SOURCE (founder 2026-06-17).
+   THE place that controls text-link underlines everywhere. TWO logical types:
+   • ACTION / CONTACT (.lt-action + in-content action/contact links + footer email):
+       PARTIAL half-rule at REST → animates to FULL on hover / focus / active / current.
+   • NAV / LIST (.lt-nav + footer column nav + utility links + breadcrumb + TOC):
+       CLEAN (no rule) at REST → rule slides in on hover / focus / current only.
+   Gradient mechanism (not ::after) so it also works on WRAPPING inline links.
+   Faint ink → accent, 1.5px. Reduced-motion: the width snaps (no animation).
+   Primary NAV links use the matching nav treatment via an ::after pseudo in
+   04-chrome.css (padded pills need a pseudo to sit the rule under the text).
+   Buttons / buyer-card__cta / link-standalone keep their own treatments.
+   Edit HERE to change link underlines site-wide; never page-by-page.
    ============================================================================ */
+/* ---- ACTION / CONTACT: partial → full ---- */
 :is(
+  .lt-action,
   main a:not([class]),
   .prose a,
   .in-brief__text a, .section__lede a, .ai-summary__answer a, .faq__answer a,
   .process-step__body a, .buyer-card__body a, .review-card__fact a,
   .service-card__body a, .tldr__body a, .legal-doc__body a, .deliver-card p a,
-  .site-footer__col a, .breadcrumb a, .toc a
+  .site-footer a[href^="mailto:"]
 ) {
   text-decoration: none;
   background-image: linear-gradient(var(--color-ink-faint), var(--color-ink-faint));
   background-repeat: no-repeat;
   background-position: 0 100%;
-  background-size: 45% 1.5px;
+  background-size: 42% 1.5px;
   transition: background-size var(--motion-base) var(--ease-out), color var(--motion-base) var(--ease-out);
 }
 :is(
+  .lt-action,
   main a:not([class]),
   .prose a,
   .in-brief__text a, .section__lede a, .ai-summary__answer a, .faq__answer a,
   .process-step__body a, .buyer-card__body a, .review-card__fact a,
   .service-card__body a, .tldr__body a, .legal-doc__body a, .deliver-card p a,
-  .site-footer__col a, .breadcrumb a, .toc a
-):hover,
-:is(
-  main a:not([class]),
-  .prose a,
-  .in-brief__text a, .section__lede a, .ai-summary__answer a, .faq__answer a,
-  .process-step__body a, .buyer-card__body a, .review-card__fact a,
-  .service-card__body a, .tldr__body a, .legal-doc__body a, .deliver-card p a,
-  .site-footer__col a, .breadcrumb a, .toc a
-):focus-visible {
+  .site-footer a[href^="mailto:"]
+):is(:hover, :focus-visible, :active, [aria-current="page"]) {
   background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 100% 1.5px;
+}
+/* ---- NAV / LIST: clean rest → full on hover/focus/current ---- */
+:is(
+  .lt-nav,
+  .site-footer__col a:not([href^="mailto:"]),
+  .site-footer__legal a,
+  .breadcrumb a, .toc a
+) {
+  text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 1.5px;
+  transition: background-size var(--motion-base) var(--ease-out), color var(--motion-base) var(--ease-out);
+}
+:is(
+  .lt-nav,
+  .site-footer__col a:not([href^="mailto:"]),
+  .site-footer__legal a,
+  .breadcrumb a, .toc a
+):is(:hover, :focus-visible, [aria-current="page"]) {
   background-size: 100% 1.5px;
 }
 @media (prefers-reduced-motion: reduce) {
   :is(
-    main a:not([class]), .prose a, .in-brief__text a, .section__lede a,
-    .ai-summary__answer a, .faq__answer a, .process-step__body a,
+    .lt-action, .lt-nav, main a:not([class]), .prose a, .in-brief__text a,
+    .section__lede a, .ai-summary__answer a, .faq__answer a, .process-step__body a,
     .buyer-card__body a, .review-card__fact a, .service-card__body a,
     .tldr__body a, .legal-doc__body a, .deliver-card p a,
-    .site-footer__col a, .breadcrumb a, .toc a
+    .site-footer__col a, .site-footer__legal a, .breadcrumb a, .toc a
   ) { transition: color var(--motion-base) var(--ease-out); }
 }
+
+/* ---- Animated arrow (→): the trailing arrow in action links slides right on
+   hover/focus. One reusable component (.lnk-arrow span / arrow macro). Premium,
+   subtle, reduced-motion safe. ---- */
+.lnk-arrow { display: inline-block; transition: transform var(--motion-base) var(--ease-out); will-change: transform; }
+a:is(:hover, :focus-visible) .lnk-arrow { transform: translateX(0.22em); }
+@media (prefers-reduced-motion: reduce) { .lnk-arrow { transition: none; } }
 
 /* 4 — prose section breathing room (was cramped); generous paragraph rhythm +
    space before a following pull-quote. */

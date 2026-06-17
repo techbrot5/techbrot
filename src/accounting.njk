@@ -84,7 +84,7 @@
         <h3>{{ s.name | safe }}</h3>
         <p class="review-card__fact">{{ s.body | safe }}</p>
         <p class="review-card__fact"><strong>{{ s.fee | safe }}</strong> &middot; {{ s.eng | safe }}</p>
-        <a class="review-card__link" href="{{ s.href }}{% if s.intent %}?intent={{ s.intent }}{% endif %}">{{ s.cta }} &rarr;</a>
+        <a class="review-card__link" href="{{ s.href }}{% if s.intent %}?intent={{ s.intent }}{% endif %}">{{ s.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
       </article>
       {%- endfor %}
     </div>

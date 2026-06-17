@@ -79,7 +79,7 @@
         <p class="review-card__fact">{{ s.body | safe }}</p>
         <p class="review-card__fact"><strong>{{ s.fee | safe }}</strong> &middot; {{ s.eng | safe }}</p>
         <p class="review-card__fact">Best for: {{ s.best | safe }}</p>
-        <a class="review-card__link" href="{{ s.href }}">{{ s.name | safe }} &rarr;</a>
+        <a class="review-card__link" href="{{ s.href }}">{{ s.name | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
       </article>
       {%- endfor %}
     </div>
@@ -89,7 +89,7 @@
       <p class="review-card__fact">{{ cfo.lede | safe }}</p>
       <p class="review-card__fact"><strong>{{ cfo.fee | safe }}</strong> &middot; {{ cfo.eng | safe }}</p>
       <p class="review-card__fact">Best for: {{ cfo.best | safe }}</p>
-      <a class="review-card__link" href="{{ cfo.href }}">{{ cfo.name | safe }} &rarr;</a>
+      <a class="review-card__link" href="{{ cfo.href }}">{{ cfo.name | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
     </article>
   </div>
 </section>
@@ -108,7 +108,7 @@
         <p class="review-card__fact"><strong>Diagnosis:</strong> {{ d.diagnosis | safe }}</p>
         <p class="review-card__fact"><strong>Right path:</strong> {{ d.path | safe }}</p>
         <p class="review-card__fact"><strong>Typical fee:</strong> {{ d.fee | safe }}</p>
-        <a class="review-card__link" href="{{ d.href }}">{{ d.cta | safe }} &rarr;</a>
+        <a class="review-card__link" href="{{ d.href }}">{{ d.cta | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
       </article>
       {%- endfor %}
     </div>
