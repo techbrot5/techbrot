@@ -130,7 +130,24 @@ already carried guide-grid + byline + meta-reviewed). **Fit-to-purpose boundary:
 HowTo + legal docs KEEP their compact/clean heroes (no marketing figure). equity GREEN all 6 · overflow clean
 360/390/768 (/accounting/faq/ sw 360/375/753) · battery green · CSS 76,515B/83,968B.
 
-**▶ NEXT: STOP-GATE #1 — NY pillar (`/find-an-accountant/new-york/`) + 1 NY child.** t-location is the only
-state built out; the pillar is the template-quality bar → prove it elevated SOLO, founder reviews, then fan
-out NY children. Then honest-triage (STOP-GATE #2) · Wave-2 registry types. Resume from the "🔵 FRESH-SESSION
-RESUME" block in BUILD-TRACKER.
+## Update 2026-06-17 (session 2 cont. — STOP-GATE #1: NY pillar + 1 NY child)
+**✅ STOP-GATE #1 PROVED (`d72642d`).** Read the locked `State Pillar - Template.dc.html` — the elevated
+state-pillar hero is the **LIGHT split article-hero + signature T-account figure + trust chips**, NOT the legacy
+dark state-contour hero. That contour hero was a Code-authored migration-floor invention; the captured design
+supersedes it (design-ownership rule), so it's RETIRED for the pillar. Implementation:
+- **t-location layout**: added a `heroFigure` opt-in (default OFF), mirroring t-hub/t-guide — light split hero +
+  figure + trust when set, legacy dark-contour hero otherwise. Buttons non-inverted in the light variant.
+- **`/find-an-accountant/new-york/`** (pillar): `heroFigure: "taccount"` + 3 NY trust chips. equity GREEN
+  (72 baseline headings · 17 FAQ · 30 schema; the 2 removals — "Recent New York results." reframed to
+  "Representative New York outcomes." per R5, + "The monthly brief." — are PRE-EXISTING founder-ruled, not mine).
+  axe 0/36 · overflow clean 360/390/768 (sw 360/375/753) · CLS 0.
+- **`/find-an-accountant/new-york/cities/new-york-city/`** (1 NY child, flagship city): same elevated hero +
+  NYC trust chips. equity GREEN (21h · 8faq · 27schema) · axe 0/29 · overflow clean · CLS 0.
+- CA/TX/FL/IL landings + the other 37 NY children UNCHANGED (dark hero) — await fan-out. CSS 76,515B (no new CSS;
+  the split-hero/figure classes already existed). Battery green · design-fidelity · variety-12a.
+
+**⏸ STOP-GATE #1 — awaiting founder review of the NY pillar + child before fanning out the NY children.**
+**▶ NEXT (after OK):** fan out NY children per CONFIRMED re-tier rulings — cities (11) + industries (8) =
+elevated t-location hero; service children (13) + honest-triage (4) → RE-TIER to t-bofu; CA/TX/FL/IL landings =
+elevated t-location hero (neutral). Then STOP-GATE #2 (honest-triage copy) · Wave-2 registry types. Resume from
+the "🔵 FRESH-SESSION RESUME" block in BUILD-TRACKER.
