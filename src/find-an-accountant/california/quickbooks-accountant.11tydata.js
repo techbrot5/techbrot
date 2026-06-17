@@ -75,7 +75,7 @@ module.exports = {
   ],
   value: [
     { num: "01", title: "Monthly bookkeeping &amp; close", body: "Reconciled accounts, clean categorization, and CPA-ready statements every month &mdash; with CDTFA sales tax and the $800 franchise tax tracked.", href: "/find-an-accountant/california/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
-    { num: "02", title: "QuickBooks setup &amp; cleanup", body: "A California-correct chart of accounts, district sales-tax items by location, and a cleanup to a CPA-ready standard when the file has fallen behind.", href: "/quickbooks/cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "02", title: "QuickBooks setup &amp; cleanup", body: "A California-correct chart of accounts, district sales-tax items by location, and a cleanup to a CPA-ready standard when the file has fallen behind.", href: "/find-an-accountant/california/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
     { num: "03", title: "District sales tax, configured right", body: "QuickBooks set to the correct combined CDTFA rate by customer location &mdash; not a flat statewide rate &mdash; so the return ties.", href: "/accounting/sales-tax-compliance/", cta: "Sales tax help &rarr;" },
     { num: "04", title: "AB5 contractor tracking", body: "W-2 wages and 1099 contractor pay separated cleanly, with the misclassification exposure surfaced before the EDD sees it.", href: "/find-an-accountant/california/", cta: "California overview &rarr;" },
     { num: "05", title: "Payroll coordination", body: "California payroll configured for SDI, PIT withholding, and EDD reporting, coordinated with your payroll provider and CPA.", href: "/quickbooks/payroll/", cta: "Payroll &rarr;" },
