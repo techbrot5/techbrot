@@ -313,9 +313,9 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 184 · re-skinned (142) + growth = 42 · LAST COMMIT = round-31 TX-cities-wave-1
-(5 TX city children: houston, dallas, austin, san-antonio, fort-worth). Working tree clean on `preview-11ty`.
-State coverage: NY full tree · CA 11 cities · TX 5 cities · CA/TX/FL/IL/NY landings.** Dev server: `npm run serve` → http://192.168.1.7:8080/
+**COUNT: total pages live = 189 · re-skinned (142) + growth = 47 · LAST COMMIT = round-32 FL-cities-wave-1
+(5 FL city children: miami, orlando, tampa, jacksonville, fort-lauderdale). Working tree clean on `preview-11ty`.
+State coverage: NY full tree · CA 11 cities · TX 5 cities · FL 5 cities · CA/TX/FL/IL/NY landings. City children = 21.** Dev server: `npm run serve` → http://192.168.1.7:8080/
 (data-file edits need a server restart; a clean `npx @11ty/eleventy` reflects them). PROBE via 127.0.0.1 (8125 =
 _site-prod, 8090 = _site + axe.min.js) — the probe scripts' hardcoded `localhost` resolves to IPv6 → empty output.
 **⚠ HEADLESS-CHROME PROBES NON-FUNCTIONAL THIS MACHINE** — `chrome --headless=new --dump-dom` returns 0-length DOM
@@ -353,7 +353,13 @@ Houston oil&gas/Port/medical · Dallas corporate/finance/tech multi-entity · Au
 military/cyber/tourism · Fort Worth Barnett-gas/aerospace/ranching. Shared TX tax stack (no income tax → franchise
 "margin" tax → 8.25% sales tax) + a varied 3rd tax item per city (severance/BPP/HOT). The shared city-child template
 is state-agnostic (new state = data files only). Battery GREEN; honesty held (deferred to TX Comptroller/cities/CPA).
-Detail: `_build/reports/round-31-tx-cities-w1.md`. **City children now = 16 (11 CA + 5 TX).**
+Detail: `_build/reports/round-31-tx-cities-w1.md`. **City children now = 16 (11 CA + 5 TX).** ·
+✅ **FL CITIES WAVE 1 (round 32, 5 children: Miami · Orlando · Tampa · Jacksonville · Fort Lauderdale)** — NEW STATE.
+FL = no personal income tax BUT 5.5% C-corp income tax (distinct from TX); Florida DOR. Per-city distinctness via
+economy + a different FL-specific tax item each: Miami commercial-rent sales tax · Orlando Tourist Development Tax ·
+Tampa tangible-personal-property (DR-405) · Jacksonville reemployment (RT-6) tax · Fort Lauderdale boat sales-tax cap.
+Battery GREEN; honesty held (deferred to FL DOR/county/CPA). Detail: `_build/reports/round-32-fl-cities-w1.md`.
+**City children now = 21 (11 CA + 5 TX + 5 FL).**
 
 **▶ NEXT — FAN OUT THE STATE CLUSTER, FULLY AUTONOMOUS, ALL 50 STATES CONTINUOUSLY:**
 order = **CA cities + industries → TX → FL → IL → then the remaining states.** Patterns PROVEN, reuse them:
