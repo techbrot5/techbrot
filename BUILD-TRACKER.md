@@ -313,8 +313,9 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 174 · re-skinned (142) + growth = 32 · LAST COMMIT = round-29 CA-cities-wave-1
-(5 CA city children). Working tree clean on `preview-11ty`.** Dev server: `npm run serve` → http://192.168.1.7:8080/
+**COUNT: total pages live = 179 · re-skinned (142) + growth = 37 · LAST COMMIT = round-30 CA-cities-wave-2
+(5 more CA city children: fresno, long-beach, anaheim, riverside, bakersfield). Working tree clean on `preview-11ty`.
+CA cities now = 11 (SF proof + LA/SD/SJ/Sac/Oak + Fresno/LB/Anaheim/Riverside/Bakersfield).** Dev server: `npm run serve` → http://192.168.1.7:8080/
 (data-file edits need a server restart; a clean `npx @11ty/eleventy` reflects them). PROBE via 127.0.0.1 (8125 =
 _site-prod, 8090 = _site + axe.min.js) — the probe scripts' hardcoded `localhost` resolves to IPv6 → empty output.
 **⚠ HEADLESS-CHROME PROBES NON-FUNCTIONAL THIS MACHINE** — `chrome --headless=new --dump-dom` returns 0-length DOM
@@ -341,7 +342,11 @@ hero+intro width = --measure-prose, triage amber disclosure, standing rules R8 U
 city-tax mechanism (mad-libs FAILS): LA gross-receipts LABT+Measure ULA · SD employee-certificate (no GR tax) ·
 SJ per-employee · Sacramento gross-receipts BOT + capital econ · Oakland progressive Measure T + cannabis §280E.
 Built on the new shared city-child architecture; battery GREEN; honesty held (deferred to authorities/CPA,
-founder-name-zero). Detail: `_build/reports/round-29-ca-cities-w1.md`.
+founder-name-zero). Detail: `_build/reports/round-29-ca-cities-w1.md`. ·
+✅ **CA CITIES WAVE 2 (round 30, 5 children: Fresno · Long Beach · Anaheim · Riverside · Bakersfield)** — Fresno
+ag sales-tax exemptions · Long Beach own-city-tax (NOT LA's) + Port logistics · Anaheim TOT-as-liability/tourism ·
+Riverside Inland-Empire distribution + multi-state nexus · Bakersfield oil & gas JIB/royalty/LOS + Kern ag.
+Battery GREEN; honesty held. Detail: `_build/reports/round-30-ca-cities-w2.md`. **CA cities = 11 total.**
 
 **▶ NEXT — FAN OUT THE STATE CLUSTER, FULLY AUTONOMOUS, ALL 50 STATES CONTINUOUSLY:**
 order = **CA cities + industries → TX → FL → IL → then the remaining states.** Patterns PROVEN, reuse them:
