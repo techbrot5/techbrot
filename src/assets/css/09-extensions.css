@@ -669,3 +669,16 @@
 .lead-magnet__cta { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 44px; padding: 0 var(--space-5); background: var(--surface-card); color: var(--color-ink); border-radius: var(--radius-md); font-size: var(--fs-14); font-weight: var(--fw-medium); flex: none; transition: transform var(--motion-fast) var(--ease-out); }
 .lead-magnet__cta:hover { background: var(--color-ink-inverted); }
 .lead-magnet__cta:active { transform: translateY(1px); }
+
+/* ============================================================================
+   HONEST-TRIAGE DISCLOSURE — amber ATF banner (capture: Honest Triage template +
+   Gallery 06). The unmissable "we're not Intuit · route billing/login to Intuit"
+   signal above the fold. Token-only (the --caution-* amber group). Opt-in via
+   .disclosure--warn so non-triage disclosures keep the plain treatment.
+   ============================================================================ */
+.disclosure--warn { display: flex; gap: var(--space-3); align-items: flex-start; border: 1px solid var(--caution-border); border-radius: var(--radius-lg); background: var(--caution-soft); padding: var(--space-4) var(--space-5); color: var(--caution-deep); }
+.disclosure--warn::before { content: none; }
+.disclosure--warn .disclosure__icon { flex: none; margin-top: 2px; }
+.disclosure--warn .disclosure__body { min-width: 0; }
+.disclosure--warn strong { color: var(--caution-deep); }
+.disclosure--warn a { color: var(--caution-deep); text-decoration: underline; }
