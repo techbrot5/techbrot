@@ -44,7 +44,7 @@ callBar: true
         <h1 class="hero__heading">{{ hero.heading | safe }}</h1>
         <p class="hero__subheading">{{ hero.subheading | safe }}</p>
         <div class="hero__actions">
-          {%- for action in hero.actions %}
+          {%- for action in hero.actions.slice(0, 2) %}
           <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
             {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
           {%- endfor %}
@@ -68,7 +68,7 @@ callBar: true
       <h1 class="hero__heading">{{ hero.heading | safe }}</h1>
       <p class="hero__subheading">{{ hero.subheading | safe }}</p>
       <div class="hero__actions">
-        {%- for action in hero.actions %}
+        {%- for action in hero.actions.slice(0, 2) %}
         <a class="btn {{ action.class }} btn--inverted btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
           {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
         {%- endfor %}

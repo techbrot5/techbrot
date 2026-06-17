@@ -41,7 +41,7 @@ pageTier: guide
         <p class="hero__subheading">{{ hero.subheading | safe }}</p>
         {%- if hero.actions %}
         <div class="hero__actions">
-          {%- for action in hero.actions %}
+          {%- for action in hero.actions.slice(0, 2) %}
           <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
             {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
           {%- endfor %}
@@ -66,7 +66,7 @@ pageTier: guide
       <p class="hero__subheading">{{ hero.subheading | safe }}</p>
       {%- if hero.actions %}
       <div class="hero__actions">
-        {%- for action in hero.actions %}
+        {%- for action in hero.actions.slice(0, 2) %}
         <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
           {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
         {%- endfor %}

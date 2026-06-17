@@ -26,7 +26,7 @@
     <h1 class="util-hero__heading">{{ hero.heading | safe }}</h1>
     {%- if hero.subheading %}<p class="util-hero__lede">{{ hero.subheading | safe }}</p>{%- endif %}
     <div class="util-hero__actions">
-      {%- for action in hero.actions %}
+      {%- for action in hero.actions.slice(0, 2) %}
       {%- if action.tel or (action.href and action.href.startsWith("tel:")) %}
       <a class="phone-cta" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">
         <span class="phone-cta__icon">{% include "icons/phone.svg" %}</span>
