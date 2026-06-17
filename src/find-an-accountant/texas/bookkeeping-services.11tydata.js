@@ -1,0 +1,130 @@
+/* /find-an-accountant/texas/bookkeeping-services/ — TX SERVICE CHILD (money).
+ * t-bofu · partials/state-service-body.njk. TX-localized: margin tax / 8.25% sales / BPP. */
+const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
+const TX_FACTS = [
+  { fig: "8.25%", title: "Sales tax baked into the books", body: "Texas sales &amp; use tax is 6.25% state plus up to 2% local (8.25% in most metros), via the <strong>Texas Comptroller</strong>. Bookkeeping that records it correctly by location is the difference between a return that ties and one that doesn&rsquo;t." },
+  { fig: "No income tax", title: "No income tax, but the margin tax tracks here", body: "Texas has no state income tax, but the <strong>franchise (&ldquo;margin&rdquo;) tax</strong> is computed from figures your books produce. Clean bookkeeping is what lets your CPA file the margin tax accurately." },
+  { fig: "BPP", title: "Fixed assets ready to render", body: "Texas businesses annually <strong>render</strong> equipment, furniture, and inventory to the county appraisal district for property tax. A maintained fixed-asset schedule in the books makes the rendition straightforward; valuation stays with your CPA." },
+];
+const TX_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Texas businesses remotely across all 254 counties. Texas tax figures &mdash; no state income tax, the franchise (margin) tax, 8.25% sales tax, and business personal property rendition &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://comptroller.texas.gov/\" rel=\"noopener nofollow\">Texas Comptroller of Public Accounts</a>. TechBrot provides bookkeeping and QuickBooks work and coordinates with your CPA, who files; we do not file Texas tax returns.";
+const TX_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the Texas Comptroller of Public Accounts &middot; No tax-filing claims (out of scope) &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-bofu.njk",
+  permalink: "/find-an-accountant/texas/bookkeeping-services/",
+  slug: "tx-svc-bookkeeping",
+  tierClass: "section--tier-bofu",
+  bodyClass: "page--bofu",
+  callBar: true,
+  heroFigure: "taccount",
+  title: "Texas Bookkeeping Services · TechBrot",
+  description: "Bookkeeping services for Texas businesses — reconciliation, clean categorization, 8.25% sales tax, fixed-asset records for BPP, CPA-ready statements. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "Texas", href: "/find-an-accountant/texas/" },
+    { name: "Bookkeeping Services" },
+  ],
+  bookHref: "/contact/?intent=texas&state=texas&source_type=state-money&funnel_stage=MOFU",
+  hero: {
+    eyebrow: "Texas &middot; Bookkeeping Services",
+    heading: "Texas bookkeeping that keeps the Comptroller&rsquo;s math clean.",
+    subheading: "Reconciliation, clean categorization, 8.25% sales tax recorded by location, and fixed-asset records ready for the rendition &mdash; delivered in your own QuickBooks file by one named Certified ProAdvisor. Fixed-fee, all 254 counties. We keep the books; your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=texas&state=texas&source_type=state-money&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> provides <strong>bookkeeping services for Texas businesses</strong> &mdash; a named Certified ProAdvisor reconciles your accounts, keeps categorization clean, records 8.25% sales tax correctly by location, maintains fixed-asset records for the business personal property rendition, and produces CPA-ready monthly statements in your own QuickBooks file. Fixed-fee, all 254 counties. Full summary below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Texas tax references reflect Comptroller rules current as of the review date; TechBrot does not file Texas taxes.",
+  },
+  ctaBand: {
+    eyebrow: "Texas businesses start here",
+    heading: "Want Texas bookkeeping that just stays clean?",
+    lede: "Book a free discovery call. We&rsquo;ll review your QuickBooks file, tell you honestly whether you need cleanup, monthly bookkeeping, or both, and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file TX taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=texas&state=texas&source_type=state-money&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  stateName: "Texas",
+  copy: {
+    aiHeading: "Texas bookkeeping services, in five questions.",
+    valueEyebrow: "What Texas bookkeeping covers",
+    valueHeading: "Clean books, every month, by one named expert.",
+    valueLede: "Scoped to your business and delivered in your own QuickBooks file by the same Certified ProAdvisor every month.",
+    factsEyebrow: "Texas tax realities your books must capture",
+    factsHeading: "Three Texas facts good bookkeeping never misses.",
+    factsLede: "Bookkeeping in Texas isn&rsquo;t generic &mdash; these three obligations decide how transactions and assets are recorded.",
+    faqHeading: "Texas bookkeeping services questions.",
+  },
+  summary: "<strong>TechBrot</strong> provides <strong>bookkeeping services for Texas businesses</strong> &mdash; a named Certified ProAdvisor handles reconciliation, clean categorization, <strong>8.25% sales tax</strong> recorded correctly by location, fixed-asset records maintained for the annual <strong>business personal property</strong> rendition, and CPA-ready monthly statements. Texas has <strong>no state income tax</strong>, but the <a href=\"/find-an-accountant/texas/franchise-tax-help/\">franchise (margin) tax</a> is computed from your books &mdash; so clean bookkeeping is what lets your CPA file accurately. In your own <a href=\"/quickbooks/online/\">QuickBooks Online</a> or hosted Desktop file across all 254 counties, fixed-fee against a written scope ($400&ndash;$2,500+/mo). Independent firm &mdash; not affiliated with Intuit Inc.",
+  aiSummary: [
+    { q: "What do Texas bookkeeping services include?", a: "<strong>Reconciliation, clean categorization, 8.25% sales tax recorded by location, fixed-asset records for the BPP rendition, and CPA-ready monthly statements</strong> &mdash; in your own QuickBooks file, by a named ProAdvisor, every month. We do the books; your CPA files." },
+    { q: "Why does Texas bookkeeping need to be Texas-specific?", a: "Because the <strong>8.25% sales tax</strong> must be recorded correctly by location for the Comptroller return to tie, the <strong>franchise (margin) tax</strong> is computed from your books, and the annual <strong>business personal property</strong> rendition needs a maintained fixed-asset schedule. Generic bookkeeping misses all three." },
+    { q: "Do you work in my own QuickBooks file?", a: "Yes &mdash; your file, your data, in <strong>QuickBooks Online or hosted Desktop</strong>, with a named ProAdvisor on the same file every month." },
+    { q: "What does it cost?", a: "Fixed-fee against a written scope, never hourly: monthly bookkeeping <strong>$400&ndash;$2,500+/mo</strong>; one-time cleanup <strong>$1,500&ndash;$15,000+</strong>. Exact fee in writing within 3 business days." },
+    { q: "Do you file Texas taxes?", a: "No &mdash; TechBrot keeps the books CPA-ready and coordinates with your CPA, who files. Independent firm; not affiliated with Intuit Inc." },
+  ],
+  value: [
+    { num: "01", title: "Reconciliation &amp; categorization", body: "Every account reconciled and every transaction categorized to a clean, Texas-correct chart of accounts each month.", href: "/find-an-accountant/texas/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { num: "02", title: "Sales tax recorded right", body: "8.25% sales tax recorded by location so the Comptroller return ties &mdash; no manual cleanup at filing time.", href: "/find-an-accountant/texas/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "03", title: "Fixed-asset schedule maintained", body: "Equipment, furniture, and inventory tracked so the business personal property rendition is straightforward.", href: "/find-an-accountant/texas/franchise-tax-help/", cta: "Franchise &amp; property tax &rarr;" },
+    { num: "04", title: "Cleanup &amp; catch-up", body: "Behind by months or years? A one-time cleanup brings the file to a CPA-ready standard before monthly cadence starts.", href: "/quickbooks/cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "05", title: "CPA-ready statements", body: "P&amp;L, balance sheet, and cash-flow delivered monthly in a format your CPA can file from directly.", href: "/accounting/financial-statements/", cta: "Financial statements &rarr;" },
+    { num: "06", title: "Advisory, when ready", body: "Once the books are clean, fractional-CFO advisory on the global team &mdash; forecasting and cash-flow.", href: "/accounting/advisory/fractional-cfo/", cta: "Fractional CFO &rarr;" },
+  ],
+  facts: TX_FACTS,
+  scopeDo: [
+    "Reconcile every account and categorize every transaction each month",
+    "Maintain a Texas-correct chart of accounts",
+    "Record 8.25% sales tax correctly by location",
+    "Maintain a fixed-asset schedule ready for the BPP rendition",
+    "Produce CPA-ready monthly financial statements",
+    "Clean up and catch up a file that has fallen behind",
+  ],
+  scopeDont: [
+    "File the Texas franchise (margin) tax or sales-tax returns",
+    "File the business personal property rendition or handle valuation",
+    "Represent you before the Texas Comptroller",
+    "Provide legal or tax advice",
+  ],
+  process: [
+    { phase: "Step 1", title: "Free file review", body: "A Certified ProAdvisor reviews your QuickBooks file and Texas situation at no cost." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "Within 3 business days you get a written scope and fixed fee. No hourly billing." },
+    { phase: "Step 3", title: "Cleanup, if needed", body: "If the file has fallen behind, we bring it to a CPA-ready standard first." },
+    { phase: "Step 4", title: "Monthly cadence", body: "A named ProAdvisor keeps the file reconciled and current every month." },
+  ],
+  advisoryBody: [
+    "Bookkeeping is where Texas tax compliance is won or lost: the 8.25% sales tax has to be recorded correctly as transactions happen, the margin tax is only as accurate as the books behind it, and the BPP rendition depends on a fixed-asset schedule nobody kept. Clean bookkeeping makes all three a non-event.",
+    "Start with accurate books, then extend &mdash; when you&rsquo;re ready &mdash; into <a href=\"/accounting/advisory/fractional-cfo/\">fractional-CFO advisory</a>, in coordination with your CPA.",
+  ],
+  faq: [
+    { q: "What's included in Texas bookkeeping services?", a: "Reconciliation, clean categorization to a Texas-correct chart of accounts, 8.25% sales tax recorded correctly by location, a maintained fixed-asset schedule for the business personal property rendition, and CPA-ready monthly statements &mdash; all in your own QuickBooks file, by a named ProAdvisor. We do the books; your CPA files." },
+    { q: "Why does Texas bookkeeping have to be Texas-specific?", a: "Because the 8.25% sales tax must be recorded correctly by location for the Comptroller return to tie, the franchise (margin) tax is computed directly from your books, and the annual business personal property rendition needs a fixed-asset schedule. Generic bookkeeping that ignores those three creates filing problems your CPA has to untangle." },
+    { q: "Do you work in my existing QuickBooks file?", a: "Yes &mdash; your file, your data, in QuickBooks Online or hosted Desktop, with a named ProAdvisor on the same file every month. We can set up or migrate the file if needed." },
+    { q: "Can you clean up a messy file first?", a: "Yes. If the file is behind by months or years, or sales tax was misconfigured, we scope a one-time cleanup to a CPA-ready standard, then move into monthly bookkeeping so it stays clean." },
+    { q: "How much do Texas bookkeeping services cost?", a: "Fixed-fee against a written scope, never hourly. Monthly bookkeeping runs $400&ndash;$2,500+/mo by volume and accounts; one-time cleanup runs $1,500&ndash;$15,000+. Exact fee in writing within 3 business days of a free discovery call." },
+    { q: "Do you file my Texas taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor and bookkeeping firm &mdash; we keep the books CPA-ready and coordinate with your CPA, who files the franchise (margin) tax and sales tax and handles the BPP rendition. We are not affiliated with Intuit Inc." },
+  ],
+  reviewProse: TX_REVIEW_PROSE,
+  reviewCreds: TX_REVIEW_CREDS,
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/texas/bookkeeping-services/",
+    name: "Texas Bookkeeping Services",
+    description: "Bookkeeping services for Texas businesses — reconciliation, clean categorization, 8.25% sales tax by location, fixed-asset records for the BPP rendition, and CPA-ready statements in your own QuickBooks file across all 254 counties. Independent firm; does not file Texas taxes.",
+    serviceName: "Texas Bookkeeping Services",
+    serviceType: "Bookkeeping services",
+    serviceDesc: "Reconciliation, categorization, 8.25% sales-tax recording by location, fixed-asset schedule maintenance for the business personal property rendition, cleanup, and CPA-ready monthly statements for Texas businesses across all 254 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns.",
+    areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
+    audienceType: "Texas small and midsize businesses across all 254 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};

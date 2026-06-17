@@ -1,0 +1,130 @@
+/* /find-an-accountant/texas/virtual-bookkeeper/ — TX SERVICE CHILD (money).
+ * t-bofu · partials/state-service-body.njk. TX-localized: margin tax / 8.25% sales / BPP. */
+const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
+const TX_FACTS = [
+  { fig: "254", title: "All 254 counties, one named ProAdvisor", body: "A virtual bookkeeper means the same Certified ProAdvisor works your file from anywhere in Texas &mdash; Houston to El Paso, all 254 counties &mdash; on your own QuickBooks Online or hosted Desktop file. Location changes the sales-tax rate, never the service." },
+  { fig: "8.25%", title: "Sales tax configured remotely, correctly", body: "Texas sales &amp; use tax is 6.25% state plus up to 2% local (8.25% in most metros), via the <strong>Texas Comptroller</strong>. A virtual ProAdvisor configures it to your exact location so the return ties." },
+  { fig: "No income tax", title: "No income tax &mdash; margin tax still tracked", body: "Texas has no state income tax, but the <strong>franchise (&ldquo;margin&rdquo;) tax</strong> and the annual <strong>business personal property</strong> rendition still apply. We track both remotely in the books; your CPA files." },
+];
+const TX_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Texas businesses remotely across all 254 counties. Texas tax figures &mdash; no state income tax, the franchise (margin) tax, 8.25% sales tax, and business personal property rendition &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://comptroller.texas.gov/\" rel=\"noopener nofollow\">Texas Comptroller of Public Accounts</a>. TechBrot provides remote bookkeeping and QuickBooks work and coordinates with your CPA, who files; we do not file Texas tax returns.";
+const TX_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the Texas Comptroller of Public Accounts &middot; No tax-filing claims (out of scope) &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-bofu.njk",
+  permalink: "/find-an-accountant/texas/virtual-bookkeeper/",
+  slug: "tx-svc-virtual",
+  tierClass: "section--tier-bofu",
+  bodyClass: "page--bofu",
+  callBar: true,
+  heroFigure: "taccount",
+  title: "Texas Virtual Bookkeeper · TechBrot",
+  description: "Virtual bookkeeper for Texas businesses — remote reconciliation, 8.25% sales tax, the franchise (margin) tax tracked, CPA-ready statements in your own QuickBooks file. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "Texas", href: "/find-an-accountant/texas/" },
+    { name: "Virtual Bookkeeper" },
+  ],
+  bookHref: "/contact/?intent=texas&state=texas&source_type=state-money&funnel_stage=MOFU",
+  hero: {
+    eyebrow: "Texas &middot; Virtual Bookkeeper",
+    heading: "A virtual bookkeeper for Texas &mdash; same expert, every month, anywhere in the state.",
+    subheading: "Remote reconciliation, clean categorization, 8.25% sales tax configured to your location, and CPA-ready statements &mdash; in your own QuickBooks file, by one named Certified ProAdvisor, across all 254 counties. We keep the books; your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=texas&state=texas&source_type=state-money&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> is a <strong>virtual bookkeeper for Texas businesses</strong> &mdash; a named Certified ProAdvisor works your QuickBooks file remotely every month: reconciliation, clean categorization, 8.25% sales tax configured to your location, the franchise (margin) tax tracked, business personal property records maintained, and CPA-ready statements. All 254 counties, fixed-fee. Full summary below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Texas tax references reflect Comptroller rules current as of the review date; TechBrot does not file Texas taxes.",
+  },
+  ctaBand: {
+    eyebrow: "Texas businesses start here",
+    heading: "Ready for a virtual bookkeeper who actually knows your file?",
+    lede: "Book a free discovery call. We&rsquo;ll review your QuickBooks file, tell you honestly what you need, and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file TX taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=texas&state=texas&source_type=state-money&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  stateName: "Texas",
+  copy: {
+    aiHeading: "Texas virtual bookkeeper, in five questions.",
+    valueEyebrow: "What a virtual bookkeeper handles in Texas",
+    valueHeading: "Full remote bookkeeping, one named expert.",
+    valueLede: "Scoped to your business and delivered remotely in your own QuickBooks file by the same Certified ProAdvisor every month.",
+    factsEyebrow: "Why remote works perfectly in Texas",
+    factsHeading: "Three Texas facts a virtual bookkeeper handles remotely.",
+    factsLede: "Texas bookkeeping is location-aware but fully remote &mdash; here&rsquo;s what a virtual ProAdvisor manages from anywhere.",
+    faqHeading: "Texas virtual bookkeeper questions.",
+  },
+  summary: "<strong>TechBrot</strong> is a <strong>virtual bookkeeper for Texas businesses</strong> &mdash; a named Certified ProAdvisor works your QuickBooks file remotely every month: reconciliation, clean categorization, <strong>8.25% sales tax</strong> configured to your exact location, the <a href=\"/find-an-accountant/texas/franchise-tax-help/\">franchise (margin) tax</a> position tracked, <strong>business personal property</strong> records maintained, and CPA-ready statements. Texas has <strong>no state income tax</strong>, and remote delivery works across all 254 counties &mdash; your location changes the sales-tax rate, never the service or the named ProAdvisor. In your own <a href=\"/quickbooks/online/\">QuickBooks Online</a> or hosted Desktop file, fixed-fee against a written scope ($400&ndash;$2,500+/mo). Independent firm &mdash; not affiliated with Intuit Inc.",
+  aiSummary: [
+    { q: "What is a virtual bookkeeper in Texas?", a: "<strong>A Certified QuickBooks ProAdvisor who works your books remotely</strong> &mdash; reconciliation, categorization, 8.25% sales tax configured to your location, the margin-tax position tracked, BPP records maintained, and CPA-ready statements, in your own QuickBooks file, same expert every month. We do the books; your CPA files." },
+    { q: "Does remote bookkeeping work for Texas tax?", a: "Yes &mdash; everything is cloud-based. <strong>8.25% sales tax</strong> is configured to your exact location remotely, the <strong>franchise (margin) tax</strong> is tracked from your books, and the <strong>business personal property</strong> schedule is maintained &mdash; all without an on-site visit." },
+    { q: "Do you work in my own QuickBooks file?", a: "Yes &mdash; your file, your data, in <strong>QuickBooks Online or hosted Desktop</strong>, with a named ProAdvisor on the same file every month, from anywhere in Texas." },
+    { q: "What does it cost?", a: "Fixed-fee against a written scope, never hourly: <strong>$400&ndash;$2,500+/mo</strong> by volume and accounts; one-time cleanup <strong>$1,500&ndash;$15,000+</strong>. Exact fee in writing within 3 business days." },
+    { q: "Do you file Texas taxes?", a: "No &mdash; TechBrot keeps the books CPA-ready and coordinates with your CPA, who files. Independent firm; not affiliated with Intuit Inc." },
+  ],
+  value: [
+    { num: "01", title: "Remote monthly bookkeeping", body: "Reconciled accounts, clean categorization, and CPA-ready statements every month &mdash; entirely remote.", href: "/find-an-accountant/texas/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { num: "02", title: "Sales tax configured to your location", body: "8.25% sales tax set to your exact Texas combined rate and reconciled so the Comptroller return ties.", href: "/find-an-accountant/texas/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "03", title: "Margin tax &amp; BPP tracked", body: "The franchise-tax position and fixed-asset schedule maintained remotely so your CPA can file the margin tax and the rendition.", href: "/find-an-accountant/texas/franchise-tax-help/", cta: "Franchise tax help &rarr;" },
+    { num: "04", title: "Cleanup, fully remote", body: "A behind or messy file brought to a CPA-ready standard without an on-site visit.", href: "/quickbooks/cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "05", title: "Payroll coordination", body: "Texas payroll configured and coordinated with your provider remotely &mdash; federal and unemployment handled cleanly.", href: "/quickbooks/payroll/", cta: "Payroll &rarr;" },
+    { num: "06", title: "Advisory, when ready", body: "Once the books are clean, fractional-CFO advisory on the global team &mdash; forecasting and cash-flow.", href: "/accounting/advisory/fractional-cfo/", cta: "Fractional CFO &rarr;" },
+  ],
+  facts: TX_FACTS,
+  scopeDo: [
+    "Work your QuickBooks Online or Desktop file remotely every month",
+    "Reconcile accounts and maintain a Texas-correct chart of accounts",
+    "Configure 8.25% sales tax to your exact location and reconcile it",
+    "Track the franchise (margin) tax position and maintain the BPP fixed-asset schedule",
+    "Coordinate Texas payroll and produce CPA-ready statements",
+    "Clean up a behind or messy file &mdash; entirely remote",
+  ],
+  scopeDont: [
+    "File the Texas franchise (margin) tax or sales-tax returns",
+    "File the business personal property rendition or handle valuation",
+    "Represent you before the Texas Comptroller",
+    "Provide legal or tax advice",
+  ],
+  process: [
+    { phase: "Step 1", title: "Free file review", body: "A Certified ProAdvisor reviews your QuickBooks file and Texas situation remotely at no cost." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "Within 3 business days you get a written scope and fixed fee. No hourly billing." },
+    { phase: "Step 3", title: "Secure remote access", body: "We connect to your QuickBooks Online or hosted Desktop file securely &mdash; no on-site visit needed." },
+    { phase: "Step 4", title: "Monthly cadence", body: "A named ProAdvisor keeps the file clean every month and hands CPA-ready statements to your CPA." },
+  ],
+  advisoryBody: [
+    "Texas is built for remote bookkeeping: no state income tax to localize, sales tax that&rsquo;s configured by location in software, and a margin tax computed from the books &mdash; all manageable from anywhere by a named ProAdvisor who knows your file. The value is the same expert every month, not a rotating queue.",
+    "Start with accurate books, then extend &mdash; when you&rsquo;re ready &mdash; into <a href=\"/accounting/advisory/fractional-cfo/\">fractional-CFO advisory</a>, in coordination with your CPA.",
+  ],
+  faq: [
+    { q: "What does a virtual bookkeeper do in Texas?", a: "A Certified QuickBooks ProAdvisor works your books remotely &mdash; reconciliation, clean categorization, 8.25% sales tax configured to your location, the franchise (margin) tax position tracked, business personal property records maintained, payroll coordination, and CPA-ready statements &mdash; in your own QuickBooks file, the same expert every month. We do the books; your CPA files." },
+    { q: "Does remote bookkeeping really work for Texas businesses?", a: "Yes. Texas is well suited to it: there&rsquo;s no state income tax to localize, the 8.25% sales tax is configured by location in QuickBooks, the franchise (margin) tax is computed from the books, and the business personal property schedule is maintained digitally &mdash; all without an on-site visit." },
+    { q: "Do you work in my existing QuickBooks file?", a: "Yes &mdash; your file, your data, in QuickBooks Online or hosted Desktop, with a named ProAdvisor on the same file every month, from anywhere in Texas. We can set up or migrate the file if needed." },
+    { q: "Do you serve my city or county?", a: "All 254 Texas counties &mdash; Houston, Dallas, Austin, San Antonio, Fort Worth, El Paso and everywhere between &mdash; delivered remotely. Your location changes the sales-tax rate, never the service or the named ProAdvisor." },
+    { q: "How much does a Texas virtual bookkeeper cost?", a: "Fixed-fee against a written scope, never hourly. Monthly bookkeeping runs $400&ndash;$2,500+/mo by volume and accounts; one-time cleanup runs $1,500&ndash;$15,000+. Exact fee in writing within 3 business days of a free discovery call." },
+    { q: "Do you file my Texas taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books CPA-ready and coordinate with your CPA, who files the franchise (margin) tax and sales tax and handles the BPP rendition. We are not affiliated with Intuit Inc." },
+  ],
+  reviewProse: TX_REVIEW_PROSE,
+  reviewCreds: TX_REVIEW_CREDS,
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/texas/virtual-bookkeeper/",
+    name: "Texas Virtual Bookkeeper",
+    description: "Virtual bookkeeper for Texas businesses — remote reconciliation, 8.25% sales tax by location, the franchise (margin) tax tracked, BPP records, and CPA-ready statements in your own QuickBooks file across all 254 counties. Independent firm; does not file Texas taxes.",
+    serviceName: "Texas Virtual Bookkeeping Services",
+    serviceType: "Virtual (remote) bookkeeping services",
+    serviceDesc: "Remote reconciliation, categorization, 8.25% sales-tax configuration by location, franchise (margin) tax tracking, business personal property record-keeping, payroll coordination, and CPA-ready statements for Texas businesses across all 254 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns.",
+    areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
+    audienceType: "Texas small and midsize businesses across all 254 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};

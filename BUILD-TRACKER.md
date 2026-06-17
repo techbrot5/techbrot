@@ -322,10 +322,12 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 221 · re-skinned (142) + growth = 79 · LAST COMMIT = round-39 CA-COMPLETE
-(speak-to-a-proadvisor + pricing + pillar ecosystem re-link). Working tree clean on `preview-11ty`.
-✅ CALIFORNIA COMPLETE (v4 full child set = 39 CA pages: pillar + 19 services + 6 industries + 2 hubs + 11 cities).
-FOUR state child templates (city-child · state-service · state-triage · state-industry). PHASE = DEPTH (NY ✅ · CA ✅ · TX/FL/IL next).
+**COUNT: total pages live = 228 · re-skinned (142) + growth = 86 · LAST COMMIT = round-40 TX-money+tax
+(7 pages: TX money/bkg 5 + TX tax cluster 2). Working tree clean on `preview-11ty`.
+✅ CALIFORNIA COMPLETE (39). TEXAS IN PROGRESS = pillar + 5 cities + 7 services (money 5/6 [speak HELD] · tax 2/2 ✅ · bkg-spoke monthly ✅).
+FOUR state child templates (city-child · state-service · state-triage · state-industry). PHASE = DEPTH (NY ✅ · CA ✅ · TX in progress · FL/IL next).
+⚑ FOUNDER GATE (2026-06-17): TX triage page speak-to-a-proadvisor HELD pending CA-disclosure sign-off; all non-triage TX proceeds.
+⚑ TODO: re-link the 5 TX money pages' quickbooks-cleanup ref off the global `/quickbooks/cleanup/` to the TX QB-cleanup spoke when built (next wave).
 ⚑ FOUNDER SPOT-CHECK PENDING: the 3 CA honest-triage disclosures (state-tax-notice-help, business-tax-problems, speak-to-a-proadvisor).** Dev server: `npm run serve` → http://192.168.1.7:8080/
 (data-file edits need a server restart; a clean `npx @11ty/eleventy` reflects them). PROBE via 127.0.0.1 (8125 =
 _site-prod, 8090 = _site + axe.min.js) — the probe scripts' hardcoded `localhost` resolves to IPv6 → empty output.
