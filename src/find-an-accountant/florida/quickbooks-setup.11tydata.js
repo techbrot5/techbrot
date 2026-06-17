@@ -33,7 +33,7 @@ module.exports = {
   hero: {
     eyebrow: "Florida &middot; QuickBooks Setup",
     heading: "Florida QuickBooks setup, done right the first time.",
-    subheading: "A Certified QuickBooks ProAdvisor sets up your Florida file properly &mdash; a FL-correct chart of accounts, 6%+surtax sales-tax items by county, the commercial-rent tax configured, a fixed-asset schedule for the TPP return, and payroll &mdash; so the books are right from transaction one. Fixed-fee, all 67 counties. We set it up; your CPA files.",
+    subheading: "A Certified QuickBooks ProAdvisor sets up your Florida file properly &mdash; a FL-correct chart of accounts, 6%+surtax sales-tax items by county, the taxability of services configured, a fixed-asset schedule for the TPP return, and payroll &mdash; so the books are right from transaction one. Fixed-fee, all 67 counties. We set it up; your CPA files.",
     actions: [
       { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=state-qb&funnel_stage=MOFU", class: "btn--primary" },
       { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
@@ -65,10 +65,10 @@ module.exports = {
     factsLede: "A generic QuickBooks setup misses these &mdash; and fixing them later is a cleanup. We configure them up front.",
     faqHeading: "Florida QuickBooks setup questions.",
   },
-  summary: "<strong>TechBrot</strong> provides <strong>QuickBooks setup for Florida businesses</strong> &mdash; a Certified QuickBooks ProAdvisor configures your <a href=\"/quickbooks/online/\">QuickBooks Online</a> or Desktop file to a Florida standard: a FL-correct chart of accounts, <strong>6%+surtax sales-tax items by county</strong> (not a flat statewide rate), the <a href=\"/find-an-accountant/florida/corporate-tax-help/\">commercial-rent tax</a> configured, a fixed-asset schedule for the annual <strong>tangible personal property</strong> return, and Florida payroll. Setup decisions made now shape years of bookkeeping, so the Florida specifics go in from transaction one. Fixed-fee against a written scope (typically $750&ndash;$5,000+ by complexity). Independent firm &mdash; not affiliated with Intuit Inc.; we set it up, your CPA files.",
+  summary: "<strong>TechBrot</strong> provides <strong>QuickBooks setup for Florida businesses</strong> &mdash; a Certified QuickBooks ProAdvisor configures your <a href=\"/quickbooks/online/\">QuickBooks Online</a> or Desktop file to a Florida standard: a FL-correct chart of accounts, <strong>6%+surtax sales-tax items by county</strong> (not a flat statewide rate), the <a href=\"/find-an-accountant/florida/corporate-tax-help/\">taxability of services</a> configured, a fixed-asset schedule for the annual <strong>tangible personal property</strong> return, and Florida payroll. Setup decisions made now shape years of bookkeeping, so the Florida specifics go in from transaction one. Fixed-fee against a written scope (typically $750&ndash;$5,000+ by complexity). Independent firm &mdash; not affiliated with Intuit Inc.; we set it up, your CPA files.",
   aiSummary: [
     { q: "What does Florida QuickBooks setup include?", a: "<strong>A FL-correct chart of accounts, 6%+surtax sales-tax items configured by county, the taxability of services, a fixed-asset schedule for the TPP return, and Florida payroll setup</strong> &mdash; by a Certified QuickBooks ProAdvisor in QuickBooks Online or Desktop. We set it up; your CPA files." },
-    { q: "Why does a Florida setup need a specialist?", a: "Because the Florida specifics are configured at setup or fixed later as a cleanup. <strong>Sales tax must be applied by county surtax</strong>, the <strong>commercial-rent tax</strong> recorded from leases, and a <strong>fixed-asset schedule</strong> built for the TPP return. A generic setup misses all three." },
+    { q: "Why does a Florida setup need a specialist?", a: "Because the Florida specifics are configured at setup or fixed later as a cleanup. <strong>Sales tax must be applied by county surtax</strong>, the <strong>taxability of services</strong> set up correctly, and a <strong>fixed-asset schedule</strong> built for the TPP return. A generic setup misses all three." },
     { q: "QuickBooks Online or Desktop?", a: "Whichever fits your business &mdash; we configure either, in your own file. QBO suits most Florida small businesses and hospitality/SaaS; Desktop or Enterprise suits some inventory- or job-cost-heavy operations. We&rsquo;ll recommend honestly and set it up." },
     { q: "What does setup cost?", a: "Fixed-fee against a written scope, typically <strong>$750&ndash;$5,000+</strong> depending on entity complexity, payroll, inventory, and integrations. Exact fee in writing within 3 business days." },
     { q: "Do you keep the books after setup?", a: "If you want &mdash; many Florida businesses move from setup into <a href=\"/find-an-accountant/florida/monthly-bookkeeping/\">monthly bookkeeping</a> with the same named ProAdvisor. Setup alone is fine too." },
@@ -76,7 +76,7 @@ module.exports = {
   value: [
     { num: "01", title: "Florida chart of accounts", body: "A chart of accounts built for your Florida industry &mdash; structured for the reporting and tax positions you actually need.", href: "/find-an-accountant/florida/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
     { num: "02", title: "Sales tax by county", body: "6%+surtax sales-tax items configured to the correct combined rate by county, with single-item caps &mdash; the single most-missed Florida setup step.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
-    { num: "03", title: "Commercial-rent tax configured", body: "The business-rent tax on leased space set up to record correctly from day one so your CPA can file it.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate &amp; rent tax &rarr;" },
+    { num: "03", title: "Service taxability configured", body: "Taxable service lines set up from day one so Florida&rsquo;s tax on services is rated correctly &mdash; the line generic setups miss.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
     { num: "04", title: "TPP fixed-asset schedule", body: "Equipment and furniture tracked from day one so the annual tangible personal property return (DR-405) is a quick export.", href: "/find-an-accountant/florida/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
     { num: "05", title: "Florida payroll config", body: "QuickBooks Payroll configured for Florida &mdash; no state income-tax withholding, but federal and reemployment tax set up cleanly with your provider.", href: "/quickbooks/payroll/", cta: "Payroll &rarr;" },
     { num: "06", title: "Clean go-live or migration", body: "Opening balances, integrations, and reporting right &mdash; or migrated cleanly from Desktop or another system.", href: "/find-an-accountant/florida/quickbooks-migration/", cta: "QuickBooks migration &rarr;" },
@@ -85,13 +85,13 @@ module.exports = {
   scopeDo: [
     "Configure a Florida-correct chart of accounts",
     "Set 6%+surtax sales-tax items by county, with single-item caps",
-    "Configure the commercial-rent tax to record from leases",
+    "Configure service taxability set up correctly",
     "Build a fixed-asset schedule for the TPP return and configure Florida payroll",
     "Set opening balances, integrations, and reporting cleanly",
     "Train your team on the new file if you want it",
   ],
   scopeDont: [
-    "File the Florida sales tax, corporate income tax, or commercial-rent tax",
+    "File the Florida sales tax, corporate income tax, or taxability of services",
     "File the tangible personal property return or federal returns",
     "Represent you before the Florida Department of Revenue",
     "Provide legal or tax advice",
@@ -107,8 +107,8 @@ module.exports = {
     "Once the file is built right, the same named ProAdvisor can keep it clean in <a href=\"/find-an-accountant/florida/monthly-bookkeeping/\">monthly bookkeeping</a> and extend into <a href=\"/accounting/advisory/fractional-cfo/\">fractional-CFO advisory</a> when you&rsquo;re ready.",
   ],
   faq: [
-    { q: "What does Florida QuickBooks setup include?", a: "A Certified ProAdvisor configures a FL-correct chart of accounts, 6%+surtax sales-tax items by county (with single-item caps), the commercial-rent tax configured to record from leases, a fixed-asset schedule for the TPP return, and Florida payroll, with opening balances, integrations, and reporting set cleanly &mdash; in your own QuickBooks Online or Desktop file. We set it up; your CPA files." },
-    { q: "Why does a Florida setup need a ProAdvisor?", a: "Because the Florida specifics are either configured at setup or fixed later as a cleanup. Sales tax has to be applied by county surtax rather than a flat statewide rate, the commercial-rent tax has to be recorded from leases, and a fixed-asset schedule should exist from the start for the TPP return. A generic setup misses all three and turns into an expensive cleanup." },
+    { q: "What does Florida QuickBooks setup include?", a: "A Certified ProAdvisor configures a FL-correct chart of accounts, 6%+surtax sales-tax items by county (with single-item caps), the taxability of services configured to record from leases, a fixed-asset schedule for the TPP return, and Florida payroll, with opening balances, integrations, and reporting set cleanly &mdash; in your own QuickBooks Online or Desktop file. We set it up; your CPA files." },
+    { q: "Why does a Florida setup need a ProAdvisor?", a: "Because the Florida specifics are either configured at setup or fixed later as a cleanup. Sales tax has to be applied by county surtax rather than a flat statewide rate, the taxability of services has to be recorded from leases, and a fixed-asset schedule should exist from the start for the TPP return. A generic setup misses all three and turns into an expensive cleanup." },
     { q: "Should I use QuickBooks Online or Desktop?", a: "Whichever fits your business &mdash; we configure either in your own file. QuickBooks Online suits most Florida small businesses, hospitality, and SaaS; Desktop or Enterprise can suit inventory- or job-cost-heavy operations like construction or marine. We recommend honestly and set it up; we earn nothing on the subscription regardless." },
     { q: "How much does Florida QuickBooks setup cost?", a: "Fixed-fee against a written scope, never hourly &mdash; typically $750&ndash;$5,000+ depending on entity complexity, payroll, inventory, and integrations. You get the exact fee in writing within 3 business days of a free discovery call." },
     { q: "Can you set up Florida payroll too?", a: "Yes &mdash; we configure QuickBooks Payroll for a Florida employer. Florida has no state income-tax withholding, but we set up federal withholding, federal unemployment, and the Florida reemployment tax (RT-6) correctly, coordinated with your payroll provider." },
@@ -123,7 +123,7 @@ module.exports = {
     description: "QuickBooks setup for Florida businesses by a Certified ProAdvisor — a FL chart of accounts, 6%+surtax sales-tax items by county, the taxability of services, a fixed-asset schedule for TPP, and Florida payroll. Independent firm; does not file Florida taxes.",
     serviceName: "Florida QuickBooks Setup Services",
     serviceType: "QuickBooks setup and implementation",
-    serviceDesc: "QuickBooks Online or Desktop setup for Florida businesses — a Florida-correct chart of accounts, 6%+surtax sales-tax items by county, commercial-rent tax configuration, a fixed-asset schedule for the tangible personal property return, Florida payroll, opening balances, and integrations. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "QuickBooks Online or Desktop setup for Florida businesses — a Florida-correct chart of accounts, 6%+surtax sales-tax items by county, taxability of services configuration, a fixed-asset schedule for the tangible personal property return, Florida payroll, opening balances, and integrations. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
     audienceType: "Florida small and midsize businesses across all 67 counties setting up or restructuring QuickBooks",
     offerPrice: "750",

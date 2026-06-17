@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida QuickBooks Reconciliation · TechBrot",
-  description: "QuickBooks reconciliation for Florida businesses by a Certified ProAdvisor — every account reconciled monthly, the 6%+surtax sales-tax liability tied to the DOR return by county, commercial-rent reconciled. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  description: "QuickBooks reconciliation for Florida businesses by a Certified ProAdvisor — every account reconciled monthly, the 6%+surtax sales-tax liability tied to the DOR return by county, service-taxability reconciled. Fixed-fee, all 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -41,7 +41,7 @@ module.exports = {
     trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
   },
   inBrief: {
-    text: "<strong>TechBrot</strong> provides <strong>QuickBooks reconciliation for Florida businesses</strong> &mdash; a Certified ProAdvisor reconciles bank, credit-card, and loan accounts every month and ties the 6% + county surtax sales-tax liability to the Florida Department of Revenue return, so the books hold and the corporate-tax and commercial-rent figures are clean. Fixed-fee, all 67 counties. The full Florida reconciliation summary is below.",
+    text: "<strong>TechBrot</strong> provides <strong>QuickBooks reconciliation for Florida businesses</strong> &mdash; a Certified ProAdvisor reconciles bank, credit-card, and loan accounts every month and ties the 6% + county surtax sales-tax liability to the Florida Department of Revenue return, so the books hold and the corporate-tax and service-taxability figures are clean. Fixed-fee, all 67 counties. The full Florida reconciliation summary is below.",
     source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Florida tax references reflect Department of Revenue rules current as of the review date; TechBrot does not file Florida taxes.",
   },
   ctaBand: {
@@ -58,16 +58,16 @@ module.exports = {
     aiHeading: "Florida QuickBooks reconciliation, in five questions.",
     valueEyebrow: "What Florida reconciliation covers",
     valueHeading: "Every account tied, the sales-tax liability matched.",
-    valueLede: "Reconciliation in Florida is more than bank accounts &mdash; the sales-tax and commercial-rent liabilities have to tie to the DOR return.",
+    valueLede: "Reconciliation in Florida is more than bank accounts &mdash; the sales-tax and service-taxability liabilities have to tie to the DOR return.",
     factsEyebrow: "Why reconciliation matters more in Florida",
     factsHeading: "Three reasons Florida reconciliation can&rsquo;t be skipped.",
     factsLede: "Florida&rsquo;s tax obligations are computed from the books &mdash; so reconciliation is what makes them accurate.",
     faqHeading: "Florida QuickBooks reconciliation questions.",
   },
-  summary: "<strong>TechBrot</strong> provides <strong>QuickBooks reconciliation for Florida businesses</strong> &mdash; a Certified QuickBooks ProAdvisor reconciles every account every month: bank, credit-card, loan, and clearing accounts, plus the <strong>6% + county surtax sales-tax liability</strong> tied to what the <strong>Florida Department of Revenue</strong> return reports by county (with the collection allowance captured) and the commercial-rent tax reconciled to the leases. Reconciled books are what make the <a href=\"/find-an-accountant/florida/corporate-tax-help/\">5.5% corporate tax</a> computable and keep the <strong>TPP</strong> fixed-asset schedule trustworthy. Issues surface immediately instead of at year-end. Fixed-fee against a written scope. Independent firm &mdash; not affiliated with Intuit Inc.; we reconcile, your CPA files.",
+  summary: "<strong>TechBrot</strong> provides <strong>QuickBooks reconciliation for Florida businesses</strong> &mdash; a Certified QuickBooks ProAdvisor reconciles every account every month: bank, credit-card, loan, and clearing accounts, plus the <strong>6% + county surtax sales-tax liability</strong> tied to what the <strong>Florida Department of Revenue</strong> return reports by county (with the collection allowance captured) and any taxable services rated correctly. Reconciled books are what make the <a href=\"/find-an-accountant/florida/corporate-tax-help/\">5.5% corporate tax</a> computable and keep the <strong>TPP</strong> fixed-asset schedule trustworthy. Issues surface immediately instead of at year-end. Fixed-fee against a written scope. Independent firm &mdash; not affiliated with Intuit Inc.; we reconcile, your CPA files.",
   aiSummary: [
-    { q: "What does Florida QuickBooks reconciliation include?", a: "<strong>Bank, credit-card, loan, and clearing accounts reconciled every month, plus the 6% + county surtax sales-tax liability tied to the DOR return by county and the commercial-rent tax reconciled</strong> &mdash; so the books hold and the corporate-tax figures are clean. We reconcile; your CPA files." },
-    { q: "Why is reconciliation important in Florida specifically?", a: "Because Florida&rsquo;s obligations are computed from the books: the <strong>5.5% corporate tax</strong> needs clean revenue and expenses, the <strong>sales-tax return</strong> has to tie to the liability account by county, the <strong>commercial-rent tax</strong> has to reconcile to the leases, and the <strong>TPP return</strong> relies on a trustworthy fixed-asset schedule. Unreconciled books make all of them wrong." },
+    { q: "What does Florida QuickBooks reconciliation include?", a: "<strong>Bank, credit-card, loan, and clearing accounts reconciled every month, plus the 6% + county surtax sales-tax liability tied to the DOR return by county and the taxability of services reconciled</strong> &mdash; so the books hold and the corporate-tax figures are clean. We reconcile; your CPA files." },
+    { q: "Why is reconciliation important in Florida specifically?", a: "Because Florida&rsquo;s obligations are computed from the books: the <strong>5.5% corporate tax</strong> needs clean revenue and expenses, the <strong>sales-tax return</strong> has to tie to the liability account by county, <strong>taxable services</strong> have to be rated correctly, and the <strong>TPP return</strong> relies on a trustworthy fixed-asset schedule. Unreconciled books make all of them wrong." },
     { q: "How often should accounts be reconciled?", a: "Monthly. Reconciling every month surfaces errors immediately and keeps the corporate-tax and TPP deadlines from catching you reconstructing a year of records under pressure." },
     { q: "What does it cost?", a: "Fixed-fee against a written scope, never hourly &mdash; scoped to the number of accounts and transaction volume. Exact fee in writing within 3 business days of a free file review." },
     { q: "Can you reconcile months of backlog?", a: "Yes &mdash; if reconciliation has lapsed, we catch it up as part of a <a href=\"/find-an-accountant/florida/quickbooks-cleanup/\">cleanup</a>, then keep it current every month." },
@@ -75,7 +75,7 @@ module.exports = {
   value: [
     { num: "01", title: "Bank &amp; credit-card accounts", body: "Every bank and credit-card account reconciled monthly to statement, with discrepancies investigated and resolved.", href: "/find-an-accountant/florida/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
     { num: "02", title: "Sales-tax liability tied to the return", body: "The 6% + county surtax liability account reconciled to what the DOR return reports by county &mdash; collection allowance captured, nothing over- or under-remitted.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
-    { num: "03", title: "Commercial-rent &amp; loan accounts", body: "The commercial-rent tax reconciled to the leases and loan balances tied to lender statements so nothing hides in suspense.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate &amp; rent tax &rarr;" },
+    { num: "03", title: "Loan &amp; clearing accounts", body: "Loan balances tied to lender statements and clearing accounts zeroed so nothing hides in suspense.", href: "/find-an-accountant/florida/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
     { num: "04", title: "Corporate-tax figures verified", body: "Revenue and expenses reconciled so your CPA computes the 5.5% corporate tax from numbers that hold.", href: "/find-an-accountant/florida/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
     { num: "05", title: "Backlog caught up", body: "If reconciliation has lapsed for months, we catch it up as part of a cleanup, then keep it current.", href: "/find-an-accountant/florida/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
     { num: "06", title: "CPA-ready every month", body: "Reconciled statements handed to your CPA monthly &mdash; no year-end scramble, no surprises.", href: "/find-an-accountant/florida/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
@@ -84,13 +84,13 @@ module.exports = {
   scopeDo: [
     "Reconcile bank, credit-card, loan, and clearing accounts every month",
     "Tie the 6% + county surtax sales-tax liability to the DOR return by county",
-    "Reconcile the commercial-rent tax to the leases",
+    "Rate any taxable services correctly",
     "Verify revenue and expenses for the 5.5% corporate tax",
     "Investigate and resolve discrepancies and miscategorizations",
     "Deliver reconciled, CPA-ready statements monthly",
   ],
   scopeDont: [
-    "File the Florida sales tax, corporate income tax, or commercial-rent tax",
+    "File the Florida sales tax, corporate income tax, or taxability of services",
     "File the tangible personal property return",
     "Represent you before the Florida Department of Revenue",
     "Provide legal or tax advice",
@@ -98,7 +98,7 @@ module.exports = {
   process: [
     { phase: "Step 1", title: "Free file review", body: "A Certified ProAdvisor reviews where reconciliation stands and what&rsquo;s out of balance." },
     { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days, by number of accounts and volume." },
-    { phase: "Step 3", title: "Reconcile &amp; resolve", body: "We reconcile every account, tie the sales-tax and commercial-rent liabilities to the return, and resolve discrepancies." },
+    { phase: "Step 3", title: "Reconcile &amp; resolve", body: "We reconcile every account, tie the sales-tax and service-taxability liabilities to the return, and resolve discrepancies." },
     { phase: "Step 4", title: "Monthly cadence", body: "Every account reconciled every month and CPA-ready statements delivered &mdash; no year-end scramble." },
   ],
   advisoryBody: [
@@ -106,8 +106,8 @@ module.exports = {
     "We reconcile every month so issues surface immediately, and extend &mdash; when you&rsquo;re ready &mdash; into full <a href=\"/find-an-accountant/florida/monthly-bookkeeping/\">monthly bookkeeping</a> and <a href=\"/accounting/advisory/fractional-cfo/\">advisory</a>.",
   ],
   faq: [
-    { q: "What does Florida QuickBooks reconciliation include?", a: "A Certified ProAdvisor reconciles bank, credit-card, loan, and clearing accounts every month and ties the 6% + county surtax sales-tax liability to what the Florida Department of Revenue return reports by county, reconciles the commercial-rent tax to the leases, verifies the revenue and expenses behind the 5.5% corporate tax, and resolves discrepancies &mdash; so the books hold. We reconcile; your CPA files." },
-    { q: "Why does reconciliation matter more in Florida?", a: "Because Florida&rsquo;s tax obligations are computed directly from the books. The 5.5% corporate tax needs clean revenue and expenses, the sales-tax return has to tie to the liability account by county, the commercial-rent tax has to reconcile to the leases, and the tangible personal property return relies on a trustworthy fixed-asset schedule. Unreconciled books make all of them inaccurate." },
+    { q: "What does Florida QuickBooks reconciliation include?", a: "A Certified ProAdvisor reconciles bank, credit-card, loan, and clearing accounts every month and ties the 6% + county surtax sales-tax liability to what the Florida Department of Revenue return reports by county, rates any taxable services correctly, verifies the revenue and expenses behind the 5.5% corporate tax, and resolves discrepancies &mdash; so the books hold. We reconcile; your CPA files." },
+    { q: "Why does reconciliation matter more in Florida?", a: "Because Florida&rsquo;s tax obligations are computed directly from the books. The 5.5% corporate tax needs clean revenue and expenses, the sales-tax return has to tie to the liability account by county, taxable services have to be rated correctly, and the tangible personal property return relies on a trustworthy fixed-asset schedule. Unreconciled books make all of them inaccurate." },
     { q: "How often should I reconcile my QuickBooks accounts?", a: "Monthly. Reconciling every month surfaces errors and missing transactions immediately rather than at year-end, and keeps the corporate-tax and TPP deadlines from catching you reconstructing a year of records under deadline pressure." },
     { q: "My sales-tax liability never matches my return. Can you fix that?", a: "Yes &mdash; that mismatch usually means sales tax was set to a single rate instead of by county surtax, single-item caps were ignored, or the liability account was never reconciled to the filing. We tie the liability to the DOR return by county so nothing is over- or under-remitted, and correct prior periods as part of a cleanup if needed." },
     { q: "How much does Florida QuickBooks reconciliation cost?", a: "Fixed-fee against a written scope, never hourly &mdash; scoped to the number of accounts and transaction volume. If there&rsquo;s a backlog to catch up, that&rsquo;s scoped as a one-time cleanup. You get the exact fee in writing within 3 business days of a free file review." },
@@ -121,7 +121,7 @@ module.exports = {
     description: "QuickBooks reconciliation for Florida businesses by a Certified ProAdvisor — every account reconciled monthly and the 6%+surtax sales-tax liability tied to the DOR return so the corporate-tax figures hold. Independent firm; does not file Florida taxes.",
     serviceName: "Florida QuickBooks Reconciliation Services",
     serviceType: "Account reconciliation (bookkeeping)",
-    serviceDesc: "Monthly reconciliation of bank, credit-card, loan, and clearing accounts and the 6% + county surtax sales-tax liability for Florida businesses, tying the liability to the Florida Department of Revenue return by county, reconciling the commercial-rent tax to leases, and verifying the figures behind the 5.5% corporate tax. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "Monthly reconciliation of bank, credit-card, loan, and clearing accounts and the 6% + county surtax sales-tax liability for Florida businesses, tying the liability to the Florida Department of Revenue return by county, rating taxable services correctly, and verifying the figures behind the 5.5% corporate tax. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
     audienceType: "Florida businesses needing monthly account reconciliation across all 67 counties",
     offerPrice: "400",

@@ -324,15 +324,14 @@ GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overf
 
 **COUNT: total pages live = 271 · re-skinned (142) + growth = 129 · LAST COMMIT = round-47 FL-bkg+industries
 (9 pages: bkg-spokes 2 + industries hub+6). FL bkg 3/3 ✅ · industries hub+6/6 ✅. Working tree clean on `preview-11ty`.
-⛔ FL ACCURACY BLOCKER (found 2026-06-18, round 48): the FL COMMERCIAL-RENT ("business rent") sales tax was
-REPEALED effective Oct 1, 2025 (HB 7031) — the FL pillar states this correctly (line 52). But the ~18 FL
-service/QB/bkg pages I built rounds 44/46/47 describe it as a CURRENT obligation ("rate phasing down,"
-"if you lease space it's a real line item"). FACTUAL ERROR — honesty gate. CORRECTING site-wide: drop the
-commercial-rent hook; replace with the CURRENT FL-distinctive hooks per the pillar = SALES TAX ON SERVICES
-(FL taxes commercial cleaning, pest control, certain repairs, security, laundry that others exempt) + the
-$5,000 single-item surtax cap + 5.5% C-corp ($50K exemption). corporate-tax-help reworked (was built around
-commercial-rent). FL-FINISH + any "FLORIDA COMPLETE" claim HELD until correction is battery-green and committed.
-FL REMAINING (after correction) = 6th city + cities-hub + pricing + pillar re-link → FLORIDA COMPLETE. Then IL.
+✅ FL ACCURACY CORRECTION COMPLETE (round 48, commits 7fe4c19 + this): the FL COMMERCIAL-RENT ("business rent")
+sales tax was REPEALED effective Oct 1, 2025 (HB 7031). The ~18 FL pages built rounds 44/46/47 had wrongly
+described it as current; ALL corrected site-wide (3 scripts in _build/scripts/fix-fl-commercial-rent*.py +
+miami script + corporate-tax-help full rewrite). Replaced with the CURRENT FL-distinctive hook = SALES TAX ON
+SERVICES (FL taxes commercial cleaning, pest control, repairs, security, laundry others exempt) + $5,000
+single-item surtax cap + 5.5% C-corp ($50K exemption). Every remaining "commercial-rent" mention is now an
+explicit REPEAL NOTE (corporate-tax-help educates on it; miami historical). Battery GREEN; grep-verified.
+FL REMAINING = 6th city + cities-hub + pricing + pillar re-link → FLORIDA COMPLETE. Then IL.
 ✅ TRIAGE HOLD GATE CLEARED SITE-WIDE (founder approved CA disclosure pattern 2026-06-18; locked as approved). IL triage builds normally at IL.
 ✅ CALIFORNIA COMPLETE (39). ✅ TEXAS COMPLETE incl. triage (32). FLORIDA IN PROGRESS = pillar + 5 cities + 8 services (money 4/6 + speak ✅ [pricing pending] · tax 2/2 ✅ · bkg-spoke monthly ✅).
 FL tax stack = no personal income tax BUT 5.5% C-corp · 6%+county-surtax sales tax · commercial-rent tax · TPP (DR-405) · RT-6 · FL Dept of Revenue · 67 counties.

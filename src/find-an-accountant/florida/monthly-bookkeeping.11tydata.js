@@ -1,5 +1,5 @@
 /* /find-an-accountant/florida/monthly-bookkeeping/ — FL SERVICE CHILD (bkg spoke).
- * t-bofu · partials/state-service-body.njk. FL-localized: 5.5% corp / 6%+surtax / commercial-rent. */
+ * t-bofu · partials/state-service-body.njk. FL-localized: 5.5% corp / 6%+surtax / service-taxability. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
   { fig: "Monthly", title: "A close every month, not a scramble at filing", body: "Monthly bookkeeping means the books are reconciled and closed each month &mdash; so the <strong>6%+surtax sales tax</strong>, the taxability of services, and the corporate-tax position are right all year, not reconstructed at filing time." },
@@ -32,7 +32,7 @@ module.exports = {
   hero: {
     eyebrow: "Florida &middot; Monthly Bookkeeping",
     heading: "Monthly bookkeeping that closes the books every month.",
-    subheading: "A real monthly close for Florida businesses &mdash; reconciliation, 6%+surtax sales tax reconciled by county, the commercial-rent tax captured, and CPA-ready statements &mdash; in your own QuickBooks file, by one named Certified ProAdvisor. Fixed-fee, all 67 counties. We keep the books; your CPA files.",
+    subheading: "A real monthly close for Florida businesses &mdash; reconciliation, 6%+surtax sales tax reconciled by county, service taxability handled, and CPA-ready statements &mdash; in your own QuickBooks file, by one named Certified ProAdvisor. Fixed-fee, all 67 counties. We keep the books; your CPA files.",
     actions: [
       { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=state-money&funnel_stage=MOFU", class: "btn--primary" },
       { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
@@ -41,7 +41,7 @@ module.exports = {
     trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
   },
   inBrief: {
-    text: "<strong>TechBrot</strong> provides <strong>monthly bookkeeping for Florida businesses</strong> &mdash; a named Certified ProAdvisor reconciles and closes your books every month: clean categorization, 6%+surtax sales tax reconciled by county, the commercial-rent tax captured, tangible personal property records maintained, and CPA-ready statements, in your own QuickBooks file. Fixed-fee, all 67 counties. Full summary below.",
+    text: "<strong>TechBrot</strong> provides <strong>monthly bookkeeping for Florida businesses</strong> &mdash; a named Certified ProAdvisor reconciles and closes your books every month: clean categorization, 6%+surtax sales tax reconciled by county, service taxability handled, tangible personal property records maintained, and CPA-ready statements, in your own QuickBooks file. Fixed-fee, all 67 counties. Full summary below.",
     source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Florida tax references reflect Department of Revenue rules current as of the review date; TechBrot does not file Florida taxes.",
   },
   ctaBand: {
@@ -64,10 +64,10 @@ module.exports = {
     factsLede: "Closing every month keeps the sales tax, service taxability, and the TPP return accurate year-round &mdash; not reconstructed under deadline.",
     faqHeading: "Florida monthly bookkeeping questions.",
   },
-  summary: "<strong>TechBrot</strong> provides <strong>monthly bookkeeping for Florida businesses</strong> &mdash; a named Certified ProAdvisor reconciles and closes your books every month: clean categorization, <strong>6%+surtax sales tax</strong> reconciled by county, the <a href=\"/find-an-accountant/florida/corporate-tax-help/\">commercial-rent tax</a> captured, <strong>tangible personal property</strong> records maintained, and CPA-ready statements. Florida has <strong>no personal income tax</strong>, but a real monthly close keeps the sales tax, rent tax, and (for C-corps) the corporate-tax position accurate all year instead of reconstructed at filing time. In your own <a href=\"/quickbooks/online/\">QuickBooks Online</a> or hosted Desktop file across all 67 counties, fixed-fee against a written scope ($400&ndash;$2,500+/mo). Independent firm &mdash; not affiliated with Intuit Inc.",
+  summary: "<strong>TechBrot</strong> provides <strong>monthly bookkeeping for Florida businesses</strong> &mdash; a named Certified ProAdvisor reconciles and closes your books every month: clean categorization, <strong>6%+surtax sales tax</strong> reconciled by county, the <a href=\"/find-an-accountant/florida/corporate-tax-help/\">taxability of services</a> captured, <strong>tangible personal property</strong> records maintained, and CPA-ready statements. Florida has <strong>no personal income tax</strong>, but a real monthly close keeps the sales tax, service taxability, and (for C-corps) the corporate-tax position accurate all year instead of reconstructed at filing time. In your own <a href=\"/quickbooks/online/\">QuickBooks Online</a> or hosted Desktop file across all 67 counties, fixed-fee against a written scope ($400&ndash;$2,500+/mo). Independent firm &mdash; not affiliated with Intuit Inc.",
   aiSummary: [
-    { q: "What is monthly bookkeeping in Florida?", a: "<strong>A real close of your books every month</strong> &mdash; reconciliation, clean categorization, 6%+surtax sales tax reconciled by county, the commercial-rent tax captured, TPP records maintained, and CPA-ready statements, in your own QuickBooks file, by the same ProAdvisor. We do the books; your CPA files." },
-    { q: "Why does a monthly close matter in Florida?", a: "Because the <strong>6%+surtax sales tax</strong>, the <strong>commercial-rent tax</strong>, and the <strong>corporate tax</strong> are computed from your books &mdash; a monthly close keeps those figures accurate all year so filing is a non-event, and the annual <strong>tangible personal property</strong> return is a quick export." },
+    { q: "What is monthly bookkeeping in Florida?", a: "<strong>A real close of your books every month</strong> &mdash; reconciliation, clean categorization, 6%+surtax sales tax reconciled by county, service taxability handled, TPP records maintained, and CPA-ready statements, in your own QuickBooks file, by the same ProAdvisor. We do the books; your CPA files." },
+    { q: "Why does a monthly close matter in Florida?", a: "Because the <strong>6%+surtax sales tax</strong>, the <strong>taxability of services</strong>, and the <strong>corporate tax</strong> are computed from your books &mdash; a monthly close keeps those figures accurate all year so filing is a non-event, and the annual <strong>tangible personal property</strong> return is a quick export." },
     { q: "Do you work in my own QuickBooks file?", a: "Yes &mdash; your file, your data, in <strong>QuickBooks Online or hosted Desktop</strong>, with a named ProAdvisor on the same file every month." },
     { q: "What does it cost?", a: "Fixed-fee against a written scope, never hourly: <strong>$400&ndash;$2,500+/mo</strong> by volume and accounts; one-time cleanup before monthly cadence <strong>$1,500&ndash;$15,000+</strong>. Exact fee in writing within 3 business days." },
     { q: "Do you file Florida taxes?", a: "No &mdash; TechBrot keeps the books CPA-ready and coordinates with your CPA, who files. Independent firm; not affiliated with Intuit Inc." },
@@ -75,7 +75,7 @@ module.exports = {
   value: [
     { num: "01", title: "Monthly reconciliation &amp; close", body: "Every account reconciled and the month closed &mdash; clean categorization to a Florida-correct chart of accounts.", href: "/find-an-accountant/florida/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
     { num: "02", title: "Sales tax reconciled monthly", body: "6% + county surtax reconciled each month so every Department of Revenue return ties and nothing is owed by surprise.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
-    { num: "03", title: "Rent &amp; corporate tax kept current", body: "The commercial-rent tax and (where it applies) the 5.5% corporate-tax position tracked monthly so your CPA can file accurately.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate tax help &rarr;" },
+    { num: "03", title: "Rent &amp; corporate tax kept current", body: "The taxability of services and (where it applies) the 5.5% corporate-tax position tracked monthly so your CPA can file accurately.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate tax help &rarr;" },
     { num: "04", title: "CPA-ready statements", body: "P&amp;L, balance sheet, and cash-flow delivered every month in a format your CPA can file from directly.", href: "/accounting/financial-statements/", cta: "Financial statements &rarr;" },
     { num: "05", title: "Cleanup first, if needed", body: "Behind by months? A one-time cleanup brings the file current before the monthly cadence begins.", href: "/find-an-accountant/florida/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
     { num: "06", title: "Advisory, when ready", body: "Once the close is reliable, fractional-CFO advisory on the global team &mdash; forecasting and cash-flow.", href: "/accounting/advisory/fractional-cfo/", cta: "Fractional CFO &rarr;" },
@@ -85,12 +85,12 @@ module.exports = {
     "Reconcile every account and close the books each month",
     "Maintain a Florida-correct chart of accounts and clean categorization",
     "Reconcile 6% + county surtax sales tax monthly so each return ties",
-    "Keep the commercial-rent tax and the corporate-tax position current for your CPA",
+    "Keep the taxability of services and the corporate-tax position current for your CPA",
     "Keep fixed-asset records current for the tangible personal property return",
     "Deliver CPA-ready monthly financial statements",
   ],
   scopeDont: [
-    "File the Florida sales tax, corporate income tax, or commercial-rent tax",
+    "File the Florida sales tax, corporate income tax, or taxability of services",
     "File the tangible personal property return or handle valuation",
     "Represent you before the Florida Department of Revenue",
     "Provide legal or tax advice",
@@ -106,7 +106,7 @@ module.exports = {
     "Start with a reliable monthly close, then extend &mdash; when you&rsquo;re ready &mdash; into <a href=\"/accounting/advisory/fractional-cfo/\">fractional-CFO advisory</a>, in coordination with your CPA.",
   ],
   faq: [
-    { q: "What does Florida monthly bookkeeping include?", a: "A real close of your books every month &mdash; reconciliation, clean categorization to a Florida-correct chart of accounts, 6%+surtax sales tax reconciled by county, the commercial-rent tax captured, tangible personal property records maintained, and CPA-ready statements &mdash; in your own QuickBooks file, by the same ProAdvisor. We do the books; your CPA files." },
+    { q: "What does Florida monthly bookkeeping include?", a: "A real close of your books every month &mdash; reconciliation, clean categorization to a Florida-correct chart of accounts, 6%+surtax sales tax reconciled by county, service taxability handled, tangible personal property records maintained, and CPA-ready statements &mdash; in your own QuickBooks file, by the same ProAdvisor. We do the books; your CPA files." },
     { q: "Why does a monthly close matter for Florida businesses?", a: "Because the 6%+surtax sales tax, the taxability of services, and (for C-corps) the corporate tax are computed from your books. Closing every month keeps those figures accurate all year, so filing is a non-event and the annual tangible personal property return is a quick export &mdash; instead of reconstructing a year of records under deadline." },
     { q: "Do you work in my existing QuickBooks file?", a: "Yes &mdash; your file, your data, in QuickBooks Online or hosted Desktop, with a named ProAdvisor on the same file every month. We can set up or migrate the file if needed." },
     { q: "What if my books are months behind?", a: "We scope a one-time cleanup to bring the file current to a CPA-ready standard first, then start the monthly close so it stays current. Both are fixed-fee against a written scope." },
@@ -118,10 +118,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/monthly-bookkeeping/",
     name: "Florida Monthly Bookkeeping",
-    description: "Monthly bookkeeping for Florida businesses — a real close every month, 6%+surtax sales tax reconciled by county, the commercial-rent tax captured, TPP records, and CPA-ready statements in your own QuickBooks file across all 67 counties. Independent firm; does not file Florida taxes.",
+    description: "Monthly bookkeeping for Florida businesses — a real close every month, 6%+surtax sales tax reconciled by county, service taxability handled, TPP records, and CPA-ready statements in your own QuickBooks file across all 67 counties. Independent firm; does not file Florida taxes.",
     serviceName: "Florida Monthly Bookkeeping Services",
     serviceType: "Monthly bookkeeping and close services",
-    serviceDesc: "A monthly close — reconciliation, categorization, 6% + county surtax sales-tax reconciliation, commercial-rent tax capture, 5.5% corporate-tax tracking where applicable, tangible personal property record-keeping, and CPA-ready statements for Florida businesses across all 67 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns.",
+    serviceDesc: "A monthly close — reconciliation, categorization, 6% + county surtax sales-tax reconciliation, taxability of services capture, 5.5% corporate-tax tracking where applicable, tangible personal property record-keeping, and CPA-ready statements for Florida businesses across all 67 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
     audienceType: "Florida small and midsize businesses across all 67 counties",
     offerPrice: "400",

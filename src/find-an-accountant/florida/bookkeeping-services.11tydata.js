@@ -1,5 +1,5 @@
 /* /find-an-accountant/florida/bookkeeping-services/ — FL SERVICE CHILD (money).
- * t-bofu · partials/state-service-body.njk. FL-localized: 5.5% corp / 6%+surtax / commercial-rent. */
+ * t-bofu · partials/state-service-body.njk. FL-localized: 5.5% corp / 6%+surtax / service-taxability. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
   { fig: "6% + surtax", title: "Sales tax baked into the books, by county", body: "Florida sales &amp; use tax is 6% plus a discretionary county surtax that varies by county, via the <strong>Florida Department of Revenue</strong>. Bookkeeping that records the right combined rate by location is the difference between a return that ties and one that doesn&rsquo;t." },
@@ -32,7 +32,7 @@ module.exports = {
   hero: {
     eyebrow: "Florida &middot; Bookkeeping Services",
     heading: "Florida bookkeeping that keeps the Department of Revenue&rsquo;s math clean.",
-    subheading: "Reconciliation, clean categorization, 6%+surtax sales tax recorded by county, the commercial-rent tax captured, and tangible personal property ready to file &mdash; delivered in your own QuickBooks file by one named Certified ProAdvisor. Fixed-fee, all 67 counties. We keep the books; your CPA files.",
+    subheading: "Reconciliation, clean categorization, 6%+surtax sales tax recorded by county, service taxability handled, and tangible personal property ready to file &mdash; delivered in your own QuickBooks file by one named Certified ProAdvisor. Fixed-fee, all 67 counties. We keep the books; your CPA files.",
     actions: [
       { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=state-money&funnel_stage=MOFU", class: "btn--primary" },
       { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
@@ -41,7 +41,7 @@ module.exports = {
     trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
   },
   inBrief: {
-    text: "<strong>TechBrot</strong> provides <strong>bookkeeping services for Florida businesses</strong> &mdash; a named Certified ProAdvisor reconciles your accounts, keeps categorization clean, records 6%+surtax sales tax correctly by county, captures the commercial-rent tax, maintains tangible personal property records, and produces CPA-ready monthly statements in your own QuickBooks file. Fixed-fee, all 67 counties. Full summary below.",
+    text: "<strong>TechBrot</strong> provides <strong>bookkeeping services for Florida businesses</strong> &mdash; a named Certified ProAdvisor reconciles your accounts, keeps categorization clean, records 6%+surtax sales tax correctly by county, captures the taxability of services, maintains tangible personal property records, and produces CPA-ready monthly statements in your own QuickBooks file. Fixed-fee, all 67 counties. Full summary below.",
     source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Florida tax references reflect Department of Revenue rules current as of the review date; TechBrot does not file Florida taxes.",
   },
   ctaBand: {
@@ -64,10 +64,10 @@ module.exports = {
     factsLede: "Bookkeeping in Florida isn&rsquo;t generic &mdash; these three obligations decide how transactions, leases, and assets are recorded.",
     faqHeading: "Florida bookkeeping services questions.",
   },
-  summary: "<strong>TechBrot</strong> provides <strong>bookkeeping services for Florida businesses</strong> &mdash; a named Certified ProAdvisor handles reconciliation, clean categorization, <strong>6%+surtax sales tax</strong> recorded correctly by county, the <strong>commercial-rent tax</strong> captured (a line many bookkeepers miss), tangible personal property records maintained for the annual return, and CPA-ready monthly statements. Florida has <strong>no personal income tax</strong>, but C-corps pay a <a href=\"/find-an-accountant/florida/corporate-tax-help/\">5.5% corporate tax</a> computed from your books &mdash; so clean bookkeeping is what lets your CPA file accurately. In your own <a href=\"/quickbooks/online/\">QuickBooks Online</a> or hosted Desktop file across all 67 counties, fixed-fee against a written scope ($400&ndash;$2,500+/mo). Independent firm &mdash; not affiliated with Intuit Inc.",
+  summary: "<strong>TechBrot</strong> provides <strong>bookkeeping services for Florida businesses</strong> &mdash; a named Certified ProAdvisor handles reconciliation, clean categorization, <strong>6%+surtax sales tax</strong> recorded correctly by county, the <strong>taxability of services</strong> captured (a line many bookkeepers miss), tangible personal property records maintained for the annual return, and CPA-ready monthly statements. Florida has <strong>no personal income tax</strong>, but C-corps pay a <a href=\"/find-an-accountant/florida/corporate-tax-help/\">5.5% corporate tax</a> computed from your books &mdash; so clean bookkeeping is what lets your CPA file accurately. In your own <a href=\"/quickbooks/online/\">QuickBooks Online</a> or hosted Desktop file across all 67 counties, fixed-fee against a written scope ($400&ndash;$2,500+/mo). Independent firm &mdash; not affiliated with Intuit Inc.",
   aiSummary: [
-    { q: "What do Florida bookkeeping services include?", a: "<strong>Reconciliation, clean categorization, 6%+surtax sales tax recorded by county, the commercial-rent tax captured, tangible personal property records, and CPA-ready monthly statements</strong> &mdash; in your own QuickBooks file, by a named ProAdvisor, every month. We do the books; your CPA files." },
-    { q: "Why does Florida bookkeeping need to be Florida-specific?", a: "Because the <strong>6% + county surtax</strong> must be recorded correctly by location for the return to tie, the <strong>commercial-rent tax</strong> on leased space is a line generic bookkeepers miss, the <strong>5.5% corporate tax</strong> (for C-corps) is computed from your books, and the annual <strong>tangible personal property</strong> return needs a maintained fixed-asset schedule." },
+    { q: "What do Florida bookkeeping services include?", a: "<strong>Reconciliation, clean categorization, 6%+surtax sales tax recorded by county, service taxability handled, tangible personal property records, and CPA-ready monthly statements</strong> &mdash; in your own QuickBooks file, by a named ProAdvisor, every month. We do the books; your CPA files." },
+    { q: "Why does Florida bookkeeping need to be Florida-specific?", a: "Because the <strong>6% + county surtax</strong> must be recorded correctly by location for the return to tie, the <strong>taxability of services</strong> Florida applies that other states exempt is a line generic bookkeepers miss, the <strong>5.5% corporate tax</strong> (for C-corps) is computed from your books, and the annual <strong>tangible personal property</strong> return needs a maintained fixed-asset schedule." },
     { q: "Do you work in my own QuickBooks file?", a: "Yes &mdash; your file, your data, in <strong>QuickBooks Online or hosted Desktop</strong>, with a named ProAdvisor on the same file every month." },
     { q: "What does it cost?", a: "Fixed-fee against a written scope, never hourly: monthly bookkeeping <strong>$400&ndash;$2,500+/mo</strong>; one-time cleanup <strong>$1,500&ndash;$15,000+</strong>. Exact fee in writing within 3 business days." },
     { q: "Do you file Florida taxes?", a: "No &mdash; TechBrot keeps the books CPA-ready and coordinates with your CPA, who files. Independent firm; not affiliated with Intuit Inc." },
@@ -75,7 +75,7 @@ module.exports = {
   value: [
     { num: "01", title: "Reconciliation &amp; categorization", body: "Every account reconciled and every transaction categorized to a clean, Florida-correct chart of accounts each month.", href: "/find-an-accountant/florida/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
     { num: "02", title: "Sales tax recorded right, by county", body: "6% + county surtax recorded by location so the Department of Revenue return ties &mdash; no manual cleanup at filing time.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
-    { num: "03", title: "Commercial-rent tax captured", body: "The business-rent tax on leased commercial space recorded correctly &mdash; the line a generic bookkeeper misses.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate &amp; rent tax &rarr;" },
+    { num: "03", title: "Sales tax on services", body: "Florida taxes many services other states exempt &mdash; we flag taxable service lines so they&rsquo;re rated correctly, the line a generic bookkeeper misses.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
     { num: "04", title: "TPP fixed-asset schedule", body: "Equipment and furniture tracked so the annual tangible personal property return (DR-405) is straightforward.", href: "/find-an-accountant/florida/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
     { num: "05", title: "CPA-ready statements", body: "P&amp;L, balance sheet, and cash-flow delivered monthly in a format your CPA can file from directly.", href: "/accounting/financial-statements/", cta: "Financial statements &rarr;" },
     { num: "06", title: "Advisory, when ready", body: "Once the books are clean, fractional-CFO advisory on the global team &mdash; forecasting and cash-flow.", href: "/accounting/advisory/fractional-cfo/", cta: "Fractional CFO &rarr;" },
@@ -85,12 +85,12 @@ module.exports = {
     "Reconcile every account and categorize every transaction each month",
     "Maintain a Florida-correct chart of accounts",
     "Record 6% + county surtax sales tax correctly by location",
-    "Capture the commercial-rent tax on leased space",
+    "Capture the taxability of services",
     "Maintain a fixed-asset schedule for the tangible personal property return",
     "Produce CPA-ready monthly financial statements",
   ],
   scopeDont: [
-    "File the Florida sales tax, corporate income tax, or commercial-rent tax",
+    "File the Florida sales tax, corporate income tax, or taxability of services",
     "File the tangible personal property return or handle valuation",
     "Represent you before the Florida Department of Revenue",
     "Provide legal or tax advice",
@@ -98,18 +98,18 @@ module.exports = {
   process: [
     { phase: "Step 1", title: "Free file review", body: "A Certified ProAdvisor reviews your QuickBooks file and Florida situation at no cost." },
     { phase: "Step 2", title: "Written fixed-fee scope", body: "Within 3 business days you get a written scope and fixed fee. No hourly billing." },
-    { phase: "Step 3", title: "Cleanup, if needed", body: "If the file has fallen behind or missed the rent tax, we bring it to a CPA-ready standard first." },
+    { phase: "Step 3", title: "Cleanup, if needed", body: "If the file has fallen behind or mis-taxed services, we bring it to a CPA-ready standard first." },
     { phase: "Step 4", title: "Monthly cadence", body: "A named ProAdvisor keeps the file reconciled and current every month." },
   ],
   advisoryBody: [
-    "Bookkeeping is where Florida tax compliance is won or lost: the 6%+surtax sales tax has to be recorded by county as transactions happen, the commercial-rent tax is a line generic bookkeepers skip, the corporate tax is only as accurate as the books behind it, and the TPP return depends on a fixed-asset schedule nobody kept. Clean bookkeeping makes all four a non-event.",
+    "Bookkeeping is where Florida tax compliance is won or lost: the 6%+surtax sales tax has to be recorded by county as transactions happen, the taxability of services is a line generic bookkeepers skip, the corporate tax is only as accurate as the books behind it, and the TPP return depends on a fixed-asset schedule nobody kept. Clean bookkeeping makes all four a non-event.",
     "Start with accurate books, then extend &mdash; when you&rsquo;re ready &mdash; into <a href=\"/accounting/advisory/fractional-cfo/\">fractional-CFO advisory</a>, in coordination with your CPA.",
   ],
   faq: [
-    { q: "What's included in Florida bookkeeping services?", a: "Reconciliation, clean categorization to a Florida-correct chart of accounts, 6% + county surtax sales tax recorded correctly by location, the commercial-rent tax captured on leased space, a maintained fixed-asset schedule for the tangible personal property return, and CPA-ready monthly statements &mdash; all in your own QuickBooks file, by a named ProAdvisor. We do the books; your CPA files." },
-    { q: "Why does Florida bookkeeping have to be Florida-specific?", a: "Because the 6% + county surtax must be recorded correctly by location for the return to tie, the commercial-rent tax on leased space is a line generic bookkeepers miss entirely, the 5.5% corporate tax (for C-corps) is computed from your books, and the annual tangible personal property return needs a fixed-asset schedule. Generic bookkeeping that ignores those creates filing problems your CPA has to untangle." },
+    { q: "What's included in Florida bookkeeping services?", a: "Reconciliation, clean categorization to a Florida-correct chart of accounts, 6% + county surtax sales tax recorded correctly by location, service taxability handled correctly, a maintained fixed-asset schedule for the tangible personal property return, and CPA-ready monthly statements &mdash; all in your own QuickBooks file, by a named ProAdvisor. We do the books; your CPA files." },
+    { q: "Why does Florida bookkeeping have to be Florida-specific?", a: "Because the 6% + county surtax must be recorded correctly by location for the return to tie, the taxability of services is a line generic bookkeepers miss entirely, the 5.5% corporate tax (for C-corps) is computed from your books, and the annual tangible personal property return needs a fixed-asset schedule. Generic bookkeeping that ignores those creates filing problems your CPA has to untangle." },
     { q: "Do you work in my existing QuickBooks file?", a: "Yes &mdash; your file, your data, in QuickBooks Online or hosted Desktop, with a named ProAdvisor on the same file every month. We can set up or migrate the file if needed." },
-    { q: "Can you clean up a messy file first?", a: "Yes. If the file is behind, or sales tax was set to one rate instead of by county, or the rent tax was never recorded, we scope a one-time cleanup to a CPA-ready standard, then move into monthly bookkeeping so it stays clean." },
+    { q: "Can you clean up a messy file first?", a: "Yes. If the file is behind, or sales tax was set to one rate instead of by county, or taxable services were mis-rated, we scope a one-time cleanup to a CPA-ready standard, then move into monthly bookkeeping so it stays clean." },
     { q: "How much do Florida bookkeeping services cost?", a: "Fixed-fee against a written scope, never hourly. Monthly bookkeeping runs $400&ndash;$2,500+/mo by volume and accounts; one-time cleanup runs $1,500&ndash;$15,000+. Exact fee in writing within 3 business days of a free discovery call." },
     { q: "Do you file my Florida taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor and bookkeeping firm &mdash; we keep the books CPA-ready and coordinate with your CPA, who files the sales tax, corporate income tax, service taxability, and tangible personal property return. We are not affiliated with Intuit Inc." },
   ],
@@ -118,10 +118,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/bookkeeping-services/",
     name: "Florida Bookkeeping Services",
-    description: "Bookkeeping services for Florida businesses — reconciliation, clean categorization, 6%+surtax sales tax by county, the commercial-rent tax captured, TPP records, and CPA-ready statements in your own QuickBooks file across all 67 counties. Independent firm; does not file Florida taxes.",
+    description: "Bookkeeping services for Florida businesses — reconciliation, clean categorization, 6%+surtax sales tax by county, service taxability handled, TPP records, and CPA-ready statements in your own QuickBooks file across all 67 counties. Independent firm; does not file Florida taxes.",
     serviceName: "Florida Bookkeeping Services",
     serviceType: "Bookkeeping services",
-    serviceDesc: "Reconciliation, categorization, 6% + county surtax sales-tax recording by location, commercial-rent tax capture, fixed-asset schedule maintenance for the tangible personal property return, cleanup, and CPA-ready monthly statements for Florida businesses across all 67 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns.",
+    serviceDesc: "Reconciliation, categorization, 6% + county surtax sales-tax recording by location, taxability of services capture, fixed-asset schedule maintenance for the tangible personal property return, cleanup, and CPA-ready monthly statements for Florida businesses across all 67 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
     audienceType: "Florida small and midsize businesses across all 67 counties",
     offerPrice: "400",

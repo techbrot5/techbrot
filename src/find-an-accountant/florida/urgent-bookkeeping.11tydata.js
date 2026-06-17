@@ -74,7 +74,7 @@ module.exports = {
     { q: "What does urgent bookkeeping cost?", a: "Fixed-fee against a written scope, set after a fast file review &mdash; scoped to the volume and the deadline. Exact fee in writing before we start." },
   ],
   value: [
-    { num: "01", title: "Tax-deadline rescue", body: "Sales-tax and corporate figures reconciled fast so your CPA can file the Department of Revenue return on time.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate &amp; rent tax &rarr;" },
+    { num: "01", title: "Tax-deadline rescue", body: "Sales-tax and corporate figures reconciled fast so your CPA can file the Department of Revenue return on time.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate tax help &rarr;" },
     { num: "02", title: "Loan- &amp; sale-ready statements", body: "CPA-ready P&amp;L and balance sheet turned around quickly for a lender, SBA loan, or business sale.", href: "/accounting/financial-statements/", cta: "Financial statements &rarr;" },
     { num: "03", title: "Sales-tax period closing", body: "The 6% + county surtax liability reconciled by location fast so the closing period ties before it&rsquo;s due.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
     { num: "04", title: "Catch-up, prioritized", body: "A backlog reconstructed on an accelerated timeline when the deadline won&rsquo;t wait for a normal cadence.", href: "/find-an-accountant/florida/cleanup-bookkeeping/", cta: "Catch-up bookkeeping &rarr;" },
@@ -91,7 +91,7 @@ module.exports = {
     "Hand reconciled, CPA-ready books to your CPA",
   ],
   scopeDont: [
-    "File the Florida sales tax, corporate income tax, or commercial-rent tax",
+    "File the Florida sales tax, corporate income tax, or taxability of services",
     "Guarantee a filing, loan, or sale outcome",
     "Represent you before the Florida Department of Revenue or a lender",
     "Provide legal or tax advice",
