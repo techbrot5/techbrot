@@ -1,0 +1,131 @@
+/* /find-an-accountant/florida/small-business-accountant/ — FL SERVICE CHILD (money).
+ * t-bofu · partials/state-service-body.njk. FL-localized: 5.5% corp / 6%+surtax / commercial-rent. */
+const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
+const FL_FACTS = [
+  { fig: "5.5%", title: "No personal income tax &mdash; but a 5.5% corporate tax", body: "Florida has no state personal income tax, but small businesses organized as <strong>C-corporations pay a 5.5% corporate income tax</strong> to the Florida Department of Revenue. Pass-throughs generally don&rsquo;t &mdash; entity type decides. We track the position; your CPA confirms." },
+  { fig: "6% + surtax", title: "Sales tax &mdash; 6% state + county surtax", body: "Florida sales &amp; use tax is 6% plus a discretionary county surtax that varies by county, via the <strong>Florida Department of Revenue</strong>. We configure it by location in QuickBooks so the return ties." },
+  { fig: "Commercial rent", title: "Florida&rsquo;s commercial-rent sales tax", body: "Florida taxes <strong>commercial real-property rent</strong> (the &ldquo;business rent tax&rdquo;) &mdash; a rate that has been stepping down and is being phased out. If you lease space it&rsquo;s a real line; we track it and the DOR&rsquo;s rules and your CPA confirm the current rate." },
+];
+const FL_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Florida small businesses remotely across all 67 counties. Florida tax figures &mdash; no personal income tax, the 5.5% corporate income tax, 6% sales tax plus discretionary county surtax, the commercial-rent tax, and the tangible personal property return &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://floridarevenue.com/\" rel=\"noopener nofollow\">Florida Department of Revenue</a>. Rates change; confirm current figures with the Department and your CPA. TechBrot provides bookkeeping and QuickBooks work and coordinates with your CPA, who files; we do not file Florida returns or represent clients before the Department.";
+const FL_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the Florida Department of Revenue &middot; No tax-filing or representation claims (out of scope) &middot; Rates change &mdash; confirm current figures &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-bofu.njk",
+  permalink: "/find-an-accountant/florida/small-business-accountant/",
+  slug: "fl-svc-smallbiz",
+  tierClass: "section--tier-bofu",
+  bodyClass: "page--bofu",
+  callBar: true,
+  heroFigure: "taccount",
+  title: "Florida Small Business Accountant · TechBrot",
+  description: "Accountant & bookkeeper for Florida small businesses — monthly bookkeeping, QuickBooks, payroll, 6%+surtax sales tax, the 5.5% corporate tax, commercial-rent tax, and TPP. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "Florida", href: "/find-an-accountant/florida/" },
+    { name: "Small Business Accountant" },
+  ],
+  bookHref: "/contact/?intent=florida&state=florida&source_type=state-money&funnel_stage=MOFU",
+  hero: {
+    eyebrow: "Florida &middot; Small Business Accounting",
+    heading: "A small business accountant who actually knows Florida.",
+    subheading: "Monthly bookkeeping, QuickBooks, payroll coordination, and 6%+surtax sales tax for Florida small businesses &mdash; one named Certified ProAdvisor on your file, fixed-fee, all 67 counties. We keep the books and track the 5.5% corporate tax, commercial-rent tax, and tangible personal property; your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=state-money&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> is an <strong>accountant and bookkeeper for Florida small businesses</strong> &mdash; a named Certified ProAdvisor keeps your QuickBooks file reconciled and CPA-ready every month: clean categorization, 6%+surtax sales tax configured, the 5.5% corporate-tax position tracked where it applies, the commercial-rent tax watched, tangible personal property ready to file, and payroll coordinated. Fixed-fee, all 67 counties. Full summary below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Florida tax references reflect Florida Department of Revenue rules current as of the review date; TechBrot does not file Florida taxes.",
+  },
+  ctaBand: {
+    eyebrow: "Florida small businesses start here",
+    heading: "Want a small business accountant who stays on your books?",
+    lede: "Book a free discovery call. We&rsquo;ll review your QuickBooks file, tell you honestly whether you need cleanup, monthly bookkeeping, or both, and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file FL taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=state-money&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  stateName: "Florida",
+  copy: {
+    aiHeading: "Florida small business accountant, in five questions.",
+    valueEyebrow: "What a small business accountant handles in Florida",
+    valueHeading: "The whole back office, one named expert.",
+    valueLede: "Scoped to your business and delivered in your own QuickBooks file by the same Certified ProAdvisor every month.",
+    factsEyebrow: "Florida tax realities for small businesses",
+    factsHeading: "Three Florida facts every small business&rsquo;s books must reflect.",
+    factsLede: "No personal income tax doesn&rsquo;t mean no obligations &mdash; these three shape your chart of accounts, sales tax, and leases.",
+    faqHeading: "Florida small business accountant questions.",
+  },
+  summary: "<strong>TechBrot</strong> is an <strong>accountant and bookkeeper for Florida small businesses</strong> &mdash; one named Certified ProAdvisor on your QuickBooks file every month: categorization and reconciliation, a clean chart of accounts, <strong>6%+surtax sales tax</strong> configured and reconciled, payroll coordination, and CPA-ready statements. Florida has <strong>no personal income tax</strong>, but C-corps pay a <a href=\"/find-an-accountant/florida/corporate-tax-help/\">5.5% corporate tax</a>, the <strong>commercial-rent tax</strong> applies if you lease space, and the annual <strong>tangible personal property</strong> return still applies &mdash; all tracked in the books. In your own <a href=\"/quickbooks/online/\">QuickBooks Online</a> or hosted Desktop file across all 67 counties, fixed-fee against a written scope ($400&ndash;$2,500+/mo). Independent firm &mdash; not affiliated with Intuit Inc.; we keep the books, your CPA files.",
+  aiSummary: [
+    { q: "What does a Florida small business accountant do?", a: "<strong>Keeps your books in your own QuickBooks file to a Florida standard</strong> &mdash; categorization, reconciliation, 6%+surtax sales tax, the 5.5% corporate-tax position where it applies, the commercial-rent tax, tangible personal property ready to file, payroll coordination, and CPA-ready statements every month. We do the books; your CPA files." },
+    { q: "What Florida taxes affect my small business?", a: "There&rsquo;s <strong>no personal income tax</strong>, but you may face the <strong>5.5% corporate income tax</strong> (if a C-corp), <strong>6% sales tax plus a county surtax</strong>, the <strong>commercial-rent tax</strong> on leased space, an annual <strong>tangible personal property</strong> return, and <strong>reemployment tax</strong>. We track all of it in the books." },
+    { q: "Do you work in my own QuickBooks file?", a: "Yes &mdash; your file, your data, in <strong>QuickBooks Online or hosted Desktop</strong>, with a named ProAdvisor on the same file every month. We can set up or migrate the file if needed." },
+    { q: "What does it cost?", a: "Fixed-fee against a written scope, never hourly: monthly bookkeeping <strong>$400&ndash;$2,500+/mo</strong>; one-time cleanup <strong>$1,500&ndash;$15,000+</strong>. Exact fee in writing within 3 business days of a free call." },
+    { q: "Do you file Florida taxes?", a: "No &mdash; TechBrot is an independent Certified QuickBooks ProAdvisor firm. We keep the books CPA-ready and coordinate with your CPA, who files. We are not affiliated with Intuit Inc." },
+  ],
+  value: [
+    { num: "01", title: "Monthly bookkeeping &amp; close", body: "Reconciled accounts, clean categorization, and CPA-ready statements every month &mdash; sales tax and the corporate-tax position tracked.", href: "/find-an-accountant/florida/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { num: "02", title: "QuickBooks setup &amp; cleanup", body: "A Florida-correct chart of accounts and a cleanup to CPA-ready standard when the file has fallen behind.", href: "/quickbooks/cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "03", title: "Sales tax, configured right", body: "QuickBooks set to the correct 6% + county surtax rate by location and reconciled so the Department of Revenue return ties.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "04", title: "Corporate &amp; rent tax tracked", body: "The 5.5% corporate-tax position (where it applies) and the commercial-rent tax tracked so your CPA can file accurately.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate tax help &rarr;" },
+    { num: "05", title: "Payroll coordination", body: "Florida payroll configured and coordinated with your provider &mdash; no state income-tax withholding, but federal and reemployment tax handled cleanly.", href: "/quickbooks/payroll/", cta: "Payroll &rarr;" },
+    { num: "06", title: "Advisory, when ready", body: "Once the books are clean, fractional-CFO advisory on the global team &mdash; forecasting, cash-flow, board reporting.", href: "/accounting/advisory/fractional-cfo/", cta: "Fractional CFO &rarr;" },
+  ],
+  facts: FL_FACTS,
+  scopeDo: [
+    "Keep your QuickBooks Online or Desktop file reconciled and current every month",
+    "Build and maintain a Florida-correct chart of accounts",
+    "Configure 6% + county surtax sales tax by location and reconcile it",
+    "Track the 5.5% corporate-tax position (where it applies) and the commercial-rent tax",
+    "Keep tangible personal property records ready for the annual return",
+    "Coordinate Florida payroll and reemployment tax and prepare CPA-ready statements",
+  ],
+  scopeDont: [
+    "File the Florida corporate income tax, sales tax, or commercial-rent tax",
+    "File the tangible personal property return or the reemployment tax return",
+    "Represent you before the Florida Department of Revenue",
+    "Provide legal or tax advice",
+  ],
+  process: [
+    { phase: "Step 1", title: "Free file review", body: "A Certified ProAdvisor reviews your QuickBooks file and your Florida situation at no cost." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "Within 3 business days you get a written scope and fixed fee. No hourly billing." },
+    { phase: "Step 3", title: "Cleanup to CPA-ready", body: "If the file needs it, we bring it to a CPA-ready standard &mdash; sales tax corrected by county, accounts reconciled." },
+    { phase: "Step 4", title: "Monthly cadence", body: "A named ProAdvisor keeps the file clean every month and hands CPA-ready statements to your CPA." },
+  ],
+  advisoryBody: [
+    "Most Florida small businesses don&rsquo;t need a full-time accountant &mdash; they need clean books, the sales tax and (where it applies) the corporate tax tracked correctly, the commercial-rent tax and TPP handled, and a named expert who knows their file. That&rsquo;s exactly the gap a fixed-fee Certified ProAdvisor fills.",
+    "Start with accurate books, then extend &mdash; when you&rsquo;re ready &mdash; into <a href=\"/accounting/advisory/fractional-cfo/\">fractional-CFO advisory</a>, in coordination with your CPA.",
+  ],
+  faq: [
+    { q: "What does a Florida small business accountant do?", a: "Keeps your books in your own QuickBooks file to a Florida standard &mdash; categorization and reconciliation, a clean chart of accounts, 6%+surtax sales tax configured and reconciled, the 5.5% corporate-tax position tracked where it applies, the commercial-rent tax watched, tangible personal property ready to file, payroll coordination, and CPA-ready statements every month. We do the books; your CPA files." },
+    { q: "What Florida taxes does a small business owe?", a: "Florida has no personal income tax, but small businesses may face the 5.5% corporate income tax (if organized as a C-corp), 6% sales tax plus a discretionary county surtax, the commercial-rent sales tax if they lease space, an annual tangible personal property return, and reemployment (unemployment) tax. We build all of it into how the books are kept; your CPA files." },
+    { q: "Do you work in my existing QuickBooks file?", a: "Yes &mdash; your file, your data, in QuickBooks Online or hosted Desktop, with a named ProAdvisor on the same file every month. If you need a new file set up or a migration, we handle that too." },
+    { q: "Do you serve my city or county?", a: "All 67 Florida counties &mdash; Miami, Orlando, Tampa, Jacksonville, Fort Lauderdale and everywhere between &mdash; delivered remotely on QuickBooks. Your county changes the surtax rate, never the service or the named ProAdvisor." },
+    { q: "How much does it cost?", a: "Fixed-fee against a written scope, never hourly. Monthly bookkeeping runs $400&ndash;$2,500+/mo by volume and accounts; one-time cleanup runs $1,500&ndash;$15,000+. Exact fee in writing within 3 business days of a free discovery call." },
+    { q: "Do you file my Florida taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books CPA-ready and coordinate with your CPA, who files the sales tax, the 5.5% corporate income tax, the commercial-rent tax, and the tangible personal property return. We do not file or represent, and we are not affiliated with Intuit Inc." },
+    { q: "Are you a CPA firm?", a: "No &mdash; we&rsquo;re an independent Certified QuickBooks ProAdvisor and bookkeeping firm. TechBrot handles QuickBooks and bookkeeping; your Florida CPA handles filing and representation. Most clients use both; we coordinate directly." },
+  ],
+  reviewProse: FL_REVIEW_PROSE,
+  reviewCreds: FL_REVIEW_CREDS,
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/florida/small-business-accountant/",
+    name: "Florida Small Business Accountant",
+    description: "Accountant and bookkeeper for Florida small businesses — monthly bookkeeping, QuickBooks, payroll coordination, 6%+surtax sales tax, the 5.5% corporate tax, commercial-rent tax, and tangible personal property in your own QuickBooks file across all 67 counties. Independent firm; does not file Florida taxes.",
+    serviceName: "Florida Small Business Accounting & Bookkeeping",
+    serviceType: "Small business accounting and bookkeeping services",
+    serviceDesc: "Monthly bookkeeping, QuickBooks setup and cleanup, 6% + county surtax sales-tax configuration, 5.5% corporate-tax tracking, commercial-rent tax tracking, tangible personal property record-keeping, and payroll coordination for Florida small businesses across all 67 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns.",
+    areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
+    audienceType: "Florida small businesses across all 67 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};
