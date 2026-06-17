@@ -355,3 +355,19 @@ in-brief at the 680 content measure below).
 COUNT: total pages live = 157 · re-skinned (142) + growth this phase = 15 · pages added THIS turn = none
 (site-wide hero+intro width fix; no new pages) · remaining in current cluster (glossary) ≈ ~10–12 candidate
 quality terms (real-or-skip) · next cluster = CA/TX/FL/IL state children.
+
+## Update 2026-06-17 (GLOSSARY COMPLETE — final wave, real-or-skip held)
+**✅ GLOSSARY TYPE COMPLETE (`6667592`) — FINAL COUNT: 24 terms + index = 25 pages.** Added 10 final distinct
+substantive terms: bookkeeping-vs-accounting, cost-of-goods-sold, cash-flow-statement, depreciation,
+certified-quickbooks-proadvisor (FAQ ×6, incl. explicit not-Intuit-affiliation Q), retained-earnings,
+deferred-revenue, opening-balance, 1099-vs-w2, journal-entry (T-account diagram). **Held the bar: STOPPED at 24
+distinct substantive terms — did NOT pad toward 25/46.** Diagrams + FAQ only where genuine. Honesty held
+(depreciation tax method · 1099 classification · sales-tax nexus all deferred to CPA/EA). All 24:
+DefinedTerm/WebPage/BreadcrumbList schema + speakable + CALL. battery green · design-fidelity 161 · url-set 173 ·
+axe 0/26 · overflow clean 360/390/768 · CLS 0.
+
+COUNT: total pages live = 167 · re-skinned (142) + growth this phase = 25 · pages added THIS turn =
+/glossary/{bookkeeping-vs-accounting, cost-of-goods-sold, cash-flow-statement, depreciation,
+certified-quickbooks-proadvisor, retained-earnings, deferred-revenue, opening-balance, 1099-vs-w2,
+journal-entry}/ (10 terms) · remaining in current cluster = 0 (GLOSSARY COMPLETE at 24 terms) · next cluster =
+CA/TX/FL/IL state children — **NEW-TYPE PROOF: build ONE CA child → STOP for founder glance before fan-out.**
