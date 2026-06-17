@@ -1,0 +1,70 @@
+---json
+{
+  "layout": "layouts/t-guide.njk",
+  "permalink": "/glossary/",
+  "slug": "glossary",
+  "tierClass": "section--tier-guide",
+  "bodyClass": "page--mofu",
+  "title": "Accounting & QuickBooks Glossary — Plain-English Definitions · TechBrot",
+  "description": "Plain-English definitions of the accounting and QuickBooks terms that come up in real engagements — what each term means, why it matters, and where it shows up. By Certified QuickBooks ProAdvisors.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Glossary" }
+  ],
+  "hero": {
+    "eyebrow": "Glossary",
+    "heading": "The accounting &amp; QuickBooks glossary.",
+    "subheading": "Plain-English, accurate definitions of the terms that come up in real bookkeeping and QuickBooks engagements &mdash; what each means, why it matters, and where it shows up in the work. Written and maintained by the Certified QuickBooks ProAdvisor team.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "The <strong>TechBrot glossary</strong> defines the accounting and QuickBooks terms that come up in real engagements &mdash; bookkeeping, cleanup, reconciliation, payroll, sales tax, and advisory. Each entry is a genuine, citable definition with the context that makes it useful and links to where the term applies in the work. New terms are added regularly.",
+    "source": "Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Term raised a question about your books?",
+    "heading": "Ask a Certified ProAdvisor.",
+    "lede": "If a definition here describes a problem in your own QuickBooks file, a free file review will tell you exactly where you stand &mdash; with a written fixed-fee scope to fix it.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── TERMS · grid of glossary entries (grows as the type fans out). (H2: Browse the glossary.) ── #}
+<section class="section" id="glossary-terms">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Browse the terms</p>
+      <h2 class="section__heading">Browse the glossary.</h2>
+      <p class="section__lede">Every entry is a real, plain-English definition &mdash; what the term means, why it matters, and where it comes up. More terms are added regularly.</p>
+    </header>
+    <div class="related-grid">
+      {%- for t in terms %}
+      <a class="related-card" href="{{ t.href }}">
+        <h3>{{ t.term | safe }}</h3>
+        <p>{{ t.blurb | safe }}</p>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── BYLINE + REVIEW · firm-level (founder-name-zero). ── #}
+<section class="section section--alt" id="glossary-review">
+  <div class="container container--narrow">
+    <div class="byline-block">
+      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; independent firm, not affiliated with Intuit Inc.</p>
+      </div>
+    </div>
+    <p class="meta-reviewed"><span>Maintained by the Certified QuickBooks ProAdvisor team</span><span>Updated: 2026-06-17</span></p>
+  </div>
+</section>
