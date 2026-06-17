@@ -78,7 +78,7 @@ module.exports = {
   ],
   value: [
     { num: "01", title: "Monthly bookkeeping &amp; close", body: "Reconciled accounts, clean categorization, and CPA-ready statements every month &mdash; with 6%+surtax sales tax and the corporate-tax position tracked.", href: "/find-an-accountant/florida/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
-    { num: "02", title: "QuickBooks setup &amp; cleanup", body: "A Florida-correct chart of accounts, sales-tax items configured by county, and a cleanup to a CPA-ready standard when the file has fallen behind.", href: "/quickbooks/cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "02", title: "QuickBooks setup &amp; cleanup", body: "A Florida-correct chart of accounts, sales-tax items configured by county, and a cleanup to a CPA-ready standard when the file has fallen behind.", href: "/find-an-accountant/florida/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
     { num: "03", title: "Sales tax, configured right", body: "QuickBooks set to the correct 6% + county surtax rate by location and reconciled so the Department of Revenue return ties.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
     { num: "04", title: "Corporate &amp; rent tax tracked", body: "The 5.5% corporate-tax position (where it applies) and the commercial-rent tax tracked in the books so your CPA can file accurately.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate tax help &rarr;" },
     { num: "05", title: "Payroll coordination", body: "Florida payroll configured and coordinated with your provider &mdash; no state income-tax withholding, but federal and reemployment tax handled cleanly.", href: "/quickbooks/payroll/", cta: "Payroll &rarr;" },

@@ -83,7 +83,7 @@ module.exports = {
     { num: "03", title: "TPP fixed-asset schedule", body: "Equipment, furniture, and fixtures tracked so the annual tangible personal property return (DR-405) is a quick export.", href: "/find-an-accountant/florida/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
     { num: "04", title: "Sales tax handled alongside", body: "The 6% + county surtax sales tax configured and reconciled in the same file, so every Department obligation stays clean.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
     { num: "05", title: "Reemployment tax tracked", body: "Florida reemployment (unemployment) tax wages tracked so your payroll provider and CPA can file the RT-6 accurately.", href: "/quickbooks/payroll/", cta: "Payroll &rarr;" },
-    { num: "06", title: "Cleanup before handoff", body: "If the file is behind or miscategorized, a one-time cleanup brings the figures to a CPA-ready standard.", href: "/quickbooks/cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "06", title: "Cleanup before handoff", body: "If the file is behind or miscategorized, a one-time cleanup brings the figures to a CPA-ready standard.", href: "/find-an-accountant/florida/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
   ],
   facts: FL_FACTS,
   scopeDo: [

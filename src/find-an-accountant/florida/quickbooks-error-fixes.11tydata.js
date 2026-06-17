@@ -1,0 +1,130 @@
+/* /find-an-accountant/florida/quickbooks-error-fixes/ — FL SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. FL-localized. HONESTY: FL DOR + CPA; not Intuit. */
+const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
+const FL_FACTS = [
+  { fig: "6% + surtax", title: "Sales-tax errors that won&rsquo;t reconcile", body: "The Florida error we fix most: a sales-tax liability that won&rsquo;t tie to the <strong>Department of Revenue</strong> return because the rate was flat instead of by county, single-item caps were ignored, or items were mapped wrong. We trace it, correct the setup, and reconcile the liability back." },
+  { fig: "Commercial rent", title: "The commercial-rent tax mishandled", body: "Leased-space rent taxed wrong &mdash; or not at all &mdash; quietly breaks the Florida picture. We find and correct how the <strong>commercial-rent tax</strong> is recorded so it&rsquo;s right going forward." },
+  { fig: "Recon", title: "Out-of-balance &amp; duplicate transactions", body: "Negative balances, duplicate entries, and a balance sheet that won&rsquo;t reconcile are the usual symptoms. We diagnose the root cause and fix it &mdash; not just paper over the number." },
+];
+const FL_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Florida businesses remotely across all 67 counties. Florida tax figures &mdash; no personal income tax, the 5.5% corporate income tax, 6% sales tax plus discretionary county surtax, the commercial-rent tax, and the tangible personal property return &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://floridarevenue.com/\" rel=\"noopener nofollow\">Florida Department of Revenue</a>. Rates change; confirm current figures with the Department and your CPA. TechBrot diagnoses and fixes QuickBooks errors and provides bookkeeping and coordinates with your CPA, who files; we do not file Florida returns or represent clients before the Department.";
+const FL_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the Florida Department of Revenue &middot; No tax-filing or representation claims (out of scope) &middot; Root-cause fixes, not symptom masking &middot; Rates change &mdash; confirm current figures &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-bofu.njk",
+  permalink: "/find-an-accountant/florida/quickbooks-error-fixes/",
+  slug: "fl-svc-qberrors",
+  tierClass: "section--tier-bofu",
+  bodyClass: "page--bofu",
+  callBar: true,
+  heroFigure: "taccount",
+  title: "Florida QuickBooks Error Fixes · TechBrot",
+  description: "QuickBooks error fixes for Florida businesses by a Certified ProAdvisor — sales-tax liability that won't tie, out-of-balance balance sheet, duplicate entries, mishandled commercial-rent tax. Root-cause fixes, all 67 counties. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "Florida", href: "/find-an-accountant/florida/" },
+    { name: "QuickBooks Error Fixes" },
+  ],
+  bookHref: "/contact/?intent=florida&state=florida&source_type=state-qb&funnel_stage=MOFU",
+  hero: {
+    eyebrow: "Florida &middot; QuickBooks Error Fixes",
+    heading: "Florida QuickBooks errors, traced to the root and fixed.",
+    subheading: "A Certified QuickBooks ProAdvisor diagnoses and fixes what&rsquo;s broken in your Florida file &mdash; a sales-tax liability that won&rsquo;t tie to the Department of Revenue return, an out-of-balance balance sheet, duplicate entries, or a commercial-rent tax recorded wrong. Root-cause fixes, not symptom masking. All 67 counties.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=state-qb&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Root-cause fixes &middot; not symptom masking"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> provides <strong>QuickBooks error fixes for Florida businesses</strong> &mdash; a Certified ProAdvisor diagnoses and fixes a sales-tax liability that won&rsquo;t tie to the Department of Revenue return, an out-of-balance balance sheet, duplicate or negative entries, and a commercial-rent tax recorded wrong, in your own file. Root-cause fixes, all 67 counties. The full Florida error-fix summary is below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Florida tax references reflect Department of Revenue rules current as of the review date; TechBrot does not file Florida taxes.",
+  },
+  ctaBand: {
+    eyebrow: "Florida businesses start here",
+    heading: "Something broken in your Florida QuickBooks file?",
+    lede: "Book a free discovery call. We&rsquo;ll diagnose the error, tell you the root cause, and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file FL taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=state-qb&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  stateName: "Florida",
+  copy: {
+    aiHeading: "Florida QuickBooks error fixes, in five questions.",
+    valueEyebrow: "What Florida error fixes cover",
+    valueHeading: "Diagnosed at the root, fixed for good.",
+    valueLede: "We trace each error to its cause &mdash; especially the Florida-specific ones &mdash; and fix it so it stays fixed.",
+    factsEyebrow: "The Florida errors we fix most",
+    factsHeading: "Three Florida QuickBooks errors we see again and again.",
+    factsLede: "Florida files break in recognizable ways &mdash; these three are the usual emergencies, and all three have a real fix.",
+    faqHeading: "Florida QuickBooks error-fix questions.",
+  },
+  summary: "<strong>TechBrot</strong> provides <strong>QuickBooks error fixes for Florida businesses</strong> &mdash; a Certified QuickBooks ProAdvisor diagnoses and fixes what&rsquo;s broken: a <strong>sales-tax liability that won&rsquo;t tie</strong> to the Department of Revenue return (usually a flat rate instead of by county surtax), an <strong>out-of-balance balance sheet</strong>, duplicate or negative entries, and a <a href=\"/find-an-accountant/florida/corporate-tax-help/\">commercial-rent tax</a> recorded wrong. We trace each to the root cause and fix it &mdash; never just paper over the number &mdash; in your own QuickBooks file. Fixed-fee against a written scope. Independent firm &mdash; not affiliated with Intuit Inc.; we fix it, your CPA files.",
+  aiSummary: [
+    { q: "What QuickBooks errors do you fix for Florida businesses?", a: "<strong>A sales-tax liability that won&rsquo;t tie to the DOR return, an out-of-balance balance sheet, duplicate or negative entries, and a commercial-rent tax recorded wrong</strong> &mdash; traced to root cause and fixed in your own file. We fix it; your CPA files." },
+    { q: "Why won&rsquo;t my sales-tax liability match my return?", a: "Usually because sales tax was set to a single flat rate instead of the <strong>6% + county surtax by location</strong>, single-item caps were ignored, or items were mapped to the wrong taxability. We trace it, correct the setup, and reconcile the liability back to the DOR return." },
+    { q: "Do you fix the cause or just the number?", a: "The cause. Masking a symptom &mdash; forcing a balance with a journal entry &mdash; just hides the problem until next period. We diagnose the <strong>root cause</strong> and fix it so it stays fixed." },
+    { q: "What does an error fix cost?", a: "Fixed-fee against a written scope once we&rsquo;ve diagnosed it &mdash; scoped to the depth of the problem. A bigger underlying mess may be scoped as a <a href=\"/find-an-accountant/florida/quickbooks-cleanup/\">cleanup</a>. Exact fee in writing within 3 business days." },
+    { q: "How fast can you fix it?", a: "Many single errors are diagnosed and fixed within days of the file review. Deeper issues are scoped with a clear timeline up front." },
+  ],
+  value: [
+    { num: "01", title: "Sales-tax liability won&rsquo;t tie", body: "Traced to a flat rate, ignored surtax cap, or bad item mapping, corrected to 6% + the county surtax, and reconciled back to the DOR return.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "02", title: "Out-of-balance balance sheet", body: "Negative balances and a balance sheet that won&rsquo;t reconcile traced to the root posting and corrected &mdash; not forced.", href: "/find-an-accountant/florida/quickbooks-reconciliation/", cta: "Reconciliation &rarr;" },
+    { num: "03", title: "Commercial-rent tax recorded wrong", body: "The business-rent tax mishandled or missing &mdash; found and corrected so leased-space rent is taxed right.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate &amp; rent tax &rarr;" },
+    { num: "04", title: "Duplicate &amp; orphaned entries", body: "Double-imported bank feeds, duplicate invoices, and orphaned transactions cleaned up at the source.", href: "/find-an-accountant/florida/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
+    { num: "05", title: "Deeper mess? Scoped as cleanup", body: "If the error is a symptom of a broken file, we scope a full cleanup rather than a band-aid.", href: "/find-an-accountant/florida/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "06", title: "Stays fixed", body: "Move into monthly bookkeeping so the same error doesn&rsquo;t come back next quarter.", href: "/find-an-accountant/florida/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+  ],
+  facts: FL_FACTS,
+  scopeDo: [
+    "Diagnose why the sales-tax liability won't tie and correct it by county",
+    "Trace an out-of-balance balance sheet to its root posting and fix it",
+    "Find and correct how the commercial-rent tax is recorded",
+    "Clean up duplicate, negative, and orphaned transactions",
+    "Scope a full cleanup when the error is a symptom of a broken file",
+    "Fix root causes, never mask symptoms",
+  ],
+  scopeDont: [
+    "File the Florida sales tax, corporate income tax, or commercial-rent tax",
+    "File the tangible personal property return",
+    "Represent you before the Florida Department of Revenue",
+    "Provide legal or tax advice",
+  ],
+  process: [
+    { phase: "Step 1", title: "Free file review", body: "A Certified ProAdvisor reviews the file and diagnoses the error and its root cause." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days &mdash; or a cleanup scope if the mess runs deeper." },
+    { phase: "Step 3", title: "Root-cause fix", body: "We correct the cause &mdash; sales-tax setup, commercial-rent recording, mis-postings, duplicates &mdash; and reconcile back to clean." },
+    { phase: "Step 4", title: "Keep it fixed", body: "Optional monthly bookkeeping so the same error doesn&rsquo;t recur &mdash; the file stays clean." },
+  ],
+  advisoryBody: [
+    "A QuickBooks error in a Florida file is rarely just a number &mdash; a sales-tax liability that won&rsquo;t tie, a balance sheet that won&rsquo;t balance, or a commercial-rent tax recorded wrong all have a root cause, and forcing the number with a journal entry only hides it until next period. We diagnose the cause and fix it properly.",
+    "When an error turns out to be the tip of a broken file, we say so and scope a <a href=\"/find-an-accountant/florida/quickbooks-cleanup/\">cleanup</a> rather than a band-aid &mdash; then keep it clean in <a href=\"/find-an-accountant/florida/monthly-bookkeeping/\">monthly bookkeeping</a>.",
+  ],
+  faq: [
+    { q: "What QuickBooks errors do you fix for Florida businesses?", a: "A Certified ProAdvisor diagnoses and fixes a sales-tax liability that won&rsquo;t tie to the Department of Revenue return, an out-of-balance balance sheet, negative balances, duplicate or orphaned entries, and a commercial-rent tax recorded wrong &mdash; each traced to its root cause and fixed in your own file. We fix it; your CPA files." },
+    { q: "Why won't my Florida sales-tax liability match the return?", a: "Almost always because sales tax was set to a single flat rate instead of 6% + the county surtax by location, single-item surtax caps were ignored, or products and services were mapped to the wrong taxability. We trace the mismatch, correct the setup to apply the right rate by county, and reconcile the liability account back to what the DOR return reports." },
+    { q: "Do you fix the root cause or just force the numbers?", a: "The root cause. Forcing a balance with an adjusting journal entry just hides the problem until it resurfaces next period &mdash; and can make the sales-tax and corporate-tax figures wrong. We diagnose why the error happened and fix it at the source so it stays fixed. This is a firm rule for us." },
+    { q: "How much does a QuickBooks error fix cost?", a: "Fixed-fee against a written scope once we&rsquo;ve diagnosed the error &mdash; scoped to its depth. A single isolated error is a small fixed fee; if it turns out to be a symptom of a broader broken file, we scope it as a cleanup instead and tell you so. Exact fee in writing within 3 business days." },
+    { q: "How quickly can you fix my QuickBooks error?", a: "Many single errors are diagnosed and fixed within days of the free file review. Deeper or multi-period issues are scoped with a clear timeline up front, so you know what to expect before we start." },
+    { q: "Do you file my Florida taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we fix the file and keep the books CPA-ready and coordinate with your CPA, who files the sales tax, corporate income tax, commercial-rent tax, and TPP return. We are not affiliated with Intuit Inc." },
+  ],
+  reviewProse: FL_REVIEW_PROSE,
+  reviewCreds: FL_REVIEW_CREDS,
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/florida/quickbooks-error-fixes/",
+    name: "Florida QuickBooks Error Fixes",
+    description: "QuickBooks error fixes for Florida businesses by a Certified ProAdvisor — a sales-tax liability that won't tie, an out-of-balance balance sheet, duplicate entries, and a mishandled commercial-rent tax, traced to root cause and fixed. Independent firm; does not file Florida taxes.",
+    serviceName: "Florida QuickBooks Error Diagnosis & Fix Services",
+    serviceType: "QuickBooks error diagnosis and correction",
+    serviceDesc: "Diagnosis and root-cause correction of QuickBooks errors for Florida businesses — a sales-tax liability that won't tie to the DOR return, an out-of-balance balance sheet, duplicate and orphaned entries, and a commercial-rent tax recorded wrong, fixed in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
+    areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
+    audienceType: "Florida businesses with broken or out-of-balance QuickBooks files across all 67 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};

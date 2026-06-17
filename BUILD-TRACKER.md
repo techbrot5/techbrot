@@ -322,8 +322,8 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 256 · re-skinned (142) + growth = 114 · LAST COMMIT = round-45 TRIAGE-UNHOLD
-(3 pages: TX speak + TX business-tax-problems + FL speak + TX pillar re-link). Working tree clean on `preview-11ty`.
+**COUNT: total pages live = 262 · re-skinned (142) + growth = 120 · LAST COMMIT = round-46 FL-QB-spokes
+(6 pages: setup, cleanup, reconciliation, migration, training, error-fixes). FL QB spokes 6/6 ✅; cleanup re-link TODO cleared. Working tree clean on `preview-11ty`.
 ✅ TRIAGE HOLD GATE CLEARED SITE-WIDE (founder approved CA disclosure pattern 2026-06-18; locked as approved). IL triage builds normally at IL.
 ✅ CALIFORNIA COMPLETE (39). ✅ TEXAS COMPLETE incl. triage (32). FLORIDA IN PROGRESS = pillar + 5 cities + 8 services (money 4/6 + speak ✅ [pricing pending] · tax 2/2 ✅ · bkg-spoke monthly ✅).
 FL tax stack = no personal income tax BUT 5.5% C-corp · 6%+county-surtax sales tax · commercial-rent tax · TPP (DR-405) · RT-6 · FL Dept of Revenue · 67 counties.

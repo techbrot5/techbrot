@@ -76,7 +76,7 @@ module.exports = {
     { num: "01", title: "Remote monthly bookkeeping", body: "Reconciled accounts, clean categorization, and CPA-ready statements every month &mdash; entirely remote.", href: "/find-an-accountant/florida/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
     { num: "02", title: "Sales tax configured to your county", body: "6% + county surtax set to your exact Florida county and reconciled so the Department of Revenue return ties.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
     { num: "03", title: "Rent &amp; corporate tax tracked", body: "The commercial-rent tax and (where it applies) the 5.5% corporate-tax position maintained remotely so your CPA can file.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate tax help &rarr;" },
-    { num: "04", title: "Cleanup, fully remote", body: "A behind or messy file brought to a CPA-ready standard without an on-site visit.", href: "/quickbooks/cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "04", title: "Cleanup, fully remote", body: "A behind or messy file brought to a CPA-ready standard without an on-site visit.", href: "/find-an-accountant/florida/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
     { num: "05", title: "Payroll coordination", body: "Florida payroll configured and coordinated with your provider remotely &mdash; federal and reemployment tax handled cleanly.", href: "/quickbooks/payroll/", cta: "Payroll &rarr;" },
     { num: "06", title: "Advisory, when ready", body: "Once the books are clean, fractional-CFO advisory on the global team &mdash; forecasting and cash-flow.", href: "/accounting/advisory/fractional-cfo/", cta: "Fractional CFO &rarr;" },
   ],

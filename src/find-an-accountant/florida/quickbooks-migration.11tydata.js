@@ -1,0 +1,130 @@
+/* /find-an-accountant/florida/quickbooks-migration/ — FL SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. FL-localized. HONESTY: FL DOR + CPA; not Intuit. */
+const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
+const FL_FACTS = [
+  { fig: "6% + surtax", title: "Sales tax re-mapped to Florida, by county", body: "A migration is the moment to set sales tax up <strong>right</strong> &mdash; 6% + the county surtax applied by location with single-item caps, not carried over as a flat rate from the old system. We re-map it as part of the move." },
+  { fig: "Commercial rent", title: "The commercial-rent tax brought across", body: "If the old system never recorded the <strong>commercial-rent tax</strong>, the migration is where it gets configured correctly &mdash; so leased-space rent is taxed right going forward." },
+  { fig: "TPP", title: "Fixed assets carried over intact", body: "The fixed-asset schedule for the <strong>tangible personal property</strong> return has to survive the migration. We carry it over intact so the DR-405 isn&rsquo;t reconstructed after the move." },
+];
+const FL_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Florida businesses remotely across all 67 counties. Florida tax figures &mdash; no personal income tax, the 5.5% corporate income tax, 6% sales tax plus discretionary county surtax, the commercial-rent tax, and the tangible personal property return &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://floridarevenue.com/\" rel=\"noopener nofollow\">Florida Department of Revenue</a>. Rates change; confirm current figures with the Department and your CPA. TechBrot migrates and maintains QuickBooks files and coordinates with your CPA, who files; we do not file Florida returns or represent clients before the Department.";
+const FL_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the Florida Department of Revenue &middot; No tax-filing or representation claims (out of scope) &middot; Rates change &mdash; confirm current figures &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-bofu.njk",
+  permalink: "/find-an-accountant/florida/quickbooks-migration/",
+  slug: "fl-svc-qbmigration",
+  tierClass: "section--tier-bofu",
+  bodyClass: "page--bofu",
+  callBar: true,
+  heroFigure: "taccount",
+  title: "Florida QuickBooks Migration · TechBrot",
+  description: "QuickBooks migration for Florida businesses by a Certified ProAdvisor — Desktop to Online or another platform, opening balances and history intact, sales tax re-mapped by county, fixed assets carried over. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "Florida", href: "/find-an-accountant/florida/" },
+    { name: "QuickBooks Migration" },
+  ],
+  bookHref: "/contact/?intent=florida&state=florida&source_type=state-qb&funnel_stage=MOFU",
+  hero: {
+    eyebrow: "Florida &middot; QuickBooks Migration",
+    heading: "Florida QuickBooks migration without losing your history.",
+    subheading: "A Certified QuickBooks ProAdvisor moves your Florida file &mdash; Desktop to Online, or from another platform &mdash; with opening balances and history intact, sales tax re-mapped to 6% + the county surtax by location, the commercial-rent tax configured, and the fixed-asset schedule carried over for the TPP return. Fixed-fee, all 67 counties. We migrate; your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=state-qb&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> provides <strong>QuickBooks migration for Florida businesses</strong> &mdash; a Certified ProAdvisor moves your file from Desktop to Online or from another platform with opening balances and history intact, re-maps sales tax to 6% + the county surtax by location, configures the commercial-rent tax, and carries the fixed-asset schedule over for the TPP return. Fixed-fee, all 67 counties. The full Florida migration summary is below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Florida tax references reflect Department of Revenue rules current as of the review date; TechBrot does not file Florida taxes.",
+  },
+  ctaBand: {
+    eyebrow: "Florida businesses start here",
+    heading: "Moving to QuickBooks in Florida? Let&rsquo;s migrate it cleanly.",
+    lede: "Book a free discovery call. We&rsquo;ll scope the migration and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file FL taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=state-qb&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  stateName: "Florida",
+  copy: {
+    aiHeading: "Florida QuickBooks migration, in five questions.",
+    valueEyebrow: "What a Florida migration covers",
+    valueHeading: "A clean move, with Florida configured right.",
+    valueLede: "A migration is the best moment to fix the Florida specifics &mdash; so we re-map them as part of the move.",
+    factsEyebrow: "What a migration gets right for Florida",
+    factsHeading: "Three Florida things a migration should fix, not carry over.",
+    factsLede: "Migrating is the chance to set Florida up correctly &mdash; rather than importing the old system&rsquo;s mistakes.",
+    faqHeading: "Florida QuickBooks migration questions.",
+  },
+  summary: "<strong>TechBrot</strong> provides <strong>QuickBooks migration for Florida businesses</strong> &mdash; a Certified QuickBooks ProAdvisor moves your file from <a href=\"/quickbooks/online/\">Desktop to Online</a> or from another platform with <strong>opening balances and history intact</strong>. A migration is the moment to set Florida up right: <strong>6% + county surtax sales tax re-mapped by location</strong> (not carried over as a flat rate), the <a href=\"/find-an-accountant/florida/corporate-tax-help/\">commercial-rent tax</a> configured, and the fixed-asset schedule carried over intact for the <strong>tangible personal property</strong> return. Fixed-fee against a written scope (typically $2,500&ndash;$10,000+ by data complexity). Independent firm &mdash; not affiliated with Intuit Inc.; we migrate, your CPA files.",
+  aiSummary: [
+    { q: "What does Florida QuickBooks migration include?", a: "<strong>Moving your file from Desktop to Online or from another platform with opening balances and history intact, sales tax re-mapped to 6% + the county surtax by location, the commercial-rent tax configured, and the fixed-asset schedule carried over</strong> for the TPP return. We migrate; your CPA files." },
+    { q: "Why migrate with a ProAdvisor instead of the built-in tool?", a: "Because the built-in import carries over the old system&rsquo;s mistakes &mdash; including flat-rate sales tax and a missing commercial-rent tax. A ProAdvisor migration is the chance to <strong>re-map sales tax by county</strong>, configure the commercial-rent tax, and verify opening balances, so you land on a clean Florida file rather than a copy of the old mess." },
+    { q: "Will I lose my history?", a: "No &mdash; we migrate opening balances and history so reporting and the corporate-tax figures stay continuous across the cutover. We verify the migrated data ties to the source before go-live." },
+    { q: "What does migration cost?", a: "Fixed-fee against a written scope, typically <strong>$2,500&ndash;$10,000+</strong> depending on data volume, the source system, and how much re-mapping is needed. Exact fee in writing within 3 business days." },
+    { q: "What happens after the migration?", a: "Most Florida businesses keep the same named ProAdvisor for <a href=\"/find-an-accountant/florida/monthly-bookkeeping/\">monthly bookkeeping</a> so the freshly migrated file stays clean. Migration-only is fine too." },
+  ],
+  value: [
+    { num: "01", title: "Desktop to Online", body: "A clean move from QuickBooks Desktop to Online with lists, balances, and history intact &mdash; or the reverse if Desktop fits better.", href: "/quickbooks/online/", cta: "QuickBooks Online &rarr;" },
+    { num: "02", title: "From another platform", body: "Coming from Xero, Wave, spreadsheets, or another system &mdash; we map the data into a Florida-correct QuickBooks file.", href: "/find-an-accountant/florida/quickbooks-setup/", cta: "QuickBooks setup &rarr;" },
+    { num: "03", title: "Sales tax re-mapped by county", body: "Sales tax set up correctly to 6% + the county surtax during the move &mdash; not carried over as a flat statewide rate.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "04", title: "Commercial-rent tax configured", body: "The business-rent tax configured during the migration so leased-space rent is taxed correctly going forward.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate &amp; rent tax &rarr;" },
+    { num: "05", title: "Fixed assets carried over", body: "The fixed-asset schedule moved intact so the tangible personal property return isn&rsquo;t reconstructed after the migration.", href: "/find-an-accountant/florida/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
+    { num: "06", title: "Verified before go-live", body: "Migrated balances reconciled to the source and the file verified clean before you rely on it.", href: "/find-an-accountant/florida/quickbooks-reconciliation/", cta: "Reconciliation &rarr;" },
+  ],
+  facts: FL_FACTS,
+  scopeDo: [
+    "Migrate from Desktop to Online, or from another platform, with history intact",
+    "Re-map 6% + county surtax sales tax by location during the move",
+    "Configure the commercial-rent tax during the migration",
+    "Carry the fixed-asset schedule over intact for the TPP return",
+    "Reconcile migrated balances to the source before go-live",
+    "Configure reporting and integrations on the new file",
+  ],
+  scopeDont: [
+    "File the Florida sales tax, corporate income tax, or commercial-rent tax",
+    "File the tangible personal property return",
+    "Represent you before the Florida Department of Revenue",
+    "Provide legal or tax advice",
+  ],
+  process: [
+    { phase: "Step 1", title: "Free scoping call", body: "A Certified ProAdvisor reviews your source system and data to scope the migration." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days, with the Florida re-mapping listed." },
+    { phase: "Step 3", title: "Migrate &amp; re-map", body: "We move balances and history, re-map sales tax by county, configure the commercial-rent tax, and carry the fixed-asset schedule over." },
+    { phase: "Step 4", title: "Verify &amp; go-live", body: "Migrated data reconciled to the source and the file verified before go-live &mdash; or straight into monthly bookkeeping." },
+  ],
+  advisoryBody: [
+    "A migration is the cheapest opportunity you&rsquo;ll get to fix Florida configuration &mdash; the built-in import tools faithfully carry over flat-rate sales tax and a missing commercial-rent tax, so &ldquo;just importing&rdquo; often means importing the old mess. Doing it with a ProAdvisor means you land on a clean Florida file instead.",
+    "Once migrated, the same named ProAdvisor can keep the file clean in <a href=\"/find-an-accountant/florida/monthly-bookkeeping/\">monthly bookkeeping</a> &mdash; so the fresh start lasts.",
+  ],
+  faq: [
+    { q: "What does Florida QuickBooks migration include?", a: "A Certified ProAdvisor moves your file from Desktop to Online or from another platform with opening balances and history intact, re-maps sales tax to 6% + the county surtax by location, configures the commercial-rent tax, and carries the fixed-asset schedule over for the TPP return &mdash; then verifies the data before go-live. We migrate; your CPA files." },
+    { q: "Why not just use the built-in migration tool?", a: "Because the built-in import carries over the old system&rsquo;s mistakes faithfully &mdash; including flat-rate sales tax and a commercial-rent tax that was never recorded. A ProAdvisor migration is the chance to re-map sales tax by county, configure the commercial-rent tax, and verify opening balances, so you land on a clean Florida file rather than a copy of the old mess." },
+    { q: "Will I lose my transaction history?", a: "No. We migrate opening balances and history so reporting and the corporate-tax figures stay continuous across the cutover, and we reconcile the migrated data to the source before go-live so you can trust it. The depth of history moved depends on the source system, which we confirm during scoping." },
+    { q: "Can you migrate from Xero or spreadsheets?", a: "Yes &mdash; whether you&rsquo;re coming from QuickBooks Desktop, Xero, Wave, spreadsheets, or another platform, we map the data into a Florida-correct QuickBooks file with sales tax, the commercial-rent tax, the chart of accounts, and fixed assets set up properly for Florida." },
+    { q: "How much does Florida QuickBooks migration cost?", a: "Fixed-fee against a written scope, never hourly &mdash; typically $2,500&ndash;$10,000+ depending on data volume, the source system, and how much re-mapping the Florida setup needs. You get the exact fee in writing within 3 business days of a free scoping call." },
+    { q: "Do you file my Florida taxes after migrating?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we migrate and keep the books CPA-ready and coordinate with your CPA, who files the sales tax, corporate income tax, commercial-rent tax, and TPP return. We are not affiliated with Intuit Inc." },
+  ],
+  reviewProse: FL_REVIEW_PROSE,
+  reviewCreds: FL_REVIEW_CREDS,
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/florida/quickbooks-migration/",
+    name: "Florida QuickBooks Migration",
+    description: "QuickBooks migration for Florida businesses by a Certified ProAdvisor — Desktop to Online or another platform with history intact, sales tax re-mapped to 6%+surtax by county, and the fixed-asset schedule carried over for TPP. Independent firm; does not file Florida taxes.",
+    serviceName: "Florida QuickBooks Migration Services",
+    serviceType: "QuickBooks data migration and conversion",
+    serviceDesc: "Migration of QuickBooks files from Desktop to Online or from another platform for Florida businesses — opening balances and history intact, 6% + county surtax sales tax re-mapped by location, the commercial-rent tax configured, and the fixed-asset schedule carried over for the tangible personal property return, with data verified before go-live. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
+    areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
+    audienceType: "Florida businesses migrating to or between QuickBooks editions across all 67 counties",
+    offerPrice: "2500",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};

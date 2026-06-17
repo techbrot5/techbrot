@@ -1,0 +1,130 @@
+/* /find-an-accountant/florida/quickbooks-training/ — FL SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. FL-localized. HONESTY: FL DOR + CPA; not Intuit. */
+const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
+const FL_FACTS = [
+  { fig: "6% + surtax", title: "Train your team to invoice sales tax right", body: "The most common day-to-day mistake is applying the wrong sales-tax rate at invoice time. We train your team to use 6% + the correct county surtax <strong>by location</strong> &mdash; with single-item caps &mdash; so it&rsquo;s right at entry, not corrected later." },
+  { fig: "Commercial rent", title: "Record the commercial-rent tax", body: "If you lease space, your team has to record the <strong>commercial-rent tax</strong> correctly &mdash; a line most people don&rsquo;t know exists. We train them to handle it so leased-space rent is taxed right." },
+  { fig: "TPP", title: "Record fixed assets as you buy them", body: "Equipment and furniture entered correctly when purchased keeps the <strong>tangible personal property</strong> schedule current &mdash; so the annual DR-405 is an export, not a hunt through the bank feed." },
+];
+const FL_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Florida businesses remotely across all 67 counties. Florida tax figures &mdash; no personal income tax, the 5.5% corporate income tax, 6% sales tax plus discretionary county surtax, the commercial-rent tax, and the tangible personal property return &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://floridarevenue.com/\" rel=\"noopener nofollow\">Florida Department of Revenue</a>. Rates change; confirm current figures with the Department and your CPA. TechBrot trains teams on QuickBooks and provides bookkeeping and coordinates with your CPA, who files; we do not file Florida returns or represent clients before the Department.";
+const FL_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the Florida Department of Revenue &middot; No tax-filing or representation claims (out of scope) &middot; Rates change &mdash; confirm current figures &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-bofu.njk",
+  permalink: "/find-an-accountant/florida/quickbooks-training/",
+  slug: "fl-svc-qbtraining",
+  tierClass: "section--tier-bofu",
+  bodyClass: "page--bofu",
+  callBar: true,
+  heroFigure: "taccount",
+  title: "Florida QuickBooks Training · TechBrot",
+  description: "QuickBooks training for Florida business teams by a Certified ProAdvisor — invoice 6%+surtax sales tax by county, record the commercial-rent tax, track fixed assets for TPP. Live, role-specific, all 67 counties. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "Florida", href: "/find-an-accountant/florida/" },
+    { name: "QuickBooks Training" },
+  ],
+  bookHref: "/contact/?intent=florida&state=florida&source_type=state-qb&funnel_stage=MOFU",
+  hero: {
+    eyebrow: "Florida &middot; QuickBooks Training",
+    heading: "QuickBooks training for your Florida team, done your way.",
+    subheading: "A Certified QuickBooks ProAdvisor trains your team on the things that matter in Florida &mdash; invoicing 6%+surtax sales tax by county, recording the commercial-rent tax, and tracking fixed assets for the TPP return &mdash; live and role-specific, in your own file. Fixed-fee, all 67 counties.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=state-qb&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Live &middot; role-specific &middot; your own file"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> provides <strong>QuickBooks training for Florida business teams</strong> &mdash; a Certified ProAdvisor trains your staff, live and role-specific, on invoicing 6%+surtax sales tax by county, recording the commercial-rent tax, and tracking fixed assets for the TPP return, in your own QuickBooks file. Fixed-fee, all 67 counties. The full Florida training summary is below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Florida tax references reflect Department of Revenue rules current as of the review date; TechBrot does not file Florida taxes.",
+  },
+  ctaBand: {
+    eyebrow: "Florida businesses start here",
+    heading: "Want your Florida team confident in QuickBooks?",
+    lede: "Book a free discovery call. We&rsquo;ll scope the training to your team&rsquo;s roles and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file FL taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=state-qb&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  stateName: "Florida",
+  copy: {
+    aiHeading: "Florida QuickBooks training, in five questions.",
+    valueEyebrow: "What Florida training covers",
+    valueHeading: "Your team, confident on the Florida specifics.",
+    valueLede: "We train on the day-to-day actions that keep a Florida file clean &mdash; tailored to each role.",
+    factsEyebrow: "What we make sure your team gets right",
+    factsHeading: "Three Florida habits good training builds in.",
+    factsLede: "Most Florida file problems start at data entry &mdash; training fixes them at the source.",
+    faqHeading: "Florida QuickBooks training questions.",
+  },
+  summary: "<strong>TechBrot</strong> provides <strong>QuickBooks training for Florida business teams</strong> &mdash; a Certified QuickBooks ProAdvisor trains your staff live and role-specific, in your own file, on the things that matter in Florida: invoicing <strong>6%+surtax sales tax by county</strong>, recording the <a href=\"/find-an-accountant/florida/corporate-tax-help/\">commercial-rent tax</a> on leased space, and recording fixed assets so the <strong>tangible personal property</strong> schedule stays current. Most Florida file problems start at data entry, so training fixes them at the source. Fixed-fee against a written scope, scoped to your team&rsquo;s roles. Independent firm &mdash; not affiliated with Intuit Inc.",
+  aiSummary: [
+    { q: "What does Florida QuickBooks training cover?", a: "<strong>Invoicing 6%+surtax sales tax by county, recording the commercial-rent tax, tracking fixed assets for the TPP return, and the day-to-day workflows for each role</strong> &mdash; live, in your own QuickBooks file, by a Certified ProAdvisor." },
+    { q: "Who is the training for?", a: "Whoever touches the books &mdash; owners, office managers, bookkeepers, and AR/AP staff. We tailor each session to the role, so an invoicing clerk learns sales tax by county and a bookkeeper learns the commercial-rent tax." },
+    { q: "Is it live or recorded?", a: "Live and interactive, in your own QuickBooks file, so your team practices on real workflows rather than a generic demo. We can record the sessions for onboarding new staff later." },
+    { q: "What does training cost?", a: "Fixed-fee against a written scope, scoped to the number of people and sessions. Exact fee in writing within 3 business days of a free discovery call." },
+    { q: "Can you train and keep the books?", a: "Yes &mdash; many Florida businesses pair training with <a href=\"/find-an-accountant/florida/monthly-bookkeeping/\">monthly bookkeeping</a>, where we keep the file clean and the team handles day-to-day entry confidently." },
+  ],
+  value: [
+    { num: "01", title: "Sales tax at invoice time", body: "Train AR staff to apply 6% + the correct county surtax (with single-item caps) so invoices are right at entry &mdash; the most common day-to-day fix.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "02", title: "Commercial-rent tax", body: "Train your team to record the business-rent tax on leased space &mdash; the line most people don&rsquo;t know exists.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate &amp; rent tax &rarr;" },
+    { num: "03", title: "Fixed-asset entry", body: "Train your team to record equipment and furniture as purchased, keeping the TPP schedule current year-round.", href: "/find-an-accountant/florida/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
+    { num: "04", title: "Role-specific workflows", body: "Sessions tailored by role &mdash; owner dashboards, AR/AP, payroll entry &mdash; so each person learns exactly their part.", href: "/find-an-accountant/florida/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
+    { num: "05", title: "Reporting your team can read", body: "Train owners and managers to pull and read the reports that matter, so the books drive decisions, not just compliance.", href: "/accounting/financial-statements/", cta: "Financial statements &rarr;" },
+    { num: "06", title: "Onboarding-ready recordings", body: "Sessions recorded in your own file so new hires can be brought up to speed without starting from scratch.", href: "/find-an-accountant/florida/quickbooks-setup/", cta: "QuickBooks setup &rarr;" },
+  ],
+  facts: FL_FACTS,
+  scopeDo: [
+    "Train staff to invoice 6% + the county surtax by location, with single-item caps",
+    "Train the team to record the commercial-rent tax on leased space",
+    "Train the team to record fixed assets for the TPP schedule",
+    "Tailor sessions by role &mdash; owner, AR/AP, bookkeeper, payroll",
+    "Train owners and managers to read the reports that matter",
+    "Record sessions in your own file for onboarding",
+  ],
+  scopeDont: [
+    "File the Florida sales tax, corporate income tax, or commercial-rent tax",
+    "File the tangible personal property return",
+    "Represent you before the Florida Department of Revenue",
+    "Provide legal or tax advice",
+  ],
+  process: [
+    { phase: "Step 1", title: "Free scoping call", body: "A Certified ProAdvisor reviews your team&rsquo;s roles and the file to scope the training." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days, by number of people and sessions." },
+    { phase: "Step 3", title: "Live, role-specific sessions", body: "We train each role live in your own file on the Florida-specific workflows, with practice on real data." },
+    { phase: "Step 4", title: "Recordings &amp; follow-up", body: "Sessions recorded for onboarding, with follow-up support &mdash; or paired with monthly bookkeeping." },
+  ],
+  advisoryBody: [
+    "Most Florida QuickBooks problems aren&rsquo;t the software &mdash; they&rsquo;re data entry: the wrong county surtax on an invoice, the commercial-rent tax never recorded, a new asset booked as an expense instead of a fixed asset. Training fixes those at the source, so the file stays clean between closes.",
+    "Pair training with <a href=\"/find-an-accountant/florida/monthly-bookkeeping/\">monthly bookkeeping</a> and your team handles day-to-day entry confidently while a ProAdvisor keeps the close and the Florida filings clean.",
+  ],
+  faq: [
+    { q: "What does Florida QuickBooks training cover?", a: "A Certified ProAdvisor trains your team, live and role-specific in your own file, on invoicing 6%+surtax sales tax by county (with single-item caps), recording the commercial-rent tax on leased space, recording fixed assets for the TPP return, and the day-to-day workflows for each role. The focus is the Florida-specific habits that keep a file clean." },
+    { q: "Who should attend the training?", a: "Anyone who touches the books &mdash; owners, office managers, bookkeepers, and AR/AP staff. We tailor each session to the role: an invoicing clerk learns sales tax by county, a bookkeeper learns the commercial-rent tax, and an owner learns to read the reports that matter." },
+    { q: "Is the training live or pre-recorded?", a: "Live and interactive, in your own QuickBooks file, so your team practices on real workflows rather than a generic demo. We can record the live sessions so you can onboard new staff with them later without paying for the training again." },
+    { q: "How much does Florida QuickBooks training cost?", a: "Fixed-fee against a written scope, never hourly &mdash; scoped to the number of people and sessions. You get the exact fee in writing within 3 business days of a free discovery call." },
+    { q: "Can you train my team and also keep the books?", a: "Yes &mdash; many Florida businesses pair training with monthly bookkeeping, so your team handles day-to-day entry confidently while a named ProAdvisor keeps the monthly close and the Florida filings clean. Training-only is also fine." },
+    { q: "Do you file my Florida taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we train your team and keep the books CPA-ready and coordinate with your CPA, who files the sales tax, corporate income tax, commercial-rent tax, and TPP return. We are not affiliated with Intuit Inc." },
+  ],
+  reviewProse: FL_REVIEW_PROSE,
+  reviewCreds: FL_REVIEW_CREDS,
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/florida/quickbooks-training/",
+    name: "Florida QuickBooks Training",
+    description: "QuickBooks training for Florida business teams by a Certified ProAdvisor — live, role-specific sessions on invoicing 6%+surtax sales tax by county, recording the commercial-rent tax, and tracking fixed assets for TPP. Independent firm; does not file Florida taxes.",
+    serviceName: "Florida QuickBooks Training Services",
+    serviceType: "QuickBooks training and staff enablement",
+    serviceDesc: "Live, role-specific QuickBooks training for Florida business teams — invoicing 6% + county surtax sales tax by location, recording the commercial-rent tax, tracking fixed assets for the tangible personal property return, and reporting, in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
+    areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
+    audienceType: "Florida business owners and staff learning QuickBooks across all 67 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};

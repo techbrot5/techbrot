@@ -1,0 +1,131 @@
+/* /find-an-accountant/florida/quickbooks-cleanup/ — FL SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. FL-localized cleanup. HONESTY: FL DOR + CPA; not Intuit. */
+const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
+const FL_FACTS = [
+  { fig: "6% + surtax", title: "The single-rate sales-tax mistake", body: "The most common Florida QuickBooks mess: sales tax set to one statewide rate instead of the correct 6% + the county surtax <strong>by location</strong>, with single-item caps ignored. It over- or under-collects and the Department of Revenue return won&rsquo;t tie. We correct it and reconcile prior periods back." },
+  { fig: "Commercial rent", title: "The commercial-rent tax nobody recorded", body: "Many messy Florida files never recorded the <strong>commercial-rent tax</strong> on leased space at all. Cleanup adds it correctly so your CPA can address any prior-period exposure; the rate is phasing down, so the DOR&rsquo;s rules and your CPA confirm." },
+  { fig: "TPP", title: "Fixed assets never tracked", body: "Many messy Florida files never kept a fixed-asset schedule, so the annual <strong>tangible personal property</strong> return (DR-405) is a scramble. Cleanup rebuilds the schedule so it&rsquo;s ready. Valuation stays with your CPA." },
+];
+const FL_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Florida businesses remotely across all 67 counties. Florida tax figures &mdash; no personal income tax, the 5.5% corporate income tax, 6% sales tax plus discretionary county surtax, the commercial-rent tax, and the tangible personal property return &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://floridarevenue.com/\" rel=\"noopener nofollow\">Florida Department of Revenue</a>. Rates change; confirm current figures with the Department and your CPA. TechBrot cleans up and maintains QuickBooks files and coordinates with your CPA, who files; we do not file Florida returns or represent clients before the Department.";
+const FL_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the Florida Department of Revenue &middot; No tax-filing or representation claims (out of scope) &middot; Rates change &mdash; confirm current figures &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-bofu.njk",
+  permalink: "/find-an-accountant/florida/quickbooks-cleanup/",
+  slug: "fl-svc-qbcleanup",
+  tierClass: "section--tier-bofu",
+  bodyClass: "page--bofu",
+  callBar: true,
+  heroFigure: "taccount",
+  title: "Florida QuickBooks Cleanup · TechBrot",
+  description: "QuickBooks cleanup for Florida businesses by a Certified ProAdvisor — fix single-rate sales tax, add the missed commercial-rent tax, rebuild the TPP fixed-asset schedule, reconcile to CPA-ready. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "Florida", href: "/find-an-accountant/florida/" },
+    { name: "QuickBooks Cleanup" },
+  ],
+  bookHref: "/contact/?intent=florida&state=florida&source_type=state-qb&funnel_stage=MOFU",
+  hero: {
+    eyebrow: "Florida &middot; QuickBooks Cleanup",
+    heading: "Florida QuickBooks cleanup, back to CPA-ready.",
+    subheading: "A Certified QuickBooks ProAdvisor brings a behind or broken Florida file back to a CPA-ready standard &mdash; fixing single-rate sales tax, adding the missed commercial-rent tax, rebuilding the TPP fixed-asset schedule, and reconciling every account. Fixed-fee, all 67 counties. We clean it up; your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=state-qb&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> provides <strong>QuickBooks cleanup for Florida businesses</strong> &mdash; a Certified ProAdvisor fixes single-rate sales tax, adds the commercial-rent tax that was never recorded, rebuilds the fixed-asset schedule for the TPP return, and reconciles every account back to a CPA-ready standard in your own QuickBooks file. Fixed-fee, all 67 counties. The full Florida QuickBooks cleanup summary is below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Florida tax references reflect Department of Revenue rules current as of the review date; TechBrot does not file Florida taxes.",
+  },
+  ctaBand: {
+    eyebrow: "Florida businesses start here",
+    heading: "Florida QuickBooks file a mess? We&rsquo;ll fix it.",
+    lede: "Book a free discovery call. We&rsquo;ll review the file, tell you honestly how deep the cleanup goes, and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file FL taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=florida&state=florida&source_type=state-qb&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  stateName: "Florida",
+  copy: {
+    aiHeading: "Florida QuickBooks cleanup, in five questions.",
+    valueEyebrow: "What a Florida cleanup fixes",
+    valueHeading: "From messy to CPA-ready, the Florida way.",
+    valueLede: "We fix the Florida-specific things a generic cleanup misses &mdash; then reconcile the whole file back to clean.",
+    factsEyebrow: "The Florida messes we see most",
+    factsHeading: "Three Florida problems a cleanup almost always finds.",
+    factsLede: "Florida files break in predictable ways &mdash; these three are the usual culprits, and all three are fixable.",
+    faqHeading: "Florida QuickBooks cleanup questions.",
+  },
+  summary: "<strong>TechBrot</strong> provides <strong>QuickBooks cleanup for Florida businesses</strong> &mdash; a Certified QuickBooks ProAdvisor brings a behind or broken file back to a CPA-ready standard. We fix the most common Florida mess (<strong>single-rate sales tax</strong> instead of 6% + the correct county surtax), add the <a href=\"/find-an-accountant/florida/corporate-tax-help/\">commercial-rent tax</a> that was never recorded, rebuild the fixed-asset schedule for the <strong>tangible personal property</strong> return, and reconcile every account. Fixed-fee against a written scope (typically $1,500&ndash;$15,000+ by how far behind the file is). Independent firm &mdash; not affiliated with Intuit Inc.; we clean it up, your CPA files.",
+  aiSummary: [
+    { q: "What does Florida QuickBooks cleanup fix?", a: "<strong>Single-rate sales tax corrected to 6% + the county surtax by location, the missed commercial-rent tax added, the fixed-asset schedule rebuilt for the TPP return, and every account reconciled</strong> back to a CPA-ready standard. We clean it up; your CPA files." },
+    { q: "Why is my Florida QuickBooks file wrong?", a: "Usually one of three Florida-specific problems: <strong>sales tax set to a single statewide rate</strong> instead of by county surtax, the <strong>commercial-rent tax never recorded</strong> on leased space, or a <strong>fixed-asset schedule that was never kept</strong> for the TPP return &mdash; on top of unreconciled accounts." },
+    { q: "How long does a cleanup take?", a: "It depends on how far behind the file is &mdash; a few weeks for a single year, longer for multiple years. We scope it after a free file review so you know the timeline and fixed fee up front." },
+    { q: "What does cleanup cost?", a: "Fixed-fee against a written scope, typically <strong>$1,500&ndash;$15,000+</strong> depending on how many months or years are behind and how broken the file is. Exact fee in writing within 3 business days." },
+    { q: "What happens after cleanup?", a: "Most Florida businesses move into <a href=\"/find-an-accountant/florida/monthly-bookkeeping/\">monthly bookkeeping</a> with the same named ProAdvisor so the file never falls behind again. Cleanup-only is fine too." },
+  ],
+  value: [
+    { num: "01", title: "Sales tax corrected", body: "Single-rate sales tax replaced with 6% + the correct county surtax by location, single-item caps handled, and prior periods reconciled back.", href: "/find-an-accountant/florida/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "02", title: "Commercial-rent tax added", body: "The business-rent tax on leased space recorded correctly &mdash; the line that was missing entirely &mdash; so your CPA can address prior periods.", href: "/find-an-accountant/florida/corporate-tax-help/", cta: "Corporate &amp; rent tax &rarr;" },
+    { num: "03", title: "TPP schedule rebuilt", body: "Equipment and furniture reconstructed into a fixed-asset schedule ready for the tangible personal property return.", href: "/find-an-accountant/florida/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
+    { num: "04", title: "Every account reconciled", body: "Bank, credit-card, and loan accounts reconciled and miscategorized transactions corrected to a clean chart of accounts.", href: "/find-an-accountant/florida/quickbooks-reconciliation/", cta: "Reconciliation &rarr;" },
+    { num: "05", title: "Catch-up of months behind", body: "Whether you&rsquo;re a few months or a few years behind, we catch the file up to current and CPA-ready.", href: "/find-an-accountant/florida/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
+    { num: "06", title: "Stays clean after", body: "Move into monthly bookkeeping with the same ProAdvisor so the file never falls behind again.", href: "/find-an-accountant/florida/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+  ],
+  facts: FL_FACTS,
+  scopeDo: [
+    "Correct single-rate sales tax to 6% + the county surtax by location",
+    "Add the commercial-rent tax that was never recorded",
+    "Rebuild the fixed-asset schedule for the TPP return",
+    "Reconcile bank, credit-card, and loan accounts and fix miscategorizations",
+    "Catch the file up from months or years behind to current",
+    "Hand a CPA-ready file to your CPA",
+  ],
+  scopeDont: [
+    "File the Florida sales tax, corporate income tax, or commercial-rent tax",
+    "File the tangible personal property return or amend prior filings",
+    "Represent you before the Florida Department of Revenue",
+    "Provide legal or tax advice",
+  ],
+  process: [
+    { phase: "Step 1", title: "Free file review", body: "A Certified ProAdvisor reviews the file and finds how deep the cleanup goes &mdash; sales tax, commercial-rent, TPP, reconciliation." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days, with the timeline and the Florida-specific fixes listed." },
+    { phase: "Step 3", title: "Clean &amp; reconcile", body: "We correct sales tax, add the commercial-rent tax, rebuild the fixed-asset schedule, and reconcile every account." },
+    { phase: "Step 4", title: "CPA-ready handoff", body: "A clean, current file handed to your CPA &mdash; or straight into monthly bookkeeping so it stays clean." },
+  ],
+  advisoryBody: [
+    "A Florida QuickBooks cleanup almost always finds the same three things &mdash; single-rate sales tax, a commercial-rent tax nobody recorded, and a fixed-asset schedule that was never kept. None of them are filing problems; they&rsquo;re bookkeeping problems, and all three are exactly what a Certified ProAdvisor fixes so your CPA&rsquo;s filings are accurate.",
+    "Once the file is clean, the same named ProAdvisor keeps it that way in <a href=\"/find-an-accountant/florida/monthly-bookkeeping/\">monthly bookkeeping</a> &mdash; so you never need a second cleanup.",
+  ],
+  faq: [
+    { q: "What does a Florida QuickBooks cleanup fix?", a: "A Certified ProAdvisor corrects single-rate sales tax to 6% + the county surtax by location, adds the commercial-rent tax that was never recorded, rebuilds the fixed-asset schedule for the tangible personal property return, reconciles every account, and catches the file up to current &mdash; back to a CPA-ready standard. We clean it up; your CPA files." },
+    { q: "Why is my Florida QuickBooks file a mess?", a: "Usually one or more of three Florida-specific problems: sales tax set to a single statewide rate instead of by county surtax, the commercial-rent tax never recorded on leased space, or a fixed-asset schedule that was never kept for the TPP return &mdash; plus the usual unreconciled accounts and miscategorized transactions. We fix all of it." },
+    { q: "How far behind can you catch up?", a: "Any distance &mdash; a few months or several years. The further behind, the bigger the scope, but we&rsquo;ve brought multi-year Florida files back to current and CPA-ready. We scope it after a free file review so the timeline and fee are known up front." },
+    { q: "How much does Florida QuickBooks cleanup cost?", a: "Fixed-fee against a written scope, never hourly &mdash; typically $1,500&ndash;$15,000+ depending on how many months or years are behind and how broken the file is. You get the exact fee in writing within 3 business days of a free file review." },
+    { q: "Will you fix my sales tax going back?", a: "Yes &mdash; correcting single-rate sales tax and reconciling prior periods back is one of the most common parts of a Florida cleanup. We get the books right so your CPA can address any prior-period filing implications; we don&rsquo;t file or amend returns ourselves." },
+    { q: "What happens after the cleanup is done?", a: "Most Florida businesses move into monthly bookkeeping with the same named ProAdvisor so the file stays current and never needs a second cleanup. A cleanup-only engagement is fine too &mdash; we hand a clean, CPA-ready file to your CPA either way." },
+    { q: "Do you file my Florida taxes after cleanup?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we clean up and keep the books CPA-ready and coordinate with your CPA, who files the sales tax, corporate income tax, commercial-rent tax, and TPP return. We are not affiliated with Intuit Inc." },
+  ],
+  reviewProse: FL_REVIEW_PROSE,
+  reviewCreds: FL_REVIEW_CREDS,
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/florida/quickbooks-cleanup/",
+    name: "Florida QuickBooks Cleanup",
+    description: "QuickBooks cleanup for Florida businesses by a Certified ProAdvisor — fix single-rate sales tax, add the missed commercial-rent tax, rebuild the TPP fixed-asset schedule, and reconcile to CPA-ready. Independent firm; does not file Florida taxes.",
+    serviceName: "Florida QuickBooks Cleanup & Catch-Up Services",
+    serviceType: "QuickBooks cleanup and catch-up bookkeeping",
+    serviceDesc: "Cleanup and catch-up of QuickBooks files for Florida businesses — correcting single-rate sales tax to 6% + the county surtax by location, adding the commercial-rent tax, rebuilding the fixed-asset schedule for the tangible personal property return, reconciling all accounts, and catching the file up to current. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
+    areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
+    audienceType: "Florida businesses with behind or broken QuickBooks files across all 67 counties",
+    offerPrice: "1500",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};
