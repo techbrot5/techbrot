@@ -1,0 +1,130 @@
+/* /find-an-accountant/texas/quickbooks-training/ — TX SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. TX-localized. HONESTY: Comptroller + CPA; not Intuit. */
+const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
+const TX_FACTS = [
+  { fig: "8.25%", title: "Train your team to invoice sales tax right", body: "The most common day-to-day mistake is applying the wrong sales-tax rate at invoice time. We train your team to use the 8.25% combined rate <strong>by location</strong> so it&rsquo;s right at entry, not corrected later." },
+  { fig: "Margin", title: "Categorize for the margin tax", body: "Your team decides where transactions land, and that&rsquo;s what feeds the franchise (&ldquo;margin&rdquo;) tax. We train them to keep revenue, COGS, and compensation distinct so the margin base stays clean between closes." },
+  { fig: "BPP", title: "Record fixed assets as you buy them", body: "Equipment and furniture entered correctly when purchased keeps the <strong>business personal property</strong> schedule current &mdash; so the annual rendition is an export, not a hunt through the bank feed." },
+];
+const TX_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Texas businesses remotely across all 254 counties. Texas tax figures &mdash; no state income tax, the franchise (margin) tax, 8.25% sales tax, and business personal property rendition &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://comptroller.texas.gov/\" rel=\"noopener nofollow\">Texas Comptroller of Public Accounts</a>. TechBrot trains teams on QuickBooks and provides bookkeeping and coordinates with your CPA, who files; we do not file Texas returns or represent clients before the Comptroller.";
+const TX_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the Texas Comptroller of Public Accounts &middot; No tax-filing or representation claims (out of scope) &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-bofu.njk",
+  permalink: "/find-an-accountant/texas/quickbooks-training/",
+  slug: "tx-svc-qbtraining",
+  tierClass: "section--tier-bofu",
+  bodyClass: "page--bofu",
+  callBar: true,
+  heroFigure: "taccount",
+  title: "Texas QuickBooks Training · TechBrot",
+  description: "QuickBooks training for Texas business teams by a Certified ProAdvisor — invoice the 8.25% sales tax by location, categorize for the margin tax, record fixed assets for BPP. Live, role-specific, all 254 counties. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "Texas", href: "/find-an-accountant/texas/" },
+    { name: "QuickBooks Training" },
+  ],
+  bookHref: "/contact/?intent=texas&state=texas&source_type=state-qb&funnel_stage=MOFU",
+  hero: {
+    eyebrow: "Texas &middot; QuickBooks Training",
+    heading: "QuickBooks training for your Texas team, done your way.",
+    subheading: "A Certified QuickBooks ProAdvisor trains your team on the things that matter in Texas &mdash; invoicing the 8.25% sales tax by location, categorizing for the franchise (margin) tax, and recording fixed assets for the BPP rendition &mdash; live and role-specific, in your own file. Fixed-fee, all 254 counties.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=texas&state=texas&source_type=state-qb&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Live &middot; role-specific &middot; your own file"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> provides <strong>QuickBooks training for Texas business teams</strong> &mdash; a Certified ProAdvisor trains your staff, live and role-specific, on invoicing the 8.25% sales tax by location, categorizing for the franchise (margin) tax, and recording fixed assets for the BPP rendition, in your own QuickBooks file. Fixed-fee, all 254 counties. The full Texas training summary is below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Texas tax references reflect Comptroller rules current as of the review date; TechBrot does not file Texas taxes.",
+  },
+  ctaBand: {
+    eyebrow: "Texas businesses start here",
+    heading: "Want your Texas team confident in QuickBooks?",
+    lede: "Book a free discovery call. We&rsquo;ll scope the training to your team&rsquo;s roles and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file TX taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=texas&state=texas&source_type=state-qb&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  stateName: "Texas",
+  copy: {
+    aiHeading: "Texas QuickBooks training, in five questions.",
+    valueEyebrow: "What Texas training covers",
+    valueHeading: "Your team, confident on the Texas specifics.",
+    valueLede: "We train on the day-to-day actions that keep a Texas file clean &mdash; tailored to each role.",
+    factsEyebrow: "What we make sure your team gets right",
+    factsHeading: "Three Texas habits good training builds in.",
+    factsLede: "Most Texas file problems start at data entry &mdash; training fixes them at the source.",
+    faqHeading: "Texas QuickBooks training questions.",
+  },
+  summary: "<strong>TechBrot</strong> provides <strong>QuickBooks training for Texas business teams</strong> &mdash; a Certified QuickBooks ProAdvisor trains your staff live and role-specific, in your own file, on the things that matter in Texas: invoicing the <strong>8.25% sales tax by location</strong>, categorizing transactions so the <a href=\"/find-an-accountant/texas/franchise-tax-help/\">franchise (margin) tax</a> figures stay clean, and recording fixed assets so the <strong>business personal property</strong> schedule stays current. Most Texas file problems start at data entry, so training fixes them at the source. Fixed-fee against a written scope, scoped to your team&rsquo;s roles. Independent firm &mdash; not affiliated with Intuit Inc.",
+  aiSummary: [
+    { q: "What does Texas QuickBooks training cover?", a: "<strong>Invoicing the 8.25% sales tax by location, categorizing transactions for the franchise (margin) tax, recording fixed assets for the BPP rendition, and the day-to-day workflows for each role</strong> &mdash; live, in your own QuickBooks file, by a Certified ProAdvisor." },
+    { q: "Who is the training for?", a: "Whoever touches the books &mdash; owners, office managers, bookkeepers, and AR/AP staff. We tailor each session to the role, so an invoicing clerk learns sales tax by location and a bookkeeper learns the margin-tax categorization." },
+    { q: "Is it live or recorded?", a: "Live and interactive, in your own QuickBooks file, so your team practices on real workflows rather than a generic demo. We can record the sessions for onboarding new staff later." },
+    { q: "What does training cost?", a: "Fixed-fee against a written scope, scoped to the number of people and sessions. Exact fee in writing within 3 business days of a free discovery call." },
+    { q: "Can you train and keep the books?", a: "Yes &mdash; many Texas businesses pair training with <a href=\"/find-an-accountant/texas/monthly-bookkeeping/\">monthly bookkeeping</a>, where we keep the file clean and the team handles day-to-day entry confidently." },
+  ],
+  value: [
+    { num: "01", title: "Sales tax at invoice time", body: "Train AR staff to apply the 8.25% combined rate by location so invoices are right at entry &mdash; the most common day-to-day fix.", href: "/find-an-accountant/texas/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "02", title: "Categorization for the margin tax", body: "Train bookkeepers to keep revenue, COGS, and compensation distinct so the franchise (margin) tax figures stay clean.", href: "/find-an-accountant/texas/franchise-tax-help/", cta: "Franchise tax help &rarr;" },
+    { num: "03", title: "Fixed-asset entry", body: "Train your team to record equipment and furniture as purchased, keeping the BPP schedule current year-round.", href: "/find-an-accountant/texas/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
+    { num: "04", title: "Role-specific workflows", body: "Sessions tailored by role &mdash; owner dashboards, AR/AP, payroll entry &mdash; so each person learns exactly their part.", href: "/find-an-accountant/texas/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
+    { num: "05", title: "Reporting your team can read", body: "Train owners and managers to pull and read the reports that matter, so the books drive decisions, not just compliance.", href: "/accounting/financial-statements/", cta: "Financial statements &rarr;" },
+    { num: "06", title: "Onboarding-ready recordings", body: "Sessions recorded in your own file so new hires can be brought up to speed without starting from scratch.", href: "/find-an-accountant/texas/quickbooks-setup/", cta: "QuickBooks setup &rarr;" },
+  ],
+  facts: TX_FACTS,
+  scopeDo: [
+    "Train staff to invoice the 8.25% sales tax by location",
+    "Train bookkeepers to categorize for the franchise (margin) tax",
+    "Train the team to record fixed assets for the BPP schedule",
+    "Tailor sessions by role &mdash; owner, AR/AP, bookkeeper, payroll",
+    "Train owners and managers to read the reports that matter",
+    "Record sessions in your own file for onboarding",
+  ],
+  scopeDont: [
+    "File the Texas franchise (margin) tax or sales-tax returns",
+    "Compute the franchise-tax margin or file the BPP rendition",
+    "Represent you before the Texas Comptroller",
+    "Provide legal or tax advice",
+  ],
+  process: [
+    { phase: "Step 1", title: "Free scoping call", body: "A Certified ProAdvisor reviews your team&rsquo;s roles and the file to scope the training." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days, by number of people and sessions." },
+    { phase: "Step 3", title: "Live, role-specific sessions", body: "We train each role live in your own file on the Texas-specific workflows, with practice on real data." },
+    { phase: "Step 4", title: "Recordings &amp; follow-up", body: "Sessions recorded for onboarding, with follow-up support &mdash; or paired with monthly bookkeeping." },
+  ],
+  advisoryBody: [
+    "Most Texas QuickBooks problems aren&rsquo;t the software &mdash; they&rsquo;re data entry: the wrong sales-tax rate on an invoice, revenue and COGS blended, a new truck booked as an expense instead of a fixed asset. Training fixes those at the source, so the file stays clean between closes.",
+    "Pair training with <a href=\"/find-an-accountant/texas/monthly-bookkeeping/\">monthly bookkeeping</a> and your team handles day-to-day entry confidently while a ProAdvisor keeps the close and the Texas filings clean.",
+  ],
+  faq: [
+    { q: "What does Texas QuickBooks training cover?", a: "A Certified ProAdvisor trains your team, live and role-specific in your own file, on invoicing the 8.25% sales tax by location, categorizing transactions so the franchise (margin) tax figures stay clean, recording fixed assets for the BPP rendition, and the day-to-day workflows for each role. The focus is the Texas-specific habits that keep a file clean." },
+    { q: "Who should attend the training?", a: "Anyone who touches the books &mdash; owners, office managers, bookkeepers, and AR/AP staff. We tailor each session to the role: an invoicing clerk learns sales tax by location, a bookkeeper learns the margin-tax categorization, and an owner learns to read the reports that matter." },
+    { q: "Is the training live or pre-recorded?", a: "Live and interactive, in your own QuickBooks file, so your team practices on real workflows rather than a generic demo. We can record the live sessions so you can onboard new staff with them later without paying for the training again." },
+    { q: "How much does Texas QuickBooks training cost?", a: "Fixed-fee against a written scope, never hourly &mdash; scoped to the number of people and sessions. You get the exact fee in writing within 3 business days of a free discovery call." },
+    { q: "Can you train my team and also keep the books?", a: "Yes &mdash; many Texas businesses pair training with monthly bookkeeping, so your team handles day-to-day entry confidently while a named ProAdvisor keeps the monthly close and the Texas filings clean. Training-only is also fine." },
+    { q: "Do you file my Texas taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we train your team and keep the books CPA-ready and coordinate with your CPA, who files the franchise (margin) tax, sales tax, and federal returns. We are not affiliated with Intuit Inc." },
+  ],
+  reviewProse: TX_REVIEW_PROSE,
+  reviewCreds: TX_REVIEW_CREDS,
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/texas/quickbooks-training/",
+    name: "Texas QuickBooks Training",
+    description: "QuickBooks training for Texas business teams by a Certified ProAdvisor — live, role-specific sessions on invoicing the 8.25% sales tax by location, categorizing for the margin tax, and recording fixed assets for BPP. Independent firm; does not file Texas taxes.",
+    serviceName: "Texas QuickBooks Training Services",
+    serviceType: "QuickBooks training and staff enablement",
+    serviceDesc: "Live, role-specific QuickBooks training for Texas business teams — invoicing the 8.25% sales tax by location, categorizing transactions for the franchise (margin) tax, recording fixed assets for the business personal property rendition, and reporting, in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns — coordinates with the client's CPA or EA.",
+    areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
+    audienceType: "Texas business owners and staff learning QuickBooks across all 254 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};

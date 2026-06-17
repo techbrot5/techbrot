@@ -1,0 +1,130 @@
+/* /find-an-accountant/texas/quickbooks-error-fixes/ — TX SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. TX-localized. HONESTY: Comptroller + CPA; not Intuit. */
+const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
+const TX_FACTS = [
+  { fig: "8.25%", title: "Sales-tax errors that won&rsquo;t reconcile", body: "The Texas error we fix most: a sales-tax liability that won&rsquo;t tie to the <strong>Comptroller</strong> return because the rate was flat instead of by location, or items were mapped wrong. We trace it, correct the setup, and reconcile the liability back." },
+  { fig: "Margin", title: "Mis-postings that break the margin base", body: "Owner draws booked as expense, COGS blended into overhead, compensation miscoded &mdash; each quietly breaks the franchise (&ldquo;margin&rdquo;) tax base. We find and correct the mis-postings so the figures hold." },
+  { fig: "Recon", title: "Out-of-balance &amp; duplicate transactions", body: "Negative balances, duplicate entries, and a balance sheet that won&rsquo;t reconcile are the usual symptoms. We diagnose the root cause and fix it &mdash; not just paper over the number." },
+];
+const TX_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Texas businesses remotely across all 254 counties. Texas tax figures &mdash; no state income tax, the franchise (margin) tax, 8.25% sales tax, and business personal property rendition &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://comptroller.texas.gov/\" rel=\"noopener nofollow\">Texas Comptroller of Public Accounts</a>. TechBrot diagnoses and fixes QuickBooks errors and provides bookkeeping and coordinates with your CPA, who files; we do not file Texas returns or represent clients before the Comptroller.";
+const TX_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the Texas Comptroller of Public Accounts &middot; No tax-filing or representation claims (out of scope) &middot; Root-cause fixes, not symptom masking &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-bofu.njk",
+  permalink: "/find-an-accountant/texas/quickbooks-error-fixes/",
+  slug: "tx-svc-qberrors",
+  tierClass: "section--tier-bofu",
+  bodyClass: "page--bofu",
+  callBar: true,
+  heroFigure: "taccount",
+  title: "Texas QuickBooks Error Fixes · TechBrot",
+  description: "QuickBooks error fixes for Texas businesses by a Certified ProAdvisor — sales-tax liability that won't tie, out-of-balance balance sheet, duplicate entries, broken margin-tax figures. Root-cause fixes, all 254 counties. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "Texas", href: "/find-an-accountant/texas/" },
+    { name: "QuickBooks Error Fixes" },
+  ],
+  bookHref: "/contact/?intent=texas&state=texas&source_type=state-qb&funnel_stage=MOFU",
+  hero: {
+    eyebrow: "Texas &middot; QuickBooks Error Fixes",
+    heading: "Texas QuickBooks errors, traced to the root and fixed.",
+    subheading: "A Certified QuickBooks ProAdvisor diagnoses and fixes what&rsquo;s broken in your Texas file &mdash; a sales-tax liability that won&rsquo;t tie to the Comptroller return, an out-of-balance balance sheet, duplicate entries, or mis-postings that break the margin-tax figures. Root-cause fixes, not symptom masking. All 254 counties.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=texas&state=texas&source_type=state-qb&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Root-cause fixes &middot; not symptom masking"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> provides <strong>QuickBooks error fixes for Texas businesses</strong> &mdash; a Certified ProAdvisor diagnoses and fixes a sales-tax liability that won&rsquo;t tie to the Comptroller return, an out-of-balance balance sheet, duplicate or negative entries, and mis-postings that break the franchise (margin) tax figures, in your own file. Root-cause fixes, all 254 counties. The full Texas error-fix summary is below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Texas tax references reflect Comptroller rules current as of the review date; TechBrot does not file Texas taxes.",
+  },
+  ctaBand: {
+    eyebrow: "Texas businesses start here",
+    heading: "Something broken in your Texas QuickBooks file?",
+    lede: "Book a free discovery call. We&rsquo;ll diagnose the error, tell you the root cause, and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file TX taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=texas&state=texas&source_type=state-qb&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  stateName: "Texas",
+  copy: {
+    aiHeading: "Texas QuickBooks error fixes, in five questions.",
+    valueEyebrow: "What Texas error fixes cover",
+    valueHeading: "Diagnosed at the root, fixed for good.",
+    valueLede: "We trace each error to its cause &mdash; especially the Texas-specific ones &mdash; and fix it so it stays fixed.",
+    factsEyebrow: "The Texas errors we fix most",
+    factsHeading: "Three Texas QuickBooks errors we see again and again.",
+    factsLede: "Texas files break in recognizable ways &mdash; these three are the usual emergencies, and all three have a real fix.",
+    faqHeading: "Texas QuickBooks error-fix questions.",
+  },
+  summary: "<strong>TechBrot</strong> provides <strong>QuickBooks error fixes for Texas businesses</strong> &mdash; a Certified QuickBooks ProAdvisor diagnoses and fixes what&rsquo;s broken: a <strong>sales-tax liability that won&rsquo;t tie</strong> to the Comptroller return (usually a flat rate instead of by location), an <strong>out-of-balance balance sheet</strong>, duplicate or negative entries, and mis-postings that break the <a href=\"/find-an-accountant/texas/franchise-tax-help/\">franchise (margin) tax</a> figures. We trace each to the root cause and fix it &mdash; never just paper over the number &mdash; in your own QuickBooks file. Fixed-fee against a written scope. Independent firm &mdash; not affiliated with Intuit Inc.; we fix it, your CPA files.",
+  aiSummary: [
+    { q: "What QuickBooks errors do you fix for Texas businesses?", a: "<strong>A sales-tax liability that won&rsquo;t tie to the Comptroller return, an out-of-balance balance sheet, duplicate or negative entries, and mis-postings that break the franchise (margin) tax figures</strong> &mdash; traced to root cause and fixed in your own file. We fix it; your CPA files." },
+    { q: "Why won&rsquo;t my sales-tax liability match my return?", a: "Usually because sales tax was set to a single flat rate instead of the <strong>8.25% combined rate by location</strong>, or items were mapped to the wrong taxability. We trace it, correct the setup, and reconcile the liability back to the Comptroller return." },
+    { q: "Do you fix the cause or just the number?", a: "The cause. Masking a symptom &mdash; forcing a balance with a journal entry &mdash; just hides the problem until next period. We diagnose the <strong>root cause</strong> and fix it so it stays fixed." },
+    { q: "What does an error fix cost?", a: "Fixed-fee against a written scope once we&rsquo;ve diagnosed it &mdash; scoped to the depth of the problem. A bigger underlying mess may be scoped as a <a href=\"/find-an-accountant/texas/quickbooks-cleanup/\">cleanup</a>. Exact fee in writing within 3 business days." },
+    { q: "How fast can you fix it?", a: "Many single errors are diagnosed and fixed within days of the file review. Deeper issues are scoped with a clear timeline up front." },
+  ],
+  value: [
+    { num: "01", title: "Sales-tax liability won&rsquo;t tie", body: "Traced to a flat rate or bad item mapping, corrected to 8.25% by location, and reconciled back to the Comptroller return.", href: "/find-an-accountant/texas/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "02", title: "Out-of-balance balance sheet", body: "Negative balances and a balance sheet that won&rsquo;t reconcile traced to the root posting and corrected &mdash; not forced.", href: "/find-an-accountant/texas/quickbooks-reconciliation/", cta: "Reconciliation &rarr;" },
+    { num: "03", title: "Broken margin-tax figures", body: "Owner draws, COGS, and compensation miscoded &mdash; found and corrected so the franchise (margin) tax base holds.", href: "/find-an-accountant/texas/franchise-tax-help/", cta: "Franchise tax help &rarr;" },
+    { num: "04", title: "Duplicate &amp; orphaned entries", body: "Double-imported bank feeds, duplicate invoices, and orphaned transactions cleaned up at the source.", href: "/find-an-accountant/texas/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
+    { num: "05", title: "Deeper mess? Scoped as cleanup", body: "If the error is a symptom of a broken file, we scope a full cleanup rather than a band-aid.", href: "/find-an-accountant/texas/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "06", title: "Stays fixed", body: "Move into monthly bookkeeping so the same error doesn&rsquo;t come back next quarter.", href: "/find-an-accountant/texas/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+  ],
+  facts: TX_FACTS,
+  scopeDo: [
+    "Diagnose why the sales-tax liability won't tie and correct it by location",
+    "Trace an out-of-balance balance sheet to its root posting and fix it",
+    "Find and correct mis-postings that break the margin-tax figures",
+    "Clean up duplicate, negative, and orphaned transactions",
+    "Scope a full cleanup when the error is a symptom of a broken file",
+    "Fix root causes, never mask symptoms",
+  ],
+  scopeDont: [
+    "File the Texas franchise (margin) tax or sales-tax returns",
+    "Compute the franchise-tax margin or file the BPP rendition",
+    "Represent you before the Texas Comptroller",
+    "Provide legal or tax advice",
+  ],
+  process: [
+    { phase: "Step 1", title: "Free file review", body: "A Certified ProAdvisor reviews the file and diagnoses the error and its root cause." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days &mdash; or a cleanup scope if the mess runs deeper." },
+    { phase: "Step 3", title: "Root-cause fix", body: "We correct the cause &mdash; sales-tax setup, mis-postings, duplicates &mdash; and reconcile back to clean." },
+    { phase: "Step 4", title: "Keep it fixed", body: "Optional monthly bookkeeping so the same error doesn&rsquo;t recur &mdash; the file stays clean." },
+  ],
+  advisoryBody: [
+    "A QuickBooks error in a Texas file is rarely just a number &mdash; a sales-tax liability that won&rsquo;t tie, a balance sheet that won&rsquo;t balance, or a broken margin base all have a root cause, and forcing the number with a journal entry only hides it until next period. We diagnose the cause and fix it properly.",
+    "When an error turns out to be the tip of a broken file, we say so and scope a <a href=\"/find-an-accountant/texas/quickbooks-cleanup/\">cleanup</a> rather than a band-aid &mdash; then keep it clean in <a href=\"/find-an-accountant/texas/monthly-bookkeeping/\">monthly bookkeeping</a>.",
+  ],
+  faq: [
+    { q: "What QuickBooks errors do you fix for Texas businesses?", a: "A Certified ProAdvisor diagnoses and fixes a sales-tax liability that won&rsquo;t tie to the Comptroller return, an out-of-balance balance sheet, negative balances, duplicate or orphaned entries, and mis-postings that break the franchise (margin) tax figures &mdash; each traced to its root cause and fixed in your own file. We fix it; your CPA files." },
+    { q: "Why won't my Texas sales-tax liability match the return?", a: "Almost always because sales tax was set to a single flat rate instead of the 8.25% combined rate by location, or products and services were mapped to the wrong taxability. We trace the mismatch, correct the setup to apply the right rate by location, and reconcile the liability account back to what the Comptroller return reports." },
+    { q: "Do you fix the root cause or just force the numbers?", a: "The root cause. Forcing a balance with an adjusting journal entry just hides the problem until it resurfaces next period &mdash; and can make the franchise-tax and sales-tax figures wrong. We diagnose why the error happened and fix it at the source so it stays fixed. This is a firm rule for us." },
+    { q: "How much does a QuickBooks error fix cost?", a: "Fixed-fee against a written scope once we&rsquo;ve diagnosed the error &mdash; scoped to its depth. A single isolated error is a small fixed fee; if it turns out to be a symptom of a broader broken file, we scope it as a cleanup instead and tell you so. Exact fee in writing within 3 business days." },
+    { q: "How quickly can you fix my QuickBooks error?", a: "Many single errors are diagnosed and fixed within days of the free file review. Deeper or multi-period issues are scoped with a clear timeline up front, so you know what to expect before we start." },
+    { q: "Do you file my Texas taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we fix the file and keep the books CPA-ready and coordinate with your CPA, who files the franchise (margin) tax, sales tax, and federal returns. We are not affiliated with Intuit Inc." },
+  ],
+  reviewProse: TX_REVIEW_PROSE,
+  reviewCreds: TX_REVIEW_CREDS,
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/texas/quickbooks-error-fixes/",
+    name: "Texas QuickBooks Error Fixes",
+    description: "QuickBooks error fixes for Texas businesses by a Certified ProAdvisor — a sales-tax liability that won't tie, an out-of-balance balance sheet, duplicate entries, and broken margin-tax figures, traced to root cause and fixed. Independent firm; does not file Texas taxes.",
+    serviceName: "Texas QuickBooks Error Diagnosis & Fix Services",
+    serviceType: "QuickBooks error diagnosis and correction",
+    serviceDesc: "Diagnosis and root-cause correction of QuickBooks errors for Texas businesses — a sales-tax liability that won't tie to the Comptroller return, an out-of-balance balance sheet, duplicate and orphaned entries, and mis-postings that break the franchise (margin) tax figures, fixed in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns — coordinates with the client's CPA or EA.",
+    areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
+    audienceType: "Texas businesses with broken or out-of-balance QuickBooks files across all 254 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};

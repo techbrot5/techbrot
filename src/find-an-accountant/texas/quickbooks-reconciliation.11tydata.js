@@ -1,0 +1,130 @@
+/* /find-an-accountant/texas/quickbooks-reconciliation/ — TX SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. TX-localized. HONESTY: Comptroller + CPA; not Intuit. */
+const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
+const TX_FACTS = [
+  { fig: "8.25%", title: "Sales-tax liability reconciled to the return", body: "Reconciliation isn&rsquo;t just bank accounts &mdash; the 8.25% sales-tax liability has to reconcile to what the <strong>Texas Comptroller</strong> return reports, by location. We tie the liability account to the filing so nothing is over- or under-remitted." },
+  { fig: "Margin", title: "Clean figures for the margin tax", body: "Reconciled books are what make the franchise (&ldquo;margin&rdquo;) tax computable &mdash; revenue, COGS, and compensation only mean something once the accounts behind them tie. We reconcile so your CPA starts from numbers that hold." },
+  { fig: "Monthly", title: "Every account, every month", body: "Bank, credit-card, loan, and clearing accounts reconciled every month, so issues surface immediately instead of at year-end &mdash; and the franchise-tax and BPP deadlines never catch you reconstructing." },
+];
+const TX_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Texas businesses remotely across all 254 counties. Texas tax figures &mdash; no state income tax, the franchise (margin) tax, 8.25% sales tax, and business personal property rendition &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://comptroller.texas.gov/\" rel=\"noopener nofollow\">Texas Comptroller of Public Accounts</a>. TechBrot reconciles and maintains QuickBooks files and coordinates with your CPA, who files; we do not file Texas returns or represent clients before the Comptroller.";
+const TX_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the Texas Comptroller of Public Accounts &middot; No tax-filing or representation claims (out of scope) &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-bofu.njk",
+  permalink: "/find-an-accountant/texas/quickbooks-reconciliation/",
+  slug: "tx-svc-qbrecon",
+  tierClass: "section--tier-bofu",
+  bodyClass: "page--bofu",
+  callBar: true,
+  heroFigure: "taccount",
+  title: "Texas QuickBooks Reconciliation · TechBrot",
+  description: "QuickBooks reconciliation for Texas businesses by a Certified ProAdvisor — every account reconciled monthly, the 8.25% sales-tax liability tied to the Comptroller return, margin-tax figures clean. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "Texas", href: "/find-an-accountant/texas/" },
+    { name: "QuickBooks Reconciliation" },
+  ],
+  bookHref: "/contact/?intent=texas&state=texas&source_type=state-qb&funnel_stage=MOFU",
+  hero: {
+    eyebrow: "Texas &middot; QuickBooks Reconciliation",
+    heading: "Texas QuickBooks reconciliation that actually ties.",
+    subheading: "A Certified QuickBooks ProAdvisor reconciles every account every month &mdash; bank, credit-card, loan, and the 8.25% sales-tax liability tied to the Texas Comptroller return &mdash; so the books hold and the margin-tax figures are clean. Fixed-fee, all 254 counties. We reconcile; your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=texas&state=texas&source_type=state-qb&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> provides <strong>QuickBooks reconciliation for Texas businesses</strong> &mdash; a Certified ProAdvisor reconciles bank, credit-card, and loan accounts every month and ties the 8.25% sales-tax liability to the Texas Comptroller return, so the books hold and the franchise (margin) tax figures are clean. Fixed-fee, all 254 counties. The full Texas reconciliation summary is below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Texas tax references reflect Comptroller rules current as of the review date; TechBrot does not file Texas taxes.",
+  },
+  ctaBand: {
+    eyebrow: "Texas businesses start here",
+    heading: "Want a Texas file that reconciles every month?",
+    lede: "Book a free discovery call. We&rsquo;ll review where reconciliation stands and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file TX taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=texas&state=texas&source_type=state-qb&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  stateName: "Texas",
+  copy: {
+    aiHeading: "Texas QuickBooks reconciliation, in five questions.",
+    valueEyebrow: "What Texas reconciliation covers",
+    valueHeading: "Every account tied, the sales-tax liability matched.",
+    valueLede: "Reconciliation in Texas is more than bank accounts &mdash; the sales-tax liability has to tie to the Comptroller return.",
+    factsEyebrow: "Why reconciliation matters more in Texas",
+    factsHeading: "Three reasons Texas reconciliation can&rsquo;t be skipped.",
+    factsLede: "Texas&rsquo;s tax obligations are computed from the books &mdash; so reconciliation is what makes them accurate.",
+    faqHeading: "Texas QuickBooks reconciliation questions.",
+  },
+  summary: "<strong>TechBrot</strong> provides <strong>QuickBooks reconciliation for Texas businesses</strong> &mdash; a Certified QuickBooks ProAdvisor reconciles every account every month: bank, credit-card, loan, and clearing accounts, plus the <strong>8.25% sales-tax liability</strong> tied to what the <strong>Texas Comptroller</strong> return reports by location. Reconciled books are what make the <a href=\"/find-an-accountant/texas/franchise-tax-help/\">franchise (margin) tax</a> computable and keep the <strong>BPP</strong> fixed-asset schedule trustworthy. Issues surface immediately instead of at year-end. Fixed-fee against a written scope. Independent firm &mdash; not affiliated with Intuit Inc.; we reconcile, your CPA files.",
+  aiSummary: [
+    { q: "What does Texas QuickBooks reconciliation include?", a: "<strong>Bank, credit-card, loan, and clearing accounts reconciled every month, plus the 8.25% sales-tax liability tied to the Texas Comptroller return by location</strong> &mdash; so the books hold and the margin-tax figures are clean. We reconcile; your CPA files." },
+    { q: "Why is reconciliation important in Texas specifically?", a: "Because Texas&rsquo;s obligations are computed from the books: the <strong>franchise (margin) tax</strong> needs clean revenue/COGS/compensation, the <strong>sales-tax return</strong> has to tie to the liability account, and the <strong>BPP rendition</strong> relies on a trustworthy fixed-asset schedule. Unreconciled books make all three wrong." },
+    { q: "How often should accounts be reconciled?", a: "Monthly. Reconciling every month surfaces errors immediately and keeps the franchise-tax and BPP deadlines from catching you reconstructing a year of records under pressure." },
+    { q: "What does it cost?", a: "Fixed-fee against a written scope, never hourly &mdash; scoped to the number of accounts and transaction volume. Exact fee in writing within 3 business days of a free file review." },
+    { q: "Can you reconcile months of backlog?", a: "Yes &mdash; if reconciliation has lapsed, we catch it up as part of a <a href=\"/find-an-accountant/texas/quickbooks-cleanup/\">cleanup</a>, then keep it current every month." },
+  ],
+  value: [
+    { num: "01", title: "Bank &amp; credit-card accounts", body: "Every bank and credit-card account reconciled monthly to statement, with discrepancies investigated and resolved.", href: "/find-an-accountant/texas/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { num: "02", title: "Sales-tax liability tied to the return", body: "The 8.25% sales-tax liability account reconciled to what the Comptroller return reports by location &mdash; nothing over- or under-remitted.", href: "/find-an-accountant/texas/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "03", title: "Loan &amp; clearing accounts", body: "Loan balances tied to lender statements and clearing accounts zeroed so nothing hides in suspense.", href: "/find-an-accountant/texas/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
+    { num: "04", title: "Margin-tax figures verified", body: "Revenue, COGS, and compensation reconciled so your CPA computes the franchise (margin) tax from numbers that hold.", href: "/find-an-accountant/texas/franchise-tax-help/", cta: "Franchise tax help &rarr;" },
+    { num: "05", title: "Backlog caught up", body: "If reconciliation has lapsed for months, we catch it up as part of a cleanup, then keep it current.", href: "/find-an-accountant/texas/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "06", title: "CPA-ready every month", body: "Reconciled statements handed to your CPA monthly &mdash; no year-end scramble, no surprises.", href: "/find-an-accountant/texas/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
+  ],
+  facts: TX_FACTS,
+  scopeDo: [
+    "Reconcile bank, credit-card, loan, and clearing accounts every month",
+    "Tie the 8.25% sales-tax liability to the Comptroller return by location",
+    "Verify revenue, COGS, and compensation for the margin tax",
+    "Investigate and resolve discrepancies and miscategorizations",
+    "Catch up a reconciliation backlog as part of a cleanup",
+    "Deliver reconciled, CPA-ready statements monthly",
+  ],
+  scopeDont: [
+    "File the Texas franchise (margin) tax or sales-tax returns",
+    "Compute the franchise-tax margin or file the BPP rendition",
+    "Represent you before the Texas Comptroller",
+    "Provide legal or tax advice",
+  ],
+  process: [
+    { phase: "Step 1", title: "Free file review", body: "A Certified ProAdvisor reviews where reconciliation stands and what&rsquo;s out of balance." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days, by number of accounts and volume." },
+    { phase: "Step 3", title: "Reconcile &amp; resolve", body: "We reconcile every account, tie the sales-tax liability to the return, and resolve discrepancies." },
+    { phase: "Step 4", title: "Monthly cadence", body: "Every account reconciled every month and CPA-ready statements delivered &mdash; no year-end scramble." },
+  ],
+  advisoryBody: [
+    "Reconciliation is the quiet backbone of Texas compliance: the franchise (margin) tax, the sales-tax return, and the BPP rendition are all only as accurate as the reconciled accounts behind them. Skip it and every one of those filings is built on numbers that don&rsquo;t hold.",
+    "We reconcile every month so issues surface immediately, and extend &mdash; when you&rsquo;re ready &mdash; into full <a href=\"/find-an-accountant/texas/monthly-bookkeeping/\">monthly bookkeeping</a> and <a href=\"/accounting/advisory/fractional-cfo/\">advisory</a>.",
+  ],
+  faq: [
+    { q: "What does Texas QuickBooks reconciliation include?", a: "A Certified ProAdvisor reconciles bank, credit-card, loan, and clearing accounts every month and ties the 8.25% sales-tax liability to what the Texas Comptroller return reports by location, verifies the revenue/COGS/compensation figures for the franchise (margin) tax, and resolves discrepancies &mdash; so the books hold. We reconcile; your CPA files." },
+    { q: "Why does reconciliation matter more in Texas?", a: "Because Texas&rsquo;s tax obligations are computed directly from the books. The franchise (margin) tax needs clean revenue/COGS/compensation, the sales-tax return has to tie to the liability account by location, and the business personal property rendition relies on a trustworthy fixed-asset schedule. Unreconciled books make all three inaccurate." },
+    { q: "How often should I reconcile my QuickBooks accounts?", a: "Monthly. Reconciling every month surfaces errors and missing transactions immediately rather than at year-end, and keeps the franchise-tax and BPP deadlines from catching you reconstructing a year of records under deadline pressure." },
+    { q: "My sales-tax liability never matches my return. Can you fix that?", a: "Yes &mdash; that mismatch usually means sales tax was set to a single rate instead of by location, or the liability account was never reconciled to the filing. We tie the liability to the Comptroller return by location so nothing is over- or under-remitted, and correct prior periods as part of a cleanup if needed." },
+    { q: "How much does Texas QuickBooks reconciliation cost?", a: "Fixed-fee against a written scope, never hourly &mdash; scoped to the number of accounts and transaction volume. If there&rsquo;s a backlog to catch up, that&rsquo;s scoped as a one-time cleanup. You get the exact fee in writing within 3 business days of a free file review." },
+    { q: "Do you file my Texas taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we reconcile and keep the books CPA-ready and coordinate with your CPA, who files the franchise (margin) tax, sales tax, and federal returns. We are not affiliated with Intuit Inc." },
+  ],
+  reviewProse: TX_REVIEW_PROSE,
+  reviewCreds: TX_REVIEW_CREDS,
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/texas/quickbooks-reconciliation/",
+    name: "Texas QuickBooks Reconciliation",
+    description: "QuickBooks reconciliation for Texas businesses by a Certified ProAdvisor — every account reconciled monthly and the 8.25% sales-tax liability tied to the Comptroller return so the margin-tax figures hold. Independent firm; does not file Texas taxes.",
+    serviceName: "Texas QuickBooks Reconciliation Services",
+    serviceType: "Account reconciliation (bookkeeping)",
+    serviceDesc: "Monthly reconciliation of bank, credit-card, loan, and clearing accounts and the 8.25% sales-tax liability for Texas businesses, tying the liability to the Texas Comptroller return by location and verifying the figures behind the franchise (margin) tax. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns — coordinates with the client's CPA or EA.",
+    areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
+    audienceType: "Texas businesses needing monthly account reconciliation across all 254 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};

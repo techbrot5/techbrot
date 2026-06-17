@@ -77,7 +77,7 @@ module.exports = {
     { num: "02", title: "Sales tax reconciled monthly", body: "8.25% sales tax reconciled each month so every Comptroller return ties and nothing is owed by surprise.", href: "/find-an-accountant/texas/sales-tax-help/", cta: "Sales tax help &rarr;" },
     { num: "03", title: "Margin-tax figures kept current", body: "The franchise-tax position tracked monthly so your CPA can file accurately and the threshold is never a surprise.", href: "/find-an-accountant/texas/franchise-tax-help/", cta: "Franchise tax help &rarr;" },
     { num: "04", title: "CPA-ready statements", body: "P&amp;L, balance sheet, and cash-flow delivered every month in a format your CPA can file from directly.", href: "/accounting/financial-statements/", cta: "Financial statements &rarr;" },
-    { num: "05", title: "Cleanup first, if needed", body: "Behind by months? A one-time cleanup brings the file current before the monthly cadence begins.", href: "/quickbooks/cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "05", title: "Cleanup first, if needed", body: "Behind by months? A one-time cleanup brings the file current before the monthly cadence begins.", href: "/find-an-accountant/texas/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
     { num: "06", title: "Advisory, when ready", body: "Once the close is reliable, fractional-CFO advisory on the global team &mdash; forecasting and cash-flow.", href: "/accounting/advisory/fractional-cfo/", cta: "Fractional CFO &rarr;" },
   ],
   facts: TX_FACTS,

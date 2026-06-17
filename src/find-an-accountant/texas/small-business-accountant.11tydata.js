@@ -74,7 +74,7 @@ module.exports = {
   ],
   value: [
     { num: "01", title: "Monthly bookkeeping &amp; close", body: "Reconciled accounts, clean categorization, and CPA-ready statements every month &mdash; sales tax and the margin-tax position tracked.", href: "/find-an-accountant/texas/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
-    { num: "02", title: "QuickBooks setup &amp; cleanup", body: "A Texas-correct chart of accounts and a cleanup to CPA-ready standard when the file has fallen behind.", href: "/quickbooks/cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "02", title: "QuickBooks setup &amp; cleanup", body: "A Texas-correct chart of accounts and a cleanup to CPA-ready standard when the file has fallen behind.", href: "/find-an-accountant/texas/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
     { num: "03", title: "Sales tax, configured right", body: "QuickBooks set to the correct Texas combined rate by location and reconciled so the Comptroller return ties.", href: "/find-an-accountant/texas/sales-tax-help/", cta: "Sales tax help &rarr;" },
     { num: "04", title: "Franchise (margin) tax tracked", body: "The franchise-tax position tracked in the books so your CPA can file and the threshold is never a surprise.", href: "/find-an-accountant/texas/franchise-tax-help/", cta: "Franchise tax help &rarr;" },
     { num: "05", title: "Payroll coordination", body: "Texas payroll configured and coordinated with your provider &mdash; no state income-tax withholding, but federal and unemployment handled cleanly.", href: "/quickbooks/payroll/", cta: "Payroll &rarr;" },

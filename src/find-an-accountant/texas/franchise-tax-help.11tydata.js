@@ -81,7 +81,7 @@ module.exports = {
     { num: "03", title: "Threshold monitored", body: "We watch revenue against the no-tax-due threshold so crossing it &mdash; and the filing change that comes with it &mdash; is never a surprise.", href: "/find-an-accountant/texas/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
     { num: "04", title: "Books reconciled before May", body: "The file reconciled and closed ahead of the franchise-tax deadline so your CPA isn&rsquo;t reconstructing the year under pressure.", href: "/find-an-accountant/texas/virtual-bookkeeper/", cta: "Virtual bookkeeper &rarr;" },
     { num: "05", title: "Sales tax handled alongside", body: "The 8.25% sales tax configured and reconciled in the same file, so both Comptroller obligations stay clean.", href: "/find-an-accountant/texas/sales-tax-help/", cta: "Sales tax help &rarr;" },
-    { num: "06", title: "Cleanup before handoff", body: "If the file is behind or miscategorized, a one-time cleanup brings revenue, COGS, and compensation to a CPA-ready standard.", href: "/quickbooks/cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "06", title: "Cleanup before handoff", body: "If the file is behind or miscategorized, a one-time cleanup brings revenue, COGS, and compensation to a CPA-ready standard.", href: "/find-an-accountant/texas/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
   ],
   facts: TX_FACTS,
   scopeDo: [
