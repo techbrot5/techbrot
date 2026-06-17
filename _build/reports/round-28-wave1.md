@@ -282,3 +282,20 @@ recorded. **RE-SKIN COMPLETE: 142/142 built pages on the elevated system; batter
 | /resources/ interim repoint | ⚠ nav "Resources" → /resources/research/ interim (safe; real /resources/ hub is post-redesign). |
 
 **▶ HOLDING for founder flip-vs-build decision (autonomous paused per founder).**
+
+## Update 2026-06-17 (GROWTH PHASE started — founder held flip, build to 200 first)
+Build order CONFIRMED (founder): glossary → CA/TX/FL/IL children → support → more-QB → tools → guides →
+pricing+blog → trust/reviews/etc. Honesty LOUDER for growth (real claims only).
+**⏸ GLOSSARY TYPE PROOF (`ec7002c`) — AWAITING FOUNDER GLANCE before fan-out.**
+- `/glossary/bank-reconciliation/` (the proof entry): substantive, citable definition (speakable) · why-it-matters
+  · how-it-works + the signature reconcile-flow diagram (genuinely fits) · book-vs-bank clarification · related-
+  cluster links (cleanup/monthly/migration) · CALL conversion · 6 real FAQ. Schema: **DefinedTerm + WebPage +
+  BreadcrumbList + FAQPage** (verbatim). t-guide compact, elevated system.
+- `/glossary/` index: **CollectionPage + DefinedTermSet** landing; terms grid grows as the type fans out.
+- VERIFY: battery GREEN (url-set/manifest/links/design-fidelity 138/variety/css 77,515B) · overflow clean
+  360/390/768 · axe 0/27 · CLS 0. Honesty: real definitions, firm byline, no fabricated counts.
+- **Glossary-type pattern banked:** compact t-guide · DefinedTerm schema · speakable definition · why/how/clarify
+  · related-grid · CALL · 6 FAQ (only where genuinely substantive — FAQ optional per term to avoid padding;
+  faq-min-6 gate means a term either carries 6+ real Q or omits the faq__list).
+**▶ NEXT (after glance): fan out glossary** (real definitions only, one per term, link into clusters) → then
+CA state children → down the order. Report every URL each turn.
