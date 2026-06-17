@@ -154,7 +154,7 @@ module.exports = {
       { label: "TX Small Business Accountant", href: "/find-an-accountant/texas/small-business-accountant/" },
       { label: "TX Bookkeeping Services", href: "/find-an-accountant/texas/bookkeeping-services/" },
       { label: "TX Virtual Bookkeeper", href: "/find-an-accountant/texas/virtual-bookkeeper/" },
-      { label: "Speak to a TX ProAdvisor", tag: "BOFU &middot; soon" },
+      { label: "Speak to a TX ProAdvisor", href: "/find-an-accountant/texas/speak-to-a-proadvisor/", tag: "BOFU" },
       { label: "TX Pricing &amp; Engagement Fees", href: "/find-an-accountant/texas/pricing/" },
     ] },
     { eyebrow: "Cluster 02", heading: "Texas QuickBooks spokes", lede: "TX-specific QuickBooks ProAdvisor engagements &mdash; each scoped within the direct-service model.", links: [
@@ -173,7 +173,7 @@ module.exports = {
     { eyebrow: "Cluster 04", heading: "Texas tax cluster", lede: "The genuinely Texas-specific tax stack &mdash; franchise/margin tax, origin-based sales tax, SaaS 80% taxability &mdash; covered in this pillar above.", links: [
       { label: "TX Sales Tax (6.25%+ &middot; origin-based &middot; SaaS 80%)", href: "/find-an-accountant/texas/sales-tax-help/" },
       { label: "TX Franchise Tax (margin &middot; PIR/OIR)", href: "/find-an-accountant/texas/franchise-tax-help/" },
-      { label: "TX Business Tax Problems", tag: "soon" },
+      { label: "TX Business Tax Problems", href: "/find-an-accountant/texas/business-tax-problems/" },
     ] },
     { eyebrow: "Cluster 05", heading: "Texas industries", lede: "Vertical-specific accounting depth for Texas&rsquo;s leading sectors &mdash; each handled within the direct engagement.", links: [
       { label: "TX Construction Accounting", href: "/find-an-accountant/texas/industries/construction/" },
@@ -194,7 +194,7 @@ module.exports = {
       { label: "All Texas cities &amp; counties", href: "/find-an-accountant/texas/cities/", tag: "hub" },
     ] },
   ],
-  ecosystemNote: "Each Texas page above is live &mdash; follow the link for the full detail, or <a href=\"/contact/?intent=texas&state=texas&source_type=location&funnel_stage=MOFU\">start with a discovery call &rarr;</a>. (The &ldquo;speak to a ProAdvisor&rdquo; and business-tax-problems pages are publishing shortly.)",
+  ecosystemNote: "Every Texas page above is live &mdash; follow the link for the full detail, or <a href=\"/contact/?intent=texas&state=texas&source_type=location&funnel_stage=MOFU\">start with a discovery call &rarr;</a>.",
 
   // PRICING — 8-row table. (H2: Fixed-fee starting ranges for Texas engagements.)
   // NO-CHILDREN: service-name cells are PLAIN TEXT (href omitted). pricingNote child link dropped to plain text.

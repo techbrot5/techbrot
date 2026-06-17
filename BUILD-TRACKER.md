@@ -322,12 +322,13 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 253 · re-skinned (142) + growth = 111 · LAST COMMIT = round-44 FL-money+tax
-(7 pages: FL money/bkg 5 + FL tax cluster 2). Working tree clean on `preview-11ty`.
-✅ CALIFORNIA COMPLETE (39). ✅ TEXAS COMPLETE non-triage (30). FLORIDA IN PROGRESS = pillar + 5 cities + 7 services (money 4/6 [speak HELD, pricing pending] · tax 2/2 ✅ · bkg-spoke monthly ✅).
+**COUNT: total pages live = 256 · re-skinned (142) + growth = 114 · LAST COMMIT = round-45 TRIAGE-UNHOLD
+(3 pages: TX speak + TX business-tax-problems + FL speak + TX pillar re-link). Working tree clean on `preview-11ty`.
+✅ TRIAGE HOLD GATE CLEARED SITE-WIDE (founder approved CA disclosure pattern 2026-06-18; locked as approved). IL triage builds normally at IL.
+✅ CALIFORNIA COMPLETE (39). ✅ TEXAS COMPLETE incl. triage (32). FLORIDA IN PROGRESS = pillar + 5 cities + 8 services (money 4/6 + speak ✅ [pricing pending] · tax 2/2 ✅ · bkg-spoke monthly ✅).
 FL tax stack = no personal income tax BUT 5.5% C-corp · 6%+county-surtax sales tax · commercial-rent tax · TPP (DR-405) · RT-6 · FL Dept of Revenue · 67 counties.
-⚑ TODO: re-link the 5 FL money pages' quickbooks-cleanup ref off the global to the FL QB-cleanup spoke when built (next wave).
-ONLY TX HELD = speak-to-a-proadvisor (triage, awaiting CA-disclosure sign-off).
+⚑ TODO: re-link the 5 FL money pages' quickbooks-cleanup ref off the global to the FL QB-cleanup spoke when built (next FL wave).
+⚑ APPROVED TRIAGE PATTERN: amber disclosure ATF · not-agency/not-CPA/no-rep/no-tax-advice/no-resolution · Intuit-intent routed away · CALL conversion. Replicate to IL (IL Dept of Revenue + IRS).
 FOUR state child templates (city-child · state-service · state-triage · state-industry). PHASE = DEPTH (NY ✅ · CA ✅ · TX ✅ · FL/IL next).
 ⚑ FOUNDER GATE (2026-06-17): every state's triage pages (speak-to-a-proadvisor etc.) HELD pending CA-disclosure sign-off; all non-triage proceeds.
 ⚑ AFTER 5 DEEP: flag breadth-vs-more-depth decision (don't auto-spread to all 50).
