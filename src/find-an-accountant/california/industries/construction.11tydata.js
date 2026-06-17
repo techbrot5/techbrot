@@ -1,0 +1,142 @@
+/* /find-an-accountant/california/industries/construction/ — CA INDUSTRY CHILD.
+ * t-location + heroLight. Shared body: partials/state-industry-body.njk. v4 CA state-weighted.
+ * GENUINELY CA×construction: job costing, WIP, AIA billing, retainage, California prevailing-wage /
+ * certified payroll (DIR / DLSE), CSLB-aware compliance, subcontractor 1099s + AB5. HONESTY:
+ * deferred to DIR/CSLB/FTB + CPA/EA; founder-name-zero; not Intuit. */
+const { stripTags, buildCityGraph } = require("../../../../_build/lib/city-child.js");
+const CA_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the CA DIR, CSLB &amp; FTB &middot; No tax-filing, certified-payroll-submission, or representation claims (out of scope) &middot; Reviewed periodically &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-location.njk",
+  permalink: "/find-an-accountant/california/industries/construction/",
+  slug: "ca-ind-construction",
+  tierClass: "section--tier-hub",
+  bodyClass: "page--location page--industry",
+  callBar: true,
+  heroLight: true,
+  title: "California Construction Accounting & Job Costing · TechBrot",
+  description: "Construction accounting for California contractors — job costing, WIP, AIA billing, retainage, prevailing-wage/certified payroll, CSLB-aware compliance, AB5 subs. Fixed-fee. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "California", href: "/find-an-accountant/california/" },
+    { name: "Industries", href: "/find-an-accountant/california/industries/" },
+    { name: "Construction" },
+  ],
+  bookHref: "/contact/?intent=california&state=california&source_type=industry&funnel_stage=BOFU",
+  hero: {
+    eyebrow: "California &middot; Construction Accounting",
+    heading: "California construction accounting that knows which job made money.",
+    subheading: "California contractors don&rsquo;t fail on revenue &mdash; they fail on jobs that quietly lost money while the books looked fine. We set up real job costing, WIP, AIA billing, and retainage, handle California prevailing-wage and certified payroll, keep books CSLB-aware, and sort subcontractor 1099s under AB5 &mdash; by a named Certified ProAdvisor. We deliver the books; your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=california&state=california&source_type=industry&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor construction accounting for California contractors</strong> &mdash; job costing, WIP schedules, AIA billing, retainage, California prevailing-wage and certified payroll, and subcontractor 1099/AB5 tracking, set up in your own QuickBooks file. The full California construction summary is below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. California construction facts (prevailing wage / certified payroll under the DIR; CSLB licensing; AB5) reflect rules current as of the review date; TechBrot does not file California taxes or submit certified payroll.",
+  },
+  ctaBand: {
+    eyebrow: "California contractors start here",
+    heading: "See which California jobs actually make you money.",
+    lede: "Book a free discovery call. We&rsquo;ll review your jobs, your California payroll requirements, and where the books are breaking, flag any prevailing-wage or AB5 exposure, and send a written fixed-fee scope within 3 business days. No pitch. Independent firm &mdash; does not file CA taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=california&state=california&source_type=industry&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  copy: {
+    summaryHeading: "California construction accounting, plainly.",
+    aiHeading: "California construction accounting, in five questions.",
+    challengesEyebrow: "Why California contractor books break",
+    challengesHeading: "Three places California contractors lose the numbers.",
+    challengesLede: "Profitable-looking contractors go under when these go unmanaged. Knowing which one you&rsquo;re in tells us where to start.",
+    handleHeading: "California construction accounting, done by an expert.",
+    handleLede: "Every engagement is scoped to your jobs and crew, delivered in your own QuickBooks file by a named Certified ProAdvisor.",
+    integrationsHeading: "Connected to how you build.",
+    processHeading: "From guesswork to job-level profit.",
+    processLede: "Every California construction engagement follows the same rhythm &mdash; books accurate first, job-profit visibility second, advisory third.",
+    advisoryHeading: "Accurate job costs are the start. Winning the right bids is the point.",
+    faqHeading: "California construction accounting questions.",
+    relatedHeading: "Related California services &amp; industries.",
+  },
+  summary: [
+    "<strong>TechBrot provides construction accounting for California contractors</strong> &mdash; general contractors, subs, and specialty trades &mdash; in your own QuickBooks file by a named Certified ProAdvisor. The job is to show which jobs make money and keep California&rsquo;s payroll and licensing requirements clean.",
+    "California adds real weight. Public-works jobs require <strong>prevailing wage and certified payroll</strong> under the Department of Industrial Relations (DIR), with electronic reporting to the DLSE. Contractors must keep books <strong>CSLB</strong>-aware for licensing and bonding, and a sub-heavy roster runs straight into <strong>AB5</strong> on subcontractor classification. We set up job costing, WIP, AIA billing, and retainage, and keep the California payroll and sub records clean &mdash; CPA-ready. We keep the books; we don&rsquo;t submit certified payroll on your behalf. Independent firm &mdash; not affiliated with Intuit Inc.; we deliver the books, your CPA files.",
+  ],
+  aiSummary: [
+    { q: "What is California construction accounting?", a: "<strong>Real job costing, WIP schedules, AIA billing, and retainage, plus California prevailing-wage and certified payroll, CSLB-aware books, and subcontractor 1099/AB5 tracking</strong> &mdash; so contractors see which jobs make money and stay compliant. A named Certified ProAdvisor does the books; your CPA files." },
+    { q: "How does California prevailing wage and certified payroll work?", a: "Public-works projects require paying <strong>prevailing wage</strong> and submitting <strong>certified payroll</strong> to the DIR/DLSE (electronic eCPR). We keep the payroll records and job coding clean so certified payroll can be produced accurately; the submission and compliance are yours or your payroll provider&rsquo;s &mdash; we keep the books behind it right." },
+    { q: "How do you handle job costing and WIP?", a: "We tie labor, materials, subs, and equipment to each job and maintain a <strong>WIP schedule</strong> (costs vs billings) so over- and under-billings are visible and you know real job margin before the job closes &mdash; not after." },
+    { q: "How does AB5 affect subcontractors?", a: "California&rsquo;s ABC test can reclassify subs doing core work as employees. We keep 1099 sub records clean and surface the exposure; the classification call and any audit are your CPA&rsquo;s or employment attorney&rsquo;s &mdash; see <a href=\"/find-an-accountant/california/ab5-worker-classification/\">AB5 worker classification</a>." },
+    { q: "Do you file California taxes or submit certified payroll?", a: "No &mdash; we keep the books CPA-ready and the payroll records clean; your CPA files taxes and you or your payroll provider submit certified payroll. We&rsquo;re independent and don&rsquo;t represent clients before the DIR, CSLB, or FTB." },
+  ],
+  challenges: [
+    { signal: "Job costs", title: "Jobs that quietly lose money", body: "Without real job costing and a WIP schedule, a contractor can look profitable while individual jobs bleed &mdash; the loss only shows up after the job (and the cash) is gone." },
+    { signal: "Payroll", title: "Prevailing wage &amp; certified payroll", body: "Public-works jobs require prevailing wage and certified payroll under the DIR. Books that aren&rsquo;t set up for it turn certified payroll into a scramble and a compliance risk." },
+    { signal: "Subs &amp; AB5", title: "Subcontractors as exposure", body: "A sub-heavy roster doing core work is exactly what AB5&rsquo;s Prong B reclassifies &mdash; and what 1099 records hide until the EDD or a workers&rsquo;-comp audit looks." },
+  ],
+  handle: [
+    { num: "01", title: "Real job costing", body: "Labor, materials, subs, and equipment tied to each job so true job margin is visible, not a blended number.", href: "/find-an-accountant/california/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
+    { num: "02", title: "WIP schedules", body: "Costs vs billings tracked per job so over- and under-billings and real margin are visible before the job closes.", href: "/find-an-accountant/california/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { num: "03", title: "AIA billing &amp; retainage", body: "Progress billing (AIA G702/G703) and retainage receivable/payable tracked so cash and billings stay straight.", href: "/find-an-accountant/california/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
+    { num: "04", title: "Prevailing-wage payroll records", body: "Payroll and job coding kept clean for certified payroll under the DIR &mdash; you (or your provider) submit; we keep the records right.", href: "/quickbooks/payroll/", cta: "Payroll &rarr;" },
+    { num: "05", title: "Subcontractor 1099 &amp; AB5", body: "Sub records and 1099s kept clean with AB5 exposure surfaced for your advisors.", href: "/find-an-accountant/california/ab5-worker-classification/", cta: "AB5 classification &rarr;" },
+    { num: "06", title: "CSLB-aware, CPA-ready books", body: "Books kept clean for CSLB licensing and bonding and ready for your CPA to file from.", href: "/accounting/financial-statements/", cta: "Financial statements &rarr;" },
+  ],
+  integrations: [
+    "Procore, Buildertrend, and construction-management platforms",
+    "Knowify and job-costing tools",
+    "Certified-payroll / prevailing-wage tools (eCPR)",
+    "Gusto, ADP, and construction payroll providers",
+    "Bill.com for subcontractor and vendor AP",
+    "QuickBooks Online or hosted Desktop &mdash; your file",
+  ],
+  integrationsNote: "We reconcile alongside the project-management and payroll tools you already run &mdash; the books read from how you build.",
+  process: [
+    { phase: "Step 1", title: "Free job &amp; payroll review", body: "A Certified ProAdvisor reviews your jobs, WIP, and California payroll requirements &mdash; at no cost." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days &mdash; setup, cleanup, or monthly." },
+    { phase: "Step 3", title: "Build job costing &amp; WIP", body: "Job costing and a WIP schedule set up, AIA billing and retainage tracked, payroll records cleaned." },
+    { phase: "Step 4", title: "Monthly job profit", body: "A monthly close showing job-level profit and WIP, CPA-ready and bonding-ready." },
+  ],
+  advisoryBody: [
+    "When job costs are accurate and WIP is visible, the decisions get real: which work to bid, which crews and job types make money, whether to take the bonded public-works job &mdash; answered from numbers that tie.",
+    "That&rsquo;s where <a href=\"/accounting/advisory/fractional-cfo/\">fractional-CFO advisory</a> picks up, in coordination with your CPA and bonding agent. We keep the books; your CPA files; the strategy rests on both being right.",
+  ],
+  faq: [
+    { q: "What does California construction accounting include?", a: "Real job costing, WIP schedules (costs vs billings), AIA progress billing and retainage, California prevailing-wage and certified-payroll record-keeping, subcontractor 1099 and AB5 tracking, and CSLB-aware, CPA-ready books &mdash; in your own QuickBooks file. We deliver the books; your CPA files." },
+    { q: "How does California prevailing wage and certified payroll work?", a: "Public-works (government-funded) projects in California require paying prevailing wage and submitting certified payroll records electronically (eCPR) to the Department of Industrial Relations / DLSE. We keep the payroll records and job coding clean so accurate certified payroll can be produced; the submission and labor-compliance obligations are yours or your payroll provider&rsquo;s. We keep the books behind it right; we don&rsquo;t submit certified payroll or represent you before the DIR." },
+    { q: "How do job costing and WIP schedules work?", a: "We tie labor, materials, subcontractors, and equipment to each job and maintain a WIP schedule comparing costs incurred to amounts billed. That surfaces over- and under-billings and shows real job margin before the job closes &mdash; so a job that&rsquo;s bleeding gets caught while you can still do something about it, not at year-end." },
+    { q: "How does AB5 affect my subcontractors?", a: "California&rsquo;s ABC test can reclassify subcontractors doing core work as employees, with payroll-tax and workers&rsquo;-comp exposure. We keep 1099 sub records clean and surface the exposure in the books so your advisors can act. The classification determination and any EDD or workers&rsquo;-comp audit are handled by your CPA or employment attorney; see our AB5 page." },
+    { q: "Do you keep books CSLB-ready for licensing and bonding?", a: "Yes &mdash; we keep clean, organized financials that support CSLB licensing requirements and the financial statements your bonding agent needs. The license and bond are yours to maintain; we make sure the books behind them are accurate and current so renewals and bonding aren&rsquo;t a scramble." },
+    { q: "Do you work in my own QuickBooks file?", a: "Yes &mdash; your file, your data, in QuickBooks Online or hosted Desktop, with a named ProAdvisor on the same file every month, connected to your construction-management and payroll tools rather than proprietary software." },
+    { q: "Do you file my California taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books CPA-ready and coordinate with your CPA or EA, who files. We don&rsquo;t submit certified payroll or represent clients before the DIR, CSLB, or FTB, and we are not affiliated with Intuit Inc." },
+    { q: "Do you work with subcontractors and specialty trades, not just GCs?", a: "Yes &mdash; subs and specialty trades (electrical, plumbing, HVAC, concrete) share the construction challenges: job costing, retainage, prevailing wage on public work, and AB5 on their own subs and labor. We handle the same job-cost discipline whether you&rsquo;re the GC or the sub." },
+  ],
+  reviewProse: "This page reflects how TechBrot handles California construction engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on job costing, WIP, retainage, California prevailing-wage / certified payroll, and AB5 against <a href=\"https://www.dir.ca.gov/\" rel=\"noopener nofollow\">California DIR</a> and <a href=\"https://www.cslb.ca.gov/\" rel=\"noopener nofollow\">CSLB</a> guidance current as of the date below. TechBrot delivers the books and coordinates with your CPA, who files; we do not submit certified payroll or represent clients before tax or labor authorities.",
+  reviewCreds: CA_REVIEW_CREDS,
+  related: [
+    { title: "California AB5 worker classification", body: "The subcontractor-classification detail behind your construction books &mdash; books-only, educational.", href: "/find-an-accountant/california/ab5-worker-classification/", cta: "AB5 classification &rarr;" },
+    { title: "California monthly bookkeeping", body: "Keep job costing and WIP current with a recurring monthly close.", href: "/find-an-accountant/california/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { title: "California QuickBooks setup", body: "Starting fresh? Set up job costing and California payroll right from day one.", href: "/find-an-accountant/california/quickbooks-setup/", cta: "QuickBooks setup &rarr;" },
+    { title: "Construction accounting (national)", body: "Our global construction industry overview for the broader playbook.", href: "/accounting/industries/construction/", cta: "National overview &rarr;" },
+  ],
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/california/industries/construction/",
+    name: "California Construction Accounting & Job Costing",
+    description: "Construction accounting for California contractors — job costing, WIP, AIA billing, retainage, prevailing-wage/certified payroll, CSLB-aware books, and subcontractor 1099/AB5 tracking. Independent firm; does not file California taxes or submit certified payroll.",
+    serviceName: "California Construction Accounting & Job Costing",
+    serviceType: "Construction industry bookkeeping and job-costing services",
+    serviceDesc: "Bookkeeping for California contractors — job costing, WIP schedules, AIA progress billing and retainage, prevailing-wage and certified-payroll record-keeping under the DIR, subcontractor 1099/AB5 tracking, and CSLB-aware, CPA-ready books. Independent Certified QuickBooks ProAdvisor firm; does not file California taxes, submit certified payroll, or represent clients before the DIR/CSLB/FTB — coordinates with the client's CPA or EA.",
+    areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
+    audienceType: "California general contractors, subcontractors, and specialty trades across all 58 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};

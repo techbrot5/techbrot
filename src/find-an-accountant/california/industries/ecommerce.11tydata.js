@@ -1,0 +1,142 @@
+/* /find-an-accountant/california/industries/ecommerce/ — CA INDUSTRY CHILD.
+ * t-location + heroLight. Shared body: partials/state-industry-body.njk. v4 CA state-weighted
+ * industry. GENUINELY CA×ecommerce: CDTFA district sales tax by SHIP-TO location, $500K economic
+ * nexus + multi-state, marketplace-facilitator, inventory/COGS by SKU/channel. HONESTY: deferred
+ * to CDTFA + CPA/EA; founder-name-zero; not Intuit. */
+const { stripTags, buildCityGraph } = require("../../../../_build/lib/city-child.js");
+const CA_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the CA CDTFA &amp; FTB &middot; No tax-filing, nexus-determination, or representation claims (out of scope) &middot; Reviewed periodically &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-location.njk",
+  permalink: "/find-an-accountant/california/industries/ecommerce/",
+  slug: "ca-ind-ecommerce",
+  tierClass: "section--tier-hub",
+  bodyClass: "page--location page--industry",
+  callBar: true,
+  heroLight: true,
+  title: "California E-commerce Accounting & Bookkeeping · TechBrot",
+  description: "E-commerce accounting for California DTC & marketplace sellers — multi-channel reconciliation, CDTFA district sales tax by ship-to location, economic nexus, inventory & COGS by SKU. Fixed-fee. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "California", href: "/find-an-accountant/california/" },
+    { name: "Industries", href: "/find-an-accountant/california/industries/" },
+    { name: "E-commerce" },
+  ],
+  bookHref: "/contact/?intent=california&state=california&source_type=industry&funnel_stage=BOFU",
+  hero: {
+    eyebrow: "California &middot; E-commerce Accounting",
+    heading: "California e-commerce accounting that knows your real margin by channel.",
+    subheading: "California DTC and marketplace sellers don&rsquo;t fail on revenue &mdash; they fail on a margin nobody can see and a sales-tax footprint nobody tracked. We reconcile Shopify, Amazon, and marketplaces into QuickBooks, configure CDTFA district sales tax by ship-to location, track economic nexus, and tie inventory and COGS to SKU and channel &mdash; by a named Certified ProAdvisor. We deliver the books; your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=california&state=california&source_type=industry&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor e-commerce accounting for California sellers</strong> &mdash; multi-channel reconciliation (Shopify, Amazon, marketplaces), CDTFA district sales tax by ship-to location, economic-nexus tracking, and inventory and COGS by SKU and channel, in your own QuickBooks file. The full California e-commerce summary is below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. California sales-tax references (district rates by location; $500K economic nexus) reflect CDTFA rules current as of the review date; TechBrot does not file California sales tax or determine nexus.",
+  },
+  ctaBand: {
+    eyebrow: "California sellers start here",
+    heading: "See your real channel margin &mdash; and your sales-tax footprint.",
+    lede: "Book a free discovery call. We&rsquo;ll review your channels, your CDTFA setup, and your nexus footprint, flag where margin or sales tax is leaking, and send a written fixed-fee scope within 3 business days. No pitch. Independent firm &mdash; does not file CA sales tax; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=california&state=california&source_type=industry&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  copy: {
+    summaryHeading: "California e-commerce accounting, plainly.",
+    aiHeading: "California e-commerce accounting, in five questions.",
+    challengesEyebrow: "Why California seller books break",
+    challengesHeading: "Three places California sellers lose the numbers.",
+    challengesLede: "Sellers that look profitable go under when these go unmanaged. Knowing which one you&rsquo;re in tells us where to start.",
+    handleHeading: "California e-commerce accounting, done by an expert.",
+    handleLede: "Every engagement is scoped to your channels and catalog, delivered in your own QuickBooks file by a named Certified ProAdvisor.",
+    integrationsHeading: "Connected to how you sell.",
+    processHeading: "From guesswork to channel-level profit.",
+    processLede: "Every California e-commerce engagement follows the same rhythm &mdash; books accurate first, margin visibility second, advisory third.",
+    advisoryHeading: "Clean channel margin is the start. Knowing which channel to grow is the point.",
+    faqHeading: "California e-commerce accounting questions.",
+    relatedHeading: "Related California services &amp; industries.",
+  },
+  summary: [
+    "<strong>TechBrot provides e-commerce accounting for California DTC and marketplace sellers</strong> &mdash; Shopify, Amazon, BigCommerce, WooCommerce, and multi-channel operations &mdash; reconciled into your own QuickBooks file by a named Certified QuickBooks ProAdvisor. We make two things true at once: your <strong>real margin by SKU and channel</strong> is visible, and your <strong>California sales tax</strong> is right.",
+    "California makes the second part hard. The <strong>CDTFA</strong> sources sales tax by location, so the correct combined rate depends on where each order ships &mdash; not a flat statewide rate. Add <strong>economic nexus</strong> ($500,000 in California sales, plus your multi-state footprint) and <strong>marketplace-facilitator</strong> collection, and the sales-tax picture is where most seller books quietly break. We keep it clean and CPA-ready. Independent firm &mdash; not affiliated with Intuit Inc.; we deliver the books, your CPA files.",
+  ],
+  aiSummary: [
+    { q: "What is California e-commerce accounting?", a: "<strong>Reconciling your sales channels (Shopify, Amazon, marketplaces) into QuickBooks, configuring CDTFA district sales tax by ship-to location, tracking economic nexus, and tying inventory and COGS to SKU and channel</strong> &mdash; so your real margin is visible and your California sales tax is right. A named Certified ProAdvisor does the books; your CPA files." },
+    { q: "How does California sales tax work for online sellers?", a: "California sources sales tax by location, so the correct combined rate depends on <strong>where the order ships</strong> &mdash; not a flat statewide rate. Remote sellers reach <strong>economic nexus at $500,000</strong> in California sales (no transaction count). Marketplaces like Amazon collect as facilitators; your direct sales you handle. We keep all of it straight in the books; your CPA files the CDTFA return." },
+    { q: "How do you find my real margin?", a: "By tying <strong>inventory and COGS to SKU and channel</strong> and pulling fees, shipping, returns, and chargebacks into the right place &mdash; so you see true contribution by product and channel, not just a blended gross number that hides the losers." },
+    { q: "Do you reconcile Amazon and Shopify payouts?", a: "Yes &mdash; payouts net of fees, refunds, and reserves are the single biggest source of e-commerce bookkeeping error. We reconcile each channel&rsquo;s payouts (often via A2X or similar) so deposits tie to sales and the books are accurate." },
+    { q: "Do you file my California sales tax?", a: "No &mdash; we keep the books CDTFA-ready and reconcile the liability; your CPA or EA files the return, determines nexus, and handles registration. We&rsquo;re independent and don&rsquo;t represent clients before the CDTFA." },
+  ],
+  challenges: [
+    { signal: "Sales tax", title: "A footprint nobody tracked", body: "District rate by ship-to, $500K California economic nexus, multi-state exposure, and marketplace-vs-direct collection &mdash; the area where seller books most often drift until a CDTFA notice arrives." },
+    { signal: "Margin", title: "A blended number hiding losers", body: "When inventory and COGS aren&rsquo;t tied to SKU and channel, a healthy blended margin hides products and channels that lose money on every order." },
+    { signal: "Payouts", title: "Deposits that don&rsquo;t tie", body: "Amazon and Shopify pay out net of fees, refunds, and reserves. Without channel reconciliation, deposits never tie to sales and the books are wrong from the first month." },
+  ],
+  handle: [
+    { num: "01", title: "Multi-channel reconciliation", body: "Shopify, Amazon, and marketplace payouts reconciled into QuickBooks net of fees, refunds, and reserves &mdash; deposits tie to sales.", href: "/find-an-accountant/california/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
+    { num: "02", title: "District sales tax by ship-to", body: "CDTFA sales-tax items configured to the correct combined rate by ship-to location, not a flat statewide rate.", href: "/find-an-accountant/california/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "03", title: "Economic-nexus tracking", body: "California and multi-state sales tracked against the $500K threshold so registration timing is never a surprise.", href: "/glossary/sales-tax-nexus/", cta: "Sales-tax nexus &rarr;" },
+    { num: "04", title: "Inventory &amp; COGS by SKU", body: "Inventory and COGS tied to SKU and channel so your real contribution margin by product is visible.", href: "/glossary/cost-of-goods-sold/", cta: "Cost of goods sold &rarr;" },
+    { num: "05", title: "Marketplace-facilitator split", body: "Marketplace-collected sales separated from your direct sales so you don&rsquo;t double-count or mis-report.", href: "/find-an-accountant/california/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "06", title: "Monthly close, CPA-ready", body: "A reconciled monthly close with channel-level margin and a clean sales-tax position your CPA can file from.", href: "/find-an-accountant/california/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+  ],
+  integrations: [
+    "Shopify &amp; Shopify Payments",
+    "Amazon Seller Central &amp; FBA",
+    "A2X (or similar) for channel payout reconciliation",
+    "Stripe, PayPal, and other processors",
+    "BigCommerce, WooCommerce, and Walmart Marketplace",
+    "Inventory and 3PL apps tied back to COGS",
+  ],
+  integrationsNote: "We reconcile alongside the tools you already sell on &mdash; the books read from your channels, not the other way around.",
+  process: [
+    { phase: "Step 1", title: "Free channel &amp; tax review", body: "A Certified ProAdvisor reviews your channels, CDTFA setup, and nexus footprint &mdash; at no cost." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days &mdash; cleanup, setup, or monthly." },
+    { phase: "Step 3", title: "Reconcile &amp; configure", body: "Channels reconciled, district sales tax set by ship-to, inventory and COGS tied to SKU." },
+    { phase: "Step 4", title: "Monthly margin &amp; tax", body: "A monthly close showing channel margin and a CPA-ready sales-tax position." },
+  ],
+  advisoryBody: [
+    "Once the books show real margin by channel and the sales tax is right, the questions get strategic: which channel to scale, which SKUs to cut, whether a price change actually helped &mdash; answered from numbers you can trust.",
+    "That&rsquo;s where <a href=\"/accounting/advisory/fractional-cfo/\">fractional-CFO advisory</a> picks up, in coordination with your CPA. We keep the books; your CPA files; the strategy rests on both being right.",
+  ],
+  faq: [
+    { q: "What does California e-commerce accounting include?", a: "Multi-channel reconciliation of Shopify, Amazon, and marketplace payouts into QuickBooks; CDTFA district sales tax configured by ship-to location; economic-nexus tracking against the $500,000 threshold; inventory and COGS tied to SKU and channel; marketplace-vs-direct separation; and a CPA-ready monthly close. We deliver the books; your CPA files." },
+    { q: "How does California sales tax work for online sellers?", a: "California sources sales tax by location, so the correct combined rate depends on where each order ships, not a flat statewide rate. Remote sellers reach economic nexus at $500,000 in California sales (a sales-only threshold, no transaction count). Marketplaces collect as facilitators on the sales they process; your direct sales are yours to handle. We keep the books straight; your CPA files the CDTFA return and determines nexus." },
+    { q: "Do you reconcile Amazon and Shopify payouts?", a: "Yes &mdash; and it&rsquo;s the most important part. Amazon and Shopify pay out net of fees, refunds, reserves, and adjustments, so the deposit never equals the sales. We reconcile each channel (often via A2X or a similar tool) so deposits tie to sales, fees land in the right accounts, and the books are accurate from the first month." },
+    { q: "How do you figure out my real margin?", a: "By tying inventory and COGS to SKU and channel and pulling fees, shipping, returns, and chargebacks into the right places. A blended gross margin hides the products and channels losing money on every order; SKU- and channel-level contribution shows you which to grow and which to cut." },
+    { q: "Do I have sales-tax nexus in other states too?", a: "Probably &mdash; most growing e-commerce sellers cross economic-nexus thresholds in multiple states, and stored FBA inventory can create physical nexus. We keep your sales-by-state picture clear so a nexus review is fast; the determination and the multi-state registrations and filings are handled by your CPA or a sales-tax specialist." },
+    { q: "Do you work in my own QuickBooks file?", a: "Yes &mdash; your file, your data, in QuickBooks Online or hosted Desktop, with a named ProAdvisor on the same file every month. We connect to your channels and tools rather than locking you into proprietary software." },
+    { q: "Do you file my California sales tax?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books CDTFA-ready and reconcile the liability, and your CPA or EA files the CDTFA return, determines nexus, and represents you in any audit. We are not affiliated with Intuit Inc." },
+    { q: "Do you serve sellers outside the big California metros?", a: "Yes &mdash; all 58 counties, delivered remotely. E-commerce is location-independent; what matters is your channels, your catalog, and your ship-to footprint, which we handle the same wherever you are." },
+  ],
+  reviewProse: "This page reflects how TechBrot handles California e-commerce engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on multi-channel reconciliation, CDTFA district sales tax by location, the $500,000 economic-nexus threshold, and inventory/COGS by SKU against <a href=\"https://www.cdtfa.ca.gov/\" rel=\"noopener nofollow\">CDTFA</a> guidance current as of the date below. TechBrot delivers the books and coordinates with your CPA, who files; we do not file California sales tax, determine nexus, or represent clients before the CDTFA.",
+  reviewCreds: CA_REVIEW_CREDS,
+  related: [
+    { title: "California sales tax help", body: "The CDTFA district-rate, nexus, and seller&rsquo;s-permit detail behind your e-commerce books.", href: "/find-an-accountant/california/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { title: "California monthly bookkeeping", body: "Keep the channel reconciliation and sales tax current with a recurring monthly close.", href: "/find-an-accountant/california/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { title: "California QuickBooks cleanup", body: "Behind on channel reconciliation or inventory? Get the file CPA-ready first.", href: "/find-an-accountant/california/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { title: "E-commerce accounting (national)", body: "Our global e-commerce industry overview, for the playbook beyond California.", href: "/accounting/industries/ecommerce/", cta: "National overview &rarr;" },
+  ],
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/california/industries/ecommerce/",
+    name: "California E-commerce Accounting & Bookkeeping",
+    description: "E-commerce accounting for California DTC and marketplace sellers — multi-channel reconciliation, CDTFA district sales tax by ship-to location, economic-nexus tracking, and inventory/COGS by SKU and channel. Independent firm; does not file California sales tax.",
+    serviceName: "California E-commerce Accounting & Bookkeeping",
+    serviceType: "E-commerce industry bookkeeping and QuickBooks ProAdvisor services",
+    serviceDesc: "Multi-channel e-commerce bookkeeping for California DTC and marketplace sellers — Shopify/Amazon/marketplace payout reconciliation, CDTFA district sales tax by ship-to location, economic-nexus tracking, inventory and COGS by SKU and channel, and a CPA-ready monthly close. Independent Certified QuickBooks ProAdvisor firm; does not file California sales tax or determine nexus — coordinates with the client's CPA or EA.",
+    areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
+    audienceType: "California DTC, Shopify, Amazon, and multi-channel e-commerce sellers across all 58 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};

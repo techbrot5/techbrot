@@ -1,0 +1,142 @@
+/* /find-an-accountant/california/industries/agency/ — CA INDUSTRY CHILD.
+ * t-location + heroLight. Shared body: partials/state-industry-body.njk. v4 CA state-weighted
+ * industry (agencies / SaaS / creative & production). GENUINELY CA×agency: ASC 606 gross-vs-net
+ * (principal/agent on media pass-through), deferred revenue, project profitability, heavy AB5
+ * freelancer exposure, R&D for tech. HONESTY: deferred to FTB/EDD + CPA/EA; founder-name-zero. */
+const { stripTags, buildCityGraph } = require("../../../../_build/lib/city-child.js");
+const CA_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the CA FTB &amp; EDD &middot; No tax-filing, classification-determination, or representation claims (out of scope) &middot; Reviewed periodically &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-location.njk",
+  permalink: "/find-an-accountant/california/industries/agency/",
+  slug: "ca-ind-agency",
+  tierClass: "section--tier-hub",
+  bodyClass: "page--location page--industry",
+  callBar: true,
+  heroLight: true,
+  title: "California Agency & SaaS Accounting (ASC 606) · TechBrot",
+  description: "Accounting for California agencies, SaaS & production — ASC 606 gross-vs-net on media spend, deferred revenue, project profitability, and AB5 freelancer tracking. Fixed-fee. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "California", href: "/find-an-accountant/california/" },
+    { name: "Industries", href: "/find-an-accountant/california/industries/" },
+    { name: "Agencies, SaaS &amp; Production" },
+  ],
+  bookHref: "/contact/?intent=california&state=california&source_type=industry&funnel_stage=BOFU",
+  hero: {
+    eyebrow: "California &middot; Agency, SaaS &amp; Production",
+    heading: "California agency accounting that books revenue the way it&rsquo;s really earned.",
+    subheading: "California agencies, SaaS companies, and production shops overstate revenue more than any other vertical &mdash; booking pass-through media as gross, recognizing annual contracts on signing, and running heavy freelancer rosters straight into AB5 exposure. We fix the ASC 606 gross-vs-net call, build deferred revenue, surface project profitability, and keep the contractor mix clean &mdash; by a named Certified ProAdvisor. We deliver the books; your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=california&state=california&source_type=industry&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor accounting for California agencies, SaaS companies, and production shops</strong> &mdash; ASC 606 gross-vs-net on pass-through media, deferred-revenue schedules, project profitability, and AB5 freelancer tracking, in your own QuickBooks file. The full California agency summary is below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. California references (ASC 606 revenue recognition; AB5 / the ABC test) reflect rules current as of the review date; TechBrot does not file California taxes or make worker-classification determinations.",
+  },
+  ctaBand: {
+    eyebrow: "California agencies start here",
+    heading: "See your real revenue &mdash; and your real freelancer exposure.",
+    lede: "Book a free discovery call. We&rsquo;ll review how revenue is booked, your deferred-revenue picture, and your contractor roster, flag any gross-vs-net or AB5 exposure, and send a written fixed-fee scope within 3 business days. No pitch. Independent firm &mdash; does not file CA taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=california&state=california&source_type=industry&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  copy: {
+    summaryHeading: "California agency &amp; SaaS accounting, plainly.",
+    aiHeading: "California agency accounting, in five questions.",
+    challengesEyebrow: "Why California agency books break",
+    challengesHeading: "Three places California agencies lose the numbers.",
+    challengesLede: "Profitable-looking agencies misstate the two things that matter most &mdash; revenue and contractor exposure. Knowing which one you&rsquo;re in tells us where to start.",
+    handleHeading: "California agency accounting, done by an expert.",
+    handleLede: "Every engagement is scoped to your services and roster, delivered in your own QuickBooks file by a named Certified ProAdvisor.",
+    integrationsHeading: "Connected to how you deliver.",
+    processHeading: "From overstated revenue to real project margin.",
+    processLede: "Every California agency engagement follows the same rhythm &mdash; revenue right first, project margin second, advisory third.",
+    advisoryHeading: "Correct revenue is the start. Knowing which clients make money is the point.",
+    faqHeading: "California agency &amp; SaaS accounting questions.",
+    relatedHeading: "Related California services &amp; industries.",
+  },
+  summary: [
+    "<strong>TechBrot provides accounting for California agencies, SaaS companies, and production shops</strong> &mdash; creative, media, marketing, software, and entertainment-production businesses &mdash; in your own QuickBooks file by a named Certified ProAdvisor. The job is to make revenue tell the truth and keep the heavy freelancer roster from becoming an AB5 problem.",
+    "Two California specifics drive it. <strong>ASC 606</strong> decides whether pass-through media and production spend is your revenue (principal, gross) or a pass-through (agent, net) &mdash; getting it wrong inflates the top line by multiples &mdash; and decides how annual SaaS contracts defer across the term. And <strong>AB5</strong>&rsquo;s ABC test reclassifies many core-work freelancers as employees, which the books have to surface before the EDD does. We keep both clean and CPA-ready. Independent firm &mdash; not affiliated with Intuit Inc.; we deliver the books, your CPA files.",
+  ],
+  aiSummary: [
+    { q: "What is California agency accounting?", a: "<strong>Booking revenue under ASC 606 (gross-vs-net on pass-through media, deferred revenue on annual contracts), tracking project profitability, and keeping freelancer classification clean under AB5</strong> &mdash; for agencies, SaaS, and production shops. A named Certified ProAdvisor does the books; your CPA files." },
+    { q: "Gross or net &mdash; how should an agency book media spend?", a: "Under <strong>ASC 606</strong> it depends on whether you act as principal (you control the media, book gross) or agent (you arrange it, book net fee). Most agencies are agents on pass-through media and should book the <strong>net fee</strong> &mdash; booking it gross can overstate revenue by multiples. We make the call defensible in the books; your CPA confirms the tax treatment." },
+    { q: "How does AB5 affect my freelancers?", a: "California&rsquo;s ABC test (<strong>Prong B</strong>) reclassifies freelancers doing core work as employees. We keep W-2 and 1099 pay separated and surface the exposure in the books; the legal classification call and any EDD audit are your CPA&rsquo;s or employment attorney&rsquo;s &mdash; see <a href=\"/find-an-accountant/california/ab5-worker-classification/\">AB5 worker classification</a>." },
+    { q: "Do you handle SaaS deferred revenue?", a: "Yes &mdash; annual and multi-year SaaS contracts must defer revenue across the service period, not book it on signing. We build the <a href=\"/glossary/deferred-revenue/\">deferred-revenue</a> schedule and clean MRR/ARR so the numbers survive diligence." },
+    { q: "Do you file California taxes?", a: "No &mdash; we keep the books CPA-ready and coordinate with your CPA, who files. We&rsquo;re independent and don&rsquo;t make worker-classification determinations or represent clients before the EDD or FTB." },
+  ],
+  challenges: [
+    { signal: "Revenue", title: "Pass-through booked as gross", body: "Agencies and production shops that book media and production pass-through as their own revenue overstate the top line by multiples &mdash; the ASC 606 principal-vs-agent call is where it&rsquo;s won or lost." },
+    { signal: "AB5", title: "A freelancer roster as exposure", body: "A heavy roster of core-work freelancers is exactly what AB5&rsquo;s Prong B reclassifies as employees. If the books don&rsquo;t separate it, the exposure stays hidden until the EDD finds it." },
+    { signal: "Deferred", title: "Annual contracts booked on signing", body: "SaaS and retainer revenue recognized at signing instead of deferred across the term inflates current revenue and distorts MRR/ARR &mdash; a diligence killer." },
+  ],
+  handle: [
+    { num: "01", title: "ASC 606 gross-vs-net", body: "Principal-vs-agent analysis on media and production pass-through so revenue reflects what you actually earn.", href: "/find-an-accountant/california/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
+    { num: "02", title: "Deferred revenue &amp; MRR/ARR", body: "Annual and multi-year contracts deferred across the term, with clean MRR/ARR for SaaS.", href: "/glossary/deferred-revenue/", cta: "Deferred revenue &rarr;" },
+    { num: "03", title: "Project &amp; client profitability", body: "Revenue and cost tied to projects and clients so you see which work actually makes money.", href: "/find-an-accountant/california/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { num: "04", title: "AB5 freelancer tracking", body: "W-2 and 1099 pay separated cleanly and the misclassification exposure surfaced for your advisors.", href: "/find-an-accountant/california/ab5-worker-classification/", cta: "AB5 classification &rarr;" },
+    { num: "05", title: "R&amp;D &amp; equity-comp support", body: "Clean books for R&amp;D credits and equity compensation, coordinated with your CPA at tax time.", href: "/find-an-accountant/california/", cta: "California overview &rarr;" },
+    { num: "06", title: "Diligence-ready close", body: "A monthly close investors and a board can trust &mdash; revenue, deferred revenue, and equity comp clean.", href: "/accounting/financial-statements/", cta: "Financial statements &rarr;" },
+  ],
+  integrations: [
+    "HubSpot, Salesforce, and CRM revenue data",
+    "Stripe, Chargebee, and subscription billing",
+    "Harvest, Float, and project / time tracking",
+    "Gusto and payroll for W-2 staff",
+    "Bill.com for AP and contractor payments",
+    "QuickBooks Online or hosted Desktop &mdash; your file",
+  ],
+  integrationsNote: "We reconcile alongside the billing, CRM, and project tools you already run on &mdash; the books read from how you deliver.",
+  process: [
+    { phase: "Step 1", title: "Free revenue &amp; roster review", body: "A Certified ProAdvisor reviews how revenue is booked and your contractor roster &mdash; at no cost." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days &mdash; revenue cleanup, monthly, or both." },
+    { phase: "Step 3", title: "Fix revenue &amp; classification", body: "Gross-vs-net corrected, deferred revenue built, freelancer pay separated for AB5." },
+    { phase: "Step 4", title: "Monthly project margin", body: "A diligence-ready monthly close showing real project and client profitability." },
+  ],
+  advisoryBody: [
+    "When revenue is honest and projects are costed, the real questions surface: which clients and services make money, whether to convert freelancers to staff, whether the SaaS metrics will survive a raise &mdash; answered from numbers a board can trust.",
+    "That&rsquo;s where <a href=\"/accounting/advisory/fractional-cfo/\">fractional-CFO advisory</a> picks up, in coordination with your CPA. We keep the books; your CPA files; the strategy rests on both being right.",
+  ],
+  faq: [
+    { q: "What does California agency accounting include?", a: "ASC 606 gross-vs-net analysis on pass-through media and production spend, deferred-revenue schedules for annual and SaaS contracts, project and client profitability, AB5 freelancer tracking (W-2 vs 1099), and a diligence-ready monthly close &mdash; in your own QuickBooks file. We deliver the books; your CPA files." },
+    { q: "Should my agency book media spend gross or net?", a: "Under ASC 606 it depends on whether you act as principal (you control the media and book it gross) or agent (you arrange it and book your net fee). Most agencies are agents on pass-through media buys and should book the net fee; booking it gross overstates revenue, sometimes by multiples. We make the principal-vs-agent call defensible in the books, and your CPA confirms the tax treatment." },
+    { q: "How does AB5 affect my freelancers?", a: "California&rsquo;s AB5 codified the ABC test, and Prong B reclassifies freelancers doing core work &mdash; writers, designers, developers &mdash; as employees. We keep W-2 and 1099 pay separated and surface the misclassification exposure in the books so your advisors can act. The legal classification determination and any EDD audit are handled by your CPA or employment attorney, not us; see our AB5 page." },
+    { q: "Do you handle SaaS deferred revenue and MRR/ARR?", a: "Yes. Annual and multi-year SaaS contracts must defer revenue across the service period rather than booking it on signing, and MRR/ARR must be derived from corrected recognition. We build the deferred-revenue schedule and clean the metrics so they hold up in board reporting and diligence." },
+    { q: "Do you support R&D credits and equity compensation?", a: "We keep the books so R&amp;D spend is tracked and equity compensation is reflected cleanly and ties to the cap table &mdash; the foundation your CPA needs. The R&amp;D-credit calculation and the equity-comp tax treatment (ASC 718) are your CPA&rsquo;s; we coordinate and keep the underlying books consistent." },
+    { q: "Do you work in my own QuickBooks file?", a: "Yes &mdash; your file, your data, in QuickBooks Online or hosted Desktop, with a named ProAdvisor on the same file every month, connected to your billing, CRM, and project tools rather than proprietary software." },
+    { q: "Do you file my California taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books CPA-ready and coordinate with your CPA or EA, who files. We don&rsquo;t make worker-classification determinations or represent clients before the EDD or FTB, and we are not affiliated with Intuit Inc." },
+    { q: "Do you work with production companies and studios?", a: "Yes &mdash; production shops share the agency challenges: pass-through production spend that should be net, heavy freelance crews under AB5, and project-level job costing. We handle all three the same way, with revenue recognized correctly and the crew classification surfaced for your advisors." },
+  ],
+  reviewProse: "This page reflects how TechBrot handles California agency, SaaS, and production engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on ASC 606 principal-vs-agent and deferred revenue, project profitability, and AB5 / the ABC test against <a href=\"https://www.dir.ca.gov/dlse/faq_independentcontractor.htm\" rel=\"noopener nofollow\">CA DIR</a> and <a href=\"https://edd.ca.gov/\" rel=\"noopener nofollow\">EDD</a> guidance current as of the date below. TechBrot delivers the books and coordinates with your CPA, who files; we do not make worker-classification determinations or represent clients before tax authorities.",
+  reviewCreds: CA_REVIEW_CREDS,
+  related: [
+    { title: "California AB5 worker classification", body: "The freelancer-classification detail behind your agency books &mdash; books-only, educational.", href: "/find-an-accountant/california/ab5-worker-classification/", cta: "AB5 classification &rarr;" },
+    { title: "California monthly bookkeeping", body: "Keep revenue recognition and project margin current with a recurring monthly close.", href: "/find-an-accountant/california/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { title: "California QuickBooks cleanup", body: "Revenue booked wrong or freelancers blurred? Get the file CPA-ready first.", href: "/find-an-accountant/california/quickbooks-cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { title: "Professional services (national)", body: "Our global professional-services industry overview for the broader playbook.", href: "/accounting/industries/professional-services/", cta: "National overview &rarr;" },
+  ],
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/california/industries/agency/",
+    name: "California Agency, SaaS & Production Accounting",
+    description: "Accounting for California agencies, SaaS, and production — ASC 606 gross-vs-net on pass-through media, deferred revenue and MRR/ARR, project profitability, and AB5 freelancer tracking. Independent firm; does not file California taxes or make classification determinations.",
+    serviceName: "California Agency, SaaS & Production Accounting",
+    serviceType: "Agency and SaaS industry bookkeeping and QuickBooks ProAdvisor services",
+    serviceDesc: "Bookkeeping for California agencies, SaaS companies, and production shops — ASC 606 principal-vs-agent revenue, deferred revenue and MRR/ARR, project and client profitability, AB5 freelancer tracking, and a diligence-ready monthly close. Independent Certified QuickBooks ProAdvisor firm; does not file California taxes, make worker-classification determinations, or represent clients before the EDD — coordinates with the client's CPA or EA.",
+    areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
+    audienceType: "California creative and media agencies, SaaS and software companies, and entertainment-production shops across all 58 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};

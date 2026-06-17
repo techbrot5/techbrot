@@ -322,10 +322,11 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 209 · re-skinned (142) + growth = 67 · LAST COMMIT = round-36 CA-tax-cluster
-(4 children + NEW shared state-triage template). Working tree clean on `preview-11ty`. CA = pillar + 11 cities + 15 services.
-PHASE = DEPTH BUILD-OUT (founder 2026-06-17): fully build NY/CA/TX/FL/IL per v4 before new states.
-⚑ FOUNDER SPOT-CHECK PENDING: the 2 CA honest-triage pages' disclosure copy (round-36 report §HONESTY REVIEW).** Dev server: `npm run serve` → http://192.168.1.7:8080/
+**COUNT: total pages live = 216 · re-skinned (142) + growth = 74 · LAST COMMIT = round-37 CA-industries
+(6 industry children + hub + NEW shared state-industry template). Working tree clean on `preview-11ty`.
+CA = pillar + 11 cities + 15 services + 6 industries + industries-hub. THREE state child templates now exist
+(city-child · state-service · state-triage · state-industry). PHASE = DEPTH BUILD-OUT (NY/CA/TX/FL/IL per v4).
+⚑ FOUNDER SPOT-CHECK PENDING: the 2 CA honest-triage disclosures (round-36 §HONESTY REVIEW).** Dev server: `npm run serve` → http://192.168.1.7:8080/
 (data-file edits need a server restart; a clean `npx @11ty/eleventy` reflects them). PROBE via 127.0.0.1 (8125 =
 _site-prod, 8090 = _site + axe.min.js) — the probe scripts' hardcoded `localhost` resolves to IPv6 → empty output.
 **⚠ HEADLESS-CHROME PROBES NON-FUNCTIONAL THIS MACHINE** — `chrome --headless=new --dump-dom` returns 0-length DOM
@@ -398,8 +399,12 @@ body = TODO). NY = master, DONE (39). Remaining ≈ **CA 22 · TX 26 · FL 26 ·
   round 36 tax-cluster ×4: sales-tax-help, ab5-worker-classification, state-tax-notice-help [triage],
   business-tax-problems [triage]). CA remaining: **pricing + speak-to-a-proadvisor (2 special)** ·
   **industries hub+6** · **cities-hub** · pillar ecosystem re-link.
-- **NEW shared template** `partials/state-triage-body.njk` (round 36, honest-triage; amber disclosure ATF +
-  scope-split, Sheet-7/§8). State templates now: city-child-body · state-service-body · state-triage-body.
+- **NEW shared templates:** `partials/state-triage-body.njk` (round 36, honest-triage; amber disclosure ATF +
+  scope-split, Sheet-7/§8) + `partials/state-industry-body.njk` (round 37, t-location industry child).
+  State templates now: city-child-body · state-service-body · state-triage-body · state-industry-body.
+- **CA industries ✅ (round 37):** hub + 6 (ecommerce, agency, restaurant, real-estate, professional-services,
+  construction), each CA×industry-localized. **CA remaining ≈ 5:** cleanup-bookkeeping + urgent-bookkeeping
+  (bkg spokes), speak-to-a-proadvisor (triage) + pricing (table) [money cluster's last 2], cities-hub, pillar re-link.
 - **TODO re-link:** quickbooks-cleanup CTA re-pointed to the CA child ✅ (round 35); `sales-tax-help` links still
   point to global /accounting/sales-tax-compliance/ until the CA tax-cluster wave ships — re-point then.
 ✅ **ROUND 34 — CA SERVICE CLUSTER WAVE 1** (5 money/bkg pages + new shared state-service template). Battery GREEN.
@@ -411,6 +416,10 @@ body = TODO). NY = master, DONE (39). Remaining ≈ **CA 22 · TX 26 · FL 26 ·
   **⚑ FOUNDER SPOT-CHECK PENDING on the 2 triage disclosures + AB5 (R3 — honest-triage gets its own review).**
   Disclosures defer all filing/agency/resolution/representation to CPA/EA/attorney; not-Intuit; educational-only;
   no tax-resolution/OIC claims. Detail: `_build/reports/round-36-ca-taxcluster.md`.
+✅ **ROUND 37 — CA INDUSTRIES** (6 children + hub + new state-industry template): ecommerce, agency, restaurant,
+  real-estate, professional-services, construction. Each CA×industry (district-tax-by-ship-to, ASC 606, uncapped
+  SDI, Prop 13, IOLTA, CA prevailing wage, AB5). Trust-fund boundaries explicit (we keep records, don't hold funds).
+  Battery GREEN; founder-zero PASS. Detail: `_build/reports/round-37-ca-industries.md`.
 
 **▶ NEXT — FAN OUT THE STATE CLUSTER, FULLY AUTONOMOUS, ALL 50 STATES CONTINUOUSLY:**
 order = **CA cities + industries → TX → FL → IL → then the remaining states.** Patterns PROVEN, reuse them:

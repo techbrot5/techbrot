@@ -1,0 +1,142 @@
+/* /find-an-accountant/california/industries/restaurant/ — CA INDUSTRY CHILD.
+ * t-location + heroLight. Shared body: partials/state-industry-body.njk. v4 CA state-weighted.
+ * GENUINELY CA×restaurant: high-volume POS reconciled to the CDTFA district rate, tipped-employee
+ * payroll with California SDI (uncapped) and PIT, food-vs-alcohol taxability, multi-location, local
+ * minimum-wage tracking. HONESTY: deferred to CDTFA/EDD + CPA/EA; founder-name-zero; not Intuit. */
+const { stripTags, buildCityGraph } = require("../../../../_build/lib/city-child.js");
+const CA_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the CA CDTFA &amp; EDD &middot; No tax-filing or representation claims (out of scope) &middot; Reviewed periodically &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-location.njk",
+  permalink: "/find-an-accountant/california/industries/restaurant/",
+  slug: "ca-ind-restaurant",
+  tierClass: "section--tier-hub",
+  bodyClass: "page--location page--industry",
+  callBar: true,
+  heroLight: true,
+  title: "California Restaurant Accounting & Bookkeeping · TechBrot",
+  description: "Restaurant accounting for California operators — high-volume POS reconciled to CDTFA district rates, tipped payroll with CA SDI, food-vs-alcohol sales tax, multi-location. Fixed-fee. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "California", href: "/find-an-accountant/california/" },
+    { name: "Industries", href: "/find-an-accountant/california/industries/" },
+    { name: "Restaurants &amp; Hospitality" },
+  ],
+  bookHref: "/contact/?intent=california&state=california&source_type=industry&funnel_stage=BOFU",
+  hero: {
+    eyebrow: "California &middot; Restaurant Accounting",
+    heading: "California restaurant accounting that ties the POS to the books.",
+    subheading: "California restaurants run on thin margins and high volume &mdash; and the books break at the POS, the tip line, and the sales-tax return. We reconcile your POS deposits to QuickBooks, run tipped payroll with California&rsquo;s uncapped SDI, split food-vs-alcohol sales tax to the right CDTFA district rate, and roll it up across locations &mdash; by a named Certified ProAdvisor. We deliver the books; your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=california&state=california&source_type=industry&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor restaurant accounting for California operators</strong> &mdash; high-volume POS reconciliation, tipped payroll with California SDI and PIT, food-vs-alcohol sales-tax coding to the right CDTFA district rate, and multi-location roll-ups, in your own QuickBooks file. The full California restaurant summary is below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. California references (CDTFA district sales tax; CA SDI/PIT payroll) reflect rules current as of the review date; TechBrot does not file California taxes.",
+  },
+  ctaBand: {
+    eyebrow: "California restaurants start here",
+    heading: "Get books that tie to the POS &mdash; every shift.",
+    lede: "Book a free discovery call. We&rsquo;ll review your POS, payroll, and sales-tax setup, flag where deposits or tips aren&rsquo;t tying, and send a written fixed-fee scope within 3 business days. No pitch. Independent firm &mdash; does not file CA taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=california&state=california&source_type=industry&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  copy: {
+    summaryHeading: "California restaurant accounting, plainly.",
+    aiHeading: "California restaurant accounting, in five questions.",
+    challengesEyebrow: "Why California restaurant books break",
+    challengesHeading: "Three places California restaurants lose the numbers.",
+    challengesLede: "Thin-margin businesses can&rsquo;t afford books that don&rsquo;t tie. Knowing which one you&rsquo;re in tells us where to start.",
+    handleHeading: "California restaurant accounting, done by an expert.",
+    handleLede: "Every engagement is scoped to your POS, locations, and crew, delivered in your own QuickBooks file by a named Certified ProAdvisor.",
+    integrationsHeading: "Connected to how you serve.",
+    processHeading: "From a POS that doesn&rsquo;t tie to books that do.",
+    processLede: "Every California restaurant engagement follows the same rhythm &mdash; deposits tie first, prime cost second, advisory third.",
+    advisoryHeading: "Books that tie are the start. Knowing your prime cost is the point.",
+    faqHeading: "California restaurant accounting questions.",
+    relatedHeading: "Related California services &amp; industries.",
+  },
+  summary: [
+    "<strong>TechBrot provides restaurant accounting for California operators</strong> &mdash; single-location, multi-location, fast-casual, full-service, and hospitality groups &mdash; in your own QuickBooks file by a named Certified ProAdvisor. The job is to make the books tie to the POS, run California tipped payroll correctly, and get the sales-tax return right.",
+    "California adds real complexity. The <strong>CDTFA</strong> sources sales tax by location and treats food and alcohol differently, so multi-location operators need the right combined rate per site. <strong>Tipped payroll</strong> runs into California&rsquo;s <strong>uncapped State Disability Insurance (SDI)</strong> and PIT withholding, and local <strong>minimum-wage</strong> rules vary by city. We reconcile POS deposits, run payroll cleanly, and keep prime cost visible &mdash; CPA-ready. Independent firm &mdash; not affiliated with Intuit Inc.; we deliver the books, your CPA files.",
+  ],
+  aiSummary: [
+    { q: "What is California restaurant accounting?", a: "<strong>Reconciling high-volume POS deposits into QuickBooks, running tipped payroll with California SDI and PIT, coding food-vs-alcohol sales tax to the right CDTFA district rate, and rolling it up across locations</strong> &mdash; so the books tie to the POS and prime cost is visible. A named Certified ProAdvisor does the books; your CPA files." },
+    { q: "How does California sales tax work for restaurants?", a: "The <strong>CDTFA</strong> sources sales tax by location and treats prepared food and alcohol differently, so each location needs the correct combined district rate and the right food-vs-alcohol taxability split. Multi-location operators get this wrong most often &mdash; we set it up per site and reconcile it so the return ties." },
+    { q: "How is California tipped payroll different?", a: "California has <strong>no tip credit</strong> &mdash; tipped staff must be paid full minimum wage &mdash; and <strong>State Disability Insurance (SDI) is uncapped</strong>, plus PIT withholding and local minimum-wage rules that vary by city. We keep tips, wages, and the California payroll items clean; your payroll provider and CPA handle filing." },
+    { q: "Can you handle multiple locations?", a: "Yes &mdash; we keep each location&rsquo;s POS, sales tax, and labor clean and roll them up so you see per-location and consolidated results. Multi-location prime cost (food + labor as a percent of sales) is where the money is made or lost." },
+    { q: "Do you file my California sales tax?", a: "No &mdash; we keep the books CDTFA-ready and reconcile the liability; your CPA or EA files the return. We&rsquo;re independent and don&rsquo;t represent clients before the CDTFA or EDD." },
+  ],
+  challenges: [
+    { signal: "POS", title: "Deposits that don&rsquo;t tie", body: "POS systems net out tips, comps, fees, and third-party delivery before depositing &mdash; so the bank deposit never equals sales. Without daily-sales reconciliation, the books are wrong from the first shift." },
+    { signal: "Tips &amp; SDI", title: "Tipped payroll, California-style", body: "No tip credit, uncapped SDI, PIT withholding, and city-by-city minimum wage make California tipped payroll its own discipline &mdash; mishandled, it&rsquo;s both a labor and a tax exposure." },
+    { signal: "Sales tax", title: "Food vs alcohol, by location", body: "Food and alcohol are taxed differently and the district rate is sourced by location &mdash; so multi-location operators routinely file a sales-tax return that doesn&rsquo;t tie to the books." },
+  ],
+  handle: [
+    { num: "01", title: "Daily-sales POS reconciliation", body: "POS deposits reconciled into QuickBooks net of tips, comps, fees, and delivery so deposits tie to sales.", href: "/find-an-accountant/california/quickbooks-reconciliation/", cta: "Reconciliation &rarr;" },
+    { num: "02", title: "Tipped payroll (CA SDI/PIT)", body: "Tips, wages, and California payroll items (uncapped SDI, PIT, local minimum wage) kept clean for your provider.", href: "/quickbooks/payroll/", cta: "Payroll &rarr;" },
+    { num: "03", title: "Food-vs-alcohol sales tax", body: "Sales tax split by taxability and set to the correct CDTFA district rate per location so the return ties.", href: "/find-an-accountant/california/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "04", title: "Prime cost visibility", body: "Food and labor tracked as a percent of sales &mdash; the number that decides whether a restaurant makes money.", href: "/find-an-accountant/california/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { num: "05", title: "Multi-location roll-ups", body: "Each location reconciled and rolled up so you see per-site and consolidated results side by side.", href: "/find-an-accountant/california/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
+    { num: "06", title: "Vendor &amp; COGS control", body: "Food and beverage COGS and vendor bills kept current so margin isn&rsquo;t a month-end guess.", href: "/glossary/cost-of-goods-sold/", cta: "Cost of goods sold &rarr;" },
+  ],
+  integrations: [
+    "Toast, Square, Clover, and other POS systems",
+    "DoorDash, Uber Eats, and third-party delivery payouts",
+    "Gusto, ADP, and restaurant payroll providers",
+    "MarginEdge, Restaurant365-style inventory/COGS tools",
+    "Bill.com for vendor AP",
+    "QuickBooks Online or hosted Desktop &mdash; your file",
+  ],
+  integrationsNote: "We reconcile alongside the POS and delivery platforms you already run &mdash; the books read from how you serve.",
+  process: [
+    { phase: "Step 1", title: "Free POS &amp; payroll review", body: "A Certified ProAdvisor reviews your POS, payroll, and sales-tax setup &mdash; at no cost." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days &mdash; cleanup, monthly, or both." },
+    { phase: "Step 3", title: "Tie the POS to the books", body: "Daily-sales reconciliation set up, payroll cleaned, sales tax split by location and taxability." },
+    { phase: "Step 4", title: "Monthly prime cost", body: "A monthly close showing prime cost per location and a CPA-ready sales-tax position." },
+  ],
+  advisoryBody: [
+    "When the POS ties and prime cost is visible per location, the decisions get real: which location is dragging, whether a menu price change worked, whether the third-party delivery mix is worth it &mdash; answered from numbers that tie.",
+    "That&rsquo;s where <a href=\"/accounting/advisory/fractional-cfo/\">fractional-CFO advisory</a> picks up, in coordination with your CPA. We keep the books; your CPA files; the strategy rests on both being right.",
+  ],
+  faq: [
+    { q: "What does California restaurant accounting include?", a: "Daily-sales POS reconciliation into QuickBooks, tipped payroll with California SDI and PIT, food-vs-alcohol sales tax coded to the correct CDTFA district rate per location, prime-cost (food + labor) visibility, multi-location roll-ups, and vendor/COGS control &mdash; in your own QuickBooks file. We deliver the books; your CPA files." },
+    { q: "How does California sales tax work for restaurants?", a: "The CDTFA sources sales tax by location and treats prepared food and alcohol differently, so each location needs the correct combined district rate and the right food-vs-alcohol taxability split. Multi-location operators get this wrong most often, which is why the sales-tax return stops tying to the books. We set it up per site and reconcile it so it ties." },
+    { q: "How is California tipped payroll different from other states?", a: "California has no tip credit, so tipped staff must be paid full minimum wage; State Disability Insurance (SDI) is uncapped; PIT withholding applies; and local minimum-wage rules vary city by city. We keep tips, wages, and the California payroll items clean in the books, and your payroll provider and CPA handle the filing and any agency matters." },
+    { q: "Can you handle multiple restaurant locations?", a: "Yes. We keep each location&rsquo;s POS, sales tax, and labor clean and roll them up so you see per-location and consolidated results. Multi-location prime cost &mdash; food and labor as a percent of sales &mdash; is exactly where thin-margin restaurants are won or lost, so we make it visible site by site." },
+    { q: "Do you reconcile third-party delivery (DoorDash, Uber Eats)?", a: "Yes &mdash; delivery platforms pay out net of high commissions, fees, and adjustments, so the deposit is far from the sales. We reconcile each platform&rsquo;s payouts so delivery sales, commissions, and net deposits all land correctly and you can see whether the delivery channel actually makes money." },
+    { q: "Do you work in my own QuickBooks file?", a: "Yes &mdash; your file, your data, in QuickBooks Online or hosted Desktop, with a named ProAdvisor on the same file every month, connected to your POS and delivery platforms rather than proprietary software." },
+    { q: "Do you file my California taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books CDTFA-ready and reconcile the liability, and your CPA or EA files the sales-tax and income returns and handles any agency matter. We are not affiliated with Intuit Inc." },
+    { q: "Do you serve bars, breweries, and hospitality groups?", a: "Yes &mdash; bars, breweries, cafes, and hospitality groups share the restaurant challenges (POS reconciliation, food-vs-alcohol tax, tipped payroll), and breweries add production and federal excise considerations we keep clean for your CPA." },
+  ],
+  reviewProse: "This page reflects how TechBrot handles California restaurant and hospitality engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on POS reconciliation, food-vs-alcohol CDTFA district sales tax, and California tipped payroll (uncapped SDI, PIT) against <a href=\"https://www.cdtfa.ca.gov/\" rel=\"noopener nofollow\">CDTFA</a> and <a href=\"https://edd.ca.gov/\" rel=\"noopener nofollow\">EDD</a> guidance current as of the date below. TechBrot delivers the books and coordinates with your CPA, who files; we do not file California taxes or represent clients before tax authorities.",
+  reviewCreds: CA_REVIEW_CREDS,
+  related: [
+    { title: "California sales tax help", body: "The CDTFA district-rate and food-vs-alcohol detail behind your restaurant books.", href: "/find-an-accountant/california/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { title: "California monthly bookkeeping", body: "Keep the POS reconciliation and prime cost current with a recurring monthly close.", href: "/find-an-accountant/california/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { title: "California QuickBooks reconciliation", body: "Deposits not tying to the POS? Start with reconciliation.", href: "/find-an-accountant/california/quickbooks-reconciliation/", cta: "Reconciliation &rarr;" },
+    { title: "Restaurant accounting (national)", body: "Our global restaurant industry overview for the broader playbook.", href: "/accounting/industries/restaurant/", cta: "National overview &rarr;" },
+  ],
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/california/industries/restaurant/",
+    name: "California Restaurant Accounting & Bookkeeping",
+    description: "Restaurant accounting for California operators — high-volume POS reconciliation, tipped payroll with uncapped CA SDI and PIT, food-vs-alcohol sales tax at the right CDTFA district rate, and multi-location roll-ups. Independent firm; does not file California taxes.",
+    serviceName: "California Restaurant Accounting & Bookkeeping",
+    serviceType: "Restaurant and hospitality industry bookkeeping services",
+    serviceDesc: "Bookkeeping for California restaurants and hospitality operators — daily-sales POS reconciliation, tipped payroll with California SDI/PIT, food-vs-alcohol CDTFA district sales tax per location, prime-cost visibility, multi-location roll-ups, and vendor/COGS control. Independent Certified QuickBooks ProAdvisor firm; does not file California taxes — coordinates with the client's CPA or EA.",
+    areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
+    audienceType: "California restaurants, bars, breweries, cafes, and multi-location hospitality groups across all 58 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};

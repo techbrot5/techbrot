@@ -1,0 +1,199 @@
+{#- SHARED STATE-INDUSTRY-CHILD BODY (find-an-accountant state cluster, growth phase).
+    ONE source for per-state industry children under /find-an-accountant/<state>/industries/<industry>/.
+    t-location + heroLight (lighter location-child hero). DOM modelled on the founder-approved NY
+    industry children (new-york/industries/construction.njk): summary · ai-5Q · challenges ·
+    what-we-handle · integrations · process · advisory · FAQ · expert-review · related.
+    Everything state+industry-specific comes from the page's .11tydata.js (summary, aiSummary,
+    challenges, handle, integrations, process, advisoryBody, faq, reviewProse, reviewCreds, related,
+    copy.*, bookHref). HARD BAR: genuine state×industry substance; the mad-libs test must FAIL.
+    HONESTY: real facts, tax specifics deferred to the authority + CPA/EA; founder-name-zero; not Intuit. -#}
+
+{# ── SUMMARY ── #}
+<section class="section section--compact" id="{{ slug }}-summary-sec">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In one paragraph</p>
+      <h2 class="section__heading">{{ copy.summaryHeading | safe }}</h2>
+    </header>
+    <div class="stack-8">
+      {%- for p in summary %}<p class="prose"{% if loop.first %} id="{{ slug }}-summary"{% endif %}>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── AI SUMMARY · five-question block ── #}
+<section class="section" id="{{ slug }}-ai-summary-sec">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">{{ copy.aiHeading | safe }}</h2>
+    </header>
+    <dl class="ai-summary ai-summary--ruled" id="{{ slug }}-ai-summary-list">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
+        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+{# ── CHALLENGES · the un-clonable band (grid-3 buyer-cards) ── #}
+<section class="section section--alt" id="{{ slug }}-challenges">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">{{ copy.challengesEyebrow | safe }}</p>
+      <h2 class="section__heading">{{ copy.challengesHeading | safe }}</h2>
+      {%- if copy.challengesLede %}<p class="section__lede">{{ copy.challengesLede | safe }}</p>{%- endif %}
+    </header>
+    <div class="grid-3">
+      {%- for c in challenges %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ c.signal | safe }}</p>
+        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
+        <p class="buyer-card__body">{{ c.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── WHAT WE HANDLE · the services (grid-3 buyer-cards) ── #}
+<section class="section" id="{{ slug }}-handle">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What TechBrot handles</p>
+      <h2 class="section__heading">{{ copy.handleHeading | safe }}</h2>
+      {%- if copy.handleLede %}<p class="section__lede">{{ copy.handleLede | safe }}</p>{%- endif %}
+    </header>
+    <div class="grid-3">
+      {%- for s in handle %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ s.num }}</p>
+        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
+        <p class="buyer-card__body">{{ s.body | safe }}</p>
+        {%- if s.href %}<a class="buyer-card__cta" href="{{ s.href }}">{{ s.cta | safe }}</a>{%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── INTEGRATIONS · tools reconciled with QuickBooks (checks-list) ── #}
+<section class="section section--alt" id="{{ slug }}-integrations">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Tools we work alongside</p>
+      <h2 class="section__heading">{{ copy.integrationsHeading | safe }}</h2>
+    </header>
+    <ul class="checks-list">
+      {%- for t in integrations %}<li>{{ t | safe }}</li>{%- endfor %}
+    </ul>
+    {%- if integrationsNote %}<p class="prose">{{ integrationsNote | safe }}</p>{%- endif %}
+  </div>
+</section>
+
+{# ── PROCESS · four-phase rhythm (grid-2 buyer-cards) ── #}
+<section class="section" id="{{ slug }}-process">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">How engagements work</p>
+      <h2 class="section__heading">{{ copy.processHeading | safe }}</h2>
+      {%- if copy.processLede %}<p class="section__lede">{{ copy.processLede | safe }}</p>{%- endif %}
+    </header>
+    <div class="grid-2">
+      {%- for p in process %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ p.phase }}</p>
+        <h3 class="buyer-card__heading">{{ p.title | safe }}</h3>
+        <p class="buyer-card__body">{{ p.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── ADVISORY · standing brand line ── #}
+<section class="section section--alt" id="{{ slug }}-advisory">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Beyond the books</p>
+      <h2 class="section__heading">{{ copy.advisoryHeading | safe }}</h2>
+    </header>
+    <div class="stack-8">
+      {%- for p in advisoryBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+    </div>
+    <div class="hero__actions">
+      <a class="btn btn--primary btn--lg" href="{{ bookHref }}">Book the discovery call</a>
+    </div>
+  </div>
+</section>
+
+{# ── FAQ · visible faq__list = FAQPage schema ── #}
+<section class="section" id="{{ slug }}-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">{{ copy.faqHeading | safe }}</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="{{ slug }}-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="{{ slug }}-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level, no personal name ── #}
+<section class="section section--alt" id="{{ slug }}-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    </header>
+    <div class="byline-block">
+      <div class="byline-block__mark" aria-hidden="true"></div>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose"><p>{{ reviewProse | safe }}</p></div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-17</span><span>Updated: 2026-06-17</span><span>Reviewed: 2026-06-17 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
+
+{# ── RELATED · state services & industries (grid-2 buyer-cards) ── #}
+{%- if related %}
+<section class="section" id="{{ slug }}-related">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">{{ copy.relatedHeading | safe }}</h2>
+    </header>
+    <div class="grid-2">
+      {%- for r in related %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading">{{ r.title | safe }}</h3>
+        <p class="buyer-card__body">{{ r.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}

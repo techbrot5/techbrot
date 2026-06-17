@@ -1,0 +1,97 @@
+---json
+{
+  "layout": "layouts/t-hub.njk",
+  "permalink": "/find-an-accountant/california/industries/",
+  "slug": "ca-industries-hub",
+  "title": "California Industry-Specific Accounting · TechBrot",
+  "description": "Industry-specific accounting for California businesses — e-commerce, agencies & SaaS, restaurants, real estate, professional services, and construction, each built around California's tax and labor rules. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "California", "href": "/find-an-accountant/california/" },
+    { "name": "Industries" }
+  ],
+  "heroFigure": false,
+  "hero": {
+    "eyebrow": "California · Industry Accounting",
+    "heading": "California accounting, built for your industry.",
+    "subheading": "California's tax and labor rules hit every industry differently — district sales tax by ship-to for sellers, ASC 606 for agencies, tipped payroll for restaurants, trust accounting for real estate and law firms, prevailing wage for construction. We build the books around what your industry actually needs, by a named Certified ProAdvisor. We deliver the books; your CPA files.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=california&state=california&source_type=industry-hub&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Independent · not Intuit",
+      "Fixed-fee · written scope in 3 days"
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>industry-specific accounting for California businesses</strong> — six California-weighted verticals (e-commerce, agencies &amp; SaaS, restaurants, real estate, professional services, and construction), each built around the California tax and labor rules that actually shape the books. Industries not listed are served through our <a href=\"/accounting/industries/\">global industry pages</a>. The full list is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not affiliated with Intuit Inc. California tax and labor references reflect rules current as of the review date; TechBrot does not file California taxes."
+  },
+  "ctaBand": {
+    "eyebrow": "California businesses start here",
+    "heading": "Tell us your industry — we'll scope the right books.",
+    "lede": "Book a free discovery call. We'll review where your books stand against your industry's California requirements and send a written fixed-fee scope within 3 business days. No pitch. Independent firm — does not file CA taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=california&state=california&source_type=industry-hub&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY ── #}
+<section class="section section--compact" id="ca-industries-hub-summary-sec">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In short</p>
+      <h2 class="section__heading">Industry-specific California accounting.</h2>
+    </header>
+    <p class="prose" id="ca-industries-hub-summary">{{ summary | safe }}</p>
+  </div>
+</section>
+
+{# ── INDUSTRIES GRID · the 6 CA state-weighted verticals (buyer-cards) ── #}
+<section class="section" id="ca-industries-hub-grid">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">California-weighted verticals</p>
+      <h2 class="section__heading">Six California industries we build books for.</h2>
+      <p class="section__lede">Each page is built around that industry's California-specific accounting &mdash; not a keyword swap.</p>
+    </header>
+    <div class="grid-3">
+      {%- for i in industries %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading">{{ i.title | safe }}</h3>
+        <p class="buyer-card__body">{{ i.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ i.href }}">{{ i.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="prose">{{ industriesNote | safe }}</p>
+  </div>
+</section>
+
+{# ── FAQ ── #}
+<section class="section section--alt" id="ca-industries-hub-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">California industry accounting questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ca-industries-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="ca-industries-hub-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
