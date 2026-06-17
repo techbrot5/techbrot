@@ -261,3 +261,24 @@ compact triage hero per the capture).
 
 **▶ NEXT (after triage OK, FULLY AUTONOMOUS toward 200):** triage fan-out → rest of Wave-2 (optional mofu diagram-
 tease / pricing tiles) → find-an-accountant LAST → toward 200. Hard gates held. Only STOP = the triage gate (now).
+
+## Update 2026-06-17 (session 2 cont. — triage fan-out + link-TYPE UX system + cutover-gate audit)
+**✅ TRIAGE FAN-OUT (`d55bc0b`)** — all 5 triage pages: amber `.disclosure--warn` ATF banner; 4 NY triage compacted
++ call-breakout CALL conversion. **✅ LINK-TYPE UX + ARROW (`b21605e`)** — action/contact = partial→full, nav/list =
+clean→hover, animated `.lnk-arrow` (118 wrapped), ONE source, axe 0v/28p, WCAG focus intact. Standing UX rule R8
+recorded. **RE-SKIN COMPLETE: 142/142 built pages on the elevated system; battery green throughout.**
+
+### ⛳ CUTOVER-GATE AUDIT (2026-06-17, for the flip-vs-build decision)
+| Gate | Status |
+|---|---|
+| Real phone | ✅ (877) 751-5575 tokenized site-wide |
+| Full site equity-GREEN + battery | ✅ 142/142 · 0 reds · CSS 77,525B/83,968B |
+| GA4 | ✅ wired (`G-K2Z8GK69Z5`, fail-closed: fires only when TB_ENV=production) + tb-analytics event layer |
+| Orphan 301s | ✅ 3 staged in `_redirects` (find-an-accountant→/accounting/, /reviews/→/trust/, /about/team/→/about/) |
+| **Form POST handler** | ❌ **PENDING** — forms POST to `/contact/submit` + `/api/pillar-lead`; NO Cloudflare Pages Function in repo (`functions/` absent). Forms will fail on submit until a handler is added. |
+| **OG image per type** | ❌ **PENDING** — base head has og:title/desc/url/type + twitter `summary`, but NO `og:image`/`twitter:image`. No social/AI preview image. |
+| **Intuit ProAdvisor badge artwork** | ❌ **PENDING** — no badge asset in `src/assets`; founder supplies. |
+| **baseline-vs-live-prod re-crawl** | ⚠ PARTIAL — 3 known orphans 301'd; full re-crawl to catch any other live-prod URL not yet done. |
+| /resources/ interim repoint | ⚠ nav "Resources" → /resources/research/ interim (safe; real /resources/ hub is post-redesign). |
+
+**▶ HOLDING for founder flip-vs-build decision (autonomous paused per founder).**
