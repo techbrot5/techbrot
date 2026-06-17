@@ -322,9 +322,9 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 194 · re-skinned (142) + growth = 52 · LAST COMMIT = round-33 IL-cities-wave-1
-(5 IL city children: chicago, aurora, naperville, joliet, rockford). Working tree clean on `preview-11ty`.
-State coverage: NY full tree · CA 11 · TX 5 · FL 5 · IL 5 · CA/TX/FL/IL/NY landings. City children = 26. ~6 from 200.** Dev server: `npm run serve` → http://192.168.1.7:8080/
+**COUNT: total pages live = 199 · re-skinned (142) + growth = 57 · LAST COMMIT = round-34 CA-services-wave-1
+(5 CA service children + NEW shared state-service template). Working tree clean on `preview-11ty`.
+PHASE = DEPTH BUILD-OUT (founder 2026-06-17): fully build NY/CA/TX/FL/IL per v4 before new states.** Dev server: `npm run serve` → http://192.168.1.7:8080/
 (data-file edits need a server restart; a clean `npx @11ty/eleventy` reflects them). PROBE via 127.0.0.1 (8125 =
 _site-prod, 8090 = _site + axe.min.js) — the probe scripts' hardcoded `localhost` resolves to IPv6 → empty output.
 **⚠ HEADLESS-CHROME PROBES NON-FUNCTIONAL THIS MACHINE** — `chrome --headless=new --dump-dom` returns 0-length DOM
@@ -377,6 +377,29 @@ Joliet = intermodal logistics + multi-state nexus. Battery GREEN; honesty held (
 of Finance/CPA). Detail: `_build/reports/round-33-il-cities-w1.md`. **City children now = 26 (11 CA + 5 TX + 5 FL + 5 IL).**
 **⛔ FLIP-BLOCKER (cutover gate #6): 26 city children + 24 glossary = 50 pages are inferred-clean (static-proxy +
 SF-equivalence), pending LIVE axe/overflow on the founder's machine before flip.**
+
+## 🏗️ DEPTH BUILD-OUT (founder 2026-06-17) — fully build NY/CA/TX/FL/IL per v4 BEFORE any new states
+Scope from v4 Sheet 2 (LOCATIONS). Per full state = **Pillar + Money(6) + QB-spokes(6) + Bookkeeping-spokes(3)
++ Tax-cluster(varies) + Industries(hub+6 state-weighted) + Cities(hub+N)**. v4 RULES: industries = only the
+6 state-weighted (rest → global /accounting/industries/*); advisory/comparisons/payroll → global; NO /near-me/;
+children-on-pillar (re-link each pillar's ecosystem block to children once built). State service+industry
+children = **t-bofu** (shared templates: `partials/state-service-body.njk` ✅ built round 34; state-industry
+body = TODO). NY = master, DONE (39). Remaining ≈ **CA 22 · TX 26 · FL 26 · IL 27**. Order: **CA → TX → FL → IL**.
+- **v4 state-weighted INDUSTRIES:** CA = ecommerce·agency·restaurant·real-estate·professional-services·construction
+  · TX = construction·manufacturing·real-estate·trucking·healthcare·professional-services · FL = restaurant·
+  healthcare·dental·real-estate·construction·home-services · IL = manufacturing·healthcare·agency·restaurant·
+  professional-services·trucking.
+- **v4 TAX cluster:** CA 4 (sales-tax·ab5-worker-classification·state-tax-notice·business-tax) · TX 2 (sales-tax·
+  franchise-tax) · FL 2 (sales-tax·business-tax) · IL 3 (sales-tax·state-tax-notice·business-tax).
+- **Missing cities to add:** TX el-paso · FL st-petersburg · IL springfield. (CA cities = 11, ahead of v4's 8;
+  founder-ruled: keep anaheim, skip a separate orange-county page.)
+- **CA progress:** pillar ✅ · 11 cities ✅ · **5 services ✅ (round 34: qb-accountant, small-business-accountant,
+  bookkeeping-services, virtual-bookkeeper, monthly-bookkeeping)**. CA remaining: QB-spokes(6) · tax-cluster(4) ·
+  pricing + speak-to-a-proadvisor(2 special) · industries hub+6 · cities-hub · pillar ecosystem re-link.
+- **TODO re-link** (round 34): CA service pages temporarily point quickbooks-cleanup→/quickbooks/cleanup/ and
+  sales-tax-help→/accounting/sales-tax-compliance/; re-point to the CA children once the CA QB-spokes + tax waves ship.
+✅ **ROUND 34 — CA SERVICE CLUSTER WAVE 1** (5 pages, new shared state-service template). Battery GREEN; honesty
+held; links gate caught + fixed 2 forward-refs. Detail: `_build/reports/round-34-ca-services-w1.md`.
 
 **▶ NEXT — FAN OUT THE STATE CLUSTER, FULLY AUTONOMOUS, ALL 50 STATES CONTINUOUSLY:**
 order = **CA cities + industries → TX → FL → IL → then the remaining states.** Patterns PROVEN, reuse them:

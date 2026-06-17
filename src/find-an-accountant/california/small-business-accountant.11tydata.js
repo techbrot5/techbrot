@@ -1,0 +1,133 @@
+/* /find-an-accountant/california/small-business-accountant/ — CA SERVICE CHILD (money/TOFU).
+ * t-bofu. Shared body: partials/state-service-body.njk. v4 money cluster — the "small
+ * business accountant near me" TOFU page for California. GENUINELY CA-localized (the facts
+ * band = the real CA stack; service content = the all-in-one accountant for CA SMBs).
+ * HONESTY: real facts deferred to FTB/CDTFA/EDD + CPA/EA; founder-name-zero; not Intuit. */
+const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
+module.exports = {
+  layout: "layouts/t-bofu.njk",
+  permalink: "/find-an-accountant/california/small-business-accountant/",
+  slug: "ca-svc-smallbiz",
+  tierClass: "section--tier-bofu",
+  bodyClass: "page--bofu",
+  callBar: true,
+  heroFigure: "taccount",
+  title: "California Small Business Accountant · TechBrot",
+  description: "Small business accountant for California — bookkeeping, QuickBooks, CDTFA sales tax, AB5 tracking, payroll coordination, kept CPA-ready. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "California", href: "/find-an-accountant/california/" },
+    { name: "Small Business Accountant" },
+  ],
+  bookHref: "/contact/?intent=california&state=california&source_type=state-money&funnel_stage=TOFU",
+  hero: {
+    eyebrow: "California &middot; Small Business Accounting",
+    heading: "A California small business accountant who keeps the whole thing straight.",
+    subheading: "One named Certified QuickBooks ProAdvisor for your California small business &mdash; bookkeeping, QuickBooks, CDTFA sales tax, AB5 contractor tracking, and payroll coordination, kept CPA-ready every month in your own file. Fixed-fee, all 58 counties. We deliver the books; your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=california&state=california&source_type=state-money&funnel_stage=TOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> is a <strong>small business accountant for California businesses</strong> &mdash; an independent Certified QuickBooks ProAdvisor firm that keeps your bookkeeping, QuickBooks, CDTFA sales tax, AB5 contractor tracking, and payroll coordination straight and CPA-ready, in your own QuickBooks file across all 58 counties. The full California small business accountant summary is below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. California tax references ($800 FTB franchise tax; CDTFA district sales tax; AB5) reflect rules current as of the review date; TechBrot does not file California taxes.",
+  },
+  ctaBand: {
+    eyebrow: "California small businesses start here",
+    heading: "Want one accountant who keeps the whole thing straight?",
+    lede: "Book a free discovery call. We&rsquo;ll review where your books stand and send a written fixed-fee quote within 3 business days. No pitch. Independent firm &mdash; does not file CA taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=california&state=california&source_type=state-money&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  stateName: "California",
+  copy: {
+    aiHeading: "California small business accountant, in five questions.",
+    valueEyebrow: "What your California small business gets",
+    valueHeading: "One accountant, the whole back office.",
+    valueLede: "Bookkeeping, QuickBooks, sales tax, payroll coordination, and CPA-ready statements &mdash; handled by a named ProAdvisor so you can run the business.",
+    factsEyebrow: "California tax realities we build into your books",
+    factsHeading: "Three California facts that change how your books are kept.",
+    factsLede: "California small businesses get tripped up by these more than anything else &mdash; so we build them into the setup from day one.",
+    faqHeading: "California small business accountant questions.",
+  },
+  summary: "<strong>TechBrot</strong> is a <strong>small business accountant for California businesses</strong> &mdash; an independent Certified QuickBooks ProAdvisor firm that gives a California small business one named expert for the whole back office: <a href=\"/find-an-accountant/california/bookkeeping-services/\">bookkeeping</a>, QuickBooks, CDTFA district sales tax, AB5 contractor tracking, payroll coordination, and CPA-ready monthly statements, in your own QuickBooks file across all 58 counties. California&rsquo;s structure &mdash; the <strong>$800 FTB franchise tax</strong>, the nation&rsquo;s most complex <strong>district sales tax</strong>, and <strong>AB5</strong> &mdash; is built into the setup. Fixed-fee ($400&ndash;$2,500+/mo monthly; cleanup $1,500&ndash;$15,000+). Independent firm &mdash; not affiliated with Intuit Inc.; we deliver the books, your CPA files.",
+  aiSummary: [
+    { q: "What does a California small business accountant do?", a: "<strong>Keeps a small business&rsquo;s whole back office straight</strong> &mdash; bookkeeping, QuickBooks, CDTFA sales tax, AB5 contractor tracking, payroll coordination, and CPA-ready statements &mdash; by a named Certified QuickBooks ProAdvisor in your own file. TechBrot is independent; we do the operational accounting, your CPA files." },
+    { q: "Do I need a bookkeeper, an accountant, or a CPA?", a: "Most California small businesses need <strong>all three roles</strong>, often filled by two firms: a ProAdvisor/bookkeeper (TechBrot) for the day-to-day books and QuickBooks, and a <strong>CPA</strong> for tax filing and representation. We keep the books CPA-ready and coordinate directly with your CPA." },
+    { q: "What California taxes affect a small business?", a: "The <strong>$800 FTB franchise tax</strong> (owed even at a loss), <strong>CDTFA district sales tax</strong> at the correct combined rate by location, and <strong>AB5</strong> worker classification. We build all three into the books; your CPA files." },
+    { q: "What does it cost?", a: "Fixed-fee against a written scope: monthly bookkeeping <strong>$400&ndash;$2,500+/mo</strong>; one-time cleanup <strong>$1,500&ndash;$15,000+</strong>. Exact fee in writing within 3 business days of a free discovery call." },
+    { q: "Do you serve my California city?", a: "All 58 counties &mdash; LA, the Bay Area, San Diego, the Central Valley, Sacramento and beyond &mdash; delivered remotely on QuickBooks. Your location changes the tax context, never the service." },
+  ],
+  value: [
+    { num: "01", title: "Bookkeeping that stays current", body: "Monthly reconciliation and a clean chart of accounts so you always know where the business stands.", href: "/find-an-accountant/california/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
+    { num: "02", title: "QuickBooks, set up right", body: "A California-correct file &mdash; district sales-tax items by location, clean contractor tracking &mdash; in QuickBooks Online or Desktop.", href: "/find-an-accountant/california/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
+    { num: "03", title: "Sales tax handled", body: "CDTFA district rates configured by customer location and reconciled, so the return ties and notices don&rsquo;t arrive.", href: "/accounting/sales-tax-compliance/", cta: "Sales tax help &rarr;" },
+    { num: "04", title: "AB5 contractor clarity", body: "W-2 and 1099 pay separated cleanly so your contractor mix is defensible if the EDD ever asks.", href: "/find-an-accountant/california/", cta: "California overview &rarr;" },
+    { num: "05", title: "Payroll coordination", body: "California payroll (SDI, PIT, EDD) configured and coordinated with your provider and CPA.", href: "/quickbooks/payroll/", cta: "Payroll &rarr;" },
+    { num: "06", title: "CPA-ready, every month", body: "Clean monthly statements your CPA can file from and a lender or investor can trust.", href: "/accounting/financial-statements/", cta: "Financial statements &rarr;" },
+  ],
+  facts: [
+    { fig: "$800", title: "California&rsquo;s $800 FTB franchise tax", body: "Every LLC and corporation owes the Franchise Tax Board $800 a year to do business in California &mdash; even at a loss &mdash; plus an income-based LLC fee. We accrue it so it&rsquo;s never a surprise; your CPA files." },
+    { fig: "10.25%+", title: "District sales tax by location", body: "California&rsquo;s 7.25% base is the highest in the U.S., and local district add-ons push the combined rate past 10.25% in places. QuickBooks must apply the correct combined rate by customer location, not a flat statewide rate." },
+    { fig: "AB5", title: "AB5 worker classification", body: "The ABC test reclassifies many core-work contractors as employees, with penalties of $5,000&ndash;$25,000 per violation plus back payroll taxes. We separate W-2 from 1099 and surface the exposure; disputes go to your CPA or counsel." },
+  ],
+  scopeDo: [
+    "Keep your QuickBooks file reconciled and current every month",
+    "Build a California-correct chart of accounts and sales-tax setup",
+    "Track AB5 contractor classification &mdash; W-2 vs 1099",
+    "Accrue the $800 franchise tax and prepare CPA-ready statements",
+    "Coordinate California payroll with your provider",
+    "Be your single point of contact for the books",
+  ],
+  scopeDont: [
+    "File California or federal income, franchise, or sales-tax returns",
+    "Represent you before the FTB, CDTFA, or EDD",
+    "Resolve worker-classification disputes or audits",
+    "Provide legal or tax advice",
+  ],
+  process: [
+    { phase: "Step 1", title: "Free file review", body: "A Certified ProAdvisor reviews your books and your California situation at no cost." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days &mdash; cleanup, monthly, or both." },
+    { phase: "Step 3", title: "Get current", body: "If the file needs it, we bring it to a CPA-ready standard before the monthly cadence starts." },
+    { phase: "Step 4", title: "One accountant, every month", body: "A named ProAdvisor keeps the back office straight and hands CPA-ready statements to your CPA." },
+  ],
+  advisoryBody: [
+    "A California small business doesn&rsquo;t need five vendors &mdash; it needs one accountant who keeps the books accurate, the sales tax configured, and the contractor mix defensible, and who can tell you what the numbers mean.",
+    "That&rsquo;s the TechBrot model: accurate books first, one named ProAdvisor, and &mdash; when you&rsquo;re ready &mdash; <a href=\"/accounting/advisory/fractional-cfo/\">fractional-CFO advisory</a> in coordination with your CPA.",
+  ],
+  faq: [
+    { q: "What does a California small business accountant do?", a: "Keeps a small business&rsquo;s whole back office straight &mdash; bookkeeping, QuickBooks, CDTFA sales tax, AB5 contractor tracking, payroll coordination, and CPA-ready statements &mdash; by a named Certified QuickBooks ProAdvisor in your own file. TechBrot is an independent ProAdvisor firm; we do the operational accounting and your CPA files the returns." },
+    { q: "Do I need a bookkeeper, an accountant, or a CPA?", a: "Most California small businesses need all three roles. In practice a ProAdvisor/bookkeeping firm like TechBrot handles the day-to-day books and QuickBooks, and a CPA handles tax filing, audit, and representation. We keep the books CPA-ready and coordinate directly with your CPA, so the two roles fit together cleanly." },
+    { q: "Which California taxes affect my small business?", a: "The $800 FTB minimum franchise tax (owed even at a loss), CDTFA district sales tax at the correct combined rate by location, and AB5 worker classification. We build all three into how the books are kept from day one; the filings and any agency disputes stay with your CPA or EA." },
+    { q: "Do you serve my city or county?", a: "All 58 California counties, delivered remotely on QuickBooks &mdash; from Los Angeles, the Bay Area, and San Diego to the Central Valley and Sacramento. Your location changes the tax context but never the service or the named ProAdvisor on your file." },
+    { q: "How much does it cost?", a: "Fixed-fee against a written scope, never hourly. Monthly bookkeeping runs $400&ndash;$2,500+/mo by volume and accounts; one-time cleanup runs $1,500&ndash;$15,000+. You get the exact fee in writing within 3 business days of a free discovery call." },
+    { q: "Do you file my California taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books CPA-ready and coordinate with your CPA or EA, who files the FTB, CDTFA, and income returns. We do not file returns or represent clients, and we are not affiliated with Intuit Inc." },
+    { q: "Can you take over messy books?", a: "Yes &mdash; it&rsquo;s a common starting point. We scope a one-time cleanup to a CPA-ready standard &mdash; correcting district sales tax, reconciling accounts, cleaning up classification &mdash; then keep the file clean every month so it doesn&rsquo;t happen again." },
+    { q: "Are you a CPA firm?", a: "No &mdash; we&rsquo;re an independent Certified QuickBooks ProAdvisor and bookkeeping firm. TechBrot handles QuickBooks operations and bookkeeping; your California CPA handles tax filing and representation. Most California small businesses use both, and we coordinate directly with your CPA." },
+  ],
+  reviewProse: "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving California small businesses remotely across all 58 counties. California tax figures &mdash; the $800 FTB minimum franchise tax, CDTFA district sales tax, and AB5 worker classification &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://www.ftb.ca.gov/\" rel=\"noopener nofollow\">California Franchise Tax Board</a>, the <a href=\"https://www.cdtfa.ca.gov/\" rel=\"noopener nofollow\">CDTFA</a>, and the <a href=\"https://edd.ca.gov/\" rel=\"noopener nofollow\">EDD</a>. TechBrot provides bookkeeping, QuickBooks work, and payroll coordination and works with your CPA, who files; we do not file California returns or represent clients before tax authorities.",
+  reviewCreds: [
+    { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+    { label: "Standards", detail: "Verified vs the CA FTB, CDTFA &amp; EDD &middot; No tax-filing or representation claims (out of scope) &middot; Reviewed periodically &middot; No fabricated data" },
+    { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+  ],
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/california/small-business-accountant/",
+    name: "California Small Business Accountant",
+    description: "Small business accountant for California — bookkeeping, QuickBooks, CDTFA district sales tax, AB5 tracking, and payroll coordination kept CPA-ready in your own file across all 58 counties. Independent firm; does not file California taxes.",
+    serviceName: "California Small Business Accounting Services",
+    serviceType: "Small business bookkeeping and QuickBooks ProAdvisor services",
+    serviceDesc: "Full-service small business bookkeeping, QuickBooks, CDTFA district sales tax, AB5 contractor tracking, payroll coordination, and CPA-ready statements for California small businesses across all 58 counties. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns — coordinates with the client's CPA or EA.",
+    areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
+    audienceType: "California small and midsize businesses across all 58 counties needing a single accountant for bookkeeping, QuickBooks, sales tax, and payroll coordination",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};
