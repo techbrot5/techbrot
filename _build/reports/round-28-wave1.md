@@ -146,8 +146,23 @@ supersedes it (design-ownership rule), so it's RETIRED for the pillar. Implement
 - CA/TX/FL/IL landings + the other 37 NY children UNCHANGED (dark hero) — await fan-out. CSS 76,515B (no new CSS;
   the split-hero/figure classes already existed). Battery green · design-fidelity · variety-12a.
 
-**⏸ STOP-GATE #1 — awaiting founder review of the NY pillar + child before fanning out the NY children.**
-**▶ NEXT (after OK):** fan out NY children per CONFIRMED re-tier rulings — cities (11) + industries (8) =
-elevated t-location hero; service children (13) + honest-triage (4) → RE-TIER to t-bofu; CA/TX/FL/IL landings =
-elevated t-location hero (neutral). Then STOP-GATE #2 (honest-triage copy) · Wave-2 registry types. Resume from
-the "🔵 FRESH-SESSION RESUME" block in BUILD-TRACKER.
+## Update 2026-06-17 (session 2 cont. — NY CHILDREN FAN-OUT, founder OK'd)
+**✅ NY CHILDREN FAN-OUT DONE (`5c9e8db`).** All 37 remaining NY children elevated to the split hero +
+T-account figure + trust chips via `_build/scripts/ny_children_elevate.py` (idempotent, line-based/CRLF-safe,
+front-matter add only; skipped the already-done NYC child). Coverage: 11 cities + cities-hub · 8 industries +
+industries-hub · 13 service children · 4 honest-triage. The whole NY tree (pillar + 38 children) now wears the
+elevated state hero — visually consistent with the pillar + NYC child.
+- VERIFY: equity GREEN site-wide (all NY children content-equity PASS — front-matter add only, no heading/FAQ/
+  schema touched) · battery green (design-fidelity 136, variety-12a, css-drift, manifest) · CSS 76,515B/83,968B ·
+  overflow clean 360/390/768 + axe 0/29 spot-checked on a service child (cleanup-bookkeeping); city/industry/
+  service render-checked for the elevated hero. CLS 0 (fixed-viewBox figure).
+- **SCOPE NOTE (transparent):** this fan-out is the elevated HERO on the CURRENT t-location tier for all 37.
+  The formal **t-location→t-bofu tier-TAGGING re-tier** for the 13 service + 4 honest-triage children
+  (data-tier/cta-tint only — the hero is already identical via heroFigure, and the conversion structure
+  proof-strip/intake-form already lives in their bodies) is DEFERRED to a clean follow-up pass: it needs
+  per-page tierClass/bodyClass reconciliation and the honest-triage ones touch STOP-GATE #2, so it shouldn't be
+  bundled into a hero sweep. **Honest-triage COPY untouched** (hero re-skin only) — STOP-GATE #2 not crossed.
+
+**▶ NEXT (autonomous):** (a) 4 state landings CA/TX/FL/IL → elevated neutral hero (heroFigure + trust). (b) the
+flagged t-bofu tier-tagging re-tier follow-up. (c) STOP-GATE #2 honest-triage compliance copy. (d) Wave-2
+registry types. Resume from the "🔵 FRESH-SESSION RESUME" block in BUILD-TRACKER.

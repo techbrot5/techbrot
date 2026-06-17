@@ -322,13 +322,20 @@ gained a `heroFigure` opt-in (default OFF). `/find-an-accountant/new-york/` (72h
 clean 360/390/768, CLS 0, equity GREEN. CA/TX/FL/IL landings + the other 37 NY children KEEP the dark hero
 until fan-out. **⏸ AWAITING FOUNDER REVIEW of this proof before fanning out NY children.**
 
-**▶ NEXT (after founder OK of the NY proof): fan out the NY children (37) + the 4 state landings.** Per the
-CONFIRMED re-tier rulings (ARCHITECTURE-TRUTH §2): NY **cities (11) + industries (8)** = elevated t-location
-hero (like the NYC child); NY **service children (13) + honest-triage (4) → RE-TIER to t-bofu** (conversion
-structure, not just a new hero); the 4 **state landings (CA/TX/FL/IL)** = elevated t-location hero (neutral, no
-contour). Then **STOP-GATE #2: honest-triage** compliance copy. Then Wave-2 registry types (product/mofu ·
-comparison · pricing · legal · location-child). CUTOVER GATE tracked above; gate #1 (phone) CLEARED.
-Old→handoff map + RS1–RS4 + PACE govern.
+**✅ NY CHILDREN FAN-OUT DONE (`5c9e8db`, 2026-06-17).** All 37 remaining NY children elevated to the split hero
++ T-account figure + trust (11 cities + cities-hub, 8 industries + industries-hub, 13 service children, 4
+honest-triage) via idempotent `_build/scripts/ny_children_elevate.py` (front-matter add only). Whole NY tree
+(pillar + 38 children) now wears the elevated state hero. equity GREEN site-wide · battery green · overflow clean
+360/390/768 · axe 0 (spot-checked city/industry/service) · CSS 76,515B. **Honest-triage COPY untouched** (hero
+re-skin only) — STOP-GATE #2 not crossed.
+
+**▶ NEXT (autonomous):** (a) **4 state landings CA/TX/FL/IL** → elevated t-location hero (neutral; they keep
+`heroMotif` today — give them `heroFigure:"taccount"` + trust like NY). (b) **FLAGGED FOLLOW-UP — formal
+t-location→t-bofu tier-TAGGING re-tier** for the 13 service + 4 honest-triage NY children (data-tier/tint only;
+the hero is already identical, so this is low-visible-impact — needs per-page tierClass/bodyClass reconciliation;
+do as its own clean pass). (c) **STOP-GATE #2: honest-triage compliance copy** (separate from the hero re-skin).
+(d) Wave-2 registry types (product/mofu · comparison · pricing · legal · location-child). CUTOVER GATE tracked
+above; gate #1 (phone) CLEARED. Old→handoff map + RS1–RS4 + PACE govern.
 **DEV-SERVER NOTE:** `npm run serve` binds the LAN; this session = http://192.168.1.7:8080/. Probe servers
 must be hit via 127.0.0.1 (the scripts' hardcoded `localhost` resolves to IPv6 ::1 while python http.server
 binds IPv4 only → empty probes; run chrome against 127.0.0.1:8125/_site-prod + 127.0.0.1:8090/_site).
