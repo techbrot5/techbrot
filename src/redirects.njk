@@ -4,13 +4,10 @@ eleventyExcludeFromCollections: true
 ---
 # Cloudflare Pages redirects. Format: <from> <to> <status>.
 #
-# Interim 301 -- the /find-an-accountant/ bare national landing was removed for
-# quality (founder ruling 2026-06-15) and is deferred to a fresh net-new build
-# post-redesign. The URL is currently LIVE (200) on production, so this temporary
-# 301 to the national /accounting/ hub prevents a 404 at cutover. REMOVE this line
-# when the real find-an-accountant national landing ships. See ARCHITECTURE-TRUTH sec 9.
-/find-an-accountant/  /accounting/  301
-
+# NOTE: the interim /find-an-accountant/ -> /accounting/ 301 was REMOVED 2026-06-17 —
+# the real find-an-accountant national routing hub now ships (src/find-an-accountant/
+# index.njk), so the URL resolves to itself and must NOT redirect away.
+#
 # Interim 301s -- two uncaptured-live orphans found by the v4.xlsx diff (2026-06-16):
 # both are LIVE (200, distinct content) on production but were never in baseline/built.
 # Founder rulings: NO standalone /reviews/ until 5+ real reviews (honesty); NO individual

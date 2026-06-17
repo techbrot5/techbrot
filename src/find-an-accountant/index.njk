@@ -1,0 +1,137 @@
+---json
+{
+  "layout": "layouts/t-hub.njk",
+  "permalink": "/find-an-accountant/",
+  "slug": "faa",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--hub",
+  "title": "Find a Certified QuickBooks ProAdvisor & Accountant · TechBrot",
+  "description": "Find a Certified QuickBooks ProAdvisor for your business — remote-first bookkeeping, cleanup, setup & advisory in every state, with dedicated pages for New York, California, Texas, Florida & Illinois. Fixed-fee. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant" }
+  ],
+  "hero": {
+    "eyebrow": "Find an accountant",
+    "heading": "Find a Certified QuickBooks ProAdvisor for your business.",
+    "subheading": "Remote-first bookkeeping, cleanup, setup, and advisory from an independent Certified QuickBooks ProAdvisor firm &mdash; with real local tax fluency for your state and a named operator on your file. Fixed-fee, written scope first. Serving businesses in every state.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Every state &middot; remote-first",
+      "Fixed-fee &middot; written scope in 3 days"
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> is an independent firm of <strong>Certified QuickBooks ProAdvisors</strong> that does the accounting work inside your QuickBooks file &mdash; bookkeeping, cleanup, setup, payroll, sales-tax-ready books, and advisory &mdash; delivered remotely to businesses in every state, with real local tax fluency for the states we&rsquo;ve built out. Pick your state below, or talk to a ProAdvisor.",
+    "source": "Independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc.; coordinates with your CPA or EA, who files."
+  },
+  "ctaBand": {
+    "eyebrow": "Wherever your business is",
+    "heading": "Talk to a Certified ProAdvisor.",
+    "lede": "A free 30-minute discovery call &mdash; we review your QuickBooks file and your state&rsquo;s situation, then send a written fixed-fee scope within 3 business days. Independent firm; not Intuit; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=find-an-accountant", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── STATE ROUTING · buyer-cards to the state pillars/landings. (H2: Find an accountant by state.) ── #}
+<section class="section" id="faa-states">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Routing by state</p>
+      <h2 class="section__heading">Find an accountant by state.</h2>
+      <p class="section__lede">Each state page is built around what&rsquo;s actually different there &mdash; the local taxes, the filing realities, the industries. Don&rsquo;t see your state? We serve it remotely &mdash; just reach out.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in states %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ s.tag }}</p>
+        <h3 class="buyer-card__heading"><a href="{{ s.href }}">{{ s.name | safe }}</a></h3>
+        <p class="buyer-card__body">{{ s.note | safe }}</p>
+        <a class="buyer-card__cta" href="{{ s.href }}">{{ s.name | safe }} accountants &rarr;</a>
+      </article>
+      {%- endfor %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">Every other state</p>
+        <h3 class="buyer-card__heading"><a href="/contact/?intent=find-an-accountant">Your state isn&rsquo;t listed yet</a></h3>
+        <p class="buyer-card__body">We serve businesses in every state remotely on QuickBooks &mdash; tell us where you are and what you need, and a Certified ProAdvisor will route you.</p>
+        <a class="buyer-card__cta" href="/contact/?intent=find-an-accountant">Tell us where you are &rarr;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# ── VALUE PROP. (H2: What you get, in any state.) ── #}
+<section class="section section--alt" id="faa-value">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What you get</p>
+      <h2 class="section__heading">What you get, in any state.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for v in valueProps %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ v.num }}</p>
+        <h3>{{ v.title | safe }}</h3>
+        <p class="prose">{{ v.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── NETWORK · the real model (honest). (H2: How the network works.) ── #}
+<section class="section" id="faa-network">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Direct delivery + vetted partners</p>
+      <h2 class="section__heading">How the network works.</h2>
+    </header>
+    <div class="stack-8">
+      {%- for p in network %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+    </div>
+    <p class="prose"><small>{{ networkNote | safe }}</small></p>
+  </div>
+</section>
+
+{# ── CALL conversion. ── #}
+<section class="section section--compact" id="faa-call">
+  <div class="container container--narrow">
+    <div class="call-breakout">
+      <div>
+        <p class="call-breakout__title">Not sure which page fits your business?</p>
+        <p class="call-breakout__sub">A Certified ProAdvisor reviews your QuickBooks file and your state&rsquo;s situation, then scopes the work in writing &mdash; fixed-fee. Independent firm; not Intuit.</p>
+      </div>
+      <a class="btn btn--primary" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">Speak to a ProAdvisor</a>
+    </div>
+  </div>
+</section>
+
+{# ── FAQ · 6 Q/A; visible faq__list = FAQPage schema. (H2: Find-an-accountant questions.) ── #}
+<section class="section section--alt" id="faa-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">Find-an-accountant questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="faa-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="faa-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
