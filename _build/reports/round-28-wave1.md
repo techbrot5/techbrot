@@ -163,6 +163,15 @@ elevated state hero — visually consistent with the pillar + NYC child.
   per-page tierClass/bodyClass reconciliation and the honest-triage ones touch STOP-GATE #2, so it shouldn't be
   bundled into a hero sweep. **Honest-triage COPY untouched** (hero re-skin only) — STOP-GATE #2 not crossed.
 
-**▶ NEXT (autonomous):** (a) 4 state landings CA/TX/FL/IL → elevated neutral hero (heroFigure + trust). (b) the
-flagged t-bofu tier-tagging re-tier follow-up. (c) STOP-GATE #2 honest-triage compliance copy. (d) Wave-2
-registry types. Resume from the "🔵 FRESH-SESSION RESUME" block in BUILD-TRACKER.
+## Update 2026-06-17 (session 2 cont. — STATE LANDINGS, founder OK'd)
+**✅ STATE LANDINGS DONE (`209768b`).** CA/TX/FL/IL elevated to the same split hero + T-account figure +
+state-tailored trust chips (e.g. "California businesses · all 58 counties"). The legacy dark neutral-motif hero
+is retired for them; `heroMotif` left in front-matter (now unused/harmless — only the dark else-branch reads it).
+equity GREEN · battery green (css 76,515B) · overflow clean 360/390/768 · axe 0/36 (Texas spot-check) · CLS 0.
+**The ENTIRE find-an-accountant silo (43 pages: NY pillar + 38 NY children + 4 state landings) now wears the
+elevated state hero — visually consistent end to end.**
+
+**▶ NEXT (autonomous):** (a) the flagged t-location→t-bofu tier-tagging re-tier follow-up (service + honest-triage
+children; data-tier/tint only). (b) STOP-GATE #2 honest-triage compliance copy. (c) Wave-2 registry types
+(product/mofu · comparison · pricing · legal · location-child). Resume from the "🔵 FRESH-SESSION RESUME" block
+in BUILD-TRACKER.
