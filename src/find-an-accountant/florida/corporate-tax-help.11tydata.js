@@ -8,10 +8,10 @@
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
   { fig: "5.5%", title: "The 5.5% corporate income tax", body: "Florida has no personal income tax, but <strong>C-corporations pay a 5.5% corporate income tax</strong> (Form F-1120) to the Department of Revenue, with a standard exemption. Pass-throughs (S-corps, most LLCs, partnerships) generally don&rsquo;t &mdash; entity type decides. We track the figures; your CPA computes and files." },
-  { fig: "Commercial rent", title: "The commercial-rent (&ldquo;business rent&rdquo;) tax", body: "Florida is unusual in taxing <strong>commercial real-property rent</strong> &mdash; a rate that has been stepping down and is being phased out. If you lease commercial space it&rsquo;s a real obligation; the current rate and treatment change, so we track it and the DOR&rsquo;s rules and your CPA confirm." },
+  { fig: "Services", title: "Florida taxes services others exempt", body: "Unlike most states, Florida taxes a range of <strong>services</strong> &mdash; commercial cleaning, pest control, certain repairs, security, commercial laundry. Owners who assume services are exempt routinely under-collect, so we flag taxable vs. exempt service lines in QuickBooks and apply the right rate." },
   { fig: "TPP", title: "The tangible personal property return", body: "Florida businesses file an annual <strong>tangible personal property</strong> return (DR-405) on equipment, furniture, and fixtures with the county property appraiser. We keep a maintained fixed-asset schedule so it&rsquo;s ready; valuation and any exemption stay with your CPA." },
 ];
-const FL_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Florida businesses remotely across all 67 counties. Florida business-tax references &mdash; the 5.5% corporate income tax and its exemption, the commercial-rent (business rent) tax and its phase-down, and the tangible personal property return &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://floridarevenue.com/\" rel=\"noopener nofollow\">Florida Department of Revenue</a>. Exact rates, exemptions, and the rent-tax phase-out change; confirm current figures with the Department and your CPA. TechBrot tracks the figures in the books and coordinates with your CPA; we do not compute the liability, file the returns, or represent clients before the Department.";
+const FL_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Florida businesses remotely across all 67 counties. Florida business-tax references &mdash; the 5.5% corporate income tax and its exemption, and the tangible personal property return &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://floridarevenue.com/\" rel=\"noopener nofollow\">Florida Department of Revenue</a>. Exact rates, exemptions, and the rent-tax phase-out change; confirm current figures with the Department and your CPA. TechBrot tracks the figures in the books and coordinates with your CPA; we do not compute the liability, file the returns, or represent clients before the Department.";
 const FL_REVIEW_CREDS = [
   { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
   { label: "Standards", detail: "Verified vs the Florida Department of Revenue &middot; No tax computation, filing, or representation claims (out of scope) &middot; Rates &amp; the rent-tax phase-out change &mdash; confirm current figures &middot; No fabricated data" },
@@ -26,7 +26,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida Corporate, Rent & TPP Tax Help · TechBrot",
-  description: "Florida's business taxes beyond sales tax — the 5.5% corporate income tax, the commercial-rent tax, and the tangible personal property return — tracked in your books so your CPA can file. Call (877) 751-5575.",
+  description: "Florida's business taxes beyond sales tax — the 5.5% corporate income tax, the taxability of services, and the tangible personal property return — tracked in your books so your CPA can file. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -97,7 +97,7 @@ module.exports = {
   scopeDont: [
     "Compute the corporate income tax or determine the commercial-rent tax rate",
     "Determine whether you owe the corporate tax or the TPP exemption",
-    "File Form F-1120, the commercial-rent tax, or the TPP return",
+    "File Form F-1120, the taxability of services, or the TPP return",
     "Represent you before the Florida Department of Revenue or provide tax advice",
   ],
   process: [
@@ -115,7 +115,7 @@ module.exports = {
     { q: "What is the Florida commercial-rent (business rent) tax?", a: "Florida is unusual in taxing commercial real-property rent &mdash; the &ldquo;business rent tax.&rdquo; If you lease commercial space, the rent is subject to sales tax at a rate that has been stepping down over recent years and is being phased out. Because the rate has changed repeatedly, we record it in the books at the current rate and your CPA and the Department confirm the figure &mdash; we don&rsquo;t assert a specific rate that could go stale." },
     { q: "What is the tangible personal property return (DR-405)?", a: "Florida businesses file an annual tangible personal property return with the county property appraiser, reporting equipment, furniture, and fixtures used in the business, with an exemption available. We keep a maintained fixed-asset schedule in QuickBooks so the return is a quick export rather than a year-end reconstruction. The valuation and the exemption are handled by your CPA or a property-tax consultant." },
     { q: "What does TechBrot do for these Florida business taxes?", a: "We keep the figures clean in QuickBooks &mdash; revenue and expenses for the corporate tax, the commercial-rent tax captured from your leases, a fixed-asset schedule for the TPP return, and reemployment-tax wages tracked &mdash; so your CPA can compute and file each accurately. We do not compute the liabilities, set the rent-tax rate, file the returns, or represent you before the Department." },
-    { q: "Do you file my Form F-1120, rent tax, or TPP return?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books CPA-ready and coordinate with your CPA, who computes and files the corporate income tax, the commercial-rent tax, and the tangible personal property return. We don&rsquo;t file or represent clients, and we are not affiliated with Intuit Inc. or the Florida Department of Revenue." },
+    { q: "Do you file my Form F-1120, rent tax, or TPP return?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books CPA-ready and coordinate with your CPA, who computes and files the corporate income tax, the taxability of services, and the tangible personal property return. We don&rsquo;t file or represent clients, and we are not affiliated with Intuit Inc. or the Florida Department of Revenue." },
     { q: "I'm an LLC, not a C-corp — does the 5.5% corporate tax apply to me?", a: "Generally not &mdash; the 5.5% corporate income tax applies to C-corporations. Most LLCs, S-corps, and partnerships are pass-through entities whose income is reported by the owners, and Florida has no personal income tax. But entity classification can be nuanced (an LLC can elect C-corp treatment), so your CPA confirms how it applies to you. We keep the books so either answer is supported." },
   ],
   reviewProse: FL_REVIEW_PROSE,
@@ -123,7 +123,7 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/corporate-tax-help/",
     name: "Florida Corporate, Rent & TPP Tax Help",
-    description: "Florida's business taxes beyond sales tax — the 5.5% corporate income tax (C-corps), the commercial-rent tax, and the tangible personal property return — tracked in your QuickBooks file so your CPA can compute and file. Independent firm; does not compute or file.",
+    description: "Florida's business taxes beyond sales tax — the 5.5% corporate income tax (C-corps), the taxability of services, and the tangible personal property return — tracked in your QuickBooks file so your CPA can compute and file. Independent firm; does not compute or file.",
     serviceName: "Florida Corporate, Commercial-Rent & TPP Tax Bookkeeping Support",
     serviceType: "Business-tax bookkeeping support",
     serviceDesc: "Tracking and reconciliation of the figures behind Florida's 5.5% corporate income tax (C-corps), the commercial-rent (business rent) tax on leased space, and the annual tangible personal property return (DR-405), plus reemployment-tax wage tracking, for Florida businesses across all 67 counties. Independent Certified QuickBooks ProAdvisor firm; does not compute the liabilities, set rates, file the returns, or represent clients before the Florida Department of Revenue — coordinates with the client's CPA or EA.",

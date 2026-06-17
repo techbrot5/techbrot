@@ -25,7 +25,7 @@ module.exports = {
       "Your QuickBooks file is a mess and you want an honest read",
       "You&rsquo;re behind and need cleanup or catch-up",
       "You want monthly bookkeeping by a named ProAdvisor",
-      "You have Florida-specific questions (6%+surtax sales tax by county, the commercial-rent tax, the 5.5% corporate tax, tangible personal property)",
+      "You have Florida-specific questions (6%+surtax sales tax by county, the taxability of services, the 5.5% corporate tax, tangible personal property)",
       "You want CFO-level advisory once the books are clean",
     ], cta: "Book the discovery call &rarr;", href: "/contact/?intent=florida&state=florida&source_type=state-money&funnel_stage=BOFU" },
     { tag: "Contact Intuit", title: "Contact Intuit directly if&hellip;", body: "These are Intuit account or product matters this team cannot access or resolve:", list: [
@@ -39,13 +39,13 @@ module.exports = {
   aiSummary: [
     { q: "Is TechBrot the same as Intuit or QuickBooks support?", a: "<strong>No.</strong> TechBrot is an independent Certified QuickBooks ProAdvisor and bookkeeping firm &mdash; not Intuit, not QuickBooks Customer Support, not QuickBooks Live, and not Intuit&rsquo;s ProAdvisor referral line. &ldquo;Certified QuickBooks ProAdvisor&rdquo; is a certification the firm holds from Intuit; it does not mean affiliation. For Intuit account or product help, contact Intuit directly." },
     { q: "What does speaking to a Florida ProAdvisor cost?", a: "<strong>Nothing.</strong> The discovery call is free and no-obligation. You speak with an actual Certified QuickBooks ProAdvisor about your own Florida books; if you want work done, you get a written fixed-fee scope within 3 business days." },
-    { q: "What can a ProAdvisor call help with?", a: "The accounting work inside your own books &mdash; QuickBooks setup, cleanup, catch-up, monthly bookkeeping, Florida specifics (6%+surtax sales tax by county, the commercial-rent tax, the 5.5% corporate tax, tangible personal property), and CFO-level advisory. We do the books; your CPA files." },
+    { q: "What can a ProAdvisor call help with?", a: "The accounting work inside your own books &mdash; QuickBooks setup, cleanup, catch-up, monthly bookkeeping, Florida specifics (6%+surtax sales tax by county, the taxability of services, the 5.5% corporate tax, tangible personal property), and CFO-level advisory. We do the books; your CPA files." },
     { q: "What can&rsquo;t this call help with?", a: "Intuit account, billing, subscription, or login issues, and QuickBooks product bugs &mdash; those require Intuit, which we can&rsquo;t access. And filing Florida returns or representation before the Florida Department of Revenue is your CPA&rsquo;s or EA&rsquo;s." },
     { q: "Will I get a sales pitch?", a: "No. You speak with a Certified ProAdvisor who would do or oversee the work, not a salesperson. If TechBrot isn&rsquo;t the right fit, we&rsquo;ll say so &mdash; and point you toward who is." },
   ],
   conversation: [
     { num: "01", title: "You describe the situation", body: "Where your Florida books stand, what&rsquo;s prompting the call, and any deadline. No script, no qualifying interrogation." },
-    { num: "02", title: "We review your own file", body: "A Certified ProAdvisor looks at your actual QuickBooks file &mdash; reconciliation, sales tax by county, the commercial-rent tax, the corporate-tax figures &mdash; and tells you what it really needs." },
+    { num: "02", title: "We review your own file", body: "A Certified ProAdvisor looks at your actual QuickBooks file &mdash; reconciliation, sales tax by county, the taxability of services, the corporate-tax figures &mdash; and tells you what it really needs." },
     { num: "03", title: "You get an honest read", body: "Setup, cleanup, monthly, or nothing at all if that&rsquo;s the truth &mdash; plus a written fixed-fee scope within 3 business days if you want the work." },
   ],
   faq: [
@@ -54,7 +54,7 @@ module.exports = {
     { q: "I have an Intuit billing or login problem — can you help?", a: "No &mdash; we can&rsquo;t access your Intuit account, so an Intuit billing, subscription, login, password, or product-bug matter has to go to Intuit directly. We&rsquo;ll happily point you to the right place, but the call we can help with is about the accounting work inside your own QuickBooks file." },
     { q: "What Florida things can a ProAdvisor actually help with?", a: "The accounting inside your books: QuickBooks setup and cleanup, monthly bookkeeping, 6%+surtax sales tax configured by county, the commercial-rent tax captured, the 5.5% corporate-tax position tracked where it applies, tangible personal property kept ready, and CFO-level advisory once the books are clean. We keep the books CPA-ready; your CPA files the Florida returns." },
     { q: "Will I be talking to a salesperson?", a: "No &mdash; you speak with a Certified QuickBooks ProAdvisor, the kind of person who would do or oversee the work, not a call-center rep working a script. If TechBrot isn&rsquo;t the right fit for your situation, we&rsquo;ll tell you that honestly and point you toward who is." },
-    { q: "Do you file my Florida taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we do the bookkeeping and QuickBooks work and keep the books CPA-ready, and your CPA or EA files the sales tax, corporate income tax, commercial-rent tax, and tangible personal property return and represents you before the Florida Department of Revenue. We are not affiliated with Intuit Inc." },
+    { q: "Do you file my Florida taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we do the bookkeeping and QuickBooks work and keep the books CPA-ready, and your CPA or EA files the sales tax, corporate income tax, service taxability, and tangible personal property return and represents you before the Florida Department of Revenue. We are not affiliated with Intuit Inc." },
     { q: "Do you serve my Florida city or county?", a: "All 67 Florida counties, delivered remotely on QuickBooks &mdash; Miami, Orlando, Tampa, Jacksonville, Fort Lauderdale and beyond. Your county changes the surtax rate but not the service or the named ProAdvisor on your file." },
     { q: "How do I book the call?", a: "Use the discovery-call link or call the number on this page. Tell us where your books stand and any deadline; a Certified ProAdvisor reviews your file and gives you an honest read, with a written fixed-fee scope within 3 business days if you want work done." },
   ],

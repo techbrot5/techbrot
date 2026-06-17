@@ -3,10 +3,10 @@
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
   { fig: "6% + surtax", title: "Sales tax baked into the books, by county", body: "Florida sales &amp; use tax is 6% plus a discretionary county surtax that varies by county, via the <strong>Florida Department of Revenue</strong>. Bookkeeping that records the right combined rate by location is the difference between a return that ties and one that doesn&rsquo;t." },
-  { fig: "Commercial rent", title: "The commercial-rent tax, tracked", body: "Florida taxes <strong>commercial real-property rent</strong> &mdash; a line many bookkeepers miss entirely. If you lease space, the &ldquo;business rent tax&rdquo; has to be recorded; the rate is phasing down, so we track it and the DOR&rsquo;s rules and your CPA confirm." },
+  { fig: "Services", title: "Florida taxes services others exempt", body: "Unlike most states, Florida taxes a range of <strong>services</strong> &mdash; commercial cleaning, pest control, certain repairs, security, commercial laundry. Owners who assume services are exempt routinely under-collect, so we flag taxable vs. exempt service lines in QuickBooks and apply the right rate." },
   { fig: "TPP", title: "Tangible personal property ready to file", body: "Florida businesses file an annual <strong>tangible personal property</strong> return (DR-405) with the county property appraiser. A maintained fixed-asset schedule makes it straightforward; valuation stays with your CPA." },
 ];
-const FL_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Florida businesses remotely across all 67 counties. Florida tax figures &mdash; no personal income tax, the 5.5% corporate income tax, 6% sales tax plus discretionary county surtax, the commercial-rent tax, and the tangible personal property return &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://floridarevenue.com/\" rel=\"noopener nofollow\">Florida Department of Revenue</a>. Rates change; confirm current figures with the Department and your CPA. TechBrot provides bookkeeping and QuickBooks work and coordinates with your CPA, who files; we do not file Florida returns.";
+const FL_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Florida businesses remotely across all 67 counties. Florida tax figures &mdash; no personal income tax, the 5.5% corporate income tax, 6% sales tax plus discretionary county surtax, the taxability of services, and the tangible personal property return &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://floridarevenue.com/\" rel=\"noopener nofollow\">Florida Department of Revenue</a>. Rates change; confirm current figures with the Department and your CPA. TechBrot provides bookkeeping and QuickBooks work and coordinates with your CPA, who files; we do not file Florida returns.";
 const FL_REVIEW_CREDS = [
   { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
   { label: "Standards", detail: "Verified vs the Florida Department of Revenue &middot; No tax-filing claims (out of scope) &middot; Rates change &mdash; confirm current figures &middot; No fabricated data" },
@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida Bookkeeping Services · TechBrot",
-  description: "Bookkeeping services for Florida businesses — reconciliation, clean categorization, 6%+surtax sales tax by county, the commercial-rent tax, TPP records, CPA-ready statements. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  description: "Bookkeeping services for Florida businesses — reconciliation, clean categorization, 6%+surtax sales tax by county, the taxability of services, TPP records, CPA-ready statements. Fixed-fee, all 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -111,7 +111,7 @@ module.exports = {
     { q: "Do you work in my existing QuickBooks file?", a: "Yes &mdash; your file, your data, in QuickBooks Online or hosted Desktop, with a named ProAdvisor on the same file every month. We can set up or migrate the file if needed." },
     { q: "Can you clean up a messy file first?", a: "Yes. If the file is behind, or sales tax was set to one rate instead of by county, or the rent tax was never recorded, we scope a one-time cleanup to a CPA-ready standard, then move into monthly bookkeeping so it stays clean." },
     { q: "How much do Florida bookkeeping services cost?", a: "Fixed-fee against a written scope, never hourly. Monthly bookkeeping runs $400&ndash;$2,500+/mo by volume and accounts; one-time cleanup runs $1,500&ndash;$15,000+. Exact fee in writing within 3 business days of a free discovery call." },
-    { q: "Do you file my Florida taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor and bookkeeping firm &mdash; we keep the books CPA-ready and coordinate with your CPA, who files the sales tax, corporate income tax, commercial-rent tax, and tangible personal property return. We are not affiliated with Intuit Inc." },
+    { q: "Do you file my Florida taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor and bookkeeping firm &mdash; we keep the books CPA-ready and coordinate with your CPA, who files the sales tax, corporate income tax, service taxability, and tangible personal property return. We are not affiliated with Intuit Inc." },
   ],
   reviewProse: FL_REVIEW_PROSE,
   reviewCreds: FL_REVIEW_CREDS,
