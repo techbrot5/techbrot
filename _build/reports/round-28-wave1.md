@@ -391,3 +391,21 @@ COUNT: total pages live = 168 · re-skinned (142) + growth this phase = 26 · pa
 /find-an-accountant/california/cities/san-francisco/ (1 — CA state-child proof) · remaining in current cluster =
 state children fan-out PENDING founder approval of this proof · next cluster (after approval) = CA cities/
 industries fan-out, then TX/FL/IL.
+
+## Update 2026-06-17 (find-an-accountant HUB rebuilt + 301 pulled — STOP for founder glance)
+**✅ /find-an-accountant/ NATIONAL ROUTING HUB (`5ac9962`).** Founder ruling: the old bare landing (deleted for
+quality) rebuilt FRESH as a proper t-hub routing landing — parent of the state pillars. Routes by state
+(buyer-card grid: NY full build-out · CA · TX · FL · IL, each with a real local-tax hook + an "every other
+state, remote" → contact card). Real content: value prop, the HONEST network model (direct remote delivery +
+selectively vetted partner practices — NO fabricated counts/office network), CALL conversion, 6 FAQ. Schema:
+CollectionPage + ItemList(states) + BreadcrumbList + FAQPage + speakable. Founder-name-zero; independent, not
+Intuit. **REMOVED the interim `/find-an-accountant/ → /accounting/` 301 from `_redirects` (confirmed gone)** so the
+URL resolves to itself. Added the `find-an-accountant` CTA intent. battery green · design-fidelity 163 · url-set
+175 · overflow clean 360/390/768 · axe 0/27 · CLS 0.
+**⏸ STOP — FOUNDER GLANCE on the hub + the CA child (hub→child routing):** /find-an-accountant/ (hub) →
+/find-an-accountant/california/ (CA landing) → /find-an-accountant/california/cities/san-francisco/ (CA child proof).
+Approve → fan out the rest of the state children.
+
+COUNT: total pages live = 169 · re-skinned (142) + growth this phase = 27 · pages added THIS turn =
+/find-an-accountant/ (national routing hub) · remaining in current cluster = state-children fan-out PENDING
+founder approval (hub + CA child shown) · next cluster (after approval) = CA cities/industries → TX/FL/IL.
