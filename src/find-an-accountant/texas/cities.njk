@@ -1,0 +1,100 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/texas/cities/",
+  "slug": "tx-cities",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "heroLight": true,
+  "title": "Texas Cities We Serve · Bookkeeping & QuickBooks · TechBrot",
+  "description": "Certified QuickBooks ProAdvisor bookkeeping across Texas — Houston, Dallas, Austin, San Antonio, Fort Worth, El Paso, and all 254 counties. No income tax; the franchise (margin) tax and 8.25% sales tax handled. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Texas", "href": "/find-an-accountant/texas/" },
+    { "name": "Cities" }
+  ],
+  "hero": {
+    "eyebrow": "Texas · Cities We Serve",
+    "heading": "A Texas bookkeeper for your city — and your city's economy.",
+    "subheading": "Texas has no state income tax and no city income or gross-receipts taxes — so what makes each metro's books distinct is its economy: Houston's energy and port, Dallas's corporate and finance, Austin's tech, San Antonio's military and tourism, Fort Worth's logistics and energy, El Paso's border trade. We have a dedicated bookkeeper for the major metros and serve all 254 counties remotely, by a named Certified ProAdvisor. We deliver the books; your CPA files.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=texas&state=texas&source_type=cities-hub&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Texas · all 254 counties",
+      "Fixed-fee · written scope in 3 days"
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> provides <strong>Certified QuickBooks ProAdvisor bookkeeping across Texas</strong> — dedicated city pages for the major metros (each built around that city's actual economy) plus remote service in all 254 counties, by a named bookkeeper on the same file every month, with the Texas franchise (margin) tax and 8.25% sales tax handled. The full list is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not affiliated with Intuit Inc. Texas tax figures reflect Comptroller rules current as of the review date; TechBrot does not file Texas taxes."
+  },
+  "ctaBand": {
+    "eyebrow": "Texas businesses start here",
+    "heading": "Find your city — or just call.",
+    "lede": "Don't see your city? We serve all 254 Texas counties remotely on QuickBooks. Book a free discovery call and we'll scope the right books for your business and your city's economy — written fixed-fee scope within 3 business days. Independent firm — does not file TX taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=texas&state=texas&source_type=cities-hub&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY ── #}
+<section class="section section--compact" id="tx-cities-summary-sec">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In short</p>
+      <h2 class="section__heading">Texas bookkeeping, city by city.</h2>
+    </header>
+    <p class="prose" id="tx-cities-summary">{{ summary | safe }}</p>
+  </div>
+</section>
+
+{# ── CITIES GRID · the dedicated metro pages (buyer-cards) ── #}
+<section class="section" id="tx-cities-grid">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Dedicated city pages</p>
+      <h2 class="section__heading">Texas metros we serve.</h2>
+      <p class="section__lede">Each city page is built around that city&rsquo;s real economy &mdash; not a name swap.</p>
+    </header>
+    <div class="grid-3">
+      {%- for c in cities %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading">{{ c.name | safe }}</h3>
+        <p class="buyer-card__body">{{ c.note | safe }}</p>
+        <a class="buyer-card__cta" href="{{ c.href }}">{{ c.name | safe }} bookkeeper &rarr;</a>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="prose">{{ citiesNote | safe }}</p>
+  </div>
+</section>
+
+{# ── FAQ ── #}
+<section class="section section--alt" id="tx-cities-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">Texas cities &amp; coverage questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="tx-cities-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="tx-cities-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
