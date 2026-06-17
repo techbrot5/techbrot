@@ -56,6 +56,11 @@ ruling: the 4 "Recent New York results" figures, formerly "real engagement outco
 client request," are reframed to explicitly representative/illustrative; operational substance —
 patterns, problems, work — kept. Reviews on any page = only the 2 real Clutch reviews.)
 
+## ⭐ STANDING RULE R9 — PAGE-COUNT LINE EVERY ROUND REPORT (founder 2026-06-17)
+Every round report (every turn) MUST carry a COUNT line alongside the URLs, exact format:
+`COUNT: total pages live = X · re-skinned (142) + growth this phase = Y · pages added THIS turn = [list new URLs] · remaining in current cluster = Z · next cluster = ___`
+So the founder always sees: what was done this turn (every new URL), the running total, and what's left.
+
 ## 🌱 GROWTH PHASE (founder greenlit 2026-06-17 — flip held; build to ~200 first, then flip)
 **Discipline = same as re-skin, HONESTY LOUDER (new content):** REAL claims only — no fabricated stats/reviews/
 counts/case-studies/testimonials/credentials; founder-name-zero; real Intuit badge only; never imply Intuit

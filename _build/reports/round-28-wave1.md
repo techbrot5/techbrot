@@ -315,3 +315,9 @@ CA state children → down the order. Report every URL each turn.
 - Adding a term now = one entry in `glossary.js` + its URL in build-new-queue.json.
 **▶ NEXT (autonomous): more glossary terms (real ones only) → then CA state children** (real localized tax/context
 per state — founder reviews closely). Report every URL each turn.
+
+COUNT: total pages live = 150 · re-skinned (142) + growth this phase = 8 · pages added THIS turn = none (R9
+standing-count-rule setup; prior build = glossary wave 1: /glossary/ + /glossary/{bank-reconciliation, chart-of-
+accounts, double-entry-accounting, general-ledger, accrual-vs-cash-basis-accounting, catch-up-bookkeeping,
+month-end-close}/) · remaining in current cluster (glossary) ≈ ~18 candidate quality terms (real-or-skip; working
+target ~25) · next cluster = CA/TX/FL/IL state children.
