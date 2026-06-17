@@ -56,6 +56,32 @@ ruling: the 4 "Recent New York results" figures, formerly "real engagement outco
 client request," are reframed to explicitly representative/illustrative; operational substance —
 patterns, problems, work — kept. Reviews on any page = only the 2 real Clutch reviews.)
 
+## 🌱 GROWTH PHASE (founder greenlit 2026-06-17 — flip held; build to ~200 first, then flip)
+**Discipline = same as re-skin, HONESTY LOUDER (new content):** REAL claims only — no fabricated stats/reviews/
+counts/case-studies/testimonials/credentials; founder-name-zero; real Intuit badge only; never imply Intuit
+affiliation; if a claim can't be substantiated, write without it or flag (honesty is the #1 growth gate).
+Every page: top-0.01% AI-citable (speakable/QAPage/FAQ, schema-rich, entity-clear) · Google-rank-engineered ·
+CALL conversion · elevated design system · built-to-standard not floor. Gates fire (variety/honesty/forms/CLS/
+axe/overflow/equity-not-applicable-but-quality). **NEW types need a PROOF first (founder glance) before fan-out.**
+STOP-AND-WAIT on: (1) build-ORDER (below — awaiting confirm), (2) each new-type proof, (3) honesty-unsure, (4)
+ambiguous v4 cluster structure.
+
+**▶ PROPOSED BUILD ORDER (awaiting founder confirm — ranked by north-star value):**
+1. **Glossary (~46)** — NEW type · highest AI-citation-per-effort (definitions = LLM quote magnets) · fast · low
+   honesty risk · internal-link authority into money pages. **Recommended FIRST PROOF.**
+2. **State children — CA→TX→FL→IL (~120–150)** — existing proven NY template · biggest CALLS engine (local "[city]
+   bookkeeper" intent) · completes the namesake silo. Needs a CA content-QUALITY proof (real local tax, not mad-lib).
+3. **Support/Help silo (~67)** — t-bofu + honest-triage + error-pattern · problem-aware → calls · heavily AI-cited.
+4. **More QuickBooks (~86)** — core-brand cluster dominance (product/help/error on existing types).
+5. **Tools/calculators (~10)** — NEW type · engagement + link-magnet + hand-off to file-review (calls).
+6. **Guides (~16, 3 go-remote-blocker first)** — t-guide · citations + mid-funnel.
+7. **Pricing children (5, BOFU) + Blog (10, NEW article type)**.
+8. **Trust/Reviews/Partners/Legal/Careers children + Case studies** — supporting; **HONESTY-GATED:** reviews =
+   only 2 real Clutch (no AggregateRating until 5+; /reviews/ currently 301→/trust/); case studies = REAL only
+   (likely BLOCKED unless the firm has substantiable engagements — FLAG). Build the substantiable ones, skip/flag rest.
+**NEW-TYPE proofs required:** glossary · tools/calculator · blog-article · case-study · reviews-listing · switch.
+**Existing types (content-quality check only):** state children · QB-more · support · guides · pricing children.
+
 ## ⭐ STANDING UX RULE (founder 2026-06-17 — R8) — COMPONENT/TOKEN LEVEL, ONE SOURCE, SITE-WIDE
 **Every UX fix lands at the COMPONENT/TOKEN level in base CSS, ONE source, site-wide — never page-by-page.**
 Best/futuristic/logical UX, every fix serving the north star (top-0.01% AI citations + Google rank + calls +
