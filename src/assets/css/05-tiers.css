@@ -34,10 +34,14 @@ body{margin:0;background:var(--bg-page);font-family:var(--font-sans);color:var(-
 /* compact (paper) hero — MOFU / GUIDE / BOFU */
 .hero--compact{padding:var(--space-12) 0 var(--space-10)}
 @media (min-width:768px){.hero--compact{padding:var(--space-20) 0 var(--space-16)}}
-.hero--compact .hero{max-width:46em}
+/* Compact (no-figure) hero aligns to the SAME measure as the in-brief below it
+   (founder 2026-06-17 hero+intro width fix) — one consistent left column at
+   --measure-prose, so the lede, the hairline, and the intro all share one edge +
+   width. Split heroes keep max-width:none (their figure fills the right column). */
+.hero--compact .hero{max-width:var(--measure-prose)}
 .hero--compact .hero__eyebrow{color:var(--text-eyebrow)}
 .hero--compact .hero__heading{font-size:clamp(1.75rem,1.3rem + 2.2vw,2.75rem);font-variation-settings:var(--serif-heading-axes);letter-spacing:var(--ls-snug);line-height:var(--lh-snug);color:var(--text-primary);max-width:14em}
-.hero--compact .hero__subheading{color:var(--text-body)}
+.hero--compact .hero__subheading{color:var(--text-body);max-width:none}
 .hero--rule .hero__heading::before{content:"";display:block;width:4px;height:3px;margin-bottom:var(--space-6);border-left:30px solid var(--accent);border-right:14px solid var(--accent)}/* border-built gapped rule: see motif note in 02-conversion */
 
 /* ---- in-brief / tldr ----
@@ -46,9 +50,9 @@ body{margin:0;background:var(--bg-page);font-family:var(--font-sans);color:var(-
    under the hero CTAs — a subtle hairline separator + generous top air above the
    lede + a refined reading measure + a quiet sourced caption. ONE source; every
    page type that renders `.in-brief` inherits it site-wide. */
-.in-brief{max-width:var(--container-narrow);border-top:1px solid var(--border-hairline);padding-top:var(--space-8)}
-.in-brief__text{font-size:clamp(1.0625rem,0.98rem + 0.55vw,1.3125rem);line-height:var(--lh-base);letter-spacing:var(--ls-snug);color:var(--text-body);max-width:62ch;margin:0;text-wrap:pretty}
-.in-brief__source{font-size:var(--fs-13);line-height:var(--lh-base);color:var(--text-secondary);max-width:62ch;margin:var(--space-5) 0 0}
+.in-brief{max-width:var(--measure-prose);border-top:1px solid var(--border-hairline);padding-top:var(--space-8)}
+.in-brief__text{font-size:clamp(1.0625rem,0.98rem + 0.55vw,1.3125rem);line-height:var(--lh-base);letter-spacing:var(--ls-snug);color:var(--text-body);margin:0;text-wrap:pretty}
+.in-brief__source{font-size:var(--fs-13);line-height:var(--lh-base);color:var(--text-secondary);margin:var(--space-5) 0 0}
 .tldr{border:1px solid var(--border-hairline);border-radius:var(--radius-lg);padding:var(--space-6)}
 .tldr__label{font-size:var(--fs-12);font-weight:var(--fw-semibold);letter-spacing:var(--ls-wider);text-transform:uppercase;color:var(--text-eyebrow);margin:0 0 var(--space-3)}
 .tldr__body{font-size:var(--fs-16);line-height:var(--lh-base);color:var(--text-body);margin:0;max-width:62em}
