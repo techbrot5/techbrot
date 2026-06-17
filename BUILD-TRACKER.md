@@ -346,9 +346,27 @@ equity GREEN, overflow clean, axe 0/29. **Honest-triage compliance copy UNTOUCHE
 hero subheading + scope-split section — verified intact; STOP-GATE #2 preserved).
 **⚠ Housekeeping:** an empty commit `c5b78d1` titled "_" slipped between the two (no tree impact; squash later).
 
-**▶ NEXT (founder-gated):** **STOP-GATE #2** — review/finalize honest-triage compliance copy if any change wanted
-(currently preserved as-built, compliant). Then **Wave-2 registry types** (product/mofu · comparison · pricing ·
-legal · location-child). CUTOVER GATE tracked above; gate #1 (phone) CLEARED. Old→handoff map + RS1–RS4 + PACE govern.
+**✅ WAVE-2 ASSESSMENT (2026-06-17, against Gallery 06 per-type heroes + captured templates).** Verified each
+Wave-2 type's hero against the captured design. Result: **most are ALREADY fit-to-type** from the skin re-cut +
+migration bodies — no uniform figure-hero applies (Gallery 06: "each type gets a first screen fit to its job").
+- **legal** ✅ DONE — document treatment already in place (`.legal-doc` header: eyebrow "Legal" + title +
+  Effective/Updated dates; NO marketing hero, NO cta-band). Matches Gallery 06 legal spec exactly.
+- **product/mofu** ✅ FIT — compact hero + body (vs-table/buyer-card/CALL). Gallery 06 mofu = compact + small
+  "diagram tease" (optional enhancement, not a gap).
+- **comparison/vs** ✅ FIT — compact hero + vs-table verdict (Gallery 06 = "honest verdict" table). 
+- **pricing** ✅ FIT — t-bofu compact hero + real fixed-fee tier tables + CallBand (Gallery 06 = "transparency →
+  CallBand"). Optional: the 3 featured tier tiles in-hero (enhancement, not a gap).
+- **location-child** ⚠ **CONFLICT — FOUNDER DECISION NEEDED.** Gallery 06 says location child = "lighter — NOT
+  the pillar hero" (the A4 fix, flagged RED in the capture). But the NY-children fan-out (`5c9e8db`, founder-OK'd)
+  gave the 11 cities + 8 industries (+ NYC child) the PILLAR's figure-split hero — re-introducing the A4 clone.
+  Fixing to the capture needs a NEW light-compact location-child hero variant (no figure, no dark contour, distinct
+  from pillar) + re-applying to 19–20 pages → STOP-GATE #5 (structure decision). **Recommend:** build the lighter
+  child hero per the capture; keep the figure on the pillar + the (now t-bofu) service children (money-page
+  treatment is capture-correct for bofu). Awaiting founder ruling — did NOT unilaterally flip just-approved pages.
+
+**▶ NEXT (founder-gated):** (a) RULE on the location-child hero (keep figure vs capture-lighter — I build the
+lighter variant on OK). (b) optional enhancements: mofu diagram-tease · pricing featured tiles. (c) STOP-GATE #2
+honest-triage copy (preserved as-built; open if change wanted). CUTOVER GATE tracked above; gate #1 (phone) CLEARED.
 **DEV-SERVER NOTE:** `npm run serve` binds the LAN; this session = http://192.168.1.7:8080/. Probe servers
 must be hit via 127.0.0.1 (the scripts' hardcoded `localhost` resolves to IPv6 ::1 while python http.server
 binds IPv4 only → empty probes; run chrome against 127.0.0.1:8125/_site-prod + 127.0.0.1:8090/_site).

@@ -202,5 +202,38 @@ pretend" scope-split section), not a `.disclosure` component; re-tag changed onl
 5. **`heroMotif` now unused** on CA/TX/FL/IL + NY pillar (the dark-hero else-branch only). Harmless; can be removed
    in cleanup.
 
-**▶ NEXT (founder-gated):** STOP-GATE #2 (honest-triage copy, if any change wanted) · Wave-2 registry types
-(product/mofu · comparison · pricing · legal · location-child). Resume from the "🔵 FRESH-SESSION RESUME" block.
+## Update 2026-06-17 (session 2 cont. — WAVE-2 ASSESSMENT against captured per-type heroes)
+Verified every Wave-2 type against **Gallery 06 (Heroes Per Type)** + the captured templates. Gallery 06's rule:
+"No uniform hero — each page type gets a first screen fit to its job; legal/utility get a clean document treatment,
+never a marketing hero." So Wave-2 is NOT a uniform figure-hero fan-out. Findings:
+- **legal ✅ DONE** — disclaimer/terms/dpa already render the `.legal-doc` document header (eyebrow "Legal" + title
+  + Effective/Updated dates), zero marketing hero, zero cta-band. Exactly the Gallery 06 legal frame. (The
+  `Legal - Template.dc.html` file is an unreliable copy-paste of the home/marketing shell — Gallery 06 is the real
+  spec; flagged.)
+- **product/mofu ✅ FIT** — e.g. /quickbooks/desktop/, /which-plan-is-right/, /about/methodology/: compact hero
+  (skin re-cut) + vs-table/buyer-card body + CallBand + capped CTAs. Gallery 06 mofu adds a small "diagram tease"
+  (OPTIONAL enhancement, not a gap).
+- **comparison/vs ✅ FIT** — /vs/* : compact hero + vs-table verdict + CallBand. Matches Gallery 06 "honest verdict".
+- **pricing ✅ FIT** — /pricing/ (t-bofu): compact hero + real fixed-fee tier TABLES + CallBand. Gallery 06 shows
+  3 featured tier TILES in-hero (OPTIONAL enhancement).
+- **location-child ⚠ CONFLICT (founder decision)** — see review item below.
+
+### ⚑ REVIEW REPORT (Wave-2)
+1. **location-child hero CONFLICT (the one real Wave-2 decision).** Gallery 06 specifies the location child = a
+   LIGHTER hero, explicitly "NOT the pillar hero" (the A4 fix, flagged in RED in the capture: no map, no big form,
+   distinct from pillar). The NY-children fan-out (`5c9e8db`, which you OK'd) instead gave the **11 cities + 8
+   industries (+ the NYC child)** the PILLAR's figure-split hero — i.e. it re-introduced the A4 clone the capture
+   warns against. The service children are now t-bofu, where a figure hero IS capture-correct (money-page), so
+   those are fine; the pillar keeps its figure (correct). **To fix cities/industries to the capture I'd add a new
+   light-compact location-child hero (no figure, no dark contour, distinct from the pillar) and re-apply to ~19–20
+   pages.** That's a structure change to just-approved pages, so I did NOT do it unilaterally. **Recommend: build
+   the lighter child hero per the capture.** Your call: keep the figure hero (override the capture), or switch
+   cities/industries to the lighter hero.
+2. **Wave-2 needed almost no new code** — the skin re-cut (Commit 1) + migration bodies already put mofu/comparison/
+   pricing/legal into fit-to-type states. Optional capture enhancements remain (mofu diagram-tease, pricing featured
+   tiles) — low priority, flag if you want them.
+3. **`Legal - Template.dc.html` is unreliable** (contains the marketing/home shell, not a legal doc) — used Gallery
+   06 as the legal spec instead. Noting so it isn't trusted later.
+
+**▶ NEXT (founder-gated):** rule on location-child hero · optional mofu/pricing enhancements · STOP-GATE #2
+honest-triage copy (preserved as-built). Resume from the "🔵 FRESH-SESSION RESUME" block in BUILD-TRACKER.
