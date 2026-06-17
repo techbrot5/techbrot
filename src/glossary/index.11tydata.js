@@ -1,20 +1,11 @@
 /* /glossary/ — glossary index / DefinedTermSet landing (growth phase, 2026-06-17).
- * The `terms` array grows as the glossary type fans out. CollectionPage +
- * DefinedTermSet + BreadcrumbList; global Org/WebSite injected by base.njk. */
-
-const terms = [
-  {
-    term: "Bank reconciliation",
-    href: "/glossary/bank-reconciliation/",
-    blurb: "Matching your books to your bank statement for the period so the balances agree &mdash; the core accuracy control in bookkeeping.",
-    id: "https://techbrot.com/glossary/bank-reconciliation/#term",
-  },
-];
+ * Reads the shared `glossary` global data (src/_data/glossary.js) — ONE source for
+ * both the index grid and the paginated entries. CollectionPage + DefinedTermSet +
+ * BreadcrumbList; global Org/WebSite injected by base.njk. */
 
 module.exports = {
-  terms,
   eleventyComputed: {
-    pageGraph: () => ({
+    pageGraph: (data) => ({
       "@context": "https://schema.org",
       "@graph": [
         {
@@ -34,7 +25,9 @@ module.exports = {
           "@id": "https://techbrot.com/glossary/#set",
           "name": "TechBrot Accounting & QuickBooks Glossary",
           "url": "https://techbrot.com/glossary/",
-          "hasDefinedTerm": terms.map((t) => ({ "@id": t.id })),
+          "hasDefinedTerm": (data.glossary || []).map((t) => ({
+            "@id": "https://techbrot.com/glossary/" + t.slug + "/#term",
+          })),
         },
         {
           "@type": "BreadcrumbList",
