@@ -339,3 +339,19 @@ COUNT: total pages live = 157 · re-skinned (142) + growth this phase = 15 · pa
 /glossary/profit-and-loss-statement/, /glossary/balance-sheet/, /glossary/fractional-cfo/,
 /glossary/sales-tax-nexus/ (7 glossary terms) · remaining in current cluster (glossary) ≈ ~10–12 candidate quality
 terms (real-or-skip) · next cluster = CA/TX/FL/IL state children.
+
+## Update 2026-06-17 (HERO+INTRO width fix — site-wide, one source)
+**✅ HERO+INTRO WIDTH FIX (`f54d507`).** Compact-hero pages had a width mismatch: hero `.hero` 46em / lede 32em
+vs `.in-brief` container-narrow 820px → hairline overhang + empty-looking right. Fixed at the component level
+(`src/assets/css/05-tiers.css`): the compact hero block, its lede, and the in-brief now all share
+`--measure-prose` (680px) at the same left edge. Verified /glossary/: heroW = inbriefW = 680, same left (47px) —
+hairline aligns cleanly. Split heroes unaffected (`.hero--split .hero{max-width:none}` overrides; the figure
+fills the right = intentional asymmetric layout). ONE source, every compact hero+intro page inherits it. CLS 0,
+axe unaffected (measure only), battery green, CSS 77,691B.
+**SHOWN FOR FOUNDER CONFIRM (consistency across types before locking as standard):** /glossary/ (compact, fixed) ·
+/quickbooks/desktop/ (compact mofu, fixed) · /accounting/ + /quickbooks/faq/ (split heroes — figure fills right,
+in-brief at the 680 content measure below).
+
+COUNT: total pages live = 157 · re-skinned (142) + growth this phase = 15 · pages added THIS turn = none
+(site-wide hero+intro width fix; no new pages) · remaining in current cluster (glossary) ≈ ~10–12 candidate
+quality terms (real-or-skip) · next cluster = CA/TX/FL/IL state children.
