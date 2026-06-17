@@ -322,9 +322,10 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 205 · re-skinned (142) + growth = 63 · LAST COMMIT = round-35 CA-QB-spokes
-(6 CA QB-spoke children). Working tree clean on `preview-11ty`. CA = pillar + 11 cities + 11 services.
-PHASE = DEPTH BUILD-OUT (founder 2026-06-17): fully build NY/CA/TX/FL/IL per v4 before new states.** Dev server: `npm run serve` → http://192.168.1.7:8080/
+**COUNT: total pages live = 209 · re-skinned (142) + growth = 67 · LAST COMMIT = round-36 CA-tax-cluster
+(4 children + NEW shared state-triage template). Working tree clean on `preview-11ty`. CA = pillar + 11 cities + 15 services.
+PHASE = DEPTH BUILD-OUT (founder 2026-06-17): fully build NY/CA/TX/FL/IL per v4 before new states.
+⚑ FOUNDER SPOT-CHECK PENDING: the 2 CA honest-triage pages' disclosure copy (round-36 report §HONESTY REVIEW).** Dev server: `npm run serve` → http://192.168.1.7:8080/
 (data-file edits need a server restart; a clean `npx @11ty/eleventy` reflects them). PROBE via 127.0.0.1 (8125 =
 _site-prod, 8090 = _site + axe.min.js) — the probe scripts' hardcoded `localhost` resolves to IPv6 → empty output.
 **⚠ HEADLESS-CHROME PROBES NON-FUNCTIONAL THIS MACHINE** — `chrome --headless=new --dump-dom` returns 0-length DOM
@@ -393,16 +394,23 @@ body = TODO). NY = master, DONE (39). Remaining ≈ **CA 22 · TX 26 · FL 26 ·
   franchise-tax) · FL 2 (sales-tax·business-tax) · IL 3 (sales-tax·state-tax-notice·business-tax).
 - **Missing cities to add:** TX el-paso · FL st-petersburg · IL springfield. (CA cities = 11, ahead of v4's 8;
   founder-ruled: keep anaheim, skip a separate orange-county page.)
-- **CA progress:** pillar ✅ · 11 cities ✅ · **11 services ✅** (round 34 money/bkg: qb-accountant,
-  small-business-accountant, bookkeeping-services, virtual-bookkeeper, monthly-bookkeeping; round 35 QB-spokes:
-  quickbooks-{setup, cleanup, reconciliation, migration, training, error-fixes}). CA remaining: **tax-cluster(4)** ·
-  pricing + speak-to-a-proadvisor(2 special) · industries hub+6 · cities-hub · pillar ecosystem re-link.
+- **CA progress:** pillar ✅ · 11 cities ✅ · **15 services ✅** (round 34 money/bkg ×5; round 35 QB-spokes ×6;
+  round 36 tax-cluster ×4: sales-tax-help, ab5-worker-classification, state-tax-notice-help [triage],
+  business-tax-problems [triage]). CA remaining: **pricing + speak-to-a-proadvisor (2 special)** ·
+  **industries hub+6** · **cities-hub** · pillar ecosystem re-link.
+- **NEW shared template** `partials/state-triage-body.njk` (round 36, honest-triage; amber disclosure ATF +
+  scope-split, Sheet-7/§8). State templates now: city-child-body · state-service-body · state-triage-body.
 - **TODO re-link:** quickbooks-cleanup CTA re-pointed to the CA child ✅ (round 35); `sales-tax-help` links still
   point to global /accounting/sales-tax-compliance/ until the CA tax-cluster wave ships — re-point then.
 ✅ **ROUND 34 — CA SERVICE CLUSTER WAVE 1** (5 money/bkg pages + new shared state-service template). Battery GREEN.
   Detail: `_build/reports/round-34-ca-services-w1.md`.
 ✅ **ROUND 35 — CA QB-SPOKES** (6 pages: setup, cleanup, reconciliation, migration, training, error-fixes). Each
   genuinely service-distinct + CA-specific. Battery GREEN; honesty held. Detail: `_build/reports/round-35-ca-qbspokes.md`.
+✅ **ROUND 36 — CA TAX-CLUSTER** (4 pages: sales-tax-help, ab5-worker-classification + 2 HONEST-TRIAGE:
+  state-tax-notice-help, business-tax-problems) + new state-triage template. Battery GREEN; founder-zero PASS.
+  **⚑ FOUNDER SPOT-CHECK PENDING on the 2 triage disclosures + AB5 (R3 — honest-triage gets its own review).**
+  Disclosures defer all filing/agency/resolution/representation to CPA/EA/attorney; not-Intuit; educational-only;
+  no tax-resolution/OIC claims. Detail: `_build/reports/round-36-ca-taxcluster.md`.
 
 **▶ NEXT — FAN OUT THE STATE CLUSTER, FULLY AUTONOMOUS, ALL 50 STATES CONTINUOUSLY:**
 order = **CA cities + industries → TX → FL → IL → then the remaining states.** Patterns PROVEN, reuse them:
