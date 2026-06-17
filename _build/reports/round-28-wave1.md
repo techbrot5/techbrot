@@ -235,5 +235,29 @@ never a marketing hero." So Wave-2 is NOT a uniform figure-hero fan-out. Finding
 3. **`Legal - Template.dc.html` is unreliable** (contains the marketing/home shell, not a legal doc) — used Gallery
    06 as the legal spec instead. Noting so it isn't trusted later.
 
-**▶ NEXT (founder-gated):** rule on location-child hero · optional mofu/pricing enhancements · STOP-GATE #2
-honest-triage copy (preserved as-built). Resume from the "🔵 FRESH-SESSION RESUME" block in BUILD-TRACKER.
+## Update 2026-06-17 (session 2 cont. — location-child lighter hero + honest-triage proof)
+**✅ LOCATION-CHILD LIGHTER HERO (`71d98b1`).** Founder ruled: make cities/industries lighter (A4 fix — children
+must NOT clone the pillar's heavy figure hero). Added a t-location `heroLight` branch (lighter compact conversion
+hero: eyebrow + heading + lede + 2 CTAs + trust; NO figure, no dark contour, no motif — clearly subordinate). Swept
+all 19 city + industry leaf pages heroFigure→heroLight via `ny_children_lighten.py`. Pillar keeps its figure;
+t-bofu service children keep theirs (money-page, capture-correct). equity GREEN · battery green · design-fidelity
+PASS (location pages pass via buyer-card/proof-strip) · overflow clean 360/390/768 · axe 0/27 (Brooklyn) · CLS 0.
+NOTE: the 2 sub-hubs (cities.njk, industries.njk) kept the figure hero (hub-like routing) — leave or lighten later.
+
+**⏸ STOP-GATE #2 — HONEST-TRIAGE PROOF (`52de277`) — AWAITING FOUNDER OK.**
+Read the captured Honest Triage template + Gallery 06: the honest-triage signature is an **amber disclosure ATF
+banner**. Proved on `/quickbooks/speak-to-a-quickbooks-expert/`: new opt-in `.disclosure--warn` (amber --caution-*
+tokens: soft bg + border + deep ink + warning icon) makes the not-Intuit / route-billing-login-to-Intuit boundary
+unmissable above the fold. **Compliance COPY kept verbatim** (the thorough round-26 founder-approved disclosure —
+NOT downgraded to the captured shorter phrasing; ours is a superset). The exact copy on the page:
+> **TechBrot is an independent bookkeeping and Certified QuickBooks ProAdvisor firm — not Intuit, not QuickBooks
+> Customer Support, not QuickBooks Live, and not Intuit's expert or ProAdvisor referral line.** Calling this number
+> does not reach Intuit. … For any Intuit account, billing, subscription, login, password, or product-bug matter,
+> contact Intuit directly. What this team does is the accounting work inside your own books. …
+> + the explicit checks-list split (talk-to-this-team vs go-to-Intuit, with the Intuit support link).
+equity GREEN (36h/7faq/27schema) · axe 0/31 (amber AA) · battery green · CSS 77,023B. **FOUNDER: verify the copy →
+OK the triage fan-out** (then: amber disclosure across all triage pages + lighten the 4 NY triage heroes to the
+compact triage hero per the capture).
+
+**▶ NEXT (after triage OK, FULLY AUTONOMOUS toward 200):** triage fan-out → rest of Wave-2 (optional mofu diagram-
+tease / pricing tiles) → find-an-accountant LAST → toward 200. Hard gates held. Only STOP = the triage gate (now).

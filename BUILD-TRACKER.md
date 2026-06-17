@@ -364,9 +364,23 @@ migration bodies — no uniform figure-hero applies (Gallery 06: "each type gets
   child hero per the capture; keep the figure on the pillar + the (now t-bofu) service children (money-page
   treatment is capture-correct for bofu). Awaiting founder ruling — did NOT unilaterally flip just-approved pages.
 
-**▶ NEXT (founder-gated):** (a) RULE on the location-child hero (keep figure vs capture-lighter — I build the
-lighter variant on OK). (b) optional enhancements: mofu diagram-tease · pricing featured tiles. (c) STOP-GATE #2
-honest-triage copy (preserved as-built; open if change wanted). CUTOVER GATE tracked above; gate #1 (phone) CLEARED.
+**✅ LOCATION-CHILD LIGHTER HERO (`71d98b1`, founder ruling 2026-06-17).** A4 fix: cities + industries no longer
+clone the pillar. New t-location `heroLight` branch = lighter compact conversion hero (eyebrow+heading+lede+2 CTAs
++trust, NO figure/contour/motif), subordinate to the pillar. Applied to all 19 city+industry leaf pages via
+`ny_children_lighten.py`. Pillar keeps figure; t-bofu service children keep theirs. equity GREEN · battery green ·
+overflow clean 360/390/768 · axe 0/27. (Sub-hubs cities.njk/industries.njk still figure — leave or lighten later.)
+
+**⏸ STOP-GATE #2 — HONEST-TRIAGE PROOF (`52de277`) — AWAITING FOUNDER OK before triage fan-out.**
+`/quickbooks/speak-to-a-quickbooks-expert/` now carries the captured amber disclosure ATF banner (`.disclosure--warn`,
+--caution-* tokens, warning icon) — the unmissable not-Intuit + route-billing/login-to-Intuit signal. Compliance COPY
+kept verbatim (thorough round-26 founder-approved disclosure). equity GREEN (36h/7faq/27schema) · axe 0/31 (amber AA)
+· battery green. **FOUNDER: verify the disclosure copy, then OK the triage fan-out.**
+
+**▶ NEXT (after triage OK) — FULLY AUTONOMOUS toward 200 (founder 2026-06-17):** triage fan-out (amber disclosure
++ lighten the 4 NY triage heroes per capture's compact triage hero) → rest of Wave-2 optional enhancements →
+find-an-accountant LAST → toward 200. Hold hard gates (honesty/equity/variety/forms, equity-GREEN every page).
+Update tracker + round report with every URL each turn. ONLY STOP for the triage gate (now). CUTOVER GATE tracked
+above; gate #1 (phone) CLEARED. Old→handoff map + RS1–RS4 + PACE govern.
 **DEV-SERVER NOTE:** `npm run serve` binds the LAN; this session = http://192.168.1.7:8080/. Probe servers
 must be hit via 127.0.0.1 (the scripts' hardcoded `localhost` resolves to IPv6 ::1 while python http.server
 binds IPv4 only → empty probes; run chrome against 127.0.0.1:8125/_site-prod + 127.0.0.1:8090/_site).
