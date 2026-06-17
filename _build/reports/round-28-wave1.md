@@ -299,3 +299,19 @@ pricing+blog → trust/reviews/etc. Honesty LOUDER for growth (real claims only)
   faq-min-6 gate means a term either carries 6+ real Q or omits the faq__list).
 **▶ NEXT (after glance): fan out glossary** (real definitions only, one per term, link into clusters) → then
 CA state children → down the order. Report every URL each turn.
+
+## Update 2026-06-17 (GLOSSARY fan-out WAVE 1 — proof approved, data-driven system + 7 terms)
+**✅ GLOSSARY WAVE 1 (`232faa3`).** Built the scalable data-driven glossary system: ONE source
+`src/_data/glossary.js` → paginated `entry.njk` + the index, sharing the array (migrated the approved proof in).
+7 real, substantive, citable terms — **quality over count, real-or-omit held:**
+- `/glossary/bank-reconciliation/` (FAQ ×6 + reconcile-flow diagram) · `/glossary/chart-of-accounts/` ·
+  `/glossary/double-entry-accounting/` (T-account diagram) · `/glossary/general-ledger/` ·
+  `/glossary/accrual-vs-cash-basis-accounting/` · `/glossary/catch-up-bookkeeping/` (before/after diagram) ·
+  `/glossary/month-end-close/` · index `/glossary/`.
+- Each: real definition + why-it-matters + cluster links + CALL; DefinedTerm + WebPage + BreadcrumbList schema +
+  speakable. Signature diagram ONLY where it genuinely fits (3 of 7). FAQ only where 6+ real (bank-rec only).
+  Honesty: accurate definitions, firm byline, no fabricated counts. battery green · design-fidelity 144 ·
+  overflow clean 360/390/768 · axe 0/27 · CLS 0.
+- Adding a term now = one entry in `glossary.js` + its URL in build-new-queue.json.
+**▶ NEXT (autonomous): more glossary terms (real ones only) → then CA state children** (real localized tax/context
+per state — founder reviews closely). Report every URL each turn.
