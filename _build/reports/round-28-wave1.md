@@ -321,3 +321,21 @@ standing-count-rule setup; prior build = glossary wave 1: /glossary/ + /glossary
 accounts, double-entry-accounting, general-ledger, accrual-vs-cash-basis-accounting, catch-up-bookkeeping,
 month-end-close}/) · remaining in current cluster (glossary) ≈ ~18 candidate quality terms (real-or-skip; working
 target ~25) · next cluster = CA/TX/FL/IL state children.
+
+## Update 2026-06-17 (GLOSSARY wave 2 + elevated in-brief)
+**✅ GLOSSARY WAVE 2 (`8868799`) — +7 substantive terms** (real-or-omit held; no forced diagrams):
+/glossary/{accounts-receivable, accounts-payable, trial-balance, profit-and-loss-statement, balance-sheet,
+fractional-cfo, sales-tax-nexus}/. Each: real definition + why + cluster links + CALL; DefinedTerm/WebPage/
+BreadcrumbList schema + speakable. FAQ only on sales-tax-nexus (6 real Q; nexus determination + filings deferred
+to CPA/EA — honesty held). Fixed a bad link (sales-tax → /accounting/sales-tax-compliance/).
+**✅ UX — elevated in-brief intro/lede (`8868799`, ONE source = `src/assets/css/05-tiers.css` `.in-brief`):**
+hairline top separator + generous top air (border-top 1px + padding-top space-8) + refined 62ch measure +
+quieter sourced caption. Reads as its own editorial section, not body text under the hero CTAs. Inherited by
+EVERY tier that renders `.in-brief`, site-wide. axe 0/25 · overflow unaffected (border/padding only) · CLS 0.
+Battery green · design-fidelity 151 · CSS 77,693B.
+
+COUNT: total pages live = 157 · re-skinned (142) + growth this phase = 15 · pages added THIS turn =
+/glossary/accounts-receivable/, /glossary/accounts-payable/, /glossary/trial-balance/,
+/glossary/profit-and-loss-statement/, /glossary/balance-sheet/, /glossary/fractional-cfo/,
+/glossary/sales-tax-nexus/ (7 glossary terms) · remaining in current cluster (glossary) ≈ ~10–12 candidate quality
+terms (real-or-skip) · next cluster = CA/TX/FL/IL state children.
