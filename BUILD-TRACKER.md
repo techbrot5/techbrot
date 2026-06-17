@@ -322,11 +322,11 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 219 · re-skinned (142) + growth = 77 · LAST COMMIT = round-38 CA-bkgspokes+cities-hub
-(2 bkg spokes + cities-hub). Working tree clean on `preview-11ty`. CA = pillar + 11 cities + cities-hub +
-17 services + 6 industries + industries-hub. CA REMAINING = 3: speak-to-a-proadvisor, pricing, pillar re-link.
-FOUR state child templates (city-child · state-service · state-triage · state-industry). PHASE = DEPTH (NY/CA/TX/FL/IL).
-⚑ FOUNDER SPOT-CHECK PENDING: the 2 CA honest-triage disclosures (round-36 §HONESTY REVIEW).** Dev server: `npm run serve` → http://192.168.1.7:8080/
+**COUNT: total pages live = 221 · re-skinned (142) + growth = 79 · LAST COMMIT = round-39 CA-COMPLETE
+(speak-to-a-proadvisor + pricing + pillar ecosystem re-link). Working tree clean on `preview-11ty`.
+✅ CALIFORNIA COMPLETE (v4 full child set = 39 CA pages: pillar + 19 services + 6 industries + 2 hubs + 11 cities).
+FOUR state child templates (city-child · state-service · state-triage · state-industry). PHASE = DEPTH (NY ✅ · CA ✅ · TX/FL/IL next).
+⚑ FOUNDER SPOT-CHECK PENDING: the 3 CA honest-triage disclosures (state-tax-notice-help, business-tax-problems, speak-to-a-proadvisor).** Dev server: `npm run serve` → http://192.168.1.7:8080/
 (data-file edits need a server restart; a clean `npx @11ty/eleventy` reflects them). PROBE via 127.0.0.1 (8125 =
 _site-prod, 8090 = _site + axe.min.js) — the probe scripts' hardcoded `localhost` resolves to IPv6 → empty output.
 **⚠ HEADLESS-CHROME PROBES NON-FUNCTIONAL THIS MACHINE** — `chrome --headless=new --dump-dom` returns 0-length DOM
@@ -423,6 +423,10 @@ body = TODO). NY = master, DONE (39). Remaining ≈ **CA 22 · TX 26 · FL 26 ·
 ✅ **ROUND 38 — CA BKG-SPOKES + CITIES-HUB** (cleanup-bookkeeping, urgent-bookkeeping + cities-hub). cleanup =
   behind-books catch-up (distinct from QB-spoke quickbooks-cleanup); urgent = deadline-driven (honest, no false
   urgency). cities-hub = t-location, ItemList of the 11 city children. Battery GREEN. Detail: `round-38-ca-bkgspokes-citieshub.md`.
+✅ **ROUND 39 — CALIFORNIA COMPLETE** (speak-to-a-proadvisor [bespoke not-Intuit honest-triage] + pricing [bespoke
+  fixed-fee table, canonical figures] + the v4 children-on-pillar PILLAR ECOSYSTEM RE-LINK — the CA pillar's 6
+  clusters now link every label to its built child). **CA is the first state fully built to v4 depth (39 pages).**
+  Battery GREEN. Detail: `_build/reports/round-39-ca-complete.md`. **NEXT = TEXAS depth (data files only on the 4 templates).**
 
 **▶ NEXT — FAN OUT THE STATE CLUSTER, FULLY AUTONOMOUS, ALL 50 STATES CONTINUOUSLY:**
 order = **CA cities + industries → TX → FL → IL → then the remaining states.** Patterns PROVEN, reuse them:

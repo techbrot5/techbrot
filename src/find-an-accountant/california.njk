@@ -290,7 +290,7 @@
         <h3>{{ cl.heading | safe }}</h3>
         <p class="prose">{{ cl.lede | safe }}</p>
         <ul class="checks-list">
-          {%- for l in cl.links %}<li>{{ l.label | safe }}{% if l.tag %} <span class="proof-strip__rating">{{ l.tag | safe }}</span>{% endif %}</li>{%- endfor %}
+          {%- for l in cl.links %}<li>{% if l.href %}<a href="{{ l.href }}">{{ l.label | safe }}</a>{% else %}{{ l.label | safe }}{% endif %}{% if l.tag %} <span class="proof-strip__rating">{{ l.tag | safe }}</span>{% endif %}</li>{%- endfor %}
         </ul>
       </article>
       {%- endfor %}
