@@ -1,0 +1,141 @@
+/* /find-an-accountant/texas/industries/real-estate/ — TX INDUSTRY CHILD.
+ * t-location + heroLight. partials/state-industry-body.njk. GENUINELY TX×real-estate: multi-entity
+ * ledgers, broker/PM trust-RECORD keeping (we keep records, NEVER hold/disburse client or escrow
+ * funds), high TX property tax, 1031 documentation, agent commissions, no state income tax.
+ * HONESTY: trust-fund boundary explicit; Comptroller/TREC + CPA; not Intuit. */
+const { stripTags, buildCityGraph } = require("../../../../_build/lib/city-child.js");
+const TX_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the Texas Comptroller &amp; general TREC trust-account principles &middot; No tax-filing, fund-custody, or representation claims (out of scope) &middot; We keep records, never hold client or escrow funds &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-location.njk",
+  permalink: "/find-an-accountant/texas/industries/real-estate/",
+  slug: "tx-ind-realestate",
+  tierClass: "section--tier-hub",
+  bodyClass: "page--location page--industry",
+  callBar: true,
+  heroLight: true,
+  title: "Texas Real Estate Accounting & Bookkeeping · TechBrot",
+  description: "Real estate accounting for Texas brokers, investors & property managers — multi-entity books, trust-record keeping, property-tax tracking, 1031 documentation, agent commissions. Fixed-fee. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "Texas", href: "/find-an-accountant/texas/" },
+    { name: "Industries", href: "/find-an-accountant/texas/industries/" },
+    { name: "Real Estate" },
+  ],
+  bookHref: "/contact/?intent=texas&state=texas&source_type=industry&funnel_stage=BOFU",
+  hero: {
+    eyebrow: "Texas &middot; Real Estate Accounting",
+    heading: "Texas real estate accounting that keeps every entity straight.",
+    subheading: "Texas brokers, investors, and property managers run on multiple entities, trust records, and property tax that doesn&rsquo;t quit. We keep multi-entity books clean, maintain accurate trust and owner-statement records, track Texas property tax and 1031 documentation, and handle agent commissions &mdash; by a named Certified ProAdvisor. We keep the records; we never hold your client or escrow funds, and your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=texas&state=texas&source_type=industry&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "We keep records &middot; never hold client funds"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor real estate accounting for Texas brokers, investors, and property managers</strong> &mdash; multi-entity books, trust and owner-statement record-keeping, Texas property-tax and 1031 documentation, and agent-commission tracking, in your own QuickBooks file. We keep the records; we never hold or disburse client or escrow funds. The full Texas real estate summary is below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Texas references (property tax; broker trust-account principles; 1031) reflect rules current as of the review date. TechBrot keeps books and records only; it does not hold client or escrow funds, file Texas taxes, or provide legal advice.",
+  },
+  ctaBand: {
+    eyebrow: "Texas real estate businesses start here",
+    heading: "Multiple entities and a stack of property tax? Let&rsquo;s straighten the books.",
+    lede: "Book a free discovery call. We&rsquo;ll review your entity structure, trust records, and property-tax tracking, and send a written fixed-fee scope within 3 business days. No pitch. Independent firm &mdash; keeps records only, never holds client funds; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=texas&state=texas&source_type=industry&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  copy: {
+    summaryHeading: "Texas real estate accounting, plainly.",
+    aiHeading: "Texas real estate accounting, in five questions.",
+    challengesEyebrow: "Why Texas real estate books break",
+    challengesHeading: "Three places Texas real estate businesses lose the numbers.",
+    challengesLede: "Entities, trust records, and property tax are where it goes wrong. Knowing which one you&rsquo;re in tells us where to start.",
+    handleHeading: "Texas real estate accounting, done by an expert.",
+    handleLede: "Every engagement is scoped to your entities and portfolio, delivered in your own QuickBooks file by a named Certified ProAdvisor.",
+    integrationsHeading: "Connected to how you transact.",
+    processHeading: "From tangled entities to clean books.",
+    processLede: "Every Texas real estate engagement follows the same rhythm &mdash; books accurate first, portfolio visibility second, advisory third.",
+    advisoryHeading: "Clean entity books are the start. Portfolio returns are the point.",
+    faqHeading: "Texas real estate accounting questions.",
+    relatedHeading: "Related Texas services &amp; industries.",
+  },
+  summary: [
+    "<strong>TechBrot provides real estate accounting for Texas brokers, investors, and property managers</strong> &mdash; in your own QuickBooks file by a named Certified ProAdvisor. The job is to keep multiple entities straight, keep trust and owner-statement records accurate, and keep the property-tax and 1031 picture clean.",
+    "Texas shapes the work. There&rsquo;s <strong>no state income tax</strong>, but Texas funds local government with some of the country&rsquo;s heaviest <strong>property tax</strong> &mdash; so tracking it across a portfolio matters. Brokers and property managers handle <strong>trust and escrow funds</strong> under TREC principles; we keep the trust-account records and owner statements accurate and reconciled, but we never hold or disburse those funds &mdash; that stays with you and your bank. We keep multi-entity ledgers, 1031 documentation, and agent commissions clean &mdash; CPA-ready. We keep the books; your CPA files. Independent firm &mdash; not affiliated with Intuit Inc.",
+  ],
+  aiSummary: [
+    { q: "What is Texas real estate accounting?", a: "<strong>Multi-entity bookkeeping, trust and owner-statement record-keeping, property-tax and 1031 documentation, and agent-commission tracking</strong> for Texas brokers, investors, and property managers &mdash; in your own QuickBooks file. We keep the records; we never hold client funds; your CPA files." },
+    { q: "Do you hold or manage my trust or escrow funds?", a: "<strong>No.</strong> We keep the trust-account records and owner statements accurate and reconciled to support your TREC obligations, but we never take custody of, hold, or disburse client or escrow funds. The funds stay in your trust accounts under your control and your bank; we keep the books behind them clean." },
+    { q: "How do you handle multiple entities?", a: "We keep <strong>separate, clean ledgers per entity</strong> &mdash; each LLC, property, or fund &mdash; with inter-company transactions tracked, so each entity&rsquo;s books stand on their own and your CPA can file each correctly. No more commingled, untraceable books across the portfolio." },
+    { q: "Does Texas property tax affect my books?", a: "Yes &mdash; Texas has no income tax but heavy <strong>property tax</strong>, so we track it per property across the portfolio and accrue it cleanly. The valuation, protest, and filing stay with your CPA or a property-tax consultant; we keep the records straight." },
+    { q: "Do you file Texas taxes or provide legal advice?", a: "No &mdash; we keep the books and records CPA-ready; your CPA files and your attorney handles legal and TREC compliance. We&rsquo;re independent, don&rsquo;t hold client funds or represent clients before authorities, and aren&rsquo;t affiliated with Intuit." },
+  ],
+  challenges: [
+    { signal: "Entities", title: "Commingled, tangled entities", body: "Investors and brokers accumulate LLCs and properties fast &mdash; and without clean per-entity ledgers, the books commingle and no single entity&rsquo;s numbers can be trusted or filed cleanly." },
+    { signal: "Trust records", title: "Trust-account records that don&rsquo;t reconcile", body: "Broker and property-management trust accounting under TREC requires accurate, reconciled records and owner statements &mdash; sloppy records are a compliance risk, even though the funds stay in your hands, not ours." },
+    { signal: "Property tax", title: "Property tax across a portfolio", body: "Texas property tax is heavy and per-property &mdash; untracked across a portfolio, it distorts cash planning and the picture of which properties actually perform." },
+  ],
+  handle: [
+    { num: "01", title: "Per-entity ledgers", body: "Separate, clean books for each LLC, property, or fund, with inter-company transactions tracked so each entity stands on its own.", href: "/find-an-accountant/texas/quickbooks-accountant/", cta: "QuickBooks accountant &rarr;" },
+    { num: "02", title: "Trust-record keeping", body: "Trust-account records and owner statements kept accurate and reconciled to support your TREC obligations &mdash; we keep records, never hold the funds.", href: "/find-an-accountant/texas/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
+    { num: "03", title: "Property-tax tracking", body: "Texas property tax tracked and accrued per property across the portfolio so cash planning and filing aren&rsquo;t a surprise.", href: "/find-an-accountant/texas/franchise-tax-help/", cta: "Franchise &amp; property tax &rarr;" },
+    { num: "04", title: "1031 documentation", body: "Like-kind exchange documentation and basis tracked cleanly so your CPA and qualified intermediary have what they need.", href: "/find-an-accountant/texas/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { num: "05", title: "Agent commissions", body: "Commission income and splits tracked accurately for brokerages &mdash; clean for both the agents and the broker&rsquo;s books.", href: "/find-an-accountant/texas/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
+    { num: "06", title: "Portfolio reporting", body: "Reporting that shows which properties and entities actually perform &mdash; CPA-ready and decision-ready.", href: "/accounting/financial-statements/", cta: "Financial statements &rarr;" },
+  ],
+  integrations: [
+    "AppFolio, Buildium, and property-management platforms",
+    "QuickBooks Online or hosted Desktop &mdash; your file",
+    "DoorLoop and rent-collection tools",
+    "Gusto, ADP, and payroll providers",
+    "Bill.com for owner and vendor disbursements",
+    "Brokerage commission and transaction systems",
+  ],
+  integrationsNote: "We reconcile alongside the property-management and transaction systems you already run &mdash; the books read from how you transact. We never take custody of trust or escrow funds.",
+  process: [
+    { phase: "Step 1", title: "Free entity &amp; records review", body: "A Certified ProAdvisor reviews your entity structure, trust records, and property-tax tracking &mdash; at no cost." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "A written scope and fixed fee within 3 business days &mdash; setup, cleanup, or monthly." },
+    { phase: "Step 3", title: "Separate &amp; reconcile", body: "Per-entity ledgers separated, trust records reconciled, property tax and commissions tracked." },
+    { phase: "Step 4", title: "Monthly portfolio close", body: "A monthly close per entity and a portfolio view, CPA-ready &mdash; with trust records reconciled." },
+  ],
+  advisoryBody: [
+    "When entities are clean and trust records reconcile, the decisions get real: which properties carry the portfolio, which entity to acquire in, when a 1031 makes sense, where property tax is eating the return &mdash; answered from numbers that tie.",
+    "That&rsquo;s where <a href=\"/accounting/advisory/fractional-cfo/\">fractional-CFO advisory</a> picks up, in coordination with your CPA and attorney. We keep the books and records; your CPA files; we never hold your funds.",
+  ],
+  faq: [
+    { q: "What does Texas real estate accounting include?", a: "Multi-entity bookkeeping (clean ledgers per LLC, property, or fund), trust and owner-statement record-keeping, Texas property-tax tracking, 1031 like-kind exchange documentation, and agent-commission tracking &mdash; in your own QuickBooks file. We keep the books and records; we never hold client or escrow funds; your CPA files." },
+    { q: "Do you hold or disburse my trust or escrow funds?", a: "No &mdash; this is a firm boundary. We keep the trust-account records and owner statements accurate and reconciled so they support your TREC trust-accounting obligations, but we never take custody of, hold, or disburse client or escrow funds. Those funds stay in your trust accounts, under your control and your bank. We keep the books behind them clean; the custody and the compliance are yours." },
+    { q: "How do you keep multiple entities straight?", a: "We maintain separate, clean ledgers for each entity &mdash; each LLC, property, or fund &mdash; and track inter-company transactions so nothing commingles. That way each entity&rsquo;s books stand on their own and your CPA can file each one correctly, and you get both per-entity and portfolio-level visibility." },
+    { q: "How does Texas property tax factor into my books?", a: "Texas has no state income tax but funds local government with heavy property tax, assessed per property by the county appraisal district. We track and accrue it per property across your portfolio so cash planning is accurate and nothing is a year-end surprise. The valuation, any protest, and the filing stay with your CPA or a property-tax consultant; we keep the records straight." },
+    { q: "Can you handle 1031 exchanges and basis tracking?", a: "We keep the documentation and basis tracking clean so your CPA and qualified intermediary have accurate records for a like-kind exchange. We don&rsquo;t act as the qualified intermediary or give tax or legal advice on the exchange &mdash; that&rsquo;s your CPA, attorney, and QI; we make sure the books behind it are right." },
+    { q: "Do you work in my own QuickBooks file?", a: "Yes &mdash; your file, your data, in QuickBooks Online or hosted Desktop, with a named ProAdvisor on the same file every month, connected to your property-management and transaction systems rather than proprietary software." },
+    { q: "Do you file my Texas taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books and records CPA-ready and coordinate with your CPA, who files. We don&rsquo;t hold client funds, provide legal or TREC-compliance advice, or represent clients before authorities, and we are not affiliated with Intuit Inc." },
+  ],
+  reviewProse: "This page reflects how TechBrot handles Texas real estate engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on multi-entity bookkeeping, trust-account record-keeping principles, Texas property tax, and 1031 documentation, current as of the date below. TechBrot keeps books and records only and reconciles trust-account records; it never holds, controls, or disburses client or escrow funds, does not file Texas taxes or provide legal advice, and does not represent clients before TREC, the Comptroller, or any authority.",
+  reviewCreds: TX_REVIEW_CREDS,
+  related: [
+    { title: "Texas franchise tax help", body: "Keep the entity-level margin-tax figures clean across your real estate LLCs.", href: "/find-an-accountant/texas/franchise-tax-help/", cta: "Franchise tax help &rarr;" },
+    { title: "Texas monthly bookkeeping", body: "Keep multi-entity books and trust records current with a recurring monthly close.", href: "/find-an-accountant/texas/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { title: "Texas QuickBooks setup", body: "Set up per-entity books and trust-record tracking from day one.", href: "/find-an-accountant/texas/quickbooks-setup/", cta: "QuickBooks setup &rarr;" },
+    { title: "Real estate accounting (national)", body: "Our global real estate industry overview for the broader playbook.", href: "/accounting/industries/", cta: "Industry overview &rarr;" },
+  ],
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/texas/industries/real-estate/",
+    name: "Texas Real Estate Accounting & Bookkeeping",
+    description: "Real estate accounting for Texas brokers, investors, and property managers — multi-entity books, trust-record keeping, property-tax tracking, 1031 documentation, and agent commissions. Keeps records only, never holds client funds; does not file Texas taxes.",
+    serviceName: "Texas Real Estate Accounting & Bookkeeping",
+    serviceType: "Real estate industry bookkeeping services",
+    serviceDesc: "Bookkeeping for Texas brokers, investors, and property managers — multi-entity ledgers, trust-account and owner-statement record-keeping (records only; no fund custody), Texas property-tax tracking, 1031 documentation, and agent-commission tracking, kept CPA-ready. Independent Certified QuickBooks ProAdvisor firm; does not hold client or escrow funds, file Texas taxes, provide legal advice, or represent clients before TREC or the Comptroller — coordinates with the client's CPA or EA.",
+    areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
+    audienceType: "Texas real estate brokers, investors, syndicators, and property managers across all 254 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};
