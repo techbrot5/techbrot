@@ -1,0 +1,130 @@
+/* /find-an-accountant/illinois/small-business-accountant/ — IL SERVICE CHILD (money).
+ * t-bofu · partials/state-service-body.njk. IL-localized: PPRT / 10.25% Chicago / cloud tax. */
+const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
+const IL_FACTS = [
+  { fig: "PPRT", title: "The Personal Property Replacement Tax", body: "Illinois imposes an entity-level <strong>Personal Property Replacement Tax</strong> on net income &mdash; <strong>2.5% for C-corps, 1.5% for S-corps, partnerships, and trusts</strong>. Even small pass-throughs owe the 1.5% at the entity level, which surprises owners new to Illinois. We track Illinois net income cleanly; your CPA computes and files." },
+  { fig: "10.25%", title: "Chicago&rsquo;s layered sales tax", body: "Illinois sales tax is <strong>6.25% state</strong> plus county and home-rule add-ons &mdash; <strong>10.25% in Chicago</strong>, destination-based for remote sellers. We configure the correct combined rate by jurisdiction in QuickBooks so the return ties." },
+  { fig: "Cloud tax", title: "Chicago taxes SaaS at 15%", body: "Illinois doesn&rsquo;t tax SaaS &mdash; but <strong>Chicago does</strong>, via its lease/&ldquo;cloud&rdquo; tax, <strong>15% as of January 2026</strong>. A small SaaS firm with Chicago customers must collect it, tracked separately from sales tax. It&rsquo;s a City of Chicago tax, not a state one." },
+];
+const IL_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Illinois small businesses remotely across all 102 counties. Illinois tax figures &mdash; the flat 4.95% income tax, the Personal Property Replacement Tax (2.5% C-corp / 1.5% pass-through), the 9.5% combined C-corp rate, the permanent PTE election, the 6.25%&ndash;10.25% sales tax, and Chicago&rsquo;s 15% lease/cloud tax &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://tax.illinois.gov/\" rel=\"noopener nofollow\">Illinois Department of Revenue</a> and the City of Chicago Department of Finance. Rates change; confirm current figures with the Department and your CPA. TechBrot provides bookkeeping and QuickBooks work and coordinates with your CPA, who files; we do not file Illinois returns or represent clients before the Department.";
+const IL_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the Illinois Department of Revenue &amp; the City of Chicago &middot; No tax-filing or representation claims (out of scope) &middot; Rates change &mdash; confirm current figures &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-bofu.njk",
+  permalink: "/find-an-accountant/illinois/small-business-accountant/",
+  slug: "il-svc-smallbiz",
+  tierClass: "section--tier-bofu",
+  bodyClass: "page--bofu",
+  callBar: true,
+  heroFigure: "taccount",
+  title: "Illinois Small Business Accountant · TechBrot",
+  description: "Accountant & bookkeeper for Illinois small businesses — monthly bookkeeping, QuickBooks, payroll, 10.25% Chicago sales tax, the PPRT, and Chicago's 15% cloud tax. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "Illinois", href: "/find-an-accountant/illinois/" },
+    { name: "Small Business Accountant" },
+  ],
+  bookHref: "/contact/?intent=illinois&state=illinois&source_type=state-money&funnel_stage=MOFU",
+  hero: {
+    eyebrow: "Illinois &middot; Small Business Accounting",
+    heading: "A small business accountant who actually knows Illinois.",
+    subheading: "Monthly bookkeeping, QuickBooks, payroll coordination, and Illinois sales tax (10.25% in Chicago) for Illinois small businesses &mdash; one named Certified ProAdvisor on your file, fixed-fee, all 102 counties. We keep the books and track the PPRT, the PTE position, and Chicago&rsquo;s 15% cloud tax; your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=illinois&state=illinois&source_type=state-money&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> is an <strong>accountant and bookkeeper for Illinois small businesses</strong> &mdash; a named Certified ProAdvisor keeps your QuickBooks file reconciled and CPA-ready every month: clean categorization, combined sales tax by jurisdiction, Illinois net income tracked for the PPRT, Chicago&rsquo;s cloud tax handled where it applies, and payroll coordinated. Fixed-fee, all 102 counties. Full summary below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Illinois tax references reflect IDOR and City of Chicago rules current as of the review date; TechBrot does not file Illinois taxes.",
+  },
+  ctaBand: {
+    eyebrow: "Illinois small businesses start here",
+    heading: "Want a small business accountant who stays on your books?",
+    lede: "Book a free discovery call. We&rsquo;ll review your QuickBooks file, tell you honestly whether you need cleanup, monthly bookkeeping, or both, and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file IL taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=illinois&state=illinois&source_type=state-money&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  stateName: "Illinois",
+  copy: {
+    aiHeading: "Illinois small business accountant, in five questions.",
+    valueEyebrow: "What a small business accountant handles in Illinois",
+    valueHeading: "The whole back office, one named expert.",
+    valueLede: "Scoped to your business and delivered in your own QuickBooks file by the same Certified ProAdvisor every month.",
+    factsEyebrow: "Illinois tax realities for small businesses",
+    factsHeading: "Three Illinois facts every small business&rsquo;s books must reflect.",
+    factsLede: "Illinois layers an entity-level tax and Chicago-specific taxes on top of the basics &mdash; these three shape your chart of accounts and sales-tax setup.",
+    faqHeading: "Illinois small business accountant questions.",
+  },
+  summary: "<strong>TechBrot</strong> is an <strong>accountant and bookkeeper for Illinois small businesses</strong> &mdash; one named Certified ProAdvisor on your QuickBooks file every month: categorization and reconciliation, a clean chart of accounts, combined sales tax by jurisdiction (<strong>10.25% in Chicago</strong>) configured and reconciled, payroll coordination, and CPA-ready statements. Illinois has a flat 4.95% income tax but layers the <a href=\"/find-an-accountant/illinois/replacement-tax-help/\">PPRT</a> on entity income &mdash; even small pass-throughs owe 1.5% &mdash; and <strong>Chicago taxes SaaS at 15%</strong> through its lease/cloud tax. We track all of it. In your own <a href=\"/quickbooks/online/\">QuickBooks Online</a> or hosted Desktop file across all 102 counties, fixed-fee against a written scope ($400&ndash;$2,500+/mo). Independent firm &mdash; not affiliated with Intuit Inc.; we keep the books, your CPA files.",
+  aiSummary: [
+    { q: "What does an Illinois small business accountant do?", a: "<strong>Keeps your books in your own QuickBooks file to an Illinois standard</strong> &mdash; categorization, reconciliation, combined sales tax by jurisdiction, Illinois net income tracked for the PPRT, Chicago&rsquo;s cloud tax where it applies, payroll coordination, and CPA-ready statements every month. We do the books; your CPA files." },
+    { q: "What Illinois taxes affect my small business?", a: "A <strong>flat 4.95% income tax</strong>, the <strong>PPRT</strong> on entity net income (1.5% for most small pass-throughs, 2.5% for C-corps), <strong>6.25%&ndash;10.25% sales tax</strong> by jurisdiction, and &mdash; if you sell SaaS to Chicago customers &mdash; <strong>Chicago&rsquo;s 15% cloud tax</strong>. There&rsquo;s also the optional <strong>PTE election</strong>. We track all of it in the books." },
+    { q: "Do small pass-throughs really owe the PPRT?", a: "Yes &mdash; S-corps, partnerships, and trusts owe the <strong>1.5% PPRT at the entity level</strong> even though they&rsquo;re pass-throughs. It catches a lot of new Illinois owners off guard. We track Illinois net income cleanly so it&rsquo;s supportable; your CPA computes and files." },
+    { q: "What does it cost?", a: "Fixed-fee against a written scope, never hourly: monthly bookkeeping <strong>$400&ndash;$2,500+/mo</strong>; one-time cleanup <strong>$1,500&ndash;$15,000+</strong>. Exact fee in writing within 3 business days." },
+    { q: "Do you file Illinois taxes?", a: "No &mdash; TechBrot keeps the books CPA-ready and coordinates with your CPA, who files. Independent firm; not affiliated with Intuit Inc." },
+  ],
+  value: [
+    { num: "01", title: "Monthly bookkeeping &amp; close", body: "Reconciled accounts, clean categorization, and CPA-ready statements every month &mdash; sales tax by jurisdiction and PPRT net income tracked.", href: "/find-an-accountant/illinois/monthly-bookkeeping/", cta: "Monthly bookkeeping &rarr;" },
+    { num: "02", title: "QuickBooks setup &amp; cleanup", body: "An Illinois-correct chart of accounts and a cleanup to CPA-ready standard when the file has fallen behind.", href: "/quickbooks/cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "03", title: "Sales tax, configured right", body: "QuickBooks set to the correct combined rate by jurisdiction (10.25% in Chicago) and reconciled so the IDOR return ties.", href: "/find-an-accountant/illinois/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "04", title: "PPRT &amp; PTE tracked", body: "Illinois net income tracked for the PPRT, with the books structured so your CPA can model the PTE election.", href: "/find-an-accountant/illinois/replacement-tax-help/", cta: "Replacement tax help &rarr;" },
+    { num: "05", title: "Payroll coordination", body: "Illinois payroll configured and coordinated &mdash; 4.95% state withholding (IL-941) and IDES unemployment handled cleanly with your provider.", href: "/quickbooks/payroll/", cta: "Payroll &rarr;" },
+    { num: "06", title: "Advisory, when ready", body: "Once the books are clean, fractional-CFO advisory on the global team &mdash; forecasting, cash-flow, PPRT/PTE planning.", href: "/accounting/advisory/fractional-cfo/", cta: "Fractional CFO &rarr;" },
+  ],
+  facts: IL_FACTS,
+  scopeDo: [
+    "Keep your QuickBooks Online or Desktop file reconciled and current every month",
+    "Build and maintain an Illinois-correct chart of accounts",
+    "Configure combined sales tax by jurisdiction (10.25% in Chicago) and reconcile it",
+    "Track Illinois net income for the PPRT and structure the books for the PTE election",
+    "Track Chicago&rsquo;s lease/cloud tax separately where it applies",
+    "Coordinate Illinois payroll (4.95% withholding, IDES) and prepare CPA-ready statements",
+  ],
+  scopeDont: [
+    "File Illinois income tax, the PPRT, sales tax, or the PTE election",
+    "File Chicago city taxes or federal returns",
+    "Represent you before the Illinois Department of Revenue or the City of Chicago",
+    "Provide legal or tax advice",
+  ],
+  process: [
+    { phase: "Step 1", title: "Free file review", body: "A Certified ProAdvisor reviews your QuickBooks file and your Illinois situation at no cost." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "Within 3 business days you get a written scope and fixed fee. No hourly billing." },
+    { phase: "Step 3", title: "Cleanup to CPA-ready", body: "If the file needs it, we bring it to a CPA-ready standard &mdash; sales tax corrected by jurisdiction, Chicago cloud tax separated, accounts reconciled." },
+    { phase: "Step 4", title: "Monthly cadence", body: "A named ProAdvisor keeps the file clean every month and hands CPA-ready statements to your CPA." },
+  ],
+  advisoryBody: [
+    "Most Illinois small businesses don&rsquo;t need a full-time accountant &mdash; they need clean books, sales tax tracked correctly by jurisdiction, the PPRT net income supportable, any Chicago cloud-tax exposure handled, and a named expert who knows their file. That&rsquo;s exactly the gap a fixed-fee Certified ProAdvisor fills.",
+    "Start with accurate books, then extend &mdash; when you&rsquo;re ready &mdash; into <a href=\"/accounting/advisory/fractional-cfo/\">fractional-CFO advisory</a> including PPRT/PTE planning, in coordination with your CPA.",
+  ],
+  faq: [
+    { q: "What does an Illinois small business accountant do?", a: "Keeps your books in your own QuickBooks file to an Illinois standard &mdash; categorization and reconciliation, a clean chart of accounts, combined sales tax by jurisdiction (10.25% in Chicago) configured and reconciled, Illinois net income tracked for the PPRT, Chicago&rsquo;s cloud tax handled where it applies, payroll coordination, and CPA-ready statements every month. We do the books; your CPA files." },
+    { q: "What Illinois taxes does a small business owe?", a: "Illinois has a flat 4.95% income tax, the Personal Property Replacement Tax on entity net income (1.5% for most small pass-throughs, 2.5% for C-corps), 6.25%&ndash;10.25% sales tax by jurisdiction, and &mdash; for SaaS sold to Chicago customers &mdash; Chicago&rsquo;s 15% lease/cloud tax. Illinois also offers the optional PTE election. We build all of it into how the books are kept; your CPA files." },
+    { q: "Do small pass-through businesses owe the PPRT?", a: "Yes. S-corporations, partnerships, and trusts owe the 1.5% Personal Property Replacement Tax at the entity level even though they&rsquo;re pass-throughs &mdash; an Illinois-specific obligation that surprises owners new to the state. We track Illinois net income cleanly so it&rsquo;s supportable, and your CPA computes and files it." },
+    { q: "Do you serve my city or county?", a: "All 102 Illinois counties &mdash; Chicago and the collar counties, Aurora, Naperville, Joliet, Rockford, Springfield, and everywhere downstate &mdash; delivered remotely on QuickBooks. Your location changes the sales-tax jurisdiction and any Chicago city taxes, never the service or the named ProAdvisor." },
+    { q: "How much does it cost?", a: "Fixed-fee against a written scope, never hourly. Monthly bookkeeping runs $400&ndash;$2,500+/mo by volume and accounts; one-time cleanup runs $1,500&ndash;$15,000+. Exact fee in writing within 3 business days of a free discovery call." },
+    { q: "Do you file my Illinois taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books CPA-ready and coordinate with your CPA, who files the income tax, the PPRT, sales tax, any PTE election, and Chicago city taxes. We do not file or represent, and we are not affiliated with Intuit Inc." },
+  ],
+  reviewProse: IL_REVIEW_PROSE,
+  reviewCreds: IL_REVIEW_CREDS,
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/illinois/small-business-accountant/",
+    name: "Illinois Small Business Accountant",
+    description: "Accountant and bookkeeper for Illinois small businesses — monthly bookkeeping, QuickBooks, payroll coordination, 6.25%–10.25% sales tax, the PPRT, the PTE election, and Chicago's 15% cloud tax in your own QuickBooks file across all 102 counties. Independent firm; does not file Illinois taxes.",
+    serviceName: "Illinois Small Business Accounting & Bookkeeping",
+    serviceType: "Small business accounting and bookkeeping services",
+    serviceDesc: "Monthly bookkeeping, QuickBooks setup and cleanup, combined sales-tax configuration by jurisdiction, Personal Property Replacement Tax net-income tracking, PTE-election-ready books, Chicago lease/cloud-tax tracking, and payroll coordination for Illinois small businesses across all 102 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois or Chicago tax returns.",
+    areaServed: [{ type: "State", name: "Illinois", sameAs: "https://en.wikipedia.org/wiki/Illinois" }],
+    audienceType: "Illinois small businesses across all 102 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};

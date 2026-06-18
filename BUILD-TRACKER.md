@@ -322,8 +322,10 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 274 · re-skinned (142) + growth = 132 · LAST COMMIT = round-49 FL-COMPLETE
-(3 pages: st-petersburg + cities-hub + pricing + pillar re-link). Working tree clean on `preview-11ty`.
+**COUNT: total pages live = 281 · re-skinned (142) + growth = 139 · LAST COMMIT = round-50 IL-money+tax
+(7 pages: IL money/bkg 5 + IL tax cluster 2). Working tree clean on `preview-11ty`.
+ILLINOIS IN PROGRESS (5th/last state) = pillar + 5 cities + 7 services (money 4/6 [speak+pricing pending] · tax 2/2 ✅ · bkg-spoke monthly ✅).
+IL stack (pillar-verified): flat 4.95% income · PPRT (2.5% C-corp / 1.5% pass-through, even pass-throughs owe) · 9.5% combined C-corp · permanent PTE election (SB 1911) · 6.25%→10.25% Chicago sales · Chicago 15% cloud tax on SaaS · IDOR + Chicago Dept of Finance · 102 counties · 6th city = Springfield.
 ✅ FLORIDA COMPLETE (31 FL pages: pillar + 6 money + 6 QB + 3 bkg + 2 tax + industries hub+6 + cities hub+6, incl. triage), on the CORRECTED FL stack.
 ✅ FOUR STATES COMPLETE: NY · CA (39) · TX (32) · FL (31). NEXT = ILLINOIS depth (5th/last); build IL triage normally (approved pattern, IL Dept of Revenue + IRS). IL stack = flat 4.95% income + PPRT + Chicago taxes.
 ⚑ AFTER IL: flag breadth-vs-more-depth decision. ⚑ LESSON (rd-48): check each state's pillar tax facts BEFORE building children.

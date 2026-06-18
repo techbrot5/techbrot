@@ -1,0 +1,130 @@
+/* /find-an-accountant/illinois/monthly-bookkeeping/ — IL SERVICE CHILD (bkg spoke).
+ * t-bofu · partials/state-service-body.njk. IL-localized: PPRT / 10.25% Chicago / cloud tax. */
+const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
+const IL_FACTS = [
+  { fig: "Monthly", title: "A close every month, not a scramble at filing", body: "Monthly bookkeeping means the books are reconciled and closed each month &mdash; so the combined sales tax, the PPRT net income, and Chicago&rsquo;s cloud-tax figures are right all year, not reconstructed at filing time." },
+  { fig: "10.25%", title: "Sales tax reconciled every month, by jurisdiction", body: "Illinois combined sales tax (6.25% state to 10.25% in Chicago) is reconciled monthly so each IDOR ST-1 ties and nothing is owed by surprise." },
+  { fig: "PPRT", title: "Illinois net income kept current", body: "The <strong>Personal Property Replacement Tax</strong> is computed from Illinois net income &mdash; a monthly close keeps that figure current and supportable, for C-corps (2.5%) and pass-throughs (1.5%) alike. Your CPA computes and files." },
+];
+const IL_REVIEW_PROSE = "Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Illinois businesses remotely across all 102 counties. Illinois tax figures &mdash; the flat 4.95% income tax, the Personal Property Replacement Tax, the 6.25%&ndash;10.25% sales tax, and Chicago&rsquo;s 15% lease/cloud tax &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href=\"https://tax.illinois.gov/\" rel=\"noopener nofollow\">Illinois Department of Revenue</a> and the City of Chicago Department of Finance. Rates change; confirm current figures with the Department and your CPA. TechBrot provides monthly bookkeeping and QuickBooks work and coordinates with your CPA, who files; we do not file Illinois returns.";
+const IL_REVIEW_CREDS = [
+  { label: "Reviewer", detail: "TechBrot Certified ProAdvisor team &middot; 40+ years combined operational accounting experience" },
+  { label: "Standards", detail: "Verified vs the Illinois Department of Revenue &amp; the City of Chicago &middot; No tax-filing claims (out of scope) &middot; Rates change &mdash; confirm current figures &middot; No fabricated data" },
+  { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+];
+module.exports = {
+  layout: "layouts/t-bofu.njk",
+  permalink: "/find-an-accountant/illinois/monthly-bookkeeping/",
+  slug: "il-svc-monthly",
+  tierClass: "section--tier-bofu",
+  bodyClass: "page--bofu",
+  callBar: true,
+  heroFigure: "taccount",
+  title: "Illinois Monthly Bookkeeping · TechBrot",
+  description: "Monthly bookkeeping for Illinois businesses — a real close every month, 10.25% Chicago sales tax reconciled by jurisdiction, PPRT net income kept current, CPA-ready statements. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  breadcrumb: [
+    { name: "Home", href: "/" },
+    { name: "Find an Accountant", href: "/find-an-accountant/" },
+    { name: "Illinois", href: "/find-an-accountant/illinois/" },
+    { name: "Monthly Bookkeeping" },
+  ],
+  bookHref: "/contact/?intent=illinois&state=illinois&source_type=state-money&funnel_stage=MOFU",
+  hero: {
+    eyebrow: "Illinois &middot; Monthly Bookkeeping",
+    heading: "Monthly bookkeeping that closes the books every month.",
+    subheading: "A real monthly close for Illinois businesses &mdash; reconciliation, sales tax reconciled by jurisdiction (10.25% in Chicago), Illinois net income kept current for the PPRT, and CPA-ready statements &mdash; in your own QuickBooks file, by one named Certified ProAdvisor. Fixed-fee, all 102 counties. We keep the books; your CPA files.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=illinois&state=illinois&source_type=state-money&funnel_stage=MOFU", class: "btn--primary" },
+      { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--ghost" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+    trust: ["Certified QuickBooks ProAdvisor team", "Independent &middot; not Intuit", "Fixed-fee &middot; written scope in 3 days"],
+  },
+  inBrief: {
+    text: "<strong>TechBrot</strong> provides <strong>monthly bookkeeping for Illinois businesses</strong> &mdash; a named Certified ProAdvisor reconciles and closes your books every month: clean categorization, sales tax reconciled by jurisdiction, Illinois net income kept current for the PPRT, Chicago&rsquo;s cloud tax handled where it applies, and CPA-ready statements, in your own QuickBooks file. Fixed-fee, all 102 counties. Full summary below.",
+    source: "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Illinois tax references reflect IDOR and City of Chicago rules current as of the review date; TechBrot does not file Illinois taxes.",
+  },
+  ctaBand: {
+    eyebrow: "Illinois businesses start here",
+    heading: "Ready to close the books every month instead of at filing time?",
+    lede: "Book a free discovery call. We&rsquo;ll review your QuickBooks file, tell you honestly what you need, and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file IL taxes; coordinates with your CPA.",
+    actions: [
+      { label: "Book the discovery call", href: "/contact/?intent=illinois&state=illinois&source_type=state-money&funnel_stage=BOFU", class: "btn--primary" },
+      { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+    ],
+  },
+  stateName: "Illinois",
+  copy: {
+    aiHeading: "Illinois monthly bookkeeping, in five questions.",
+    valueEyebrow: "What a monthly close covers in Illinois",
+    valueHeading: "A real close, every month, by one named expert.",
+    valueLede: "Scoped to your business and delivered in your own QuickBooks file by the same Certified ProAdvisor every month.",
+    factsEyebrow: "Why monthly beats annual in Illinois",
+    factsHeading: "Three Illinois facts a monthly close keeps clean.",
+    factsLede: "Closing every month keeps the sales tax, the PPRT, and Chicago&rsquo;s cloud tax accurate year-round &mdash; not reconstructed under deadline.",
+    faqHeading: "Illinois monthly bookkeeping questions.",
+  },
+  summary: "<strong>TechBrot</strong> provides <strong>monthly bookkeeping for Illinois businesses</strong> &mdash; a named Certified ProAdvisor reconciles and closes your books every month: clean categorization, sales tax reconciled by jurisdiction (<strong>10.25% in Chicago</strong>), Illinois net income kept current for the <a href=\"/find-an-accountant/illinois/replacement-tax-help/\">PPRT</a>, and Chicago&rsquo;s lease/cloud tax handled where it applies. A real monthly close keeps the sales tax and the PPRT accurate all year instead of reconstructed at filing time. In your own <a href=\"/quickbooks/online/\">QuickBooks Online</a> or hosted Desktop file across all 102 counties, fixed-fee against a written scope ($400&ndash;$2,500+/mo). Independent firm &mdash; not affiliated with Intuit Inc.",
+  aiSummary: [
+    { q: "What is monthly bookkeeping in Illinois?", a: "<strong>A real close of your books every month</strong> &mdash; reconciliation, clean categorization, sales tax reconciled by jurisdiction, Illinois net income kept current for the PPRT, Chicago&rsquo;s cloud tax handled, and CPA-ready statements, in your own QuickBooks file, by the same ProAdvisor. We do the books; your CPA files." },
+    { q: "Why does a monthly close matter in Illinois?", a: "Because the <strong>combined sales tax</strong>, the <strong>PPRT</strong> (computed from Illinois net income), and <strong>Chicago&rsquo;s cloud tax</strong> are all computed from your books &mdash; a monthly close keeps those figures accurate all year so filing is a non-event for your CPA." },
+    { q: "Do you work in my own QuickBooks file?", a: "Yes &mdash; your file, your data, in <strong>QuickBooks Online or hosted Desktop</strong>, with a named ProAdvisor on the same file every month." },
+    { q: "What does it cost?", a: "Fixed-fee against a written scope, never hourly: <strong>$400&ndash;$2,500+/mo</strong> by volume and accounts; one-time cleanup before monthly cadence <strong>$1,500&ndash;$15,000+</strong>. Exact fee in writing within 3 business days." },
+    { q: "Do you file Illinois taxes?", a: "No &mdash; TechBrot keeps the books CPA-ready and coordinates with your CPA, who files. Independent firm; not affiliated with Intuit Inc." },
+  ],
+  value: [
+    { num: "01", title: "Monthly reconciliation &amp; close", body: "Every account reconciled and the month closed &mdash; clean categorization to an Illinois-correct chart of accounts.", href: "/find-an-accountant/illinois/bookkeeping-services/", cta: "Bookkeeping services &rarr;" },
+    { num: "02", title: "Sales tax reconciled monthly", body: "Combined sales tax (10.25% in Chicago) reconciled each month so every IDOR ST-1 ties and nothing is owed by surprise.", href: "/find-an-accountant/illinois/sales-tax-help/", cta: "Sales tax help &rarr;" },
+    { num: "03", title: "PPRT net income kept current", body: "Illinois net income kept current monthly so your CPA can compute and support the PPRT accurately.", href: "/find-an-accountant/illinois/replacement-tax-help/", cta: "Replacement tax help &rarr;" },
+    { num: "04", title: "CPA-ready statements", body: "P&amp;L, balance sheet, and cash-flow delivered every month in a format your CPA can file from directly.", href: "/accounting/financial-statements/", cta: "Financial statements &rarr;" },
+    { num: "05", title: "Cleanup first, if needed", body: "Behind by months? A one-time cleanup brings the file current before the monthly cadence begins.", href: "/quickbooks/cleanup/", cta: "QuickBooks cleanup &rarr;" },
+    { num: "06", title: "Advisory, when ready", body: "Once the close is reliable, fractional-CFO advisory on the global team &mdash; forecasting and PPRT/PTE planning.", href: "/accounting/advisory/fractional-cfo/", cta: "Fractional CFO &rarr;" },
+  ],
+  facts: IL_FACTS,
+  scopeDo: [
+    "Reconcile every account and close the books each month",
+    "Maintain an Illinois-correct chart of accounts and clean categorization",
+    "Reconcile combined sales tax monthly by jurisdiction so each ST-1 ties",
+    "Keep Illinois net income current for the PPRT",
+    "Handle Chicago&rsquo;s lease/cloud tax monthly where it applies",
+    "Deliver CPA-ready monthly financial statements",
+  ],
+  scopeDont: [
+    "File Illinois income tax, the PPRT, or sales tax",
+    "File Chicago city taxes or the PTE election",
+    "Represent you before the Illinois Department of Revenue or the City of Chicago",
+    "Provide legal or tax advice",
+  ],
+  process: [
+    { phase: "Step 1", title: "Free file review", body: "A Certified ProAdvisor reviews your QuickBooks file and Illinois situation at no cost." },
+    { phase: "Step 2", title: "Written fixed-fee scope", body: "Within 3 business days you get a written scope and fixed monthly fee. No hourly billing." },
+    { phase: "Step 3", title: "Cleanup, if needed", body: "If the file is behind, we bring it current to a CPA-ready standard before the monthly cadence begins." },
+    { phase: "Step 4", title: "Monthly close", body: "A named ProAdvisor reconciles, closes, and hands CPA-ready statements to your CPA every month." },
+  ],
+  advisoryBody: [
+    "The case for a monthly close in Illinois is simple: the combined sales tax, the PPRT, and Chicago&rsquo;s cloud tax are only as accurate as the books behind them. Close every month and all of it stays right &mdash; close once a year and you&rsquo;re reconstructing the Illinois net income and the Chicago exposure under deadline.",
+    "Start with a reliable monthly close, then extend &mdash; when you&rsquo;re ready &mdash; into <a href=\"/accounting/advisory/fractional-cfo/\">fractional-CFO advisory</a> including PPRT/PTE planning, in coordination with your CPA.",
+  ],
+  faq: [
+    { q: "What does Illinois monthly bookkeeping include?", a: "A real close of your books every month &mdash; reconciliation, clean categorization to an Illinois-correct chart of accounts, combined sales tax reconciled by jurisdiction (10.25% in Chicago), Illinois net income kept current for the PPRT, Chicago&rsquo;s lease/cloud tax handled where it applies, and CPA-ready statements &mdash; in your own QuickBooks file, by the same ProAdvisor. We do the books; your CPA files." },
+    { q: "Why does a monthly close matter for Illinois businesses?", a: "Because the combined sales tax, the Personal Property Replacement Tax (computed from Illinois net income), and Chicago&rsquo;s lease/cloud tax are all computed from your books. Closing every month keeps those figures accurate all year, so filing is a non-event &mdash; instead of reconstructing a year of records, the Illinois net income, and the Chicago exposure under deadline pressure." },
+    { q: "Do you work in my existing QuickBooks file?", a: "Yes &mdash; your file, your data, in QuickBooks Online or hosted Desktop, with a named ProAdvisor on the same file every month. We can set up or migrate the file if needed." },
+    { q: "What if my books are months behind?", a: "We scope a one-time cleanup to bring the file current to a CPA-ready standard first, then start the monthly close so it stays current. Both are fixed-fee against a written scope." },
+    { q: "How much does Illinois monthly bookkeeping cost?", a: "Fixed-fee against a written scope, never hourly. Monthly bookkeeping runs $400&ndash;$2,500+/mo by volume and accounts; a one-time cleanup beforehand runs $1,500&ndash;$15,000+. Exact fee in writing within 3 business days of a free discovery call." },
+    { q: "Do you file my Illinois taxes?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books CPA-ready and coordinate with your CPA, who files the income tax, the PPRT, sales tax, the PTE election, and Chicago city taxes. We are not affiliated with Intuit Inc." },
+  ],
+  reviewProse: IL_REVIEW_PROSE,
+  reviewCreds: IL_REVIEW_CREDS,
+  cityMeta: {
+    url: "https://techbrot.com/find-an-accountant/illinois/monthly-bookkeeping/",
+    name: "Illinois Monthly Bookkeeping",
+    description: "Monthly bookkeeping for Illinois businesses — a real close every month, 6.25%–10.25% sales tax reconciled by jurisdiction, PPRT net income kept current, Chicago's cloud tax handled, and CPA-ready statements in your own QuickBooks file across all 102 counties. Independent firm; does not file Illinois taxes.",
+    serviceName: "Illinois Monthly Bookkeeping Services",
+    serviceType: "Monthly bookkeeping and close services",
+    serviceDesc: "A monthly close — reconciliation, categorization, combined sales-tax reconciliation by jurisdiction, Illinois-net-income tracking for the Personal Property Replacement Tax, Chicago lease/cloud-tax handling, and CPA-ready statements for Illinois businesses across all 102 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns.",
+    areaServed: [{ type: "State", name: "Illinois", sameAs: "https://en.wikipedia.org/wiki/Illinois" }],
+    audienceType: "Illinois small and midsize businesses across all 102 counties",
+    offerPrice: "400",
+  },
+  eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },
+};
