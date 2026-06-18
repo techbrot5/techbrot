@@ -12,8 +12,9 @@ eleventyExcludeFromCollections: true
 # both are LIVE (200, distinct content) on production but were never in baseline/built.
 # Founder rulings: NO standalone /reviews/ until 5+ real reviews (honesty); NO individual
 # /about/team/ page (founder-name-zero). So both redirect (not rebuilt as-is).
-# REMOVE /reviews/ when a reviews listing ships (5+ reviews). See ARCHITECTURE-TRUTH sec 9.
-/reviews/      /trust/   301
+# /reviews/ 301 REMOVED round 80 — the verified-reviews listing now ships
+# (src/reviews.njk: 2 real Clutch reviews, no AggregateRating until 5+). The URL
+# resolves to itself and must NOT redirect away.
 /about/team/   /about/   301
 
 # Growth-phase merges/dup 301s (founder rulings, round 79): variant/dup URLs
