@@ -1,0 +1,85 @@
+/* /quickbooks/help/books-not-ready-for-accountant/ (a problem/symptom page in the
+ * QuickBooks Help silo — cleanup-conversion intent). Shape cloned from the proven
+ * bank-feeds-not-working help page and the t-guide tier. Citable: why books aren't
+ * CPA-ready + the SIX-step path to CPA-ready (HowTo). HONEST SPLIT (load-bearing):
+ * we do BOOKKEEPING to a CPA-ready standard; the client's CPA/EA files returns and
+ * gives tax advice — we never file or advise on tax. Sheet-7 honest-triage:
+ * .disclosure above the fold; first FAQ = "Is this Intuit's official QuickBooks
+ * support?" -> No, plainly; never "official" near our offer; phone = "Speak to a
+ * ProAdvisor" (canonical lexicon) + "(independent firm)" in copy; provider/publisher
+ * always #organization; reviewedBy = #david-westgate (schema only, mirrors
+ * bank-feeds). No fabricated Intuit phone/hours; no fabricated internals; canonical
+ * pricing only ($1,500-$15,000+ cleanup by how far behind). CTA: help = file-review
+ * primary, phone tertiary. Authorship firm-level; founder schema-only. Independent
+ * firm; not affiliated with Intuit Inc. */
+function stripTags(html){return html.replace(/<[^>]+>/g,"").replace(/&rsquo;/g,"’").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&mdash;/g,"—").replace(/&ndash;/g,"–").replace(/&rarr;/g,"→").replace(/&amp;/g,"&").replace(/&nbsp;/g," ").replace(/&middot;/g,"·").replace(/&em;/g,"").replace(/\s+/g," ").trim();}
+module.exports = {
+  // quick-5 — distinct from FAQ (what / why-not-ready / how-to-ready / who-does-what / cost)
+  aiSummary: [
+    { q: "What does &ldquo;the books aren&rsquo;t ready for your accountant&rdquo; mean?", a: "Your QuickBooks file isn&rsquo;t in a state your CPA can file a return from. Typically: accounts that have never been <strong>reconciled</strong> to the bank, transactions left uncategorized or parked in <strong>Ask My Accountant</strong>, a balance sheet that doesn&rsquo;t tie, missing months or years, duplicates, or personal and business spending mixed in the same accounts. A CPA can&rsquo;t responsibly file on numbers like that, so they ask for cleanup first." },
+    { q: "Why won&rsquo;t my CPA file until the books are cleaned up?", a: "Because filing a return on unreconciled, miscategorized, or incomplete books risks a wrong return &mdash; and that&rsquo;s the CPA&rsquo;s name on it. A CPA files returns and advises on tax; they generally don&rsquo;t do the bookkeeping cleanup that gets a messy file to a filable state. That cleanup &mdash; reconciling, categorizing, catching up, producing statements that tie &mdash; is a bookkeeping job a Certified QuickBooks ProAdvisor does first." },
+    { q: "How do I get my QuickBooks books ready for my accountant?", a: "Start with a free file review, then a written fixed-fee cleanup scope. From there: reconcile every bank and credit-card account to the statement; categorize the Ask-My-Accountant pile and fix the chart of accounts so the balance sheet ties; catch up any missing months or years; remove duplicates and separate personal from business; then hand <strong>CPA-ready statements</strong> to your CPA, who files the return." },
+    { q: "Do you file my taxes too?", a: "No. We do the <strong>bookkeeping</strong> to a CPA-ready standard &mdash; reconciling, categorizing, catching up, and producing statements that tie. Your CPA or EA files the returns and gives the tax advice; we don&rsquo;t file or advise on tax. We get the file clean and hand it over, so your CPA can do their part on accurate numbers." },
+    { q: "What does it cost to clean up books for filing?", a: "Cleanup runs <strong>$1,500&ndash;$15,000+</strong> depending on how far behind the books are &mdash; a few uncategorized months is at the low end; multiple years with unreconciled accounts and mixed personal spending is at the high end. It always starts with a free file review and a written fixed-fee scope, so you see the number before any work begins." },
+  ],
+  // Why books aren't CPA-ready, the citable list. General and accurate; no invented internals.
+  causes: [
+    { rank: "Reason 01", name: "Accounts have never been reconciled", body: "Bank and credit-card accounts that were never reconciled mean the balances in QuickBooks don&rsquo;t match the statements &mdash; so no one can trust the numbers a return would be built on. Reconciling every account to the statement is the first thing a CPA expects to be done before they&rsquo;ll file." },
+    { rank: "Reason 02", name: "An uncategorized / Ask-My-Accountant pile", body: "Transactions left uncategorized, or dumped into the Ask My Accountant account to deal with later, distort income and expenses. Until each one is categorized correctly, the profit-and-loss is wrong &mdash; and a CPA can&rsquo;t file an accurate return from it." },
+    { rank: "Reason 03", name: "Balances that don&rsquo;t tie", body: "When the balance sheet doesn&rsquo;t tie &mdash; retained earnings off, an opening balance equity that never cleared, accounts that don&rsquo;t roll forward &mdash; it signals deeper bookkeeping errors. A CPA needs a balance sheet that ties before the file is usable for a return." },
+    { rank: "Reason 04", name: "Missing months or a catch-up gap", body: "Whole months, or whole years, where transactions were never entered leave gaps a return can&rsquo;t be filed across. Catch-up bookkeeping fills those periods in &mdash; reconstructing the activity from statements and records so the year is complete." },
+    { rank: "Reason 05", name: "Duplicate transactions", body: "Transactions entered twice &mdash; once manually and once from a feed, or doubled after an import &mdash; overstate income or expenses and throw off reconciliation. Removing genuine duplicates carefully, without deleting real transactions, is part of getting the file CPA-ready." },
+    { rank: "Reason 06", name: "Personal and business spending mixed", body: "When personal purchases run through the business accounts, the books overstate expenses and the return would be wrong. Separating personal from business &mdash; reclassifying owner draws and personal spending correctly &mdash; is essential before a CPA will file." },
+  ],
+  // Six ordered steps — the HowTo path to CPA-ready. We do bookkeeping; CPA files.
+  fixSteps: [
+    { name: "Start with a free file review", body: "We open the QuickBooks file and assess how far behind it is &mdash; what&rsquo;s unreconciled, what&rsquo;s uncategorized, where the balances don&rsquo;t tie, and which periods are missing. The review is free; nothing is scoped or charged until you&rsquo;ve seen what the file actually needs." },
+    { name: "Get a written fixed-fee cleanup scope", body: "From the review you receive a written, fixed-fee cleanup scope &mdash; what will be reconciled, categorized, and caught up, and the price &mdash; before any work begins. No open-ended hourly surprises; you approve the number first." },
+    { name: "Reconcile all accounts to the statements", body: "Every bank and credit-card account is reconciled to its statement so the balances in QuickBooks match reality. This is the foundation a CPA-ready file is built on &mdash; without it, nothing above it can be trusted." },
+    { name: "Categorize transactions &amp; fix the chart of accounts", body: "The Ask-My-Accountant pile is emptied and every transaction categorized correctly, and the chart of accounts is repaired so the balance sheet ties &mdash; opening balance equity cleared, retained earnings correct, accounts rolling forward properly." },
+    { name: "Catch up any missing periods", body: "Missing months or years are reconstructed from statements and records so the year is complete, with no gaps. Duplicates are removed and personal spending is separated out of the business books along the way." },
+    { name: "Hand CPA-ready statements to your CPA", body: "We produce financial statements that tie &mdash; profit-and-loss and balance sheet &mdash; and hand them to your CPA or EA, who files the return and advises on tax. We do the bookkeeping to a CPA-ready standard; your CPA does the filing. We don&rsquo;t file or advise on tax." },
+  ],
+  proSignals: [
+    { name: "A tax deadline is looming over messy books", body: "A filing deadline is close and the books are nowhere near filable &mdash; unreconciled, uncategorized, missing periods. The fix is fast, focused cleanup to a CPA-ready standard so your CPA can file in time; that&rsquo;s a ProAdvisor job, not something to push onto your CPA at the last minute." },
+    { name: "Your CPA refused to file until it&rsquo;s cleaned up", body: "Your CPA or tax preparer handed the file back and said they can&rsquo;t file until the bookkeeping is cleaned up. That&rsquo;s the clearest signal of all &mdash; the gap between where the file is and where a CPA needs it is bookkeeping work, which is exactly what we do." },
+    { name: "You&rsquo;re multiple years behind", body: "The books are one, two, or more years behind &mdash; whole periods unentered, never reconciled, personal and business tangled together. Multi-year catch-up and cleanup is a defined ProAdvisor project that brings the file current and CPA-ready, against a written scope." },
+  ],
+  related: [
+    { title: "QuickBooks file cleanup", href: "/quickbooks/cleanup/", body: "The full fixed-fee QuickBooks cleanup service &mdash; reconciling, categorizing, catching up, and getting the balance sheet to tie. $1,500&ndash;$15,000+ depending on how far behind, with a written scope before any work begins." },
+    { title: "QuickBooks reconciliation that won&rsquo;t balance", href: "/quickbooks/help/reconciliation-broken/", body: "If the core problem is reconciliation that no longer ties to the bank statement, this reference covers why it breaks and the path back to balances a CPA can rely on." },
+    { title: "Financial statements that tie", href: "/accounting/financial-statements/", body: "What CPA-ready financial statements look like &mdash; a profit-and-loss and balance sheet that tie &mdash; and why they&rsquo;re the handoff point between bookkeeping cleanup and your CPA filing the return." },
+  ],
+  operatorSpec: [
+    { value: "Free", label: "file review first — we look before we scope" },
+    { value: "$1,500–$15,000+", label: "fixed-fee cleanup, by how far behind the books are" },
+    { value: "Independent", label: "Certified ProAdvisor firm — bookkeeping to CPA-ready; your CPA files" },
+  ],
+  faq: [
+    { q: "Is this Intuit&rsquo;s official QuickBooks support?", a: "No. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; not Intuit, and not Intuit&rsquo;s official software support. This page is an independent ProAdvisor reference. For an Intuit account, login, password, subscription, or billing issue, contact Intuit directly; we can&rsquo;t access your Intuit account. What we do is the operational bookkeeping inside your own books to get the file CPA-ready. QuickBooks and Intuit are registered trademarks of Intuit Inc." },
+    { q: "Do you file my taxes?", a: "No. We get your books to a CPA-ready standard &mdash; reconciling, categorizing, catching up missing periods, and producing financial statements that tie &mdash; and then your CPA or EA files the returns and gives the tax advice. We do the bookkeeping; your CPA does the filing. We don&rsquo;t file returns or advise on tax." },
+    { q: "What does cleanup cost?", a: "Cleanup runs $1,500&ndash;$15,000+ depending on how far behind the books are &mdash; a few uncategorized months sits at the low end; multiple years with unreconciled accounts and mixed personal spending sits at the high end. It always starts with a free file review and a written, fixed-fee scope, so you see the price before any work begins." },
+    { q: "Why won&rsquo;t my CPA just file from the books I have?", a: "Because filing on unreconciled, miscategorized, or incomplete books risks a wrong return, and it&rsquo;s the CPA&rsquo;s name on it. A CPA files returns and advises on tax; they generally don&rsquo;t do the bookkeeping cleanup that gets a messy file to a filable state. That cleanup is a separate, bookkeeping job &mdash; which is what we do, before your CPA files." },
+    { q: "What does &ldquo;CPA-ready&rdquo; actually mean?", a: "It means every bank and credit-card account is reconciled to its statement, transactions are categorized correctly with no Ask-My-Accountant pile, the balance sheet ties, missing periods are caught up, duplicates are removed, and personal spending is separated from business. The output is financial statements &mdash; a profit-and-loss and balance sheet &mdash; that tie, ready to hand to your CPA." },
+    { q: "How long does it take to get the books ready?", a: "It depends on how far behind the file is. A few uncategorized months can be brought to CPA-ready quickly; multiple years of unreconciled, mixed books take longer. The free file review tells us the scope, and the written fixed-fee scope sets the timeline &mdash; we&rsquo;ll be honest about whether a looming deadline is realistic before you commit." },
+    { q: "Can you work with my existing CPA or tax preparer?", a: "Yes &mdash; that&rsquo;s the normal arrangement. We do the bookkeeping cleanup to a CPA-ready standard and hand the financial statements to your CPA or EA, who files the return and handles the tax advice. We stay in our lane (bookkeeping) and your CPA stays in theirs (filing and tax). You keep the CPA relationship you already have." },
+    { q: "My books are years behind &mdash; is that too far gone?", a: "No. Multi-year catch-up and cleanup is a defined project we do regularly &mdash; reconstructing missing periods from statements and records, reconciling every account, untangling personal from business, and bringing the file current. The free file review tells you exactly how far behind you are and what it takes to get CPA-ready, with a written fixed-fee scope before any work begins." },
+  ],
+  eleventyComputed: {
+    pageGraph(data){
+      const url="https://techbrot.com/quickbooks/help/books-not-ready-for-accountant/";
+      return {"@context":"https://schema.org","@graph":[
+        {"@type":"WebPage","@id":url+"#webpage","url":url,"name":data.title,"description":data.description,"isPartOf":{"@id":"https://techbrot.com/#website"},"about":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"inLanguage":"en-US","speakable":{"@type":"SpeakableSpecification","cssSelector":["#qb-help-books-not-ready-in-brief-text"]},"reviewedBy":{"@id":"https://techbrot.com/#david-westgate"}},
+        {"@type":"BreadcrumbList","@id":url+"#breadcrumb","itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://techbrot.com/"},
+          {"@type":"ListItem","position":2,"name":"QuickBooks","item":"https://techbrot.com/quickbooks/"},
+          {"@type":"ListItem","position":3,"name":"Help","item":"https://techbrot.com/quickbooks/help/"},
+          {"@type":"ListItem","position":4,"name":"Books Not Ready for Accountant","item":url}]},
+        {"@type":"TechArticle","@id":url+"#techarticle","headline":"QuickBooks Books Not Ready for Your Accountant? Get CPA-Ready","description":data.description,"about":{"@type":"SoftwareApplication","name":"QuickBooks","applicationCategory":"BusinessApplication","operatingSystem":"Web, Microsoft Windows"},"author":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"reviewedBy":{"@id":"https://techbrot.com/#david-westgate"},"inLanguage":"en-US","proficiencyLevel":"Beginner","mainEntityOfPage":{"@id":url+"#webpage"}},
+        {"@type":"HowTo","@id":url+"#howto","name":"How to get QuickBooks books ready for your accountant","description":"Bring a messy QuickBooks file to a CPA-ready standard in six ordered steps, from a free file review to handing CPA-ready statements to your CPA.","tool":[{"@type":"HowToTool","name":"QuickBooks Online or QuickBooks Desktop"},{"@type":"HowToTool","name":"Bank and credit-card statements"}],"step":data.fixSteps.map(function(s,i){return {"@type":"HowToStep","position":i+1,"name":stripTags(s.name),"text":stripTags(s.body),"url":url+"#qb-help-books-not-ready-fix"};})},
+        {"@type":"Service","@id":url+"#service","name":"QuickBooks cleanup and catch-up to a CPA-ready standard","serviceType":"QuickBooks bookkeeping cleanup, reconciliation, and catch-up to CPA-ready","areaServed":{"@type":"Country","name":"United States"},"provider":{"@id":"https://techbrot.com/#organization"},"offers":{"@type":"Offer","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","description":"Free file review; $1,500–$15,000+ fixed-fee cleanup depending on how far behind the books are"}}},
+        {"@type":"FAQPage","@id":url+"#faq","mainEntity":data.faq.map(function(i){return {"@type":"Question","name":stripTags(i.q),"acceptedAnswer":{"@type":"Answer","text":stripTags(i.a)}};})}
+      ]};
+    },
+  },
+};
