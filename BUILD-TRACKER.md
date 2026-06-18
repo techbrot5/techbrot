@@ -322,8 +322,10 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 492 · re-skinned (142) + growth = 350 · LAST COMMIT = round-80 switch-silo+reviews
-(6: /switch/ hub + from-bench + from-pilot + from-quickbooks-live + from-your-bookkeeper + /reviews/). Working tree clean on `preview-11ty`.
+**COUNT: total pages live = 514 · re-skinned (142) + growth = 372 · LAST COMMIT = round-81 resources-silo
+(22: /resources/ hub + /resources/guides/ hub + 13 guides + /resources/checklists/ hub + 6 checklists). Working tree clean on `preview-11ty`.
+RESOURCES ✅ DONE (t-guide guides + checklists, t-hub hubs; all free/no-gate; canonical pricing; Intuit/market figures deferred/dated; honesty held). Battery note: hubs need ≥6 FAQ (faq-min-6 gate) — caught+fixed 3 hubs that shipped with 5. NEXT batch group: (3) accounting-systems+platforms (6) · (4) tools proof · (5) blog proof.
+⚠ overlap flagged for founder: /resources/checklists/quickbooks-setup-checklist/ (condensed printable) vs /quickbooks/setup/checklist/ (full how-to) — built as cross-linked companion, confirm or merge.
 🎉 ACCOUNTING+QUICKBOOKS SILOS v4 ✅ COMPLETE (tasks #16–21). NOW: REMAINING-v4 BUILD (founder 2026-06-18, gap report this session). Confirmed order: (1) switch silo ✅ DONE · (2) resources guides+hub+checklists (~22) · (3) accounting-systems+platforms (6) · (4) tools/calculators (4, NEW type — 1 PROOF first, STOP) · (5) blog (~17, NEW type — PROOF first; seed-post count to confirm) · + /reviews/ ✅ DONE (2 real Clutch reviews, no AggregateRating, 301 removed).
 REMAINING after this batch (not yet scheduled): /vs/ additions (9), QB money pages (~18: hire-a-proadvisor, cost, catch-up, bookkeeping-services, inventory, emergency-triage, training×3, year-end-close, book-a-call, desktop-discontinuation, reverse-migrations×4, switching-away, proadvisor-near-me), coined-frameworks hub (6), industry high-fee (6), optional (~27). DEFERRED (real-data gate): results, case-studies, reviews-by-X, research flagships.
 NEXT (founder-gated, after remaining v4): FLIP-GATE — LIVE a11y/overflow probes (axe @360/390/768), real form handler, real Intuit badge, baseline-vs-live re-crawl.

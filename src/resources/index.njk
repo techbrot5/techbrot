@@ -1,0 +1,103 @@
+---json
+{
+  "layout": "layouts/t-hub.njk",
+  "permalink": "/resources/",
+  "slug": "resources-hub",
+  "title": "Free Accounting & QuickBooks Resources · TechBrot",
+  "description": "Free, genuinely useful accounting & QuickBooks resources from Certified ProAdvisors — plain-English guides, practical checklists, a glossary, and our original data. Independent firm, not Intuit. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Resources" }
+  ],
+  "heroFigure": false,
+  "hero": {
+    "eyebrow": "Resources",
+    "heading": "Free accounting & QuickBooks resources, from ProAdvisors.",
+    "subheading": "Free, genuinely useful accounting & QuickBooks resources from Certified ProAdvisors — plain-English guides, practical checklists, a plain-English glossary, and our original data. Everything here is free and written to actually help, with nothing gated behind a form. We're an independent firm — not affiliated with Intuit Inc. Browse the full library below.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Independent · not Intuit",
+      "Free · no gated fluff"
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> is an independent Certified QuickBooks ProAdvisor firm — <strong>not Intuit</strong>. This hub is our free resource library: plain-English <a href=\"/resources/guides/\">guides</a>, practical <a href=\"/resources/checklists/\">checklists</a>, a plain-English <a href=\"/glossary/\">glossary</a>, and our <a href=\"/resources/research/\">original research and data</a>. Everything is free and genuinely useful — written by Certified ProAdvisors to help you understand your books, not to sell you anything, and nothing is locked behind a form. The full library is below.",
+    "source": "Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not Intuit, and not Intuit's official software support. Not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Start with your real file",
+    "heading": "Ready for help with your own books?",
+    "lede": "Get a free QuickBooks file review or book a discovery call. We'll look at how your file is set up and show you exactly where setup or cleanup will help. No pitch. Independent firm — not Intuit.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY ── #}
+<section class="section section--compact" id="resources-hub-summary-sec">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In short</p>
+      <h2 class="section__heading">Everything in the resource library, free.</h2>
+    </header>
+    <p class="prose" id="resources-hub-summary">{{ summary | safe }}</p>
+  </div>
+</section>
+
+{# ── RESOURCE GRID · routes to each resource type (buyer-cards) ── #}
+{%- for group in resourceGroups %}
+<section class="section{% if loop.index is even %} section--alt{% endif %}" id="resources-hub-{{ group.id }}">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">{{ group.eyebrow | safe }}</p>
+      <h2 class="section__heading">{{ group.heading | safe }}</h2>
+      {%- if group.lede %}<p class="section__lede">{{ group.lede | safe }}</p>{%- endif %}
+    </header>
+    <div class="grid-3">
+      {%- for r in group.resources %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading">{{ r.title | safe }}</h3>
+        <p class="buyer-card__body">{{ r.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endfor %}
+
+{# ── CROSS-LINKS ── #}
+<section class="section section--compact" id="resources-hub-related">
+  <div class="container container--narrow">
+    <p class="prose">{{ relatedNote | safe }}</p>
+  </div>
+</section>
+
+{# ── FAQ ── #}
+<section class="section section--alt" id="resources-hub-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">Resource library questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="resources-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="resources-hub-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

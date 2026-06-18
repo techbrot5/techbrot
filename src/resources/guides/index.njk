@@ -1,0 +1,104 @@
+---json
+{
+  "layout": "layouts/t-hub.njk",
+  "permalink": "/resources/guides/",
+  "slug": "guides-hub",
+  "title": "Accounting & QuickBooks Guides · TechBrot",
+  "description": "Plain-English accounting and QuickBooks guides from Certified ProAdvisors — how bookkeeping, hiring, pricing, and compliance actually work for small businesses. Free to read, dated and reviewed. Independent firm, not Intuit. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Resources", "href": "/resources/" },
+    { "name": "Guides" }
+  ],
+  "heroFigure": false,
+  "hero": {
+    "eyebrow": "Resources · Guides",
+    "heading": "Plain-English guides from Certified ProAdvisors.",
+    "subheading": "Plain-English guides from Certified ProAdvisors — how bookkeeping, QuickBooks, hiring, pricing, and compliance actually work for small businesses. This hub routes to a dedicated guide for every topic, from bookkeeping basics and small-business accounting to QuickBooks cleanup, hiring a bookkeeper or fractional CFO, what bookkeeping really costs, payroll and sales-tax setup, and where AI fits in accounting in 2026. Every guide is written by our ProAdvisor team, dated, and reviewed for accuracy. Independent firm — not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Independent · not Intuit",
+      "Free to read · dated &amp; reviewed"
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> is an independent Certified QuickBooks ProAdvisor firm — <strong>not Intuit</strong>. These guides exist to be genuinely useful: plain-English explanations of how bookkeeping, QuickBooks, hiring, pricing, and compliance actually work for small businesses. Every guide is <strong>free to read</strong>, written by our ProAdvisor team, dated, and reviewed for accuracy. When we quote prices, we use our own <strong>canonical figures</strong>; Intuit and broader market figures are described and dated rather than guessed. The full guide library is below. Need help with your own books? Start with a <a href=\"/quickbooks/file-review/?intent=file-review\">free file review</a>.",
+    "source": "Library maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not Intuit, and not Intuit's official software support. Guides reflect our practice and publicly available information as of each guide's review date. QuickBooks and Intuit are registered trademarks of Intuit Inc. Not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Start with your real numbers",
+    "heading": "Guides are a start — your file is the answer.",
+    "lede": "Get a free QuickBooks file review or book a discovery call. We'll look at your actual books, show you exactly where setup or cleanup will help, and point you to the guides that fit your situation. No pitch. Independent firm — not Intuit.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY ── #}
+<section class="section section--compact" id="guides-hub-summary-sec">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In short</p>
+      <h2 class="section__heading">All 13 guides, in plain English.</h2>
+    </header>
+    <p class="prose" id="guides-hub-summary">{{ summary | safe }}</p>
+  </div>
+</section>
+
+{# ── GUIDE GRID · grouped by topic, 13 guide pages (buyer-cards) ── #}
+{%- for group in guideGroups %}
+<section class="section{% if loop.index is even %} section--alt{% endif %}" id="guides-hub-{{ group.id }}">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">{{ group.eyebrow | safe }}</p>
+      <h2 class="section__heading">{{ group.heading | safe }}</h2>
+      {%- if group.lede %}<p class="section__lede">{{ group.lede | safe }}</p>{%- endif %}
+    </header>
+    <div class="grid-3">
+      {%- for g in group.guides %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading">{{ g.title | safe }}</h3>
+        <p class="buyer-card__body">{{ g.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ g.href }}">{{ g.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endfor %}
+
+{# ── CROSS-LINKS ── #}
+<section class="section section--compact" id="guides-hub-related">
+  <div class="container container--narrow">
+    <p class="prose">{{ relatedNote | safe }}</p>
+  </div>
+</section>
+
+{# ── FAQ ── #}
+<section class="section section--alt" id="guides-hub-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">About these guides.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="guides-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="guides-hub-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
