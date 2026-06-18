@@ -1,0 +1,81 @@
+---json
+{
+  "layout": "layouts/t-hub.njk",
+  "permalink": "/blog/",
+  "slug": "blog-hub",
+  "title": "The TechBrot Blog · Bookkeeping, QuickBooks & Small-Business Finance",
+  "description": "Plain-English articles on bookkeeping, QuickBooks, payroll, taxes, and small-business finance from a Certified QuickBooks ProAdvisor team. Honest, practical, no fluff. Independent firm, not Intuit. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Blog" }
+  ],
+  "heroFigure": false,
+  "hero": {
+    "eyebrow": "The TechBrot blog",
+    "heading": "Bookkeeping, QuickBooks & business finance, explained straight.",
+    "subheading": "Practical, plain-English articles from a Certified QuickBooks ProAdvisor team &mdash; on keeping clean books, getting the most from QuickBooks, payroll and tax-season prep, and the financial fundamentals every owner should know. No fluff, no fabricated stats, and an honest take even when it&rsquo;s about AI or where we&rsquo;re not the right fit. Independent firm &mdash; not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
+      { "label": "Explore Services", "href": "/accounting/services/", "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Independent · not Intuit",
+      "Plain English · no fabricated stats"
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> is an independent Certified QuickBooks ProAdvisor firm &mdash; <strong>not Intuit</strong>. This is our blog: practical articles on <a href=\"/blog/category/bookkeeping/\">bookkeeping</a>, <a href=\"/blog/category/quickbooks/\">QuickBooks</a>, <a href=\"/blog/category/payroll/\">payroll</a>, <a href=\"/blog/category/taxes/\">tax-season prep</a>, and <a href=\"/blog/category/business-finance/\">business finance</a>, written to actually help &mdash; not to sell you anything and never padded with invented numbers. Everything here is general information, not tax, legal, or financial advice. The latest articles and all topics are below.",
+    "source": "Articles maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not Intuit. Not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Reading is a start",
+    "heading": "Want it done on your own books?",
+    "lede": "A free 30-minute discovery call with a Certified ProAdvisor turns any article into action on your actual file &mdash; a written fixed-fee scope within 3 business days, no hourly billing, no obligation. Independent firm &mdash; not Intuit.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="blog-hub-latest">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Latest</p>
+      <h2 class="section__heading">Recent articles.</h2>
+    </header>
+    {%- set posts = collections.post %}
+    {%- if posts and posts.length %}
+    <div class="grid-3">
+      {%- for post in posts | reverse %}
+      <article class="review-card">
+        <p class="team-card__role">{{ post.data.categoryLabel }} &middot; {{ post.data.dateDisplay }}</p>
+        <h3>{{ post.data.headline | safe }}</h3>
+        <p class="review-card__fact">{{ post.data.deck | safe }}</p>
+        <a class="review-card__link" href="{{ post.url }}">Read it <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </div>
+</section>
+
+<section class="section section--alt" id="blog-hub-topics">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Browse by topic</p>
+      <h2 class="section__heading">All categories.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for c in blogCategories %}
+      <article class="review-card">
+        <h3>{{ c.label | safe }}</h3>
+        <p class="review-card__fact">{{ c.blurb | safe }}</p>
+        <a class="review-card__link" href="/blog/category/{{ c.slug }}/">Browse {{ c.label | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

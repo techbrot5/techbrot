@@ -322,8 +322,18 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 528 (measured `find` count, non-dev) · re-skinned (142) + growth = 386 · LAST COMMIT = round-86 tools Wave 3 — TOOLS SILO COMPLETE
-(3: /tools/1099-deadline-calculator/ + /tools/quickbooks-plan-selector/ + /tools/sales-tax-rate-lookup/). Working tree clean on `preview-11ty`.
+**COUNT: total pages live = 545 (measured `find` count, non-dev) · re-skinned (142) + growth = 403 · LAST COMMIT = round-87 BLOG PROOF (NEW article type)
+(17: /blog/ hub + 8 category pages + 8 seed posts). Working tree clean on `preview-11ty`.
+⏸ STOP-AND-WAIT — BLOG NEW-TYPE PROOF GLANCE PENDING (founder). Report: `_build/reports/round-87.md`.
+BLOG PROOF ✅ BUILT, BATTERY GREEN. NEW article type. Architecture: t-article layout (firm byline-block + dates, founder-name-zero) · blogCategories.js
+→ paginated category.njk generates all 8 category pages · posts as .md in src/blog/posts/ with shared posts.11tydata.js (centralized
+BlogPosting+WebPage+Breadcrumb+FAQPage schema) · 11ty auto-collections by tag (collections.post + per-category). 8 seed posts (one per category),
+~900–1200 words, 6-FAQ each, internal links to money pages, honest canonical CTAs. HONESTY: zero fabricated stats/partners/testimonials;
+partner-spotlight seed is about the PROGRAM (real partner stories only with permission); taxes post stays in-lane ("we don't file taxes"); AI post =
+honest "assisted not replaced". Battery GREEN (faq-min-6 caught 8 posts at 5→fixed to 6; intent partner→partner-question fixed).
+NEXT (after founder glance): more posts per category as desired, OR next backlog lane (/vs/ additions 7 · QB money pages ~18 · coined-frameworks hub 6 ·
+industry high-fee 6 · pricing/partners/trust/legal/careers children).
+TOOLS/CALCULATORS SILO ✅ COMPLETE (rounds 83–86) — detail retained below.
 🎉 TOOLS/CALCULATORS SILO ✅ COMPLETE (10 pages = /tools/ hub + 9 tools). Rounds 83–86, all battery GREEN. Three JS islands, all client-only/CLS-0/no-network:
   tb-calc.js (band estimators: bookkeeping, cleanup, payroll — canonical-slice bands, can't exceed published ranges) ·
   tb-formula.js (arithmetic on user's OWN numbers: breakeven, cash-runway, budget-worksheet — honest edge handling, math unit-tested) ·

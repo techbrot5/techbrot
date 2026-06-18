@@ -1,0 +1,113 @@
+---
+pagination:
+  data: blogCategories
+  size: 1
+  alias: cat
+layout: layouts/t-mofu.njk
+chrome: full
+callBar: true
+pageTier: mofu
+bodyClass: page--mofu
+eleventyComputed:
+  permalink: "/blog/category/{{ cat.slug }}/"
+  slug: "blogcat-{{ cat.slug }}"
+  title: "{{ cat.label | safe }} Articles · TechBrot Blog"
+  description: "{{ cat.blurb | safe }} Independent Certified QuickBooks ProAdvisor firm — not Intuit. Call (877) 751-5575."
+  breadcrumb:
+    - name: "Home"
+      href: "/"
+    - name: "Blog"
+      href: "/blog/"
+    - name: "{{ cat.label | safe }}"
+  hero:
+    eyebrow: "Blog category"
+    heading: "{{ cat.label | safe }}"
+    subheading: "{{ cat.blurb | safe }}"
+    actions:
+      - label: "Book the discovery call"
+        href: "/contact/?intent=accounting"
+        class: "btn--primary"
+      - label: "Explore Services"
+        href: "/accounting/services/"
+        class: "btn--ghost"
+  ctaBand:
+    eyebrow: "From reading to doing"
+    heading: "Want this handled on your own books?"
+    lede: "Articles explain the what and the why. A free 30-minute discovery call with a Certified ProAdvisor turns it into action on your actual file — a written fixed-fee scope within 3 business days, no obligation."
+    actions:
+      - label: "Book the discovery call"
+        href: "/contact/?intent=accounting"
+        class: "btn--primary"
+      - label: "Speak to a ProAdvisor"
+        tel: true
+        class: "btn--ghost"
+  pageGraph:
+    "@context": "https://schema.org"
+    "@graph":
+      - "@type": "CollectionPage"
+        "@id": "https://techbrot.com/blog/category/{{ cat.slug }}/#webpage"
+        url: "https://techbrot.com/blog/category/{{ cat.slug }}/"
+        name: "{{ cat.label | safe }} Articles"
+        description: "{{ cat.blurb | safe }}"
+        isPartOf:
+          "@id": "https://techbrot.com/#website"
+        about:
+          "@id": "https://techbrot.com/#organization"
+        publisher:
+          "@id": "https://techbrot.com/#organization"
+        inLanguage: "en-US"
+      - "@type": "BreadcrumbList"
+        "@id": "https://techbrot.com/blog/category/{{ cat.slug }}/#breadcrumb"
+        itemListElement:
+          - "@type": "ListItem"
+            position: 1
+            name: "Home"
+            item: "https://techbrot.com/"
+          - "@type": "ListItem"
+            position: 2
+            name: "Blog"
+            item: "https://techbrot.com/blog/"
+          - "@type": "ListItem"
+            position: 3
+            name: "{{ cat.label | safe }}"
+            item: "https://techbrot.com/blog/category/{{ cat.slug }}/"
+---
+
+<section class="section" id="{{ slug }}-list">
+  <div class="container">
+    {%- set posts = collections[cat.slug] %}
+    {%- if posts and posts.length %}
+    <div class="grid-3">
+      {%- for post in posts | reverse %}
+      <article class="review-card">
+        <p class="team-card__role">{{ post.data.categoryLabel }} &middot; {{ post.data.dateDisplay }}</p>
+        <h2>{{ post.data.headline | safe }}</h2>
+        <p class="review-card__fact">{{ post.data.deck | safe }}</p>
+        <a class="review-card__link" href="{{ post.url }}">Read it <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      {%- endfor %}
+    </div>
+    {%- else %}
+    <div class="in-brief">
+      <p class="in-brief__text">New {{ cat.label | safe }} articles are on the way. In the meantime, <a href="/blog/">browse the full blog</a> or <a href="/contact/?intent=accounting">book a free discovery call</a> with a Certified ProAdvisor.</p>
+    </div>
+    {%- endif %}
+  </div>
+</section>
+
+<section class="section section--alt" id="{{ slug }}-browse">
+  <div class="container container--narrow">
+    <blockquote class="pull-quote">We write these to actually help &mdash; plain English, real substance, and an honest answer even when it&rsquo;s that you don&rsquo;t need us.</blockquote>
+    <header class="section__header">
+      <p class="section__eyebrow">Browse by topic</p>
+      <h2 class="section__heading">Other categories.</h2>
+    </header>
+    <div class="checks-list">
+      {%- for c in blogCategories %}
+      {%- if c.slug != cat.slug %}
+      <p><a href="/blog/category/{{ c.slug }}/">{{ c.label | safe }}</a> &mdash; {{ c.blurb | safe }}</p>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
