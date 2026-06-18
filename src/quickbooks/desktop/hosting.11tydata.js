@@ -1,0 +1,80 @@
+/* /quickbooks/desktop/hosting/ (a topic/explainer page in the QuickBooks Desktop
+ * silo — "hosting QuickBooks Desktop in the cloud"). Pattern cloned from the proven
+ * help-symptom page (help/bank-feeds-not-working) and the t-guide tier. Citable: why
+ * businesses host Desktop + the before-you-host considerations (HowTo). Sheet-7
+ * honest-triage: .disclosure above the fold; first FAQ = "Are you a QuickBooks
+ * hosting provider / Intuit?" -> No, plainly; never "official"; we are NOT a hosting
+ * provider and NOT Intuit; phone = "Speak to a ProAdvisor" (canonical lexicon) +
+ * "(independent firm)" in copy; Intuit link rel=nofollow; provider/publisher always
+ * #organization; reviewedBy = #david-westgate (schema only). No invented prices, no
+ * fabricated internals, no named hosts. CTA: file-review primary, phone tertiary,
+ * discovery call (/contact/?intent=quickbooks). Authorship firm-level; founder
+ * schema-only. Independent firm; not affiliated with Intuit Inc. */
+function stripTags(html){return html.replace(/<[^>]+>/g,"").replace(/&rsquo;/g,"’").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&mdash;/g,"—").replace(/&ndash;/g,"–").replace(/&rarr;/g,"→").replace(/&amp;/g,"&").replace(/&nbsp;/g," ").replace(/&middot;/g,"·").replace(/&em;/g,"").replace(/\s+/g," ").trim();}
+module.exports = {
+  // quick-5 — distinct from FAQ (what / how-it-works / authorized-host / data-backup / bridge-to-online)
+  aiSummary: [
+    { q: "What does hosting QuickBooks Desktop in the cloud mean?", a: "It means running your installed QuickBooks Desktop software and company file on a <strong>remote server</strong> instead of a single office PC, so you and your team sign in from anywhere and work in the file together. It is still QuickBooks Desktop &mdash; what changes is where it runs &mdash; delivered through an Intuit-authorized commercial host or Intuit&rsquo;s own hosting add-on." },
+    { q: "Why do businesses host QuickBooks Desktop?", a: "To get <strong>remote, anywhere access</strong> and <strong>multi-user</strong> access while staying on QuickBooks Desktop rather than switching products. It suits teams working from home or across multiple locations, and anyone who relies on Desktop-only features but no longer wants the file locked to one computer." },
+    { q: "Can you host QuickBooks Desktop on any server?", a: "No &mdash; to stay within QuickBooks licensing, hosting must run on an <strong>Intuit-authorized commercial hosting provider</strong> or through <strong>Intuit&rsquo;s own hosting add-on</strong>. Putting a licensed Desktop file on an unauthorized server can breach the license, so the choice of an authorized, reputable host matters." },
+    { q: "What happens to my data and backups when Desktop is hosted?", a: "Your company file and its backups move to the host&rsquo;s servers, so where the data lives, how often it&rsquo;s backed up, and how it&rsquo;s secured become the host&rsquo;s responsibility &mdash; which is why a reputable authorized host with clear backup, security, and data-access terms is essential before you migrate the file." },
+    { q: "Is hosting the same as QuickBooks Online?", a: "No. QuickBooks Online is a separate, browser-native cloud product; hosting is your existing <strong>Desktop</strong> file delivered over the cloud. Hosting is often a <strong>bridge</strong> &mdash; it gives remote access on Desktop now, and many businesses ultimately move to QuickBooks Online for native cloud later." },
+  ],
+  // Why businesses host — the citable reasons. Accurate, general; no invented stats or named hosts.
+  reasons: [
+    { rank: "Reason 01", name: "Remote, anywhere access on the Desktop file", body: "The core driver. Hosting lifts the company file off one office PC and onto a server you sign in to from home, on the road, or across offices &mdash; so the team works in the same Desktop file from anywhere, without leaving a copy on a local machine or emailing files back and forth." },
+    { rank: "Reason 02", name: "Multi-user access without a local network", body: "Several people can be in the hosted file at once, the way Desktop multi-user works on an office network &mdash; but delivered over the cloud, so multi-location teams collaborate in real time without maintaining their own server or VPN." },
+    { rank: "Reason 03", name: "Staying on Desktop, not switching products", body: "Some businesses depend on Desktop-specific features, an established Desktop file, or integrated apps that aren&rsquo;t a clean fit for QuickBooks Online. Hosting gives cloud-style access while keeping the exact Desktop product and file they already run." },
+    { rank: "Reason 04", name: "It runs on an authorized host, within licensing", body: "Done correctly, hosting uses an Intuit-authorized commercial host or Intuit&rsquo;s own hosting add-on, so your licensed Desktop stays compliant. The host handles the server, updates, and access; you keep working in the same QuickBooks Desktop you know." },
+    { rank: "Bridge", name: "A bridge before a possible move to Online", body: "For many businesses hosting is a transitional step: it solves remote access on Desktop today, while a move to QuickBooks Online for native cloud is weighed for later. It buys time and flexibility without forcing an immediate migration." },
+  ],
+  // Before-you-host considerations — the ordered HowTo sequence. Practical, accurate, general. #1 = licensing (non-negotiable).
+  considerations: [
+    { name: "Confirm the host is Intuit-authorized", body: "This comes first and is non-negotiable for licensing. Use an Intuit-authorized commercial hosting provider, or Intuit&rsquo;s own hosting add-on for supported Desktop products. Hosting a licensed Desktop file on an unauthorized server can breach the QuickBooks license &mdash; verify authorization before anything else." },
+    { name: "Check how backups and data security are handled", body: "Once the file is hosted, your data and its backups live on the host&rsquo;s servers. Confirm how often backups run, where they&rsquo;re stored, how restores work, and what security and encryption the host provides &mdash; in writing &mdash; before you move the company file." },
+    { name: "Confirm data ownership and exit terms", body: "Make sure the agreement is clear that the data remains yours and that you can export or retrieve your company file if you leave the host. Knowing how you get your file back &mdash; and in what format &mdash; protects you long before you ever need it." },
+    { name: "Size the users, performance, and add-ons", body: "Decide how many users need access, which integrated apps and printers must work in the hosted environment, and what performance you need. A reputable host will scope this with you so multi-user access and your essential add-ons are configured correctly from day one." },
+    { name: "Decide whether hosting is the destination or a bridge", body: "Be deliberate about whether hosting is the long-term home or a step toward QuickBooks Online. Weighing native-cloud Online against hosted Desktop now &mdash; against your features, team, and budget &mdash; saves a second migration later. A ProAdvisor can help you compare honestly." },
+  ],
+  proSignals: [
+    { name: "You&rsquo;re choosing a host and setting it up", body: "Picking a reputable authorized host, then setting up and optimizing QuickBooks Desktop in the hosted environment &mdash; multi-user access, backups, and integrated apps configured correctly &mdash; is where a ProAdvisor saves you from a misconfigured start that&rsquo;s painful to unwind later." },
+    { name: "You need the books kept clean in the hosted file", body: "Hosting moves where the file lives; it doesn&rsquo;t do the bookkeeping. If you want categorization, reconciliation, and reporting handled accurately inside your hosted Desktop file against a written scope, that&rsquo;s the ongoing ProAdvisor work &mdash; not something the host provides." },
+    { name: "You&rsquo;re weighing Desktop hosting vs. moving to Online", body: "If you&rsquo;re unsure whether to host Desktop or migrate to QuickBooks Online, an independent ProAdvisor compares them honestly against your features and team &mdash; and scopes a clean migration if Online turns out to be the better home, so you don&rsquo;t migrate twice." },
+  ],
+  related: [
+    { title: "QuickBooks Desktop", href: "/quickbooks/desktop/", body: "The full QuickBooks Desktop overview &mdash; what Desktop is, who it still suits, and the support and bookkeeping an independent ProAdvisor firm provides for a Desktop file, hosted or local." },
+    { title: "QuickBooks Desktop multi-user setup", href: "/quickbooks/desktop/multi-user-setup/", body: "Hosting is one way to get several people into the same Desktop file; multi-user mode is the other. How multi-user setup works, what it needs, and where it overlaps with &mdash; or differs from &mdash; a hosted environment." },
+    { title: "QuickBooks Online vs. Desktop", href: "/quickbooks/compare/online-vs-desktop/", body: "Because hosting is often a bridge, the honest comparison matters: native-cloud QuickBooks Online versus hosted QuickBooks Desktop, feature by feature, so you choose the right long-term home before migrating." },
+  ],
+  operatorSpec: [
+    { value: "Free", label: "file review first — we look before we scope" },
+    { value: "Not a host", label: "we don&rsquo;t sell hosting — we set up, optimize &amp; keep the books in your file" },
+    { value: "Independent", label: "Certified ProAdvisor firm — not Intuit, not a hosting provider" },
+  ],
+  faq: [
+    { q: "Are you a QuickBooks hosting provider, or Intuit?", a: "No to both. TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; we do not sell or operate QuickBooks hosting, and we are not Intuit or Intuit&rsquo;s official support. Hosting itself is delivered by Intuit-authorized commercial hosts or by Intuit&rsquo;s own hosting add-on. What we do is help you choose a reputable authorized host, set up and optimize Desktop in that environment, and do the bookkeeping inside your own file. QuickBooks and Intuit are registered trademarks of Intuit Inc." },
+    { q: "What does it mean to host QuickBooks Desktop in the cloud?", a: "It means running your installed QuickBooks Desktop software and company file on a remote server rather than a single office computer, so you and your team sign in from anywhere and work in the file together. It is still QuickBooks Desktop &mdash; what changes is where the program and file actually run &mdash; giving cloud-style remote and multi-user access without switching products." },
+    { q: "Can I host QuickBooks Desktop on any cloud server?", a: "No &mdash; to stay within QuickBooks licensing, hosting must run on an Intuit-authorized commercial hosting provider or through Intuit&rsquo;s own hosting add-on for supported Desktop products. Placing a licensed Desktop file on an unauthorized server can breach the license, so verifying that a host is authorized is the first thing to confirm before you move the file." },
+    { q: "What happens to my data and backups when Desktop is hosted?", a: "Your company file and its backups move to the host&rsquo;s servers, so backup frequency, storage location, restores, and security become the host&rsquo;s responsibility. Before migrating the file, confirm in writing how backups run, how you&rsquo;d restore data, what security the host provides, and that the data remains yours with a clear way to retrieve it if you leave." },
+    { q: "Is hosted QuickBooks Desktop the same as QuickBooks Online?", a: "No. QuickBooks Online is a separate, browser-native cloud product built for the web. Hosting is your existing QuickBooks Desktop file delivered over the cloud from a remote server. They feel different and have different features &mdash; which is why hosting is often a bridge: it gives remote access on Desktop now, and many businesses ultimately move to QuickBooks Online for native cloud later." },
+    { q: "Should I host Desktop or move to QuickBooks Online?", a: "It depends on your features, team, integrated apps, and budget. Hosting keeps you on the exact Desktop product and file you run today with remote, multi-user access; QuickBooks Online is native cloud but a different product. Many businesses host as a bridge and migrate later. An independent ProAdvisor can compare the two honestly and scope a clean migration if Online is the better long-term home." },
+    { q: "What can you actually help with around hosting?", a: "We help you choose a reputable Intuit-authorized host, set up and optimize QuickBooks Desktop in the hosted environment so multi-user access and backups are configured correctly, and run the bookkeeping inside your hosted file against a written scope &mdash; or scope a migration to QuickBooks Online if that fits better. We don&rsquo;t sell hosting and we&rsquo;re not Intuit; the hosting product and your Intuit account stay with the host and Intuit." },
+  ],
+  eleventyComputed: {
+    pageGraph(data){
+      const url="https://techbrot.com/quickbooks/desktop/hosting/";
+      return {"@context":"https://schema.org","@graph":[
+        {"@type":"WebPage","@id":url+"#webpage","url":url,"name":data.title,"description":data.description,"isPartOf":{"@id":"https://techbrot.com/#website"},"about":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"inLanguage":"en-US","speakable":{"@type":"SpeakableSpecification","cssSelector":["#qb-desktop-hosting-in-brief-text"]},"reviewedBy":{"@id":"https://techbrot.com/#david-westgate"}},
+        {"@type":"BreadcrumbList","@id":url+"#breadcrumb","itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://techbrot.com/"},
+          {"@type":"ListItem","position":2,"name":"QuickBooks","item":"https://techbrot.com/quickbooks/"},
+          {"@type":"ListItem","position":3,"name":"Desktop","item":"https://techbrot.com/quickbooks/desktop/"},
+          {"@type":"ListItem","position":4,"name":"Hosting","item":url}]},
+        {"@type":"TechArticle","@id":url+"#techarticle","headline":"Hosting QuickBooks Desktop in the Cloud: What to Know","description":data.description,"about":{"@type":"SoftwareApplication","name":"QuickBooks Desktop","applicationCategory":"BusinessApplication","operatingSystem":"Microsoft Windows"},"author":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"reviewedBy":{"@id":"https://techbrot.com/#david-westgate"},"inLanguage":"en-US","proficiencyLevel":"Beginner","mainEntityOfPage":{"@id":url+"#webpage"}},
+        {"@type":"HowTo","@id":url+"#howto","name":"What to settle before hosting QuickBooks Desktop in the cloud","description":"Five things to confirm before moving a QuickBooks Desktop company file to a hosted environment, starting with the Intuit-authorized-host requirement.","tool":[{"@type":"HowToTool","name":"QuickBooks Desktop"},{"@type":"HowToTool","name":"An Intuit-authorized commercial hosting provider or Intuit hosting add-on"}],"step":data.considerations.map(function(s,i){return {"@type":"HowToStep","position":i+1,"name":stripTags(s.name),"text":stripTags(s.body),"url":url+"#qb-desktop-hosting-considerations"};})},
+        {"@type":"Service","@id":url+"#service","name":"QuickBooks Desktop hosting setup and bookkeeping support","serviceType":"QuickBooks Desktop hosted-environment setup, optimization, and bookkeeping","areaServed":{"@type":"Country","name":"United States"},"provider":{"@id":"https://techbrot.com/#organization"},"offers":{"@type":"Offer","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","description":"Free file review; written scope before any work begins"}}},
+        {"@type":"FAQPage","@id":url+"#faq","mainEntity":data.faq.map(function(i){return {"@type":"Question","name":stripTags(i.q),"acceptedAnswer":{"@type":"Answer","text":stripTags(i.a)}};})}
+      ]};
+    },
+  },
+};

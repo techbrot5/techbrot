@@ -1,0 +1,212 @@
+---json
+{
+  "layout": "layouts/t-guide.njk",
+  "permalink": "/quickbooks/desktop/multi-user-setup/",
+  "slug": "qb-desktop-multi-user",
+  "tierClass": "section--tier-guide",
+  "bodyClass": "page--mofu",
+  "title": "QuickBooks Desktop Multi-User Setup: Step by Step · TechBrot",
+  "description": "QuickBooks Desktop multi-user setup, step by step. An independent Certified QuickBooks ProAdvisor firm explains what multi-user mode does, how to set it up &mdash; Database Server Manager, host, folder permissions, firewall, users, and switching to multi-user mode &mdash; and when the H101/H202/H303/H505 hosting errors mean it&rsquo;s a ProAdvisor call. Not Intuit, not Intuit&rsquo;s official support. (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "QuickBooks", "href": "/quickbooks/" },
+    { "name": "Desktop", "href": "/quickbooks/desktop/" },
+    { "name": "Multi-User Setup" }
+  ],
+  "hero": {
+    "eyebrow": "QuickBooks Desktop &middot; <span class=\"error-badge\">Multi-user</span>",
+    "heading": "QuickBooks Desktop multi-user setup: step by step.",
+    "subheading": "Multi-user mode lets several people work in one QuickBooks Desktop company file at the same time over a network &mdash; the file lives on a host computer and other computers connect to it. Setting it up means installing the <code>QuickBooks Database Server Manager</code> on the host, storing and sharing the company file, hosting multi-user access, configuring folder permissions and the Windows firewall, adding users with role permissions, and switching to multi-user mode. Below the steps: when the H-series hosting errors mean it&rsquo;s a ProAdvisor call. Independent firm, not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>QuickBooks Desktop multi-user mode</strong> lets several people open and work in one company file at the same time over a local network. The file is stored on one computer &mdash; the host &mdash; and other computers connect to it across the network. Setting it up correctly takes a short, ordered sequence: install the <code>QuickBooks Database Server Manager</code> on the host, store the company file on the host in a shared folder, set the host to host multi-user access, configure the folder permissions and Windows firewall, add a user with role permissions for each person, then switch to multi-user mode. When a workstation can&rsquo;t reach the file on the host, QuickBooks shows an <code>H101</code>, <code>H202</code>, <code>H303</code>, or <code>H505</code> hosting error &mdash; the same setup steps are what resolve them.",
+    "source": "Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not Intuit, and not Intuit&rsquo;s official software support. Not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Hosting errors won&rsquo;t clear, or moving to a new server?",
+    "heading": "Setup won&rsquo;t hold? Get the file and the setup reviewed.",
+    "lede": "If the H-series errors keep returning, permissions and firewall are inconsistent across machines, or you&rsquo;re moving the company file to a new host, the fix is a correct multi-user configuration &mdash; not another reconnect. Start with a free file review; we set hosting, role permissions, and the books up correctly against a written scope before any work begins. Independent ProAdvisor firm.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section section--compact" id="qb-desktop-multi-user-disclosure">
+  <div class="container container--narrow">
+    <div class="disclosure">
+      <strong>This is an independent Certified QuickBooks ProAdvisor reference &mdash; not Intuit, and not QuickBooks&rsquo; official support.</strong> If your problem is really an Intuit account, login, password, subscription, licensing, or billing issue, Intuit&rsquo;s own support is the right path: <a href="https://quickbooks.intuit.com/learn-support/" rel="noopener nofollow">Intuit support <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>. What we do is the operational work inside your own books &mdash; setting up multi-user mode and keeping the books. QuickBooks and Intuit are registered trademarks of Intuit Inc.
+    </div>
+  </div>
+</section>
+
+<section class="section section--compact" id="qb-desktop-multi-user-byline">
+  <div class="container container--narrow">
+    <div class="byline-block">
+      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; Online &amp; Desktop certified</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qb-desktop-multi-user-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In plain terms</p>
+      <h2 class="section__heading">What multi-user mode does.</h2>
+    </header>
+    <div class="prose">
+      <p>Multi-user mode lets several people open and work in the same QuickBooks Desktop company file at the same time over a local network. Instead of one person at a time in single-user mode, a bookkeeper, an owner, and a clerk can all be in the books at once &mdash; entering invoices, reconciling, and running reports without taking turns. The company file itself lives on one computer, the <em>host</em>, and every other computer connects to it across the network rather than keeping its own copy, so everyone is always working in one shared set of books.</p>
+      <p>Making that work takes a few pieces in place: the <code>QuickBooks Database Server Manager</code> installed on the host to serve the file, the company file stored in a shared folder, the host set to host multi-user access, Windows folder permissions and the firewall configured to allow the connection, and a user account with role permissions for each person. When a workstation can&rsquo;t reach the file on the host &mdash; usually a hosting, firewall, permission, or <code>QuickBooks Database Server Manager</code> issue &mdash; QuickBooks returns an <code>H</code>-series error. And if the underlying issue is your Intuit account, licensing, or billing, that&rsquo;s Intuit&rsquo;s to resolve, not something an independent firm can reach.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qb-desktop-multi-user-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Multi-user setup, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qb-desktop-multi-user-needs">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What you need</p>
+      <h2 class="section__heading">What multi-user mode requires.</h2>
+      <p class="section__lede">The setup steps put these in place in the same order &mdash; so working through them in sequence stands up multi-user mode cleanly.</p>
+    </header>
+    <div class="grid-2">
+      {%- for c in causes %}
+      <div class="stack-8">
+        <p class="section__eyebrow">{{ c.rank }}</p>
+        <h3>{{ c.name | safe }}</h3>
+        <p class="prose">{{ c.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qb-desktop-multi-user-fix">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The setup</p>
+      <h2 class="section__heading">How to set up multi-user mode.</h2>
+      <p class="section__lede">Six steps, in order, all on the host first. If a workstation returns an <code>H</code>-series error after the last step, it can&rsquo;t reach the file &mdash; revisit hosting, permissions, and the firewall, or get the setup reviewed.</p>
+    </header>
+    <ol class="fix-steps">
+      {%- for s in fixSteps %}
+      <li>
+        <span class="n">{{ loop.index }}</span>
+        <div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section section--alt" id="qb-desktop-multi-user-signals">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">When to call</p>
+      <h2 class="section__heading">When a ProAdvisor should help.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for p in proSignals %}
+      <div class="stack-8">
+        <h3>{{ p.name | safe }}</h3>
+        <p class="prose">{{ p.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qb-desktop-multi-user-breakout">
+  <div class="container container--narrow">
+    <div class="call-breakout">
+      <div>
+        <p class="call-breakout__title">Hosting errors won&rsquo;t clear, or moving to a new server?</p>
+        <p class="call-breakout__sub">A Certified ProAdvisor reviews the file free, then sets up the host, the <code>QuickBooks Database Server Manager</code>, permissions, firewall, and role-based users &mdash; against a written scope before any work begins. Independent firm.</p>
+      </div>
+      <a class="btn btn--primary" href="/quickbooks/file-review/?intent=file-review">Get the free file review</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="qb-desktop-multi-user-operator">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Who sets it up</p>
+      <h2 class="section__heading">A Certified ProAdvisor sets up multi-user and keeps the books.</h2>
+    </header>
+    <div class="prose">
+      <p>Turning on multi-user mode is the easy part. The work that makes it hold is everything around it: installing and scanning with the <code>QuickBooks Database Server Manager</code> on the host, getting Windows folder permissions and the firewall right so the <code>H101</code>, <code>H202</code>, <code>H303</code>, and <code>H505</code> errors don&rsquo;t return, configuring role permissions so each person sees only what they should, and confirming the books reconcile before more than one person starts working in the file. A Certified QuickBooks ProAdvisor with active Online and Desktop certifications does that against a written scope. Independent firm &mdash; not Intuit, and not Intuit&rsquo;s software support; an Intuit account, licensing, or billing matter stays with Intuit.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in operatorSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="qb-desktop-multi-user-related">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Where this leads next</p>
+      <h2 class="section__heading">If the hosting errors won&rsquo;t clear.</h2>
+    </header>
+    {%- for n in related %}
+    <div class="stack-8">
+      <h3><a href="{{ n.href }}"{% if n.rel %} rel="{{ n.rel }}"{% endif %}>{{ n.title | safe }}</a></h3>
+      <p class="prose">{{ n.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="section section--alt" id="qb-desktop-multi-user-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">What people ask about multi-user setup.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qb-desktop-multi-user-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="qb-desktop-multi-user-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-18</span><span>Updated: 2026-06-18</span><span>Reviewed: 2026-06-18 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
