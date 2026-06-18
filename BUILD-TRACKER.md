@@ -322,11 +322,12 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 307 · re-skinned (142) + growth = 165 · LAST COMMIT = round-56 TX-cities-w2
-(5 cities: Plano, Corpus Christi, Lubbock, Laredo, Killeen + TX cities-hub & pillar wired). Working tree clean on `preview-11ty`.
+**COUNT: total pages live = 312 · re-skinned (142) + growth = 170 · LAST COMMIT = round-57 FL-cities-w2
+(5 cities: Tallahassee, West Palm Beach, Fort Myers, Gainesville, Lakeland + FL cities-hub & pillar wired). Working tree clean on `preview-11ty`.
 ✅✅ ALL FIVE DEPTH STATES COMPLETE: NY (39) · CA (39) · TX · FL · IL.
-🌱 FOUNDER CHOSE (B) MORE DEPTH ON THE 5 (2026-06-18) → executing as the CITY-CHILD CALLS ENGINE: bring TX/FL/IL from 6 cities up toward NY/CA's 11, genuinely distinct economies (mad-libs fails), then wire each state's cities-hub + pillar. Wave order: TX ✅ → FL (next) → IL.
-CITY DEPTH: NY 11 · CA 11 · TX 11 ✅ (Houston·Dallas·Austin·San Antonio·Fort Worth·El Paso·Plano·Corpus Christi·Lubbock·Laredo·Killeen) · FL 6 (→11 next) · IL 6 (→11 after).
+🌱 FOUNDER CHOSE (B) MORE DEPTH ON THE 5 (2026-06-18) → CITY-CHILD CALLS ENGINE: bring TX/FL/IL from 6 cities up toward NY/CA's 11, distinct economies, wire each state's cities-hub + pillar. Wave order: TX ✅ → FL ✅ → IL (next, LAST).
+CITY DEPTH: NY 11 · CA 11 · TX 11 ✅ · FL 11 ✅ (Miami·Orlando·Tampa·Jacksonville·Fort Lauderdale·St Petersburg·Tallahassee·West Palm Beach·Fort Myers·Gainesville·Lakeland) · IL 6 (→11 next).
+FL wave-2 economies (distinct): Tallahassee=state-capital/universities · West Palm Beach=finance/wealth (Wall Street South) · Fort Myers=SWFL construction/retirement · Gainesville=UF/biotech · Lakeland=I-4 logistics/ag. FL stack post-correction (no commercial-rent; DR-405/services/5.5% C-corp).
 TX wave-2 economies (distinct): Plano=corporate-HQ · Corpus Christi=energy-export/refining/port · Lubbock=cotton-agribusiness+Texas Tech · Laredo=#1 land-port trade corridor (deliberately differentiated from El Paso) · Killeen=Fort Cavazos military.
 ⛔ FLIP-BLOCKER #6 grows: these 5 TX cities join the inferred-clean list (static-proxy + byte-equivalence) — LIVE axe/overflow on founder's machine still pending before flip.
 IL = pillar(re-linked) + 6 cities + cities-hub + 6 money + 6 QB spokes + 3 bkg + 4 tax/triage + industries(hub+6). Templates: city-child · state-service · state-triage · state-industry · pillar.
