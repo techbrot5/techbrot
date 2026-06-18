@@ -14,13 +14,25 @@ const fs = require("fs");
 const path = require("path");
 function stripTags(html){return html.replace(/<[^>]+>/g,"").replace(/&rsquo;/g,"’").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&mdash;/g,"—").replace(/&ndash;/g,"–").replace(/&rarr;/g,"→").replace(/&amp;/g,"&").replace(/&nbsp;/g," ").replace(/&middot;/g,"·").replace(/\s+/g," ").trim();}
 
-// Read the live dataset — N is HONEST, computed from the committed data file.
+// Read the live datasets — every N is HONEST, computed from the committed data files.
+function readN(file){ try { const d = JSON.parse(fs.readFileSync(path.join(__dirname, "../../../_build/data/" + file), "utf8")); return Array.isArray(d.records) ? d.records.length : 0; } catch (e) { return 0; } }
 let dataset = { records: [], _started: "2026-06-14" };
 try { dataset = JSON.parse(fs.readFileSync(path.join(__dirname, "../../../_build/data/cleanup-benchmarks.json"), "utf8")); } catch (e) {}
 const N = Array.isArray(dataset.records) ? dataset.records.length : 0;
+// The 6-dataset original-data program (founder 2026-06-18). Each N read live; "collecting"
+// until real data accrues. NO statistic publishes on any breakdown until N>=20 (standing rule).
+const datasets = [
+  { name: "US QuickBooks Cleanup Benchmarks", captures: "What a QuickBooks cleanup actually costs and involves &mdash; by how far behind the books were, industry, and transaction volume.", n: readN("cleanup-benchmarks.json"), flagship: true },
+  { name: "US QuickBooks Migration Outcomes", captures: "What breaks in a Desktop&rarr;Online (or platform) migration, the ProAdvisor hours it takes, and the closing cost.", n: readN("migration-outcomes.json") },
+  { name: "Lead-Source &amp; Page-Performance", captures: "How clients actually find us &mdash; including which AI assistants recommend us &mdash; and which page types convert. (Internal-priority; no external figure until a real denominator and N&ge;20.)", n: readN("lead-source-performance.json") },
+  { name: "QuickBooks Error &amp; Symptom Intelligence", captures: "The real root causes behind QuickBooks errors and symptoms, and what it actually takes to resolve them.", n: readN("error-intelligence.json") },
+  { name: "Books-Health Benchmarks by Industry", captures: "How far behind books arrive and what&rsquo;s most often broken, by industry and state.", n: readN("industry-benchmarks.json") },
+  { name: "QuickBooks Systems-Selection Outcomes", captures: "QuickBooks Online vs Desktop vs Enterprise &mdash; what drives the choice and what businesses actually pick.", n: readN("systems-selection.json") },
+];
 
 module.exports = {
   datasetN: N,
+  datasets: datasets,
   // The 8 logged fields — the locked schema, shown as the dataset's variables.
   fields: [
     { name: "State", body: "The engagement&rsquo;s U.S. billing state &mdash; so cleanup cost and backlog can be read regionally, not just nationally." },

@@ -1,0 +1,26 @@
+{
+  "_dataset": "US QuickBooks Migration Outcomes",
+  "_owner": "TechBrot Inc. — Certified QuickBooks ProAdvisor team",
+  "_status": "collecting",
+  "_started": "2026-06-18",
+  "_methodology": "One anonymized row is logged by the engaging ProAdvisor at the CLOSE of every completed QuickBooks migration engagement (Desktop->Online, platform switch, or version move). No client-identifying data is ever stored. Figures are observed, never estimated or modeled. The published page reports the live N and never reports a statistic on a cell with N<20 for that breakdown.",
+  "_schema": {
+    "engagement_id": "string — anonymous opaque id, no client linkage",
+    "from_platform": "string — one of: qb-desktop, qb-enterprise, qb-premier, xero, wave, sage, spreadsheets, other",
+    "to_platform": "string — one of: qbo, qb-enterprise, other",
+    "industry": "string — primary industry",
+    "data_years_band": "string — one of: <1, 1-3, 3-7, 7+",
+    "issues_found": "array<string> — e.g. balances-off, lists-truncated, payroll-broke, inventory-mismatch, integrations-lost, ar-ap-detail-lost, sales-tax-reset, none",
+    "migration_hours": "number — total ProAdvisor hours to a verified, reconciled migrated file",
+    "cost_band": "string — one of: <2500, 2500-5000, 5000-10000, 10000+",
+    "outcome": "string — one of: clean, cleanup-required"
+  },
+  "_field_enums": {
+    "from_platform": ["qb-desktop", "qb-enterprise", "qb-premier", "xero", "wave", "sage", "spreadsheets", "other"],
+    "to_platform": ["qbo", "qb-enterprise", "other"],
+    "data_years_band": ["<1", "1-3", "3-7", "7+"],
+    "cost_band": ["<2500", "2500-5000", "5000-10000", "10000+"],
+    "outcome": ["clean", "cleanup-required"]
+  },
+  "records": []
+}

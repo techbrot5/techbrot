@@ -1,0 +1,23 @@
+{
+  "_dataset": "QuickBooks Error & Symptom Intelligence",
+  "_owner": "TechBrot Inc. — Certified QuickBooks ProAdvisor team",
+  "_status": "collecting",
+  "_started": "2026-06-18",
+  "_methodology": "One anonymized row is logged by the engaging ProAdvisor when a QuickBooks error or symptom engagement is resolved. Records the symptom, the QuickBooks product, the actual root cause found, whether self-fix had been attempted, who resolved it, and whether it recurred. No client-identifying data is ever stored. Observed only, never modeled. The published page reports the live N and never reports a statistic on a cell with N<20.",
+  "_schema": {
+    "engagement_id": "string — anonymous opaque id, no client linkage",
+    "primary_symptom": "string — the presenting error code or symptom slug (e.g. h202, 6000-83, bank-feeds-not-working, reconciliation-broken)",
+    "qb_product": "string — one of: desktop, premier, enterprise, online",
+    "root_cause_category": "string — one of: network-hosting, file-damage, configuration, update-connection, payroll-subscription, browser, user-error, bank-aggregator, other",
+    "self_fix_attempted": "boolean — had the client tried the documented self-fix before the engagement",
+    "resolved_by": "string — one of: self-fix, proadvisor",
+    "resolution_hours": "number — ProAdvisor hours to resolution (0 if self-fix sufficed)",
+    "recurring": "boolean — had the same error recurred after a prior fix"
+  },
+  "_field_enums": {
+    "qb_product": ["desktop", "premier", "enterprise", "online"],
+    "root_cause_category": ["network-hosting", "file-damage", "configuration", "update-connection", "payroll-subscription", "browser", "user-error", "bank-aggregator", "other"],
+    "resolved_by": ["self-fix", "proadvisor"]
+  },
+  "records": []
+}

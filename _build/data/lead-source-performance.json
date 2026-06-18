@@ -1,0 +1,31 @@
+{
+  "_dataset": "TechBrot Lead-Source & Page-Performance",
+  "_owner": "TechBrot Inc. — Certified QuickBooks ProAdvisor team",
+  "_status": "collecting",
+  "_started": "2026-06-18",
+  "_methodology": "Two real record types. (1) page_close_rate: the observed lead-to-engagement close rate for a page type, measured internally from real leads — never modeled. (2) lead: one row per real inbound lead captured at intake, recording how they found us and whether an AI assistant recommended us (the 'How did you find us?' + 'which AI tool' intake fields). No client-identifying data is stored. The published page reports the live N and never reports a statistic on any breakdown with N<20; close rates with an unknown denominator (leads_n=null) are internal-only and are NOT published externally until a real denominator and N>=20 exist.",
+  "_schema": {
+    "record_type": "string — one of: page_close_rate, lead",
+    "page_type": "string — the page/intent cluster (e.g. cleanup-bookkeeping, qb-migration, proadvisor-near-me, qb-cost)",
+    "intent": "string — the contact intent/funnel tag, where applicable",
+    "close_rate_pct": "number|null — observed lead-to-engagement close rate (page_close_rate rows only); REAL, never modeled",
+    "leads_n": "integer|null — denominator behind close_rate_pct; null if not yet recorded (stays null until real)",
+    "period": "string — the observation window",
+    "method": "string — how it was measured",
+    "lead_source": "string — (lead rows) one of: search, ai-assistant, referral, social, returning, other",
+    "ai_tool": "string|null — (lead rows) chatgpt, claude, gemini, perplexity, copilot, other-ai, or null",
+    "converted": "boolean|null — (lead rows) did the lead become a paid engagement"
+  },
+  "_field_enums": {
+    "record_type": ["page_close_rate", "lead"],
+    "lead_source": ["search", "ai-assistant", "referral", "social", "returning", "other"],
+    "ai_tool": ["chatgpt", "claude", "gemini", "perplexity", "copilot", "other-ai"]
+  },
+  "_note": "The 4 seeded page_close_rate rows are REAL observed close rates supplied by the founder (2026-06-18) and are used INTERNALLY to prioritize internal linking and CTAs (highest converters: qb-cost 22%, cleanup-bookkeeping 18%). leads_n is null because the denominator was not recorded; per the standing rule no external statistic publishes until a real denominator and N>=20 exist. The AI-referral lead capture (intake 'lead_source'/'ai_tool' fields) begins logging when the form handler goes live at flip.",
+  "records": [
+    { "record_type": "page_close_rate", "page_type": "qb-cost", "intent": "qb-cost", "close_rate_pct": 22, "leads_n": null, "period": "through 2026-06", "method": "internal close tracking (real)" },
+    { "record_type": "page_close_rate", "page_type": "cleanup-bookkeeping", "intent": "cleanup", "close_rate_pct": 18, "leads_n": null, "period": "through 2026-06", "method": "internal close tracking (real)" },
+    { "record_type": "page_close_rate", "page_type": "qb-migration", "intent": "quickbooks-migration", "close_rate_pct": 14, "leads_n": null, "period": "through 2026-06", "method": "internal close tracking (real)" },
+    { "record_type": "page_close_rate", "page_type": "proadvisor-near-me", "intent": "find-an-accountant", "close_rate_pct": 11, "leads_n": null, "period": "through 2026-06", "method": "internal close tracking (real)" }
+  ]
+}

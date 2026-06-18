@@ -1,0 +1,22 @@
+{
+  "_dataset": "QuickBooks Systems-Selection Outcomes",
+  "_owner": "TechBrot Inc. — Certified QuickBooks ProAdvisor team",
+  "_status": "collecting",
+  "_started": "2026-06-18",
+  "_methodology": "One anonymized row is logged when a setup or migration engagement makes a platform recommendation (QuickBooks Online vs Desktop vs Enterprise vs other), capturing what drove the decision and what was chosen. No client-identifying data is ever stored. Observed on real engagements only — never modeled. The published page reports the live N and never reports a statistic on a cell with N<20.",
+  "_schema": {
+    "engagement_id": "string — anonymous opaque id, no client linkage",
+    "industry": "string — primary industry",
+    "txn_volume_band": "string — one of: <500, 500-2000, 2000-10000, 10000+",
+    "prior_system": "string — one of: qb-desktop, qb-enterprise, qbo, xero, wave, sage, spreadsheets, none, other",
+    "recommended_system": "string — one of: qbo, qb-enterprise, qb-desktop, other",
+    "decision_drivers": "array<string> — e.g. inventory, multi-user, remote-access, payroll, cost, integrations, job-costing, reporting, industry-fit",
+    "switched": "boolean — did the client adopt the recommendation"
+  },
+  "_field_enums": {
+    "txn_volume_band": ["<500", "500-2000", "2000-10000", "10000+"],
+    "prior_system": ["qb-desktop", "qb-enterprise", "qbo", "xero", "wave", "sage", "spreadsheets", "none", "other"],
+    "recommended_system": ["qbo", "qb-enterprise", "qb-desktop", "other"]
+  },
+  "records": []
+}

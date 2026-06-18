@@ -1,0 +1,23 @@
+{
+  "_dataset": "US Small-Business Books-Health Benchmarks by Industry",
+  "_owner": "TechBrot Inc. — Certified QuickBooks ProAdvisor team",
+  "_status": "collecting",
+  "_started": "2026-06-18",
+  "_methodology": "One anonymized row is logged at the close of an engagement, capturing the books-health profile of the business by industry and state. No client-identifying data is ever stored. Every value is observed on a real, completed engagement — never estimated or modeled. The published page reports the live N and never reports a statistic on a cell with N<20 for that breakdown.",
+  "_schema": {
+    "engagement_id": "string — anonymous opaque id, no client linkage",
+    "industry": "string — primary industry",
+    "state": "string — US billing state",
+    "months_behind_at_intake": "integer — months since last reconciled close at intake",
+    "books_health_band": "string — one of: clean, minor-drift, behind, severe (observed at intake)",
+    "most_common_issue": "string — the dominant issue found (e.g. unreconciled-accounts, miscategorized, undeposited-funds, sales-tax, payroll-liability, inventory)",
+    "monthly_txn_band": "string — one of: <500, 500-2000, 2000-10000, 10000+",
+    "monthly_fee_band": "string — the closing recurring fee band: <400, 400-800, 800-1500, 1500-2500, 2500+"
+  },
+  "_field_enums": {
+    "books_health_band": ["clean", "minor-drift", "behind", "severe"],
+    "monthly_txn_band": ["<500", "500-2000", "2000-10000", "10000+"],
+    "monthly_fee_band": ["<400", "400-800", "800-1500", "1500-2500", "2500+"]
+  },
+  "records": []
+}

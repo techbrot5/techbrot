@@ -113,6 +113,26 @@
   </div>
 </section>
 
+<section class="section" id="research-program">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The research program</p>
+      <h2 class="section__heading">Six original datasets, each built the same honest way.</h2>
+      <p class="section__lede">The Cleanup Benchmarks is the flagship; five more datasets log alongside it &mdash; same rules: observed on real engagements, anonymized at source, and never reported on a breakdown below a defensible sample. Each shows its live record count.</p>
+    </header>
+    <div class="grid-3">
+      {%- for d in datasets %}
+      <article class="review-card">
+        <p class="review-card__role">{% if d.flagship %}Flagship &middot; {% endif %}Collecting &middot; N={{ d.n }}</p>
+        <h3>{{ d.name | safe }}</h3>
+        <p class="review-card__fact">{{ d.captures | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="prose"><small>Every dataset is &ldquo;collecting&rdquo; until it reaches a defensible sample. We publish a figure on a breakdown only at N&ge;20, always with the sample size shown &mdash; never a fabricated, estimated, or borrowed number.</small></p>
+  </div>
+</section>
+
 <section class="section" id="research-ai-summary">
   <div class="container container--narrow">
     <header class="section__header">
