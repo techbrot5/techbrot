@@ -322,8 +322,9 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 514 · re-skinned (142) + growth = 372 · LAST COMMIT = round-81 resources-silo
-(22: /resources/ hub + /resources/guides/ hub + 13 guides + /resources/checklists/ hub + 6 checklists). Working tree clean on `preview-11ty`.
+**COUNT: total pages live = 520 · re-skinned (142) + growth = 378 · LAST COMMIT = round-82 accounting-systems+platforms
+(6: /platforms/ hub + /platforms/quickbooks/ + /accounting-systems/ hub + /which-accounting-software/ + /app-stack/ + /accounting-systems/migration-planning/). Working tree clean on `preview-11ty`.
+PLATFORMS+ACCOUNTING-SYSTEMS ✅ DONE (de-risk layer; platform-agnostic advisory; QuickBooks the only real certification listed, others only when real; fair fit-first, no fabricated competitor pricing). Battery note: /platforms/quickbooks used intent=qb-setup (invalid) → fixed to quickbooks-setup. NEXT batch group: (4) tools proof · (5) blog proof.
 RESOURCES ✅ DONE (t-guide guides + checklists, t-hub hubs; all free/no-gate; canonical pricing; Intuit/market figures deferred/dated; honesty held). Battery note: hubs need ≥6 FAQ (faq-min-6 gate) — caught+fixed 3 hubs that shipped with 5. NEXT batch group: (3) accounting-systems+platforms (6) · (4) tools proof · (5) blog proof.
 ⚠ overlap flagged for founder: /resources/checklists/quickbooks-setup-checklist/ (condensed printable) vs /quickbooks/setup/checklist/ (full how-to) — built as cross-linked companion, confirm or merge.
 🎉 ACCOUNTING+QUICKBOOKS SILOS v4 ✅ COMPLETE (tasks #16–21). NOW: REMAINING-v4 BUILD (founder 2026-06-18, gap report this session). Confirmed order: (1) switch silo ✅ DONE · (2) resources guides+hub+checklists (~22) · (3) accounting-systems+platforms (6) · (4) tools/calculators (4, NEW type — 1 PROOF first, STOP) · (5) blog (~17, NEW type — PROOF first; seed-post count to confirm) · + /reviews/ ✅ DONE (2 real Clutch reviews, no AggregateRating, 301 removed).

@@ -1,0 +1,103 @@
+---json
+{
+  "layout": "layouts/t-hub.njk",
+  "permalink": "/platforms/",
+  "slug": "platforms-hub",
+  "title": "Platforms We're Certified On · TechBrot",
+  "description": "TechBrot is an independent accounting-technology advisory firm — not Intuit. QuickBooks is the platform we're certified on today; we add others here only when the certification is real. No fabricated partnerships, ever. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Platforms" }
+  ],
+  "heroFigure": false,
+  "hero": {
+    "eyebrow": "Platforms",
+    "heading": "The platforms we're certified on.",
+    "subheading": "TechBrot is an independent accounting-technology advisory firm. QuickBooks is the platform we're certified on today; we add others here only when the certification is real. We're platform-led, not tied to one vendor forever — but we will never list a tool here that we aren't genuinely certified or partnered on. Independent firm — not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Independent · not Intuit",
+      "Zero fabricated certifications"
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> is an independent accounting-technology advisory firm &mdash; <strong>not Intuit</strong>. <strong>QuickBooks is the platform we're certified on today</strong>, through the Certified QuickBooks ProAdvisor program; we add other platforms to this page <em>only</em> when the certification or partnership is real. We will never claim a credential we don't hold. We're platform-led advisory &mdash; the platform serves the books, not the other way around &mdash; so if a different tool genuinely fits you better, we'll say so. See <a href=\"/accounting-systems/\">accounting systems we work with</a> for the broader picture, and <a href=\"/quickbooks/\">our QuickBooks practice</a> for what we do today.",
+    "source": "Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not Intuit, and not Intuit's official software support. This page lists only platforms TechBrot holds a real certification or partnership on; none are fabricated. Not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Start with your real file",
+    "heading": "Find out where your platform is helping — and where it isn't.",
+    "lede": "Get a free QuickBooks file review or book a discovery call. We'll look at how your platform is configured against what your business actually needs, and tell you honestly whether it fits. No pitch. Independent firm — not Intuit.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY ── #}
+<section class="section section--compact" id="platforms-hub-summary-sec">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In short</p>
+      <h2 class="section__heading">One real certification today — and an honest list as more land.</h2>
+    </header>
+    <p class="prose" id="platforms-hub-summary">{{ summary | safe }}</p>
+  </div>
+</section>
+
+{# ── PLATFORM GRID · only platforms we hold a real certification/partnership on ── #}
+{%- for group in platformGroups %}
+<section class="section{% if loop.index is even %} section--alt{% endif %}" id="platforms-hub-{{ group.id }}">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">{{ group.eyebrow | safe }}</p>
+      <h2 class="section__heading">{{ group.heading | safe }}</h2>
+      {%- if group.lede %}<p class="section__lede">{{ group.lede | safe }}</p>{%- endif %}
+    </header>
+    <div class="grid-3">
+      {%- for p in group.platforms %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading">{{ p.title | safe }}</h3>
+        <p class="buyer-card__body">{{ p.body | safe }}</p>
+        {%- if p.href %}<a class="buyer-card__cta" href="{{ p.href }}">{{ p.cta | safe }}</a>{%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endfor %}
+
+{# ── CROSS-LINKS ── #}
+<section class="section section--compact" id="platforms-hub-related">
+  <div class="container container--narrow">
+    <p class="prose">{{ relatedNote | safe }}</p>
+  </div>
+</section>
+
+{# ── FAQ ── #}
+<section class="section section--alt" id="platforms-hub-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">Platforms &amp; certifications questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="platforms-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="platforms-hub-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
