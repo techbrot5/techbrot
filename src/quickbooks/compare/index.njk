@@ -1,0 +1,104 @@
+---json
+{
+  "layout": "layouts/t-hub.njk",
+  "permalink": "/quickbooks/compare/",
+  "slug": "qb-compare-hub",
+  "title": "QuickBooks Comparisons: Fair Software Comparisons by ProAdvisors · TechBrot",
+  "description": "QuickBooks vs Xero, Wave, Sage, FreshBooks, and Zoho Books — plus Online vs Desktop and the QBO plans compared. We're Certified QuickBooks ProAdvisors with a clear preference for QuickBooks, and we say so; these comparisons are written to be fair, naming when a competitor fits better. Independent firm — not Intuit, not affiliated with these companies. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "QuickBooks", "href": "/quickbooks/" },
+    { "name": "Compare" }
+  ],
+  "heroFigure": false,
+  "hero": {
+    "eyebrow": "QuickBooks · Comparisons",
+    "heading": "Choosing accounting software is a fit decision, not a winner-takes-all.",
+    "subheading": "We're Certified QuickBooks ProAdvisors, so we have a clear preference — and we say so plainly. But these comparisons are written to be fair: where another tool is genuinely the better fit for your business, we tell you. This hub routes to honest, side-by-side reads of QuickBooks against Xero, Wave, Sage, FreshBooks, and Zoho Books, plus QuickBooks against itself — Online vs Desktop, and the QBO plans compared. Independent firm — not Intuit, and not affiliated with any of these companies.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks", "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Independent · not Intuit · not affiliated with these tools",
+      "Fair reads — we name when a competitor fits better"
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> is an independent Certified QuickBooks ProAdvisor firm — <strong>not Intuit</strong>, and not affiliated with Xero, Wave, Sage, FreshBooks, or Zoho. Choosing accounting software is a <strong>fit decision, not a winner-takes-all</strong>. We have a clear preference for QuickBooks — that's our specialization, and we disclose it — but these comparisons are written to be <strong>fair</strong>: where another tool is the better fit, we say so. Below are honest reads of QuickBooks against five alternatives, plus QuickBooks against itself (Online vs Desktop, and the QBO plans). Already decided to switch? We can help you <a href=\"/quickbooks/migration/\">migrate to QuickBooks</a>. Not sure which QBO plan fits? See <a href=\"/quickbooks/which-plan-is-right/\">which QuickBooks plan is right</a>.",
+    "source": "Comparisons maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not Intuit, and not affiliated with Xero, Wave, Sage, FreshBooks, or Zoho. Product capabilities reflect each vendor's software as of the review date and are set by those vendors. No competitor pricing is quoted here. Not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Start with your real file",
+    "heading": "Not sure if QuickBooks is the right fit? Let's look at your actual file.",
+    "lede": "Get a free QuickBooks file review or book a discovery call. We'll look at how your books are set up today and give you a straight read on whether QuickBooks fits — and if another tool fits you better, we'll tell you. No pitch. Independent firm — not Intuit.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY ── #}
+<section class="section section--compact" id="qb-compare-hub-summary-sec">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In short</p>
+      <h2 class="section__heading">Seven fair comparisons, written by ProAdvisors who tell you the truth.</h2>
+    </header>
+    <p class="prose" id="qb-compare-hub-summary">{{ summary | safe }}</p>
+  </div>
+</section>
+
+{# ── COMPARISON GRID · grouped (vs alternatives / vs itself) ── #}
+{%- for group in compareGroups %}
+<section class="section{% if loop.index is even %} section--alt{% endif %}" id="qb-compare-hub-{{ group.id }}">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">{{ group.eyebrow | safe }}</p>
+      <h2 class="section__heading">{{ group.heading | safe }}</h2>
+      {%- if group.lede %}<p class="section__lede">{{ group.lede | safe }}</p>{%- endif %}
+    </header>
+    <div class="grid-3">
+      {%- for c in group.cards %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
+        <p class="buyer-card__body">{{ c.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ c.href }}">{{ c.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endfor %}
+
+{# ── CROSS-LINKS ── #}
+<section class="section section--compact" id="qb-compare-hub-related">
+  <div class="container container--narrow">
+    <p class="prose">{{ relatedNote | safe }}</p>
+  </div>
+</section>
+
+{# ── FAQ ── #}
+<section class="section section--alt" id="qb-compare-hub-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">QuickBooks comparison questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qb-compare-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="qb-compare-hub-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
