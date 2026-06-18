@@ -322,8 +322,21 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 520 · re-skinned (142) + growth = 378 · LAST COMMIT = round-82 accounting-systems+platforms
-(6: /platforms/ hub + /platforms/quickbooks/ + /accounting-systems/ hub + /which-accounting-software/ + /app-stack/ + /accounting-systems/migration-planning/). Working tree clean on `preview-11ty`.
+**COUNT: total pages live = 520 (measured `find` count, non-dev) · re-skinned (142) + growth = 378 · LAST COMMIT = round-83 tools/calculators PROOF
+(2: /tools/ hub + /tools/bookkeeping-cost-calculator/). Working tree clean on `preview-11ty`.
+⏸ STOP-AND-WAIT — NEW-TYPE PROOF GLANCE PENDING (founder). Report: `_build/reports/round-83.md`.
+ROUND 83 — TOOLS/CALCULATORS proof ✅ BUILT, BATTERY GREEN. First interactive type on the site. Bookkeeping Cost Calculator:
+t-mofu tool variant; NEW `tb-calc.js` island (deterministic, client-only, CLS 0, noscript fallback); `.calc` CSS in 09-extensions
+(token-only, +~1.8KB min, mobile font step-down on result <480px). HONESTY ENGINEERED: 4 bands are slices of canonical
+$400–$2,500+/mo (==Sheet 0); model CANNOT output outside the published range; ALWAYS a range never a point; "estimate not a
+quote → exact fee in writing after free discovery call" repeated everywhere. SINGLE SOURCE OF TRUTH: same `model` renders selects
++ dumps to #calc-model for JS (no drift). Minimal /tools/ hub built alongside (no-404 floor; t-hub, 6 FAQ; roadmap UNLINKED;
+ItemList = live tool only). includeCalcJs gate added to base.njk. url-set queue updated. ⚑ +4 sanctioned CTA labels added
+PENDING FOUNDER RATIFICATION ("Get your exact fixed fee" · "See full pricing" · "Skip to the calculator" · "Open the calculator").
+ON FOUNDER OK: fan out remaining ~8 calculators (cleanup-cost-estimator, quickbooks-plan-selector [no Intuit plan $], payroll-cost,
+sales-tax-rate-lookup [look-up-on-call, NOT a live rate DB], breakeven, cash-runway, 1099-deadline, business-budget-template),
+THEN blog proof (8 seed posts per founder). CORRECTION logged: founder's dictated order items 1–3 (/switch/, /resources/,
+/accounting-systems+platforms/) + /reviews/ were ALREADY built rounds 80–82 — NOT rebuilt; resumed at item 4.
 PLATFORMS+ACCOUNTING-SYSTEMS ✅ DONE (de-risk layer; platform-agnostic advisory; QuickBooks the only real certification listed, others only when real; fair fit-first, no fabricated competitor pricing). Battery note: /platforms/quickbooks used intent=qb-setup (invalid) → fixed to quickbooks-setup. NEXT batch group: (4) tools proof · (5) blog proof.
 RESOURCES ✅ DONE (t-guide guides + checklists, t-hub hubs; all free/no-gate; canonical pricing; Intuit/market figures deferred/dated; honesty held). Battery note: hubs need ≥6 FAQ (faq-min-6 gate) — caught+fixed 3 hubs that shipped with 5. NEXT batch group: (3) accounting-systems+platforms (6) · (4) tools proof · (5) blog proof.
 ⚠ overlap flagged for founder: /resources/checklists/quickbooks-setup-checklist/ (condensed printable) vs /quickbooks/setup/checklist/ (full how-to) — built as cross-linked companion, confirm or merge.

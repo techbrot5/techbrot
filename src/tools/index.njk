@@ -1,0 +1,114 @@
+---json
+{
+  "layout": "layouts/t-hub.njk",
+  "permalink": "/tools/",
+  "slug": "tools-hub",
+  "title": "Free Accounting & QuickBooks Tools & Calculators · TechBrot",
+  "description": "Free accounting and QuickBooks calculators from Certified ProAdvisors — estimate bookkeeping cost and more. Honest estimates from published pricing, never a sales gate. Independent firm, not Intuit. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Tools" }
+  ],
+  "hero": {
+    "eyebrow": "Free tools",
+    "heading": "Free accounting & QuickBooks tools, from ProAdvisors.",
+    "subheading": "Practical calculators and tools built by Certified QuickBooks ProAdvisors to answer the questions business owners actually ask &mdash; starting with what bookkeeping should cost. Free, no form to fill in, and honest: estimates come from our published pricing, never invented numbers. We&rsquo;re an independent firm &mdash; not affiliated with Intuit Inc.",
+    "actions": [
+      { "label": "Open the calculator", "href": "/tools/bookkeeping-cost-calculator/", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=pricing", "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Independent · not Intuit",
+      "Free · no gate, honest math"
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> is an independent Certified QuickBooks ProAdvisor firm &mdash; <strong>not Intuit</strong>. These tools are free and built to actually help: each one is transparent about its math and honest about its limits. Our estimates draw straight from <a href=\"/pricing/\">published fixed-fee pricing</a> &mdash; they set expectations, they are never a binding quote. The full set of tools is below; more are in development.",
+    "source": "Tools maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not Intuit. Not affiliated with Intuit Inc."
+  },
+  "tools": [
+    { "name": "Bookkeeping Cost Calculator", "body": "Estimate a realistic monthly bookkeeping fee for your business from our published $400&ndash;$2,500+/month pricing. Five questions, an honest range, no form.", "cta": "Open the calculator", "href": "/tools/bookkeeping-cost-calculator/" }
+  ],
+  "roadmap": [
+    "Cleanup cost estimator",
+    "QuickBooks plan selector",
+    "Payroll cost calculator",
+    "Sales tax rate lookup",
+    "Break-even calculator",
+    "Cash runway calculator"
+  ],
+  "faq": [
+    { "q": "Are these tools really free?", "a": "Yes &mdash; genuinely free, with nothing locked behind a form or an email signup. We build them as Certified ProAdvisors to be useful first; if a tool raises a question about your own books, you&rsquo;re welcome to book a free discovery call, but there&rsquo;s no obligation and no gate." },
+    { "q": "Is a calculator estimate the same as a quote?", "a": "No. Every estimate here is built from TechBrot&rsquo;s published pricing to put you in a realistic range &mdash; it is never a binding quote. A short form can&rsquo;t see your actual file. Your exact fixed fee is always confirmed in writing within 3 business days of a free discovery call, before any work begins." },
+    { "q": "Where do the numbers come from?", "a": "From our real, published fixed-fee pricing &mdash; the same ranges shown on the <a href=\"/pricing/\">pricing page</a> and identical everywhere on the site. We don&rsquo;t invent figures or quote competitor prices we can&rsquo;t verify. Each tool shows its own math so you can see exactly how it reached a number." },
+    { "q": "Do the tools send my information anywhere?", "a": "No. The calculators run entirely in your browser. Nothing you enter is transmitted or stored anywhere unless you choose to book a call and tell us yourself. You can use any tool here completely anonymously." },
+    { "q": "What tools are available right now?", "a": "The Bookkeeping Cost Calculator is live today. More &mdash; a cleanup cost estimator, a QuickBooks plan selector, a payroll cost calculator, and others &mdash; are in development and will appear here as they&rsquo;re published. We list them as &ldquo;in development&rdquo; rather than linking to pages that don&rsquo;t exist yet." },
+    { "q": "Is TechBrot affiliated with Intuit?", "a": "No. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm. We hold active Intuit certifications and work inside QuickBooks, but TechBrot is not owned, employed, or operated by Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc." }
+  ],
+  "ctaBand": {
+    "eyebrow": "From a number to a plan",
+    "heading": "Want the exact number for your books?",
+    "lede": "A free 30-minute discovery call turns any estimate into a written fixed-fee scope within 3 business days &mdash; the exact figure, before you commit. No hourly billing, no obligation. Independent firm &mdash; not Intuit.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=pricing", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="tools-hub-available">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Available now</p>
+      <h2 class="section__heading">Tools you can use today.</h2>
+      <p class="section__lede">Free, transparent, and honest about their limits &mdash; each one shows its own math.</p>
+    </header>
+    <div class="grid-3">
+      {%- for t in tools %}
+      <article class="review-card">
+        <h3>{{ t.name }}</h3>
+        <p class="review-card__fact">{{ t.body | safe }}</p>
+        <a class="review-card__link" href="{{ t.href }}">{{ t.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="tools-hub-roadmap">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In development</p>
+      <h2 class="section__heading">More tools on the way.</h2>
+      <p class="section__lede">We&rsquo;d rather name what&rsquo;s coming than link to pages that don&rsquo;t exist yet. These are in development and will appear here as they&rsquo;re published.</p>
+    </header>
+    <ul class="checks-list">
+      {%- for r in roadmap %}
+      <li>{{ r }}</li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="tools-hub-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">About these tools</p>
+      <h2 class="section__heading">Questions about the tools.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="tools-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="tools-hub-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

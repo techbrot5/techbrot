@@ -713,3 +713,23 @@ a:is(:hover, :focus-visible) .lnk-arrow { transform: translateX(0.22em); }
 .state-router { display: flex; gap: var(--space-4); align-items: flex-end; flex-wrap: wrap; max-width: var(--measure-prose); margin: 0 0 var(--space-10); }
 .state-router__field { flex: 1 1 260px; margin: 0; }
 @media (max-width: 520px) { .state-router .btn { width: 100%; } }
+
+/* ---- Calculator / interactive tool (NEW type, round 83). Token-only. The
+   result panel is always present in markup with default content, so the JS
+   update causes NO layout shift (CLS 0). Inputs reuse the .intake-field skin. ---- */
+.calc { display: grid; grid-template-columns: 1fr; gap: var(--space-6); align-items: start; }
+@media (min-width: 768px) { .calc { grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr); gap: var(--space-8); } }
+.calc__form { display: grid; gap: var(--space-4); margin: 0; }
+.calc__formnote { font-size: var(--fs-13); color: var(--text-secondary); margin: 0 0 var(--space-1); }
+.calc__field { margin: 0; }
+.calc__result { background: var(--bg-card); border: 1px solid var(--color-paper-edge); border-top: 3px solid var(--color-accent); border-radius: var(--radius-xl); box-shadow: var(--shadow-card); padding: var(--space-6); }
+@media (min-width: 768px) { .calc__result { position: sticky; top: var(--space-6); } }
+.calc__result-label { font-size: var(--fs-12); letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 var(--space-2); }
+.calc__result-range { font-family: var(--font-serif); font-size: var(--fs-32); font-weight: var(--fw-bold); line-height: var(--lh-tight); color: var(--color-accent); margin: 0; }
+@media (min-width: 480px) { .calc__result-range { font-size: var(--fs-44); } }
+.calc__result-unit { font-family: var(--font-sans); font-size: var(--fs-18); font-weight: var(--fw-medium); color: var(--text-secondary); margin-left: var(--space-1); }
+.calc__result-band { font-size: var(--fs-15); font-weight: var(--fw-semibold); color: var(--text-primary); margin: var(--space-3) 0 var(--space-1); }
+.calc__result-why { font-size: var(--fs-14); color: var(--text-body); margin: 0 0 var(--space-4); }
+.calc__result-disclaimer { font-size: var(--fs-13); color: var(--text-secondary); border-top: 1px solid var(--color-paper-edge); padding-top: var(--space-4); margin: 0 0 var(--space-4); }
+.calc__result-cta { width: 100%; justify-content: center; }
+.calc__noscript { grid-column: 1 / -1; border: 1px solid var(--color-paper-edge); border-radius: var(--radius-lg); background: var(--surface-subtle); padding: var(--space-4) var(--space-5); font-size: var(--fs-14); color: var(--text-body); }
