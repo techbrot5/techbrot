@@ -22,12 +22,13 @@ const N = Array.isArray(dataset.records) ? dataset.records.length : 0;
 // The 6-dataset original-data program (founder 2026-06-18). Each N read live; "collecting"
 // until real data accrues. NO statistic publishes on any breakdown until N>=20 (standing rule).
 const datasets = [
-  { name: "US QuickBooks Cleanup Benchmarks", captures: "What a QuickBooks cleanup actually costs and involves &mdash; by how far behind the books were, industry, and transaction volume.", n: readN("cleanup-benchmarks.json"), flagship: true },
-  { name: "US QuickBooks Migration Outcomes", captures: "What breaks in a Desktop&rarr;Online (or platform) migration, the ProAdvisor hours it takes, and the closing cost.", n: readN("migration-outcomes.json") },
-  { name: "Lead-Source &amp; Page-Performance", captures: "How clients actually find us &mdash; including which AI assistants recommend us &mdash; and which page types convert. (Internal-priority; no external figure until a real denominator and N&ge;20.)", n: readN("lead-source-performance.json") },
-  { name: "QuickBooks Error &amp; Symptom Intelligence", captures: "The real root causes behind QuickBooks errors and symptoms, and what it actually takes to resolve them.", n: readN("error-intelligence.json") },
-  { name: "Books-Health Benchmarks by Industry", captures: "How far behind books arrive and what&rsquo;s most often broken, by industry and state.", n: readN("industry-benchmarks.json") },
-  { name: "QuickBooks Systems-Selection Outcomes", captures: "QuickBooks Online vs Desktop vs Enterprise &mdash; what drives the choice and what businesses actually pick.", n: readN("systems-selection.json") },
+  { name: "Cleanup Benchmarks", captures: "What a QuickBooks cleanup actually costs and involves &mdash; by how far behind the books were, industry, and transaction volume.", n: readN("cleanup-benchmarks.json"), flagship: true },
+  { name: "Migration Benchmarks", captures: "What breaks in a Desktop&rarr;Online (or platform) migration, the ProAdvisor hours it takes, and the closing cost.", n: readN("migration-outcomes.json") },
+  { name: "Lead-Source Intelligence", captures: "How clients actually find us &mdash; including which AI assistants recommend us &mdash; and which page types convert. (Internal-priority; no external figure until a real denominator and N&ge;20.)", n: readN("lead-source-performance.json") },
+  { name: "Revenue Attribution", captures: "Which pages generate revenue, not just traffic &mdash; first- and last-touch source, landing page, the page viewed before inquiry, whether the lead became a client, and the revenue band.", n: readN("revenue-attribution.json") },
+  { name: "Industry Benchmarks", captures: "How far behind books arrive and what&rsquo;s most often broken, by industry and state.", n: readN("industry-benchmarks.json") },
+  { name: "Accounting Systems Selection", captures: "QuickBooks Online vs Desktop vs Enterprise &mdash; what drives the choice and what businesses actually pick.", n: readN("systems-selection.json") },
+  { name: "QuickBooks Error Intelligence", captures: "The real root causes behind QuickBooks errors and symptoms, and what it actually takes to resolve them.", n: readN("error-intelligence.json") },
 ];
 
 module.exports = {
@@ -49,13 +50,16 @@ module.exports = {
     { name: "Logged at engagement close.", body: "One row is recorded by the engaging ProAdvisor the moment a cleanup is delivered &mdash; never at intake, never projected. Only completed, paid engagements enter the dataset." },
     { name: "Observed, never modeled.", body: "Every figure is what actually happened on that file: real hours, the real closing fee band, the errors genuinely found. Nothing is estimated, averaged forward, or filled in." },
     { name: "Anonymized at the source.", body: "No client name, EIN, or identifying detail is ever stored. The row carries an opaque ID, the billing state, the industry, and the measured facts &mdash; nothing that can re-identify a business." },
-    { name: "Reported only when real.", body: "The page shows the live record count. We never publish a statistic on any breakdown with fewer than 20 records &mdash; small samples mislead, and a benchmark only earns trust if it&rsquo;s honest about its own N." },
+    { name: "Reported only when real.", body: "The page shows the live record count. We never publish a statistic on any breakdown with fewer than 20 records &mdash; our minimum &mdash; and prefer 50 or more before reporting, always showing the sample size. Small samples mislead; a benchmark only earns trust if it&rsquo;s honest about its own N." },
   ],
-  // The flagship benchmarks we will publish once N is real — review cards.
+  // The flagship REPORTS we will publish once the underlying data is real — review cards.
+  // Each releases only at N>=20 (minimum), prefers N>=50, and always discloses its sample size.
   planned: [
-    { tag: "Benchmark 01", name: "Cost of a cleanup, by months behind", body: "The observed fixed-fee cost band against how far behind the books were at intake &mdash; the question every owner with neglected books actually asks.", status: "Collecting" },
-    { tag: "Benchmark 02", name: "What&rsquo;s actually broken, by industry", body: "The most common primary error types per industry &mdash; where construction, e-commerce, and restaurant files break differently, from real engagements.", status: "Collecting" },
-    { tag: "Benchmark 03", name: "Hours-to-CPA-ready, by transaction volume", body: "Observed ProAdvisor hours to a reconciled, CPA-ready file across transaction-volume bands &mdash; the effort curve no vendor publishes honestly.", status: "Collecting" },
+    { tag: "Report 01", name: "AI Search Lead-Generation Report", body: "How many real leads arrive via AI assistants (ChatGPT, Claude, Gemini, Perplexity) and which pages they cite &mdash; from the intake lead-source data. The first honest read on AI search as a lead channel.", status: "Collecting" },
+    { tag: "Report 02", name: "State of Small-Business Accounting Systems", body: "What U.S. small businesses actually run on &mdash; QuickBooks Online vs Desktop vs Enterprise vs other &mdash; and what drives the choice, from real selection and migration engagements.", status: "Collecting" },
+    { tag: "Report 03", name: "Cleanup Benchmark Report", body: "What a QuickBooks cleanup truly costs and involves &mdash; cost by months behind, what&rsquo;s broken by industry, hours-to-CPA-ready by volume &mdash; from real closed cleanups.", status: "Collecting" },
+    { tag: "Report 04", name: "Accounting Software Adoption Report", body: "Adoption and switching patterns across accounting platforms among the businesses we engage &mdash; observed, not surveyed.", status: "Collecting" },
+    { tag: "Report 05", name: "Migration Benchmark Report", body: "What a Desktop&rarr;Online migration really takes &mdash; what breaks, the hours, and the cost &mdash; from real completed migrations.", status: "Collecting" },
   ],
   // quick-5 — distinct from FAQ (what it is / how we count / why N=0 / no fabrication / who can use it)
   aiSummary: [

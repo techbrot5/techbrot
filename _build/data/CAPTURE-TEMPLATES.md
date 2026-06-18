@@ -2,7 +2,16 @@
 
 Honesty bar (locked): REAL closed-engagement facts only · NO client/company names or re-identifying
 detail · bands use the fixed enums below (never exact figures) · a blank field stays blank (no fills) ·
-no number publishes on any breakdown until that dataset hits **N≥20**, sample size always disclosed.
+no number publishes on any breakdown until **N≥20 (minimum), 50+ preferred**, sample size ALWAYS disclosed.
+No fabricated data · no estimated benchmarks · no synthetic case studies · real engagements only.
+
+INTAKE FORM now captures (every form, shared partial): How did you find TechBrot? (lead_source) ·
+Did an AI tool recommend TechBrot? (ai_recommended) · Which AI tool? (ai_tool) · Which page convinced
+you? (convincing_page) · plus hidden attribution trackers first_touch_source / last_touch_source /
+landing_page / prior_page (auto-filled by the attribution JS when the handler goes live at flip).
+
+FLAGSHIP REPORTS (publish-gated): AI Search Lead-Generation · State of Small-Business Accounting Systems ·
+Cleanup Benchmark · Accounting Software Adoption · Migration Benchmark.
 Just give me the raw facts in any rough format — I assign the opaque engagement_id (ENG-0001…) and
 write the validated JSON row. One row per CLOSED engagement, logged at close.
 

@@ -1,0 +1,26 @@
+{
+  "_dataset": "TechBrot Revenue Attribution",
+  "_owner": "TechBrot Inc. — Certified QuickBooks ProAdvisor team",
+  "_status": "collecting",
+  "_started": "2026-06-18",
+  "_methodology": "One anonymized row per real lead, completed at engagement close (or marked lost). Captures the marketing-attribution chain — first-touch and last-touch source, the session landing page, the page viewed just before the inquiry, and the service requested — plus whether the lead became a paying client and, if so, the revenue band. The goal is to know which pages generate REVENUE, not just traffic. No client-identifying data is ever stored; revenue is recorded as a band, never an exact figure. Observed only — never estimated or modeled. The published page reports the live N and never reports a statistic on a breakdown until N>=20 (minimum) and prefers N>=50; sample size is always disclosed.",
+  "_schema": {
+    "lead_id": "string — anonymous opaque id, no client linkage",
+    "first_touch_source": "string — how the lead first reached us: organic-search, ai-assistant, referral, social, direct, paid, other",
+    "last_touch_source": "string — the source of the session in which they inquired (same enum)",
+    "ai_tool": "string|null — if AI-assisted: chatgpt, claude, gemini, perplexity, copilot, other-ai, or null",
+    "landing_page": "string — the first page of the converting session (path or page_type)",
+    "page_before_inquiry": "string — the page viewed immediately before submitting (path or page_type)",
+    "service_requested": "string — primary service requested (from the intake services[])",
+    "became_client": "boolean — did the lead become a paying client",
+    "revenue_band": "string|null — closed revenue band if became_client: <1500, 1500-5000, 5000-15000, 15000-50000, 50000+ (recurring annualized); null if not a client"
+  },
+  "_field_enums": {
+    "first_touch_source": ["organic-search", "ai-assistant", "referral", "social", "direct", "paid", "other"],
+    "last_touch_source": ["organic-search", "ai-assistant", "referral", "social", "direct", "paid", "other"],
+    "ai_tool": ["chatgpt", "claude", "gemini", "perplexity", "copilot", "other-ai"],
+    "revenue_band": ["<1500", "1500-5000", "5000-15000", "15000-50000", "50000+"]
+  },
+  "_note": "first/last-touch, landing_page, and page_before_inquiry are captured by the intake form's attribution trackers (hidden fields) once the form handler is live at flip; became_client and revenue_band are logged by the founder at engagement close. No fabrication; a blank field stays blank.",
+  "records": []
+}

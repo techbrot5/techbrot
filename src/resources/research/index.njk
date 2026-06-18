@@ -105,10 +105,10 @@
     <div class="stat-row">
       <div><div class="stat__value">{{ datasetN }}</div><div class="stat__label">completed engagements logged</div></div>
       <div><div class="stat__value">8</div><div class="stat__label">fields per record</div></div>
-      <div><div class="stat__value">20</div><div class="stat__label">minimum N before any breakdown is reported</div></div>
+      <div><div class="stat__value">20</div><div class="stat__label">minimum N before any breakdown is reported (50+ preferred)</div></div>
     </div>
     <div class="prose">
-      <p>{% if datasetN == 0 %}The dataset is <strong>live and collecting (N=0).</strong> No statistics are published yet &mdash; and we will not publish one until a breakdown reaches at least 20 real records. We&rsquo;d rather show a count of zero honestly than a number we can&rsquo;t stand behind.{% else %}The dataset currently holds <strong>{{ datasetN }} completed engagements.</strong> Statistics are published per breakdown only once that breakdown reaches at least 20 real records; everything below that threshold stays unreported.{% endif %} The methodology above is locked, so the data is comparable from the first row forward. This page updates as the count grows.</p>
+      <p>{% if datasetN == 0 %}The dataset is <strong>live and collecting (N=0).</strong> No statistics are published yet &mdash; and we will not publish one until a breakdown reaches at least 20 real records (we prefer 50 or more), always with the sample size shown. We&rsquo;d rather show a count of zero honestly than a number we can&rsquo;t stand behind.{% else %}The dataset currently holds <strong>{{ datasetN }} completed engagements.</strong> Statistics are published per breakdown only once it reaches at least 20 real records (50+ preferred), always with the sample size disclosed; everything below that threshold stays unreported.{% endif %} The methodology above is locked, so the data is comparable from the first row forward. This page updates as the count grows.</p>
     </div>
   </div>
 </section>
@@ -129,7 +129,7 @@
       </article>
       {%- endfor %}
     </div>
-    <p class="prose"><small>Every dataset is &ldquo;collecting&rdquo; until it reaches a defensible sample. We publish a figure on a breakdown only at N&ge;20, always with the sample size shown &mdash; never a fabricated, estimated, or borrowed number.</small></p>
+    <p class="prose"><small>Every dataset is &ldquo;collecting&rdquo; until it reaches a defensible sample. We publish a figure on a breakdown only at a minimum N&ge;20 (50+ preferred), always with the sample size shown &mdash; never a fabricated, estimated, or borrowed number.</small></p>
   </div>
 </section>
 
@@ -154,8 +154,8 @@
   <div class="container">
     <header class="section__header">
       <p class="section__eyebrow">On the roadmap</p>
-      <h2 class="section__heading">The benchmarks we&rsquo;re building toward.</h2>
-      <p class="section__lede">Each releases independently, the moment its sample is defensible &mdash; not before.</p>
+      <h2 class="section__heading">The reports we&rsquo;re building toward.</h2>
+      <p class="section__lede">Five flagship reports, each drawn from the datasets above. Each releases independently the moment its sample is defensible (minimum N&ge;20, 50+ preferred, sample size disclosed) &mdash; not before.</p>
     </header>
     <div class="grid-3">
       {%- for p in planned %}

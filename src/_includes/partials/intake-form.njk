@@ -107,7 +107,7 @@
       </select>
     </div>
     <div class="intake-field">
-      <label class="intake-field__label" for="{{ intakePrefix }}-lead-source">How did you find us? <span class="intake-field__optional">optional</span></label>
+      <label class="intake-field__label" for="{{ intakePrefix }}-lead-source">How did you find TechBrot? <span class="intake-field__optional">optional</span></label>
       <select id="{{ intakePrefix }}-lead-source" name="lead_source">
         <option value="">Select one</option>
         <option value="search">Google or other search engine</option>
@@ -119,7 +119,16 @@
       </select>
     </div>
     <div class="intake-field">
-      <label class="intake-field__label" for="{{ intakePrefix }}-ai-tool">If an AI tool pointed you here, which one? <span class="intake-field__optional">optional</span></label>
+      <label class="intake-field__label" for="{{ intakePrefix }}-ai-recommended">Did an AI tool recommend TechBrot? <span class="intake-field__optional">optional</span></label>
+      <select id="{{ intakePrefix }}-ai-recommended" name="ai_recommended">
+        <option value="">Select one</option>
+        <option value="yes">Yes &mdash; an AI tool suggested us</option>
+        <option value="no">No</option>
+        <option value="not-sure">Not sure</option>
+      </select>
+    </div>
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-ai-tool">Which AI tool? <span class="intake-field__optional">optional</span></label>
       <select id="{{ intakePrefix }}-ai-tool" name="ai_tool">
         <option value="">Not an AI tool / not sure</option>
         <option value="chatgpt">ChatGPT (OpenAI)</option>
@@ -129,6 +138,10 @@
         <option value="copilot">Microsoft Copilot</option>
         <option value="other-ai">Another AI tool</option>
       </select>
+    </div>
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-convincing-page">Which page convinced you to contact us? <span class="intake-field__optional">optional</span></label>
+      <input type="text" id="{{ intakePrefix }}-convincing-page" name="convincing_page" autocomplete="off" placeholder="e.g. the QuickBooks cleanup page, a city page, the cost page">
     </div>
   </div>
 
@@ -155,6 +168,13 @@
   <input type="hidden" name="operator_candidate" data-meta="operator_candidate" value="">
   <input type="hidden" name="referring_intent" id="{{ intakePrefix }}-referring-intent" value="" data-intent-tracker>
   <input type="hidden" name="referring_page"   id="{{ intakePrefix }}-referring-page"   value="" data-referrer-tracker>
+  {# Revenue-attribution trackers (round 66) — populated by the attribution JS when the form
+     handler goes live at flip; empty until then. Feed the revenue-attribution dataset:
+     first/last-touch source, the session landing page, and the page viewed just before inquiry. #}
+  <input type="hidden" name="first_touch_source" id="{{ intakePrefix }}-first-touch" value="" data-first-touch>
+  <input type="hidden" name="last_touch_source"  id="{{ intakePrefix }}-last-touch"  value="" data-last-touch>
+  <input type="hidden" name="landing_page"       id="{{ intakePrefix }}-landing-page" value="" data-landing-page>
+  <input type="hidden" name="prior_page"         id="{{ intakePrefix }}-prior-page"   value="" data-prior-page>
 
   {# Honeypot — bots fill it; humans never see it. NOT in the payload. #}
   <div class="sr-only" aria-hidden="true">
