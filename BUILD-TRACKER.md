@@ -322,12 +322,13 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 312 · re-skinned (142) + growth = 170 · LAST COMMIT = round-57 FL-cities-w2
-(5 cities: Tallahassee, West Palm Beach, Fort Myers, Gainesville, Lakeland + FL cities-hub & pillar wired). Working tree clean on `preview-11ty`.
-✅✅ ALL FIVE DEPTH STATES COMPLETE: NY (39) · CA (39) · TX · FL · IL.
-🌱 FOUNDER CHOSE (B) MORE DEPTH ON THE 5 (2026-06-18) → CITY-CHILD CALLS ENGINE: bring TX/FL/IL from 6 cities up toward NY/CA's 11, distinct economies, wire each state's cities-hub + pillar. Wave order: TX ✅ → FL ✅ → IL (next, LAST).
-CITY DEPTH: NY 11 · CA 11 · TX 11 ✅ · FL 11 ✅ (Miami·Orlando·Tampa·Jacksonville·Fort Lauderdale·St Petersburg·Tallahassee·West Palm Beach·Fort Myers·Gainesville·Lakeland) · IL 6 (→11 next).
-FL wave-2 economies (distinct): Tallahassee=state-capital/universities · West Palm Beach=finance/wealth (Wall Street South) · Fort Myers=SWFL construction/retirement · Gainesville=UF/biotech · Lakeland=I-4 logistics/ag. FL stack post-correction (no commercial-rent; DR-405/services/5.5% C-corp).
+**COUNT: total pages live = 317 · re-skinned (142) + growth = 175 · LAST COMMIT = round-58 IL-cities-w2
+(5 cities: Peoria, Champaign, Bloomington, Decatur, Schaumburg + IL cities-hub & pillar wired). Working tree clean on `preview-11ty`.
+✅✅ ALL FIVE DEPTH STATES COMPLETE + CITY PARITY: NY 11 · CA 11 · TX 11 · FL 11 · IL 11 = 55 city children.
+🌱 FOUNDER CHOSE (B) MORE DEPTH ON THE 5 (2026-06-18). City-child calls-engine lane DONE (TX ✅ FL ✅ IL ✅ all to 11).
+⚑ CHECKPOINT — next DEPTH lane offered to founder (round-58 report), recommend GLOSSARY EXPANSION (24→~46, highest AI-citation-per-effort). Other lanes: Support/Help silo (~67) · Guides (~16) · more cities (12th+, diminishing) · Tools/calculators (NEW, needs proof) · Blog (NEW, needs proof) · global service/industry pages. Proceeding on glossary unless redirected.
+IL wave-2 economies (distinct): Peoria=heavy-equip mfg+OSF healthcare+river · Champaign=UIUC Research Park tech/agtech · Bloomington=insurance+Rivian EV+ISU · Decatur=agribusiness processing · Schaumburg=suburban corporate-office+Woodfield retail.
+⛔ FLIP-BLOCKER #6 grows: the 15 new TX/FL/IL cities join the inferred-clean list — LIVE axe/overflow on founder's machine still pending before flip.
 TX wave-2 economies (distinct): Plano=corporate-HQ · Corpus Christi=energy-export/refining/port · Lubbock=cotton-agribusiness+Texas Tech · Laredo=#1 land-port trade corridor (deliberately differentiated from El Paso) · Killeen=Fort Cavazos military.
 ⛔ FLIP-BLOCKER #6 grows: these 5 TX cities join the inferred-clean list (static-proxy + byte-equivalence) — LIVE axe/overflow on founder's machine still pending before flip.
 IL = pillar(re-linked) + 6 cities + cities-hub + 6 money + 6 QB spokes + 3 bkg + 4 tax/triage + industries(hub+6). Templates: city-child · state-service · state-triage · state-industry · pillar.
