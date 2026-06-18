@@ -322,11 +322,14 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 317 · re-skinned (142) + growth = 175 · LAST COMMIT = round-58 IL-cities-w2
-(5 cities: Peoria, Champaign, Bloomington, Decatur, Schaumburg + IL cities-hub & pillar wired). Working tree clean on `preview-11ty`.
-✅✅ ALL FIVE DEPTH STATES COMPLETE + CITY PARITY: NY 11 · CA 11 · TX 11 · FL 11 · IL 11 = 55 city children.
-🌱 FOUNDER CHOSE (B) MORE DEPTH ON THE 5 (2026-06-18). City-child calls-engine lane DONE (TX ✅ FL ✅ IL ✅ all to 11).
-⚑ CHECKPOINT — next DEPTH lane offered to founder (round-58 report), recommend GLOSSARY EXPANSION (24→~46, highest AI-citation-per-effort). Other lanes: Support/Help silo (~67) · Guides (~16) · more cities (12th+, diminishing) · Tools/calculators (NEW, needs proof) · Blog (NEW, needs proof) · global service/industry pages. Proceeding on glossary unless redirected.
+**COUNT: total pages live = 322 · re-skinned (142) + growth = 180 · LAST COMMIT = round-59 support-silo PROOF
+(5 pages: support flagship + hub + independent-help + bank-feeds-not-working + error-6123). Working tree clean on `preview-11ty`.
+✅ ALL 5 STATES + CITY PARITY (55 city children). Founder chose (B) more depth; city lane DONE.
+🟡 FOUNDER QUEUE (2026-06-18): (1) SUPPORT/HELP silo (~67) — IN PROGRESS, then (2) GLOSSARY expansion (24→~46).
+⚑⚑ STOP — FOUNDER GLANCE PENDING on the support honest-triage PROOF before fan-out (round-59 report). Most reputation-sensitive type on the site.
+SUPPORT SILO = honest-TRIAGE per v4 Sheet 7 (capture "QuickBooks support" demand by being the honest answer, route Intuit-account→Intuit, convert file/books→independent paid). Sheet-7 page rules ENFORCED: ATF disclosure · first FAQ "official support? No" · phone CTA "Talk to a Certified ProAdvisor (independent firm)" (added to ctaLexicon.json sanctioned) · no fabricated Intuit phone/hours/24-7 · provider=#organization · drop impersonation slugs · drop 24-7 (not staffed). Proof templates proven: support-triage (clone speak-to-a-quickbooks-expert) + error-code (clone h202) + help-symptom (clone h202 shape).
+FAN-OUT AFTER GLANCE ≈ 47: ~16 error codes (6000/6000-83/6000-301/6073/6150/12002/12007/12029/15223/15271/9999/h101/h505/ps036/unrecoverable) · ~30 help-symptom (cant-login, data-recovery, file-wont-open, payroll-failed, reconciliation-broken, after-hours-help [honest hours], cant-reach-intuit, proadvisor-vs-intuit-support, etc.) · wire help/qb/error-codes hubs. NEW intents added: qb-support, qb-support-contact, qb-support-independent, qb-help-bank-feeds, qb-error-6123.
+⛔ FLIP-BLOCKER #6: 5 support proof pages join inferred-clean list (LIVE axe/overflow pending).
 IL wave-2 economies (distinct): Peoria=heavy-equip mfg+OSF healthcare+river · Champaign=UIUC Research Park tech/agtech · Bloomington=insurance+Rivian EV+ISU · Decatur=agribusiness processing · Schaumburg=suburban corporate-office+Woodfield retail.
 ⛔ FLIP-BLOCKER #6 grows: the 15 new TX/FL/IL cities join the inferred-clean list — LIVE axe/overflow on founder's machine still pending before flip.
 TX wave-2 economies (distinct): Plano=corporate-HQ · Corpus Christi=energy-export/refining/port · Lubbock=cotton-agribusiness+Texas Tech · Laredo=#1 land-port trade corridor (deliberately differentiated from El Paso) · Killeen=Fort Cavazos military.
