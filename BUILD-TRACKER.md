@@ -322,10 +322,10 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 300 · re-skinned (142) + growth = 158 · LAST COMMIT = round-53 IL-industries
-(7 pages: industries hub + manufacturing·healthcare·agency·restaurant·professional-services·trucking). Working tree clean on `preview-11ty`.
-ILLINOIS IN PROGRESS (5th/last state) = pillar + 5 cities + 19 services + industries(hub+6 ✅) (money 6/6 ✅ · tax 2/2 ✅ · QB spokes 6/6 ✅ · bkg 3/3 ✅ · triage 3/3 ✅ · industries 7/7 ✅).
-IL REMAINING ≈ 3: cities (springfield + cities-hub) · pillar ecosystem re-link → ILLINOIS COMPLETE → STOP & flag breadth-vs-depth.
+**COUNT: total pages live = 302 · re-skinned (142) + growth = 160 · LAST COMMIT = round-54 IL-cities-finish
+(2 pages: springfield city child + cities-hub). Working tree clean on `preview-11ty`.
+ILLINOIS IN PROGRESS (5th/last state) = pillar + 6 cities + cities-hub + 19 services + industries(hub+6 ✅) (money 6/6 ✅ · tax 2/2 ✅ · QB spokes 6/6 ✅ · bkg 3/3 ✅ · triage 3/3 ✅ · industries 7/7 ✅ · cities 6 + hub ✅).
+IL REMAINING ≈ 1: pillar ecosystem re-link (the IL pillar was built no-children; re-link its ecosystem/services/industries/cities to the now-built children) → ILLINOIS COMPLETE → STOP & flag breadth-vs-depth.
 IL industry angles (genuine): manufacturing=MM&E exemption · healthcare=insurance-AR+PPRT/PTE (books-only no PHI) · agency=Chicago 15% cloud tax+PPRT · restaurant=POS+tipped/FICA-tip-credit+10.25% Chicago (dining-tax general) · prof-services=IOLTA records-only · trucking=IFTA/IRP+intermodal nexus.
 IL triage built on approved disclosure pattern; agency set = IDOR + City of Chicago Dept of Finance + IDES + IRS. biztax correctly uses IL Secretary of State admin-dissolution (NOT a $800 franchise tax — IL has none).
 IL stack (pillar-verified): flat 4.95% income · PPRT (2.5% C-corp / 1.5% pass-through, even pass-throughs owe) · 9.5% combined C-corp · permanent PTE election (SB 1911) · 6.25%→10.25% Chicago sales · Chicago 15% cloud tax on SaaS · IDOR + Chicago Dept of Finance · 102 counties · 6th city = Springfield.

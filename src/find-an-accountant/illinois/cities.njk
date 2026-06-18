@@ -1,0 +1,100 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/illinois/cities/",
+  "slug": "il-cities",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "heroLight": true,
+  "title": "Illinois Cities We Serve · Bookkeeping & QuickBooks · TechBrot",
+  "description": "Certified QuickBooks ProAdvisor bookkeeping across Illinois — Chicago, Aurora, Naperville, Joliet, Rockford, Springfield, and all 102 counties. The flat 4.95% income tax, the PPRT, Chicago's 10.25% sales tax and 15% lease/cloud tax handled. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Illinois", "href": "/find-an-accountant/illinois/" },
+    { "name": "Cities" }
+  ],
+  "hero": {
+    "eyebrow": "Illinois · Cities We Serve",
+    "heading": "An Illinois bookkeeper for your city — where the city can change the tax picture, not just the economy.",
+    "subheading": "Unlike no-income-tax states, Illinois has a flat 4.95% income tax and the PPRT, and Chicago levies its own taxes on top — a 10.25% combined sales tax and a 15% lease/&ldquo;cloud&rdquo; tax. So in Illinois the city can change the actual tax stack, not only the industry mix: Chicago's finance, fintech and SaaS, Aurora's manufacturing and data centers, Naperville's professional services, Joliet's intermodal logistics, Rockford's aerospace machining, Springfield's state government. We have a dedicated bookkeeper for the major metros and serve all 102 counties remotely, by a named Certified ProAdvisor. We deliver the books; your CPA files.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=illinois&state=illinois&source_type=cities-hub&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Illinois · all 102 counties",
+      "Fixed-fee · written scope in 3 days"
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> provides <strong>Certified QuickBooks ProAdvisor bookkeeping across Illinois</strong> &mdash; dedicated city pages for the major metros (each built around that city&rsquo;s actual economy) plus remote service in all 102 counties, by a named bookkeeper on the same file every month. In Illinois the city can change the tax picture, not just the economy: Chicago layers a 10.25% combined sales tax and a 15% lease/&ldquo;cloud&rdquo; tax on top of the state&rsquo;s flat 4.95% income tax and the PPRT. The full list is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not affiliated with Intuit Inc. Illinois tax figures reflect Department of Revenue and City of Chicago rules current as of the review date; TechBrot does not file Illinois taxes."
+  },
+  "ctaBand": {
+    "eyebrow": "Illinois businesses start here",
+    "heading": "Find your city — or just call.",
+    "lede": "Don't see your city? We serve all 102 Illinois counties remotely on QuickBooks. Book a free discovery call and we'll scope the right books for your business, your city's economy, and the right tax stack — including Chicago's lease/cloud tax and combined sales tax where it applies — with a written fixed-fee scope within 3 business days. Independent firm — does not file IL taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=illinois&state=illinois&source_type=cities-hub&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY ── #}
+<section class="section section--compact" id="il-cities-summary-sec">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In short</p>
+      <h2 class="section__heading">Illinois bookkeeping, city by city.</h2>
+    </header>
+    <p class="prose" id="il-cities-summary">{{ summary | safe }}</p>
+  </div>
+</section>
+
+{# ── CITIES GRID · the dedicated metro pages (buyer-cards) ── #}
+<section class="section" id="il-cities-grid">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Dedicated city pages</p>
+      <h2 class="section__heading">Illinois metros we serve.</h2>
+      <p class="section__lede">Each city page is built around that city&rsquo;s real economy &mdash; not a name swap.</p>
+    </header>
+    <div class="grid-3">
+      {%- for c in cities %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading">{{ c.name | safe }}</h3>
+        <p class="buyer-card__body">{{ c.note | safe }}</p>
+        <a class="buyer-card__cta" href="{{ c.href }}">{{ c.name | safe }} bookkeeper &rarr;</a>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="prose">{{ citiesNote | safe }}</p>
+  </div>
+</section>
+
+{# ── FAQ ── #}
+<section class="section section--alt" id="il-cities-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">Illinois cities &amp; coverage questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="il-cities-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="il-cities-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
