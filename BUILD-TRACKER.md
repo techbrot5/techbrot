@@ -322,11 +322,12 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 369 · re-skinned (142) + growth = 227 · LAST COMMIT = round-64 SUPPORT-SILO COMPLETE
-(support-end-dates + hub wiring). Working tree clean on `preview-11ty`.
-✅ SUPPORT/HELP SILO COMPLETE (51 pages, rounds 59–64, founder-approved): proof 5 + error codes 14 + help-symptom 30 + support-end-dates 1 + hub wiring. All honest-triage per v4 Sheet 7; battery GREEN every wave. Deferred (demand-gated): /quickbooks/support/<category>/* expansion buckets (build by GSC demand, not speculatively).
-🟡 FOUNDER QUEUE: NEXT = GLOSSARY expansion (24 → ~46 terms). Glossary architecture = `src/_data/glossary.js` (data collection) + `src/glossary/entry.njk` (pagination size 1, DefinedTerm/speakable/CALL) + `src/glossary/index.njk` (A–Z hub). Add terms = append objects to glossary.js (no new njk). Real-or-skip honesty; AI-citation magnets; internal-link into money pages.
-⛔ FLIP-BLOCKER #6: all 51 support pages join inferred-clean list (LIVE axe/overflow pending on founder's machine).
+**COUNT: total pages live = 391 · re-skinned (142) + growth = 249 · LAST COMMIT = round-65 GLOSSARY EXPANSION
+(22 new terms; glossary now 46). Working tree clean on `preview-11ty`.
+✅ SUPPORT/HELP SILO COMPLETE (51 pages, rounds 59–64). ✅ GLOSSARY EXPANSION COMPLETE (24→46, round 65). BOTH founder-queued lanes (2026-06-18) DONE.
+🟡 AWAITING FOUNDER on next lane. Remaining growth lanes (per ARCHITECTURE-TRUTH §7 / v4): more QuickBooks product/help (~86) · tools/calculators (~10, NEW type — needs proof) · guides (~16, t-guide) · blog (10, NEW article type — needs proof) · pricing children (5) · trust/reviews/partners/legal/careers children (HONESTY-GATED: reviews = 2 real Clutch only, no AggregateRating <5; case studies REAL-only/likely-flag) · switch pages (4, NEW) · /resources/research/ original-data layer (Gap 2 — flagged still-not-started, can't be backfilled) · more states/industries · the find-an-accountant national hub already built. Glossary could extend further (46→more) if desired.
+⛔ FLIP-BLOCKER #6: all support (51) + glossary (22 new) pages join inferred-clean list (LIVE axe/overflow on founder's machine still pending before flip). CUTOVER GATE also needs: real Intuit badge artwork · baseline-vs-live-prod re-crawl · /resources/ repoint.
+Support silo deferred (demand-gated): /quickbooks/support/<category>/* expansion buckets.
 Generic intents added: qb-error (error pages) + qb-help (help-symptom pages). ps036 routes subscription/billing→Intuit; 9999=QBO browser. error-code template = clone 6123/h202/ps038; help-symptom = clone bank-feeds-not-working.
 ✅ ALL 5 STATES + CITY PARITY (55 city children). Founder chose (B) more depth; city lane DONE.
 🟡 FOUNDER QUEUE (2026-06-18): (1) SUPPORT/HELP silo (~67) — IN PROGRESS, then (2) GLOSSARY expansion (24→~46).

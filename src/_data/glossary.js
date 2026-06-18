@@ -811,4 +811,791 @@ module.exports = [
     faq: null,
     published: "2026-06-17", updated: "2026-06-17",
   },
+
+  {
+    slug: "accrued-expenses",
+    term: "Accrued expenses",
+    title: "Accrued Expenses — Definition & Why They Matter · TechBrot",
+    description: "Accrued expenses: costs your business has incurred but not yet paid or been billed for &mdash; wages earned, interest accrued. What they are, how adjusting entries record them, and why accrual books need them. By Certified QuickBooks ProAdvisors.",
+    shortDef: "Costs your business has already incurred but not yet paid or been invoiced for &mdash; recorded as a liability through adjusting entries so the period&rsquo;s expenses match the period that earned them.",
+    blurb: "Costs incurred but not yet paid or billed &mdash; a liability recorded by adjusting entries on accrual books.",
+    definition: [
+      "<strong>Accrued expenses</strong> are costs a business has already incurred but has not yet paid &mdash; and often has not yet received a bill for. Common examples are wages employees have earned but that haven&rsquo;t been paid out, interest that has accumulated on a loan, or utilities used before the statement arrives. On accrual-basis books they are recorded as a current liability, because the obligation exists even though no cash has moved.",
+      "They are recorded through <strong>adjusting entries</strong> at the end of a period: an expense is posted to the <a href=\"/glossary/profit-and-loss-statement/\">profit and loss statement</a> and a matching liability to the <a href=\"/glossary/balance-sheet/\">balance sheet</a>. When the bill is later paid, the liability clears. This keeps each period&rsquo;s expenses matched to the period that actually consumed them.",
+    ],
+    why: {
+      heading: "Why accruals make the period honest.",
+      paras: [
+        "Without accruals, a month can look more profitable than it really was simply because a bill hasn&rsquo;t arrived yet. Accruing the cost when it&rsquo;s incurred &mdash; not when it&rsquo;s paid &mdash; is the heart of <a href=\"/glossary/accrual-vs-cash-basis-accounting/\">accrual-basis accounting</a> and what makes period-to-period comparison trustworthy.",
+        "Missing or stale accruals are a common finding in a <a href=\"/accounting/bookkeeping/cleanup-bookkeeping/\">cleanup</a>: an accrued liability that was booked and never reversed, or a recurring cost that was never accrued at all, quietly distorts both the expense reports and the liability balance until it&rsquo;s corrected.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "Accrued expenses vs. accounts payable.",
+      paras: [
+        "They&rsquo;re close but not the same. <a href=\"/glossary/accounts-payable/\">Accounts payable</a> is money you owe against a bill you have actually received from a vendor. An <strong>accrued expense</strong> is a cost you&rsquo;ve incurred but for which no bill has arrived yet &mdash; so you estimate and record it to keep the period accurate. Once the invoice comes in, the accrual is typically reversed and the amount moves to accounts payable.",
+      ],
+    },
+    related: [
+      { href: "/glossary/accounts-payable/", title: "Accounts payable", blurb: "The related liability &mdash; money owed against a bill you&rsquo;ve actually received." },
+      { href: "/glossary/accrual-vs-cash-basis-accounting/", title: "Accrual vs. cash basis", blurb: "Accruals only exist on the accrual basis &mdash; the method that records costs when incurred." },
+      { href: "/accounting/bookkeeping/monthly-bookkeeping/", title: "Monthly bookkeeping", blurb: "Recurring accruals posted as part of a real month-end close, so each period is complete." },
+    ],
+    call: { title: "Expenses landing in the wrong month?", sub: "A Certified ProAdvisor reviews how accruals are handled in your books and corrects what&rsquo;s off &mdash; written, fixed-fee scope. Independent firm; not Intuit." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "prepaid-expenses",
+    term: "Prepaid expenses",
+    title: "Prepaid Expenses — Definition & Why They&rsquo;re an Asset · TechBrot",
+    description: "Prepaid expenses: payments made in advance for a future benefit &mdash; insurance, rent, annual software. Why they&rsquo;re recorded as an asset and expensed over time, not all at once. By Certified QuickBooks ProAdvisors.",
+    shortDef: "Payments made in advance for a benefit you&rsquo;ll receive later &mdash; insurance, rent, an annual subscription &mdash; recorded as a current asset and expensed over the period the payment actually covers.",
+    blurb: "Payments made in advance &mdash; recorded as an asset, then expensed over the period they cover.",
+    definition: [
+      "<strong>Prepaid expenses</strong> are payments a business makes in advance for goods or services it will receive in a future period &mdash; annual insurance premiums, rent paid ahead, a yearly software subscription. Because the benefit is still to come, the payment is recorded as a current <strong>asset</strong> on the <a href=\"/glossary/balance-sheet/\">balance sheet</a> rather than an immediate expense.",
+      "As each month of the covered period passes, a portion is moved from the prepaid asset to expense on the <a href=\"/glossary/profit-and-loss-statement/\">profit and loss statement</a>. A twelve-month policy paid up front, for example, is expensed one-twelfth at a time, so each month carries only the cost it actually used.",
+    ],
+    why: {
+      heading: "Why timing the expense matters.",
+      paras: [
+        "Booking a full year&rsquo;s insurance or software as a single expense in the month it&rsquo;s paid overstates that month&rsquo;s costs and understates the eleven that follow &mdash; making the <a href=\"/glossary/profit-and-loss-statement/\">P&amp;L</a> lurch around for no real operating reason. Spreading it correctly keeps each period comparable and the margins meaningful.",
+        "Prepaids are a routine part of a real <a href=\"/accounting/bookkeeping/monthly-bookkeeping/\">month-end close</a>, and a frequent <a href=\"/accounting/bookkeeping/cleanup-bookkeeping/\">cleanup</a> correction &mdash; either large advance payments expensed all at once, or a prepaid asset that was set up and never amortized down as the period elapsed.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "Prepaid expense vs. a regular expense.",
+      paras: [
+        "The difference is timing, not category. A <strong>regular expense</strong> is recorded when the cost is incurred and consumed in the same period. A <strong>prepaid expense</strong> is paid now for a benefit spread across future periods, so it sits as an asset and converts to expense gradually. The cash leaves your account at the same moment either way &mdash; what differs is when the cost hits your reports.",
+      ],
+    },
+    related: [
+      { href: "/glossary/balance-sheet/", title: "Balance sheet", blurb: "Where a prepaid sits as a current asset until it&rsquo;s used up." },
+      { href: "/glossary/accrual-vs-cash-basis-accounting/", title: "Accrual vs. cash basis", blurb: "Prepaids matter on the accrual basis, which records cost when the benefit is consumed." },
+      { href: "/accounting/bookkeeping/monthly-bookkeeping/", title: "Monthly bookkeeping", blurb: "Prepaids amortized down each month as part of a real close, so reports stay even." },
+    ],
+    call: { title: "Big annual payments distorting your months?", sub: "A Certified ProAdvisor checks whether prepaids are recorded and amortized correctly and scopes the fix in writing &mdash; fixed-fee. Independent firm; not Intuit." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "fixed-assets",
+    term: "Fixed assets",
+    title: "Fixed Assets — Definition, Capitalization & Depreciation · TechBrot",
+    description: "Fixed assets: long-lived tangible property a business uses to operate &mdash; equipment, vehicles, furniture, buildings. Why they&rsquo;re capitalized on the balance sheet and depreciated over time, not expensed at purchase. By Certified QuickBooks ProAdvisors.",
+    shortDef: "Long-lived tangible property a business owns and uses to operate &mdash; equipment, vehicles, furniture, buildings &mdash; recorded on the balance sheet and depreciated over its useful life rather than expensed when bought.",
+    blurb: "Long-lived tangible property &mdash; equipment, vehicles, buildings &mdash; capitalized and depreciated, not expensed at purchase.",
+    definition: [
+      "<strong>Fixed assets</strong> are the long-lived, tangible items a business owns and uses to run its operations rather than to sell &mdash; equipment, vehicles, furniture, computers, machinery, and buildings. Also called property, plant, and equipment, they are expected to provide value for more than a single year.",
+      "Because the benefit is spread over years, a fixed asset is <strong>capitalized</strong>: it&rsquo;s recorded as an asset on the <a href=\"/glossary/balance-sheet/\">balance sheet</a> at its cost, not written off as an expense the moment it&rsquo;s bought. Its cost is then moved to expense gradually through <a href=\"/glossary/depreciation/\">depreciation</a> over the asset&rsquo;s useful life.",
+    ],
+    why: {
+      heading: "Why capitalizing them keeps the books true.",
+      paras: [
+        "Expensing a $30,000 vehicle in the month it&rsquo;s purchased would crater that month&rsquo;s profit and overstate it forever after &mdash; while leaving an asset the business clearly still owns nowhere on the balance sheet. Capitalizing and depreciating it matches the cost to the years the asset is actually used, so both the <a href=\"/glossary/profit-and-loss-statement/\">P&amp;L</a> and the balance sheet tell the truth.",
+        "A fixed-asset register that ties to the balance sheet &mdash; what&rsquo;s owned, its cost, and accumulated depreciation &mdash; is part of solid <a href=\"/accounting/bookkeeping/\">bookkeeping</a>. Assets expensed instead of capitalized, or depreciation never recorded, are common <a href=\"/accounting/bookkeeping/cleanup-bookkeeping/\">cleanup</a> findings. Depreciation method and tax treatment are confirmed with your CPA or EA.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "Fixed assets vs. current assets vs. expenses.",
+      paras: [
+        "<strong>Current assets</strong> &mdash; cash, <a href=\"/glossary/accounts-receivable/\">receivables</a>, inventory &mdash; are expected to convert to cash within a year. <strong>Fixed assets</strong> are kept and used for years. And a small or short-lived purchase is simply an <strong>expense</strong>, written off at once: businesses set a capitalization threshold (for example, items over a few hundred or thousand dollars) below which it isn&rsquo;t worth tracking as an asset.",
+      ],
+    },
+    related: [
+      { href: "/glossary/depreciation/", title: "Depreciation", blurb: "How a fixed asset&rsquo;s cost is moved to expense over its useful life." },
+      { href: "/glossary/balance-sheet/", title: "Balance sheet", blurb: "Where fixed assets are carried, net of accumulated depreciation." },
+      { href: "/accounting/bookkeeping/", title: "Bookkeeping services", blurb: "A fixed-asset register kept accurate and tied to the balance sheet." },
+    ],
+    call: { title: "Equipment expensed when it should be on the books?", sub: "A Certified ProAdvisor reviews how your fixed assets are recorded and depreciated and scopes any correction in writing &mdash; fixed-fee, coordinating with your CPA on tax treatment. Independent firm; not Intuit." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "operating-expenses",
+    term: "Operating expenses",
+    title: "Operating Expenses (OpEx) — Definition & Why They&rsquo;re Below Gross Profit · TechBrot",
+    description: "Operating expenses (OpEx): the ongoing costs of running a business that aren&rsquo;t tied directly to a sale &mdash; rent, utilities, admin salaries, software, marketing. What counts, and why they sit below gross profit on the P&L. By Certified QuickBooks ProAdvisors.",
+    shortDef: "The ongoing costs of running the business that aren&rsquo;t tied directly to producing a sale &mdash; rent, utilities, admin salaries, software, marketing &mdash; reported below gross profit on the profit and loss statement.",
+    blurb: "The ongoing costs of running the business not tied to a sale &mdash; below gross profit on the P&L.",
+    definition: [
+      "<strong>Operating expenses</strong> (OpEx) are the ongoing costs a business incurs to keep running that are not tied directly to producing any one sale &mdash; rent, utilities, administrative salaries, software subscriptions, insurance, office costs, and marketing. They are the overhead of being in business, paid whether or not a particular sale is made.",
+      "On the <a href=\"/glossary/profit-and-loss-statement/\">profit and loss statement</a> they sit below gross profit: revenue minus <a href=\"/glossary/cost-of-goods-sold/\">cost of goods sold</a> gives gross profit, and gross profit minus operating expenses gives operating profit. That ordering separates how profitably you make the product from how efficiently you run the company around it.",
+    ],
+    why: {
+      heading: "Why the OpEx line drives real decisions.",
+      paras: [
+        "Operating expenses are where most owners actually have control month to month, so a clean, well-structured OpEx section is what makes the <a href=\"/glossary/profit-and-loss-statement/\">P&amp;L</a> a management tool rather than a tax artifact &mdash; you can see where money goes and what to adjust. That depends on a <a href=\"/glossary/chart-of-accounts/\">chart of accounts</a> built for how the business actually operates.",
+        "Expenses scattered across overlapping accounts, personal spending mixed in, or direct costs misfiled as overhead all blur the picture &mdash; common <a href=\"/accounting/bookkeeping/cleanup-bookkeeping/\">cleanup</a> corrections that, once fixed, make the operating section comparable period to period.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "Operating expenses vs. cost of goods sold.",
+      paras: [
+        "The line between them is direct vs. indirect. <a href=\"/glossary/cost-of-goods-sold/\">Cost of goods sold</a> is the <em>direct</em> cost of what you sold &mdash; it rises and falls with sales. <strong>Operating expenses</strong> are <em>indirect</em> &mdash; you&rsquo;d pay the rent and the admin salaries whether or not you made a sale this month. Drawing that line consistently is what makes gross margin and operating margin both mean something.",
+      ],
+    },
+    related: [
+      { href: "/glossary/cost-of-goods-sold/", title: "Cost of goods sold", blurb: "The direct costs above the line &mdash; the other side of the OpEx distinction." },
+      { href: "/glossary/profit-and-loss-statement/", title: "Profit and loss statement", blurb: "Where operating expenses sit, below gross profit." },
+      { href: "/accounting/financial-statements/", title: "Financial statements", blurb: "Reports structured so the operating section actually guides decisions." },
+    ],
+    call: { title: "Can&rsquo;t see where the money really goes?", sub: "A Certified ProAdvisor reviews how your operating expenses are categorized and whether the P&amp;L is helping or hiding the picture &mdash; written, fixed-fee scope. Independent firm; not Intuit." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+{
+    slug: "owners-equity",
+    term: "Owner&rsquo;s equity",
+    title: "Owner&rsquo;s Equity — Definition & Where It Sits on the Balance Sheet · TechBrot",
+    description: "Owner's equity: the owner's residual claim on the business — assets minus liabilities. What it is, how it appears for sole props, partnerships, and corporations, and how it differs from retained earnings. By Certified QuickBooks ProAdvisors.",
+    shortDef: "The owner&rsquo;s residual claim on the business &mdash; what&rsquo;s left when you subtract everything the business owes (liabilities) from everything it owns (assets). It is the equity section of the balance sheet.",
+    blurb: "The owner&rsquo;s residual claim on the business &mdash; assets minus liabilities, the equity section of the balance sheet.",
+    definition: [
+      "<strong>Owner&rsquo;s equity</strong> is the owner&rsquo;s residual claim on a business: what remains after you subtract everything the business owes (its liabilities) from everything it owns (its assets). It is the third side of the accounting equation &mdash; assets = liabilities + equity &mdash; and the section of the <a href=\"/glossary/balance-sheet/\">balance sheet</a> that represents the owners&rsquo; stake in the company.",
+      "What it&rsquo;s called depends on how the business is structured. In a sole proprietorship or partnership it appears as owner&rsquo;s capital or partners&rsquo; capital. In a corporation it is shareholders&rsquo; equity &mdash; typically common stock plus <a href=\"/glossary/retained-earnings/\">retained earnings</a>. The concept is the same in every case: the portion of the business that belongs to its owners.",
+    ],
+    why: {
+      heading: "What owner&rsquo;s equity tells you.",
+      paras: [
+        "Owner&rsquo;s equity is the book value of the business to its owners &mdash; what would be left for them, on the books, if every asset were turned to cash and every debt paid. It rises when the business earns profit or the owner contributes capital, and falls when the business loses money or the owner takes money out. Watched over time, it is one of the clearest signals of whether a business is building value or drawing it down.",
+        "Like every balance-sheet figure, it is only as trustworthy as the bookkeeping underneath it. Owner contributions and draws posted to the wrong accounts, profit that never closed into equity, or stale balances all distort it &mdash; which is why reconciling the equity accounts, not just the bank, is part of a real <a href=\"/accounting/bookkeeping/cleanup-bookkeeping/\">cleanup</a>.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "Owner&rsquo;s equity vs. retained earnings.",
+      paras: [
+        "They&rsquo;re related but not the same. <strong>Owner&rsquo;s equity</strong> is the whole owners&rsquo; stake &mdash; capital contributed plus accumulated profit, less anything taken out. <a href=\"/glossary/retained-earnings/\">Retained earnings</a> is one component of it: the cumulative profit a business has kept rather than distributed. Equity is the total; retained earnings is the portion built up from profits over time.",
+      ],
+    },
+    related: [
+      { href: "/glossary/balance-sheet/", title: "Balance sheet", blurb: "Where owner&rsquo;s equity sits &mdash; the third side of assets = liabilities + equity." },
+      { href: "/glossary/retained-earnings/", title: "Retained earnings", blurb: "The accumulated-profit component of equity, kept rather than distributed." },
+      { href: "/accounting/financial-statements/", title: "Financial statements", blurb: "The balance sheet your equity is read from, prepared so it ties out." },
+    ],
+    call: { title: "Does your balance sheet&rsquo;s equity make sense?", sub: "A Certified ProAdvisor reconciles your equity accounts &mdash; contributions, draws, and retained earnings &mdash; and scopes any cleanup in writing, fixed-fee. Independent firm; not Intuit." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "owners-draw",
+    term: "Owner&rsquo;s draw",
+    title: "Owner&rsquo;s Draw — Definition & How It Differs From Salary · TechBrot",
+    description: "Owner's draw: money an owner takes out of an unincorporated business for personal use. What it is, why it isn't a deductible expense or payroll, and how it differs from an S-corp salary. By Certified QuickBooks ProAdvisors.",
+    shortDef: "Money an owner takes out of an unincorporated business &mdash; a sole proprietorship, partnership, or LLC &mdash; for personal use. It reduces owner&rsquo;s equity and is not a tax-deductible business expense.",
+    blurb: "Money an owner takes out of an unincorporated business for personal use &mdash; it reduces equity, and it isn&rsquo;t payroll or a deductible expense.",
+    definition: [
+      "An <strong>owner&rsquo;s draw</strong> is money an owner takes out of an unincorporated business &mdash; a sole proprietorship, partnership, or LLC &mdash; for personal use. Rather than being paid a wage, the owner simply withdraws funds the business has earned. Each draw reduces <a href=\"/glossary/owners-equity/\">owner&rsquo;s equity</a> on the balance sheet, because it lowers the owner&rsquo;s remaining stake in the business.",
+      "Critically, a draw is not a business expense. It does not appear on the <a href=\"/glossary/profit-and-loss-statement/\">profit and loss statement</a>, it is not tax-deductible, and it is not payroll &mdash; no wages are recorded and no payroll taxes are withheld on it. A draw moves money the business already owns into the owner&rsquo;s hands; it doesn&rsquo;t change the business&rsquo;s profit.",
+    ],
+    why: {
+      heading: "Why drawing money correctly keeps your books honest.",
+      paras: [
+        "Recording draws in the right place matters because miscategorizing them quietly distorts the picture. Posted as an expense, a draw understates profit and overstates costs &mdash; the P&amp;L lies and the tax figures built on it follow. Personal spending run straight through the business and never reclassified as a draw is one of the most common reasons a set of books needs a <a href=\"/accounting/bookkeeping/cleanup-bookkeeping/\">cleanup</a>.",
+        "Kept correctly, draws flow to an equity account where they belong, the P&amp;L stays clean, and the balance sheet shows the owner&rsquo;s true remaining stake &mdash; the foundation any <a href=\"/accounting/advisory/\">advisory</a> conversation about how much you can safely take out has to rest on.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "Owner&rsquo;s draw vs. salary &mdash; a tax decision for your CPA.",
+      paras: [
+        "Owners of sole proprietorships, partnerships, and most LLCs take draws, not a salary. Owners of an S corporation are different: the IRS requires them to pay themselves a reasonable W-2 salary through payroll, and they may take additional distributions on top. Which structure you should use, and how to split pay between salary and distributions, is a tax matter with real consequences &mdash; we keep the bookkeeping correct for whatever you choose, but the salary-versus-draw decision is confirmed with your CPA or EA.",
+      ],
+    },
+    related: [
+      { href: "/glossary/owners-equity/", title: "Owner&rsquo;s equity", blurb: "The account a draw reduces &mdash; the owner&rsquo;s stake in the business." },
+      { href: "/accounting/bookkeeping/", title: "Bookkeeping services", blurb: "Draws and personal spending recorded to equity so your P&L stays clean." },
+      { href: "/accounting/advisory/", title: "Advisory & fractional CFO", blurb: "How much you can safely take out &mdash; read off books that are actually right." },
+    ],
+    call: { title: "Personal spending tangled into the business?", sub: "A Certified ProAdvisor sorts draws from real expenses so your books and P&amp;L are right &mdash; fixed-fee, in writing. The salary-vs-draw tax call stays with your CPA." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "working-capital",
+    term: "Working capital",
+    title: "Working Capital — Definition & Why Liquidity Matters · TechBrot",
+    description: "Working capital: current assets minus current liabilities — the short-term cushion that funds day-to-day operations. What it is, why positive working capital matters, and how it reads on the balance sheet. By Certified QuickBooks ProAdvisors.",
+    shortDef: "Current assets minus current liabilities &mdash; the short-term liquidity cushion that funds day-to-day operations. Positive working capital means the business can cover what it owes in the near term.",
+    blurb: "Current assets minus current liabilities &mdash; the short-term cushion that funds day-to-day operations.",
+    definition: [
+      "<strong>Working capital</strong> is current assets minus current liabilities &mdash; the cash and near-cash a business has available to fund its day-to-day operations after accounting for what it owes in the near term. Current assets include cash, <a href=\"/glossary/accounts-receivable/\">accounts receivable</a>, and inventory; current liabilities include <a href=\"/glossary/accounts-payable/\">accounts payable</a> and other obligations due within a year.",
+      "It is read straight off the <a href=\"/glossary/balance-sheet/\">balance sheet</a>. Positive working capital means current assets exceed current liabilities &mdash; the business can cover its short-term obligations from short-term resources. Negative working capital means the opposite, and is a warning that near-term bills may outrun near-term cash.",
+    ],
+    why: {
+      heading: "Working capital is a liquidity measure, not a profit measure.",
+      paras: [
+        "A business can be profitable and still run short of working capital &mdash; profit tied up in unpaid receivables or inventory isn&rsquo;t cash you can use to make payroll. Working capital is the question lenders, investors, and owners ask about survival in the next few months: can the business pay what it owes as it comes due? It is one of the most-watched signals of short-term financial health.",
+        "It is only meaningful if the books are accurate. An AR balance for invoices already paid, payables entered twice, or inventory that&rsquo;s wrong all skew the figure &mdash; which is why reconciled current accounts matter, and why interpreting working capital and managing it is a core <a href=\"/accounting/advisory/\">advisory</a> conversation.",
+      ],
+    },
+    how: null,
+    clarify: null,
+    related: [
+      { href: "/glossary/accounts-receivable/", title: "Accounts receivable", blurb: "A current asset &mdash; cash owed to you that feeds working capital once collected." },
+      { href: "/glossary/accounts-payable/", title: "Accounts payable", blurb: "A current liability &mdash; the near-term bills working capital has to cover." },
+      { href: "/accounting/advisory/", title: "Advisory & fractional CFO", blurb: "Reading and managing liquidity &mdash; can the business pay what&rsquo;s due as it comes due?" },
+    ],
+    call: { title: "Profitable but always short on cash?", sub: "A Certified ProAdvisor reconciles your current accounts and reads your real working capital with you &mdash; fixed-fee, in writing. Independent firm; not Intuit." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "gross-margin",
+    term: "Gross margin",
+    title: "Gross Margin — Definition & How It Differs From Markup · TechBrot",
+    description: "Gross margin: gross profit as a percentage of revenue — how much of each sales dollar is left after the cost of goods sold. What it measures, why it matters, and how it differs from markup. By Certified QuickBooks ProAdvisors.",
+    shortDef: "Gross profit as a percentage of revenue &mdash; gross profit &divide; revenue &mdash; showing how much of each sales dollar is left after the cost of what you sold.",
+    blurb: "Gross profit as a percentage of revenue &mdash; how much of each sales dollar is left after COGS.",
+    definition: [
+      "<strong>Gross margin</strong> is gross profit expressed as a percentage of revenue: gross profit &divide; revenue. Gross profit is revenue minus <a href=\"/glossary/cost-of-goods-sold/\">cost of goods sold</a>, so gross margin tells you how much of every sales dollar is left after paying the direct cost of what you sold &mdash; the money available to cover operating expenses and produce a profit.",
+      "It appears at the top of the <a href=\"/glossary/profit-and-loss-statement/\">profit and loss statement</a>, just below revenue and COGS. A business with $100,000 in revenue and $60,000 in COGS has $40,000 in gross profit and a 40% gross margin &mdash; 40 cents of every sales dollar survives the direct cost of the sale.",
+    ],
+    why: {
+      heading: "Why gross margin is the number to watch.",
+      paras: [
+        "Gross margin is one of the most revealing figures a business has: it shows whether the core product or service is fundamentally profitable before overhead, and it&rsquo;s the lever pricing and cost decisions move directly. A slipping gross margin &mdash; rising costs not passed through, or discounting that ate into the line &mdash; is an early warning that no amount of revenue growth fixes.",
+        "It is only trustworthy if COGS is drawn correctly and consistently. Lumping operating expenses into COGS or scattering direct costs into overhead makes the margin look better or worse than it is and breaks period-to-period comparison &mdash; which is why a correct COGS line, and reading margin on accurate <a href=\"/accounting/financial-statements/\">financial statements</a>, comes first.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "Gross margin vs. markup.",
+      paras: [
+        "They&rsquo;re easy to confuse and they aren&rsquo;t the same. <strong>Gross margin</strong> is gross profit as a percentage of the <em>selling price</em>; <strong>markup</strong> is the same profit as a percentage of the <em>cost</em>. A product that costs $60 and sells for $100 carries a 40% margin (40 &divide; 100) but a 67% markup (40 &divide; 60). Using one figure when you mean the other is a common pricing mistake &mdash; the same dollars, two different percentages.",
+      ],
+    },
+    related: [
+      { href: "/glossary/cost-of-goods-sold/", title: "Cost of goods sold", blurb: "The direct cost subtracted from revenue to get the gross profit margin is built on." },
+      { href: "/glossary/profit-and-loss-statement/", title: "Profit and loss statement", blurb: "Where gross margin appears &mdash; just below revenue and COGS." },
+      { href: "/accounting/advisory/", title: "Advisory & fractional CFO", blurb: "Turning margin into pricing and cost decisions, not just a percentage on a report." },
+    ],
+    call: { title: "Is your gross margin telling the truth?", sub: "A Certified ProAdvisor checks that your COGS is drawn correctly so your margin is real &mdash; with a written fixed-fee scope to fix it if not. Independent firm; not Intuit." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+{
+    slug: "write-off",
+    term: "Write-off",
+    title: "Write-Off — Definition & What It Really Means in the Books · TechBrot",
+    description: "A write-off: removing an amount from the books that's no longer collectible or has no value — most often a bad-debt or obsolete-inventory write-off. What it means in bookkeeping, and why it isn't the same as a tax deduction. By Certified QuickBooks ProAdvisors.",
+    shortDef: "Removing from the books an amount that&rsquo;s no longer collectible or has no remaining value &mdash; most often an uncollectible receivable or obsolete inventory &mdash; and recording the loss as an expense.",
+    blurb: "Removing an uncollectible or worthless amount from the books and recording the loss &mdash; not the same as a tax deduction.",
+    definition: [
+      "A <strong>write-off</strong> is the accounting act of removing an amount from the books because it is no longer collectible or no longer has any value, and recording the corresponding loss as an expense. The two most common cases are a <strong>bad-debt write-off</strong> &mdash; an <a href=\"/glossary/accounts-receivable/\">accounts-receivable</a> balance a customer will never pay, removed from receivables and booked as bad-debt expense &mdash; and an <strong>inventory write-off</strong>, where stock that is obsolete, damaged, or unsellable is removed from inventory and expensed.",
+      "Writing something off doesn&rsquo;t make the loss happen; it records a loss that has already happened. The point is to stop the books from carrying an asset &mdash; a receivable or inventory item &mdash; that is no longer worth what it says, so the financial statements reflect reality.",
+    ],
+    why: {
+      heading: "An overstated asset is a misleading balance sheet.",
+      paras: [
+        "Until an uncollectible receivable or worthless inventory item is written off, it sits on the balance sheet as an asset the business doesn&rsquo;t really have. That inflates what the company appears to own, distorts ratios a lender reads, and quietly props up profit on the <a href=\"/glossary/profit-and-loss-statement/\">P&amp;L</a> that was never real. Recording the write-off corrects both at once.",
+        "Identifying what should be written off &mdash; receivables long past collection, inventory that will never sell &mdash; is a routine part of a <a href=\"/accounting/bookkeeping/cleanup-bookkeeping/\">cleanup</a>, because stale balances are exactly the kind of thing that accumulates when the books drift. The judgment of <em>when</em> a balance is truly uncollectible is real work, not a formality.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "A write-off is not the same as a tax deduction.",
+      paras: [
+        "In everyday speech &ldquo;write it off&rdquo; is used loosely to mean &ldquo;deduct it on my taxes&rdquo; &mdash; but those are two different things. A <strong>bookkeeping write-off</strong> removes book value from your accounting records and records a loss in your books. Whether, when, and how that loss is deductible on a tax return is a separate question governed by tax rules, and it is confirmed with your CPA or EA &mdash; not assumed from the bookkeeping entry. TechBrot records the write-off correctly in your books; the tax treatment is your CPA&rsquo;s call.",
+      ],
+    },
+    related: [
+      { href: "/glossary/accounts-receivable/", title: "Accounts receivable", blurb: "Where a bad-debt write-off removes an uncollectible customer balance." },
+      { href: "/accounting/bookkeeping/cleanup-bookkeeping/", title: "Bookkeeping cleanup", blurb: "Stale, uncollectible balances are a classic cleanup finding &mdash; written off so the books reflect reality." },
+      { href: "/accounting/bookkeeping/", title: "Bookkeeping services", blurb: "Receivables and inventory kept current, with write-offs recorded correctly when value is gone." },
+    ],
+    call: { title: "Carrying balances you&rsquo;ll never collect?", sub: "A Certified ProAdvisor reviews what&rsquo;s really collectible, records the write-offs correctly, and coordinates the tax treatment with your CPA &mdash; fixed-fee, independent firm." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "net-income",
+    term: "Net income",
+    title: "Net Income — Definition & Why It's the Bottom Line · TechBrot",
+    description: "Net income: revenue minus all expenses — COGS, operating expenses, interest, and taxes — over a period. The final profit on the P&L, why it's called the bottom line, and why it isn't the same as cash. By Certified QuickBooks ProAdvisors.",
+    shortDef: "The bottom line &mdash; revenue minus every expense (cost of goods sold, operating expenses, interest, and taxes) over a period. The final profit figure on the profit and loss statement.",
+    blurb: "Revenue minus all expenses over a period &mdash; the final profit on the P&L, and not the same as cash.",
+    definition: [
+      "<strong>Net income</strong> is what&rsquo;s left after every expense is subtracted from revenue over a period &mdash; cost of goods sold, operating expenses, interest, and taxes. It is the last line of the <a href=\"/glossary/profit-and-loss-statement/\">profit and loss statement</a>, which is why it&rsquo;s called &ldquo;the bottom line,&rdquo; and it is also known as net profit or net earnings.",
+      "Net income flows onward into the rest of the books: it increases <a href=\"/glossary/retained-earnings/\">retained earnings</a> in the equity section of the <a href=\"/glossary/balance-sheet/\">balance sheet</a>, tying the period&rsquo;s profit to the cumulative value the business has kept over its lifetime.",
+    ],
+    why: {
+      heading: "The number everyone reads &mdash; only as true as the books.",
+      paras: [
+        "Net income is the figure owners, lenders, and buyers look at first to judge whether a business actually makes money. But it is the end of a long chain: every miscategorized expense, every revenue recorded in the wrong period, and every personal cost mixed into the business changes it directly. A confident net-income number on unreconciled books is a confident guess.",
+        "Because so much rolls up into it, net income is also where bookkeeping errors become visible &mdash; an implausible bottom line is often the first sign a file needs a <a href=\"/accounting/bookkeeping/cleanup-bookkeeping/\">cleanup</a> before the number can be trusted or acted on.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "Net income is not cash.",
+      paras: [
+        "A business can show strong net income and still be short on cash &mdash; and the reverse. Profit can be tied up in unpaid <a href=\"/glossary/accounts-receivable/\">receivables</a> or inventory, while loan principal and owner draws drain cash without ever touching net income. That is why the bottom line is read alongside the <a href=\"/glossary/cash-flow-statement/\">cash flow statement</a>, not on its own. Net income answers &ldquo;did we make money?&rdquo;; the cash flow statement answers &ldquo;where did the cash go?&rdquo;",
+      ],
+    },
+    related: [
+      { href: "/glossary/profit-and-loss-statement/", title: "Profit and loss statement", blurb: "The report net income is the bottom line of." },
+      { href: "/glossary/cash-flow-statement/", title: "Cash flow statement", blurb: "Why a profitable bottom line still isn&rsquo;t cash in the bank." },
+      { href: "/glossary/retained-earnings/", title: "Retained earnings", blurb: "Where net income flows into equity, period after period." },
+    ],
+    call: { title: "Does your bottom line ring true?", sub: "A Certified ProAdvisor checks whether your net income is built on reconciled, correctly categorized books &mdash; or whether a cleanup is needed first. Written fixed-fee scope; independent firm." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "amortization",
+    term: "Amortization",
+    title: "Amortization — Definition & How It Differs from Depreciation · TechBrot",
+    description: "Amortization: spreading the cost of an intangible asset, or a loan's principal, over time. What it means for patents, goodwill, and software, how loan amortization works, and how it differs from depreciation. By Certified QuickBooks ProAdvisors.",
+    shortDef: "Spreading a cost over time &mdash; either the cost of an intangible asset across its useful life (the intangible analog of depreciation), or a loan&rsquo;s principal across the schedule by which it&rsquo;s repaid.",
+    blurb: "Spreading the cost of an intangible asset, or a loan&rsquo;s principal, over time &mdash; depreciation&rsquo;s intangible counterpart.",
+    definition: [
+      "<strong>Amortization</strong> has two closely related meanings, both about spreading a cost over time. In the asset sense, it is the gradual expensing of an <strong>intangible asset</strong> &mdash; something with value but no physical form, such as a patent, goodwill, or purchased software &mdash; across its useful life, the same way <a href=\"/glossary/depreciation/\">depreciation</a> spreads the cost of a physical asset.",
+      "In the loan sense, amortization is the schedule by which a loan&rsquo;s <strong>principal</strong> is paid down over its term. An amortization schedule shows how each payment splits between interest and principal, with the principal portion growing as the balance shrinks &mdash; which is why early payments are mostly interest and later ones mostly principal.",
+    ],
+    why: {
+      heading: "Why spreading the cost matters.",
+      paras: [
+        "Expensing a long-lived intangible all at once would distort a single period&rsquo;s profit and understate the asset&rsquo;s value in every period after. Amortization matches the cost to the periods that benefit from it, so the <a href=\"/glossary/profit-and-loss-statement/\">P&amp;L</a> and the <a href=\"/glossary/balance-sheet/\">balance sheet</a> both stay closer to economic reality.",
+        "On the loan side, splitting each payment between interest (an expense) and principal (a reduction of a liability) is what keeps a loan recorded correctly &mdash; a frequent <a href=\"/accounting/bookkeeping/cleanup-bookkeeping/\">cleanup</a> finding is a loan where every payment was booked entirely to expense, leaving the liability balance wrong for years.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "Amortization vs. depreciation.",
+      paras: [
+        "They are the same idea applied to different assets. <strong>Amortization</strong> spreads the cost of <em>intangible</em> assets &mdash; patents, goodwill, software. <a href=\"/glossary/depreciation/\">Depreciation</a> spreads the cost of <em>tangible</em>, physical assets &mdash; equipment, vehicles, buildings. The accounting mechanics are parallel; the distinction is simply whether you can touch the asset. How either is calculated for a tax return follows separate tax rules confirmed with your CPA or EA.",
+      ],
+    },
+    related: [
+      { href: "/glossary/depreciation/", title: "Depreciation", blurb: "The tangible-asset counterpart &mdash; same idea, physical assets." },
+      { href: "/glossary/balance-sheet/", title: "Balance sheet", blurb: "Where intangible assets and loan principal both sit, and shrink as they amortize." },
+      { href: "/accounting/bookkeeping/", title: "Bookkeeping services", blurb: "Intangible assets and loans recorded and amortized correctly, month after month." },
+    ],
+    call: { title: "Loans or intangibles recorded right?", sub: "A Certified ProAdvisor checks whether your loans and intangible assets are amortized correctly in the books, and coordinates the tax treatment with your CPA &mdash; fixed-fee, independent firm." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+{
+    slug: "undeposited-funds",
+    term: "Undeposited Funds",
+    title: "Undeposited Funds — What the Account Is For & Why It Piles Up · TechBrot",
+    description: "Undeposited Funds: the default QuickBooks holding account where received payments sit until you group them into a deposit that matches the bank. What it's for, why it piles up, and how to fix it. By Certified QuickBooks ProAdvisors.",
+    shortDef: "A default QuickBooks holding account where customer payments sit after they&rsquo;re received but before they&rsquo;re grouped into a bank deposit &mdash; so the deposit in your books matches the single deposit slip the bank actually shows.",
+    blurb: "The default QuickBooks holding account where received payments wait until you group them into a deposit that matches the bank &mdash; and a classic place errors pile up.",
+    definition: [
+      "<strong>Undeposited Funds</strong> is a default account QuickBooks creates to hold customer payments after you&rsquo;ve recorded receiving them but before you&rsquo;ve recorded depositing them at the bank. When you receive several payments and take them to the bank together, the bank records one combined deposit; Undeposited Funds lets you do the same in QuickBooks &mdash; hold the individual payments, then group them into a single deposit entry that matches the real-world deposit slip.",
+      "Used as intended, it is the bridge between recording a payment and recording a deposit, and it is what makes the deposit in your books line up cleanly with the lump sum that shows on the <a href=\"/glossary/bank-reconciliation/\">bank statement</a>.",
+    ],
+    why: {
+      heading: "Why it piles up &mdash; and why that&rsquo;s a problem.",
+      paras: [
+        "Payments left in Undeposited Funds and never grouped into a deposit are one of the most common QuickBooks bookkeeping errors and a frequent <a href=\"/quickbooks/cleanup/\">cleanup</a> finding. When payments are recorded as received but the deposit step is skipped, they stack up in the holding account indefinitely &mdash; inflating that account, leaving the bank account understated, and making the books impossible to reconcile because the deposits in QuickBooks never match the deposits at the bank.",
+        "The fix is the discipline behind the account: every payment received is grouped into a deposit that mirrors what actually hit the bank, so Undeposited Funds clears to zero between deposits and reconciliation stays clean.",
+      ],
+      quote: "Undeposited Funds isn&rsquo;t a place money lives. It&rsquo;s a waiting room &mdash; and a full waiting room means the deposits never got made in the books.",
+    },
+    how: {
+      paras: [
+        "The intended flow is two steps: record the payment to Undeposited Funds when it comes in, then, when you make the actual bank deposit, group the payments that went in together into one deposit entry. That grouped entry &mdash; not the individual payments &mdash; is what posts to the bank account and matches the single line on the statement, so the account reconciles instead of fighting you.",
+      ],
+    },
+    clarify: {
+      heading: "Undeposited Funds vs. depositing straight to the bank.",
+      paras: [
+        "You don&rsquo;t always need it. If a payment is deposited on its own, recording it directly to the bank account is fine. Undeposited Funds earns its place when multiple payments are deposited <em>together</em> &mdash; it lets one combined deposit in QuickBooks match the one combined deposit the bank shows. The error is leaving payments parked there, not using the account at all.",
+      ],
+    },
+    related: [
+      { href: "/glossary/bank-reconciliation/", title: "Bank reconciliation", blurb: "Deposits that don&rsquo;t match the bank are why a file won&rsquo;t reconcile &mdash; misused Undeposited Funds is a top cause." },
+      { href: "/quickbooks/cleanup/", title: "QuickBooks cleanup", blurb: "Payments piled up in Undeposited Funds are a classic cleanup finding &mdash; cleared and matched to real deposits." },
+      { href: "/accounting/bookkeeping/", title: "Bookkeeping services", blurb: "Ongoing bookkeeping that records, groups, and deposits payments correctly so the account clears every month." },
+    ],
+    call: { title: "Payments piling up in Undeposited Funds?", sub: "A Certified ProAdvisor clears the holding account, matches deposits to the bank, and gets the file reconciling again &mdash; fixed-fee, in writing. Independent firm; not Intuit." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "class-tracking",
+    term: "Class tracking",
+    title: "Class Tracking in QuickBooks — What It Is & When to Use It · TechBrot",
+    description: "Class tracking: the QuickBooks feature for tagging transactions to a segment — location, department, program, or property — so you can run a P&L by class. What it does, when it helps, and why consistency is everything. By Certified QuickBooks ProAdvisors.",
+    shortDef: "A QuickBooks feature that lets you tag each transaction to a segment of the business &mdash; a location, department, program, or property &mdash; so you can run a profit and loss statement for that segment, not just the company as a whole.",
+    blurb: "The QuickBooks feature for tagging transactions to a segment &mdash; location, department, program &mdash; so you can run a P&L by class. Powerful, but only if applied consistently.",
+    definition: [
+      "<strong>Class tracking</strong> is a QuickBooks feature (Classes) that lets you attach a label to each transaction marking which part of the business it belongs to &mdash; a location, a department, a program, a property, a revenue line. Because the label rides on the transaction, you can then run a <a href=\"/glossary/profit-and-loss-statement/\">profit and loss statement</a> broken out by class and see how each segment is doing on its own.",
+      "It is a second dimension layered over the <a href=\"/glossary/chart-of-accounts/\">chart of accounts</a>: the account says <em>what</em> the transaction is (rent, sales, payroll); the class says <em>which part of the business</em> it belongs to. Together they answer questions a single company-wide P&amp;L can&rsquo;t.",
+    ],
+    why: {
+      heading: "Powerful for segmented businesses &mdash; if it&rsquo;s consistent.",
+      paras: [
+        "For a business that runs multiple locations, programs, or properties, class tracking turns one blended P&amp;L into a per-segment view: which store is actually profitable, which program covers its costs, which property is dragging. That visibility is hard to get any other way without separate company files.",
+        "But it only works if every relevant transaction is classed, every time. Half-classed books are worse than unclassed ones: an &ldquo;unclassified&rdquo; bucket quietly absorbs transactions, and the per-class reports mislead because the totals don&rsquo;t add up to the whole. Setting up classes deliberately is part of a proper <a href=\"/quickbooks/setup/\">setup</a>, and inconsistent classing is a recurring cleanup correction.",
+      ],
+    },
+    how: {
+      paras: [
+        "Class tracking is turned on in settings, a short list of classes is defined to match how the business is actually segmented, and from then on each transaction is tagged as it&rsquo;s entered. The payoff is the P&amp;L by class report &mdash; one column per segment &mdash; which is only as trustworthy as the consistency of the tagging behind it.",
+      ],
+    },
+    clarify: {
+      heading: "Classes vs. the chart of accounts.",
+      paras: [
+        "They&rsquo;re easy to confuse. The <strong>chart of accounts</strong> categorizes <em>what kind</em> of transaction it is; <strong>classes</strong> categorize <em>which part of the business</em> it belongs to. You don&rsquo;t create a new account for each location &mdash; you use one set of accounts and one class per location, so the P&amp;L can slice either way.",
+      ],
+    },
+    related: [
+      { href: "/quickbooks/setup/", title: "QuickBooks setup", blurb: "Classes set up deliberately from the start &mdash; matched to how the business is actually segmented." },
+      { href: "/accounting/industries/", title: "Industry-specific accounting", blurb: "Multi-location, multi-program, and property businesses are where class tracking earns its keep." },
+      { href: "/glossary/profit-and-loss-statement/", title: "Profit and loss statement", blurb: "The P&L by class is the report class tracking exists to produce." },
+    ],
+    call: { title: "Want a P&amp;L by location or program?", sub: "A Certified ProAdvisor sets up class tracking to match how your business really runs &mdash; and fixes inconsistent classing if it&rsquo;s already in place. Fixed-fee, in writing. Independent firm; not Intuit." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "bank-feeds",
+    term: "Bank feeds",
+    title: "Bank Feeds in QuickBooks — What They Do & Their Limits · TechBrot",
+    description: "Bank feeds: the QuickBooks feature that imports transactions automatically from a connected bank or card into the For Review queue. What they do, why they speed bookkeeping, and why a feed is not a finished reconciliation. By Certified QuickBooks ProAdvisors.",
+    shortDef: "The QuickBooks feature that imports transactions automatically from a connected bank or credit-card account into a For Review queue, where each one is categorized and matched &mdash; speeding bookkeeping, but not replacing reconciliation.",
+    blurb: "The QuickBooks feature that auto-imports transactions from a connected bank or card into the For Review queue. Speeds bookkeeping &mdash; but matching the feed is not a finished reconciliation.",
+    definition: [
+      "<strong>Bank feeds</strong> are a QuickBooks feature that connects to your bank or credit-card account and imports transactions automatically into a <strong>For Review</strong> queue. Instead of typing each transaction in by hand, you review what came in, confirm or set its category, and either match it to a transaction already in the books or add it as a new one.",
+      "The feed is a data-entry accelerator: it pulls the raw activity in quickly and accurately, and rules can pre-categorize recurring transactions. What it does not do is decide that the activity is complete and correct &mdash; that is still a person&rsquo;s job.",
+    ],
+    why: {
+      heading: "A feed is not a reconciliation.",
+      paras: [
+        "This is the single most important and most misunderstood point about bank feeds: clearing the For Review queue is not the same as reconciling the account. The feed shows what the bank <em>sent</em>; it doesn&rsquo;t prove the account matches the bank&rsquo;s ending balance for the period. Transactions can be miscategorized, matched to the wrong entry, duplicated, or missing if the feed dropped them &mdash; and the queue will still look empty.",
+        "A completed <a href=\"/glossary/bank-reconciliation/\">bank reconciliation</a> is the separate step that confirms the full set of transactions ties to the statement and the account closes to the right balance. Bank feeds make the data entry faster; reconciliation is what makes the books true. Feeds also break &mdash; connections drop and imports stall &mdash; which is its own <a href=\"/quickbooks/help/bank-feeds-not-working/\">troubleshooting</a> problem.",
+      ],
+    },
+    how: {
+      paras: [
+        "Each imported transaction lands in For Review, where you confirm its category and either match it to an existing entry (an invoice payment, a recorded bill) or add it as new. Once reviewed it moves into the register &mdash; ready to be reconciled, but not reconciled by the act of being reviewed.",
+      ],
+    },
+    clarify: {
+      heading: "For Review queue vs. the reconcile screen.",
+      paras: [
+        "Two different screens, two different jobs. The <strong>For Review</strong> queue is where imported transactions get categorized and matched &mdash; it&rsquo;s about getting each transaction <em>into</em> the books correctly. The <strong>reconcile</strong> screen is where you prove the books match the statement for the period. You can empty the queue and still be unreconciled.",
+      ],
+    },
+    related: [
+      { href: "/glossary/bank-reconciliation/", title: "Bank reconciliation", blurb: "The step bank feeds don&rsquo;t replace &mdash; proving the account matches the statement and closes to the right balance." },
+      { href: "/quickbooks/help/bank-feeds-not-working/", title: "Bank feeds not working", blurb: "When the connection drops or transactions stop importing &mdash; how the feed gets restored." },
+      { href: "/accounting/bookkeeping/", title: "Bookkeeping services", blurb: "Feeds reviewed correctly and every account reconciled each month &mdash; not just a cleared queue." },
+    ],
+    call: { title: "Relying on the feed and skipping the reconcile?", sub: "A Certified ProAdvisor reviews how your feeds are categorized and reconciles the accounts properly &mdash; so the books are true, not just tidy. Fixed-fee, in writing. Independent firm; not Intuit." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "audit-trail",
+    term: "Audit trail",
+    title: "QuickBooks Audit Trail (Audit Log) — What It Records & Why · TechBrot",
+    description: "The QuickBooks audit trail: a built-in, unalterable log of every change to the file — who entered, edited, or deleted a transaction and when. What it records, where to find it, and why it's essential for accountability and cleanup. By Certified QuickBooks ProAdvisors.",
+    shortDef: "QuickBooks&rsquo; built-in, unalterable log of every change made to the company file &mdash; who entered, edited, or deleted each transaction, what changed, and when &mdash; so nothing in the books is anonymous or untraceable.",
+    blurb: "QuickBooks&rsquo; built-in, unalterable log of every change to the file &mdash; who did what, and when. Essential for accountability and for finding what changed.",
+    definition: [
+      "The <strong>audit trail</strong> is QuickBooks&rsquo; built-in record of every change made to the company file: each time a transaction is entered, edited, or deleted, QuickBooks logs who did it, when, and what the values were before and after. It is maintained automatically and cannot be turned off or altered by users, which is what makes it trustworthy as a record.",
+      "In QuickBooks Online it is the <strong>Audit Log</strong>; in QuickBooks Desktop it is the <strong>Audit Trail</strong> report. Same idea in both: a complete, time-stamped history of activity in the file, attributed to the user who performed each action.",
+    ],
+    why: {
+      heading: "Why the audit trail matters.",
+      paras: [
+        "The audit trail is accountability built into the books. When a balance changes unexpectedly, an invoice that was there last week is gone, or a number doesn&rsquo;t match what someone remembers, the log answers exactly what happened, when, and who did it &mdash; turning a mystery into a fact. That makes it indispensable for catching errors, investigating discrepancies, and detecting tampering or fraud.",
+        "It is also a core tool in forensic and <a href=\"/quickbooks/cleanup/\">cleanup</a> work. Before a file can be trusted, you often need to know how it got into its current state &mdash; the audit trail shows the deletions and after-the-fact edits that explain why the books drifted, so the corrections fix the real cause rather than the symptom.",
+      ],
+      quote: "Nothing in a QuickBooks file is truly anonymous. The audit trail remembers who entered it, who changed it, and exactly when &mdash; even after the transaction itself is gone.",
+    },
+    how: {
+      paras: [
+        "The audit trail records automatically &mdash; there&rsquo;s nothing to switch on. To use it, you open the Audit Log (QBO) or run the Audit Trail report (Desktop) and filter by user, date, or transaction to see the full before-and-after history of what changed. The value isn&rsquo;t in producing the log; it&rsquo;s in reading it to reconstruct what actually happened in the file.",
+      ],
+    },
+    clarify: null,
+    related: [
+      { href: "/quickbooks/cleanup/", title: "QuickBooks cleanup", blurb: "The audit trail shows how a file drifted &mdash; the deletions and edits cleanup work has to trace back and correct." },
+      { href: "/accounting/bookkeeping/", title: "Bookkeeping services", blurb: "Accountable books where every change is attributable &mdash; and discrepancies are traceable, not guesswork." },
+      { href: "/glossary/journal-entry/", title: "Journal entry", blurb: "After-the-fact entries and edits are exactly what the audit trail captures, before and after." },
+    ],
+    call: { title: "Numbers changed and no one knows how?", sub: "A Certified ProAdvisor reads the audit trail, finds what changed and when, and scopes the correction in writing &mdash; fixed-fee. Independent firm; not Intuit." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "memorized-transaction",
+    term: "Memorized transaction",
+    title: "Memorized / Recurring Transactions in QuickBooks — What They Are · TechBrot",
+    description: "Memorized transactions (recurring transactions): saved templates QuickBooks uses to create repeating transactions on a schedule — recurring invoices, bills, journal entries. What they do, why they save time, and why stale templates cause errors. By Certified QuickBooks ProAdvisors.",
+    shortDef: "A saved transaction template QuickBooks uses to create a repeating transaction automatically on a schedule &mdash; a recurring invoice, bill, or journal entry &mdash; so the same routine entry doesn&rsquo;t have to be built by hand every time.",
+    blurb: "A saved template QuickBooks uses to create repeating transactions on a schedule &mdash; recurring invoices, bills, journal entries. Saves time; stale templates post wrong amounts.",
+    definition: [
+      "A <strong>memorized transaction</strong> is a saved template QuickBooks uses to generate a transaction that repeats on a schedule &mdash; a monthly invoice to the same client, a recurring rent bill, a standing <a href=\"/glossary/journal-entry\">journal entry</a>. You define the transaction once, set how often it should recur, and QuickBooks creates it automatically (or reminds you to) each cycle.",
+      "QuickBooks Desktop calls these <strong>memorized transactions</strong>; QuickBooks Online calls them <strong>recurring transactions</strong>. The mechanism is the same in both: one saved template driving many identical or near-identical entries over time.",
+    ],
+    why: {
+      heading: "Time-saving &mdash; until the template goes stale.",
+      paras: [
+        "For anything that repeats, memorized transactions remove the manual work and the risk of forgetting: the recurring invoice goes out, the standing bill posts, the monthly accrual entry lands &mdash; consistently, on schedule, in the same form every time. That consistency is part of what makes a <a href=\"/accounting/bookkeeping/monthly-bookkeeping/\">monthly bookkeeping</a> routine reliable.",
+        "The risk is the flip side of that automation: a template that&rsquo;s out of date keeps posting anyway. A rent amount that changed, a client who&rsquo;s no longer active, an account that was renamed &mdash; the memorized transaction will keep creating the old version until someone updates or stops it, quietly entering wrong amounts every cycle. Reviewing memorized transactions is part of keeping a clean file, and stale ones are a recurring cleanup finding.",
+      ],
+    },
+    how: {
+      paras: [
+        "You build the transaction once, then save it as memorized (Desktop) or recurring (QBO) with a schedule and an action &mdash; post automatically, or prompt you to confirm. From then on QuickBooks creates each instance on schedule. The maintenance, not the setup, is where care is needed: when the underlying details change, the template has to change with them.",
+      ],
+    },
+    clarify: {
+      heading: "Same feature, two names.",
+      paras: [
+        "If you move between QuickBooks Desktop and QuickBooks Online, the terminology shifts but the concept doesn&rsquo;t. <strong>Memorized transaction</strong> (Desktop) and <strong>recurring transaction</strong> (Online) refer to the same thing: a saved template that drives scheduled, repeating entries.",
+      ],
+    },
+    related: [
+      { href: "/quickbooks/setup/", title: "QuickBooks setup", blurb: "Recurring transactions set up correctly from the start &mdash; the right templates, schedules, and amounts." },
+      { href: "/accounting/bookkeeping/monthly-bookkeeping/", title: "Monthly bookkeeping", blurb: "Recurring entries that post reliably each cycle &mdash; and get reviewed so stale templates don&rsquo;t post wrong amounts." },
+      { href: "/quickbooks/cleanup/", title: "QuickBooks cleanup", blurb: "Stale memorized transactions quietly posting outdated amounts are a recurring cleanup finding." },
+    ],
+    call: { title: "Recurring entries posting the wrong amounts?", sub: "A Certified ProAdvisor reviews your memorized and recurring transactions, fixes the stale ones, and gets them posting correctly &mdash; fixed-fee, in writing. Independent firm; not Intuit." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+{
+    slug: "w-9-form",
+    term: "Form W-9",
+    title: "Form W-9 — What It Is & Why You Collect It Before You Pay · TechBrot",
+    description: "Form W-9: the IRS form a business collects from a vendor or contractor to get their legal name, address, and taxpayer ID so it can issue a 1099 at year end. What it is, when to collect it, and how it differs from a 1099. By Certified QuickBooks ProAdvisors.",
+    shortDef: "The IRS form a business collects <em>from</em> a vendor or contractor &mdash; capturing their legal name, address, and taxpayer ID (TIN, SSN, or EIN) &mdash; so the business can issue a 1099 at year end. Collect it before you pay.",
+    blurb: "The form you collect from a contractor to get their taxpayer ID &mdash; so you can issue a 1099 at year end. Educational only.",
+    definition: [
+      "<strong>Form W-9</strong> (&ldquo;Request for Taxpayer Identification Number and Certification&rdquo;) is the IRS form a business collects <em>from</em> a vendor or independent contractor before paying them. The contractor fills it out with their legal name, business name if any, address, and taxpayer identification number &mdash; an SSN for an individual or an <a href=\"/glossary/ein/\">EIN</a> for a business &mdash; and signs it. The business keeps the W-9 on file; it is not sent to the IRS.",
+      "The W-9 exists so the payer has the verified information it needs to issue a <a href=\"/glossary/1099-nec/\">Form 1099</a> after year end. Without a completed W-9, a business can be left chasing a contractor for a taxpayer ID at the worst possible time &mdash; or facing backup-withholding rules. This page is educational; whether a payment requires a W-9 or a 1099, and any related tax obligation, is confirmed with your CPA or EA.",
+    ],
+    why: {
+      heading: "Collect it before you pay &mdash; not at year end.",
+      paras: [
+        "Missing W-9s are one of the most common cleanup gaps we find. The form is easy to get when a contractor wants to be paid and hard to get once the work is done and the invoice is settled. Making a signed W-9 a condition of the first payment means that, twelve months later, the information needed to issue a 1099 is already on file &mdash; instead of becoming a January scramble.",
+        "What TechBrot does is operational: we help track which vendors in your QuickBooks file are 1099-eligible and which are still missing a W-9, so the year-end 1099 run isn&rsquo;t derailed by gaps &mdash; see <a href=\"/quickbooks/help/1099-errors/\">1099 errors in QuickBooks</a>. Collecting the form, and any decision about a worker&rsquo;s tax treatment, stays with you and your CPA or EA.",
+      ],
+      quote: "The W-9 is cheap insurance: a two-minute form at the start that prevents a year-end emergency you can&rsquo;t fully fix.",
+    },
+    how: null,
+    clarify: {
+      heading: "W-9 vs. 1099 &mdash; which way does it flow?",
+      paras: [
+        "They&rsquo;re two ends of the same process, and they&rsquo;re easy to confuse. You <strong>collect a W-9</strong> from the people you pay &mdash; it flows <em>in</em> to you. You <strong>issue a 1099</strong> to those same people after year end &mdash; it flows <em>out</em> from you, using the information the W-9 provided. The W-9 is the input; the <a href=\"/glossary/1099-nec/\">1099-NEC</a> is the output.",
+      ],
+    },
+    related: [
+      { href: "/glossary/1099-nec/", title: "Form 1099-NEC", blurb: "The year-end information return the W-9 makes possible &mdash; the output to the W-9&rsquo;s input." },
+      { href: "/glossary/1099-vs-w2/", title: "1099 vs. W-2", blurb: "Whether a worker is a contractor (W-9 then 1099) or an employee (W-4 then W-2) &mdash; the classification behind it." },
+      { href: "/quickbooks/help/1099-errors/", title: "1099 errors in QuickBooks", blurb: "Missing W-9s and bad vendor data are the root of most year-end 1099 errors &mdash; how we get the data right." },
+    ],
+    call: { title: "Year-end 1099s held up by missing W-9s?", sub: "A Certified ProAdvisor reviews your QuickBooks vendors, flags who&rsquo;s 1099-eligible and missing a W-9, and gets the books and vendor data right &mdash; fixed-fee, in writing. Your CPA files; we&rsquo;re an independent firm, not Intuit. Educational only &mdash; not tax advice." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "1099-nec",
+    term: "Form 1099-NEC",
+    title: "Form 1099-NEC — Nonemployee Compensation Explained · TechBrot",
+    description: "Form 1099-NEC: the IRS information return businesses file to report nonemployee compensation — generally $600 or more paid to an independent contractor in a year. What it reports, the $600 threshold, and why card payments go on a 1099-K instead. By Certified QuickBooks ProAdvisors.",
+    shortDef: "The IRS information return a business files to report <strong>nonemployee compensation</strong> &mdash; generally $600 or more paid to an independent contractor during the year. Reintroduced in 2020, split back out from the 1099-MISC.",
+    blurb: "The form that reports $600+ paid to a contractor in a year &mdash; we get the QuickBooks data right; your CPA files. Educational only.",
+    definition: [
+      "<strong>Form 1099-NEC</strong> (&ldquo;Nonemployee Compensation&rdquo;) is the IRS information return a business uses to report payments made to independent contractors and other nonemployees &mdash; generally $600 or more paid to a given payee over the course of the year. The contractor gets a copy and reports the income; the IRS gets a copy to match against that contractor&rsquo;s return.",
+      "The form was reintroduced for the 2020 tax year, splitting nonemployee compensation back out of <a href=\"/glossary/1099-vs-w2/\">Form 1099-MISC</a>, where it had lived in &ldquo;Box 7&rdquo; for decades. This page is educational; the $600 figure is the well-established general threshold, but whether a specific payment is reportable, and the filing itself, are confirmed with your CPA or EA.",
+    ],
+    why: {
+      heading: "Get the vendor data right, and the filing follows.",
+      paras: [
+        "A correct 1099-NEC run depends entirely on clean books: the right vendors flagged as 1099-eligible, a <a href=\"/glossary/w-9-form/\">W-9</a> on file for each, and the amounts paid totaled accurately by payee. When any of that is missing or wrong, the year-end run produces errors &mdash; wrong totals, missing payees, duplicate filings &mdash; that take real work to unwind under deadline.",
+        "What TechBrot does is the operational half: getting your QuickBooks vendor data, eligibility flags, and amounts right so the numbers behind each 1099 are accurate &mdash; see <a href=\"/quickbooks/help/1099-errors/\">1099 errors in QuickBooks</a>. The filing itself runs through Intuit&rsquo;s 1099 e-file service or your CPA. We keep the records right; the licensed professional advises and files.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "1099-NEC vs. 1099-MISC vs. 1099-K.",
+      paras: [
+        "<strong>1099-NEC</strong> reports nonemployee compensation &mdash; what you pay contractors for their services. <strong>1099-MISC</strong> reports other miscellaneous payments &mdash; rent, royalties, prizes, certain legal payments &mdash; that are <em>not</em> compensation for services. And critically: payments you make by credit card or through a third-party processor are reported on a <strong>1099-K</strong> by the processor, <em>not</em> on your 1099-NEC &mdash; reporting them on both would double-count the contractor&rsquo;s income.",
+      ],
+    },
+    related: [
+      { href: "/glossary/w-9-form/", title: "Form W-9", blurb: "The form you collect from a contractor up front &mdash; the source of the name and taxpayer ID a 1099-NEC needs." },
+      { href: "/glossary/1099-vs-w2/", title: "1099 vs. W-2", blurb: "Whether a worker gets a 1099-NEC (contractor) or a W-2 (employee) &mdash; the classification that decides which form applies." },
+      { href: "/quickbooks/help/1099-errors/", title: "1099 errors in QuickBooks", blurb: "Wrong amounts, missing payees, card payments double-counted &mdash; the common 1099 errors and how we fix the data." },
+    ],
+    call: { title: "1099-NEC season coming up?", sub: "A Certified ProAdvisor gets your QuickBooks vendor data, eligibility flags, and amounts right so the 1099 run is clean &mdash; fixed-fee, in writing. Your CPA files; we&rsquo;re an independent firm, not Intuit. Educational only &mdash; not tax advice." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "ein",
+    term: "Employer Identification Number (EIN)",
+    title: "EIN (Employer Identification Number) — What It Is & When You Need One · TechBrot",
+    description: "Employer Identification Number (EIN): the IRS-issued nine-digit federal tax ID for a business — like an SSN for the entity. What it is, when you need one to hire, file, or open a bank account, and how it differs from a state tax ID. By Certified QuickBooks ProAdvisors.",
+    shortDef: "The IRS-issued nine-digit federal tax ID for a business &mdash; effectively an SSN for the entity. It identifies the business on federal returns, payroll filings, and bank accounts. Issued by the IRS, free of charge.",
+    blurb: "The IRS&rsquo;s nine-digit federal tax ID for a business &mdash; like an SSN for the entity. Educational only; the IRS issues it.",
+    definition: [
+      "An <strong>Employer Identification Number</strong> (EIN), also called a Federal Tax Identification Number, is the nine-digit number the IRS issues to identify a business for federal tax purposes &mdash; in effect, a Social Security number for the entity rather than a person. It appears on the business&rsquo;s federal returns, payroll filings, and the forms its banks and vendors keep on file.",
+      "A business generally needs an EIN to hire employees, file business tax returns, open a business bank account, and often to form an entity such as an LLC or corporation. The IRS issues an EIN directly, free of charge. This page is educational; whether your business needs one, and any entity or tax question around it, belongs with the IRS and your CPA or EA &mdash; not with us.",
+    ],
+    why: {
+      heading: "Where the EIN shows up in your books.",
+      paras: [
+        "The EIN is the thread that ties a business&rsquo;s financial records together: it&rsquo;s on the business bank accounts you reconcile, the payroll tax filings, and the W-9 the business hands to its own customers. Keeping payroll and the books set up under the correct EIN &mdash; especially after an entity change &mdash; is what keeps filings and records consistent.",
+        "What TechBrot does is operational: making sure the EIN is recorded correctly in QuickBooks and that payroll and the books are configured to it &mdash; see <a href=\"/accounting/payroll-management/\">payroll management</a>. Obtaining the EIN, and any entity or tax decision behind it, is handled directly with the IRS and your CPA or EA.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "EIN (federal) vs. a state tax ID.",
+      paras: [
+        "They&rsquo;re different numbers from different authorities. The <strong>EIN</strong> is federal, issued once by the IRS, and identifies the business to the federal government. A <strong>state tax or registration ID</strong> is issued separately by a state &mdash; for state payroll withholding, sales tax, or business registration &mdash; and a business operating in several states may hold more than one. Having an EIN does not give you a state ID, and vice versa.",
+      ],
+    },
+    related: [
+      { href: "/accounting/payroll-management/", title: "Payroll management", blurb: "Payroll runs under the business&rsquo;s EIN &mdash; we keep the setup and filings consistent with it." },
+      { href: "/glossary/w-9-form/", title: "Form W-9", blurb: "An incorporated contractor reports its EIN on the W-9 you collect &mdash; the same kind of federal tax ID, for their entity." },
+      { href: "/glossary/1099-nec/", title: "Form 1099-NEC", blurb: "A payee&rsquo;s EIN or SSN is the taxpayer ID that appears on the 1099 you issue." },
+    ],
+    call: { title: "Payroll or books not lined up to the right EIN?", sub: "A Certified ProAdvisor confirms your EIN is recorded correctly in QuickBooks and that payroll and the books are configured to it &mdash; fixed-fee, in writing. The IRS issues the EIN; your CPA advises. Independent firm, not Intuit. Educational only &mdash; not tax advice." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+{
+    slug: "estimated-taxes",
+    term: "Estimated taxes",
+    title: "Estimated Taxes — Quarterly Payments & Why Accurate Books Matter · TechBrot",
+    description: "Estimated taxes: the quarterly payments individuals and businesses make on income not subject to withholding, because the U.S. tax system is pay-as-you-go. What they are, why underpaying triggers penalties, and why accurate books make the estimate reliable. Educational only &mdash; your CPA or EA calculates and files. By Certified QuickBooks ProAdvisors.",
+    shortDef: "Periodic payments &mdash; generally quarterly &mdash; that individuals and businesses make through the year on income that isn&rsquo;t subject to withholding, because the U.S. tax system is pay-as-you-go.",
+    blurb: "Quarterly payments on income that isn&rsquo;t withheld &mdash; the pay-as-you-go system. Your CPA calculates them; accurate books make the estimate reliable.",
+    definition: [
+      "<strong>Estimated taxes</strong> are periodic payments individuals and businesses make to the IRS &mdash; and usually their state &mdash; through the year on income that isn&rsquo;t subject to withholding. The U.S. tax system is <em>pay-as-you-go</em>: tax is meant to be paid as income is earned, not in a single lump at filing. Employees meet that through paycheck withholding; the self-employed, business owners, and anyone with significant untaxed income (profit distributions, interest, gains) generally meet it by making estimated payments instead.",
+      "They are generally paid quarterly, on a schedule the IRS sets each year. Underpaying &mdash; paying too little, or too late &mdash; can trigger an IRS underpayment penalty even if the full balance is settled at filing, which is why estimating accurately through the year matters.",
+    ],
+    why: {
+      heading: "Accurate books are what make the estimate reliable.",
+      paras: [
+        "An estimate is only as good as the numbers behind it. If the books are behind, unreconciled, or miscategorized, the income figure your CPA or EA works from is a guess &mdash; and a guess that&rsquo;s too low invites a penalty, while one that&rsquo;s too high ties up cash you needed. Current, reconciled books let the person calculating your estimate work from real profit, not a hopeful number.",
+        "TechBrot keeps the books accurate and current so your CPA or EA can calculate your estimated payments from real figures, and so a quarterly profit picture is there when the decision is due. We do the bookkeeping; the licensed tax professional does the math and the filing. See our <a href=\"/accounting/bookkeeping/\">bookkeeping</a> and <a href=\"/accounting/advisory/\">advisory</a> work for how the foundation is kept.",
+      ],
+      quote: "We don&rsquo;t calculate your estimated taxes &mdash; your CPA does. We make sure the books they calculate from are true.",
+    },
+    how: null,
+    clarify: {
+      heading: "Estimated taxes vs. payroll-tax deposits.",
+      paras: [
+        "They are easy to confuse but flow in different directions. <strong>Estimated taxes</strong> are paid by <em>you</em> (or your business) to the IRS and state on your own untaxed income. <a href=\"/glossary/payroll-liabilities/\">Payroll-tax deposits</a> are made by an <em>employer</em> remitting tax that was withheld from <em>employees&rsquo;</em> wages, on the employees&rsquo; behalf. One covers the owner&rsquo;s income; the other is the employer passing along money it held in trust.",
+        "This page is educational only. The amount you owe, the safe-harbor rules that protect against penalties, and the actual filing are your CPA&rsquo;s or EA&rsquo;s &mdash; TechBrot is an independent ProAdvisor firm and does not calculate, advise on, or file taxes.",
+      ],
+    },
+    related: [
+      { href: "/accounting/bookkeeping/", title: "Bookkeeping services", blurb: "Current, reconciled books are what let your CPA estimate from real income, not a guess." },
+      { href: "/accounting/advisory/", title: "Advisory & fractional CFO", blurb: "A quarterly profit picture, so the cash for an estimated payment is never a surprise." },
+      { href: "/glossary/payroll-liabilities/", title: "Payroll liabilities", blurb: "The other tax owed through the year &mdash; employer-remitted, not the owner&rsquo;s estimated payment." },
+    ],
+    call: { title: "Books too far behind to estimate from?", sub: "A Certified ProAdvisor brings your books current and reconciled so your CPA can calculate estimated taxes from real numbers &mdash; written fixed-fee scope. We keep the books accurate; your CPA files. Independent firm; not Intuit." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "payroll-liabilities",
+    term: "Payroll liabilities",
+    title: "Payroll Liabilities — Definition & Why They Must Be Remitted On Time · TechBrot",
+    description: "Payroll liabilities: amounts a business has withheld from employees or owes as an employer but not yet remitted &mdash; income-tax withholding, Social Security and Medicare, unemployment, and benefit withholdings. What they are, why trust-fund taxes must be remitted on time, and how they&rsquo;re kept reconciled in QuickBooks. By Certified QuickBooks ProAdvisors.",
+    shortDef: "Amounts a business has withheld from employees, or owes as an employer, but not yet remitted to the agencies &mdash; a liability on the balance sheet until it&rsquo;s paid.",
+    blurb: "What you&rsquo;ve withheld from employees or owe as an employer but haven&rsquo;t yet remitted &mdash; a liability until it&rsquo;s paid, and the trust-fund portion is serious.",
+    definition: [
+      "<strong>Payroll liabilities</strong> are the amounts a business has either withheld from employees&rsquo; pay or incurred as an employer, but has not yet remitted to the taxing agencies and benefit providers. They include employee income-tax withholding, Social Security and Medicare (both the employee and the employer halves), federal and state unemployment, and any benefit withholdings such as health-insurance premiums or retirement contributions.",
+      "Each of these sits as a <em>liability</em> on the balance sheet from the moment payroll is run until the money is actually paid to the agency. The amounts withheld from employees are <strong>trust-fund taxes</strong> &mdash; money the business holds on the employees&rsquo; behalf &mdash; and they must be remitted on time; the agencies treat trust-fund obligations seriously.",
+    ],
+    why: {
+      heading: "A liability until it&rsquo;s paid &mdash; and the books have to show it.",
+      paras: [
+        "Between running payroll and paying the agencies, the withheld and accrued amounts are real obligations sitting on the books. If they aren&rsquo;t recorded and reconciled correctly, the balance sheet understates what the business owes and the cash that looks available isn&rsquo;t really yours &mdash; it&rsquo;s the employees&rsquo; tax, held in trust. Misstated payroll liabilities are a common source of confusion and of <a href=\"/accounting/bookkeeping/cleanup-bookkeeping/\">cleanup</a> work.",
+        "TechBrot keeps payroll liabilities recorded and reconciled in QuickBooks so the balance always reflects what&rsquo;s genuinely owed. The actual filing and remittance run through your payroll service &mdash; Intuit&rsquo;s payroll product or another provider &mdash; or your CPA; we make sure the books match what was filed and paid. See <a href=\"/accounting/payroll-management/\">payroll management</a> and <a href=\"/quickbooks/payroll/\">QuickBooks Payroll</a> for how that fits together.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "Recorded and reconciled vs. filed and remitted.",
+      paras: [
+        "There are two different jobs here. <strong>Recording and reconciling</strong> payroll liabilities in QuickBooks &mdash; making sure the books show the right amount owed and that it clears when paid &mdash; is the bookkeeping work TechBrot does. <strong>Filing the returns and remitting the money</strong> to the IRS and state agencies is handled by your payroll service (Intuit payroll or another provider) or your CPA.",
+        "When the books and the payroll filings disagree &mdash; a deposit not recorded, a liability that won&rsquo;t clear &mdash; that&rsquo;s reconcilable bookkeeping work; see <a href=\"/quickbooks/help/payroll-tax-error/\">payroll-tax errors in QuickBooks</a>. TechBrot is an independent firm and not affiliated with Intuit.",
+      ],
+    },
+    related: [
+      { href: "/quickbooks/payroll/", title: "QuickBooks Payroll", blurb: "Where payroll liabilities are tracked &mdash; kept recorded and reconciled against what was filed." },
+      { href: "/accounting/payroll-management/", title: "Payroll management", blurb: "Payroll run and reconciled in the books; filing and remittance via your provider or CPA." },
+      { href: "/quickbooks/help/payroll-tax-error/", title: "Payroll-tax errors in QuickBooks", blurb: "When a payroll liability won&rsquo;t clear or the books don&rsquo;t match the filing." },
+    ],
+    call: { title: "Payroll liabilities that won&rsquo;t reconcile?", sub: "A Certified ProAdvisor gets your payroll liabilities recorded and reconciled in QuickBooks so the books match what was filed &mdash; written fixed-fee scope. Filing and remittance run through your payroll service or CPA. Independent firm; not Intuit." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
+
+  {
+    slug: "fiscal-year",
+    term: "Fiscal year",
+    title: "Fiscal Year — Definition & How It Differs From a Calendar Year · TechBrot",
+    description: "Fiscal year: the 12-month period a business uses for accounting and tax reporting &mdash; often the calendar year, but it can be any 12-month span. What it is, how it differs from the calendar year, and why the choice affects when books close and returns are due. The election is confirmed with your CPA. By Certified QuickBooks ProAdvisors.",
+    shortDef: "The 12-month period a business uses for accounting and tax reporting &mdash; often the calendar year (January through December), but it can be any 12-month span a business chooses.",
+    blurb: "The 12-month period a business reports on &mdash; often the calendar year, but not always. It sets when the books close and returns come due.",
+    definition: [
+      "A <strong>fiscal year</strong> is the 12-month period a business uses for its accounting and tax reporting. For many businesses it is the <strong>calendar year</strong> &mdash; January 1 through December 31 &mdash; but it doesn&rsquo;t have to be. A fiscal year can be any 12-month span: a retailer might end its year on January 31, after the holiday rush has fully settled, so the busiest season falls inside one clean reporting period.",
+      "The fiscal year sets the rhythm of the books: it determines when the year-end <a href=\"/glossary/month-end-close/\">close</a> happens, when annual financial statements are produced, and when tax returns come due. Once chosen, it&rsquo;s the frame every annual report is built in.",
+    ],
+    why: {
+      heading: "Why the choice shapes your reporting.",
+      paras: [
+        "Picking a fiscal year that matches how the business actually operates makes the numbers easier to read: a seasonal business that ends its year right after its peak gets a cleaner picture of a full cycle than one split awkwardly across two calendar years. The choice also fixes your deadlines &mdash; when the books must be closed and when returns are due &mdash; so it shapes the whole annual workload.",
+        "TechBrot keeps your books and closes aligned to whatever fiscal year you&rsquo;re on, so each period ties out and the year-end package is ready on schedule. The actual fiscal-year (tax-year) election &mdash; whether you may use a non-calendar year, and how to elect or change it &mdash; is a tax matter confirmed with your CPA or EA.",
+      ],
+    },
+    how: null,
+    clarify: {
+      heading: "Fiscal year vs. calendar year.",
+      paras: [
+        "A <strong>calendar year</strong> always runs January 1 to December 31. A <strong>fiscal year</strong> is any 12-month reporting period a business uses &mdash; which <em>may</em> be the calendar year, or may end on a different date (a fiscal year ending January 31, June 30, and so on). Every calendar year is a fiscal year; not every fiscal year is the calendar year.",
+        "Which one you may use, and the fiscal-year or tax-year election, is confirmed with your CPA &mdash; TechBrot is an independent ProAdvisor firm and does not advise on or file the tax-year election. We keep the books accurate on whichever year you&rsquo;re on.",
+      ],
+    },
+    related: [
+      { href: "/glossary/month-end-close/", title: "Month-end close", blurb: "The monthly discipline that rolls up into the fiscal year-end close." },
+      { href: "/accounting/bookkeeping/", title: "Bookkeeping services", blurb: "Books kept and closed in step with your fiscal year, year-end package ready on schedule." },
+      { href: "/accounting/advisory/", title: "Advisory & fractional CFO", blurb: "Reading a full fiscal year against how the business actually cycles." },
+    ],
+    call: { title: "Year-end books that aren&rsquo;t ready on time?", sub: "A Certified ProAdvisor keeps your books closed and reconciled on your fiscal-year schedule, so the year-end package is ready &mdash; written fixed-fee scope. The tax-year election is confirmed with your CPA; we keep the books accurate. Independent firm; not Intuit." },
+    faq: null,
+    published: "2026-06-18", updated: "2026-06-18",
+  },
 ];
