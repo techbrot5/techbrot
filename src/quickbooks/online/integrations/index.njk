@@ -1,0 +1,105 @@
+---json
+{
+  "layout": "layouts/t-hub.njk",
+  "permalink": "/quickbooks/online/integrations/",
+  "slug": "qbo-integrations-hub",
+  "title": "QuickBooks Online Integrations: ProAdvisor Setup Guide · TechBrot",
+  "description": "How to connect Stripe, PayPal, Square, Shopify, Bill.com, Expensify, Gusto, HubSpot, and QuickBooks Payments to QuickBooks Online the right way — and reconcile them. Most apps bring data in net of fees, so the books only balance if mapping is set up correctly. Independent firm, not Intuit, not affiliated with these apps. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "QuickBooks", "href": "/quickbooks/" },
+    { "name": "Online", "href": "/quickbooks/online/" },
+    { "name": "Integrations" }
+  ],
+  "heroFigure": false,
+  "hero": {
+    "eyebrow": "QuickBooks Online · Integrations",
+    "heading": "Connecting an app to QuickBooks is easy. Reconciling it is where the books break.",
+    "subheading": "Almost any app will sync to QuickBooks Online in a few clicks — but the click is the easy part. Configuring the data flow and reconciling it correctly is where books fall apart, because most integrations bring money in net of fees or post entries that have to be mapped to the right accounts or the file won't balance. This hub routes to a plain-English page for all nine common QBO integrations and explains the one gotcha that breaks each one. Independent Certified ProAdvisor firm — not Intuit, and not affiliated with any of these apps.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks", "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Independent · not Intuit · not these apps",
+      "We set up and reconcile the data flow in your file"
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> is an independent Certified QuickBooks ProAdvisor firm — <strong>not Intuit</strong>, and <strong>not affiliated with</strong> any of the third-party apps below. Connecting an app to QuickBooks Online is easy; <em>configuring the data flow and reconciling it correctly is where the books break</em>. The recurring problem: most integrations deposit money <strong>net of fees</strong> or post entries against accounts that must be <strong>mapped correctly first</strong>, or the file won't reconcile. This hub links to a dedicated page for each of the nine common QBO integrations, grouped by what they do. Already connected something and the books are a mess? See <a href=\"/quickbooks/cleanup/\">QuickBooks cleanup</a>. The full list is below.",
+    "source": "Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not Intuit, not Intuit's official software support, and not affiliated with Stripe, PayPal, Square, Shopify, Bill.com, Expensify, Gusto, or HubSpot. App names are trademarks of their respective owners. Integration behavior reflects each app as of the review date and is set by the app and Intuit. Not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Start with your real file",
+    "heading": "We'll set up the integration — and make it reconcile.",
+    "lede": "Get a free QuickBooks file review or book a discovery call. We'll look at how your apps connect to QBO today — what's mapped where, what's posting net of fees, and what isn't reconciling — and set it up so the books actually balance. No pitch. Independent firm — not Intuit.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── SUMMARY ── #}
+<section class="section section--compact" id="qbo-integrations-hub-summary-sec">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In short</p>
+      <h2 class="section__heading">All nine QuickBooks Online integrations, and where each one breaks the books.</h2>
+    </header>
+    <p class="prose" id="qbo-integrations-hub-summary">{{ summary | safe }}</p>
+  </div>
+</section>
+
+{# ── INTEGRATION GRID · grouped by workflow, 9 QBO integration pages (buyer-cards) ── #}
+{%- for group in integrationGroups %}
+<section class="section{% if loop.index is even %} section--alt{% endif %}" id="qbo-integrations-hub-{{ group.id }}">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">{{ group.eyebrow | safe }}</p>
+      <h2 class="section__heading">{{ group.heading | safe }}</h2>
+      {%- if group.lede %}<p class="section__lede">{{ group.lede | safe }}</p>{%- endif %}
+    </header>
+    <div class="grid-3">
+      {%- for f in group.integrations %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading">{{ f.title | safe }}</h3>
+        <p class="buyer-card__body">{{ f.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ f.href }}">{{ f.cta | safe }}</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endfor %}
+
+{# ── CROSS-LINKS ── #}
+<section class="section section--compact" id="qbo-integrations-hub-related">
+  <div class="container container--narrow">
+    <p class="prose">{{ relatedNote | safe }}</p>
+  </div>
+</section>
+
+{# ── FAQ ── #}
+<section class="section section--alt" id="qbo-integrations-hub-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">QuickBooks Online integrations questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbo-integrations-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="qbo-integrations-hub-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
