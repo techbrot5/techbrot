@@ -74,7 +74,7 @@ module.exports = {
           {"@type":"ListItem","position":1,"name":"Home","item":"https://techbrot.com/"},
           {"@type":"ListItem","position":2,"name":"QuickBooks","item":"https://techbrot.com/quickbooks/"},
           {"@type":"ListItem","position":3,"name":"Online","item":"https://techbrot.com/quickbooks/online/"},
-          {"@type":"ListItem","position":4,"name":"Features","item":"https://techbrot.com/quickbooks/online/"},
+          {"@type":"ListItem","position":4,"name":"Features","item":"https://techbrot.com/quickbooks/online/features/"},
           {"@type":"ListItem","position":5,"name":"Inventory","item":url}]},
         {"@type":"TechArticle","@id":url+"#techarticle","headline":"QuickBooks Online Inventory: How It Works (FIFO, Plus/Advanced)","description":data.description,"about":{"@type":"SoftwareApplication","name":"QuickBooks Online","applicationCategory":"BusinessApplication","operatingSystem":"Web"},"author":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"reviewedBy":{"@id":"https://techbrot.com/#david-westgate"},"inLanguage":"en-US","proficiencyLevel":"Beginner","mainEntityOfPage":{"@id":url+"#webpage"}},
         {"@type":"HowTo","@id":url+"#howto","name":"How to set up and use inventory in QuickBooks Online","description":"Set up QuickBooks Online inventory correctly in six ordered steps, from confirming your plan supports it through opening balances, account mapping, and watching negative inventory.","tool":[{"@type":"HowToTool","name":"QuickBooks Online Plus or Advanced"}],"step":data.fixSteps.map(function(s,i){return {"@type":"HowToStep","position":i+1,"name":stripTags(s.name),"text":stripTags(s.body),"url":url+"#qbo-feat-inventory-fix"};})},

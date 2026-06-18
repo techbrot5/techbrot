@@ -77,7 +77,7 @@ module.exports = {
           {"@type":"ListItem","position":1,"name":"Home","item":"https://techbrot.com/"},
           {"@type":"ListItem","position":2,"name":"QuickBooks","item":"https://techbrot.com/quickbooks/"},
           {"@type":"ListItem","position":3,"name":"Online","item":"https://techbrot.com/quickbooks/online/"},
-          {"@type":"ListItem","position":4,"name":"Features","item":"https://techbrot.com/quickbooks/online/"},
+          {"@type":"ListItem","position":4,"name":"Features","item":"https://techbrot.com/quickbooks/online/features/"},
           {"@type":"ListItem","position":5,"name":"Chart of Accounts","item":url}]},
         {"@type":"TechArticle","@id":url+"#techarticle","headline":"QuickBooks Online Chart of Accounts: Structure It Right","description":data.description,"about":{"@type":"SoftwareApplication","name":"QuickBooks Online","applicationCategory":"BusinessApplication","operatingSystem":"Web"},"author":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"reviewedBy":{"@id":"https://techbrot.com/#david-westgate"},"inLanguage":"en-US","proficiencyLevel":"Beginner","mainEntityOfPage":{"@id":url+"#webpage"}},
         {"@type":"HowTo","@id":url+"#howto","name":"How to structure a QuickBooks Online chart of accounts well","description":"Structure a QuickBooks Online chart of accounts correctly with six ordered principles, from an industry-appropriate starting structure through deciding it once and living with it.","tool":[{"@type":"HowToTool","name":"QuickBooks Online"}],"step":data.fixSteps.map(function(s,i){return {"@type":"HowToStep","position":i+1,"name":stripTags(s.name),"text":stripTags(s.body),"url":url+"#qbo-feat-chart-of-accounts-fix"};})},

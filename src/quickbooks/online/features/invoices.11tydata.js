@@ -74,7 +74,7 @@ module.exports = {
           {"@type":"ListItem","position":1,"name":"Home","item":"https://techbrot.com/"},
           {"@type":"ListItem","position":2,"name":"QuickBooks","item":"https://techbrot.com/quickbooks/"},
           {"@type":"ListItem","position":3,"name":"Online","item":"https://techbrot.com/quickbooks/online/"},
-          {"@type":"ListItem","position":4,"name":"Features","item":"https://techbrot.com/quickbooks/online/"},
+          {"@type":"ListItem","position":4,"name":"Features","item":"https://techbrot.com/quickbooks/online/features/"},
           {"@type":"ListItem","position":5,"name":"Invoices","item":url}]},
         {"@type":"TechArticle","@id":url+"#techarticle","headline":"QuickBooks Online Invoices: How Invoicing Works & Best Practices","description":data.description,"about":{"@type":"SoftwareApplication","name":"QuickBooks Online","applicationCategory":"BusinessApplication","operatingSystem":"Web"},"author":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"reviewedBy":{"@id":"https://techbrot.com/#david-westgate"},"inLanguage":"en-US","proficiencyLevel":"Beginner","mainEntityOfPage":{"@id":url+"#webpage"}},
         {"@type":"HowTo","@id":url+"#howto","name":"How to set up and use QuickBooks Online invoicing well","description":"Set up and run QuickBooks Online invoicing correctly with ordered steps that keep accounts receivable accurate.","tool":[{"@type":"HowToTool","name":"QuickBooks Online"},{"@type":"HowToTool","name":"QuickBooks Payments (optional)"}],"step":data.fixSteps.map(function(s,i){return {"@type":"HowToStep","position":i+1,"name":stripTags(s.name),"text":stripTags(s.body),"url":url+"#qbo-feat-invoices-fix"};})},
