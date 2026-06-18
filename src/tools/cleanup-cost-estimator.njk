@@ -1,0 +1,176 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/tools/cleanup-cost-estimator/",
+  "slug": "cleanup-calc",
+  "chrome": "full",
+  "callBar": true,
+  "includeCalcJs": true,
+  "bodyClass": "page--mofu",
+  "pageTier": "mofu",
+  "title": "QuickBooks Cleanup Cost Estimator · What Bookkeeping Cleanup & Catch-Up Cost · TechBrot",
+  "description": "Free cleanup cost estimator. Estimate a one-time QuickBooks cleanup or catch-up from how far behind and how messy your books are, against TechBrot's published pricing (cleanup $1,500–$15,000+, catch-up $2,000–$20,000+). An estimate, not a quote. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Tools", "href": "/tools/" },
+    { "name": "Cleanup Cost Estimator" }
+  ],
+  "hero": {
+    "eyebrow": "Free tool · Cleanup & catch-up pricing",
+    "heading": "What will it cost to clean up or catch up your books?",
+    "subheading": "Cleanup and catch-up are one-time projects, priced on how far behind you are and how tangled the file is. Answer five questions for a realistic range &mdash; drawn from TechBrot&rsquo;s published fixed-fee pricing, not a guess. It&rsquo;s an estimate, not a quote: your exact fixed fee is confirmed in writing within 3 business days of a free discovery call.",
+    "actions": [
+      { "label": "Skip to the calculator", "href": "#calc", "class": "btn--primary" },
+      { "label": "See full pricing", "href": "/pricing/", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>This tool estimates a one-time project</strong>: a QuickBooks <strong>cleanup</strong> (books exist but are messy &mdash; TechBrot range <strong>$1,500&ndash;$15,000+</strong>) or <strong>catch-up</strong> (months or years not done &mdash; <strong>$2,000&ndash;$20,000+</strong>). It is an estimate from public pricing &mdash; never a binding quote. The drivers are how far behind you are, transaction volume, accounts, reconciliation state, and payroll. Your exact fixed fee is quoted in writing within 3 business days of a free discovery call.",
+    "source": "TechBrot Inc. &middot; independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "From estimate to exact number",
+    "heading": "Get the exact fixed fee to fix your books.",
+    "lede": "The estimator gets you in the right range. A free 30-minute discovery call &mdash; with a look at your actual file &mdash; gets you the exact number, in writing within 3 business days, before you commit. No hourly billing, no obligation.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=cleanup", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="calc">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The estimator</p>
+      <h2 class="section__heading">Estimate your cleanup or catch-up cost.</h2>
+      <p class="section__lede">Pick the option that fits in each row. The estimate updates as you go. Everything stays in your browser &mdash; nothing is sent until <em>you</em> decide to book a call.</p>
+    </header>
+
+    <div class="calc" data-calc>
+      <form class="calc__form" aria-describedby="calc-disclaimer-top">
+        <p class="calc__formnote" id="calc-disclaimer-top">An estimate from published pricing &mdash; not a quote.</p>
+        {%- for field in model.inputs %}
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="calc-{{ field.id }}">{{ field.label | safe }}{% if field.help %} <span class="intake-field__optional">{{ field.help | safe }}</span>{% endif %}</label>
+          <select id="calc-{{ field.id }}" data-calc-input="{{ field.id }}">
+            {%- for opt in field.options %}
+            <option value="{{ opt.v }}">{{ opt.label | safe }}</option>
+            {%- endfor %}
+          </select>
+        </div>
+        {%- endfor %}
+      </form>
+
+      <div class="calc__result" id="calc-result" role="status" aria-live="polite" data-calc-result>
+        <p class="calc__result-label">Estimated one-time fee</p>
+        <p class="calc__result-range"><span data-calc-value>$1,500&ndash;$3,500</span></p>
+        <p class="calc__result-band" data-calc-band>Light cleanup</p>
+        <p class="calc__result-why" data-calc-why>Books are mostly current and just need tidying before the monthly close takes over.</p>
+        <p class="calc__result-disclaimer">This is an <strong>estimate from TechBrot&rsquo;s published pricing</strong> &mdash; not a quote. Cleanup is forensic work; the real fixed fee is set after a ProAdvisor reviews your actual file, and is confirmed in writing within 3 business days of a free discovery call.</p>
+        <a class="btn btn--primary btn--lg calc__result-cta" href="/contact/?intent=cleanup" data-tb-event="calc_to_quote">Get your exact fixed fee</a>
+      </div>
+
+      <noscript>
+        <div class="calc__noscript">
+          <p>The live estimate needs JavaScript. You can still see the full published ranges on the <a href="/pricing/">pricing page</a>, or <a href="/contact/?intent=cleanup">book a free discovery call</a> for an exact fixed-fee quote within 3 business days.</p>
+        </div>
+      </noscript>
+    </div>
+
+    <script type="application/json" id="calc-model">{{ model | dump | safe }}</script>
+  </div>
+</section>
+
+<section class="section section--alt" id="cleanup-calc-how">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">No black box</p>
+      <h2 class="section__heading">How this estimate is calculated.</h2>
+      <p class="section__lede">Every number is a slice of our published cleanup and catch-up ranges &mdash; we&rsquo;d rather show the math than hide it.</p>
+    </header>
+    <div class="legal-doc__body">
+      <p>Cleanup and catch-up are <strong>one-time fixed-fee projects</strong>, not monthly work. <strong>Cleanup</strong> ($1,500&ndash;$15,000+) is fixing books that exist but are wrong &mdash; unreconciled accounts, miscategorized transactions, a broken chart of accounts. <strong>Catch-up</strong> ($2,000&ndash;$20,000+) is building books for months or years that were never done. Many engagements are a bit of both.</p>
+      <p>The estimator scores five drivers &mdash; how far behind you are, monthly transaction volume, number of accounts, how reconciled the file is, and payroll &mdash; and maps the total to one of four bands inside those published ranges. The deeper the backlog and the worse the reconciliation state, the more forensic untangling it takes, which moves the estimate up.</p>
+      <p>The estimate is a <strong>range, never a single number</strong>. Cleanup pricing depends on what we actually find when we open the file &mdash; a five-question form can&rsquo;t see that. The real fixed fee is set after a ProAdvisor reviews your file on a free discovery call, and is always delivered in writing before any work begins.</p>
+    </div>
+    <div class="vs-scroll stack-8">
+      <table class="vs-table">
+        <caption class="sr-only">The four cleanup/catch-up bands inside TechBrot&rsquo;s published ranges.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Band</th>
+            <th scope="col" class="vs-table__us">Typical range</th>
+            <th scope="col">Looks like</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for b in model.bands %}
+          <tr>
+            <td><strong>{{ b.name }}</strong></td>
+            <td class="vs-table__us"><strong>{{ b.display | safe }}</strong></td>
+            <td class="vs-table__concede">{{ b.why | safe }}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cleanup-calc-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Cleanup &amp; catch-up cost, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="cleanup-calc-next">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Where to go next.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for card in nextCards %}
+      <article class="review-card">
+        <h3>{{ card.name }}</h3>
+        <p class="review-card__fact">{{ card.body | safe }}</p>
+        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cleanup-calc-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Before you call</p>
+      <h2 class="section__heading">Questions about the estimate.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="cleanup-calc-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="cleanup-calc-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

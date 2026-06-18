@@ -322,9 +322,10 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 520 (measured `find` count, non-dev) · re-skinned (142) + growth = 378 · LAST COMMIT = round-83 tools/calculators PROOF
-(2: /tools/ hub + /tools/bookkeeping-cost-calculator/). Working tree clean on `preview-11ty`.
-⏸ STOP-AND-WAIT — NEW-TYPE PROOF GLANCE PENDING (founder). Report: `_build/reports/round-83.md`.
+**COUNT: total pages live = 522 (measured `find` count, non-dev) · re-skinned (142) + growth = 380 · LAST COMMIT = round-84 tools Wave 1
+(2: /tools/cleanup-cost-estimator/ + /tools/payroll-cost-calculator/). Working tree clean on `preview-11ty`.
+🟢 CALCULATOR PROOF APPROVED (founder round 84): band model = template for all calculators; 4 CTA labels RATIFIED; hub-alongside OK; /reviews/ left as-is.
+TOOLS FAN-OUT IN PROGRESS (autonomous, founder round 84): Wave 1 ✅ DONE (cleanup-cost-estimator + payroll-cost-calculator, band estimators, canonical-slice bands, battery GREEN). NEXT: Wave 2 = formula calcs (breakeven, cash-runway, business-budget) via new lightweight tb-formula.js island · Wave 3 = 1099-deadline (factual date) + quickbooks-plan-selector (FIT only, NO Intuit prices) + sales-tax-rate-lookup (call-based page, NOT live rate DB) · THEN blog proof (8 seed posts, NEW type, proof-first STOP).
 ROUND 83 — TOOLS/CALCULATORS proof ✅ BUILT, BATTERY GREEN. First interactive type on the site. Bookkeeping Cost Calculator:
 t-mofu tool variant; NEW `tb-calc.js` island (deterministic, client-only, CLS 0, noscript fallback); `.calc` CSS in 09-extensions
 (token-only, +~1.8KB min, mobile font step-down on result <480px). HONESTY ENGINEERED: 4 bands are slices of canonical
