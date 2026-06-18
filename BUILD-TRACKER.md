@@ -322,9 +322,17 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 545 (measured `find` count, non-dev) · re-skinned (142) + growth = 403 · LAST COMMIT = round-87 BLOG PROOF (NEW article type)
-(17: /blog/ hub + 8 category pages + 8 seed posts). Working tree clean on `preview-11ty`.
-⏸ STOP-AND-WAIT — BLOG NEW-TYPE PROOF GLANCE PENDING (founder). Report: `_build/reports/round-87.md`.
+**COUNT: total pages live = 548 (measured `find` count, non-dev) · re-skinned (142) + growth = 406 · LAST COMMIT = round-88 /vs/ Wave A (3 competitor comparisons)
+(3: /vs/techbrot-vs-1-800-accountant/ + /vs/techbrot-vs-bookkeeper-com/ + /vs/bench-vs-quickbooks-live/). Working tree clean on `preview-11ty`.
+🟢 BLOG PROOF founder-built (round 87) — awaiting glance but NOT blocking; founder directed /vs/ additions next.
+/vs/ ADDITIONS IN PROGRESS (founder round 88, 7 total, existing approved type — no proof-stop). Wave A ✅ DONE (3 competitor comparisons:
+1-800Accountant + Bookkeeper.com cloned from techbrot-vs-bench shape; bench-vs-quickbooks-live = competitor-vs-competitor neutral, TechBrot as
+independent third option). HONESTY: fair reads, competitor named where it fits, NO fabricated competitor pricing (deferred to vendor), competitors
+described from public info as of review date, Bench shutdown stated as documented, QuickBooks Live = Intuit's (never imply affiliation, defer current
+details to Intuit), TechBrot-does-not-file-taxes stated. Battery GREEN (forward cross-link to Wave B page resolved by queueing the 4 Wave B URLs).
+NEXT: Wave B = 4 role/structure comparisons (bookkeeper-vs-cpa, cpa-vs-ea, bookkeeping-firm-vs-freelancer, in-house-vs-outsourced-bookkeeping) on the
+bookkeeper-vs-accountant shape; then update /vs/ hub listing (src/vs.11tydata.js). THEN backlog: QB money pages ~18 · coined-frameworks hub 6 · industry high-fee 6 · pricing/partners/trust/legal/careers children.
+PRIOR: BLOG PROOF (round 87) + TOOLS SILO (rounds 83–86) — detail retained below.
 BLOG PROOF ✅ BUILT, BATTERY GREEN. NEW article type. Architecture: t-article layout (firm byline-block + dates, founder-name-zero) · blogCategories.js
 → paginated category.njk generates all 8 category pages · posts as .md in src/blog/posts/ with shared posts.11tydata.js (centralized
 BlogPosting+WebPage+Breadcrumb+FAQPage schema) · 11ty auto-collections by tag (collections.post + per-category). 8 seed posts (one per category),
