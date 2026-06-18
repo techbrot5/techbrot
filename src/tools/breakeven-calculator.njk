@@ -1,0 +1,166 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/tools/breakeven-calculator/",
+  "slug": "breakeven-calc",
+  "chrome": "full",
+  "callBar": true,
+  "includeFormulaJs": true,
+  "bodyClass": "page--mofu",
+  "pageTier": "mofu",
+  "title": "Break-Even Calculator · How Many Sales to Cover Your Costs · TechBrot",
+  "description": "Free break-even calculator. Enter your monthly fixed costs, price per sale, and variable cost per sale to see the sales volume and revenue where you break even. Your own numbers, plain math, no signup. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Tools", "href": "/tools/" },
+    { "name": "Break-Even Calculator" }
+  ],
+  "hero": {
+    "eyebrow": "Free tool · Unit economics",
+    "heading": "How many sales a month do you need to break even?",
+    "subheading": "Enter three numbers &mdash; your monthly fixed costs, your average price per sale, and the variable cost of each sale &mdash; and see the sales volume and revenue where you stop losing money and start covering costs. It&rsquo;s plain arithmetic on <strong>your own figures</strong>, not advice: nothing is sent anywhere, and a Certified ProAdvisor can help you act on it.",
+    "actions": [
+      { "label": "Skip to the calculator", "href": "#calc", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=fractional-cfo", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>Break-even</strong> is the point where your contribution margin (price minus variable cost per sale) covers your fixed costs. This tool does that one calculation on <strong>your own numbers</strong>: break-even sales per month and the revenue that implies. It&rsquo;s a model of your inputs, not financial advice &mdash; and it runs entirely in your browser. If the assumptions need pressure-testing, a fractional CFO conversation is the next step.",
+    "source": "TechBrot Inc. &middot; independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Make the number real",
+    "heading": "Turn the math into a plan.",
+    "lede": "A break-even number is only as good as the assumptions under it. A free 30-minute discovery call with a Certified ProAdvisor pressure-tests your costs, pricing, and margins &mdash; and shows where the leverage is. No hourly billing, no obligation.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=fractional-cfo", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="calc">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The calculator</p>
+      <h2 class="section__heading">Find your break-even point.</h2>
+      <p class="section__lede">Enter your figures; the result updates as you type. Everything stays in your browser &mdash; nothing is sent until <em>you</em> decide to book a call.</p>
+    </header>
+
+    <div class="calc" data-calc data-formula="breakeven">
+      <form class="calc__form" aria-describedby="calc-disclaimer-top">
+        <p class="calc__formnote" id="calc-disclaimer-top">Plain math on your own numbers &mdash; not advice.</p>
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="f-fixed">Monthly fixed costs <span class="intake-field__optional">rent, salaries, software &mdash; $</span></label>
+          <input type="number" inputmode="decimal" min="0" step="any" id="f-fixed" data-calc-num="fixed" placeholder="e.g. 8000">
+        </div>
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="f-price">Average price per sale <span class="intake-field__optional">$</span></label>
+          <input type="number" inputmode="decimal" min="0" step="any" id="f-price" data-calc-num="price" placeholder="e.g. 120">
+        </div>
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="f-varcost">Variable cost per sale <span class="intake-field__optional">materials, fees, shipping &mdash; $</span></label>
+          <input type="number" inputmode="decimal" min="0" step="any" id="f-varcost" data-calc-num="varcost" placeholder="e.g. 45">
+        </div>
+      </form>
+
+      <div class="calc__result" id="calc-result" role="status" aria-live="polite">
+        <p class="calc__result-label">Break-even volume</p>
+        <p class="calc__result-range"><span data-out="primary">&mdash;</span></p>
+        <ul class="calc__metrics">
+          <li class="calc__metric"><span class="calc__metric-label">Contribution margin / sale</span><span class="calc__metric-value" data-out="m1">&mdash;</span></li>
+          <li class="calc__metric"><span class="calc__metric-label">Break-even revenue / mo</span><span class="calc__metric-value" data-out="m2">&mdash;</span></li>
+        </ul>
+        <p class="calc__result-why" data-out="text">Enter your monthly fixed costs, price per sale, and variable cost per sale above.</p>
+        <p class="calc__result-disclaimer">This is <strong>a model of your own inputs</strong>, not financial advice. Real break-even analysis weighs mixed products, seasonality, and step costs &mdash; a Certified ProAdvisor can build that with you.</p>
+        <a class="btn btn--primary btn--lg calc__result-cta" href="/contact/?intent=fractional-cfo" data-tb-event="calc_to_quote">Book the discovery call</a>
+      </div>
+
+      <noscript>
+        <div class="calc__noscript">
+          <p>The live calculator needs JavaScript. The formula is simple: <strong>break-even sales = monthly fixed costs ÷ (price per sale − variable cost per sale)</strong>. Or <a href="/contact/?intent=fractional-cfo">book a free discovery call</a> and a ProAdvisor will work it through with you.</p>
+        </div>
+      </noscript>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="breakeven-calc-how">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">No black box</p>
+      <h2 class="section__heading">How break-even is calculated.</h2>
+    </header>
+    <div class="legal-doc__body">
+      <p>Break-even is the sales volume at which total revenue exactly covers total costs &mdash; the point where you stop losing money. The math has two steps. First, <strong>contribution margin per sale = price − variable cost per sale</strong>: the dollars each sale contributes toward fixed costs after covering its own variable cost. Second, <strong>break-even sales = fixed costs ÷ contribution margin</strong>, rounded up to whole sales. Multiply by price for break-even revenue.</p>
+      <p>If the contribution margin is zero or negative, there is no break-even at any volume &mdash; each sale loses money, so selling more makes the hole deeper. The tool says so plainly rather than printing a misleading number. That case usually means a price increase or a variable-cost cut, which is exactly the kind of thing a fractional CFO engagement models.</p>
+      <p>This is a single-product, steady-state model. Real businesses have product mixes, seasonality, and costs that step up at certain volumes. The calculator is a fast sanity check on your own figures &mdash; not a forecast, and not advice.</p>
+    </div>
+    <div class="flow stack-8" role="img" aria-label="From your own numbers, to an instant break-even figure, to a free discovery call, to a pricing and margin plan built on your real books.">
+      <div class="flow__step"><span class="flow__label">Your own numbers</span><span class="flow__sub">in your browser</span></div>
+      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+      <div class="flow__step"><span class="flow__label">Break-even figure</span><span class="flow__sub">instant, honest math</span></div>
+      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+      <div class="flow__step flow__step--accent"><span class="flow__label">Free discovery call</span><span class="flow__sub">30 min &middot; no obligation</span></div>
+      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+      <div class="flow__step"><span class="flow__label">A pricing &amp; margin plan</span><span class="flow__sub">on your real books</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="breakeven-calc-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Break-even, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="breakeven-calc-next">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Where to go next.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for card in nextCards %}
+      <article class="review-card">
+        <h3>{{ card.name }}</h3>
+        <p class="review-card__fact">{{ card.body | safe }}</p>
+        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="breakeven-calc-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">Questions about break-even.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="breakeven-calc-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="breakeven-calc-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

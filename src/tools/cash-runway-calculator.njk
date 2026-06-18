@@ -1,0 +1,158 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/tools/cash-runway-calculator/",
+  "slug": "runway-calc",
+  "chrome": "full",
+  "callBar": true,
+  "includeFormulaJs": true,
+  "bodyClass": "page--mofu",
+  "pageTier": "mofu",
+  "title": "Cash Runway Calculator · How Many Months of Cash You Have · TechBrot",
+  "description": "Free cash runway calculator. Enter your cash on hand and average monthly net burn to see how many months of runway you have. Your own numbers, plain math, no signup. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Tools", "href": "/tools/" },
+    { "name": "Cash Runway Calculator" }
+  ],
+  "hero": {
+    "eyebrow": "Free tool · Cash management",
+    "heading": "How many months of cash do you have left?",
+    "subheading": "Enter two numbers &mdash; your cash on hand and your average monthly net burn &mdash; and see how long your cash lasts at the current rate. It&rsquo;s plain arithmetic on <strong>your own figures</strong>, not advice: nothing is sent anywhere, and a Certified ProAdvisor can help you turn it into a real forecast.",
+    "actions": [
+      { "label": "Skip to the calculator", "href": "#calc", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=fractional-cfo", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>Cash runway</strong> is how long your cash lasts at your current burn: <strong>runway = cash on hand ÷ average monthly net burn</strong>. This tool does that one calculation on <strong>your own numbers</strong>. If you&rsquo;re cash-flow positive, it says so &mdash; there&rsquo;s no runway limit. It&rsquo;s a model of your inputs, not financial advice, and it runs entirely in your browser. A fractional CFO conversation turns a single number into a forward forecast.",
+    "source": "TechBrot Inc. &middot; independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "From a number to a forecast",
+    "heading": "Know the number? Now build the plan.",
+    "lede": "Runway is a snapshot; a forecast is a plan. A free 30-minute discovery call with a Certified ProAdvisor builds a real cash-flow forecast from clean books &mdash; so you see the runway change before it surprises you. No hourly billing, no obligation.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=fractional-cfo", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="calc">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The calculator</p>
+      <h2 class="section__heading">Calculate your cash runway.</h2>
+      <p class="section__lede">Enter your figures; the result updates as you type. Everything stays in your browser &mdash; nothing is sent until <em>you</em> decide to book a call.</p>
+    </header>
+
+    <div class="calc" data-calc data-formula="runway">
+      <form class="calc__form" aria-describedby="calc-disclaimer-top">
+        <p class="calc__formnote" id="calc-disclaimer-top">Plain math on your own numbers &mdash; not advice.</p>
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="f-cash">Cash on hand <span class="intake-field__optional">bank + readily available &mdash; $</span></label>
+          <input type="number" inputmode="decimal" min="0" step="any" id="f-cash" data-calc-num="cash" placeholder="e.g. 90000">
+        </div>
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="f-burn">Average monthly net burn <span class="intake-field__optional">expenses − revenue, per month &mdash; $</span></label>
+          <input type="number" inputmode="decimal" min="0" step="any" id="f-burn" data-calc-num="burn" placeholder="e.g. 12000">
+        </div>
+      </form>
+
+      <div class="calc__result" id="calc-result" role="status" aria-live="polite">
+        <p class="calc__result-label">Cash runway</p>
+        <p class="calc__result-range"><span data-out="primary">&mdash;</span></p>
+        <p class="calc__result-why" data-out="text">Enter your cash on hand and average monthly net burn above.</p>
+        <p class="calc__result-disclaimer">This is <strong>a model of your own inputs</strong>, not financial advice. Real runway moves with revenue, hiring, and seasonality &mdash; a Certified ProAdvisor can build a forward forecast on your actual books.</p>
+        <a class="btn btn--primary btn--lg calc__result-cta" href="/contact/?intent=fractional-cfo" data-tb-event="calc_to_quote">Book the discovery call</a>
+      </div>
+
+      <noscript>
+        <div class="calc__noscript">
+          <p>The live calculator needs JavaScript. The formula is simple: <strong>runway in months = cash on hand ÷ average monthly net burn</strong>. Or <a href="/contact/?intent=fractional-cfo">book a free discovery call</a> and a ProAdvisor will build a real forecast with you.</p>
+        </div>
+      </noscript>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="runway-calc-how">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">No black box</p>
+      <h2 class="section__heading">How cash runway is calculated.</h2>
+    </header>
+    <div class="legal-doc__body">
+      <p>Runway answers one question: at the rate you&rsquo;re spending net of revenue, how long until the cash runs out? The math is <strong>runway in months = cash on hand ÷ average monthly net burn</strong>, where net burn is your monthly expenses minus your monthly revenue. If revenue exceeds expenses, net burn is zero or negative &mdash; you&rsquo;re not burning cash, so there&rsquo;s no runway limit, and the tool says exactly that instead of dividing by zero.</p>
+      <p>The hard part isn&rsquo;t the division &mdash; it&rsquo;s getting an honest burn number. Burn should be an average over a few representative months, not your best or worst single month, and it should reflect real cash movements, not accrual timing. That&rsquo;s why accurate books matter: a runway figure built on guesswork is worse than none.</p>
+      <p>This is a flat-rate snapshot &mdash; it assumes today&rsquo;s burn holds steady. In reality burn changes with hiring, seasonality, and growth. Use the number as a sanity check, then build a real forward forecast. That&rsquo;s a model of your inputs, not advice.</p>
+    </div>
+    <div class="flow stack-8" role="img" aria-label="From your own numbers, to an instant runway figure, to a free discovery call, to a real cash-flow forecast built on your books.">
+      <div class="flow__step"><span class="flow__label">Your own numbers</span><span class="flow__sub">in your browser</span></div>
+      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+      <div class="flow__step"><span class="flow__label">Runway figure</span><span class="flow__sub">instant, honest math</span></div>
+      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+      <div class="flow__step flow__step--accent"><span class="flow__label">Free discovery call</span><span class="flow__sub">30 min &middot; no obligation</span></div>
+      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+      <div class="flow__step"><span class="flow__label">A cash-flow forecast</span><span class="flow__sub">on your real books</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="runway-calc-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Cash runway, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="runway-calc-next">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Where to go next.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for card in nextCards %}
+      <article class="review-card">
+        <h3>{{ card.name }}</h3>
+        <p class="review-card__fact">{{ card.body | safe }}</p>
+        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="runway-calc-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">Questions about cash runway.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="runway-calc-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="runway-calc-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,170 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/tools/business-budget-template/",
+  "slug": "budget-calc",
+  "chrome": "full",
+  "callBar": true,
+  "includeFormulaJs": true,
+  "bodyClass": "page--mofu",
+  "pageTier": "mofu",
+  "title": "Small Business Budget Worksheet · Monthly Income vs Expenses · TechBrot",
+  "description": "Free monthly budget worksheet for small businesses. Enter revenue and your expense lines to see total expenses, monthly surplus or deficit, and net margin. Your own numbers, plain math, no signup. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Tools", "href": "/tools/" },
+    { "name": "Business Budget Worksheet" }
+  ],
+  "hero": {
+    "eyebrow": "Free tool · Budgeting",
+    "heading": "A simple monthly budget worksheet for your business.",
+    "subheading": "Enter your monthly revenue and three expense lines &mdash; cost of goods, fixed costs, and everything else &mdash; and see your total expenses, monthly surplus or deficit, and net margin. It&rsquo;s plain arithmetic on <strong>your own figures</strong>, not advice: nothing is sent anywhere, and a Certified ProAdvisor can build a full budget with you.",
+    "actions": [
+      { "label": "Skip to the calculator", "href": "#calc", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>This is a working budget worksheet, not a download.</strong> Enter your monthly numbers and it shows <strong>total expenses, surplus or deficit, and net margin</strong> live. It&rsquo;s a model of your own inputs &mdash; plain math, run entirely in your browser, nothing stored or sent. It&rsquo;s a starting structure, not financial advice; a Certified ProAdvisor can turn it into a real budget and forecast on your actual books.",
+    "source": "TechBrot Inc. &middot; independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "From worksheet to working budget",
+    "heading": "Build a budget you&rsquo;ll actually use.",
+    "lede": "A worksheet is a start; a budget that drives decisions is built on accurate books and a forward forecast. A free 30-minute discovery call with a Certified ProAdvisor turns your numbers into a real budgeting and forecasting model. No hourly billing, no obligation.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="calc">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The worksheet</p>
+      <h2 class="section__heading">Work out your monthly budget.</h2>
+      <p class="section__lede">Enter your figures; the result updates as you type. Everything stays in your browser &mdash; nothing is sent until <em>you</em> decide to book a call.</p>
+    </header>
+
+    <div class="calc" data-calc data-formula="budget">
+      <form class="calc__form" aria-describedby="calc-disclaimer-top">
+        <p class="calc__formnote" id="calc-disclaimer-top">Plain math on your own numbers &mdash; not advice.</p>
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="f-income">Monthly revenue <span class="intake-field__optional">$</span></label>
+          <input type="number" inputmode="decimal" min="0" step="any" id="f-income" data-calc-num="income" placeholder="e.g. 40000">
+        </div>
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="f-cogs">Cost of goods / services <span class="intake-field__optional">direct costs &mdash; $</span></label>
+          <input type="number" inputmode="decimal" min="0" step="any" id="f-cogs" data-calc-num="cogs" placeholder="e.g. 14000">
+        </div>
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="f-fixed">Fixed operating costs <span class="intake-field__optional">rent, salaries, software &mdash; $</span></label>
+          <input type="number" inputmode="decimal" min="0" step="any" id="f-fixed" data-calc-num="fixed" placeholder="e.g. 18000">
+        </div>
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="f-other">Other / variable costs <span class="intake-field__optional">marketing, travel, misc &mdash; $</span></label>
+          <input type="number" inputmode="decimal" min="0" step="any" id="f-other" data-calc-num="other" placeholder="e.g. 3000">
+        </div>
+      </form>
+
+      <div class="calc__result" id="calc-result" role="status" aria-live="polite">
+        <p class="calc__result-label">Monthly surplus / deficit</p>
+        <p class="calc__result-range"><span data-out="primary">&mdash;</span></p>
+        <ul class="calc__metrics">
+          <li class="calc__metric"><span class="calc__metric-label">Total monthly expenses</span><span class="calc__metric-value" data-out="m1">&mdash;</span></li>
+          <li class="calc__metric"><span class="calc__metric-label">Net margin</span><span class="calc__metric-value" data-out="m2">&mdash;</span></li>
+        </ul>
+        <p class="calc__result-why" data-out="text">Enter your monthly revenue and the three expense lines above.</p>
+        <p class="calc__result-disclaimer">This is <strong>a model of your own inputs</strong>, not financial advice. A real budget tracks against actuals each month and forecasts forward &mdash; a Certified ProAdvisor can build that on your books.</p>
+        <a class="btn btn--primary btn--lg calc__result-cta" href="/contact/?intent=accounting" data-tb-event="calc_to_quote">Book the discovery call</a>
+      </div>
+
+      <noscript>
+        <div class="calc__noscript">
+          <p>The live worksheet needs JavaScript. The math is simple: <strong>surplus = revenue − (cost of goods + fixed costs + other costs)</strong>, and net margin = surplus ÷ revenue. Or <a href="/contact/?intent=accounting">book a free discovery call</a> and a ProAdvisor will build a budget with you.</p>
+        </div>
+      </noscript>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="budget-calc-how">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">No black box</p>
+      <h2 class="section__heading">How the worksheet works.</h2>
+    </header>
+    <div class="legal-doc__body">
+      <p>The arithmetic is deliberately simple so you can trust it. <strong>Total expenses = cost of goods + fixed operating costs + other/variable costs.</strong> <strong>Surplus or deficit = revenue − total expenses.</strong> <strong>Net margin = surplus ÷ revenue</strong>, shown as a percentage. Splitting costs into those three buckets is enough to see whether the month works and where the weight sits.</p>
+      <p>Cost of goods (or cost of services) is what it directly costs to deliver what you sell. Fixed operating costs stay roughly level month to month &mdash; rent, salaries, software, insurance. Other/variable costs are everything that moves with activity &mdash; marketing, travel, supplies. Getting transactions into the right bucket is exactly the discipline good bookkeeping provides, which is why a budget is only as honest as the books under it.</p>
+      <p>This worksheet is a single-month snapshot. A real budget is built once, then tracked against actuals every month and rolled forward as a forecast &mdash; that&rsquo;s a budgeting-and-forecasting engagement, not a one-page tool. Use this to frame the conversation, not to replace it. It&rsquo;s a model of your inputs, not advice.</p>
+    </div>
+    <div class="flow stack-8" role="img" aria-label="From your own numbers, to an instant surplus and margin, to a free discovery call, to a tracked budget built on your real books.">
+      <div class="flow__step"><span class="flow__label">Your own numbers</span><span class="flow__sub">in your browser</span></div>
+      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+      <div class="flow__step"><span class="flow__label">Surplus &amp; margin</span><span class="flow__sub">instant, honest math</span></div>
+      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+      <div class="flow__step flow__step--accent"><span class="flow__label">Free discovery call</span><span class="flow__sub">30 min &middot; no obligation</span></div>
+      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+      <div class="flow__step"><span class="flow__label">A tracked budget</span><span class="flow__sub">on your real books</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="budget-calc-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Business budgeting, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="budget-calc-next">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Where to go next.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for card in nextCards %}
+      <article class="review-card">
+        <h3>{{ card.name }}</h3>
+        <p class="review-card__fact">{{ card.body | safe }}</p>
+        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="budget-calc-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">Questions about budgeting.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="budget-calc-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="budget-calc-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
