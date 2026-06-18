@@ -322,10 +322,14 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 548 (measured `find` count, non-dev) · re-skinned (142) + growth = 406 · LAST COMMIT = round-88 /vs/ Wave A (3 competitor comparisons)
-(3: /vs/techbrot-vs-1-800-accountant/ + /vs/techbrot-vs-bookkeeper-com/ + /vs/bench-vs-quickbooks-live/). Working tree clean on `preview-11ty`.
-🟢 BLOG PROOF founder-built (round 87) — awaiting glance but NOT blocking; founder directed /vs/ additions next.
-/vs/ ADDITIONS IN PROGRESS (founder round 88, 7 total, existing approved type — no proof-stop). Wave A ✅ DONE (3 competitor comparisons:
+**COUNT: total pages live = 552 (measured `find` count, non-dev) · re-skinned (142) + growth = 410 · LAST COMMIT = round-89 /vs/ Wave B (4 role/structure comparisons) — /vs/ ADDITIONS COMPLETE
+(4: /vs/bookkeeper-vs-cpa/ + /vs/cpa-vs-ea/ + /vs/bookkeeping-firm-vs-freelancer/ + /vs/in-house-vs-outsourced-bookkeeping/). Working tree clean on `preview-11ty`.
+🎉 /vs/ ADDITIONS ✅ COMPLETE (7 pages, rounds 88–89). Hub (src/vs.11tydata.js) updated: 7 new cards + map rows + ItemList schema; "In progress" placeholders that are now built flipped to Published.
+  Wave B used a shared partial `partials/vs-compare-body.njk` (byline·summary·ai-summary·sides·vs-table·decision·fit+trust-row·faq·related) so the 4 category pages are front-matter + data only.
+  HONESTY: TechBrot's side disclosed per page (bookkeeper side / firm / outsourced); competitor/role named where it's the better fit; cpa-vs-ea = TechBrot is NEITHER (the layer beneath both); "not tax advice" where relevant; no fabricated stats; founder-name-zero; not-Intuit. Battery GREEN both waves.
+🟢 BLOG PROOF founder-built (round 87) — awaiting glance but NOT blocking.
+NEXT (founder's call): QB money pages (~18: hire-a-proadvisor, cost, catch-up, bookkeeping-services, inventory, emergency-triage, training×3, year-end-close, book-a-call, desktop-discontinuation, reverse-migrations×4, switching-away, proadvisor-near-me) · coined-frameworks hub (6) · industry high-fee (6) · pricing/partners/trust/legal/careers children. DEFERRED (real-data gate): results, case-studies, reviews-by-X, research flagships.
+PRIOR /vs/ Wave A (round 88): 3 competitor comparisons:
 1-800Accountant + Bookkeeper.com cloned from techbrot-vs-bench shape; bench-vs-quickbooks-live = competitor-vs-competitor neutral, TechBrot as
 independent third option). HONESTY: fair reads, competitor named where it fits, NO fabricated competitor pricing (deferred to vendor), competitors
 described from public info as of review date, Bench shutdown stated as documented, QuickBooks Live = Intuit's (never imply affiliation, defer current
