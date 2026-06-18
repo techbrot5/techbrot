@@ -322,10 +322,11 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 289 · re-skinned (142) + growth = 147 · LAST COMMIT = round-52a IL-bkg-spokes
-(2 pages: cleanup-bookkeeping, urgent-bookkeeping). Working tree clean on `preview-11ty`.
-ILLINOIS IN PROGRESS (5th/last state) = pillar + 5 cities + 15 services (money 4/6 [speak+pricing pending] · tax 2/2 ✅ · QB spokes 6/6 ✅ · bkg-spokes 3/3 ✅).
-IL REMAINING ≈ 11: triage 3 (speak-to-a-proadvisor, state-tax-notice-help, business-tax-problems) · pricing 1 · industries hub+6 · cities (springfield + cities-hub).
+**COUNT: total pages live = 292 · re-skinned (142) + growth = 150 · LAST COMMIT = round-52b IL-triage
+(3 pages: speak-to-a-proadvisor, state-tax-notice-help, business-tax-problems). Working tree clean on `preview-11ty`.
+ILLINOIS IN PROGRESS (5th/last state) = pillar + 5 cities + 18 services (money 5/6 [pricing pending] · tax 2/2 ✅ · QB spokes 6/6 ✅ · bkg-spokes 3/3 ✅ · triage 3/3 ✅).
+IL REMAINING ≈ 9: pricing 1 · industries hub+6 · cities (springfield + cities-hub).
+IL triage built on approved disclosure pattern; agency set = IDOR + City of Chicago Dept of Finance + IDES + IRS. biztax correctly uses IL Secretary of State admin-dissolution (NOT a $800 franchise tax — IL has none).
 IL stack (pillar-verified): flat 4.95% income · PPRT (2.5% C-corp / 1.5% pass-through, even pass-throughs owe) · 9.5% combined C-corp · permanent PTE election (SB 1911) · 6.25%→10.25% Chicago sales · Chicago 15% cloud tax on SaaS · IDOR + Chicago Dept of Finance · 102 counties · 6th city = Springfield.
 ✅ FLORIDA COMPLETE (31 FL pages: pillar + 6 money + 6 QB + 3 bkg + 2 tax + industries hub+6 + cities hub+6, incl. triage), on the CORRECTED FL stack.
 ✅ FOUR STATES COMPLETE: NY · CA (39) · TX (32) · FL (31). NEXT = ILLINOIS depth (5th/last); build IL triage normally (approved pattern, IL Dept of Revenue + IRS). IL stack = flat 4.95% income + PPRT + Chicago taxes.
