@@ -322,11 +322,13 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 302 · re-skinned (142) + growth = 160 · LAST COMMIT = round-55 IL-pillar-re-link
-(0 new URLs — IL pillar ecosystem now links all 25 built IL children; ILLINOIS COMPLETE). Working tree clean on `preview-11ty`.
-✅✅ ALL FIVE DEPTH STATES COMPLETE: NY (39) · CA (39) · TX (32) · FL (31) · IL (~27, this turn).
-⚑⚑ HARD STOP — BREADTH-vs-MORE-DEPTH DECISION pending founder (do NOT auto-start more states). Options in round-55 report:
-(A) BREADTH = new states on the proven templates · (B) MORE DEPTH on the 5 (more cities / global service+industry pages / guides / glossary / tools / blog) · (C) FLIP PREP = clear the CUTOVER GATE (esp. flip-blocker #6: LIVE axe/overflow on all growth children on founder's machine; real Intuit badge; baseline-vs-live re-crawl).
+**COUNT: total pages live = 307 · re-skinned (142) + growth = 165 · LAST COMMIT = round-56 TX-cities-w2
+(5 cities: Plano, Corpus Christi, Lubbock, Laredo, Killeen + TX cities-hub & pillar wired). Working tree clean on `preview-11ty`.
+✅✅ ALL FIVE DEPTH STATES COMPLETE: NY (39) · CA (39) · TX · FL · IL.
+🌱 FOUNDER CHOSE (B) MORE DEPTH ON THE 5 (2026-06-18) → executing as the CITY-CHILD CALLS ENGINE: bring TX/FL/IL from 6 cities up toward NY/CA's 11, genuinely distinct economies (mad-libs fails), then wire each state's cities-hub + pillar. Wave order: TX ✅ → FL (next) → IL.
+CITY DEPTH: NY 11 · CA 11 · TX 11 ✅ (Houston·Dallas·Austin·San Antonio·Fort Worth·El Paso·Plano·Corpus Christi·Lubbock·Laredo·Killeen) · FL 6 (→11 next) · IL 6 (→11 after).
+TX wave-2 economies (distinct): Plano=corporate-HQ · Corpus Christi=energy-export/refining/port · Lubbock=cotton-agribusiness+Texas Tech · Laredo=#1 land-port trade corridor (deliberately differentiated from El Paso) · Killeen=Fort Cavazos military.
+⛔ FLIP-BLOCKER #6 grows: these 5 TX cities join the inferred-clean list (static-proxy + byte-equivalence) — LIVE axe/overflow on founder's machine still pending before flip.
 IL = pillar(re-linked) + 6 cities + cities-hub + 6 money + 6 QB spokes + 3 bkg + 4 tax/triage + industries(hub+6). Templates: city-child · state-service · state-triage · state-industry · pillar.
 IL triage agency set = IDOR + City of Chicago Dept of Finance + IDES + IRS. biztax uses IL Secretary of State admin-dissolution (IL has NO $800 franchise tax).
 ⛔ FLIP-BLOCKER #6 GROWS: 27 new IL children this turn join the inferred-clean list (static-proxy + CA/TX/FL byte-equivalence) — LIVE axe/overflow on founder's machine still pending before flip.
