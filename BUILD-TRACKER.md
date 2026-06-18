@@ -322,9 +322,9 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 336 · re-skinned (142) + growth = 194 · LAST COMMIT = round-60 support-error-codes
-(14 error codes: 6000/6000-83/6000-301/6073/6150/12002/12007/12029/15223/15271/9999/h101/h505/ps036). Working tree clean on `preview-11ty`.
-SUPPORT-SILO FAN-OUT IN PROGRESS (founder approved 2026-06-18 after proof glance). DONE: proof(5, rd-59) + error codes(14, rd-60). NEXT: ~30 help-symptom pages → hub wiring → then glossary.
+**COUNT: total pages live = 344 · re-skinned (142) + growth = 202 · LAST COMMIT = round-61 help-symptom-A
+(8 file/books pages: file-wont-open, file-corrupted, data-recovery, backup-restore, reconciliation-broken, duplicate-transactions, missing-transactions, reports-wrong). Working tree clean on `preview-11ty`.
+SUPPORT-SILO FAN-OUT IN PROGRESS (founder approved 2026-06-18). DONE: proof(5, rd-59) + error codes(14, rd-60) + help-symptom file/books(8, rd-61). NEXT: ~22 more help-symptom (account/login route-to-Intuit + proadvisor-triage + payroll/tax) → support-end-dates → hub wiring → then glossary.
 Generic intents added: qb-error (error pages) + qb-help (help-symptom pages). ps036 routes subscription/billing→Intuit; 9999=QBO browser. error-code template = clone 6123/h202/ps038; help-symptom = clone bank-feeds-not-working.
 ✅ ALL 5 STATES + CITY PARITY (55 city children). Founder chose (B) more depth; city lane DONE.
 🟡 FOUNDER QUEUE (2026-06-18): (1) SUPPORT/HELP silo (~67) — IN PROGRESS, then (2) GLOSSARY expansion (24→~46).
