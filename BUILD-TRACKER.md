@@ -322,10 +322,14 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 302 · re-skinned (142) + growth = 160 · LAST COMMIT = round-54 IL-cities-finish
-(2 pages: springfield city child + cities-hub). Working tree clean on `preview-11ty`.
-ILLINOIS IN PROGRESS (5th/last state) = pillar + 6 cities + cities-hub + 19 services + industries(hub+6 ✅) (money 6/6 ✅ · tax 2/2 ✅ · QB spokes 6/6 ✅ · bkg 3/3 ✅ · triage 3/3 ✅ · industries 7/7 ✅ · cities 6 + hub ✅).
-IL REMAINING ≈ 1: pillar ecosystem re-link (the IL pillar was built no-children; re-link its ecosystem/services/industries/cities to the now-built children) → ILLINOIS COMPLETE → STOP & flag breadth-vs-depth.
+**COUNT: total pages live = 302 · re-skinned (142) + growth = 160 · LAST COMMIT = round-55 IL-pillar-re-link
+(0 new URLs — IL pillar ecosystem now links all 25 built IL children; ILLINOIS COMPLETE). Working tree clean on `preview-11ty`.
+✅✅ ALL FIVE DEPTH STATES COMPLETE: NY (39) · CA (39) · TX (32) · FL (31) · IL (~27, this turn).
+⚑⚑ HARD STOP — BREADTH-vs-MORE-DEPTH DECISION pending founder (do NOT auto-start more states). Options in round-55 report:
+(A) BREADTH = new states on the proven templates · (B) MORE DEPTH on the 5 (more cities / global service+industry pages / guides / glossary / tools / blog) · (C) FLIP PREP = clear the CUTOVER GATE (esp. flip-blocker #6: LIVE axe/overflow on all growth children on founder's machine; real Intuit badge; baseline-vs-live re-crawl).
+IL = pillar(re-linked) + 6 cities + cities-hub + 6 money + 6 QB spokes + 3 bkg + 4 tax/triage + industries(hub+6). Templates: city-child · state-service · state-triage · state-industry · pillar.
+IL triage agency set = IDOR + City of Chicago Dept of Finance + IDES + IRS. biztax uses IL Secretary of State admin-dissolution (IL has NO $800 franchise tax).
+⛔ FLIP-BLOCKER #6 GROWS: 27 new IL children this turn join the inferred-clean list (static-proxy + CA/TX/FL byte-equivalence) — LIVE axe/overflow on founder's machine still pending before flip.
 IL industry angles (genuine): manufacturing=MM&E exemption · healthcare=insurance-AR+PPRT/PTE (books-only no PHI) · agency=Chicago 15% cloud tax+PPRT · restaurant=POS+tipped/FICA-tip-credit+10.25% Chicago (dining-tax general) · prof-services=IOLTA records-only · trucking=IFTA/IRP+intermodal nexus.
 IL triage built on approved disclosure pattern; agency set = IDOR + City of Chicago Dept of Finance + IDES + IRS. biztax correctly uses IL Secretary of State admin-dissolution (NOT a $800 franchise tax — IL has none).
 IL stack (pillar-verified): flat 4.95% income · PPRT (2.5% C-corp / 1.5% pass-through, even pass-throughs owe) · 9.5% combined C-corp · permanent PTE election (SB 1911) · 6.25%→10.25% Chicago sales · Chicago 15% cloud tax on SaaS · IDOR + Chicago Dept of Finance · 102 counties · 6th city = Springfield.

@@ -153,14 +153,47 @@ module.exports = {
   // NO-CHILDREN: every cluster item is PLAIN TEXT (Illinois sub-pages are not built). The
   // cluster lede frames each as content; the only live link per cluster is /contact/.
   ecosystem: [
-    { eyebrow: "Cluster 01", heading: "Illinois money cluster", lede: "The primary Illinois engagement types &mdash; what business owners mean by &ldquo;quickbooks accountant near me&rdquo; and &ldquo;bookkeeper near me&rdquo; in Illinois. All delivered directly today; ask about any of these on the discovery call.", items: ["IL QuickBooks Accountant / ProAdvisor (umbrella engagement)", "IL Small Business Accountant", "IL Bookkeeping Services", "IL Virtual Bookkeeper", "Speak to an IL ProAdvisor", "IL Pricing &amp; Engagement Fees"] },
-    { eyebrow: "Cluster 02", heading: "Illinois QuickBooks spokes", lede: "Illinois-specific QuickBooks ProAdvisor engagements. Each is delivered directly by TechBrot&rsquo;s lead practice.", items: ["IL QuickBooks Setup", "IL QuickBooks Cleanup", "IL QuickBooks Reconciliation", "IL QuickBooks Migration", "IL QuickBooks Training", "IL QuickBooks Error Fixes"] },
-    { eyebrow: "Cluster 03", heading: "Illinois bookkeeping spokes", lede: "Recurring and project bookkeeping engagements scoped to Illinois operational reality.", items: ["IL Monthly Bookkeeping", "IL Cleanup &amp; Catch-Up Bookkeeping", "IL Urgent Bookkeeping"] },
-    { eyebrow: "Cluster 04", heading: "Illinois tax cluster", lede: "The genuinely Illinois-specific tax stack we keep your books ready for &mdash; the replacement tax, Chicago&rsquo;s lease/SaaS tax, Cook County sales tax, and the PTE election.", items: ["IL Sales Tax Help (6.25%+ &middot; Cook County &middot; Chicago lease tax)", "IL Business Tax Support (PPRT &middot; 9.5% C-corp &middot; PTE &middot; IDOR)"] },
-    { eyebrow: "Cluster 05", heading: "Illinois industries", lede: "Vertical-specific accounting depth for Illinois&rsquo;s leading sectors &mdash; the verticals where Illinois creates genuinely distinct requirements.", items: ["IL Manufacturing Accounting", "IL Healthcare Practice Accounting", "IL Agency &amp; Creative Accounting", "IL Restaurant Accounting", "IL Professional Services Accounting", "IL Trucking &amp; Logistics Accounting"] },
-    { eyebrow: "Cluster 06", heading: "Illinois cities", lede: "Illinois&rsquo;s primary metros &mdash; the major population and business centers we serve statewide.", items: ["Chicago (Cook County)", "Aurora (Kane County)", "Naperville (DuPage County)", "Rockford (Winnebago County)", "Springfield (Sangamon County)", "Joliet (Will County)"] },
+    { eyebrow: "Cluster 01", heading: "Illinois money cluster", lede: "The primary Illinois engagement types &mdash; what business owners mean by &ldquo;quickbooks accountant near me&rdquo; and &ldquo;bookkeeper near me&rdquo; in Illinois.", items: [
+      { label: "IL QuickBooks Accountant / ProAdvisor (umbrella engagement)", href: "/find-an-accountant/illinois/quickbooks-accountant/" },
+      { label: "IL Small Business Accountant", href: "/find-an-accountant/illinois/small-business-accountant/" },
+      { label: "IL Bookkeeping Services", href: "/find-an-accountant/illinois/bookkeeping-services/" },
+      { label: "IL Virtual Bookkeeper", href: "/find-an-accountant/illinois/virtual-bookkeeper/" },
+      { label: "Speak to an IL ProAdvisor", href: "/find-an-accountant/illinois/speak-to-a-proadvisor/" },
+      { label: "IL Pricing &amp; Engagement Fees", href: "/find-an-accountant/illinois/pricing/" }] },
+    { eyebrow: "Cluster 02", heading: "Illinois QuickBooks spokes", lede: "Illinois-specific QuickBooks ProAdvisor engagements, each delivered directly by TechBrot&rsquo;s lead practice.", items: [
+      { label: "IL QuickBooks Setup", href: "/find-an-accountant/illinois/quickbooks-setup/" },
+      { label: "IL QuickBooks Cleanup", href: "/find-an-accountant/illinois/quickbooks-cleanup/" },
+      { label: "IL QuickBooks Reconciliation", href: "/find-an-accountant/illinois/quickbooks-reconciliation/" },
+      { label: "IL QuickBooks Migration", href: "/find-an-accountant/illinois/quickbooks-migration/" },
+      { label: "IL QuickBooks Training", href: "/find-an-accountant/illinois/quickbooks-training/" },
+      { label: "IL QuickBooks Error Fixes", href: "/find-an-accountant/illinois/quickbooks-error-fixes/" }] },
+    { eyebrow: "Cluster 03", heading: "Illinois bookkeeping spokes", lede: "Recurring and project bookkeeping engagements scoped to Illinois operational reality.", items: [
+      { label: "IL Monthly Bookkeeping", href: "/find-an-accountant/illinois/monthly-bookkeeping/" },
+      { label: "IL Cleanup &amp; Catch-Up Bookkeeping", href: "/find-an-accountant/illinois/cleanup-bookkeeping/" },
+      { label: "IL Urgent Bookkeeping", href: "/find-an-accountant/illinois/urgent-bookkeeping/" }] },
+    { eyebrow: "Cluster 04", heading: "Illinois tax cluster", lede: "The genuinely Illinois-specific tax stack we keep your books ready for &mdash; the replacement tax, Chicago&rsquo;s lease/SaaS tax, Cook County sales tax, and the PTE election.", items: [
+      { label: "IL Sales Tax Help (6.25%+ &middot; Cook County &middot; Chicago lease tax)", href: "/find-an-accountant/illinois/sales-tax-help/" },
+      { label: "IL Replacement Tax Help (PPRT &middot; 9.5% C-corp &middot; PTE)", href: "/find-an-accountant/illinois/replacement-tax-help/" },
+      { label: "IL Business Tax Problems (books-first triage)", href: "/find-an-accountant/illinois/business-tax-problems/" },
+      { label: "IL State Tax Notice Help (IDOR &middot; Chicago &middot; IRS)", href: "/find-an-accountant/illinois/state-tax-notice-help/" }] },
+    { eyebrow: "Cluster 05", heading: "Illinois industries", lede: "Vertical-specific accounting depth for Illinois&rsquo;s leading sectors &mdash; the verticals where Illinois creates genuinely distinct requirements.", items: [
+      { label: "IL Manufacturing Accounting", href: "/find-an-accountant/illinois/industries/manufacturing/" },
+      { label: "IL Healthcare Practice Accounting", href: "/find-an-accountant/illinois/industries/healthcare/" },
+      { label: "IL Agency &amp; Creative Accounting", href: "/find-an-accountant/illinois/industries/agency/" },
+      { label: "IL Restaurant Accounting", href: "/find-an-accountant/illinois/industries/restaurant/" },
+      { label: "IL Professional Services Accounting", href: "/find-an-accountant/illinois/industries/professional-services/" },
+      { label: "IL Trucking &amp; Logistics Accounting", href: "/find-an-accountant/illinois/industries/trucking/" },
+      { label: "All Illinois industries", href: "/find-an-accountant/illinois/industries/" }] },
+    { eyebrow: "Cluster 06", heading: "Illinois cities", lede: "Illinois&rsquo;s primary metros &mdash; the major population and business centers we serve statewide.", items: [
+      { label: "Chicago (Cook County)", href: "/find-an-accountant/illinois/cities/chicago/" },
+      { label: "Aurora (Kane County)", href: "/find-an-accountant/illinois/cities/aurora/" },
+      { label: "Naperville (DuPage County)", href: "/find-an-accountant/illinois/cities/naperville/" },
+      { label: "Rockford (Winnebago County)", href: "/find-an-accountant/illinois/cities/rockford/" },
+      { label: "Springfield (Sangamon County)", href: "/find-an-accountant/illinois/cities/springfield/" },
+      { label: "Joliet (Will County)", href: "/find-an-accountant/illinois/cities/joliet/" },
+      { label: "All Illinois cities &amp; counties", href: "/find-an-accountant/illinois/cities/" }] },
   ],
-  ecosystemNote: "Illinois is served as a single statewide engagement today &mdash; every service, industry, and metro above is delivered directly by TechBrot&rsquo;s lead practice. <a href=\"/contact/?intent=illinois&amp;state=illinois&amp;source_type=location&amp;funnel_stage=MOFU\">Tell us which applies to your business &rarr;</a>",
+  ecosystemNote: "Every Illinois page above is live &mdash; follow the link for the full detail, or <a href=\"/contact/?intent=illinois&amp;state=illinois&amp;source_type=location&amp;funnel_stage=MOFU\">start with a discovery call &rarr;</a>. All 102 counties, scoped on one call.",
 
   // PRICING — 8-row table. (H2: Fixed-fee starting ranges for Illinois engagements.)
   // svc names PLAIN TEXT (baseline linked Illinois children — none exist).

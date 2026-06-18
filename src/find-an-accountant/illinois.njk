@@ -275,13 +275,13 @@
   </div>
 </section>
 
-{# ── ECOSYSTEM (H2: Every Illinois page in one place. + 6 cluster H3s) · items PLAIN TEXT (no IL children) ── #}
+{# ── ECOSYSTEM (H2: Every Illinois page in one place. + 6 cluster H3s) · items LINKED to built IL children (re-linked round 55) ── #}
 <section class="section" id="il-ecosystem">
   <div class="container">
     <header class="section__header">
       <p class="section__eyebrow">The full Illinois ecosystem</p>
       <h2 class="section__heading">Every Illinois page in one place.</h2>
-      <p class="section__lede">Illinois is served as a single statewide engagement &mdash; covering every service, industry, city, and tax topic Illinois business owners search for, all delivered directly today. Below is the full map.</p>
+      <p class="section__lede">Every service, industry, city, and tax topic Illinois business owners search for &mdash; each now a dedicated page. Below is the full map; follow any link for the detail.</p>
     </header>
     <div class="grid-3">
       {%- for cl in ecosystem %}
@@ -290,7 +290,7 @@
         <h3>{{ cl.heading | safe }}</h3>
         <p class="prose">{{ cl.lede | safe }}</p>
         <ul class="checks-list">
-          {%- for it in cl.items %}<li>{{ it | safe }}</li>{%- endfor %}
+          {%- for it in cl.items %}<li>{% if it.href %}<a href="{{ it.href }}">{{ it.label | safe }}</a>{% elif it.label %}{{ it.label | safe }}{% else %}{{ it | safe }}{% endif %}</li>{%- endfor %}
         </ul>
       </article>
       {%- endfor %}
