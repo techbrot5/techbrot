@@ -65,6 +65,8 @@ module.exports = {
     { value: "Independence", label: "Independent ProAdvisor firm — not affiliated with, endorsed by, or sponsored by Intuit Inc." },
   ],
   related: [
+    { title: "QuickBooks Support Hub", href: "/quickbooks/support/", body: "Symptom-by-symptom QuickBooks help with the honest split — what an independent ProAdvisor fixes inside your file versus what belongs with Intuit. Error codes, file problems, payroll, and the “how to contact QuickBooks support” guide." },
+    { title: "QuickBooks Error Codes", href: "/quickbooks/help/error-codes/", body: "The full Certified-ProAdvisor error-code reference — H-series, 6000-series, 12000/15000-series, PS payroll, and more, each with causes, a self-fix, and when to call." },
     { title: "Speak to a QuickBooks Expert", href: "/contact/?intent=qb-help", body: "Book a free 30-minute discovery call — a Certified ProAdvisor surfaces the issue and recommends the right engagement, or says it isn’t the right fit." },
     { title: "The ProAdvisor Team", href: "/about/?intent=techbrot-fit", body: "Who delivers the work — the Certified QuickBooks ProAdvisor team and how the firm operates." },
     { title: "QuickBooks Services Hub", href: "/quickbooks/?intent=quickbooks", body: "The full ProAdvisor silo — every engagement type with scope and pricing." },

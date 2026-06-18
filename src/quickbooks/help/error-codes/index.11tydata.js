@@ -43,21 +43,21 @@ module.exports = {
   // H-series — only H202 has a dedicated page; the rest are heading text only.
   hSeries: [
     { name: "Error H202", href: "/quickbooks/help/error-codes/h202/", body: "The most common H-series error. Workstation can&rsquo;t communicate with the server hosting the file &mdash; typically Database Server Manager not running, hosting misconfigured, or a firewall blocking. Resolution requires touching both host and workstation. Full self-fix and HowTo on the dedicated page." },
-    { name: "Error H505", body: "Workstation thinks the company file is on another workstation, but that machine isn&rsquo;t set up to host. Similar root cause to H202, but specifically a hosting-configuration issue. Resolution involves verifying which machine should host." },
-    { name: "Error H101", body: "QuickBooks needs additional configuration to switch to multi-user mode. Often a sign of a fresh installation or a new workstation that wasn&rsquo;t fully set up for multi-user. Resolution involves Database Server Manager configuration." },
+    { name: "Error H505", href: "/quickbooks/help/error-codes/h505/", body: "Workstation thinks the company file is on another workstation, but that machine isn&rsquo;t set up to host. Similar root cause to H202, but specifically a hosting-configuration issue. Resolution involves verifying which machine should host. Full self-fix and HowTo on the dedicated page." },
+    { name: "Error H101", href: "/quickbooks/help/error-codes/h101/", body: "QuickBooks needs additional configuration to switch to multi-user mode. Often a sign of a fresh installation or a new workstation that wasn&rsquo;t fully set up for multi-user. Resolution involves Database Server Manager configuration. Full self-fix and HowTo on the dedicated page." },
     { name: "Error H303", body: "Similar pattern to H202 and H505 &mdash; multi-user mode breakdown between workstation and host. The same diagnostic approach (Database Server Manager, hosting settings, firewall, path) applies." },
   ],
   // 6000-series — all variants point to the complete 6000-series reference page.
   sixThousand: [
     { name: "Error 6190 &amp; -816", href: "/quickbooks/help/error-codes/error-6000-series/", body: "Single-user file open in multi-user mode, or the transaction log (.TLG) out of sync with the company file (.QBW). Often resolved by renaming .TLG and .ND files; persistent occurrences point to file-integrity issues." },
     { name: "Error 6000-77", href: "/quickbooks/help/error-codes/error-6000-series/", body: "QuickBooks can&rsquo;t access the file path &mdash; usually a mapped network drive or external storage. Often resolved by moving the file local or using UNC paths instead of mapped drives. Permission issues are the second common cause." },
-    { name: "Error 6000-301", href: "/quickbooks/help/error-codes/error-6000-series/", body: "File-damage variant of the 6000-series. The file has integrity issues needing repair via QuickBooks File Doctor or, more commonly, a ProAdvisor-level rebuild. Self-fix works only for surface-level damage." },
+    { name: "Error 6000-301", href: "/quickbooks/help/error-codes/6000-301/", body: "File-damage variant of the 6000-series. The file has integrity issues needing repair via QuickBooks File Doctor or, more commonly, a ProAdvisor-level rebuild. Self-fix works only for surface-level damage. Full self-fix and HowTo on the dedicated page." },
     { name: "Complete 6000-series reference", href: "/quickbooks/help/error-codes/error-6000-series/", body: "All 6000-variants in one place: 6000-77, 6000-80, 6000-83, 6000-301, 6000-832, 6147, 6189, 6190, and the patterns connecting them &mdash; the page to bookmark if you&rsquo;re seeing multiple 6000-variants." },
   ],
   // PS-series — only PS038 has a dedicated page.
   psSeries: [
     { name: "Error PS038", href: "/quickbooks/help/error-codes/ps038/", body: "Paychecks stuck in &ldquo;Online to Send&rdquo; status &mdash; typically created while offline, then unable to sync. Resolution involves identifying the stuck paychecks and re-sending them, sometimes with payroll-service support to clear the queue. Full HowTo on the dedicated page." },
-    { name: "Error PS036", body: "Payroll subscription validation failure &mdash; QuickBooks can&rsquo;t confirm the payroll subscription is active. Common after billing changes, expired cards, or subscription transitions. First step: verify subscription status with Intuit directly." },
+    { name: "Error PS036", href: "/quickbooks/help/error-codes/ps036/", body: "Payroll subscription validation failure &mdash; QuickBooks can&rsquo;t confirm the payroll subscription is active. Common after billing changes, expired cards, or subscription transitions. First step: verify subscription status with Intuit directly. Full self-fix and HowTo on the dedicated page." },
     { name: "Error PS077", body: "Tax-table download fails. Causes range from an outdated QuickBooks version to incomplete billing information to security settings (still relevant for some QB versions). Usually resolvable without ProAdvisor involvement." },
     { name: "PS032 &amp; PS107", body: "Variants in the PS family covering tax-table validation and paycheck-creation issues. Often share root causes with PS036 and PS077 &mdash; verify subscription and tax-table status first." },
   ],
@@ -122,10 +122,25 @@ module.exports = {
       const url="https://techbrot.com/quickbooks/help/error-codes/";
       const codes=[
         ["QuickBooks Error H202","h202/"],
+        ["QuickBooks Error H101","h101/"],
+        ["QuickBooks Error H505","h505/"],
         ["QuickBooks Error 6000-series","error-6000-series/"],
+        ["QuickBooks Error 6000","6000/"],
+        ["QuickBooks Error 6000-83","6000-83/"],
+        ["QuickBooks Error 6000-301","6000-301/"],
+        ["QuickBooks Error 6073","6073/"],
+        ["QuickBooks Error 6123","6123/"],
+        ["QuickBooks Error 6150","6150/"],
+        ["QuickBooks Error 12002","12002/"],
+        ["QuickBooks Error 12007","12007/"],
+        ["QuickBooks Error 12029","12029/"],
+        ["QuickBooks Error 15223","15223/"],
+        ["QuickBooks Error 15240","15240/"],
+        ["QuickBooks Error 15271","15271/"],
+        ["QuickBooks Error 9999","9999/"],
+        ["QuickBooks Error PS036","ps036/"],
         ["QuickBooks Error PS038","ps038/"],
         ["QuickBooks Error 3371","3371/"],
-        ["QuickBooks Error 15240","15240/"],
         ["QuickBooks Unrecoverable Error","unrecoverable-error/"],
         ["QuickBooks C-series Errors","c-series/"],
       ];
