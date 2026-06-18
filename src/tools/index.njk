@@ -33,13 +33,12 @@
     { "name": "Payroll Cost Calculator", "body": "Estimate the monthly fee to have your payroll managed &mdash; from headcount, states, and frequency. Our management fee only, not wages or taxes.", "cta": "Open the calculator", "href": "/tools/payroll-cost-calculator/" },
     { "name": "Break-Even Calculator", "body": "Enter your fixed costs, price, and variable cost per sale to see the monthly sales volume and revenue where you break even. Your own numbers, plain math.", "cta": "Open the calculator", "href": "/tools/breakeven-calculator/" },
     { "name": "Cash Runway Calculator", "body": "Enter your cash on hand and monthly net burn to see how many months of runway you have. A snapshot to pressure-test with a forecast.", "cta": "Open the calculator", "href": "/tools/cash-runway-calculator/" },
-    { "name": "Business Budget Worksheet", "body": "A live monthly worksheet: enter revenue and expense lines to see total expenses, surplus or deficit, and net margin. A starting structure, not a download.", "cta": "Open the worksheet", "href": "/tools/business-budget-template/" }
+    { "name": "Business Budget Worksheet", "body": "A live monthly worksheet: enter revenue and expense lines to see total expenses, surplus or deficit, and net margin. A starting structure, not a download.", "cta": "Open the worksheet", "href": "/tools/business-budget-template/" },
+    { "name": "QuickBooks Plan Selector", "body": "Answer five questions about users, inventory, projects, and class tracking to see which QuickBooks Online plan fits. Fit-based &mdash; no pricing, Intuit sets that.", "cta": "Open the selector", "href": "/tools/quickbooks-plan-selector/" },
+    { "name": "1099 Deadline Calculator", "body": "Pick a tax year to see the exact 1099-NEC and W-2 filing deadline, including the weekend roll, plus the 1099-MISC e-file date. Confirm on IRS.gov.", "cta": "Open the calculator", "href": "/tools/1099-deadline-calculator/" },
+    { "name": "Sales Tax Rate Lookup", "body": "Rates change constantly and are address-specific, so instead of a stale box, a ProAdvisor finds your exact current rate and nexus with you on a free call.", "cta": "How it works", "href": "/tools/sales-tax-rate-lookup/" }
   ],
-  "roadmap": [
-    "QuickBooks plan selector",
-    "Sales tax rate lookup",
-    "1099 deadline calculator"
-  ],
+  "roadmap": [],
   "faq": [
     { "q": "Are these tools really free?", "a": "Yes &mdash; genuinely free, with nothing locked behind a form or an email signup. We build them as Certified ProAdvisors to be useful first; if a tool raises a question about your own books, you&rsquo;re welcome to book a free discovery call, but there&rsquo;s no obligation and no gate." },
     { "q": "Is a calculator estimate the same as a quote?", "a": "No. Every estimate here is built from TechBrot&rsquo;s published pricing to put you in a realistic range &mdash; it is never a binding quote. A short form can&rsquo;t see your actual file. Your exact fixed fee is always confirmed in writing within 3 business days of a free discovery call, before any work begins." },
@@ -82,15 +81,23 @@
 <section class="section section--alt" id="tools-hub-roadmap">
   <div class="container container--narrow">
     <header class="section__header">
+      {%- if roadmap.length %}
       <p class="section__eyebrow">In development</p>
       <h2 class="section__heading">More tools on the way.</h2>
       <p class="section__lede">We&rsquo;d rather name what&rsquo;s coming than link to pages that don&rsquo;t exist yet. These are in development and will appear here as they&rsquo;re published.</p>
+      {%- else %}
+      <p class="section__eyebrow">More to come</p>
+      <h2 class="section__heading">Need a tool we don&rsquo;t have yet?</h2>
+      <p class="section__lede">This set covers the questions we hear most. We add tools as businesses ask for them &mdash; if there&rsquo;s a calculation you wish existed, mention it on a discovery call and we&rsquo;ll look at building it.</p>
+      {%- endif %}
     </header>
+    {%- if roadmap.length %}
     <ul class="checks-list">
       {%- for r in roadmap %}
       <li>{{ r }}</li>
       {%- endfor %}
     </ul>
+    {%- endif %}
   </div>
 </section>
 

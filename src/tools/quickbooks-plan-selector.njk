@@ -1,0 +1,201 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/tools/quickbooks-plan-selector/",
+  "slug": "plan-select",
+  "chrome": "full",
+  "callBar": true,
+  "includeSelectJs": true,
+  "bodyClass": "page--mofu",
+  "pageTier": "mofu",
+  "title": "QuickBooks Online Plan Selector · Which QBO Plan Fits · TechBrot",
+  "description": "Free QuickBooks Online plan selector. Answer five questions about users, inventory, projects, and class tracking to see which QBO plan fits — Simple Start, Essentials, Plus, or Advanced. Fit-based, no pricing (Intuit sets prices). Independent firm, not Intuit. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Tools", "href": "/tools/" },
+    { "name": "QuickBooks Plan Selector" }
+  ],
+  "hero": {
+    "eyebrow": "Free tool · QuickBooks Online",
+    "heading": "Which QuickBooks Online plan actually fits your business?",
+    "subheading": "Answer five questions about how you work &mdash; users, inventory, projects, class tracking &mdash; and see which QuickBooks Online plan has the features you need, from Simple Start to Advanced. We recommend on <strong>fit, not price</strong>: Intuit sets and changes plan pricing, so we point you to the right tier and you confirm the current cost with Intuit.",
+    "actions": [
+      { "label": "Skip to the calculator", "href": "#calc", "class": "btn--primary" },
+      { "label": "See full pricing", "href": "/pricing/", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>This tool matches you to a QuickBooks Online tier on features, not price.</strong> The deciding factors are how many users you need and whether you require inventory, project profitability, or class/location tracking &mdash; the capabilities that separate Simple Start, Essentials, Plus, and Advanced. We don&rsquo;t quote Intuit&rsquo;s prices because Intuit sets and changes them; check current pricing at Intuit. TechBrot is an independent ProAdvisor firm &mdash; not Intuit &mdash; and we can set up whichever plan fits, correctly.",
+    "source": "TechBrot Inc. &middot; independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc. Plan names and features are Intuit&rsquo;s and can change."
+  },
+  "ctaBand": {
+    "eyebrow": "Right plan, set up right",
+    "heading": "Get the plan picked and set up correctly.",
+    "lede": "Picking the tier is the easy part &mdash; setting it up so your books are right from day one is the work. A free 30-minute discovery call confirms the plan for your business and scopes a clean QuickBooks setup. No hourly billing, no obligation. Independent firm &mdash; not Intuit.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks-setup", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="calc">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The selector</p>
+      <h2 class="section__heading">Find the plan that fits.</h2>
+      <p class="section__lede">Pick the option that fits in each row. The recommendation updates as you go &mdash; and it&rsquo;s based on features, never on price.</p>
+    </header>
+
+    <div class="calc" data-calc data-select-formula="planselect">
+      <form class="calc__form" aria-describedby="calc-disclaimer-top">
+        <p class="calc__formnote" id="calc-disclaimer-top">Recommends on feature fit &mdash; Intuit sets pricing, check Intuit.</p>
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="sel-users">How many people need access?</label>
+          <select id="sel-users" data-calc-sel="users">
+            <option value="1">Just me</option>
+            <option value="3">2&ndash;3 people</option>
+            <option value="5">4&ndash;5 people</option>
+            <option value="25">6&ndash;25 people</option>
+            <option value="40">More than 25</option>
+          </select>
+        </div>
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="sel-inventory">Do you track product inventory?</label>
+          <select id="sel-inventory" data-calc-sel="inventory">
+            <option value="0">No</option>
+            <option value="1">Yes &mdash; track inventory quantities &amp; cost</option>
+          </select>
+        </div>
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="sel-projects">Do you need project or job profitability?</label>
+          <select id="sel-projects" data-calc-sel="projects">
+            <option value="0">No</option>
+            <option value="1">Yes &mdash; profitability by project/job</option>
+          </select>
+        </div>
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="sel-classes">Track by class, department, or location?</label>
+          <select id="sel-classes" data-calc-sel="classes">
+            <option value="0">No</option>
+            <option value="1">Yes &mdash; class/location reporting</option>
+          </select>
+        </div>
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="sel-billtime">Bill clients for tracked time?</label>
+          <select id="sel-billtime" data-calc-sel="billtime">
+            <option value="0">No</option>
+            <option value="1">Yes &mdash; billable time on invoices</option>
+          </select>
+        </div>
+      </form>
+
+      <div class="calc__result" id="calc-result" role="status" aria-live="polite">
+        <p class="calc__result-label">Recommended plan</p>
+        <p class="calc__result-range calc__result-range--text"><span data-out="primary">&mdash;</span></p>
+        <p class="calc__result-why" data-out="text">Answer the questions above to see which plan fits.</p>
+        <p class="calc__result-disclaimer">A <strong>fit-based starting point</strong>, not a price comparison. Intuit sets and changes QuickBooks pricing &mdash; check current prices at Intuit. Plan features can change; a Certified ProAdvisor can confirm the right tier for your business.</p>
+        <a class="btn btn--primary btn--lg calc__result-cta" href="/contact/?intent=quickbooks-setup" data-tb-event="calc_to_quote">Book the discovery call</a>
+      </div>
+
+      <noscript>
+        <div class="calc__noscript">
+          <p>The live selector needs JavaScript. The short version: <strong>inventory, project profitability, or class tracking → Plus</strong>; <strong>more than five users → Advanced</strong>; <strong>multiple users without those features → Essentials</strong>; <strong>a single user with simple needs → Simple Start</strong>. The full comparison is below, or <a href="/contact/?intent=quickbooks-setup">book a free discovery call</a>.</p>
+        </div>
+      </noscript>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="plan-select-how">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The deciding features</p>
+      <h2 class="section__heading">What separates the QuickBooks Online plans.</h2>
+      <p class="section__lede">Features, not price &mdash; the capabilities that actually determine which tier you need. Pricing is set by Intuit; confirm current costs there.</p>
+    </header>
+    <div class="vs-scroll">
+      <table class="vs-table">
+        <caption class="sr-only">Key feature differences across QuickBooks Online plans (features only, no pricing).</caption>
+        <thead>
+          <tr>
+            <th scope="col">Capability</th>
+            <th scope="col">Simple Start</th>
+            <th scope="col">Essentials</th>
+            <th scope="col">Plus</th>
+            <th scope="col">Advanced</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Users (billed seats)</td><td>1</td><td>Up to 3</td><td>Up to 5</td><td class="vs-table__us">Up to 25</td></tr>
+          <tr><td>Bill management &amp; time tracking</td><td class="vs-table__concede">&ndash;</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+          <tr><td>Inventory tracking</td><td class="vs-table__concede">&ndash;</td><td class="vs-table__concede">&ndash;</td><td>Yes</td><td>Yes</td></tr>
+          <tr><td>Project / job profitability</td><td class="vs-table__concede">&ndash;</td><td class="vs-table__concede">&ndash;</td><td>Yes</td><td>Yes</td></tr>
+          <tr><td>Class &amp; location tracking</td><td class="vs-table__concede">&ndash;</td><td class="vs-table__concede">&ndash;</td><td>Yes</td><td>Yes</td></tr>
+          <tr><td>Custom roles, deeper reporting, automation</td><td class="vs-table__concede">&ndash;</td><td class="vs-table__concede">&ndash;</td><td class="vs-table__concede">&ndash;</td><td class="vs-table__us">Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="legal-doc__body stack-8">
+      <p>The logic is simple once you see it. <strong>Inventory, project profitability, or class/location tracking all require Plus</strong> &mdash; Simple Start and Essentials don&rsquo;t include them, so if you need any one of them, Plus is your floor. <strong>More than five users requires Advanced</strong>, which raises the seat limit to 25 and adds custom roles, batch tools, and deeper reporting. If you don&rsquo;t need those features, the smaller (and less expensive) plans are the honest choice &mdash; there&rsquo;s no benefit to paying for capabilities you won&rsquo;t use.</p>
+      <p>Plan names, feature sets, and user limits are Intuit&rsquo;s and can change; this reflects the current QuickBooks Online lineup at a feature level. For exact, current pricing and any limited-time offers, go to Intuit directly &mdash; we deliberately don&rsquo;t republish Intuit&rsquo;s prices here. For a side-by-side capability matrix, see our <a href="/quickbooks/compare/online-plans/">QuickBooks Online plan comparison</a>; to talk it through, our <a href="/quickbooks/which-plan-is-right/">which-plan guide</a> goes deeper.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="plan-select-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Choosing a QuickBooks Online plan, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="plan-select-next">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Where to go next.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for card in nextCards %}
+      <article class="review-card">
+        <h3>{{ card.name }}</h3>
+        <p class="review-card__fact">{{ card.body | safe }}</p>
+        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="plan-select-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">Questions about choosing a plan.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="plan-select-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="plan-select-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

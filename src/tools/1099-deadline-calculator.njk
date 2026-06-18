@@ -1,0 +1,170 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/tools/1099-deadline-calculator/",
+  "slug": "deadline-calc",
+  "chrome": "full",
+  "callBar": true,
+  "includeSelectJs": true,
+  "bodyClass": "page--mofu",
+  "pageTier": "mofu",
+  "title": "1099 Deadline Calculator · When 1099-NEC & W-2 Are Due · TechBrot",
+  "description": "Free 1099 deadline calculator. Pick a tax year to see the exact 1099-NEC and W-2 filing deadline (January 31, rolled for weekends) and the 1099-MISC e-file date. Always confirm on IRS.gov. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Tools", "href": "/tools/" },
+    { "name": "1099 Deadline Calculator" }
+  ],
+  "hero": {
+    "eyebrow": "Free tool · Filing deadlines",
+    "heading": "When are your 1099s and W-2s due?",
+    "subheading": "Pick a tax year and see the exact federal filing deadline for Form 1099-NEC and W-2 &mdash; including the weekend roll when January 31 lands on a Saturday or Sunday. These are the published IRS rules, not a guess. Missing them carries per-form penalties, so always confirm the current-year dates on IRS.gov.",
+    "actions": [
+      { "label": "Skip to the calculator", "href": "#calc", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>The core rule:</strong> Form <strong>1099-NEC</strong> (non-employee compensation) and <strong>W-2</strong> are both due to recipients and to the IRS/SSA by <strong>January 31</strong> of the year after the tax year. If January 31 is a weekend, the deadline rolls to the next business day. <strong>1099-MISC</strong> e-filed to the IRS is due later (March 31). This tool computes the exact date for the year you pick &mdash; but tax deadlines can shift, so always confirm on IRS.gov. Penalties apply per late form.",
+    "source": "TechBrot Inc. &middot; independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc. This is general information, not tax advice."
+  },
+  "ctaBand": {
+    "eyebrow": "Don&rsquo;t miss a filing",
+    "heading": "Let us handle the 1099s and payroll filings.",
+    "lede": "Late or wrong 1099s carry per-form penalties. A free 30-minute discovery call scopes ongoing bookkeeping and payroll that keeps contractor records clean and files on time, every year. No hourly billing, no obligation. Filing itself is coordinated with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="calc">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The calculator</p>
+      <h2 class="section__heading">Find your filing deadline.</h2>
+      <p class="section__lede">Pick the tax year &mdash; the year the income was paid. The deadline shown is for filing in the following year.</p>
+    </header>
+
+    <div class="calc" data-calc data-select-formula="deadline">
+      <form class="calc__form" aria-describedby="calc-disclaimer-top">
+        <p class="calc__formnote" id="calc-disclaimer-top">Published IRS rules &mdash; confirm current-year dates on IRS.gov.</p>
+        <div class="calc__field intake-field">
+          <label class="intake-field__label" for="sel-year">Tax year <span class="intake-field__optional">year the income was paid</span></label>
+          <select id="sel-year" data-calc-sel="year">
+            <option value="2024">2024 (filed in 2025)</option>
+            <option value="2025">2025 (filed in 2026)</option>
+            <option value="2026">2026 (filed in 2027)</option>
+            <option value="2027">2027 (filed in 2028)</option>
+          </select>
+        </div>
+      </form>
+
+      <div class="calc__result" id="calc-result" role="status" aria-live="polite">
+        <p class="calc__result-label">1099-NEC &amp; W-2 deadline</p>
+        <p class="calc__result-range"><span data-out="primary">&mdash;</span></p>
+        <ul class="calc__metrics">
+          <li class="calc__metric"><span class="calc__metric-label">1099-MISC e-file to IRS</span><span class="calc__metric-value" data-out="m1">&mdash;</span></li>
+        </ul>
+        <p class="calc__result-why" data-out="text">Pick a tax year above to see the deadline.</p>
+        <p class="calc__result-disclaimer">These are the published federal rules &mdash; <strong>always confirm the exact current-year dates on IRS.gov</strong>. State deadlines and penalties may differ, and this is general information, not tax advice.</p>
+        <a class="btn btn--primary btn--lg calc__result-cta" href="/contact/?intent=accounting" data-tb-event="calc_to_quote">Book the discovery call</a>
+      </div>
+
+      <noscript>
+        <div class="calc__noscript">
+          <p>The live calculator needs JavaScript. The core rule: <strong>1099-NEC and W-2 are due January 31</strong> of the year after the tax year (rolled to the next business day if that&rsquo;s a weekend); <strong>1099-MISC e-filed to the IRS is due March 31</strong>. Confirm exact dates on IRS.gov, or <a href="/contact/?intent=accounting">book a free discovery call</a>.</p>
+        </div>
+      </noscript>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="deadline-calc-how">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The rules behind it</p>
+      <h2 class="section__heading">The 1099 &amp; W-2 deadlines that matter.</h2>
+      <p class="section__lede">The federal filing calendar for the most common information returns &mdash; the same rules the calculator applies.</p>
+    </header>
+    <div class="vs-scroll">
+      <table class="vs-table">
+        <caption class="sr-only">Common information-return filing deadlines (federal).</caption>
+        <thead>
+          <tr>
+            <th scope="col">Form</th>
+            <th scope="col">To recipient</th>
+            <th scope="col" class="vs-table__us">To IRS / SSA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>1099-NEC</strong> <span class="vs-table__concede">contractor pay</span></td><td>January 31</td><td class="vs-table__us"><strong>January 31</strong></td></tr>
+          <tr><td><strong>W-2</strong> <span class="vs-table__concede">employee wages</span></td><td>January 31</td><td class="vs-table__us"><strong>January 31</strong> (SSA)</td></tr>
+          <tr><td><strong>1099-MISC</strong> <span class="vs-table__concede">rents, other</span></td><td>January 31</td><td class="vs-table__us"><strong>Feb 28</strong> paper · <strong>Mar 31</strong> e-file</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="legal-doc__body stack-8">
+      <p>Any deadline that lands on a Saturday, Sunday, or legal holiday rolls to the next business day &mdash; the calculator applies that roll to the January 31 dates automatically. Send recipient copies and file with the IRS/SSA by the dates shown; e-filing is required once you hit the IRS volume threshold for information returns.</p>
+      <p>Late or incorrect filings carry penalties <em>per form</em>, and they scale with how late you are &mdash; which is why clean, current books and accurate contractor records through the year matter more than a last-minute scramble. This page is general information, not tax advice; your CPA files the returns, and we keep the underlying records right.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="deadline-calc-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">1099 deadlines, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="deadline-calc-next">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Where to go next.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for card in nextCards %}
+      <article class="review-card">
+        <h3>{{ card.name }}</h3>
+        <p class="review-card__fact">{{ card.body | safe }}</p>
+        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="deadline-calc-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">Questions about 1099 deadlines.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="deadline-calc-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="deadline-calc-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

@@ -322,10 +322,15 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 525 (measured `find` count, non-dev) · re-skinned (142) + growth = 383 · LAST COMMIT = round-85 tools Wave 2
-(3: /tools/breakeven-calculator/ + /tools/cash-runway-calculator/ + /tools/business-budget-template/). Working tree clean on `preview-11ty`.
-🟢 CALCULATOR PROOF APPROVED (founder round 84): band model = template for all calculators; 4 CTA labels RATIFIED; hub-alongside OK; /reviews/ left as-is.
-TOOLS FAN-OUT IN PROGRESS (autonomous, founder round 84): Wave 1 ✅ DONE (cleanup-cost-estimator + payroll-cost-calculator). Wave 2 ✅ DONE (breakeven + cash-runway + business-budget; NEW lightweight tb-formula.js island = arithmetic on user's OWN numbers, no firm pricing, honest zero/negative-denominator handling, math unit-tested, CLS-0; flow__step process diagram added to satisfy mofu design-fidelity gate; battery GREEN). NEXT: Wave 3 = 1099-deadline (factual date) + quickbooks-plan-selector (FIT only, NO Intuit prices) + sales-tax-rate-lookup (call-based page, NOT live rate DB) · THEN blog proof (8 seed posts, NEW type, proof-first STOP). 6 of 9 tools live (hub + bookkeeping + cleanup + payroll + breakeven + runway + budget).
+**COUNT: total pages live = 528 (measured `find` count, non-dev) · re-skinned (142) + growth = 386 · LAST COMMIT = round-86 tools Wave 3 — TOOLS SILO COMPLETE
+(3: /tools/1099-deadline-calculator/ + /tools/quickbooks-plan-selector/ + /tools/sales-tax-rate-lookup/). Working tree clean on `preview-11ty`.
+🎉 TOOLS/CALCULATORS SILO ✅ COMPLETE (10 pages = /tools/ hub + 9 tools). Rounds 83–86, all battery GREEN. Three JS islands, all client-only/CLS-0/no-network:
+  tb-calc.js (band estimators: bookkeeping, cleanup, payroll — canonical-slice bands, can't exceed published ranges) ·
+  tb-formula.js (arithmetic on user's OWN numbers: breakeven, cash-runway, budget-worksheet — honest edge handling, math unit-tested) ·
+  tb-select.js (1099-deadline = real IRS Jan-31 rule + weekend-roll, date math verified; quickbooks-plan-selector = FEATURE-FIT only, NO Intuit prices).
+  sales-tax-rate-lookup = call-based page (NOT a live rate DB, founder ruling) — honest "rates change/address-specific, we look it up with you".
+  HONESTY held throughout: canonical pricing only, estimate-not-a-quote everywhere, no fabricated outputs, not-Intuit disclosure, founder-name-zero. 4 tools-CTA labels RATIFIED.
+NEXT: BLOG PROOF (NEW article type, founder round 84) — hub + 8 category pages + 8 seed posts; proof-first then STOP for founder glance. Report: `_build/reports/round-86.md`.
 ROUND 83 — TOOLS/CALCULATORS proof ✅ BUILT, BATTERY GREEN. First interactive type on the site. Bookkeeping Cost Calculator:
 t-mofu tool variant; NEW `tb-calc.js` island (deterministic, client-only, CLS 0, noscript fallback); `.calc` CSS in 09-extensions
 (token-only, +~1.8KB min, mobile font step-down on result <480px). HONESTY ENGINEERED: 4 bands are slices of canonical

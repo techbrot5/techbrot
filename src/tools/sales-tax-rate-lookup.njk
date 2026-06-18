@@ -1,0 +1,134 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/tools/sales-tax-rate-lookup/",
+  "slug": "salestax-lookup",
+  "chrome": "full",
+  "callBar": true,
+  "bodyClass": "page--mofu",
+  "pageTier": "mofu",
+  "title": "Sales Tax Rate Lookup · We Find Your Exact Rate & Nexus · TechBrot",
+  "description": "Sales tax rates change constantly and depend on the exact delivery address, not just the state — so instead of a stale live lookup, a Certified ProAdvisor finds your exact current rate and nexus obligations with you on a free call. Independent firm, not Intuit. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Tools", "href": "/tools/" },
+    { "name": "Sales Tax Rate Lookup" }
+  ],
+  "hero": {
+    "eyebrow": "Sales tax · We look it up with you",
+    "heading": "Find your exact sales tax rate &mdash; the right way.",
+    "subheading": "We could show you a sales tax rate calculator. We won&rsquo;t &mdash; because rates change constantly and depend on the exact delivery address, not just the state, so a static lookup is wrong as often as it&rsquo;s right. Instead, a Certified ProAdvisor finds your <strong>exact current rate and your nexus obligations</strong> with you on a free call. A wrong rate is worse than no rate.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=sales-tax", "class": "btn--primary" },
+      { "label": "See full pricing", "href": "/pricing/", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>Why there&rsquo;s no live rate box here:</strong> U.S. sales tax is set at state, county, city, and special-district levels and changes throughout the year, and the correct rate depends on the precise ship-to or point-of-sale address &mdash; ZIP codes routinely span multiple rates. The harder question is usually <strong>nexus</strong>: which states you&rsquo;re even obligated to collect in. Rather than publish numbers that go stale, a Certified ProAdvisor pulls your exact current rates from authoritative sources and reviews your nexus with you. Independent firm &mdash; not Intuit. This is general information, not tax advice.",
+    "source": "TechBrot Inc. &middot; independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Get it right, not approximately right",
+    "heading": "Get your exact rate and a nexus check.",
+    "lede": "On a free 30-minute call, a Certified ProAdvisor pulls your current rates from authoritative sources, reviews where you have nexus, and shows you what collecting and filing correctly looks like. No hourly billing, no obligation. Filing is coordinated with your CPA where needed.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=sales-tax", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section" id="salestax-lookup-why">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The honest version</p>
+      <h2 class="section__heading">Why a live rate box would mislead you.</h2>
+    </header>
+    <div class="legal-doc__body">
+      <p>A sales tax rate looks like it should be a simple lookup. It isn&rsquo;t. The rate that applies to a sale is the <strong>combined</strong> state, county, city, and special-district rate at the exact location of the sale &mdash; and in many places a single ZIP code contains more than one combined rate. Type in a ZIP and you can easily get a number that&rsquo;s close but wrong, and &lsquo;close&rsquo; is what triggers under-collection and audit exposure.</p>
+      <p>Rates also <strong>change throughout the year</strong> as jurisdictions adjust them. A number we hard-coded today could be out of date within a quarter. Holding ourselves to the same honesty standard as the rest of this site, we&rsquo;d rather not publish a figure we can&rsquo;t guarantee is current and correct for <em>your</em> address.</p>
+      <p>And the rate is usually the smaller question. The one that actually creates risk is <strong>nexus</strong>: which states your activity obligates you to register, collect, and file in. Economic-nexus thresholds mean you can owe sales tax in states you&rsquo;ve never set foot in. That&rsquo;s a judgment call about your specific footprint &mdash; exactly the kind of thing a person should look at with you, not a box on a web page.</p>
+    </div>
+    <div class="flow stack-8" role="img" aria-label="Tell us where you sell, a ProAdvisor pulls your exact current rates and reviews nexus, then you get correct collection and filing set up.">
+      <div class="flow__step"><span class="flow__label">Tell us where you sell</span><span class="flow__sub">states &amp; channels</span></div>
+      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+      <div class="flow__step flow__step--accent"><span class="flow__label">We pull rates &amp; check nexus</span><span class="flow__sub">free call · authoritative sources</span></div>
+      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+      <div class="flow__step"><span class="flow__label">Collect &amp; file correctly</span><span class="flow__sub">set up right</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="salestax-lookup-factors">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What actually determines your rate</p>
+      <h2 class="section__heading">Four things that decide what you owe.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for f in factors %}
+      <article class="review-card">
+        <h3>{{ f.name }}</h3>
+        <p class="review-card__fact">{{ f.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="salestax-lookup-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Sales tax rates &amp; nexus, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="salestax-lookup-next">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Where to go next.</h2>
+    </header>
+    <div class="grid-3">
+      {%- for card in nextCards %}
+      <article class="review-card">
+        <h3>{{ card.name }}</h3>
+        <p class="review-card__fact">{{ card.body | safe }}</p>
+        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="salestax-lookup-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">Questions about sales tax rates.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="salestax-lookup-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="salestax-lookup-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
