@@ -322,7 +322,13 @@ on (a) a battery failure you can't cleanly fix, or (b) an equity/honesty gate br
 STOP-gates are RETIRED — glossary, the CA state-child, and the find-an-accountant hub are all founder-APPROVED.)
 GATES every page: variety #12a/#12b · honesty · forms · CLS 0 · axe · overflow · (equity n/a for net-new growth).
 
-**COUNT: total pages live = 575 (orientation `*.html` non-dev; round-94 572 + 3) · re-skinned (142) + growth = 433 · LAST COMMIT = round-95 three competitor /vs/ pages. Working tree clean on `preview-11ty`.
+**COUNT: total pages live = 576 (orientation `*.html` non-dev; round-95 575 + 1) · re-skinned (142) + growth = 434 · LAST COMMIT = round-96 quickbooks/year-end-close. Working tree clean on `preview-11ty`.
+🎯 BUILDABLE BOFU SURFACE ✅ COMPLETE (round 96) — /quickbooks/year-end-close/ (seasonal, operational close-in-QB, 1099 folded in, tax-lane honest, distinct from year-end-review/payroll-year-end/month-end-close/checklist). Battery GREEN (fixed 4 escaped-quote hrefs + de-numbered deliverables grid). Report: round-96.md.
+⭐ REVENUE/CONVERSION SURFACE COMPLETE on buildable BOFU (rounds 90–96): QB money layer (hire-a-proadvisor·proadvisor-cost·bookkeeping-services·training) · pricing+5 children · 6 industry high-fee · 4 into-QB migrations · proadvisor-near-me · full /vs/ set · year-end-close. Nothing buildable-BOFU remains.
+⏸ HELD (founder): guarantee page (REAL terms only) · scheduler/book-a-call (flip infra, parked w/ form handler).
+🛑 DATA-GATED (no fabrication): /results/ · /case-studies/ · /reviews/by-X/ — fixable only via the engagement/review capture loop (calendar-time). TOP conversion ceiling.
+📚 NON-BOFU lanes open (founder's call, lower call-yield): coined-frameworks hub (~6, AI-citation/MOFU — best remaining authority play) · supporting children (trust/partners/careers) · blog/glossary expansion · optional /quickbooks/training/ online+payroll children.
+PRIOR — round-95 three competitor /vs/ pages. Working tree clean on `preview-11ty`.
 ⚖️ /vs/ ADDITIONS (Sheet-8) ✅ DONE (round 95) — /vs/techbrot-vs-bookkeeper360/ + /vs/techbrot-vs-xendoo/ (competitor, full shape) + /vs/local-cpa-vs-online-bookkeeping/ (role/structure, shared partial). Hub wired: statuses flipped to Published, DUPLICATE bookkeeper360 card fixed, local-cpa added, ItemList +3. HONESTY: no fabricated competitor pricing (deferred to vendor), fair win/loss tallies (never a sweep), local-cpa=complementary (we don't file taxes / use both, non-disparaging). Battery GREEN first pass (proactive checks). Report: round-95.md.
 NEXT (round 96, founder-confirmed): /quickbooks/year-end-close/ (seasonal BOFU) — the LAST buildable BOFU tail item. After it, revenue/conversion surface is effectively COMPLETE bar HELD items + data-gated proof.
 PRIOR — round-94 proadvisor-near-me. Working tree clean on `preview-11ty`.
