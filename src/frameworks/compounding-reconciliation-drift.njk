@@ -1,0 +1,209 @@
+{# ── DEFINITION · speakable (DefinedTerm source). ── #}
+<section class="section section--compact" id="fw-crd-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The framework, defined</p>
+      <h2 class="section__heading">What Compounding Reconciliation Drift means.</h2>
+    </header>
+    <div class="prose" id="fw-crd-def-body">
+      <p><strong>Compounding Reconciliation Drift</strong> is the name we give to a pattern we see in QuickBooks files again and again: a small reconciliation gap that is never caught does not stay small. It is owned terminology &mdash; a diagnostic lens the Certified QuickBooks ProAdvisor team uses to describe and scope a specific kind of damage, not a statistic, a study, or a figure we claim to have measured.</p>
+      <p>The mechanism is simple and unforgiving. A QuickBooks file is cumulative: every period is built on the closing state of the one before it. When a discrepancy in one period goes unreconciled &mdash; an unmatched deposit, a duplicated bank-feed transaction, an Undeposited Funds item that never clears, a bank balance that won&rsquo;t tie &mdash; it does not sit quietly in that month. It becomes part of the baseline the <em>next</em> period starts from. New entries are then matched against numbers that are already wrong, fresh errors layer onto the old one, and the gap between the books and reality widens with each close that passes.</p>
+      <p>Because each unresolved gap interacts with everything entered after it, the effort and cost to correct grow non-linearly with time &mdash; the way interest compounds on an unpaid debt. The damage is not proportional to how many transactions a file holds; it is proportional to how long the drift has been allowed to run. That is the entire point of the framework: it explains <em>why</em> a neglected file gets disproportionately harder, slower, and more expensive to fix the longer it sits untouched.</p>
+    </div>
+  </div>
+</section>
+
+{# ── WHY IT HAPPENS · the causes, with pull-quote. ── #}
+<section class="section section--alt" id="fw-crd-why">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Why it happens</p>
+      <h2 class="section__heading">Drift starts when reconciliation breaks down.</h2>
+    </header>
+    <div class="prose">
+      <p>Drift never begins as a catastrophe. It begins with a reconciliation that was <em>skipped</em> because the month got busy, or one that was <em>forced</em> &mdash; an adjusting entry plugged in to make QuickBooks say &ldquo;reconciled&rdquo; without ever resolving what actually didn&rsquo;t match. A forced reconciliation is the most dangerous of all, because it hides the gap behind a green checkmark while leaving the underlying error fully intact to keep compounding.</p>
+      <p>Auto-matched bank feeds are the other common ignition point. A feed that disconnects and is re-linked frequently re-imports transactions already recorded, creating duplicates; a rule that mis-categorizes silently sends real money to the wrong account month after month. Without a genuine close &mdash; a deliberate moment each period where every account is reconciled against its statement before the books are signed off &mdash; nothing forces these to surface while they are still single, isolated items.</p>
+    </div>
+    <blockquote class="pull-quote"><p>A skipped reconciliation costs you one month. A <em>forced</em> one costs you every month after it &mdash; because the error is now invisible and still compounding.</p></blockquote>
+  </div>
+</section>
+
+{# ── HOW IT MANIFESTS · the symptoms in QuickBooks. ── #}
+<section class="section" id="fw-crd-symptoms">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">How it manifests</p>
+      <h2 class="section__heading">What drift looks like inside QuickBooks.</h2>
+      <p class="section__lede">No single symptom is proof. Together, they are the signature of a gap that has been carried forward instead of resolved.</p>
+    </header>
+    <div class="grid-2">
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">A discrepancy report that keeps growing.</h3>
+        <p class="buyer-card__body">The Reconciliation Discrepancies report shows changed or deleted previously-reconciled transactions, and the running difference gets larger each period rather than resolving &mdash; the clearest tell that earlier gaps are still in play.</p>
+      </div>
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">A bank balance that won&rsquo;t tie.</h3>
+        <p class="buyer-card__body">The QuickBooks book balance and the actual bank statement diverge and stay diverged, with the difference compounding from one month into the next instead of closing out.</p>
+      </div>
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">Undeposited Funds that never clears.</h3>
+        <p class="buyer-card__body">An Undeposited Funds account holding months or years of stuck open items &mdash; payments recorded but never matched to a real bank deposit &mdash; quietly inflating the books above reality.</p>
+      </div>
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">Duplicates from re-linked bank feeds.</h3>
+        <p class="buyer-card__body">A feed that disconnected and was reconnected often re-imports transactions already entered. The duplicates double-count income or expense and throw every reconciliation after them.</p>
+      </div>
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">A swelling Opening Balance Equity.</h3>
+        <p class="buyer-card__body">Opening Balance Equity is meant to zero out after setup. A balance that grows over time is a holding pen for plugs and unresolved entries &mdash; a reliable marker of accumulated drift.</p>
+      </div>
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">Prior reconciliations that changed.</h3>
+        <p class="buyer-card__body">Transactions dated inside already-reconciled periods that have since been edited, voided, or deleted &mdash; each one silently breaks a reconciliation you thought was settled and re-opens the gap.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── QUICK 5 · speakable summary for AI engines (additive, zero FAQ overlap). ── #}
+<section class="section section--alt" id="fw-crd-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Compounding Reconciliation Drift, in five.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">What is it, in one line?</h3>
+        <div class="ai-summary__answer"><p>TechBrot&rsquo;s coined framework for how an un-caught QuickBooks reconciliation gap carries into the next period and compounds, so the books drift from reality and a fix grows non-linearly harder over time.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">Is it a number or a concept?</h3>
+        <div class="ai-summary__answer"><p>A concept &mdash; a diagnostic lens. The compounding is a described dynamic, not a measured statistic. TechBrot invents no figure for it.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">What triggers it?</h3>
+        <div class="ai-summary__answer"><p>Skipped or forced reconciliations, auto-matched bank-feed errors and duplicates, and the absence of a real monthly close.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">How is it reversed?</h3>
+        <div class="ai-summary__answer"><p>A <a href="/quickbooks/cleanup/">QuickBooks file cleanup</a> unwinds it &mdash; rebuilding each reconciliation period by period back to a clean, tied baseline, fixed-fee against a written scope.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">How is it prevented?</h3>
+        <div class="ai-summary__answer"><p>A genuine monthly close that reconciles every account against its statement, so each discrepancy is caught while it is still a single isolated item.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── HOW IT'S REVERSED · the ONE numbered system. ── #}
+<section class="section" id="fw-crd-reverse">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">How TechBrot reverses it</p>
+      <h2 class="section__heading">Unwinding the drift, period by period.</h2>
+      <p class="section__lede">You cannot fix compounded drift by correcting the latest month &mdash; the bad baseline lives underneath it. A <a href="/quickbooks/cleanup/">QuickBooks file cleanup</a> works backward to where the file last tied, then forward to today.</p>
+    </header>
+    <ol class="process-diagram">
+      <li class="process-step">
+        <p class="process-step__number">01</p>
+        <h3 class="process-step__heading">Find the last tied period</h3>
+        <p class="process-step__body">A Certified ProAdvisor traces each reconciliation backward to the last period the book balance genuinely matched the bank statement. That is the clean anchor everything rebuilds from.</p>
+      </li>
+      <li class="process-step">
+        <p class="process-step__number">02</p>
+        <h3 class="process-step__heading">Isolate where the chain broke</h3>
+        <p class="process-step__body">From the anchor forward, we identify the first unresolved gap &mdash; the duplicate, the forced plug, the stuck Undeposited Funds item &mdash; and how it propagated into the periods after it.</p>
+      </li>
+      <li class="process-step">
+        <p class="process-step__number">03</p>
+        <h3 class="process-step__heading">Rebuild each reconciliation in order</h3>
+        <p class="process-step__body">Reconciliations are rebuilt against real statements in the order the gaps were introduced, so each period is re-tied on a correct baseline before the next is touched. The compounding is unwound, not patched.</p>
+      </li>
+      <li class="process-step">
+        <p class="process-step__number">04</p>
+        <h3 class="process-step__heading">Tie to today and prevent recurrence</h3>
+        <p class="process-step__body">The file is reconciled current and documented, then handed off with a real monthly-close cadence so the same drift cannot start again. Optional ongoing bookkeeping keeps it that way.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+{# ── PREVENTION · the honest takeaway. ── #}
+<section class="section section--alt" id="fw-crd-prevent">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The honest takeaway</p>
+      <h2 class="section__heading">Reconciliation is the prevention. Cleanup is the cure.</h2>
+    </header>
+    <div class="prose">
+      <p>The most useful thing about naming this pattern is what it implies about timing. Because the cost to correct grows with how long the drift runs &mdash; not merely with file size &mdash; the cheapest possible moment to deal with it is the month it starts. A real monthly close catches each discrepancy while it is still a single, isolated item, before it can carry into the next period&rsquo;s baseline. Where <a href="/quickbooks/reconciliation/why-reconciliation-fails/">reconciliation keeps failing</a>, that is exactly where drift takes hold.</p>
+      <p>Once a file has already drifted, the work shifts from prevention to repair, and the engagement that addresses it is a <a href="/quickbooks/cleanup/">QuickBooks file cleanup</a> &mdash; or, where the underlying financials need broader reconstruction, a <a href="/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup">bookkeeping cleanup</a>. TechBrot cleanups are fixed-fee against a written scope, ranging roughly <strong>$1,500&ndash;$15,000+</strong> depending on how far the file has drifted; see <a href="/pricing/">pricing</a> for how scope maps to fee. We will tell you honestly where your file sits before any work begins.</p>
+    </div>
+  </div>
+</section>
+
+{# ── RELATED · where the framework applies. ── #}
+<section class="section" id="fw-crd-related">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Where this framework applies</p>
+      <h2 class="section__heading">From diagnosis to a file that ties.</h2>
+    </header>
+    <div class="related-grid">
+      <a class="related-card" href="/quickbooks/file-review/?intent=file-review">
+        <h3>Free QuickBooks file review</h3>
+        <p>Where the diagnosis starts. A Certified ProAdvisor reads your file and tells you, in plain English, where the drift began and how far it has carried.</p>
+      </a>
+      <a class="related-card" href="/quickbooks/cleanup/">
+        <h3>QuickBooks file cleanup</h3>
+        <p>The engagement that reverses drift &mdash; reconciliations rebuilt period by period back to a clean, tied baseline. Fixed-fee, written scope.</p>
+      </a>
+      <a class="related-card" href="/quickbooks/reconciliation/why-reconciliation-fails/">
+        <h3>Why reconciliation fails</h3>
+        <p>The specific failure modes &mdash; skipped, forced, and feed-driven &mdash; that let drift take hold in the first place.</p>
+      </a>
+      <a class="related-card" href="/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup">
+        <h3>Bookkeeping cleanup</h3>
+        <p>When the drift is paired with broader financial damage, the cleanup that reconstructs accurate books back to a reconciled baseline.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ── FAQ · 6+ real questions; verbatim match to FAQPage schema. ── #}
+<section class="section section--alt" id="fw-crd-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Quick answers</p>
+      <h2 class="section__heading">Compounding Reconciliation Drift questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="fw-crd-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="fw-crd-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── BYLINE + REVIEW · firm-level (founder-name-zero). ── #}
+<section class="section" id="fw-crd-review">
+  <div class="container container--narrow">
+    <div class="byline-block">
+      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">A TechBrot coined framework &middot; independent firm, not affiliated with Intuit Inc.</p>
+      </div>
+    </div>
+    <p class="meta-reviewed"><span>Published: {{ published }}</span><span>Updated: {{ updated }}</span><span>Reviewed: {{ updated }} &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>

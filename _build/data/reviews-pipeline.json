@@ -1,0 +1,12 @@
+{
+  "_dataset": "reviews-pipeline",
+  "_purpose": "Collect REAL client reviews over time via the post-engagement review-request loop (Sheet 7 Gap 4).",
+  "_loop": "At every engagement close: send a no-incentive review request (Clutch primary, Google Business secondary). When a REAL review arrives, log it here. /reviews/ displays only real, verifiable reviews.",
+  "_honesty": "NEVER log or publish a review the firm did not actually receive. Verbatim excerpts only, with a verification/permalink URL and the client's permission to display.",
+  "_aggregate_rating_gate": "AggregateRating stays OFF until N>=5 real reviews (locked rule). At N>=5, enable it from the real ratings in this log, sample size disclosed.",
+  "_schema": "review_id, platform, date, service, industry, rating, excerpt, source_url, permission_to_display, on_site",
+  "_status": "collecting",
+  "real_review_count": 2,
+  "_seed_note": "2 real Clutch reviews are already live on /reviews/ (inline in src/reviews.11tydata.js). Migrate their real details here as REV-0001/REV-0002 so this log is the single source of truth, then append new real reviews as the loop runs. Count today = 2 -> AggregateRating remains OFF.",
+  "rows": []
+}

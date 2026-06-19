@@ -52,3 +52,30 @@ industry · txn_volume_band (`<500 · 500-2000 · 2000-10000 · 10000+`) · prio
 qbo/xero/wave/sage/spreadsheets/none/other) · recommended_system (qbo/qb-enterprise/qb-desktop/other) ·
 decision_drivers (inventory, multi-user, remote-access, payroll, cost, integrations, job-costing, reporting,
 industry-fit) · switched (y/n)
+
+## 7. Engagement Results (for a future `/results/` + `/case-studies/`) → `engagement-results.json`
+**The conversion-ceiling dataset. Capture starts NOW; PUBLISHES NOTHING until real + substantiable + founder sign-off.**
+One row per CLOSED engagement, written from REAL facts you hand me — NO client/company names, NO re-identifying
+detail (anonymized to industry + state + situation). A `/results/` or `/case-studies/` page builds ONLY when there
+are enough substantiable rows the founder will stand behind (target N≥5 distinct, each verifiable). No synthetic
+case studies, no invented outcomes, no fabricated quotes — ever.
+Fields: engagement_id (ENG-####) · service (cleanup/catch-up/migration/monthly/setup/payroll/advisory) · industry ·
+state · starting_situation (short, anonymized — e.g. "14 months behind, unreconciled, prior bookkeeper left") ·
+work_done (short) · outcome (short, factual — e.g. "books reconciled to source, CPA-ready, now on monthly") ·
+months_behind_at_intake (int, optional) · duration_weeks (optional) · cost_band (reuse §1 bands) ·
+client_quote (ONLY if the client gave a real, attributable-by-permission quote — else blank) ·
+substantiable (y/n — can the firm back this up if asked) · publish_ok (y/n — founder cleared it). Blank stays blank.
+
+## 8. Reviews & the post-engagement review-request loop → `reviews-pipeline.json`
+**The review-request STEP (Sheet 7 Gap 4). Capture/collect real reviews over time; publish only real ones.**
+THE LOOP (runs at every engagement close, founder-operated until the form handler is live at flip):
+1. Engagement closes → send the client a review request (Clutch primary; Google Business secondary) — a short,
+   no-incentive ask. (At flip, the intake/close flow can trigger this; until then it's a manual step at close.)
+2. When a REAL review comes in, log it here (platform · date · service · industry · rating · verbatim excerpt ·
+   permalink/verification URL · permission_to_display y/n). NEVER write a review we didn't receive.
+3. `/reviews/` displays only real, verifiable reviews (currently the 2 real Clutch). **AggregateRating stays OFF
+   until N≥5 real reviews** (locked rule); when N≥5, enable it from THIS log's real ratings, sample size shown.
+Fields: review_id (REV-####) · platform (clutch/google/other) · date · service · industry · rating (1–5, real) ·
+excerpt (verbatim, as published) · source_url · permission_to_display (y/n) · on_site (y/n).
+SEED (real, already live on /reviews/): the 2 existing Clutch reviews — migrate their real details into this log as
+REV-0001/REV-0002 so the loop has one source of truth. Count today: **2 real → AggregateRating remains OFF.**
