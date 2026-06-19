@@ -1,11 +1,46 @@
 # ARCHITECTURE-TRUTH.md — source-of-truth architecture
-Status: DRAFT for founder review (post-migration Deliverable 2) · Created 2026-06-15 (as TECHBROT-BLUEPRINT-V5.md)
-· Renamed to ARCHITECTURE-TRUTH.md 2026-06-15. Supersedes techbrot-blueprint-v3.xlsx + the v4 working references
-(now legacy/historical). This is the canonical ARCHITECTURE truth for the post-migration → redesign → growth
-phases. It consolidates and points to the other governing docs (see §10); where they disagree, ARCHITECTURE-TRUTH
-+ the latest founder ruling win.
+Status: RECONCILED TO v5 (2026-06-20). Created 2026-06-15 (as TECHBROT-BLUEPRINT-V5.md), renamed
+ARCHITECTURE-TRUTH.md the same day. Founder-approved 2026-06-16.
 
-DO NOT let anything depend on this until the founder has reviewed and approved it (founder instruction).
+═══════════════════════════════════════════════════════════════
+⚠ v5 RECONCILIATION (2026-06-20) — READ FIRST
+═══════════════════════════════════════════════════════════════
+**The current STRATEGIC truth is now `techbrot-blueprint-v5.xlsx`** (repo root; 6 sheets: START HERE ·
+ALL URLs · LOCATIONS · DESIGN METHOD · FORWARD PLAN · RULES+FLIP GATE). It supersedes the v4/v3 xlsx and
+THIS doc's body where they disagree. **BUILD-TRACKER.md remains the live EXECUTION truth (wins on
+operational conflict).** This doc body below was written at the END of the migration phase (139 pages,
+pre-growth, design-as-reskin) and is now substantially behind. It is kept for the still-accurate detail
+(§6 factory method, §8 honesty contract) and as the historical record; the deltas below are authoritative.
+
+**CURRENT STATE (per v5):** 586 live pages on `preview-11ty` (noindex) = **393 core + 193 location**.
+Build content COMPLETE (re-skin 142 + full growth: 5 deep states, accounting + QuickBooks silos, support,
+glossary, tools, blog, /vs/, /switch/, frameworks, resources). Capture loops running, honest at N=0.
+**NEVER flipped** — techbrot.com still serves the OLD site. **TWO things left:** (1) DESIGN
+RE-ARCHITECTURE (pre-flip, IN PROGRESS — Claude Design is building a complete NEW visual system from the
+kitchen-sink package; fresh direction, NOT the old cobalt/teal); (2) THE FLIP (clear v5 Sheet 5 gate).
+
+**CONFLICTS FOUND vs this doc's body — resolutions (flagged, not silently overwritten):**
+| § | Body says (stale) | v5 truth (authoritative now) |
+|---|---|---|
+| §1 | "139 pages, ALL BUILT" | 586 live (393 core + 193 location). 139 = the FROZEN equity-baseline SUBSET only (v5 Sheet 1 = full URL list). |
+| §2 | 5-tier system + re-tier queue | Superseded by the **25 page-type FAMILY** model (v5 Sheet 3 + `_build/reports/SECTION-SIGNATURE-MAP.md`). Re-tiering already executed during the reskin/growth. |
+| §3 | CA/TX/FL/IL = landings only, children post-redesign | **All 5 states deep** (NY+CA+TX+FL+IL), full child sets = 193 location pages, DONE. More states = post-flip, demand-driven (v5 Sheet 2/4). |
+| §4 | Re-skin the cobalt FLOOR per REDESIGN-BRIEF | **Complete RE-ARCHITECTURE**: brand-new visual system from Claude Design via the kitchen-sink method. Old cobalt/teal does NOT carry over. Authority = the Claude Design project + `DESIGN-CONTRACT.md` + `SECTION-SIGNATURE-MAP.md`. REDESIGN-BRIEF = historical input only. |
+| §5 | Gated post-migration deliverables → redesign → cutover → growth | Post-migration deliverables DONE; growth DONE (pre-flip). Now: design re-architecture (in progress) → FLIP (last). Flip gate = v5 Sheet 5 (8 items). |
+| §7 | Growth backlog, build-new AFTER cutover | Growth COMPLETE pre-flip. Post-flip = the FORWARD PLAN engine (v5 Sheet 4): no whole-site rebuilds, settle 60–90d, then data-driven per-page optimization + cadence + demand-driven expansion. |
+| §9 | find-an-accountant→/accounting/ + reviews→/trust/ 301s staged | BOTH REMOVED — those pages are now BUILT and live. Only `/about/team/→/about/` + growth dup/merge 301s remain (`src/redirects.njk`). Corrected rule (v5 Sheet 5): only DROPPED OLD-BASELINE urls need 301s; preview-only growth deletions need none. |
+| §10 | 5 canonical docs | ADD: **techbrot-blueprint-v5.xlsx = strategic truth**; the kitchen-sink package (SECTION-SIGNATURE-MAP + DESIGN-CONTRACT + KITCHEN-SINK-SPEC) = the re-architecture authority; REDESIGN-BRIEF demoted to historical. |
+
+**IMPLEMENTATION RULE for the coming Design handoff (confirmed, don't act until Design ships):** REPLACE
+the entire VISUAL system (old cobalt/teal CSS, component styling, layouts) with Design's new system — new
+look entirely, old visual/UX does NOT carry over. PRESERVE the FROZEN skeleton-of-meaning (v5 Sheet 3
+freeze contract / DESIGN-CONTRACT.md): every URL · all content/copy · headings + question-form wording ·
+FAQ Q&A block matching FAQPage schema verbatim · TL;DR/speakable selectable · valid heading hierarchy · the
+full JSON-LD graph. Code re-attaches schema to the new markup per family. Scope = complete re-architecture
+across ~580 pages via the shared token/CSS/layout layers, family by family, equity-safe — one final pass.
+
+Still-accurate below (NOT superseded): §0 identity/non-negotiables (CSS-budget number resets for the new
+system) · §6 factory/build method · §8 honesty contract. Everything else: read the delta table above first.
 
 ═══════════════════════════════════════════════════════════════
 §0 — IDENTITY + NON-NEGOTIABLES (the locked frame)
@@ -37,7 +72,7 @@ taxes / audit / represent before tax authorities (coordinates with the client's 
   never cross.
 
 ═══════════════════════════════════════════════════════════════
-§1 — URL + SILO ARCHITECTURE (the contract) — 139 pages, ALL BUILT ✅
+§1 — URL + SILO ARCHITECTURE (the contract) — 139 pages ⚠ STALE COUNT → 586 live now (see v5 banner; 139 = equity-baseline subset)
 ═══════════════════════════════════════════════════════════════
 Path B migration COMPLETE 2026-06-15: 139/139 baselines built on the cobalt floor, 0 missing, cutover
 parity. By top-level silo:
@@ -110,7 +145,7 @@ The design-fidelity battery gate (#12) asserts each page carries ≥1 rich compo
   treatment, state services use t-bofu.
 
 ═══════════════════════════════════════════════════════════════
-§4 — DESIGN SYSTEM (migration floor → redesign)
+§4 — DESIGN SYSTEM (migration floor → redesign) ⚠ SUPERSEDED → complete re-architecture, NEW system from Claude Design (see v5 banner + DESIGN-CONTRACT.md)
 ═══════════════════════════════════════════════════════════════
 Current = the cobalt MIGRATION FLOOR (warm-paper/Fraunces/cobalt; ONE site.min.css). The redesign replaces
 it per `REDESIGN-BRIEF.md` (the creative truth): colder/lighter palette · richest font pairing ·
@@ -157,7 +192,7 @@ done and signed off.**
   proof-strip__item cards (nowrap → mobile overflow). CTAs: canonical lexicon only.
 
 ═══════════════════════════════════════════════════════════════
-§7 — GROWTH BACKLOG (build-new, AFTER cutover) — from v3/v4 Sheets 1/7/8 + registry Part 2
+§7 — GROWTH BACKLOG (build-new, AFTER cutover) ⚠ SUPERSEDED → growth COMPLETE pre-flip; post-flip engine = v5 Sheet 4 FORWARD PLAN (see v5 banner)
 ═══════════════════════════════════════════════════════════════
 Migration restored the 139 ranking-equity baselines. GROWTH is additive build-new on the new system, in
 small batches, after cutover. NOT-yet-built TYPES + scope — **reconciled 2026-06-16 against the v4.xlsx Sheet-1
@@ -237,8 +272,14 @@ The growth gate is funnel/intent coverage + honesty, NOT a page-count target ("2
 two docs ever disagree, **THIS (ARCHITECTURE-TRUTH) + the latest founder ruling win**, and reconcile immediately.
 
 **Canonical (authoritative, update-don't-spawn):**
-1. **BUILD-TRACKER.md** — OPERATIONAL truth (current status, resume anchor, governing rules). **Read first.**
-2. **THIS (ARCHITECTURE-TRUTH.md)** — ARCHITECTURE truth (URLs/silo, tiers, state strategy, sequence, growth).
+0. **techbrot-blueprint-v5.xlsx** (repo root) — **STRATEGIC truth** (current state, all URLs, locations, the
+   design METHOD, the post-flip forward plan, rules + flip gate). Supersedes this doc's body where they differ.
+1. **BUILD-TRACKER.md** — OPERATIONAL / live-execution truth (current status, resume anchor, governing rules).
+   **Read first; wins on operational conflict.**
+2. **THIS (ARCHITECTURE-TRUTH.md)** — ARCHITECTURE truth, reconciled to v5 (URLs/silo, families, state strategy).
+2b. **The re-architecture package** — `_build/reports/SECTION-SIGNATURE-MAP.md` (25 families) +
+   `DESIGN-CONTRACT.md` (FREE/FROZEN) + `KITCHEN-SINK-SPEC.md`; the live system is the Claude Design project.
+   **REDESIGN-BRIEF.md is now HISTORICAL** (the original creative input; superseded by the Design system).
 3. **_build/reports/PAGE-TYPE-REGISTRY.md** — STRUCTURAL truth (type → tier → ordered sections → components).
 4. **REDESIGN-BRIEF.md** — CREATIVE truth (the redesign: goal/aesthetic/nav/assets/motion/heroes/components +
    the §13 as-built reconciliation). *(Promoted to this slot 2026-06-15; supersedes DESIGN-DIRECTION.md.)*
