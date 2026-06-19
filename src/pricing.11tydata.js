@@ -39,6 +39,14 @@ const PRICING = [
 
 module.exports = {
   pricing: PRICING,
+  // per-service pricing-detail children (round 91) — the price grain under the canonical overview.
+  byService: [
+    { name: "Monthly bookkeeping pricing", href: "/pricing/bookkeeping/", body: "The three tiers, what moves you between them, and what every tier includes &mdash; $400&ndash;$2,500+/month." },
+    { name: "Cleanup &amp; catch-up pricing", href: "/pricing/cleanup/", body: "Why cleanup is forensic work and what drives the figure &mdash; cleanup $1,500&ndash;$15,000+, catch-up $2,000&ndash;$20,000+." },
+    { name: "Payroll pricing", href: "/pricing/payroll/", body: "What moves the monthly fee, and why the software subscription is billed separately &mdash; $150&ndash;$800+/month." },
+    { name: "Fractional CFO pricing", href: "/pricing/cfo/", body: "A senior retainer by application &mdash; priced on judgment and depth, not transaction volume &mdash; $3,000&ndash;$8,000+/month." },
+    { name: "QuickBooks setup pricing", href: "/pricing/quickbooks-setup/", body: "What drives a one-time implementation fee across QBO, Desktop, and Enterprise &mdash; $750&ndash;$5,000+." },
+  ],
   // engagement "shapes"
   shapes: [
     { label: "Recurring", name: "Monthly retainer", body: "Ongoing work billed as a fixed monthly fee. Same-shape deliverables every month. No long-term lock-in &mdash; runs month to month against the written scope.", forList: "Monthly bookkeeping, payroll, sales tax compliance, fractional CFO." },

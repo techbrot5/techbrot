@@ -1,0 +1,217 @@
+---json
+{
+  "layout": "layouts/t-bofu.njk",
+  "permalink": "/pricing/quickbooks-setup/",
+  "slug": "pqs",
+  "chrome": "full",
+  "callBar": false,
+  "tierClass": "section--tier-bofu",
+  "bodyClass": "page--bofu",
+  "title": "QuickBooks Setup Cost &amp; Pricing · Fixed Fee $750–$5,000+ · TechBrot",
+  "description": "What a QuickBooks setup costs and why: a one-time fixed fee of $750–$5,000+, scoped to file complexity, accounts, integrations & product tier. Written quote in 3 business days.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Pricing", "href": "/pricing/" },
+    { "name": "QuickBooks Setup Cost" }
+  ],
+  "hero": {
+    "eyebrow": "Pricing detail · QuickBooks setup",
+    "heading": "What a QuickBooks setup costs &mdash; and what moves the number.",
+    "subheading": "A correct QuickBooks setup is a one-time, fixed-fee implementation: <strong>$750&ndash;$5,000+</strong>, typically delivered in 2&ndash;4 weeks. This page explains exactly what drives that figure and what a proper setup includes &mdash; so the range stops being a mystery. Your exact fixed fee is quoted in writing within 3 business days of a free discovery call.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=pricing", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>QuickBooks setup: $750&ndash;$5,000+</strong>, one-time fixed fee, ~2&ndash;4 weeks. The number is driven by file complexity, number of accounts and entities, integrations, whether you&rsquo;re migrating from spreadsheets or starting fresh, and the product tier (QBO, Desktop, or Enterprise). The fee is the <em>implementation service</em> &mdash; your QuickBooks software subscription is billed by Intuit separately.",
+    "source": "TechBrot Inc. &middot; independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Get your number",
+    "heading": "Get your exact QuickBooks setup fee in writing.",
+    "lede": "A free 30-minute discovery call, then a written fixed-fee scope within 3 business days &mdash; the exact one-time setup number, before you commit to anything. The software subscription is billed by Intuit separately.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=pricing", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+<section class="section section--compact section--tier-bofu" id="pqs-tldr">
+  <div class="container">
+    <div class="tldr">
+      <p class="tldr__label">In one paragraph</p>
+      <h2 class="tldr__heading">What QuickBooks setup costs.</h2>
+      <p class="tldr__body" id="pqs-tldr-body">A QuickBooks setup at TechBrot is a one-time, fixed-fee implementation of <strong>$750&ndash;$5,000+</strong>, usually delivered in 2&ndash;4 weeks against a written scope &mdash; no hourly billing. Where you land in that range is driven by real, knowable factors: how complex the file is, how many bank and credit accounts and entities you run, which third-party apps need to connect, whether you&rsquo;re migrating off spreadsheets or starting fresh, and which product tier you&rsquo;re on (QuickBooks Online, Desktop, or Enterprise). The fee covers the implementation work &mdash; building the chart of accounts, connecting feeds, setting opening balances, and proving the file reconciles. The QuickBooks software subscription itself is billed by Intuit separately and is not part of this fee. Your exact fixed fee is quoted in writing within 3 business days of a free discovery call; tax filing is handled by your CPA and isn&rsquo;t included.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pqs-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">QuickBooks setup pricing, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="pqs-drivers">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What moves the number</p>
+      <h2 class="section__heading">Five factors decide where you land in the range.</h2>
+      <p class="section__lede">The same setup isn&rsquo;t the same price for two different businesses. These are the factors a ProAdvisor scopes on the discovery call &mdash; each one pushes the fixed fee up or down.</p>
+    </header>
+    <div class="grid-3">
+      {%- for d in drivers %}
+      <article class="review-card">
+        <p class="team-card__role">{{ d.label }}</p>
+        <h3>{{ d.name }}</h3>
+        <p class="review-card__fact">{{ d.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pqs-includes">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What you&rsquo;re paying for</p>
+      <h2 class="section__heading">What a correct setup actually includes.</h2>
+      <p class="section__lede">A real implementation is more than installing software and inviting a user. These are the pieces of work the fixed fee buys &mdash; the difference between a file that simply opens and a file you can trust at year-end.</p>
+    </header>
+    <div class="grid-3">
+      {%- for inc in includes %}
+      <article class="review-card">
+        <h3>{{ inc.name }}</h3>
+        <p class="review-card__fact">{{ inc.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="pqs-process">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">How the fee is delivered</p>
+      <h2 class="section__heading">The setup, step by step.</h2>
+      <p class="section__lede">The one-time fee covers a defined sequence &mdash; the <a href="/quickbooks/setup/">TechBrot Setup Protocol</a> &mdash; with set start and completion dates inside the 2&ndash;4 week window.</p>
+    </header>
+    <ol class="fix-steps">
+      {%- for step in steps %}
+      <li>
+        <span class="n">{{ loop.index }}</span>
+        <div><h3>{{ step.name | safe }}</h3><p>{{ step.body | safe }}</p></div>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="pqs-tiers">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Product tier matters</p>
+      <h2 class="section__heading">QBO, Desktop, or Enterprise &mdash; the tier shifts the work.</h2>
+      <p class="section__lede">The same range covers all three, but the implementation differs. Plan selection comes first &mdash; if you don&rsquo;t know which tier fits, we settle that before scoping the setup. The software subscription for whichever tier you choose is billed by Intuit separately.</p>
+    </header>
+    <div class="grid-3">
+      {%- for t in tiers %}
+      <article class="review-card">
+        <p class="team-card__role">{{ t.label }}</p>
+        <h3>{{ t.name }}</h3>
+        <p class="review-card__fact">{{ t.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="in-brief__source stack-8">Not sure which tier you need? Settle it first with <a href="/quickbooks/which-plan-is-right/">which QuickBooks plan is right</a> &mdash; then the setup is scoped against the right product.</p>
+  </div>
+</section>
+
+<section class="section section--alt" id="pqs-scenarios">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Where the range comes from</p>
+      <h2 class="section__heading">Representative scenarios.</h2>
+      <p class="section__lede">Illustrative only &mdash; not quotes. Every fixed fee is set per file after the discovery call. These show how the factors above combine to move a setup across the range.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in scenarios %}
+      <article class="review-card">
+        <p class="team-card__role">{{ s.label }}</p>
+        <h3>{{ s.name }}</h3>
+        <p class="review-card__fact">{{ s.body | safe }}</p>
+        <p class="review-card__fact"><strong>Representative band:</strong> {{ s.band | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="in-brief__source stack-8">Bands are illustrative and sit inside the canonical $750&ndash;$5,000+ range. Your exact fixed fee is quoted in writing within 3 business days of the free discovery call.</p>
+  </div>
+</section>
+
+<section class="section" id="pqs-software">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The fee vs. the software</p>
+      <h2 class="section__heading">Two separate bills &mdash; don&rsquo;t confuse them.</h2>
+    </header>
+    <div class="legal-doc__body">
+      <p>There are two costs in any QuickBooks setup, and they are billed by two different parties. <strong>The TechBrot setup fee is the implementation service</strong> &mdash; the professional work of building, connecting, and proving your file. That&rsquo;s the $750&ndash;$5,000+ range on this page, a one-time fixed fee.</p>
+      <p><strong>The QuickBooks software subscription is billed by Intuit separately.</strong> It&rsquo;s a recurring charge for the license itself, set and collected by Intuit &mdash; not part of our fee, and not something we mark up or resell. We don&rsquo;t quote Intuit&rsquo;s subscription prices here; those come from Intuit directly and change on their schedule, not ours.</p>
+      <p>The practical takeaway: budget the one-time setup fee against this page, and budget the recurring software subscription against Intuit&rsquo;s current pricing. The setup fee is paid once; the subscription continues for as long as you use QuickBooks. <strong>TechBrot Inc. is not affiliated with Intuit Inc.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="pqs-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Before you call</p>
+      <h2 class="section__heading">Questions about setup cost.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="pqs-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="pqs-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pqs-next">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Next steps</p>
+      <h2 class="section__heading">Where to go next.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for card in nextCards %}
+      <article class="review-card">
+        <h3>{{ card.name }}</h3>
+        <p class="review-card__fact">{{ card.body | safe }}</p>
+        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

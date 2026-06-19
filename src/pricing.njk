@@ -137,6 +137,24 @@
   </div>
 </section>
 
+<section class="section" id="pricing-by-service">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Pricing in detail</p>
+      <h2 class="section__heading">Detailed pricing, by service.</h2>
+      <p class="section__lede">The full price grain for each major engagement &mdash; the tiers, what drives the figure, and what&rsquo;s included &mdash; on its own page.</p>
+    </header>
+    <div class="grid-3">
+      {%- for card in byService %}
+      <article class="review-card">
+        <h3><a href="{{ card.href }}?intent=pricing">{{ card.name | safe }}</a></h3>
+        <p class="review-card__fact">{{ card.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
 <section class="section section--alt" id="pricing-why">
   <div class="container container--narrow">
     <header class="section__header">
