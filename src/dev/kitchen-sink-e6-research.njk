@@ -1,0 +1,374 @@
+---json
+{
+  "layout": "layouts/t-hub.njk",
+  "slug": "kitchen-sink-e6-research",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--hub",
+  "title": "DEV kitchen-sink · E6 Research flagship · TechBrot",
+  "description": "Preview-only complete component inventory for the Research flagship page type.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Resources", "href": "/resources/" },
+    { "name": "Research" }
+  ],
+  "hero": {
+    "eyebrow": "Original research",
+    "heading": "Real data on what QuickBooks cleanups actually cost.",
+    "subheading": "The US QuickBooks Cleanup Benchmarks &mdash; an original dataset built by TechBrot&rsquo;s Certified ProAdvisor team from real, completed cleanup engagements. We log one anonymized row at every engagement close: state, industry, months behind, what was broken, hours, and the closing fee. Honest about its own sample size, every step of the way.",
+    "actions": [
+      { "label": "Read the methodology", "href": "#kitchen-sink-e6-research-methodology", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=research", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>The US QuickBooks Cleanup Benchmarks</strong> is TechBrot&rsquo;s original dataset on the cost, effort, and error profile of QuickBooks file cleanups &mdash; one anonymized row logged at the close of every completed Certified ProAdvisor engagement. Methodology and schema are public now; each benchmark is released only once it reaches a defensible sample. No estimated or fabricated numbers, ever.",
+    "source": "Built and maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Read your own file against the data",
+    "heading": "Where does your file actually sit?",
+    "lede": "A benchmark tells you where files like yours tend to land; a free file review tells you where yours sits. A Certified ProAdvisor reads your actual file, then delivers a written fixed-fee scope within 3 business days if you want it fixed &mdash; no obligation.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=research", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# DEV KITCHEN-SINK — E6 Research flagship. Markup + real content harvested from the built HTML of /resources/research/. Layout = t-hub (matches rep). heroFigure inherits the t-hub default (taccount split hero); ctaBand has no `dark` key so the layout renders the DARK final-CTA band by default (section--cta-band--dark) — the rep's exact mechanism. Honesty language (N=0, nothing published yet) is verbatim. No JSON-LD. #}
+
+<section class="section section--compact" id="kitchen-sink-e6-research-devlabel">
+  <div class="container">
+    <div style="border:2px dashed var(--color-accent,#841E1E);border-radius:8px;padding:var(--space-5);background:#FBF6F6">
+      <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;margin:0 0 .5rem">KITCHEN-SINK REFERENCE · NOT SHIPPED</p>
+      <p style="margin:0"><strong>Family E6 · Research flagship</strong> — complete component inventory.
+      Represents <strong>1 live page</strong>: the research / resources flagship (<code>/resources/research/</code>) — the original-dataset research desk.
+      Sections below = the UNION of every variant this type uses, in canonical order.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--compact section--tier-hub" id="kitchen-sink-e6-research-tldr">
+  <div class="container">
+    <div class="tldr">
+      <p class="tldr__label">In one paragraph</p>
+      <h2 class="tldr__heading">TechBrot&rsquo;s research desk, summarized.</h2>
+      <p class="tldr__body" id="kitchen-sink-e6-research-tldr-body">There is no honest, current benchmark for what a QuickBooks cleanup actually costs or involves &mdash; owners get vendor marketing or guesswork. So we&rsquo;re building one. The <strong>US QuickBooks Cleanup Benchmarks</strong> is an original dataset assembled from TechBrot&rsquo;s own completed cleanup engagements: the Certified ProAdvisor who delivers each cleanup logs one anonymized row at close &mdash; state, industry, how far behind the books were, what was broken, the hours it took, and the fixed fee it closed at. Every figure is observed on a real engagement, never estimated. The methodology and schema are fixed and public now so the data is comparable from the first row; each benchmark is published only once it reaches a defensible sample size. The dataset is currently <strong>collecting.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="kitchen-sink-e6-research-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">What it is</p>
+      <h2 class="section__heading">An owned dataset, not a borrowed statistic.</h2>
+    </header>
+    <div class="prose">
+      <p>The <strong>US QuickBooks Cleanup Benchmarks</strong> is a structured record of what TechBrot actually sees when neglected QuickBooks files arrive for cleanup. Most &ldquo;benchmarks&rdquo; in this space are repackaged vendor marketing or a survey of opinions. This one is built the only way a benchmark earns trust: from real, completed, paid engagements &mdash; the files, the hours, and the fees as they genuinely landed.</p>
+      <p>It exists because the question owners ask most often &mdash; <em>&ldquo;my books are months behind; what is this going to cost to fix?&rdquo;</em> &mdash; has no honest published answer. A dataset built from real cleanups, transparent about its own sample size, is the only way to answer it without guessing. The dataset is the visible artifact; the discipline behind it &mdash; logging one row at every close &mdash; is the real work, and it cannot be backfilled, which is why it starts now.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="kitchen-sink-e6-research-fields">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The schema</p>
+      <h2 class="section__heading">Eight fields, logged at every engagement close.</h2>
+      <p class="section__lede">The schema is fixed now &mdash; so the very first row and the thousandth row measure the same things, the same way.</p>
+    </header>
+    <div class="grid-2">
+      <div class="stack-8">
+        <h3>State</h3>
+        <p class="prose">The engagement&rsquo;s U.S. billing state &mdash; so cleanup cost and backlog can be read regionally, not just nationally.</p>
+      </div>
+      <div class="stack-8">
+        <h3>Industry</h3>
+        <p class="prose">The business&rsquo;s primary industry &mdash; construction, e-commerce, restaurant, professional services, and the rest carry very different cleanup profiles.</p>
+      </div>
+      <div class="stack-8">
+        <h3>Months behind at intake</h3>
+        <p class="prose">How many months since the last reconciled close when the file arrived &mdash; the single strongest predictor of cleanup effort.</p>
+      </div>
+      <div class="stack-8">
+        <h3>Primary error types</h3>
+        <p class="prose">What was actually wrong: unreconciled accounts, miscategorized transactions, duplicates, Opening Balance Equity, Undeposited Funds, payroll-liability and sales-tax errors, file corruption, bank-feed gaps.</p>
+      </div>
+      <div class="stack-8">
+        <h3>Transaction volume band</h3>
+        <p class="prose">The file&rsquo;s transaction density (&lt;500 · 500&ndash;2,000 · 2,000&ndash;10,000 · 10,000+) &mdash; volume scales the work independently of how far behind the books are.</p>
+      </div>
+      <div class="stack-8">
+        <h3>Cleanup hours</h3>
+        <p class="prose">Total Certified ProAdvisor hours to a reconciled, CPA-ready file &mdash; the observed effort, never an estimate.</p>
+      </div>
+      <div class="stack-8">
+        <h3>Cost band</h3>
+        <p class="prose">The fixed fee the engagement actually closed at, bucketed (&lt;$1,500 · $1,500&ndash;$3,500 · $3,500&ndash;$8,000 · $8,000&ndash;$15,000 · $15,000+).</p>
+      </div>
+      <div class="stack-8">
+        <h3>Engagement ID</h3>
+        <p class="prose">An opaque anonymous identifier with no client linkage &mdash; the row can never be traced to a business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="kitchen-sink-e6-research-methodology">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The methodology</p>
+      <h2 class="section__heading">How each row gets into the dataset.</h2>
+      <p class="section__lede">Four rules, fixed before the first row &mdash; the difference between a benchmark and a marketing number.</p>
+    </header>
+    <ol class="process-diagram">
+      <li class="process-step">
+        <p class="process-step__number">01</p>
+        <h3 class="process-step__heading">Logged at engagement close.</h3>
+        <p class="process-step__body">One row is recorded by the engaging ProAdvisor the moment a cleanup is delivered &mdash; never at intake, never projected. Only completed, paid engagements enter the dataset.</p>
+      </li>
+      <li class="process-step">
+        <p class="process-step__number">02</p>
+        <h3 class="process-step__heading">Observed, never modeled.</h3>
+        <p class="process-step__body">Every figure is what actually happened on that file: real hours, the real closing fee band, the errors genuinely found. Nothing is estimated, averaged forward, or filled in.</p>
+      </li>
+      <li class="process-step">
+        <p class="process-step__number">03</p>
+        <h3 class="process-step__heading">Anonymized at the source.</h3>
+        <p class="process-step__body">No client name, EIN, or identifying detail is ever stored. The row carries an opaque ID, the billing state, the industry, and the measured facts &mdash; nothing that can re-identify a business.</p>
+      </li>
+      <li class="process-step">
+        <p class="process-step__number">04</p>
+        <h3 class="process-step__heading">Reported only when real.</h3>
+        <p class="process-step__body">The page shows the live record count. We never publish a statistic on any breakdown with fewer than 20 records &mdash; our minimum &mdash; and prefer 50 or more before reporting, always showing the sample size. Small samples mislead; a benchmark only earns trust if it&rsquo;s honest about its own N.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--alt" id="kitchen-sink-e6-research-status">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Where the dataset stands today</p>
+      <h2 class="section__heading">Honest by design: the live count.</h2>
+    </header>
+    <div class="stat-row">
+      <div><div class="stat__value">0</div><div class="stat__label">completed engagements logged</div></div>
+      <div><div class="stat__value">8</div><div class="stat__label">fields per record</div></div>
+      <div><div class="stat__value">20</div><div class="stat__label">minimum N before any breakdown is reported (50+ preferred)</div></div>
+    </div>
+    <div class="prose">
+      <p>The dataset is <strong>live and collecting (N=0).</strong> No statistics are published yet &mdash; and we will not publish one until a breakdown reaches at least 20 real records (we prefer 50 or more), always with the sample size shown. We&rsquo;d rather show a count of zero honestly than a number we can&rsquo;t stand behind. The methodology above is locked, so the data is comparable from the first row forward. This page updates as the count grows.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="kitchen-sink-e6-research-program">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The research program</p>
+      <h2 class="section__heading">Six original datasets, each built the same honest way.</h2>
+      <p class="section__lede">The Cleanup Benchmarks is the flagship; five more datasets log alongside it &mdash; same rules: observed on real engagements, anonymized at source, and never reported on a breakdown below a defensible sample. Each shows its live record count.</p>
+    </header>
+    <div class="grid-3">
+      <article class="review-card">
+        <p class="review-card__role">Flagship &middot; Collecting &middot; N=0</p>
+        <h3>Cleanup Benchmarks</h3>
+        <p class="review-card__fact">What a QuickBooks cleanup actually costs and involves &mdash; by how far behind the books were, industry, and transaction volume.</p>
+      </article>
+      <article class="review-card">
+        <p class="review-card__role">Collecting &middot; N=0</p>
+        <h3>Migration Benchmarks</h3>
+        <p class="review-card__fact">What breaks in a Desktop&rarr;Online (or platform) migration, the ProAdvisor hours it takes, and the closing cost.</p>
+      </article>
+      <article class="review-card">
+        <p class="review-card__role">Collecting &middot; N=4</p>
+        <h3>Lead-Source Intelligence</h3>
+        <p class="review-card__fact">How clients actually find us &mdash; including which AI assistants recommend us &mdash; and which page types convert. (Internal-priority; no external figure until a real denominator and N&ge;20.)</p>
+      </article>
+      <article class="review-card">
+        <p class="review-card__role">Collecting &middot; N=0</p>
+        <h3>Revenue Attribution</h3>
+        <p class="review-card__fact">Which pages generate revenue, not just traffic &mdash; first- and last-touch source, landing page, the page viewed before inquiry, whether the lead became a client, and the revenue band.</p>
+      </article>
+      <article class="review-card">
+        <p class="review-card__role">Collecting &middot; N=0</p>
+        <h3>Industry Benchmarks</h3>
+        <p class="review-card__fact">How far behind books arrive and what&rsquo;s most often broken, by industry and state.</p>
+      </article>
+      <article class="review-card">
+        <p class="review-card__role">Collecting &middot; N=0</p>
+        <h3>Accounting Systems Selection</h3>
+        <p class="review-card__fact">QuickBooks Online vs Desktop vs Enterprise &mdash; what drives the choice and what businesses actually pick.</p>
+      </article>
+      <article class="review-card">
+        <p class="review-card__role">Collecting &middot; N=0</p>
+        <h3>QuickBooks Error Intelligence</h3>
+        <p class="review-card__fact">The real root causes behind QuickBooks errors and symptoms, and what it actually takes to resolve them.</p>
+      </article>
+    </div>
+    <p class="prose"><small>Every dataset is &ldquo;collecting&rdquo; until it reaches a defensible sample. We publish a figure on a breakdown only at a minimum N&ge;20 (50+ preferred), always with the sample size shown &mdash; never a fabricated, estimated, or borrowed number.</small></p>
+  </div>
+</section>
+
+<section class="section" id="kitchen-sink-e6-research-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">The research desk, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">What is the US QuickBooks Cleanup Benchmarks dataset?</h3>
+        <div class="ai-summary__answer"><p>An original dataset built by TechBrot&rsquo;s Certified QuickBooks ProAdvisor team &mdash; one anonymized row logged at the close of every completed QuickBooks cleanup engagement, capturing state, industry, months behind, error types, transaction volume, hours, and the closing cost band.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">How many engagements are in the dataset right now?</h3>
+        <div class="ai-summary__answer"><p><strong>Zero &mdash; the dataset is live and collecting (N=0).</strong> We publish the live count and never report a statistic on any breakdown with fewer than 20 records. The methodology is fixed now so the data is comparable from the first row.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">Are any of the numbers estimated or modeled?</h3>
+        <div class="ai-summary__answer"><p>No. Every figure is observed on a real, completed, paid engagement &mdash; actual hours, the actual closing fee band, the errors genuinely found. Nothing is estimated, projected, or fabricated. Until a breakdown reaches a real sample, no number is shown for it.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">How is client data protected in the dataset?</h3>
+        <div class="ai-summary__answer"><p>Anonymized at the source. No client name, EIN, or identifying detail is ever stored &mdash; each row carries only an opaque ID, the billing state, the industry, and the measured facts, so a row can never be traced back to a business.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">Why publish your own data instead of citing industry stats?</h3>
+        <div class="ai-summary__answer"><p>Because no honest, current benchmark exists for what a QuickBooks cleanup actually costs and involves. Owners get vendor marketing or guesswork. A dataset built from real closed engagements &mdash; transparent about its own N &mdash; is the only way to answer the question truthfully.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="kitchen-sink-e6-research-planned">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">On the roadmap</p>
+      <h2 class="section__heading">The reports we&rsquo;re building toward.</h2>
+      <p class="section__lede">Five flagship reports, each drawn from the datasets above. Each releases independently the moment its sample is defensible (minimum N&ge;20, 50+ preferred, sample size disclosed) &mdash; not before.</p>
+    </header>
+    <div class="grid-3">
+      <article class="review-card">
+        <p class="review-card__role">Report 01 &middot; Collecting</p>
+        <h3>AI Search Lead-Generation Report</h3>
+        <p class="review-card__fact">How many real leads arrive via AI assistants (ChatGPT, Claude, Gemini, Perplexity) and which pages they cite &mdash; from the intake lead-source data. The first honest read on AI search as a lead channel.</p>
+      </article>
+      <article class="review-card">
+        <p class="review-card__role">Report 02 &middot; Collecting</p>
+        <h3>State of Small-Business Accounting Systems</h3>
+        <p class="review-card__fact">What U.S. small businesses actually run on &mdash; QuickBooks Online vs Desktop vs Enterprise vs other &mdash; and what drives the choice, from real selection and migration engagements.</p>
+      </article>
+      <article class="review-card">
+        <p class="review-card__role">Report 03 &middot; Collecting</p>
+        <h3>Cleanup Benchmark Report</h3>
+        <p class="review-card__fact">What a QuickBooks cleanup truly costs and involves &mdash; cost by months behind, what&rsquo;s broken by industry, hours-to-CPA-ready by volume &mdash; from real closed cleanups.</p>
+      </article>
+      <article class="review-card">
+        <p class="review-card__role">Report 04 &middot; Collecting</p>
+        <h3>Accounting Software Adoption Report</h3>
+        <p class="review-card__fact">Adoption and switching patterns across accounting platforms among the businesses we engage &mdash; observed, not surveyed.</p>
+      </article>
+      <article class="review-card">
+        <p class="review-card__role">Report 05 &middot; Collecting</p>
+        <h3>Migration Benchmark Report</h3>
+        <p class="review-card__fact">What a Desktop&rarr;Online migration really takes &mdash; what breaks, the hours, and the cost &mdash; from real completed migrations.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="kitchen-sink-e6-research-honesty">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Our standard</p>
+      <h2 class="section__heading">What you will never find here.</h2>
+    </header>
+    <div class="disclosure">
+      <strong>No fabricated, estimated, or borrowed numbers.</strong> TechBrot publishes no statistic it has not observed on real, completed engagements at a defensible sample size. Until a benchmark is released, there is no number to cite &mdash; and we say so plainly rather than fill the gap with a guess. The dataset is built by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm; it carries no client-identifying data and implies no affiliation with Intuit Inc.
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="kitchen-sink-e6-research-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Common questions</p>
+      <h2 class="section__heading">Questions about the data.</h2>
+    </header>
+    <div class="faq__list">
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-e6-research-faq-a1">Is the US QuickBooks Cleanup Benchmarks dataset published yet?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-e6-research-faq-a1" data-open="false">
+          <p>The dataset is live and collecting. The methodology and schema are fixed and public now; the numbers are released per breakdown only once that breakdown reaches a real sample (at least 20 records). The page always shows the current record count honestly.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-e6-research-faq-a2">Where does the data come from?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-e6-research-faq-a2" data-open="false">
+          <p>From TechBrot&rsquo;s own completed QuickBooks cleanup engagements. One anonymized row is logged by the engaging Certified ProAdvisor at the close of each delivered cleanup &mdash; never from surveys, third-party panels, or projections.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-e6-research-faq-a3">What exactly is recorded for each engagement?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-e6-research-faq-a3" data-open="false">
+          <p>Eight fields: state, industry, months behind at intake, primary error types, transaction-volume band, ProAdvisor hours to CPA-ready, the closing cost band, and an opaque anonymous engagement ID. No client-identifying information is ever stored.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-e6-research-faq-a4">When will the first benchmarks be published?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-e6-research-faq-a4" data-open="false">
+          <p>As soon as a breakdown reaches a defensible sample size. Cleanup engagements accrue over time, so the cost-by-months-behind benchmark is expected to reach a reportable N first. We&rsquo;d rather publish late and honest than early and misleading.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-e6-research-faq-a5">Can I use these benchmarks or cite them?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-e6-research-faq-a5" data-open="false">
+          <p>Yes, once they&rsquo;re published. The dataset is built to be citable &mdash; clear methodology, stated N, defined fields, and an owned name. Until a figure is published, please don&rsquo;t attribute any number to TechBrot; there are none to attribute yet.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-e6-research-faq-a6">Does a benchmark replace a real review of my own books?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-e6-research-faq-a6" data-open="false">
+          <p>No. A benchmark tells you where files like yours tend to land; only a review of your actual file tells you where yours sits. A Certified ProAdvisor can read your situation against the dataset and give you an honest, specific read &mdash; free, with a written fixed-fee scope if you want the work done.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="kitchen-sink-e6-research-related">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Where else to go</p>
+      <h2 class="section__heading">Related work.</h2>
+    </header>
+    <div class="stack-8">
+      <h3><a href="/quickbooks/cleanup/?intent=qb-cleanup">QuickBooks cleanup</a></h3>
+      <p class="prose">The engagement the dataset is built from &mdash; what a QuickBooks file cleanup actually involves, and what it costs.</p>
+    </div>
+    <div class="stack-8">
+      <h3><a href="/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup">Bookkeeping cleanup</a></h3>
+      <p class="prose">Compounding Reconciliation Drift &mdash; why neglected books get exponentially more expensive to fix, the framework behind the cost curve.</p>
+    </div>
+    <div class="stack-8">
+      <h3><a href="/quickbooks/file-review/?intent=file-review">Free file review</a></h3>
+      <p class="prose">Have a Certified ProAdvisor read your actual file against the data &mdash; reconciliation status, error types, and where your file sits. Free.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,457 @@
+---json
+{
+  "layout": "layouts/t-bofu.njk",
+  "chrome": "full",
+  "callBar": false,
+  "tierClass": "section--tier-bofu",
+  "bodyClass": "page--bofu",
+  "slug": "kitchen-sink-f2-pricing",
+  "title": "DEV kitchen-sink · F2 Pricing page · TechBrot",
+  "description": "Preview-only complete component inventory for the F2 pricing page type.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Pricing", "href": "/pricing/" },
+    { "name": "DEV kitchen-sink F2" }
+  ],
+  "hero": {
+    "eyebrow": "Pricing · Fixed-fee, written scope",
+    "heading": "Fixed-fee pricing. Written scope before any work.",
+    "subheading": "Most firms hide pricing and bill by the hour. TechBrot does the opposite: every engagement is a fixed fee against a written scope, agreed before work begins. Here are the real ranges across every service &mdash; your exact fixed fee is quoted in writing within 3 business days of a free discovery call.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=pricing", "class": "btn--primary" },
+      { "label": "Explore Services", "href": "/accounting/services/", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>Always:</strong> fixed-fee &middot; written scope before work begins &middot; no hourly billing &middot; free 30-minute discovery call &middot; written quote within 3 business days &middot; no long-term lock-in on recurring engagements.",
+    "source": "TechBrot Inc. &middot; independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "Start here",
+    "heading": "Get your exact fixed fee.",
+    "lede": "A free 30-minute discovery call, then a written fixed-fee scope within 3 business days &mdash; the exact number, in writing, before you commit to anything. No hourly billing, no obligation.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=pricing", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{#- KITCHEN-SINK F2 — Pricing page. Layout = t-bofu (matches /pricing/ rep:
+    hero--compact hero--rule, light cta). Union of /pricing/ + /pricing/cleanup/
+    + /find-an-accountant/new-york/pricing/. CANONICAL Sheet-0 figures only,
+    copied from the live pages. -#}
+
+<section class="section section--compact" id="kitchen-sink-f2-pricing-devlabel">
+  <div class="container">
+    <div style="border:2px dashed var(--color-accent,#841E1E);border-radius:8px;padding:var(--space-5);background:#FBF6F6">
+      <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;margin:0 0 .5rem">KITCHEN-SINK REFERENCE · NOT SHIPPED</p>
+      <p style="margin:0"><strong>Family F2 · Pricing page</strong> — complete component inventory.
+      Represents <strong>11 live pages</strong>: <code>/pricing/</code> + 5 service children (<code>/pricing/{bookkeeping,cleanup,payroll,cfo,quickbooks-setup}/</code>) + 5 state pricing pages (<code>/find-an-accountant/&lt;state&gt;/pricing/</code>).
+      Sections below = the UNION of every variant this type uses, in canonical order. All figures are canonical Sheet-0 ranges copied from the live pages.</p>
+    </div>
+  </div>
+</section>
+
+{# ============ TL;DR (bofu tint) ============ #}
+<section class="section section--compact section--tier-bofu" id="kitchen-sink-f2-pricing-tldr">
+  <div class="container">
+    <div class="tldr">
+      <p class="tldr__label">In one paragraph</p>
+      <h2 class="tldr__heading">How TechBrot pricing works.</h2>
+      <p class="tldr__body" id="kitchen-sink-f2-pricing-tldr-body">Every TechBrot engagement is fixed-fee with a written scope agreed before any work begins &mdash; no hourly billing. Real ranges: <strong>monthly bookkeeping $400&ndash;$2,500+/month</strong>, cleanup $1,500&ndash;$15,000+, catch-up $2,000&ndash;$20,000+, QuickBooks setup $750&ndash;$5,000+, migration $2,500&ndash;$10,000+, payroll $150&ndash;$800+/month, sales tax compliance $250&ndash;$1,500+/month, and fractional CFO $3,000&ndash;$8,000+/month (by application). Where you land depends on real factors &mdash; transaction volume, number of accounts and entities, history depth, file complexity. The 30-minute discovery call is free; your exact fixed fee is delivered in writing within 3 business days. No long-term lock-in on recurring engagements. Tax filing isn&rsquo;t included (your CPA handles that), but a year-end CPA handoff is included free.</p>
+    </div>
+  </div>
+</section>
+
+{# ============ flow — path to a fixed fee ============ #}
+<section class="section section--compact" id="kitchen-sink-f2-pricing-path">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">From question to fixed fee</p>
+      <h2 class="section__heading">Four steps to a number in writing.</h2>
+    </header>
+    <div class="flow" role="img" aria-label="The path to a fixed fee: a free 30-minute discovery call, then a written fixed-fee scope within 3 business days, the exact fixed fee in writing with no hourly billing, then work begins with a named operator.">
+      <div class="flow__step flow__step--accent"><span class="flow__label">Free discovery call</span><span class="flow__sub">30 min &middot; no obligation</span></div>
+      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+      <div class="flow__step"><span class="flow__label">Written scope</span><span class="flow__sub">within 3 business days</span></div>
+      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+      <div class="flow__step"><span class="flow__label">Fixed fee, in writing</span><span class="flow__sub">no hourly billing</span></div>
+      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
+      <div class="flow__step"><span class="flow__label">Work begins</span><span class="flow__sub">named operator</span></div>
+    </div>
+  </div>
+</section>
+
+{# ============ ai-summary (ruled) ============ #}
+<section class="section" id="kitchen-sink-f2-pricing-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">TechBrot pricing, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">How much does monthly bookkeeping cost?</h3>
+        <div class="ai-summary__answer"><p><strong>$400&ndash;$2,500+/month</strong>, as a fixed monthly fee against a written scope &mdash; no hourly billing. Where you land depends on transaction volume, number of bank and credit accounts, payroll, and entities. Your exact fee is quoted in writing within 3 business days of a free discovery call.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">What does a QuickBooks cleanup or catch-up cost?</h3>
+        <div class="ai-summary__answer"><p><strong>Cleanup runs $1,500&ndash;$15,000+</strong> and <strong>catch-up $2,000&ndash;$20,000+</strong>, as one-time fixed-fee projects. The figure reflects how many months or years are involved and the severity of the issues &mdash; cleanup is forensic work, priced for untangling, not data entry.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">How much is QuickBooks setup or migration?</h3>
+        <div class="ai-summary__answer"><p><strong>Setup is $750&ndash;$5,000+</strong> (new implementation, 2&ndash;4 weeks); <strong>Desktop&rarr;Online migration is $2,500&ndash;$10,000+</strong> (3&ndash;8 weeks). Both are one-time fixed-fee projects scoped against file complexity, integrations, and platform.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">How fast do I get a fixed-fee quote?</h3>
+        <div class="ai-summary__answer"><p><strong>Within 3 business days</strong> of a free 30-minute discovery call. The call is no-obligation; the quote is a written fixed-fee scope &mdash; the exact number, in writing, before you commit to anything.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">What is included in every TechBrot fixed fee?</h3>
+        <div class="ai-summary__answer"><p><strong>Six things, every engagement</strong>: the free discovery call, the written fixed-fee scope, Certified ProAdvisor delivery, named-operator continuity, direct access to your own QuickBooks file, and a year-end CPA-ready handoff (free on recurring engagements).</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ============ review-card / team-card pricing tiers (engagement shapes — uses team-card__role) ============ #}
+<section class="section section--alt" id="kitchen-sink-f2-pricing-shapes">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Engagement shapes</p>
+      <h2 class="section__heading">Every engagement fits one of three shapes.</h2>
+      <p class="section__lede">However the work is priced, it takes one of three forms &mdash; so you know what you&rsquo;re committing to before the discovery call.</p>
+    </header>
+    <div class="grid-3">
+      <article class="review-card">
+        <p class="team-card__role">Recurring</p>
+        <h3>Monthly retainer</h3>
+        <p class="review-card__fact">Ongoing work billed as a fixed monthly fee. Same-shape deliverables every month. No long-term lock-in &mdash; runs month to month against the written scope.</p>
+        <p class="review-card__fact"><strong>For:</strong> Monthly bookkeeping, payroll, sales tax compliance, fractional CFO.</p>
+      </article>
+      <article class="review-card">
+        <p class="team-card__role">One-time</p>
+        <h3>Fixed-fee project</h3>
+        <p class="review-card__fact">Defined-scope work delivered in weeks, with a written fixed fee and set start and completion dates. Often transitions into a recurring engagement after.</p>
+        <p class="review-card__fact"><strong>For:</strong> Cleanup, catch-up, QuickBooks setup, migration, emergency fixes.</p>
+      </article>
+      <article class="review-card">
+        <p class="team-card__role">By application</p>
+        <h3>Senior retainer</h3>
+        <p class="review-card__fact">Senior strategic engagements accepted by application with limited capacity per quarter. Scoped to the depth of involvement the business needs.</p>
+        <p class="review-card__fact"><strong>For:</strong> Fractional CFO, complex multi-entity advisory.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# ============ vs-table — full canonical pricing table (/pricing/ variant) ============ #}
+<section class="section" id="kitchen-sink-f2-pricing-table">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The full table</p>
+      <h2 class="section__heading">Every service, every range.</h2>
+      <p class="section__lede">Canonical fixed-fee ranges, identical everywhere on the site. All engagements: fixed fee, written scope before work begins, no hourly billing.</p>
+    </header>
+    <div class="vs-scroll">
+      <table class="vs-table">
+        <caption class="sr-only">TechBrot fixed-fee pricing across all engagement types.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Engagement type</th>
+            <th scope="col" class="vs-table__us">Fee range</th>
+            <th scope="col">Cadence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">Monthly Bookkeeping</a></td>
+            <td class="vs-table__concede">Recurring fixed-fee close</td>
+            <td class="vs-table__us"><strong>$400&ndash;$2,500+</strong><span class="vs-table__concede">/mo</span></td>
+            <td class="vs-table__concede">Monthly</td>
+          </tr>
+          <tr>
+            <td><a href="/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup">Cleanup Bookkeeping</a></td>
+            <td class="vs-table__concede">One-time structural fix</td>
+            <td class="vs-table__us"><strong>$1,500&ndash;$15,000+</strong></td>
+            <td class="vs-table__concede">One-time · 2&ndash;8 wks</td>
+          </tr>
+          <tr>
+            <td><a href="/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up">Catch-up Bookkeeping</a></td>
+            <td class="vs-table__concede">Historical bookkeeping</td>
+            <td class="vs-table__us"><strong>$2,000&ndash;$20,000+</strong></td>
+            <td class="vs-table__concede">One-time · 4&ndash;12 wks</td>
+          </tr>
+          <tr>
+            <td><a href="/quickbooks/setup/?intent=quickbooks-setup">QuickBooks Setup</a></td>
+            <td class="vs-table__concede">New implementation</td>
+            <td class="vs-table__us"><strong>$750&ndash;$5,000+</strong></td>
+            <td class="vs-table__concede">One-time · 2&ndash;4 wks</td>
+          </tr>
+          <tr>
+            <td><a href="/quickbooks/cleanup/?intent=qb-cleanup">QuickBooks Cleanup</a></td>
+            <td class="vs-table__concede">QB-specific structural fix</td>
+            <td class="vs-table__us"><strong>$1,500&ndash;$15,000+</strong></td>
+            <td class="vs-table__concede">One-time · 2&ndash;8 wks</td>
+          </tr>
+          <tr>
+            <td><a href="/quickbooks/migration/?intent=quickbooks-migration">QuickBooks Migration</a></td>
+            <td class="vs-table__concede">Desktop → Online, platform switch</td>
+            <td class="vs-table__us"><strong>$2,500&ndash;$10,000+</strong></td>
+            <td class="vs-table__concede">One-time · 3&ndash;8 wks</td>
+          </tr>
+          <tr>
+            <td><a href="/quickbooks/help/?intent=file-review">Emergency QB Fix</a></td>
+            <td class="vs-table__concede">File corruption, error resolution</td>
+            <td class="vs-table__us"><strong>$500&ndash;$2,500</strong></td>
+            <td class="vs-table__concede">One-time · same-day diag</td>
+          </tr>
+          <tr>
+            <td><a href="/accounting/payroll-management/?intent=payroll">Payroll Management</a></td>
+            <td class="vs-table__concede">Multi-state recurring payroll</td>
+            <td class="vs-table__us"><strong>$150&ndash;$800+</strong><span class="vs-table__concede">/mo</span></td>
+            <td class="vs-table__concede">Monthly</td>
+          </tr>
+          <tr>
+            <td><a href="/accounting/sales-tax-compliance/?intent=sales-tax">Sales Tax Compliance</a></td>
+            <td class="vs-table__concede">Multi-state nexus & filings</td>
+            <td class="vs-table__us"><strong>$250&ndash;$1,500+</strong><span class="vs-table__concede">/mo</span></td>
+            <td class="vs-table__concede">Monthly + setup</td>
+          </tr>
+          <tr>
+            <td><a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">Fractional CFO</a></td>
+            <td class="vs-table__concede">Strategic finance, by application</td>
+            <td class="vs-table__us"><strong>$3,000&ndash;$8,000+</strong><span class="vs-table__concede">/mo</span></td>
+            <td class="vs-table__concede">Monthly retainer</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="in-brief__source stack-8">Sales tax compliance also carries a one-time nexus review of $500&ndash;$3,000. Your specific quote follows the free discovery call within 3 business days.</p>
+  </div>
+</section>
+
+{# ============ vs-table — tiered breakdown (/pricing/cleanup/ child variant) ============ #}
+<section class="section section--alt" id="kitchen-sink-f2-pricing-tiers">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The cleanup tiers</p>
+      <h2 class="section__heading">Cleanup is scoped in three tiers.</h2>
+      <p class="section__lede">QuickBooks cleanup is sized to what the file actually needs. These are the canonical tier figures from the service pages &mdash; the free file review tells you honestly which tier fits. Catch-up bookkeeping is priced separately by how many periods are behind.</p>
+    </header>
+    <div class="vs-scroll">
+      <table class="vs-table">
+        <caption class="sr-only">TechBrot QuickBooks cleanup tiers and the catch-up bookkeeping range.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Tier</th>
+            <th scope="col">When it fits</th>
+            <th scope="col" class="vs-table__us">Fixed-fee range</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="/quickbooks/cleanup/focused/">Focused cleanup</a></td>
+            <td class="vs-table__concede">One contained issue in otherwise-current books &mdash; a single drifted reconciliation, a bad bank-feed import, one period miscategorized.</td>
+            <td class="vs-table__us"><strong>$1,200&ndash;$3,000</strong></td>
+          </tr>
+          <tr>
+            <td><a href="/quickbooks/cleanup/standard/">Standard cleanup</a></td>
+            <td class="vs-table__concede">Several stacked issues, or books several months to about a year behind &mdash; the most common cleanup tier.</td>
+            <td class="vs-table__us"><strong>$3,000&ndash;$7,500</strong></td>
+          </tr>
+          <tr>
+            <td><a href="/quickbooks/cleanup/complex/">Complex cleanup</a></td>
+            <td class="vs-table__concede">Multi-year backlog, a corrupted or restructured file, or multiple entities to consolidate &mdash; scoped in phases.</td>
+            <td class="vs-table__us"><strong>$7,500&ndash;$15,000+</strong></td>
+          </tr>
+          <tr>
+            <td><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up bookkeeping</a></td>
+            <td class="vs-table__concede">Months or years of books never recorded &mdash; reconstructed period by period from source documents.</td>
+            <td class="vs-table__us"><strong>$2,000&ndash;$20,000+</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="in-brief__source stack-8">Tier figures are the canonical ranges shown on each cleanup tier page. A file that&rsquo;s both badly tangled and years behind is scoped as a combined cleanup-plus-catch-up project; the written scope states the single fixed fee. Your exact number follows the free file review within 3 business days.</p>
+  </div>
+</section>
+
+{# ============ detail-by-service card grid (review-card links to the 5 pricing children) ============ #}
+<section class="section" id="kitchen-sink-f2-pricing-by-service">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Pricing in detail</p>
+      <h2 class="section__heading">Detailed pricing, by service.</h2>
+      <p class="section__lede">The full price grain for each major engagement &mdash; the tiers, what drives the figure, and what&rsquo;s included &mdash; on its own page.</p>
+    </header>
+    <div class="grid-3">
+      <article class="review-card">
+        <h3><a href="/pricing/bookkeeping/?intent=pricing">Monthly bookkeeping pricing</a></h3>
+        <p class="review-card__fact">The three tiers, what moves you between them, and what every tier includes &mdash; $400&ndash;$2,500+/month.</p>
+      </article>
+      <article class="review-card">
+        <h3><a href="/pricing/cleanup/?intent=pricing">Cleanup &amp; catch-up pricing</a></h3>
+        <p class="review-card__fact">Why cleanup is forensic work and what drives the figure &mdash; cleanup $1,500&ndash;$15,000+, catch-up $2,000&ndash;$20,000+.</p>
+      </article>
+      <article class="review-card">
+        <h3><a href="/pricing/payroll/?intent=pricing">Payroll pricing</a></h3>
+        <p class="review-card__fact">What moves the monthly fee, and why the software subscription is billed separately &mdash; $150&ndash;$800+/month.</p>
+      </article>
+      <article class="review-card">
+        <h3><a href="/pricing/cfo/?intent=pricing">Fractional CFO pricing</a></h3>
+        <p class="review-card__fact">A senior retainer by application &mdash; priced on judgment and depth, not transaction volume &mdash; $3,000&ndash;$8,000+/month.</p>
+      </article>
+      <article class="review-card">
+        <h3><a href="/pricing/quickbooks-setup/?intent=pricing">QuickBooks setup pricing</a></h3>
+        <p class="review-card__fact">What drives a one-time implementation fee across QBO, Desktop, and Enterprise &mdash; $750&ndash;$5,000+.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# ============ legal-doc (fine print) — why fixed-fee prose body ============ #}
+<section class="section section--alt" id="kitchen-sink-f2-pricing-why">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Why fixed-fee</p>
+      <h2 class="section__heading">Why we don&rsquo;t bill by the hour.</h2>
+    </header>
+    <div class="legal-doc__body">
+      <p>Hourly billing has a structural problem: it penalizes you for the provider&rsquo;s inefficiency. The slower they work, the more you pay. The invoice is unpredictable, and you can&rsquo;t budget around it. Worse, it makes you hesitate to call your own accountant &mdash; because every question starts a meter.</p>
+      <p>TechBrot prices every engagement as a fixed fee against a written scope. You know the total cost before any work begins. Call as often as you need within the engagement &mdash; no meter. If the work genuinely expands beyond the agreed scope, the fee is re-quoted and re-approved in writing before anything proceeds. <strong>You are never surprised by an invoice.</strong></p>
+      <p>This only works because the work is delivered by Certified ProAdvisors efficient enough to price confidently. The fixed fee is a statement of competence: we know how long good work takes, so we can quote it.</p>
+    </div>
+  </div>
+</section>
+
+{# ============ what every fixed fee includes (review-card grid) ============ #}
+<section class="section" id="kitchen-sink-f2-pricing-includes">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Every engagement</p>
+      <h2 class="section__heading">Every fixed fee includes these.</h2>
+      <p class="section__lede">Six things in every engagement, whatever the service or the number.</p>
+    </header>
+    <div class="grid-3">
+      <article class="review-card">
+        <h3>Free discovery call</h3>
+        <p class="review-card__fact">A 30-minute call before anything is quoted. Free, no obligation, no sales push.</p>
+      </article>
+      <article class="review-card">
+        <h3>Written fixed-fee scope</h3>
+        <p class="review-card__fact">Within 3 business days of the call. The scope is the agreement &mdash; no hourly billing, no creep.</p>
+      </article>
+      <article class="review-card">
+        <h3>Certified ProAdvisor delivery</h3>
+        <p class="review-card__fact">Delivered by a Certified Intuit ProAdvisor &mdash; verifiable on Intuit&rsquo;s public directory.</p>
+      </article>
+      <article class="review-card">
+        <h3>Named-operator continuity</h3>
+        <p class="review-card__fact">A named ProAdvisor owns your account end-to-end. No rotation, no re-explaining.</p>
+      </article>
+      <article class="review-card">
+        <h3>Direct file access</h3>
+        <p class="review-card__fact">We work inside your own QuickBooks file. Your data, your audit trail, never a parallel system.</p>
+      </article>
+      <article class="review-card">
+        <h3>CPA-ready handoff</h3>
+        <p class="review-card__fact">Recurring engagements include a year-end CPA handoff at no extra cost.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# ============ FAQ ============ #}
+<section class="section section--alt" id="kitchen-sink-f2-pricing-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Before you call</p>
+      <h2 class="section__heading">Questions about cost.</h2>
+    </header>
+    <div class="faq__list">
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-f2-pricing-faq-a1">How does TechBrot price its services?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-f2-pricing-faq-a1" data-open="false">
+          <p>Every TechBrot engagement is fixed-fee with a written scope agreed before any work begins &mdash; no hourly billing, no surprise invoices. Monthly bookkeeping runs $400&ndash;$2,500+/mo; cleanup $1,500&ndash;$15,000+; catch-up $2,000&ndash;$20,000+; QuickBooks setup $750&ndash;$5,000+; migration $2,500&ndash;$10,000+; payroll $150&ndash;$800+/mo; sales tax $250&ndash;$1,500+/mo; fractional CFO $3,000&ndash;$8,000+/mo. The exact fee is quoted within 3 business days of a free discovery call.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-f2-pricing-faq-a2">Why doesn&rsquo;t TechBrot bill hourly?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-f2-pricing-faq-a2" data-open="false">
+          <p>Hourly billing penalizes clients for a provider&rsquo;s inefficiency and creates unpredictable invoices. TechBrot prices every engagement as a fixed fee against a written scope, so total cost is known before work starts. If the work genuinely expands beyond the agreed scope, the fee is re-quoted and re-approved in writing &mdash; never a surprise invoice.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-f2-pricing-faq-a3">What determines where my engagement falls in the price range?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-f2-pricing-faq-a3" data-open="false">
+          <p>For recurring bookkeeping: monthly transaction volume, number of bank and credit accounts, payroll complexity, and number of entities. For cleanup and catch-up: how many months or years are involved and the severity of the issues. For QuickBooks projects: file complexity, integrations, and platform. The free discovery call surfaces these factors and the written scope reflects them.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-f2-pricing-faq-a4">Is the discovery call free?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-f2-pricing-faq-a4" data-open="false">
+          <p>Yes. The 30-minute discovery call is free and no-obligation. TechBrot reviews your situation, recommends the right engagement, and delivers a written fixed-fee scope within 3 business days. If TechBrot isn&rsquo;t the right fit, we say so honestly, with a referral where appropriate.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-f2-pricing-faq-a5">Are there long-term contracts?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-f2-pricing-faq-a5" data-open="false">
+          <p>No long-term lock-in on recurring engagements. Recurring bookkeeping, payroll, and sales tax engagements run month to month against the written scope and can be ended on the agreement&rsquo;s terms. One-time projects have defined start and completion dates.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-f2-pricing-faq-a6">Does the price include tax filing?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-f2-pricing-faq-a6" data-open="false">
+          <p>No. TechBrot delivers operational accounting and CPA-ready books; tax filing and IRS representation are handled by your CPA or EA and are not part of TechBrot&rsquo;s scope. Recurring engagements include a year-end CPA handoff at no extra cost.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-f2-pricing-faq-a7">Is TechBrot affiliated with Intuit Inc.?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-f2-pricing-faq-a7" data-open="false">
+          <p>No. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm. We hold active Intuit certifications and use QuickBooks software, but TechBrot is not owned, employed, or operated by Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ============ pricing standards (legal-doc fine print + trust-row) ============ #}
+<section class="section" id="kitchen-sink-f2-pricing-standards">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Pricing standards</p>
+      <h2 class="section__heading">Pricing maintained by the TechBrot platform team.</h2>
+    </header>
+    <div class="legal-doc__body">
+      <p>Pricing on this page is maintained by the <strong>Certified QuickBooks ProAdvisor team</strong> at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm. Ranges reflect current operational pricing and are reviewed quarterly. Specific fixed fees are quoted per engagement after a free discovery call. Where pricing changes, this page and the individual service pages are updated together to stay consistent.</p>
+    </div>
+    <div class="trust-row stack-8">
+      <div class="trust-row__item"><p class="trust-row__value">Entity</p><p class="trust-row__label">TechBrot Inc. · Delaware C-Corp · independent ProAdvisor firm</p></div>
+      <div class="trust-row__divider"></div>
+      <div class="trust-row__item"><p class="trust-row__value">Model</p><p class="trust-row__label">Fixed-fee · written scope before work · no hourly billing</p></div>
+      <div class="trust-row__divider"></div>
+      <div class="trust-row__item"><p class="trust-row__value">Certifications</p><p class="trust-row__label">Active Intuit ProAdvisor — QBO L2, Desktop, Enterprise, Payroll, Bookkeeping</p></div>
+      <div class="trust-row__divider"></div>
+      <div class="trust-row__item"><p class="trust-row__value">Independence</p><p class="trust-row__label">Not affiliated with Intuit Inc.</p></div>
+    </div>
+    <p class="in-brief__source stack-8">Pricing last reviewed: May 2026.</p>
+  </div>
+</section>

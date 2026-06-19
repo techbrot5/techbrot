@@ -1,0 +1,587 @@
+---json
+{
+  "layout": "layouts/t-guide.njk",
+  "slug": "kitchen-sink-b3-listing-hub",
+  "title": "DEV kitchen-sink · B3 Light listing hub · TechBrot",
+  "description": "Preview-only complete component inventory for the Light listing hub (B3) page type.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Resources", "href": "/resources/" },
+    { "name": "DEV kitchen-sink B3" }
+  ],
+  "hero": {
+    "eyebrow": "Glossary",
+    "heading": "The accounting &amp; QuickBooks glossary.",
+    "subheading": "Plain-English, accurate definitions of the terms that come up in real bookkeeping and QuickBooks engagements &mdash; what each means, why it matters, and where it shows up in the work. Written and maintained by the Certified QuickBooks ProAdvisor team.",
+    "actions": [
+      { "label": "Browse the glossary", "href": "/glossary/", "class": "btn--primary" },
+      { "label": "Call a ProAdvisor", "href": "tel:+18777515575", "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "The <strong>TechBrot glossary</strong> defines the accounting and QuickBooks terms that come up in real engagements &mdash; bookkeeping, cleanup, reconciliation, payroll, sales tax, and advisory. Each entry is a genuine, citable definition with the context that makes it useful and links to where the term applies in the work. New terms are added regularly.",
+    "source": "Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "dark": true,
+    "eyebrow": "Speak to an expert",
+    "heading": "Have a question these pages don&rsquo;t answer?",
+    "lede": "Talk to a Certified ProAdvisor — a real conversation, not a sales call.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/", "class": "btn--primary" }
+    ]
+  }
+}
+---
+
+{# KITCHEN-SINK B3 · Light listing hub — UNION of all FOUR sub-shapes:
+   glossary index (related-grid term list), blog index (review-card post list),
+   tools index (review-card grid + the hero figure lives in the layout hero),
+   frameworks index (related-grid). Layout renders breadcrumb -> hero(compact)
+   -> in-brief -> {{content}} -> cta. Body below = label box -> glossary
+   related-grid -> blog review-card list -> tools review-card grid -> frameworks
+   intro prose + related-grid -> blog-category checks-list/pull-quote variant ->
+   tools FAQ -> shared byline+meta. ld+json removed; ids slug-prefixed & unique;
+   only classes seen in built HTML. #}
+
+<section class="section section--compact" id="kitchen-sink-b3-listing-hub-devlabel">
+  <div class="container">
+    <div style="border:2px dashed var(--color-accent,#841E1E);border-radius:8px;padding:var(--space-5);background:#FBF6F6">
+      <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;margin:0 0 .5rem">KITCHEN-SINK REFERENCE · NOT SHIPPED</p>
+      <p style="margin:0"><strong>Family B3 · Light listing hub</strong> — complete component inventory.
+      Represents <strong>12 live pages</strong> across four sub-shapes:
+      <strong>glossary index</strong> (<code>/glossary/</code>, related-grid term list),
+      <strong>blog index</strong> (<code>/blog/</code> + <code>/blog/category/*</code>, review-card post list),
+      <strong>tools index</strong> (<code>/tools/</code>, review-card + figure), and
+      <strong>frameworks index</strong> (<code>/frameworks/</code>, related-grid).
+      Sections below = the UNION of every variant this type uses, in canonical order.</p>
+    </div>
+  </div>
+</section>
+
+{# ===== SUB-SHAPE 1 · GLOSSARY INDEX — related-grid term list (from /glossary/) ===== #}
+<section class="section" id="kitchen-sink-b3-listing-hub-glossary-terms">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Browse the terms</p>
+      <h2 class="section__heading">Browse the glossary.</h2>
+      <p class="section__lede">Every entry is a real, plain-English definition &mdash; what the term means, why it matters, and where it comes up. More terms are added regularly.</p>
+    </header>
+    <div class="related-grid">
+      <a class="related-card" href="/glossary/bank-reconciliation/">
+        <h3>Bank reconciliation</h3>
+        <p>Matching your books to your bank statement for the period so the balances agree &mdash; the core accuracy control in bookkeeping.</p>
+      </a>
+      <a class="related-card" href="/glossary/chart-of-accounts/">
+        <h3>Chart of accounts</h3>
+        <p>The structured list of every account your books record into &mdash; the framework every report is built on.</p>
+      </a>
+      <a class="related-card" href="/glossary/double-entry-accounting/">
+        <h3>Double-entry accounting</h3>
+        <p>Every transaction recorded as equal debits and credits, so the books always balance &mdash; the foundation of reliable accounting.</p>
+      </a>
+      <a class="related-card" href="/glossary/general-ledger/">
+        <h3>General ledger</h3>
+        <p>The complete record of every transaction posted to every account &mdash; the books&rsquo; source of truth.</p>
+      </a>
+      <a class="related-card" href="/glossary/accrual-vs-cash-basis-accounting/">
+        <h3>Accrual vs. cash basis accounting</h3>
+        <p>Cash records money when it moves; accrual records it when earned or owed &mdash; and the choice changes what your reports say.</p>
+      </a>
+      <a class="related-card" href="/glossary/catch-up-bookkeeping/">
+        <h3>Catch-up bookkeeping</h3>
+        <p>Bringing months or years of un-entered books current &mdash; distinct from cleanup, which fixes books that were kept wrong.</p>
+      </a>
+      <a class="related-card" href="/glossary/month-end-close/">
+        <h3>Month-end close</h3>
+        <p>The monthly routine that finalizes the books so the period&rsquo;s numbers are complete and trustworthy.</p>
+      </a>
+      <a class="related-card" href="/glossary/accounts-receivable/">
+        <h3>Accounts receivable</h3>
+        <p>Money customers owe you for work already delivered &mdash; an asset until it&rsquo;s collected.</p>
+      </a>
+      <a class="related-card" href="/glossary/accounts-payable/">
+        <h3>Accounts payable</h3>
+        <p>Money you owe vendors for bills received but not yet paid &mdash; a liability until settled.</p>
+      </a>
+      <a class="related-card" href="/glossary/trial-balance/">
+        <h3>Trial balance</h3>
+        <p>A list of every account&rsquo;s balance confirming total debits equal total credits &mdash; the books&rsquo; internal-consistency check.</p>
+      </a>
+      <a class="related-card" href="/glossary/profit-and-loss-statement/">
+        <h3>Profit and loss statement</h3>
+        <p>Revenue minus expenses over a period &mdash; whether you made money, and where it came from and went.</p>
+      </a>
+      <a class="related-card" href="/glossary/balance-sheet/">
+        <h3>Balance sheet</h3>
+        <p>A point-in-time snapshot of what you own, owe, and are worth &mdash; assets = liabilities + equity.</p>
+      </a>
+      <a class="related-card" href="/glossary/fractional-cfo/">
+        <h3>Fractional CFO</h3>
+        <p>Senior financial leadership part-time &mdash; the forecasting and judgment a full-time CFO gives, without the full-time cost.</p>
+      </a>
+      <a class="related-card" href="/glossary/sales-tax-nexus/">
+        <h3>Sales tax nexus</h3>
+        <p>The connection to a state that requires you to collect its sales tax &mdash; physical or, post-Wayfair, economic.</p>
+      </a>
+      <a class="related-card" href="/glossary/bookkeeping-vs-accounting/">
+        <h3>Bookkeeping vs. accounting</h3>
+        <p>Bookkeeping records and reconciles; accounting interprets and advises &mdash; what each is, and who you need.</p>
+      </a>
+      <a class="related-card" href="/glossary/cost-of-goods-sold/">
+        <h3>Cost of goods sold</h3>
+        <p>The direct cost of what you sold &mdash; and getting it right is the difference between knowing your margin and guessing.</p>
+      </a>
+      <a class="related-card" href="/glossary/cash-flow-statement/">
+        <h3>Cash flow statement</h3>
+        <p>Actual cash in and out over a period &mdash; the statement that explains &lsquo;profitable but broke.&rsquo;</p>
+      </a>
+      <a class="related-card" href="/glossary/depreciation/">
+        <h3>Depreciation</h3>
+        <p>Spreading an asset&rsquo;s cost over its useful life &mdash; a non-cash expense that lowers profit, not cash.</p>
+      </a>
+      <a class="related-card" href="/glossary/certified-quickbooks-proadvisor/">
+        <h3>Certified QuickBooks ProAdvisor</h3>
+        <p>What the ProAdvisor credential means &mdash; and what it doesn&rsquo;t (it&rsquo;s not Intuit affiliation, not a CPA).</p>
+      </a>
+      <a class="related-card" href="/glossary/retained-earnings/">
+        <h3>Retained earnings</h3>
+        <p>Cumulative profit the business has kept &mdash; an equity account each year&rsquo;s net income rolls into.</p>
+      </a>
+      <a class="related-card" href="/glossary/deferred-revenue/">
+        <h3>Deferred revenue</h3>
+        <p>Money collected before the work is delivered &mdash; a liability until earned, not income on receipt.</p>
+      </a>
+      <a class="related-card" href="/glossary/opening-balance/">
+        <h3>Opening balance</h3>
+        <p>An account&rsquo;s starting balance &mdash; the foundation everything else is built on, and a top cause of wrong books after a migration.</p>
+      </a>
+      <a class="related-card" href="/glossary/1099-vs-w2/">
+        <h3>1099 vs. W-2</h3>
+        <p>Employee vs. independent contractor &mdash; the classification that drives withholding, taxes, and real compliance risk.</p>
+      </a>
+      <a class="related-card" href="/glossary/journal-entry/">
+        <h3>Journal entry</h3>
+        <p>The double-entry record of a transaction &mdash; debits and credits; manual adjusting entries close the books.</p>
+      </a>
+      <a class="related-card" href="/glossary/accrued-expenses/">
+        <h3>Accrued expenses</h3>
+        <p>Costs incurred but not yet paid or billed &mdash; a liability recorded by adjusting entries on accrual books.</p>
+      </a>
+      <a class="related-card" href="/glossary/prepaid-expenses/">
+        <h3>Prepaid expenses</h3>
+        <p>Payments made in advance &mdash; recorded as an asset, then expensed over the period they cover.</p>
+      </a>
+      <a class="related-card" href="/glossary/fixed-assets/">
+        <h3>Fixed assets</h3>
+        <p>Long-lived tangible property &mdash; equipment, vehicles, buildings &mdash; capitalized and depreciated, not expensed at purchase.</p>
+      </a>
+      <a class="related-card" href="/glossary/operating-expenses/">
+        <h3>Operating expenses</h3>
+        <p>The ongoing costs of running the business not tied to a sale &mdash; below gross profit on the P&L.</p>
+      </a>
+      <a class="related-card" href="/glossary/owners-equity/">
+        <h3>Owner&rsquo;s equity</h3>
+        <p>The owner&rsquo;s residual claim on the business &mdash; assets minus liabilities, the equity section of the balance sheet.</p>
+      </a>
+      <a class="related-card" href="/glossary/owners-draw/">
+        <h3>Owner&rsquo;s draw</h3>
+        <p>Money an owner takes out of an unincorporated business for personal use &mdash; it reduces equity, and it isn&rsquo;t payroll or a deductible expense.</p>
+      </a>
+      <a class="related-card" href="/glossary/working-capital/">
+        <h3>Working capital</h3>
+        <p>Current assets minus current liabilities &mdash; the short-term cushion that funds day-to-day operations.</p>
+      </a>
+      <a class="related-card" href="/glossary/gross-margin/">
+        <h3>Gross margin</h3>
+        <p>Gross profit as a percentage of revenue &mdash; how much of each sales dollar is left after COGS.</p>
+      </a>
+      <a class="related-card" href="/glossary/write-off/">
+        <h3>Write-off</h3>
+        <p>Removing an uncollectible or worthless amount from the books and recording the loss &mdash; not the same as a tax deduction.</p>
+      </a>
+      <a class="related-card" href="/glossary/net-income/">
+        <h3>Net income</h3>
+        <p>Revenue minus all expenses over a period &mdash; the final profit on the P&L, and not the same as cash.</p>
+      </a>
+      <a class="related-card" href="/glossary/amortization/">
+        <h3>Amortization</h3>
+        <p>Spreading the cost of an intangible asset, or a loan&rsquo;s principal, over time &mdash; depreciation&rsquo;s intangible counterpart.</p>
+      </a>
+      <a class="related-card" href="/glossary/undeposited-funds/">
+        <h3>Undeposited Funds</h3>
+        <p>The default QuickBooks holding account where received payments wait until you group them into a deposit that matches the bank &mdash; and a classic place errors pile up.</p>
+      </a>
+      <a class="related-card" href="/glossary/class-tracking/">
+        <h3>Class tracking</h3>
+        <p>The QuickBooks feature for tagging transactions to a segment &mdash; location, department, program &mdash; so you can run a P&L by class. Powerful, but only if applied consistently.</p>
+      </a>
+      <a class="related-card" href="/glossary/bank-feeds/">
+        <h3>Bank feeds</h3>
+        <p>The QuickBooks feature that auto-imports transactions from a connected bank or card into the For Review queue. Speeds bookkeeping &mdash; but matching the feed is not a finished reconciliation.</p>
+      </a>
+      <a class="related-card" href="/glossary/audit-trail/">
+        <h3>Audit trail</h3>
+        <p>QuickBooks&rsquo; built-in, unalterable log of every change to the file &mdash; who did what, and when. Essential for accountability and for finding what changed.</p>
+      </a>
+      <a class="related-card" href="/glossary/memorized-transaction/">
+        <h3>Memorized transaction</h3>
+        <p>A saved template QuickBooks uses to create repeating transactions on a schedule &mdash; recurring invoices, bills, journal entries. Saves time; stale templates post wrong amounts.</p>
+      </a>
+      <a class="related-card" href="/glossary/w-9-form/">
+        <h3>Form W-9</h3>
+        <p>The form you collect from a contractor to get their taxpayer ID &mdash; so you can issue a 1099 at year end. Educational only.</p>
+      </a>
+      <a class="related-card" href="/glossary/1099-nec/">
+        <h3>Form 1099-NEC</h3>
+        <p>The form that reports $600+ paid to a contractor in a year &mdash; we get the QuickBooks data right; your CPA files. Educational only.</p>
+      </a>
+      <a class="related-card" href="/glossary/ein/">
+        <h3>Employer Identification Number (EIN)</h3>
+        <p>The IRS&rsquo;s nine-digit federal tax ID for a business &mdash; like an SSN for the entity. Educational only; the IRS issues it.</p>
+      </a>
+      <a class="related-card" href="/glossary/estimated-taxes/">
+        <h3>Estimated taxes</h3>
+        <p>Quarterly payments on income that isn&rsquo;t withheld &mdash; the pay-as-you-go system. Your CPA calculates them; accurate books make the estimate reliable.</p>
+      </a>
+      <a class="related-card" href="/glossary/payroll-liabilities/">
+        <h3>Payroll liabilities</h3>
+        <p>What you&rsquo;ve withheld from employees or owe as an employer but haven&rsquo;t yet remitted &mdash; a liability until it&rsquo;s paid, and the trust-fund portion is serious.</p>
+      </a>
+      <a class="related-card" href="/glossary/fiscal-year/">
+        <h3>Fiscal year</h3>
+        <p>The 12-month period a business reports on &mdash; often the calendar year, but not always. It sets when the books close and returns come due.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ===== SUB-SHAPE 2 · BLOG INDEX — review-card post list (from /blog/) ===== #}
+<section class="section" id="kitchen-sink-b3-listing-hub-blog-latest">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Latest</p>
+      <h2 class="section__heading">Recent articles.</h2>
+    </header>
+    <div class="grid-3">
+      <article class="review-card">
+        <p class="team-card__role">Partner Spotlight &middot; June 9, 2026</p>
+        <h3>Inside the TechBrot accountant partner program</h3>
+        <p class="review-card__fact">Our first partner-spotlight post is about the program itself: how independent accountants and CPAs work with us, what we handle, what stays theirs, and who it&rsquo;s a fit for. Real partner stories will follow &mdash; with their permission, never invented.</p>
+        <a class="review-card__link" href="/blog/inside-the-techbrot-partner-program/">Read it <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <p class="team-card__role">AI &amp; Accounting &middot; June 11, 2026</p>
+        <h3>Will AI replace your bookkeeper? An honest answer</h3>
+        <p class="review-card__fact">AI is genuinely good at parts of bookkeeping &mdash; and genuinely dangerous at others, precisely because it&rsquo;s confident when it&rsquo;s wrong. Here&rsquo;s where it helps, where it hurts, and what doesn&rsquo;t get automated away.</p>
+        <a class="review-card__link" href="/blog/will-ai-replace-your-bookkeeper/">Read it <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <p class="team-card__role">Taxes &middot; June 12, 2026</p>
+        <h3>How to get your books ready for tax season (without doing your taxes)</h3>
+        <p class="review-card__fact">The work that makes tax season painless isn&rsquo;t the filing &mdash; it&rsquo;s the bookkeeping that comes before it. Here&rsquo;s how to hand your CPA a clean file instead of a shoebox, so the return is fast, accurate, and cheaper.</p>
+        <a class="review-card__link" href="/blog/get-your-books-ready-for-tax-season/">Read it <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <p class="team-card__role">Payroll &middot; June 13, 2026</p>
+        <h3>W-2 vs 1099: how to classify a worker (and why it matters)</h3>
+        <p class="review-card__fact">Calling a worker a contractor doesn&rsquo;t make them one &mdash; the IRS and states decide that by how the work actually happens. Misclassify, and the back taxes and penalties land on you. Here&rsquo;s how the line really works.</p>
+        <a class="review-card__link" href="/blog/w2-vs-1099-worker-classification/">Read it <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <p class="team-card__role">Business Finance &middot; June 15, 2026</p>
+        <h3>Profit vs cash flow: why a profitable business can still go broke</h3>
+        <p class="review-card__fact">You can be profitable on paper and still not make payroll. Here&rsquo;s why profit and cash diverge, the traps that catch growing businesses, and how to watch the number that actually keeps the lights on.</p>
+        <a class="review-card__link" href="/blog/profit-vs-cash-flow/">Read it <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <p class="team-card__role">Accounting &middot; June 16, 2026</p>
+        <h3>Bookkeeping vs accounting: what&rsquo;s the difference?</h3>
+        <p class="review-card__fact">People use the words interchangeably, but they&rsquo;re different jobs done at different cadences. Knowing which is which helps you hire the right help &mdash; and stop overpaying for the wrong one.</p>
+        <a class="review-card__link" href="/blog/bookkeeping-vs-accounting/">Read it <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <p class="team-card__role">Bookkeeping &middot; June 17, 2026</p>
+        <h3>5 signs your books need a cleanup</h3>
+        <p class="review-card__fact">Messy books rarely announce themselves &mdash; they just quietly make every report and decision less trustworthy. Here are five signs it&rsquo;s time for a cleanup, and what one actually fixes.</p>
+        <a class="review-card__link" href="/blog/5-signs-your-books-need-a-cleanup/">Read it <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <p class="team-card__role">QuickBooks &middot; June 18, 2026</p>
+        <h3>QuickBooks Online vs Desktop in 2026: which should you use?</h3>
+        <p class="review-card__fact">Intuit has steadily moved customers toward the cloud, and that reshapes the old &ldquo;Online or Desktop?&rdquo; question. Here&rsquo;s where each stands in 2026 and how to choose without regret.</p>
+        <a class="review-card__link" href="/blog/quickbooks-online-vs-desktop-2026/">Read it <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# Blog index — "All categories" topic list (review-card grid) ===== #}
+<section class="section section--alt" id="kitchen-sink-b3-listing-hub-blog-topics">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Browse by topic</p>
+      <h2 class="section__heading">All categories.</h2>
+    </header>
+    <div class="grid-3">
+      <article class="review-card">
+        <h3>QuickBooks</h3>
+        <p class="review-card__fact">Getting the most out of QuickBooks — setup, features, mistakes to avoid, and Online vs Desktop — from a Certified ProAdvisor team.</p>
+        <a class="review-card__link" href="/blog/category/quickbooks/">Browse QuickBooks <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <h3>Bookkeeping</h3>
+        <p class="review-card__fact">How clean books actually get kept: the monthly close, cleanup, catch-up, and knowing when to bring in help.</p>
+        <a class="review-card__link" href="/blog/category/bookkeeping/">Browse Bookkeeping <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <h3>Accounting</h3>
+        <p class="review-card__fact">The fundamentals every owner should understand — bookkeeping vs accounting, the core reports, and what your numbers are telling you.</p>
+        <a class="review-card__link" href="/blog/category/accounting/">Browse Accounting <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <h3>Payroll</h3>
+        <p class="review-card__fact">Running payroll correctly: worker classification, multi-state compliance, deadlines, and the year-end forms that trip people up.</p>
+        <a class="review-card__link" href="/blog/category/payroll/">Browse Payroll <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <h3>Taxes</h3>
+        <p class="review-card__fact">How to keep your books tax-ready and work well with your CPA. We don't file taxes — we make tax season painless. Not tax advice.</p>
+        <a class="review-card__link" href="/blog/category/taxes/">Browse Taxes <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <h3>Business Finance</h3>
+        <p class="review-card__fact">Cash flow, margins, break-even, and runway — the financial literacy that helps owners make better decisions.</p>
+        <a class="review-card__link" href="/blog/category/business-finance/">Browse Business Finance <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <h3>AI & Accounting</h3>
+        <p class="review-card__fact">An honest, ground-level look at where AI helps with bookkeeping and accounting — and where it quietly gets things wrong.</p>
+        <a class="review-card__link" href="/blog/category/ai-and-accounting/">Browse AI & Accounting <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <h3>Partner Spotlight</h3>
+        <p class="review-card__fact">Our accountant partner program — how it works, who it's for, and how independent firms collaborate with TechBrot.</p>
+        <a class="review-card__link" href="/blog/category/partner-spotlight/">Browse Partner Spotlight <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# Blog CATEGORY variant (/blog/category/quickbooks/) — single review-card list (h2) + pull-quote + checks-list ===== #}
+<section class="section" id="kitchen-sink-b3-listing-hub-blogcat-list">
+  <div class="container">
+    <div class="grid-3">
+      <article class="review-card">
+        <p class="team-card__role">QuickBooks &middot; June 18, 2026</p>
+        <h2>QuickBooks Online vs Desktop in 2026: which should you use?</h2>
+        <p class="review-card__fact">Intuit has steadily moved customers toward the cloud, and that reshapes the old &ldquo;Online or Desktop?&rdquo; question. Here&rsquo;s where each stands in 2026 and how to choose without regret.</p>
+        <a class="review-card__link" href="/blog/quickbooks-online-vs-desktop-2026/">Read it <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="kitchen-sink-b3-listing-hub-blogcat-browse">
+  <div class="container container--narrow">
+    <blockquote class="pull-quote">We write these to actually help &mdash; plain English, real substance, and an honest answer even when it&rsquo;s that you don&rsquo;t need us.</blockquote>
+    <header class="section__header">
+      <p class="section__eyebrow">Browse by topic</p>
+      <h2 class="section__heading">Other categories.</h2>
+    </header>
+    <div class="checks-list">
+      <p><a href="/blog/category/bookkeeping/">Bookkeeping</a> &mdash; How clean books actually get kept: the monthly close, cleanup, catch-up, and knowing when to bring in help.</p>
+      <p><a href="/blog/category/accounting/">Accounting</a> &mdash; The fundamentals every owner should understand — bookkeeping vs accounting, the core reports, and what your numbers are telling you.</p>
+      <p><a href="/blog/category/payroll/">Payroll</a> &mdash; Running payroll correctly: worker classification, multi-state compliance, deadlines, and the year-end forms that trip people up.</p>
+      <p><a href="/blog/category/taxes/">Taxes</a> &mdash; How to keep your books tax-ready and work well with your CPA. We don't file taxes — we make tax season painless. Not tax advice.</p>
+      <p><a href="/blog/category/business-finance/">Business Finance</a> &mdash; Cash flow, margins, break-even, and runway — the financial literacy that helps owners make better decisions.</p>
+      <p><a href="/blog/category/ai-and-accounting/">AI & Accounting</a> &mdash; An honest, ground-level look at where AI helps with bookkeeping and accounting — and where it quietly gets things wrong.</p>
+      <p><a href="/blog/category/partner-spotlight/">Partner Spotlight</a> &mdash; Our accountant partner program — how it works, who it's for, and how independent firms collaborate with TechBrot.</p>
+    </div>
+  </div>
+</section>
+
+{# ===== SUB-SHAPE 3 · TOOLS INDEX — review-card grid (from /tools/) ===== #}
+{# NOTE: the tools sub-shape's signature figure (hero-figure T-account) lives in the
+   layout hero (hero--split) and is therefore not duplicated in the body harvest. #}
+<section class="section" id="kitchen-sink-b3-listing-hub-tools-available">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Available now</p>
+      <h2 class="section__heading">Tools you can use today.</h2>
+      <p class="section__lede">Free, transparent, and honest about their limits &mdash; each one shows its own math.</p>
+    </header>
+    <div class="grid-3">
+      <article class="review-card">
+        <h3>Bookkeeping Cost Calculator</h3>
+        <p class="review-card__fact">Estimate a realistic monthly bookkeeping fee for your business from our published $400&ndash;$2,500+/month pricing. Five questions, an honest range, no form.</p>
+        <a class="review-card__link" href="/tools/bookkeeping-cost-calculator/">Open the calculator <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <h3>Cleanup Cost Estimator</h3>
+        <p class="review-card__fact">Estimate a one-time QuickBooks cleanup or catch-up from how far behind and how messy your books are, against our published cleanup and catch-up pricing.</p>
+        <a class="review-card__link" href="/tools/cleanup-cost-estimator/">Open the estimator <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <h3>Payroll Cost Calculator</h3>
+        <p class="review-card__fact">Estimate the monthly fee to have your payroll managed &mdash; from headcount, states, and frequency. Our management fee only, not wages or taxes.</p>
+        <a class="review-card__link" href="/tools/payroll-cost-calculator/">Open the calculator <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <h3>Break-Even Calculator</h3>
+        <p class="review-card__fact">Enter your fixed costs, price, and variable cost per sale to see the monthly sales volume and revenue where you break even. Your own numbers, plain math.</p>
+        <a class="review-card__link" href="/tools/breakeven-calculator/">Open the calculator <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <h3>Cash Runway Calculator</h3>
+        <p class="review-card__fact">Enter your cash on hand and monthly net burn to see how many months of runway you have. A snapshot to pressure-test with a forecast.</p>
+        <a class="review-card__link" href="/tools/cash-runway-calculator/">Open the calculator <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <h3>Business Budget Worksheet</h3>
+        <p class="review-card__fact">A live monthly worksheet: enter revenue and expense lines to see total expenses, surplus or deficit, and net margin. A starting structure, not a download.</p>
+        <a class="review-card__link" href="/tools/business-budget-template/">Open the worksheet <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <h3>QuickBooks Plan Selector</h3>
+        <p class="review-card__fact">Answer five questions about users, inventory, projects, and class tracking to see which QuickBooks Online plan fits. Fit-based &mdash; no pricing, Intuit sets that.</p>
+        <a class="review-card__link" href="/tools/quickbooks-plan-selector/">Open the selector <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <h3>1099 Deadline Calculator</h3>
+        <p class="review-card__fact">Pick a tax year to see the exact 1099-NEC and W-2 filing deadline, including the weekend roll, plus the 1099-MISC e-file date. Confirm on IRS.gov.</p>
+        <a class="review-card__link" href="/tools/1099-deadline-calculator/">Open the calculator <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      <article class="review-card">
+        <h3>Sales Tax Rate Lookup</h3>
+        <p class="review-card__fact">Rates change constantly and are address-specific, so instead of a stale box, a ProAdvisor finds your exact current rate and nexus with you on a free call.</p>
+        <a class="review-card__link" href="/tools/sales-tax-rate-lookup/">How it works <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="kitchen-sink-b3-listing-hub-tools-roadmap">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">More to come</p>
+      <h2 class="section__heading">Need a tool we don&rsquo;t have yet?</h2>
+      <p class="section__lede">This set covers the questions we hear most. We add tools as businesses ask for them &mdash; if there&rsquo;s a calculation you wish existed, mention it on a discovery call and we&rsquo;ll look at building it.</p>
+    </header>
+  </div>
+</section>
+
+{# ===== SUB-SHAPE 4 · FRAMEWORKS INDEX — intro prose + related-grid (from /frameworks/) ===== #}
+<section class="section section--compact" id="kitchen-sink-b3-listing-hub-frameworks-intro">
+  <div class="container container--narrow">
+    <div class="prose">
+      <p>A framework here is a <strong>named way of describing a pattern</strong> we see over and over in real QuickBooks files &mdash; a diagnostic lens or a defined method, given a precise name so it can be talked about, taught, and scoped. They are <strong>coined concepts and methodologies, not statistics, surveys, or studies</strong>: each names a real dynamic or discipline, defined once, in plain language. Two describe what goes <em>wrong</em> when books are neglected; two describe how we do the work <em>right</em>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="kitchen-sink-b3-listing-hub-frameworks-list">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Four frameworks</p>
+      <h2 class="section__heading">The frameworks.</h2>
+      <p class="section__lede">Each is defined on its own page as a citable reference, and links to the engagement where it applies.</p>
+    </header>
+    <div class="related-grid">
+      <a class="related-card" href="/frameworks/compounding-reconciliation-drift/">
+        <p class="section__eyebrow">Cleanup</p>
+        <h3>Compounding Reconciliation Drift</h3>
+        <p>How small, un-caught reconciliation gaps in QuickBooks compound period-over-period &mdash; why a neglected file gets non-linearly harder and costlier to fix the longer it sits.</p>
+      </a>
+      <a class="related-card" href="/frameworks/historical-accounting-debt/">
+        <p class="section__eyebrow">Catch-up</p>
+        <h3>Historical Accounting Debt</h3>
+        <p>The accumulating &ldquo;debt&rdquo; a business takes on when bookkeeping falls behind &mdash; lost context, missing documents, aged bank feeds &mdash; and why catch-up gets harder to pay down over time.</p>
+      </a>
+      <a class="related-card" href="/frameworks/techbrot-setup-protocol/">
+        <p class="section__eyebrow">Setup</p>
+        <h3>TechBrot Setup Protocol</h3>
+        <p>The ordered methodology for setting up a QuickBooks file correctly the first time &mdash; the dependency sequence that builds a file right rather than retrofitting it later.</p>
+      </a>
+      <a class="related-card" href="/frameworks/migration-integrity-protocol/">
+        <p class="section__eyebrow">Migration</p>
+        <h3>Migration Integrity Protocol</h3>
+        <p>The verification method that proves a migrated QuickBooks file ties to its source &mdash; balances, A/R, A/P, and totals reconciled against the old system before sign-off, not assumed from a raw import.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ===== SHARED · tools FAQ (only B3 member carrying a faq, from /tools/) ===== #}
+<section class="section" id="kitchen-sink-b3-listing-hub-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">About these tools</p>
+      <h2 class="section__heading">Questions about the tools.</h2>
+    </header>
+    <div class="faq__list">
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-b3-listing-hub-faq-a1">Are these tools really free?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-b3-listing-hub-faq-a1" data-open="false">
+          <p>Yes &mdash; genuinely free, with nothing locked behind a form or an email signup. We build them as Certified ProAdvisors to be useful first; if a tool raises a question about your own books, you&rsquo;re welcome to book a free discovery call, but there&rsquo;s no obligation and no gate.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-b3-listing-hub-faq-a2">Is a calculator estimate the same as a quote?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-b3-listing-hub-faq-a2" data-open="false">
+          <p>No. Every estimate here is built from TechBrot&rsquo;s published pricing to put you in a realistic range &mdash; it is never a binding quote. A short form can&rsquo;t see your actual file. Your exact fixed fee is always confirmed in writing within 3 business days of a free discovery call, before any work begins.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-b3-listing-hub-faq-a3">Where do the numbers come from?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-b3-listing-hub-faq-a3" data-open="false">
+          <p>From our real, published fixed-fee pricing &mdash; the same ranges shown on the <a href="/pricing/">pricing page</a> and identical everywhere on the site. We don&rsquo;t invent figures or quote competitor prices we can&rsquo;t verify. Each tool shows its own math so you can see exactly how it reached a number.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-b3-listing-hub-faq-a4">Do the tools send my information anywhere?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-b3-listing-hub-faq-a4" data-open="false">
+          <p>No. The calculators run entirely in your browser. Nothing you enter is transmitted or stored anywhere unless you choose to book a call and tell us yourself. You can use any tool here completely anonymously.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-b3-listing-hub-faq-a5">What tools are available right now?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-b3-listing-hub-faq-a5" data-open="false">
+          <p>The Bookkeeping Cost Calculator is live today. More &mdash; a cleanup cost estimator, a QuickBooks plan selector, a payroll cost calculator, and others &mdash; are in development and will appear here as they&rsquo;re published. We list them as &ldquo;in development&rdquo; rather than linking to pages that don&rsquo;t exist yet.</p>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="kitchen-sink-b3-listing-hub-faq-a6">Is TechBrot affiliated with Intuit?</button>
+        </h3>
+        <div class="faq__answer" id="kitchen-sink-b3-listing-hub-faq-a6" data-open="false">
+          <p>No. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm. We hold active Intuit certifications and work inside QuickBooks, but TechBrot is not owned, employed, or operated by Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ===== SHARED · byline + meta-reviewed block (glossary + frameworks variant) ===== #}
+<section class="section section--alt" id="kitchen-sink-b3-listing-hub-review">
+  <div class="container container--narrow">
+    <div class="byline-block">
+      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; independent firm, not affiliated with Intuit Inc.</p>
+      </div>
+    </div>
+    <p class="meta-reviewed"><span>Maintained by the Certified QuickBooks ProAdvisor team</span><span>Updated: 2026-06-19</span></p>
+  </div>
+</section>
