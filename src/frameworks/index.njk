@@ -1,0 +1,80 @@
+---json
+{
+  "layout": "layouts/t-guide.njk",
+  "permalink": "/frameworks/",
+  "slug": "frameworks",
+  "tierClass": "section--tier-guide",
+  "bodyClass": "page--mofu",
+  "title": "TechBrot Frameworks — How We Diagnose Accounting & QuickBooks Work · TechBrot",
+  "description": "The named diagnostic concepts and methodologies TechBrot uses to describe and scope cleanup, catch-up, setup, and migration work — defined plainly by Certified QuickBooks ProAdvisors.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Frameworks" }
+  ],
+  "hero": {
+    "eyebrow": "Frameworks",
+    "heading": "How we name and diagnose the work.",
+    "subheading": "Across thousands of QuickBooks files, the same patterns recur. TechBrot gives the important ones precise names &mdash; coined frameworks we use to diagnose a file, scope the work honestly, and explain what&rsquo;s happening in plain language. Each is defined once here, as owned reference. Written and maintained by the Certified QuickBooks ProAdvisor team.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot frameworks</strong> are the named diagnostic concepts and methodologies we use in real engagements &mdash; a way to describe a pattern precisely so it can be diagnosed, scoped, and fixed. They are coined concepts, not statistics or studies: <strong>Compounding Reconciliation Drift</strong> (cleanup), <strong>Historical Accounting Debt</strong> (catch-up), the <strong>TechBrot Setup Protocol</strong> (setup), and the <strong>Migration Integrity Protocol</strong> (migration). Each links to the work where it applies.",
+    "source": "Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc."
+  },
+  "ctaBand": {
+    "eyebrow": "See one of these in your own books?",
+    "heading": "Get a Certified ProAdvisor&rsquo;s read.",
+    "lede": "If a framework here describes what&rsquo;s happening in your QuickBooks file, a free file review tells you exactly where you stand &mdash; with a written fixed-fee scope. Independent firm; not Intuit.",
+    "actions": [
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks", "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── WHAT THESE ARE · honest framing (coined IP, not stats). ── #}
+<section class="section section--compact" id="frameworks-intro">
+  <div class="container container--narrow">
+    <div class="prose">
+      <p>A framework here is a <strong>named way of describing a pattern</strong> we see over and over in real QuickBooks files &mdash; a diagnostic lens or a defined method, given a precise name so it can be talked about, taught, and scoped. They are <strong>coined concepts and methodologies, not statistics, surveys, or studies</strong>: each names a real dynamic or discipline, defined once, in plain language. Two describe what goes <em>wrong</em> when books are neglected; two describe how we do the work <em>right</em>.</p>
+    </div>
+  </div>
+</section>
+
+{# ── THE FRAMEWORKS · grid of 4. (H2: The frameworks.) ── #}
+<section class="section" id="frameworks-list">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Four frameworks</p>
+      <h2 class="section__heading">The frameworks.</h2>
+      <p class="section__lede">Each is defined on its own page as a citable reference, and links to the engagement where it applies.</p>
+    </header>
+    <div class="related-grid">
+      {%- for f in frameworks %}
+      <a class="related-card" href="/frameworks/{{ f.slug }}/">
+        <p class="section__eyebrow">{{ f.tie }}</p>
+        <h3>{{ f.term | safe }}</h3>
+        <p>{{ f.blurb | safe }}</p>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── BYLINE + REVIEW · firm-level (founder-name-zero). ── #}
+<section class="section section--alt" id="frameworks-review">
+  <div class="container container--narrow">
+    <div class="byline-block">
+      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; independent firm, not affiliated with Intuit Inc.</p>
+      </div>
+    </div>
+    <p class="meta-reviewed"><span>Maintained by the Certified QuickBooks ProAdvisor team</span><span>Updated: 2026-06-19</span></p>
+  </div>
+</section>

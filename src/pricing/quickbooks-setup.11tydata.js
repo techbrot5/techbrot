@@ -126,7 +126,7 @@ module.exports = {
             areaServed: { "@type": "Country", name: "United States" },
             audience: { "@type": "BusinessAudience", audienceType: "U.S. small and mid-sized businesses adopting or re-implementing QuickBooks" },
             provider: { "@id": "https://techbrot.com/#organization" },
-            termsOfService: { "@id": "https://techbrot.com/pricing/quickbooks-setup/#setup-protocol" },
+            termsOfService: { "@id": "https://techbrot.com/frameworks/techbrot-setup-protocol/#term" },
             offers: {
               "@type": "OfferCatalog",
               name: "QuickBooks setup fixed-fee pricing",
@@ -145,13 +145,7 @@ module.exports = {
               ],
             },
           },
-          {
-            "@type": "DefinedTerm",
-            "@id": "https://techbrot.com/pricing/quickbooks-setup/#setup-protocol",
-            name: "TechBrot Setup Protocol",
-            description: stripTags("TechBrot&rsquo;s defined QuickBooks setup sequence — discovery and scope, file configuration, connecting feeds and integrations, opening balances and data, reconciliation and proof, then handoff and orientation — covered by the one-time fixed setup fee."),
-            inDefinedTermSet: { "@id": "https://techbrot.com/#organization" },
-          },
+          { "@id": "https://techbrot.com/frameworks/techbrot-setup-protocol/#term" },
           {
             "@type": "FAQPage",
             "@id": "https://techbrot.com/pricing/quickbooks-setup/#faq",

@@ -142,20 +142,8 @@ module.exports = {
               ],
             },
           },
-          {
-            "@type": "DefinedTerm",
-            "@id": "https://techbrot.com/pricing/cleanup/#compounding-reconciliation-drift",
-            name: "Compounding Reconciliation Drift",
-            description: stripTags("TechBrot&rsquo;s term for how an unresolved reconciliation error breeds further error downstream &mdash; each tangled period throwing off the periods after it &mdash; so the cost and effort of a cleanup grow the longer the books sit uncorrected."),
-            inDefinedTermSet: { "@id": "https://techbrot.com/#organization" },
-          },
-          {
-            "@type": "DefinedTerm",
-            "@id": "https://techbrot.com/pricing/cleanup/#historical-accounting-debt",
-            name: "Historical Accounting Debt",
-            description: stripTags("TechBrot&rsquo;s term for the accumulated obligation of unrecorded bookkeeping &mdash; every period left undone must be reconstructed from source documents in sequence before the next can close, so catch-up cost scales with how far behind the books are."),
-            inDefinedTermSet: { "@id": "https://techbrot.com/#organization" },
-          },
+          { "@id": "https://techbrot.com/frameworks/compounding-reconciliation-drift/#term" },
+          { "@id": "https://techbrot.com/frameworks/historical-accounting-debt/#term" },
           {
             "@type": "FAQPage",
             "@id": "https://techbrot.com/pricing/cleanup/#faq",

@@ -1,0 +1,229 @@
+{# ── DEFINITION · speakable (DefinedTerm source). ── #}
+<section class="section section--compact" id="tsp-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The framework, defined</p>
+      <h2 class="section__heading">What the TechBrot Setup Protocol means.</h2>
+    </header>
+    <div class="prose" id="tsp-def-body">
+      <p>The <strong>TechBrot Setup Protocol</strong> is the name we give to our own ordered method for building a QuickBooks file correctly the first time. It is owned terminology &mdash; a named methodology the Certified QuickBooks ProAdvisor team follows, not an Intuit-official procedure and not a certification. It describes <em>how</em> we set a file up so it is built right rather than retrofitted later.</p>
+      <p>What makes it a protocol and not a checklist is that the steps are <em>dependent</em>. A QuickBooks file is layered: the entity and fiscal-year settings frame everything, the chart of accounts is the spine every transaction hangs from, and opening balances anchor that chart to a real starting point in time. Connect bank feeds, build items, or switch on sales tax before those foundations are right, and the later layers inherit the earlier mistake. The order is the value &mdash; each stage is validated before the next is allowed to begin.</p>
+      <p>The reason we work this way is unforgiving in practice: the two costliest things to fix after the fact are the chart of accounts and the opening balances, because by the time they are wrong, months of transactions are already posted against them. Getting the sequence right up front means the file does not need a cleanup later. That is the entire point of the protocol &mdash; a file built once, in the right order, instead of one corrected after it has already gone sideways.</p>
+    </div>
+  </div>
+</section>
+
+{# ── WHY THE ORDER MATTERS · the dependency logic, with pull-quote. ── #}
+<section class="section section--alt" id="tsp-why">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Why the order matters</p>
+      <h2 class="section__heading">Each stage depends on the one before it.</h2>
+    </header>
+    <div class="prose">
+      <p>Setting up QuickBooks in the wrong order is not a style preference &mdash; it creates rework. If the chart of accounts is built before anyone understands how the business actually earns and spends, the accounts get reshaped later, and every transaction already categorized has to be re-mapped. If bank feeds are connected before the chart is right, real money flows into placeholder accounts and has to be re-categorized transaction by transaction. If opening balances are entered against an unfinished chart, they land in the wrong accounts and quietly throw the equity section off from day one.</p>
+      <p>The dependencies run in one direction. Entity and fiscal-year settings define the reporting frame; the chart of accounts has to fit the business inside that frame; opening balances anchor that chart to a clean start date; and only then do feeds, items, sales tax, users, and workflows have a correct foundation to sit on. Skip ahead and you are not saving time &mdash; you are pre-loading a <a href="/quickbooks/cleanup/">cleanup</a> into a brand-new file.</p>
+    </div>
+    <blockquote class="pull-quote"><p>Setting up out of order doesn&rsquo;t save a step &mdash; it buys a cleanup. The chart of accounts and the opening balances are the most expensive things to fix once transactions are already posted against them.</p></blockquote>
+  </div>
+</section>
+
+{# ── THE STAGES · the ONE numbered system (the protocol sequence). ── #}
+<section class="section" id="tsp-stages">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">The protocol, in order</p>
+      <h2 class="section__heading">The ordered stages we follow.</h2>
+      <p class="section__lede">Each stage is validated before the next begins. The sequence is the method &mdash; this is the order a <a href="/quickbooks/setup/">QuickBooks setup</a> follows when it is built to last.</p>
+    </header>
+    <ol class="process-diagram">
+      <li class="process-step">
+        <p class="process-step__number">01</p>
+        <h3 class="process-step__heading">Company &amp; fiscal-year configuration</h3>
+        <p class="process-step__body">Entity type, legal and reporting name, fiscal year, accounting method, and base preferences are set first. These frame how every report reads, so they are locked before any account or balance is created.</p>
+      </li>
+      <li class="process-step">
+        <p class="process-step__number">02</p>
+        <h3 class="process-step__heading">A chart of accounts built for the business</h3>
+        <p class="process-step__body">The chart is designed around how this specific business earns and spends &mdash; not a generic default &mdash; so reports are meaningful from the start. It is the spine every later stage hangs from, which is why it comes before anything that posts to it.</p>
+      </li>
+      <li class="process-step">
+        <p class="process-step__number">03</p>
+        <h3 class="process-step__heading">Opening balances at a clean start date</h3>
+        <p class="process-step__body">With the chart in place, opening balances are entered as of a deliberate start date so the file begins tied to reality. Done after the chart and never before, so each balance lands in the right account and equity zeroes correctly.</p>
+      </li>
+      <li class="process-step">
+        <p class="process-step__number">04</p>
+        <h3 class="process-step__heading">Bank &amp; credit-card connections</h3>
+        <p class="process-step__body">Only once the chart and opening balances are correct do we connect bank and credit-card feeds, mapping each to the right account. Connecting earlier would route real transactions into accounts that aren&rsquo;t finished yet.</p>
+      </li>
+      <li class="process-step">
+        <p class="process-step__number">05</p>
+        <h3 class="process-step__heading">Products, services &amp; items</h3>
+        <p class="process-step__body">Items and services are built and pointed at the correct income and expense accounts so invoices and sales post where they belong. This depends on a finished chart, so it follows it &mdash; not the other way around.</p>
+      </li>
+      <li class="process-step">
+        <p class="process-step__number">06</p>
+        <h3 class="process-step__heading">Sales-tax setup</h3>
+        <p class="process-step__body">Where the business collects sales tax, rates, agencies, and the tax liability account are configured and tied to the right items. It sits after items because it depends on them being defined first.</p>
+      </li>
+      <li class="process-step">
+        <p class="process-step__number">07</p>
+        <h3 class="process-step__heading">Users &amp; permissions</h3>
+        <p class="process-step__body">With the structure built, users are added with roles scoped to what each person should see and do. This comes near the end so permissions are set against a file that is already organized, not a moving target.</p>
+      </li>
+      <li class="process-step">
+        <p class="process-step__number">08</p>
+        <h3 class="process-step__heading">Preferences &amp; workflows</h3>
+        <p class="process-step__body">Finally, invoicing, payments, recurring transactions, and reminder workflows are tuned to how the team actually operates, then the whole file is validated end to end before it is handed off ready to use.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+{# ── QUICK 5 · speakable summary for AI engines (additive, zero FAQ overlap). ── #}
+<section class="section section--alt" id="tsp-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">The TechBrot Setup Protocol, in five.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">What is it, in one line?</h3>
+        <div class="ai-summary__answer"><p>TechBrot&rsquo;s named, ordered method for setting up a QuickBooks file correctly the first time &mdash; a sequence where each stage depends on the one before, so the file is built right rather than retrofitted.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">Is it official or certified?</h3>
+        <div class="ai-summary__answer"><p>No. It is TechBrot&rsquo;s own coined methodology &mdash; not an Intuit-official protocol and not a certification. It is the order our Certified ProAdvisor team follows.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">Why does the order matter?</h3>
+        <div class="ai-summary__answer"><p>The stages are dependent. The chart of accounts and opening balances are the most expensive things to fix after the fact, so the foundation is built and validated before anything posts against it.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">What are the stages?</h3>
+        <div class="ai-summary__answer"><p>Company &amp; fiscal-year setup, a chart of accounts built for the business, opening balances at a clean start date, bank &amp; card connections, products and items, sales tax, users and permissions, then preferences and workflows.</p></div>
+      </div>
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">What does it produce?</h3>
+        <div class="ai-summary__answer"><p>A QuickBooks file that ties from day one and doesn&rsquo;t need a <a href="/quickbooks/cleanup/">cleanup</a> later &mdash; because it was built once, in the right order, instead of corrected after the fact.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── WHAT BREAKS WHEN SKIPPED · the symptoms of out-of-order setup. ── #}
+<section class="section" id="tsp-skipped">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What breaks when it&rsquo;s skipped</p>
+      <h2 class="section__heading">Where out-of-order setup costs you.</h2>
+      <p class="section__lede">No single shortcut looks dangerous on day one. Each one shows up as rework once transactions are posted against a foundation that wasn&rsquo;t finished.</p>
+    </header>
+    <div class="grid-2">
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">A generic chart of accounts.</h3>
+        <p class="buyer-card__body">Accepting the default chart instead of designing one for the business means reports never quite say anything useful &mdash; and reshaping it later forces every posted transaction to be re-mapped.</p>
+      </div>
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">Opening balances entered too early.</h3>
+        <p class="buyer-card__body">Balances entered against an unfinished chart land in the wrong accounts and throw the equity section off from the first day, quietly misstating the books until someone untangles it.</p>
+      </div>
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">Bank feeds connected first.</h3>
+        <p class="buyer-card__body">Connecting feeds before the chart is right routes real money into placeholder accounts, leaving a backlog of transactions that all have to be re-categorized one by one.</p>
+      </div>
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">Items pointed at the wrong accounts.</h3>
+        <p class="buyer-card__body">Products and services built before the chart is settled post sales and costs to the wrong income and expense accounts, so revenue and margin reports are wrong from the first invoice.</p>
+      </div>
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">No clean start date.</h3>
+        <p class="buyer-card__body">Without a deliberate start date the file has no clean line between &ldquo;before&rdquo; and &ldquo;after,&rdquo; so balances and history blur together and nothing reconciles cleanly back to a known point.</p>
+      </div>
+      <div class="buyer-card">
+        <h3 class="buyer-card__opener">Permissions set on a moving target.</h3>
+        <p class="buyer-card__body">Adding users before the structure is built means roles are scoped against a file that is still changing, so access ends up either too broad or constantly reworked as the setup settles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── THE OUTCOME · the honest takeaway. ── #}
+<section class="section section--alt" id="tsp-outcome">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">The honest takeaway</p>
+      <h2 class="section__heading">Build it right once, not twice.</h2>
+    </header>
+    <div class="prose">
+      <p>The most useful thing about naming this method is what it implies about timing. The cheapest moment to get a QuickBooks file right is at setup, before any transactions are posted &mdash; because everything entered afterward inherits whatever foundation it lands on. A file built in the right order, with the chart and opening balances settled first, simply works: reports read correctly, reconciliations tie, and there is nothing to unwind later. That is the difference between a <a href="/quickbooks/setup/">setup done once</a> and a file that drifts into needing repair.</p>
+      <p>If a file was already set up out of order, the work shifts from setup to repair, and the engagement that addresses it is a <a href="/quickbooks/cleanup/">QuickBooks file cleanup</a>. TechBrot setup engagements are fixed-fee against a written scope, ranging roughly <strong>$750&ndash;$5,000+</strong> depending on the complexity of the business and the data being migrated; see <a href="/pricing/">pricing</a> for how scope maps to fee. Your QuickBooks subscription is billed by Intuit separately. We will tell you honestly what your file needs before any work begins.</p>
+    </div>
+  </div>
+</section>
+
+{# ── RELATED · where the framework applies. ── #}
+<section class="section" id="tsp-related">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Where this framework applies</p>
+      <h2 class="section__heading">From protocol to a file built right.</h2>
+    </header>
+    <div class="related-grid">
+      <a class="related-card" href="/quickbooks/setup/">
+        <h3>QuickBooks setup</h3>
+        <p>The engagement that runs this protocol end to end &mdash; a file built in the right order, validated stage by stage, fixed-fee against a written scope.</p>
+      </a>
+      <a class="related-card" href="/quickbooks/setup/checklist/">
+        <h3>QuickBooks setup checklist</h3>
+        <p>The practical, stage-by-stage checklist that sits underneath the protocol &mdash; what gets configured at each step before the next begins.</p>
+      </a>
+      <a class="related-card" href="/quickbooks/setup/new-business/">
+        <h3>Setup for a new business</h3>
+        <p>How the protocol applies when you&rsquo;re starting from zero &mdash; building the file clean from day one so there is never a foundation to retrofit.</p>
+      </a>
+      <a class="related-card" href="/quickbooks/which-plan-is-right/">
+        <h3>Which QuickBooks plan is right</h3>
+        <p>Setup starts with the right edition. How to choose the plan that fits the business before the file is ever built.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ── FAQ · 6+ real questions; verbatim match to FAQPage schema. ── #}
+<section class="section section--alt" id="tsp-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Quick answers</p>
+      <h2 class="section__heading">TechBrot Setup Protocol questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="tsp-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="tsp-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── BYLINE + REVIEW · firm-level (founder-name-zero). ── #}
+<section class="section" id="tsp-review">
+  <div class="container container--narrow">
+    <div class="byline-block">
+      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">A TechBrot coined framework &middot; independent firm, not affiliated with Intuit Inc.</p>
+      </div>
+    </div>
+    <p class="meta-reviewed"><span>Published: {{ published }}</span><span>Updated: {{ updated }}</span><span>Reviewed: {{ updated }} &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
