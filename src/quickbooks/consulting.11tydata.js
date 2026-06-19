@@ -118,6 +118,9 @@ module.exports = {
   ],
   // related — "Other QuickBooks engagements" verbatim headings.
   related: [
+    { title: "Hire a QuickBooks ProAdvisor", href: "/quickbooks/hire-a-proadvisor/", body: "How engaging a Certified ProAdvisor works &mdash; the scoping path from free file review to written fixed-fee scope, and which engagement (cleanup, setup, bookkeeping, migration, consulting) fits your situation." },
+    { title: "QuickBooks training", href: "/quickbooks/training/", body: "If the need is teaching you or your team to use QuickBooks well &mdash; not advisory judgment on configuration &mdash; ProAdvisor-led training is the fit. Consulting and training are different in kind." },
+    { title: "ProAdvisor cost", href: "/quickbooks/proadvisor-cost/", body: "What a QuickBooks ProAdvisor costs and what drives the fee &mdash; hourly vs fixed-fee, the factors that move price, and the canonical ranges by engagement type." },
     { title: "QuickBooks Setup", href: "/quickbooks/setup/", body: "The one-time fixed-fee setup engagement that consulting typically follows. If you haven&rsquo;t set up QuickBooks correctly yet, start here." },
     { title: "QuickBooks Cleanup", href: "/quickbooks/cleanup/", body: "If the existing QuickBooks file has significant accumulated errors before consulting begins, cleanup typically precedes the consulting retainer." },
     { title: "QuickBooks Payroll", href: "/quickbooks/payroll/", body: "Payroll processing, setup, multi-state, and year-end &mdash; the operational payroll engagement that sits alongside or within the consulting retainer." },

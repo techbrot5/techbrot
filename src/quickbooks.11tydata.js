@@ -53,6 +53,7 @@ module.exports = {
     { num: "06", name: "Platform standards", body: "Every operator runs under TechBrot’s defined quality standard with platform-level review, so the work is consistent regardless of who delivers it." },
   ],
   bookkeepingLinks: [
+    { title: "QuickBooks bookkeeping services", href: "/quickbooks/bookkeeping-services/?intent=bookkeeping", body: "Bookkeeping done inside your own QuickBooks file by a Certified ProAdvisor — bank-feed categorization, statement-tied reconciliations, and the monthly close, QB-native. You keep ownership of the file." },
     { title: "Monthly bookkeeping", href: "/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly", body: "Ongoing monthly close inside your QuickBooks file — real reconciliations, financial package by the 15th, named operator." },
     { title: "Bookkeeping cleanup", href: "/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup", body: "Messy or unreconciled books rebuilt to a CPA-ready standard — every account reconciled to source." },
     { title: "Catch-up bookkeeping", href: "/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up", body: "Months or years behind brought current, priced per month of backlog, then transitioned to monthly." },

@@ -12,9 +12,10 @@
 {%- else %}
 <meta name="robots" content="noindex, nofollow">
 {%- endif %}
-<link rel="canonical" href="{{ site.url }}{{ page.url }}">
-<link rel="alternate" hreflang="en-US" href="{{ site.url }}{{ page.url }}">
-<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url }}">
+{%- set canon = canonicalUrl or page.url %}
+<link rel="canonical" href="{{ site.url }}{{ canon }}">
+<link rel="alternate" hreflang="en-US" href="{{ site.url }}{{ canon }}">
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ canon }}">
 <meta name="format-detection" content="telephone=yes">
 <meta name="theme-color" content="#FBFCFE">
 <meta name="trademark" content="QuickBooks is a registered trademark of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc.">

@@ -45,8 +45,7 @@ module.exports = {
     { name: "No review, so errors surface at tax time", body: "Bookkeeping with no credentialed review can look cheap all year and then cost you at year-end &mdash; a tax preparer charging to untangle miscategorized accounts, or a missed reconciliation that hides a real problem. The savings were borrowed from accuracy, and the interest comes due when the numbers matter most." },
   ],
   related: [
-    { title: "Accounting &amp; bookkeeping pricing", href: "/accounting/pricing/", body: "The full breakdown of how our bookkeeping and accounting engagements are scoped and priced &mdash; the monthly, cleanup, and setup ranges from this guide, with what each tier includes." },
-    { title: "Pricing overview", href: "/pricing/", body: "TechBrot&rsquo;s pricing across services in one place, with the same fixed-fee, scoped-in-writing approach &mdash; so you can see where bookkeeping sits alongside the rest of what we do." },
+    { title: "Pricing overview", href: "/pricing/", body: "TechBrot&rsquo;s pricing across services in one place, with the same fixed-fee, scoped-in-writing approach &mdash; the monthly, cleanup, and setup ranges from this guide alongside the rest of what we do." },
     { title: "Outsourced bookkeeping", href: "/accounting/outsourced-bookkeeping/", body: "What ongoing outsourced bookkeeping actually covers month to month &mdash; the recurring service a monthly retainer pays for, run by a Certified ProAdvisor team." },
   ],
   operatorSpec: [
