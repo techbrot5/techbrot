@@ -21,18 +21,14 @@
   "inBrief": {
     "text": "The <strong>TechBrot glossary</strong> defines the accounting and QuickBooks terms that come up in real engagements &mdash; bookkeeping, cleanup, reconciliation, payroll, sales tax, and advisory. Each entry is a genuine, citable definition with the context that makes it useful and links to where the term applies in the work. New terms are added regularly.",
     "source": "Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc."
-  },
-  "ctaBand": {
-    "dark": true,
-    "eyebrow": "Speak to an expert",
-    "heading": "Have a question these pages don&rsquo;t answer?",
-    "lede": "Talk to a Certified ProAdvisor — a real conversation, not a sales call.",
-    "actions": [
-      { "label": "Book the discovery call", "href": "/contact/", "class": "btn--primary" }
-    ]
   }
 }
 ---
+{# CTA NOTE: B3 is a HUB family → DARK final-CTA, consistent with the other hub
+   families (Home/silo-hubs/research). The t-guide layout hardcodes a LIGHT cta band
+   and ignores ctaBand.dark, so the frontmatter ctaBand is dropped and the DARK band
+   is authored directly in the body below using the existing section--cta-band--dark
+   component (section--tier-hub). No shared layout was modified. #}
 
 {# KITCHEN-SINK B3 · Light listing hub — UNION of all FOUR sub-shapes:
    glossary index (related-grid term list), blog index (review-card post list),
@@ -583,5 +579,21 @@
       </div>
     </div>
     <p class="meta-reviewed"><span>Maintained by the Certified QuickBooks ProAdvisor team</span><span>Updated: 2026-06-19</span></p>
+  </div>
+</section>
+
+{# ===== FINAL CTA — DARK (hub-family convention; authored in body, see CTA NOTE in head) ===== #}
+<section class="section section--cta-band section--cta-band--dark section--tier-hub" id="kitchen-sink-b3-listing-hub-cta">
+  <div class="cta-band__motif" aria-hidden="true">{% include "partials/motif-align-single.svg" %}</div>
+  <div class="container">
+    <div class="final-cta">
+      <p class="section__eyebrow">Speak to an expert</p>
+      <h2 class="final-cta__heading">Have a question these pages don&rsquo;t answer?</h2>
+      <p class="final-cta__lede">Talk to a Certified ProAdvisor &mdash; a real conversation, not a sales call.</p>
+      <div class="final-cta__actions">
+        <a class="btn btn--primary" href="/contact/">Book the discovery call</a>
+      </div>
+      <p class="final-cta__disclaimer">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
+    </div>
   </div>
 </section>
