@@ -66,8 +66,9 @@ module.exports = {
     { cap: "CPA vs EA", who: "two tax professionals, compared", live: "Published" },
     { cap: "Bookkeeping firm vs freelancer", who: "cost vs continuity in who keeps your books", live: "Published" },
     { cap: "In-house vs Outsourced", who: "hire an employee or outsource the function", live: "Published" },
-    { cap: "TechBrot vs Bookkeeper360", who: "remote subscriptions vs operator networks", live: "In progress" },
-    { cap: "TechBrot vs Xendoo", who: "comparing bundled service stacks", live: "In progress" },
+    { cap: "TechBrot vs Bookkeeper360", who: "remote subscriptions vs operator networks", live: "Published" },
+    { cap: "TechBrot vs Xendoo", who: "comparing bundled service stacks", live: "Published" },
+    { cap: "Local CPA vs Online bookkeeping", who: "in-person CPA vs remote QuickBooks bookkeeping (often both)", live: "Published" },
   ],
 
   // 5 PROVIDER H3s — buyer-cards. H3s VERBATIM from contract. `href` set ONLY for the
@@ -76,12 +77,11 @@ module.exports = {
     { name: "TechBrot vs Bench Accounting", href: "/vs/techbrot-vs-bench/", status: "Published &middot; with status disclosure", body: "Bench ran a centralized remote-bookkeeping subscription before its <strong>December 2024 Chapter 7 bankruptcy</strong> and subsequent acquisition by Employer.com. The page covers the migration path off Bench, the full status disclosure, and how TechBrot&rsquo;s QuickBooks-native, named-operator model is structured differently.", cta: "Read TechBrot vs Bench &rarr;" },
     { name: "TechBrot vs Pilot", href: "/vs/techbrot-vs-pilot/", status: "Published", body: "Pilot serves venture-backed startups with fundraising-specific accounting, GAAP financials, and centralized team support &mdash; a different buyer and a different model. The honest read: if you&rsquo;re raising and need audit-ready financials, Pilot may fit better, and the page says so.", cta: "Read TechBrot vs Pilot &rarr;" },
     { name: "TechBrot vs QuickBooks Live", href: "/vs/techbrot-vs-quickbooks-live/", status: "Published", body: "QuickBooks Live is Intuit&rsquo;s own bookkeeping service inside QuickBooks Online &mdash; narrower scope, more scripted operations, and vendor-aligned by design. The page compares independence, scope, and pricing structure for QBO users deciding between Intuit&rsquo;s service and independent ProAdvisors.", cta: "Read TechBrot vs QuickBooks Live &rarr;" },
-    { name: "TechBrot vs Bookkeeper360", href: null, status: "In progress", body: "Bookkeeper360 offers tiered remote bookkeeping with payroll, tax, and HR add-ons. The comparison &mdash; in progress &mdash; will cover service model, pricing tiers, the add-on stack, and operator accountability for owners weighing a remote subscription against an operator network.", cta: null },
+    { name: "TechBrot vs Bookkeeper360", href: "/vs/techbrot-vs-bookkeeper360/", status: "Published", body: "Bookkeeper360 offers tiered remote bookkeeping with payroll, tax, HR, and CFO add-ons, supporting QuickBooks Online and Xero. The page weighs a bundled tiered subscription and add-on stack against deep bookkeeping in your own QuickBooks file with a named operator &mdash; and names when Bookkeeper360 fits better.", cta: "Read TechBrot vs Bookkeeper360 &rarr;" },
     { name: "TechBrot vs 1-800Accountant", href: "/vs/techbrot-vs-1-800-accountant/", status: "Published", body: "1-800Accountant bundles bookkeeping, tax filing, and advisory in one national subscription. The page compares bundled-everything against deep bookkeeping in your own QuickBooks file with a named operator &mdash; and names when the bundle is the better call.", cta: "Read TechBrot vs 1-800Accountant &rarr;" },
     { name: "TechBrot vs Bookkeeper.com", href: "/vs/techbrot-vs-bookkeeper-com/", status: "Published", body: "Bookkeeper.com is a national online service bundling bookkeeping, payroll, and tax. One of the closer matchups in the library &mdash; the page weighs breadth-and-bundling against depth-in-your-own-file with a dedicated ProAdvisor.", cta: "Read TechBrot vs Bookkeeper.com &rarr;" },
     { name: "Bench vs QuickBooks Live", href: "/vs/bench-vs-quickbooks-live/", status: "Published &middot; neutral, two competitors", body: "A neutral read on two competitors &mdash; Bench&rsquo;s (now-shut-down) proprietary model vs Intuit&rsquo;s in-QBO assisted service &mdash; for owners evaluating both, including former Bench customers, plus where an independent firm fits as the third option.", cta: "Read Bench vs QuickBooks Live &rarr;" },
-    { name: "TechBrot vs Bookkeeper360", href: null, status: "In progress", body: "Bookkeeper360 offers tiered remote bookkeeping with payroll, tax, and HR add-ons. The comparison &mdash; in progress &mdash; will cover service model, pricing tiers, the add-on stack, and operator accountability for owners weighing a remote subscription against an operator network.", cta: null },
-    { name: "TechBrot vs Xendoo", href: null, status: "In progress", body: "Xendoo offers monthly bookkeeping with optional tax filing and CFO services. The comparison &mdash; in progress &mdash; will cover the software approach, QuickBooks compatibility, bundling, and named-operator accountability for owners comparing bundled service stacks.", cta: null },
+    { name: "TechBrot vs Xendoo", href: "/vs/techbrot-vs-xendoo/", status: "Published", body: "Xendoo offers flat monthly plans bundling bookkeeping with optional tax filing and CFO services, on QuickBooks Online and Xero. The page weighs flat-rate bundled books-and-tax against deep bookkeeping in your own QuickBooks file with a named operator &mdash; and names when Xendoo fits better.", cta: "Read TechBrot vs Xendoo &rarr;" },
   ],
 
   // 3 ROLE/STRUCTURE H3s — buyer-cards. H3s VERBATIM from contract. Same href rule.
@@ -91,6 +91,7 @@ module.exports = {
     { name: "CPA vs EA", href: "/vs/cpa-vs-ea/", status: "Published", body: "Certified Public Accountant vs Enrolled Agent &mdash; what each is licensed to do, who&rsquo;s the broader generalist, who&rsquo;s the tax specialist, and which you need. TechBrot is the bookkeeping layer beneath both.", cta: "Read CPA vs EA &rarr;" },
     { name: "Bookkeeping Firm vs Freelancer", href: "/vs/bookkeeping-firm-vs-freelancer/", status: "Published", body: "The cost-vs-continuity trade between a solo freelance bookkeeper and a firm &mdash; single-point-of-failure risk, bench depth, and quality review. We&rsquo;re a firm, and we say when a freelancer fits you better.", cta: "Read Firm vs Freelancer &rarr;" },
     { name: "In-house vs Outsourced Bookkeeping", href: "/vs/in-house-vs-outsourced-bookkeeping/", status: "Published", body: "Hire an employee or outsource? The fully-loaded cost of an in-house bookkeeper vs an outsourced fixed fee, plus the size and complexity thresholds where each wins, and hybrid setups. We&rsquo;re the outsourced option.", cta: "Read In-house vs Outsourced &rarr;" },
+    { name: "Local CPA vs Online Bookkeeping", href: "/vs/local-cpa-vs-online-bookkeeping/", status: "Published", body: "An in-person local CPA who files your taxes vs a remote QuickBooks bookkeeping service that keeps the books deeply and affordably &mdash; and why most businesses use both. TechBrot is the online bookkeeping side; we don&rsquo;t file taxes, your CPA does.", cta: "Read Local CPA vs Online Bookkeeping &rarr;" },
     { name: "Monthly vs Hourly Bookkeeping Pricing", href: null, status: "In progress", body: "Why most professional bookkeepers price monthly, how hourly billing structures actually work, and the trade-offs against fixed-fee scoping. The comparison &mdash; in progress &mdash; will cover scope creep, predictability, and total cost.", cta: null },
   ],
 
@@ -138,6 +139,9 @@ module.exports = {
     { name: "CPA vs EA", url: "https://techbrot.com/vs/cpa-vs-ea/" },
     { name: "Bookkeeping Firm vs Freelancer", url: "https://techbrot.com/vs/bookkeeping-firm-vs-freelancer/" },
     { name: "In-house vs Outsourced Bookkeeping", url: "https://techbrot.com/vs/in-house-vs-outsourced-bookkeeping/" },
+    { name: "TechBrot vs Bookkeeper360", url: "https://techbrot.com/vs/techbrot-vs-bookkeeper360/" },
+    { name: "TechBrot vs Xendoo", url: "https://techbrot.com/vs/techbrot-vs-xendoo/" },
+    { name: "Local CPA vs Online Bookkeeping", url: "https://techbrot.com/vs/local-cpa-vs-online-bookkeeping/" },
   ],
 
   eleventyComputed: {
