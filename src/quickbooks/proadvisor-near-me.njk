@@ -1,0 +1,275 @@
+---json
+{
+  "layout": "layouts/t-bofu.njk",
+  "permalink": "/quickbooks/proadvisor-near-me/",
+  "slug": "qbnearme",
+  "tierClass": "section--tier-bofu",
+  "bodyClass": "page--bofu",
+  "callBar": true,
+  "title": "QuickBooks ProAdvisor Near Me &middot; Remote-First, Every U.S. State &middot; TechBrot",
+  "description": "Looking for a QuickBooks ProAdvisor, bookkeeper, or accountant near you? For cloud QuickBooks work, what matters is a Certified ProAdvisor inside your file — not a desk on your street. TechBrot is an independent, remote-first Certified QuickBooks ProAdvisor firm serving businesses in every U.S. state, with real local tax fluency for New York, California, Texas, Florida & Illinois. Not affiliated with Intuit Inc.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "QuickBooks", "href": "/quickbooks/" },
+    { "name": "ProAdvisor Near Me" }
+  ],
+  "hero": {
+    "eyebrow": "QuickBooks &middot; ProAdvisor near me, answered honestly",
+    "heading": "The best QuickBooks ProAdvisor for you may not be on your street.",
+    "subheading": "When you search &ldquo;QuickBooks ProAdvisor near me,&rdquo; &ldquo;bookkeeper near me,&rdquo; or &ldquo;accountant near me,&rdquo; you&rsquo;re really asking: who can fix my books? For QuickBooks work that question isn&rsquo;t about distance &mdash; the work lives in the cloud, inside your own QuickBooks file. TechBrot is an independent, remote-first Certified QuickBooks ProAdvisor firm. We work in your file, in your timezone, on a fixed fee, for businesses in every U.S. state &mdash; with real local tax fluency for the states we&rsquo;ve built out. We&rsquo;ll be honest about when remote is the better choice and when in-person genuinely fits you better.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks-proadvisor", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ],
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Every U.S. state &middot; remote-first",
+      "Local tax fluency: NY &middot; CA &middot; TX &middot; FL &middot; IL"
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>For cloud QuickBooks work, &ldquo;near me&rdquo; is the wrong question &mdash; the right one is &ldquo;which Certified ProAdvisor will work inside my file.&rdquo;</strong> TechBrot is an independent, remote-first Certified QuickBooks ProAdvisor firm that does the accounting work inside your QuickBooks file &mdash; bookkeeping, cleanup, setup, migration, payroll, sales-tax-ready books, and advisory &mdash; for businesses in <strong>every U.S. state</strong>, with real local tax fluency for the states we&rsquo;ve built dedicated pages for. You get a named ProAdvisor, your own file, your timezone, and a written fixed fee. Pick your state below, or talk to a ProAdvisor. Some businesses still prefer someone in the room &mdash; that&rsquo;s a valid choice, and we&rsquo;ll say so.",
+    "source": "Independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with, endorsed by, or sponsored by Intuit Inc. TechBrot does not file tax returns or represent clients before the IRS; it coordinates with your CPA or EA, who files."
+  },
+  "ctaBand": {
+    "eyebrow": "Wherever your business is",
+    "heading": "Find your ProAdvisor &mdash; not your nearest one, your right one.",
+    "lede": "A free 30-minute discovery call: we review your QuickBooks file and your state&rsquo;s situation, then send a written fixed-fee scope within 3 business days. Independent firm; not Intuit; coordinates with your CPA. Serving businesses in every U.S. state, remotely.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks-proadvisor", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── HONESTY FRAME · the "near me" answer, plainly. Remote-first stated up front; no
+     LocalBusiness claim, no offices, no "serving [city]". Sits directly under the in-brief
+     so the honest thesis is unmissable above the fold. ── #}
+<section class="section section--compact" id="pnm-frame">
+  <div class="container container--narrow">
+    <div class="disclosure">
+      <svg class="disclosure__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#841E1E" stroke-width="1.75" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.3" stroke-linecap="round"/></svg>
+      <div class="disclosure__body"><strong>An honest answer to &ldquo;near me.&rdquo;</strong> TechBrot is a <strong>remote-first</strong> firm. We do not run physical offices in your city, and we will never claim a local storefront we don&rsquo;t have. Our QuickBooks work is done in the cloud, inside your own file. For that work, the ProAdvisor&rsquo;s street address doesn&rsquo;t change the result &mdash; their certification, their reconciliation discipline, and their fluency in your state&rsquo;s taxes do. We serve businesses in every U.S. state on this model.</div>
+    </div>
+  </div>
+</section>
+
+{# ── AI SUMMARY · the "near me" question in five answers. speakable target #pnm-ai-summary. ── #}
+<section class="section" id="pnm-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">&ldquo;A ProAdvisor near me,&rdquo; answered in five questions.</h2>
+    </header>
+    <dl class="ai-summary ai-summary--ruled" id="pnm-ai-summary-list">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
+        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+{# ── WHY "NEAR ME" CHANGED · prose. Why proximity used to matter and why cloud accounting
+     changed it. Honest, non-disparaging. ── #}
+<section class="section section--alt" id="pnm-why">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Why the question changed</p>
+      <h2 class="section__heading">Why &ldquo;near me&rdquo; used to matter &mdash; and why it doesn&rsquo;t for cloud QuickBooks.</h2>
+    </header>
+    <div class="prose">
+      <p>There was a real reason people searched for a bookkeeper or accountant nearby. Before cloud accounting, the books lived in one place: a desktop file on one machine, a filing cabinet, a shoebox of receipts. Working together meant being in the same room, or couriering a backup file across town. Proximity wasn&rsquo;t a preference &mdash; it was a constraint.</p>
+      <p>QuickBooks Online removed that constraint. Your file lives in the cloud, your bank feeds connect directly, your documents attach to transactions, and a Certified ProAdvisor can work inside the exact same file you see &mdash; at the same time, with full audit history. The reconciliation, the cleanup, the month-end close, the migration off Desktop: none of it requires anyone to be physically near your business. It requires someone certified, methodical, and accountable.</p>
+      <p>That shift quietly widened your options. When &ldquo;near me&rdquo; was a hard rule, you were limited to whoever happened to set up shop within driving distance &mdash; their specialties, their capacity, their fee structure, take it or leave it. Remove the distance constraint and you can choose the ProAdvisor who actually fits your situation: the one who knows your industry, your QuickBooks version, and your state&rsquo;s tax rules. The best fit for your business may not be the closest one &mdash; and that&rsquo;s an advantage, not a compromise.</p>
+      <p>We&rsquo;ll be straight about the flip side. Some owners genuinely work better with someone they can sit across from &mdash; a cash-heavy retail shop that wants a bookkeeper to drop in, an owner who simply prefers handing over a physical box of paperwork. That is a completely valid choice, and remote isn&rsquo;t automatically better for everyone. What we&rsquo;re saying is narrower and honest: for the cloud QuickBooks work we do, distance is no longer what determines quality.</p>
+    </div>
+  </div>
+</section>
+
+{# ── WHAT YOU ACTUALLY GET · grid-3 buyer-cards. The concrete remote-first value. ── #}
+<section class="section" id="pnm-get">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What you actually get</p>
+      <h2 class="section__heading">What a remote ProAdvisor relationship looks like.</h2>
+      <p class="section__lede">Not a faceless queue and not a once-a-year drop-in. A named Certified ProAdvisor working in your own file, on your schedule, for a fee you agree to in writing first.</p>
+    </header>
+    <div class="grid-3">
+      {%- for g in getCards %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ g.tag | safe }}</p>
+        <h3 class="buyer-card__heading">{{ g.title | safe }}</h3>
+        <p class="buyer-card__body">{{ g.body | safe }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── LOCAL TAX · prose. How local tax fluency is handled remotely — routes to the state layer. ── #}
+<section class="section section--alt" id="pnm-tax">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Local where it counts</p>
+      <h2 class="section__heading">&ldquo;But will a remote firm know my state&rsquo;s taxes?&rdquo;</h2>
+    </header>
+    <div class="prose">
+      <p>This is the fair objection to a remote firm, and we take it seriously. Sales tax, state filing thresholds, nexus rules, and state-specific quirks are genuinely local &mdash; and getting them wrong is expensive. &ldquo;We serve everyone&rdquo; is meaningless if it means &ldquo;we&rsquo;re shallow everywhere.&rdquo;</p>
+      <p>So we&rsquo;re precise about it. We keep your QuickBooks books sales-tax-ready and state-correct for businesses in every state. For the states where we&rsquo;ve done the deepest work, we maintain dedicated pages built around what is actually different there &mdash; the local taxes, the filing realities, the industries. Below, route straight to your state, or tell us where you are if we haven&rsquo;t built your state page yet &mdash; we still serve you remotely.</p>
+      <p>One honest boundary: TechBrot does the bookkeeping and operational accounting and keeps your books filing-ready. We do not file income-tax returns and we don&rsquo;t represent you before the IRS &mdash; that is your CPA&rsquo;s or EA&rsquo;s role, and we coordinate directly with them. <a href="/find-an-accountant/">See how we cover every state <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
+    </div>
+  </div>
+</section>
+
+{# ── STATE ROUTER · the conversion engine. Routes to /find-an-accountant/ + the 5 built
+     state pillars. DISTINCT from the directory hub — this is a focused route-in, not a
+     second directory. ── #}
+<section class="section" id="pnm-states">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Route to your state</p>
+      <h2 class="section__heading">Find a ProAdvisor for your state.</h2>
+      <p class="section__lede">These are the states with dedicated, locally-built pages. Don&rsquo;t see yours? We still serve you remotely &mdash; head to the directory and tell us where you are.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in statePillars %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">{{ s.tag | safe }}</p>
+        <h3 class="buyer-card__heading"><a href="{{ s.href }}">{{ s.name | safe }}</a></h3>
+        <p class="buyer-card__body">{{ s.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ s.href }}">{{ s.name | safe }} ProAdvisors <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      {%- endfor %}
+      <article class="buyer-card">
+        <p class="buyer-card__opener">Every other state</p>
+        <h3 class="buyer-card__heading"><a href="/find-an-accountant/">Served remotely &mdash; tell us where you are</a></h3>
+        <p class="buyer-card__body">We serve businesses in every U.S. state remotely on QuickBooks. The directory has the full state router &mdash; pick yours, and a Certified ProAdvisor routes you.</p>
+        <a class="buyer-card__cta" href="/find-an-accountant/">Open the directory <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# ── HOW IT WORKS · the ONE numbered system (process-diagram). How working with a remote
+     ProAdvisor actually goes, step by step. ── #}
+<section class="section section--alt" id="pnm-how">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">How it actually works</p>
+      <h2 class="section__heading">Working with a remote ProAdvisor, start to finish.</h2>
+    </header>
+    <ol class="process-diagram">
+      {%- for p in process %}
+      <li class="process-step">
+        <p class="process-step__number">0{{ loop.index }}</p>
+        <h3 class="process-step__heading">{{ p.name | safe }}</h3>
+        <p class="process-step__body">{{ p.body | safe }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+{# ── CALL conversion (BOFU handoff component) ── #}
+<section class="section section--alt" id="pnm-call">
+  <div class="container">
+    <div class="call-block">
+      <div class="call-block__main">
+        <p class="section__eyebrow">Talk to a ProAdvisor</p>
+        <h2 class="call-block__heading">There&rsquo;s a Certified ProAdvisor for your business &mdash; wherever you are.</h2>
+        <p class="call-block__lede">No form, no sales script. You speak with a Certified QuickBooks ProAdvisor who works in files like yours, in your state &mdash; remotely, in your own QuickBooks &mdash; and you get a written fixed-fee scope within 3 business days.</p>
+        <a class="call-block__cta" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">
+          {% include "icons/phone.svg" %}
+          <span class="call-block__num">{{ site.phone.display }}<span class="call-block__sub">Mon&ndash;Fri &middot; we reply the same business day</span></span>
+        </a>
+        <ul class="call-block__trust">
+          <li>Certified ProAdvisor</li>
+          <li>Every state &middot; remote-first</li>
+          <li>Independent firm</li>
+        </ul>
+        <p class="call-block__alt">Prefer to write it down? <a href="/contact/?intent=quickbooks-proadvisor">Book the discovery call</a> or <a href="/quickbooks/file-review/?intent=file-review">get the free file review</a>.</p>
+      </div>
+      <div class="call-block__aside">
+        <p class="call-block__aside-label">What happens when you call</p>
+        <ol class="call-block__steps">
+          <li><span class="call-block__mark" aria-hidden="true"></span><span><b>You talk to a ProAdvisor</b>A real Certified QuickBooks ProAdvisor &mdash; not a call centre, not an offshore queue.</span></li>
+          <li><span class="call-block__mark" aria-hidden="true"></span><span><b>We look at your situation</b>Your QuickBooks, your state, and what your books actually need.</span></li>
+          <li><span class="call-block__mark call-block__mark--tie" aria-hidden="true"></span><span><b>You get a written scope</b>A fixed fee in writing within 3 business days. Then you decide.</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── FAQ · 6 Q/A; visible faq__list = FAQPage schema (same array). ── #}
+<section class="section" id="pnm-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">&ldquo;Near me&rdquo; questions, answered.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="pnm-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="pnm-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level (no founder name in visible content). ── #}
+<section class="section section--alt" id="pnm-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Remote-first, stated honestly.</h2>
+    </header>
+    <div class="byline-block">
+      <div class="byline-block__mark" aria-hidden="true"></div>
+      <div>
+        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose">
+      <p>This page is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, an independent, remote-first ProAdvisor firm. The remote-first model, the every-state coverage, and the named-ProAdvisor commitment described here reflect current operational standards. TechBrot does not operate physical offices in client cities and makes no local-presence claim; its certifications are publicly verifiable on Intuit&rsquo;s ProAdvisor directory. TechBrot is an independent firm &mdash; not affiliated with, endorsed by, or sponsored by <a href="https://www.intuit.com/" rel="noopener nofollow">Intuit Inc.</a>; it does not file tax returns or represent clients before the IRS, and coordinates with the client&rsquo;s CPA or EA, who files.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-19</span><span>Updated: 2026-06-19</span><span>Reviewed: 2026-06-19 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
+
+{# ── RELATED · grid-2 buyer-cards; where else to go. ── #}
+<section class="section" id="pnm-related">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Where else to go.</h2>
+    </header>
+    <div class="grid-2">
+      {%- for r in related %}
+      <article class="buyer-card">
+        <h3 class="buyer-card__heading"><a href="{{ r.href }}">{{ r.title | safe }}</a></h3>
+        <p class="buyer-card__body">{{ r.body | safe }}</p>
+        <a class="buyer-card__cta" href="{{ r.href }}"{% if r.rel %} rel="{{ r.rel }}"{% endif %}>{{ r.cta | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
