@@ -1,0 +1,230 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/accounting/industries/amazon-sellers/",
+  "slug": "acctind-amazon",
+  "tierClass": "section--tier-guide",
+  "bodyClass": "page--mofu",
+  "callBar": true,
+  "title": "Amazon Seller Accounting &amp; FBA Bookkeeping · TechBrot",
+  "description": "Amazon seller accounting and FBA bookkeeping by Certified QuickBooks ProAdvisors — settlement-report reconciliation, FBA inventory and COGS, reserve balances, and marketplace-facilitator sales tax recorded correctly in your own QuickBooks file.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Accounting", "href": "/accounting/" },
+    { "name": "Industries", "href": "/accounting/industries/" },
+    { "name": "Amazon Sellers" }
+  ],
+  "hero": {
+    "eyebrow": "Industry &middot; Amazon seller accounting",
+    "heading": "Amazon seller accounting that ties the deposit back to the truth.",
+    "subheading": "Amazon never deposits your sales &mdash; it deposits what&rsquo;s left after referral fees, FBA fees, storage, refunds, and reserves. TechBrot&rsquo;s Certified QuickBooks ProAdvisors reconcile every settlement so your gross sales, fee load, FBA inventory, and margins are accurate, and your marketplace-facilitator tax is recorded the right way &mdash; not double-counted, not double-filed. We deliver the books in your own QuickBooks file; your CPA confirms nexus and files. Independent firm, not affiliated with Intuit Inc. or Amazon.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>Amazon seller accounting</strong> is settlement accounting. Every two weeks Amazon pays a single net deposit that bundles gross sales with referral fees, FBA fulfillment and storage fees, refunds, reimbursements, advertising charges, and a moving <strong>reserve balance</strong> &mdash; all of which must be split apart and booked to the right accounts. Layer on <strong>FBA inventory and COGS</strong> sitting commingled across multiple warehouses, multi-marketplace activity, and <strong>marketplace-facilitator sales tax</strong> that Amazon collects and remits but you still have to record correctly, and ordinary bookkeeping breaks. TechBrot&rsquo;s Certified QuickBooks ProAdvisors reconcile each settlement to your own QuickBooks file using A2X-style summarization, track FBA inventory and margin, and keep the records your CPA needs. We do not file your income taxes and we do not make your nexus determination &mdash; that stays with your CPA or the state authority. This page is Amazon-specific; for multi-channel sellers across Shopify, Stripe, and more, see <a href=\"/accounting/industries/ecommerce/\">e-commerce accounting</a>.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. or Amazon.com, Inc. Bookkeeping and ProAdvisor scope; does not file income taxes and does not make nexus determinations &mdash; coordinates with your CPA, EA, or state authority. Marketplace-facilitator framing reflects state laws under which Amazon collects and remits sales tax on third-party sales in most states."
+  },
+  "ctaBand": {
+    "eyebrow": "Ready when you are",
+    "heading": "Get Amazon books you can actually trust.",
+    "lede": "Book a discovery call. A Certified ProAdvisor reviews your Seller Central settlements, your FBA inventory, and where the books are breaking, flags any margin or sales-tax recording problem, and sends a written fixed-fee scope within 3 business days. No pitch. Independent firm &mdash; does not file income taxes or make nexus calls; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── DEFINITION · real H2 carrying the Amazon-seller definition prose + settlement-decomposition vs-table (no extra heading, T3 no collapse). (H2: Amazon seller accounting, plainly.) ── #}
+<section class="section" id="amz-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In plain terms</p>
+      <h2 class="section__heading">Amazon seller accounting, plainly.</h2>
+    </header>
+    <div class="prose">
+      {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+    <div class="vs-scroll">
+      <table class="vs-table">
+        <caption class="sr-only">What a single Amazon settlement deposit actually contains, and where each piece belongs in QuickBooks</caption>
+        <thead><tr><th scope="col">Inside one settlement</th><th scope="col">Netted &mdash; what hits your bank</th><th scope="col" class="vs-table__us">Decomposed &mdash; how we book it</th></tr></thead>
+        <tbody>
+          {%- for r in settlementRows %}
+          <tr><th scope="row">{{ r.line | safe }}</th><td><span class="vs-table__concede">{{ r.net | safe }}</span></td><td class="vs-table__us"><span class="vs-table__concede">{{ r.clean | safe }}</span></td></tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{# ── AI SUMMARY · five-question block. NON-heading questions. (H2: Amazon seller accounting, in five questions.) ── #}
+<section class="section section--alt" id="amz-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Amazon seller accounting, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <p class="ai-summary__question">{{ item.q | safe }}</p>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── CHALLENGES · three places Amazon sellers lose the numbers (grid-3 buyer-cards). (H2 + 3 H3s) ── #}
+<section class="section" id="amz-challenges">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Why Amazon books break</p>
+      <h2 class="section__heading">Three places Amazon sellers lose the numbers.</h2>
+      <p class="section__lede">Almost every messy Amazon file fails in the same three areas. Knowing which one you&rsquo;re in tells us where to start.</p>
+    </header>
+    <div class="grid-3">
+      {%- for c in challenges %}
+      <div class="buyer-card">
+        <p class="buyer-card__opener">{{ c.signal | safe }}</p>
+        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
+        <p class="buyer-card__body">{{ c.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── WHAT WE HANDLE · the six services (grid-3 stack-8). (H2 + 6 H3s) ── #}
+<section class="section section--alt" id="amz-handle">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What TechBrot handles</p>
+      <h2 class="section__heading">Amazon seller accounting, done by an expert.</h2>
+      <p class="section__lede">Every engagement is scoped to your settlement volume, marketplaces, and FBA footprint, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in handle %}
+      <div class="stack-8">
+        <h3><a href="{{ s.href }}">{{ s.title | safe }}</a></h3>
+        <p class="prose">{{ s.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── INTEGRATIONS · what we reconcile from Seller Central into QuickBooks (checks-list). (H2: From Seller Central into QuickBooks.) ── #}
+<section class="section" id="amz-integrations">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">What we reconcile</p>
+      <h2 class="section__heading">From Seller Central into QuickBooks.</h2>
+    </header>
+    <ul class="checks-list">
+      {%- for t in integrations %}<li>{{ t | safe }}</li>{%- endfor %}
+    </ul>
+    <p class="prose">{{ integrationsNote | safe }}</p>
+  </div>
+</section>
+
+{# ── PROCESS · four-phase engagement rhythm (process-diagram). (H2 + 4 H3s) ── #}
+<section class="section section--alt" id="amz-process">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">How engagements work</p>
+      <h2 class="section__heading">From netted settlements to clean margins.</h2>
+      <p class="section__lede">Every Amazon engagement follows the same four-phase rhythm &mdash; books accurate first, profit visibility second, advisory third.</p>
+    </header>
+    <ol class="process-diagram">
+      {%- for s in process %}
+      <li class="process-step">
+        <p class="process-step__number">{{ s.num | safe }}</p>
+        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
+        <p class="process-step__body">{{ s.body | safe }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+{# ── ADVISORY · standing brand line carried as section prose. (H2: Clean books are the start. Decisions are the point.) ── #}
+<section class="section" id="amz-advisory">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Beyond the books</p>
+      <h2 class="section__heading">Clean books are the start. Decisions are the point.</h2>
+    </header>
+    <div class="prose">
+      {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+    <div class="hero__actions">
+      <a class="btn btn--primary btn--lg" href="/contact/?intent=accounting">Book the discovery call</a>
+    </div>
+  </div>
+</section>
+
+{# ── FAQ · distinct Amazon Q/A; visible faq__list = FAQPage schema (same array, NO dedup). (H2: Amazon seller accounting questions.) ── #}
+<section class="section section--alt" id="amz-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">Amazon seller accounting questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="amz-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="amz-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level, no founder name (trust-row + meta-reviewed). (H2: Reviewed by the ProAdvisor team.) ── #}
+<section class="section" id="amz-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
+    </header>
+    <div class="prose">
+      <p>This page reflects how TechBrot actually handles Amazon seller engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on settlement-report reconciliation, FBA inventory and COGS, reserve handling, and marketplace-facilitator sales-tax recording. Where our approach or scope changes, this page is updated. TechBrot delivers the books and keeps the records your CPA needs; your CPA confirms nexus and files. Not affiliated with Intuit Inc. or Amazon.com, Inc.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in reviewSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-19</span><span>Updated: 2026-06-19</span><span>Reviewed: 2026-06-19 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
+
+{# ── RELATED · services & industries (stack-8). (H2 + 4 H3s) ── #}
+<section class="section section--alt" id="amz-related">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Related services &amp; industries.</h2>
+    </header>
+    {%- for r in related %}
+    <div class="stack-8">
+      <h3><a href="{{ r.href }}">{{ r.title | safe }}</a></h3>
+      <p class="prose">{{ r.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>

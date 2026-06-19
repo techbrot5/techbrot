@@ -52,6 +52,12 @@ module.exports = {
     { dim: "Auto repair", turns: "Parts, labor &amp; RO margin", page: "Auto repair", href: "/accounting/industries/auto-repair/" },
     { dim: "Fitness &amp; wellness", turns: "Memberships &amp; deferred revenue", page: "Fitness", href: "/accounting/industries/fitness/" },
     { dim: "Landscaping", turns: "Crew &amp; equipment job costing", page: "Landscaping", href: "/accounting/industries/landscaping/" },
+    { dim: "Property management", turns: "Trust/deposit ledgers &amp; owner statements", page: "Property management", href: "/accounting/industries/property-management/" },
+    { dim: "Short-term rentals", turns: "Per-listing P&amp;L &amp; platform payouts", page: "Short-term rentals", href: "/accounting/industries/short-term-rentals/" },
+    { dim: "Amazon sellers", turns: "Settlement reconciliation &amp; FBA COGS", page: "Amazon sellers", href: "/accounting/industries/amazon-sellers/" },
+    { dim: "Shopify sellers", turns: "Payout reconciliation &amp; sales tax", page: "Shopify sellers", href: "/accounting/industries/shopify-sellers/" },
+    { dim: "Law firm trust / IOLTA", turns: "Three-way trust reconciliation", page: "Law firm trust accounting", href: "/accounting/industries/law-firm-trust-accounting/" },
+    { dim: "Specialty trades", turns: "Per-ticket margin &amp; service agreements", page: "Specialty trades", href: "/accounting/industries/specialty-trades/" },
   ],
   reviewSpec: [
     { value: "Certifications", label: "Active Intuit ProAdvisor &mdash; QBO L2, Desktop, Enterprise, Payroll · verifiable on Intuit&rsquo;s directory" },

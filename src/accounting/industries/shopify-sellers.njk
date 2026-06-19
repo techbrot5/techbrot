@@ -1,0 +1,225 @@
+---json
+{
+  "layout": "layouts/t-mofu.njk",
+  "permalink": "/accounting/industries/shopify-sellers/",
+  "slug": "acctind-shopify",
+  "tierClass": "section--tier-guide",
+  "bodyClass": "page--mofu",
+  "callBar": true,
+  "title": "Shopify Accounting &amp; QuickBooks Bookkeeping for Sellers · TechBrot",
+  "description": "Shopify accounting and QuickBooks bookkeeping that reconciles Shopify Payments payouts to the penny — gross order value vs net payout, processing fees, refunds, chargebacks, gift-card liability, and multi-channel sales-tax. By Certified ProAdvisors.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Accounting", "href": "/accounting/" },
+    { "name": "Industries", "href": "/accounting/industries/" },
+    { "name": "Shopify Sellers" }
+  ],
+  "hero": {
+    "eyebrow": "Industry &middot; Shopify accounting",
+    "heading": "Shopify accounting that reconciles the payout, not the screen.",
+    "subheading": "Your Shopify dashboard shows gross sales. Your bank shows a smaller, irregular Shopify Payments deposit &mdash; net of processing fees, refunds, chargebacks, and held funds. TechBrot&rsquo;s Certified QuickBooks ProAdvisors reconcile gross order value to net payout for every deposit, book gift-card and sales-tax liability where they belong, and tie in Shop Pay, PayPal, and your POS. We keep the records and the by-state numbers your CPA needs; your CPA confirms nexus and files. Independent firm, not affiliated with Intuit Inc. or Shopify Inc."
+  },
+  "inBrief": {
+    "text": "<strong>Shopify accounting</strong> has one problem most bookkeepers miss: the number in your Shopify admin is not the number that hits your bank. A single <a href=\"/accounting/bookkeeping/\">Shopify Payments payout</a> nets processing fees, refunds, chargebacks, and reserves against gross sales, while collected sales tax and unredeemed gift cards are liabilities &mdash; not revenue &mdash; that the deposit hides. TechBrot&rsquo;s Certified QuickBooks ProAdvisors reconcile gross order value to each net payout, post summarized journal entries from Shopify into your own QuickBooks file, fold in Shop Pay, PayPal, and POS, and keep clean by-state sales-tax records. Because Shopify is your own store &mdash; not a marketplace facilitator &mdash; you generally remit your own sales tax; we keep the records and reconcile what Shopify Tax calculates, and your CPA or state authority determines nexus, registration, and filing.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. or Shopify Inc. Bookkeeping and ProAdvisor scope; does not file the client&rsquo;s sales or income taxes &mdash; nexus, registration, and filing are determined with the client&rsquo;s CPA or state authority. Marketplace-facilitator framing reflects the seller&rsquo;s own Shopify store, where the seller is generally the responsible party."
+  },
+  "ctaBand": {
+    "eyebrow": "Ready when you are",
+    "heading": "Get Shopify books that match the bank.",
+    "lede": "Book a discovery call. A Certified ProAdvisor reviews your Shopify payouts, your other channels, and where the books drift from the deposits, flags any margin or sales-tax exposure, and sends a written fixed-fee scope within 3 business days. No pitch. Independent firm &mdash; does not file your taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{# ── DEFINITION · real H2 carrying the Shopify-accounting definition prose + payout-decomposition vs-table (no extra heading, T3 no collapse). (H2: Shopify accounting, plainly.) ── #}
+<section class="section" id="shop-definition">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">In plain terms</p>
+      <h2 class="section__heading">Shopify accounting, plainly.</h2>
+    </header>
+    <div class="prose">
+      {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+    <div class="vs-scroll">
+      <table class="vs-table">
+        <caption class="sr-only">What a single Shopify Payments payout actually contains, and where each piece belongs in QuickBooks</caption>
+        <thead><tr><th scope="col">In one Shopify payout</th><th scope="col">On the deposit &mdash; what you see</th><th scope="col" class="vs-table__us">Reconciled &mdash; how we book it</th></tr></thead>
+        <tbody>
+          {%- for r in payoutRows %}
+          <tr><th scope="row">{{ r.line | safe }}</th><td><span class="vs-table__concede">{{ r.net | safe }}</span></td><td class="vs-table__us"><span class="vs-table__concede">{{ r.clean | safe }}</span></td></tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{# ── AI SUMMARY · five-question block. NON-heading questions (ai-summary__question). (H2: Shopify accounting, in five questions.) ── #}
+<section class="section section--alt" id="shop-ai-summary">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
+      <h2 class="section__heading">Shopify accounting, in five questions.</h2>
+    </header>
+    <div class="ai-summary ai-summary--ruled">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <p class="ai-summary__question">{{ item.q | safe }}</p>
+        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── CHALLENGES · three places Shopify books drift (grid-3 buyer-cards). (H2 + 3 H3s) ── #}
+<section class="section" id="shop-challenges">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">Why Shopify books drift</p>
+      <h2 class="section__heading">Three places Shopify books drift from the bank.</h2>
+      <p class="section__lede">Nearly every messy Shopify file fails in the same three areas. Knowing which one you&rsquo;re in tells us where to start.</p>
+    </header>
+    <div class="grid-3">
+      {%- for c in challenges %}
+      <div class="buyer-card">
+        <p class="buyer-card__opener">{{ c.signal | safe }}</p>
+        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
+        <p class="buyer-card__body">{{ c.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── WHAT WE HANDLE · the six services (grid-3 stack-8). (H2 + 6 H3s) ── #}
+<section class="section section--alt" id="shop-handle">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">What TechBrot handles</p>
+      <h2 class="section__heading">Shopify accounting, done by an expert.</h2>
+      <p class="section__lede">Every engagement is scoped to your channels and order volume, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    </header>
+    <div class="grid-3">
+      {%- for s in handle %}
+      <div class="stack-8">
+        <h3><a href="{{ s.href }}">{{ s.title | safe }}</a></h3>
+        <p class="prose">{{ s.body | safe }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── INTEGRATIONS · channels & processors reconciled with QuickBooks (checks-list). (H2: Connected to every way Shopify pays out.) ── #}
+<section class="section" id="shop-integrations">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">What we reconcile</p>
+      <h2 class="section__heading">Connected to every way Shopify pays out.</h2>
+    </header>
+    <ul class="checks-list">
+      {%- for t in integrations %}<li>{{ t | safe }}</li>{%- endfor %}
+    </ul>
+    <p class="prose">{{ integrationsNote | safe }}</p>
+  </div>
+</section>
+
+{# ── PROCESS · four-phase engagement rhythm (process-diagram). (H2 + 4 H3s) ── #}
+<section class="section section--alt" id="shop-process">
+  <div class="container">
+    <header class="section__header">
+      <p class="section__eyebrow">How engagements work</p>
+      <h2 class="section__heading">From netted payouts to matched deposits.</h2>
+      <p class="section__lede">Every Shopify engagement follows the same four-phase rhythm &mdash; payouts reconciled first, profit visibility second, advisory third.</p>
+    </header>
+    <ol class="process-diagram">
+      {%- for s in process %}
+      <li class="process-step">
+        <p class="process-step__number">{{ s.num | safe }}</p>
+        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
+        <p class="process-step__body">{{ s.body | safe }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+{# ── ADVISORY · standing brand line carried as section prose. (H2: Clean books are the start. Decisions are the point.) ── #}
+<section class="section" id="shop-advisory">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Beyond the books</p>
+      <h2 class="section__heading">Clean books are the start. Decisions are the point.</h2>
+    </header>
+    <div class="prose">
+      {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+    <div class="hero__actions">
+      <a class="btn btn--primary btn--lg" href="/contact/?intent=accounting">Book the discovery call</a>
+    </div>
+  </div>
+</section>
+
+{# ── FAQ · 6 distinct Q/A; visible faq__list = FAQPage schema (same array, NO dedup). (H2: Shopify accounting questions.) ── #}
+<section class="section section--alt" id="shop-faq">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">FAQ</p>
+      <h2 class="section__heading">Shopify accounting questions.</h2>
+    </header>
+    <div class="faq__list">
+      {%- for item in faq %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="shop-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
+        </h3>
+        <div class="faq__answer" id="shop-faq-a{{ loop.index }}" data-open="false">
+          <p>{{ item.a | safe }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level, no founder name (trust-row + meta-reviewed). (H2: Reviewed by the ProAdvisor team.) ── #}
+<section class="section" id="shop-review">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Page review &amp; standards</p>
+      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
+    </header>
+    <div class="prose">
+      <p>This page reflects how TechBrot actually handles Shopify engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on Shopify Payments payout reconciliation, gift-card and sales-tax liability, and multi-channel revenue. Where our approach or scope changes, this page is updated. TechBrot delivers the books and keeps the by-state records; your CPA or state authority determines nexus, registration, and filing.</p>
+    </div>
+    <div class="trust-row">
+      {%- for r in reviewSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-19</span><span>Updated: 2026-06-19</span><span>Reviewed: 2026-06-19 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
+
+{# ── RELATED · services & industries (stack-8). (H2 + 4 H3s) ── #}
+<section class="section section--alt" id="shop-related">
+  <div class="container container--narrow">
+    <header class="section__header">
+      <p class="section__eyebrow">Related</p>
+      <h2 class="section__heading">Related services &amp; industries.</h2>
+    </header>
+    {%- for r in related %}
+    <div class="stack-8">
+      <h3><a href="{{ r.href }}">{{ r.title | safe }}</a></h3>
+      <p class="prose">{{ r.body | safe }}</p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
