@@ -286,3 +286,46 @@ per-family templates). **~40 components: most ✅ COVERED; gap list below.**
 **No src edits this turn** (audit only). Tasks: design-source read ✓, site inventory ✓, coverage map ✓. **STOP / PAUSE for founder review of
 the coverage map + gap list → founder closes gaps in Claude Design + settles the foundation palette → THEN the CSS rebuild from a complete set.**
 **COUNT:** total live = 581 (unchanged) · pages added = none · src files changed = 0 · deliverable = coverage map + gap list (above).
+
+---
+
+## Turn — 2026-06-20 · PURGE the superseded cold-cobalt v1 design (founder directive) · commit `182e2d9` (isolated, revertable)
+**Directive:** founder settled the Finding-1 contradiction in favour of WARM PETROL (HANDOFF-MANIFEST + repo tokens govern) and ordered
+the dead cold-cobalt v1 design DELETED so nothing can read it again. Isolated revertable commit; freeze intact; prove grep=0 cold hex / Geist Mono.
+
+**🛑 CRITICAL FINDING (escalate before any D1/G1 rebuild):** while scoping the purge I confirmed **EVERY design template — including the
+"LOCKED" ones (Money Page 51 cold-hex hits, State Pillar 34, Legal 29, all Galleries) — is COLD COBALT; zero petrol.** So **"warm petrol"
+exists ONLY as (a) the HANDOFF-MANIFEST text and (b) the repo's re-cut `src/assets/css` tokens.** There are NO warm-petrol design TEMPLATE
+files anywhere. ⇒ "rebuild D1/G1 to the warm-petrol handoff" really means: take the design template's **STRUCTURE/markup** (cold-coloured) and
+apply the repo's **petrol tokens** for colour. Founder must confirm this is the intended model (or have Claude Design actually recolour the
+templates to petrol) BEFORE the D1/G1 markup rebuild — else rework risk. This is why I PAUSED instead of continuing into D1/G1 this turn.
+
+**PURGED (commit `182e2d9` — 416 files, 46,224 deletions):**
+- `_archive/_design/` — two old skin bundles (techbrot-design-system + techbrot-skin-handoff; pre-elevation, cold/superseded).
+- `_archive/design-capture/` — the cold elevation extract: cobalt `_ds/tokens/*`, `readme.md`, `Foundations & Direction`, `Handoff - Claude Code`
+  (v1), Galleries 01-07, AND the cold-coloured locked templates. **Authoritative copies remain in the live DesignSync project** (rebuild source).
+
+**ACTIVE-TREE cold cleanup (src/ now provably 0 cold hex / 0 Geist Mono):**
+- `base.njk` theme-color `#FBFCFE` (cold) → `#FCFBF8` (warm page bg) — real bug (browser chrome was cold).
+- `01-tokens.css` `--illus-ink #0A0F1C` → `#14110C` (warm; the one cold straggler in the otherwise-warm `--illus-*` group; `--illus-tie` is the only used member).
+- comment hex/font literals reworded in `01-tokens.css` / `00-fonts.css` / `09-extensions.css` (no cold tokens left in comments).
+- `kitchen-sink-e2-glossary.njk` dev SVG recoloured to warm tokens + `Spline Sans Mono`.
+
+**BATTERY decoupled from the deleted archive (last turn I'd pointed the manifest gate at `_archive/_design/.../CLASS-MANIFEST.md`):** the manifest
+gate now derives classes from the **live bundle CSS** (zero archive dependency — this IS the regen-from-live-CSS the RESKIN-HANDOFF flagged).
+`ai-summary--ruled` added to the whitelist (sitewide modifier, 385 pages; base `.ai-summary` styles it; the old static 208-manifest had masked it).
+
+**VERIFICATION / PROOF:** clean build GREEN (611 pages). Battery **GREEN** (exit 0): css-drift GREEN, css-bytes 92,142B/102,400B, manifest
+`live-bundle(370)∪whitelist` GREEN, equity/faq/variety/fidelity all GREEN. **`git grep` cold-cobalt hex + Geist Mono in `src/` = 0** (proven).
+Remaining "cobalt"/"Ledger Ink" matches tree-wide = benign build-lineage CODE COMMENTS (e.g. `// migrated from the cobalt-era page`) + historical
+docs/scripts (ARCHITECTURE-TRUTH, BUILD-TRACKER, `_archive/reports/*`, recut_diagrams.py) — **not hex, not Geist Mono, not design definitions**;
+left as accurate history (offer to scrub the word too if founder wants absolute zero).
+
+**CONFIRM (founder's ask):** after the purge, the ONLY design system in the repo **build path (src/) + build output** is the warm-petrol handoff —
+nothing cold survives in the active system, css-drift GREEN, nothing to contradict it. ✅
+
+**FREEZE:** intact — no URL/copy/heading/FAQ/speakable/hierarchy/schema touched (only a dev-page SVG recolour + comments + tokens + theme-color).
+
+**⛔ PAUSE for founder judgment** (per directive) BEFORE the D1/G1 component-markup rebuild — and specifically to settle the CRITICAL FINDING
+(templates are cold; rebuild = structure + petrol tokens — confirm, or have Design recolour the templates). **COUNT:** total live = 581 (unchanged)
+· pages added = none · files deleted = 410 design files + 6 src/tooling edits · commit `182e2d9` (revert = full restore).
