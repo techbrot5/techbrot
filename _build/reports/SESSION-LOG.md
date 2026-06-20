@@ -329,3 +329,33 @@ nothing cold survives in the active system, css-drift GREEN, nothing to contradi
 **⛔ PAUSE for founder judgment** (per directive) BEFORE the D1/G1 component-markup rebuild — and specifically to settle the CRITICAL FINDING
 (templates are cold; rebuild = structure + petrol tokens — confirm, or have Design recolour the templates). **COUNT:** total live = 581 (unchanged)
 · pages added = none · files deleted = 410 design files + 6 src/tooling edits · commit `182e2d9` (revert = full restore).
+
+---
+
+## Turn — 2026-06-20 · D1 rebuild model CONFIRMED + read LIVE D1 template → DELTA MAP (freeze-conflicts flagged) · no src edits
+**Founder confirmed:** rebuild model = cold template structure + petrol tokens. Began the D1 rebuild by pulling the LIVE D1 template
+(`QuickBooks Cleanup - Money Page.dc.html`) from DesignSync (local copy was purged).
+
+**🔄 CORRECTION to my two prior findings (both were artifacts of the STALE LOCAL extract — the LIVE template is the truth):**
+1. **The live templates are WARM PETROL, not cold.** Live D1: `body background #FCFBF8`, `::selection #0E4A50`, `Spline Sans Mono`,
+   `.idx__n color #0E4A50`. The cold-cobalt I grepped was the stale `_archive` snapshot (correctly purged). The design source is COHERENT
+   (live templates + manifest + repo tokens all petrol). So "recolour the templates" is NOT needed — they're already petrol.
+2. **`cleanup-timeline` (D1 2nd viz) is SANCTIONED, not Code-invented.** Live template line 326: `data-viz="cleanup-timeline" · FINAL`.
+   My audit ❌ "cleanup-timeline missing / violates one-viz-per-family" was WRONG (stale extract). It stays.
+
+**KEY: the current `cleanup-bookkeeping.njk` (built earlier this session from the dossier concept) already MATCHES the live template
+STRUCTURALLY** — same §-rhythm, dossier ai-summary (§03 deep-petrol), zigzag process + cleanup-timeline (§05), operator (§08),
+dual seam, dark proof-strip + final-CTA. So D1 is a **fidelity-alignment pass, not a from-scratch rebuild.**
+
+**DELTA MAP (current njk → live template) — and 4 deltas where the TEMPLATE CONFLICTS WITH FROZEN CONTENT (freeze wins, founder ruling):**
+- ✅ SAFE presentation deltas (no content touch): hero eyebrow petrol+clay gap-marks · §03 dossier idx exact colours (`#6FD0C8`/`#6FA8A6`
+  on `#0E3A3F`) · exact section-band rhythm (sand `#F7F2E9` on §01/§05/§07/§10). I can apply these freely.
+- ⚠ FREEZE-CONFLICT (need ruling — template is more minimal than our equity content; I will NOT gut content to match a design):
+  (a) **§02 buyer cards + §04 deliverables:** template = icon/number + TITLE ONLY; current carries body text. Trim to template (if body = Code enrichment) or keep (if baseline equity)? 
+  (b) **§06 "What changes":** template = a centred Fraunces CALLOUT statement, NO table; current = the before/after `vs-table`. Is the comparison baseline equity? If yes, table stays (presented in the new style); if enrichment, switch to the callout.
+  (c) **§07 pricing figures:** template shows `$1,400+ / $2,400+ / Custom`; current uses the **canonical Sheet-0 ranges** ($1,500–3,500 / 3,500–8k / 8k–15k+). **Canonical pricing WINS over the template** (frozen #10) — keep current figures, template style.
+  (d) **proof-strip:** template = 4 items, no rating; current = 5 incl. the real `5.0 · 2 verified Clutch reviews`. Keep the real review proof (honesty asset) or match template's 4?
+  (e) extra **§09 "Around the cleanup"** (frozen baseline heading the template omits) — KEEP per freeze.
+
+**No src edits this turn** (the freeze-conflict deltas need rulings before I touch content; I won't gut equity to match a template). G1 (Legal)
+read + fidelity pass queued next. **⛔ PAUSE for founder rulings on (a)–(d).** **COUNT:** total live = 581 · pages added = none · src changed = 0.
