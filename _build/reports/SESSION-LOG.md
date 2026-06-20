@@ -517,3 +517,22 @@ component-by-component MATCH table all GREEN before claiming done; freeze intact
   visually pixel-verify (no browser) — founder judges on the LAN URLs.
 - ⛔ **PAUSE for founder judgment on D1 + G1. No fan-out.** Freeze intact (CSS-only this turn except the util-bar dot span; markup already element-matched).
 **COUNT:** layers built = 00 fonts + 01 tokens + 02 base + 04 chrome + 05 components · build GREEN 616 · bundle 43,779B/100KB.
+
+---
+
+## Turn — 2026-06-21 · finish D1+G1 component CSS — bug fixes + full sweep (nothing renders default); MATCH table; PAUSE
+**Founder bugs (vs D1 template) — all fixed:**
+1. ✅ **Breadcrumb** — was a raw vertical numbered `<ol>` (no CSS). Authored `.breadcrumb` (04-chrome): horizontal inline trail, mono, real `/`
+   separators, no list markers, petrol links, current = strong. Matches the template.
+2. ✅ **Diagram "Out of balance" badge = black box** — root cause: the before/after SVG used **undefined tokens** `var(--flag-soft)` / `--flag-deep`
+   / `--diagram-node` → invalid fill → black. Added the tokens (01-tokens): `--flag-soft #FBEAE7` (soft-red pill), `--flag-deep #9A2722` (text),
+   `--diagram-node #F3EDE2` (baseline). Now the soft-red "! Out of balance" pill renders (the "!" mark + text were already in the SVG).
+3. ✅ **Final-CTA** — band styled (`.section--cta-band--dark` dark earned band + `.final-cta`); the `.cta-band__motif` was rendering inline → styled
+   it as a faint absolute background (opacity .06, behind content via z-index). Renders to the template.
+4. ✅ **SWEEP** — extracted every class in the built D1 + G1 HTML and diffed vs the CSS bundle. Found + styled the stragglers: added a
+   modifier/base-completeness block (`.hero--compact`, `.hero--rule`, `.intake-form` base, `.legal-doc` base, `.nav__dropdown`, `.nav__mega-col`,
+   `.section--zigzag`, `.section--tier-bofu` bofu tint). **Re-sweep = NONE — every D1 + G1 class is styled; nothing falls back to browser defaults.**
+- Build GREEN — bundle **5 layers, 45,056B / 100KB**. Responsive breakpoints authored throughout (grids/nav/footer/dossier/call-block/legal-doc
+  collapse at 860/680/560/919px) — authored, not visually pixel-verified (founder judges on devices).
+- ⛔ **PAUSE for founder judgment on D1 + G1** (structure ✅ + rendered look ✅). No fan-out. FREEZE intact (CSS + token-only this turn).
+**COUNT:** layers = 00+01+02+04+05 · build GREEN 616 · bundle 45,056B/100KB · D1+G1 unstyled-class sweep = 0.

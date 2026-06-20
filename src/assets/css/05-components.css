@@ -228,9 +228,11 @@ a:hover .lnk-arrow, .stat-tier__link:hover .lnk-arrow { transform: translateX(3p
 .faq__answer p { font-size: var(--fs-16); line-height: var(--lh-loose); color: var(--text-body); margin: 0 0 var(--space-5); max-width: 70ch; }
 
 /* ===================== FINAL CTA BAND (layout · dark earned moment) ===================== */
-.section--cta-band { background: var(--surface-subtle); }
+.section--cta-band { position: relative; overflow: hidden; background: var(--surface-subtle); }
 .section--cta-band--dark, .section--tier-hub.section--cta-band { background: var(--surface-ink); color: var(--text-on-ink); }
-.final-cta { text-align: center; max-width: 40rem; margin: 0 auto; }
+.cta-band__motif { position: absolute; inset: 0; z-index: 0; opacity: 0.06; pointer-events: none; display: flex; align-items: center; justify-content: flex-end; overflow: hidden; }
+.cta-band__motif svg { height: 130%; width: auto; }
+.final-cta { position: relative; z-index: 1; text-align: center; max-width: 40rem; margin: 0 auto; }
 .final-cta__heading { font-family: var(--font-serif); font-variation-settings: var(--serif-display-axes); font-weight: var(--fw-medium); font-size: clamp(2rem, 1.6rem + 2.4vw, 3.125rem); line-height: var(--lh-tight); letter-spacing: var(--ls-tight); margin: 0 0 var(--space-5); }
 .section--cta-band--dark .final-cta__heading { color: #fff; }
 .final-cta__lede { font-size: var(--fs-18); line-height: var(--lh-base); margin: 0 0 var(--space-8); }
@@ -268,3 +270,13 @@ a:hover .lnk-arrow, .stat-tier__link:hover .lnk-arrow { transform: translateX(3p
 .legal-doc__list { margin: 0 0 var(--space-4); padding-left: var(--space-6); color: var(--text-body); line-height: var(--lh-loose); }
 .legal-doc__list li { margin-block-end: var(--space-2); }
 .legal-doc__footer-line { border-block-start: 1px solid var(--border-hairline); padding-block-start: var(--space-5); font-size: var(--fs-13); color: var(--text-secondary); }
+
+/* ===================== modifier / base completeness (nothing undeclared) ===================== */
+.hero--compact { padding-top: var(--space-10); padding-bottom: var(--space-9); }
+.hero--rule { position: relative; }     /* the gapped-rule cue is the eyebrow mark; no separate top rule */
+.intake-form { display: grid; gap: var(--space-5); }   /* base form (full form on /contact/ extends this) */
+.legal-doc { display: block; }
+.nav__dropdown { position: relative; }
+.nav__mega-col { display: grid; gap: var(--space-1); align-content: start; }
+.section--zigzag { display: block; }
+.section--tier-bofu:not(.section--cta-band) { background: var(--surface-tier-bofu); }
