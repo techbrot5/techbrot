@@ -122,3 +122,30 @@ THEN G1 + D1 proof → ⛔ PAUSE for founder spot-check.
 
 **COUNT:** Phase-0 = Step 1–3 of 6 done · commits `c7fe356` (fonts/tokens) + `96351d6` (chrome) · src files changed this
 turn = 3 (03-conversion, 04-chrome, site-header) · build GREEN 611 pages · CSS 81,394B/83,968B · still not at the G1+D1 pause.
+
+**Founder flag answers (chrome):** (1) `/partners/` for "For Accountants" — CONFIRMED keep. (2) Real-URLs-over-design-shorthands
+— CONFIRMED standing practice (always use the real frozen slug, never the design's 404-ing placeholder). (3) Header 64-vs-74 —
+defer to proof BUT do a side-by-side height comparison vs the design template at G1/D1 and match the *rendered* design; show founder.
+
+---
+
+## Turn — 2026-06-20 · Phase 0 foundation, Step 4 (diagrams + icons) · commit `65c1585`
+**Did:**
+- **4 signature diagram partials re-cut** (`figure-taccount` · `figure-reconcile-flow` · `figure-cleanup-beforeafter` ·
+  `figure-judgment`): every hardcoded diagram color → `var(--diagram-*)` role token (petrol credit / green tie / warm
+  rule+grid+node), `Geist Mono` → `Spline Sans Mono`, swap-friendly `data-viz` + `data-viz-state="FINAL"` on each root
+  `<svg>` (inline partials → `var()` resolves in the live DOM). Clears the cold-hex/Geist-Mono debt from the tokens turn.
+- **Icons:** the existing 8 (`phone·check·chevron-down·arrow-right·menu·minus·star·x`) are already the design style —
+  Lucide-grade **stroke 1.75 + currentColor** — so they auto-inherit the palette. The full 24-icon set is added
+  per-component as needed (lean; not pre-building unused icons).
+- Verified: build GREEN; home renders `data-viz="taccount-tieout"` + `var(--diagram-credit)`; D1 renders its figure;
+  zero `Geist Mono`/cold hex in built figures. Script `_build/scripts/recut_diagrams.py`.
+
+**Flags / notes:** full 24-icon set deferred to per-component (flag if you want all 24 pre-built) · the D1 2nd viz
+`cleanup-timeline` (FINAL in the design) is built when D1 is built (the proof) · "numbers mirrored in real text" honesty
+gate is per-page (each page's caption/table mirrors its figure numbers) — enforced at family build.
+
+**Phase 0 remaining:** Step 5 import real Intuit badges · Step 6 reset gates → THEN G1 + D1 proof → ⛔ PAUSE for spot-check.
+
+**COUNT:** Phase-0 = Step 1–4 of 6 done · commits `c7fe356`+`96351d6`+`65c1585` · src changed this turn = 4 figure SVGs ·
+build GREEN 611 pages · CSS unchanged (SVG only) · still not at the G1+D1 pause; badges + gates next, then proof.
