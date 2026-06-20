@@ -1,5 +1,5 @@
-/* ============================================================================
-   TechBrot · 06 — CONTENT COMPONENTS (cross-family fan-out)
+﻿/* ============================================================================
+   TechBrot Â· 06 â€” CONTENT COMPONENTS (cross-family fan-out)
    Styles the shared components the other 23 families use, to the design system
    (petrol/clay/Spline, consistent with the D1/G1 components in 05). Token-only.
    Each is screenshot-audited per family; refined against its template as needed.
@@ -20,7 +20,7 @@
 
 /* ---- byline-block + meta-reviewed (guide/comparison/glossary/blog/framework) ---- */
 .byline-block { display: flex; align-items: center; gap: var(--space-3); font-size: var(--fs-14); color: var(--text-secondary); }
-.byline-block__mark { width: 28px; height: 28px; flex: none; display: inline-flex; align-items: center; justify-content: center; background: var(--accent); border-radius: var(--radius-sm); color: #fff; }
+.byline-block__mark { width: 28px; height: 28px; flex: none; display: inline-flex; align-items: center; justify-content: center; background: var(--accent); border-radius: var(--radius-sm); color: var(--white); }
 .byline-block__name { font-weight: var(--fw-semibold); color: var(--text-strong); }
 .byline-block__review { color: var(--text-muted); }
 .meta-reviewed { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--text-faint); }
@@ -135,7 +135,7 @@
 .calc__field input, .calc__field select { padding: var(--space-3) var(--space-4); border: 1px solid var(--border-default); border-radius: var(--radius-md); background: var(--surface-page); font-size: var(--fs-15); }
 .calc__result { background: var(--surface-dossier); color: var(--text-on-dossier); border-radius: var(--radius-lg); padding: var(--space-7); display: grid; gap: var(--space-3); align-content: start; }
 .calc__result-label { font-family: var(--font-mono); font-size: var(--fs-11); letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--accent-on-dossier); }
-.calc__result-range { font-family: var(--font-mono); font-size: var(--fs-32); font-weight: var(--fw-medium); color: #fff; }
+.calc__result-range { font-family: var(--font-mono); font-size: var(--fs-32); font-weight: var(--fw-medium); color: var(--white); }
 .calc__result-range--text { font-size: var(--fs-20); }
 .calc__result-unit { font-size: var(--fs-14); color: var(--text-on-dossier-mut); }
 .calc__result-band, .calc__result-why { font-size: var(--fs-14); color: var(--text-on-dossier-mut); }
@@ -151,7 +151,7 @@
 
 /* ---- hub hero (dark) + motif + rule-mark ---- */
 .hero--hub { background: var(--surface-ink); color: var(--text-on-ink); }
-.hero--hub .hero__heading { color: #fff; }
+.hero--hub .hero__heading { color: var(--white); }
 .hero--hub .hero__subheading { color: var(--text-on-ink-mut); }
 .hero--hub .hero__eyebrow { color: var(--accent-on-ink); }
 .hero__motif { position: absolute; inset: 0; opacity: 0.05; pointer-events: none; }
@@ -189,3 +189,18 @@
 .site-header--minimal .site-nav, .site-header--minimal .site-header__cta, .site-header--minimal .nav__hamburger { display: none; }
 .site-footer--minimal .site-footer__grid { display: none; }
 .site-footer__slim { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); justify-content: space-between; }
+
+/* ---- remaining cross-site components (full-battery sweep) ---- */
+.calc__metric { display: flex; justify-content: space-between; gap: var(--space-3); font-size: var(--fs-14); border-top: 1px solid var(--border-on-dossier); padding-top: var(--space-2); }
+.calc__metric-label { color: var(--text-on-dossier-mut); }
+.calc__metric-value { font-family: var(--font-mono); font-weight: var(--fw-medium); color: var(--white); }
+.lead-magnet { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-5); background: var(--surface-ink); color: var(--text-on-ink); border-radius: var(--radius-lg); padding: var(--space-6) var(--space-7); margin: var(--space-8) 0; }
+.lead-magnet__text { flex: 1; min-width: 220px; }
+.lead-magnet__title { font-family: var(--font-serif); font-variation-settings: var(--serif-small-axes); font-weight: var(--fw-semibold); font-size: var(--fs-18); color: var(--white); margin: 0; }
+.lead-magnet__sub { font-size: var(--fs-14); color: var(--text-on-ink-mut); margin: var(--space-1) 0 0; }
+.lead-magnet__cta { flex: none; }
+.call-block__mark { width: 8px; height: 8px; border-radius: var(--radius-pill); background: var(--accent-on-ink); flex: none; margin-top: 6px; }
+.call-block__mark--tie { background: var(--illus-tie); }
+.faq__more { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--fs-14); font-weight: var(--fw-medium); color: var(--accent); margin-top: var(--space-4); background: none; border: 0; cursor: pointer; }
+.num { font-family: var(--font-mono); font-size: var(--fs-13); color: var(--accent); }
+.nf-silos { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--space-4); margin-top: var(--space-6); }

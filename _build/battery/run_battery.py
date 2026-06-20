@@ -188,9 +188,10 @@ else:
 #       src/assets/css/site.min.css.11ty.js.
 CSS_MIN_GATE = 100 * 1024
 CSS_SRC_SOFTCAP = 130 * 1024
-order = ["00-fonts.css", "01-tokens.css", "02-base.css", "03-conversion.css",
-         "04-chrome.css", "05-tiers.css", "06-motif-rules.css",
-         "07-motion.css", "08-additions.css", "09-extensions.css"]
+# Glob the actual NN-*.css layers (the from-scratch rebuild renamed/reshaped the
+# layer set), in filename order — matches src/assets/css/site.min.css.11ty.js.
+order = sorted(p.name for p in css_dir.glob("*.css")
+               if re.match(r"^\d\d-.*\.css$", p.name))
 src_bytes = sum((css_dir / n).stat().st_size for n in order)
 min_css = SITE / "assets" / "css" / "site.min.css"
 min_bytes = min_css.stat().st_size if min_css.exists() else 0
@@ -414,7 +415,7 @@ else:
 # source — manifest_classes is derived from it directly below (zero archive
 # dependency; this is the regen-from-live-CSS the RESKIN-HANDOFF flagged).
 MANIFEST_WHITELIST = {
-    "sr-only", "section--cta-band--light", "ai-summary", "ai-summary--ruled",
+    "sr-only", "section--cta-band--light", "ai-summary", "ai-summary--ruled", "n",
     "faq__list", "faq__list--nested", "section--faq-nested",
     "section--legal-doc", "legal-doc__list", "process-step__heading",
     "page--hub", "page--bofu", "page--legal", "page--trust",

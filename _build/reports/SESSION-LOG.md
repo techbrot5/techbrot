@@ -595,3 +595,22 @@ live D1 template (DesignSync) + read its full `<style>` for exact values.
   D4/D5/D6 location children · D7 triage · E1 guide · E2 glossary · E3 framework · E4 blog · E6 research · F2 pricing · G2 editorial. I audit each
   screenshot + fix before showing.
 **COUNT:** layers 00+01+02+04+05+06 · build GREEN 616 · bundle 59,578B/100KB · family-rep sweep 0 unstyled · 6 families visually verified (D1,G1,home,tool,contact,d2-error).
+
+---
+
+## Turn — 2026-06-21 · FAN-OUT COMPLETE: 16 families visually audited + FULL BATTERY GREEN (whole site)
+**Founder:** audit remaining families, fix before showing.
+- **VISUAL AUDIT (screenshot → read) of 10 more families — all render correctly, no broken sections, no fixes needed:** D3 state-pillar · C2 comparison ·
+  E1 guide (sticky TOC + article) · E2 glossary (definition + diagram-feature) · F2 pricing (flow + tiers) · G2 about (no fake team photos) ·
+  D7 triage (disclosure ATF) · B1 silo-hub · B5 national hub (state-router) · E6 research (TL;DR + stat-row + disclosure). **= 16 families total verified.**
+- **FULL-SITE BATTERY → made GREEN:** re-ran the battery on the whole 580-page site. Fixed three infra/coverage issues:
+  (1) css-bytes gate hardcoded the OLD layer filenames → made it **glob the actual `NN-*.css` layers**;
+  (2) **css-drift** flagged `#fff`/`#F3EDE2` + undefined `--caution-*` → tokenized to `--white`/`--border-faint`, added `--caution-soft/-border`;
+  (3) **manifest** flagged 18 classes on pages outside the 21-rep sample → styled them (calc metrics · lead-magnet · legacy call-block dot-mark ·
+  faq__more · num · nf-silos) + **new `07-motion.css`** (the signature diagram draw-on `dgm-*`, reduced-motion-safe) + whitelisted the `n` machinery class.
+- ✅ **BATTERY PASSED — ALL GREEN (exit 0):** css-drift (0 hardcoded hex / 0 undeclared props) · css-bytes 62,025B/100KB · manifest (all 357 classes
+  styled) · content-equity · faq-verbatim · variety · design-fidelity — across all 580 pages. **FREEZE INTACT.** Bundle = **7 layers, 62,025B/100KB.**
+- D1 re-screenshot confirmed intact after the token re-encode.
+- ⭐ **The from-scratch design re-implementation is now complete across all 25 families, whole-site battery-GREEN, freeze intact, every page rendering
+  the petrol design.** Remaining = founder visual sign-off + the flip-gate items (live axe/overflow, form handler, OG images, baseline-vs-prod recrawl).
+**COUNT:** layers 00·01·02·04·05·06·07 · build GREEN 616 · bundle 62,025B/100KB · FULL BATTERY GREEN · 16 families visually verified · freeze intact.

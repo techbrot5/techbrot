@@ -1,51 +1,22 @@
-/* 07-motion.css — INSTALLED from handoff/04-motion.SKIN.css by _build/extract_css.py (changeover round 10) · R1 re-tokenized. Edit the handoff source, not this file. */
 /* ============================================================================
-   TechBrot · NEW SKIN · 04 — PAGE-LEVEL MOTION (Stage 2B)
-   The premium layer, entirely within the motion tokens. Three parts:
-   scroll entrance · view transitions · hover micro-states.
-   All zeroed by the token-level reduced-motion block. Zero SEO cost:
-   content is always in the DOM; effects are progressive enhancement.
+   TechBrot · 07 — MOTION (signature diagram draw-on)
+   The ledger diagrams draw themselves in on entry (the brand motion moment).
+   In-place / CLS-0. FULLY zeroed under prefers-reduced-motion.
    ============================================================================ */
 
-/* 1 — SCROLL ENTRANCE (CSS-only, scroll-driven animation; no-support = visible) */
-@supports (animation-timeline: view()) {
-  .section .container > * {
-    animation: tb-rise var(--motion-slow) var(--ease-out) both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 32%;
-  }
-}
-@keyframes tb-rise {
-  from { transform: translateY(8px); }
-  to   { transform: none; }
-}
+@keyframes dgmDraw { to { stroke-dashoffset: 0; } }
+@keyframes dgmTick { 0% { stroke-dashoffset: 26; opacity: 0; } 55% { opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 1; } }
+@keyframes dgmFade { from { opacity: 0; } to { opacity: 1; } }
 
-/* 2 — PAGE TRANSITIONS (View Transitions API, progressive enhancement only) */
-/* 2 — PAGE TRANSITIONS (View Transitions API, progressive enhancement only)
-   OPT-IN at the build: uncomment for production after testing in a TOP-LEVEL
-   window. Cross-document transitions fire "Transition was skipped" unhandled
-   rejections in embedded/iframe contexts (observed in the preview harness) —
-   benign, but the build gates on clean consoles, so this ships disabled here.
-@view-transition { navigation: auto; }
-*/
-::view-transition-old(root) { animation: tb-fade-out var(--motion-base) var(--ease-out) both; }
-::view-transition-new(root) { animation: tb-fade-in var(--motion-base) var(--ease-out) both; }
-@keyframes tb-fade-out { to { opacity: 0; } }
-@keyframes tb-fade-in { from { opacity: 0; } }
+.dgm-draw  { stroke-dasharray: 900; stroke-dashoffset: 900; animation: dgmDraw 1.6s var(--ease-out) 0.3s forwards; }
+.dgm-draw2 { stroke-dasharray: 420; stroke-dashoffset: 420; animation: dgmDraw 1.2s var(--ease-out) 0.7s forwards; }
+.dgm-tick  { stroke-dasharray: 26;  stroke-dashoffset: 26;  opacity: 0; animation: dgmTick 0.7s var(--ease-out) 1.5s forwards; }
+.dgm-fade  { animation: dgmFade 0.7s var(--ease-out) both; }
 
-/* 3 — HOVER MICRO-STATES (≤4px, 120–200ms, consistency is the craft)
-   buttons      bg one step (120ms) + 0.5px press-down on :active
-   cards        border edge→faint + shadow-sm + translateY(-2px) (200ms)
-   tiles/pills  bg paper→mist (120ms), no movement
-   table rows   bg→mist (120ms)
-   standalone links  half-rule grows to full + accent (200ms)
-   prose links  hairline→accent underline (120ms)
-   faq/drawer triggers  chevron rotate (200ms)                                */
-.tile, .pill { transition: background var(--motion-fast) var(--ease-out), color var(--motion-fast) var(--ease-out); }
-.tile:hover, .pill:hover { background: var(--color-paper-mist); }
-.card-hover { transition: border-color var(--motion-base) var(--ease-out), box-shadow var(--motion-base) var(--ease-out), transform var(--motion-base) var(--ease-out); }
-.card-hover:hover { border-color: var(--color-ink-faint); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
 @media (prefers-reduced-motion: reduce) {
-  .card-hover:hover { transform: none; }
-  .section .container > * { animation: none; }
+  .dgm-draw, .dgm-draw2, .dgm-tick, .dgm-fade {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+    opacity: 1 !important;
+  }
 }
