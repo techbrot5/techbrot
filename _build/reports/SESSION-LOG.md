@@ -575,3 +575,23 @@ live D1 template (DesignSync) + read its full `<style>` for exact values.
   · **final-CTA = clean dark LEFT-aligned band, Tie-Out corner mark, NO bars ✓** · mobile: nav→hamburger, hero stacks, grids→1col ✓.
 - ⭐ From here I VISUALLY self-audit (screenshot + read) before showing the founder — no more "value-audit only / can't see pixels."
 **COUNT:** headless-chrome render pipeline working · D1 desktop+mobile visually verified · build GREEN 616 · bundle 45,934B.
+
+---
+
+## Turn — 2026-06-21 · FAN-OUT begins: 06-content shared component layer + visual audit of 4 high-variety families
+**Founder:** fan out across families, audit each screenshot before showing.
+- **Sweep first:** 1 representative page per family (21) → diffed classes vs CSS → **105 unstyled component classes** = the fan-out todo.
+- ✅ Authored **`06-content.css`** — the cross-family shared component layer: byline-block/meta-reviewed · review-card · team-card · trust-row ·
+  checks-list · stat-row/stat · call-breakout · disclosure(+warn) · error-badge · fix-steps · process-diagram/process-step · flow · deliver-card ·
+  vs-table marks · diagram-feature/diagram-figure · guide-grid + sticky toc + article · **calc** (form + dark petrol result) · state-router · hub
+  hero(dark)+motif+rule-mark · buyer-card variants · tldr heading · full contact form extras · util/404 hero · phone-cta · section/chrome variants.
+  Token-only, consistent with the 05 D1/G1 components.
+- Build GREEN — bundle **6 layers, 59,578B / 100KB**. **Re-sweep across all 21 family reps = 0 unstyled classes.**
+- **VISUAL AUDIT (screenshot → read) of 4 high-variety families — all render correctly, no broken/unstyled sections:**
+  · **A1 home** (T-account hero figure, proof band, buyer cards, judgment chart, vs-table, review cards, clean LEFT final-CTA) ✅
+  · **E5 tool** (calc island: form + dark-petrol result panel) ✅ · **F1 contact** (full form + "right path" flow, minimal chrome) ✅
+  · **D2 error** (177-page family — error-badge chip, fix-steps, ai-summary, call-block) ✅
+- ⏭ REMAINING to visually audit (same now-styled component library): B1/B2 hubs · B3 listing · B4/B5 location hubs · C1/C2 comparison · D3 state-pillar ·
+  D4/D5/D6 location children · D7 triage · E1 guide · E2 glossary · E3 framework · E4 blog · E6 research · F2 pricing · G2 editorial. I audit each
+  screenshot + fix before showing.
+**COUNT:** layers 00+01+02+04+05+06 · build GREEN 616 · bundle 59,578B/100KB · family-rep sweep 0 unstyled · 6 families visually verified (D1,G1,home,tool,contact,d2-error).
