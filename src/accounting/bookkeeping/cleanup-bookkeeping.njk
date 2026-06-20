@@ -100,18 +100,19 @@
 </section>
 
 {#- §03 — AI SUMMARY / quick-5 (DARK DOSSIER treatment · QAPage) -#}
-<section class="section section--flagship" id="cleanup-bookkeeping-ai-summary">
+<section class="section section--flagship section--dossier-band" id="cleanup-bookkeeping-ai-summary">
   <div class="container">
-    <div class="ai-summary ai-summary--ruled ai-summary--dossier">
-      <div class="idx"><span class="idx__n">§03</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
-      <h2 class="ai-summary--dossier__heading section__heading">Cleanup, in five questions.</h2>
-      <div class="ai-summary--dossier__grid">
-        {%- for item in aiSummary %}
-        <div class="ai-summary__item">
-          <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-          <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-        </div>
-        {%- endfor %}
+    <div class="idx"><span class="idx__n">§03</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
+    <h2 class="section__heading dossier__heading">Cleanup, in five questions.</h2>
+    <div class="ai-summary__grid">
+      {%- for item in aiSummary %}
+      <div class="ai-summary__item">
+        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+        <p class="ai-summary__answer">{{ item.a | safe }}</p>
+      </div>
+      {%- endfor %}
+      <div class="ai-summary__item ai-summary__cta-cell">
+        <a class="btn btn--primary" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click">{% include "icons/phone.svg" %} Speak to a ProAdvisor</a>
       </div>
     </div>
   </div>
@@ -170,6 +171,11 @@
     <div class="callout">
       <h2 class="callout__line section__heading">What changes when the books are clean.</h2>
       <p class="callout__sub">Cleanup unwinds the accumulated <strong>compounding reconciliation drift</strong> &mdash; here is the before and after, dimension by dimension.</p>
+      <div class="callout__dots">
+        <span><span class="callout__dot" aria-hidden="true"></span>CPA-ready output</span>
+        <span><span class="callout__dot" aria-hidden="true"></span>Audit-traceable corrections</span>
+        <span><span class="callout__dot" aria-hidden="true"></span>Fixed fee, no surprises</span>
+      </div>
     </div>
     <div class="vs-scroll">
       <table class="vs-table">

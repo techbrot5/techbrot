@@ -879,6 +879,23 @@ a:is(:hover, :focus-visible) .lnk-arrow { transform: translateX(0.22em); }
 .buyer-card:has(.buyer-card__n) { display: flex; gap: var(--space-3); align-items: flex-start; }
 .buyer-card__n { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--accent); flex: none; padding-top: 3px; }
 .buyer-card__text { display: block; }
+/* §06 — template dot-row under the callout statement (sits above the kept vs-table) */
+.callout__dots { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: var(--space-3) var(--space-7); margin-top: var(--space-6); font-family: var(--font-mono); font-size: var(--fs-14); color: var(--text-secondary); }
+.callout__dots > span { display: inline-flex; align-items: center; gap: var(--space-2); }
+.callout__dot { width: 7px; height: 7px; border-radius: var(--radius-pill); background: var(--accent); flex: none; }
+/* §03 — full-bleed dark-petrol AI-summary band (template: the section IS the panel; + CTA cell) */
+.section--dossier-band { background: var(--surface-dossier); color: var(--text-on-dossier); }
+.section--dossier-band .idx__n { color: var(--accent-on-dossier); }
+.section--dossier-band .idx__t { color: var(--text-on-dossier-faint); }
+.section--dossier-band .idx__rule { background: var(--border-on-dossier); }
+.section--dossier-band .dossier__heading { color: var(--surface-card); max-width: 16ch; margin-bottom: var(--space-10); }
+.section--dossier-band .ai-summary__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--space-12); }
+.section--dossier-band .ai-summary__item { border-top: 1px solid var(--border-on-dossier); padding: var(--space-5) 0; }
+.section--dossier-band .ai-summary__question { font-size: var(--fs-17); font-weight: var(--fw-semibold); color: var(--surface-card); margin: 0 0 var(--space-2); }
+.section--dossier-band .ai-summary__answer { font-size: var(--fs-15); line-height: var(--lh-base); color: var(--text-on-dossier-mut); margin: 0; }
+.section--dossier-band .ai-summary__answer strong { color: var(--text-on-dossier); }
+.section--dossier-band .ai-summary__cta-cell { display: flex; align-items: center; border-top: 1px solid var(--border-on-dossier); }
+@media (max-width: 860px) { .section--dossier-band .ai-summary__grid { grid-template-columns: 1fr; } }
 
 /* ── cleanup-timeline figure (the D1 second viz) ── */
 .cleanup-timeline { margin: var(--space-10) 0 0; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-6) var(--space-7) var(--space-5); }
