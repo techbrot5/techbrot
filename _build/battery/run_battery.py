@@ -409,26 +409,22 @@ else:
 #        classes DEFINED in the bundle (skin + 09-extensions) ∪ the
 #        content-machinery/semantic whitelist. Anything else is an
 #        old-system trace or an undeclared class.
-# NOTE 2026-06-20: the _design/ handoff tree was archived in the pre-impl
-# cleanup, so this manifest now lives under _archive/ (git-tracked, present).
-# The gate's real enforcement is the bundle-CSS class union below; this stale
-# 208-class manifest is a secondary source. REGEN-FROM-LIVE-CSS is a pending
-# RESKIN-HANDOFF prep item (live CSS ships ~318 classes) — separate, founder-gated.
-MANIFEST_MD = (ROOT / "_archive/_design/techbrot-skin-handoff/techbrot-design-system"
-               / "project/handoff/CLASS-MANIFEST.md")
+# NOTE 2026-06-20 (cold-cobalt purge): the static CLASS-MANIFEST.md lived in the
+# now-DELETED cold-design archive. The live bundle CSS is the authoritative class
+# source — manifest_classes is derived from it directly below (zero archive
+# dependency; this is the regen-from-live-CSS the RESKIN-HANDOFF flagged).
 MANIFEST_WHITELIST = {
-    "sr-only", "section--cta-band--light", "ai-summary",
+    "sr-only", "section--cta-band--light", "ai-summary", "ai-summary--ruled",
     "faq__list", "faq__list--nested", "section--faq-nested",
     "section--legal-doc", "legal-doc__list", "process-step__heading",
     "page--hub", "page--bofu", "page--legal", "page--trust",
     "page--partners", "page--mofu", "page--location", "page--industry", "has-call-bar",
 }
-manifest_classes = set(re.findall(r"^([a-z][a-z0-9_-]*)$",
-                                  MANIFEST_MD.read_text(encoding="utf-8"), re.M))
-allowed_classes = manifest_classes | MANIFEST_WHITELIST
+manifest_classes = set()
 for cf in (ROOT / "src/assets/css").glob("*.css"):
-    allowed_classes |= set(re.findall(r"\.([A-Za-z][A-Za-z0-9_-]*)",
-                                      cf.read_text(encoding="utf-8")))
+    manifest_classes |= set(re.findall(r"\.([A-Za-z][A-Za-z0-9_-]*)",
+                                       cf.read_text(encoding="utf-8")))
+allowed_classes = manifest_classes | MANIFEST_WHITELIST
 manifest_strays = {}
 manifest_html = list(SITE.rglob("*.html"))
 for p in manifest_html:
@@ -443,7 +439,7 @@ if manifest_strays:
     for c, pgs in sorted(manifest_strays.items()):
         fail("manifest", f"class outside manifest∪bundle∪whitelist: {c} ({sorted(pgs)[:2]})")
 else:
-    ok("manifest", f"all built classes within manifest({len(manifest_classes)})∪bundle∪whitelist")
+    ok("manifest", f"all built classes within live-bundle({len(manifest_classes)})∪whitelist")
 
 # 11 ── FAQ FLAT (round-11 standing rule, founder 2026-06-13): every FAQ is
 #        the /contact/ shape — flat question → prose answer. No nested
