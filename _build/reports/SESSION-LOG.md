@@ -467,3 +467,18 @@ Elevation), implement the designs.
   eyebrow gap-mark spans, proof-strip, etc.) → (4) fan-out across the 25 families/580 pages → battery GREEN + MATCH tables. Freeze intact throughout.
 - ⏭ **NEXT:** layer 02 (base/reset/type) + 04 (chrome) so a page renders, then the D1 + G1 proofs element-for-element from the templates.
 **COUNT:** total live = building (foundation only) · src added = 01-tokens.css + site.min.css.11ty.js · build GREEN 616.
+
+---
+
+## Turn — 2026-06-21 · rebuild cont: 02 base/typography layer (build GREEN)
+**Founder GO:** base/typography → chrome → D1+G1 element-for-element → PAUSE. HARD RULE re-affirmed: every component's HTML element tree matches
+the template (real eyebrow gap-mark SPANS, proof-strip label + per-item check-svgs — not old markup recolored / not CSS ::before fakes); show the
+component-by-component MATCH table all GREEN before claiming done; freeze intact.
+- ✅ Authored **`02-base.css`** — reset/box-sizing, `body` (petrol page, Geist 17px), links/selection, Fraunces heading base + `.dsp`/`.h2`/`.lede`/
+  `.eyebrow`/`.mono`/`.tnum`, layout primitives (`.container`/`--narrow`/`--wide`, `.section`/`--compact`, `.section__heading`/`__eyebrow`/`__lede`),
+  `.prose` reading column, utilities (`.sr-only`/`.skip-link`), teal `:focus-visible`, reduced-motion. All token-driven (css-drift-safe).
+- Build GREEN — bundle now **2 layers, 8,223B / 100KB**. Base text/headings/containers render with the design; chrome + components still pending.
+- ⏭ NEXT (this rebuild): **chrome layer** (util-bar + sticky header + mid-mega nav + dropdowns + footer + mobile drawer + sticky call-bar) — built
+  element-for-element to the template chrome (from the Legal template's full chrome markup) → then **D1 + G1 proofs element-for-element + the MATCH
+  table** → PAUSE. Not at the D1/G1 pause yet (turn-end, continuing).
+**COUNT:** layers built = 01 tokens + 02 base · build GREEN 616 · src added = 02-base.css.
