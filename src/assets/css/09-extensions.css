@@ -273,13 +273,27 @@
   font-size: var(--fs-13);
 }
 .legal-doc__toc-list a {
+  display: block;
   color: var(--text-secondary);
+  padding: var(--space-2) var(--space-3);
+  border-inline-start: 2px solid var(--border-subtle);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  line-height: var(--lh-snug);
+  transition: color var(--motion-fast) var(--ease-out), border-color var(--motion-fast) var(--ease-out), background var(--motion-fast) var(--ease-out);
 }
 .legal-doc__toc-list a:hover {
   color: var(--color-accent);
+  border-inline-start-color: var(--color-accent);
+  background: var(--surface-subtle);
 }
 .legal-doc__section {
   margin-block-end: var(--space-10);
+  border-block-start: 1px solid var(--border-subtle);
+  padding-block-start: var(--space-7);
+}
+.legal-doc__section:first-of-type {
+  border-block-start: 0;
+  padding-block-start: 0;
 }
 .legal-doc__section-heading {
   font-family: var(--font-serif);
@@ -426,6 +440,10 @@
 .hero__trust { list-style: none; margin: var(--space-6) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); }
 .hero__trust-item { font-size: var(--fs-13); color: var(--text-body); display: inline-flex; align-items: center; gap: var(--space-2); }
 .hero__trust-item::before { content: ""; width: 13px; height: 7px; border-left: 1.75px solid var(--accent); border-bottom: 1.75px solid var(--accent); transform: rotate(-45deg); flex: none; }
+
+/* ---- D1 money-page hero eyebrow: petrol+clay gap-mark (live-template fidelity) ---- */
+.page--bofu .hero__eyebrow { display: inline-flex; align-items: center; gap: var(--space-3); }
+.page--bofu .hero__eyebrow::before { content: ""; flex: none; width: 45px; height: 3px; background: linear-gradient(to right, var(--accent) 0 28px, transparent 28px 32px, var(--cta) 32px 45px); }
 
 /* ---- Signature figure card ---- */
 .hero-figure { margin: 0; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); box-shadow: var(--shadow-feature); padding: var(--space-6) var(--space-6) var(--space-5); }

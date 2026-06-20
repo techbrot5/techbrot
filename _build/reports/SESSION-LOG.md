@@ -366,3 +366,15 @@ canonical pricing, the real Clutch-review proof, the extra "Around the cleanup" 
 fixing a §04/§05 adjacency. Build GREEN (616), battery GREEN (css-drift, css-bytes 92,210B/102,400B). **DEFERRED to next D1 increment** (flagged,
 not done): hero eyebrow petrol+clay gap-marks (layout-level, all t-bofu) + a full band-rhythm sweep + G1 (Legal) fidelity pass.
 **⛔ PAUSE for founder to judge D1 vs the live template.** **COUNT:** total live = 581 · pages added = none · src changed = 3 (tokens, extensions, cleanup njk).
+
+**↳ FOUNDER: "go ahead with the deferred polish + G1" — DONE (same turn):**
+- **D1 hero eyebrow gap-mark** (live-template fidelity): added the petrol+clay double-bar before the bofu hero eyebrow as a CSS `::before`
+  (`linear-gradient(--accent 0-28px / gap / --cta 32-45px)`), scoped `.page--bofu .hero__eyebrow` — component-level, every money-page hero inherits it (R8). No markup change.
+- **D1 band-rhythm:** verified the full sand/white/petrol/dark sequence already matches the live template after the §04 fix (only delta was §04 → white). No further change needed.
+- **G1 (Legal) fidelity pass** — read the live `Legal - Template` (DesignSync): doc layout (240px TOC + 720px reading, gap 64, centered) already matched
+  from the last G1 proof. Applied the two remaining presentation deltas (CSS-only, no content/markup/freeze touch): (1) **TOC links** → left-border rail
+  (`border-inline-start` 2px hairline → petrol on hover + sand hover bg), was plain text; (2) **legal sections** → top hairline dividers
+  (`border-block-start`, `:first-of-type` none), were undivided. Matches the template's clean legal-document treatment.
+- **Verified:** build GREEN (616), battery GREEN — css-drift GREEN, css-bytes 93,042B/102,400B. FREEZE intact (all CSS-only).
+**⛔ PAUSE for founder to judge D1 + G1 vs the live templates → then fan out the D1 family (65 pages) + the other 3 legal pages.**
+**COUNT:** total live = 581 · pages added = none · src changed this step = 1 (`09-extensions.css`: hero gap-mark + legal TOC/section).
