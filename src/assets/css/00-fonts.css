@@ -1,76 +1,34 @@
-/* 00-fonts.css — RE-CUT to the LOCKED "TechBrot Design System Elevation" (Phase 0, 2026-06-20).
-   Family locked by HANDOFF-MANIFEST.md + every locked template's CSS:
-     · Fraunces        — display / headings (variable, opsz)
-     · Geist           — body / UI (variable)
-     · Spline Sans Mono — ALL figures / numbers / labels / eyebrows (400/500/600)
-   ⚠ DISCREPANCY FLAGGED: the Handoff "Token system" table lists a cobalt-era `--font-mono`,
-   but HANDOFF-MANIFEST.md (governs) AND all locked templates specify Spline Sans Mono.
-   Per "manifest governs + use what the templates reference" → Spline Sans Mono is used here.
-   The cobalt-era candidate monos are RETIRED.
-   Self-hosted woff2 (latin), no CDN. font-display:swap. Metric fallbacks keep CLS 0 during swap. */
+/* ============================================================================
+   TechBrot · 00 — WEBFONTS (self-hosted variable woff2, latin, no CDN)
+   Design type system: Fraunces (display/headings) · Geist (body/UI) ·
+   Spline Sans Mono (figures/labels/diagrams). font-display:swap; CLS-safe.
+   ============================================================================ */
 
-/* ---- Fraunces — display & headings (variable; normal + italic) ---- */
 @font-face {
   font-family: "Fraunces";
-  src: url("/assets/fonts/fraunces-var-latin.woff2") format("woff2-variations");
-  font-weight: 300 700;
+  src: url("/assets/fonts/fraunces-var-latin.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2010-2027, U+2030-205E, U+20AC, U+2122;
 }
 @font-face {
   font-family: "Fraunces";
-  src: url("/assets/fonts/fraunces-italic-var-latin.woff2") format("woff2-variations");
-  font-weight: 300 700;
+  src: url("/assets/fonts/fraunces-italic-var-latin.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: italic;
   font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2010-2027, U+2030-205E, U+20AC, U+2122;
 }
-
-/* ---- Geist — body & UI (variable) ---- */
 @font-face {
   font-family: "Geist";
-  src: url("/assets/fonts/geist-var-latin.woff2") format("woff2-variations");
-  font-weight: 300 700;
+  src: url("/assets/fonts/geist-var-latin.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2010-2027, U+2030-205E, U+20AC, U+2122;
 }
-
-/* ---- Spline Sans Mono — figures, numbers, labels, eyebrows (variable 400–600) ---- */
 @font-face {
   font-family: "Spline Sans Mono";
-  src: url("/assets/fonts/spline-sans-mono-var-latin.woff2") format("woff2-variations");
+  src: url("/assets/fonts/spline-sans-mono-var-latin.woff2") format("woff2");
   font-weight: 400 600;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2010-2027, U+2030-205E, U+20AC, U+2122;
-}
-
-/* ---- Metric-matched fallbacks — CLS 0 during swap (verify with fontaine/capsize) ---- */
-@font-face {
-  font-family: "Fraunces-fallback";
-  src: local("Georgia");
-  size-adjust: 106.8%;
-  ascent-override: 97.8%;
-  descent-override: 25.5%;
-  line-gap-override: 0%;
-}
-@font-face {
-  /* Geist → Arial reference (grotesque; upm 1000, asc ~1005, desc ~251, xH ~0.51). */
-  font-family: "Geist-fallback";
-  src: local("Arial");
-  size-adjust: 98.5%;
-  ascent-override: 95%;
-  descent-override: 24%;
-  line-gap-override: 0%;
-}
-@font-face {
-  /* Spline Sans Mono → Consolas reference (monospace; tabular). */
-  font-family: "SplineMono-fallback";
-  src: local("Consolas"), local("Menlo");
-  size-adjust: 100%;
-  ascent-override: 92%;
-  descent-override: 23%;
-  line-gap-override: 0%;
 }

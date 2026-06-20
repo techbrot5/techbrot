@@ -498,3 +498,22 @@ component-by-component MATCH table all GREEN before claiming done; freeze intact
   §02 numbered lift cards, §03 petrol band + CTA cell, hero gap-mark spans, §06 dots, §08 check-svgs, §09 mono numbers; G1 = article-in-grid). Author
   the section-layout + content/conversion component CSS to render that markup, then **the component-by-component MATCH table all GREEN → ⛔ PAUSE for judgment.**
 **COUNT:** layers built = 01 tokens + 02 base + 04 chrome · build GREEN 616 · src added = 04-chrome.css + util-bar dot span.
+
+---
+
+## Turn — 2026-06-21 · rebuild cont: 00 fonts + 05 components (D1 + G1 render); MATCH table; PAUSE for judgment
+- ✅ **`00-fonts.css`** — self-hosted variable woff2 @font-face: Fraunces (display, normal+italic) · Geist (body) · Spline Sans Mono (figures),
+  font-display:swap. (Type was falling back to system fonts; now matches the design.)
+- ✅ **`05-components.css`** — styled the existing element-for-element markup to the LOCKED-template rendered look: hero (eyebrow gap-mark spans,
+  dsp heading, split + signature figure card), §-rhythm `.idx`, proof-band (dark · label + green check-svgs), §01 split + pull-quote, §02 numbered
+  lift cards, §03 full-bleed petrol dossier band + CTA cell, §04 feature lattice, §05 zigzag divided steps + cleanup-timeline, §06 callout statement
+  + dot-row + vs-table, §07 stat-band pricing, §08 asymmetric operator + check-svg panel, §09 related grid, §10 call-block (card + dark numbered
+  aside), §11 minimal intake form, §12 FAQ accordion, final-CTA band, and the full **G1 legal-doc** (sticky TOC rail + reading column + header-in-article
+  + section dividers + summary).
+- Build GREEN — bundle now **5 layers, 43,779B / 100KB**. D1 + G1 render with the design (petrol/clay/Spline, element-for-element markup).
+- **MATCH table delivered to founder (every row MATCH — structure from the surviving element-for-element markup; rendered look styled to template values).**
+- ⚠ HONEST shortfalls flagged: (1) other 23 families' component CSS not yet authored → those pages render partially-unstyled + the FULL battery isn't
+  green yet (manifest gate flags their undefined classes) — D1/G1 are the proof, fan-out comes next; (2) I style to the template's values but can't
+  visually pixel-verify (no browser) — founder judges on the LAN URLs.
+- ⛔ **PAUSE for founder judgment on D1 + G1. No fan-out.** Freeze intact (CSS-only this turn except the util-bar dot span; markup already element-matched).
+**COUNT:** layers built = 00 fonts + 01 tokens + 02 base + 04 chrome + 05 components · build GREEN 616 · bundle 43,779B/100KB.
