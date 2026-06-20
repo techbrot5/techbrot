@@ -865,6 +865,21 @@ a:is(:hover, :focus-visible) .lnk-arrow { transform: translateX(0.22em); }
 .intake-seam__lede { font-size: var(--fs-17); line-height: var(--lh-base); color: var(--text-body); max-width: 50ch; margin: 0 0 var(--space-7); }
 .intake-seam__lede a { color: var(--accent); border-bottom: 1.5px solid var(--accent-border); }
 
+/* ════ D1 LIVE-TEMPLATE STRUCTURAL REBUILD (markup-match, 2026-06-20) ════
+   Element trees rebuilt to the DesignSync D1 template; our content kept inside.
+   New classes are scoped (:has / page-level) so shared components stay safe. */
+/* proof band — dark strip: mono label + per-item green check (template structure) */
+.proof-band { background: var(--surface-ink); }
+.proof-band .proof-strip { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4) var(--space-8); padding: var(--space-5) 0; }
+.proof-strip__label { font-family: var(--font-mono); font-size: var(--fs-11); letter-spacing: var(--ls-wider); text-transform: uppercase; color: var(--accent-on-ink); }
+.proof-band .proof-strip__item { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--fs-14); color: var(--text-on-ink); }
+.proof-strip__check { width: 16px; height: 16px; color: var(--illus-tie); flex: none; }
+.proof-band .proof-strip__rating { font-weight: var(--fw-semibold); color: var(--accent-on-ink); }
+/* §02 buyer card — template lift: mono number + title/body block (scoped via :has, shared .buyer-card unaffected) */
+.buyer-card:has(.buyer-card__n) { display: flex; gap: var(--space-3); align-items: flex-start; }
+.buyer-card__n { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--accent); flex: none; padding-top: 3px; }
+.buyer-card__text { display: block; }
+
 /* ── cleanup-timeline figure (the D1 second viz) ── */
 .cleanup-timeline { margin: var(--space-10) 0 0; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-6) var(--space-7) var(--space-5); }
 .cleanup-timeline__cap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-2); margin-bottom: var(--space-5); }

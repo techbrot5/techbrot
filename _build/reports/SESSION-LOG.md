@@ -378,3 +378,31 @@ not done): hero eyebrow petrol+clay gap-marks (layout-level, all t-bofu) + a ful
 - **Verified:** build GREEN (616), battery GREEN — css-drift GREEN, css-bytes 93,042B/102,400B. FREEZE intact (all CSS-only).
 **⛔ PAUSE for founder to judge D1 + G1 vs the live templates → then fan out the D1 family (65 pages) + the other 3 legal pages.**
 **COUNT:** total live = 581 · pages added = none · src changed this step = 1 (`09-extensions.css`: hero gap-mark + legal TOC/section).
+
+---
+
+## Turn — 2026-06-20 · D1 MARKUP STRUCTURAL REBUILD to live template (IN PROGRESS — not done) · battery GREEN
+**Founder STOP + correction:** the CSS/colours were not the issue — the **component HTML STRUCTURE** doesn't match the live templates.
+Confirmed mandate: rebuild the BUILT markup to the template's element tree for every MISMATCH/PARTIAL; keep our content inside; re-attach
+schema; **handoff is CORRECT — do NOT regenerate it, fix the build.** 3 rulings: (1) §05 keep semantic `<ol>/<li>` styled like the template's
+divided steps; (2) §06 template structure (callout statement + dot-row) AND keep our `vs-table`; (3) proof-strip = template's label + per-item
+check-svgs + all 5 items. GENERAL RULE: template element STRUCTURE + OUR content + preserve semantics where it doesn't change the look.
+
+**Produced the D1 component-by-component MATCH/MISMATCH table** (current built markup vs live template) — confirmed the founder is right:
+most components were the old recolored markup, not the template's element tree (eyebrow gap-mark, proof-strip label+checks, .lift number cards,
+§03 CTA cell, §05 step structure, §06 statement+dots, etc.).
+
+**REBUILT THIS TURN (element tree now matches template, scoped CSS, content kept, battery GREEN):**
+- ✅ **Proof strip** → `section.proof-band(dark) > .container.proof-strip > span.proof-strip__label + 5× span.proof-strip__item(svg.check + text)`
+  (was `.section--compact > .proof-strip > items with <b>`). New scoped CSS `.proof-band`/`__label`/`__check`.
+- ✅ **§02 buyer cards** → template lift: `.buyer-card > span.buyer-card__n(mono number) + .buyer-card__text(h3 + p)` (was h3+p, no number).
+  CSS scoped via `.buyer-card:has(.buyer-card__n)` so the sitewide shared `.buyer-card` is unaffected. ⭐ KEY LESSON: components are SHARED
+  sitewide, so each restructure needs `:has`/page-scoping or a variant — can't change the base class globally without breaking other pages.
+
+**STILL TO REBUILD (queued, exact target structure known — NOT done, NOT claiming done):** hero eyebrow gap-mark as real spans (layout-owned
+t-bofu) · §03 full-bleed petrol band + CTA cell (currently a rounded inner panel, no CTA cell) · §05 ol/li styled to template divided steps ·
+§06 add the centred statement + mono dot-row above the kept vs-table · §08 operator panel anatomy · §09 call-block r-callband split · then the
+whole **G1 Legal** markup pass · then the all-GREEN table.
+
+**HONEST STATUS:** 2 of ~12 D1 components rebuilt correctly as the proven pattern; build GREEN (616), battery GREEN. This is a substantial
+multi-step markup rebuild; **NOT claiming done.** **⛔ PAUSE.** **COUNT:** total live = 581 · pages added = none · src changed = 2 (cleanup njk + 09-extensions).
