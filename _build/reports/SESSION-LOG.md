@@ -419,3 +419,28 @@ multi-step markup rebuild; **NOT claiming done.** **⛔ PAUSE.** **COUNT:** tota
 - ⏳ REMAINING for full all-green sign-off: the other 3 legal pages (terms/dpa/disclaimer — same G1 restructure) + D1-family fan-out (65 pages);
   the D1 PARTIALs §01/§04/§07/§10/§11 use template element structure with our content but their class names are Code's (functionally matching).
 **⛔ PAUSE for founder judgment on D1 + G1 (privacy) before fan-out.** **COUNT:** total live = 581 · pages added = none · src changed = D1 njk + t-bofu layout + 09-extensions + privacy njk.
+
+---
+
+## Turn — 2026-06-20 · RESET: founder emptied CSS + deleting old handoff; PAUSED for a FRESH handoff from Claude Design · no build
+**Founder action:** deleted the ENTIRE `src/assets/css/` (now 0 files) and is re-sharing a FRESH handoff from Claude Design. Directive: delete the
+old handoff files from the repo (isolated, revertable), **build NOTHING** until the fresh handoff arrives, then rebuild from scratch
+(CSS foundation + every component's HTML structure element-for-element, content + schema preserved).
+
+**DELETED — isolated commit `60f593b` (8 tracked files + 1 untracked temp; revert restores all):**
+- `_build/reports/DESIGN-CONTRACT.md` · `SECTION-SIGNATURE-MAP.md` · `KITCHEN-SINK-SPEC.md` · `DESIGN-HANDOFF-INDEX.md` · `round-01-design-impl.md`
+- `_archive/reports/RESKIN-HANDOFF.md`
+- `_build/scripts/extract_design.ps1` · `stage_design_handoff.py`
+- `_build/tmp/d1-money-template.html` (untracked temp template copy I had extracted)
+The CSS deletions (founder's) are left UNSTAGED — not in this commit (kept isolated per R4). No local `HANDOFF-MANIFEST.md` existed (it was remote in DesignSync).
+
+**NOT deleted — FLAGGED for the founder (also handoff-era; say the word and I remove them too):**
+- `src/dev/kitchen-sink-*.njk` (25 "before" snapshot pages built FOR Design — now obsolete; they're preview-only build inputs, not docs, so I left them).
+- Re-arch DATA: `_build/reports/live-urls-v5.txt` · `_page-family-map.txt` · `_families.txt` (URL/family inventory backing the deleted map; regenerable via `section_signature.py`).
+- `_archive/scripts/reskin_forms.py` (old reskin script).
+
+**STATE: src/assets/css = EMPTY (0 files); old handoff docs deleted; NOTHING built this turn.** The repo will not build until the new CSS lands —
+that is expected and intended (founder reset). **⛔ PAUSED — waiting for the founder's fresh Claude Design handoff. Build nothing until re-shared.**
+**ON RE-SHARE:** read the fresh handoff completely → rebuild CSS foundation + every component's HTML element-for-element (real eyebrow gap-mark spans,
+proof strip, all of it) → content + schema preserved (freeze intact) → battery GREEN → MATCH table → commit per component.
+**COUNT:** total live = n/a until rebuild (CSS empty) · pages added = none · deletions = 8 handoff files (`60f593b`).
