@@ -559,3 +559,19 @@ live D1 template (DesignSync) + read its full `<style>` for exact values.
   fine-proportion check, but every default-fallback is eliminated and every readable template value is matched.
 - ⛔ PAUSE for founder judgment on D1 + G1. No fan-out. FREEZE intact.
 **COUNT:** layers 00+01+02+04+05 · build GREEN 616 · bundle 45,934B/100KB · sweep 0 · src changed = 01-tokens, 02-base, 05-components, t-bofu.njk.
+
+---
+
+## Turn — 2026-06-21 · HEADLESS CHROME WORKING — Code can SEE the render now (visual audit unblocked)
+**Founder:** get headless chrome working so I can see the render. **DONE.** Root capability restored — the prior "no browser" limit is lifted.
+- **Found:** Chrome at `C:\Program Files\Google\Chrome\Application\chrome.exe` (+ Edge). The `--screenshot` path WORKS on this machine even though
+  `--dump-dom` returns 0-length (that's why earlier probes failed). The leak (memory: chrome-headless-leak) is avoided with a dedicated
+  `--user-data-dir=C:\tb-probe-profile` + kill-chrome after each shot.
+- **New reusable tool: `_build/scripts/render_shot.ps1`** — `-url -name -w -h`; headless screenshot of the served dev page → `_build/verify/shots/<name>.png`,
+  kills chrome after. Code then **Reads the PNG to actually see the render.**
+- **VISUAL AUDIT of D1 (desktop 1280, hero close-up, full 13000, mobile 390) — confirmed the fixes render:** util-bar + green dot ✓ · horizontal
+  breadcrumb ✓ · **petrol/clay gap-mark eyebrow ✓** · Fraunces H1 ✓ · reconciliation figure with the **soft-red "Out of balance" pill (no black box) ✓**
+  · dark proof band ✓ · sand/white/deep-petrol section rhythm with breathing room ✓ · §03 dossier band ✓ · pricing/operator/call-block/intake/FAQ ✓
+  · **final-CTA = clean dark LEFT-aligned band, Tie-Out corner mark, NO bars ✓** · mobile: nav→hamburger, hero stacks, grids→1col ✓.
+- ⭐ From here I VISUALLY self-audit (screenshot + read) before showing the founder — no more "value-audit only / can't see pixels."
+**COUNT:** headless-chrome render pipeline working · D1 desktop+mobile visually verified · build GREEN 616 · bundle 45,934B.
