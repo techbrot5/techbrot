@@ -231,3 +231,58 @@ out the design system family-by-family (D-family money pages next), each equity-
 
 **STOP / PAUSE:** D1 + G1 live for founder judgment on PC + phone. ⛔ Do NOT fan out until the founder signs off both proofs.
 Working tree will be clean after this turn's commit; dev server left running for the founder's review.
+
+---
+
+## Turn — 2026-06-20 · DESIGN-HANDOFF COMPONENT-COVERAGE AUDIT (founder pivot: audit BEFORE any CSS rebuild) · NO src edits
+**Directive change:** founder first asked to delete `src/assets/css` + rebuild from scratch against the handoff; then (mid-turn)
+**superseded that** with: AUDIT whether the design handoff covers EVERY component the 586 live pages use, list gaps to take back to
+Claude Design, and PAUSE for review — **no rebuild yet, no src edits.** Did exactly that. Located the authoritative design source
+and ran the coverage audit. (Rebuild tasks deferred until gaps closed + foundation settled.)
+
+**Design source located + read (authoritative):** the live Claude Design project **"TechBrot Design System Elevation"**
+(`0fb63c85-c201-4bca-9941-d1bda1992d10`) via DesignSync (read scopes live), AND a local extract under
+`_archive/design-capture/extracted/techbrot-design-system-elevation/project/` (~12 templates + Galleries 01–07). Read this turn:
+`HANDOFF-MANIFEST.md` (governs), `Handoff - Claude Code.dc.html` (v1 impl doc), `readme.md`, `tokens/colors.css` + `fonts.css` +
+`typography.css`, `SECTION-SIGNATURE-MAP.md` (the site's per-family component inventory), live `src/assets/css/*` class set.
+
+**🛑 CRITICAL FINDING 1 — the design project contradicts ITSELF on the FOUNDATION (palette/type). Founder must settle with Design.**
+Two conflicting directions live in the same project:
+- **Cold-cobalt set:** `readme.md` + `tokens/colors.css` + `Foundations & Direction` + `Handoff - Claude Code` (v1) + Galleries —
+  accent **cobalt `#2B4FD6`**, cold/light surfaces `#FBFCFE`, **Geist Mono**. readme calls it "the corrected direction (cold/light + Geist)."
+- **Warm-petrol set:** **`HANDOFF-MANIFEST.md` (self-declared "single source of truth for Code") + the 23 LOCKED `.dc.html` templates** —
+  accent **Petrol `#0E4A50`** + Burnt-Clay CTA `#BE5240`, warm surfaces `#FCFBF8`/`#F7F2E9`, **Spline Sans Mono**. Marked "all 25 LOCKED · Design frozen."
+- The MANIFEST explicitly **demotes** the cobalt set to "REFERENCE library (v1) — not the final page design."
+- By the project's OWN governance (MANIFEST + LOCKED templates win) → **WARM PETROL is final**, and the repo's current petrol tokens
+  are CORRECT, not drift. (I initially mis-read colors.css as proof the petrol was drift; the MANIFEST reverses that.) **This must be
+  resolved to ONE locked foundation before any CSS rebuild** — it's a prerequisite, not a component gap.
+
+**🔍 FINDING 2 — COMPONENT COVERAGE AUDIT (the deliverable).** Method: site component union (live CSS classes + SECTION-SIGNATURE-MAP,
+25 families) mapped by FUNCTION (Design owns its own class names — grepping site class names against design files returns nothing) to the
+design's explicit catalog (readme §6 core/forms/ledger/content + ui_kit heroes + Handoff §2 inventory + Gallery 01–07 + the 25 LOCKED
+per-family templates). **~40 components: most ✅ COVERED; gap list below.**
+- ✅ COVERED (in catalog): 4 heroes, eyebrow, badge/tag, button, breadcrumb, nav/mega/drawer/footer/sticky call-bar, in-brief intro,
+  ai-summary + QAPage quick-5, proof-strip, buyer-card, vs-table, checks-list, pull-quote, review-card, trust-row, byline-block/meta,
+  disclosure, error-badge, fix-steps, call-block(CallBand), call-breakout(mid-body CTA), lead-magnet, final-CTA band, faq accordion,
+  intake-form + form controls, contact/file-review form (F1), legal-doc (G1), guide-grid/toc/article (E1), diagram-feature, the signature
+  diagrams (T-account, reconciliation, before/after, decision-tree/judgment), DataFigure, StateMap, the 10 section layouts, the D1 dossier
+  §-rhythm, pricing tiers (F2).
+- ❌ MISSING (Code would invent — flag): **cleanup-timeline (2nd money-page viz)** — Code added it THIS session; not in design; violates
+  the manifest "one signature viz per family, never scatter multiple" rule (D1 viz = `reconciliation-beforeafter`). Design must sanction a
+  2nd D1 viz or it gets dropped at rebuild.
+- ⚠ PARTIAL / CONFIRM-WITH-DESIGN (likely covered but unverified, or honesty-sensitive): **team-card/operator-card** (catalog has ReviewCard,
+  NO TeamCard; + the no-fake-team-photos honesty rule may mean it's intentionally absent — used on about/trust/home/B1) · **tldr/TL;DR block**
+  (distinct vs folded into ai-summary/hero?) · **deliver-card / deliverables-scope grid** (D1; + legacy `.num` mapping) · **flow / path-to-fixed-fee
+  step strip** (pricing/cfo) · **state-router** (B5 national-hub state selector — in Location National Hub template?) · **calc islands**
+  (band-estimator/formula/selector/sales-tax-lookup + noscript/result/disclaimer states — Tool E5) · **404 / utility-empty / no-results /
+  maintenance** (Gallery 07 reference exists but NO locked family template) · (minor) **related-grid**, **stat-row vs stat-band naming**,
+  **migration signature diagram** (Handoff §2 names it; no family-viz assigned).
+- **CONFIRM (founder Q4):** once the ❌/⚠ items are designed + re-handed-off — AND the Finding-1 foundation is locked to ONE palette/type
+  set — **YES, I can build ALL CSS purely from the handoff with zero invented/ad-hoc CSS.** The foundation contradiction is the one true
+  blocker; the component gaps are small and mostly "confirm the treatment," not "no treatment exists."
+- **Audit confidence/caveat (honest):** ✅ marks = "the design CATALOG names this component" (readme §6 + manifest + Handoff §2), not
+  line-verified in all 23 templates. The ⚠ list is deliberately inclusive so Design confirms/fills rather than me inventing later.
+
+**No src edits this turn** (audit only). Tasks: design-source read ✓, site inventory ✓, coverage map ✓. **STOP / PAUSE for founder review of
+the coverage map + gap list → founder closes gaps in Claude Design + settles the foundation palette → THEN the CSS rebuild from a complete set.**
+**COUNT:** total live = 581 (unchanged) · pages added = none · src files changed = 0 · deliverable = coverage map + gap list (above).
