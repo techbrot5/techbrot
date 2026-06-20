@@ -741,3 +741,116 @@ a:is(:hover, :focus-visible) .lnk-arrow { transform: translateX(0.22em); }
 .calc__metric { display: flex; justify-content: space-between; gap: var(--space-3); font-size: var(--fs-14); border-top: 1px solid var(--color-paper-edge); padding-top: var(--space-2); }
 .calc__metric-label { color: var(--text-secondary); }
 .calc__metric-value { font-weight: var(--fw-semibold); color: var(--text-primary); }
+
+/* ════════════════════════════════════════════════════════════════════════
+   D1 MONEY-PAGE DOSSIER SYSTEM (2026-06-20)
+   Captured from the LOCKED "QuickBooks Cleanup — Money Page" template: the
+   editorial section-index rhythm (.idx), the section-layout modifiers
+   (split / feature / asymmetric / zigzag / callout / stat-band), the deep
+   dossier ai-summary, the cleanup-timeline figure, and the minimal intake
+   seam. Token-only (css-drift gate). Flagship rhythm = --section-y-flagship.
+   ════════════════════════════════════════════════════════════════════════ */
+
+/* ── editorial section-index marker (the dossier §-rhythm) ── */
+.idx { display: flex; align-items: center; gap: var(--space-3); margin: 0 0 var(--space-7); }
+.idx__n { font-family: var(--font-mono); font-size: var(--fs-12); letter-spacing: var(--ls-wide); color: var(--accent); }
+.idx__t { font-family: var(--font-mono); font-size: var(--fs-11); letter-spacing: var(--ls-wider); text-transform: uppercase; color: var(--text-faint); }
+.idx__rule { flex: 1; height: 1px; background: var(--border-subtle); }
+.idx--centered { justify-content: center; }
+.idx--centered .idx__rule { flex: 0 1 60px; }
+
+/* ── flagship section rhythm: money-page bands run at the flagship cadence ── */
+.section--flagship { padding: var(--section-y-flagship) 0; }
+
+/* ── SPLIT — heading column | body column (in-brief, operator) ── */
+.section--split .section-split { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: start; }
+.section--split .section-split__lede { font-size: var(--fs-17); line-height: var(--lh-loose); color: var(--text-body); }
+.section--split .section-split__lede > p { margin: 0 0 var(--space-4); }
+.section--split .section-split__lede > p:last-child { margin-bottom: 0; }
+.section--split .section__heading { max-width: 18ch; margin: 0; }
+@media (max-width: 860px) { .section--split .section-split { grid-template-columns: 1fr; gap: var(--space-6); } }
+
+/* ── FEATURE — single full-bleed card lattice of equal cells (deliverables) ── */
+.section--feature .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); overflow: hidden; }
+.section--feature .feature-cell { background: var(--surface-card); padding: var(--space-6) var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
+.section--feature .feature-cell__icon { width: 22px; height: 22px; color: var(--accent); }
+.section--feature .feature-cell h3 { font-family: var(--font-serif); font-variation-settings: var(--serif-small-axes); font-size: var(--fs-16); font-weight: var(--fw-semibold); color: var(--text-strong); margin: 0; line-height: var(--lh-snug); }
+.section--feature .feature-cell p { font-size: var(--fs-14); line-height: var(--lh-base); color: var(--text-secondary); margin: 0; }
+@media (max-width: 860px) { .section--feature .feature-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .section--feature .feature-grid { grid-template-columns: 1fr; } }
+
+/* ── ASYMMETRIC — wide editorial column | narrow trust panel (operator) ── */
+.section--asymmetric .section-split { grid-template-columns: 1.1fr 0.9fr; align-items: center; }
+.section--asymmetric .operator-panel { background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: var(--space-8); box-shadow: var(--shadow-card); }
+.section--asymmetric .operator-panel__label { font-family: var(--font-mono); font-size: var(--fs-11); letter-spacing: var(--ls-wider); text-transform: uppercase; color: var(--text-faint); margin: 0 0 var(--space-6); }
+.section--asymmetric .operator-panel ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); }
+.section--asymmetric .operator-panel li { display: flex; gap: var(--space-3); align-items: flex-start; font-size: var(--fs-15); color: var(--text-body); }
+.section--asymmetric .operator-panel li::before { content: ""; flex: none; margin-top: 5px; width: 13px; height: 7px; border-left: 2px solid var(--tie); border-bottom: 2px solid var(--tie); transform: rotate(-45deg); }
+.section--asymmetric .operator-quote { font-family: var(--font-serif); font-style: italic; font-variation-settings: var(--serif-heading-axes); font-size: var(--fs-20); line-height: 1.45; color: var(--text-strong); border-left: 2px solid var(--cta); padding-left: var(--space-5); margin: var(--space-6) 0 0; }
+.section--asymmetric .operator-quote cite { display: block; font-family: var(--font-sans); font-style: normal; font-size: var(--fs-13); color: var(--text-secondary); margin-top: var(--space-3); }
+.section--asymmetric .operator-quote cite b { color: var(--tie-deep); font-weight: var(--fw-medium); }
+
+/* ── ZIGZAG — the numbered process steps with hairline dividers (the ONE numbered system) ── */
+.section--zigzag .zigzag-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.section--zigzag .zigzag-step { padding: 0 var(--space-6); border-right: 1px solid var(--border-default); }
+.section--zigzag .zigzag-step:first-child { padding-left: 0; }
+.section--zigzag .zigzag-step:last-child { border-right: 0; padding-right: 0; }
+.section--zigzag .zigzag-step__n { font-family: var(--font-mono); font-size: var(--fs-13); color: var(--cta); margin: 0 0 var(--space-4); }
+.section--zigzag .zigzag-step--done .zigzag-step__n { color: var(--tie); }
+.section--zigzag .zigzag-step h3 { font-family: var(--font-serif); font-variation-settings: var(--serif-small-axes); font-size: var(--fs-18); font-weight: var(--fw-semibold); color: var(--text-strong); margin: 0 0 var(--space-2); line-height: var(--lh-snug); }
+.section--zigzag .zigzag-step p { font-size: var(--fs-14); line-height: var(--lh-base); color: var(--text-secondary); margin: 0; }
+@media (max-width: 860px) { .section--zigzag .zigzag-steps { grid-template-columns: 1fr 1fr; gap: var(--space-6) var(--space-5); } .section--zigzag .zigzag-step { padding: 0; border-right: 0; border-top: 1px solid var(--border-default); padding-top: var(--space-5); } .section--zigzag .zigzag-step:first-child { padding-left: 0; } }
+@media (max-width: 560px) { .section--zigzag .zigzag-steps { grid-template-columns: 1fr; } }
+
+/* ── CALLOUT — centered editorial framing for the comparison band ("what changes") ── */
+.section--callout .callout { max-width: 900px; margin: 0 auto var(--space-10); text-align: center; }
+.section--callout .callout__line { font-family: var(--font-serif); font-variation-settings: var(--serif-heading-axes); font-weight: var(--fw-medium); font-size: clamp(1.625rem, 1.4rem + 2.2vw, 2.5rem); line-height: 1.18; letter-spacing: var(--ls-snug); color: var(--text-strong); margin: 0 0 var(--space-5); text-wrap: balance; }
+.section--callout .callout__sub { font-size: var(--fs-17); line-height: var(--lh-base); color: var(--text-secondary); max-width: 62ch; margin: 0 auto; }
+.section--callout .callout__sub strong { color: var(--accent); }
+
+/* ── STAT-BAND — pricing tiers as a bordered 3-up (de-numbered grid: NOT the page's numbered system) ── */
+.section--stat-band .stat-band { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); overflow: hidden; }
+.section--stat-band .stat-tier { background: var(--surface-card); padding: var(--space-8) var(--space-7); position: relative; }
+.section--stat-band .stat-tier--featured { box-shadow: inset 0 0 0 2px var(--accent); }
+.section--stat-band .stat-tier__flag { position: absolute; top: var(--space-6); right: var(--space-6); font-family: var(--font-mono); font-size: var(--fs-11); letter-spacing: var(--ls-wide); color: var(--accent); background: var(--accent-soft); border-radius: var(--radius-sm); padding: 2px var(--space-2); }
+.section--stat-band .stat-tier__name { font-size: var(--fs-14); font-weight: var(--fw-semibold); color: var(--text-strong); margin: 0; }
+.section--stat-band .stat-tier__price { font-family: var(--font-mono); font-size: var(--fs-28); font-weight: var(--fw-medium); color: var(--text-strong); margin: var(--space-4) 0 var(--space-1); }
+.section--stat-band .stat-tier__for { font-size: var(--fs-14); line-height: var(--lh-base); color: var(--text-secondary); margin: var(--space-3) 0 var(--space-4); }
+.section--stat-band .stat-tier__bullets { list-style: none; margin: 0 0 var(--space-5); padding: 0; display: grid; gap: var(--space-2); }
+.section--stat-band .stat-tier__bullets li { font-size: var(--fs-13); color: var(--text-body); display: flex; gap: var(--space-2); align-items: flex-start; }
+.section--stat-band .stat-tier__bullets li::before { content: ""; flex: none; margin-top: 4px; width: 11px; height: 6px; border-left: 1.75px solid var(--tie); border-bottom: 1.75px solid var(--tie); transform: rotate(-45deg); }
+.section--stat-band .stat-tier__link { position: relative; display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--fs-14); font-weight: var(--fw-medium); color: var(--text-primary); }
+.section--stat-band .stat-tier__link .lnk-arrow { color: var(--accent); transition: transform var(--motion-base) var(--ease-out); }
+.section--stat-band .stat-tier__link:hover { color: var(--accent-press); }
+.section--stat-band .stat-tier__link:hover .lnk-arrow { transform: translateX(3px); }
+@media (max-width: 860px) { .section--stat-band .stat-band { grid-template-columns: 1fr; } }
+
+/* ── DOSSIER ai-summary — money-page dark treatment (per-type differentiation) ── */
+.ai-summary--dossier { background: var(--surface-dossier); color: var(--text-on-dossier); border-radius: var(--radius-xl); padding: var(--section-y-tight) var(--space-10) var(--space-12); }
+.ai-summary--dossier .idx__n { color: var(--accent-on-ink); }
+.ai-summary--dossier .idx__t { color: var(--text-on-dossier-mut); }
+.ai-summary--dossier .idx__rule { background: var(--border-on-dossier); }
+.ai-summary--dossier .ai-summary--dossier__heading { font-family: var(--font-serif); font-variation-settings: var(--serif-heading-axes); font-weight: var(--fw-medium); font-size: var(--fs-32); line-height: var(--lh-snug); letter-spacing: var(--ls-snug); color: var(--surface-card); max-width: 16ch; margin: 0 0 var(--space-10); }
+.ai-summary--dossier .ai-summary--dossier__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--space-12); }
+.ai-summary--dossier .ai-summary__item { border-top: 1px solid var(--border-on-dossier); border-bottom: 0; padding: var(--space-5) 0; }
+.ai-summary--dossier .ai-summary__item:first-child { border-top: 1px solid var(--border-on-dossier); }
+.ai-summary--dossier .ai-summary__question { font-family: var(--font-sans); font-size: var(--fs-17); font-weight: var(--fw-semibold); color: var(--surface-card); margin: 0 0 var(--space-2); }
+.ai-summary--dossier .ai-summary__answer { color: var(--text-on-dossier-mut); margin: 0; }
+.ai-summary--dossier .ai-summary__answer p { margin: 0; color: var(--text-on-dossier-mut); }
+.ai-summary--dossier .ai-summary__answer strong { color: var(--text-on-dossier); }
+@media (max-width: 860px) { .ai-summary--dossier { padding: var(--space-8) var(--space-6) var(--space-8); } .ai-summary--dossier .ai-summary--dossier__grid { grid-template-columns: 1fr; } }
+
+/* ── DUAL SEAM — primary call-block sits flush; minimal intake seam alt-banded ── */
+.intake-form--minimal { gap: var(--space-5); background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-8); box-shadow: var(--shadow-card); }
+.intake-form--minimal .intake-form__foot { display: flex; align-items: center; gap: var(--space-4); flex-wrap: wrap; }
+.intake-form--minimal .intake-form__foot .intake-form__reassurance { margin: 0; }
+.intake-seam__lede { font-size: var(--fs-17); line-height: var(--lh-base); color: var(--text-body); max-width: 50ch; margin: 0 0 var(--space-7); }
+.intake-seam__lede a { color: var(--accent); border-bottom: 1.5px solid var(--accent-border); }
+
+/* ── cleanup-timeline figure (the D1 second viz) ── */
+.cleanup-timeline { margin: var(--space-10) 0 0; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-6) var(--space-7) var(--space-5); }
+.cleanup-timeline__cap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-2); margin-bottom: var(--space-5); }
+.cleanup-timeline__cap-label { font-family: var(--font-mono); font-size: var(--fs-11); letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--text-faint); }
+.cleanup-timeline__cap-note { font-family: var(--font-mono); font-size: var(--fs-11); color: var(--text-secondary); }
+.cleanup-timeline__note { font-family: var(--font-mono); font-size: var(--fs-11); color: var(--text-faint); margin: var(--space-4) 0 0; }
+.cleanup-timeline__note a { color: var(--accent); }

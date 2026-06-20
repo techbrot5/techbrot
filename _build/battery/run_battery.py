@@ -20,6 +20,14 @@ import sys
 from html.parser import HTMLParser
 from pathlib import Path
 
+# The battery prints Unicode (∪, ·, →, ×); force UTF-8 stdout so it doesn't
+# crash under Windows' default cp1252 console/pipe encoding.
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except (AttributeError, ValueError):
+    pass
+
 ROOT = Path(__file__).resolve().parents[2]
 SITE = ROOT / "_site"
 FAILURES = []
@@ -169,14 +177,17 @@ if drift:
 else:
     ok("css-drift", "zero hardcoded hex, zero undeclared custom properties in bundle")
 
-# 6 ── CSS byte gate. RE-SET 2026-06-16 for the elevated design system capture
-#       (was 58KB for the cobalt floor). The elevated library adds the
-#       section-layout engine, the 4 signature diagrams, call-band, mid-mega nav
-#       and per-type heroes. HARD gate on the shipped minified artifact = 82KB;
-#       source overage reported as a flag (soft-cap 120KB). Keep this in sync
-#       with src/assets/css/site.min.css.11ty.js.
-CSS_MIN_GATE = 82 * 1024
-CSS_SRC_SOFTCAP = 120 * 1024
+# 6 ── CSS byte gate. RAISED 2026-06-20 to a 100KB TRANSITION CEILING (founder
+#       ruling): the design re-architecture layers the new, legitimately richer
+#       system (dossier rhythm, real diagrams, craft detail) ON TOP of the old
+#       components that still serve 500+ un-converted pages, so the bundle grows
+#       mid-transition and nets back down as old CSS is deleted family-by-family.
+#       This is NOT the final budget — the flip-gate carries a hard "CSS must net
+#       back under target before flip" line. (Was 82KB for the elevated capture;
+#       58KB for the cobalt floor before that.) Keep in sync with
+#       src/assets/css/site.min.css.11ty.js.
+CSS_MIN_GATE = 100 * 1024
+CSS_SRC_SOFTCAP = 130 * 1024
 order = ["00-fonts.css", "01-tokens.css", "02-base.css", "03-conversion.css",
          "04-chrome.css", "05-tiers.css", "06-motif-rules.css",
          "07-motion.css", "08-additions.css", "09-extensions.css"]
@@ -398,7 +409,12 @@ else:
 #        classes DEFINED in the bundle (skin + 09-extensions) ∪ the
 #        content-machinery/semantic whitelist. Anything else is an
 #        old-system trace or an undeclared class.
-MANIFEST_MD = (ROOT / "_design/techbrot-skin-handoff/techbrot-design-system"
+# NOTE 2026-06-20: the _design/ handoff tree was archived in the pre-impl
+# cleanup, so this manifest now lives under _archive/ (git-tracked, present).
+# The gate's real enforcement is the bundle-CSS class union below; this stale
+# 208-class manifest is a secondary source. REGEN-FROM-LIVE-CSS is a pending
+# RESKIN-HANDOFF prep item (live CSS ships ~318 classes) — separate, founder-gated.
+MANIFEST_MD = (ROOT / "_archive/_design/techbrot-skin-handoff/techbrot-design-system"
                / "project/handoff/CLASS-MANIFEST.md")
 MANIFEST_WHITELIST = {
     "sr-only", "section--cta-band--light", "ai-summary",

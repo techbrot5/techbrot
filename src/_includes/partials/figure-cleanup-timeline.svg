@@ -1,0 +1,36 @@
+{#- D1 SECOND VIZ — cleanup-timeline. Captured from the locked Money-Page
+    template (§05). Week-by-week schedule for a file ~6 months behind. Flat
+    SVG/CSS, fixed viewBox = CLS 0. All colours = var(--diagram-*) / token roles
+    (css-drift scans CSS; SVG attrs carry the tokens directly). Numbers are
+    ILLUSTRATIVE / representative — mirrored verbatim in the figcaption + the
+    on-page caption text at the call site (honesty gate: no visual-only data,
+    never asserted as a real client result). Draw-on via .dgm-* (zeroed under
+    prefers-reduced-motion in 07-motion). -#}
+<figure class="cleanup-timeline">
+  <figcaption class="cleanup-timeline__cap">
+    <span class="cleanup-timeline__cap-label">Representative schedule &middot; a file ~6 months behind</span>
+    <span class="cleanup-timeline__cap-note">weeks, not months</span>
+  </figcaption>
+  <svg data-viz="cleanup-timeline" data-viz-state="FINAL" viewBox="0 0 720 184" width="100%" style="display:block;overflow:visible" role="img" aria-label="Representative week-by-week cleanup schedule for a file about six months behind. Week 1: scope and access. Weeks 2 to 3: categorise and correct transactions. Weeks 3 to 4: reconcile every account. Week 5: review and corrected statements. Week 5: CPA-ready handoff. Indicative, not a guarantee.">
+    <line x1="40" y1="58" x2="688" y2="58" stroke="var(--diagram-grid)" stroke-width="2"/>
+    <g font-family="Spline Sans Mono, monospace" font-size="11" fill="var(--diagram-credit)" text-anchor="middle">
+      <text x="76" y="30">WK 1</text><text x="228" y="30">WK 2&ndash;3</text><text x="380" y="30">WK 3&ndash;4</text><text x="532" y="30">WK 5</text><text x="660" y="30">WK 5</text>
+    </g>
+    <line class="dgm-draw" x1="40" y1="58" x2="688" y2="58" stroke="var(--diagram-credit)" stroke-width="2" pathLength="900"/>
+    <g>
+      <circle cx="76" cy="58" r="6" fill="var(--diagram-credit)"/>
+      <circle cx="228" cy="58" r="6" fill="var(--diagram-credit)"/>
+      <circle cx="380" cy="58" r="6" fill="var(--diagram-credit)"/>
+      <circle cx="532" cy="58" r="6" fill="var(--diagram-credit)"/>
+      <circle cx="660" cy="58" r="9" fill="var(--tie-soft)" stroke="var(--diagram-tie)" stroke-width="1.5"/>
+      <path class="dgm-tick" d="M656 58l3 3 5-6" fill="none" stroke="var(--diagram-tie)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g font-family="Geist, sans-serif" font-size="12.5" fill="var(--diagram-debit)" text-anchor="middle">
+      <text x="76" y="92">Scope &amp;</text><text x="76" y="108">access</text>
+      <text x="228" y="92">Categorise &amp;</text><text x="228" y="108">correct</text>
+      <text x="380" y="92">Reconcile</text><text x="380" y="108">every account</text>
+      <text x="532" y="92">Review &amp;</text><text x="532" y="108">statements</text>
+      <text x="660" y="92" fill="var(--tie-deep)">CPA-ready</text><text x="660" y="108" fill="var(--tie-deep)">handoff</text>
+    </g>
+  </svg>
+</figure>

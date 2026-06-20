@@ -178,3 +178,56 @@ build GREEN 611 pages · CSS unchanged (SVG only) · still not at the G1+D1 paus
 **PAUSE:** G1 live for spot-check; D1 (the flagship structural rebuild) is the next focused turn, then both judged before any
 fan-out. **COUNT:** Phase 0 = Steps 1–5 done + Step 6 deferred-to-proof + G1 proof done · D1 = next · commits this turn 3 ·
 build GREEN 616 files · dev server up @ http://192.168.1.7:8080/.
+
+---
+
+## Turn — 2026-06-20 · D1 cleanup-bookkeeping STRUCTURAL REBUILD + battery to full GREEN + css-bytes gate raise · (proof, NOT committed → committed this turn)
+**Context:** resumed via `claude -c` mid-stream with the D1 rebuild already in the working tree (uncommitted). Finished it,
+fixed 2 battery-infra bugs, applied the founder's css-bytes gate ruling, drove the battery to full GREEN, committed.
+
+**D1 — what the rebuild is (`/accounting/bookkeeping/cleanup-bookkeeping/`, t-bofu money page):** a real STRUCTURAL rebuild
+(not a recolor — last turn's assessment that D1 needed rebuilding was correct). Body re-architected to the locked "QuickBooks
+Cleanup — Money Page" template: editorial **§-rhythm index markers** (`.idx` §01–§12), the **section-layout engine**
+(split / feature / asymmetric / zigzag / callout / stat-band), a **dark dossier ai-summary** (deep-petrol panel, new tokens),
+the **cleanup-timeline** 2nd viz (week-by-week, illustrative numbers mirrored verbatim in caption text — honesty gate),
+and the **DUAL conversion seam** (primary call-block §10 + minimal intake-form §11). FROZEN held: every heading text/level,
+FAQ Q/A verbatim, speakable `#cleanup-bookkeeping-in-brief-text`, the JSON-LD graph. Content-equity GREEN: 42 baseline
+headings · 12 FAQ · 31 schema types accounted for (justified removals only: 'The monthly brief.', 'QAPage' per exceptions).
+New CSS = `09-extensions.css` +113 lines (token-only, css-drift GREEN), 4 new dossier tokens in `01-tokens.css`
+(`--surface-dossier` deep petrol + on-panel text/border roles), new `figure-cleanup-timeline.svg`.
+
+**2 BATTERY-INFRA FIXES (not page changes — both founder-confirmed correct, keep):**
+1. **manifest gate path** — read `CLASS-MANIFEST.md` from `_design/…`, which the pre-impl cleanup ARCHIVED → repointed to its
+   real `_archive/_design/…` location so the battery runs. The gate's real enforcement is the bundle-CSS class union (so all
+   new D1 classes are accounted for regardless). ⚠ **STILL-OPEN founder-gated to-do:** REGENERATE the manifest from live CSS
+   (stale 208 vs ~318 live classes) per RESKIN-HANDOFF prep — separate step.
+2. **UTF-8 stdout** — battery crashed printing the `∪` glyph under Windows cp1252 → added `sys.stdout.reconfigure(utf-8)` so it
+   runs clean on the founder's machine too.
+
+**css-bytes GATE RAISE (founder ruling this turn):** raised to a **~100KB TRANSITION CEILING** in BOTH gates —
+`_build/battery/run_battery.py` (`CSS_MIN_GATE = 100*1024`) and `src/assets/css/site.min.css.11ty.js` (`CSS_BUDGET_MIN =
+100*1024`). Rationale: the re-architecture layers the richer new system on top of old components still serving 500+
+un-converted pages, so the bundle grows mid-transition and nets back down as legacy CSS is deleted family-by-family. **NOT the
+final budget.** Added a HARD flip-gate blocker (BUILD-TRACKER cutover gate item 7): "CSS must net back under target before flip"
+— run `css_audit.py` trim pass + lower the gate before cutover. Did NOT trim D1's CSS (founder: won't judge a starved page).
+
+**cta-lexicon FIX:** new submit label `'Request a scoped quote'` → reused the existing sanctioned `'Send the Discovery Brief'`
+(the live baseline-equity contact-form-submit label) — no new founder ruling needed; the intake form IS a discovery form.
+
+**VERIFICATION — BATTERY FULL GREEN (exit 0, 0 fails):** css-drift GREEN · css-bytes 92,142B / 102,400B gate (source 134,995B,
+flagged over the 130KB soft-cap — informational, non-blocking visibility into transition bloat) · manifest GREEN · content-equity
+GREEN incl. D1 · cta-lexicon GREEN (16 labels) · design-fidelity 574 pages · variety-12a ≤1 numbered system (D1's one numbered
+system = the zigzag process; deliverables→feature-cells, pricing→stat-band both de-numbered) · faq-flat/verbatim GREEN.
+Clean build = 616 files. Live axe/overflow on D1 still owed at the LIVE-probe flip-gate (env-blocked here).
+
+**PROOF URLS (LAN dev server, founder judging on PC + phone):**
+- D1: http://192.168.1.7:8080/accounting/bookkeeping/cleanup-bookkeeping/ (the structural money-page rebuild)
+- G1: http://192.168.1.7:8080/legal/privacy-policy/ (legal-doc layout proof; sibling /legal/terms/)
+
+**COUNT:** total pages live = 581 (unchanged — D1 is a re-architecture of an existing page, not a new URL) · re-skinned (142)
++ growth = 439 · pages added THIS turn = none (D1/G1 are restyle proofs of existing URLs) · Phase-0 = Steps 1–6 done + G1 + D1
+proofs delivered · remaining before fan-out = founder spot-check of G1 + D1 vs the design templates · next = on founder GO, fan
+out the design system family-by-family (D-family money pages next), each equity-safe + battery-GREEN.
+
+**STOP / PAUSE:** D1 + G1 live for founder judgment on PC + phone. ⛔ Do NOT fan out until the founder signs off both proofs.
+Working tree will be clean after this turn's commit; dev server left running for the founder's review.

@@ -33,8 +33,18 @@ const CSS_ORDER = [
 // floor used 58KB; the elevated library adds the section-layout engine, the 4
 // signature diagrams, call-band, mid-mega nav and per-type heroes. New ceiling
 // set with headroom; tighten after the full re-skin lands.
-const CSS_BUDGET_MIN = 82 * 1024; // minified, hard build gate (ceiling)
-const CSS_BUDGET_SRC = 120 * 1024; // source soft-cap, flagged only
+// 2026-06-20 (D1 dossier re-skin): the HEAD bundle already sat at 81.5KB —
+// the 82KB ceiling left zero headroom for the D1 money-page section-layout
+// engine the comment above anticipated (split/feature/asymmetric/zigzag/
+// callout/stat-band + dossier ai-summary + cleanup-timeline). Raised to a
+// 100KB TRANSITION CEILING (founder ruling 2026-06-20) — the new design is
+// layered on while old components still serve 500+ un-converted pages, so the
+// bundle grows mid-transition and nets back down as legacy CSS is deleted
+// family-by-family. NOT the final budget: the flip-gate carries a hard "CSS
+// must net back under target before flip" line; tighten via css_audit.py once
+// the per-type re-skin lands. Kept in sync with _build/battery/run_battery.py.
+const CSS_BUDGET_MIN = 100 * 1024; // minified, hard build gate (transition ceiling)
+const CSS_BUDGET_SRC = 130 * 1024; // source soft-cap, flagged only
 
 module.exports = class {
   data() {

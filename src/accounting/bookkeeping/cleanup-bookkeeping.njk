@@ -45,6 +45,15 @@
 }
 ---
 
+{#- ═══════════════════════════════════════════════════════════════════════
+    D1 MONEY-PAGE DOSSIER — body re-architected to the LOCKED "QuickBooks
+    Cleanup — Money Page" template (§-rhythm + section-layout modifiers +
+    cleanup-timeline viz + DUAL conversion seam). Hero + final CTA band are
+    layout-owned (t-bofu.njk). FROZEN: every heading text/level + FAQ Q/A
+    verbatim; speakable #cleanup-bookkeeping-in-brief-text intact.
+    ═══════════════════════════════════════════════════════════════════════ -#}
+
+{#- PROOF STRIP — what you can verify (dark band) -#}
 <section class="section section--compact" id="cleanup-bookkeeping-proof">
   <div class="container">
     <div class="proof-strip">
@@ -57,28 +66,26 @@
   </div>
 </section>
 
-<section class="section" id="cleanup-bookkeeping-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The engagement</p>
+{#- §01 — IN BRIEF / the engagement (SPLIT: heading | prose + coined-term pull) -#}
+<section class="section section--flagship section--alt section--split" id="cleanup-bookkeeping-definition">
+  <div class="container">
+    <div class="idx"><span class="idx__n">§01</span><span class="idx__t">The engagement</span><span class="idx__rule"></span></div>
+    <div class="section-split">
       <h2 class="section__heading">What a cleanup engagement actually is.</h2>
-    </header>
-    <div class="prose">
-      <p>A bookkeeping cleanup is a project-based engagement that reconstructs accurate financial records from a messy or unreconciled state. It covers QuickBooks file cleanup, real bank reconciliation against actual statements, categorization corrections, clearing undeposited funds, fixing duplicate or missing transactions, correcting prior-period errors, verifying payroll and sales-tax entries, and producing CPA-ready financial statements. Most engagements take 2&ndash;8 weeks and are priced as a fixed fee against a written scope.</p>
-      <p>Cleanup is distinct from <a href="/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up">catch-up bookkeeping</a> (which brings behind-but-structured books up to date) and from <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> (which is recurring). Many engagements combine cleanup with catch-up &mdash; clean up the existing periods, catch up the missing months, then transition to monthly.</p>
+      <div class="section-split__lede prose">
+        <p>A bookkeeping cleanup is a project-based engagement that reconstructs accurate financial records from a messy or unreconciled state. It covers QuickBooks file cleanup, real bank reconciliation against actual statements, categorization corrections, clearing undeposited funds, fixing duplicate or missing transactions, correcting prior-period errors, verifying payroll and sales-tax entries, and producing CPA-ready financial statements. Most engagements take 2&ndash;8 weeks and are priced as a fixed fee against a written scope.</p>
+        <p>Cleanup is distinct from <a href="/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up">catch-up bookkeeping</a> (which brings behind-but-structured books up to date) and from <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> (which is recurring). Many engagements combine cleanup with catch-up &mdash; clean up the existing periods, catch up the missing months, then transition to monthly.</p>
+        <blockquote class="pull-quote"><p>{{ drift.body | safe }}</p></blockquote>
+      </div>
     </div>
-    <blockquote class="pull-quote">
-      <p>{{ drift.body | safe }}</p>
-    </blockquote>
   </div>
 </section>
 
-<section class="section section--alt" id="cleanup-bookkeeping-signals">
+{#- §02 — SIGNALS / is this you (buyer-card grid, de-numbered: NOT the page's numbered system) -#}
+<section class="section section--flagship" id="cleanup-bookkeeping-signals">
   <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Is it time?</p>
-      <h2 class="section__heading">If any of these sound familiar, the answer is yes.</h2>
-    </header>
+    <div class="idx"><span class="idx__n">§02</span><span class="idx__t">Is this you</span><span class="idx__rule"></span></div>
+    <h2 class="section__heading">If any of these sound familiar, the answer is yes.</h2>
     <div class="grid-2">
       {%- for s in signals %}
       <div class="buyer-card">
@@ -90,69 +97,78 @@
   </div>
 </section>
 
-<section class="section" id="cleanup-bookkeeping-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Cleanup, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="cleanup-bookkeeping-deliverables">
+{#- §03 — AI SUMMARY / quick-5 (DARK DOSSIER treatment · QAPage) -#}
+<section class="section section--flagship" id="cleanup-bookkeeping-ai-summary">
   <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The scope</p>
-      <h2 class="section__heading">What cleanup actually delivers.</h2>
-    </header>
-    <div class="grid-2">
-      {%- for d in deliverables %}
-      <div class="deliver-card">
-        <span class="deliver-card__tick" aria-hidden="true"></span>
-        <div>
-          <h3>{{ d.name | safe }}</h3>
-          <p class="prose">{{ d.body | safe }}</p>
+    <div class="ai-summary ai-summary--ruled ai-summary--dossier">
+      <div class="idx"><span class="idx__n">§03</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
+      <h2 class="ai-summary--dossier__heading section__heading">Cleanup, in five questions.</h2>
+      <div class="ai-summary--dossier__grid">
+        {%- for item in aiSummary %}
+        <div class="ai-summary__item">
+          <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
+          <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
         </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{#- §04 — DELIVERABLES / scope (FEATURE lattice — 8 cells, iconned) -#}
+<section class="section section--flagship section--alt section--feature" id="cleanup-bookkeeping-deliverables">
+  <div class="container">
+    <div class="idx"><span class="idx__n">§04</span><span class="idx__t">Scope of work</span><span class="idx__rule"></span></div>
+    <h2 class="section__heading">What cleanup actually delivers.</h2>
+    <div class="feature-grid">
+      {%- for d in deliverables %}
+      <div class="feature-cell">
+        <svg class="feature-cell__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          {%- if loop.index == 1 %}<path d="M4 10a8 8 0 0114-4.5" stroke-linecap="round"/><path d="M4 5.5V10h4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 14a8 8 0 01-14 4.5" stroke-linecap="round"/><path d="M20 18.5V14h-4.5" stroke-linecap="round" stroke-linejoin="round"/>
+          {%- elif loop.index == 2 %}<path d="M4 7h16M4 12h16M4 17h10" stroke-linecap="round"/>
+          {%- elif loop.index == 3 %}<rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 9.5h16M9.5 9.5V19" stroke-linecap="round"/>
+          {%- elif loop.index == 4 %}<path d="M8 8h8v8H8z" stroke-linejoin="round"/><path d="M5 5l3 3M19 5l-3 3M5 19l3-3M19 19l-3-3" stroke-linecap="round"/>
+          {%- elif loop.index == 5 %}<path d="M12 3v18M5 8l7-5 7 5" stroke-linecap="round" stroke-linejoin="round"/>
+          {%- elif loop.index == 6 %}<path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4.5" stroke-linecap="round" stroke-linejoin="round"/>
+          {%- elif loop.index == 7 %}<path d="M4 20h16M7 20V9M12 20V4M17 20v-7" stroke-linecap="round"/>
+          {%- else %}<path d="M7 3h7l4 4v14H7z" stroke-linejoin="round"/><path d="M14 3v4h4M10 13h5M10 17h5" stroke-linecap="round"/>{%- endif %}
+        </svg>
+        <h3>{{ d.name | safe }}</h3>
+        <p>{{ d.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="cleanup-bookkeeping-process">
+{#- §05 — PROCESS / how it works (ZIGZAG — the ONE numbered system · HowTo) + cleanup-timeline viz -#}
+<section class="section section--flagship section--alt section--zigzag" id="cleanup-bookkeeping-process">
   <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The process</p>
-      <h2 class="section__heading">From first call to clean books.</h2>
-    </header>
-    <ol class="process-diagram">
+    <div class="idx"><span class="idx__n">§05</span><span class="idx__t">How it works</span><span class="idx__rule"></span></div>
+    <h2 class="section__heading">From first call to clean books.</h2>
+    <ol class="zigzag-steps">
       {%- for s in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-        <p class="process-step__body"><strong>{{ s.when | safe }}</strong></p>
+      <li class="zigzag-step{% if loop.last %} zigzag-step--done{% endif %}">
+        <p class="zigzag-step__n">STEP {{ s.num }}{% if loop.last %} &check;{% endif %}</p>
+        <h3>{{ s.name | safe }}</h3>
+        <p>{{ s.body | safe }}</p>
+        <p><strong>{{ s.when | safe }}</strong></p>
       </li>
       {%- endfor %}
     </ol>
+    {% include "partials/figure-cleanup-timeline.svg" %}
+    <p class="cleanup-timeline__note">Representative schedule, not a guarantee &mdash; your written timeline is set from your own file after the diagnostic. A file ~6 months behind typically runs about five weeks (week&nbsp;1 scope &amp; access, weeks&nbsp;2&ndash;3 categorise &amp; correct, weeks&nbsp;3&ndash;4 reconcile every account, week&nbsp;5 review, corrected statements, and CPA-ready handoff). Files further behind run longer.</p>
   </div>
 </section>
 
-<section class="section section--alt" id="cleanup-bookkeeping-compare">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The difference</p>
-      <h2 class="section__heading">What changes when the books are clean.</h2>
-      <p class="section__lede">Cleanup unwinds the accumulated <strong>compounding reconciliation drift</strong> &mdash; here is the before and after, dimension by dimension.</p>
-    </header>
+{#- §06 — COMPARISON / what changes (CALLOUT framing + before/after vs-table) -#}
+<section class="section section--flagship section--callout" id="cleanup-bookkeeping-compare">
+  <div class="container">
+    <div class="idx idx--centered"><span class="idx__rule"></span><span class="idx__t">What changes</span><span class="idx__rule"></span></div>
+    <div class="callout">
+      <h2 class="callout__line section__heading">What changes when the books are clean.</h2>
+      <p class="callout__sub">Cleanup unwinds the accumulated <strong>compounding reconciliation drift</strong> &mdash; here is the before and after, dimension by dimension.</p>
+    </div>
     <div class="vs-scroll">
       <table class="vs-table">
         <caption class="sr-only">Bookkeeping before and after a TechBrot cleanup engagement, by dimension.</caption>
@@ -177,54 +193,60 @@
   </div>
 </section>
 
-<section class="section" id="cleanup-bookkeeping-pricing">
+{#- §07 — PRICING (STAT-BAND — 3 tiers, MOST COMMON featured) -#}
+<section class="section section--flagship section--alt section--stat-band" id="cleanup-bookkeeping-pricing">
   <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Pricing</p>
-      <h2 class="section__heading">Fixed fee, written scope, no hourly billing.</h2>
-      <p class="section__lede">Three tiers; ranges are typical engagements, final pricing follows the diagnostic. See the <a href="/pricing/?intent=pricing">bookkeeping pricing page</a> for ongoing monthly pricing after cleanup.</p>
-    </header>
-    <div class="grid-3">
+    <div class="idx"><span class="idx__n">§07</span><span class="idx__t">Pricing</span><span class="idx__rule"></span></div>
+    <h2 class="section__heading">Fixed fee, written scope, no hourly billing.</h2>
+    <p class="section__lede">Three tiers; ranges are typical engagements, final pricing follows the diagnostic. See the <a href="/pricing/?intent=pricing">bookkeeping pricing page</a> for ongoing monthly pricing after cleanup.</p>
+    <div class="stat-band">
       {%- for t in tiers %}
-      <article class="review-card{% if t.note %} review-card--featured{% endif %}">
-        {%- if t.note %}<p class="review-card__role">{{ t.note | safe }}</p>{%- endif %}
-        <h3>{{ t.name | safe }}</h3>
-        <p class="review-card__fact"><strong>{{ t.price | safe }}</strong></p>
-        <p class="review-card__fact"><strong>For:</strong> {{ t.forWhom | safe }}</p>
-        <ul class="checks-list">
+      <article class="stat-tier{% if t.note %} stat-tier--featured{% endif %}">
+        {%- if t.note %}<p class="stat-tier__flag">{{ t.note | safe }}</p>{%- endif %}
+        <h3 class="stat-tier__name">{{ t.name | safe }}</h3>
+        <p class="stat-tier__price">{{ t.price | safe }}</p>
+        <p class="stat-tier__for"><strong>For:</strong> {{ t.forWhom | safe }}</p>
+        <ul class="stat-tier__bullets">
           {%- for b in t.bullets %}<li>{{ b | safe }}</li>{%- endfor %}
         </ul>
-        <a class="review-card__link" href="/contact/?intent=cleanup">{{ t.cta | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="stat-tier__link" href="/contact/?intent=cleanup">{{ t.cta | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
       </article>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="cleanup-bookkeeping-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Who performs the work</p>
-      <h2 class="section__heading">A named, credentialed local operator. Not an anonymous offshore team.</h2>
-    </header>
-    <div class="prose">
-      <p>Every TechBrot cleanup is delivered by a vetted local operator &mdash; an independent accounting practice running under TechBrot&rsquo;s brand, standards, and infrastructure. You&rsquo;ll know exactly who is working on your books, how to reach them, and what credentials they hold. Platform-level quality review backs every engagement, and if continuity is ever a question, the platform handles the transition without losing the file context.</p>
-    </div>
-    <div class="trust-row">
-      {%- for r in operatorSpec %}
-      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
-      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
-      {%- endfor %}
+{#- §08 — OPERATOR / who does the work (ASYMMETRIC — editorial + trust panel) -#}
+<section class="section section--flagship section--asymmetric" id="cleanup-bookkeeping-operator">
+  <div class="container">
+    <div class="section-split">
+      <div>
+        <div class="idx"><span class="idx__n">§08</span><span class="idx__t">Who performs the work</span><span class="idx__rule"></span></div>
+        <h2 class="section__heading">A named, credentialed local operator. Not an anonymous offshore team.</h2>
+        <p class="section-split__lede" style="max-width:46ch;">Every TechBrot cleanup is delivered by a vetted local operator &mdash; an independent accounting practice running under TechBrot&rsquo;s brand, standards, and infrastructure. You&rsquo;ll know exactly who is working on your books, how to reach them, and what credentials they hold. Platform-level quality review backs every engagement, and if continuity is ever a question, the platform handles the transition without losing the file context.</p>
+        <figure class="operator-quote" style="margin-top:var(--space-7);">
+          <blockquote>&ldquo;They took something that felt overwhelming to me as a first-year business owner and made it simple.&rdquo;</blockquote>
+          <cite>Heidi Schubert &middot; Owner, Beverage Connection &middot; <b>Verified Clutch review</b></cite>
+        </figure>
+      </div>
+      <div class="operator-panel">
+        <p class="operator-panel__label">The standard, every file</p>
+        <ul>
+          {%- for r in operatorSpec %}
+          <li><span><strong>{{ r.value | safe }}.</strong> {{ r.label | safe }}</span></li>
+          {%- endfor %}
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="cleanup-bookkeeping-next">
+{#- §09 — AROUND THE CLEANUP / related engagements (SPLIT idx + related-grid;
+    FREEZE-required headings the Design template omitted — kept per freeze) -#}
+<section class="section section--flagship section--alt" id="cleanup-bookkeeping-next">
   <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Around the cleanup</p>
-      <h2 class="section__heading">Cleanup is often part of a larger engagement.</h2>
-    </header>
+    <div class="idx"><span class="idx__n">§09</span><span class="idx__t">Around the cleanup</span><span class="idx__rule"></span></div>
+    <h2 class="section__heading">Cleanup is often part of a larger engagement.</h2>
     <div class="related-grid">
       {%- for n in nextSteps %}
       <a class="related-card" href="{{ n.href }}">
@@ -236,14 +258,18 @@
   </div>
 </section>
 
-<section class="section" id="cleanup-bookkeeping-call">
+{#- ─── DUAL CONVERSION SEAM ─── primary call-block, then the minimal intake-form ─── -#}
+
+{#- §10 — PRIMARY CALL-BLOCK -#}
+<section class="section section--flagship" id="cleanup-bookkeeping-call">
   <div class="container">
+    <div class="idx"><span class="idx__n">§10</span><span class="idx__t">Talk to a ProAdvisor</span><span class="idx__rule"></span></div>
     <div class="call-block">
       <div class="call-block__main">
         <p class="section__eyebrow">Talk to a ProAdvisor</p>
         <h2 class="call-block__heading">One call tells you exactly where your books stand.</h2>
         <p class="call-block__lede">No form, no sales script. You speak with a Certified QuickBooks ProAdvisor who has looked at files like yours &mdash; and you get a written fixed-fee scope within one business day.</p>
-        <a class="call-block__cta" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">
+        <a class="call-block__cta" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click">
           {% include "icons/phone.svg" %}
           <span class="call-block__num">{{ site.phone.display }}<span class="call-block__sub">Mon&ndash;Fri &middot; we reply the same business day</span></span>
         </a>
@@ -266,12 +292,72 @@
   </div>
 </section>
 
-<section class="section section--alt" id="cleanup-bookkeeping-faq">
+{#- §11 — INTAKE FORM (secondary seam, minimal · locked field names) -#}
+<section class="section section--flagship section--alt" id="cleanup-bookkeeping-intake">
   <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">What people ask before scoping a cleanup.</h2>
-    </header>
+    <div class="idx"><span class="idx__n">§11</span><span class="idx__t">Prefer email</span><span class="idx__rule"></span></div>
+    <h2 class="section__heading">Scope your cleanup.</h2>
+    <p class="intake-seam__lede">Send a few details and a Certified ProAdvisor replies the same business day. Or just <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click">call {{ site.phone.display }}</a>.</p>
+    <form class="intake-form intake-form--minimal" id="cleanup-bookkeeping-intake-form" data-form="contact-discovery" method="POST" action="/contact/submit" novalidate>
+      <div class="intake-grid">
+        <div class="intake-field">
+          <label class="intake-field__label" for="cb-name">Full name</label>
+          <input type="text" id="cb-name" name="name" required autocomplete="name">
+        </div>
+        <div class="intake-field">
+          <label class="intake-field__label" for="cb-email">Work email</label>
+          <input type="email" id="cb-email" name="email" required autocomplete="email">
+        </div>
+        <div class="intake-field">
+          <label class="intake-field__label" for="cb-months">Months behind <span class="intake-field__optional">optional</span></label>
+          <select id="cb-months" name="months">
+            <option value="">Select range</option>
+            <option value="1-3">1&ndash;3 months</option>
+            <option value="3-12">3&ndash;12 months</option>
+            <option value="1-2y">1&ndash;2 years</option>
+            <option value="2y-plus">2+ years</option>
+          </select>
+        </div>
+        <div class="intake-field">
+          <label class="intake-field__label" for="cb-qb-status">QuickBooks version <span class="intake-field__optional">optional</span></label>
+          <select id="cb-qb-status" name="qb_status">
+            <option value="">Select one</option>
+            <option value="qbo-current">QuickBooks Online</option>
+            <option value="qb-desktop">QuickBooks Desktop</option>
+            <option value="qb-enterprise">QuickBooks Enterprise</option>
+            <option value="not-sure">Not sure</option>
+          </select>
+        </div>
+      </div>
+      <div class="intake-field">
+        <label class="intake-field__label" for="cb-message">Anything specific? <span class="intake-field__optional">optional</span></label>
+        <textarea id="cb-message" name="message" rows="3" placeholder="A line or two about the state of the file helps us scope the call."></textarea>
+      </div>
+      <div class="intake-consent">
+        <label class="intake-checkbox"><input type="checkbox" name="consent" value="agreed" required><span>I agree to be contacted by TechBrot regarding this cleanup inquiry.<span class="intake-checkbox__help">We&rsquo;ll only use your details to respond to this request. See our <a href="/legal/privacy-policy/">privacy policy</a>.</span></span></label>
+      </div>
+      <input type="hidden" name="intent" data-meta="intent" value="cleanup">
+      <input type="hidden" name="source_page" data-meta="source_page" value="accounting/bookkeeping/cleanup-bookkeeping">
+      <input type="hidden" name="source_type" data-meta="source_type" value="bofu-conversion">
+      <input type="hidden" name="funnel_stage" data-meta="funnel_stage" value="BOFU">
+      <input type="hidden" name="referring_page" id="cb-referring-page" value="" data-referrer-tracker>
+      <div class="sr-only" aria-hidden="true">
+        <label for="cb-company-website">Company website (leave blank)</label>
+        <input type="text" id="cb-company-website" name="company_website" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="intake-form__foot">
+        <button class="btn btn--primary" type="submit" data-cta="contact-form-submit">Send the Discovery Brief</button>
+        <p class="intake-form__reassurance">Same business day &middot; no obligation. A Certified ProAdvisor replies within one business day.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+{#- §12 — FAQ (faq__list / crawlable Q&A · matches FAQPage verbatim) -#}
+<section class="section section--flagship" id="cleanup-bookkeeping-faq">
+  <div class="container container--narrow">
+    <div class="idx"><span class="idx__n">§12</span><span class="idx__t">Questions</span><span class="idx__rule"></span></div>
+    <h2 class="section__heading">What people ask before scoping a cleanup.</h2>
     <div class="faq__list">
       {%- for item in faq %}
       <div class="faq__item">
