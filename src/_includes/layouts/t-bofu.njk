@@ -70,10 +70,10 @@ callBar: true
 
 {%- if ctaBand %}
 <section class="section section--cta-band section--cta-band--{% if ctaBand.dark %}dark{% else %}light{% endif %} {{ tierClass }}" id="{{ slug }}-cta">
-  <div class="cta-band__motif" aria-hidden="true">{% include "partials/motif-align-single.svg" %}</div>
+  <div class="cta-band__motif" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></div>
   <div class="container">
     <div class="final-cta">
-      <p class="section__eyebrow">{{ ctaBand.eyebrow | safe }}</p>
+      <p class="final-cta__eyebrow"><span class="final-cta__mark" aria-hidden="true"><span></span><span></span></span>{{ ctaBand.eyebrow | safe }}</p>
       <h2 class="final-cta__heading">{{ ctaBand.heading | safe }}</h2>
       <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
       <div class="final-cta__actions">

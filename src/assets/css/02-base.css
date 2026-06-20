@@ -50,7 +50,7 @@ p { margin: 0; }
 
 /* ---- Display + heading helpers used by templates ---- */
 .dsp { font-family: var(--font-serif); font-variation-settings: var(--serif-display-axes); font-weight: var(--fw-medium); line-height: var(--lh-tight); letter-spacing: var(--ls-tight); color: var(--text-strong); }
-.h2 { font-family: var(--font-serif); font-variation-settings: var(--serif-heading-axes); font-weight: var(--fw-medium); font-size: var(--fs-32); line-height: var(--lh-snug); letter-spacing: var(--ls-snug); color: var(--text-strong); }
+.h2 { font-family: var(--font-serif); font-variation-settings: var(--serif-heading-axes); font-weight: var(--fw-medium); font-size: clamp(1.75rem, 1.4rem + 2vw, 2.5rem); line-height: var(--lh-tight); letter-spacing: var(--ls-snug); color: var(--text-strong); }
 .lede { font-size: var(--fs-20); line-height: var(--lh-base); color: var(--text-secondary); }
 .eyebrow { font-family: var(--font-mono); font-size: var(--fs-12); letter-spacing: var(--ls-wider); text-transform: uppercase; color: var(--text-secondary); }
 .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
@@ -68,8 +68,9 @@ p { margin: 0; }
 .section__header--centered { text-align: center; margin-inline: auto; }
 .section__eyebrow { font-family: var(--font-mono); font-size: var(--fs-12); letter-spacing: var(--ls-wider); text-transform: uppercase; color: var(--text-secondary); margin-bottom: var(--space-3); }
 .section__eyebrow--inverted { color: var(--accent-on-ink); }
-.section__heading { font-family: var(--font-serif); font-variation-settings: var(--serif-heading-axes); font-weight: var(--fw-medium); font-size: var(--fs-32); line-height: var(--lh-snug); letter-spacing: var(--ls-snug); color: var(--text-strong); margin: 0; }
-.section__lede { font-size: var(--fs-17); line-height: var(--lh-base); color: var(--text-secondary); margin: var(--space-4) 0 0; max-width: 60ch; }
+.section__heading { font-family: var(--font-serif); font-variation-settings: var(--serif-heading-axes); font-weight: var(--fw-medium); font-size: clamp(1.75rem, 1.4rem + 2vw, 2.5rem); line-height: var(--lh-tight); letter-spacing: var(--ls-snug); color: var(--text-strong); margin: 0 0 var(--space-8); }
+.section__heading:has(+ .section__lede) { margin-bottom: var(--space-3); }
+.section__lede { font-size: var(--fs-18); line-height: var(--lh-base); color: var(--text-secondary); margin: 0 0 var(--space-8); max-width: 62ch; }
 
 /* ---- Prose (reading column) ---- */
 .prose { font-size: var(--fs-17); line-height: var(--lh-loose); color: var(--text-body); }

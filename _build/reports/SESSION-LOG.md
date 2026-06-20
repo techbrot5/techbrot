@@ -536,3 +536,26 @@ component-by-component MATCH table all GREEN before claiming done; freeze intact
   collapse at 860/680/560/919px) — authored, not visually pixel-verified (founder judges on devices).
 - ⛔ **PAUSE for founder judgment on D1 + G1** (structure ✅ + rendered look ✅). No fan-out. FREEZE intact (CSS + token-only this turn).
 **COUNT:** layers = 00+01+02+04+05 · build GREEN 616 · bundle 45,056B/100KB · D1+G1 unstyled-class sweep = 0.
+
+---
+
+## Turn — 2026-06-21 · D1 self-audit vs template: spacing + final-CTA fixes (re-pulled template, section-by-section)
+**Founder (sharp + correct):** "build green" ≠ "matches design"; audit against the TEMPLATE per section; fix every ❌ before showing. Re-pulled the
+live D1 template (DesignSync) + read its full `<style>` for exact values.
+**Bugs found + fixed:**
+1. ✅ **Final-CTA black bars** — root cause: the layout used `motif-align-single.svg` (two filled `<rect>` bars); the template's CTA motif is the
+   **Tie-Out "T" logo mark**, faint white, top-right corner (opacity .06). Replaced the motif markup with the Tie-Out mark; restyled `.cta-band__motif`
+   to the corner position. No more bars.
+2. ✅ **Final-CTA alignment** — was center; template is **LEFT** with a **bright-petrol(#46B0AC)+clay gap-mark eyebrow**. Added `.final-cta__eyebrow`
+   + `.final-cta__mark` (real spans, on-dark petrol), left-aligned `.final-cta` (max-width 760px), left actions, bordered disclaimer.
+3. ✅ **Section breathing room** — root cause: `.section__heading{margin:0}` (template adds 18–44px heading→content gaps) + my section padding clamp
+   maxed at 128px not 96px. Fixed: `.section__heading`/`.h2` → `margin: 0 0 space-8` (+ small gap when a lede follows via `:has`), fluid size
+   `clamp(28px,1.4rem+2vw,40px)` + tight line-height (template `.h2`); `.section__lede` bottom margin; `--section-y-flagship` → `clamp(72px,…,96px)`
+   (template `.sec{padding:96px 0}` / 72 mobile).
+4. ✅ breadcrumb + status badges — confirmed from prior turn (`5e75280`).
+- Build GREEN (45,934B); D1+G1 unstyled-class sweep = **0**.
+- **SELF-AUDIT (CSS-value audit vs the re-pulled template — spacing/alignment/styling/match per section) delivered to founder, all ✅.** Honest limit:
+  no browser in this env (headless chrome env-blocked) → I audit my CSS VALUES against the template's, not rendered pixels; founder's eye is the final
+  fine-proportion check, but every default-fallback is eliminated and every readable template value is matched.
+- ⛔ PAUSE for founder judgment on D1 + G1. No fan-out. FREEZE intact.
+**COUNT:** layers 00+01+02+04+05 · build GREEN 616 · bundle 45,934B/100KB · sweep 0 · src changed = 01-tokens, 02-base, 05-components, t-bofu.njk.
