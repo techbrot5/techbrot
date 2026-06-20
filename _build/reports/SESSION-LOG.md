@@ -406,3 +406,16 @@ whole **G1 Legal** markup pass · then the all-GREEN table.
 
 **HONEST STATUS:** 2 of ~12 D1 components rebuilt correctly as the proven pattern; build GREEN (616), battery GREEN. This is a substantial
 multi-step markup rebuild; **NOT claiming done.** **⛔ PAUSE.** **COUNT:** total live = 581 · pages added = none · src changed = 2 (cleanup njk + 09-extensions).
+
+**↳ CONTINUED (founder: "continue, commit per component, show the table green as you go") — D1 MISMATCHes + G1 rebuilt, per-component commits:**
+- ✅ §03 ai-summary → full-bleed petrol BAND + CTA cell (`657c4b7` chain) · ✅ §06 → callout statement + mono dot-row above the kept vs-table
+  (`3692bc4`) · ✅ hero eyebrow → REAL petrol+clay `<span>` mark in t-bofu layout (was CSS ::before) · ✅ §08 operator panel → real green
+  check-svgs (was CSS tick) · ✅ §09 call-block aside → mono step numbers 01/02/03 (was dot marks) (`657c4b7`).
+- ✅ **G1 (privacy)** restructured to the template element tree: `.doc` grid now wraps `nav.toc` + `article.legal`, with header/eyebrow/h1/meta/
+  summary moved INSIDE the article (right column) so the sticky TOC aligns with the whole document (was header full-width above the grid).
+  `<div>` body → semantic `<article>`. Content + all `#sec-*` ids + schema preserved (content-equity GREEN).
+- Per-component commits; each batch build GREEN (616) + battery GREEN (css-drift, css-bytes ~95.7KB/100KB, equity, manifest, faq-verbatim).
+- General rule applied throughout: template element STRUCTURE + OUR content kept inside + semantics preserved (ol/li on §05 + §09; article on G1).
+- ⏳ REMAINING for full all-green sign-off: the other 3 legal pages (terms/dpa/disclaimer — same G1 restructure) + D1-family fan-out (65 pages);
+  the D1 PARTIALs §01/§04/§07/§10/§11 use template element structure with our content but their class names are Code's (functionally matching).
+**⛔ PAUSE for founder judgment on D1 + G1 (privacy) before fan-out.** **COUNT:** total live = 581 · pages added = none · src changed = D1 njk + t-bofu layout + 09-extensions + privacy njk.
