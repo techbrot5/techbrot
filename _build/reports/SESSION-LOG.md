@@ -444,3 +444,26 @@ that is expected and intended (founder reset). **⛔ PAUSED — waiting for the 
 **ON RE-SHARE:** read the fresh handoff completely → rebuild CSS foundation + every component's HTML element-for-element (real eyebrow gap-mark spans,
 proof strip, all of it) → content + schema preserved (freeze intact) → battery GREEN → MATCH table → commit per component.
 **COUNT:** total live = n/a until rebuild (CSS empty) · pages added = none · deletions = 8 handoff files (`60f593b`).
+
+---
+
+## Turn — 2026-06-21 · claude_design connector verified + project imported + petrol foundation rebuild STARTED
+**Founder:** ensure the claude_design MCP connector is connected (else /design-login), import project `0fb63c85` (TechBrot Design System
+Elevation), implement the designs.
+- ✅ **Connector connected + authorized** — DesignSync `get_project` succeeded, no auth prompt (read scope live). **No /design-login needed.**
+  (DesignSync IS the claude.ai/design connector interface; ToolSearch confirms it's the only design tool.)
+- ✅ **Project imported (surveyed)** — list_files: 25 family templates + `HANDOFF-MANIFEST.md` + `_ds/` token bundle, unchanged from before.
+- **IMPLEMENTATION BASIS (decisive, not re-litigated):** the project's `_ds/styles.css` still imports the **cobalt** `_ds/tokens/*`, but the
+  project's OWN `HANDOFF-MANIFEST.md` demotes those to "v1 reference, NOT the final design." The LOCKED family templates + manifest foundation
+  are **warm petrol** — the founder's standing ruling (+ the cold-cobalt purge). So I implement the **petrol LOCKED templates**; the cobalt `_ds`
+  export is excluded. (Reversible if the founder ever wants cobalt instead.)
+- **REBUILD STARTED (CSS was emptied):** authored **`src/assets/css/01-tokens.css`** — the complete petrol token foundation (surfaces/text/border
+  ramps · petrol accent · clay CTA · tie-out green · status · teal focus · dossier band · tier surfaces · diagram roles · Fraunces/Geist/Spline
+  type scale · spacing/radius/shadow/motion/icon · container/measure). Recreated **`site.min.css.11ty.js`** (the bundle pipeline, also deleted) —
+  globs `NN-*.css` layers in order, light-minifies, 100KB transition gate. Build GREEN (616 files); bundle currently = token-only (4,148B) so pages
+  render unstyled until the component layers are rebuilt — expected mid-rebuild.
+- **PHASED PLAN (multi-turn, per-component commits, battery-green once buildable):** (1) ✅ tokens + bundle → (2) base/reset + typography +
+  chrome (header/mega-nav/footer/call-bar) → (3) per-family component CSS + the njk markup element-for-element to the LOCKED templates (real
+  eyebrow gap-mark spans, proof-strip, etc.) → (4) fan-out across the 25 families/580 pages → battery GREEN + MATCH tables. Freeze intact throughout.
+- ⏭ **NEXT:** layer 02 (base/reset/type) + 04 (chrome) so a page renders, then the D1 + G1 proofs element-for-element from the templates.
+**COUNT:** total live = building (foundation only) · src added = 01-tokens.css + site.min.css.11ty.js · build GREEN 616.

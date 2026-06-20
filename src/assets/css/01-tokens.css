@@ -1,286 +1,184 @@
-/* 01-tokens.css — RE-CUT to the LOCKED "TechBrot Design System Elevation" (Phase 0, 2026-06-20).
-   ============================================================================
-   TechBrot · ELEVATED SKIN · 01 — DESIGN TOKENS  (WARM / PETROL system)
-   Source of truth: Claude Design "TechBrot Design System Elevation" — HANDOFF-MANIFEST.md (governs)
-   + Handoff - Claude Code + the locked templates. Founder-locked palette:
-     WARM + LIGHT · page #FCFBF8 / sand #F7F2E9 · two accent ROLES, never crossed:
-       · Petrol Ink  #0E4A50 — brand · links · marks · verification-adjacent  (--accent / --color-accent)
-       · Burnt Clay  #BE5240 — primary CTA fills + key attention ONLY, never links (--cta · NEW group)
-       · Tie-out grn #157A52 — reconciled / verification ticks ONLY (--tie / --color-success)
-     Type: Fraunces (display) · Geist (body/UI) · Spline Sans Mono (figures, 400/500/600).
-   ----------------------------------------------------------------------------
-   CAPTURE RULE (design-ownership): every ENFORCED legacy token NAME is preserved and only its VALUE
-   re-cut, so the component layers (02–09, fully tokenised, zero hardcoded hex) inherit the new skin
-   with no class churn and the css-drift gate stays GREEN. New concepts are NEW names (--cta-* group +
-   the handoff --surface-* / --diagram-* / --illus-* / --measure-* / --icon-* / --section-y-flagship).
-   Supersedes the 2026-06-16 cold Ledger-Ink elevation (now purged direction).
+/* ============================================================================
+   TechBrot · 01 — DESIGN TOKENS  (WARM / PETROL system)
+   Rebuilt from scratch against the Claude Design project "TechBrot Design System
+   Elevation" (0fb63c85) — the LOCKED family templates + HANDOFF-MANIFEST.md.
+   Foundation (manifest-governed, petrol — NOT the demoted v1 cobalt _ds export):
+     · Petrol Ink  #0E4A50 — brand · links · marks            (--accent / --color-accent)
+     · Burnt Clay  #BE5240 — primary CTA fills + key attention (--cta · never links)
+     · Tie-out grn #157A52 — reconciled / verification ticks   (--tie / --color-success)
+   Surfaces WARM + LIGHT: page #FCFBF8 · sand #F7F2E9 · card #FFF · ink #14110C.
+   Type: Fraunces (display) · Geist (body/UI) · Spline Sans Mono (figures, 400/500/600).
+   Every component layer references THESE tokens (zero hardcoded hex; css-drift gate).
    ============================================================================ */
 
 :root {
-  /* ===== Warm neutral ramp (legacy "paper" names re-cut WARM) ===== */
-  --color-paper: #FCFBF8;        /* page                                        */
-  --color-paper-warm: #F7F2E9;   /* sand — whisper tonal (variety engine)       */
-  --color-paper-deep: #F1EBDF;   /* deeper inset band (tier: bofu)              */
-  --color-paper-edge: #DED6C9;   /* hairlines / input borders (non-text)        */
-  --color-paper-mist: #FAF6EE;   /* subtle tonal section / hover (tier: hub/guide) */
-  --color-ink: #14110C;          /* strong warm ink · headings                  */
-  --color-ink-soft: #2E2A24;     /* body default                                */
-  --color-ink-mute: #6E6456;     /* muted / eyebrow                             */
-  --color-ink-faint: #9C9484;    /* NON-TEXT ONLY — placeholders, hairmarks     */
-  --color-accent: #0E4A50;       /* Petrol Ink · brand · links · marks          */
-  --color-accent-deep: #09353A;  /* hover / active                              */
-  --color-accent-soft: #2E7D82;  /* bright accent (emphasis; non-text/large)    */
-  --color-ink-inverted: #F5F3EC; /* warm cream on dark                          */
+  /* ===== Warm neutral ramp ===== */
+  --color-paper: #FCFBF8;         /* page background                              */
+  --color-paper-warm: #F7F2E9;    /* sand — tonal sections (variety engine)       */
+  --color-paper-mist: #FAF6EE;    /* subtle tonal section / hover                 */
+  --color-paper-deep: #F1EBDF;    /* deeper inset band (tier: bofu)              */
+  --color-paper-edge: #DED6C9;    /* input borders / hairlines (non-text)        */
+  --color-ink: #14110C;           /* strong warm ink · headings                  */
+  --color-ink-soft: #2E2A24;      /* body default                                */
+  --color-ink-body2: #4A443B;     /* secondary body (on cards / dark-adjacent)   */
+  --color-ink-mute: #6E6456;      /* muted / eyebrow                             */
+  --color-ink-faint: #9C9484;     /* NON-TEXT ONLY — placeholders, hairmarks     */
+  --color-ink-inverted: #F5F3EC;  /* warm cream on dark                          */
   --color-ink-inverted-soft: rgba(245, 243, 236, 0.74);
   --color-ink-inverted-mute: rgba(245, 243, 236, 0.5);
   --color-surface-dark: #14110C;
   --color-surface-dark-2: #1F1A12;
+
+  /* ===== Accent — Petrol Ink (brand · links · marks; NEVER a CTA fill) ===== */
+  --color-accent: #0E4A50;
+  --color-accent-deep: #09353A;   /* hover / active                              */
+  --color-accent-soft: #2E7D82;   /* bright accent (emphasis; large/non-text)    */
+
+  /* ===== CTA — Burnt Clay (PRIMARY fills + key attention ONLY; never links) ===== */
+  --cta: #BE5240;
+  --cta-hover: #9C4233;
+  --cta-press: #843225;
+  --cta-soft: #F6E7E2;            /* soft clay tint                             */
+  --cta-border: #E7C3B9;
+
+  /* ===== Status / ledger semantics ===== */
+  --color-success: #157A52;       /* tie-out / reconciled (verification only)    */
+  --color-success-deep: #0F5E3F;
+  --color-success-soft: #E7F5EE;
+  --color-warning: #A4660A;       /* needs-review / caution                      */
+  --color-critical: #C0322C;      /* out-of-balance / form error                */
+  --color-critical-soft: #FBEAE7;
+  --color-brass: #7E5A1E;         /* editorial garnish                          */
+  --color-brass-bright: #C9A961;  /* dark-surface garnish / rating stars         */
+  --color-focus: #118A7E;         /* teal — never confusable with petrol links   */
+
+  /* ===== Semantic surface aliases (components reference these) ===== */
+  --surface-page: var(--color-paper);
+  --surface-subtle: #F7F2E9;      /* sand whisper tint                          */
+  --surface-muted: #FAF6EE;
+  --surface-inset: #F1EBDF;
+  --surface-card: #FFFFFF;        /* cards step up to white                      */
+  --surface-ink: #14110C;         /* the one earned dark band + footer mark well */
+  --surface-ink-2: #1F1A12;
+  --bg-page: var(--color-paper);
+  --bg-section-alt: var(--color-paper-warm);
+  --bg-card: #FFFFFF;
+  --bg-card-on-warm: #FFFFFF;
+
   /* Tier-coded section surfaces (warm, very light) */
   --surface-tier-hub: #F4EFE4;
   --surface-tier-bofu: #F1EBDF;
   --surface-tier-guide: #F7F2E9;
-  --color-focus: #118A7E;        /* teal — never confusable with petrol links   */
-  --color-success: #157A52;      /* tie-out / reconciled                        */
-  --color-warning: #A4660A;      /* needs-review / caution                      */
-  --color-critical: #C0322C;     /* out-of-balance / form error                 */
-  --color-brass-bright: #C9A961; /* dark-surface garnish                        */
-  --color-brass: #7E5A1E;        /* editorial garnish                           */
-  --bg-page: var(--color-paper);
-  --bg-section-alt: var(--color-paper-warm);
-  --bg-card: #FFFFFF;            /* cards step up to white                       */
-  --bg-card-on-warm: #FFFFFF;
+
+  /* ===== Text ===== */
   --text-primary: var(--color-ink);
+  --text-strong: #14110C;
   --text-body: var(--color-ink-soft);
   --text-secondary: var(--color-ink-mute);
+  --text-muted: var(--color-ink-mute);
   --text-eyebrow: var(--color-ink-mute);
-  --border-hairline: var(--color-paper-edge);
-  --accent: var(--color-accent);
+  --text-faint: #9C9484;          /* NON-TEXT ONLY */
+  --text-on-ink: #F5F3EC;
+  --text-on-ink-mut: #C9C0AE;
 
-  /* ===== handoff --surface-* group (warm/light system) ===== */
-  --surface-page: var(--color-paper);
-  --surface-subtle: #F7F2E9;     /* sand — handoff whisper tint                  */
-  --surface-muted: #FAF6EE;
-  --surface-inset: #F1EBDF;
-  --surface-card: #FFFFFF;
-  --surface-ink: #14110C;        /* the one earned dark band + footer mark well   */
-  --surface-ink-2: #1F1A12;
+  /* ===== Borders / hairlines ===== */
+  --border-hairline: var(--color-paper-edge);
   --border-subtle: #ECE5D8;
   --border-default: #DED6C9;
   --border-strong: #CBC2B0;
-  --text-strong: #14110C;
-  --text-muted: var(--color-ink-mute);
-  --text-faint: #9C9484;         /* NON-TEXT ONLY */
-  --text-on-ink: #F5F3EC;
-  --text-on-ink-mut: #C9C0AE;
-  /* accent system (Petrol) */
+
+  /* ===== Accent system (Petrol) — semantic ===== */
+  --accent: var(--color-accent);
   --accent-hover: #09353A;
   --accent-press: #07282C;
   --accent-bright: #2E7D82;
-  --accent-soft: #E4EDEC;        /* soft petrol tint fill / chip bg             */
+  --accent-soft: #E4EDEC;         /* soft petrol tint fill / chip bg            */
   --accent-border: #C8DBDA;
-  --accent-on-ink: #46B0AC;      /* bright petrol for dark surfaces             */
-  /* NEW (D1 dossier · 2026-06-20): deep-petrol dossier panel (money-page
-     ai-summary "dark dossier" treatment) + its on-panel text roles. Distinct
-     from the near-black --surface-ink earned band; this is a brand-petrol well. */
-  --surface-dossier: #0E3A3F;    /* NEW · deep petrol panel (D1 ai-summary)     */
-  --text-on-dossier: #DCEAE9;    /* NEW · cream-petrol body on dossier          */
-  --text-on-dossier-mut: #A9C7C4;/* NEW · muted body on dossier                 */
-  --border-on-dossier: #1E545A;  /* NEW · hairline on dossier                   */
-  --accent-on-dossier: #6FD0C8;  /* NEW · bright petrol-cyan §-marker on dossier (D1 live-template fidelity) */
-  --text-on-dossier-faint: #6FA8A6; /* NEW · muted label on dossier             */
+  --accent-on-ink: #46B0AC;       /* bright petrol legible on dark surfaces      */
 
-  /* ===== NEW: CTA group — Burnt Clay (PRIMARY CTA FILLS + KEY ATTENTION ONLY, never links) ===== */
-  --cta: #BE5240;
-  --cta-hover: #9C4233;
-  --cta-press: #843225;
-  --cta-soft: #F6E7E2;           /* soft clay tint                             */
-  --cta-border: #E7C3B9;
-  --cta-on: #FFFFFF;             /* white text on clay — AA                     */
+  /* ===== Verification tie-out ===== */
+  --tie: #157A52;
+  --tie-deep: #0F5E3F;
+  --tie-soft: #E7F5EE;
 
-  /* ledger semantic (component aliases) */
-  --tie: #157A52;  --tie-deep: #0F5E3F;  --tie-soft: #E7F5EE;  --tie-border: #CFEADF;
-  --flag: #C0322C; --flag-deep: #9A2722; --flag-soft: #FCEDEC; --flag-border: #F4D9D6;
-  --caution: #A4660A; --caution-deep: #7E4D06; --caution-soft: #FBF2E0; --caution-border: #F6E3BE;
+  /* ===== D1 dossier — deep-petrol AI-summary band ===== */
+  --surface-dossier: #0E3A3F;
+  --text-on-dossier: #DCEAE9;
+  --text-on-dossier-mut: #A9C7C4;
+  --text-on-dossier-faint: #6FA8A6;
+  --border-on-dossier: #1E545A;
+  --accent-on-dossier: #6FD0C8;
 
-  /* ===== signature diagram roles (--diagram-*) — petrol/warm ===== */
-  --diagram-rule: #CBC2B0;       /* the T / ledger rules · stroke 1.5            */
-  --diagram-debit: #14110C;      /* debit column ink                            */
-  --diagram-credit: #0E4A50;     /* credit column petrol                        */
-  --diagram-tie: #157A52;        /* the green tie-out tick                       */
-  --diagram-flag: #C0322C;       /* out-of-balance                              */
-  --diagram-grid: #ECE5D8;       /* faint backing grid                          */
-  --diagram-node: #F7F2E9;       /* node fill                                   */
-  --diagram-paper: #FFFFFF;      /* figure surface                              */
+  /* ===== Signature-diagram role tokens (petrol credit / green tie / warm rule) ===== */
+  --diagram-rule: #CBC2B0;
+  --diagram-grid: #ECE5D8;
+  --diagram-debit: #14110C;
+  --diagram-credit: #0E4A50;
+  --diagram-tie: #157A52;
+  --diagram-flag: #C0322C;
+  --diagram-paper: #FFFFFF;
+  --diagram-field: #FAF6EE;
+  --illus-tie: #3DBB85;           /* bright tie-out on dark (proof band / aside)  */
 
-  /* ===== isometric 3D-look illustration palette (on dark) (--illus-*) ===== */
-  --illus-ink: #14110C;
-  --illus-face-1: #14110C;
-  --illus-face-2: #1F1A12;
-  --illus-edge: #2E2A24;
-  --illus-edge-2: #3A3528;
-  --illus-accent: #2E7D82;
-  --illus-accent-line: #46B0AC;
-  --illus-tie: #3DBB85;
-  --illus-tie-deep: #0F2E22;
-  --illus-tie-stroke: #1E9266;
+  /* ===== Type — families ===== */
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;   /* display / headings */
+  --font-sans: "Geist", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "Spline Sans Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  /* opsz/axis presets for variable Fraunces */
+  --serif-display-axes: "opsz" 96;
+  --serif-heading-axes: "opsz" 72;
+  --serif-small-axes: "opsz" 40;
 
-  /* ===== Fonts ===== */
-  --font-serif: "Fraunces", "Fraunces-fallback", Georgia, "Times New Roman", serif;
-  --font-sans: "Geist", "Geist-fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  --font-mono: "Spline Sans Mono", "SplineMono-fallback", "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
-  /* Fraunces variable axes — display vs heading vs small voice */
-  --serif-display-axes: "opsz" 110, "SOFT" 0, "WONK" 0;
-  --serif-heading-axes: "opsz" 60, "SOFT" 0, "WONK" 0;
-  --serif-small-axes: "opsz" 40, "SOFT" 0, "WONK" 0;
+  /* ===== Type — scale (rem, 16px base) ===== */
+  --fs-11: 0.6875rem;  --fs-12: 0.75rem;   --fs-13: 0.8125rem; --fs-14: 0.875rem;
+  --fs-15: 0.9375rem;  --fs-16: 1rem;      --fs-17: 1.0625rem;  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;    --fs-24: 1.5rem;    --fs-28: 1.75rem;    --fs-32: 2rem;
+  --fs-40: 2.5rem;     --fs-50: 3.125rem;  --fs-68: clamp(2.5rem, 2rem + 3.6vw, 4.25rem);
 
-  /* Brand mark — the gapped rule (30 / gap / 14), inherits Petrol via var(--accent).
-     REFERENCE values; usages inline the literal gradient (render engines mishandle
-     gradient-holding custom properties on pseudo-elements). */
-  --rule-aligned: linear-gradient(90deg, var(--accent) 0 30px, transparent 30px 34px, var(--accent) 34px 48px);
-  --rule-aligned-sm: linear-gradient(90deg, var(--accent) 0 16px, transparent 16px 19px, var(--accent) 19px 26px);
+  /* ===== Type — weights / line-height / tracking ===== */
+  --fw-regular: 400;  --fw-medium: 500;  --fw-semibold: 600;  --fw-bold: 700;
+  --lh-none: 1;       --lh-tight: 1.08;  --lh-snug: 1.22;  --lh-base: 1.55;
+  --lh-loose: 1.7;    --lh-prose: 1.8;
+  --ls-tight: -0.022em;  --ls-snug: -0.018em;  --ls-base: -0.005em;
+  --ls-wide: 0.1em;      --ls-wider: 0.2em;
 
-  /* ===== Type scale (names kept; rem-based) ===== */
-  --fs-11: 0.6875rem;
-  --fs-12: 0.75rem;
-  --fs-13: 0.8125rem;
-  --fs-14: 0.875rem;
-  --fs-15: 0.9375rem;
-  --fs-16: 1rem;
-  --fs-17: 1.0625rem;
-  --fs-18: 1.125rem;
-  --fs-20: 1.25rem;
-  --fs-22: 1.375rem;
-  --fs-24: 1.5rem;
-  --fs-28: 1.75rem;
-  --fs-32: 2rem;
-  --fs-38: 2.375rem;
-  --fs-44: 2.75rem;
-  --fs-52: 3.25rem;
-  --fs-68: 4.25rem;
-  /* Fluid display clamps (heroes) */
-  --display-sm: clamp(2.25rem, 1.6rem + 2.6vw, 3.25rem);
-  --display-md: clamp(2.5rem, 1.5rem + 3.4vw, 3.75rem);
-  --display-lg: clamp(2.75rem, 1.4rem + 5vw, 4.25rem);
+  /* ===== Spacing (4px base) ===== */
+  --space-1: 0.25rem;  --space-2: 0.5rem;   --space-3: 0.75rem;  --space-4: 1rem;
+  --space-5: 1.25rem;  --space-6: 1.5rem;   --space-7: 2rem;     --space-8: 2.5rem;
+  --space-9: 3rem;     --space-10: 3.5rem;  --space-12: 4rem;    --space-14: 5rem;
+  --space-16: 6rem;    --space-20: 8rem;
+  --section-y: clamp(4rem, 2.5rem + 5vw, 7rem);
+  --section-y-flagship: clamp(4.5rem, 3rem + 6vw, 8rem);
+  --section-y-tight: clamp(3rem, 2rem + 3vw, 4.5rem);
 
-  --lh-tight: 1.05; /* @kind other */
-  --lh-snug: 1.15; /* @kind other */
-  --lh-base: 1.55; /* @kind other */
-  --lh-loose: 1.7; /* @kind other */
-  --lh-prose: 1.65; /* @kind other */
-  --ls-tight: -0.022em;   /* display */
-  --ls-snug: -0.018em;    /* heading */
-  --ls-base: -0.004em;    /* body */
-  --ls-wide: 0.08em;
-  --ls-wider: 0.13em;     /* eyebrow tracking */
-  --fw-regular: 400; /* @kind font */
-  --fw-medium: 500; /* @kind font */
-  --fw-semibold: 600; /* @kind font */
-  --fw-bold: 700; /* @kind font */
-
-  /* ===== Spacing (4px grid) ===== */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-7: 1.75rem;
-  --space-8: 2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-  --space-20: 5rem;
-  --space-24: 6rem;
-  --space-32: 8rem;
-  --space-40: 10rem;
-  /* rhythm — locked two-step (founder): 64 content · 96 flagship (72 mobile) */
-  --section-y: clamp(3.25rem, 2.6rem + 2vw, 4rem);            /* 52 → 64 content sections      */
-  --section-y-flagship: clamp(4.5rem, 3.4rem + 2.8vw, 6rem);  /* 72 → 96 flagship (home/money) */
-  --section-y-tight: clamp(2.5rem, 2rem + 2vw, 3.5rem);       /* compact bands                 */
-
-  /* ===== Layout measures ===== */
-  --container-max: 1240px;       /* existing content column (kept for current pages) */
+  /* ===== Containers / measure ===== */
+  --container-content: 1200px;
   --container-narrow: 820px;
-  --container-wide: 1440px;
-  --container-padding: 1.25rem;
-  --container-padding-lg: 2rem;
-  --header-height: 64px;         /* rendered Design nav bar = 64px (Gallery 04 + D1 + minimal all render 64; the manifest's "74" was a number, not the render — rendered wins, founder ruling) */
-  --header-height-scrolled: 56px;
-  /* handoff measures */
   --measure-prose: 680px;
   --measure-wide: 1240px;
-  --measure-content: 1200px;     /* elevated content column (money page etc.)    */
-  --container-mega: 660px;       /* mid-mega nav panel                          */
 
-  /* ===== Radius (locked: control 10 · card 14 · panel 20 · pill) ===== */
-  --radius-none: 0;
-  --radius-xs: 4px;
-  --radius-sm: 6px;
-  --radius-md: 10px;   /* controls */
-  --radius-lg: 14px;   /* cards */
-  --radius-xl: 20px;   /* panels */
-  --radius-2xl: 28px;
-  --radius-pill: 999px;
+  /* ===== Radius ===== */
+  --radius-sm: 6px;  --radius-md: 10px;  --radius-lg: 14px;  --radius-xl: 18px;  --radius-pill: 999px;
 
-  /* ===== Elevation — warm-tinted, low-spread; rest state is FLAT ===== */
-  --shadow-xs: 0 1px 2px rgba(20, 17, 12, 0.05);
-  --shadow-sm: 0 1px 3px rgba(20, 17, 12, 0.06), 0 1px 2px rgba(20, 17, 12, 0.04);
-  --shadow-md: 0 4px 12px -2px rgba(20, 17, 12, 0.08), 0 2px 6px -3px rgba(20, 17, 12, 0.05);
-  --shadow-lg: 0 14px 30px -8px rgba(20, 17, 12, 0.12), 0 4px 10px -4px rgba(20, 17, 12, 0.06);
-  /* handoff: card ring+drop · menu pop · 3D feature depth */
-  --shadow-card: 0 0 0 1px rgba(20, 17, 12, 0.04), 0 4px 12px -2px rgba(20, 17, 12, 0.07);
-  --shadow-pop: 0 0 0 1px rgba(20, 17, 12, 0.06), 0 18px 40px -12px rgba(20, 17, 12, 0.20);
-  --shadow-feature: 0 2px 4px rgba(20, 17, 12, 0.06), 0 22px 50px rgba(20, 17, 12, 0.16);
-  --shadow-focus: 0 0 0 3px rgba(17, 138, 126, 0.30);
+  /* ===== Shadow (soft, low-spread, warm-tinted) ===== */
+  --shadow-card: 0 1px 2px rgba(40, 30, 12, 0.04), 0 12px 30px rgba(40, 30, 12, 0.06);
+  --shadow-pop: 0 2px 4px rgba(40, 30, 12, 0.05), 0 18px 44px rgba(40, 30, 12, 0.12);
+  --shadow-feature: 0 2px 4px rgba(40, 30, 12, 0.04), 0 30px 60px rgba(40, 30, 12, 0.10);
+
+  /* ===== Motion ===== */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-fast: 140ms;
+  --motion-base: 280ms;
+  --motion-slow: 560ms;
+  --motion-stagger: 60ms;
 
   /* ===== Icon ===== */
-  --icon-stroke: 1.75; /* @kind other */
-  --icon-xs: 14px;
-  --icon-sm: 16px;
-  --icon-md: 20px;
-  --icon-lg: 24px;
-  --icon-xl: 32px;
+  --icon-sm: 16px;  --icon-md: 20px;  --icon-lg: 24px;  --icon-stroke: 1.75;
 
-  /* ===== Motion (120–560ms · ease (.16,1,.3,1) · stagger 60ms) ===== */
-  --motion-fast: 120ms; /* @kind other */
-  --motion-base: 200ms; /* @kind other */
-  --motion-slow: 360ms; /* @kind other */
-  --motion-slower: 560ms; /* @kind other */
-  --motion-draw: 1600ms; /* @kind other — diagram draw-on */
-  --motion-stagger: 60ms; /* @kind other — section-reveal stagger */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other — the one timing band */
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
-  --ease-spring: cubic-bezier(0.5, 1.2, 0.4, 1); /* @kind other */
-
-  /* ===== z-index ===== */
-  --z-base: 1; /* @kind other */
-  --z-sticky: 50; /* @kind other */
-  --z-header: 100; /* @kind other */
-  --z-dropdown: 200; /* @kind other */
-  --z-drawer: 300; /* @kind other */
-  --z-modal: 400; /* @kind other */
-  --z-toast: 500; /* @kind other */
+  /* ===== Chrome ===== */
+  --header-height: 74px;
 }
 
-/* DARK MODE — opt-in via [data-theme="dark"] (future-ready; light-mode-only ships) */
-[data-theme="dark"] {
-  --bg-page: var(--color-surface-dark);
-  --bg-section-alt: var(--color-surface-dark-2);
-  --text-primary: var(--color-ink-inverted);
-  --text-body: var(--color-ink-inverted-soft);
-  --text-secondary: var(--color-ink-inverted-mute);
-  --text-eyebrow: var(--color-ink-inverted-mute);
-  --border-hairline: rgba(245, 243, 236, 0.12);
-}
-
-/* REDUCED MOTION — token-level zeroing (contract preserved) */
 @media (prefers-reduced-motion: reduce) {
-  :root {
-    --motion-fast: 0ms; /* @kind other */
-    --motion-base: 0ms; /* @kind other */
-    --motion-slow: 0ms; /* @kind other */
-    --motion-slower: 0ms; /* @kind other */
-    --motion-draw: 0ms; /* @kind other */
-    --motion-stagger: 0ms; /* @kind other */
-  }
+  :root { --motion-fast: 0ms; --motion-base: 0ms; --motion-slow: 0ms; --motion-stagger: 0ms; }
 }
