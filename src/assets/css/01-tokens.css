@@ -1,45 +1,45 @@
-/* 01-tokens.css — RE-CUT to the elevated design system (capture round, 2026-06-16).
+/* 01-tokens.css — RE-CUT to the LOCKED "TechBrot Design System Elevation" (Phase 0, 2026-06-20).
    ============================================================================
-   TechBrot · ELEVATED SKIN · 01 — DESIGN TOKENS
-   Source of truth: Claude Design "TechBrot Design System Elevation" handoff
-   (Foundations board + Galleries 01–07 + Handoff doc). Founder-locked:
-   COLD + LIGHT palette · accent = Ledger Ink #1E3A70 (the #6005f5 was a paste
-   slip) · Fraunces + Geist + Geist Mono · whisper tonal --surface-subtle #F7FAFD.
+   TechBrot · ELEVATED SKIN · 01 — DESIGN TOKENS  (WARM / PETROL system)
+   Source of truth: Claude Design "TechBrot Design System Elevation" — HANDOFF-MANIFEST.md (governs)
+   + Handoff - Claude Code + the locked templates. Founder-locked palette:
+     WARM + LIGHT · page #FCFBF8 / sand #F7F2E9 · two accent ROLES, never crossed:
+       · Petrol Ink  #0E4A50 — brand · links · marks · verification-adjacent  (--accent / --color-accent)
+       · Burnt Clay  #BE5240 — primary CTA fills + key attention ONLY, never links (--cta · NEW group)
+       · Tie-out grn #157A52 — reconciled / verification ticks ONLY (--tie / --color-success)
+     Type: Fraunces (display) · Geist (body/UI) · Spline Sans Mono (figures, 400/500/600).
    ----------------------------------------------------------------------------
-   CAPTURE RULE (design-ownership): every ENFORCED legacy token NAME is preserved
-   and only its VALUE re-cut, so the component layers (02–09, fully tokenised,
-   zero hardcoded hex) inherit the new skin with no class churn and the css-drift
-   gate stays GREEN. New concepts are NEW names (marked NEW), namely the handoff
-   groups --surface-* / --diagram-* / --illus-* / --measure-* / --icon-* /
-   --motion-stagger. AA: muted ink nudged a hair deeper than the spec #62708A →
-   #5C6A82 so eyebrows clear 4.5:1 on every tonal tier surface (permitted minor
-   adjustment; faint #8A98AD stays NON-TEXT only, per the handoff "faint = non-text").
+   CAPTURE RULE (design-ownership): every ENFORCED legacy token NAME is preserved and only its VALUE
+   re-cut, so the component layers (02–09, fully tokenised, zero hardcoded hex) inherit the new skin
+   with no class churn and the css-drift gate stays GREEN. New concepts are NEW names (--cta-* group +
+   the handoff --surface-* / --diagram-* / --illus-* / --measure-* / --icon-* / --section-y-flagship).
+   Supersedes the 2026-06-16 cold "Ledger Ink #1E3A70" elevation (now archived direction).
    ============================================================================ */
 
 :root {
-  /* ===== Cool neutral ramp (legacy "paper" names re-cut cold) ===== */
-  --color-paper: #FBFCFE;        /* page                                        */
-  --color-paper-warm: #F7FAFD;   /* whisper tonal (variety engine) — now cold   */
-  --color-paper-deep: #EDF1F7;   /* deeper inset band (tier: bofu)              */
-  --color-paper-edge: #D4DCE7;   /* hairlines / input borders (non-text)        */
-  --color-paper-mist: #F5F8FC;   /* subtle tonal section / hover (tier: hub/guide) */
-  --color-ink: #0A0F1C;          /* strong ink · ~18:1 on page                  */
-  --color-ink-soft: #2D384E;     /* body default · ~11:1                        */
-  --color-ink-mute: #5C6A82;     /* muted / eyebrow · AA on every tonal tier    */
-  --color-ink-faint: #8A98AD;    /* NON-TEXT ONLY — placeholders, hairmarks     */
-  --color-accent: #1E3A70;       /* Ledger Ink · ~9:1 on page                   */
-  --color-accent-deep: #15294F;  /* hover / active                              */
-  --color-accent-soft: #2E55C8;  /* bright accent (emphasis; non-text/large)    */
-  --color-ink-inverted: #F5F7FB; /* on dark                                     */
-  --color-ink-inverted-soft: rgba(245, 247, 251, 0.74);
-  --color-ink-inverted-mute: rgba(245, 247, 251, 0.5);
-  --color-surface-dark: #0A0F1C;
-  --color-surface-dark-2: #111A30;
-  /* Tier-coded section surfaces (cool, very light) */
-  --surface-tier-hub: #F3F6FD;
-  --surface-tier-bofu: #EDF1F8;
-  --surface-tier-guide: #F5F8FC;
-  --color-focus: #118A7E;        /* teal — never confusable with ink-blue links */
+  /* ===== Warm neutral ramp (legacy "paper" names re-cut WARM) ===== */
+  --color-paper: #FCFBF8;        /* page                                        */
+  --color-paper-warm: #F7F2E9;   /* sand — whisper tonal (variety engine)       */
+  --color-paper-deep: #F1EBDF;   /* deeper inset band (tier: bofu)              */
+  --color-paper-edge: #DED6C9;   /* hairlines / input borders (non-text)        */
+  --color-paper-mist: #FAF6EE;   /* subtle tonal section / hover (tier: hub/guide) */
+  --color-ink: #14110C;          /* strong warm ink · headings                  */
+  --color-ink-soft: #2E2A24;     /* body default                                */
+  --color-ink-mute: #6E6456;     /* muted / eyebrow                             */
+  --color-ink-faint: #9C9484;    /* NON-TEXT ONLY — placeholders, hairmarks     */
+  --color-accent: #0E4A50;       /* Petrol Ink · brand · links · marks          */
+  --color-accent-deep: #09353A;  /* hover / active                              */
+  --color-accent-soft: #2E7D82;  /* bright accent (emphasis; non-text/large)    */
+  --color-ink-inverted: #F5F3EC; /* warm cream on dark                          */
+  --color-ink-inverted-soft: rgba(245, 243, 236, 0.74);
+  --color-ink-inverted-mute: rgba(245, 243, 236, 0.5);
+  --color-surface-dark: #14110C;
+  --color-surface-dark-2: #1F1A12;
+  /* Tier-coded section surfaces (warm, very light) */
+  --surface-tier-hub: #F4EFE4;
+  --surface-tier-bofu: #F1EBDF;
+  --surface-tier-guide: #F7F2E9;
+  --color-focus: #118A7E;        /* teal — never confusable with petrol links   */
   --color-success: #157A52;      /* tie-out / reconciled                        */
   --color-warning: #A4660A;      /* needs-review / caution                      */
   --color-critical: #C0322C;     /* out-of-balance / form error                 */
@@ -56,52 +56,61 @@
   --border-hairline: var(--color-paper-edge);
   --accent: var(--color-accent);
 
-  /* ===== NEW: handoff --surface-* group (cold/light system) ===== */
+  /* ===== handoff --surface-* group (warm/light system) ===== */
   --surface-page: var(--color-paper);
-  --surface-subtle: #F7FAFD;     /* whisper-quiet — chat-locked variety tint     */
-  --surface-muted: #F5F8FC;
-  --surface-inset: #EDF1F7;
+  --surface-subtle: #F7F2E9;     /* sand — handoff whisper tint                  */
+  --surface-muted: #FAF6EE;
+  --surface-inset: #F1EBDF;
   --surface-card: #FFFFFF;
-  --surface-ink: #0A0F1C;        /* the one earned dark band + footer mark well   */
-  --surface-ink-2: #111A30;
-  --border-subtle: #E3E9F1;
-  --border-default: #D4DCE7;
-  --border-strong: #B5C0D0;
-  --text-strong: #0A0F1C;
+  --surface-ink: #14110C;        /* the one earned dark band + footer mark well   */
+  --surface-ink-2: #1F1A12;
+  --border-subtle: #ECE5D8;
+  --border-default: #DED6C9;
+  --border-strong: #CBC2B0;
+  --text-strong: #14110C;
   --text-muted: var(--color-ink-mute);
-  --text-faint: #8A98AD;         /* NON-TEXT ONLY */
-  --text-on-ink: #EDF1F7;
-  --text-on-ink-mut: #8A98AD;
-  /* accent system */
-  --accent-hover: #15294F;
-  --accent-press: #102043;
-  --accent-bright: #2E55C8;
-  --accent-soft: #EEF2FB;        /* soft tint fill / chip bg                     */
-  --accent-border: #C9D6F0;
-  --accent-on-ink: #6E83F0;      /* bright ink-blue for dark surfaces            */
+  --text-faint: #9C9484;         /* NON-TEXT ONLY */
+  --text-on-ink: #F5F3EC;
+  --text-on-ink-mut: #C9C0AE;
+  /* accent system (Petrol) */
+  --accent-hover: #09353A;
+  --accent-press: #07282C;
+  --accent-bright: #2E7D82;
+  --accent-soft: #E4EDEC;        /* soft petrol tint fill / chip bg             */
+  --accent-border: #C8DBDA;
+  --accent-on-ink: #46B0AC;      /* bright petrol for dark surfaces             */
+
+  /* ===== NEW: CTA group — Burnt Clay (PRIMARY CTA FILLS + KEY ATTENTION ONLY, never links) ===== */
+  --cta: #BE5240;
+  --cta-hover: #9C4233;
+  --cta-press: #843225;
+  --cta-soft: #F6E7E2;           /* soft clay tint                             */
+  --cta-border: #E7C3B9;
+  --cta-on: #FFFFFF;             /* white text on clay — AA                     */
+
   /* ledger semantic (component aliases) */
   --tie: #157A52;  --tie-deep: #0F5E3F;  --tie-soft: #E7F5EE;  --tie-border: #CFEADF;
-  --flag: #C0322C; --flag-deep: #9A2722; --flag-soft: #FCEDEC; --flag-border: #F9DAD8;
+  --flag: #C0322C; --flag-deep: #9A2722; --flag-soft: #FCEDEC; --flag-border: #F4D9D6;
   --caution: #A4660A; --caution-deep: #7E4D06; --caution-soft: #FBF2E0; --caution-border: #F6E3BE;
 
-  /* ===== NEW: signature diagram roles (--diagram-*) ===== */
-  --diagram-rule: #B5C0D0;       /* the T / ledger rules · stroke 1.5            */
-  --diagram-debit: #0A0F1C;      /* debit column ink                            */
-  --diagram-credit: #1E3A70;     /* credit column ink-blue                      */
+  /* ===== signature diagram roles (--diagram-*) — petrol/warm ===== */
+  --diagram-rule: #CBC2B0;       /* the T / ledger rules · stroke 1.5            */
+  --diagram-debit: #14110C;      /* debit column ink                            */
+  --diagram-credit: #0E4A50;     /* credit column petrol                        */
   --diagram-tie: #157A52;        /* the green tie-out tick                       */
   --diagram-flag: #C0322C;       /* out-of-balance                              */
-  --diagram-grid: #E3E9F1;       /* faint backing grid                          */
-  --diagram-node: #F5F8FC;       /* node fill                                   */
+  --diagram-grid: #ECE5D8;       /* faint backing grid                          */
+  --diagram-node: #F7F2E9;       /* node fill                                   */
   --diagram-paper: #FFFFFF;      /* figure surface                              */
 
-  /* ===== NEW: isometric 3D-look illustration palette (on dark) (--illus-*) ===== */
+  /* ===== isometric 3D-look illustration palette (on dark) (--illus-*) ===== */
   --illus-ink: #0A0F1C;
-  --illus-face-1: #111A30;
-  --illus-face-2: #1A2236;
-  --illus-edge: #2D384E;
-  --illus-edge-2: #3A476B;
-  --illus-accent: #2E55C8;
-  --illus-accent-line: #6E83F0;
+  --illus-face-1: #14110C;
+  --illus-face-2: #1F1A12;
+  --illus-edge: #2E2A24;
+  --illus-edge-2: #3A3528;
+  --illus-accent: #2E7D82;
+  --illus-accent-line: #46B0AC;
   --illus-tie: #3DBB85;
   --illus-tie-deep: #0F2E22;
   --illus-tie-stroke: #1E9266;
@@ -109,15 +118,15 @@
   /* ===== Fonts ===== */
   --font-serif: "Fraunces", "Fraunces-fallback", Georgia, "Times New Roman", serif;
   --font-sans: "Geist", "Geist-fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  --font-mono: "Geist Mono", "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  --font-mono: "Spline Sans Mono", "SplineMono-fallback", "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
   /* Fraunces variable axes — display vs heading vs small voice */
   --serif-display-axes: "opsz" 110, "SOFT" 0, "WONK" 0;
   --serif-heading-axes: "opsz" 60, "SOFT" 0, "WONK" 0;
   --serif-small-axes: "opsz" 40, "SOFT" 0, "WONK" 0;
 
-  /* Brand mark — the gapped rule (30 / gap / 14), re-cut to Ledger Ink.
-     REFERENCE values; usages inline the literal gradient (render engines
-     mishandle gradient-holding custom properties on pseudo-elements). */
+  /* Brand mark — the gapped rule (30 / gap / 14), inherits Petrol via var(--accent).
+     REFERENCE values; usages inline the literal gradient (render engines mishandle
+     gradient-holding custom properties on pseudo-elements). */
   --rule-aligned: linear-gradient(90deg, var(--accent) 0 30px, transparent 30px 34px, var(--accent) 34px 48px);
   --rule-aligned-sm: linear-gradient(90deg, var(--accent) 0 16px, transparent 16px 19px, var(--accent) 19px 26px);
 
@@ -149,11 +158,11 @@
   --lh-base: 1.55; /* @kind other */
   --lh-loose: 1.7; /* @kind other */
   --lh-prose: 1.65; /* @kind other */
-  --ls-tight: -0.022em;
-  --ls-snug: -0.018em;
-  --ls-base: -0.004em;
+  --ls-tight: -0.022em;   /* display */
+  --ls-snug: -0.018em;    /* heading */
+  --ls-base: -0.004em;    /* body */
   --ls-wide: 0.08em;
-  --ls-wider: 0.13em;   /* eyebrow tracking */
+  --ls-wider: 0.13em;     /* eyebrow tracking */
   --fw-regular: 400; /* @kind font */
   --fw-medium: 500; /* @kind font */
   --fw-semibold: 600; /* @kind font */
@@ -175,9 +184,10 @@
   --space-24: 6rem;
   --space-32: 8rem;
   --space-40: 10rem;
-  /* rhythm */
-  --section-y: clamp(3.5rem, 2.5rem + 5vw, 6.5rem);
-  --section-y-tight: clamp(2.75rem, 2rem + 3vw, 4rem);
+  /* rhythm — locked two-step (founder): 64 content · 96 flagship (72 mobile) */
+  --section-y: clamp(3.25rem, 2.6rem + 2vw, 4rem);            /* 52 → 64 content sections      */
+  --section-y-flagship: clamp(4.5rem, 3.4rem + 2.8vw, 6rem);  /* 72 → 96 flagship (home/money) */
+  --section-y-tight: clamp(2.5rem, 2rem + 2vw, 3.5rem);       /* compact bands                 */
 
   /* ===== Layout measures ===== */
   --container-max: 1240px;       /* existing content column (kept for current pages) */
@@ -185,15 +195,15 @@
   --container-wide: 1440px;
   --container-padding: 1.25rem;
   --container-padding-lg: 2rem;
-  --header-height: 64px;
-  --header-height-scrolled: 56px;
-  /* NEW: handoff measures */
+  --header-height: 74px;         /* handoff: 74px mid-mega header                */
+  --header-height-scrolled: 64px;
+  /* handoff measures */
   --measure-prose: 680px;
   --measure-wide: 1240px;
-  --measure-content: 1160px;     /* elevated content column (money page etc.)    */
+  --measure-content: 1200px;     /* elevated content column (money page etc.)    */
   --container-mega: 660px;       /* mid-mega nav panel                          */
 
-  /* ===== Radius (re-cut to the elevated language) ===== */
+  /* ===== Radius (locked: control 10 · card 14 · panel 20 · pill) ===== */
   --radius-none: 0;
   --radius-xs: 4px;
   --radius-sm: 6px;
@@ -203,18 +213,18 @@
   --radius-2xl: 28px;
   --radius-pill: 999px;
 
-  /* ===== Elevation — cool-tinted (blue-grey), low-spread; rest state is FLAT ===== */
-  --shadow-xs: 0 1px 2px rgba(10, 15, 28, 0.05);
-  --shadow-sm: 0 1px 3px rgba(10, 15, 28, 0.06), 0 1px 2px rgba(10, 15, 28, 0.04);
-  --shadow-md: 0 4px 12px -2px rgba(10, 15, 28, 0.08), 0 2px 6px -3px rgba(10, 15, 28, 0.05);
-  --shadow-lg: 0 14px 30px -8px rgba(10, 15, 28, 0.12), 0 4px 10px -4px rgba(10, 15, 28, 0.06);
-  /* NEW: card ring+drop · menu pop · 3D feature depth */
-  --shadow-card: 0 0 0 1px rgba(10, 15, 28, 0.04), 0 4px 12px -2px rgba(10, 15, 28, 0.07);
-  --shadow-pop: 0 0 0 1px rgba(10, 15, 28, 0.06), 0 18px 40px -12px rgba(10, 15, 28, 0.20);
-  --shadow-feature: 0 2px 4px rgba(10, 15, 28, 0.06), 0 22px 50px rgba(10, 15, 28, 0.16);
-  --shadow-focus: 0 0 0 3px rgba(17, 138, 126, 0.28);
+  /* ===== Elevation — warm-tinted, low-spread; rest state is FLAT ===== */
+  --shadow-xs: 0 1px 2px rgba(20, 17, 12, 0.05);
+  --shadow-sm: 0 1px 3px rgba(20, 17, 12, 0.06), 0 1px 2px rgba(20, 17, 12, 0.04);
+  --shadow-md: 0 4px 12px -2px rgba(20, 17, 12, 0.08), 0 2px 6px -3px rgba(20, 17, 12, 0.05);
+  --shadow-lg: 0 14px 30px -8px rgba(20, 17, 12, 0.12), 0 4px 10px -4px rgba(20, 17, 12, 0.06);
+  /* handoff: card ring+drop · menu pop · 3D feature depth */
+  --shadow-card: 0 0 0 1px rgba(20, 17, 12, 0.04), 0 4px 12px -2px rgba(20, 17, 12, 0.07);
+  --shadow-pop: 0 0 0 1px rgba(20, 17, 12, 0.06), 0 18px 40px -12px rgba(20, 17, 12, 0.20);
+  --shadow-feature: 0 2px 4px rgba(20, 17, 12, 0.06), 0 22px 50px rgba(20, 17, 12, 0.16);
+  --shadow-focus: 0 0 0 3px rgba(17, 138, 126, 0.30);
 
-  /* ===== Icon (NEW group) ===== */
+  /* ===== Icon ===== */
   --icon-stroke: 1.75; /* @kind other */
   --icon-xs: 14px;
   --icon-sm: 16px;
@@ -222,14 +232,14 @@
   --icon-lg: 24px;
   --icon-xl: 32px;
 
-  /* ===== Motion ===== */
+  /* ===== Motion (120–560ms · ease (.16,1,.3,1) · stagger 60ms) ===== */
   --motion-fast: 120ms; /* @kind other */
   --motion-base: 200ms; /* @kind other */
   --motion-slow: 360ms; /* @kind other */
   --motion-slower: 560ms; /* @kind other */
   --motion-draw: 1600ms; /* @kind other — diagram draw-on */
-  --motion-stagger: 60ms; /* @kind other — NEW: section-reveal stagger */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --motion-stagger: 60ms; /* @kind other — section-reveal stagger */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other — the one timing band */
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
   --ease-spring: cubic-bezier(0.5, 1.2, 0.4, 1); /* @kind other */
 
@@ -251,7 +261,7 @@
   --text-body: var(--color-ink-inverted-soft);
   --text-secondary: var(--color-ink-inverted-mute);
   --text-eyebrow: var(--color-ink-inverted-mute);
-  --border-hairline: rgba(245, 247, 251, 0.12);
+  --border-hairline: rgba(245, 243, 236, 0.12);
 }
 
 /* REDUCED MOTION — token-level zeroing (contract preserved) */
