@@ -149,3 +149,32 @@ gate is per-page (each page's caption/table mirrors its figure numbers) — enfo
 
 **COUNT:** Phase-0 = Step 1–4 of 6 done · commits `c7fe356`+`96351d6`+`65c1585` · src changed this turn = 4 figure SVGs ·
 build GREEN 611 pages · CSS unchanged (SVG only) · still not at the G1+D1 pause; badges + gates next, then proof.
+
+---
+
+## Turn — 2026-06-20 · Phase 0 Step 5–6 (badges + gates) + G1 proof; D1 assessed · commits `b7e0d80`·`2ff70bb`·`00bc913`
+**Did:**
+- **Badges (Step 5):** 2/5 real Intuit badges imported (`badge-proadvisor-gold` 600², `badge-payroll` 680²) via a subagent
+  (isolated the base64 transfer). ⚠ 3 (QBO L1/L2, Bookkeeping) exceed DesignSync's 256 KiB get_file cap → FOUNDER re-export
+  smaller or drop into `src/assets/img/brand/badges/`. Desktop/Enterprise stay placeholder.
+- **Header height (founder flag 3):** rendered Design nav bar = 64px (Gallery 04 + Legal + D1 + minimal all render 64;
+  the manifest's "74" was a number, not the render). Per "rendered wins" → set `--header-height: 64px` (`2ff70bb`).
+- **Gates (Step 6):** `run_battery.py` is pure-Python static (no chrome) but VERY slow (6+ min on the 611-page link+equity
+  diff). Won't run it repeatedly; will run ONCE at the D1 proof. Foundation changed NO page content → content gates
+  (equity/faq/cta-lexicon/variety/fidelity) unaffected by construction; only the class-manifest needs regen for the new
+  classes (btn--dark, util-bar__*) — done at the D1 proof.
+- **G1 PROOF (legal) ✅ DELIVERED + VERIFIED:** the current legal page ALREADY had the Design's legal structure
+  (`legal-doc__layout` 2-col sticky-TOC + numbered `<section>`s + eyebrow/h1/meta + a "short version" summary the Design
+  lacks). The token re-cut applied the warm/petrol palette; I tightened the doc to the Design's exact widths (240 TOC +
+  720 reading column, centered, 64 gap; `00bc913`). Verified on a clean build: 2-col TOC layout, 12 frozen numbered
+  sections, frozen H1 + section headings unchanged, JSON-LD intact, no hero/CTA (correct), petrol links live.
+  → reads as the Design's legal template; NOT old-Bootstrap recolored (the structure already matched).
+- **D1 ASSESSED (not yet built):** current cleanup-bookkeeping HAS the Design's component vocabulary (proof-strip,
+  deliver-card, buyer-card, process-diagram, vs-table, call-block, ai-summary, reconciliation viz) but is **NOT structural**:
+  missing the dossier §-rhythm markers (`.idx`), the **intake-form** (Design has dual call-block+intake seam), the
+  **cleanup-timeline** 2nd viz, and the Design's section-layout treatments. So D1 = a real structural rebuild (next turn) —
+  the founder's "recolor not rebuild" concern is correct for D1.
+
+**PAUSE:** G1 live for spot-check; D1 (the flagship structural rebuild) is the next focused turn, then both judged before any
+fan-out. **COUNT:** Phase 0 = Steps 1–5 done + Step 6 deferred-to-proof + G1 proof done · D1 = next · commits this turn 3 ·
+build GREEN 616 files · dev server up @ http://192.168.1.7:8080/.
