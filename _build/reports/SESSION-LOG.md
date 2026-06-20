@@ -482,3 +482,19 @@ component-by-component MATCH table all GREEN before claiming done; freeze intact
   element-for-element to the template chrome (from the Legal template's full chrome markup) → then **D1 + G1 proofs element-for-element + the MATCH
   table** → PAUSE. Not at the D1/G1 pause yet (turn-end, continuing).
 **COUNT:** layers built = 01 tokens + 02 base · build GREEN 616 · src added = 02-base.css.
+
+---
+
+## Turn — 2026-06-21 · rebuild cont: 04 chrome layer (build GREEN)
+- ✅ Authored **`04-chrome.css`** styling the existing design-structured chrome markup (it was built to the Gallery-04 mid-mega spec; only CSS was
+  deleted): **buttons** (`.btn` + `--primary` clay / `--dark` ink / `--ghost` / `--lg`), **util-bar** (dark strip + green tie-dot + links),
+  **sticky blur header** (`rgba(252,251,248,.85)` blur, 74px, hairline), **primary nav** (`.nav__link`/`.nav__trigger` chevron) + **mid-mega dropdown**
+  (`.nav__dropdown--mega` white panel, 2-col `.nav__mega`, megalinks with left-border translateX hover + `.nav__mega-call`), **header actions**
+  (mono phone · dark CTA · hamburger), **drawer** (mobile accordion), **light sand footer** (5-col grid → mobile `<details>` accordion + the
+  petrol+clay gap-mark on the disclosure + trademark/legal), **sticky clay call-bar** (≤919px).
+- ✅ Element-match: added the **util-bar green tie-dot** as a real `<span class="util-bar__dot">` (template element), not CSS-only.
+- Build GREEN — bundle now **3 layers, 17,826B / 100KB**. Base + full chrome render; component CSS (D1/G1 + shared) still pending.
+- ⏭ NEXT: the **D1 + G1 component CSS** (the D1 njk markup is already element-for-element from the earlier rebuild — proof-strip label+checks,
+  §02 numbered lift cards, §03 petrol band + CTA cell, hero gap-mark spans, §06 dots, §08 check-svgs, §09 mono numbers; G1 = article-in-grid). Author
+  the section-layout + content/conversion component CSS to render that markup, then **the component-by-component MATCH table all GREEN → ⛔ PAUSE for judgment.**
+**COUNT:** layers built = 01 tokens + 02 base + 04 chrome · build GREEN 616 · src added = 04-chrome.css + util-bar dot span.
