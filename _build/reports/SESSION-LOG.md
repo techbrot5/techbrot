@@ -614,3 +614,19 @@ live D1 template (DesignSync) + read its full `<style>` for exact values.
 - ⭐ **The from-scratch design re-implementation is now complete across all 25 families, whole-site battery-GREEN, freeze intact, every page rendering
   the petrol design.** Remaining = founder visual sign-off + the flip-gate items (live axe/overflow, form handler, OG images, baseline-vs-prod recrawl).
 **COUNT:** layers 00·01·02·04·05·06·07 · build GREEN 616 · bundle 62,025B/100KB · FULL BATTERY GREEN · 16 families visually verified · freeze intact.
+
+---
+
+## Turn — 2026-06-21 · LAST 9 VARIANT FAMILIES AUDITED → ALL 25 FAMILIES VISUALLY VERIFIED
+**Founder:** audit the last 9 variant families.
+- **VISUAL AUDIT (screenshot → read) of the remaining 9 — all render correctly, no broken sections, no fixes needed:**
+  · **B2** card-grid hub (dark hub hero + card grids) · **B3** listing (glossary term grid + call-breakout) · **B4** location sub-hub (NY industries) ·
+  · **C1** comparison-hub (callout + comparison cards) · **D4** city child (Champaign) · **D5** state-service child (IL accountant) · **D6** industry
+  child (NY nonprofit) · **E3** framework (process-diagram + pull-quote) · **E4** blog (byline hero + article + related).
+- ⭐⭐ **ALL 25 FAMILIES NOW VISUALLY VERIFIED** (25/25: A1·B1·B2·B3·B4·B5·C1·C2·D1·D2·D3·D4·D5·D6·D7·E1·E2·E3·E4·E5·E6·F1·F2·G1·G2) — every one
+  renders the petrol design correctly (desktop; D1 also mobile-verified). Whole-site battery GREEN, freeze intact, bundle 62KB/100KB.
+- **The from-scratch design re-implementation is COMPLETE + visually verified end-to-end.** No styling fixes were needed on any of the last 9 —
+  the shared component library held across every family.
+- ⏭ Remaining (not design): flip-gate items — live axe/overflow on the founder's machine · form POST handler · real Intuit badge artwork ·
+  baseline-vs-prod recrawl · OG images. Plus founder final sign-off.
+**COUNT:** 25/25 families visually verified · FULL BATTERY GREEN · freeze intact · design rebuild complete.
