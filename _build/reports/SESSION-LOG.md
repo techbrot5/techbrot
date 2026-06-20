@@ -357,5 +357,12 @@ dual seam, dark proof-strip + final-CTA. So D1 is a **fidelity-alignment pass, n
   (d) **proof-strip:** template = 4 items, no rating; current = 5 incl. the real `5.0 · 2 verified Clutch reviews`. Keep the real review proof (honesty asset) or match template's 4?
   (e) extra **§09 "Around the cleanup"** (frozen baseline heading the template omits) — KEEP per freeze.
 
-**No src edits this turn** (the freeze-conflict deltas need rulings before I touch content; I won't gut equity to match a template). G1 (Legal)
-read + fidelity pass queued next. **⛔ PAUSE for founder rulings on (a)–(d).** **COUNT:** total live = 581 · pages added = none · src changed = 0.
+G1 (Legal) read + fidelity pass queued next.
+
+**↳ FOUNDER RULING (same turn): "Keep content, new style"** — preserve all substance (buyer/deliverable bodies, the §06 comparison table,
+canonical pricing, the real Clutch-review proof, the extra "Around the cleanup" section), present in the template's style; never gut equity.
+**Applied the SAFE presentation deltas** (no content touched): (1) §03 dossier idx markers → live-template petrol-cyan (`--accent-on-dossier #6FD0C8`,
+`--text-on-dossier-faint #6FA8A6`); (2) §04 "Scope of work" band → white (was sand `section--alt`), matching the template's sand/white rhythm +
+fixing a §04/§05 adjacency. Build GREEN (616), battery GREEN (css-drift, css-bytes 92,210B/102,400B). **DEFERRED to next D1 increment** (flagged,
+not done): hero eyebrow petrol+clay gap-marks (layout-level, all t-bofu) + a full band-rhythm sweep + G1 (Legal) fidelity pass.
+**⛔ PAUSE for founder to judge D1 vs the live template.** **COUNT:** total live = 581 · pages added = none · src changed = 3 (tokens, extensions, cleanup njk).
