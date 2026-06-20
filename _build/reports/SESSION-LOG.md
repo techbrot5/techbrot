@@ -81,3 +81,44 @@ layers inherit; css-drift stays green).
 
 **COUNT:** Phase-0 progress = Step 1–2 of 6 done · commit `c7fe356` · src files changed = 8 (2 css recut, 1 font
 add, 5 font rm) · build GREEN 611 pages · CSS 80,633B/83,968B · NOT a foundation-complete; continuing next turn.
+
+---
+
+## Turn — 2026-06-20 · Phase 0 foundation, Step 3 (chrome) · commit `96351d6`
+**Goal:** re-skin the sitewide chrome (mega-nav · footer · call-bar · nav JS) to the locked Gallery-04 look.
+Holds the fidelity bar (clean token rebuild; pixel-faithful to the *rendered* design; freeze untouched).
+
+**Finding:** the existing chrome was already a full mid-mega + light-footer system, fully tokenized — so the
+prior token re-cut already moved its palette to warm/petrol. Remaining work = the **structural design deltas**
+only. `tb-nav.js` already implements the exact behavior contract (one-open · Esc · outside-close · focus-return ·
+scroll-lock · drawer accordion) → KEPT as-is.
+
+**Did:**
+- **Two accent ROLES enforced** (the crux): `btn--primary` → **Burnt Clay `--cta`** (the one loud conversion fill —
+  final-CTA / call-block / call-bar / drawer call); added **`btn--dark`** (restrained dark ink) for the **header CTA**
+  (the design's header button is dark, not loud clay).
+- **util-bar:** light → **dark strip** (green dot + "Independent ProAdvisor firm · U.S.-based" left; "Find an Accountant"
+  + "For Accountants →" links right).
+- **header backdrop** → warm `rgba(252,251,248,.9)` (was a hardcoded cold rgba the token swap couldn't reach).
+- **nav uniform pills** (design premium sweep): one weight/color, sand-pill hover the only differentiator; removed the
+  old per-link underline-rule.
+- **mega panels:** **hub link where the phone was** (founder's pattern) → `/accounting/` · `/quickbooks/`; megalink
+  left-border + translateX hover.
+- **footer** surface → sand `--surface-subtle` (light editorial `<details>`, already structurally correct).
+- Verified: build GREEN (exit 0); bundle carries `btn--primary{--cta}`, `btn--dark`, dark util links, hub-link footers;
+  CSS 81,394B / gate 83,968B.
+
+**Decisions / flags:**
+- **For-Accountants link:** the design util points to `/for-accountants/` (doesn't exist) → routed to the real **`/partners/`**
+  (the firm's accountant-partner program). Flag for founder confirm.
+- **Real URLs kept** over the design's env shorthands (`/file-review/`, `/quickbooks/expert/`, `/accounting/sales-tax/`)
+  — those would 404; used the real slugs (`/quickbooks/file-review/`, `…/speak-to-a-quickbooks-expert/`, `…/sales-tax-compliance/`).
+- **Deferred chrome polish** (not blocking; next pass): SVG caret in triggers (currently a CSS-border caret that rotates) ·
+  `.prose a` animated slide-underline craft detail (currently a static petrol underline) · header height 64 vs manifest's 74 (used the
+  rendered Gallery's 64-ish via existing token). Will reconcile during the G1/D1 proof.
+
+**Phase 0 remaining:** Step 4 diagrams (4 signature) + 24 icons · Step 5 real Intuit badges · Step 6 reset gates →
+THEN G1 + D1 proof → ⛔ PAUSE for founder spot-check.
+
+**COUNT:** Phase-0 = Step 1–3 of 6 done · commits `c7fe356` (fonts/tokens) + `96351d6` (chrome) · src files changed this
+turn = 3 (03-conversion, 04-chrome, site-header) · build GREEN 611 pages · CSS 81,394B/83,968B · still not at the G1+D1 pause.
