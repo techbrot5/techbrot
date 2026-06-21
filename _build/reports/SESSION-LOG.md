@@ -806,3 +806,31 @@ Files: src/assets/css/02-base.css.
 - VERIFICATION: probe RE-RUNNING (bg bel1ig0f0) to confirm overflow 0. Battery GREEN (no hex).
 COUNT: src changed = 1 (02-base skip-link); a11y GREEN (0); overflow expect 0 after skip-link fix; step 0 green pending probe.
 OPEN/NEXT: read probe bel1ig0f0 -> if overflow 0 -> STEP 0 DONE (flip-gate #6 clear) -> commit + start family fan-out D1->D3->D2 (NY untouched) + badge strip home/about/pricing/money. If any page persists, isolate its specific element.
+
+---
+
+## Turn -- 2026-06-21 -- STEP 0 round 6: last overflow sources PINPOINTED + fixed (one-off scrollWidth finder)
+Founder: fix remaining a11y + overflow, re-run to green. a11y already 0. Wrote _build/probe/find-overflow.mjs (scrollWidth/clientWidth + margin + pseudo finder -- catches what bounding-rect misses) to pinpoint the 4 stubborn overflow pages:
+- 12029 (443): .disclosure had DIRECT text inside display:flex (no .disclosure__body) -> the anonymous text flex item will not shrink -> 422px wide. FIX: .disclosure -> display:block + overflow-wrap; .disclosure__icon -> float:left. Text now wraps. (This trademark banner is on ALL 177 D2 error pages.)
+- techbrot-vs-bench (371): ol.process-diagram had the default 40px list padding-inline-start (never reset) -> content overflow. FIX: .process-diagram { list-style:none; margin:0; padding:0 }.
+- new-york/illinois (374): buyer-card/contact-form-wrap not shrinking. FIX: .buyer-card__text min-width:0; .buyer-card__body overflow-wrap; .contact-form-wrap min-width:0 + box-sizing + max-width.
+- 3371 (383): cleared by the disclosure fix.
+- VERIFIED via one-off: ALL 4 now docSW=360 (= viewport), was 443/371/374/383.
+Files: src/assets/css/05-components.css, 06-content.css, _build/probe/find-overflow.mjs.
+- VERIFICATION: full probe RE-RUNNING (bg b21e6oz2z) for sitewide a11y 0 + overflow 0 confirmation.
+COUNT: src changed = 2 css; 4 overflow pages fixed at source; a11y already 0; step 0 = GREEN pending full-probe confirmation.
+OPEN/NEXT: full probe b21e6oz2z -> if 0/0 sitewide -> STEP 0 DONE (flip-gate #6 clear) -> fan-out D1->D3->D2 (NY untouched) + badge strip home/about/pricing/money.
+
+(interim, round-6 same turn): full probe b21e6oz2z at 31/35 pages -- EVERY page a11y 0 / overflow 0 so far (home, hubs, money, error, location, comparison, tool, contact, glossary, research all clean). Battery GREEN (exit 0). Awaiting final summary to declare STEP 0 DONE.
+
+---
+
+## Turn -- 2026-06-21 -- ✅ STEP 0 COMPLETE: full probe GREEN (a11y 0 / overflow 0, 35 pages)
+Founder: fix remaining a11y + overflow, re-run to green. DONE.
+- FULL PROBE b21e6oz2z (exit 0): "PROBE GREEN - no serious a11y violations, no overflow." pages probed 35, a11y violations 0 (serious 0), pages with overflow 0.
+- Battery GREEN (exit 0). Freeze intact throughout (all fixes were CSS at 02/05/06 source level, R8 -- inherited site-wide; no URL/copy/heading/FAQ/schema touched).
+- THE STEP-0 JOURNEY: a11y 64 serious -> 0 (contrast: ~8 --text-faint text labels -> --text-secondary, clay process-number -> --cta-press, dark-band eyebrow/disclaimer -> light, call-block__sub -> pure white on clay; the --text-faint token stays NON-TEXT/decorative only). overflow 13 pages -> 0 (vs-table table-layout:fixed, link-wrap wrap, motif hide <=640, global input max-width, process-step/buyer-card/fix-steps/disclosure-body min-width:0 + overflow-wrap, process-diagram list reset, contact-form-wrap box-sizing, disclosure flex->block+float, skip-link left:-9999 -> clip). Built a scrollWidth-based one-off (find-overflow.mjs) to pinpoint the last margin/flex-shrink sources bounding-rect missed.
+- ⭐ STEP 0 = DONE. Clears FLIP-GATE #6 (live axe/overflow). Commit 1fc99ee.
+- FLIP-GATE SCOREBOARD: phone ✅ · re-skin+battery ✅ · recrawl ✅ · OG ✅ · CSS-under-target ✅ · Intuit badges ✅(5 wired, strip on /trust/; OPEN: home/about/pricing/money) · form handler ✅(Apps Script live, 200/ok) · **axe/overflow ✅ (step 0 done)**. Remaining: badge strip on 4 pages · founder final sign-off · the founder-side TEST-FLIP-2026 destination confirm.
+COUNT: a11y 0 / overflow 0 / battery GREEN / 35 pages probed; step 0 COMPLETE; freeze intact.
+OPEN/NEXT: per founder order -> family fan-out D1(reconfirm)->D3->D2->D4/D5/D6(generated only, NY untouched)->D7->B1-B5->C1-C2->E1-E6->F1-F2->G2->A1; + wire badge strip onto home/about/pricing/money. Per-family: rebuild REP -> verify (equity+battery+axe+overflow+CLS0) -> commit -> SESSION-LOG + COUNT.
