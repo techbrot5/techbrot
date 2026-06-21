@@ -1,0 +1,13 @@
+---json
+{ "permalink": "/_headers", "eleventyExcludeFromCollections": true }
+---
+{%- if env.production -%}
+# TechBrot — PRODUCTION deployment headers (ENVIRONMENT=production).
+# Indexable: the per-page robots meta is "index, follow". Add security/caching headers here.
+{%- else -%}
+# TechBrot — NON-PRODUCTION (preview) deployment. Fail-closed env safety:
+# keep every preview URL out of search indexes via an X-Robots-Tag HTTP header,
+# belt-and-suspenders to the per-page <meta name="robots" content="noindex, nofollow">.
+/*
+  X-Robots-Tag: noindex, nofollow
+{%- endif %}
