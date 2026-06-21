@@ -27,19 +27,19 @@
 
 /* ---- checks-list ---- */
 .checks-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
-.checks-list li { display: flex; gap: var(--space-3); align-items: flex-start; font-size: var(--fs-15); line-height: var(--lh-base); color: var(--text-body); }
+.checks-list li { display: flex; gap: var(--space-3); align-items: flex-start; min-width: 0; overflow-wrap: anywhere; font-size: var(--fs-15); line-height: var(--lh-base); color: var(--text-body); }
 .checks-list li::before { content: ""; flex: none; margin-top: 5px; width: 13px; height: 7px; border-left: 2px solid var(--tie); border-bottom: 2px solid var(--tie); transform: rotate(-45deg); }
 
 /* ---- trust-row (stat trio with dividers) ---- */
 .trust-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-5) var(--space-7); }
 .trust-row__item { display: flex; flex-direction: column; gap: var(--space-1); }
-.trust-row__value { font-family: var(--font-mono); font-size: var(--fs-24); font-weight: var(--fw-medium); color: var(--text-strong); }
+.trust-row__value { font-family: var(--font-mono); font-size: var(--fs-24); font-weight: var(--fw-medium); color: var(--accent); }
 .trust-row__label { font-size: var(--fs-13); color: var(--text-secondary); }
 .trust-row__divider { width: 1px; align-self: stretch; background: var(--border-default); }
 
 /* ---- stat-row / stat ---- */
 .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: var(--space-6); }
-.stat__value { font-family: var(--font-mono); font-size: var(--fs-32); font-weight: var(--fw-medium); color: var(--text-strong); }
+.stat__value { font-family: var(--font-mono); font-size: var(--fs-32); font-weight: var(--fw-medium); color: var(--accent); }
 .stat__delta { font-size: var(--fs-13); color: var(--tie-deep); }
 .stat__label { font-size: var(--fs-14); color: var(--text-secondary); margin-top: var(--space-1); }
 
@@ -242,6 +242,14 @@
 .btn--ghost-inverted { background: transparent; color: var(--white); border: 1px solid var(--text-on-ink-mut); }
 .btn--ghost-inverted:hover { border-color: var(--white); }
 
+/* Eyebrow kicker dash-mark — flagship template motif (two petrol bars 30+14) */
+.kicker-mark { display: inline-flex; align-items: center; gap: 4px; vertical-align: middle; margin-right: var(--space-2); }
+.kicker-mark::before, .kicker-mark::after { content: ""; height: 3px; background: var(--accent); }
+.kicker-mark::before { width: 30px; }
+.kicker-mark::after { width: 14px; }
+.section--cta-band--dark .kicker-mark::before, .section--cta-band--dark .kicker-mark::after { background: var(--accent-on-ink); }
+.proof-rating { font-family: var(--font-mono); font-size: var(--fs-13); color: var(--color-brass); margin: var(--space-2) 0 0; }
+
 /* ==== Real handoff components carried into home from the full library ==== */
 /* Routing cards — Hub (B1) + Card-Grid (B2). .route=2-col, .cards=3-col grids */
 .route { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
@@ -250,6 +258,7 @@
 @media (max-width: 680px) { .route, .cards { grid-template-columns: 1fr; } }
 .rcard { display: flex; flex-direction: column; min-width: 0; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-6); transition: border-color .2s, box-shadow .2s, transform .2s; }
 .rcard:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); border-color: var(--border-strong); }
+.rcard__icon { display: block; color: var(--accent); margin-bottom: var(--space-3); line-height: 0; }
 .rcard__n { font-family: var(--font-mono); font-size: var(--fs-12); letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: var(--space-3); }
 .rcard__t { font-family: var(--font-serif); font-variation-settings: var(--serif-small-axes); font-weight: var(--fw-semibold); font-size: var(--fs-20); line-height: 1.2; letter-spacing: -0.012em; color: var(--text-strong); margin: 0 0 var(--space-2); }
 .rcard__t a { color: inherit; }

@@ -15,8 +15,9 @@
 .hero__eyebrow { font-family: var(--font-mono); font-size: var(--fs-12); letter-spacing: var(--ls-wider); text-transform: uppercase; color: var(--text-secondary); margin: 0 0 var(--space-6); }
 .hero__eyebrow:has(.hero__eyebrow-mark) { display: inline-flex; align-items: center; gap: var(--space-3); }
 .hero__eyebrow-mark { display: inline-flex; gap: 4px; align-items: center; flex: none; }
-.hero__eyebrow-mark > span:first-child { width: 28px; height: 3px; background: var(--accent); }
-.hero__eyebrow-mark > span:last-child { width: 13px; height: 3px; background: var(--cta); }
+.hero__eyebrow-mark > span:first-child { width: 30px; height: 3px; background: var(--accent); }
+.hero__eyebrow-mark > span:last-child { width: 14px; height: 3px; background: var(--accent); }
+.hero--hub .hero__eyebrow-mark > span, .hero--location .hero__eyebrow-mark > span { background: var(--accent-on-ink); }
 .hero__heading { font-family: var(--font-serif); font-variation-settings: var(--serif-display-axes); font-weight: var(--fw-medium); font-size: clamp(2.5rem, 2rem + 3.4vw, 4.25rem); line-height: var(--lh-tight); letter-spacing: var(--ls-tight); color: var(--text-strong); margin: 0 0 var(--space-6); }
 .hero__subheading { font-size: var(--fs-20); line-height: var(--lh-base); color: var(--text-secondary); margin: 0 0 var(--space-8); max-width: 40ch; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-6); }
@@ -34,7 +35,7 @@
 .in-brief { padding: var(--space-6) 0; }
 .in-brief__text { font-size: var(--fs-18); line-height: var(--lh-base); color: var(--text-body); }
 .in-brief__source { font-size: var(--fs-13); color: var(--text-muted); margin-top: var(--space-3); }
-.tldr { background: var(--surface-subtle); border-radius: var(--radius-lg); padding: var(--space-6); }
+.tldr { background: var(--surface-subtle); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-6); }
 .tldr__label { font-family: var(--font-mono); font-size: var(--fs-11); letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--text-secondary); margin: 0 0 var(--space-2); }
 .tldr__body { font-size: var(--fs-17); line-height: var(--lh-base); color: var(--text-body); margin: 0; }
 
@@ -292,7 +293,7 @@ a:hover .lnk-arrow, .stat-tier__link:hover .lnk-arrow { transform: translateX(3p
 .hero--rule { position: relative; }     /* the gapped-rule cue is the eyebrow mark; no separate top rule */
 .intake-form { display: grid; gap: var(--space-5); }   /* base form (full form on /contact/ extends this) */
 .legal-doc { display: block; }
-.nav__dropdown { position: relative; }
+.nav__dropdown { min-width: 0; }   /* NOTE: position is owned by .nav__dropdown--mega (absolute) — do not set position here (it loads after 04-chrome and would override the panel back to in-flow) */
 .nav__mega-col { display: grid; gap: var(--space-1); align-content: start; }
 .section--zigzag { display: block; }
 .section--tier-bofu:not(.section--cta-band) { background: var(--surface-tier-bofu); }

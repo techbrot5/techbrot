@@ -1147,3 +1147,104 @@ Founder (3 msgs): (1) MECHANICAL asset-integrity + render check on EVERY page ->
 - Re-probing home b2cbinxf7 (expect axe 0 / overflow 0).
 COUNT: home 3-serious-axe regression fixed (nested-anchor + 2 contrast); david-westgate source-missing flagged; founder's 2 cross-page checks (mechanical + bidirectional template-match) queued.
 OPEN/NEXT: confirm home axe 0 -> commit home -> BUILD the mechanical all-pages asset/render check (puppeteer: img.naturalWidth, CSS loaded, overflow, axe) -> run + report -> then bidirectional template-match diff per family REP (extra + missing vs .dc.html) -> founder rules. Re-add MISSING template eyebrows etc. from real markup.
+
+(checks cont.) TASK 1 MECHANICAL: built _build/probe/asset-render-check.mjs (Puppeteer, own Chromium = chrome-safe) + _build/scripts/run-asset-check.ps1 -- discovers EVERY built URL from _site-probe, per page flags broken/empty <img> (clientW/H>0 but naturalWidth 0, incl picture/source via currentSrc), CSS-bundle-not-loaded, overflow@390. Running b4gesmmu6 on 580 pages -> _build/verify/asset-render-report.json. Will report the full defect table.
+TASK 2 MISSING (started): confirmed .hero__eyebrow/.section__eyebrow are text-only -- the template's dash-mark kicker (two petrol bars 30+14) is genuinely MISSING. Added .kicker-mark CSS (token-pure, + dark-band variant). Markup (hero/in-brief/final-CTA eyebrows) pending -- will add after the mechanical run frees _site-probe (template-match phase). Template uses the mark selectively (hero/in-brief/CTA/footer, NOT plain "What we do" labels).
+COUNT: mechanical check built + running on 580 pages (report pending); eyebrow dash-mark CSS added (MISSING element, markup pending).
+OPEN/NEXT: mechanical check b4gesmmu6 -> report every page+defect -> then bidirectional template-match diff per family REP (home first: EXTRA = review work/outcome facts+long roles+read-review links+statband, services lede+sublinks 6-vs-4; MISSING = eyebrow dash-marks [CSS ready], service-card icons). Founder rules EXTRA; I add MISSING.
+
+(updates) Founder: (1) david-westgate real source now at src/assets/img/people/david-westgate.jpg (207KB) -- re-wire + confirm CLEAN build. (2) Form gate #3 CONFIRMED working (founder got the test email + saw the spreadsheet row) -- DONE, no changes. (3) No clock -- quality over speed on the template-match pass.
+- FIXED photo path: {% photo %} resolves path.join(__dirname, src) (root-relative); old "assets/people/david-westgate.jpg" pointed at a non-existent root path (worked only from eleventy-img cache). Updated to "src/assets/img/people/david-westgate.jpg" (the real source). CLEAN-build verify (clear img cache -> rebuild -> new generated variants from real source) QUEUED after the mechanical sweep frees _site-probe.
+- Mechanical sweep b4gesmmu6 still running on 580 pages.
+COUNT: david-westgate photo re-wired to real source (clean-build verify pending); form gate #3 confirmed done by founder.
+OPEN/NEXT: sweep b4gesmmu6 -> report full defect table -> clean-build verify (david-westgate from real source) -> bidirectional template-match diff (home first: kicker-mark markup [CSS ready] + the EXTRA/MISSING report; then 24 families). No clock; quality bar.
+
+---
+
+## Turn -- 2026-06-22 -- MECHANICAL SWEEP report (580 pages) + david-westgate flip-blocker CLEARED
+TASK 1 result. Method: Puppeteer @390, force-load lazy + scroll, check every img naturalWidth + CSS-bundle-loaded + overflow.
+- CSS-missing (unstyled page): 0 of 580. Every page loads site.min.css.
+- Broken/empty images: 0 REAL. v1 flagged 4 pages (home, about, cleanup-bookkeeping, trust) but those were LAZY-LOAD FALSE POSITIVES -- badges + david-westgate photo are below-fold loading=lazy, so naturalWidth=0 before scroll. Fixed the check (force lazy to eager + scroll before measuring); re-check of all 5 image pages = 0 defects. Badge PNGs are real (165-415KB, present in src + build).
+- Overflow @390: 8 pages, ALL in the support/help/training silo -- the only REAL mechanical defects: help/cant-reach-intuit, help/proadvisor-phone-help, help/proadvisor-vs-intuit-support, help/speak-to-an-expert, support/, support/how-to-contact-quickbooks-support, support/independent-quickbooks-help, training/. Likely a shared support-silo component overflowing. Probing source b6e47qk5z.
+- DAVID WESTGATE flip-blocker CLEARED: photo path was assets/people/... (non-existent root path, worked only from cache) -> fixed to src/assets/img/people/david-westgate.jpg (real 207KB source). CLEAN build (deleted _site-probe then rebuilt) regenerates it from source (3kDgMuRRPO-128=4853B / -192=8470B), 0 defects. Survives clean build, not just cache.
+- TOOLING: asset-render-check.mjs (lazy-aware) + run-asset-check.ps1 (Clean + PathList switches).
+COUNT: mechanical sweep done -- 0 broken images real, 0 css-missing, 8 support-silo overflow pages real; david-westgate clean-build verified.
+OPEN/NEXT: overflow source b6e47qk5z -> fix support-silo overflow at component source -> optional full 580 re-run with lazy fix to confirm 0 -> then TASK 2 bidirectional template-match diff (home first).
+
+(task1 fix) Support-silo overflow ROOT CAUSE: a long-label .btn--primary.btn--lg (the Sheet-7 mandated "Talk to a Certified ProAdvisor (independent firm)" CTA) -- .btn had white-space:nowrap + fixed height, so the label could not wrap -> forced 451px width at 360/390. FIXED at component source (04-chrome): .btn height->min-height, +max-width:100%, white-space nowrap->normal, +text-align:center, line-height 1->1.15; .btn--lg height->min-height. One fix, all 8 inherit. Re-probing the 8 at 360/390/768 (bueq8on83). Then full 580 sweep.
+COUNT: btn overflow fix at source (R8); 8-page re-probe running; full re-run next.
+
+(task1 cont.) 8-page re-probe: .btn fix cleared overflow on 7/8; only /quickbooks/training/ remained (docW=400). find-overflow.mjs pinpointed: the pricing checks-list li had min-content 380px but the grid column is 320px, and grid/flex items default min-width:auto -> li would not shrink -> overflow. FIXED: .checks-list li +min-width:0 +overflow-wrap:anywhere (R8, all checks-lists inherit). Both overflow root causes now fixed at component source.
+- FULL 580-page sweep running bx8pvcm6w (CLEAN build = also re-verifies david-westgate regen from source; lazy-aware checker; both overflow fixes). Definitive 0-broken/0-css/0-overflow record pending.
+- Founder :8080 dev server crashed earlier (exit 134, concurrent-build OOM). Keeping it OFF during the heavy sweep to avoid another crash; will restart after the sweep completes.
+COUNT: both overflow causes fixed at source (.btn + .checks-list li); full clean sweep running; dev server to restart post-sweep.
+OPEN/NEXT: report full sweep result -> restart :8080 -> commit fixes -> TASK 2 bidirectional template-match (home first).
+
+(task1 cont.) Dev server restarted per founder -- :8080 HTTP 200 (live for LAN review). Full sweep bx8pvcm6w still running (was 100/580, 0 defects so far -- both overflow fixes holding). LAN IP note: default-route adapter = 192.168.1.7 (proven earlier); a secondary adapter shows 192.168.11.1 -- founder uses whichever resolves on their phone's subnet. localhost:8080 on PC. Will report the full sweep result on completion.
+
+---
+
+## Turn -- 2026-06-22 -- TASK 2 bidirectional template-match: HOME diff vs Home - Template.dc.html
+Anchor: built home carries ALL d5a35c9 content (approved), so COPY differences (H1, CTA, eyebrow texts) are d5a35c9-approved, NOT diffs. Diff is composition/component + presentation.
+- MISSING (template has, built omitted) -> ADDED: eyebrow dash-mark (.kicker-mark, two petrol bars 30+14) on hero + in-brief + final-CTA eyebrows (CSS + markup). Template uses it selectively (these 3 + footer), NOT on plain "What we do" labels -- matched.
+- MISSING (component choice, founder rules): service-card ICONS. Template's 4 service cards are icon-led w/ no sublinks; built uses real Hub .route/.rcard (index-label "01/CORE") to CARRY the d5a35c9 sublinks (icon card has no sublink slot). Founder rules: Hub-routing-with-sublinks vs icon-cards-without-sublinks.
+- EXTRA (built heavier than template refines; founder rules presentation, content stays): PROOF reviews -- built adds "The work:/The outcome:" fact blocks + long role + "Read the verified review" link + 4-stat statband + eyebrow + lede; template = italic quote + short role + Verified + single "5.0 - 2 reviews" line. SERVICES -- built adds lede + 6 cards (vs 4) + sublinks + go-links. Several section ledes.
+- CARRIED sections (beyond bare template, approved via d5a35c9 anchor -- keep): TL;DR, Judgment+figure, Buyer routing, Process, Comparison, Team, Industries, Guides, States (each in real handoff component).
+COUNT: HOME template-match diff produced (bidirectional); eyebrow dash-mark MISSING added; EXTRA + service-icon component-choice reported for founder ruling.
+OPEN/NEXT: founder rules home EXTRA (review fields/statband presentation, services icons-vs-sublinks) -> apply -> verify eyebrow marks render (post-sweep build) -> then the 24 families (read each .dc.html, diff vs built REP). Full sweep bx8pvcm6w still running (report on completion).
+
+---
+
+## Turn -- 2026-06-22 -- FULL SWEEP definitive clean + HOME rulings applied + nav bug fixed
+- FULL SWEEP bx8pvcm6w DEFINITIVE: 580 pages, 0 defects -- 0 broken images, 0 missing CSS, 0 overflow. Mechanical record locked.
+- HOME RULINGS (founder) applied:
+  1. SERVICE CARDS: icon+label+sublinks IS feasible -> added 6 icons (new: svc-accounting/compare/find/pricing; reused svc-setup/advisory) + .rcard__icon CSS; KEPT sublinks (internal-link equity overrides template's link-less icon cards).
+  2. REVIEWS: slimmed to template -- DROPPED "The work/The outcome" mono blocks + "Read the verified review" link; SHORTENED roles (Owner, Beverage Connection - Denver, CO / CEO, Barbara B. - Business services, CA). STATBAND DROPPED: no repo source confirms the 4 sub-scores (Quality/Schedule/Willing-to-refer 5.0) are real Clutch data -> honesty default = drop; kept single verifiable "5.0 - 2 verified reviews on Clutch" line. FLAG: founder confirm from Clutch profile to restore the sub-scores.
+  3. SECTION LEDES: kept; tightened the 2 longest (judgment, states) to one crisp line.
+  4. EYEBROW dash-mark: .kicker-mark markup on hero/in-brief/final-CTA (verifying render).
+  5. NAV DROPDOWN BUG (site-wide): root cause = .nav__item was only button-height (40px) centered in 64px header, so panel top:calc(100%+8) landed INSIDE the bar -> overlapped logo + nav. FIXED at source (04-chrome): .nav__item height:var(--header-height) + flex center -> panel now drops cleanly below the full header bar. R8, inherits site-wide.
+- VERIFY running beo6ubz5j (build + render checks + battery + equity). Screenshots next: home top-to-bottom + nav dropdown open.
+COUNT: full sweep 0/0/0 (580); all 5 home rulings applied + nav bug fixed at source; verifying.
+OPEN/NEXT: beo6ubz5j -> axe(home) 0 + overflow 0 -> screenshot home + nav-dropdown-open (puppeteer click) -> commit -> founder LAN review -> then 24-family diff (add CSS-only vs MARKUP column; carry home rulings as defaults).
+
+---
+
+## Turn -- 2026-06-22 -- COMPONENT DRIFT MAP (new plan: fix library, not sections)
+Founder: stop per-section; audit handoff components vs built repo components; report drift map FIRST (scope) before fixing at component source (all pages inherit).
+Accurate census (tokenized class extraction, 580 pages). The handoff-real components I built exist ONLY on home; 579 pages still render the older built components:
+| Component | built class (pages) | handoff-real | verdict | fix-type |
+| Comparison table | vs-table (81) | .cmp dot-marks + us-col + mobile transpose | DRIFT | MARKUP |
+| Stat / trust band | trust-row (449) + stat-row (40) | .statband -- value in PETROL not ink | DRIFT (value color/size) | CSS-ONLY |
+| CTA band | final-cta (574) | dark + eyebrow dash-mark + reassure line + tie-out MONOGRAM | DRIFT | MARKUP (+CSS) |
+| Hero | hero-split (144) | + dash-mark + helper line + 2 icon trust-chips | DRIFT | MARKUP (+CSS) |
+| Eyebrow | section/hero__eyebrow (~574) | + .kicker-mark dash (flagship only) | DRIFT | MARKUP (+CSS) |
+| Process steps | process-step (70) | .steps STEP-0N + column dividers | DRIFT | MARKUP |
+| Review card | review-card +facts +link (68) | slim quote + short role + Verified | DRIFT (heavy usage) | MARKUP (content-sensitive) |
+| TL;DR | tldr (18) | .tldr-box + 1px border | DRIFT (minor) | CSS-ONLY |
+| Buyer cards | buyer-card (304) | (no handoff equivalent) | KEEP | n/a |
+| byline-block (420), checks-list (280) | -- | likely match (confirm) | -- | -- |
+KEY INSIGHT confirmed: ~8 drifted shared components explain the "hundreds of off sections." Biggest reach: stat/trust band 489 (CSS-only recolor to petrol), CTA band 574 + eyebrow 574 + hero 144 (markup: add monogram/mark/helper/chips to the SHARED cta + hero partials -> all inherit), comparison 81 + process 70 (markup).
+COUNT: drift map produced -- 8 drifted components, CSS-only = stat-band(489)+tldr(18); MARKUP = comparison(81), process(70), CTA(574), hero(144), eyebrow(574), review-usage(68).
+OPEN/NEXT: founder reviews drift map + rules fix order -> fix each at component source (CSS/partial), all pages inherit -> re-census + battery + axe + full sweep after each. Tooling: component-census.ps1.
+
+---
+
+## Turn -- 2026-06-22 -- MASTER FAMILY DRIFT MAP vs HANDOFF-MANIFEST (25 families, 5 parallel auditors)
+Screenshots: eyebrow .kicker-mark RENDERS (visible); NAV dropdown still overlaps util/header -- my full-height-li fix was INSUFFICIENT, re-fix at chrome source pending. All 25 .dc.html templates present (none missing). Tokens OK site-wide (petrol/CTA/fonts via var(); no raw wrong hex). Env fail-closed (noindex preview) OK.
+DOMINANT ROOT CAUSE = SIGNATURE-VIZ SUBSTITUTION: most families reuse the A1 hero figure data-viz="taccount-tieout" instead of their locked family viz (the tier layouts default heroFigure:taccount). Correct viz only on A1 (taccount) + D1 (reconciliation-beforeafter).
+DRIFT families + locked viz MISSING/WRONG: B1 (catalog-index-table -> taccount), B3 (compact-hero -> split+taccount), B5 (no-viz -> taccount + missing dark CTA band), D3 (state-servicemap MISSING + badge downgraded to text + DATA BUG 13 empty glossary <p>), D4/D5/D6 cost-stack-bar MISSING (rendered as text buyer-card grids; ~155 pages), E1 monthly-cycle process diagram MISSING, E3 drift-compound MISSING, E6 turnaround-bars -> taccount, F2 pricing-range-bars MISSING (rendered as vs-table; no tier band), G2 editorial-essay built as HUB page (drop-cap + pull-quote MISSING + foreign taccount), C2 vs-table-not-cmp (the marquee comparison; 21 pages), B4 missing cities/pull-quote + cta-dark-not-light + buyer-card-not-rcard.
+MATCH families: A1 (minor copy), B2, C1, D1, D2, D7 (disclosure ATF correct), E2 (viz name-drift reconcile-gap, DefinedTerm schema ok), E4, E5 (calculator present), F1 (full form -- the one form family), G1 (correctly omits hero/CTA/viz).
+SHARED-COMPONENT drifts (site-wide): eyebrow-no-dashmark (inconsistent D3/D4 lack, D5/D7/F2/home have), vs-table-not-cmp (C2+F2), cta-band (B5 missing-dark / B4 dark-not-light), stat-band value ink-not-petrol (CSS), routing buyer-card/grid-3-not-rcard (B1/B4), tldr-no-border (E3).
+COUNT: ~13 DRIFT, ~12 MATCH. TRUE SCOPE = (a) ~10 per-family SIGNATURE VIZ figures to build from handoff SVGs + wire (markup/data) -- biggest reach D4/D5/D6 cost-stack-bar 155pp + C2 cmp 21pp + F2 11pp; (b) shared-component fixes (cmp, eyebrow-mark, cta-band, stat-band-color); (c) family-composition (B1 hero-fig, B3 filter, B4 cities+light-cta, G2 editorial-not-hub); (d) D3 glossary data bug; (e) nav-dropdown chrome re-fix.
+OPEN/NEXT: present master map -> founder rules rebuild order -> fix per component/family at source (viz figures, shared CSS/partials), pages inherit -> re-audit. No fixing yet (founder: map first).
+
+---
+
+## Turn -- 2026-06-22 -- REBUILD step 1: shared CSS-only + nav-dropdown ROOT-CAUSED
+- NAV DROPDOWN root cause (inspected actual positions: panel computed position=RELATIVE, top=-27, in-flow flex sibling of the trigger): `.nav__dropdown { position: relative }` in 05-components loads AFTER `.nav__dropdown--mega { position: absolute }` in 04-chrome -- same specificity, later layer wins -> panel forced to in-flow; my earlier display:flex on .nav__item then made it a flex sibling of the button = the overlap. FIXED: 05 base `.nav__dropdown` -> `min-width:0` (no position) so --mega absolute applies; kept full-height .nav__item -> panel now anchors below the full header bar. (z-60 within header z-100 = above content.)
+- STAT-BAND PETROL (489pp): .trust-row__value + .stat__value color ink->var(--accent). CSS-only.
+- TLDR BORDER (18pp): .tldr +1px border.
+- EYEBROW CONSISTENCY: existing .hero__eyebrow-mark (only in t-bofu) had a CLAY 2nd bar (wrong -- clay=CTA-only); fixed to petrol+petrol (30+14, matches Home template). ADDED hero__eyebrow-mark to t-hub/t-mofu/t-guide/t-location hero eyebrows (were missing) + dark-context rule (accent-on-ink on hub/location dark heroes). All family heroes now carry the mark consistently.
+- Build+battery+census running bf8vwanhh; nav-inspect (confirm panel below header) + axe + screenshot next; then commit step 1.
+COUNT: step-1 shared fixes applied at source (nav root-caused, stat-band petrol 489, tldr border 18, eyebrow mark spread to all tier layouts); verifying.
+OPEN/NEXT: confirm bf8vwanhh + nav-inspect green -> sweep -> commit step1 -> step 2 (.cmp comparison component, C2+F2 ~32pp).

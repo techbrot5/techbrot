@@ -1,0 +1,16 @@
+import puppeteer from "puppeteer";
+import { mkdirSync } from "node:fs";
+const BASE = (process.argv[2] || "http://localhost:8184").replace(/\/$/, "");
+mkdirSync("_build/verify/shots", { recursive: true });
+const b = await puppeteer.launch({ headless: true, args: ["--no-sandbox"] });
+const p = await b.newPage();
+await p.setViewport({ width: 1280, height: 760, deviceScaleFactor: 1 });
+await p.goto(BASE + "/", { waitUntil: "networkidle0", timeout: 30000 });
+await p.evaluate(() => document.fonts && document.fonts.ready);
+await new Promise(r => setTimeout(r, 500));
+await p.click(".nav__trigger");
+await new Promise(r => setTimeout(r, 600));
+const open = await p.$eval('.nav__dropdown--mega[data-open="true"]', e => !!e).catch(() => false);
+await p.screenshot({ path: "_build/verify/shots/nav-dropdown.png", clip: { x: 0, y: 0, width: 1280, height: 560 } });
+console.log("dropdown open:", open);
+await b.close();
