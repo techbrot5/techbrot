@@ -978,3 +978,16 @@ COUNT: F1 file-review renders + form present; F probe running; fan-out D1-D7 + B
 OPEN/NEXT: read probe b4v7e15s6 -> if green, F1-F2 verified -> G2 trust -> A1 home LAST. D7 disclosure ruling pending.
 
 (F cont.) PROBE b4v7e15s6 GREEN: 7/7 across F1/F2 -- /contact/ + /quickbooks/file-review/ (F1 forms); /pricing/ + /pricing/bookkeeping/ + /pricing/cfo/ + CA/IL state pricing (F2) -- ALL a11y 0 / overflow 0. F1-F2 VERIFIED green. Fan-out: D1-D7 + B1-B5 + C1-C2 + E1-E6 + F1-F2 all green. Remaining: G2 trust + A1 home (last). G1 legal = original signed-off proof.
+
+---
+
+## Turn -- 2026-06-21 -- G2 trust/editorial -- reviews honesty VERIFIED + probe running
+Founder: go (G2).
+- G2 = 6 pages: /about/ (REP) + /about/methodology/ + /about/network/ + /trust/ + /partners/ + /reviews/.
+- ⚠->✅ REVIEWS HONESTY (hard rule, checked carefully): /reviews/ has 0 actual AggregateRating schema nodes ("@type":"AggregateRating" count = 0), NO ratingValue/reviewCount. The 5 "AggregateRating" string hits are the WORD in the POLICY PROSE: "...no inflated star counts, no AggregateRating until we have five or more verified reviews." Visible: "Two real engagements, verified on Clutch" (2 real Clutch review cards), hero "Real reviews... Nothing else." COMPLIANT -- no fabricated aggregate.
+- VISUAL AUDIT (/reviews/): hero, disclosure note, 2 real Clutch review cards, "How we handle reviews -- and why" honesty prose, final CTA. Renders correctly. (about + trust carry the badge strip.)
+- PROBE (bg bvja4jdqv, all 6 G2 pages). Isolation render_shot -> :8080 + kill_probe.
+COUNT: reviews honest-compliant (0 AggregateRating nodes, 2 real reviews); G2 probe running; fan-out D1-D7 + B1-B5 + C1-C2 + E1-E6 + F1-F2 green.
+OPEN/NEXT: read probe bvja4jdqv -> if green, G2 verified -> A1 home (LAST family). D7 disclosure ruling pending.
+
+(G2 cont.) PROBE bvja4jdqv GREEN: 6/6 -- /about/ + /about/methodology/ + /about/network/ + /trust/ + /partners/ + /reviews/ -- ALL a11y 0 / overflow 0. G2 VERIFIED green (reviews honest-compliant). Fan-out: D1-D7 + B1-B5 + C1-C2 + E1-E6 + F1-F2 + G1(proof) + G2 all green. ONLY A1 home remains (last).
