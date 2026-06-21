@@ -685,3 +685,21 @@ live D1 template (DesignSync) + read its full `<style>` for exact values.
 - **Flip-gate scoreboard:** ✅ phone · ✅ re-skin+battery · ✅ recrawl · ✅ badges (2/5 wired, 3 pending artwork) · ✅ OG · ✅ CSS under target ·
   ✅ **form handler (works via Apps Script today; Cloudflare path scaffolded)**. REMAINING: live axe/overflow (founder machine) · 3 badge PNGs · final sign-off.
 **COUNT:** form handler scaffolded (functions/api/*) · forms already live via Apps Script · build unaffected.
+
+---
+
+## Turn — 2026-06-21 · FLIP-GATE: axe + overflow probe prepped (turnkey, founder-run)
+**Founder:** prep the axe/overflow probe commands.
+- The sandbox can't JS-exec (headless `--dump-dom` = 0-length), so the live a11y/overflow gate must run on the founder's machine. Built a turnkey
+  Puppeteer + axe-core probe:
+  · `_build/probe/probe-urls.txt` — 35 paths (25 family reps + growth-phase children), editable.
+  · `_build/probe/axe-overflow.mjs` — per URL: inject axe-core → `axe.run()` (desktop 1280) collecting violations; overflow at **360/390/768**
+    flagging any element whose right edge passes the viewport (up to 8 offenders). Writes `_build/verify/axe-overflow-report.json` + console
+    summary; **exit 1** on any serious/critical a11y violation OR any overflow.
+  · `_build/scripts/run-axe-overflow.ps1` — installs puppeteer+axe-core (one-time), builds `_site`, serves it (python http.server :8181, waits
+    till ready), runs the probe, stops the server.
+- Verified here: `node --check` SYNTAX OK · 35 URLs parse · node v22.14 + python 3.13 present.
+- **Founder runs:** `powershell -File _build\scripts\run-axe-overflow.ps1` → reads the summary / report; I fix any ❌ at the component/token level.
+- **Flip-gate scoreboard:** all code-doable items ✅ (re-skin · battery · recrawl · badges 2/5 · OG · CSS · form handler · **probe prepped**).
+  REMAINING (founder-side): RUN the probe · 3 badge PNGs · Cloudflare env + endpoint flip · final sign-off.
+**COUNT:** axe/overflow probe prepped (3 files) · syntax OK · node v22 + python ok · founder runs run-axe-overflow.ps1.
