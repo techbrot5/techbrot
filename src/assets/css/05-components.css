@@ -69,7 +69,7 @@
 /* ===================== Â§02 BUYER CARDS (lift: number + title/body) ===================== */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
-.buyer-card { background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-6); }
+.buyer-card { background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-6); min-width: 0; overflow-wrap: anywhere; }
 .buyer-card:has(.buyer-card__n) { display: flex; gap: var(--space-3); align-items: flex-start; }
 .buyer-card__n { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--accent); flex: none; padding-top: 3px; }
 .buyer-card__text { display: block; }
@@ -166,7 +166,7 @@ a:hover .lnk-arrow, .stat-tier__link:hover .lnk-arrow { transform: translateX(3p
 .operator-quote cite { display: block; font-style: normal; font-size: var(--fs-13); color: var(--text-secondary); }
 .operator-quote cite b { color: var(--tie-deep); font-weight: var(--fw-medium); }
 .operator-panel { background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: var(--space-8); box-shadow: var(--shadow-card); }
-.operator-panel__label { font-family: var(--font-mono); font-size: var(--fs-11); letter-spacing: var(--ls-wider); text-transform: uppercase; color: var(--text-faint); margin: 0 0 var(--space-6); }
+.operator-panel__label { font-family: var(--font-mono); font-size: var(--fs-11); letter-spacing: var(--ls-wider); text-transform: uppercase; color: var(--text-secondary); margin: 0 0 var(--space-6); }
 .operator-panel ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); }
 .operator-panel li { display: flex; gap: var(--space-3); align-items: flex-start; font-size: var(--fs-15); color: var(--text-body); }
 .operator-panel__check { flex: none; width: 18px; height: 18px; margin-top: 2px; color: var(--tie); }

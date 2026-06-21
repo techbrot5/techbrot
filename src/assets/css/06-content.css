@@ -76,14 +76,15 @@
 
 /* ---- fix-steps (numbered error-fix steps) ---- */
 .fix-steps { list-style: none; margin: 0; padding: 0; counter-reset: fix; display: grid; gap: var(--space-5); }
-.fix-steps li { display: flex; gap: var(--space-4); align-items: flex-start; counter-increment: fix; }
+.fix-steps li { display: flex; gap: var(--space-4); align-items: flex-start; counter-increment: fix; min-width: 0; }
+.fix-steps li > * { min-width: 0; overflow-wrap: anywhere; }
 .fix-steps li::before { content: counter(fix, decimal-leading-zero); font-family: var(--font-mono); font-size: var(--fs-13); color: var(--accent); flex: none; padding-top: 2px; }
 
 /* ---- process-diagram / process-step (numbered process; home/framework) ---- */
 .process-diagram { display: grid; gap: var(--space-6); }
 .process-step { display: flex; gap: var(--space-4); align-items: flex-start; min-width: 0; }
 .process-step__number { font-family: var(--font-mono); font-size: var(--fs-14); color: var(--cta-press); flex: none; }
-.process-step__heading { font-family: var(--font-serif); font-variation-settings: var(--serif-small-axes); font-weight: var(--fw-semibold); font-size: var(--fs-18); color: var(--text-strong); margin: 0 0 var(--space-1); }
+.process-step__heading { font-family: var(--font-serif); font-variation-settings: var(--serif-small-axes); font-weight: var(--fw-semibold); font-size: var(--fs-18); color: var(--text-strong); margin: 0 0 var(--space-1); overflow-wrap: anywhere; }
 .process-step__body { font-size: var(--fs-14); line-height: var(--lh-base); color: var(--text-secondary); margin: 0; min-width: 0; overflow-wrap: anywhere; }
 .stack-8 { display: grid; gap: var(--space-4); }
 
