@@ -99,27 +99,9 @@
       <h2 class="section__heading">Side by side, across what matters.</h2>
       <p class="section__lede">The dimensions that determine fit &mdash; a fair, both-sides read. Where each option clearly wins, and where it depends on the buyer.</p>
     </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">TechBrot versus QuickBooks Live compared across what matters, from an independent Certified QuickBooks ProAdvisor firm.</caption>
-        <thead>
-          <tr>
-            <th scope="col">Dimension</th>
-            <th scope="col" class="vs-table__us">TechBrot</th>
-            <th scope="col">QuickBooks Live</th>
-          </tr>
-        </thead>
-        <tbody>
-          {%- for r in vsTable %}
-          <tr>
-            <th scope="row">{{ r.dim | safe }}</th>
-            <td class="vs-table__us">{% if r.us == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.us == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.us | safe }}</span>{% endif %}</td>
-            <td>{% if r.them == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.them == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.them | safe }}</span>{% endif %}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+        {%- set cmpCompetitor = "QuickBooks Live" %}
+    {%- set cmpCaption = "TechBrot versus QuickBooks Live compared across what matters, from an independent Certified QuickBooks ProAdvisor firm." %}
+    {% include "partials/comparison-table.njk" %}
   </div>
 </section>
 

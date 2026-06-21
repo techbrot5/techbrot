@@ -99,20 +99,9 @@
       <h2 class="section__heading">Side by side, across what matters.</h2>
       <p class="section__lede">Fourteen dimensions that determine whether either service is the right fit. We hold no reseller or referral incentive in either direction &mdash; the read is independent.</p>
     </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">TechBrot versus Bench, compared across fourteen dimensions, from an independent Certified QuickBooks ProAdvisor firm.</caption>
-        <thead><tr><th scope="col">Dimension</th><th scope="col" class="vs-table__us">TechBrot</th><th scope="col">Bench</th></tr></thead>
-        <tbody>
-          {%- for r in vsTable %}
-          <tr><th scope="row">{{ r.cap | safe }}</th>
-            <td class="vs-table__us"><span class="vs-table__concede">{{ r.tb | safe }}</span></td>
-            <td><span class="vs-table__concede">{{ r.bench | safe }}</span></td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+        {%- set cmpCompetitor = "Bench" %}
+    {%- set cmpCaption = "TechBrot versus Bench, compared across fourteen dimensions, from an independent Certified QuickBooks ProAdvisor firm." %}
+    {% include "partials/comparison-table.njk" %}
   </div>
 </section>
 

@@ -1,0 +1,30 @@
+{#- Shared comparison table = the REAL .cmp component (Comparison - Template.dc.html, C2 signature).
+    us-column highlight + .mk dot-marks (derived from each row's `edge` winner) + mobile transpose
+    (data-col). Descriptive 4-column content preserved (Dimension / TechBrot / competitor / Edge) —
+    NO content drift; the Edge column stays (the marks visualize it, the column keeps the copy).
+    Inputs (page frontmatter): vsTable [{cap, tb, them, edge}], cmpCompetitor (name string),
+    optional cmpUsSub, cmpThemSub, cmpCaption, cmpDimLabel. -#}
+<table class="cmp" data-viz="comparison-table" data-viz-state="FINAL">
+  {%- if cmpCaption %}<caption class="sr-only">{{ cmpCaption | safe }}</caption>{%- endif %}
+  <thead>
+    <tr>
+      <th scope="col">{{ cmpDimLabel or "Dimension" }}</th>
+      <th scope="col" class="us">TechBrot{% if cmpUsSub %}<span class="sub">{{ cmpUsSub | safe }}</span>{% endif %}</th>
+      <th scope="col">{{ cmpCompetitor | safe }}{% if cmpThemSub %}<span class="sub">{{ cmpThemSub | safe }}</span>{% endif %}</th>
+      <th scope="col">Edge</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%- for r in vsTable %}
+    {%- set usMark = "mk--yes" if r.edge == "TechBrot" else ("mk--tie" if r.edge == "Depends" else "mk--no") %}
+    {%- set themMark = "mk--yes" if r.edge == cmpCompetitor else ("mk--tie" if r.edge == "Depends" else "mk--no") %}
+    {%- set edgeMark = "mk--yes" if r.edge == "TechBrot" else ("mk--tie" if r.edge == "Depends" else "mk--no") %}
+    <tr>
+      <th scope="row">{{ r.cap | safe }}</th>
+      <td class="us" data-col="TechBrot"><span class="mk {{ usMark }}"><span class="mk__dot"></span>{{ r.tb | safe }}</span></td>
+      <td data-col="{{ cmpCompetitor | safe }}"><span class="mk {{ themMark }}"><span class="mk__dot"></span>{{ r.them | safe }}</span></td>
+      <td data-col="Edge"><span class="mk {{ edgeMark }}"><span class="mk__dot"></span>{{ r.edge | safe }}</span></td>
+    </tr>
+    {%- endfor %}
+  </tbody>
+</table>
