@@ -932,3 +932,16 @@ OPEN/NEXT: read probe bj5otb4fl -> if green, D7 technically verified (pending th
 
 (D7 cont.) PROBE bj5otb4fl GREEN: 5/5 D7 sample (CA/TX/IL urgent-bookkeeping + CA state-tax-notice-help + FL sales-tax-help) a11y 0 / overflow 0. Isolation held (:8080 HTTP 200, 13 personal chrome untouched). D7 generated set = TECHNICALLY VERIFIED green + honest-triage COMPLIANT; the ONLY open item is the disclosure-banner prominence ruling (a: add bordered .disclosure to generated triage template / b: accept hero-chip+in-brief). NY hand-authored triage untouched.
 COUNT(D7): 5/5 sample green; honest-triage compliant; 1 founder ruling pending (disclosure banner). D-family (D1/D2/D3/D4/D5/D6/D7) ALL verified green.
+
+---
+
+## Turn -- 2026-06-21 -- B1-B5 hubs -- REP audits + probe running
+Founder: go (B-hubs, while D7 disclosure ruling pending).
+- B1 silo hub, B2 card-grid sub-hub, B3 listing hub, B4 location sub-hub, B5 national hub. B1/B2/B3/B5 screenshot-audited earlier (render well); B4 verified on a GENERATED sub-hub this turn (/find-an-accountant/california/industries/ -- hero, six-industry buyer cards, FAQ, dark final-CTA -- correct; NY sub-hubs untouched).
+- PROBE (bg bn3gempby, 9 across B1-B5): /quickbooks/, /accounting/ (B1); /quickbooks/online/features/ (B2); /tools/, /glossary/, /blog/ (B3); /find-an-accountant/california/industries/, /find-an-accountant/texas/cities/ (B4 generated); /find-an-accountant/ (B5).
+- ISOLATION held (render_shot -> :8080 + kill_probe personal-chrome-untouched=13).
+COUNT: B4 generated sub-hub renders design; B probe running; D-family fully done (D1-D7 green).
+OPEN/NEXT: read probe bn3gempby -> if green, B1-B5 verified -> C1-C2 comparison. D7 disclosure-banner ruling still pending.
+
+(B cont.) PROBE bn3gempby GREEN: 9/9 across B1-B5 -- /quickbooks/ + /accounting/ (B1), /quickbooks/online/features/ (B2), /tools/ + /glossary/ + /blog/ (B3), CA industries + TX cities (B4 generated), /find-an-accountant/ (B5) -- ALL a11y 0 / overflow 0. Isolation held (:8080 HTTP 200). B4 generated sub-hub renders design; B1/B2/B3/B5 audited earlier. NY sub-hubs untouched. B1-B5 VERIFIED green.
+COUNT(B): 9/9 sample green; B-family verified. Fan-out so far: D1-D7 + B1-B5 all green.
