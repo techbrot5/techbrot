@@ -10,7 +10,7 @@
 .btn--inverted:hover { border-color: var(--accent); color: var(--accent); }
 .link-standalone { display: inline-flex; align-items: center; gap: var(--space-2); font-weight: var(--fw-medium); color: var(--accent); }
 .link-standalone:hover { color: var(--accent-hover); }
-.link-wrap { display: inline-flex; align-items: center; gap: var(--space-2); }
+.link-wrap { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); max-width: 100%; }
 
 /* ---- phone-cta ---- */
 .phone-cta { display: inline-flex; align-items: center; gap: var(--space-3); }
@@ -23,7 +23,7 @@
 .byline-block__mark { width: 28px; height: 28px; flex: none; display: inline-flex; align-items: center; justify-content: center; background: var(--accent); border-radius: var(--radius-sm); color: var(--white); }
 .byline-block__name { font-weight: var(--fw-semibold); color: var(--text-strong); }
 .byline-block__review { color: var(--text-muted); }
-.meta-reviewed { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--text-faint); }
+.meta-reviewed { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--text-secondary); }
 
 /* ---- checks-list ---- */
 .checks-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
@@ -82,7 +82,7 @@
 /* ---- process-diagram / process-step (numbered process; home/framework) ---- */
 .process-diagram { display: grid; gap: var(--space-6); }
 .process-step { display: flex; gap: var(--space-4); align-items: flex-start; }
-.process-step__number { font-family: var(--font-mono); font-size: var(--fs-14); color: var(--cta); flex: none; }
+.process-step__number { font-family: var(--font-mono); font-size: var(--fs-14); color: var(--cta-press); flex: none; }
 .process-step__heading { font-family: var(--font-serif); font-variation-settings: var(--serif-small-axes); font-weight: var(--fw-semibold); font-size: var(--fs-18); color: var(--text-strong); margin: 0 0 var(--space-1); }
 .process-step__body { font-size: var(--fs-14); line-height: var(--lh-base); color: var(--text-secondary); margin: 0; }
 .stack-8 { display: grid; gap: var(--space-4); }
@@ -116,7 +116,7 @@
 .guide-grid { display: block; }
 @media (min-width: 960px) { .guide-grid { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: var(--space-12); align-items: start; } }
 .toc { position: sticky; top: calc(var(--header-height) + var(--space-5)); align-self: start; }
-.toc__label { font-family: var(--font-mono); font-size: var(--fs-11); letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--text-faint); margin: 0 0 var(--space-4); }
+.toc__label { font-family: var(--font-mono); font-size: var(--fs-11); letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--text-secondary); margin: 0 0 var(--space-4); }
 .toc ol, .toc ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-1); }
 .toc a { display: block; font-size: var(--fs-13); color: var(--text-secondary); padding: var(--space-2) var(--space-3); border-inline-start: 2px solid var(--border-subtle); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
 .toc a:hover, .toc a.is-active { color: var(--accent); border-inline-start-color: var(--accent); background: var(--surface-subtle); }
@@ -209,3 +209,8 @@
 .intuit-badges { list-style: none; margin: var(--space-5) 0 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-6); }
 .intuit-badges li { margin: 0; }
 .intuit-badges__img { height: 88px; width: auto; display: block; }
+
+/* ---- a11y: inline links in text blocks need a non-color cue (WCAG link-in-text-block) ----
+   Prose/legal/call-out links already carry a border-bottom underline; these text contexts did not. */
+.site-footer__disclosure a, .intake-checkbox a, .intake-checkbox__help a, .intake-field__help a,
+.disclosure__body a, .lead-magnet__text a, .calc__noscript a { text-decoration: underline; text-underline-offset: 0.16em; }

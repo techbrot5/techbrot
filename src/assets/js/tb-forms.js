@@ -69,7 +69,7 @@
      array, and the industry overwrite quirk are part of the contract. */
   function collect() {
     var data = {};
-    ['name','company','email','phone','revenue_range','industry','qb_status','timeline','message','consent'].forEach(function (n) {
+    ['name','company','email','phone','revenue_range','industry','qb_status','timeline','message','consent','lead_source','ai_tool'].forEach(function (n) {
       var el = field(n);
       if (el) data[n] = (el.type === 'checkbox') ? (el.checked ? el.value : '') : el.value.trim();
     });

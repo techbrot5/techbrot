@@ -703,3 +703,24 @@ live D1 template (DesignSync) + read its full `<style>` for exact values.
 - **Flip-gate scoreboard:** all code-doable items ✅ (re-skin · battery · recrawl · badges 2/5 · OG · CSS · form handler · **probe prepped**).
   REMAINING (founder-side): RUN the probe · 3 badge PNGs · Cloudflare env + endpoint flip · final sign-off.
 **COUNT:** axe/overflow probe prepped (3 files) · syntax OK · node v22 + python ok · founder runs run-axe-overflow.ps1.
+
+---
+
+## Turn -- 2026-06-21 -- STEP 0 (sitewide axe/overflow fix) + parallel gates A (form) + B (badges)
+Founder: sign-offs + go. Step 0 APPROVED; NY ruling = generated/uniform only (NY hand-authored untouched); labels SKINNED vs PROOF; RULE 0 (log every turn + cat 20).
+
+STEP 0 -- sitewide axe/overflow fixes at 05/06/layout source (R8, one source, inherits site-wide):
+- contrast: --text-faint (token tagged NON-TEXT) -> --text-secondary on .idx__t + .legal-doc__toc-label (05) and .toc__label + .meta-reviewed (06); clay .process-step__number -> --cta-press; added .section--cta-band--dark/.section--tier-hub .section__eyebrow -> --accent-on-ink (05).
+- overflow: .link-wrap -> flex-wrap:wrap + max-width (06); .vs-scroll -> +max-width:100% +min-width:0 (05; fixes the flex/grid non-shrink that leaked the vs-table).
+- links: underline inline text links lacking a non-color cue (.site-footer__disclosure, .intake-checkbox(/__help), .intake-field__help, .disclosure__body, .lead-magnet__text, .calc__noscript) (06).
+Files: src/assets/css/05-components.css, src/assets/css/06-content.css.
+
+GATE B (badges, flip-gate #2): renamed 3 spaced/caps files -> kebab (payroll-certification.png, quickbooks-level-1-certified.png, quickbooks-level-2-certified.png) via git mv; all 5 real Intuit badges now in src. Updated src/_data/badges.json to the 5 kebab files + honesty alt-text "(Intuit certification)" -- certification only, NEVER affiliation. File->credential MAP: intuit-proadvisor-badge-tier-gold=ProAdvisor Gold tier; quickbooks-level-2-certified=QBO ProAdvisor L2; quickbooks-level-1-certified=QBO ProAdvisor L1; payroll-certification=QB Payroll ProAdvisor; bookkeeping-expert-badge=Bookkeeping Expert. Strip currently live on /trust/. OPEN: wire onto home/about/pricing/money-page (next turn).
+Files: src/_data/badges.json, src/assets/img/brand/badges/* (3 renames).
+
+GATE A (form, flip-gate #3): site.json formEndpoint already = the pasted Apps Script /exec URL (confirmed, no edit needed). Added lead_source + ai_tool to tb-forms.js collect() -- they were DROPPED (selects not in the collect list); now captured = AI-lead-source preserved (26 keys = 24-contract + 2). TEST POST marker TEST-FLIP-2026, email westgatefs7+TESTFLIP2026@gmail.com: HTTP 200, body {"ok":true,"result":"success"} (exactly the success condition tb-forms.js checks). ENDPOINT WORKS. FOUNDER: confirm which sheet/inbox the TEST-FLIP-2026 row landed in (right destination?).
+Files: src/assets/js/tb-forms.js.
+
+VERIFICATION: battery GREEN after step-0 CSS (css-drift, css-bytes 62653B/102400B, manifest 359). Form endpoint 200/ok=true. Axe/overflow probe RE-RUNNING (bg b4ccsr4pi) to confirm step-0 GREEN sitewide -- result reported next turn.
+COUNT: src files changed = 4 (05-components.css, 06-content.css, badges.json, tb-forms.js) + 3 badge renames; battery GREEN; form endpoint confirmed live (200/ok); pages added = 0; freeze intact (no URL/copy/heading/FAQ/schema touched).
+OPEN/NEXT: (1) read probe result -> confirm axe/overflow GREEN (clears flip-gate #6); (2) wire badge strip onto home/about/pricing/money; (3) then begin family fan-out D1(reconfirm)->D3->D2... NY hand-authored untouched.
