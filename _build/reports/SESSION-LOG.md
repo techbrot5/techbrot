@@ -794,3 +794,15 @@ COUNT: src changed = 1 (05 css) + probe tooling; a11y target 0; overflow 4 small
 OPEN/NEXT: read enhanced probe -> fix the exact pseudo/negative-position + 14px sources -> re-run -> GREEN -> step 0 done -> fan-out.
 
 (correction, same round-4 turn): first probe launch used Start-Job which dies with the PS session + sends no completion signal; killed lingering processes (this also stopped the LAN dev server b5ghkfuxf -- restart on demand) and re-launched the enhanced probe properly as background task bo656l3bb (will notify on completion). No src change in this correction.
+
+---
+
+## Turn -- 2026-06-21 -- STEP 0 round 5: A11Y GREEN (0) + skip-link off-screen technique fixed
+Founder: fix remaining a11y + overflow, re-run to green. Enhanced probe bo656l3bb result:
+- A11Y = 0 serious. GREEN. (call-block__sub + all prior contrast fixes done.) flip-gate #6 a11y half cleared.
+- OVERFLOW = 4 pages, and the enhanced probe (left<-1 detection) revealed the common offender on ALL of them: a.skip-link at [L-9999/R-9881] -- the skip-to-content link used position:absolute; left:-9999px (the legacy off-screen technique that extends the document leftward + can cause phantom horizontal scroll). 12029/techbrot had NO other offender (skip-link only); new-york/illinois also showed buyer-card/contact-form-wrap @374 (likely consequences of the widened doc, since they sit at width:100% of the container).
+- FIX: .skip-link -> proper clip-based hide (position:absolute; width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)), expands on :focus. No left:-9999 -> no document widening. Standard accessible pattern.
+Files: src/assets/css/02-base.css.
+- VERIFICATION: probe RE-RUNNING (bg bel1ig0f0) to confirm overflow 0. Battery GREEN (no hex).
+COUNT: src changed = 1 (02-base skip-link); a11y GREEN (0); overflow expect 0 after skip-link fix; step 0 green pending probe.
+OPEN/NEXT: read probe bel1ig0f0 -> if overflow 0 -> STEP 0 DONE (flip-gate #6 clear) -> commit + start family fan-out D1->D3->D2 (NY untouched) + badge strip home/about/pricing/money. If any page persists, isolate its specific element.

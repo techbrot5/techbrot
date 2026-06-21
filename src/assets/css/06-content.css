@@ -65,10 +65,10 @@
 .call-breakout__sub { font-size: var(--fs-14); color: var(--text-secondary); margin: var(--space-1) 0 0; }
 
 /* ---- disclosure banner (honest-triage / error / research) ---- */
-.disclosure { display: flex; gap: var(--space-3); align-items: flex-start; background: var(--caution-soft); border: 1px solid var(--caution-border); border-radius: var(--radius-md); padding: var(--space-5); margin: var(--space-6) 0; }
+.disclosure { background: var(--caution-soft); border: 1px solid var(--caution-border); border-radius: var(--radius-md); padding: var(--space-5); margin: var(--space-6) 0; overflow-wrap: anywhere; }
 .disclosure--warn { background: var(--caution-soft); border-color: var(--caution-border); }
-.disclosure__icon { flex: none; width: 20px; height: 20px; color: var(--color-warning); margin-top: 1px; }
-.disclosure__body { font-size: var(--fs-14); line-height: var(--lh-base); color: var(--text-body); }
+.disclosure__icon { float: left; width: 20px; height: 20px; color: var(--color-warning); margin: 2px var(--space-3) 0 0; }
+.disclosure__body { font-size: var(--fs-14); line-height: var(--lh-base); color: var(--text-body); min-width: 0; overflow-wrap: anywhere; }
 .disclosure__body strong { color: var(--text-strong); }
 
 /* ---- error-badge (D2 error hero chip) ---- */
@@ -81,7 +81,7 @@
 .fix-steps li::before { content: counter(fix, decimal-leading-zero); font-family: var(--font-mono); font-size: var(--fs-13); color: var(--accent); flex: none; padding-top: 2px; }
 
 /* ---- process-diagram / process-step (numbered process; home/framework) ---- */
-.process-diagram { display: grid; gap: var(--space-6); }
+.process-diagram { display: grid; gap: var(--space-6); list-style: none; margin: 0; padding: 0; }
 .process-step { display: flex; gap: var(--space-4); align-items: flex-start; min-width: 0; }
 .process-step__number { font-family: var(--font-mono); font-size: var(--fs-14); color: var(--cta-press); flex: none; }
 .process-step__heading { font-family: var(--font-serif); font-variation-settings: var(--serif-small-axes); font-weight: var(--fw-semibold); font-size: var(--fs-18); color: var(--text-strong); margin: 0 0 var(--space-1); overflow-wrap: anywhere; }
@@ -170,7 +170,7 @@
 .tldr__heading { font-family: var(--font-serif); font-variation-settings: var(--serif-small-axes); font-weight: var(--fw-semibold); font-size: var(--fs-18); color: var(--text-strong); margin: 0 0 var(--space-2); }
 
 /* ---- full contact form extras (F1) ---- */
-.contact-form-wrap { background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: var(--space-9); box-shadow: var(--shadow-card); }
+.contact-form-wrap { background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: var(--space-9); box-shadow: var(--shadow-card); min-width: 0; box-sizing: border-box; max-width: 100%; }
 .intake-group { display: grid; gap: var(--space-3); }
 .intake-group__note { font-size: var(--fs-13); color: var(--text-muted); }
 .intake-group__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
