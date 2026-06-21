@@ -666,3 +666,22 @@ live D1 template (DesignSync) + read its full `<style>` for exact values.
 - **Flip-gate status:** ✅ #3 recrawl · ✅ Intuit badges (2/5 wired, 3 pending founder artwork) · ✅ OG images · ✅ CSS under target (62KB).
   REMAINING (need founder resources): form POST handler (Cloudflare) · live axe/overflow (founder machine). Plus final sign-off.
 **COUNT:** badges wired (2/5, 3 pending artwork) · OG image shipped · battery GREEN · _site/assets/og/default.png 54KB.
+
+---
+
+## Turn — 2026-06-21 · FLIP-GATE: form POST handler scaffolded (Cloudflare Pages Function)
+**Founder:** scaffold the form POST handler.
+- **Key finding:** the front-end is ALREADY complete — `src/assets/js/tb-forms.js` validates, honeypots, collects the exact payload, fires GA4
+  `lead_submit`, and POSTs JSON (as `text/plain`, no CORS preflight) to `window.TB_FORM_ENDPOINT`, which `site.json formEndpoint` currently sets to
+  a **live Google Apps Script `/exec` URL**. So forms already work in production today.
+- ✅ **Scaffolded the design's preferred same-platform backend** — Cloudflare Pages Functions under `functions/`:
+  · `functions/api/contact.js` — validates email, honeypot (`company_website`) + sub-1.5s time-trap (both drop silently as success), then
+    DELIVERS via env-configured option [`APPS_SCRIPT_URL` forward · `RESEND_API_KEY` email · or accept+log if neither] → returns `{ ok: true }`
+    (the contract tb-forms.js expects). Non-POST → 405.
+  · `functions/api/file-review.js` + `pillar-lead.js` — re-export the same handler (routed by `intent`/`source_type`; the JS posts all forms to one endpoint).
+  · `functions/README.md` — go-live steps (set Cloudflare env var + flip `site.json formEndpoint` to `/api/contact`).
+- **Did NOT switch the live endpoint** — kept the working Apps Script as the fallback (scaffold only; founder flips + sets Cloudflare env to migrate).
+  Build unaffected (`functions/` is Cloudflare-only, not in `_site`; eleventy input is `src/`). No src change → battery unchanged (GREEN).
+- **Flip-gate scoreboard:** ✅ phone · ✅ re-skin+battery · ✅ recrawl · ✅ badges (2/5 wired, 3 pending artwork) · ✅ OG · ✅ CSS under target ·
+  ✅ **form handler (works via Apps Script today; Cloudflare path scaffolded)**. REMAINING: live axe/overflow (founder machine) · 3 badge PNGs · final sign-off.
+**COUNT:** form handler scaffolded (functions/api/*) · forms already live via Apps Script · build unaffected.
