@@ -22,8 +22,11 @@ const axeSource = readFileSync(require.resolve("axe-core"), "utf8"); // axe-core
 
 const BASE = (process.argv[2] || "http://localhost:8181").replace(/\/$/, "");
 const WIDTHS = [360, 390, 768];
-const paths = readFileSync(new URL("./probe-urls.txt", import.meta.url), "utf8")
-  .split(/\r?\n/).map((l) => l.trim()).filter((l) => l && !l.startsWith("#"));
+// optional argv[3] = comma-separated path list (per-family probe); else probe-urls.txt
+const paths = process.argv[3]
+  ? process.argv[3].split(",").map((s) => s.trim()).filter(Boolean)
+  : readFileSync(new URL("./probe-urls.txt", import.meta.url), "utf8")
+      .split(/\r?\n/).map((l) => l.trim()).filter((l) => l && !l.startsWith("#"));
 
 console.log(`axe + overflow probe · ${paths.length} pages · base ${BASE}\n`);
 

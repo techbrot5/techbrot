@@ -850,3 +850,18 @@ Founder: go -- fan out D1 reconfirm + badge strip.
 Files: src/index.njk, src/about.njk, src/pricing.njk, src/accounting/bookkeeping/cleanup-bookkeeping.njk.
 COUNT: 4 pages get the badge strip; freeze-safe additive sections; battery pending; D1 reconfirm pending render+battery.
 OPEN/NEXT: read battery b7alj2cbm -> screenshot D1 + the 3 badge areas -> commit -> then D3 state pillar (next fan-out family).
+
+---
+
+## Turn -- 2026-06-21 -- ✅ Badge strip DONE (4 pages) + D1 RECONFIRMED green
+Founder: go -- fan out D1 reconfirm + badge strip.
+- BADGE STRIP wired + VERIFIED on home, /about/, /pricing/, money-page (in addition to /trust/) -- the intuit-badges partial (5 real Intuit badges, certification-only alt).
+- VERIFICATION (b7alj2cbm + one-off):
+  - battery GREEN exit 0: content-equity PASS (baseline headings/FAQ/schema all still accounted for -- the additive eyebrow sections removed nothing), manifest 359, faq-flat 518, css-bytes under gate.
+  - badges in HTML = 6 matches each on all 4 pages; SCREENSHOT-VERIFIED the 5 real badges render on the money page (gold ProAdvisor, QBO L2, QBO L1, Payroll, Bookkeeping -- real artwork, no broken imgs, no placeholder).
+  - overflow: all 4 pages docSW=360 @360 (badge strip is flex-wrap, no overflow). a11y: imgs carry alt + width/height (CLS 0); pages were a11y-0 in step 0.
+  - D1 RECONFIRM: cleanup-bookkeeping renders correctly after all step-0 CSS + the new badge strip (hero+figure, proof-band, credentials strip, §01...). D1 proof + 66-page family GREEN.
+- ⭐ FLIP-GATE #2 (Intuit badges) COMPLETE -- real badges live on trust/home/about/pricing/money, no placeholder anywhere, honesty alt-text (certification only, never affiliation).
+Files: src/index.njk, src/about.njk, src/pricing.njk, src/accounting/bookkeeping/cleanup-bookkeeping.njk.
+COUNT: 4 pages badge strip wired+verified; battery GREEN; overflow 0; D1 family reconfirmed GREEN; flip-gate #2 done.
+OPEN/NEXT: D3 state pillar (next fan-out family: rebuild REP /find-an-accountant/california/ -> verify -> 2-3 varied pages inherit -> commit -> SESSION-LOG). Generated states only; NY hand-authored untouched.
