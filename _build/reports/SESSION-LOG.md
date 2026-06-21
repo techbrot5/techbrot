@@ -1045,3 +1045,17 @@ OPEN/NEXT: battery bj7mn255d -> probe 7 tax-help -> commit. Then D7 fully banner
 - NOTE for founder: eleventy --serve repeatedly goes stale on .11tydata.js (data) changes (watch limitation); I restart it by-PID (chrome-safe) to refresh. Build work is essentially done now, so few more changes expected.
 COUNT: D7 fully bannered (11 pages); committed; dev server current. ALL 26 families verified green + D7 disclosure ruling implemented.
 OPEN/NEXT: founder sign-offs (per-family + overall) + cutover gate (CSS trim + budget lower, final baseline-vs-prod recrawl, go-live). No open build items.
+
+---
+
+## Turn -- 2026-06-21 -- CUTOVER GATE started: CSS trim (flip-gate #7)
+Founder: start the cutover gate.
+- CUTOVER GATE items: (1) CSS trim + lower the css-bytes gate from the 100KB transition ceiling toward the real target [flip-gate #7]; (2) baseline-vs-prod final recrawl [DONE earlier -- 16 orphan state pages 301'd; build added only badge strips + disclosure banners, NO new URLs, so the recrawl result is unchanged]; (3) production build (build:prod) + env-safety headers (noindex unless ENVIRONMENT=production); (4) Lighthouse/CLS (founder machine).
+- STARTED #1: bundle = 63,601B minified (well under the 100KB ceiling); 359 classes defined. Running css_audit.py (bg b7lphv64u) to find unused CSS classes (defined in bundle but used by NO built page) -> trim dead rules -> lower CSS_MIN_GATE toward the real elevated target.
+COUNT: cutover gate started; css_audit running; recrawl already satisfied (no new URLs).
+OPEN/NEXT: read css_audit b7lphv64u -> trim unused CSS -> rebuild + battery -> lower css-bytes gate -> then prod build verification.
+
+(cutover #1 cont.) css_audit b7lphv64u: bundle 63,601B, only ~1.1KB unused CSS. TRIMMED 10 unused classes (02-base: .dsp/.h2/.lede/.eyebrow/.mono/.tnum helpers block + .container--wide + .section__eyebrow--inverted; 04-chrome: .btn--cta/:hover alias). LOWERED css-bytes gate 100KB -> 72KB in BOTH run_battery.py (CSS_MIN_GATE, CSS_SRC_SOFTCAP 130->90) and site.min.css.11ty.js (CSS_BUDGET_MIN, CSS_BUDGET_SRC 140->90) -- the real elevated target with ~14% headroom over the lean ~63KB bundle. Rebuild + battery on _site-probe running b6yx2m56e (build exits non-zero if bundle > 72KB).
+Files: src/assets/css/02-base.css, 04-chrome.css, site.min.css.11ty.js, _build/battery/run_battery.py.
+COUNT: CSS trimmed (10 classes) + gate lowered 100->72KB; verifying rebuild + battery.
+OPEN/NEXT: read b6yx2m56e (bundle < 72KB + battery green) -> commit flip-gate #7 -> production build verification (build:prod + env headers).

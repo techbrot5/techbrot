@@ -6,10 +6,11 @@
 const fs = require("fs");
 const path = require("path");
 
-// 100KB minified TRANSITION ceiling (founder ruling 2026-06-20). Net back under target
-// before flip via css_audit.py. Kept in sync with _build/battery/run_battery.py.
-const CSS_BUDGET_MIN = 100 * 1024;
-const CSS_BUDGET_SRC = 140 * 1024;
+// Cutover gate (flip-gate #7, 2026-06-21): lowered from the 100KB transition ceiling to the
+// real elevated target after the css_audit trim pass (lean ~63KB bundle). Kept in sync with
+// _build/battery/run_battery.py (CSS_MIN_GATE).
+const CSS_BUDGET_MIN = 72 * 1024;
+const CSS_BUDGET_SRC = 90 * 1024;
 
 function minify(css) {
   return css

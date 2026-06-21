@@ -189,8 +189,11 @@ else:
 #       back under target before flip" line. (Was 82KB for the elevated capture;
 #       58KB for the cobalt floor before that.) Keep in sync with
 #       src/assets/css/site.min.css.11ty.js.
-CSS_MIN_GATE = 100 * 1024
-CSS_SRC_SOFTCAP = 130 * 1024
+# Cutover gate (flip-gate #7): the from-scratch petrol system is lean (~63KB minified after
+# the css_audit trim pass), so the transition 100KB ceiling is lowered to the real elevated
+# target with headroom. Raise deliberately only if the design genuinely grows.
+CSS_MIN_GATE = 72 * 1024
+CSS_SRC_SOFTCAP = 90 * 1024
 # Glob the actual NN-*.css layers (the from-scratch rebuild renamed/reshaped the
 # layer set), in filename order — matches src/assets/css/site.min.css.11ty.js.
 order = sorted(p.name for p in css_dir.glob("*.css")
