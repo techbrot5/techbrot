@@ -890,3 +890,30 @@ Founder STOP: (1) I was killing personal Chrome (Get-Process chrome | Stop-Proce
 - D2 PROSE family VERIFIED (via the FIXED isolated tooling): varied sample -- /quickbooks/which-plan-is-right/ (REP), error-codes/12029, error-codes/15240, /which-accounting-software/, /quickbooks/migration/desktop-to-online/ -- ALL a11y 0 / overflow 0. REP screenshot-audited: renders the full petrol design (hero, trust, ai-summary, factor cards, plan vs-table, ...). battery GREEN sitewide. freeze intact (verified-only; D2 already correctly built).
 COUNT: chrome isolation FIXED+proven; dev server 8080 persistent+proven-uncollided; D2 = sample a11y 0 / overflow 0 + REP renders design; D2 VERIFIED (awaiting sign-off).
 OPEN/NEXT: D4/D5/D6 location children (GENERATED/uniform only; NY hand-authored untouched). Screenshots via render_shot.ps1 -> :8080 (kill_probe); probes via run-axe-overflow.ps1 -PathList -> _site-probe/:8181.
+
+---
+
+## Turn -- 2026-06-21 -- D4/D5/D6 location children (generated, NY untouched) -- REPs audited + probe running
+Founder: go -- D4/D5/D6 location children.
+- SCOPE: mapped the location tree -- 5 states (CA/FL/IL/NY/TX), each cities(11)/industries(6-8)/services(17-19). NY = hand-authored (UNTOUCHED per ruling); CA/FL/IL/TX = generated/uniform = the verify set. Using NON-NY REPs (the _families REPs were NY).
+- ISOLATION (fixed tooling, proven again live): screenshots via render_shot.ps1 -> :8080 dev server + kill_probe (reported personal-chrome-untouched=18 -- founder's real browser running, untouched); probe via run-axe-overflow.ps1 -PathList -> _site-probe/:8181 (:8080 stayed HTTP 200).
+- VISUAL AUDIT (3 generated REPs, all render the full petrol design correctly):
+  - D4 city: /find-an-accountant/california/cities/anaheim/ (hero, proof, ai-summary, area cards, industry cards, byline, FAQ, final-CTA).
+  - D6 industry: /find-an-accountant/california/industries/agency/ (hero, ai-summary, agency cards, checks, FAQ, byline, related).
+  - D5 service: /find-an-accountant/california/bookkeeping-services/ (hero+figure, ai-summary, buyer cards, process, FAQ, byline, final-CTA + corner mark).
+- PROBE (bg brf7qs1rs, 9 varied generated children across CA/FL/IL/TX): 3/9 read so far (anaheim, aurora, austin cities) ALL a11y 0 / overflow 0; industries + services finishing.
+COUNT: D4/D5/D6 generated REPs render design; isolation proven (personal-chrome-untouched=18, :8080 up); probe 3/9 green; awaiting full 9.
+OPEN/NEXT: read probe brf7qs1rs full -> if 9/9 green -> D4/D5/D6 VERIFIED (generated set; NY untouched) -> D7 triage.
+
+---
+
+## Turn -- 2026-06-21 -- ✅ D4/D5/D6 location children VERIFIED green (generated set; NY untouched)
+Founder: go -- D4/D5/D6 location children.
+- D4/D5/D6 GENERATED children (CA/FL/IL/TX -- NY hand-authored tree UNTOUCHED per ruling). Probed 9 varied across all 3 families + 4 states:
+  D4 cities: anaheim(CA), aurora(IL), austin(TX). D6 industries: agency(CA), construction(FL), construction(TX). D5 services: ab5-worker-classification(CA), bookkeeping-services(CA), bookkeeping-services(TX).
+- PROBE (isolated _site-probe/:8181): ALL 9 ok -- a11y 0 (0 serious), overflow 0. PROBE GREEN.
+- VISUAL AUDIT (3 REPs, render full petrol design): D4 anaheim city, D6 CA agency industry, D5 CA bookkeeping-services -- all correct, no broken/unstyled sections.
+- ISOLATION re-proven LIVE: render_shot -> :8080 + kill_probe (personal-chrome-untouched=18); probe -> _site-probe/:8181; after both, :8080 still HTTP 200, 16 personal chrome procs untouched.
+- battery GREEN sitewide; freeze intact (verified-only; generated children already correctly built on the shared template). NY hand-authored cities/industries/services NOT touched.
+COUNT: D4/D5/D6 = 9/9 generated children a11y 0 / overflow 0 + 3 REPs render design; NY untouched; isolation proven; D4/D5/D6 VERIFIED (awaiting sign-off).
+OPEN/NEXT: D7 location triage (honest-triage, 17 pages, REP /find-an-accountant/new-york/urgent-bookkeeping/ -- but NY; use a generated state's urgent/triage page). Then B1-B5 hubs.
