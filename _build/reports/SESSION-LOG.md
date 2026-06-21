@@ -834,3 +834,19 @@ Founder: fix remaining a11y + overflow, re-run to green. DONE.
 - FLIP-GATE SCOREBOARD: phone ✅ · re-skin+battery ✅ · recrawl ✅ · OG ✅ · CSS-under-target ✅ · Intuit badges ✅(5 wired, strip on /trust/; OPEN: home/about/pricing/money) · form handler ✅(Apps Script live, 200/ok) · **axe/overflow ✅ (step 0 done)**. Remaining: badge strip on 4 pages · founder final sign-off · the founder-side TEST-FLIP-2026 destination confirm.
 COUNT: a11y 0 / overflow 0 / battery GREEN / 35 pages probed; step 0 COMPLETE; freeze intact.
 OPEN/NEXT: per founder order -> family fan-out D1(reconfirm)->D3->D2->D4/D5/D6(generated only, NY untouched)->D7->B1-B5->C1-C2->E1-E6->F1-F2->G2->A1; + wire badge strip onto home/about/pricing/money. Per-family: rebuild REP -> verify (equity+battery+axe+overflow+CLS0) -> commit -> SESSION-LOG + COUNT.
+
+---
+
+## Turn -- 2026-06-21 -- FAN-OUT START: badge strip wired onto home/about/pricing/money + D1 reconfirm (build+battery running)
+Founder: go -- fan out D1 reconfirm + badge strip.
+- BADGE STRIP (flip-gate #2 completion): added the intuit-badges partial (5 real Intuit badges, certification-only alt) to the credential sections of:
+  - money page (src/accounting/bookkeeping/cleanup-bookkeeping.njk): new compact "Verifiable Intuit credentials" section after the proof-band, before §01.
+  - home (src/index.njk): new credential strip after the hero, before home-tldr. (home is a fresh build, not frozen.)
+  - about (src/about.njk): into the EXISTING #about-credentials section, after the trust-row.
+  - pricing (src/pricing.njk): new credential strip after the hero, before pricing-tldr.
+  All additive (section__eyebrow, NOT a heading -> heading hierarchy + equity untouched; no FAQ/schema change). Freeze-safe.
+- D1 RECONFIRM: cleanup-bookkeeping (D1 proof, 66-page family) -- was GREEN in the step-0 probe (a11y 0 / overflow 0); now adding the badge strip + re-verifying battery/render.
+- VERIFICATION: build + battery RUNNING (bg b7alj2cbm) -- confirming content-equity (baseline headings/FAQ/schema still present), manifest, css-bytes after the additive sections. Then screenshot the 4 pages.
+Files: src/index.njk, src/about.njk, src/pricing.njk, src/accounting/bookkeeping/cleanup-bookkeeping.njk.
+COUNT: 4 pages get the badge strip; freeze-safe additive sections; battery pending; D1 reconfirm pending render+battery.
+OPEN/NEXT: read battery b7alj2cbm -> screenshot D1 + the 3 badge areas -> commit -> then D3 state pillar (next fan-out family).
