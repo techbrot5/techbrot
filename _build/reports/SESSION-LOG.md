@@ -630,3 +630,21 @@ live D1 template (DesignSync) + read its full `<style>` for exact values.
 - ⏭ Remaining (not design): flip-gate items — live axe/overflow on the founder's machine · form POST handler · real Intuit badge artwork ·
   baseline-vs-prod recrawl · OG images. Plus founder final sign-off.
 **COUNT:** 25/25 families visually verified · FULL BATTERY GREEN · freeze intact · design rebuild complete.
+
+---
+
+## Turn — 2026-06-21 · FLIP-GATE #3: baseline-vs-prod recrawl — 16 orphan state pages found + 301'd
+**Founder:** start on the flip-gate items.
+- **Recrawl:** WebFetch'd the LIVE prod `techbrot.com/sitemap.xml`, diffed vs the new build (528 URLs) + `_redirects`. New build has 528 URLs,
+  baseline.json 139, 6 existing redirects.
+- **FINDING — 16 uncaptured live-prod URLs that would 404 at cutover:** `/find-an-accountant/<state>/` landing pages for **alabama · arizona ·
+  colorado · georgia · indiana · maryland · massachusetts · michigan · minnesota · nevada · new-jersey · north-carolina · ohio · pennsylvania ·
+  virginia · washington** are LIVE on prod, but the new build ships only NY/CA/TX/FL/IL (others' real pages = post-redesign). All other live-prod
+  URLs (non-state) are built or already redirected — **no other orphans.**
+- ✅ **FIX:** added 16 `301 → /find-an-accountant/` rules to `src/redirects.njk` (national hub = topically exact, carries the state-router; preserves
+  the pages' SEO equity, no 404s). Each removed when that state's real page ships. ⚠ founder: confirm target (`/find-an-accountant/` vs `/accounting/`).
+  Build GREEN; `_site/_redirects` now 22 rules (6 + 16). 
+- **Flip-gate #3 (baseline-vs-prod recrawl) = DONE.** Remaining flip-gate items: form POST handler (needs Cloudflare access) · real Intuit badge
+  artwork (in DesignSync `assets/` — can import) · OG images (build template) · live axe/overflow (founder machine — `--screenshot` works now but axe
+  needs JS-exec; `--dump-dom` still 0-length) · CSS net-back-under-target (already under at 62KB).
+**COUNT:** flip-gate recrawl done · 16 orphan states 301'd · _redirects 22 rules · build GREEN.

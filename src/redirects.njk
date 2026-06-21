@@ -30,3 +30,25 @@ eleventyExcludeFromCollections: true
 # to the single canonical pricing page; the .njk + .11tydata.js source were removed.
 /accounting/pricing/                     /pricing/                                 301
 
+# Flip-gate baseline-vs-prod recrawl (2026-06-21): 16 /find-an-accountant/<state>/ landing
+# pages are LIVE on production but the new build ships only NY/CA/TX/FL/IL state pages
+# (others' real pages are post-redesign). Without these 301s they 404 at cutover. Target =
+# the national hub (/find-an-accountant/, topically exact, carries the state-router).
+# REMOVE each rule when that state's real page ships. (founder: confirm target.)
+/find-an-accountant/alabama/             /find-an-accountant/                      301
+/find-an-accountant/arizona/             /find-an-accountant/                      301
+/find-an-accountant/colorado/            /find-an-accountant/                      301
+/find-an-accountant/georgia/             /find-an-accountant/                      301
+/find-an-accountant/indiana/             /find-an-accountant/                      301
+/find-an-accountant/maryland/            /find-an-accountant/                      301
+/find-an-accountant/massachusetts/       /find-an-accountant/                      301
+/find-an-accountant/michigan/            /find-an-accountant/                      301
+/find-an-accountant/minnesota/           /find-an-accountant/                      301
+/find-an-accountant/nevada/              /find-an-accountant/                      301
+/find-an-accountant/new-jersey/          /find-an-accountant/                      301
+/find-an-accountant/north-carolina/      /find-an-accountant/                      301
+/find-an-accountant/ohio/                /find-an-accountant/                      301
+/find-an-accountant/pennsylvania/        /find-an-accountant/                      301
+/find-an-accountant/virginia/            /find-an-accountant/                      301
+/find-an-accountant/washington/          /find-an-accountant/                      301
+
