@@ -1018,3 +1018,8 @@ COUNT: D7 ruling (a) implemented on 4 generated urgent pages (banner ATF, scoped
 OPEN/NEXT: read probe bshogo1oe + run battery on _site-probe -> commit. NOTE: also confirm whether to extend the banner to the *-tax-help triage pages (sales-tax-help/franchise/corporate/replacement) -- they also use state-service-body + are distress/triage; founder confirm scope.
 
 (D7 ruling-a cont.) PROBE bshogo1oe GREEN: 4 urgent (with new banner) + CA bookkeeping-services (D5, no banner) -- ALL a11y 0 / overflow 0 (banner does not break a11y/overflow). Battery on _site-probe (TB_OUTDIR-aware) running bhlnsd8ne to confirm content-equity intact (banner is additive, no heading/FAQ/schema removed). Commit pending battery green.
+
+(D7 ruling-a cont.) BATTERY bhlnsd8ne GREEN on _site-probe (exit 0): content-equity intact (no baseline heading/FAQ/schema removed by the additive banner), manifest 359, css-drift clean. D7 ruling (a) DONE + committed 01abfd8.
+- DEV SERVER REFRESH: the persistent :8080 dev server had gone stale (eleventy --serve watch stopped picking up data/partial changes after many isolated _site-probe builds), so it served old content + the battery hung reading mid-state _site. Killed it BY PID (node on :8080, never by image -- kill_probe confirmed personal-chrome-untouched=14) + restarted clean. :8080 now HTTP 200 with current _site (CA urgent disclosure=3, home badge-strip=6). Founder view: http://192.168.1.7:8080/.
+COUNT: D7 ruling (a) committed + battery GREEN; dev server refreshed (current); chrome never touched.
+OPEN: founder scope ruling -- extend the disclosure banner to the *-tax-help distress/triage pages (sales-tax-help/franchise/corporate/replacement) too, or keep to urgent-bookkeeping? Then: founder sign-offs + cutover gate.
