@@ -865,3 +865,28 @@ Founder: go -- fan out D1 reconfirm + badge strip.
 Files: src/index.njk, src/about.njk, src/pricing.njk, src/accounting/bookkeeping/cleanup-bookkeeping.njk.
 COUNT: 4 pages badge strip wired+verified; battery GREEN; overflow 0; D1 family reconfirmed GREEN; flip-gate #2 done.
 OPEN/NEXT: D3 state pillar (next fan-out family: rebuild REP /find-an-accountant/california/ -> verify -> 2-3 varied pages inherit -> commit -> SESSION-LOG). Generated states only; NY hand-authored untouched.
+
+---
+
+## Turn -- 2026-06-21 -- ✅ D3 STATE PILLAR family VERIFIED green (5/5 pillars)
+Founder: go -- D3 state pillar.
+- D3 = State pillar (t-location), 5 pages (CA/FL/IL/NY/TX), REP /find-an-accountant/california/. Already on the shared t-location layout + the new petrol CSS (skinned in the earlier fan-out + step 0); this turn = the per-family VERIFY-and-sign-off pass.
+- TOOLING: enhanced _build/probe/axe-overflow.mjs to accept an optional argv[3] comma-list of paths (per-family probe; reusable for every family) -- backward compatible with probe-urls.txt.
+- D3 FAMILY PROBE (all 5 pillars, axe + overflow @360/390/768): ALL ok -- a11y 0 (0 serious), overflow 0. SUMMARY: a11y violations 0, pages with overflow 0.
+- VISUAL AUDIT (CA REP, 27 sections): renders the full petrol design correctly -- hero+figure, dark proof-band, "Certified ProAdvisor credentials" trust, CA ai-summary quick-5, the five-reasons buyer cards, vs-table, prose bands, "what we deliver / where CA differs" sections, bottom intake form, review card, FAQ, byline, dark final-CTA. No broken/unstyled sections.
+- battery GREEN sitewide (D3 included); freeze intact (NO D3 markup change this turn -- the family was already correctly built; verified-only).
+- D3 meets the DONE bar: re-architected (on shared layout + petrol CSS) + battery-GREEN + axe/overflow GREEN (live, all 5). Pending founder sign-off.
+Files: _build/probe/axe-overflow.mjs (per-family list arg). No src/ markup change.
+COUNT: D3 = 5/5 pillars a11y 0 / overflow 0 / battery GREEN / CA REP renders design; freeze intact; D3 VERIFIED (awaiting sign-off).
+OPEN/NEXT: D2 prose (177 pages, REP /quickbooks/which-plan-is-right/) -- next fan-out family. NY hand-authored untouched throughout.
+
+---
+
+## Turn -- 2026-06-21 -- ⛔FIX: probe Chrome isolation + dev-server collision (founder STOP) + D2 VERIFIED
+Founder STOP: (1) I was killing personal Chrome (Get-Process chrome | Stop-Process -- violates the round-21 PROBE CHROME ISOLATION rule); (2) probe collided with / took down the founder's :8080 dev server. Fix both before continuing.
+- FIX 1 (Chrome): render_shot.ps1 + run-axe-overflow.ps1 NO LONGER kill Chrome by image name. Cleanup now via kill_probe.ps1 (stops ONLY PIDs whose command line carries tb-probe-profile; reports personal-chrome-untouched). Puppeteer probe uses its own bundled Chromium (browser.close()). PROVEN: kill_probe -> "probe-chrome-killed=0 probe-chrome-remaining=0 personal-chrome-untouched=0".
+- FIX 2 (dev server): started PERSISTENT dev server npm run serve on 0.0.0.0:8080 (founder viewing: PC http://localhost:8080, phone http://192.168.1.7:8080). Probe now builds to _site-probe (TB_OUTDIR, gitignored) + serves :8181 -- NEVER the founder's _site or :8080. run-axe-overflow.ps1 gained -PathList for per-family probes. PROVEN: after a full isolated probe run, :8080 still HTTP 200 (no collision).
+- Commit de83840 (render_shot.ps1, run-axe-overflow.ps1, .gitignore).
+- D2 PROSE family VERIFIED (via the FIXED isolated tooling): varied sample -- /quickbooks/which-plan-is-right/ (REP), error-codes/12029, error-codes/15240, /which-accounting-software/, /quickbooks/migration/desktop-to-online/ -- ALL a11y 0 / overflow 0. REP screenshot-audited: renders the full petrol design (hero, trust, ai-summary, factor cards, plan vs-table, ...). battery GREEN sitewide. freeze intact (verified-only; D2 already correctly built).
+COUNT: chrome isolation FIXED+proven; dev server 8080 persistent+proven-uncollided; D2 = sample a11y 0 / overflow 0 + REP renders design; D2 VERIFIED (awaiting sign-off).
+OPEN/NEXT: D4/D5/D6 location children (GENERATED/uniform only; NY hand-authored untouched). Screenshots via render_shot.ps1 -> :8080 (kill_probe); probes via run-axe-overflow.ps1 -PathList -> _site-probe/:8181.
