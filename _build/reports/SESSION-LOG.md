@@ -1039,3 +1039,9 @@ OPEN/NEXT: battery bj7mn255d -> probe 7 tax-help -> commit. Then D7 fully banner
 (tax-help cont.) BATTERY bj7mn255d GREEN on _site-probe: content-equity intact + manifest 359 after the 7 additive tax-help banners. PROBE bm7b7zze4 (7 tax-help pages) running. Commit pending probe green.
 
 (tax-help cont.) Probe bm7b7zze4 still running (building _site-probe + probing 7 pages); will commit on PROBE GREEN per founder instruction. No src change this check.
+
+(tax-help cont.) PROBE bm7b7zze4 GREEN: 7/7 tax-help pages a11y 0 / overflow 0. Committed 203d2fa. Dev server restarted clean (stale again on the data change) -> :8080 HTTP 200 with current _site: CA sales-tax-help disclosure=3, CA urgent disclosure=3, TX franchise-tax-help disclosure=3, home badge-strip=6. Founder view: http://192.168.1.7:8080/.
+- ⭐ D7 RULING (a) FULLY DONE: bordered honest-triage disclosure banner now ATF on ALL 11 generated triage pages -- urgent-bookkeeping (CA/FL/IL/TX) + tax-help (CA/FL/IL/TX sales-tax-help, FL corporate, IL replacement, TX franchise). Conditional via state-service-body (`disclosure` field); D5 services unaffected; NY hand-authored untouched. All: banner renders, battery GREEN (equity intact), axe 0 / overflow 0.
+- NOTE for founder: eleventy --serve repeatedly goes stale on .11tydata.js (data) changes (watch limitation); I restart it by-PID (chrome-safe) to refresh. Build work is essentially done now, so few more changes expected.
+COUNT: D7 fully bannered (11 pages); committed; dev server current. ALL 26 families verified green + D7 disclosure ruling implemented.
+OPEN/NEXT: founder sign-offs (per-family + overall) + cutover gate (CSS trim + budget lower, final baseline-vs-prod recrawl, go-live). No open build items.
