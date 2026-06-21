@@ -126,8 +126,10 @@
 .article h3 { font-size: var(--fs-20); margin-top: var(--space-6); }
 
 /* ---- calc (tools/calculators) ---- */
-.calc { display: grid; gap: var(--space-6); background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: var(--space-8); box-shadow: var(--shadow-card); }
+.calc { display: grid; gap: var(--space-6); background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: var(--space-8); box-shadow: var(--shadow-card); box-sizing: border-box; max-width: 100%; min-width: 0; }
 @media (min-width: 760px) { .calc { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .calc { padding: var(--space-5); } }
+.calc__result-range { overflow-wrap: anywhere; }
 .calc__form { display: grid; gap: var(--space-4); min-width: 0; }
 .calc__formnote { font-size: var(--fs-13); color: var(--text-muted); }
 .calc__field { display: grid; gap: var(--space-2); min-width: 0; }

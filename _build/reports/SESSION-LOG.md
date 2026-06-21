@@ -745,3 +745,26 @@ Files: src/assets/css/05-components.css, src/assets/css/06-content.css.
 - VERIFICATION: probe RE-RUNNING (bg bkqzhwq9p) to confirm a11y 0 + overflow 0. Battery still GREEN (token-only edits, no hex). Freeze intact.
 COUNT: src changed = 2 (05,06 css); a11y fixes = 3 elements; overflow fixes = vs-table+process-step+calc; probe re-running; family fan-out still gated on probe-GREEN.
 OPEN/NEXT: read probe bkqzhwq9p -> if GREEN, step 0 done (clears flip-gate #6) + commit + start fan-out D1->D3->D2 (NY untouched); also wire badge strip onto home/about/pricing/money.
+
+---
+
+## Turn -- 2026-06-21 -- STEP 0 probe bkqzhwq9p (verifying residual fixes) -- near-green, isolating last items
+Founder: fix the remaining a11y + overflow, re-run to green. Probe bkqzhwq9p (post residual-fix build, incl commit 111c56f) still writing; partial read shows:
+- a11y: GREEN on all pages read EXCEPT cleanup-bookkeeping (1 serious). Confirmed my fixes BUILT: .cleanup-timeline__cap-label now --text-secondary on white card (passes), vs-table @media(max-width:640) present in bundle. So the remaining cleanup-bookkeeping a11y is a DIFFERENT element (not cap-label) -- needs the completed JSON.
+- overflow: GREEN on about/trust/partners (process-step fix worked) + most pages; home (/) + /quickbooks/which-plan-is-right/ still overflow 2. vs-table fix is built, so these are a different/co-element -- needs JSON.
+- No src changes this turn (read-only diagnosis while probe finishes). Battery GREEN. Freeze intact.
+COUNT: src changed = 0; a11y now ~1 element left (cleanup-bookkeeping), overflow ~2 pages (home, which-plan); awaiting probe JSON to pinpoint + fix -> re-run to green.
+OPEN/NEXT: on probe complete -> read axe-overflow-report.json -> fix the 1 a11y + 2 overflow elements at source -> re-run -> GREEN -> step 0 done.
+
+---
+
+## Turn -- 2026-06-21 -- STEP 0 final residual fixes (table-layout:fixed + motif + calc + last a11y) -> re-run
+Founder: fix the remaining a11y + overflow, re-run to green. Read probe bkqzhwq9p JSON: a11y 1 element left (.cleanup-timeline__note), overflow on home/which-plan/techbrot-vs-bench (vs-table), 12029 (cta-band__motif), tools (calc), new-york/illinois (small).
+- a11y: .cleanup-timeline__note --text-faint -> --text-secondary (the 3rd timeline label; cap-label+cap-note were already fixed).
+- overflow vs-table: diagnosed root cause -- the .vs-scroll wrapper (home IS wrapped, .container properly constrained) was NOT containing a 5-col table; display:block approach also failed. Switched to GUARANTEED fix: @media(max-width:640){.vs-table{table-layout:fixed} + cells overflow-wrap/word-break} -- forces the table to container width, cells wrap, cannot exceed viewport.
+- overflow motif: @media(max-width:640){.cta-band__motif{display:none}} -- the decorative corner motif bleeds past the band; hidden on phones (opacity 0.06, mostly off-screen anyway).
+- overflow calc: .calc box-sizing:border-box + max-width:100% + min-width:0; @media(max-width:560){.calc{padding:space-5}}; .calc__result-range overflow-wrap.
+Files: src/assets/css/05-components.css, src/assets/css/06-content.css.
+- VERIFICATION: probe RE-RUNNING (bg bvah95u2a) to confirm a11y 0 + overflow 0 sitewide. Battery GREEN expected (token-only + layout CSS, no hex).
+COUNT: src changed = 2 (05,06 css); fixes = 1 a11y + vs-table(table-layout:fixed) + motif-hide + calc; probe re-running; step 0 green pending probe.
+OPEN/NEXT: read probe bvah95u2a -> if GREEN, step 0 DONE (flip-gate #6 clear) -> commit + start family fan-out D1->D3->D2 (NY untouched) + wire badge strip home/about/pricing/money.
