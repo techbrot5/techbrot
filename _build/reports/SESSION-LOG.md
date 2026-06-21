@@ -991,3 +991,15 @@ COUNT: reviews honest-compliant (0 AggregateRating nodes, 2 real reviews); G2 pr
 OPEN/NEXT: read probe bvja4jdqv -> if green, G2 verified -> A1 home (LAST family). D7 disclosure ruling pending.
 
 (G2 cont.) PROBE bvja4jdqv GREEN: 6/6 -- /about/ + /about/methodology/ + /about/network/ + /trust/ + /partners/ + /reviews/ -- ALL a11y 0 / overflow 0. G2 VERIFIED green (reviews honest-compliant). Fan-out: D1-D7 + B1-B5 + C1-C2 + E1-E6 + F1-F2 + G1(proof) + G2 all green. ONLY A1 home remains (last).
+
+---
+
+## Turn -- 2026-06-21 -- ✅ A1 HOME verified -- 🎉 ENTIRE 26-FAMILY FAN-OUT COMPLETE
+Founder: go (A1 home, last).
+- A1 HOME (/): PROBE GREEN a11y 0 / overflow 0. VISUAL AUDIT (full 12000px): renders the full petrol design -- hero "Automation handles the data entry. We handle the judgment." + T-account figure, dark proof band, the NEW badge strip (5 real Intuit badges) after the proof band, buyer cards, judgment chart, feature/checks, process, vs-table (table-layout:fixed), review cards, clean LEFT dark final-CTA. No broken/unstyled sections. (home = fresh build, not frozen.)
+- ⭐⭐⭐ FAN-OUT COMPLETE -- ALL 26 FAMILIES VERIFIED GREEN:
+  A1 ✅ · B1-B5 ✅ · C1-C2 ✅ · D1-D7 ✅ · E1-E6 ✅ · F1-F2 ✅ · G1(proof)+G2 ✅.
+  Every family: renders the petrol design + live axe 0 + overflow 0 (360/390/768) + battery GREEN + freeze intact. NY hand-authored location tree UNTOUCHED throughout. Chrome isolation + persistent :8080 dev server held all session (founder browser never touched).
+- REMAINING (not family fan-out): (1) D7 disclosure-banner ruling [a: add bordered .disclosure to generated triage / b: accept hero-chip+in-brief]; (2) founder family sign-offs; (3) flip-gate residue (3 Intuit badge PNGs already in; live axe done; form live; recrawl done; OG done) -- effectively the founder's final sign-off + cutover.
+COUNT: A1 home green; 26/26 families verified green (axe 0 / overflow 0 / battery GREEN / design rendered); freeze intact; NY untouched. FAN-OUT DONE.
+OPEN/NEXT: founder sign-off on the fan-out + the D7 disclosure ruling -> then cutover gate (CSS trim/budget lower, baseline-vs-prod final recrawl, founder go-live).
