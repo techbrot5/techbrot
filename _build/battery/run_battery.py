@@ -426,6 +426,7 @@ MANIFEST_WHITELIST = {
     "section--legal-doc", "legal-doc__list", "process-step__heading",
     "page--hub", "page--bofu", "page--legal", "page--trust",
     "page--partners", "page--mofu", "page--location", "page--industry", "has-call-bar",
+    "page--home", "speakable",
 }
 manifest_classes = set()
 for cf in (ROOT / "src/assets/css").glob("*.css"):

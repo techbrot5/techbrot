@@ -1059,3 +1059,91 @@ OPEN/NEXT: read css_audit b7lphv64u -> trim unused CSS -> rebuild + battery -> l
 Files: src/assets/css/02-base.css, 04-chrome.css, site.min.css.11ty.js, _build/battery/run_battery.py.
 COUNT: CSS trimmed (10 classes) + gate lowered 100->72KB; verifying rebuild + battery.
 OPEN/NEXT: read b6yx2m56e (bundle < 72KB + battery green) -> commit flip-gate #7 -> production build verification (build:prod + env headers).
+
+---
+
+## Turn -- 2026-06-21 -- CUTOVER GATE: flip-gate #7 done + production build + env-safety PROVEN
+Founder: start the cutover gate.
+- ✅ FLIP-GATE #7 (CSS trim + gate lower): committed 07daa7b. css_audit -> trimmed 10 unused classes; bundle 63601->62596B; css-bytes gate 100KB->72KB (run_battery.py + site.min.css.11ty.js); battery GREEN at the new gate (62596/73728).
+- ✅ PRODUCTION BUILD: npm run build:prod -> _site-prod (586 files; preview _site = 617 incl dev). Dev pages EXCLUDED in prod (_site-prod/dev absent) -- fail-closed.
+- ✅ ENV-SAFETY PROVEN both ways:
+  - PROD (_site-prod): robots meta = "index, follow" (noindex=0); analytics gtag PRESENT; X-Robots-Tag noindex=0 (indexable).
+  - PREVIEW (_site): robots meta = "noindex, nofollow"; analytics gtag=0; + NEW X-Robots-Tag: noindex HEADER.
+  - Added src/_headers.njk (conditional on env.production): preview emits "/*  X-Robots-Tag: noindex, nofollow"; production emits no noindex header. Closes the founder rule ("noindex meta + X-Robots-Tag header" for non-production) -- previously only the meta existed.
+- ✅ BASELINE-VS-PROD RECRAWL: already satisfied (16 orphan states 301'd; fan-out added no new URLs).
+- CLS: 0 by construction (badges/figures/imgs carry explicit width/height; no late-injected layout). Lighthouse = founder machine (headless here can screenshot + axe via puppeteer, but Lighthouse perf scoring is best on the founder's machine).
+Files: src/_headers.njk, _build/reports/SESSION-LOG.md (+ committed 07daa7b: 02-base.css, 04-chrome.css, site.min.css.11ty.js, run_battery.py).
+COUNT: cutover gate technical items DONE -- CSS 62596B/72KB gate, prod build indexable + analytics, preview noindex meta+header, dev excluded, recrawl satisfied, CLS 0.
+OPEN/NEXT: founder go-live (deploy _site-prod / set Cloudflare ENVIRONMENT=production) + final sign-off. Optional: form -> Cloudflare Function migration (Apps Script works now); Lighthouse on founder machine.
+
+---
+
+## Turn -- 2026-06-21 -- Founder eyes-on review: dev server restarted clean + 26-family REP review table
+Founder: restart dev (trim+headers), give the 26-family REP review table with full LAN URLs, ordered money+location first, flag markup-changed families. Do NOT flip until sign-off; NY untouched.
+- DEV SERVER: killed old by PID (chrome-safe, kill_probe), restarted clean (bj6rm3hky) on 0.0.0.0:8080. Verified current: CSS 62596B (trimmed), _headers X-Robots-Tag noindex (preview), CA urgent + TX franchise disclosure banners=3, home badge-strip=6. LAN: http://192.168.1.7:8080/.
+- DELIVERED the 26-family REP table (full LAN URLs, priority order). MARKUP-CHANGED families this session (founder looks hardest): D1 (badge strip), D7 (disclosure banner urgent+tax-help), A1 (badge strip), F2 (badge strip), G2 (badge strip into existing about-credentials). All other families = fixed-in-step0 (sitewide CSS only, no per-family markup) -- D2/D3/D4/D5/D6, B1-B5, C1-C2, E1-E6, F1, G1. Location REPs use GENERATED (CA) pages -- NY hand-authored untouched + off the review.
+- AWAITING founder's per-family UX/component issues -> fix each at family SOURCE (R8). NO flip until sign-off.
+COUNT: dev server live + current; 26-family review table delivered; 5 markup-changed families flagged; awaiting founder walk-through.
+
+---
+
+## Turn -- 2026-06-21 -- FOUNDER STOP: home design-match investigation (SHOW, do not fix)
+Founder: home does not match the design they have open in Claude Design. Prove (1) which design system localhost is built on + approval + source, (2) is their Claude Design reference current or superseded, (3) component-by-component home: template vs built. DO NOT change anything.
+- INVESTIGATED (read-only): repo CSS + git log + DesignSync (Claude Design project 0fb63c85 "TechBrot Design System Elevation").
+- FINDING Q1: localhost = WARM PETROL (01-tokens.css: --color-accent #0E4A50, --cta #BE5240, --color-paper #FCFBF8; Fraunces/Geist/Spline Sans Mono). Zero cobalt hex in CSS bundle (only benign "cobalt-era" data comments). Source of truth = HANDOFF-MANIFEST.md ("single source of truth for Code") + 25 LOCKED .dc.html. Approved: cobalt purged 182e2d9; manifest "all 25 LOCKED, frozen."
+- FINDING Q2: the Claude Design project holds BOTH -- the LOCKED petrol .dc.html templates (CURRENT) AND the superseded cold-cobalt artifacts (Foundations & Direction.dc.html "optional reference, not a family" + _ds/.../tokens cobalt v1). If founder is viewing cool/cobalt/Geist-Mono, that is the SUPERSEDED board, not Home - Template.dc.html. Home - Template.dc.html is PETROL (same system as localhost).
+- FINDING Q3 (the real drift): localhost home (src/index.njk) is built on the t-hub tier and EXPANDED into a full hub -- ~13 sections incl. a badge strip (NOT in template), TL;DR, 6 service cards (template=4), judgment+figure, 6 buyer-cards, 4-step process, 2-person team, vs-table, industries, guides, states. The authoritative A1-home flagship template is TIGHT: hero+Cash-T-account-tieout -> 5-Q&A "In brief" -> 4 cards -> 2 Clutch reviews -> dark "Start with one honest call." CTA. Hero H1 + 2nd CTA + final-CTA copy also differ. Same DESIGN SYSTEM (petrol components), different PAGE COMPOSITION.
+- ROOT CAUSE: CLAUDE.md says "home builds fresh on T-HUB"; handoff ALSO ships a dedicated Home - Template.dc.html (A1-home flagship) that should govern -- conflict. During fan-out I verified A1 home GREEN (axe/overflow/tokens) but did NOT diff its composition vs the A1-home template. That is the gap.
+- NO CHANGES MADE. Dev server stays up (http://192.168.1.7:8080/). NY untouched. Awaiting founder ruling: confirm which they're viewing + whether to recompose home to the A1-home flagship template.
+COUNT: investigation complete, evidence cited, drift owned; zero edits per "show don't fix."
+OPEN/NEXT: founder confirms cobalt-vs-petrol on their screen + rules on recomposing home (and whether A1-home flagship template supersedes the CLAUDE.md "home on T-HUB" note). If yes, likely re-examine other families for template-vs-built composition drift (this was a verify-green-but-not-diffed gap).
+
+---
+
+## Turn -- 2026-06-22 -- HOME recomposed to A1-home flagship template (Home - Template.dc.html)
+Founder: recompose HOME ONLY to match Home - Template.dc.html exactly (real components, exact SVGs, not approximations); preserve frozen content+schema; drop the 8 hub sections + the home badge strip (keep badges on trust/about/pricing); STOP after home. Template GOVERNS over CLAUDE.md "home on T-HUB".
+- KEY: components/SVGs were ALREADY faithful (figure-taccount.svg is the template's Cash T-account verbatim, tokenized; hero-split grid = template's 1.04fr/0.96fr; review-card__quote already Fraunces-italic). The drift was COMPOSITION only -> fix = recompose, not redraw.
+- DID: switched src/index.njk from layout t-hub -> base.njk (t-hub is shared by B1-B5; home must not change them). Rebuilt body to the template's 5 sections IN ORDER: hero (eyebrow+H1+2 CTAs+helper line+2 icon trust-chips+Cash T-account) -> sand "In brief" 2-col 5-Q&A+CTA -> "Four kinds of work" 4 icon service-cards (template r-3 = 3+1) -> sand "In our clients' words" 2 Clutch reviews (italic) -> dark "Start with one honest call." CTA + faint tie-out monogram.
+- CREATED 7 SVG partials (verbatim template paths): icons/trust-shield, trust-clock, svc-cleanup/setup/refresh/advisory, partials/monogram-tieout. ADDED token-pure home CSS to 06-content (hero__helper, hero__trust-item, qa-grid/qa-col/qa-item, svc-card, proof-head, cta-band__monogram, final-cta__reassure, btn--ghost-inverted).
+- DROPPED: 8 kitchen-sink sections (tldr, judgment, start/buyer-cards, process, team, compare/vs-table, industries, guides, states) + the home badge strip. Badge strip CONFIRMED still on /trust/ /about/ /pricing/ (6 each).
+- PRESERVED FROZEN: copy + the full JSON-LD graph. Build broke first (index.11tydata.js line 69 data.silos.map + speakable #home-tldr-body) -> re-added `silos` as schema-only data (drives ItemList) + repointed speakable to [".speakable"] (hero H1/sub + qa-items carry .speakable). Graph intact: WebPage/BreadcrumbList/ItemList/FAQPage, 79 @type nodes.
+- VERIFIED (_site-probe, build exit 0): 5 template sections present; ALL 10 kitchen-sink sections removed; badge home=0 / trust+about+pricing=6; svc-card=4, monogram=1, trust-chips=2. Screenshot confirms composition matches the template top-to-bottom. Battery running bbkclzxo4; axe/overflow queued.
+- COPY DECISIONS FLAGGED for founder review (per "preserve copy"): kept MY hero H1 "Automation handles the data entry..." (template's is "The books, made right..."); services adopt the template's 4-category framing (was 6 nav-cards); services render 3+1 (matching template r-3 -- flag if you want 2x2/4-up).
+COUNT: home recomposed to flagship template (5 sections, components+SVGs verbatim, schema preserved); battery+axe verifying; STOPPED for founder review per instruction.
+OPEN/NEXT: battery bbkclzxo4 -> axe/overflow home -> report before/after composition diff -> FOUNDER REVIEW on LAN (no flip, no other family). QUEUED after sign-off: full composition-diff map of the other 24 families (kitchen-sink-vs-template) before fixing any.
+
+(home recompose -- CONTRACT CORRECTION cont.) Founder ruling (3 msgs): content frozen, never dropped/shortened; composition free but ONLY within REAL handoff components; the home template is ONE recipe, the FULL handoff (all family .dc.html) is the component library; baseline content that doesn't fit home's bare recipe goes into its proper component from another family's template -- never invented, never dropped.
+- STEP 1 equity-diff DONE: HOME IS NOT IN baseline.json (139 pages, 0 home; only "home" url = /accounting/industries/home-services/). Home was deleted Session 1 (recorded founder decision). So a literal baseline diff tags every dropped block category-(a) "never in baseline" -- a technicality; flagged honestly rather than hidden. The RIGHT anchor for home = the founder-approved pre-recompose home (git d5a35c9, reviewed green in fan-out).
+- My 1st recompose WRONGLY dropped ~10 substantive content blocks to fit the bare home template. Correction needed: re-home each into its REAL handoff component (Hub B1 routing grid, Money-Page D1 value triad+figure, Guide E1 process, State-Pillar D3 trust strip, Editorial G2 operator/David Westgate, Comparison C2 vs-table, Location-Sub-Hub B4 industries, Location-National-Hub B5 states, Card-Grid B2 guides, Prose D2 lede) -- actual handoff markup/SVGs, premium order, nothing dropped.
+- Asked founder to confirm the content anchor (committed home d5a35c9 vs founder-specified scope) before pulling real markup from ~10 family templates + rebuilding. TWO AskUserQuestion attempts REJECTED (founder wants to clarify, not pick) -> opened the floor for their clarification; stated default = anchor d5a35c9 + source real components per the map.
+- NO further edits this turn (CTA lexicon fix + whitelist from earlier still pending; current _site-probe still the stripped 5-section version -- to be superseded by the equity-complete rebuild).
+COUNT: equity-diff done (home absent from baseline -> anchor = approved committed home); component-sourcing map drafted (block -> real handoff component -> family template); awaiting founder clarification before the real-component rebuild. Dev :8080 still live; chrome untouched; NY untouched.
+OPEN/NEXT: founder clarifies anchor/scope -> pull real handoff components from the ~10 named family .dc.html -> rebuild home equity-complete (every block in its real component, premium order) -> gates (equity-GREEN vs d5a35c9, battery, axe 0, overflow 0, CLS 0, schema) -> STOP for LAN review. Same model then governs the 24-family pass.
+
+---
+
+## Turn -- 2026-06-22 -- HOME flagship rebuilt: every d5a35c9 block in its REAL handoff component
+Founder: anchor = d5a35c9 (approved built home). GO -- carry EVERY block forward, each in its real handoff component (pull actual markup/SVGs from source family .dc.html), spine = Home template, best intent order, nothing dropped/invented/shortened.
+- EXTRACTED real components via 4 parallel subagents reading the source .dc.html (DesignSync): Hub B1 `.route/.rcard` (routing), Card-Grid B2 `.cards` (guides), Comparison C2 `.cmp` + `.mk` dot-marks + mobile transpose (vs-table), Location National Hub B5 `.states` (states), Money Page D1 `.vtriad`/`.steps` (judgment/process), State Pillar D3 `.statband` (trust stats), Prose D2 `.tldr-box`/`.byline` (TL;DR/operator).
+- 2 GAPS flagged (handoff lacks the component -> used existing design-system component, NOT invented): NO person/team card in handoff (Editorial = firm principles only) -> team-card kept for David Westgate (E-E-A-T); NO buyer-quote-router -> buyer-card kept; industries kept as link-wrap (B4 card variant too heavy for 8 tertiary links). Token "divergence" (#841E1E/Inter) flagged by agents = SUPERSEDED CLAUDE.md spec; petrol correct (resolved).
+- BUILT: added --caution token; ~10 real-component CSS blocks to 06-content (token-pure, a11y-safe -- handoff #9C9484 text -> --text-muted for AA); rewrote index.njk = 14 sections in intent order (hero -> TL;DR -> in-brief 5-Q&A -> services routing -> judgment triad+figure -> buyer routing -> process steps -> proof reviews+statband -> comparison -> team -> industries -> guides -> states -> dark CTA+monogram); whitelisted page--home + speakable; all .btn labels lexicon-canonical.
+- CONTENT GATE vs d5a35c9 (home not in baseline -> diff vs approved built home): first pass caught 4 headings changed to fit the template spine (tldr H2 "What TechBrot does...", in-brief H2 "Five questions...", 5 question H3s downgraded to <p>, reviews H2 "Verified, not self-reported"). RESTORED all 4 (template COMPONENT + d5a35c9 COPY; questions back to <h3>). Re-diff GREEN: every d5a35c9 heading present (only "missing" = the unrendered {{ item.q }} literal, now rendered as the 5 question H3s).
+- Build exit 0; 14 sections present; real components render; badge home=0 / trust+about+pricing=6; schema 79 @type nodes preserved.
+- Battery running b6v67zllf; axe/overflow + screenshot next.
+COUNT: flagship home rebuilt -- every d5a35c9 block carried into its real handoff component, content gate GREEN, nothing dropped; 3 component-gap flags for founder. Verifying battery+axe; STOP for LAN review per instruction.
+OPEN/NEXT: battery b6v67zllf -> axe/overflow home -> screenshot -> commit -> REPORT final composition (section -> component -> source template) + STOP for founder LAN review. Then 24-family pass (anchor baseline.json; flag any family also missing a baseline row, like home).
+
+(home flagship cont.) Battery b6v67zllf caught 1 miss: `.stat` parent class had no own CSS rule (only .stat__v/.stat__l) -> added `.stat { min-width:0 }`. css-drift/css-bytes/cta-lexicon all PASSED. Rebuild + battery re-running b86citrcs; axe/overflow + screenshot next.
+
+---
+
+## Turn -- 2026-06-22 -- Home axe regression fixed + founder's 2 cross-page checks queued
+Founder (3 msgs): (1) MECHANICAL asset-integrity + render check on EVERY page -> ONE report of every page with broken/empty images, unloaded CSS, unstyled els, overflow, axe. (2) TEMPLATE-MATCH diff per family REP, BIDIRECTIONAL: EXTRA (built renders more than .dc.html -- heavy review cards, mono work/outcome, long roles, stat rows) + MISSING (built omits template els -- eyebrows, figures, dividers, spacing). Report both; founder rules per family; NO auto-trim (content frozen).
+- HOME axe regressed 3 serious from the flagship rebuild -- FIXED:
+  - link-name + list (12+6): services .rcard was an <a> WITH sub-link <a>s inside = invalid nested anchors. Fixed: 6 service cards <a> -> <div>, heading + go-link are the anchors (guides .rcard stay <a>, single link, fine).
+  - color-contrast (4): .step__n #BE5240 on sand = 4.21 -> repointed to --cta-press (#843225, AA); .tie-tag #A4660A on amber = 4.21 -> darkened --caution #A4660A->#8A5709 (AA; token only used by tie-tag text + decorative dot/icon).
+- DEFECT FLAG (mechanical): David Westgate photo has NO source -- src/assets/people/david-westgate.jpg absent tree-wide; build works only off CACHED generated 3kDgMuRRPO-* files. Fragile (cache-clear breaks it) + honesty question (is the photo real?). Monogram.svg valid.
+- Trimmed dead CSS (svc-card, proof-head -- superseded by .route/.section__header). Bundle was 73001B/73728B (tight after +10 real components).
+- Re-probing home b2cbinxf7 (expect axe 0 / overflow 0).
+COUNT: home 3-serious-axe regression fixed (nested-anchor + 2 contrast); david-westgate source-missing flagged; founder's 2 cross-page checks (mechanical + bidirectional template-match) queued.
+OPEN/NEXT: confirm home axe 0 -> commit home -> BUILD the mechanical all-pages asset/render check (puppeteer: img.naturalWidth, CSS loaded, overflow, axe) -> run + report -> then bidirectional template-match diff per family REP (extra + missing vs .dc.html) -> founder rules. Re-add MISSING template eyebrows etc. from real markup.

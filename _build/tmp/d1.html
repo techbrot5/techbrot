@@ -1,0 +1,515 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Geist:wght@300..700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 92px; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #FCFBF8; color: #2E2A24; font-family: 'Geist', system-ui, sans-serif; font-size: 17px; line-height: 1.6; letter-spacing: -0.005em; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden; }
+  *, *::before, *::after { box-sizing: border-box; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: #0E4A50; color: #FCFBF8; }
+  .ct { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .sec { padding: 96px 0; }
+  h1,h2,h3 { font-weight: 500; text-wrap: balance; }
+  /* editorial section index marker */
+  .idx { display: flex; align-items: center; gap: 14px; margin-bottom: 30px; }
+  .idx__n { font-family: 'Spline Sans Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #0E4A50; }
+  .idx__t { font-family: 'Spline Sans Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #9C9484; }
+  .idx__rule { flex: 1; height: 1px; background: #ECE5D8; }
+  .eyebrow { font-family: 'Spline Sans Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #6E6456; }
+  .dsp { font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'opsz' 96; letter-spacing: -0.022em; line-height: 1.02; color: #14110C; }
+  .h2 { font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'opsz' 60; font-weight: 500; font-size: clamp(28px, 1.4rem + 2vw, 40px); line-height: 1.08; letter-spacing: -0.02em; color: #14110C; margin: 0; text-wrap: balance; }
+  .lede { font-size: 19px; line-height: 1.55; color: #4A443B; }
+  .mono { font-family: 'Spline Sans Mono', monospace; font-variant-numeric: tabular-nums; }
+  /* layout helpers */
+  .r-hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+  .r-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #ECE5D8; border: 1px solid #ECE5D8; border-radius: 16px; overflow: hidden; }
+  .r-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .r-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .r-foot { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1fr; gap: 32px; }
+  .r-callband { display: grid; grid-template-columns: 1.08fr 0.92fr; }
+  /* buttons */
+  .btn { transition: background .18s cubic-bezier(.16,1,.3,1), transform .12s, box-shadow .2s; }
+  .btn:active { transform: translateY(1px); }
+  .btn-cta { background: #BE5240; color: #fff; }
+  .btn-cta:hover { background: #9C4233; }
+  .btn-ghost { background: #FCFBF8; color: #14110C; border: 1px solid #DED6C9; }
+  .btn-ghost:hover { border-color: #BCB1A0; }
+  /* card hover */
+  .lift { transition: transform .2s cubic-bezier(.16,1,.3,1), box-shadow .2s, border-color .2s; }
+  .lift:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(40,30,12,.05), 0 18px 40px rgba(40,30,12,.10); border-color: #BCB1A0; }
+  /* nav */
+  .navtrig { display: inline-flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 500; color: #4A443B; background: none; border: 0; padding: 8px 12px; border-radius: 8px; cursor: pointer; font-family: inherit; white-space: nowrap; transition: background .12s, color .12s; }
+  .navtrig:hover, .navtrig[aria-expanded="true"] { background: #F1EBDF; color: #14110C; }
+  .navtrig svg { transition: transform .2s; } .navtrig[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .navlink { font-size: 14px; font-weight: 500; color: #4A443B; padding: 8px 12px; border-radius: 8px; white-space: nowrap; }
+  .navlink:hover { background: #F7F2E9; color: #14110C; }
+  .navtrig:focus-visible, .navlink:focus-visible, [data-drawer-open]:focus-visible, [data-drawer-close]:focus-visible, a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid #118A7E; outline-offset: 2px; border-radius: 4px; }
+  .mega-panel { display: none; position: absolute; top: calc(100% + 8px); left: 0; width: min(640px, 94vw); background: #fff; border: 1px solid #ECE5D8; border-radius: 14px; box-shadow: 0 2px 4px rgba(10,15,28,.05), 0 18px 44px rgba(10,15,28,.14); padding: 22px 26px; z-index: 60; animation: megaIn .18s cubic-bezier(.16,1,.3,1); }
+  .mega-panel[data-open] { display: block; }
+  .mega { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 26px; }
+  .col-head { font-family: 'Spline Sans Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6E6456; margin-bottom: 6px; }
+  .megalink { display: block; font-size: 14px; font-weight: 500; color: #14110C; padding: 8px 12px; margin-left: -14px; border-left: 2px solid transparent; border-radius: 0 7px 7px 0; transition: transform .15s ease, border-color .15s ease, color .15s ease, background .15s ease; }
+  .megalink span { display: block; font-size: 12px; font-weight: 400; color: #9C9484; margin-top: 1px; }
+  .megalink:hover { color: #0E4A50; border-left-color: #0E4A50; background: #F7F2E9; transform: translateX(4px); }
+  .mega-call { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 14px; padding-top: 14px; border-top: 1px solid #ECE5D8; }
+  .drawer { display: none; position: fixed; inset: 0; z-index: 200; background: #FCFBF8; padding: 0 18px 24px; overflow-y: auto; }
+  .drawer[data-open] { display: block; }
+  .acc > summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 16px 0; font-size: 17px; font-weight: 600; color: #14110C; border-bottom: 1px solid #F3EDE2; }
+  .acc > summary::-webkit-details-marker { display: none; }
+  .acc > summary .chev { transition: transform .2s; } .acc[open] > summary .chev { transform: rotate(180deg); }
+  /* faq */
+  .faq details { border-top: 1px solid #ECE5D8; }
+  .faq details:last-child { border-bottom: 1px solid #ECE5D8; }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 24px 4px; font-size: 18px; font-weight: 600; color: #14110C; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .pl { position: relative; width: 14px; height: 14px; flex: none; }
+  .faq summary .pl::before, .faq summary .pl::after { content: ""; position: absolute; background: #0E4A50; transition: transform .25s cubic-bezier(.16,1,.3,1); }
+  .faq summary .pl::before { top: 6px; left: 0; width: 14px; height: 2px; }
+  .faq summary .pl::after { left: 6px; top: 0; width: 2px; height: 14px; }
+  .faq details[open] summary .pl::after { transform: scaleY(0); }
+  .faq details > div { padding: 0 4px 24px; max-width: 70ch; color: #4A443B; font-size: 15.5px; line-height: 1.7; }
+  .demo-collapse { display: flex; } .barbtn { display: none; } .mp-callbar { display: none; }
+  /* motion */
+  @keyframes megaIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+  @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes tick { 0% { stroke-dashoffset: 26; opacity: 0; } 55% { opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 1; } }
+  .d-draw { stroke-dasharray: 900; stroke-dashoffset: 900; animation: draw 1.6s cubic-bezier(.16,1,.3,1) .3s forwards; }
+  .d-draw2 { stroke-dasharray: 420; stroke-dashoffset: 420; animation: draw 1.2s cubic-bezier(.16,1,.3,1) .7s forwards; }
+  .d-tick { stroke-dasharray: 26; stroke-dashoffset: 26; opacity: 0; animation: tick .7s cubic-bezier(.16,1,.3,1) 1.5s forwards; }
+  @supports (animation-timeline: view()) { .reveal { animation: rise .7s cubic-bezier(.16,1,.3,1) both; animation-timeline: view(); animation-range: entry 2% entry 22%; } }
+  @media (max-width: 980px) { .demo-collapse { display: none !important; } .barbtn { display: inline-flex !important; } .r-hero { grid-template-columns: 1fr; gap: 38px; } .r-callband { grid-template-columns: 1fr; } }
+  @media (max-width: 860px) { .sec { padding: 72px 0; } .r-4 { grid-template-columns: 1fr 1fr; } .r-foot { grid-template-columns: 1fr 1fr; gap: 26px; } }
+  @media (max-width: 680px) { .ct { padding: 0 20px; } .r-3 { grid-template-columns: 1fr; } .r-2 { grid-template-columns: 1fr; } .r-4 { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .r-foot { grid-template-columns: 1fr; } .hide-sm { display: none !important; } }
+  @media (max-width: 980px) { .mp-callbar { display: grid; } body { padding-bottom: 78px; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .d-draw,.d-draw2,.d-tick,.reveal,.mega-panel { animation: none !important; stroke-dashoffset: 0 !important; opacity: 1 !important; } .lift:hover { transform: none; } }
+</style>
+<script>
+(function () {
+  if (window.__tbD1Nav) return; window.__tbD1Nav = true;
+  function closeMenus(x){document.querySelectorAll('[data-menu-panel]').forEach(function(p){if(p.getAttribute('data-menu-panel')!==x)p.removeAttribute('data-open');});document.querySelectorAll('[data-menu]').forEach(function(b){if(b.getAttribute('data-menu')!==x)b.setAttribute('aria-expanded','false');});}
+  function drawer(o){var d=document.querySelector('[data-drawer]');if(d){if(o){d.setAttribute('data-open','');document.body.style.overflow='hidden';}else{d.removeAttribute('data-open');document.body.style.overflow='';}}}
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-menu]');
+    if(t){e.preventDefault();var n=t.getAttribute('data-menu');var p=document.querySelector('[data-menu-panel="'+n+'"]');var open=t.getAttribute('aria-expanded')==='true';closeMenus(open?null:n);if(p){if(open){p.removeAttribute('data-open');}else{p.setAttribute('data-open','');}t.setAttribute('aria-expanded',open?'false':'true');}return;}
+    if(e.target.closest('[data-menu-panel]'))return;
+    closeMenus(null);
+    if(e.target.closest('[data-drawer-open]'))drawer(true);
+    if(e.target.closest('[data-drawer-close]'))drawer(false);
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMenus(null);drawer(false);}});
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://techbrot.com/#org","name":"TechBrot Inc.","foundingDate":"2023","description":"Independent U.S. accounting and advisory firm of Certified QuickBooks ProAdvisors.","telephone":"+1-877-751-5575","email":"info@techbrot.com","address":{"@type":"PostalAddress","streetAddress":"651 N Broad St, Suite 201","addressLocality":"Middletown","addressRegion":"DE","postalCode":"19709","addressCountry":"US"}},
+{"@type":"WebPage","@id":"https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/#webpage","name":"QuickBooks cleanup & catch-up bookkeeping","speakable":{"@type":"SpeakableSpecification","cssSelector":[".speakable"]},"breadcrumb":{"@id":"https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/#breadcrumb"}},
+{"@type":"Service","name":"QuickBooks cleanup & catch-up bookkeeping","serviceType":"Bookkeeping cleanup and catch-up","provider":{"@id":"https://techbrot.com/#org"},"areaServed":{"@type":"Country","name":"United States"},"offers":{"@type":"Offer","priceCurrency":"USD","priceSpecification":{"@type":"PriceSpecification","minPrice":"400","maxPrice":"2500","unitText":"MONTH"}}},
+{"@type":"BreadcrumbList","@id":"https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://techbrot.com/"},{"@type":"ListItem","position":2,"name":"Accounting","item":"https://techbrot.com/accounting/"},{"@type":"ListItem","position":3,"name":"Bookkeeping","item":"https://techbrot.com/accounting/bookkeeping/"},{"@type":"ListItem","position":4,"name":"Cleanup bookkeeping","item":"https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is a cleanup fixed-fee or priced by the hour?","acceptedAnswer":{"@type":"Answer","text":"Fixed fee. We scope your file first and put the price in writing before any work begins â€” never an open hourly meter."}},
+{"@type":"Question","name":"Do you clean up inside my own QuickBooks file?","acceptedAnswer":{"@type":"Answer","text":"Yes. We work in your existing QuickBooks Online or Desktop file. You keep ownership; we never make you migrate to work with us."}},
+{"@type":"Question","name":"How long does a cleanup take?","acceptedAnswer":{"@type":"Answer","text":"Most cleanups are delivered in weeks, not months. We give you a written timeline with the scope, within 3 business days of the first call."}},
+{"@type":"Question","name":"What do I receive when the cleanup is done?","acceptedAnswer":{"@type":"Answer","text":"Reconciled accounts, corrected financial statements, and a short written summary of what changed and why â€” CPA-ready."}},
+{"@type":"Question","name":"Are you affiliated with Intuit?","acceptedAnswer":{"@type":"Answer","text":"No. We are an independent firm of Certified QuickBooks ProAdvisors â€” not Intuit and not affiliated with Intuit."}}
+]},
+{"@type":"Review","itemReviewed":{"@id":"https://techbrot.com/#org"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"Heidi Schubert"},"reviewBody":"They took something that felt overwhelming to me as a first-year business owner and made it simple."}
+]}
+</script>
+</helmet>
+
+<div>
+  <a href="#main" style="position: absolute; left: -9999px;">Skip to content</a>
+
+  <!-- UTIL BAR -->
+  <div class="demo-collapse" style="background: #0A0F1C;">
+    <div class="ct" style="height: 36px; display: flex; align-items: center; justify-content: space-between; font-size: 12.5px; font-weight: 500;">
+      <span style="display: inline-flex; align-items: center; gap: 8px; color: #C7CEDC;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #3DBB85;"></span>Independent Certified QuickBooks ProAdvisor firm Â· U.S.-based</span>
+      <span style="display: inline-flex; align-items: center; gap: 20px;"><a href="https://techbrot.com/find-an-accountant/" style="color: #D8D2C4; font-weight: 500;">Find an Accountant</a><a href="https://techbrot.com/for-accountants/" style="color: #D8D2C4; font-weight: 500;">For Accountants â†’</a></span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header style="position: sticky; top: 0; z-index: 100; background: rgba(252,251,248,0.85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid #ECE5D8;">
+    <div class="ct" style="position: relative; height: 66px; display: flex; align-items: center; gap: 22px;">
+      <a href="https://techbrot.com/" style="display: flex; align-items: center; gap: 10px;"><span style="display: inline-flex; width: 28px; height: 28px; align-items: center; justify-content: center; background: #0E4A50; border-radius: 7px;"><svg width="17" height="17" viewBox="0 0 64 64" fill="#FCFBF8" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span><span style="font-weight: 600; font-size: 16px; letter-spacing: -0.012em; color: #14110C;">TechBrot</span></a>
+      <nav class="demo-collapse" aria-label="Primary" style="align-items: center; gap: 2px;">
+        <a class="navlink" href="https://techbrot.com/find-an-accountant/">Find an accountant</a>
+        <button class="navtrig" type="button" data-menu="accounting" aria-expanded="false" aria-controls="m-acct" aria-haspopup="true">Accounting <svg width="9" height="9" viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="navtrig" type="button" data-menu="quickbooks" aria-expanded="false" aria-controls="m-qb" aria-haspopup="true">QuickBooks <svg width="9" height="9" viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <a class="navlink" href="https://techbrot.com/vs/">Compare</a>
+        <a class="navlink" href="https://techbrot.com/resources/">Resources</a>
+      </nav>
+      <div style="margin-left: auto; display: flex; align-items: center; gap: 14px;">
+        <a href="tel:+18777515575" data-ga="phone_click" class="demo-collapse mono" style="align-items: center; gap: 8px; font-size: 14px; color: #14110C;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>(877) 751-5575</a>
+        <a href="tel:+18777515575" data-ga="phone_click" class="btn btn-cta" style="display: inline-flex; align-items: center; height: 38px; padding: 0 16px; border-radius: 9px; font-size: 13.5px; font-weight: 600;">Speak to a ProAdvisor</a>
+        <button class="barbtn" type="button" data-drawer-open aria-label="Open menu" style="background: none; border: 0; cursor: pointer; color: #14110C; padding: 6px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg></button>
+      </div>
+      <div class="mega-panel" id="m-acct" data-menu-panel="accounting" role="region" aria-label="Accounting">
+        <div class="mega">
+          <div><div class="col-head">Core services</div>
+            <a class="megalink" href="https://techbrot.com/accounting/bookkeeping/">Ongoing bookkeeping<span>Reconciled monthly, fixed fee</span></a>
+            <a class="megalink" href="https://techbrot.com/accounting/advisory/">Fractional CFO &amp; advisory<span>Judgment, not just data entry</span></a>
+            <a class="megalink" href="https://techbrot.com/accounting/sales-tax/">Sales tax &amp; payroll<span>Filed and reconciled monthly</span></a>
+          </div>
+          <div><div class="col-head">Start here</div>
+            <a class="megalink" href="https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup &amp; catch-up<span>Bring a behind file current</span></a>
+            <a class="megalink" href="https://techbrot.com/file-review/">Free file review<span>We look before we scope</span></a>
+            <a class="megalink" href="https://techbrot.com/find-an-accountant/">Find an accountant<span>By state and city</span></a>
+          </div>
+        </div>
+        <div class="mega-call"><span style="font-size: 13px; color: #6E6456;">Not sure which fits? A 15-minute call sorts it.</span><a href="https://techbrot.com/accounting/" class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #0E4A50;">Accounting overview <span aria-hidden="true">â†’</span></a></div>
+      </div>
+      <div class="mega-panel" id="m-qb" data-menu-panel="quickbooks" role="region" aria-label="QuickBooks">
+        <div class="mega">
+          <div><div class="col-head">Fix &amp; set up</div>
+            <a class="megalink" href="https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup &amp; catch-up<span>Behind, broken, or messy books</span></a>
+            <a class="megalink" href="https://techbrot.com/quickbooks/setup/">Setup &amp; migration<span>Set up right; Desktop â†’ Online</span></a>
+            <a class="megalink" href="https://techbrot.com/quickbooks/expert/">QuickBooks expert help<span>Independent Â· not Intuit</span></a>
+          </div>
+          <div><div class="col-head">Keep it clean</div>
+            <a class="megalink" href="https://techbrot.com/accounting/bookkeeping/">Ongoing bookkeeping<span>Monthly, reconciled to the bank</span></a>
+            <a class="megalink" href="https://techbrot.com/accounting/sales-tax/">Sales tax &amp; payroll<span>Filed and tied out</span></a>
+            <a class="megalink" href="https://techbrot.com/resources/">Guides &amp; resources<span>How the work actually goes</span></a>
+          </div>
+        </div>
+        <div class="mega-call"><span style="font-size: 13px; color: #6E6456;">Free file review â€” written scope in 3 business days.</span><a href="https://techbrot.com/quickbooks/" class="mono" style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #0E4A50;">QuickBooks overview <span aria-hidden="true">â†’</span></a></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- @@ LOCKED Â· family D1-money Â· covers 66 live pages (dossier treatment) @@ -->
+  <main id="main">
+    <!-- BREADCRUMB -->
+    <nav aria-label="Breadcrumb" style="border-bottom: 1px solid #F3EDE2;">
+      <div class="ct" style="padding: 15px 32px;"><ol class="mono" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 9px; font-size: 12px; letter-spacing: 0.02em; color: #9C9484;">
+        <li><a href="https://techbrot.com/" style="color: #6E6456;">Home</a></li><li aria-hidden="true">/</li>
+        <li><a href="https://techbrot.com/accounting/" style="color: #6E6456;">Accounting</a></li><li aria-hidden="true">/</li>
+        <li><a href="https://techbrot.com/accounting/bookkeeping/" style="color: #6E6456;">Bookkeeping</a></li><li aria-hidden="true">/</li>
+        <li aria-current="page" style="color: #14110C;">Cleanup</li>
+      </ol></div>
+    </nav>
+
+    <!-- HERO -->
+    <section style="padding: 72px 0 64px; border-bottom: 1px solid #F3EDE2;">
+      <div class="ct r-hero">
+        <div>
+          <div class="eyebrow" style="display: inline-flex; align-items: center; gap: 12px; margin-bottom: 26px;"><span style="display: inline-flex; gap: 4px;"><span style="width: 28px; height: 3px; background: #0E4A50;"></span><span style="width: 13px; height: 3px; background: #BE5240;"></span></span>QuickBooks cleanup &amp; catch-up</div>
+          <h1 class="dsp speakable" style="font-weight: 500; font-size: clamp(40px, 2rem + 3.6vw, 68px); margin: 0 0 24px;">Messy books are common. They&rsquo;re also fixable.</h1>
+          <p class="lede speakable" style="margin: 0 0 32px; max-width: 36ch;">A Certified QuickBooks ProAdvisor reconciles every account, corrects the history, and hands you CPA-ready financials â€” fixed fee, scoped in writing before any work begins.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 22px;">
+            <a href="tel:+18777515575" data-ga="phone_click" class="btn btn-cta" style="display: inline-flex; align-items: center; gap: 9px; height: 52px; padding: 0 24px; border-radius: 12px; font-size: 16px; font-weight: 600;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>Speak to a ProAdvisor</a>
+            <a href="https://techbrot.com/file-review/" class="btn btn-ghost" style="display: inline-flex; align-items: center; height: 52px; padding: 0 22px; border-radius: 12px; font-size: 16px; font-weight: 500;">Get a free file review</a>
+          </div>
+          <p style="font-size: 14px; color: #6E6456; margin: 0; max-width: 42ch;">Accounting, cleanup, advisory â€” we match the right expert to your books.</p>
+        </div>
+        <!-- signature reconciliation diagram -->
+        <figure style="margin: 0; background: #fff; border: 1px solid #ECE5D8; border-radius: 18px; box-shadow: 0 2px 4px rgba(40,30,12,.04), 0 30px 60px rgba(40,30,12,.10); padding: 26px 28px 22px; position: relative;">
+          <div style="position:absolute; inset:0; background-image: linear-gradient(#F3EDE2 1px, transparent 1px); background-size: 100% 28px; opacity: 0.45; border-radius: 18px; pointer-events: none;"></div>
+          <figcaption style="position: relative; display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px;"><span style="font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 17px; color: #14110C;">A file, reconciled</span><span class="mono" style="font-size: 11px; color: #9C9484; padding: 2px 7px; border: 1px solid #ECE5D8; border-radius: 5px;">illustrative</span></figcaption>
+          <svg viewBox="0 0 440 232" width="100%" style="position: relative; display: block;" data-viz="reconciliation-beforeafter" data-viz-state="FINAL" role="img" aria-label="An out-of-balance ledger resolving to a balanced, reconciled file.">
+            <text x="0" y="14" class="mono" font-size="10.5" letter-spacing="1.2" fill="#9C9484">BEFORE</text>
+            <g font-family="Geist, sans-serif" font-size="12.5" fill="#4A443B"><text x="0" y="46">Uncategorised</text><text x="0" y="74">Unreconciled bank</text><text x="0" y="102">Variance</text></g>
+            <g class="mono" font-size="13"><text x="190" y="46" text-anchor="end" fill="#14110C">142 txns</text><text x="190" y="74" text-anchor="end" fill="#14110C">3 accts</text><text x="190" y="102" text-anchor="end" fill="#C0322C">âˆ’4,280.00</text></g>
+            <path class="d-draw2" d="M0 118 H190 M0 122 H190" fill="none" stroke="#C0322C" stroke-width="1" stroke-linecap="round"/>
+            <g transform="translate(0 150)"><rect x="0" y="-15" width="150" height="26" rx="7" fill="#FBEAE7"/><path d="M14 -2v-5" stroke="#C0322C" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="3" r="1.1" fill="#C0322C"/><text x="28" y="2" font-family="Geist, sans-serif" font-size="11.5" fill="#9A2722">Out of balance</text></g>
+            <path class="d-draw" d="M206 84 H250" fill="none" stroke="#BCB1A0" stroke-width="1.5"/><path d="M243 79l7 5-7 5" fill="none" stroke="#BCB1A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="266" y="14" class="mono" font-size="10.5" letter-spacing="1.2" fill="#9C9484">AFTER</text>
+            <g font-family="Geist, sans-serif" font-size="12.5" fill="#4A443B"><text x="266" y="46">Categorised</text><text x="266" y="74">Reconciled</text><text x="266" y="102">Variance</text></g>
+            <g class="mono" font-size="13"><text x="440" y="46" text-anchor="end" fill="#0E4A50">142 / 142</text><text x="440" y="74" text-anchor="end" fill="#0E4A50">3 / 3</text><text x="440" y="102" text-anchor="end" fill="#0F5E3F">0.00</text></g>
+            <path class="d-draw2" d="M266 118 H440 M266 122 H440" stroke="#14110C" stroke-width="1"/>
+            <g transform="translate(266 150)"><rect x="0" y="-15" width="128" height="26" rx="7" fill="#E7F3EC"/><path class="d-tick" d="M14 -2l3.4 3.6 6.6-7.6" fill="none" stroke="#157A52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="32" y="2" font-family="Geist, sans-serif" font-size="11.5" fill="#0F5E3F">Reconciled Â· tied out</text></g>
+            <line x1="0" y1="196" x2="440" y2="196" stroke="#F3EDE2" stroke-width="1"/>
+            <text x="0" y="218" font-family="Geist, sans-serif" font-size="11.5" fill="#9C9484">Every account agreed to the bank, ready for your CPA.</text>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PROOF STRIP -->
+    <section style="background: #0A0F1C; color: #C7CEDC;">
+      <div class="ct" style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 40px; padding: 22px 32px;">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #7FA6A4;">What you can verify</span>
+        <span style="display: inline-flex; align-items: center; gap: 9px; font-size: 14px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3DBB85" stroke-width="2"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Certified QuickBooks ProAdvisor</span>
+        <span style="display: inline-flex; align-items: center; gap: 9px; font-size: 14px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3DBB85" stroke-width="2"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Fixed fee, written first</span>
+        <span style="display: inline-flex; align-items: center; gap: 9px; font-size: 14px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3DBB85" stroke-width="2"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Independent Â· not Intuit</span>
+        <span style="display: inline-flex; align-items: center; gap: 9px; font-size: 14px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3DBB85" stroke-width="2"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Same business day reply</span>
+      </div>
+    </section>
+
+    <!-- Â§01 IN BRIEF -->
+    <section class="sec reveal" style="background: #F7F2E9; border-bottom: 1px solid #ECE5D8;">
+      <div class="ct">
+        <div class="idx"><span class="idx__n">Â§01</span><span class="idx__t">In brief</span><span class="idx__rule"></span></div>
+        <div class="r-2" style="gap: 48px; align-items: start;">
+          <h2 class="h2 speakable" style="max-width: 18ch;">What a cleanup engagement actually is.</h2>
+          <div class="speakable" style="font-size: 17px; line-height: 1.7; color: #4A443B;">
+            <p style="margin: 0 0 14px;">A cleanup brings a behind or broken QuickBooks file current: every transaction categorised, every account reconciled to the bank, and prior-period errors corrected â€” so the books are CPA-ready.</p>
+            <p style="margin: 0;">We work inside your existing file. The scope and the fixed fee are agreed in writing within 3 business days of your first call, before anything begins. We&rsquo;re an <a href="https://techbrot.com/about/" style="color: #0E4A50; border-bottom: 1.5px solid #C8DBDA;">independent firm</a> of Certified ProAdvisors.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Â§02 BUYER-CARD GRID -->
+    <section class="sec reveal">
+      <div class="ct">
+        <div class="idx"><span class="idx__n">Â§02</span><span class="idx__t">Is this you</span><span class="idx__rule"></span></div>
+        <h2 class="h2" style="max-width: 20ch; margin-bottom: 36px;">If any of these sound familiar, the answer is yes.</h2>
+        <div class="r-2" style="gap: 14px;">
+          <div class="lift" style="background: #fff; border: 1px solid #ECE5D8; border-radius: 14px; padding: 24px 26px; display: flex; gap: 14px; align-items: flex-start;"><span class="mono" style="font-size: 12px; color: #0E4A50; padding-top: 2px;">01</span><h3 style="font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 18px; color: #14110C; margin: 0; line-height: 1.3;">You haven&rsquo;t reconciled in months â€” or years.</h3></div>
+          <div class="lift" style="background: #fff; border: 1px solid #ECE5D8; border-radius: 14px; padding: 24px 26px; display: flex; gap: 14px; align-items: flex-start;"><span class="mono" style="font-size: 12px; color: #0E4A50; padding-top: 2px;">02</span><h3 style="font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 18px; color: #14110C; margin: 0; line-height: 1.3;">Your CPA flagged the books before tax season.</h3></div>
+          <div class="lift" style="background: #fff; border: 1px solid #ECE5D8; border-radius: 14px; padding: 24px 26px; display: flex; gap: 14px; align-items: flex-start;"><span class="mono" style="font-size: 12px; color: #0E4A50; padding-top: 2px;">03</span><h3 style="font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 18px; color: #14110C; margin: 0; line-height: 1.3;">A lender or buyer asked for clean financials.</h3></div>
+          <div class="lift" style="background: #fff; border: 1px solid #ECE5D8; border-radius: 14px; padding: 24px 26px; display: flex; gap: 14px; align-items: flex-start;"><span class="mono" style="font-size: 12px; color: #0E4A50; padding-top: 2px;">04</span><h3 style="font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 18px; color: #14110C; margin: 0; line-height: 1.3;">Your previous bookkeeper left things in disarray.</h3></div>
+          <div class="lift" style="background: #fff; border: 1px solid #ECE5D8; border-radius: 14px; padding: 24px 26px; display: flex; gap: 14px; align-items: flex-start;"><span class="mono" style="font-size: 12px; color: #0E4A50; padding-top: 2px;">05</span><h3 style="font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 18px; color: #14110C; margin: 0; line-height: 1.3;">You switched software and the migration left gaps.</h3></div>
+          <div class="lift" style="background: #fff; border: 1px solid #ECE5D8; border-radius: 14px; padding: 24px 26px; display: flex; gap: 14px; align-items: flex-start;"><span class="mono" style="font-size: 12px; color: #0E4A50; padding-top: 2px;">06</span><h3 style="font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 18px; color: #14110C; margin: 0; line-height: 1.3;">You ran the books yourself and need a professional reset.</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Â§03 AI SUMMARY â€” money-page treatment (dark dossier) -->
+    <section class="sec reveal" style="background: #0E3A3F; color: #DCEAE9;">
+      <div class="ct">
+        <div class="idx"><span class="idx__n" style="color: #6FD0C8;">Â§03</span><span class="idx__t" style="color: #6FA8A6;">For AI engines &amp; quick answers</span><span class="idx__rule" style="background: #1E545A;"></span></div>
+        <h2 class="h2" style="color: #fff; max-width: 16ch; margin-bottom: 40px;">Cleanup, in five questions.</h2>
+        <div class="speakable" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 56px;">
+          <div style="border-top: 1px solid #1E545A; padding: 22px 0;"><h3 style="font-size: 17px; font-weight: 600; color: #fff; margin: 0 0 7px;">Is a cleanup fixed-fee or priced by the hour?</h3><p style="font-size: 15px; line-height: 1.6; color: #A9C7C4; margin: 0;">Fixed fee. We scope your file first and put the price in writing before any work begins â€” never an open hourly meter.</p></div>
+          <div style="border-top: 1px solid #1E545A; padding: 22px 0;"><h3 style="font-size: 17px; font-weight: 600; color: #fff; margin: 0 0 7px;">Do you clean up inside my own QuickBooks file?</h3><p style="font-size: 15px; line-height: 1.6; color: #A9C7C4; margin: 0;">Yes â€” your existing QuickBooks Online or Desktop file. You keep ownership; we never make you migrate to work with us.</p></div>
+          <div style="border-top: 1px solid #1E545A; padding: 22px 0;"><h3 style="font-size: 17px; font-weight: 600; color: #fff; margin: 0 0 7px;">How long does a cleanup take?</h3><p style="font-size: 15px; line-height: 1.6; color: #A9C7C4; margin: 0;">Most are delivered in weeks, not months. You get a written timeline with the scope, within 3 business days of the first call.</p></div>
+          <div style="border-top: 1px solid #1E545A; padding: 22px 0;"><h3 style="font-size: 17px; font-weight: 600; color: #fff; margin: 0 0 7px;">What do I receive when it&rsquo;s done?</h3><p style="font-size: 15px; line-height: 1.6; color: #A9C7C4; margin: 0;">Reconciled accounts, corrected statements, and a short written summary of what changed and why â€” CPA-ready.</p></div>
+          <div style="border-top: 1px solid #1E545A; padding: 22px 0;"><h3 style="font-size: 17px; font-weight: 600; color: #fff; margin: 0 0 7px;">Can the same operator keep my books current after?</h3><p style="font-size: 15px; line-height: 1.6; color: #A9C7C4; margin: 0;">Yes. Many clients move from cleanup into monthly bookkeeping with the same ProAdvisor â€” scoped as its own fixed fee.</p></div>
+          <div style="border-top: 1px solid #1E545A; padding: 22px 0; display: flex; align-items: center;"><a href="tel:+18777515575" data-ga="phone_click" class="btn btn-cta" style="display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 20px; border-radius: 10px; font-size: 14.5px; font-weight: 600;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>Ask yours on a call</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Â§04 DELIVER-CARD -->
+    <section class="sec reveal">
+      <div class="ct">
+        <div class="idx"><span class="idx__n">Â§04</span><span class="idx__t">Scope of work</span><span class="idx__rule"></span></div>
+        <h2 class="h2" style="max-width: 18ch; margin-bottom: 36px;">What cleanup actually delivers.</h2>
+        <div class="r-4" style="gap: 1px; background: #ECE5D8; border: 1px solid #ECE5D8; border-radius: 16px; overflow: hidden;">
+          <div style="background: #fff; padding: 26px 24px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.6" style="margin-bottom: 14px;"><path d="M4 10a8 8 0 0114-4.5" stroke-linecap="round"/><path d="M4 5.5V10h4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 14a8 8 0 01-14 4.5" stroke-linecap="round"/><path d="M20 18.5V14h-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg><h3 style="font-size: 15.5px; font-weight: 600; color: #14110C; margin: 0;">Bank &amp; credit card reconciliation</h3></div>
+          <div style="background: #fff; padding: 26px 24px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.6" style="margin-bottom: 14px;"><path d="M4 7h16M4 12h16M4 17h10" stroke-linecap="round"/></svg><h3 style="font-size: 15.5px; font-weight: 600; color: #14110C; margin: 0;">Transaction categorization</h3></div>
+          <div style="background: #fff; padding: 26px 24px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.6" style="margin-bottom: 14px;"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 9.5h16M9.5 9.5V19" stroke-linecap="round"/></svg><h3 style="font-size: 15.5px; font-weight: 600; color: #14110C; margin: 0;">Undeposited funds &amp; clearing</h3></div>
+          <div style="background: #fff; padding: 26px 24px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.6" style="margin-bottom: 14px;"><path d="M8 8h8v8H8z" stroke-linejoin="round"/><path d="M5 5l3 3M19 5l-3 3M5 19l3-3M19 19l-3-3" stroke-linecap="round"/></svg><h3 style="font-size: 15.5px; font-weight: 600; color: #14110C; margin: 0;">Duplicate &amp; missing transactions</h3></div>
+          <div style="background: #fff; padding: 26px 24px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.6" style="margin-bottom: 14px;"><path d="M12 3v18M5 8l7-5 7 5" stroke-linecap="round" stroke-linejoin="round"/></svg><h3 style="font-size: 15.5px; font-weight: 600; color: #14110C; margin: 0;">Prior-period error correction</h3></div>
+          <div style="background: #fff; padding: 26px 24px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.6" style="margin-bottom: 14px;"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg><h3 style="font-size: 15.5px; font-weight: 600; color: #14110C; margin: 0;">Payroll &amp; sales tax verification</h3></div>
+          <div style="background: #fff; padding: 26px 24px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.6" style="margin-bottom: 14px;"><path d="M4 20h16M7 20V9M12 20V4M17 20v-7" stroke-linecap="round"/></svg><h3 style="font-size: 15.5px; font-weight: 600; color: #14110C; margin: 0;">Chart of accounts review</h3></div>
+          <div style="background: #fff; padding: 26px 24px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.6" style="margin-bottom: 14px;"><path d="M7 3h7l4 4v14H7z" stroke-linejoin="round"/><path d="M14 3v4h4M10 13h5M10 17h5" stroke-linecap="round"/></svg><h3 style="font-size: 15.5px; font-weight: 600; color: #14110C; margin: 0;">Financial statements &amp; docs</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Â§05 PROCESS DIAGRAM (the ONE numbered system) -->
+    <section class="sec reveal" style="background: #F7F2E9; border-top: 1px solid #ECE5D8; border-bottom: 1px solid #ECE5D8;">
+      <div class="ct">
+        <div class="idx"><span class="idx__n">Â§05</span><span class="idx__t">How it works</span><span class="idx__rule"></span></div>
+        <h2 class="h2" style="max-width: 16ch; margin-bottom: 44px;">From first call to clean books.</h2>
+        <div class="r-4" style="gap: 0; background: none; border: 0; border-radius: 0; counter-reset: step;">
+          <div style="padding: 0 26px 0 0; border-right: 1px solid #DED6C9; position: relative;"><div class="mono" style="font-size: 13px; color: #BE5240; margin-bottom: 14px;">STEP 01</div><h3 style="font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 19px; color: #14110C; margin: 0 0 8px;">Diagnostic &amp; scope</h3><p style="font-size: 14.5px; line-height: 1.6; color: #6E6456; margin: 0;">We review your file and put the work and the fixed fee in writing â€” within 3 business days.</p></div>
+          <div style="padding: 0 26px; border-right: 1px solid #DED6C9;"><div class="mono" style="font-size: 13px; color: #BE5240; margin-bottom: 14px;">STEP 02</div><h3 style="font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 19px; color: #14110C; margin: 0 0 8px;">Reconcile &amp; correct</h3><p style="font-size: 14.5px; line-height: 1.6; color: #6E6456; margin: 0;">Every account agreed to statements, miscodes fixed, prior periods corrected.</p></div>
+          <div style="padding: 0 26px; border-right: 1px solid #DED6C9;"><div class="mono" style="font-size: 13px; color: #BE5240; margin-bottom: 14px;">STEP 03</div><h3 style="font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 19px; color: #14110C; margin: 0 0 8px;">Statements &amp; review</h3><p style="font-size: 14.5px; line-height: 1.6; color: #6E6456; margin: 0;">Clean financials, plus a written summary of what changed and why.</p></div>
+          <div style="padding: 0 0 0 26px;"><div class="mono" style="font-size: 13px; color: #157A52; margin-bottom: 14px;">STEP 04 âœ“</div><h3 style="font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 19px; color: #14110C; margin: 0 0 8px;">Handoff &amp; ongoing</h3><p style="font-size: 14.5px; line-height: 1.6; color: #6E6456; margin: 0;">CPA-ready books in your hands â€” keep them current with us, or take it from here.</p></div>
+        </div>
+        <!-- D1 SECOND VIZ Â· data-viz="cleanup-timeline" Â· FINAL Â· week-by-week; data mirrored in row labels + alt. Swap weeks/labels by data only. -->
+        <figure style="margin: 44px 0 0; background: #fff; border: 1px solid #ECE5D8; border-radius: 16px; padding: 26px 28px 22px;">
+          <figcaption style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 20px;"><span class="mono" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #9C9484;">Typical schedule Â· 6 months behind</span><span class="mono" style="font-size: 11px; color: #6E6456;">weeks, not months</span></figcaption>
+          <svg viewBox="0 0 720 184" width="100%" style="display: block; overflow: visible;" role="img" aria-label="Week-by-week cleanup schedule for a file six months behind. Week 1: scope and access. Weeks 2 to 3: categorise and correct transactions. Weeks 3 to 4: reconcile every account. Week 5: review and corrected statements. Week 5: CPA-ready handoff. Indicative, not a guarantee.">
+            <line x1="40" y1="58" x2="688" y2="58" stroke="#ECE5D8" stroke-width="2"/>
+            <g class="mono" font-size="11" fill="#9C9484" text-anchor="middle">
+              <text x="76" y="30">WK 1</text><text x="228" y="30">WK 2â€“3</text><text x="380" y="30">WK 3â€“4</text><text x="532" y="30">WK 5</text><text x="660" y="30">WK 5</text>
+            </g>
+            <!-- progress fill -->
+            <line class="d-draw" x1="40" y1="58" x2="688" y2="58" stroke="#0E4A50" stroke-width="2" pathLength="900"/>
+            <g>
+              <circle cx="76" cy="58" r="6" fill="#0E4A50"/><circle cx="228" cy="58" r="6" fill="#0E4A50"/><circle cx="380" cy="58" r="6" fill="#0E4A50"/><circle cx="532" cy="58" r="6" fill="#0E4A50"/>
+              <circle cx="660" cy="58" r="9" fill="#E7F5EE" stroke="#157A52" stroke-width="1.5"/><path class="d-tick" d="M656 58l3 3 5-6" fill="none" stroke="#157A52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <g font-family="Geist, sans-serif" font-size="12.5" fill="#14110C" text-anchor="middle">
+              <text x="76" y="92">Scope &amp;</text><text x="76" y="108">access</text>
+              <text x="228" y="92">Categorise &amp;</text><text x="228" y="108">correct</text>
+              <text x="380" y="92">Reconcile</text><text x="380" y="108">every account</text>
+              <text x="532" y="92">Review &amp;</text><text x="532" y="108">statements</text>
+              <text x="660" y="92" fill="#0F5E3F">CPA-ready</text><text x="660" y="108" fill="#0F5E3F">handoff</text>
+            </g>
+          </svg>
+          <p class="mono" style="font-size: 11px; color: #9C9484; margin: 14px 0 0;">Indicative schedule, not a guarantee â€” your written timeline is set from your file. Files further behind run longer (see <a href="https://techbrot.com/research/cleanup-turnaround/" style="color:#0E4A50;">turnaround data</a>).</p>
+        </figure>
+      </div>
+    </section>
+    <section class="sec reveal">
+      <div class="ct" style="max-width: 900px; text-align: center;">
+        <div class="idx" style="justify-content: center;"><span class="idx__rule" style="max-width: 60px;"></span><span class="idx__t">What changes</span><span class="idx__rule" style="max-width: 60px;"></span></div>
+        <p style="font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 72; font-weight: 500; font-size: clamp(26px, 1.4rem + 2.2vw, 40px); line-height: 1.18; letter-spacing: -0.018em; color: #14110C; margin: 0 0 24px; text-wrap: balance;">When the books are clean, the decisions get easier: you file on time, borrow on real numbers, and stop guessing what you can afford.</p>
+        <div class="mono" style="display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 12px 28px; font-size: 14px; color: #6E6456;"><span><span style="color:#0E4A50;">â—</span> CPA-ready output</span><span><span style="color:#0E4A50;">â—</span> Audit-traceable corrections</span><span><span style="color:#0E4A50;">â—</span> Fixed fee, no surprises</span></div>
+      </div>
+    </section>
+
+    <!-- Â§07 PRICING -->
+    <section class="sec reveal" style="background: #F7F2E9; border-top: 1px solid #ECE5D8; border-bottom: 1px solid #ECE5D8;">
+      <div class="ct">
+        <div class="idx"><span class="idx__n">Â§07</span><span class="idx__t">Pricing</span><span class="idx__rule"></span></div>
+        <h2 class="h2" style="max-width: 20ch; margin-bottom: 10px;">Fixed fee, written scope, no hourly billing.</h2>
+        <p class="lede" style="margin: 0 0 36px; max-width: 52ch;">Where most cleanups land. Your exact fee is scoped from your file on the first call.</p>
+        <div class="r-3">
+          <div style="background: #fff; padding: 30px 28px;"><div style="font-size: 14px; font-weight: 600; color: #14110C;">Single-year cleanup</div><div class="mono" style="font-size: 30px; font-weight: 500; color: #14110C; margin: 14px 0 4px;">$1,400<span style="font-size: 14px; color: #9C9484;">+</span></div><p style="font-size: 14px; line-height: 1.6; color: #6E6456; margin: 12px 0 0;">One year behind, modest volume, one or two accounts.</p></div>
+          <div style="background: #fff; padding: 30px 28px; position: relative; box-shadow: inset 0 0 0 2px #0E4A50;"><div class="mono" style="position: absolute; top: 22px; right: 24px; font-size: 10px; letter-spacing: 0.08em; color: #0E4A50; background: #E4EDEC; border-radius: 6px; padding: 3px 8px;">MOST COMMON</div><div style="font-size: 14px; font-weight: 600; color: #14110C;">Standard cleanup</div><div class="mono" style="font-size: 30px; font-weight: 500; color: #14110C; margin: 14px 0 4px;">$2,400<span style="font-size: 14px; color: #9C9484;">+</span></div><p style="font-size: 14px; line-height: 1.6; color: #6E6456; margin: 12px 0 0;">Multiple accounts, several months of catch-up, sales tax or payroll in the mix.</p></div>
+          <div style="background: #fff; padding: 30px 28px;"><div style="font-size: 14px; font-weight: 600; color: #14110C;">Multi-year cleanup</div><div class="mono" style="font-size: 30px; font-weight: 500; color: #14110C; margin: 14px 0 4px;">Custom</div><p style="font-size: 14px; line-height: 1.6; color: #6E6456; margin: 12px 0 0;">Two+ years, high volume, multi-entity â€” scoped precisely, still fixed.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Â§08 OPERATOR / TRUST -->
+    <section class="sec reveal">
+      <div class="ct r-2" style="gap: 48px; align-items: center;">
+        <div>
+          <div class="idx"><span class="idx__n">Â§08</span><span class="idx__t">Who does the work</span><span class="idx__rule"></span></div>
+          <h2 class="h2" style="max-width: 20ch; margin-bottom: 18px;">A named, credentialed operator â€” not an anonymous offshore team.</h2>
+          <p class="lede" style="margin: 0 0 22px; max-width: 46ch;">You work with one Certified QuickBooks ProAdvisor who knows your file. The same person who scopes the cleanup does the work and signs off on the handoff.</p>
+          <figure style="margin: 0; border-left: 2px solid #BE5240; padding: 4px 0 4px 20px;"><blockquote style="font-family: 'Fraunces', serif; font-style: italic; font-variation-settings: 'opsz' 40; font-size: 20px; line-height: 1.45; color: #14110C; margin: 0 0 12px;">&ldquo;They took something that felt overwhelming to me as a first-year business owner and made it simple.&rdquo;</blockquote><figcaption style="font-size: 13.5px; color: #6E6456;">Heidi Schubert Â· Owner, Beverage Connection Â· <span style="color: #0F5E3F;">Verified Clutch review</span></figcaption></figure>
+        </div>
+        <div style="background: #fff; border: 1px solid #ECE5D8; border-radius: 16px; padding: 30px; box-shadow: 0 1px 2px rgba(40,30,12,.04), 0 12px 30px rgba(40,30,12,.05);">
+          <div class="mono" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #9C9484; margin-bottom: 20px;">The standard, every file</div>
+          <div style="display: grid; gap: 16px;">
+            <div style="display: flex; gap: 12px; align-items: flex-start;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#157A52" stroke-width="2" style="flex:none; margin-top:2px;"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size: 15px; color: #4A443B;">U.S.-based, QuickBooks-certified</span></div>
+            <div style="display: flex; gap: 12px; align-items: flex-start;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#157A52" stroke-width="2" style="flex:none; margin-top:2px;"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size: 15px; color: #4A443B;">One operator, start to finish</span></div>
+            <div style="display: flex; gap: 12px; align-items: flex-start;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#157A52" stroke-width="2" style="flex:none; margin-top:2px;"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size: 15px; color: #4A443B;">Written summary of every correction</span></div>
+            <div style="display: flex; gap: 12px; align-items: flex-start;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#157A52" stroke-width="2" style="flex:none; margin-top:2px;"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size: 15px; color: #4A443B;">Coordinates directly with your CPA</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Â§09 PRIMARY CALL-BLOCK -->
+    <section class="sec reveal" style="padding-top: 40px;">
+      <div class="ct">
+        <div style="background: #fff; border: 1px solid #DED6C9; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 4px rgba(40,30,12,.04), 0 24px 56px rgba(40,30,12,.09);">
+          <div class="r-callband">
+            <div style="padding: 44px 44px 40px;">
+              <div class="eyebrow" style="margin-bottom: 16px;">Talk to a ProAdvisor</div>
+              <h2 class="h2" style="font-size: clamp(26px, 1.4rem + 1.4vw, 33px); margin-bottom: 12px;">One call tells you exactly where your books stand.</h2>
+              <p style="font-size: 16px; line-height: 1.55; color: #4A443B; margin: 0 0 26px; max-width: 42ch;">No form, no sales script â€” a real Certified ProAdvisor who has seen files like yours.</p>
+              <a href="tel:+18777515575" data-ga="phone_click" class="btn btn-cta" style="display: inline-flex; align-items: center; gap: 12px; height: 62px; padding: 0 26px; border-radius: 14px; margin-bottom: 16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="display: flex; flex-direction: column; line-height: 1.1;"><span class="mono" style="font-size: 22px; font-weight: 500;">(877) 751-5575</span><span style="font-size: 12px; color: rgba(255,255,255,0.78);">Monâ€“Fri Â· same business day</span></span></a>
+              <div style="display: flex; flex-wrap: wrap; gap: 10px 18px;"><span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#6E6456;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.75"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z" stroke-linejoin="round"/></svg>Certified ProAdvisor</span><span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#6E6456;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.75"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9" stroke-linecap="round" stroke-linejoin="round"/></svg>No obligation</span></div>
+            </div>
+            <div style="background: #0A0F1C; padding: 44px 40px; display: flex; flex-direction: column; justify-content: center;">
+              <span class="mono" style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #7FA6A4; margin-bottom: 22px;">What happens when you call</span>
+              <div style="display: grid; gap: 20px;">
+                <div style="display: flex; gap: 14px;"><span class="mono" style="font-size: 12px; color: #46B0AC; padding-top: 2px;">01</span><div><div style="font-size: 15px; font-weight: 600; color: #fff;">You talk to a ProAdvisor</div><div style="font-size: 13px; color: #9CABA9;">A real expert, not a call centre.</div></div></div>
+                <div style="display: flex; gap: 14px;"><span class="mono" style="font-size: 12px; color: #46B0AC; padding-top: 2px;">02</span><div><div style="font-size: 15px; font-weight: 600; color: #fff;">We review your file</div><div style="font-size: 13px; color: #9CABA9;">What&rsquo;s in your QuickBooks and what it needs.</div></div></div>
+                <div style="display: flex; gap: 14px;"><span class="mono" style="font-size: 12px; color: #3DBB85; padding-top: 2px;">03</span><div><div style="font-size: 15px; font-weight: 600; color: #fff;">You get a written scope</div><div style="font-size: 13px; color: #9CABA9;">Fixed fee in 3 business days. Then you decide.</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Â§10 INTAKE FORM (secondary seam, minimal) -->
+    <section class="sec reveal" style="background: #F7F2E9; border-top: 1px solid #ECE5D8; padding-top: 80px; padding-bottom: 80px;">
+      <div class="ct" style="max-width: 760px;">
+        <div class="idx"><span class="idx__n">Â§10</span><span class="idx__t">Prefer email</span><span class="idx__rule"></span></div>
+        <h2 class="h2" style="margin-bottom: 8px;">Scope your catch-up.</h2>
+        <p class="lede" style="margin: 0 0 28px; max-width: 50ch;">Send a few details and a ProAdvisor replies the same business day. Or just <a href="tel:+18777515575" data-ga="phone_click" style="color:#0E4A50; border-bottom: 1.5px solid #C8DBDA;">call (877) 751-5575</a>.</p>
+        <form action="/api/intake" method="post" style="background: #fff; border: 1px solid #ECE5D8; border-radius: 16px; padding: 28px; box-shadow: 0 1px 2px rgba(40,30,12,.04), 0 12px 30px rgba(40,30,12,.05);">
+          <input type="hidden" name="origin" value="accounting/bookkeeping/cleanup-bookkeeping">
+          <input type="hidden" name="intent" value="money:cleanup">
+          <div style="position: absolute; left: -9999px;" aria-hidden="true"><label>Company<input type="text" name="company_hp" tabindex="-1" autocomplete="off"></label></div>
+          <div class="r-2" style="gap: 16px;">
+            <label style="display:block;"><span style="display:block; font-size:13px; font-weight:500; color:#14110C; margin-bottom:7px;">Name</span><input type="text" name="name" autocomplete="name" style="width:100%; height:46px; padding:0 13px; background:#fff; border:1px solid #DED6C9; border-radius:10px; font:inherit; font-size:14.5px; color:#14110C;"></label>
+            <label style="display:block;"><span style="display:block; font-size:13px; font-weight:500; color:#14110C; margin-bottom:7px;">Business email</span><input type="email" name="email" required autocomplete="email" placeholder="you@company.com" style="width:100%; height:46px; padding:0 13px; background:#fff; border:1px solid #DED6C9; border-radius:10px; font:inherit; font-size:14.5px; color:#14110C;"></label>
+            <label style="display:block;"><span style="display:block; font-size:13px; font-weight:500; color:#14110C; margin-bottom:7px;">Months behind</span><select name="months" style="width:100%; height:46px; padding:0 13px; background:#fff; border:1px solid #DED6C9; border-radius:10px; font:inherit; font-size:14.5px; color:#14110C;"><option>1â€“3 months</option><option>3â€“12 months</option><option>1â€“2 years</option><option>2+ years</option></select></label>
+            <label style="display:block;"><span style="display:block; font-size:13px; font-weight:500; color:#14110C; margin-bottom:7px;">QuickBooks version</span><select name="qb_version" style="width:100%; height:46px; padding:0 13px; background:#fff; border:1px solid #DED6C9; border-radius:10px; font:inherit; font-size:14.5px; color:#14110C;"><option>QuickBooks Online</option><option>QuickBooks Desktop</option><option>Not sure</option></select></label>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; margin-top: 18px; flex-wrap: wrap;"><button type="submit" class="btn btn-cta" style="display:inline-flex; align-items:center; height:48px; padding:0 22px; border:0; border-radius:10px; font:inherit; font-size:15px; font-weight:600; cursor:pointer;">Request a scoped quote</button><span style="font-size:13px; color:#6E6456;">Same business day Â· no obligation</span></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Â§11 FAQ -->
+    <section class="sec reveal" style="padding-top: 80px;">
+      <div class="ct" style="max-width: 880px;">
+        <div class="idx"><span class="idx__n">Â§11</span><span class="idx__t">Questions</span><span class="idx__rule"></span></div>
+        <h2 class="h2" style="margin-bottom: 32px;">What people ask before scoping a cleanup.</h2>
+        <div class="faq">
+          <details open><summary>Is a cleanup fixed-fee or priced by the hour?<span class="pl"></span></summary><div>Fixed fee. We scope your file first and put the price in writing before any work begins â€” never an open hourly meter.</div></details>
+          <details><summary>Do you clean up inside my own QuickBooks file?<span class="pl"></span></summary><div>Yes. We work in your existing QuickBooks Online or Desktop file. You keep ownership; we never make you migrate to work with us.</div></details>
+          <details><summary>How long does a cleanup take?<span class="pl"></span></summary><div>Most cleanups are delivered in weeks, not months. We give you a written timeline with the scope, within 3 business days of the first call.</div></details>
+          <details><summary>What do I receive when the cleanup is done?<span class="pl"></span></summary><div>Reconciled accounts, corrected financial statements, and a short written summary of what changed and why â€” CPA-ready.</div></details>
+          <details><summary>Are you affiliated with Intuit?<span class="pl"></span></summary><div>No. We are an independent firm of Certified QuickBooks ProAdvisors â€” not Intuit and not affiliated with Intuit. For Intuit billing or login, contact Intuit directly; for the work inside your file, that&rsquo;s us.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA (earned dark) -->
+    <section style="background: #0A0F1C; position: relative; overflow: hidden;">
+      <svg width="420" height="420" viewBox="0 0 64 64" aria-hidden="true" style="position:absolute; top:-72px; right:-64px; opacity:0.06; pointer-events:none;"><path d="M8 10 H38 V54 H26 V22 H8 Z" fill="#fff"/><rect x="42" y="10" width="14" height="12" fill="#fff"/></svg>
+      <div class="ct" style="position: relative; padding: 96px 32px;">
+        <div style="max-width: 760px;">
+          <div style="display: inline-flex; gap: 4px; margin-bottom: 24px;"><span style="width: 30px; height: 3px; background: #46B0AC;"></span><span style="width: 14px; height: 3px; background: #BE5240;"></span></div>
+          <h2 class="dsp" style="font-weight: 500; font-variation-settings: 'opsz' 96; font-size: clamp(32px, 1.7rem + 2.6vw, 50px); color: #fff; margin: 0 0 18px; max-width: 17ch;">Let&rsquo;s see what your file actually needs.</h2>
+          <p style="font-size: 18px; line-height: 1.5; color: rgba(245,247,251,0.72); margin: 0 0 22px; max-width: 46ch;">A Certified QuickBooks ProAdvisor, a written fixed-fee scope in 3 business days, and a clear path back to current.</p>
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; color: rgba(245,247,251,0.66); margin-bottom: 24px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3DBB85" stroke-width="2"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Accounting, cleanup, advisory â€” we match the right expert to your books.</div>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px;">
+            <a href="tel:+18777515575" data-ga="phone_click" class="btn btn-cta" style="display: inline-flex; align-items: center; gap: 11px; height: 56px; padding: 0 26px; border-radius: 13px; font-size: 16px; font-weight: 600;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>(877) 751-5575</a>
+            <a href="https://techbrot.com/file-review/" class="btn" style="display: inline-flex; align-items: center; height: 56px; padding: 0 24px; background: transparent; color: #fff; border: 1px solid rgba(245,247,251,0.32); border-radius: 13px; font-size: 16px; font-weight: 500;">Get a free file review</a>
+          </div>
+          <p style="font-size: 12.5px; line-height: 1.6; color: rgba(245,247,251,0.5); margin: 40px 0 0; max-width: 70ch; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px;">TechBrot Inc. is an independent firm and is not affiliated with Intuit Inc. QuickBooks and ProAdvisor are trademarks of Intuit Inc. We do not file taxes or represent clients before tax authorities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background: #F7F2E9; border-top: 1px solid #ECE5D8; color: #6E6456;">
+      <div class="ct" style="padding-top: 56px; padding-bottom: 36px;">
+        <div class="r-foot">
+          <div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;"><span style="display: inline-flex; width: 28px; height: 28px; align-items: center; justify-content: center; background: #0E4A50; border-radius: 7px;"><svg width="17" height="17" viewBox="0 0 64 64" fill="#FCFBF8" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span><span style="font-weight: 600; font-size: 16px; color: #14110C;">TechBrot</span></div>
+            <p style="font-size: 14px; line-height: 1.6; margin: 0 0 18px; max-width: 30ch;">Independent accounting &amp; advisory, staffed by Certified QuickBooks ProAdvisors.</p>
+            <a href="tel:+18777515575" data-ga="phone_click" class="mono" style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px; color: #14110C;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>(877) 751-5575</a>
+          </div>
+          <div><div class="col-head">Services</div><ul style="list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 14px;"><li><a href="https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/" style="color: #4A443B;">Cleanup &amp; catch-up</a></li><li><a href="https://techbrot.com/quickbooks/setup/" style="color: #4A443B;">Setup &amp; migration</a></li><li><a href="https://techbrot.com/accounting/advisory/" style="color: #4A443B;">Advisory</a></li></ul></div>
+          <div><div class="col-head">Company</div><ul style="list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 14px;"><li><a href="https://techbrot.com/find-an-accountant/" style="color: #4A443B;">Find an accountant</a></li><li><a href="https://techbrot.com/resources/" style="color: #4A443B;">Resources</a></li><li><a href="https://techbrot.com/contact/" style="color: #4A443B;">Contact</a></li></ul></div>
+          <div><div class="col-head">Office</div><p style="font-size: 14px; line-height: 1.65; margin: 0 0 10px; color: #4A443B;">651 N Broad St, Suite 201<br>Middletown, DE 19709</p><a href="mailto:info@techbrot.com" style="font-size: 14px; color: #4A443B;">info@techbrot.com</a></div>
+        </div>
+        <div style="position: relative; border-top: 1px solid #ECE5D8; margin-top: 40px; padding-top: 24px;"><span style="position: absolute; top: -2px; left: 0; display: inline-flex; gap: 4px;"><span style="width: 30px; height: 3px; background: #0E4A50;"></span><span style="width: 14px; height: 3px; background: #BE5240;"></span></span><p style="font-size: 12.5px; line-height: 1.6; color: #6E6456; margin: 0; max-width: 80ch;">TechBrot Inc. is an independent firm and is not affiliated with Intuit Inc. QuickBooks and ProAdvisor are trademarks of Intuit Inc. We do not file taxes or represent clients before tax authorities.</p></div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- mobile drawer -->
+  <div class="drawer" data-drawer>
+    <div style="display: flex; align-items: center; justify-content: space-between; height: 60px; border-bottom: 1px solid #ECE5D8;"><div style="display: flex; align-items: center; gap: 9px;"><span style="display: inline-flex; width: 26px; height: 26px; align-items: center; justify-content: center; background: #0E4A50; border-radius: 7px;"><svg width="16" height="16" viewBox="0 0 64 64" fill="#FCFBF8"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span><span style="font-weight: 600; font-size: 15px; color: #14110C;">TechBrot</span></div><button type="button" data-drawer-close aria-label="Close menu" style="background: none; border: 0; cursor: pointer; color: #14110C; padding: 8px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg></button></div>
+    <div style="padding: 8px 0 18px;">
+      <a href="https://techbrot.com/find-an-accountant/" style="display: block; padding: 16px 0; font-size: 17px; font-weight: 600; color: #14110C; border-bottom: 1px solid #F3EDE2;">Find an accountant</a>
+      <details class="acc"><summary>Accounting <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E6456" stroke-width="1.75"><path d="M5 9l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div style="padding: 14px 0 18px; display: grid; gap: 14px;"><a href="https://techbrot.com/accounting/bookkeeping/" style="font-size: 15px; color: #4A443B;">Ongoing bookkeeping</a><a href="https://techbrot.com/accounting/advisory/" style="font-size: 15px; color: #4A443B;">Advisory</a></div></details>
+      <details class="acc"><summary>QuickBooks <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E6456" stroke-width="1.75"><path d="M5 9l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div style="padding: 14px 0 18px; display: grid; gap: 14px;"><a href="https://techbrot.com/accounting/bookkeeping/cleanup-bookkeeping/" style="font-size: 15px; color: #4A443B;">Cleanup &amp; catch-up</a><a href="https://techbrot.com/quickbooks/setup/" style="font-size: 15px; color: #4A443B;">Setup &amp; migration</a></div></details>
+      <a href="https://techbrot.com/resources/" style="display: block; padding: 16px 0; font-size: 17px; font-weight: 600; color: #14110C; border-bottom: 1px solid #F3EDE2;">Resources</a>
+      <div style="display: grid; gap: 10px; margin-top: 20px;">
+        <a href="tel:+18777515575" data-ga="phone_click" class="btn btn-cta" style="display: flex; align-items: center; justify-content: center; gap: 9px; height: 52px; padding: 0 18px; border-radius: 11px; font-size: 15px; font-weight: 600;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>Call (877) 751-5575</a>
+        <a href="https://techbrot.com/contact/" class="btn btn-ghost" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 18px; border-radius: 11px; font-size: 14.5px; font-weight: 500;">Book the discovery call</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- sticky call bar -->
+  <div class="mp-callbar" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; grid-template-columns: 1fr; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(252,251,248,0.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid #DED6C9;">
+    <a href="tel:+18777515575" data-ga="phone_click" class="btn btn-cta" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 50px; border-radius: 11px; font-size: 16px; font-weight: 600;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>Speak to a ProAdvisor Â· (877) 751-5575</a>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
+

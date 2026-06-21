@@ -52,7 +52,7 @@ module.exports = {
             breadcrumb: { "@id": `${url}#breadcrumb` },
             speakable: {
               "@type": "SpeakableSpecification",
-              cssSelector: ["#home-tldr-body", "#home-in-brief-text"],
+              cssSelector: [".speakable"],
             },
           },
           {
