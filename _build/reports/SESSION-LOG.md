@@ -1023,3 +1023,19 @@ OPEN/NEXT: read probe bshogo1oe + run battery on _site-probe -> commit. NOTE: al
 - DEV SERVER REFRESH: the persistent :8080 dev server had gone stale (eleventy --serve watch stopped picking up data/partial changes after many isolated _site-probe builds), so it served old content + the battery hung reading mid-state _site. Killed it BY PID (node on :8080, never by image -- kill_probe confirmed personal-chrome-untouched=14) + restarted clean. :8080 now HTTP 200 with current _site (CA urgent disclosure=3, home badge-strip=6). Founder view: http://192.168.1.7:8080/.
 COUNT: D7 ruling (a) committed + battery GREEN; dev server refreshed (current); chrome never touched.
 OPEN: founder scope ruling -- extend the disclosure banner to the *-tax-help distress/triage pages (sales-tax-help/franchise/corporate/replacement) too, or keep to urgent-bookkeeping? Then: founder sign-offs + cutover gate.
+
+---
+
+## Turn -- 2026-06-21 -- D7 ruling (a) EXTENDED to the 7 tax-help distress pages
+Founder: extend the disclosure banner to the tax-help pages.
+- SCOPE (verified via body-include map): the tax-help pages using state-service-body (lacking the banner) = CA sales-tax-help; FL corporate-tax-help + sales-tax-help; IL replacement-tax-help + sales-tax-help; TX franchise-tax-help + sales-tax-help = 7 pages. (business-tax-problems + state-tax-notice-help already use state-triage-body -> already had the banner.) NY untouched.
+- IMPLEMENTATION: inserted a tax-help-tuned `disclosure` field (UTF-8-safe via System.IO.File, after the slug line) into the 7 .11tydata.js: "Independent, and clear about the limits. ...not a tax authority, not Intuit, and not a CPA, EA, or attorney. We reconstruct and reconcile the books a notice or filing depends on...; your CPA or EA files and represents you before the agency. We never trade accuracy for speed." The conditional banner template (state-service-body) renders it.
+- VERIFIED (_site-probe build exit 0 = valid JS): all 7 pages disclosure=3 (banner renders ATF); D5 service (quickbooks-accountant) disclosure=0 (scoping intact); text integrity confirmed ("not a tax authority" present, no mojibake).
+- BATTERY on _site-probe running bj7mn255d; probe queued after (avoid _site-probe rebuild collision).
+Files: 7 tax-help .11tydata.js (CA/FL/IL/TX).
+COUNT: D7 banner extended to 7 tax-help pages (banner renders, scoped, NY untouched, build valid); battery + probe verifying.
+OPEN/NEXT: battery bj7mn255d -> probe 7 tax-help -> commit. Then D7 fully bannered (urgent + tax-help); founder sign-offs + cutover gate remain.
+
+(tax-help cont.) BATTERY bj7mn255d GREEN on _site-probe: content-equity intact + manifest 359 after the 7 additive tax-help banners. PROBE bm7b7zze4 (7 tax-help pages) running. Commit pending probe green.
+
+(tax-help cont.) Probe bm7b7zze4 still running (building _site-probe + probing 7 pages); will commit on PROBE GREEN per founder instruction. No src change this check.

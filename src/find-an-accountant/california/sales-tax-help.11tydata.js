@@ -20,6 +20,7 @@ module.exports = {
   layout: "layouts/t-bofu.njk",
   permalink: "/find-an-accountant/california/sales-tax-help/",
   slug: "ca-svc-salestax",
+  disclosure: "<strong>Independent, and clear about the limits.</strong> TechBrot is an independent Certified QuickBooks ProAdvisor and bookkeeping firm &mdash; not a tax authority, not Intuit, and not a CPA, EA, or attorney. We reconstruct and reconcile the books a notice or filing depends on, fast and accurately; your CPA or EA files and represents you before the agency. We never trade accuracy for speed.",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
