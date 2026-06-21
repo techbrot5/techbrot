@@ -917,3 +917,18 @@ Founder: go -- D4/D5/D6 location children.
 - battery GREEN sitewide; freeze intact (verified-only; generated children already correctly built on the shared template). NY hand-authored cities/industries/services NOT touched.
 COUNT: D4/D5/D6 = 9/9 generated children a11y 0 / overflow 0 + 3 REPs render design; NY untouched; isolation proven; D4/D5/D6 VERIFIED (awaiting sign-off).
 OPEN/NEXT: D7 location triage (honest-triage, 17 pages, REP /find-an-accountant/new-york/urgent-bookkeeping/ -- but NY; use a generated state's urgent/triage page). Then B1-B5 hubs.
+
+---
+
+## Turn -- 2026-06-21 -- D7 location triage (generated; NY untouched) -- honest-triage FLAG + probe running
+Founder: go -- D7 triage.
+- D7 = honest-triage (urgent/help pages), 17 pages. NY hand-authored UNTOUCHED; verifying the GENERATED set (CA/FL/IL/TX urgent-bookkeeping + *-help). REP = /find-an-accountant/california/urgent-bookkeeping/.
+- VISUAL AUDIT (CA urgent REP): renders the full petrol design (hero+figure, in-brief, ai-summary quick-5, deadline-ready buyer cards, what-we-do/dont checks, process, FAQ, byline, dark final-CTA). No broken/unstyled sections.
+- HONEST-TRIAGE COMPLIANCE (the hard rule): generated triage pages DISCLOSE INDEPENDENCE ABOVE THE FOLD -- hero trust chip "Independent &middot; not Intuit" (ATF) + in-brief honest service description + footer trademark notice; 13 independence/not-affiliated mentions; ZERO forbidden "official" claims (no "official QuickBooks support" etc.). COMPLIANT.
+- ⚠ FLAG (NY-vs-generated, honesty-sensitive -- founder ruling): NY (hand-authored) ADDITIONALLY carries a prominent bordered .disclosure banner; the generated triage pages do NOT have that bordered banner -- they rely on the hero "Independent · not Intuit" chip + in-brief. NOT a compliance gap (independence IS disclosed ATF), but a prominence/consistency difference. RULING NEEDED: add the bordered .disclosure banner to the generated triage body template (R8, uniform, freeze-safe additive) for max prominence + NY parity, OR accept the hero-chip + in-brief disclosure as sufficient? I will NOT change the generated triage markup until you rule (honesty-sensitive).
+- PROBE (bg bj5otb4fl, 5 D7 sample: CA/TX/IL urgent + CA state-tax-notice-help + FL sales-tax-help): running.
+COUNT: D7 generated REP renders design + honest-triage COMPLIANT (independence ATF, no "official"); disclosure-banner prominence flagged for ruling; probe running.
+OPEN/NEXT: read probe bj5otb4fl -> if green, D7 technically verified (pending the disclosure-banner ruling) -> then B1-B5 hubs.
+
+(D7 cont.) PROBE bj5otb4fl GREEN: 5/5 D7 sample (CA/TX/IL urgent-bookkeeping + CA state-tax-notice-help + FL sales-tax-help) a11y 0 / overflow 0. Isolation held (:8080 HTTP 200, 13 personal chrome untouched). D7 generated set = TECHNICALLY VERIFIED green + honest-triage COMPLIANT; the ONLY open item is the disclosure-banner prominence ruling (a: add bordered .disclosure to generated triage template / b: accept hero-chip+in-brief). NY hand-authored triage untouched.
+COUNT(D7): 5/5 sample green; honest-triage compliant; 1 founder ruling pending (disclosure banner). D-family (D1/D2/D3/D4/D5/D6/D7) ALL verified green.
