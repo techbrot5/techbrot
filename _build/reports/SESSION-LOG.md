@@ -945,3 +945,14 @@ OPEN/NEXT: read probe bn3gempby -> if green, B1-B5 verified -> C1-C2 comparison.
 
 (B cont.) PROBE bn3gempby GREEN: 9/9 across B1-B5 -- /quickbooks/ + /accounting/ (B1), /quickbooks/online/features/ (B2), /tools/ + /glossary/ + /blog/ (B3), CA industries + TX cities (B4 generated), /find-an-accountant/ (B5) -- ALL a11y 0 / overflow 0. Isolation held (:8080 HTTP 200). B4 generated sub-hub renders design; B1/B2/B3/B5 audited earlier. NY sub-hubs untouched. B1-B5 VERIFIED green.
 COUNT(B): 9/9 sample green; B-family verified. Fan-out so far: D1-D7 + B1-B5 all green.
+
+---
+
+## Turn -- 2026-06-21 -- C1-C2 comparison -- REP audits + probe running
+Founder: go (C-family).
+- C1 comparison-hub (/vs/) + the new /quickbooks/compare/ hub; C2 comparisons (role: bookkeeper-vs-accountant, cpa-vs-ea; competitor: techbrot-vs-pilot/xendoo; QB software: quickbooks-vs-xero, online-vs-desktop). C1 (/vs/) + C2 (bookkeeper-vs-accountant) screenshot-audited earlier; this turn audited a QB-software comparison (quickbooks-vs-xero) -- renders the full petrol design incl. the table-layout:fixed vs-table. No broken sections.
+- PROBE (bg bkmczcica, 8 varied across C1/C2). Isolation via render_shot -> :8080 + kill_probe.
+COUNT: C QB-software REP renders design; C probe running; fan-out D1-D7 + B1-B5 green.
+OPEN/NEXT: read probe bkmczcica -> if green, C1-C2 verified -> E1-E6 authority. D7 disclosure ruling pending.
+
+(C cont.) PROBE bkmczcica GREEN: 8/8 across C1/C2 -- /vs/ + /quickbooks/compare/ (C1); bookkeeper-vs-accountant + cpa-vs-ea (C2 role); techbrot-vs-pilot + techbrot-vs-xendoo (C2 competitor); quickbooks-vs-xero + online-vs-desktop (C2 QB-software) -- ALL a11y 0 / overflow 0. C1-C2 VERIFIED green. Fan-out: D1-D7 + B1-B5 + C1-C2 all green.
