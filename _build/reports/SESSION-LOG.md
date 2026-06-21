@@ -768,3 +768,16 @@ Files: src/assets/css/05-components.css, src/assets/css/06-content.css.
 - VERIFICATION: probe RE-RUNNING (bg bvah95u2a) to confirm a11y 0 + overflow 0 sitewide. Battery GREEN expected (token-only + layout CSS, no hex).
 COUNT: src changed = 2 (05,06 css); fixes = 1 a11y + vs-table(table-layout:fixed) + motif-hide + calc; probe re-running; step 0 green pending probe.
 OPEN/NEXT: read probe bvah95u2a -> if GREEN, step 0 DONE (flip-gate #6 clear) -> commit + start family fan-out D1->D3->D2 (NY untouched) + wire badge strip home/about/pricing/money.
+
+---
+
+## Turn -- 2026-06-21 -- STEP 0 overflow/a11y round 3 (input cap + list/card hardening) -> re-run
+Founder: fix the remaining a11y + overflow, re-run to green. Read probe bvah95u2a JSON: a11y 1 (operator-panel__label), overflow 5 pages.
+- a11y FIXED: .operator-panel__label --text-faint -> --text-secondary (last text-contrast element; .flow__arrow + .mark-no keep --text-faint = decorative, not text).
+- overflow new-york/illinois ROOT CAUSE: a 505px form input (not responsive) pushed the page wide (buyer-card/contact-form-wrap @374 were consequences). FIX: global input,select,textarea { max-width:100%; box-sizing:border-box } in 02-base.
+- overflow techbrot-vs-bench: .process-step__heading -> overflow-wrap:anywhere. 3371 (error list): .fix-steps li + children min-width:0 + overflow-wrap. buyer-card min-width:0 + overflow-wrap.
+- overflow 12029 (443px CONSTANT, offenders=0): NOT a DOM element my querySelectorAll scan can see -> a pseudo-element (::before/::after) or negative-positioned decoration. The motif is already display:none <=640 (confirmed in bundle). If it persists after this round I will enhance the probe (catch left<0 + maxRight + pseudo) or isolate the specific ::before.
+Files: src/assets/css/02-base.css, 05-components.css, 06-content.css. Commit eff2bc6.
+- VERIFICATION: probe RE-RUNNING (bg b2czwgphm). Battery GREEN expected.
+COUNT: src changed = 3; a11y now 0 expected; overflow target = clear all but the 12029 pseudo (under investigation); step 0 green pending probe.
+OPEN/NEXT: read probe b2czwgphm -> if only 12029 pseudo remains, isolate the ::before/decoration source; else GREEN -> step 0 done -> fan-out.

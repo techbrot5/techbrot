@@ -45,6 +45,10 @@ for (const path of paths) {
     row.violations = axeRes.violations.map((v) => ({
       id: v.id, impact: v.impact, count: v.nodes.length, help: v.help,
       sample: (v.nodes[0] && v.nodes[0].target && v.nodes[0].target.join(" ")) || "",
+      nodes: v.nodes.slice(0, 12).map((n) => ({
+        sel: (n.target && n.target.join(" ")) || "",
+        data: (n.any && n.any[0] && n.any[0].data) || null,
+      })),
     }));
 
     // ── overflow (per width) ──
@@ -55,17 +59,25 @@ for (const path of paths) {
         const docW = document.documentElement.scrollWidth;
         if (docW <= vw + 1) return null;
         const offenders = [];
+        let maxR = { right: 0, info: "" };
         for (const el of document.body.querySelectorAll("*")) {
           const r = el.getBoundingClientRect();
-          if (r.width > 0 && r.right > vw + 1) {
-            offenders.push({
-              tag: el.tagName.toLowerCase(),
-              cls: String(el.className || "").slice(0, 70),
-              right: Math.round(r.right),
-            });
+          if (r.width <= 0) continue;
+          const cls = String(el.className || "").slice(0, 70);
+          const info = el.tagName.toLowerCase() + (cls ? "." + cls : "");
+          if (r.right > vw + 1 || r.left < -1) {
+            offenders.push({ tag: el.tagName.toLowerCase(), cls, right: Math.round(r.right), left: Math.round(r.left) });
           }
+          for (const pe of ["::before", "::after"]) {
+            const cs = getComputedStyle(el, pe);
+            if (cs && cs.content && cs.content !== "none") {
+              const pw = parseFloat(cs.width) || 0;
+              if (pw > vw) offenders.push({ tag: el.tagName.toLowerCase() + pe, cls, right: Math.round(pw), left: 0 });
+            }
+          }
+          if (r.right > maxR.right) maxR = { right: Math.round(r.right), info };
         }
-        return { docW, offenders: offenders.slice(0, 8) };
+        return { docW, offenders: offenders.slice(0, 12), maxR };
       }, w);
       if (o) row.overflow.push({ width: w, ...o });
     }
