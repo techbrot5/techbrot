@@ -956,3 +956,14 @@ COUNT: C QB-software REP renders design; C probe running; fan-out D1-D7 + B1-B5 
 OPEN/NEXT: read probe bkmczcica -> if green, C1-C2 verified -> E1-E6 authority. D7 disclosure ruling pending.
 
 (C cont.) PROBE bkmczcica GREEN: 8/8 across C1/C2 -- /vs/ + /quickbooks/compare/ (C1); bookkeeper-vs-accountant + cpa-vs-ea (C2 role); techbrot-vs-pilot + techbrot-vs-xendoo (C2 competitor); quickbooks-vs-xero + online-vs-desktop (C2 QB-software) -- ALL a11y 0 / overflow 0. C1-C2 VERIFIED green. Fan-out: D1-D7 + B1-B5 + C1-C2 all green.
+
+---
+
+## Turn -- 2026-06-21 -- E1-E6 authority -- REP audits + probe running
+Founder: go (E-family).
+- E1 guide (faq), E2 glossary (bank-reconciliation + 1099-nec + 1099-vs-w2), E3 framework (setup-protocol + compounding-reconciliation-drift), E4 blog (w2-vs-1099 + 5-signs-cleanup), E5 tool (bookkeeping-cost-calculator + 1099-deadline-calculator), E6 research. All 6 REPs screenshot-audited earlier (render well). This turn audited a 2nd calc tool (1099-deadline-calculator) -- calc island (form + dark petrol result showing the deadline) renders correctly.
+- PROBE (bg bzpanrmst, 11 across E1-E6). Isolation render_shot -> :8080 + kill_probe.
+COUNT: E 2nd calc renders; E probe running; fan-out D1-D7 + B1-B5 + C1-C2 green.
+OPEN/NEXT: read probe bzpanrmst -> if green, E1-E6 verified -> F1-F2 conversion. D7 disclosure ruling pending.
+
+(E cont.) PROBE bzpanrmst GREEN: 11/11 across E1-E6 -- faq guide (E1); bank-reconciliation + 1099-nec + 1099-vs-w2 (E2); setup-protocol + compounding-reconciliation-drift (E3); w2-vs-1099 + 5-signs-cleanup (E4); bookkeeping-cost-calculator + 1099-deadline-calculator (E5); research (E6) -- ALL a11y 0 / overflow 0. E1-E6 VERIFIED green. Fan-out: D1-D7 + B1-B5 + C1-C2 + E1-E6 all green.
