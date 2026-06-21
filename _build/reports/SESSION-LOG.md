@@ -648,3 +648,21 @@ live D1 template (DesignSync) + read its full `<style>` for exact values.
   artwork (in DesignSync `assets/` — can import) · OG images (build template) · live axe/overflow (founder machine — `--screenshot` works now but axe
   needs JS-exec; `--dump-dom` still 0-length) · CSS net-back-under-target (already under at 62KB).
 **COUNT:** flip-gate recrawl done · 16 orphan states 301'd · _redirects 22 rules · build GREEN.
+
+---
+
+## Turn — 2026-06-21 · FLIP-GATE: Intuit badges wired + OG images shipped (both verified by screenshot)
+**Founder:** go — badges then OG images.
+- ✅ **Intuit badges** — `partials/intuit-badges.njk` renders `src/_data/badges.json` (only artwork present → no broken imgs). Wired into `/trust/`
+  under a "Verifiable Intuit credentials" row; the **2 real badges (ProAdvisor Gold + Payroll) render** (screenshot-verified). `.intuit-badges` CSS.
+  ⚠ PENDING (founder artwork — exceeded the DesignSync get_file cap): QBO L1, QBO L2, Bookkeeping → drop the PNGs into `src/assets/img/brand/badges/`
+  + add a `badges.json` entry to complete the row. (Bonus: also screenshot-verified the **404 page** renders perfectly — util-hero family ✓.)
+- ✅ **OG images** — base.njk had **no `og:image`**. Built a branded **1200×630 OG card** (`src/dev/og-card.njk`, dark-petrol field + petrol/clay
+  gap-mark + faint Tie-Out corner + Fraunces headline + TechBrot logo + techbrot.com), screenshot via headless-Chrome → **`src/assets/og/default.png`**.
+  Added `og:image`/`:width`/`:height`/`:alt` + `twitter:card`/`title`/`description`/`image` to base.njk (per-page override via `ogImage`; the page-specific
+  `og:title`/`og:description` were already present). Added `src/assets/og` to the eleventy passthrough. Prod-safe: the dev og-card uses the dev dir-data
+  (permalink:false in prod). Screenshot-verified the OG renders correctly.
+- **FULL BATTERY GREEN** after both (css-drift, css-bytes 62,242B/100KB, manifest 359 classes, equity, fidelity). FREEZE INTACT.
+- **Flip-gate status:** ✅ #3 recrawl · ✅ Intuit badges (2/5 wired, 3 pending founder artwork) · ✅ OG images · ✅ CSS under target (62KB).
+  REMAINING (need founder resources): form POST handler (Cloudflare) · live axe/overflow (founder machine). Plus final sign-off.
+**COUNT:** badges wired (2/5, 3 pending artwork) · OG image shipped · battery GREEN · _site/assets/og/default.png 54KB.
