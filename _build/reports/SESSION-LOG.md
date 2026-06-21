@@ -724,3 +724,24 @@ Files: src/assets/js/tb-forms.js.
 VERIFICATION: battery GREEN after step-0 CSS (css-drift, css-bytes 62653B/102400B, manifest 359). Form endpoint 200/ok=true. Axe/overflow probe RE-RUNNING (bg b4ccsr4pi) to confirm step-0 GREEN sitewide -- result reported next turn.
 COUNT: src files changed = 4 (05-components.css, 06-content.css, badges.json, tb-forms.js) + 3 badge renames; battery GREEN; form endpoint confirmed live (200/ok); pages added = 0; freeze intact (no URL/copy/heading/FAQ/schema touched).
 OPEN/NEXT: (1) read probe result -> confirm axe/overflow GREEN (clears flip-gate #6); (2) wire badge strip onto home/about/pricing/money; (3) then begin family fan-out D1(reconfirm)->D3->D2... NY hand-authored untouched.
+
+---
+
+## Turn -- 2026-06-21 -- STEP 0 probe re-run: INTERIM (big improvement, not yet green) -- diagnosing remainder
+Founder: report the probe result when done. Probe b4ccsr4pi still writing (27/35 pages at read); reporting interim + will diagnose+fix the remainder on completion.
+- a11y: 64 serious -> ~7 remaining (most pages 0; 1 serious left on /trust/, cleanup-bookkeeping, /find-an-accountant/new-york(/industries,/industries/nonprofit), /find-an-accountant/illinois(/cities/champaign)). A residual contrast element step 0 did not catch.
+- overflow: still ~12 pages (/, /quickbooks/which-plan-is-right/, /about/, /trust/, /partners/, monthly-bookkeeping, industries/nonprofit, error-codes/12029, error-codes/3371, vs/techbrot-vs-bench, new-york, illinois). link-wrap/vs-scroll fixes covered some, not all -- residual overflow source(s) to root-cause from the JSON.
+- NEXT: read full probe + axe-overflow-report.json -> identify the residual contrast element + overflow root cause(s) -> fix at 05/06/layout source (R8) -> re-run to GREEN before family fan-out.
+- No src changes this turn (read-only diagnosis). Battery still GREEN from prior commit 8829bbc. Freeze intact.
+COUNT: src changed = 0; probe interim a11y ~7 serious (from 64), overflow ~12 pages; step 0 ~85% cleared; family fan-out still gated on probe-green.
+
+---
+
+## Turn -- 2026-06-21 -- STEP 0 residual fixes (probe-diagnosed) -> re-running to confirm GREEN
+Founder: report probe result when done. Probe b4ccsr4pi completed: a11y 8 serious / overflow 13 pages. Root-caused from axe-overflow-report.json + fixed at 05/06 source (R8):
+- a11y (3 distinct elements, 8 pages): .cleanup-timeline__cap-label (--text-faint->--text-secondary), .legal-doc__meta dt (--text-faint->--text-secondary), .final-cta__disclaimer dark rule extended to .section--tier-hub.section--cta-band (was only --dark; tier-hub dark bands left the disclaimer dark-on-dark).
+- overflow (real sources): .vs-table NOT always wrapped in .vs-scroll (e.g. home) -> added @media(max-width:640px){.vs-table{display:block;overflow-x:auto;max-width:100%}} so any vs-table scrolls on phones, page never does. .process-step/.process-step__body -> min-width:0 + overflow-wrap (flex/grid shrink). .calc__field/.calc__form/inputs -> min-width:0 + input width:100%+box-sizing. .cta-band__motif = clipped by .section--cta-band overflow:hidden (probe false-positive; expect it to clear once co-offenders fixed).
+Files: src/assets/css/05-components.css, src/assets/css/06-content.css.
+- VERIFICATION: probe RE-RUNNING (bg bkqzhwq9p) to confirm a11y 0 + overflow 0. Battery still GREEN (token-only edits, no hex). Freeze intact.
+COUNT: src changed = 2 (05,06 css); a11y fixes = 3 elements; overflow fixes = vs-table+process-step+calc; probe re-running; family fan-out still gated on probe-GREEN.
+OPEN/NEXT: read probe bkqzhwq9p -> if GREEN, step 0 done (clears flip-gate #6) + commit + start fan-out D1->D3->D2 (NY untouched); also wire badge strip onto home/about/pricing/money.
