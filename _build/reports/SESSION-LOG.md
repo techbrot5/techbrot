@@ -967,3 +967,14 @@ COUNT: E 2nd calc renders; E probe running; fan-out D1-D7 + B1-B5 + C1-C2 green.
 OPEN/NEXT: read probe bzpanrmst -> if green, E1-E6 verified -> F1-F2 conversion. D7 disclosure ruling pending.
 
 (E cont.) PROBE bzpanrmst GREEN: 11/11 across E1-E6 -- faq guide (E1); bank-reconciliation + 1099-nec + 1099-vs-w2 (E2); setup-protocol + compounding-reconciliation-drift (E3); w2-vs-1099 + 5-signs-cleanup (E4); bookkeeping-cost-calculator + 1099-deadline-calculator (E5); research (E6) -- ALL a11y 0 / overflow 0. E1-E6 VERIFIED green. Fan-out: D1-D7 + B1-B5 + C1-C2 + E1-E6 all green.
+
+---
+
+## Turn -- 2026-06-21 -- F1-F2 conversion -- REP audits + probe running
+Founder: go (F-family).
+- F1 form endpoints: /contact/ (audited earlier) + /quickbooks/file-review/ (audited this turn -- minimal chrome, hero, full intake form fields/radios/selects/consent/submit, checks, FAQ -- renders correctly; forms wired to live Apps Script + lead_source/ai_tool capture). F2 pricing: /pricing/ (REP, audited earlier, now with badge strip) + /pricing/bookkeeping/ + /pricing/cfo/ + generated state pricing (CA/IL).
+- PROBE (bg b4v7e15s6, 7 across F1/F2). Isolation render_shot -> :8080 + kill_probe.
+COUNT: F1 file-review renders + form present; F probe running; fan-out D1-D7 + B1-B5 + C1-C2 + E1-E6 green.
+OPEN/NEXT: read probe b4v7e15s6 -> if green, F1-F2 verified -> G2 trust -> A1 home LAST. D7 disclosure ruling pending.
+
+(F cont.) PROBE b4v7e15s6 GREEN: 7/7 across F1/F2 -- /contact/ + /quickbooks/file-review/ (F1 forms); /pricing/ + /pricing/bookkeeping/ + /pricing/cfo/ + CA/IL state pricing (F2) -- ALL a11y 0 / overflow 0. F1-F2 VERIFIED green. Fan-out: D1-D7 + B1-B5 + C1-C2 + E1-E6 + F1-F2 all green. Remaining: G2 trust + A1 home (last). G1 legal = original signed-off proof.
