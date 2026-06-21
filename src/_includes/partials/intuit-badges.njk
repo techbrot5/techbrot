@@ -1,0 +1,10 @@
+{#- Real Intuit certification badges (no stand-ins). Renders src/_data/badges.json →
+    badges.intuit — only the artwork actually present in src/assets/img/brand/badges/.
+    Pending (founder drops artwork + adds a badges.json entry): QBO L1, QBO L2, Bookkeeping. -#}
+{%- if badges.intuit and badges.intuit.length %}
+<ul class="intuit-badges" aria-label="Intuit certifications">
+  {%- for b in badges.intuit %}
+  <li><img class="intuit-badges__img" src="/assets/img/brand/badges/{{ b.file }}" alt="{{ b.alt }}" width="100" height="100" loading="lazy" decoding="async"></li>
+  {%- endfor %}
+</ul>
+{%- endif %}
