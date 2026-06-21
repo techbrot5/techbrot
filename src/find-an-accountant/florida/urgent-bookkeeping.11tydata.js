@@ -20,6 +20,7 @@ module.exports = {
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
+  disclosure: "<strong>Independent &mdash; and honest about the limits.</strong> TechBrot is an independent Certified QuickBooks ProAdvisor firm, not Intuit and not a tax authority, CPA, or attorney. On a deadline we bring your books current fast and accurately; your CPA or EA files the returns and represents you. We never trade accuracy for speed.",
   heroFigure: "taccount",
   title: "Florida Urgent & Fast-Turnaround Bookkeeping · TechBrot",
   description: "Urgent bookkeeping for Florida businesses on a deadline — DOR filing due, loan or sale pending, sales-tax period closing. Fast, reconciled, CPA-ready. All 67 counties. Call (877) 751-5575.",

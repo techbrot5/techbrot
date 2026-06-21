@@ -15,6 +15,7 @@ Checks:
  6. CSS byte gate: bundle source ≤ 55KB.
 """
 import json
+import os
 import re
 import sys
 from html.parser import HTMLParser
@@ -29,7 +30,9 @@ except (AttributeError, ValueError):
     pass
 
 ROOT = Path(__file__).resolve().parents[2]
-SITE = ROOT / "_site"
+# Honor TB_OUTDIR (e.g. _site-probe) so the battery can check an isolated build without
+# reading the founder's live _site / :8080 dev-server output (which may be mid-rebuild).
+SITE = ROOT / (os.environ.get("TB_OUTDIR") or "_site")
 FAILURES = []
 
 

@@ -10,6 +10,20 @@
     local hook); the mad-libs test must FAIL. HONESTY: real facts only, tax specifics
     deferred to the authority + CPA/EA; founder-name-zero; independent, not Intuit. -#}
 
+{# ── DISCLOSURE BANNER · ABOVE THE FOLD (Sheet-7 honest-triage). Rendered ONLY when the page
+      supplies `disclosure` (the deadline/tax-authority triage pages: urgent-bookkeeping, *-tax-help);
+      regular D5 service children omit it. Matches the founder-approved state-triage-body banner. ── #}
+{%- if disclosure %}
+<section class="section section--compact" id="{{ slug }}-disclosure">
+  <div class="container container--narrow">
+    <div class="disclosure disclosure--warn">
+      <svg class="disclosure__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A4660A" stroke-width="1.75" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.3" stroke-linecap="round"/></svg>
+      <div class="disclosure__body">{{ disclosure | safe }}</div>
+    </div>
+  </div>
+</section>
+{%- endif %}
+
 {# ── SUMMARY ── #}
 <section class="section section--compact" id="{{ slug }}-summary-sec">
   <div class="container container--narrow">

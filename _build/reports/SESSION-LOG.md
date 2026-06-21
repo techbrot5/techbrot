@@ -1003,3 +1003,18 @@ Founder: go (A1 home, last).
 - REMAINING (not family fan-out): (1) D7 disclosure-banner ruling [a: add bordered .disclosure to generated triage / b: accept hero-chip+in-brief]; (2) founder family sign-offs; (3) flip-gate residue (3 Intuit badge PNGs already in; live axe done; form live; recrawl done; OG done) -- effectively the founder's final sign-off + cutover.
 COUNT: A1 home green; 26/26 families verified green (axe 0 / overflow 0 / battery GREEN / design rendered); freeze intact; NY untouched. FAN-OUT DONE.
 OPEN/NEXT: founder sign-off on the fan-out + the D7 disclosure ruling -> then cutover gate (CSS trim/budget lower, baseline-vs-prod final recrawl, founder go-live).
+
+---
+
+## Turn -- 2026-06-21 -- D7 RULING (a): bordered disclosure banner added to generated urgent-bookkeeping
+Founder ruling: (a) add the bordered .disclosure banner to the generated triage template.
+- IMPLEMENTATION (R8, one source + scoped): added a CONDITIONAL .disclosure--warn banner ABOVE THE FOLD to partials/state-service-body.njk -- rendered ONLY when the page supplies a `disclosure` field (so regular D5 service children are untouched). Matches the founder-approved state-triage-body banner (amber, warning icon).
+- DATA: added the `disclosure` field (honest-triage text: "Independent -- and honest about the limits. ...not Intuit and not a tax authority, CPA, or attorney... your CPA or EA files the returns and represents you. We never trade accuracy for speed.") to the 4 GENERATED urgent-bookkeeping .11tydata.js (CA/FL/IL/TX). NY hand-authored UNTOUCHED.
+- VERIFIED (isolated _site-probe build): CA urgent disclosure=3 (banner renders); CA bookkeeping-services (D5) disclosure=0 (correctly NOT rendered -- conditional scoping correct). Screenshot confirms the bordered amber banner ATF after the hero/in-brief.
+- TOOLING: dev-server _site was stale (didn't rebuild on the data/partial change) + the battery hung reading it -> made run_battery.py honor TB_OUTDIR (SITE = TB_OUTDIR or _site), so the battery can check _site-probe without touching the founder's _site/:8080.
+- PROBE (bg bshogo1oe): 4 urgent + 1 D5 service. Battery on _site-probe queued after.
+Files: src/_includes/partials/state-service-body.njk, src/find-an-accountant/{california,florida,illinois,texas}/urgent-bookkeeping.11tydata.js, _build/battery/run_battery.py.
+COUNT: D7 ruling (a) implemented on 4 generated urgent pages (banner ATF, scoped, NY untouched); verifying probe + battery.
+OPEN/NEXT: read probe bshogo1oe + run battery on _site-probe -> commit. NOTE: also confirm whether to extend the banner to the *-tax-help triage pages (sales-tax-help/franchise/corporate/replacement) -- they also use state-service-body + are distress/triage; founder confirm scope.
+
+(D7 ruling-a cont.) PROBE bshogo1oe GREEN: 4 urgent (with new banner) + CA bookkeeping-services (D5, no banner) -- ALL a11y 0 / overflow 0 (banner does not break a11y/overflow). Battery on _site-probe (TB_OUTDIR-aware) running bhlnsd8ne to confirm content-equity intact (banner is additive, no heading/FAQ/schema removed). Commit pending battery green.
