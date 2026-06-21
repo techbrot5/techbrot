@@ -781,3 +781,16 @@ Files: src/assets/css/02-base.css, 05-components.css, 06-content.css. Commit eff
 - VERIFICATION: probe RE-RUNNING (bg b2czwgphm). Battery GREEN expected.
 COUNT: src changed = 3; a11y now 0 expected; overflow target = clear all but the 12029 pseudo (under investigation); step 0 green pending probe.
 OPEN/NEXT: read probe b2czwgphm -> if only 12029 pseudo remains, isolate the ::before/decoration source; else GREEN -> step 0 done -> fan-out.
+
+---
+
+## Turn -- 2026-06-21 -- STEP 0 round 4: call-block__sub a11y + PROBE ENHANCED (stop the whack-a-mole)
+Founder: fix remaining a11y + overflow, re-run to green. Read probe b2czwgphm: a11y 1 (call-block__sub), overflow 4 (12029, techbrot-vs-bench, new-york, illinois).
+- a11y ROOT: .call-block__sub was rgba(255,255,255,0.78) inside the CLAY call CTA -> blends to ~3.5:1, fails. -> color: var(--white) (pure white on clay = 4.77:1, passes). (The 1-per-round a11y was my probe storing only the FIRST node target; cleanup-bookkeeping had several.)
+- PROBE ENHANCED to end the guessing: now stores ALL a11y node targets + their axe fg/bg/ratio data; overflow now catches left<-1 (negative-position) + pseudo-element ::before/::after widths + reports the max-right element. Next run pinpoints 12029 (443 const, offenders=0 = pseudo) + new-york/illinois (374, 14px) + techbrot (371) exactly.
+Files: src/assets/css/05-components.css (call-block__sub), _build/probe/axe-overflow.mjs (diagnostics).
+- VERIFICATION: enhanced probe RE-RUNNING. Battery GREEN (rgba->token, no hex added).
+COUNT: src changed = 1 (05 css) + probe tooling; a11y target 0; overflow 4 small pages under precise diagnosis; step 0 green pending.
+OPEN/NEXT: read enhanced probe -> fix the exact pseudo/negative-position + 14px sources -> re-run -> GREEN -> step 0 done -> fan-out.
+
+(correction, same round-4 turn): first probe launch used Start-Job which dies with the PS session + sends no completion signal; killed lingering processes (this also stopped the LAN dev server b5ghkfuxf -- restart on demand) and re-launched the enhanced probe properly as background task bo656l3bb (will notify on completion). No src change in this correction.
