@@ -104,12 +104,18 @@ h1, h2, h3 { font-weight: 500; text-wrap: balance; }
 .tldr p { font-size: 16.5px; line-height: 1.65; color: var(--color-ink-soft); margin: 0; }
 .tldr__src { font-size: 12.5px !important; line-height: 1.6 !important; color: var(--color-ink-faint) !important; margin-top: 12px !important; }
 
-/* ---------- AI-summary (citation surface — petrol left-rule) ---------- */
+/* ---------- AI-summary, by CONTENT SHAPE (handoff rule) ----------
+   single-verdict paragraph → petrol left-rule (.ai-verdict);
+   multi-Q&A list → ruled rows (.ai-qa), per State Pillar / Money templates. */
 .ai-verdict { border-left: 3px solid var(--color-accent); padding: 4px 0 4px 20px; }
 .ai-verdict__lead { font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 48; font-weight: 500; font-size: 21px; line-height: 1.4; letter-spacing: -0.012em; color: var(--color-ink); margin: 0; }
-.ai-qa { display: grid; gap: 18px; }
-.ai-qa__item h3 { font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 17px; color: var(--color-ink); margin: 0 0 4px; }
-.ai-qa__item p { font-size: 15.5px; line-height: 1.7; color: var(--color-ink-body2); margin: 0; }
+/* ruled multi-Q&A — matches State Pillar `.dc.html` (light) exactly */
+.ai-qa { display: grid; }
+.ai-qa__item { border-top: 1px solid var(--border-subtle); padding: 20px 0; display: grid; grid-template-columns: 1fr 1.5fr; gap: 32px; }
+.ai-qa__item:last-child { border-bottom: 1px solid var(--border-subtle); }
+.ai-qa__item h3 { font-size: 16.5px; font-weight: 600; color: var(--color-ink); margin: 0; }
+.ai-qa__item p { font-size: 15.5px; line-height: 1.6; color: var(--color-ink-body2); margin: 0; }
+@media (max-width: 640px) { .ai-qa__item { grid-template-columns: 1fr; gap: 8px; } }
 
 /* ---------- the comparison table (C2 signature) ---------- */
 .cmp { width: 100%; border-collapse: collapse; background: var(--white); border: 1px solid var(--border-subtle); border-radius: 16px; overflow: hidden; }

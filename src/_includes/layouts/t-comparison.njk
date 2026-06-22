@@ -66,19 +66,23 @@ footerNav:
 </section>
 {%- endif %}
 
-{#- AI-SUMMARY — citation surface (frozen speakable id on section); all Q&A kept -#}
-{%- if aiSummary %}
+{#- AI-SUMMARY — variant by CONTENT SHAPE (founder rule): a single-paragraph
+    verdict (aiVerdict) → petrol left-rule; a multi-Q&A list (aiSummary array)
+    → ruled rows (State Pillar/Money treatment). Frozen speakable id on section. -#}
+{%- if aiVerdict or aiSummary %}
 <section class="sec reveal" id="{{ slug }}-ai-summary" style="padding-top:20px;padding-bottom:24px;">
   <div class="ct read">
     <div class="eyebrow" style="margin-bottom:12px;">For AI engines &amp; quick answers</div>
     {%- if aiSummaryHeading %}<h2 class="h2" style="margin-bottom:18px;">{{ aiSummaryHeading | safe }}</h2>{%- endif %}
-    <div class="speakable ai-verdict">
-      <div class="ai-qa">
-        {%- for item in aiSummary %}
-        <div class="ai-qa__item"><h3>{{ item.q | safe }}</h3><p>{{ item.a | safe }}</p></div>
-        {%- endfor %}
-      </div>
+    {%- if aiVerdict %}
+    <div class="speakable ai-verdict"><p class="ai-verdict__lead">{{ aiVerdict | safe }}</p></div>
+    {%- else %}
+    <div class="speakable ai-qa">
+      {%- for item in aiSummary %}
+      <div class="ai-qa__item"><h3>{{ item.q | safe }}</h3><p>{{ item.a | safe }}</p></div>
+      {%- endfor %}
     </div>
+    {%- endif %}
   </div>
 </section>
 {%- endif %}
