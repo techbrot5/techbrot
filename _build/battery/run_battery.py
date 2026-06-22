@@ -163,7 +163,9 @@ for f in css_dir.glob("*.css"):
     declared.update(re.findall(r"(--[A-Za-z0-9_-]+)\s*:", f.read_text(encoding="utf-8")))
 drift = []
 for f in css_dir.glob("*.css"):
-    if f.name == "01-tokens.css":
+    if f.name in ("01-tokens.css", "dc-system.css"):
+        # both are token-defining design-system files (hex lives in their :root).
+        # dc-system.css is self-contained — new-design pages don't load site.min.css.
         continue
     # comment-aware: hex inside /* … */ is documentation, not a rule
     text = re.sub(r"/\*.*?\*/", lambda m: "\n" * m.group(0).count("\n"),
