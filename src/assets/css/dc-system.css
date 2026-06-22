@@ -259,6 +259,19 @@ h1, h2, h3 { font-weight: 500; text-wrap: balance; }
 .checklist { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 11px; }
 .checklist li { position: relative; padding-left: 26px; font-size: 14.5px; line-height: 1.5; color: var(--color-ink-body2); }
 .checklist li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: var(--color-success); font-weight: 700; }
+/* trust strip (Intuit credentials band — handoff: sand band, label+descriptor LEFT, badges RIGHT) */
+.trust-strip { background: var(--color-paper-warm); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+.trust-strip__row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 26px 48px; padding: 38px 0; }
+.trust-strip__lead { max-width: 34ch; }
+.trust-strip__label { font-family: 'Spline Sans Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent); margin: 0 0 6px; }
+.trust-strip__desc { font-size: 14px; line-height: 1.5; color: var(--color-ink-mute); margin: 0; }
+.trust-strip__badges { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 18px 24px; flex: 1; min-width: 300px; }
+.trust-strip__badges img { display: block; height: 60px; width: auto; }
+@media (max-width: 560px) {
+  .trust-strip__row { justify-content: flex-start; }
+  .trust-strip__badges { justify-content: flex-start; min-width: 0; flex-basis: 100%; gap: 16px 20px; }
+  .trust-strip__badges img { height: 52px; }
+}
 .deliver__cell svg { color: var(--color-accent); margin-bottom: 14px; }
 .deliver__cell h3 { font-size: 15.5px; font-weight: 600; color: var(--color-ink); margin: 0; }
 .deliver__cell p { font-size: 13.5px; line-height: 1.55; color: var(--color-ink-mute); margin: 8px 0 0; }

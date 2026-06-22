@@ -1,0 +1,19 @@
+{#- TRUST STRIP — real Intuit ProAdvisor credentials, handoff layout (State Pillar /
+    Money / Pricing / About). Sand band · "Certified by Intuit" + descriptor LEFT ·
+    real badges RIGHT (flex-end, wrap). Renders only real artwork present in
+    badges.json (no stand-ins). Needs `slug` in scope for the section id. -#}
+{%- if badges.intuit and badges.intuit.length %}
+<section class="sec reveal trust-strip" id="{{ slug }}-credentials">
+  <div class="ct trust-strip__row">
+    <div class="trust-strip__lead">
+      <p class="trust-strip__label">Certified by Intuit</p>
+      <p class="trust-strip__desc">Real credentials held by our firm and operators &mdash; verification available on request.</p>
+    </div>
+    <ul class="trust-strip__badges" aria-label="Intuit certifications">
+      {%- for b in badges.intuit %}
+      <li><img src="/assets/img/brand/badges/{{ b.file }}" alt="{{ b.alt }}" width="60" height="60" loading="lazy" decoding="async"></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+{%- endif %}

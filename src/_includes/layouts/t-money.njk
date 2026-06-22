@@ -44,6 +44,9 @@ footerNav:
 </section>
 {%- endif %}
 
+{#- TRUST STRIP (Intuit credentials band — handoff component, sand) -#}
+{%- if showBadges %}{% include "partials/trust-strip.njk" %}{% endif %}
+
 {#- PROOF STRIP (dark) -#}
 {%- if proofClaims %}
 <section class="proofbar" id="{{ slug }}-proof">
@@ -51,13 +54,6 @@ footerNav:
     <span class="proofbar__label">What you can verify</span>
     {%- for c in proofClaims %}<span class="proofbar__item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ c | safe }}</span>{%- endfor %}
   </div>
-</section>
-{%- endif %}
-
-{#- CREDENTIALS (real Intuit badges) -#}
-{%- if showBadges %}
-<section class="sec reveal" id="{{ slug }}-credentials" style="padding-top:48px;padding-bottom:8px;">
-  <div class="ct"><p class="eyebrow" style="margin-bottom:18px;">Verifiable Intuit credentials</p>{% include "partials/intuit-badges.njk" %}</div>
 </section>
 {%- endif %}
 
