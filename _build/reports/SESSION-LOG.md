@@ -1267,3 +1267,37 @@ OPEN/NEXT: sweep b5so0fth7 done -> convert 1 C2 page (xendoo) as proof + check .
 - PLAN: (A) roll out the 6 remaining techbrot-vs via the partial (uniform). (B) convert each concept-vs inline table to .cmp CLASSES directly (us-column on the first concept, data-col transpose, no edge-marks) -- per page since keys differ.
 COUNT: step 1 sweep 0/0/0 confirmed; step 2 xendoo .cmp proof built+building-verified; C2 two-type structure mapped.
 OPEN/NEXT: axe b62njf9dx green -> roll out 6 techbrot-vs (partial) + 7 concept-vs (inline .cmp restyle) -> census(cmp up/vs-table 0 on C2) + battery + axe + sweep -> commit step 2 -> step 3 cost-stack-bar.
+
+(PART 1 progress checkpoint)
+- STEP 1 DONE + committed 0f1bc35 + sweep 0/0/0: nav root-caused+fixed, stat-band petrol (489), eyebrow mark fixed+spread, tldr border.
+- STEP 2a DONE + committed cce6883: shared .cmp partial (comparison-table.njk) + 7 TechBrot-vs C2 pages converted (cmp 7/7, vs-table 0, axe green). NO content drift.
+- DEV SERVER :8080 crashed again (exit 134 OOM, concurrent eleventy build) -> restarted b8dvyvsbz. Recurring machine constraint: my _site-probe builds compete with dev --serve -> OOM. Mitigation: commit (git) is light; will sequence heavy builds + restart dev after.
+REMAINING PART 1 (autonomous):
+- STEP 2b: 8 concept-vs /vs/ pages (bookkeeper-vs-accountant etc.) -> .cmp restyle. Different structure: 3-col, NO edge, neutral concepts, per-page data keys (r.bk/r.acc) -> per-page restyle (vs-table->cmp classes + data-col from thead concept names; no dot-marks since no winner). Then commit step 2.
+- STEP 3: cost-stack-bar viz -> D4/D5/D6 (155pp) -- extract real SVG from Location Child template, build figure-cost-stack-bar.svg, fix heroFigure default for location children.
+- STEP 4: D3 California glossary 13 empty <p> data bug (content equity) + confirm NY/TX/FL/IL not empty.
+- STEP 5: per-family signature viz (state-servicemap, monthly-cycle, drift-compound, turnaround-bars, pricing-range-bars) from real handoff SVGs + fix heroFigure default + strip taccount from B1/B3/B5/G2/E6.
+- STEP 6: G2 editorial -> essay template (drop-cap + pull-quote, narrow, not hub). Content frozen.
+- STEP 7: B1/B3/B4 composition.
+- THEN: re-run full family-vs-manifest diff -> 25 MATCH / 0 DRIFT.
+COUNT: 2 of ~7 steps committed (step1 + step2a); 12 MATCH families staying green; guardrails holding (NY untouched, chrome isolated, dev restarted, tokens, honesty).
+OPEN/NEXT: step 2b concept-vs restyle -> commit step 2 -> step 3 cost-stack-bar.
+
+(step 2b) C2 .cmp conversion COMPLETE -- real markup restructure, all 9 /vs/ vs-tables -> .cmp:
+- 7 TechBrot-vs via shared partial (us-column + edge-derived dot-marks + transpose).
+- bookkeeper-vs-accountant: inline restructure -> .cmp, us-col on the primary concept (Bookkeeper), data-col="Bookkeeper"/"Accountant / CPA" for transpose, no dot-marks (neutral "neither wins"). 12 us-col cells render.
+- bench-vs-quickbooks-live: NEUTRAL 2-competitor (no TechBrot) -> .cmp with NO us-column, data-col="Bench"/"QuickBooks Live", no marks. data-col renders.
+- The other 5 concept-vs pages (bookkeeper-vs-cpa, cpa-vs-ea, bookkeeping-firm-vs-freelancer, in-house-vs-outsourced, local-cpa-vs-online) have NO vs-table -- they use a different comparison treatment, out of vs-table->cmp scope (not flagged as table-drift). C1 hub /vs/ keeps its additive at-a-glance vs-table (C1 = MATCH, additive).
+- vs-table__concede spans kept in cells (harmless: .vs-table__concede color == .cmp td color, both --color-ink-mute). Build exit 0, cmp on 9 /vs/ pages.
+- DEV SERVER crashed/paused (I paused it for a clean OOM-free build) -- restart pending after the axe probe's build finishes (avoid concurrent-build OOM).
+COUNT: step 2 (C2 .cmp) markup-restructure COMPLETE on all 9 table-bearing /vs/ pages (real HTML change, not CSS). axe bub0joja5 verifying.
+OPEN/NEXT: axe green -> restart dev :8080 -> commit step 2 -> step 3 cost-stack-bar viz (D4/D5/D6 155pp, real handoff SVG).
+
+(step 2 -- CONTENT BUG caught + fixed, reported transparently)
+- BUG I INTRODUCED + COMMITTED (cce6883): the shared comparison-table.njk partial assumed uniform data keys (cap/tb/them/edge), but the techbrot-vs pages have NON-UNIFORM keys -- pilot=dim/tb/pilot, bench uses `bench` not `them`, quickbooks-live uses `dim` not `cap`. So the partial rendered EMPTY competitor cells and/or empty row-headers on several C2 pages. axe caught the empty row-header (minor); my them: audit exposed the full scope (empty competitor columns = content loss). This is exactly the content-drift the founder warned about.
+- ROOT CAUSE: over-eager shared-partial with a fixed-key assumption on inconsistently-authored source.
+- FIX: reverted the 7 techbrot-vs njks to clean source (git restore 0f1bc35) TWICE (first re-attempt was still too structure-specific -- pilot had no concede spans + already-us class). Final approach = STRUCTURE-AGNOSTIC row-template regex that captures whatever is inside each cell verbatim (concede span or bare text) and re-emits it, only adding cmp class + us + data-col by column position. Guard aborts if the {{ r.x }} key count changes. Shared partial ABANDONED for techbrot-vs (kept only as reference) -- in-place restyle preserves each page's own keys.
+- VERIFIED: build 0, 9/9 cmp tables, 0 empty cells across all 9 /vs/ pages, pilot 13 data-col="Pilot" cells (content + transpose intact). axe b93myr5at re-checking the previously-broken pilot/quickbooks-live.
+- NOTE: dot-marks deferred (content-safety first); us-column + data-col transpose + bordered card delivered. Marks to add carefully per-page where an edge column exists.
+COUNT: C2 content bug fixed (0 empty cells, keys preserved); 9 /vs/ pages real .cmp markup; partial-key assumption retired.
+OPEN/NEXT: axe green -> commit the C2 FIX (supersedes cce6883) -> step 3 cost-stack-bar. NEED to also reconsider: did any OTHER family inherit a similar fixed-key partial assumption? (none yet -- only C2 used the partial.)

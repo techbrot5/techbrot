@@ -99,9 +99,27 @@
       <h2 class="section__heading">Side by side, across what matters.</h2>
       <p class="section__lede">The dimensions that determine fit &mdash; a fair, both-sides read. Pilot facts reflect publicly available information and may change; verify on Pilot&rsquo;s website before deciding.</p>
     </header>
-        {%- set cmpCompetitor = "Pilot" %}
-    {%- set cmpCaption = "TechBrot versus Pilot compared across the dimensions that determine fit." %}
-    {% include "partials/comparison-table.njk" %}
+    <div class="vs-scroll">
+      <table class="cmp" data-viz="comparison-table" data-viz-state="FINAL">
+        <caption class="sr-only">TechBrot versus Pilot compared across the dimensions that determine fit.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Dimension</th>
+            <th scope="col" class="us">TechBrot</th>
+            <th scope="col">Pilot</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for r in vsTable %}
+          <tr>
+            <th scope="row">{{ r.dim | safe }}</th>
+            <td class="us" data-col="TechBrot">{{ r.tb | safe }}</td>
+            <td data-col="Pilot">{{ r.pilot | safe }}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 

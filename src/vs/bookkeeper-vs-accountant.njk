@@ -107,14 +107,14 @@
       <p class="section__lede">Twelve dimensions where the two roles differ in practice. Neither role &ldquo;wins&rdquo; &mdash; they do different things. This table makes the boundaries clear.</p>
     </header>
     <div class="vs-scroll">
-      <table class="vs-table">
+      <table class="cmp" data-viz="comparison-table" data-viz-state="FINAL">
         <caption class="sr-only">Bookkeeper versus accountant role comparison across twelve dimensions. A definitional comparison &mdash; neither role wins; most small businesses need both.</caption>
-        <thead><tr><th scope="col">Dimension</th><th scope="col" class="vs-table__us">Bookkeeper</th><th scope="col">Accountant / CPA</th></tr></thead>
+        <thead><tr><th scope="col">Dimension</th><th scope="col" class="us">Bookkeeper</th><th scope="col">Accountant / CPA</th></tr></thead>
         <tbody>
           {%- for r in vsTable %}
           <tr><th scope="row">{{ r.cap | safe }}</th>
-            <td class="vs-table__us"><span class="vs-table__concede">{{ r.bk | safe }}</span></td>
-            <td><span class="vs-table__concede">{{ r.acct | safe }}</span></td>
+            <td class="us" data-col="Bookkeeper"><span class="vs-table__concede">{{ r.bk | safe }}</span></td>
+            <td data-col="Accountant / CPA"><span class="vs-table__concede">{{ r.acct | safe }}</span></td>
           </tr>
           {%- endfor %}
         </tbody>
