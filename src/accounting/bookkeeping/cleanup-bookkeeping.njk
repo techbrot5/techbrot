@@ -3,8 +3,6 @@
   "layout": "layouts/t-money.njk",
   "permalink": "/accounting/bookkeeping/cleanup-bookkeeping/",
   "slug": "cleanup-bookkeeping",
-  "tierClass": "section--tier-bofu",
-  "bodyClass": "page--bofu",
   "title": "QuickBooks & Bookkeeping Cleanup Services · TechBrot",
   "description": "Professional QuickBooks and bookkeeping cleanup for U.S. small and mid-sized businesses — reconciled, CPA-ready books rebuilt from a messy or unreconciled state. Fixed-fee, written scope, named Certified ProAdvisor. Typically 2–8 weeks.",
   "breadcrumb": [
@@ -13,24 +11,20 @@
     { "name": "Bookkeeping", "href": "/accounting/bookkeeping/" },
     { "name": "Cleanup bookkeeping" }
   ],
-  "heroFigure": "cleanup-beforeafter",
+  "heroFig": {
+    "caption": "A file, reconciled",
+    "tag": "illustrative",
+    "viz": "partials/dc-recon-beforeafter.svg"
+  },
   "hero": {
     "eyebrow": "Bookkeeping cleanup",
     "heading": "Messy books are common. They&rsquo;re also fixable.",
     "subheading": "A project-based cleanup that rebuilds accurate, reconciled, CPA-ready books from a messy or unreconciled state &mdash; real reconciliation against actual statements, corrected categorization, resolved discrepancies, documented adjustments. Fixed fee, written scope, named Certified QuickBooks ProAdvisor. Typically 2&ndash;8 weeks.",
+    "helper": "Accounting, cleanup, advisory &mdash; we match the right expert to your books.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=cleanup", "class": "btn--primary" },
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
-    ],
-    "trust": [
-      "Certified QuickBooks ProAdvisor",
-      "Written fixed-fee scope, first",
-      "Independent firm &middot; not Intuit"
+      { "label": "Book the discovery call", "href": "/contact/?intent=cleanup" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
-  },
-  "inBrief": {
-    "text": "<strong>A bookkeeping cleanup</strong> is a project-based engagement that reconstructs accurate financial records from a messy or unreconciled state &mdash; real bank reconciliation, categorization corrections, cleared undeposited funds, duplicate/missing-transaction resolution, prior-period error correction, payroll and sales-tax verification, and CPA-ready financial statements. Fixed fee, written scope, typically <strong>2&ndash;8 weeks</strong>.",
-    "source": "Distinct from catch-up (behind-but-structured) and monthly (recurring). Not affiliated with Intuit Inc."
   },
   "ctaBand": {
     "dark": true,
@@ -38,102 +32,87 @@
     "heading": "Let&rsquo;s see what your file actually needs.",
     "lede": "Book a free 30-minute diagnostic call. We&rsquo;ll review your QuickBooks file, scope the work honestly, and tell you what cleanup will cost &mdash; in writing &mdash; before any work begins. No pitch, no obligation.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=cleanup", "class": "btn--primary" },
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=cleanup" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
   }
 }
 ---
 
-{#- ═══════════════════════════════════════════════════════════════════════
-    D1 MONEY-PAGE DOSSIER — body re-architected to the LOCKED "QuickBooks
-    Cleanup — Money Page" template (§-rhythm + section-layout modifiers +
-    cleanup-timeline viz + DUAL conversion seam). Hero + final CTA band are
-    layout-owned (t-bofu.njk). FROZEN: every heading text/level + FAQ Q/A
-    verbatim; speakable #cleanup-bookkeeping-in-brief-text intact.
-    ═══════════════════════════════════════════════════════════════════════ -#}
+{#- ═══ D1 MONEY V2 — full recompose to the handoff "QuickBooks Cleanup - Money
+    Page" using REAL components (dc-system.css). FROZEN content preserved + re-flowed,
+    FULL DEPTH (every heading/FAQ/fact/schema). speakable #cleanup-bookkeeping-in-brief-text
+    kept on the §01 answer paragraph. Hero + final-dark CTA are layout-owned (t-money). ═══ -#}
 
-{#- PROOF STRIP — what you can verify (dark band · template: mono label + per-item check-svgs) -#}
-<section class="proof-band" id="cleanup-bookkeeping-proof">
-  <div class="container proof-strip">
-    <span class="proof-strip__label">What you can verify</span>
-    <span class="proof-strip__item"><svg class="proof-strip__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg>4&times; Certified QuickBooks ProAdvisor</span>
-    <span class="proof-strip__item"><svg class="proof-strip__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Correct, current books restored</span>
-    <span class="proof-strip__item"><svg class="proof-strip__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Fixed-fee written scope, first</span>
-    <span class="proof-strip__item"><svg class="proof-strip__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg>1 business day response</span>
-    <span class="proof-strip__item"><svg class="proof-strip__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="proof-strip__rating">5.0</span> 2 verified Clutch reviews</span>
+{#- PROOF STRIP (dark) -#}
+<section class="proofbar" id="cleanup-bookkeeping-proof">
+  <div class="ct proofbar__row">
+    <span class="proofbar__label">What you can verify</span>
+    {%- set checks = ["4&times; Certified QuickBooks ProAdvisor", "Correct, current books restored", "Fixed-fee written scope, first", "1 business day response"] %}
+    {%- for c in checks %}<span class="proofbar__item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ c | safe }}</span>{%- endfor %}
+    <span class="proofbar__item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="mono">5.0</span>&nbsp;2 verified Clutch reviews</span>
   </div>
 </section>
 
-<section class="section section--compact" id="cleanup-bookkeeping-credentials">
-  <div class="container">
-    <p class="section__eyebrow">Verifiable Intuit credentials</p>
+{#- CREDENTIALS — real Intuit badges (kept: full depth) -#}
+<section class="sec reveal" id="cleanup-bookkeeping-credentials" style="padding-top:48px;padding-bottom:8px;">
+  <div class="ct">
+    <p class="eyebrow" style="margin-bottom:18px;">Verifiable Intuit credentials</p>
     {% include "partials/intuit-badges.njk" %}
   </div>
 </section>
 
-{#- §01 — IN BRIEF / the engagement (SPLIT: heading | prose + coined-term pull) -#}
-<section class="section section--flagship section--alt section--split" id="cleanup-bookkeeping-definition">
-  <div class="container">
+{#- §01 IN BRIEF / the engagement (idx + 2-col) -#}
+<section class="sec reveal" id="cleanup-bookkeeping-definition" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
     <div class="idx"><span class="idx__n">§01</span><span class="idx__t">The engagement</span><span class="idx__rule"></span></div>
-    <div class="section-split">
-      <h2 class="section__heading">What a cleanup engagement actually is.</h2>
-      <div class="section-split__lede prose">
-        <p>A bookkeeping cleanup is a project-based engagement that reconstructs accurate financial records from a messy or unreconciled state. It covers QuickBooks file cleanup, real bank reconciliation against actual statements, categorization corrections, clearing undeposited funds, fixing duplicate or missing transactions, correcting prior-period errors, verifying payroll and sales-tax entries, and producing CPA-ready financial statements. Most engagements take 2&ndash;8 weeks and are priced as a fixed fee against a written scope.</p>
+    <div class="r-2" style="gap:48px;align-items:start;">
+      <h2 class="h2 speakable" style="max-width:18ch;">What a cleanup engagement actually is.</h2>
+      <div class="prose speakable">
+        <p id="cleanup-bookkeeping-in-brief-text">A bookkeeping cleanup is a project-based engagement that reconstructs accurate financial records from a messy or unreconciled state. It covers QuickBooks file cleanup, real bank reconciliation against actual statements, categorization corrections, clearing undeposited funds, fixing duplicate or missing transactions, correcting prior-period errors, verifying payroll and sales-tax entries, and producing CPA-ready financial statements. Most engagements take 2&ndash;8 weeks and are priced as a fixed fee against a written scope.</p>
         <p>Cleanup is distinct from <a href="/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up">catch-up bookkeeping</a> (which brings behind-but-structured books up to date) and from <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> (which is recurring). Many engagements combine cleanup with catch-up &mdash; clean up the existing periods, catch up the missing months, then transition to monthly.</p>
-        <blockquote class="pull-quote"><p>{{ drift.body | safe }}</p></blockquote>
+        <blockquote class="opquote" style="margin-top:20px;"><blockquote>{{ drift.body | safe }}</blockquote></blockquote>
       </div>
     </div>
   </div>
 </section>
 
-{#- §02 — SIGNALS / is this you (buyer-card grid, de-numbered: NOT the page's numbered system) -#}
-<section class="section section--flagship" id="cleanup-bookkeeping-signals">
-  <div class="container">
+{#- §02 SIGNALS / is this you (buyer-cards) -#}
+<section class="sec reveal" id="cleanup-bookkeeping-signals">
+  <div class="ct">
     <div class="idx"><span class="idx__n">§02</span><span class="idx__t">Is this you</span><span class="idx__rule"></span></div>
-    <h2 class="section__heading">If any of these sound familiar, the answer is yes.</h2>
-    <div class="grid-2">
+    <h2 class="h2" style="max-width:20ch;margin-bottom:36px;">If any of these sound familiar, the answer is yes.</h2>
+    <div class="r-2">
       {%- for s in signals %}
-      <div class="buyer-card">
-        <span class="buyer-card__n">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
-        <div class="buyer-card__text">
-          <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-          <p class="buyer-card__body">{{ s.body | safe }}</p>
-        </div>
-      </div>
+      <div class="lift"><span class="lift__n">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span><div><h3>{{ s.opener | safe }}</h3><p>{{ s.body | safe }}</p></div></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{#- §03 — AI SUMMARY / quick-5 (DARK DOSSIER treatment · QAPage) -#}
-<section class="section section--flagship section--dossier-band" id="cleanup-bookkeeping-ai-summary">
-  <div class="container">
+{#- §03 AI SUMMARY — dark dossier ruled multi-Q&A -#}
+<section class="sec reveal dossier" id="cleanup-bookkeeping-ai-summary">
+  <div class="ct">
     <div class="idx"><span class="idx__n">§03</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
-    <h2 class="section__heading dossier__heading">Cleanup, in five questions.</h2>
-    <div class="ai-summary__grid">
+    <h2 class="h2 dossier__h" style="max-width:16ch;margin-bottom:40px;">Cleanup, in five questions.</h2>
+    <div class="dossier-qa speakable">
       {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <p class="ai-summary__answer">{{ item.a | safe }}</p>
-      </div>
+      <div class="dossier-qa__item"><h3>{{ item.q | safe }}</h3><p>{{ item.a | safe }}</p></div>
       {%- endfor %}
-      <div class="ai-summary__item ai-summary__cta-cell">
-        <a class="btn btn--primary" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click">{% include "icons/phone.svg" %} Speak to a ProAdvisor</a>
-      </div>
+      <div class="dossier-qa__item dossier-qa__cta"><a class="btn btn-cta" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" style="display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 20px;border-radius:10px;font-size:14.5px;font-weight:600;">{% include "icons/phone.svg" %} Speak to a ProAdvisor</a></div>
     </div>
   </div>
 </section>
 
-{#- §04 — DELIVERABLES / scope (FEATURE lattice — 8 cells, iconned) -#}
-<section class="section section--flagship section--feature" id="cleanup-bookkeeping-deliverables">
-  <div class="container">
+{#- §04 DELIVERABLES (icon lattice) -#}
+<section class="sec reveal" id="cleanup-bookkeeping-deliverables">
+  <div class="ct">
     <div class="idx"><span class="idx__n">§04</span><span class="idx__t">Scope of work</span><span class="idx__rule"></span></div>
-    <h2 class="section__heading">What cleanup actually delivers.</h2>
-    <div class="feature-grid">
+    <h2 class="h2" style="max-width:18ch;margin-bottom:36px;">What cleanup actually delivers.</h2>
+    <div class="deliver">
       {%- for d in deliverables %}
-      <div class="feature-cell">
-        <svg class="feature-cell__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+      <div class="deliver__cell">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
           {%- if loop.index == 1 %}<path d="M4 10a8 8 0 0114-4.5" stroke-linecap="round"/><path d="M4 5.5V10h4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 14a8 8 0 01-14 4.5" stroke-linecap="round"/><path d="M20 18.5V14h-4.5" stroke-linecap="round" stroke-linejoin="round"/>
           {%- elif loop.index == 2 %}<path d="M4 7h16M4 12h16M4 17h10" stroke-linecap="round"/>
           {%- elif loop.index == 3 %}<rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 9.5h16M9.5 9.5V19" stroke-linecap="round"/>
@@ -143,247 +122,175 @@
           {%- elif loop.index == 7 %}<path d="M4 20h16M7 20V9M12 20V4M17 20v-7" stroke-linecap="round"/>
           {%- else %}<path d="M7 3h7l4 4v14H7z" stroke-linejoin="round"/><path d="M14 3v4h4M10 13h5M10 17h5" stroke-linecap="round"/>{%- endif %}
         </svg>
-        <h3>{{ d.name | safe }}</h3>
-        <p>{{ d.body | safe }}</p>
+        <h3>{{ d.name | safe }}</h3>{% if d.body %}<p>{{ d.body | safe }}</p>{% endif %}
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{#- §05 — PROCESS / how it works (ZIGZAG — the ONE numbered system · HowTo) + cleanup-timeline viz -#}
-<section class="section section--flagship section--alt section--zigzag" id="cleanup-bookkeeping-process">
-  <div class="container">
+{#- §05 PROCESS (4-step) + cleanup-timeline viz -#}
+<section class="sec reveal" id="cleanup-bookkeeping-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
     <div class="idx"><span class="idx__n">§05</span><span class="idx__t">How it works</span><span class="idx__rule"></span></div>
-    <h2 class="section__heading">From first call to clean books.</h2>
-    <ol class="zigzag-steps">
+    <h2 class="h2" style="max-width:16ch;margin-bottom:44px;">From first call to clean books.</h2>
+    <div class="process-grid">
       {%- for s in process %}
-      <li class="zigzag-step{% if loop.last %} zigzag-step--done{% endif %}">
-        <p class="zigzag-step__n">STEP {{ s.num }}{% if loop.last %} &check;{% endif %}</p>
-        <h3>{{ s.name | safe }}</h3>
-        <p>{{ s.body | safe }}</p>
-        <p><strong>{{ s.when | safe }}</strong></p>
-      </li>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">STEP {{ s.num }}{% if loop.last %} &check;{% endif %}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p>{% if s.when %}<p style="margin-top:8px;"><strong>{{ s.when | safe }}</strong></p>{% endif %}</div>
       {%- endfor %}
-    </ol>
-    {% include "partials/figure-cleanup-timeline.svg" %}
-    <p class="cleanup-timeline__note">Representative schedule, not a guarantee &mdash; your written timeline is set from your own file after the diagnostic. A file ~6 months behind typically runs about five weeks (week&nbsp;1 scope &amp; access, weeks&nbsp;2&ndash;3 categorise &amp; correct, weeks&nbsp;3&ndash;4 reconcile every account, week&nbsp;5 review, corrected statements, and CPA-ready handoff). Files further behind run longer.</p>
+    </div>
+    <figure class="timeline-card">
+      <figcaption><span class="mono" style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-ink-faint);">Typical schedule &middot; 6 months behind</span><span class="mono" style="font-size:11px;color:var(--color-ink-mute);">weeks, not months</span></figcaption>
+      {% include "partials/dc-cleanup-timeline.svg" %}
+      <p class="timeline-card__note">Representative schedule, not a guarantee &mdash; your written timeline is set from your own file after the diagnostic. A file ~6 months behind typically runs about five weeks (week&nbsp;1 scope &amp; access, weeks&nbsp;2&ndash;3 categorise &amp; correct, weeks&nbsp;3&ndash;4 reconcile every account, week&nbsp;5 review, corrected statements, and CPA-ready handoff). Files further behind run longer.</p>
+    </figure>
   </div>
 </section>
 
-{#- §06 — COMPARISON / what changes (CALLOUT framing + before/after vs-table) -#}
-<section class="section section--flagship section--callout" id="cleanup-bookkeeping-compare">
-  <div class="container">
-    <div class="idx idx--centered"><span class="idx__rule"></span><span class="idx__t">What changes</span><span class="idx__rule"></span></div>
-    <div class="callout">
-      <h2 class="callout__line section__heading">What changes when the books are clean.</h2>
-      <p class="callout__sub">Cleanup unwinds the accumulated <strong>compounding reconciliation drift</strong> &mdash; here is the before and after, dimension by dimension.</p>
-      <div class="callout__dots">
-        <span><span class="callout__dot" aria-hidden="true"></span>CPA-ready output</span>
-        <span><span class="callout__dot" aria-hidden="true"></span>Audit-traceable corrections</span>
-        <span><span class="callout__dot" aria-hidden="true"></span>Fixed fee, no surprises</span>
-      </div>
+{#- §06 WHAT CHANGES (centered statement) + before/after table (full depth: 6-dim compare) -#}
+<section class="sec reveal" id="cleanup-bookkeeping-compare">
+  <div class="ct">
+    <div class="idx idx--center"><span class="idx__rule"></span><span class="idx__t">What changes</span><span class="idx__rule"></span></div>
+    <div class="read" style="text-align:center;">
+      <h2 class="statement">What changes when the books are clean.</h2>
+      <p class="lede" style="margin:0 auto 24px;max-width:60ch;">Cleanup unwinds the accumulated <em>compounding reconciliation drift</em> &mdash; here is the before and after, dimension by dimension.</p>
+      <p class="statement-dots"><span><b>&#9679;</b> CPA-ready output</span><span><b>&#9679;</b> Audit-traceable corrections</span><span><b>&#9679;</b> Fixed fee, no surprises</span></p>
     </div>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">Bookkeeping before and after a TechBrot cleanup engagement, by dimension.</caption>
-        <thead>
-          <tr>
-            <th scope="col">Dimension</th>
-            <th scope="col">Before cleanup</th>
-            <th scope="col" class="vs-table__us">After cleanup</th>
-          </tr>
-        </thead>
-        <tbody>
-          {%- for row in compare %}
-          <tr>
-            <th scope="row">{{ row.dim | safe }}</th>
-            <td class="vs-table__concede">{{ row.before | safe }}</td>
-            <td class="vs-table__us"><strong>{{ row.after | safe }}</strong></td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+    <table class="cmp" data-viz="comparison-table" data-viz-state="FINAL" style="margin-top:40px;">
+      <caption class="sr-only">Bookkeeping before and after a TechBrot cleanup engagement, by dimension.</caption>
+      <thead><tr><th scope="col">Dimension</th><th scope="col">Before cleanup</th><th scope="col" class="us">After cleanup</th></tr></thead>
+      <tbody>
+        {%- for r in compare %}
+        <tr><th scope="row">{{ r.dim | safe }}</th><td data-col="Before cleanup">{{ r.before | safe }}</td><td class="us" data-col="After cleanup"><strong>{{ r.after | safe }}</strong></td></tr>
+        {%- endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 
-{#- §07 — PRICING (STAT-BAND — 3 tiers, MOST COMMON featured) -#}
-<section class="section section--flagship section--alt section--stat-band" id="cleanup-bookkeeping-pricing">
-  <div class="container">
+{#- §07 PRICING (tiers, MOST COMMON featured) -#}
+<section class="sec reveal" id="cleanup-bookkeeping-pricing" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
     <div class="idx"><span class="idx__n">§07</span><span class="idx__t">Pricing</span><span class="idx__rule"></span></div>
-    <h2 class="section__heading">Fixed fee, written scope, no hourly billing.</h2>
-    <p class="section__lede">Three tiers; ranges are typical engagements, final pricing follows the diagnostic. See the <a href="/pricing/?intent=pricing">bookkeeping pricing page</a> for ongoing monthly pricing after cleanup.</p>
-    <div class="stat-band">
+    <h2 class="h2" style="max-width:20ch;margin-bottom:10px;">Fixed fee, written scope, no hourly billing.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:52ch;">Three tiers; ranges are typical engagements, final pricing follows the diagnostic. See the <a href="/pricing/?intent=pricing">bookkeeping pricing page</a> for ongoing monthly pricing after cleanup.</p>
+    <div class="r-3">
       {%- for t in tiers %}
-      <article class="stat-tier{% if t.note %} stat-tier--featured{% endif %}">
-        {%- if t.note %}<p class="stat-tier__flag">{{ t.note | safe }}</p>{%- endif %}
-        <h3 class="stat-tier__name">{{ t.name | safe }}</h3>
-        <p class="stat-tier__price">{{ t.price | safe }}</p>
-        <p class="stat-tier__for"><strong>For:</strong> {{ t.forWhom | safe }}</p>
-        <ul class="stat-tier__bullets">
-          {%- for b in t.bullets %}<li>{{ b | safe }}</li>{%- endfor %}
-        </ul>
-        <a class="stat-tier__link" href="/contact/?intent=cleanup">{{ t.cta | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      <article class="ptier{% if t.note %} ptier--featured{% endif %}">
+        {%- if t.note %}<p class="ptier__flag">{{ t.note | safe }}</p>{%- endif %}
+        <h3 class="ptier__name">{{ t.name | safe }}</h3>
+        <p class="ptier__price">{{ t.price | safe }}</p>
+        <p class="ptier__for"><strong>For:</strong> {{ t.forWhom | safe }}</p>
+        {%- if t.bullets %}<ul>{%- for b in t.bullets %}<li>{{ b | safe }}</li>{%- endfor %}</ul>{%- endif %}
+        <a class="ptier__link" href="/contact/?intent=cleanup">{{ t.cta | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
       </article>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{#- §08 — OPERATOR / who does the work (ASYMMETRIC — editorial + trust panel) -#}
-<section class="section section--flagship section--asymmetric" id="cleanup-bookkeeping-operator">
-  <div class="container">
-    <div class="section-split">
-      <div>
-        <div class="idx"><span class="idx__n">§08</span><span class="idx__t">Who performs the work</span><span class="idx__rule"></span></div>
-        <h2 class="section__heading">A named, credentialed local operator. Not an anonymous offshore team.</h2>
-        <p class="section-split__lede" style="max-width:46ch;">Every TechBrot cleanup is delivered by a vetted local operator &mdash; an independent accounting practice running under TechBrot&rsquo;s brand, standards, and infrastructure. You&rsquo;ll know exactly who is working on your books, how to reach them, and what credentials they hold. Platform-level quality review backs every engagement, and if continuity is ever a question, the platform handles the transition without losing the file context.</p>
-        <figure class="operator-quote" style="margin-top:var(--space-7);">
-          <blockquote>&ldquo;They took something that felt overwhelming to me as a first-year business owner and made it simple.&rdquo;</blockquote>
-          <cite>Heidi Schubert &middot; Owner, Beverage Connection &middot; <b>Verified Clutch review</b></cite>
-        </figure>
-      </div>
-      <div class="operator-panel">
-        <p class="operator-panel__label">The standard, every file</p>
-        <ul>
-          {%- for r in operatorSpec %}
-          <li><svg class="operator-panel__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>{{ r.value | safe }}.</strong> {{ r.label | safe }}</span></li>
-          {%- endfor %}
-        </ul>
-      </div>
+{#- §08 OPERATOR (editorial + checklist) -#}
+<section class="sec reveal" id="cleanup-bookkeeping-operator">
+  <div class="ct r-2" style="gap:48px;align-items:center;">
+    <div>
+      <div class="idx"><span class="idx__n">§08</span><span class="idx__t">Who performs the work</span><span class="idx__rule"></span></div>
+      <h2 class="h2" style="max-width:20ch;margin-bottom:18px;">A named, credentialed local operator. Not an anonymous offshore team.</h2>
+      <p class="lede" style="margin:0 0 22px;max-width:46ch;">Every TechBrot cleanup is delivered by a vetted local operator &mdash; an independent accounting practice running under TechBrot&rsquo;s brand, standards, and infrastructure. You&rsquo;ll know exactly who is working on your books, how to reach them, and what credentials they hold. Platform-level quality review backs every engagement, and if continuity is ever a question, the platform handles the transition without losing the file context.</p>
+      <figure class="opquote"><blockquote>&ldquo;They took something that felt overwhelming to me as a first-year business owner and made it simple.&rdquo;</blockquote><cite>Heidi Schubert &middot; Owner, Beverage Connection &middot; <b>Verified Clutch review</b></cite></figure>
+    </div>
+    <div class="opcard">
+      <p class="opcard__label">The standard, every file</p>
+      <ul>
+        {%- for r in operatorSpec %}
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>{{ r.value | safe }}.</strong> {{ r.label | safe }}</span></li>
+        {%- endfor %}
+      </ul>
     </div>
   </div>
 </section>
 
-{#- §09 — AROUND THE CLEANUP / related engagements (SPLIT idx + related-grid;
-    FREEZE-required headings the Design template omitted — kept per freeze) -#}
-<section class="section section--flagship section--alt" id="cleanup-bookkeeping-next">
-  <div class="container container--narrow">
+{#- §09 AROUND THE CLEANUP (related engagements — full depth) -#}
+<section class="sec reveal" id="cleanup-bookkeeping-next" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
     <div class="idx"><span class="idx__n">§09</span><span class="idx__t">Around the cleanup</span><span class="idx__rule"></span></div>
-    <h2 class="section__heading">Cleanup is often part of a larger engagement.</h2>
-    <div class="related-grid">
+    <h2 class="h2" style="margin-bottom:24px;">Cleanup is often part of a larger engagement.</h2>
+    <div class="r-2">
       {%- for n in nextSteps %}
-      <a class="related-card" href="{{ n.href }}">
-        <h3>{{ n.title | safe }}</h3>
-        <p>{{ n.body | safe }}</p>
-      </a>
+      <a class="rel-card" href="{{ n.href }}"><h3 class="rel-card__t">{{ n.title | safe }}</h3><p class="rel-card__d">{{ n.body | safe }}</p></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{#- ─── DUAL CONVERSION SEAM ─── primary call-block, then the minimal intake-form ─── -#}
-
-{#- §10 — PRIMARY CALL-BLOCK -#}
-<section class="section section--flagship" id="cleanup-bookkeeping-call">
-  <div class="container">
+{#- §10 PRIMARY CALL-BLOCK (split light + dark) -#}
+<section class="sec reveal" id="cleanup-bookkeeping-call" style="padding-top:40px;">
+  <div class="ct">
     <div class="idx"><span class="idx__n">§10</span><span class="idx__t">Talk to a ProAdvisor</span><span class="idx__rule"></span></div>
-    <div class="call-block">
-      <div class="call-block__main">
-        <p class="section__eyebrow">Talk to a ProAdvisor</p>
-        <h2 class="call-block__heading">One call tells you exactly where your books stand.</h2>
-        <p class="call-block__lede">No form, no sales script. You speak with a Certified QuickBooks ProAdvisor who has looked at files like yours &mdash; and you get a written fixed-fee scope within one business day.</p>
-        <a class="call-block__cta" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click">
-          {% include "icons/phone.svg" %}
-          <span class="call-block__num">{{ site.phone.display }}<span class="call-block__sub">Mon&ndash;Fri &middot; we reply the same business day</span></span>
-        </a>
-        <ul class="call-block__trust">
-          <li>Certified ProAdvisor</li>
-          <li>Independent firm</li>
-          <li>No obligation</li>
-        </ul>
-        <p class="call-block__alt">Prefer to write it down? <a href="/contact/?intent=cleanup">Book the discovery call</a> or <a href="/quickbooks/file-review/?intent=file-review">get the free file review</a>.</p>
-      </div>
-      <div class="call-block__aside">
-        <p class="call-block__aside-label">What happens when you call</p>
-        <ol class="call-block__steps">
-          <li><span class="call-block__n" aria-hidden="true">01</span><span><b>You talk to a ProAdvisor</b>A real Certified QuickBooks ProAdvisor &mdash; not a call centre.</span></li>
-          <li><span class="call-block__n" aria-hidden="true">02</span><span><b>We review your file</b>We look at what&rsquo;s actually in your QuickBooks and what it needs.</span></li>
-          <li><span class="call-block__n call-block__n--tie" aria-hidden="true">03</span><span><b>You get a written scope</b>A fixed fee in writing within 3 business days. Then you decide.</span></li>
-        </ol>
+    <div class="callcard">
+      <div class="callband">
+        <div class="callband__main">
+          <p class="eyebrow" style="margin-bottom:16px;">Talk to a ProAdvisor</p>
+          <h2 class="h2" style="font-size:clamp(26px,1.4rem + 1.4vw,33px);margin-bottom:12px;">One call tells you exactly where your books stand.</h2>
+          <p style="font-size:16px;line-height:1.55;color:var(--color-ink-body2);margin:0 0 26px;max-width:42ch;">No form, no sales script. You speak with a Certified QuickBooks ProAdvisor who has looked at files like yours &mdash; and you get a written fixed-fee scope within one business day.</p>
+          <a class="btn btn-cta callbtn" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="mono" style="font-size:22px;font-weight:500;">{{ site.phone.display }}</span></a>
+          <p class="mono" style="font-size:12px;color:var(--color-ink-mute);margin:8px 0 16px;">Mon&ndash;Fri &middot; we reply the same business day</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px 18px;">
+            <span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--color-ink-mute);">Certified ProAdvisor</span><span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--color-ink-mute);">Independent firm</span><span style="display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--color-ink-mute);">No obligation</span>
+          </div>
+          <p style="font-size:13.5px;color:var(--color-ink-mute);margin:18px 0 0;">Prefer to write it down? <a href="/contact/?intent=cleanup" style="color:var(--color-accent);">Book the discovery call</a> or <a href="/quickbooks/file-review/?intent=file-review" style="color:var(--color-accent);">get the free file review</a>.</p>
+        </div>
+        <div class="callband__aside">
+          <span class="callband__aside-label">What happens when you call</span>
+          <ol class="callband__steps">
+            <li><span class="callband__n" aria-hidden="true">01</span><span><b>You talk to a ProAdvisor</b><span>A real Certified QuickBooks ProAdvisor &mdash; not a call centre.</span></span></li>
+            <li><span class="callband__n" aria-hidden="true">02</span><span><b>We review your file</b><span>We look at what&rsquo;s actually in your QuickBooks and what it needs.</span></span></li>
+            <li><span class="callband__n callband__n--tie" aria-hidden="true">03</span><span><b>You get a written scope</b><span>A fixed fee in writing within 3 business days. Then you decide.</span></span></li>
+          </ol>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-{#- §11 — INTAKE FORM (secondary seam, minimal · locked field names) -#}
-<section class="section section--flagship section--alt" id="cleanup-bookkeeping-intake">
-  <div class="container container--narrow">
+{#- §11 INTAKE FORM (minimal, secondary seam) -#}
+<section class="sec reveal" id="cleanup-bookkeeping-intake" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);padding-top:80px;padding-bottom:80px;">
+  <div class="ct" style="max-width:760px;">
     <div class="idx"><span class="idx__n">§11</span><span class="idx__t">Prefer email</span><span class="idx__rule"></span></div>
-    <h2 class="section__heading">Scope your cleanup.</h2>
-    <p class="intake-seam__lede">Send a few details and a Certified ProAdvisor replies the same business day. Or just <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click">call {{ site.phone.display }}</a>.</p>
-    <form class="intake-form intake-form--minimal" id="cleanup-bookkeeping-intake-form" data-form="contact-discovery" method="POST" action="/contact/submit" novalidate>
-      <div class="intake-grid">
-        <div class="intake-field">
-          <label class="intake-field__label" for="cb-name">Full name</label>
-          <input type="text" id="cb-name" name="name" required autocomplete="name">
-        </div>
-        <div class="intake-field">
-          <label class="intake-field__label" for="cb-email">Work email</label>
-          <input type="email" id="cb-email" name="email" required autocomplete="email">
-        </div>
-        <div class="intake-field">
-          <label class="intake-field__label" for="cb-months">Months behind <span class="intake-field__optional">optional</span></label>
-          <select id="cb-months" name="months">
-            <option value="">Select range</option>
-            <option value="1-3">1&ndash;3 months</option>
-            <option value="3-12">3&ndash;12 months</option>
-            <option value="1-2y">1&ndash;2 years</option>
-            <option value="2y-plus">2+ years</option>
-          </select>
-        </div>
-        <div class="intake-field">
-          <label class="intake-field__label" for="cb-qb-status">QuickBooks version <span class="intake-field__optional">optional</span></label>
-          <select id="cb-qb-status" name="qb_status">
-            <option value="">Select one</option>
-            <option value="qbo-current">QuickBooks Online</option>
-            <option value="qb-desktop">QuickBooks Desktop</option>
-            <option value="qb-enterprise">QuickBooks Enterprise</option>
-            <option value="not-sure">Not sure</option>
-          </select>
-        </div>
+    <h2 class="h2" style="margin-bottom:8px;">Scope your cleanup.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:50ch;">Send a few details and a Certified ProAdvisor replies the same business day. Or just <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" style="color:var(--color-accent);">call {{ site.phone.display }}</a>.</p>
+    <form class="intake" id="cleanup-bookkeeping-intake-form" data-form="contact-discovery" method="POST" action="/contact/submit" novalidate>
+      <div class="sr-only" aria-hidden="true"><label for="cb-company-website">Company website (leave blank)</label><input type="text" id="cb-company-website" name="company_website" tabindex="-1" autocomplete="off"></div>
+      <div class="r-2" style="gap:16px;">
+        <label><span>Full name</span><input type="text" id="cb-name" name="name" required autocomplete="name"></label>
+        <label><span>Work email</span><input type="email" id="cb-email" name="email" required autocomplete="email"></label>
+        <label><span>Months behind <span style="color:var(--color-ink-faint);font-weight:400;">optional</span></span><select id="cb-months" name="months"><option value="">Select range</option><option value="1-3">1&ndash;3 months</option><option value="3-12">3&ndash;12 months</option><option value="1-2y">1&ndash;2 years</option><option value="2y-plus">2+ years</option></select></label>
+        <label><span>QuickBooks version <span style="color:var(--color-ink-faint);font-weight:400;">optional</span></span><select id="cb-qb-status" name="qb_status"><option value="">Select one</option><option value="qbo-current">QuickBooks Online</option><option value="qb-desktop">QuickBooks Desktop</option><option value="qb-enterprise">QuickBooks Enterprise</option><option value="not-sure">Not sure</option></select></label>
       </div>
-      <div class="intake-field">
-        <label class="intake-field__label" for="cb-message">Anything specific? <span class="intake-field__optional">optional</span></label>
-        <textarea id="cb-message" name="message" rows="3" placeholder="A line or two about the state of the file helps us scope the call."></textarea>
-      </div>
-      <div class="intake-consent">
-        <label class="intake-checkbox"><input type="checkbox" name="consent" value="agreed" required><span>I agree to be contacted by TechBrot regarding this cleanup inquiry.<span class="intake-checkbox__help">We&rsquo;ll only use your details to respond to this request. See our <a href="/legal/privacy-policy/">privacy policy</a>.</span></span></label>
-      </div>
+      <label style="display:block;margin-top:16px;"><span>Anything specific? <span style="color:var(--color-ink-faint);font-weight:400;">optional</span></span><textarea id="cb-message" name="message" rows="3" placeholder="A line or two about the state of the file helps us scope the call."></textarea></label>
+      <label class="intake-checkbox" style="display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:13.5px;color:var(--color-ink-body2);"><input type="checkbox" name="consent" value="agreed" required style="width:auto;min-height:0;margin-top:3px;"><span>I agree to be contacted by TechBrot regarding this cleanup inquiry. We&rsquo;ll only use your details to respond to this request. See our <a href="/legal/privacy-policy/" style="color:var(--color-accent);">privacy policy</a>.</span></label>
       <input type="hidden" name="intent" data-meta="intent" value="cleanup">
       <input type="hidden" name="source_page" data-meta="source_page" value="accounting/bookkeeping/cleanup-bookkeeping">
       <input type="hidden" name="source_type" data-meta="source_type" value="bofu-conversion">
       <input type="hidden" name="funnel_stage" data-meta="funnel_stage" value="BOFU">
       <input type="hidden" name="referring_page" id="cb-referring-page" value="" data-referrer-tracker>
-      <div class="sr-only" aria-hidden="true">
-        <label for="cb-company-website">Company website (leave blank)</label>
-        <input type="text" id="cb-company-website" name="company_website" tabindex="-1" autocomplete="off">
-      </div>
-      <div class="intake-form__foot">
-        <button class="btn btn--primary" type="submit" data-cta="contact-form-submit">Send the Discovery Brief</button>
-        <p class="intake-form__reassurance">Same business day &middot; no obligation. A Certified ProAdvisor replies within one business day.</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:18px;">
+        <button class="btn btn-cta" type="submit" data-cta="contact-form-submit" style="display:inline-flex;align-items:center;height:48px;padding:0 22px;border:0;border-radius:10px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;">Send the Discovery Brief</button>
+        <span style="font-size:13px;color:var(--color-ink-mute);">Same business day &middot; no obligation. A Certified ProAdvisor replies within one business day.</span>
       </div>
     </form>
   </div>
 </section>
 
-{#- §12 — FAQ (faq__list / crawlable Q&A · matches FAQPage verbatim) -#}
-<section class="section section--flagship" id="cleanup-bookkeeping-faq">
-  <div class="container container--narrow">
+{#- §12 FAQ -#}
+<section class="sec reveal" id="cleanup-bookkeeping-faq" style="padding-top:80px;">
+  <div class="ct" style="max-width:880px;">
     <div class="idx"><span class="idx__n">§12</span><span class="idx__t">Questions</span><span class="idx__rule"></span></div>
-    <h2 class="section__heading">What people ask before scoping a cleanup.</h2>
-    <div class="faq__list">
+    <h2 class="h2" style="margin-bottom:32px;">What people ask before scoping a cleanup.</h2>
+    <div class="faq">
       {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="cleanup-bookkeeping-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="cleanup-bookkeeping-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
+      <details name="cb-faq"{% if loop.first %} open{% endif %}><summary>{{ item.q | safe }}<span class="pl"></span></summary><div>{{ item.a | safe }}</div></details>
       {%- endfor %}
     </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-15</span><span>Updated: 2026-06-15</span><span>Reviewed: 2026-06-15 &middot; Certified QuickBooks ProAdvisor</span></p>
   </div>
 </section>

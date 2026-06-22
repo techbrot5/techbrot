@@ -8,73 +8,60 @@ footerNav:
     - { href: "/accounting/advisory/", text: "Advisory" }
 ---
 {#- ===========================================================================
-    t-money — D1 money-page family (NEW handoff "QuickBooks Cleanup - Money Page.dc.html").
-    New handoff CHROME via dc-base; the page body (already re-architected to the
-    Money §-rhythm + dossier components) renders via the elevated component layer.
-    Hero = split, rule-mark eyebrow, signature figure (heroFigure). Final CTA =
-    earned dark (ctaBand.dark). Frozen speakable #<slug>-in-brief-text preserved.
-    BOFU: full conversion weight (dual seam lives in the page body).
+    t-money — D1 money-page family (NEW handoff "QuickBooks Cleanup - Money Page").
+    V2 FULL RECOMPOSE: split hero (rule-mark eyebrow + signature figcard viz +
+    2 CTAs + helper + trust) · {{content}} = the page's dossier body in REAL
+    handoff components · earned-DARK final CTA (monogram watermark). BOFU.
+    Frozen speakable #<slug>-in-brief-text lives in the page body.
     =========================================================================== -#}
 
-{#- HERO — split, signature figure, rule-mark eyebrow, trust row (BOFU) -#}
-<section class="section hero-tier hero--compact hero--rule{% if heroFigure %} hero--split{% endif %}" id="{{ slug }}-hero">
-  <div class="container">
-    <div class="hero-split">
-      <div class="hero">
-        <p class="hero__eyebrow"><span class="hero__eyebrow-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
-        <h1 class="hero__heading speakable">{{ hero.heading | safe }}</h1>
-        <p class="hero__subheading speakable">{{ hero.subheading | safe }}</p>
-        {%- if hero.actions %}
-        <div class="hero__actions">
-          {%- for action in hero.actions.slice(0, 2) %}
-          <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-            {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
-          {%- endfor %}
-        </div>
-        {%- endif %}
-        {%- if hero.trust %}
-        <ul class="hero__trust">
-          {%- for t in hero.trust %}<li class="hero__trust-item">{{ t | safe }}</li>{%- endfor %}
-        </ul>
-        {%- endif %}
+{#- HERO — split, signature figure card (heroFig.viz), rule-mark eyebrow -#}
+{%- if hero %}
+<section class="section" id="{{ slug }}-hero" style="padding-top:72px;padding-bottom:64px;border-bottom:1px solid var(--border-faint);">
+  <div class="ct{% if not heroFig %} read{% endif %}">
+    {%- if heroFig %}<div class="dc-rhero"><div>{% endif %}
+      <p class="eyebrow" style="display:inline-flex;align-items:center;gap:12px;margin-bottom:26px;"><span class="rule-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
+      <h1 class="dsp speakable" style="font-weight:500;font-size:clamp(40px,2rem + 3.6vw,68px);margin:0 0 24px;">{{ hero.heading | safe }}</h1>
+      <p class="lede speakable" style="margin:0 0 32px;max-width:38ch;">{{ hero.subheading | safe }}</p>
+      {%- if hero.actions %}
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px;">
+        {%- for a in hero.actions.slice(0, 2) %}
+        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:52px;padding:0 24px;border-radius:12px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
+        {%- endfor %}
       </div>
-      {%- if heroFigure %}
-      <div class="hero__figure">{% include "partials/figure-" + heroFigure + ".svg" %}</div>
       {%- endif %}
-    </div>
-  </div>
-</section>
-
-{#- IN-BRIEF (frozen speakable id) -#}
-{%- if inBrief %}
-<section class="section section--compact" id="{{ slug }}-in-brief">
-  <div class="container">
-    <div class="in-brief">
-      <p class="in-brief__text" id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
-      {%- if inBrief.source %}<p class="in-brief__source">{{ inBrief.source | safe }}</p>{%- endif %}
-    </div>
+      {%- if hero.helper %}<p style="font-size:14px;color:var(--color-ink-mute);margin:0;max-width:42ch;">{{ hero.helper | safe }}</p>{%- endif %}
+      {%- if heroFig %}
+      </div>
+      <figure class="figcard">
+        <div class="figcard__grid" aria-hidden="true"></div>
+        <figcaption><span class="figcard__t">{{ heroFig.caption | safe }}</span><span class="figcard__tag mono">{{ heroFig.tag | default("illustrative", true) | safe }}</span></figcaption>
+        {% include heroFig.viz %}
+      </figure>
+      </div>
+    {%- endif %}
   </div>
 </section>
 {%- endif %}
 
 {{ content | safe }}
 
-{#- FINAL CTA — earned dark (ctaBand.dark) -#}
+{#- FINAL CTA — earned dark (monogram watermark) -#}
 {%- if ctaBand %}
-<section class="section section--cta-band section--cta-band--{% if ctaBand.dark %}dark{% else %}light{% endif %} section--tier-bofu" id="{{ slug }}-cta">
-  <div class="cta-band__motif" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></div>
-  <div class="container">
-    <div class="final-cta">
-      <p class="final-cta__eyebrow"><span class="final-cta__mark" aria-hidden="true"><span></span><span></span></span>{{ ctaBand.eyebrow | safe }}</p>
-      <h2 class="final-cta__heading">{{ ctaBand.heading | safe }}</h2>
-      <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
-      <div class="final-cta__actions">
-        {%- for action in ctaBand.actions %}
-        <a class="btn {{ action.class }}" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+<section class="section final-dark" id="{{ slug }}-cta" style="padding:0;">
+  <svg class="final-dark__mono" width="420" height="420" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z" fill="#fff"/><rect x="42" y="10" width="14" height="12" fill="#fff"/></svg>
+  <div class="ct" style="position:relative;padding-top:96px;padding-bottom:96px;">
+    <div style="max-width:760px;">
+      <span class="rule-mark" aria-hidden="true" style="margin-bottom:24px;"><span style="background:var(--accent-on-ink);"></span><span></span></span>
+      <h2 class="final-dark__h">{{ ctaBand.heading | safe }}</h2>
+      <p class="final-dark__lede">{{ ctaBand.lede | safe }}</p>
+      {%- if hero.helper %}<p class="final-dark__reassure">{% include "icons/check.svg" %}{{ hero.helper | safe }}</p>{%- endif %}
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;">
+        {%- for a in ctaBand.actions %}
+        <a class="btn {% if loop.first %}btn-cta{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:11px;height:56px;padding:0 26px;border-radius:13px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};{% if not loop.first %}background:transparent;color:#fff;border:1px solid rgba(245,247,251,0.32);{% endif %}">{{ a.label }}</a>
         {%- endfor %}
       </div>
-      <p class="final-cta__disclaimer">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
+      <p class="final-dark__disc">TechBrot Inc. is an independent firm and is not affiliated with Intuit Inc. QuickBooks and ProAdvisor are trademarks of Intuit Inc. We do not file taxes or represent clients before tax authorities.</p>
     </div>
   </div>
 </section>
