@@ -27,14 +27,18 @@ callBar: true
 </nav>
 {%- endif %}
 
+{#- compareTier (C2 /vs/ family, set by src/vs/vs.11tydata.js): MOFU consideration
+    pages get the editorial-calm hero — eyebrow + H1 + lede only, ~820px narrow,
+    NO buttons/figure/trust row (funnel-stage match). Flag-gated so the 40+ other
+    t-mofu pages keep their normal compact hero. -#}
 {%- if hero %}
-<section class="section hero-tier hero--compact{% if heroRule %} hero--rule{% endif %}" id="{{ slug }}-hero">
-  <div class="container">
+<section class="section hero-tier hero--compact{% if heroRule %} hero--rule{% endif %}{% if compareTier %} hero--calm{% endif %}" id="{{ slug }}-hero">
+  <div class="container{% if compareTier %} container--narrow{% endif %}">
     <div class="hero">
       <p class="hero__eyebrow"><span class="hero__eyebrow-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
       <h1 class="hero__heading">{{ hero.heading | safe }}</h1>
       <p class="hero__subheading">{{ hero.subheading | safe }}</p>
-      {%- if hero.actions %}
+      {%- if hero.actions and not compareTier %}
       <div class="hero__actions">
         {%- for action in hero.actions.slice(0, 2) %}
         <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
@@ -47,13 +51,25 @@ callBar: true
 </section>
 {%- endif %}
 
+{#- compareTier: the answer-first block renders as the TL;DR card (.tldr-box,
+    matching the home recompose). The speakable cssSelector #<slug>-in-brief-text
+    is FROZEN, so the id stays on the body paragraph either way. -#}
 {%- if inBrief %}
 <section class="section section--compact" id="{{ slug }}-in-brief">
-  <div class="container">
+  <div class="container{% if compareTier %} container--narrow{% endif %}">
+    {%- if compareTier %}
+    <div class="tldr-box speakable">
+      <p class="tldr-box__label">{{ inBrief.label | default("In brief", true) | safe }}</p>
+      {%- if inBrief.heading %}<h2 class="tldr-box__heading">{{ inBrief.heading | safe }}</h2>{%- endif %}
+      <p class="tldr-box__body" id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
+      {%- if inBrief.source %}<p class="in-brief__source">{{ inBrief.source | safe }}</p>{%- endif %}
+    </div>
+    {%- else %}
     <div class="in-brief">
       <p class="in-brief__text" id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
       {%- if inBrief.source %}<p class="in-brief__source">{{ inBrief.source | safe }}</p>{%- endif %}
     </div>
+    {%- endif %}
   </div>
 </section>
 {%- endif %}
