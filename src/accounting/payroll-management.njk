@@ -1,10 +1,10 @@
 ---json
 {
-  "layout": "layouts/t-bofu.njk",
+  "layout": "layouts/t-money.njk",
   "permalink": "/accounting/payroll-management/",
   "slug": "payroll-management",
-  "tierClass": "section--tier-bofu",
-  "bodyClass": "page--bofu",
+  "intent": "payroll",
+  "showBadges": true,
   "title": "Payroll Management Services for U.S. Small Businesses · TechBrot",
   "description": "Professional payroll management for U.S. small and mid-sized businesses — multi-state payroll setup, processing, tax filing, and compliance by Certified QuickBooks Payroll ProAdvisors. Fixed monthly fees, written scope.",
   "breadcrumb": [
@@ -15,274 +15,134 @@
   "hero": {
     "eyebrow": "Payroll management",
     "heading": "Payroll, run right. Every cycle. Every state.",
-    "subheading": "Recurring payroll management for U.S. small and mid-sized businesses &mdash; scheduled processing, federal and state tax filings, multi-state compliance, employee onboarding, and year-end reporting, delivered by Certified QuickBooks Payroll ProAdvisors. Fixed monthly fees against a written scope, fully integrated with your bookkeeping.",
+    "subheading": "Recurring payroll management for U.S. small and mid-sized businesses &mdash; scheduled processing, tax filings, multi-state compliance, and year-end reporting by Certified QuickBooks Payroll ProAdvisors. Fixed monthly fee, integrated with your bookkeeping.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=payroll", "class": "btn--primary" },
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=payroll" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
+  },
+  "sec": {
+    "inBriefTag": "The engagement",
+    "inBriefH": "What payroll management actually is.",
+    "signalsTag": "Is it time?",
+    "signalsH": "If any of these apply, the answer is yes.",
+    "aiH": "Payroll management, in five questions.",
+    "pricingH": "Fixed monthly fee, written scope, no surprises.",
+    "pricingLede": "Three tiers; setup and provider-migration are quoted separately as one-time work, and software subscriptions pass through at cost. See the <a href=\"/pricing/?intent=pricing\">pricing page</a> for full detail.",
+    "operatorH": "A named Certified Payroll ProAdvisor.",
+    "operatorLede": "Every TechBrot payroll engagement is delivered by a vetted local operator who holds the Certified QuickBooks Payroll ProAdvisor credential and is multi-state capable. You&rsquo;ll know exactly who runs your payroll and how to reach them, backed by platform-level quality review and on-schedule filings.",
+    "relatedTag": "Alongside payroll",
+    "relatedH": "Payroll commonly runs alongside.",
+    "intakeH": "Scope your payroll engagement.",
+    "faqH": "What people ask before scoping payroll."
   },
   "inBrief": {
     "text": "<strong>Payroll management</strong> is the recurring service that operates your payroll correctly &mdash; scheduled pay cycles, federal and state tax withholding and filing, quarterly 941s and state unemployment, direct deposit and pay stubs, employee onboarding, multi-state compliance, and year-end W-2/1099 reporting &mdash; delivered by a Certified QuickBooks Payroll ProAdvisor and integrated with your bookkeeping. Typically <strong>$150&ndash;$800+/month</strong>.",
     "source": "Multi-state capable · integrates with QuickBooks bookkeeping. Not affiliated with Intuit Inc."
   },
+  "definition": [
+    "Payroll management is the recurring professional service that operates an employer&rsquo;s payroll function correctly &mdash; running scheduled pay cycles, calculating and withholding federal and state taxes, filing quarterly 941 returns and state unemployment filings, generating pay stubs and direct deposits, processing employee onboarding and offboarding, tracking PTO and benefits deductions, handling multi-state payroll and remote-worker compliance, and producing year-end W-2 and 1099 reporting. TechBrot delivers it as a fixed monthly engagement through Certified QuickBooks Payroll ProAdvisors, fully integrated with your QuickBooks bookkeeping.",
+    "Engagements typically run $150&ndash;$800+/month depending on employee count, state coverage, and complexity. Payroll often pairs with <a href=\"/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly\">monthly bookkeeping</a> &mdash; the two integrate cleanly and the combined cost is materially lower than running them with separate providers."
+  ],
   "ctaBand": {
+    "dark": true,
     "eyebrow": "Payroll starts here",
     "heading": "Let&rsquo;s scope a payroll engagement.",
     "lede": "Book a free 30-minute payroll review. We&rsquo;ll review your setup, employee count, state coverage, and compliance posture, and deliver a written fixed-fee scope within 3 business days &mdash; before any work begins.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=payroll", "class": "btn--primary" },
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=payroll" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
   }
 }
 ---
 
-<section class="section section--compact" id="payroll-management-proof">
-  <div class="container">
-    <div class="proof-strip">
-      <span class="proof-strip__item"><b>4&times;</b> Certified ProAdvisor &mdash; incl. Payroll</span>
-      <span class="proof-strip__item"><b>Multi-state</b> capable</span>
-      <span class="proof-strip__item"><b>Fixed-fee</b> written scope, first</span>
-      <span class="proof-strip__item"><b>1 business day</b> response</span>
-      <span class="proof-strip__item"><span class="proof-strip__rating">5.0</span> 2 verified Clutch reviews</span>
-    </div>
-  </div>
-</section>
+{#- ═══ BESPOKE MIDDLE (payroll management) — full depth re-flowed into shared dc-system
+    v2 components. Spine (hero/proof/trust/§01/§02 signals/§03 AI/pricing/operator/
+    related/call/intake/faq/CTA) is layout-owned (t-money). Bespoke sections alternate
+    sand/white so no two adjacent both sand; LAST bespoke is white. ═══ -#}
 
-<section class="section" id="payroll-management-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The engagement</p>
-      <h2 class="section__heading">What payroll management actually is.</h2>
-    </header>
-    <div class="prose">
-      <p>Payroll management is the recurring professional service that operates an employer&rsquo;s payroll function correctly &mdash; running scheduled pay cycles, calculating and withholding federal and state taxes, filing quarterly 941 returns and state unemployment filings, generating pay stubs and direct deposits, processing employee onboarding and offboarding, tracking PTO and benefits deductions, handling multi-state payroll and remote-worker compliance, and producing year-end W-2 and 1099 reporting. TechBrot delivers it as a fixed monthly engagement through Certified QuickBooks Payroll ProAdvisors, fully integrated with your QuickBooks bookkeeping.</p>
-      <p>Engagements typically run $150&ndash;$800+/month depending on employee count, state coverage, and complexity. Payroll often pairs with <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> &mdash; the two integrate cleanly and the combined cost is materially lower than running them with separate providers.</p>
-    </div>
-    <blockquote class="pull-quote">
-      <p>{{ multistate.body | safe }}</p>
-    </blockquote>
-  </div>
-</section>
-
-<section class="section section--alt" id="payroll-management-cycle">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The pay cycle</p>
-      <h2 class="section__heading">What every pay cycle actually looks like.</h2>
-      <p class="section__lede">Every cycle runs the same four-phase cadence &mdash; so nothing is rushed the night before pay date.</p>
-    </header>
-    <ol class="process-diagram">
+{#- §04 PAY CYCLE (4-phase cadence → process-grid) — sand -#}
+<section class="sec reveal" id="payroll-management-cycle" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§04</span><span class="idx__t">The pay cycle</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:20ch;margin-bottom:12px;">What every pay cycle actually looks like.</h2>
+    <p class="lede" style="margin:0 0 44px;max-width:60ch;">Every cycle runs the same four-phase cadence &mdash; so nothing is rushed the night before pay date.</p>
+    <div class="process-grid">
       {%- for s in payCycle %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ s.num | safe }}{% if loop.last %} &check;{% endif %}</div>{% if s.name %}<h3>{{ s.name | safe }}</h3>{% endif %}<p>{{ s.body | safe }}</p></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section" id="payroll-management-deliverables">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The deliverables</p>
-      <h2 class="section__heading">What you get, every cycle.</h2>
-    </header>
-    <div class="grid-2">
-      <div>
+{#- §05 DELIVERABLES (included + layered checklists → two incl-card) — white -#}
+<section class="sec reveal" id="payroll-management-deliverables">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§05</span><span class="idx__t">The deliverables</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:18ch;margin-bottom:36px;">What you get, every cycle.</h2>
+    <div class="r-2" style="gap:24px;">
+      <div class="incl-card">
         <h3>Included in every engagement</h3>
-        <ul class="checks-list">
-          {%- for d in included %}<li>{{ d | safe }}</li>{%- endfor %}
-        </ul>
+        <ul class="checklist">{%- for d in included %}<li>{{ d | safe }}</li>{%- endfor %}</ul>
       </div>
-      <div>
+      <div class="incl-card">
         <h3>Layered on as scope requires</h3>
-        <ul class="checks-list">
-          {%- for d in layered %}<li>{{ d | safe }}</li>{%- endfor %}
-        </ul>
+        <ul class="checklist">{%- for d in layered %}<li>{{ d | safe }}</li>{%- endfor %}</ul>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="payroll-management-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Payroll management, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
+{#- §06 MULTI-STATE (citable definition → lift cards, with the multistate.body pull-quote) — sand -#}
+<section class="sec reveal" id="payroll-management-multistate" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§06</span><span class="idx__t">Multi-state payroll</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:18px;">Every new state changes the math.</h2>
+    <div class="prose" style="margin-bottom:36px;"><p>{{ multistate.body | safe }}</p></div>
+    <div class="r-2">
+      <div class="lift"><span class="lift__n">01</span><div><h3>Registration in each state</h3><p>Every state where an employee actually works requires registering the business and opening state income-tax withholding and state unemployment (SUTA) accounts.</p></div></div>
+      <div class="lift"><span class="lift__n">02</span><div><h3>Reciprocal-state agreements</h3><p>Neighboring states with reciprocal agreements change which jurisdiction withholds &mdash; applied correctly so employees aren&rsquo;t taxed twice or under-withheld.</p></div></div>
+      <div class="lift"><span class="lift__n">03</span><div><h3>Filing on every schedule</h3><p>Each jurisdiction files on its own schedule. A single remote hire creates payroll nexus &mdash; registration, withholding setup, and unemployment all happen <em>before</em> the first paycheck, not after.</p></div></div>
+      <div class="lift"><span class="lift__n">04</span><div><h3>Non-linear compliance load</h3><p>The work scales non-linearly with every state you employ in &mdash; which is why multi-state payroll is one of the most common reasons businesses move to professional management.</p></div></div>
+    </div>
+  </div>
+</section>
+
+{#- §07 ONBOARDING (one-time HowTo flow → process-grid) — white -#}
+<section class="sec reveal" id="payroll-management-onboarding">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§07</span><span class="idx__t">Onboarding</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:20ch;margin-bottom:44px;">From first call to first clean pay cycle.</h2>
+    <div class="process-grid">
+      {%- for s in onboarding %}
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">0{{ loop.index }}{% if loop.last %} &check;{% endif %}</div>{% if s.name %}<h3>{{ s.name | safe }}</h3>{% endif %}<p>{{ s.body | safe }}</p>{% if s.sub %}<p style="margin-top:8px;"><strong>Typical: {{ s.sub | safe }}</strong></p>{% endif %}</div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="payroll-management-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Is it time?</p>
-      <h2 class="section__heading">If any of these apply, the answer is yes.</h2>
-    </header>
-    <div class="grid-2">
-      {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="payroll-management-pricing">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Pricing</p>
-      <h2 class="section__heading">Fixed monthly fee, written scope, no surprises.</h2>
-      <p class="section__lede">Three tiers; setup and provider-migration are quoted separately as one-time work, and software subscriptions pass through at cost. See the <a href="/pricing/?intent=pricing">pricing page</a> for full detail.</p>
-    </header>
-    <div class="grid-3">
-      {%- for t in tiers %}
-      <div class="stack-8">
-        {%- if t.note %}<p class="section__eyebrow">{{ t.note | safe }}</p>{%- endif %}
-        <h3>{{ t.name | safe }}</h3>
-        <p class="prose"><strong>{{ t.price | safe }}</strong>{{ t.per | safe }}</p>
-        <p class="prose"><strong>For:</strong> {{ t.forWhom | safe }}</p>
-        <ul class="checks-list">
-          {%- for b in t.bullets %}<li>{{ b | safe }}</li>{%- endfor %}
-        </ul>
-        <p class="prose"><a href="/contact/?intent=payroll">{{ t.cta | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="payroll-management-onboarding">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Onboarding</p>
-      <h2 class="section__heading">From first call to first clean pay cycle.</h2>
-    </header>
-    {%- for s in onboarding %}
-    <div class="stack-8">
-      <p class="num">0{{ loop.index }}</p>
-      <h3>{{ s.name | safe }}</h3>
-      <p class="prose">{{ s.body | safe }}</p>
-      <p class="prose"><strong>Typical: {{ s.sub | safe }}</strong></p>
-    </div>
-    {%- endfor %}
-  </div>
-</section>
-
-<section class="section section--alt" id="payroll-management-platforms">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The platforms</p>
-      <h2 class="section__heading">Your payroll software, professionally operated.</h2>
-    </header>
-    <div class="grid-2">
+{#- §08 PLATFORMS (payroll software → lift cards) — sand -#}
+<section class="sec reveal" id="payroll-management-platforms" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§08</span><span class="idx__t">The platforms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:36px;">Your payroll software, professionally operated.</h2>
+    <div class="r-2">
       {%- for p in platforms %}
-      <div class="stack-8">
-        <h3><span class="num">{{ p.tag | safe }}</span> {{ p.name | safe }}</h3>
-        <p class="prose">{{ p.body | safe }}</p>
-      </div>
+      <div class="lift"><span class="lift__n">{{ p.tag | safe }}</span><div><h3>{{ p.name | safe }}</h3><p>{{ p.body | safe }}</p></div></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="payroll-management-integration">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Payroll + bookkeeping</p>
-      <h2 class="section__heading">When payroll runs with bookkeeping, the math gets simpler.</h2>
-    </header>
+{#- §09 PAYROLL + BOOKKEEPING (integration prose — unmappable to a spine component) — white -#}
+<section class="sec reveal" id="payroll-management-integration">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§09</span><span class="idx__t">Payroll + bookkeeping</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:18px;">When payroll runs with bookkeeping, the math gets simpler.</h2>
     <div class="prose">
       <p>When payroll and bookkeeping run with separate providers, every month opens a reconciliation gap: the payroll journal has to be re-keyed or imported, liabilities drift, and the two systems disagree until someone fixes them. Run together, the payroll journal posts straight into your QuickBooks file each cycle and the liabilities reconcile automatically &mdash; the entire category of error disappears.</p>
       <p>It&rsquo;s also cheaper. A combined payroll-and-bookkeeping engagement with one operator costs materially less than two separate vendors, and you have one named person accountable for both. Most payroll clients run <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> alongside for exactly this reason.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="payroll-management-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Who performs the work</p>
-      <h2 class="section__heading">A named Certified Payroll ProAdvisor.</h2>
-    </header>
-    <div class="prose">
-      <p>Every TechBrot payroll engagement is delivered by a vetted local operator who holds the Certified QuickBooks Payroll ProAdvisor credential and is multi-state capable. You&rsquo;ll know exactly who runs your payroll and how to reach them, backed by platform-level quality review and on-schedule filings.</p>
-    </div>
-    <div class="trust-row">
-      {%- for r in operatorSpec %}
-      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
-      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="payroll-management-next">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Alongside payroll</p>
-      <h2 class="section__heading">Payroll commonly runs alongside.</h2>
-    </header>
-    {%- for n in nextSteps %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
-    </div>
-    {%- endfor %}
-  </div>
-</section>
-
-<section class="section" id="payroll-management-intake">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Start now</p>
-      <h2 class="section__heading">Scope your payroll engagement.</h2>
-      <p class="section__lede">Tell us the basics and a Certified Payroll ProAdvisor replies within one business day with next steps and a written fixed-fee scope. Prefer the full intake? The <a href="/contact/?intent=payroll">complete contact form</a> captures every detail.</p>
-    </header>
-    {%- set intakePrefix = "pm" %}
-    {%- set intakeFormId = "payroll-intake-form" %}
-    {%- set intakeIntent = "payroll" %}
-    {%- set intakeSourceType = "bofu-conversion" %}
-    {%- set intakeFunnelStage = "BOFU" %}
-    {%- set intakeLegend = "What we should look at" %}
-    {%- set intakeNote = "Payroll is the common reason businesses reach this page &mdash; add anything else you want scoped in the same call." %}
-    {%- set intakeConsent = "I agree to be contacted by TechBrot regarding this payroll inquiry." %}
-    {%- set intakeSubmit = "Send the Discovery Brief" %}
-    {%- set intakeReassurance = "No spam, no list, no obligation. A Certified Payroll ProAdvisor replies within one business day." %}
-    {% include "partials/intake-form.njk" %}
-  </div>
-</section>
-
-<section class="section section--alt" id="payroll-management-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">What people ask before scoping payroll.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="payroll-management-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="payroll-management-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
     </div>
   </div>
 </section>

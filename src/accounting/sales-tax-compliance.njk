@@ -1,10 +1,10 @@
 ---json
 {
-  "layout": "layouts/t-bofu.njk",
+  "layout": "layouts/t-money.njk",
   "permalink": "/accounting/sales-tax-compliance/",
   "slug": "sales-tax-compliance",
-  "tierClass": "section--tier-bofu",
-  "bodyClass": "page--bofu",
+  "intent": "sales-tax",
+  "showBadges": true,
   "title": "Sales Tax Compliance Services for U.S. Small Businesses · TechBrot",
   "description": "Multi-state sales tax compliance for U.S. small and mid-sized businesses — nexus analysis, state registration, automated filing, exemption certificate management, and audit support by Certified ProAdvisors, integrated with QuickBooks bookkeeping.",
   "breadcrumb": [
@@ -15,272 +15,120 @@
   "hero": {
     "eyebrow": "Sales tax compliance",
     "heading": "Multi-state sales tax, handled before it&rsquo;s a problem.",
-    "subheading": "Nexus analysis, state registration, monthly filings, exemption certificates, and audit support &mdash; for U.S. e-commerce sellers, SaaS companies, and service businesses with multi-state exposure. Post-Wayfair, this is no longer optional. Delivered by Certified ProAdvisors, integrated with your QuickBooks bookkeeping.",
+    "subheading": "Nexus analysis, state registration, monthly filings, exemption certificates, and audit support &mdash; for e-commerce, SaaS, and service businesses with multi-state exposure. Post-Wayfair, it&rsquo;s no longer optional. Delivered by Certified ProAdvisors, on your QuickBooks data.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=sales-tax", "class": "btn--primary" },
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=sales-tax" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
+  },
+  "sec": {
+    "inBriefTag": "The engagement",
+    "inBriefH": "What sales tax compliance actually is.",
+    "signalsTag": "Do you have exposure?",
+    "signalsH": "If any of these apply, you have exposure.",
+    "aiH": "Sales tax compliance, in five questions.",
+    "pricingH": "Fixed monthly fee, scaling by state count.",
+    "pricingLede": "One-time work (nexus analysis $500&ndash;$2,000, registration $200&ndash;$500/state, SaaS taxability $1,000&ndash;$3,000, VDA coordination per exposure) is quoted separately; filing software passes through at vendor pricing.",
+    "operatorH": "Certified ProAdvisors. Coordinated with tax counsel when required.",
+    "operatorLede": "Every TechBrot sales tax compliance engagement is delivered by Certified QuickBooks ProAdvisors with multi-state experience &mdash; directly by our lead practice or by a vetted operator running their own practice under TechBrot&rsquo;s standards. For engagements involving Voluntary Disclosure Agreements, audits with significant exposure, or tax-position disputes, we coordinate with state-specific sales-tax counsel or CPAs. TechBrot&rsquo;s role is operational compliance and documentation; legal representation and tax-position defense run through licensed professionals. The split is clean and stated up front.",
+    "relatedTag": "Alongside sales tax",
+    "relatedH": "What sales tax commonly runs alongside.",
+    "intakeH": "Scope your sales-tax compliance.",
+    "faqH": "What people ask before scoping compliance."
   },
   "inBrief": {
     "text": "<strong>Sales tax compliance</strong> is the recurring operational work of determining where you owe (economic + physical nexus), registering with each state, collecting at the right rates, filing on each state&rsquo;s schedule, remitting, managing exemption certificates, and answering notices and audits &mdash; delivered by Certified ProAdvisors and reconciled to your QuickBooks data. Typically <strong>$250&ndash;$1,500+/month</strong> by state count.",
     "source": "Multi-state · all 50 states + local jurisdictions · coordinated with tax counsel when required. Not affiliated with Intuit Inc."
   },
+  "definition": [
+    "Sales tax compliance is the ongoing operational work of determining where a business owes sales tax (economic and physical nexus analysis), registering with each state and local jurisdiction, collecting tax at the right rates, filing returns on each state&rsquo;s schedule, remitting collected tax, managing exemption certificates, and responding to state notices and audits.",
+    "The 2018 <em>South Dakota v. Wayfair</em> ruling created economic-nexus rules &mdash; most states now require collection once a business exceeds thresholds like $100,000 in sales or 200 transactions (specifics vary). Most multi-state U.S. small businesses, e-commerce sellers, and SaaS companies now have obligations they didn&rsquo;t have before. TechBrot delivers compliance as a recurring engagement &mdash; $250&ndash;$1,500+/month by state count and complexity &mdash; integrated with <a href=\"/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly\">monthly bookkeeping</a> for clean transaction-level data. Initial nexus analysis and registration are quoted as one-time engagements."
+  ],
   "ctaBand": {
+    "dark": true,
     "eyebrow": "Start with exposure",
     "heading": "Book a nexus review.",
     "lede": "A free 30-minute call, then a nexus review that produces a state-by-state map of where you stand &mdash; in writing, with a fixed-fee scope for compliance going forward, before any work begins.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=sales-tax", "class": "btn--primary" },
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=sales-tax" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
   }
 }
 ---
 
-<section class="section section--compact" id="sales-tax-compliance-proof">
-  <div class="container">
-    <div class="proof-strip">
-      <span class="proof-strip__item"><b>4&times;</b> Certified QuickBooks ProAdvisor</span>
-      <span class="proof-strip__item"><b>Multi-state</b> nexus &amp; filing</span>
-      <span class="proof-strip__item"><b>Fixed-fee</b> written scope, first</span>
-      <span class="proof-strip__item"><b>1 business day</b> response</span>
-      <span class="proof-strip__item"><span class="proof-strip__rating">5.0</span> 2 verified Clutch reviews</span>
-    </div>
-  </div>
-</section>
+{#- ═══ BESPOKE MIDDLE (sales tax compliance) — full depth re-flowed into shared
+    dc-system v2 components. Spine (hero/proof/trust/§01/§02 signals/§03 AI/pricing/
+    operator/related/call/intake/faq/CTA) is layout-owned (t-money). Bespoke sections
+    alternate white/sand so no two adjacent share a tone; LAST bespoke is white. ═══ -#}
 
-<section class="section" id="sales-tax-compliance-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The engagement</p>
-      <h2 class="section__heading">What sales tax compliance actually is.</h2>
-    </header>
-    <div class="prose">
-      <p>Sales tax compliance is the ongoing operational work of determining where a business owes sales tax (economic and physical nexus analysis), registering with each state and local jurisdiction, collecting tax at the right rates, filing returns on each state&rsquo;s schedule, remitting collected tax, managing exemption certificates, and responding to state notices and audits.</p>
-      <p>The 2018 <em>South Dakota v. Wayfair</em> ruling created economic-nexus rules &mdash; most states now require collection once a business exceeds thresholds like $100,000 in sales or 200 transactions (specifics vary). Most multi-state U.S. small businesses, e-commerce sellers, and SaaS companies now have obligations they didn&rsquo;t have before. TechBrot delivers compliance as a recurring engagement &mdash; $250&ndash;$1,500+/month by state count and complexity &mdash; integrated with <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> for clean transaction-level data. Initial nexus analysis and registration are quoted as one-time engagements.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="sales-tax-compliance-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Sales tax compliance, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="sales-tax-compliance-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Do you have exposure?</p>
-      <h2 class="section__heading">If any of these apply, you have exposure.</h2>
-    </header>
-    <div class="grid-2">
-      {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="sales-tax-compliance-models">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">By business type</p>
-      <h2 class="section__heading">How sales tax actually works for your business.</h2>
-      <p class="section__lede">General guidance &mdash; specific taxability depends on each state&rsquo;s rules, your revenue mix, and customer location. The nexus review produces a state-by-state map for your situation.</p>
-    </header>
-    <div class="grid-3">
-      {%- for m in models %}
-      <div class="stack-8">
-        <h3>{{ m.name | safe }}</h3>
-        <p class="prose"><strong>Compliance load: {{ m.load | safe }}.</strong> {{ m.pattern | safe }}</p>
-        <p class="prose"><em>Watch for:</em> {{ m.watch | safe }}</p>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="sales-tax-compliance-cycle">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The monthly cycle</p>
-      <h2 class="section__heading">What every month actually looks like.</h2>
-    </header>
-    <ol class="process-diagram">
-      {%- for s in cycle %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
-      {%- endfor %}
-    </ol>
-  </div>
-</section>
-
-<section class="section section--alt" id="sales-tax-compliance-deliverables">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The deliverables</p>
-      <h2 class="section__heading">What you actually get every month.</h2>
-    </header>
-    <div class="grid-2">
-      <div>
-        <h3>Included in every engagement</h3>
-        <ul class="checks-list">
-          {%- for d in included %}<li>{{ d | safe }}</li>{%- endfor %}
-        </ul>
-      </div>
-      <div>
-        <h3>Layered on as scope requires</h3>
-        <ul class="checks-list">
-          {%- for d in layered %}<li>{{ d | safe }}</li>{%- endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="sales-tax-compliance-pricing">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Pricing</p>
-      <h2 class="section__heading">Fixed monthly fee, scaling by state count.</h2>
-      <p class="section__lede">One-time work (nexus analysis $500&ndash;$2,000, registration $200&ndash;$500/state, SaaS taxability $1,000&ndash;$3,000, VDA coordination per exposure) is quoted separately; filing software passes through at vendor pricing.</p>
-    </header>
-    <div class="grid-3">
-      {%- for t in tiers %}
-      <article class="review-card">
-        {%- if t.note %}<p class="review-card__role">{{ t.note | safe }}</p>{%- endif %}
-        <h3>{{ t.name | safe }}</h3>
-        <p class="review-card__fact"><strong>{{ t.price | safe }}</strong>{{ t.per | safe }}</p>
-        <p class="review-card__fact"><strong>For:</strong> {{ t.forWhom | safe }}</p>
-        <ul class="checks-list">
-          {%- for b in t.bullets %}<li>{{ b | safe }}</li>{%- endfor %}
-        </ul>
-        <a class="review-card__link" href="/contact/?intent=sales-tax">{{ t.cta | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="sales-tax-compliance-wayfair">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Why this changed</p>
-      <h2 class="section__heading">The Wayfair ruling rewrote sales tax for small business.</h2>
-    </header>
+{#- §04 WAYFAIR (the economic-nexus explainer — KEPT VERBATIM) — white -#}
+<section class="sec reveal" id="sales-tax-compliance-wayfair">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§04</span><span class="idx__t">Why this changed</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:24px;">The Wayfair ruling rewrote sales tax for small business.</h2>
     <div class="prose">
       <p>Before 2018, sales-tax obligations followed physical presence &mdash; a business owed sales tax in a state only if it had a location, employees, or inventory there. Out-of-state e-commerce sellers had no general obligation where they had no physical footprint.</p>
       <p>In June 2018, the Supreme Court&rsquo;s decision in <em>South Dakota v. Wayfair, Inc.</em> overturned that physical-presence standard, allowing states to impose obligations based on economic nexus &mdash; sales volume or transaction count alone. Within months, most U.S. states adopted economic-nexus rules, typically pegged to thresholds like $100,000 in sales or 200 transactions in a calendar year (specifics vary and have shifted).</p>
       <p>The practical result: most U.S. small businesses operating across state lines now have multi-state sales-tax obligations they didn&rsquo;t have before 2018 &mdash; and most haven&rsquo;t caught up. Quantifying exposure is the first step; compliance going forward is the second. A nexus review usually takes 1&ndash;2 weeks and produces a state-by-state map of where you stand.</p>
     </div>
-    <blockquote class="pull-quote">
-      <p>{{ wayfair.body | safe }}</p>
-    </blockquote>
+    <blockquote class="opquote" style="margin-top:28px;"><blockquote>{{ wayfair.body | safe }}</blockquote></blockquote>
   </div>
 </section>
 
-<section class="section" id="sales-tax-compliance-data">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Why bookkeeping integration matters</p>
-      <h2 class="section__heading">Sales tax compliance only works on accurate transaction data.</h2>
-    </header>
+{#- §05 MODELS (how sales tax works by business type — 6 cards → lift) — sand -#}
+<section class="sec reveal" id="sales-tax-compliance-models" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§05</span><span class="idx__t">By business type</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">How sales tax actually works for your business.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:60ch;">General guidance &mdash; specific taxability depends on each state&rsquo;s rules, your revenue mix, and customer location. The nexus review produces a state-by-state map for your situation.</p>
+    <div class="r-2">
+      {%- for m in models %}
+      <div class="lift"><span class="lift__n">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span><div><h3>{{ m.name | safe }}</h3><p><strong>Compliance load: {{ m.load | safe }}.</strong> {{ m.pattern | safe }}</p><p><em>Watch for:</em> {{ m.watch | safe }}</p></div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- §06 CYCLE (the monthly sales-tax filing cycle → process-grid) — white -#}
+<section class="sec reveal" id="sales-tax-compliance-cycle">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§06</span><span class="idx__t">The monthly cycle</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:18ch;margin-bottom:44px;">What every month actually looks like.</h2>
+    <div class="process-grid">
+      {%- for s in cycle %}
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ s.num | safe }}{% if loop.last %} &check;{% endif %}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- §07 DELIVERABLES (included + layered checklists) — sand -#}
+<section class="sec reveal" id="sales-tax-compliance-deliverables" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§07</span><span class="idx__t">The deliverables</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:20ch;margin-bottom:36px;">What you actually get every month.</h2>
+    <div class="r-2" style="gap:24px;">
+      <div class="incl-card">
+        <h3>Included in every engagement</h3>
+        <ul class="checklist">{%- for d in included %}<li>{{ d | safe }}</li>{%- endfor %}</ul>
+      </div>
+      <div class="incl-card">
+        <h3>Layered on as scope requires</h3>
+        <ul class="checklist">{%- for d in layered %}<li>{{ d | safe }}</li>{%- endfor %}</ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{#- §08 DATA INTEGRATION (why bookkeeping integration matters — prose, PRESERVED) — white -#}
+<section class="sec reveal" id="sales-tax-compliance-data">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§08</span><span class="idx__t">Why bookkeeping integration matters</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:24px;">Sales tax compliance only works on accurate transaction data.</h2>
     <div class="prose">
       <p>Sales-tax filings are only as accurate as the transaction data underneath them. When compliance runs separately from bookkeeping, the same problem recurs: sales-by-state in QuickBooks doesn&rsquo;t match sales-by-state in the filing system. Reconciliation gaps multiply each month, filings end up wrong, notices arrive, and audits find variances.</p>
       <p>When TechBrot delivers both <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> and sales tax compliance, the integration is built in: transaction-level data flows from QuickBooks into return preparation, filings reconcile to the books monthly, and year-end packages flow to your CPA without rework. The combined cost is materially lower &mdash; not because either is cheaper in isolation, but because the reconciliation cost disappears.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="sales-tax-compliance-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Who handles your compliance</p>
-      <h2 class="section__heading">Certified ProAdvisors. Coordinated with tax counsel when required.</h2>
-    </header>
-    <div class="prose">
-      <p>Every TechBrot sales tax compliance engagement is delivered by Certified QuickBooks ProAdvisors with multi-state experience &mdash; directly by our lead practice or by a vetted operator running their own practice under TechBrot&rsquo;s standards. For engagements involving Voluntary Disclosure Agreements, audits with significant exposure, or tax-position disputes, we coordinate with state-specific sales-tax counsel or CPAs. TechBrot&rsquo;s role is operational compliance and documentation; legal representation and tax-position defense run through licensed professionals. The split is clean and stated up front.</p>
-    </div>
-    <div class="trust-row">
-      {%- for r in operatorSpec %}
-      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
-      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="sales-tax-compliance-next">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Alongside sales tax</p>
-      <h2 class="section__heading">What sales tax commonly runs alongside.</h2>
-    </header>
-    {%- for n in nextSteps %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
-    </div>
-    {%- endfor %}
-  </div>
-</section>
-
-<section class="section" id="sales-tax-compliance-intake">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Start now</p>
-      <h2 class="section__heading">Scope your sales-tax compliance.</h2>
-      <p class="section__lede">Tell us where you sell and a Certified ProAdvisor replies within one business day with next steps and a written scope. Prefer the full intake? The <a href="/contact/?intent=sales-tax">complete contact form</a> captures every detail.</p>
-    </header>
-    {%- set intakePrefix = "stc" %}
-    {%- set intakeFormId = "sales-tax-compliance-intake-form" %}
-    {%- set intakeIntent = "sales-tax" %}
-    {%- set intakeSourceType = "bofu-conversion" %}
-    {%- set intakeFunnelStage = "BOFU" %}
-    {%- set intakeLegend = "What we should look at" %}
-    {%- set intakeNote = "Sales-tax compliance is the common reason businesses reach this page &mdash; add anything else you want scoped in the same call." %}
-    {%- set intakeConsent = "I agree to be contacted by TechBrot regarding this sales tax compliance inquiry." %}
-    {%- set intakeSubmit = "Send the Discovery Brief" %}
-    {%- set intakeReassurance = "No spam, no list, no obligation. A Certified ProAdvisor replies within one business day." %}
-    {% include "partials/intake-form.njk" %}
-  </div>
-</section>
-
-<section class="section section--alt" id="sales-tax-compliance-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">What people ask before scoping compliance.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="sales-tax-compliance-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="sales-tax-compliance-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
     </div>
   </div>
 </section>
