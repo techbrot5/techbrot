@@ -53,7 +53,8 @@ footerNav:
 {#- §01 IN BRIEF — shared component, adaptive (short→2-col, long→heading-top flow) -#}
 {% include "partials/in-brief.njk" %}
 
-{#- §02 SIGNALS (buyer-cards) -#}
+{#- §02 SIGNALS (buyer-cards) — accepts `signals` or `triggers` -#}
+{%- set signals = signals or triggers %}
 {%- if signals %}
 <section class="sec reveal" id="{{ slug }}-signals">
   <div class="ct">
@@ -125,7 +126,8 @@ footerNav:
 </section>
 {%- endif %}
 
-{#- §RELATED (around the engagement) -#}
+{#- §RELATED (around the engagement) — accepts `nextSteps` or `related` -#}
+{%- set nextSteps = nextSteps or related %}
 {%- if nextSteps %}
 <section class="sec reveal" id="{{ slug }}-next" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
   <div class="ct read">

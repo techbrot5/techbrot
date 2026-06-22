@@ -1,10 +1,10 @@
 ---json
 {
-  "layout": "layouts/t-bofu.njk",
+  "layout": "layouts/t-money.njk",
   "permalink": "/quickbooks/migration/migration-cleanup/",
   "slug": "qb-migcleanup",
-  "tierClass": "section--tier-bofu",
-  "bodyClass": "page--bofu",
+  "intent": "quickbooks-migration",
+  "showBadges": true,
   "title": "QuickBooks Migration Cleanup — Fix a Broken Conversion · TechBrot",
   "description": "Migration left your QuickBooks file a mess? Certified ProAdvisors fix balances, lists, AR/AP, inventory, integrations, and workflows — reconciled to the source. Whether we did the migration or not. Fixed-fee.",
   "breadcrumb": [
@@ -18,150 +18,108 @@
     "heading": "The file converted. Now it&rsquo;s a mess.",
     "subheading": "Balances off, lists duplicated, AR and AP not tying, integrations dead, workflows broken. A migration that &ldquo;worked&rdquo; can still leave a file you can&rsquo;t run a business on. TechBrot Certified ProAdvisors clean up after the conversion &mdash; comparing the new file against the source, fixing what came across wrong, and rebuilding what broke &mdash; whether we did the migration or not. Fixed-fee against a written scope.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks-migration", "class": "btn--primary" },
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
-      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks-migration" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
+  },
+  "sec": {
+    "inBriefTag": "In one paragraph",
+    "inBriefH": "Migration cleanup, plainly.",
+    "signalsTag": "When migration cleanup is the right fit",
+    "signalsH": "If the conversion left you with any of these.",
+    "aiH": "Migration cleanup, in five questions.",
+    "operatorH": "A Certified ProAdvisor who reads both files.",
+    "operatorLede": "Cleaning up a migration means reading the source file the data came from and the converted file it landed in, finding every gap, and rebuilding what broke. Every TechBrot cleanup is delivered by a Certified ProAdvisor credentialed across the QuickBooks stack &mdash; regardless of who performed the original migration. Platform-level quality review backs every engagement, and every correction is documented so your CPA can see exactly what changed.",
+    "relatedTag": "Related",
+    "relatedH": "Related QuickBooks services.",
+    "intakeH": "Scope your migration cleanup.",
+    "faqH": "Cleaning up after a migration: your questions."
   },
   "inBrief": {
     "text": "<strong>QuickBooks migration cleanup</strong> is the repair work needed after a conversion that left the file disorganized or broken. Where a migration moves the data, cleanup fixes what came across wrong: <strong>incorrect balances, broken reconciliation, duplicated or garbled lists and items, AR and AP that converted as summaries, miscalculated inventory, disconnected bank feeds and app integrations, and workflows that no longer function</strong>. It&rsquo;s the difference between a file that technically opened and a file you can actually run a business on. We work from your current Online file and the original source, compare the two, and fix what went wrong &mdash; whether we performed the original migration or not. Fixed fee, priced by scope.",
     "source": "If only the numbers are off, the narrower fix is post-conversion balance repair. Not affiliated with Intuit Inc."
   },
+  "definition": [
+    "QuickBooks migration cleanup is the repair work needed after a conversion that left the file disorganized or broken. Where a <a href=\"/quickbooks/migration/?intent=quickbooks-migration\">migration</a> moves the data, cleanup fixes what came across wrong: incorrect balances, broken reconciliation, duplicated or garbled lists and items, AR and AP that converted as summaries instead of open invoices and bills, miscalculated inventory, disconnected bank feeds and app integrations, and workflows that no longer function. It&rsquo;s the difference between a file that technically opened and a file you can actually run a business on.",
+    "If only the numbers are off, the narrower fix is post-conversion balance repair; if the whole file feels wrong, migration cleanup is the right engagement. TechBrot&rsquo;s Certified ProAdvisors work from your current Online file and the original source, compare the two, and fix what went wrong &mdash; whether we performed the original migration or not. Most cleanups transition into <a href=\"/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly\">monthly bookkeeping</a> so the file stays clean. Fixed-fee against a written scope. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc."
+  ],
   "ctaBand": {
+    "dark": true,
     "eyebrow": "Cleanup starts here",
     "heading": "Make the converted file usable again.",
     "lede": "Book a cleanup diagnostic. A ProAdvisor compares your converted file against the source, maps everything that came across wrong, and scopes the cleanup in writing &mdash; before any work begins. We&rsquo;ll also tell you honestly if a fresh re-migration is the better path. No pitch.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks-migration", "class": "btn--primary" },
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks-migration" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
   }
 }
 ---
 
-<section class="section section--compact" id="qb-migcleanup-proof">
-  <div class="container">
-    <div class="proof-strip">
-      <span class="proof-strip__item"><b>4&times;</b> Certified QuickBooks ProAdvisor</span>
-      <span class="proof-strip__item"><b>Source-file</b> reconciliation</span>
-      <span class="proof-strip__item"><b>Fixed-fee</b> written scope, first</span>
-      <span class="proof-strip__item"><b>1 business day</b> response</span>
-      <span class="proof-strip__item"><span class="proof-strip__rating">5.0</span> 2 verified Clutch reviews</span>
+{#- ═══ BESPOKE MIDDLE (migration cleanup) — full depth re-flowed into shared dc-system v2
+    components. Spine (hero/proof/trust/§01 in-brief+definition/§02 signals/§03 aiSummary/
+    operator/related/call/intake/faq/CTA) is layout-owned (t-money). Bespoke sections below
+    alternate sand/white so no two adjacent both sand. Nothing dropped — every source
+    heading, fact, list-item, FAQ, and the honest re-migrate triage preserved verbatim. ═══ -#}
+
+{#- §04 CREDENTIALS (lede + checks-list in incl-card) — white -#}
+<section class="sec reveal" id="qb-migcleanup-credentials-detail">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§04</span><span class="idx__t">Certified by Intuit</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">Certified QuickBooks ProAdvisor credentials</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:62ch;">Cleaning up a migration means reading both the source file the data came from and the converted file it landed in &mdash; fluently. Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack, plus the Intuit Certified Bookkeeping Professional credential. Verification available on request.</p>
+    <div class="incl-card">
+      <h3>Active credentials, every operator</h3>
+      <ul class="checklist">{%- for c in credentials %}<li>{{ c | safe }}</li>{%- endfor %}</ul>
     </div>
   </div>
 </section>
 
-<section class="section section--compact" id="qb-migcleanup-credentials">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Certified by Intuit</p>
-      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials</h2>
-      <p class="section__lede">Cleaning up a migration means reading both the source file the data came from and the converted file it landed in &mdash; fluently. Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack, plus the Intuit Certified Bookkeeping Professional credential. Verification available on request.</p>
-    </header>
-    <ul class="checks-list">
-      {%- for c in credentials %}<li>{{ c | safe }}</li>{%- endfor %}
-    </ul>
-  </div>
-</section>
-
-<section class="section" id="qb-migcleanup-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In one paragraph</p>
-      <h2 class="section__heading">Migration cleanup, plainly.</h2>
-    </header>
-    <div class="prose">
-      <p>QuickBooks migration cleanup is the repair work needed after a conversion that left the file disorganized or broken. Where a <a href="/quickbooks/migration/?intent=quickbooks-migration">migration</a> moves the data, cleanup fixes what came across wrong: incorrect balances, broken reconciliation, duplicated or garbled lists and items, AR and AP that converted as summaries instead of open invoices and bills, miscalculated inventory, disconnected bank feeds and app integrations, and workflows that no longer function. It&rsquo;s the difference between a file that technically opened and a file you can actually run a business on.</p>
-      <p>If only the numbers are off, the narrower fix is post-conversion balance repair; if the whole file feels wrong, migration cleanup is the right engagement. TechBrot&rsquo;s Certified ProAdvisors work from your current Online file and the original source, compare the two, and fix what went wrong &mdash; whether we performed the original migration or not. Most cleanups transition into <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> so the file stays clean. Fixed-fee against a written scope. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="qb-migcleanup-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Migration cleanup, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="qb-migcleanup-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When migration cleanup is the right fit</p>
-      <h2 class="section__heading">If the conversion left you with any of these.</h2>
-      <p class="section__lede">A migration can finish &ldquo;successfully&rdquo; and still hand you a file full of problems. These are the signs cleanup is what you need.</p>
-    </header>
-    <div class="grid-2">
-      {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="qb-migcleanup-scope">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What gets cleaned up</p>
-      <h2 class="section__heading">Six areas a conversion most often damages.</h2>
-      <p class="section__lede">A full migration cleanup works through each, scoped to what your file actually needs &mdash; you don&rsquo;t pay for areas that came across clean.</p>
-    </header>
-    <div class="grid-2">
+{#- §05 SCOPE (6 numbered damaged-area cards → deliver--3 lattice) — sand -#}
+<section class="sec reveal" id="qb-migcleanup-scope" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§05</span><span class="idx__t">What gets cleaned up</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:20ch;margin-bottom:12px;">Six areas a conversion most often damages.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">A full migration cleanup works through each, scoped to what your file actually needs &mdash; you don&rsquo;t pay for areas that came across clean.</p>
+    <div class="deliver deliver--3">
       {%- for d in scope %}
-      <div class="stack-8">
-        <p class="num">{{ d.num }}</p>
-        <h3>{{ d.name | safe }}</h3>
-        <p class="prose">{{ d.body | safe }}</p>
+      <div class="deliver__cell">
+        <span class="lift__n" aria-hidden="true">{{ d.num }}</span>
+        <h3>{{ d.name | safe }}</h3>{% if d.body %}<p>{{ d.body | safe }}</p>{% endif %}
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qb-migcleanup-which">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Which engagement is yours</p>
-      <h2 class="section__heading">Migration cleanup, balance repair, or file cleanup?</h2>
-      <p class="section__lede">Three related engagements, told apart by where the damage came from. The headings below name each; the table shows when each fits.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">Migration cleanup compared with balance repair and file cleanup, by dimension.</caption>
-        <thead>
-          <tr>
-            <th scope="col">Dimension</th>
-            <th scope="col" class="vs-table__us">Migration cleanup</th>
-            <th scope="col">Balance repair</th>
-            <th scope="col">File cleanup</th>
-          </tr>
-        </thead>
-        <tbody>
-          {%- for row in which %}
-          <tr>
-            <th scope="row">{{ row.dim | safe }}</th>
-            <td class="vs-table__us"><strong>{{ row.cleanup | safe }}</strong></td>
-            <td class="vs-table__concede">{{ row.balance | safe }}</td>
-            <td class="vs-table__concede">{{ row.file | safe }}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
-    <div class="prose">
+{#- §06 WHICH (three-way disambiguation → cmp table + 3 H3 prose) — white -#}
+<section class="sec reveal" id="qb-migcleanup-which">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§06</span><span class="idx__t">Which engagement is yours</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">Migration cleanup, balance repair, or file cleanup?</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">Three related engagements, told apart by where the damage came from. The headings below name each; the table shows when each fits.</p>
+    <table class="cmp" data-viz="comparison-table" data-viz-state="FINAL">
+      <caption class="sr-only">Migration cleanup compared with balance repair and file cleanup, by dimension.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Dimension</th>
+          <th scope="col" class="us">Migration cleanup</th>
+          <th scope="col">Balance repair</th>
+          <th scope="col">File cleanup</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for row in which %}
+        <tr>
+          <th scope="row">{{ row.dim | safe }}</th>
+          <td class="us" data-col="Migration cleanup"><strong>{{ row.cleanup | safe }}</strong></td>
+          <td data-col="Balance repair">{{ row.balance | safe }}</td>
+          <td data-col="File cleanup">{{ row.file | safe }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+    <div class="prose read" style="margin-top:36px;">
       <h3>Migration cleanup</h3>
       <p>This page. The conversion damaged the file broadly &mdash; balances <em>and</em> lists, items, integrations, inventory, and workflows. The right engagement when the whole file feels wrong after a Desktop-to-Online or software-to-QuickBooks move.</p>
       <h3>Balance repair</h3>
@@ -172,145 +130,52 @@
   </div>
 </section>
 
-<section class="section section--alt" id="qb-migcleanup-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How cleanup works</p>
-      <h2 class="section__heading">From a broken conversion to a file that works.</h2>
-      <p class="section__lede">Every migration cleanup starts by comparing the converted file against the source &mdash; you can&rsquo;t fix what you haven&rsquo;t measured against the original.</p>
-    </header>
-    <ol class="process-diagram">
+{#- §07 PROCESS (4-step diagnostic→handoff → process-grid) — sand -#}
+<section class="sec reveal" id="qb-migcleanup-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§07</span><span class="idx__t">How cleanup works</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:20ch;margin-bottom:12px;">From a broken conversion to a file that works.</h2>
+    <p class="lede" style="margin:0 0 44px;max-width:62ch;">Every migration cleanup starts by comparing the converted file against the source &mdash; you can&rsquo;t fix what you haven&rsquo;t measured against the original.</p>
+    <div class="process-grid">
       {%- for s in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-        <p class="process-step__body"><strong>{{ s.when | safe }}</strong></p>
-      </li>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">STEP {{ s.num }}{% if loop.last %} &check;{% endif %}</div>{% if s.name %}<h3>{{ s.name | safe }}</h3>{% endif %}<p>{{ s.body | safe }}</p>{% if s.when %}<p style="margin-top:8px;"><strong>{{ s.when | safe }}</strong></p>{% endif %}</div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section" id="qb-migcleanup-pricing">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Pricing</p>
-      <h2 class="section__heading">Fixed-fee migration cleanup, priced by scope.</h2>
-      <p class="section__lede">Migration cleanup is priced by scope after a diagnostic, not by hour. The band below is typical; final pricing follows the diagnostic against your file.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">QuickBooks migration cleanup pricing, by engagement scope.</caption>
-        <thead>
-          <tr>
-            <th scope="col">Engagement</th>
-            <th scope="col" class="vs-table__us">Typical fixed fee</th>
-            <th scope="col">For</th>
-            <th scope="col">What it includes</th>
-          </tr>
-        </thead>
-        <tbody>
-          {%- for t in pricing %}
-          <tr>
-            <th scope="row">{{ t.tier | safe }}</th>
-            <td class="vs-table__us"><strong>{{ t.price | safe }}</strong></td>
-            <td>{{ t.forWhom | safe }}</td>
-            <td>{{ t.includes | safe }}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
+{#- §08 PRICING (data uses `pricing`, not spine-read `tiers` → rendered here as ptier r-3,
+    featured via .note; full `includes` + verbatim closing prose band preserved) — white -#}
+<section class="sec reveal" id="qb-migcleanup-pricing">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§08</span><span class="idx__t">Pricing</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">Fixed-fee migration cleanup, priced by scope.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">Migration cleanup is priced by scope after a diagnostic, not by hour. The band below is typical; final pricing follows the diagnostic against your file.</p>
+    <div class="r-3">
+      {%- for t in pricing %}
+      <article class="ptier{% if loop.last %} ptier--featured{% endif %}">
+        {%- if loop.last %}<p class="ptier__flag">Most common</p>{%- endif %}
+        <h3 class="ptier__name">{{ t.tier | safe }}</h3>
+        <p class="ptier__price">{{ t.price | safe }}</p>
+        <p class="ptier__for"><strong>For:</strong> {{ t.forWhom | safe }}</p>
+        <p style="font-size:14px;line-height:1.6;color:var(--color-ink-mute);margin:14px 0 0;">{{ t.includes | safe }}</p>
+        <a class="ptier__link" href="/contact/?intent=quickbooks-migration">Scope this cleanup <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+      </article>
+      {%- endfor %}
     </div>
-    <div class="prose">
+    <div class="prose read" style="margin-top:36px;">
       <p>A full cleanup runs to $10,000 or more depending on file size, number of periods affected, and integration complexity. Every engagement is fixed-fee against a written scope produced from the diagnostic &mdash; and if the diagnostic finds a fresh re-migration is genuinely faster and cheaper, we&rsquo;ll tell you that instead.</p>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qb-migcleanup-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Who performs the work</p>
-      <h2 class="section__heading">A Certified ProAdvisor who reads both files.</h2>
-    </header>
-    <div class="prose">
-      <p>Cleaning up a migration means reading the source file the data came from and the converted file it landed in, finding every gap, and rebuilding what broke. Every TechBrot cleanup is delivered by a Certified ProAdvisor credentialed across the QuickBooks stack &mdash; regardless of who performed the original migration. Platform-level quality review backs every engagement, and every correction is documented so your CPA can see exactly what changed.</p>
-    </div>
-    <div class="trust-row">
-      {%- for r in operatorSpec %}
-      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
-      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="qb-migcleanup-intake">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Start now</p>
-      <h2 class="section__heading">Scope your migration cleanup.</h2>
-      <p class="section__lede">Tell us your current and original setup and a Certified ProAdvisor replies within one business day with a written fixed-fee scope. Prefer the full intake? The <a href="/contact/?intent=quickbooks-migration">complete contact form</a> captures every detail.</p>
-    </header>
-    {%- set intakePrefix = "qbmc" %}
-    {%- set intakeFormId = "migration-cleanup-intake-form" %}
-    {%- set intakeIntent = "quickbooks-migration" %}
-    {%- set intakeSourceType = "bofu-conversion" %}
-    {%- set intakeFunnelStage = "BOFU" %}
-    {%- set intakeLegend = "What we should look at" %}
-    {%- set intakeNote = "Migration cleanup is the common reason businesses reach this page &mdash; tell us what broke in the conversion and add anything else you want scoped in the same call." %}
-    {%- set intakeConsent = "I agree to be contacted by TechBrot regarding this QuickBooks migration cleanup inquiry." %}
-    {%- set intakeSubmit = "Send the Discovery Brief" %}
-    {%- set intakeReassurance = "No spam, no list, no obligation. A Certified ProAdvisor replies within one business day." %}
-    {% include "partials/intake-form.njk" %}
-  </div>
-</section>
-
-<section class="section section--alt" id="qb-migcleanup-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Migration cleanup questions</p>
-      <h2 class="section__heading">Cleaning up after a migration: your questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qb-migcleanup-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="qb-migcleanup-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="qb-migcleanup-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
-    </header>
+{#- §09 REVIEW STANDARDS (page review prose) — sand -#}
+<section class="sec reveal" id="qb-migcleanup-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§09</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot repairs a broken QuickBooks conversion. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, an independent ProAdvisor firm, and reviewed for technical accuracy on balances, reconciliation, AR/AP, the weighted-average-to-FIFO inventory change, integrations, and workflow rebuild. TechBrot performs the cleanup and coordinates with your CPA, who files. Page last reviewed June 2026.</p>
     </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="qb-migcleanup-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related QuickBooks services.</h2>
-    </header>
-    {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
-    </div>
-    {%- endfor %}
   </div>
 </section>
