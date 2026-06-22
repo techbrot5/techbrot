@@ -226,8 +226,18 @@ h1, h2, h3 { font-weight: 500; text-wrap: balance; }
 .proofbar { background: var(--dc-topbar-bg); color: var(--dc-topbar-text); }
 .proofbar__row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 40px; padding: 22px 0; }
 .proofbar__label { font-family: 'Spline Sans Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-on-dossier); }
-.proofbar__item { display: inline-flex; align-items: center; gap: 9px; font-size: 14px; }
+.proofbar__item { display: inline-flex; align-items: center; gap: 9px; font-size: 14px; white-space: nowrap; }
 .proofbar__item svg { color: var(--illus-tie); flex: none; }
+@media (max-width: 680px) { .proofbar__item { white-space: normal; } }
+
+/* §01 in-brief — LONG body: heading top, body flows below in a readable column (no dead
+   left column). SHORT body keeps the .r-2 heading-left/body-right balance. */
+.in-brief--flow .in-brief__h { max-width: 28ch; margin: 0 0 26px; }
+.in-brief__body { max-width: 72ch; }
+.in-brief__body > p { font-size: 16.5px; line-height: 1.72; color: var(--color-ink-body2); margin: 0 0 16px; }
+.in-brief__body > p:last-child { margin-bottom: 0; }
+.in-brief__body .opquote { margin: 22px 0 16px; }
+.in-brief__source { font-size: 13px; color: var(--color-ink-faint); margin-top: 14px; }
 
 /* grids */
 .r-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }

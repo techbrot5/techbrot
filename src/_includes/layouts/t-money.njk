@@ -47,33 +47,11 @@ footerNav:
 {#- TRUST STRIP (Intuit credentials band — handoff component, sand) -#}
 {%- if showBadges %}{% include "partials/trust-strip.njk" %}{% endif %}
 
-{#- PROOF STRIP (dark) -#}
-{%- if proofClaims %}
-<section class="proofbar" id="{{ slug }}-proof">
-  <div class="ct proofbar__row">
-    <span class="proofbar__label">What you can verify</span>
-    {%- for c in proofClaims %}<span class="proofbar__item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ c | safe }}</span>{%- endfor %}
-  </div>
-</section>
-{%- endif %}
+{#- PROOF STRIP (dark) — shared component, 4 short default claims in one clean row -#}
+{% include "partials/proof-strip.njk" %}
 
-{#- §01 IN BRIEF (idx + 2-col: heading | answer + definition + coined pull-quote) -#}
-{%- if inBrief %}
-<section class="sec reveal" id="{{ slug }}-definition" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
-  <div class="ct">
-    <div class="idx"><span class="idx__n">§01</span><span class="idx__t">{{ sec.inBriefTag | default("The engagement", true) }}</span><span class="idx__rule"></span></div>
-    <div class="r-2" style="gap:48px;align-items:start;">
-      <h2 class="h2 speakable" style="max-width:18ch;">{{ sec.inBriefH | safe }}</h2>
-      <div class="prose speakable">
-        <p id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
-        {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
-        {%- if coinedQuote %}<blockquote class="opquote" style="margin-top:20px;"><blockquote>{{ coinedQuote | safe }}</blockquote></blockquote>{%- endif %}
-        {%- if inBrief.source %}<p class="in-brief__source" style="font-size:13px;color:var(--color-ink-faint);margin-top:14px;">{{ inBrief.source | safe }}</p>{%- endif %}
-      </div>
-    </div>
-  </div>
-</section>
-{%- endif %}
+{#- §01 IN BRIEF — shared component, adaptive (short→2-col, long→heading-top flow) -#}
+{% include "partials/in-brief.njk" %}
 
 {#- §02 SIGNALS (buyer-cards) -#}
 {%- if signals %}

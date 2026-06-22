@@ -1,0 +1,31 @@
+{#- §01 IN BRIEF — SHARED component (handoff Money/Pillar §01). Adaptive:
+    SHORT body (answer only) → 2-col, heading LEFT / body RIGHT (handoff balance).
+    LONG body (has definition[] or coinedQuote) → heading TOP, body flows below in a
+    readable single column (no tall empty left column). Frozen speakable id
+    #<slug>-in-brief-text on the answer. Needs `slug`, `inBrief`, `sec` in scope;
+    optional `definition`, `coinedQuote`. -#}
+{%- if inBrief %}
+{%- set isLong = (definition and definition.length) or coinedQuote %}
+<section class="sec reveal in-brief{% if isLong %} in-brief--flow{% endif %}" id="{{ slug }}-definition" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§01</span><span class="idx__t">{{ sec.inBriefTag | default("In brief", true) }}</span><span class="idx__rule"></span></div>
+    {%- if isLong %}
+    <h2 class="h2 speakable in-brief__h">{{ sec.inBriefH | safe }}</h2>
+    <div class="in-brief__body prose speakable">
+      <p id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
+      {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
+      {%- if coinedQuote %}<blockquote class="opquote"><blockquote>{{ coinedQuote | safe }}</blockquote></blockquote>{%- endif %}
+      {%- if inBrief.source %}<p class="in-brief__source">{{ inBrief.source | safe }}</p>{%- endif %}
+    </div>
+    {%- else %}
+    <div class="r-2 in-brief__cols" style="gap:48px;align-items:start;">
+      <h2 class="h2 speakable" style="max-width:18ch;">{{ sec.inBriefH | safe }}</h2>
+      <div class="prose speakable">
+        <p id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
+        {%- if inBrief.source %}<p class="in-brief__source">{{ inBrief.source | safe }}</p>{%- endif %}
+      </div>
+    </div>
+    {%- endif %}
+  </div>
+</section>
+{%- endif %}

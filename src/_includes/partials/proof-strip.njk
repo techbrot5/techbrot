@@ -1,0 +1,17 @@
+{#- PROOF STRIP — dark "what you can verify" band (handoff Money/Pillar). SHARED component:
+    default = the handoff's 4 short generic verifiable claims, in ONE clean row; a page may
+    override with its own SHORT claims via `proofClaims`. Claims never wrap mid-text
+    (.proofbar__item white-space:nowrap) — the row wraps whole claims on narrow widths.
+    Needs `slug` in scope. -#}
+{%- set proofClaims = proofClaims or [
+  "Certified QuickBooks ProAdvisor",
+  "Fixed fee, written first",
+  "Independent &middot; not Intuit",
+  "Same business day reply"
+] %}
+<section class="proofbar" id="{{ slug }}-proof">
+  <div class="ct proofbar__row">
+    <span class="proofbar__label">What you can verify</span>
+    {%- for c in proofClaims %}<span class="proofbar__item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ c | safe }}</span>{%- endfor %}
+  </div>
+</section>
