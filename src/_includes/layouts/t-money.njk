@@ -122,7 +122,7 @@ footerNav:
       <article class="ptier{% if t.note %} ptier--featured{% endif %}">
         {%- if t.note %}<p class="ptier__flag">{{ t.note | safe }}</p>{%- endif %}
         <h3 class="ptier__name">{{ t.name | safe }}</h3>
-        <p class="ptier__price">{{ t.price | safe }}</p>
+        <p class="ptier__price">{{ t.price | safe }}{% if t.per %}<span>{{ t.per | safe }}</span>{% endif %}</p>
         {%- if t.forWhom %}<p class="ptier__for"><strong>For:</strong> {{ t.forWhom | safe }}</p>{%- endif %}
         {%- if t.bullets %}<ul>{%- for b in t.bullets %}<li>{{ b | safe }}</li>{%- endfor %}</ul>{%- endif %}
         {%- if t.cta %}<a class="ptier__link" href="/contact/?intent={{ intent | default('cleanup', true) }}">{{ t.cta | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>{%- endif %}

@@ -251,7 +251,14 @@ h1, h2, h3 { font-weight: 500; text-wrap: balance; }
 
 /* §04 deliver lattice (hairline grid of icon cells) */
 .deliver { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border-subtle); border: 1px solid var(--border-subtle); border-radius: 16px; overflow: hidden; }
+.deliver--3 { grid-template-columns: repeat(3, 1fr); }
 .deliver__cell { background: var(--white); padding: 26px 24px; }
+/* included/layered checklists (monthly + service pages) */
+.incl-card { background: var(--white); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 28px 30px; }
+.incl-card > h3 { font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 17px; color: var(--color-ink); margin: 0; }
+.checklist { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 11px; }
+.checklist li { position: relative; padding-left: 26px; font-size: 14.5px; line-height: 1.5; color: var(--color-ink-body2); }
+.checklist li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: var(--color-success); font-weight: 700; }
 .deliver__cell svg { color: var(--color-accent); margin-bottom: 14px; }
 .deliver__cell h3 { font-size: 15.5px; font-weight: 600; color: var(--color-ink); margin: 0; }
 .deliver__cell p { font-size: 13.5px; line-height: 1.55; color: var(--color-ink-mute); margin: 8px 0 0; }
