@@ -1,0 +1,106 @@
+---
+layout: layouts/dc-base.njk
+footerNav:
+  label: QuickBooks
+  links:
+    - { href: "/quickbooks/help/", text: "Help & errors" }
+    - { href: "/quickbooks/setup/", text: "Setup & migration" }
+    - { href: "/resources/", text: "Resources & guides" }
+---
+{#- ===========================================================================
+    t-prose — D2 prose family (NEW handoff "Prose - Template.dc.html").
+    Document/reading column (help-error + informational flavors). New handoff
+    CHROME via dc-base; the prose body (TL;DR · LIGHT ruled multi-Q&A AI ·
+    disclosure · diagnostic · fix-steps · call-breakout · prose/vs-table · faq)
+    renders via the elevated component layer. Editorial-calm compact hero (split
+    only where a page opts in via heroFigure). Final CTA = LIGHT (D2 convention).
+    No call-bar (never on guides). Frozen speakable #<slug>-in-brief-text kept.
+    =========================================================================== -#}
+{%- set heroFigure = heroFigure if heroFigure is defined else false -%}
+{%- if hero %}
+{%- if heroFigure %}
+<section class="section hero-tier hero--compact hero--split" id="{{ slug }}-hero">
+  <div class="container">
+    <div class="hero-split">
+      <div class="hero">
+        <p class="hero__eyebrow"><span class="hero__eyebrow-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
+        <h1 class="hero__heading speakable">{{ hero.heading | safe }}</h1>
+        <p class="hero__subheading speakable">{{ hero.subheading | safe }}</p>
+        {%- if hero.actions %}
+        <div class="hero__actions">
+          {%- for action in hero.actions.slice(0, 2) %}
+          <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
+            {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+          {%- endfor %}
+        </div>
+        {%- endif %}
+        {%- if hero.trust %}
+        <ul class="hero__trust">
+          {%- for t in hero.trust %}<li class="hero__trust-item">{{ t | safe }}</li>{%- endfor %}
+        </ul>
+        {%- endif %}
+      </div>
+      <div class="hero__figure">{% include "partials/figure-" + heroFigure + ".svg" %}</div>
+    </div>
+  </div>
+</section>
+{%- else %}
+<section class="section hero-tier hero--compact" id="{{ slug }}-hero">
+  <div class="container">
+    <div class="hero">
+      <p class="hero__eyebrow"><span class="hero__eyebrow-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
+      <h1 class="hero__heading speakable">{{ hero.heading | safe }}</h1>
+      <p class="hero__subheading speakable">{{ hero.subheading | safe }}</p>
+      {%- if hero.actions %}
+      <div class="hero__actions">
+        {%- for action in hero.actions.slice(0, 2) %}
+        <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
+          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+      {%- if hero.trust %}
+      <ul class="hero__trust">
+        {%- for t in hero.trust %}<li class="hero__trust-item">{{ t | safe }}</li>{%- endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+{%- endif %}
+
+{%- if inBrief %}
+<section class="section section--compact" id="{{ slug }}-in-brief">
+  <div class="container">
+    <div class="in-brief">
+      <p class="in-brief__text" id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
+      {%- if inBrief.source %}<p class="in-brief__source">{{ inBrief.source | safe }}</p>{%- endif %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{{ content | safe }}
+
+{#- D2 final CTA = LIGHT, on PAPER, centered (handoff Prose convention: no sand
+    band — `.final-cta` from dc-system centers it). Keeps FAQ[sand]→CTA[paper]
+    alternation (section-bg gate). -#}
+{%- if ctaBand %}
+<section class="section" id="{{ slug }}-cta" style="padding-top:72px;padding-bottom:80px;">
+  <div class="container">
+    <div class="final-cta">
+      <p class="section__eyebrow">{{ ctaBand.eyebrow | safe }}</p>
+      <h2 class="final-cta__heading">{{ ctaBand.heading | safe }}</h2>
+      <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
+      <div class="final-cta__actions">
+        {%- for action in ctaBand.actions %}
+        <a class="btn {{ action.class }}" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
+          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+        {%- endfor %}
+      </div>
+      <p class="final-cta__disclaimer">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
+    </div>
+  </div>
+</section>
+{%- endif %}
