@@ -25,11 +25,14 @@ D1 → D3 → D2 → D4/5/6 (NY incl) → D7 → B1-B5 → C1 → E1-E6 → F1 �
 | D4/D5/D6 (NY children) | — | ⏳ | NY incl, content-frozen + rate-free viz |
 | D7 / B1-B5 / C1 / E1-E6 / F1 / F2 / G1 / G2 / A1 | — | ⏳ | pending (A1 last) |
 
-**SHARED v2 COMPONENTS (dc-system.css, fix at source):** trust-strip (handoff sand band, label-
-left/badges-right) · proofbar · dark-dossier AI · deliver / deliver--3 · process-grid (vertical-
-stack, heading optional) · ptier (+per) · checklist / incl-card · opquote/opcard · callband ·
-intake · final-dark · 2 signature SVGs (recon-beforeafter, cleanup-timeline). Self-contained
-:root tokens. Pages on spine carry redundant site.min.css (trim pre-flip).
+**SHARED v2 COMPONENTS (fix at SOURCE → all families inherit):** PARTIALS — trust-strip.njk
+(handoff sand band, label-left/badges-right) · proof-strip.njk (4 short default claims, one clean
+row, nowrap) · in-brief.njk (ADAPTIVE: short→2-col, long→heading-top flow, no dead column).
+dc-system.css — proofbar · dark-dossier AI · deliver / deliver--3 · process-grid (vertical-stack,
+heading optional) · ptier (+per) · checklist / incl-card · opquote/opcard · callband · intake ·
+final-dark · 2 signature SVGs (recon-beforeafter, cleanup-timeline). Self-contained :root tokens.
+NOTE: C2 /vs/ in-brief is a SEPARATE .tldr (single-col), not the shared in-brief partial. Pages on
+spine carry redundant site.min.css (trim pre-flip).
 
 ## ⭐ PERMANENT STANDING RULES (added 2026-06-15 — apply EVERY session, EVERY stop)
 **R1 — REPORT AT EVERY STOP.** Before asking the founder for anything (approval, a
