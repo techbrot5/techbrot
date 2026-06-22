@@ -302,6 +302,15 @@ def normalize_eq(s):
     return re.sub(r"[^a-z0-9 ]", "", re.sub(r"\s+", " ", s.lower())).strip()
 
 
+# founder ruling 2026-06-22: ONE GLOBAL footer-heading chrome rule (replaces
+# per-URL footer exceptions). The old site-footer.njk column <h2>s
+# (Accounting/Company/Network/QuickBooks) become dc-base col-head <div>s — chrome,
+# not content. When such a heading is missing from the WHOLE built page it is a
+# chrome relocation, never a content removal, so dc-base conversions don't balloon
+# the per-URL exception file. (Only applies when the text is absent page-wide; a
+# real body heading of the same text is still found by the built-headings check.)
+GLOBAL_CHROME_HEADINGS = {normalize_eq(t) for t in
+                          ("Accounting", "Company", "Network", "QuickBooks")}
 ported = [u for u in built_urls if u in baseline_urls and u not in queue_urls]
 for url in sorted(ported):
     rec = next(p for p in baseline["pages"] if p["url"] == url)
@@ -325,6 +334,8 @@ for url in sorted(ported):
                 chrome_h.append(h["text"])
             else:
                 justified_h.append(h["text"])
+        elif key in GLOBAL_CHROME_HEADINGS:
+            chrome_h.append(h["text"])           # global footer-chrome rule
         else:
             missing_h.append(f"{h['level']}: {h['text']}")
 
