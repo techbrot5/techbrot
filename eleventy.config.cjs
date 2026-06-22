@@ -57,6 +57,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "assets/js" });
   eleventyConfig.addPassthroughCopy({ "src/assets/fonts": "assets/fonts" });
   eleventyConfig.addPassthroughCopy({ "src/assets/og": "assets/og" });
+  // NEW design-system stylesheet (handoff re-skin) — served alongside site.min.css
+  // until every family is migrated off the legacy bundle. Linked by dc-base.njk.
+  eleventyConfig.addPassthroughCopy({ "src/assets/css/dc-system.css": "assets/css/dc-system.css" });
   eleventyConfig.addWatchTarget("src/assets/");
 
   return {

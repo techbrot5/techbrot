@@ -1,0 +1,247 @@
+---
+layout: layouts/dc-base.njk
+navActive: compare
+footerNav:
+  label: Compare
+  links:
+    - { href: "/vs/", text: "All comparisons" }
+    - { href: "/quickbooks/compare/", text: "QuickBooks editions" }
+    - { href: "/accounting/bookkeeping/", text: "Bookkeeping" }
+---
+{#- ===========================================================================
+    t-comparison — C2 family layout (NEW handoff "Comparison - Template.dc.html").
+    Renders the page's frozen content into the handoff components, in template
+    rhythm. comparisonIntent flag (role|product|competitor) changes ONLY: hero
+    weight (all calm here — MOFU), verdict-block presence/tone, final-CTA intensity.
+    Frozen speakable IDs preserved: #{{ slug }}-in-brief-text · #{{ slug }}-ai-summary.
+    Every section guarded — reused by both concept-vs and techbrot-vs pages.
+    =========================================================================== -#}
+{%- set intent = comparisonIntent or "role" %}
+
+{#- HERO — editorial-calm: eyebrow + H1 + lede, ~820px, no buttons (MOFU) -#}
+<section style="padding:56px 0 12px;">
+  <div class="ct read">
+    {%- if hero.eyebrow %}<div class="eyebrow" style="margin-bottom:18px;">{{ hero.eyebrow | safe }}</div>{%- endif %}
+    <h1 class="dsp speakable" style="font-weight:500;font-variation-settings:'opsz' 80;font-size:clamp(32px,1.7rem + 2.4vw,50px);margin:0 0 18px;">{{ hero.heading | safe }}</h1>
+    <p class="lede speakable" style="margin:0;">{{ hero.subheading | safe }}</p>
+  </div>
+</section>
+
+{#- BYLINE -#}
+{%- if bylineName %}
+<section class="sec" style="padding-top:28px;padding-bottom:8px;">
+  <div class="ct read">
+    <div class="byline">
+      <svg class="byline__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#0E4A50"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#FCFBF8"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div>
+        <p class="byline__name">{{ bylineName | safe }}</p>
+        <p class="byline__review">{{ bylineReview | safe }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- TL;DR card (frozen speakable id on body) -#}
+{%- if inBrief %}
+<section class="sec reveal" style="padding-top:28px;padding-bottom:28px;">
+  <div class="ct read">
+    <div class="tldr speakable">
+      <div class="eyebrow">TL;DR</div>
+      <p id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
+      {%- if inBrief.source %}<p class="tldr__src">{{ inBrief.source | safe }}</p>{%- endif %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- SUMMARY prose -#}
+{%- if summary %}
+<section class="sec reveal" style="padding-top:20px;padding-bottom:24px;">
+  <div class="ct read">
+    <div class="ph"><span class="ph__t">In one paragraph</span><span class="ph__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">The honest summary.</h2>
+    <div class="prose">{%- for p in summary %}<p>{{ p | safe }}</p>{%- endfor %}</div>
+  </div>
+</section>
+{%- endif %}
+
+{#- AI-SUMMARY — citation surface (frozen speakable id on section); all Q&A kept -#}
+{%- if aiSummary %}
+<section class="sec reveal" id="{{ slug }}-ai-summary" style="padding-top:20px;padding-bottom:24px;">
+  <div class="ct read">
+    <div class="eyebrow" style="margin-bottom:12px;">For AI engines &amp; quick answers</div>
+    {%- if aiSummaryHeading %}<h2 class="h2" style="margin-bottom:18px;">{{ aiSummaryHeading | safe }}</h2>{%- endif %}
+    <div class="speakable ai-verdict">
+      <div class="ai-qa">
+        {%- for item in aiSummary %}
+        <div class="ai-qa__item"><h3>{{ item.q | safe }}</h3><p>{{ item.a | safe }}</p></div>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- ROLES — definitional grid-2 -#}
+{%- if roles %}
+<section class="sec reveal">
+  <div class="ct">
+    <div class="ph"><span class="ph__t">The two roles, defined</span><span class="ph__rule"></span></div>
+    <h2 class="h2">What each role does &mdash; in plain language.</h2>
+    <p class="lede" style="margin:10px 0 28px;max-width:60ch;">Most confusion between the two roles comes from people using the terms interchangeably. They&rsquo;re not interchangeable. Here&rsquo;s what each actually means in U.S. small business practice.</p>
+    <div class="r-2">
+      {%- for r in roles %}
+      <div class="dc-card"><span class="eyebrow">{{ r.eyebrow | safe }}</span><h3>{{ r.name | safe }}</h3><div class="prose">{{ r.body | safe }}</div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- COMPARISON TABLE — the C2 signature viz -#}
+{%- if vsTable %}
+<section class="sec reveal">
+  <div class="ct read">
+    <div class="ph"><span class="ph__t">Side by side</span><span class="ph__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:8px;">Across the dimensions that actually matter.</h2>
+    <p class="lede" style="margin:0 0 24px;">Twelve dimensions where the two roles differ in practice. Neither role &ldquo;wins&rdquo; &mdash; they do different things. This table makes the boundaries clear.</p>
+    <table class="cmp" data-viz="comparison-table" data-viz-state="FINAL">
+      <caption>Bookkeeper vs accountant &middot; what each role actually does across twelve dimensions</caption>
+      <thead><tr><th scope="col">Dimension</th><th scope="col" class="us">Bookkeeper<span class="sub">day-to-day records</span></th><th scope="col">Accountant / CPA<span class="sub">analysis &amp; planning</span></th></tr></thead>
+      <tbody>
+        {%- for r in vsTable %}
+        <tr>
+          <th scope="row">{{ r.cap | safe }}</th>
+          <td class="us" data-col="Bookkeeper">{{ r.bk | safe }}</td>
+          <td data-col="Accountant / CPA">{{ r.acct | safe }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{%- endif %}
+
+{#- TOGETHER prose -#}
+{%- if together %}
+<section class="sec reveal">
+  <div class="ct read">
+    <div class="ph"><span class="ph__t">How they work together</span><span class="ph__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">The bookkeeper produces. The accountant interprets.</h2>
+    <div class="prose">{%- for p in together %}<p>{{ p | safe }}</p>{%- endfor %}</div>
+  </div>
+</section>
+{%- endif %}
+
+{#- DECISION — practical guide grid-3 -#}
+{%- if decision %}
+<section class="sec reveal">
+  <div class="ct">
+    <div class="ph"><span class="ph__t">When you need each</span><span class="ph__rule"></span></div>
+    <h2 class="h2">A practical decision guide.</h2>
+    <p class="lede" style="margin:10px 0 28px;max-width:60ch;">Three patterns cover most U.S. small businesses. Find the one that fits your situation.</p>
+    <div class="r-3">
+      {%- for d in decision %}
+      <div class="dc-card"><span class="eyebrow">{{ d.eyebrow | safe }}</span><h3>{{ d.name | safe }}</h3><div class="prose">{{ d.body | safe }}</div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- CREDENTIALS — demystified grid-3 -#}
+{%- if credentials %}
+<section class="sec reveal">
+  <div class="ct">
+    <div class="ph"><span class="ph__t">Credentials, demystified</span><span class="ph__rule"></span></div>
+    <h2 class="h2">What each credential actually means.</h2>
+    <p class="lede" style="margin:10px 0 28px;max-width:60ch;">U.S. accounting credentials confuse a lot of buyers. Here&rsquo;s what each one means and what it actually authorizes.</p>
+    <div class="r-3">
+      {%- for c in credentials %}
+      <div class="dc-card"><span class="eyebrow">{{ c.tag | safe }}</span><h3>{{ c.name | safe }}</h3><div class="prose">{{ c.body | safe }}</div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- FIT — where TechBrot fits + trust-row -#}
+{%- if fit %}
+<section class="sec reveal">
+  <div class="ct read">
+    <div class="ph"><span class="ph__t">Where TechBrot fits</span><span class="ph__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">We&rsquo;re the bookkeeping side. Done well.</h2>
+    <div class="prose">{%- for p in fit %}<p>{{ p | safe }}</p>{%- endfor %}</div>
+    {%- if fitSpec %}
+    <div class="trust-row">
+      {%- for r in fitSpec %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- VERDICT — competitor/product intents only (role omits per template) -#}
+{%- if verdict and intent != "role" %}
+<section class="sec reveal" style="padding-top:8px;">
+  <div class="ct read">
+    <div class="verdict">
+      <div class="eyebrow">The honest verdict</div>
+      <p class="verdict__lead">{{ verdict.lead | safe }}</p>
+      {%- if verdict.sub %}<p class="verdict__sub">{{ verdict.sub | safe }}</p>{%- endif %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- RELATED — sibling comparisons (sand band) -#}
+{%- if related %}
+<section class="sec reveal" style="background:#F7F2E9;border-top:1px solid #ECE5D8;border-bottom:1px solid #ECE5D8;">
+  <div class="ct">
+    <div class="ph"><span class="ph__t">Other comparisons</span><span class="ph__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">More honest comparisons in the same series.</h2>
+    <div class="r-3">
+      {%- for n in related %}
+      <a class="rel-card" href="{{ n.href }}"><h3 class="rel-card__t">{{ n.title | safe }}</h3><p class="rel-card__d">{{ n.body | safe }}</p></a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- FAQ -#}
+{%- if faq %}
+<section class="sec reveal">
+  <div class="ct read">
+    <div class="ph"><span class="ph__t">Common questions</span><span class="ph__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">What people ask before choosing.</h2>
+    <div class="faq">
+      {%- for item in faq %}
+      <details name="cmp-faq"{% if loop.first %} open{% endif %}><summary>{{ item.q | safe }}<span class="pl"></span></summary><div>{{ item.a | safe }}</div></details>
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-15</span><span>Updated: 2026-06-15</span><span>Reviewed: 2026-06-15 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
+{%- endif %}
+
+{#- FINAL CTA — role intent = calm, light, centered -#}
+{%- if ctaBand %}
+<section class="sec reveal{% if intent == 'competitor' %} final-cta--dark{% endif %}" style="padding:72px 0;">
+  <div class="ct read">
+    <div class="final-cta">
+      <h2 class="final-cta__h">{{ ctaBand.heading | safe }}</h2>
+      <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
+      <div class="final-cta__actions">
+        {%- for a in ctaBand.actions %}
+        <a href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% if a.tel %} mono{% endif %}{% endif %}" style="display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 24px;border-radius:13px;font-size:15.5px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif %}

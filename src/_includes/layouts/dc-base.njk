@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+{%- if robotsOverride %}
+<meta name="robots" content="{{ robotsOverride }}">
+{%- elif env.production %}
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+{%- else %}
+<meta name="robots" content="noindex, nofollow">
+{%- endif %}
+{%- set canon = canonicalUrl or page.url %}
+<link rel="canonical" href="{{ site.url }}{{ canon }}">
+<link rel="alternate" hreflang="en-US" href="{{ site.url }}{{ canon }}">
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ canon }}">
+<meta name="format-detection" content="telephone=yes">
+<meta name="theme-color" content="#FCFBF8">
+<meta name="trademark" content="QuickBooks is a registered trademark of Intuit Inc. TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc.">
+<link rel="icon" href="/assets/img/brand/icon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+{#- NEW design system fonts. PROOF: Google Fonts CDN for exact template fidelity
+    (preview is noindex). PRE-FLIP TODO: self-host Spline Sans Mono woff2 (400/500/600)
+    + Fraunces/Geist already self-hosted; drop the CDN per the manifest no-CDN rule. -#}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Geist:wght@300..700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/dc-system.css">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:title" content="{{ ogTitle or title }}">
+<meta property="og:description" content="{{ ogDescription or description }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:image" content="{{ site.url }}{{ ogImage or '/assets/og/default.png' }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ ogTitle or title }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ ogTitle or title }}">
+<meta name="twitter:description" content="{{ ogDescription or description }}">
+<meta name="twitter:image" content="{{ site.url }}{{ ogImage or '/assets/og/default.png' }}">
+<meta name="twitter:site" content="{{ site.twitterHandle }}">
+<script type="application/ld+json">{{ schemaGlobal | dump | safe }}</script>
+{%- if pageGraph %}
+<script type="application/ld+json">{{ pageGraph | dump | safe }}</script>
+{%- endif %}
+<script>window.TB_ENV={{ env.name | dump | safe }};window.TB_FORM_ENDPOINT={{ site.formEndpoint | dump | safe }};</script>
+{%- if env.production %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4Id }}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ site.ga4Id }}');</script>
+{%- endif %}
+</head>
+<body class="{{ bodyClass }}">
+<a href="#main" style="position:absolute;left:-9999px;">Skip to content</a>
+
+{#- ===== dark topbar ===== -#}
+<div class="topbar demo-collapse">
+  <div class="ct topbar__row">
+    <span class="topbar__badge"><span class="topbar__dot"></span>Independent Certified QuickBooks ProAdvisor firm · U.S.-based</span>
+    <span class="topbar__links"><a href="/find-an-accountant/">Find an Accountant</a><a href="/partners/">For Accountants &rarr;</a></span>
+  </div>
+</div>
+
+{#- ===== sticky header + mega nav ===== -#}
+<header class="site-head">
+  <div class="ct site-head__row">
+    <a class="brand" href="/"><span class="brand__mark"><svg width="17" height="17" viewBox="0 0 64 64" fill="#FCFBF8" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span><span class="brand__name">TechBrot</span></a>
+    <nav class="nav demo-collapse" aria-label="Primary">
+      <a class="navlink" href="/find-an-accountant/">Find an accountant</a>
+      <button class="navtrig" type="button" data-menu="accounting" aria-expanded="false" aria-controls="m-acct" aria-haspopup="true">Accounting <svg width="9" height="9" viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="navtrig" type="button" data-menu="quickbooks" aria-expanded="false" aria-controls="m-qb" aria-haspopup="true">QuickBooks <svg width="9" height="9" viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <a class="navlink{% if navActive == 'compare' %} navlink--active{% endif %}" href="/vs/">Compare</a>
+      <a class="navlink{% if navActive == 'resources' %} navlink--active{% endif %}" href="/resources/">Resources</a>
+    </nav>
+    <div class="head-right">
+      <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" class="demo-collapse mono head-phone"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ site.phone.display }}</a>
+      <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" class="btn btn-cta head-cta">Speak to an advisor</a>
+      <button class="barbtn" type="button" data-drawer-open aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="mega-panel" id="m-acct" data-menu-panel="accounting" role="region" aria-label="Accounting">
+      <div class="mega">
+        <div><div class="col-head" style="margin-bottom:6px;">Core services</div>
+          <a class="megalink" href="/accounting/bookkeeping/">Ongoing bookkeeping<span>Reconciled monthly, fixed fee</span></a>
+          <a class="megalink" href="/accounting/advisory/">Fractional CFO &amp; advisory<span>Judgment, not just data entry</span></a>
+          <a class="megalink" href="/accounting/sales-tax-compliance/">Sales tax &amp; payroll<span>Filed and reconciled monthly</span></a>
+        </div>
+        <div><div class="col-head" style="margin-bottom:6px;">Start here</div>
+          <a class="megalink" href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup &amp; catch-up<span>Bring a behind file current</span></a>
+          <a class="megalink" href="/quickbooks/file-review/">Free file review<span>We look before we scope</span></a>
+          <a class="megalink" href="/find-an-accountant/">Find an accountant<span>By state and city</span></a>
+        </div>
+      </div>
+      <div class="mega-call"><span style="font-size:13px;color:#6E6456;">Not sure which fits? A 15-minute call sorts it.</span><a href="/accounting/" class="mono" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#0E4A50;">Accounting overview <span aria-hidden="true">&rarr;</span></a></div>
+    </div>
+    <div class="mega-panel" id="m-qb" data-menu-panel="quickbooks" role="region" aria-label="QuickBooks">
+      <div class="mega">
+        <div><div class="col-head" style="margin-bottom:6px;">Fix &amp; set up</div>
+          <a class="megalink" href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup &amp; catch-up<span>Behind, broken, or messy books</span></a>
+          <a class="megalink" href="/quickbooks/setup/">Setup &amp; migration<span>Set up right; Desktop &rarr; Online</span></a>
+          <a class="megalink" href="/quickbooks/compare/">QuickBooks comparisons<span>QBO vs Desktop, tiers</span></a>
+        </div>
+        <div><div class="col-head" style="margin-bottom:6px;">Keep it clean</div>
+          <a class="megalink" href="/accounting/bookkeeping/">Ongoing bookkeeping<span>Monthly, reconciled to the bank</span></a>
+          <a class="megalink" href="/accounting/sales-tax-compliance/">Sales tax &amp; payroll<span>Filed and tied out</span></a>
+          <a class="megalink" href="/resources/">Guides &amp; resources<span>How the work actually goes</span></a>
+        </div>
+      </div>
+      <div class="mega-call"><span style="font-size:13px;color:#6E6456;">Free file review — written scope in 3 business days.</span><a href="/quickbooks/" class="mono" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#0E4A50;">QuickBooks overview <span aria-hidden="true">&rarr;</span></a></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+{%- if breadcrumb %}
+  <nav class="crumb" aria-label="Breadcrumb">
+    <div class="ct"><ol class="mono">
+      {%- for item in breadcrumb %}
+      {%- if item.href %}<li><a href="{{ item.href }}">{{ item.name }}</a></li><li aria-hidden="true">/</li>
+      {%- else %}<li aria-current="page">{{ item.name }}</li>{%- endif %}
+      {%- endfor %}
+    </ol></div>
+  </nav>
+{%- endif %}
+
+{{ content | safe }}
+
+  <footer class="foot">
+    <div class="ct" style="padding-top:56px;padding-bottom:36px;">
+      <div class="r-foot">
+        <div>
+          <div class="foot__brand"><span class="brand__mark"><svg width="17" height="17" viewBox="0 0 64 64" fill="#FCFBF8" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span><span class="brand__name">TechBrot</span></div>
+          <p class="foot__about">Independent accounting &amp; advisory, staffed by Certified QuickBooks ProAdvisors.</p>
+          <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" class="mono" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;color:#14110C;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ site.phone.display }}</a>
+        </div>
+        <div><div class="col-head">{{ footerNav.label or "Explore" }}</div><ul>
+          {%- for l in (footerNav.links or defaultFooterLinks) %}<li><a href="{{ l.href }}">{{ l.text }}</a></li>{%- endfor %}
+        </ul></div>
+        <div><div class="col-head">Company</div><ul>
+          <li><a href="/find-an-accountant/">Find an accountant</a></li>
+          <li><a href="/resources/">Resources</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul></div>
+        <div><div class="col-head">Office</div><p style="font-size:14px;line-height:1.65;margin:0 0 10px;color:#4A443B;">{{ site.address.streetAddress }}<br>{{ site.address.addressLocality }}, {{ site.address.addressRegion }} {{ site.address.postalCode }}</p><a href="mailto:info@techbrot.com" style="font-size:14px;color:#4A443B;">info@techbrot.com</a></div>
+      </div>
+      <div class="foot__legal"><span class="foot__mark"><span></span><span></span></span><p class="foot__disc">TechBrot Inc. is an independent firm and is not affiliated with Intuit Inc. QuickBooks and ProAdvisor are trademarks of Intuit Inc. We do not file taxes or represent clients before tax authorities.</p></div>
+    </div>
+  </footer>
+</main>
+
+{#- ===== mobile drawer ===== -#}
+<div class="drawer" data-drawer>
+  <div style="display:flex;align-items:center;justify-content:space-between;height:60px;border-bottom:1px solid #ECE5D8;">
+    <a class="brand" href="/"><span class="brand__mark"><svg width="16" height="16" viewBox="0 0 64 64" fill="#FCFBF8"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span><span class="brand__name" style="font-size:15px;">TechBrot</span></a>
+    <button type="button" data-drawer-close aria-label="Close menu" style="background:none;border:0;cursor:pointer;color:#14110C;padding:8px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg></button>
+  </div>
+  <div style="padding:8px 0 18px;">
+    <a href="/find-an-accountant/" style="display:block;padding:16px 0;font-size:17px;font-weight:600;color:#14110C;border-bottom:1px solid #F3EDE2;">Find an accountant</a>
+    <details class="acc" name="dc-drawer"><summary>Accounting <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E6456" stroke-width="1.75"><path d="M5 9l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div style="padding:14px 0 18px;display:grid;gap:14px;"><a href="/accounting/bookkeeping/" style="font-size:15px;color:#4A443B;">Ongoing bookkeeping</a><a href="/accounting/advisory/" style="font-size:15px;color:#4A443B;">Advisory</a></div></details>
+    <details class="acc" name="dc-drawer"><summary>QuickBooks <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E6456" stroke-width="1.75"><path d="M5 9l7 7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div style="padding:14px 0 18px;display:grid;gap:14px;"><a href="/quickbooks/setup/" style="font-size:15px;color:#4A443B;">Setup &amp; migration</a><a href="/quickbooks/compare/" style="font-size:15px;color:#4A443B;">QuickBooks comparisons</a></div></details>
+    <a href="/vs/" style="display:block;padding:16px 0;font-size:17px;font-weight:600;color:#14110C;border-bottom:1px solid #F3EDE2;">Compare</a>
+    <a href="/resources/" style="display:block;padding:16px 0;font-size:17px;font-weight:600;color:#14110C;border-bottom:1px solid #F3EDE2;">Resources</a>
+    <div style="display:grid;gap:10px;margin-top:20px;">
+      <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" class="btn btn-cta" style="display:flex;align-items:center;justify-content:center;gap:9px;height:52px;padding:0 18px;border-radius:11px;font-size:15px;font-weight:600;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>Call {{ site.phone.display }}</a>
+      <a href="/contact/" class="btn btn-ghost" style="display:flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 18px;border-radius:11px;font-size:14.5px;font-weight:500;">Book the discovery call</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  if (window.__tbDcNav) return; window.__tbDcNav = true;
+  function closeMenus(x){document.querySelectorAll('[data-menu-panel]').forEach(function(p){if(p.getAttribute('data-menu-panel')!==x)p.removeAttribute('data-open');});document.querySelectorAll('[data-menu]').forEach(function(b){if(b.getAttribute('data-menu')!==x)b.setAttribute('aria-expanded','false');});}
+  function drawer(o){var d=document.querySelector('[data-drawer]');if(d){if(o){d.setAttribute('data-open','');document.body.style.overflow='hidden';}else{d.removeAttribute('data-open');document.body.style.overflow='';}}}
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-menu]');
+    if(t){e.preventDefault();var n=t.getAttribute('data-menu');var p=document.querySelector('[data-menu-panel="'+n+'"]');var open=t.getAttribute('aria-expanded')==='true';closeMenus(open?null:n);if(p){if(open){p.removeAttribute('data-open');}else{p.setAttribute('data-open','');}t.setAttribute('aria-expanded',open?'false':'true');}return;}
+    if(e.target.closest('[data-menu-panel]'))return;
+    closeMenus(null);
+    if(e.target.closest('[data-drawer-open]'))drawer(true);
+    if(e.target.closest('[data-drawer-close]'))drawer(false);
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMenus(null);drawer(false);}});
+})();
+</script>
+<script src="/assets/js/tb-analytics.js" defer></script>
+</body>
+</html>
