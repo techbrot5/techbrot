@@ -8,14 +8,18 @@ footerNav:
     - { href: "/accounting/advisory/", text: "Advisory" }
 ---
 {#- ===========================================================================
-    t-money — D1 money-page family (NEW handoff "QuickBooks Cleanup - Money Page").
-    V2 FULL RECOMPOSE: split hero (rule-mark eyebrow + signature figcard viz +
-    2 CTAs + helper + trust) · {{content}} = the page's dossier body in REAL
-    handoff components · earned-DARK final CTA (monogram watermark). BOFU.
-    Frozen speakable #<slug>-in-brief-text lives in the page body.
+    t-money — D1 money-page family (handoff "QuickBooks Cleanup - Money Page").
+    DATA-DRIVEN SPINE so every D1 page inherits: hero · proof-strip · credentials ·
+    §01 in-brief(+definition+coined pull-quote) · §02 signals · §03 dark-dossier AI ·
+    {{content}} = the page's BESPOKE middle sections (deliverables/process/compare/
+    included/phases/… in shared dc-system components) · §pricing · §operator ·
+    §related · §call-block · §intake · §faq · earned-dark final CTA.
+    Per-page text via `sec` (section headings/ledes) + data arrays. Frozen speakable
+    #<slug>-in-brief-text on the §01 answer. FULL DEPTH: pages keep all content.
     =========================================================================== -#}
+{%- set sec = sec or {} %}
 
-{#- HERO — split, signature figure card (heroFig.viz), rule-mark eyebrow -#}
+{#- HERO — split, figcard signature viz, rule-mark -#}
 {%- if hero %}
 <section class="section" id="{{ slug }}-hero" style="padding-top:72px;padding-bottom:64px;border-bottom:1px solid var(--border-faint);">
   <div class="ct{% if not heroFig %} read{% endif %}">
@@ -33,20 +37,200 @@ footerNav:
       {%- if hero.helper %}<p style="font-size:14px;color:var(--color-ink-mute);margin:0;max-width:42ch;">{{ hero.helper | safe }}</p>{%- endif %}
       {%- if heroFig %}
       </div>
-      <figure class="figcard">
-        <div class="figcard__grid" aria-hidden="true"></div>
-        <figcaption><span class="figcard__t">{{ heroFig.caption | safe }}</span><span class="figcard__tag mono">{{ heroFig.tag | default("illustrative", true) | safe }}</span></figcaption>
-        {% include heroFig.viz %}
-      </figure>
+      <figure class="figcard"><div class="figcard__grid" aria-hidden="true"></div><figcaption><span class="figcard__t">{{ heroFig.caption | safe }}</span><span class="figcard__tag mono">{{ heroFig.tag | default("illustrative", true) | safe }}</span></figcaption>{% include heroFig.viz %}</figure>
       </div>
     {%- endif %}
   </div>
 </section>
 {%- endif %}
 
+{#- PROOF STRIP (dark) -#}
+{%- if proofClaims %}
+<section class="proofbar" id="{{ slug }}-proof">
+  <div class="ct proofbar__row">
+    <span class="proofbar__label">What you can verify</span>
+    {%- for c in proofClaims %}<span class="proofbar__item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ c | safe }}</span>{%- endfor %}
+  </div>
+</section>
+{%- endif %}
+
+{#- CREDENTIALS (real Intuit badges) -#}
+{%- if showBadges %}
+<section class="sec reveal" id="{{ slug }}-credentials" style="padding-top:48px;padding-bottom:8px;">
+  <div class="ct"><p class="eyebrow" style="margin-bottom:18px;">Verifiable Intuit credentials</p>{% include "partials/intuit-badges.njk" %}</div>
+</section>
+{%- endif %}
+
+{#- §01 IN BRIEF (idx + 2-col: heading | answer + definition + coined pull-quote) -#}
+{%- if inBrief %}
+<section class="sec reveal" id="{{ slug }}-definition" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§01</span><span class="idx__t">{{ sec.inBriefTag | default("The engagement", true) }}</span><span class="idx__rule"></span></div>
+    <div class="r-2" style="gap:48px;align-items:start;">
+      <h2 class="h2 speakable" style="max-width:18ch;">{{ sec.inBriefH | safe }}</h2>
+      <div class="prose speakable">
+        <p id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
+        {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
+        {%- if coinedQuote %}<blockquote class="opquote" style="margin-top:20px;"><blockquote>{{ coinedQuote | safe }}</blockquote></blockquote>{%- endif %}
+        {%- if inBrief.source %}<p class="in-brief__source" style="font-size:13px;color:var(--color-ink-faint);margin-top:14px;">{{ inBrief.source | safe }}</p>{%- endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- §02 SIGNALS (buyer-cards) -#}
+{%- if signals %}
+<section class="sec reveal" id="{{ slug }}-signals">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§02</span><span class="idx__t">{{ sec.signalsTag | default("Is this you", true) }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:22ch;margin-bottom:36px;">{{ sec.signalsH | safe }}</h2>
+    <div class="r-2">
+      {%- for s in signals %}<div class="lift"><span class="lift__n">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span><div><h3>{{ s.opener | safe }}</h3>{% if s.body %}<p>{{ s.body | safe }}</p>{% endif %}</div></div>{%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- §03 AI SUMMARY (dark dossier ruled Q&A) -#}
+{%- if aiSummary %}
+<section class="sec reveal dossier" id="{{ slug }}-ai-summary">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§03</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
+    <h2 class="h2 dossier__h" style="max-width:16ch;margin-bottom:40px;">{{ sec.aiH | safe }}</h2>
+    <div class="dossier-qa speakable">
+      {%- for item in aiSummary %}<div class="dossier-qa__item"><h3>{{ item.q | safe }}</h3><p>{{ item.a | safe }}</p></div>{%- endfor %}
+      <div class="dossier-qa__item dossier-qa__cta"><a class="btn btn-cta" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" style="display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 20px;border-radius:10px;font-size:14.5px;font-weight:600;">{% include "icons/phone.svg" %} Speak to a ProAdvisor</a></div>
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- ═══ BESPOKE MIDDLE — page provides its unique sections (deliverables/process/
+    compare/included/layered/phases/…) in shared dc-system v2 components ═══ -#}
 {{ content | safe }}
 
-{#- FINAL CTA — earned dark (monogram watermark) -#}
+{#- §PRICING (tiers, featured) -#}
+{%- if tiers %}
+<section class="sec reveal" id="{{ slug }}-pricing" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Pricing</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:22ch;margin-bottom:10px;">{{ sec.pricingH | safe }}</h2>
+    {%- if sec.pricingLede %}<p class="lede" style="margin:0 0 36px;max-width:54ch;">{{ sec.pricingLede | safe }}</p>{%- endif %}
+    <div class="r-3">
+      {%- for t in tiers %}
+      <article class="ptier{% if t.note %} ptier--featured{% endif %}">
+        {%- if t.note %}<p class="ptier__flag">{{ t.note | safe }}</p>{%- endif %}
+        <h3 class="ptier__name">{{ t.name | safe }}</h3>
+        <p class="ptier__price">{{ t.price | safe }}</p>
+        {%- if t.forWhom %}<p class="ptier__for"><strong>For:</strong> {{ t.forWhom | safe }}</p>{%- endif %}
+        {%- if t.bullets %}<ul>{%- for b in t.bullets %}<li>{{ b | safe }}</li>{%- endfor %}</ul>{%- endif %}
+        {%- if t.cta %}<a class="ptier__link" href="/contact/?intent={{ intent | default('cleanup', true) }}">{{ t.cta | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>{%- endif %}
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- §OPERATOR (editorial + checklist) -#}
+{%- if operatorSpec %}
+<section class="sec reveal" id="{{ slug }}-operator">
+  <div class="ct r-2" style="gap:48px;align-items:center;">
+    <div>
+      <div class="idx"><span class="idx__n">§</span><span class="idx__t">Who performs the work</span><span class="idx__rule"></span></div>
+      <h2 class="h2" style="max-width:20ch;margin-bottom:18px;">{{ sec.operatorH | safe }}</h2>
+      {%- if sec.operatorLede %}<p class="lede" style="margin:0 0 22px;max-width:46ch;">{{ sec.operatorLede | safe }}</p>{%- endif %}
+      <figure class="opquote"><blockquote>&ldquo;They took something that felt overwhelming to me as a first-year business owner and made it simple.&rdquo;</blockquote><cite>Heidi Schubert &middot; Owner, Beverage Connection &middot; <b>Verified Clutch review</b></cite></figure>
+    </div>
+    <div class="opcard">
+      <p class="opcard__label">The standard, every file</p>
+      <ul>{%- for r in operatorSpec %}<li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4 4 10-10.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>{{ r.value | safe }}.</strong> {{ r.label | safe }}</span></li>{%- endfor %}</ul>
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- §RELATED (around the engagement) -#}
+{%- if nextSteps %}
+<section class="sec reveal" id="{{ slug }}-next" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.relatedTag | default("Around the engagement", true) }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">{{ sec.relatedH | safe }}</h2>
+    <div class="r-2">{%- for n in nextSteps %}<a class="rel-card" href="{{ n.href }}"><h3 class="rel-card__t">{{ n.title | safe }}</h3><p class="rel-card__d">{{ n.body | safe }}</p></a>{%- endfor %}</div>
+  </div>
+</section>
+{%- endif %}
+
+{#- §CALL-BLOCK (split light + dark) -#}
+<section class="sec reveal" id="{{ slug }}-call" style="padding-top:40px;">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Talk to a ProAdvisor</span><span class="idx__rule"></span></div>
+    <div class="callcard">
+      <div class="callband">
+        <div class="callband__main">
+          <p class="eyebrow" style="margin-bottom:16px;">Talk to a ProAdvisor</p>
+          <h2 class="h2" style="font-size:clamp(26px,1.4rem + 1.4vw,33px);margin-bottom:12px;">One call tells you exactly where your books stand.</h2>
+          <p style="font-size:16px;line-height:1.55;color:var(--color-ink-body2);margin:0 0 26px;max-width:42ch;">No form, no sales script. You speak with a Certified QuickBooks ProAdvisor who has looked at files like yours &mdash; and you get a written fixed-fee scope within one business day.</p>
+          <a class="btn btn-cta callbtn" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="mono" style="font-size:22px;font-weight:500;">{{ site.phone.display }}</span></a>
+          <p class="mono" style="font-size:12px;color:var(--color-ink-mute);margin:8px 0 16px;">Mon&ndash;Fri &middot; we reply the same business day</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px 18px;"><span style="font-size:13px;color:var(--color-ink-mute);">Certified ProAdvisor</span><span style="font-size:13px;color:var(--color-ink-mute);">Independent firm</span><span style="font-size:13px;color:var(--color-ink-mute);">No obligation</span></div>
+        </div>
+        <div class="callband__aside">
+          <span class="callband__aside-label">What happens when you call</span>
+          <ol class="callband__steps">
+            <li><span class="callband__n" aria-hidden="true">01</span><span><b>You talk to a ProAdvisor</b><span>A real Certified QuickBooks ProAdvisor &mdash; not a call centre.</span></span></li>
+            <li><span class="callband__n" aria-hidden="true">02</span><span><b>We review your file</b><span>We look at what&rsquo;s actually in your QuickBooks and what it needs.</span></span></li>
+            <li><span class="callband__n callband__n--tie" aria-hidden="true">03</span><span><b>You get a written scope</b><span>A fixed fee in writing within 3 business days. Then you decide.</span></span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{#- §INTAKE FORM (minimal) -#}
+<section class="sec reveal" id="{{ slug }}-intake" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);padding-top:80px;padding-bottom:80px;">
+  <div class="ct" style="max-width:760px;">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Prefer email</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:8px;">{{ sec.intakeH | default("Scope your engagement.", true) | safe }}</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:50ch;">Send a few details and a Certified ProAdvisor replies the same business day. Or just <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" style="color:var(--color-accent);">call {{ site.phone.display }}</a>.</p>
+    <form class="intake" id="{{ slug }}-intake-form" data-form="contact-discovery" method="POST" action="/contact/submit" novalidate>
+      <div class="sr-only" aria-hidden="true"><label for="{{ slug }}-cw">Company website (leave blank)</label><input type="text" id="{{ slug }}-cw" name="company_website" tabindex="-1" autocomplete="off"></div>
+      <div class="r-2" style="gap:16px;">
+        <label><span>Full name</span><input type="text" name="name" required autocomplete="name"></label>
+        <label><span>Work email</span><input type="email" name="email" required autocomplete="email"></label>
+        <label><span>Months behind <span style="color:var(--color-ink-faint);font-weight:400;">optional</span></span><select name="months"><option value="">Select range</option><option>1&ndash;3 months</option><option>3&ndash;12 months</option><option>1&ndash;2 years</option><option>2+ years</option></select></label>
+        <label><span>QuickBooks version <span style="color:var(--color-ink-faint);font-weight:400;">optional</span></span><select name="qb_status"><option value="">Select one</option><option>QuickBooks Online</option><option>QuickBooks Desktop</option><option>QuickBooks Enterprise</option><option>Not sure</option></select></label>
+      </div>
+      <label style="display:block;margin-top:16px;"><span>Anything specific? <span style="color:var(--color-ink-faint);font-weight:400;">optional</span></span><textarea name="message" rows="3" placeholder="A line or two about the state of the file helps us scope the call."></textarea></label>
+      <label class="intake-checkbox" style="display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:13.5px;color:var(--color-ink-body2);"><input type="checkbox" name="consent" value="agreed" required style="width:auto;min-height:0;margin-top:3px;"><span>I agree to be contacted by TechBrot regarding this inquiry. We&rsquo;ll only use your details to respond to this request. See our <a href="/legal/privacy-policy/" style="color:var(--color-accent);">privacy policy</a>.</span></label>
+      <input type="hidden" name="intent" data-meta="intent" value="{{ intent | default('cleanup', true) }}">
+      <input type="hidden" name="source_page" data-meta="source_page" value="{{ page.url | replace('/','',1) | replace('/','',-1) }}">
+      <input type="hidden" name="source_type" data-meta="source_type" value="bofu-conversion">
+      <input type="hidden" name="funnel_stage" data-meta="funnel_stage" value="BOFU">
+      <input type="hidden" name="referring_page" value="" data-referrer-tracker>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:18px;">
+        <button class="btn btn-cta" type="submit" data-cta="contact-form-submit" style="display:inline-flex;align-items:center;height:48px;padding:0 22px;border:0;border-radius:10px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;">Send the Discovery Brief</button>
+        <span style="font-size:13px;color:var(--color-ink-mute);">Same business day &middot; no obligation. A Certified ProAdvisor replies within one business day.</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+{#- §FAQ -#}
+{%- if faq %}
+<section class="sec reveal" id="{{ slug }}-faq" style="padding-top:80px;">
+  <div class="ct" style="max-width:880px;">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Questions</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:32px;">{{ sec.faqH | safe }}</h2>
+    <div class="faq">{%- for item in faq %}<details name="{{ slug }}-faq"{% if loop.first %} open{% endif %}><summary>{{ item.q | safe }}<span class="pl"></span></summary><div>{{ item.a | safe }}</div></details>{%- endfor %}</div>
+    {%- if metaReviewed %}<p class="meta-reviewed"><span>Published: {{ metaReviewed }}</span><span>Updated: {{ metaReviewed }}</span><span>Reviewed: {{ metaReviewed }} &middot; Certified QuickBooks ProAdvisor</span></p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- FINAL CTA — earned dark -#}
 {%- if ctaBand %}
 <section class="section final-dark" id="{{ slug }}-cta" style="padding:0;">
   <svg class="final-dark__mono" width="420" height="420" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z" fill="#fff"/><rect x="42" y="10" width="14" height="12" fill="#fff"/></svg>
@@ -55,7 +239,6 @@ footerNav:
       <span class="rule-mark" aria-hidden="true" style="margin-bottom:24px;"><span style="background:var(--accent-on-ink);"></span><span></span></span>
       <h2 class="final-dark__h">{{ ctaBand.heading | safe }}</h2>
       <p class="final-dark__lede">{{ ctaBand.lede | safe }}</p>
-      {%- if hero.helper %}<p class="final-dark__reassure">{% include "icons/check.svg" %}{{ hero.helper | safe }}</p>{%- endif %}
       <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;">
         {%- for a in ctaBand.actions %}
         <a class="btn {% if loop.first %}btn-cta{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:11px;height:56px;padding:0 26px;border-radius:13px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};{% if not loop.first %}background:transparent;color:#fff;border:1px solid rgba(245,247,251,0.32);{% endif %}">{{ a.label }}</a>
