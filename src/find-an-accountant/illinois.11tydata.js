@@ -70,7 +70,7 @@ module.exports = {
 
   // GLOSSARY — 8 entity-dense IL terms. (H2: The Illinois terms that matter for QuickBooks & bookkeeping.)
   // Baseline definitions verbatim; child-page enrichment links REMOVED (no-children rule).
-  glossary: [
+  stateTerms: [
     { term: "Personal Property Replacement Tax (PPRT)", def: "<strong>An Illinois entity-level tax on net income</strong> that replaced the personal property tax abolished in 1970. <strong>C-corporations pay 2.5%; S-corporations, partnerships, and trusts pay 1.5%.</strong> Pass-through entities owe it at the entity level even though income flows to owners &mdash; an Illinois-specific obligation most other states don&rsquo;t impose. QuickBooks should track Illinois net income cleanly so the PPRT is supportable." },
     { term: "Flat Income Tax (4.95%)", def: "<strong>Illinois taxes personal income at a single flat rate of 4.95%</strong> &mdash; no graduated brackets, so every individual pays the same rate regardless of income. <strong>Chicago adds no separate city income tax</strong> (unlike New York City or some Ohio cities). For owners, the interaction between the flat individual rate, the PPRT, and the optional PTE election drives entity and distribution planning." },
     { term: "C-Corp Combined Rate (9.5%)", def: "<strong>Illinois C-corporations face a combined 9.5% &mdash; a 7% corporate income tax plus the 2.5% replacement tax</strong> &mdash; among the highest corporate rates in the nation. S-corporations and partnerships avoid the 7% corporate tax and pay only the 1.5% PPRT at the entity level. The gap makes entity choice consequential for Illinois businesses." },

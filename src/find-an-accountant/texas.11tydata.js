@@ -65,7 +65,7 @@ module.exports = {
 
   // GLOSSARY — 8 entity-dense TX terms. (H2: The Texas terms that matter for QuickBooks & bookkeeping.)
   // NO-CHILDREN: baseline "[texas child] →" links dropped to plain text.
-  glossary: [
+  stateTerms: [
     { term: "Texas Franchise (Margin) Tax", def: "<strong>A privilege tax on a business entity&rsquo;s taxable margin</strong> &mdash; not its income or profit. Applies to LLCs, S-corps, partnerships, and out-of-state entities with Texas nexus, regardless of federal pass-through status. For 2026, entities at or below <strong>$2.65M annualized total revenue owe $0</strong> but still file a Public or Ownership Information Report. The standard rate is <strong>0.75%</strong> (0.375% for retail/wholesale)." },
     { term: "Taxable Margin &mdash; Four Methods", def: "<strong>How franchise tax is calculated above the threshold.</strong> Margin is the <strong>lowest</strong> of: 70% of total revenue; total revenue minus cost of goods sold; total revenue minus compensation (capped at <strong>$480,000 per person for 2026</strong>); or total revenue minus a flat $1,000,000. Taxable margin can never exceed 70% of total revenue. Choosing the wrong method overstates the bill &mdash; QuickBooks must track COGS and compensation cleanly to support each calculation." },
     { term: "No State Income Tax", def: "<strong>Texas levies no personal state income tax.</strong> Payroll still requires federal withholding, Social Security/Medicare, and Texas unemployment tax (SUTA via the Texas Workforce Commission) &mdash; but no state income-tax withholding line. The trade-off for no income tax is the franchise tax and a heavier reliance on sales tax. A common point of confusion for businesses relocating from income-tax states." },
