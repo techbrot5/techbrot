@@ -105,7 +105,7 @@
     <h2 class="h2" style="max-width:16ch;margin-bottom:44px;">From first call to clean books.</h2>
     <div class="process-grid">
       {%- for s in process %}
-      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">STEP {{ s.num }}{% if loop.last %} &check;{% endif %}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p>{% if s.when %}<p style="margin-top:8px;"><strong>{{ s.when | safe }}</strong></p>{% endif %}</div>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">STEP {{ s.num }}{% if loop.last %} &check;{% endif %}</div>{% if s.name %}<h3>{{ s.name | safe }}</h3>{% endif %}<p>{{ s.body | safe }}</p>{% if s.when %}<p style="margin-top:8px;"><strong>{{ s.when | safe }}</strong></p>{% endif %}</div>
       {%- endfor %}
     </div>
     <figure class="timeline-card">

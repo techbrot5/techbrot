@@ -265,12 +265,14 @@ h1, h2, h3 { font-weight: 500; text-wrap: balance; }
 
 /* §05 process (4-step, vertical rules) + timeline figure */
 .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
-.process-step { padding: 0 26px; border-right: 1px solid var(--border-default); }
+/* display:block resets the legacy site.min.css `.process-step{display:flex}` (row) that
+   otherwise lays number/heading/body side-by-side; within a step, content stacks vertically */
+.process-step { display: block; padding: 0 26px; border-right: 1px solid var(--border-default); min-width: 0; }
 .process-step:first-child { padding-left: 0; } .process-step:last-child { padding-right: 0; border-right: 0; }
-.process-step__n { font-family: 'Spline Sans Mono', monospace; font-size: 13px; color: var(--cta); margin-bottom: 14px; }
+.process-step__n { display: block; font-family: 'Spline Sans Mono', monospace; font-size: 13px; color: var(--cta); margin-bottom: 14px; }
 .process-step__n--done { color: var(--color-success); }
-.process-step h3 { font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 19px; color: var(--color-ink); margin: 0 0 8px; }
-.process-step p { font-size: 14.5px; line-height: 1.6; color: var(--color-ink-mute); margin: 0; }
+.process-step h3 { display: block; font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 19px; color: var(--color-ink); margin: 0 0 8px; overflow-wrap: anywhere; }
+.process-step p { font-size: 14.5px; line-height: 1.6; color: var(--color-ink-mute); margin: 0; overflow-wrap: anywhere; }
 .process-step p strong { color: var(--color-ink); }
 .timeline-card { margin: 44px 0 0; background: var(--white); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 26px 28px 22px; }
 .timeline-card figcaption { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 20px; }

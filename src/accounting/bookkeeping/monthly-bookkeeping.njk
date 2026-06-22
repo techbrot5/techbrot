@@ -75,7 +75,7 @@
     <p class="lede" style="margin:0 0 40px;max-width:54ch;">Every engagement runs the same close cadence &mdash; documents in, reconciliation, close and review, package delivered by the 15th.</p>
     <div class="process-grid">
       {%- for step in closeCadence %}
-      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ step.band | safe }}{% if loop.last %} &check;{% endif %}</div><h3>{{ step.label | safe }}</h3><p>{{ step.sub | safe }}</p></div>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ step.band | safe }}{% if loop.last %} &check;{% endif %}</div>{% if step.label %}<h3>{{ step.label | safe }}</h3>{% endif %}<p>{{ step.sub | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
