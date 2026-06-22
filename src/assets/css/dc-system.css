@@ -176,6 +176,10 @@ h1, h2, h3 { font-weight: 500; text-wrap: balance; }
 .faq details > div { padding: 0 4px 22px; color: var(--color-ink-body2); font-size: 15.5px; line-height: 1.7; }
 
 /* ---------- final CTA ---------- */
+/* dc-base LIGHT CTA bands render on PAPER (handoff convention) — overrides
+   site.min.css's sand `--surface-subtle`, which == section--alt and would collapse
+   a FAQ[sand]→CTA[sand] boundary. Dark band + old non-dc-base pages unaffected. */
+.section--cta-band--light { background: var(--color-paper); }
 .final-cta { text-align: center; }
 .final-cta__h { font-family: 'Fraunces', serif; font-weight: 500; font-variation-settings: 'opsz' 80; font-size: clamp(27px, 1.5rem + 2vw, 40px); margin: 0 auto 16px; max-width: 20ch; color: var(--color-ink); }
 .final-cta__lede { font-size: 19px; line-height: 1.55; color: var(--color-ink-body2); margin: 0 auto 26px; max-width: 46ch; }
