@@ -1,5 +1,36 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
 
+## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-23)
+**R0 — DUAL-LOG EVERY TURN (founder, 2026-06-23):** append the full turn to
+`_build/reports/SESSION-LOG.md` AND update THIS file (family status) every turn; cat the
+tail of both back so the founder sees them current. Never skip either.
+**ARCHITECTURE RULE (founder):** spine/common composition lives in the LAYOUT (families
+inherit); genuinely bespoke per-page content renders via SHARED dc-system v2 components in
+the `{{content}}` slot. NEVER build composition in individual pages; NEVER flatten bespoke
+content to force uniformity. Fix shared components at SOURCE → every family inherits.
+**BUILD METHOD:** `--incremental` for body/content edits (full build only after token/
+dc-system/_data/layout changes or end-of-family); scoped battery+section-bg during iteration,
+FULL sitewide battery at per-family commit; batch fixes before rebuilding; keep `--serve` off
+during heavy builds (8 GB). FULL-DEPTH equity GREEN per page is non-negotiable + cannot be deferred.
+
+**PHASE:** V2 full-recompose (real handoff components + full depth). Order:
+D1 → D3 → D2 → D4/5/6 (NY incl) → D7 → B1-B5 → C1 → E1-E6 → F1 → F2 → G1 → G2 → A1.
+
+| Family | Layout | Status | Notes |
+|---|---|---|---|
+| C2 comparison (/vs/, 14) | t-comparison | ✅ REP done | bookkeeper-vs-accountant proof; fan-out pending |
+| **D1 money (19)** | **t-money (data-driven spine)** | **🔄 4/19 on spine** | cleanup REP + catch-up + monthly done (full-depth GREEN). 16 left: migration(9)/QB-service(4)/accounting(3) |
+| D3 state pillar (5) | t-state-pillar | ⏳ chrome-only | pending V2 redo (next after D1); apply trust-strip there |
+| D2 prose (~177) | t-prose | ⏳ infra only | chrome-only fan-out reverted; pending |
+| D4/D5/D6 (NY children) | — | ⏳ | NY incl, content-frozen + rate-free viz |
+| D7 / B1-B5 / C1 / E1-E6 / F1 / F2 / G1 / G2 / A1 | — | ⏳ | pending (A1 last) |
+
+**SHARED v2 COMPONENTS (dc-system.css, fix at source):** trust-strip (handoff sand band, label-
+left/badges-right) · proofbar · dark-dossier AI · deliver / deliver--3 · process-grid (vertical-
+stack, heading optional) · ptier (+per) · checklist / incl-card · opquote/opcard · callband ·
+intake · final-dark · 2 signature SVGs (recon-beforeafter, cleanup-timeline). Self-contained
+:root tokens. Pages on spine carry redundant site.min.css (trim pre-flip).
+
 ## ⭐ PERMANENT STANDING RULES (added 2026-06-15 — apply EVERY session, EVERY stop)
 **R1 — REPORT AT EVERY STOP.** Before asking the founder for anything (approval, a
 decision, review), write a complete, stand-alone, honest report to
