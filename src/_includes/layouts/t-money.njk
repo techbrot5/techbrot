@@ -1,0 +1,81 @@
+---
+layout: layouts/dc-base.njk
+footerNav:
+  label: Services
+  links:
+    - { href: "/accounting/bookkeeping/cleanup-bookkeeping/", text: "Cleanup & catch-up" }
+    - { href: "/quickbooks/setup/", text: "Setup & migration" }
+    - { href: "/accounting/advisory/", text: "Advisory" }
+---
+{#- ===========================================================================
+    t-money — D1 money-page family (NEW handoff "QuickBooks Cleanup - Money Page.dc.html").
+    New handoff CHROME via dc-base; the page body (already re-architected to the
+    Money §-rhythm + dossier components) renders via the elevated component layer.
+    Hero = split, rule-mark eyebrow, signature figure (heroFigure). Final CTA =
+    earned dark (ctaBand.dark). Frozen speakable #<slug>-in-brief-text preserved.
+    BOFU: full conversion weight (dual seam lives in the page body).
+    =========================================================================== -#}
+
+{#- HERO — split, signature figure, rule-mark eyebrow, trust row (BOFU) -#}
+<section class="section hero-tier hero--compact hero--rule{% if heroFigure %} hero--split{% endif %}" id="{{ slug }}-hero">
+  <div class="container">
+    <div class="hero-split">
+      <div class="hero">
+        <p class="hero__eyebrow"><span class="hero__eyebrow-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
+        <h1 class="hero__heading speakable">{{ hero.heading | safe }}</h1>
+        <p class="hero__subheading speakable">{{ hero.subheading | safe }}</p>
+        {%- if hero.actions %}
+        <div class="hero__actions">
+          {%- for action in hero.actions.slice(0, 2) %}
+          <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
+            {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+          {%- endfor %}
+        </div>
+        {%- endif %}
+        {%- if hero.trust %}
+        <ul class="hero__trust">
+          {%- for t in hero.trust %}<li class="hero__trust-item">{{ t | safe }}</li>{%- endfor %}
+        </ul>
+        {%- endif %}
+      </div>
+      {%- if heroFigure %}
+      <div class="hero__figure">{% include "partials/figure-" + heroFigure + ".svg" %}</div>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+
+{#- IN-BRIEF (frozen speakable id) -#}
+{%- if inBrief %}
+<section class="section section--compact" id="{{ slug }}-in-brief">
+  <div class="container">
+    <div class="in-brief">
+      <p class="in-brief__text" id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
+      {%- if inBrief.source %}<p class="in-brief__source">{{ inBrief.source | safe }}</p>{%- endif %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{{ content | safe }}
+
+{#- FINAL CTA — earned dark (ctaBand.dark) -#}
+{%- if ctaBand %}
+<section class="section section--cta-band section--cta-band--{% if ctaBand.dark %}dark{% else %}light{% endif %} section--tier-bofu" id="{{ slug }}-cta">
+  <div class="cta-band__motif" aria-hidden="true"><svg viewBox="0 0 64 64" fill="currentColor"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></div>
+  <div class="container">
+    <div class="final-cta">
+      <p class="final-cta__eyebrow"><span class="final-cta__mark" aria-hidden="true"><span></span><span></span></span>{{ ctaBand.eyebrow | safe }}</p>
+      <h2 class="final-cta__heading">{{ ctaBand.heading | safe }}</h2>
+      <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
+      <div class="final-cta__actions">
+        {%- for action in ctaBand.actions %}
+        <a class="btn {{ action.class }}" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
+          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+        {%- endfor %}
+      </div>
+      <p class="final-cta__disclaimer">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
+    </div>
+  </div>
+</section>
+{%- endif %}

@@ -29,6 +29,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Geist:wght@300..700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+{#- Body component layer (the already-elevated petrol/warm design: all tokens +
+    section/idx/buyer-card/feature/stat-tier/call-block/etc.). dc-system.css loads
+    AFTER it so the NEW chrome + the new C2 .cmp win on the (one) collision. The old
+    chrome CSS in here is unused — dc-base renders the new chrome markup. -#}
+<link rel="stylesheet" href="/assets/css/site.min.css">
 <link rel="stylesheet" href="/assets/css/dc-system.css">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
