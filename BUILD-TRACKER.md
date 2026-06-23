@@ -21,8 +21,8 @@ D1 → D3 → D2 → D4/5/6 (NY incl) → D7 → B1-B5 → C1 → E1-E6 → F1 �
 | C2 comparison (/vs/, 14) | t-comparison | ✅ REP done | bookkeeper-vs-accountant proof; fan-out pending |
 | **D1 money (19)** | **t-money (data-driven spine)** | **✅ 19/19 DONE** | bookkeeping 3 + migration 9 + QB-service 4 + accounting 3, all full-depth GREEN, ledes tightened. proadvisor-near-me flagged for possible re-tier (prose-heavy). |
 | **D3 state pillar (5)** | t-state-pillar (data-driven) | **✅ 5/5 DONE** | 16-section handoff; NY full depth intact; taccount figure; light CTA; pillarAnchor fix; full-depth GREEN |
-| **D2 prose (153)** | t-prose (v2) | **🔄 91/153** | help 52/52 + online 39/39 DONE (full-depth GREEN). 62 left: resources 19 / QB sub-pages 31 / accounting 11. Batch-subagent method + battery gate + anchor rule. EXCL 21, HELD 10 |
-| D4/D5/D6 (NY children) | — | ⏳ | NY incl, content-frozen + rate-free viz |
+| **D2 prose (153)** | t-prose (v2) | **✅ 153/153 DONE** | help 52 + online 39 + resources 19 + QB sub-pages 31 + accounting 12, all full-depth GREEN. Non-uniform schema anchors preserved; prose-table + IRS-triage handled. 31 still on t-guide = other families (correct) |
+| **D4/D5/D6 (NY children)** | t-location | **🔜 NEXT** | NY content-frozen (top performer) + rate-free viz; cities/industries/services + CA/TX/FL/IL |
 | D7 / B1-B5 / C1 / E1-E6 / F1 / F2 / G1 / G2 / A1 | — | ⏳ | pending (A1 last) |
 
 **SHARED v2 COMPONENTS (fix at SOURCE → all families inherit):** PARTIALS — trust-strip.njk
