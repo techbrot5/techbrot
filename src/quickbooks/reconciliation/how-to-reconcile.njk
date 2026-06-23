@@ -1,9 +1,8 @@
 ---json
 {
-  "layout": "layouts/t-guide.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/quickbooks/reconciliation/how-to-reconcile/",
   "slug": "recon-how-to",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
   "title": "How to Reconcile in QuickBooks: Step by Step · TechBrot",
   "description": "How to reconcile in QuickBooks, step by step. An independent Certified QuickBooks ProAdvisor firm walks through the procedure for Online and Desktop &mdash; pull the statement, open Reconcile, enter the ending balance and date, match each cleared transaction, drive the difference to <code>$0.00</code>, then finish. Honest about when not to force it. Not Intuit, not Intuit&rsquo;s official support. (877) 751-5575.",
@@ -13,14 +12,23 @@
     { "name": "Reconciliation", "href": "/quickbooks/reconciliation/" },
     { "name": "How to Reconcile" }
   ],
+  "metaReviewed": "2026-06-18",
+  "byline": {
+    "name": "By the Certified QuickBooks ProAdvisor team",
+    "meta": "Reviewed 2026-06 &middot; Online &amp; Desktop certified &middot; independent, not Intuit"
+  },
   "hero": {
-    "eyebrow": "QuickBooks how-to &middot; <span class=\"error-badge\">Reconciliation</span>",
+    "eyebrow": "QuickBooks how-to &middot; Reconciliation",
     "heading": "How to reconcile in QuickBooks: step by step.",
     "subheading": "Reconciling is how you prove your QuickBooks records match what the bank actually did &mdash; one statement, one period, at a time. The procedure is the same in QuickBooks Online and QuickBooks Desktop: pull the statement, open Reconcile, enter the ending balance and date, match each cleared transaction, and drive the <em>difference</em> to <code>$0.00</code> before you finish. Below: the clean step-by-step, what each control means, and the one rule that matters most &mdash; don&rsquo;t force it to zero. Independent firm, not affiliated with Intuit Inc.",
     "actions": [
       { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
       { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
     ]
+  },
+  "sec": {
+    "aiH": "How to reconcile, in five questions.",
+    "faqH": "What people ask about reconciling in QuickBooks."
   },
   "inBrief": {
     "text": "<strong>Reconciling in QuickBooks</strong> means comparing your QuickBooks register against the matching bank or credit-card statement, line by line, until the two agree to the penny. The steps are the same on both platforms: get the statement for the period, open <strong>Reconcile</strong>, confirm the <em>beginning balance</em> matches the statement&rsquo;s opening balance, enter the statement&rsquo;s <em>ending balance</em> and <em>ending date</em>, then check off each transaction that cleared the bank &mdash; deposits and payments &mdash; watching the <em>difference</em> field shrink toward <code>$0.00</code>. When the difference is <code>$0.00</code>, you finish; if it won&rsquo;t reach zero, the rule is the same on every account: don&rsquo;t force it &mdash; find the cause first.",
@@ -38,32 +46,21 @@
 }
 ---
 
-<section class="section section--compact" id="recon-how-to-disclosure">
-  <div class="container container--narrow">
-    <div class="disclosure">
-      <strong>This is an independent Certified QuickBooks ProAdvisor reference &mdash; not Intuit, and not QuickBooks&rsquo; official support.</strong> If your problem is really an Intuit account, login, password, subscription, or billing issue, Intuit&rsquo;s own support is the right path: <a href="https://quickbooks.intuit.com/learn-support/" rel="noopener nofollow">Intuit support <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>. What we do is the operational accounting work inside your own books &mdash; reconciling the accounts, finding the difference, and getting each month to tie. QuickBooks and Intuit are registered trademarks of Intuit Inc.
+{#- DISCLOSURE — Sheet-7 honest-triage, above the fold of the body -#}
+<section style="padding:8px 0 32px;" id="recon-how-to-disclosure">
+  <div class="ct read read--doc">
+    <div class="disclose">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.3" stroke-linecap="round"/></svg>
+      <div class="disclose__body"><strong>This is an independent Certified QuickBooks ProAdvisor reference &mdash; not Intuit, and not QuickBooks&rsquo; official support.</strong> If your problem is really an Intuit account, login, password, subscription, or billing issue, Intuit&rsquo;s own support is the right path: <a href="https://quickbooks.intuit.com/learn-support/" rel="noopener nofollow">Intuit support <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>. What we do is the operational accounting work inside your own books &mdash; reconciling the accounts, finding the difference, and getting each month to tie. QuickBooks and Intuit are registered trademarks of Intuit Inc.</div>
     </div>
   </div>
 </section>
 
-<section class="section section--compact" id="recon-how-to-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; Online &amp; Desktop certified</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="recon-how-to-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">What &ldquo;reconcile&rdquo; means, plainly.</h2>
-    </header>
+{#- VARIANT DETAIL (definition) — plain-terms prose body -#}
+<section class="sec reveal" id="recon-how-to-definition" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">In plain terms</div>
+    <h2 class="h2" style="margin-bottom:18px;">What &ldquo;reconcile&rdquo; means, plainly.</h2>
     <div class="prose">
       <p>To reconcile an account in QuickBooks is to match your records against an outside source of truth &mdash; the bank or credit-card statement &mdash; for one statement period, and confirm they agree to the penny. You take the statement, tell QuickBooks the period&rsquo;s ending balance and date, then go down the list checking off every transaction that also appears on the statement. As you check items, QuickBooks tracks a running <em>difference</em> between what the statement says cleared and what you&rsquo;ve marked cleared. When that difference is <code>$0.00</code>, the account is reconciled for the period and you finish.</p>
       <p>The procedure is essentially identical in QuickBooks Online and QuickBooks Desktop &mdash; same logic, slightly different screens. What reconciling is <em>not</em> is a search for a number to make it balance. If the difference won&rsquo;t reach zero, something real is off &mdash; a missing transaction, a duplicate, a wrong amount, or a beginning balance that never tied &mdash; and the answer is to find it, not to plug it. This page is the clean step-by-step. If you want the deeper explanations &mdash; what the Reconcile tool itself does, the definition of bank reconciliation, or what to do when the difference won&rsquo;t close &mdash; those live on the linked pages below.</p>
@@ -71,95 +68,64 @@
   </div>
 </section>
 
-<section class="section" id="recon-how-to-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">How to reconcile, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="recon-how-to-proves">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Before you start</p>
-      <h2 class="section__heading">What reconciliation actually proves.</h2>
-      <p class="section__lede">Understanding what each part of a reconciliation confirms is why the steps go in the order they do &mdash; and why a difference that won&rsquo;t close is information, not an obstacle.</p>
-    </header>
-    <div class="grid-2">
+{#- VARIANT DETAIL — what reconciliation proves (before you start) -#}
+<section class="sec reveal" id="recon-how-to-proves" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Before you start</div>
+    <h2 class="h2" style="margin-bottom:8px;">What reconciliation actually proves.</h2>
+    <p style="font-size:15px;color:var(--color-ink-mute);margin:0 0 18px;">Understanding what each part of a reconciliation confirms is why the steps go in the order they do &mdash; and why a difference that won&rsquo;t close is information, not an obstacle.</p>
+    <div class="prose">
       {%- for c in causes %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ c.rank }}</p>
-        <h3>{{ c.name | safe }}</h3>
-        <p class="prose">{{ c.body | safe }}</p>
-      </div>
+      <h3>{{ c.rank }} &middot; {{ c.name | safe }}</h3>
+      <p>{{ c.body | safe }}</p>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="recon-how-to-steps">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The procedure</p>
-      <h2 class="section__heading">How to reconcile an account, step by step.</h2>
-      <p class="section__lede">Six steps, in order. The same flow works in QuickBooks Online and QuickBooks Desktop &mdash; if the difference won&rsquo;t reach <code>$0.00</code>, stop at the step where it goes wrong rather than forcing the finish.</p>
-    </header>
-    <ol class="fix-steps">
+{#- HOW-TO STEPS — the procedure. KEEPS schema-referenced anchor #recon-how-to-steps -#}
+<section class="sec reveal" id="recon-how-to-steps" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">The procedure</div>
+    <h2 class="h2" style="margin-bottom:8px;">How to reconcile an account, step by step.</h2>
+    <p style="font-size:15px;color:var(--color-ink-mute);margin:0 0 8px;">Six steps, in order. The same flow works in QuickBooks Online and QuickBooks Desktop &mdash; if the difference won&rsquo;t reach <code>$0.00</code>, stop at the step where it goes wrong rather than forcing the finish.</p>
+    <div class="steps">
       {%- for s in fixSteps %}
-      <li>
-        <span class="n">{{ loop.index }}</span>
-        <div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
-      </li>
+      <div class="fixstep"><span class="fixstep__n{% if loop.last %} fixstep__n--done{% endif %}">{{ loop.index }}</span><div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section section--alt" id="recon-how-to-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When to call</p>
-      <h2 class="section__heading">When to bring in a ProAdvisor.</h2>
-    </header>
-    <div class="grid-3">
+{#- CALL-BREAKOUT — slim conversion seam -#}
+<section style="padding:16px 0 40px;" id="recon-how-to-breakout">
+  <div class="ct read read--doc">
+    <div class="breakout">
+      <div><p class="breakout__t">Difference won&rsquo;t close, or months are unreconciled?</p><p class="breakout__sub">A Certified ProAdvisor reviews the file free, then finds what&rsquo;s off and gets each month to tie &mdash; a focused reconciliation diagnostic is typically a $1,200&ndash;$3,000 fixed-fee scope; cleanup runs $1,500&ndash;$15,000+ if the books are behind. Independent firm.</p></div>
+      <a class="btn btn-cta" href="/quickbooks/file-review/?intent=file-review" style="display:inline-flex;align-items:center;height:46px;padding:0 20px;border-radius:10px;font-size:14.5px;font-weight:600;flex:none;">Get the free file review</a>
+    </div>
+  </div>
+</section>
+
+{#- SIGNALS — when to bring in a ProAdvisor -#}
+<section class="sec reveal" id="recon-how-to-signals" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">When to call</div>
+    <h2 class="h2" style="margin-bottom:18px;">When to bring in a ProAdvisor.</h2>
+    <div class="prose">
       {%- for p in proSignals %}
-      <div class="stack-8">
-        <h3>{{ p.name | safe }}</h3>
-        <p class="prose">{{ p.body | safe }}</p>
-      </div>
+      <h3>{{ p.name | safe }}</h3>
+      <p>{{ p.body | safe }}</p>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="recon-how-to-breakout">
-  <div class="container container--narrow">
-    <div class="call-breakout">
-      <div>
-        <p class="call-breakout__title">Difference won&rsquo;t close, or months are unreconciled?</p>
-        <p class="call-breakout__sub">A Certified ProAdvisor reviews the file free, then finds what&rsquo;s off and gets each month to tie &mdash; a focused reconciliation diagnostic is typically a $1,200&ndash;$3,000 fixed-fee scope; cleanup runs $1,500&ndash;$15,000+ if the books are behind. Independent firm.</p>
-      </div>
-      <a class="btn btn--primary" href="/quickbooks/file-review/?intent=file-review">Get the free file review</a>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="recon-how-to-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Who does it</p>
-      <h2 class="section__heading">A Certified ProAdvisor reconciles the accounts and finds what&rsquo;s off.</h2>
-    </header>
+{#- OPERATOR — who does it + fit stats -#}
+<section class="sec reveal" id="recon-how-to-operator" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Who does it</div>
+    <h2 class="h2" style="margin-bottom:18px;">A Certified ProAdvisor reconciles the accounts and finds what&rsquo;s off.</h2>
     <div class="prose">
       <p>Checking off transactions is the easy part. The work that actually restores trust in the numbers is everything a stubborn difference points to: a beginning balance that never tied, transactions entered twice, amounts that don&rsquo;t match the statement, items dated into the wrong period, or a prior reconciliation that was forced and left a hidden adjustment behind. A Certified QuickBooks ProAdvisor with active Online and Desktop certifications works the difference down to its real cause against a written scope, then verifies each period ties to its statement before closing. Independent firm &mdash; not Intuit, and not Intuit&rsquo;s software support; an Intuit account, login, or billing matter stays with Intuit.</p>
     </div>
@@ -172,39 +138,16 @@
   </div>
 </section>
 
-<section class="section" id="recon-how-to-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Where this leads next</p>
-      <h2 class="section__heading">Related reconciliation references.</h2>
-    </header>
-    {%- for n in related %}
-    <div class="stack-8">
+{#- RELATED — where this leads next -#}
+<section class="sec reveal" id="recon-how-to-related" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Where this leads next</div>
+    <h2 class="h2" style="margin-bottom:18px;">Related reconciliation references.</h2>
+    <div class="prose">
+      {%- for n in related %}
       <h3><a href="{{ n.href }}"{% if n.rel %} rel="{{ n.rel }}"{% endif %}>{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
-    </div>
-    {%- endfor %}
-  </div>
-</section>
-
-<section class="section section--alt" id="recon-how-to-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">What people ask about reconciling in QuickBooks.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="recon-how-to-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="recon-how-to-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
+      <p>{{ n.body | safe }}</p>
       {%- endfor %}
     </div>
-    <p class="meta-reviewed"><span>Published: 2026-06-18</span><span>Updated: 2026-06-18</span><span>Reviewed: 2026-06-18 &middot; Certified QuickBooks ProAdvisor</span></p>
   </div>
 </section>
