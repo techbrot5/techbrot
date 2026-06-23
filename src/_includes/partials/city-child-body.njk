@@ -1,155 +1,127 @@
-{#- SHARED CITY-CHILD BODY (growth phase, find-an-accountant state cluster).
+{#- SHARED CITY-CHILD BODY (growth phase, find-an-accountant state cluster) — v2 dc-system.
     ONE source for every city child under /find-an-accountant/<state>/cities/<city>/.
-    DOM is proven-equivalent to the founder-approved San Francisco proof
-    (san-francisco.njk) — section order, classes, schema selectors identical.
+    DOM is proven-equivalent to the founder-approved San Francisco proof (san-francisco.njk):
+    v2 components, section order + ids + schema selectors identical. Spine (hero / in-brief
+    #{{ slug }}-in-brief-text / light CTA) is layout-owned (t-location); this partial renders the
+    bespoke body AND its own FAQ (the layout FAQ is gated on sec.faqH, which partial pages do NOT set).
     Everything locale-specific comes from the page's .11tydata.js:
       cityName  — full city name for headings (e.g. "Los Angeles")
       slug      — section-ID prefix + speakable selector key (e.g. "la")
       copy.*    — per-section eyebrows (locale-flavoured, NOT mad-libs)
       summarized · aiSummary · localContext · areas · taxStack · taxNote ·
       industries · services · advisoryBody · advisoryCtaHref · reviewCreds · faq
-    The un-clonable LOCAL CONTEXT + TAX STACK bands carry the real local-tax
-    substance; the mad-libs test must FAIL on every page (swap the place name →
-    it reads false). HONESTY: real facts only; nexus/filing deferred to CPA/EA. -#}
+    Frozen schema cssSelectors (city graph): #{{ slug }}-summary (TL;DR para) + #{{ slug }}-ai-summary-list.
+    TAX STACK is RATE-FREE — every figure/desc verbatim from the page's real taxStack data; no
+    invented rates. HONESTY: real facts only; nexus/filing deferred to CPA/EA. Founder-name-zero. -#}
 
-{# ── SUMMARY · real H2 right after the in-brief. ── #}
-<section class="section section--compact" id="{{ slug }}-summary-sec">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <h2 class="section__heading">The short version.</h2>
-    </header>
-    <p class="prose" id="{{ slug }}-summary">{{ summarized | safe }}</p>
+{# ── SHORT VERSION · real H2 carrying the TL;DR prose; frozen anchor #{{ slug }}-summary on the para. ── #}
+<section class="sec reveal" id="{{ slug }}-summary-sec" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In full</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">The short version.</h2>
+    <div class="prose"><p id="{{ slug }}-summary">{{ summarized | safe }}</p></div>
   </div>
 </section>
 
-{# ── AI SUMMARY · five-question block. ── #}
-<section class="section" id="{{ slug }}-ai-summary-sec">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">{{ cityName | safe }} bookkeeping, in five questions.</h2>
-    </header>
-    <dl class="ai-summary ai-summary--ruled" id="{{ slug }}-ai-summary-list">
+{# ── AI SUMMARY · five-question block; frozen anchor #{{ slug }}-ai-summary-list. ── #}
+<section class="sec reveal" id="{{ slug }}-ai-summary-sec">
+  <div class="ct read">
+    <div class="idx idx--center"><span class="idx__n">§</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="text-align:center;margin:0 auto 36px;max-width:26ch;">{{ cityName | safe }} bookkeeping, in five questions.</h2>
+    <dl class="speakable ai-qa" id="{{ slug }}-ai-summary-list">
       {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
-        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
-      </div>
+      <div class="ai-qa__item"><dt><h3>{{ item.q | safe }}</h3></dt><dd style="margin:0;"><p>{{ item.a | safe }}</p></dd></div>
       {%- endfor %}
     </dl>
   </div>
 </section>
 
 {# ── LOCAL CONTEXT · the un-clonable band. ── #}
-<section class="section section--alt" id="{{ slug }}-local">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">{{ copy.localEyebrow | safe }}</p>
-      <h2 class="section__heading">Why {{ cityName | safe }} books are different.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in localContext %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+<section class="sec reveal" id="{{ slug }}-local" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ copy.localEyebrow | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Why {{ cityName | safe }} books are different.</h2>
+    <div class="prose">
+      {%- for p in localContext %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── AREAS. ── #}
-<section class="section" id="{{ slug }}-areas">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">{{ copy.areasEyebrow | safe }}</p>
-      <h2 class="section__heading">{{ cityName | safe }} areas we serve.</h2>
-    </header>
-    <div class="grid-3">
+{# ── AREAS · neighborhood chips (name + note preserved). ── #}
+<section class="sec reveal" id="{{ slug }}-areas">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ copy.areasEyebrow | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:20px;">{{ cityName | safe }} areas we serve.</h2>
+    <div class="chips">
       {%- for a in areas %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ a.name | safe }}</p>
-        <p class="prose">{{ a.note | safe }}</p>
-      </div>
+      <span class="chip"><strong>{{ a.name | safe }}</strong>&nbsp;<span class="chip__note">&middot; {{ a.note | safe }}</span></span>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── TAX STACK · grid-3. ── #}
-<section class="section section--alt" id="{{ slug }}-tax">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">{{ copy.taxEyebrow | safe }}</p>
-      <h2 class="section__heading">{{ cityName | safe }}&rsquo;s tax stack, at a glance.</h2>
-    </header>
-    <div class="grid-3">
-      {%- for t in taxStack %}
-      <div class="stack-8">
-        <p class="proof-strip__rating">{{ t.figure | safe }}</p>
-        <p class="prose">{{ t.desc | safe }}</p>
+{# ── LOCAL TAX STACK · RATE-FREE v2 figure built from the REAL `taxStack` data (figure + desc).
+     No invented rates; every figure/desc verbatim from the data. taxNote preserved below. ── #}
+<section class="sec reveal" id="{{ slug }}-tax" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx idx--center"><span class="idx__n">§</span><span class="idx__t">{{ copy.taxEyebrow | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="text-align:center;margin:0 auto 30px;max-width:24ch;">{{ cityName | safe }}&rsquo;s tax stack, at a glance.</h2>
+    <figure style="margin:0;" aria-label="{{ cityName }} local tax facts">
+      <div class="r-3">
+        {%- for t in taxStack %}
+        <div class="dc-card"><div class="trust-row__value" style="font-size:30px;margin-bottom:8px;">{{ t.figure | safe }}</div><p class="prose" style="font-size:15px;">{{ t.desc | safe }}</p></div>
+        {%- endfor %}
       </div>
-      {%- endfor %}
-    </div>
-    <p class="prose"><small>{{ taxNote | safe }}</small></p>
+      {%- if taxNote %}<figcaption class="prose" style="margin-top:18px;font-size:13px;color:var(--color-ink-faint);">{{ taxNote | safe }}</figcaption>{%- endif %}
+    </figure>
   </div>
 </section>
 
-{# ── INDUSTRIES · checks-list into national industry pages, with local wrinkles. ── #}
-<section class="section" id="{{ slug }}-industries">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">{{ copy.industriesEyebrow | safe }}</p>
-      <h2 class="section__heading">Industry-specific bookkeeping for {{ cityName | safe }} businesses.</h2>
-      <p class="section__lede">Each links to our dedicated industry page, with the {{ cityName | safe }} wrinkles built in.</p>
-    </header>
-    <ul class="checks-list">
+{# ── INDUSTRIES · chips, each links to the dedicated industry page with the local wrinkle. ── #}
+<section class="sec reveal" id="{{ slug }}-industries">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ copy.industriesEyebrow | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Industry-specific bookkeeping for {{ cityName | safe }} businesses.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:62ch;">Each links to our dedicated industry page, with the {{ cityName | safe }} wrinkles built in.</p>
+    <div class="chips">
       {%- for i in industries %}
-      <li><a href="{{ i.href }}">{{ i.label | safe }}</a> &mdash; {{ i.note | safe }}</li>
+      <a class="chip" href="{{ i.href }}"><strong>{{ i.label | safe }}</strong>&nbsp;<span class="chip__note">&middot; {{ i.note | safe }}</span>&nbsp;&rarr;</a>
       {%- endfor %}
-    </ul>
+    </div>
   </div>
 </section>
 
-{# ── SERVICES · grid-2 buyer-cards. ── #}
-<section class="section section--alt" id="{{ slug }}-services">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">{{ copy.servicesEyebrow | safe }}</p>
-      <h2 class="section__heading">Complete bookkeeping, {{ cityName | safe }}-aware.</h2>
-    </header>
-    <div class="grid-2">
+{# ── VALUE STACK · services, real H3s (dc-card + eyebrow num + cta). ── #}
+<section class="sec reveal" id="{{ slug }}-services" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ copy.servicesEyebrow | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:30px;">Complete bookkeeping, {{ cityName | safe }}-aware.</h2>
+    <div class="r-2">
       {%- for s in services %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ s.num }}</p>
-        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ s.href }}">{{ s.cta | safe }}</a>
-      </article>
+      <div class="dc-card"><span class="eyebrow">{{ s.num }}</span><h3>{{ s.title | safe }}</h3><div class="prose" style="font-size:15.5px;"><p>{{ s.body | safe }}</p></div><a class="ptier__link" href="{{ s.href }}">{{ s.cta | safe }}</a></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── ADVISORY · standing brand line. ── #}
-<section class="section" id="{{ slug }}-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond bookkeeping</p>
-      <h2 class="section__heading">Automation handles the data entry. We handle the judgment.</h2>
-    </header>
-    <p class="prose">{{ advisoryBody | safe }}</p>
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="{{ advisoryCtaHref }}">Book the discovery call</a>
-    </div>
+{# ── ADVISORY · standing brand line (pull-quote .statement). ── #}
+<section class="sec reveal" id="{{ slug }}-advisory">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Beyond bookkeeping</span><span class="idx__rule"></span></div>
+    <h2 class="statement" style="margin-bottom:18px;">Automation handles the data entry. We handle the judgment.</h2>
+    <div class="prose"><p>{{ advisoryBody | safe }}</p></div>
+    <div style="margin-top:22px;"><a class="btn btn-cta" href="{{ advisoryCtaHref }}" style="display:inline-flex;align-items:center;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Book the discovery call</a></div>
   </div>
 </section>
 
-{# ── EXPERT REVIEW · firm-level, no founder name. ── #}
-<section class="section section--alt" id="{{ slug }}-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
-    </header>
+{# ── EXPERT REVIEW · firm-level, no founder name (trust-row from reviewCreds). ── #}
+<section class="sec reveal" id="{{ slug }}-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
     <div class="trust-row">
       {%- for c in reviewCreds %}
-      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      <div class="trust-row__item"><p class="trust-row__value" style="font-size:15px;">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
@@ -157,23 +129,14 @@
   </div>
 </section>
 
-{# ── FAQ · visible faq__list = FAQPage schema. ── #}
-<section class="section" id="{{ slug }}-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">{{ copy.faqEyebrow | safe }}</p>
-      <h2 class="section__heading">{{ cityName | safe }} bookkeeping questions.</h2>
-    </header>
-    <div class="faq__list">
+{# ── FAQ · v2 details/summary; visible = FAQPage schema. id #{{ slug }}-faq. ── #}
+<section class="sec reveal" id="{{ slug }}-faq" style="padding-top:72px;">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ copy.faqEyebrow | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">{{ cityName | safe }} bookkeeping questions.</h2>
+    <div class="faq">
       {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="{{ slug }}-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="{{ slug }}-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
+      <details name="{{ slug }}-faq"{% if loop.first %} open{% endif %}><summary>{{ item.q | safe }}<span class="pl"></span></summary><div>{{ item.a | safe }}</div></details>
       {%- endfor %}
     </div>
   </div>

@@ -66,8 +66,11 @@ footerNav:
     components; each section id == the page's own pageGraph schema anchor ═══ -#}
 {{ content | safe }}
 
-{#- FAQ — visible = FAQPage schema (white). id #{{ slug }}-faq -#}
-{%- if faq %}
+{#- FAQ — visible = FAQPage schema (white). id #{{ slug }}-faq.
+    Gated on sec.faqH: the LAYOUT renders FAQ only for pages that set sec.faqH (the NY/SF
+    bespoke pages). The partial-driven CA/TX/FL/IL pages render FAQ from their shared partial
+    instead, so they DON'T set sec.faqH — avoiding a double FAQ. -#}
+{%- if faq and sec.faqH %}
 <section class="sec reveal" id="{{ slug }}-faq" style="padding-top:72px;">
   <div class="ct read">
     <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.faqTag | default("Questions", true) }}</span><span class="idx__rule"></span></div>
