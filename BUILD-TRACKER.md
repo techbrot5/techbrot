@@ -1,6 +1,6 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
 
-## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-23)
+## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-23 · D1 COMPLETE)
 **R0 — DUAL-LOG EVERY TURN (founder, 2026-06-23):** append the full turn to
 `_build/reports/SESSION-LOG.md` AND update THIS file (family status) every turn; cat the
 tail of both back so the founder sees them current. Never skip either.
@@ -19,8 +19,8 @@ D1 → D3 → D2 → D4/5/6 (NY incl) → D7 → B1-B5 → C1 → E1-E6 → F1 �
 | Family | Layout | Status | Notes |
 |---|---|---|---|
 | C2 comparison (/vs/, 14) | t-comparison | ✅ REP done | bookkeeper-vs-accountant proof; fan-out pending |
-| **D1 money (19)** | **t-money (data-driven spine)** | **🔄 4/19 on spine** | cleanup REP + catch-up + monthly done (full-depth GREEN). 16 left: migration(9)/QB-service(4)/accounting(3) |
-| D3 state pillar (5) | t-state-pillar | ⏳ chrome-only | pending V2 redo (next after D1); apply trust-strip there |
+| **D1 money (19)** | **t-money (data-driven spine)** | **✅ 19/19 DONE** | bookkeeping 3 + migration 9 + QB-service 4 + accounting 3, all full-depth GREEN, ledes tightened. proadvisor-near-me flagged for possible re-tier (prose-heavy). |
+| **D3 state pillar (5)** | t-state-pillar | **🔜 NEXT** | V2 redo; trust-strip + proof-strip + in-brief inherit |
 | D2 prose (~177) | t-prose | ⏳ infra only | chrome-only fan-out reverted; pending |
 | D4/D5/D6 (NY children) | — | ⏳ | NY incl, content-frozen + rate-free viz |
 | D7 / B1-B5 / C1 / E1-E6 / F1 / F2 / G1 / G2 / A1 | — | ⏳ | pending (A1 last) |
