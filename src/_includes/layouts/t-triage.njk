@@ -1,0 +1,123 @@
+---
+layout: layouts/dc-base.njk
+footerNav:
+  label: Find an accountant
+  links:
+    - { href: "/find-an-accountant/", text: "Find an accountant" }
+    - { href: "/accounting/bookkeeping/cleanup-bookkeeping/", text: "Cleanup & catch-up" }
+    - { href: "/resources/", text: "Resources & guides" }
+---
+{#- ===========================================================================
+    t-triage — D7 HONEST-TRIAGE family (handoff "Honest Triage - Template.dc.html").
+    Sheet-7 COMPLIANCE-CRITICAL spine. The whole reason this family exists is the
+    DISCLOSURE: it LEADS, ABOVE THE FOLD, prominent — never buried, never
+    de-emphasized. The layout renders the framing seams every D7 page shares —
+    HERO (eyebrow rule-mark + H1 + lede) with the DISCLOSURE band leading directly
+    under the lede (.disclose--lead, the prominent above-the-fold variant) · TL;DR
+    (own selectable block, sand; frozen #<slug>-in-brief-text) · {{content}} = the
+    page's BESPOKE body (what-we-do-do · honest hand-off · split · covers ·
+    conversation · advisory · reviews — in shared dc-system v2 components) ·
+    AI-SUMMARY (light ruled Q&A from `aiSummary`) · FAQ (crawlable, FAQPage verbatim;
+    gated `faq and sec.faqH`) · CALM final CTA (light, centered, quiet phone link +
+    honest hand-off note — NO aggressive call-bar, NO earned-dark, NO call-forward).
+    HARD RULES: never imply Intuit affiliation, never "official"; the intake/CTA
+    qualifies Intuit billing/account intent AWAY (route to Intuit); calm tone.
+    Per-page text via `sec` + frontmatter. FULL DEPTH: pages keep all content.
+    =========================================================================== -#}
+{%- set sec = sec or {} %}
+
+{#- HERO — editorial-calm reading-column hero; the DISCLOSURE band LEADS above the
+    fold, prominent, directly under the H1/lede (not buried). `disclose` frontmatter
+    is required for the D7 family — it is the page's reason to exist. -#}
+{%- if hero %}
+<section class="section" id="{{ slug }}-hero" style="padding:52px 0 12px;">
+  <div class="ct read read--doc">
+    <p class="eyebrow" style="display:inline-flex;align-items:center;gap:12px;margin-bottom:16px;"><span class="rule-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
+    <h1 class="dsp speakable" style="font-weight:500;font-variation-settings:'opsz' 80;font-size:clamp(32px,1.7rem + 2.4vw,48px);margin:0 0 18px;">{{ hero.heading | safe }}</h1>
+    <p class="lede speakable" style="margin:0 0 24px;max-width:62ch;">{{ hero.subheading | safe }}</p>
+    {#- DISCLOSURE — Sheet-7 boundary; the page's reason to exist. Prominent, above
+        the fold, leading. speakable so AI engines read the boundary first. -#}
+    {%- if disclose %}
+    <div class="disclose disclose--lead speakable" id="{{ slug }}-disclose">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 3l9 16H3z" stroke-linejoin="round"/><path d="M12 10v4M12 17.5v.3" stroke-linecap="round"/></svg>
+      <div class="disclose__body">
+        <span class="disclose__tag mono">{{ disclose.tag | default("Read this first — what we don&rsquo;t do", true) | safe }}</span>
+        {%- for p in disclose.body %}<p>{{ p | safe }}</p>{%- endfor %}
+      </div>
+    </div>
+    {%- endif %}
+    {%- if hero.actions %}
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;">
+      {%- for a in hero.actions.slice(0, 2) %}
+      <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel or (a.href and a.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- TL;DR — own selectable block (sand). FROZEN speakable id #<slug>-in-brief-text. -#}
+{%- if inBrief %}
+<section class="sec reveal" id="{{ slug }}-in-brief" style="padding-top:8px;padding-bottom:32px;">
+  <div class="ct read read--doc">
+    <div class="tldr-prose speakable">
+      <span class="eyebrow">{{ sec.tldrTag | default("The short version", true) }}</span>
+      <p id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
+      {%- if inBrief.source %}<p class="tldr__src">{{ inBrief.source | safe }}</p>{%- endif %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- ═══ BESPOKE BODY — the page's full-depth honest-triage document (what we do do ·
+    honest hand-off · who-should-call split · covers/boundary · conversation steps ·
+    advisory · firm-level review), in shared dc-system v2 components ═══ -#}
+{{ content | safe }}
+
+{#- AI SUMMARY — light ruled Q&A (NOT dark dossier — calm family). From `aiSummary`;
+    pages that author it in the body skip this. -#}
+{%- if aiSummary %}
+<section class="sec reveal" id="{{ slug }}-ai-summary" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">For AI engines &amp; quick answers</div>
+    <h2 class="h2" style="margin-bottom:24px;">{{ sec.aiH | safe }}</h2>
+    <div class="ai-ruled speakable"{% if sec.aiListId %} id="{{ sec.aiListId }}"{% endif %}>
+      {%- for item in aiSummary %}<div class="ai-ruled__item"><h3>{{ item.q | safe }}</h3><p>{{ item.a | safe }}</p></div>{%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- FAQ — own crawlable Q&A block (FAQPage verbatim). Gated `faq and sec.faqH`. -#}
+{%- if faq and sec.faqH %}
+<section class="sec reveal" id="{{ slug }}-faq" style="padding-top:32px;">
+  <div class="ct read read--doc">
+    <h2 class="h2" style="margin-bottom:26px;">{{ sec.faqH | safe }}</h2>
+    <div class="faq">{%- for item in faq %}<details name="{{ slug }}-faq"{% if loop.first %} open{% endif %}><summary>{{ item.q | safe }}<span class="pl"></span></summary><div>{{ item.a | safe }}</div></details>{%- endfor %}</div>
+    {%- if metaReviewed %}<p class="meta-reviewed"><span>Published: {{ metaReviewed }}</span><span>Updated: {{ metaReviewed }}</span><span>Reviewed: {{ metaReviewed }} &middot; Certified QuickBooks ProAdvisor</span></p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- CALM FINAL CTA — light, centered, quiet "talk to a ProAdvisor" + honest hand-off
+    note. NO aggressive call-bar, NO earned-dark, NO call-forward (Sheet-7 calm rule).
+    The disclaimer routes Intuit billing/account intent away. -#}
+{%- if ctaBand %}
+<section class="section" id="{{ slug }}-cta" style="padding-top:72px;padding-bottom:80px;">
+  <div class="ct read read--doc">
+    <div class="final-cta">
+      {%- if ctaBand.eyebrow %}<p class="eyebrow" style="margin-bottom:16px;">{{ ctaBand.eyebrow | safe }}</p>{%- endif %}
+      <h2 class="final-cta__h">{{ ctaBand.heading | safe }}</h2>
+      <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
+      <div class="final-cta__actions">
+        {%- for a in ctaBand.actions %}
+        <a class="btn {% if loop.first %}btn-ghost{% else %}btn-ghost{% endif %} mono" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel or (a.href and a.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 24px;border-radius:13px;font-size:16px;font-weight:500;">{{ a.label }}</a>
+        {%- endfor %}
+      </div>
+      {%- if ctaBand.note %}<p style="font-size:13px;color:var(--color-ink-mute);margin:18px auto 0;max-width:52ch;">{{ ctaBand.note | safe }}</p>{%- endif %}
+      <p class="final-cta__disclaimer" style="font-size:12.5px;line-height:1.6;color:var(--color-ink-faint);margin:24px auto 0;max-width:72ch;">{{ ctaBand.disclaimer | default("TechBrot Inc. is an independent firm and is not affiliated with Intuit Inc. QuickBooks and ProAdvisor are trademarks of Intuit Inc. For an Intuit account, billing, subscription, or login issue, contact Intuit directly. We do not file taxes or represent clients before tax authorities.", true) | safe }}</p>
+    </div>
+  </div>
+</section>
+{%- endif %}
