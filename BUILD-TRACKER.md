@@ -27,8 +27,9 @@ D1 → D3 → D2 → D4/5/6 (NY incl) → D7 → B1-B5 → C1 → E1-E6 → F1 �
 | Location sub-hubs (10) | t-location | **✅ DONE** | state city/industry listings → Location-Sub-Hub v2; find-an-accountant silo (children+sub-hubs) complete |
 | **D7 triage (10)** | t-triage (v2) | **✅ 10/10 DONE** | all honest-triage on t-triage, Sheet-7 compliant (disclosure above fold verbatim, Intuit-billing qualified away, calm CTA, only verbatim 'official' negations). Depth gate caught+restored 1 h1. |
 | **B1-B5 hubs (~20)** | t-hub (v2) | **🔄 foundation + 3 REPs** | t-hub v2 built + accounting/resources/find-an-accountant REPs (clean). FLAGS: subagent committed w/o my gate (passed); accounting silo got DARK CTA (convention=light → founder call). Fan-out ~17 (8 B1 silo + 5 B2 card-grid + 4 B3 listing), clean switch. about=G2, qb/compare=C1 (re-scoped). |
+| **C2 fan-out (13)** | t-comparison | **⏳ PENDING** | only the bookkeeper-vs-accountant REP is on t-comparison; 13 /vs/ siblings still old — fan out to the proven REP pattern |
 | **C1 / E1-E6 / F1-F2 / G1-G2 / A1** | various | **🔜 NEXT** | comparison hub (+qb/compare) · glossary/frameworks/tool/listing · pricing (incl 5 state) · legal/about-trust · home LAST · pre-flip sitewide pass |
-| D7 / B1-B5 / C1 / E1-E6 / F1 / F2 / G1 / G2 / A1 | — | ⏳ | pending (A1 last) |
+| proadvisor-near-me | t-money | **⏳ review** | flagged for possible re-tier (prose-heavy) — founder call |
 
 **SHARED v2 COMPONENTS (fix at SOURCE → all families inherit):** PARTIALS — trust-strip.njk
 (handoff sand band, label-left/badges-right) · proof-strip.njk (4 short default claims, one clean
