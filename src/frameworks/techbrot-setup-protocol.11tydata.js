@@ -73,11 +73,21 @@ const FAQ = [
 ];
 
 module.exports = {
-  layout: "layouts/t-guide.njk",
+  layout: "layouts/t-prose.njk",
   permalink: "/frameworks/techbrot-setup-protocol/",
   slug: "fw-tsp",
   tierClass: "section--tier-guide",
   bodyClass: "page--mofu",
+  // AI summary authored IN THE BODY at the frozen speakable id #tsp-ai-summary
+  // (pageGraph cssSelector uses the short prefix, not the slug).
+  metaReviewed: "2026-06-19",
+  byline: {
+    name: "By the Certified QuickBooks ProAdvisor team",
+    meta: "A TechBrot coined framework &middot; independent firm, not affiliated with Intuit Inc.",
+  },
+  sec: {
+    faqH: "TechBrot Setup Protocol questions.",
+  },
   title: "TechBrot Setup Protocol — QuickBooks Setup Framework · TechBrot",
   description:
     "The TechBrot Setup Protocol — our named, ordered method for setting up a QuickBooks file right the first time, so the chart and balances never need a cleanup later.",

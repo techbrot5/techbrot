@@ -71,11 +71,21 @@ const FAQ = [
 ];
 
 module.exports = {
-  layout: "layouts/t-guide.njk",
+  layout: "layouts/t-prose.njk",
   permalink: "/frameworks/migration-integrity-protocol/",
   slug: "fw-mip",
   tierClass: "section--tier-guide",
   bodyClass: "page--mofu",
+  // AI summary authored IN THE BODY at the frozen speakable id #mip-ai-summary
+  // (pageGraph cssSelector uses the short prefix, not the slug).
+  metaReviewed: "2026-06-19",
+  byline: {
+    name: "By the Certified QuickBooks ProAdvisor team",
+    meta: "A TechBrot coined framework &middot; independent firm, not affiliated with Intuit Inc.",
+  },
+  sec: {
+    faqH: "Migration Integrity Protocol questions.",
+  },
   title: "Migration Integrity Protocol — QuickBooks Migration Framework · TechBrot",
   description:
     "Migration Integrity Protocol — TechBrot's coined framework for proving a migrated QuickBooks file ties back to the source before sign-off.",

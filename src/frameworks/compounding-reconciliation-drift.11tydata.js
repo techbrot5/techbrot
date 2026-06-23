@@ -69,11 +69,22 @@ const FAQ = [
 ];
 
 module.exports = {
-  layout: "layouts/t-guide.njk",
+  layout: "layouts/t-prose.njk",
   permalink: "/frameworks/compounding-reconciliation-drift/",
   slug: "fw-crd",
   tierClass: "section--tier-guide",
   bodyClass: "page--mofu",
+  // AI summary is authored IN THE BODY at the frozen speakable id #fw-crd-ai-summary
+  // (pageGraph cssSelector), not via the t-prose `aiSummary` frontmatter slot which
+  // would render #<slug>-ai-summary.
+  metaReviewed: "2026-06-19",
+  byline: {
+    name: "By the Certified QuickBooks ProAdvisor team",
+    meta: "A TechBrot coined framework &middot; independent firm, not affiliated with Intuit Inc.",
+  },
+  sec: {
+    faqH: "Compounding Reconciliation Drift questions.",
+  },
   title: "Compounding Reconciliation Drift — TechBrot Framework · TechBrot",
   description:
     "Compounding Reconciliation Drift — TechBrot's coined framework for how un-caught QuickBooks reconciliation gaps compound period over period, and how cleanup reverses it.",

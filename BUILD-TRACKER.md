@@ -36,8 +36,17 @@ pre-flip sitewide pass (section-bg/overflow/axe batch; retire unused partials/vs
 accounting/convention) ✅; (b) proadvisor-near-me STAYS on t-money for now ✅.** Both prior open calls RESOLVED.
 ## 🛑 FOUNDER DECISIONS PENDING (clear before flip — founder 2026-06-24, autonomous-sleep run)
 Real founder calls deferred during the autonomous run (best-judgment applied + noted; founder to ratify pre-flip):
-- *(none yet — autonomous run in progress; minor calls are taken by best-judgment + logged, only real content/legal/honesty/re-tier/ranking calls land here.)*
-- CARRIED (now RESOLVED 2026-06-24): B3 listing CTA = LIGHT ✅; proadvisor-near-me stays t-money ✅.
+- **E5 TOOLS + F1 FORMS — v2-component dependency (deferred during autonomous run, 2026-06-24):** the 9
+  calculator pages (`src/tools/*.njk`, on OLD t-mofu) use the `.calc` widget (`data-calc`, JSON model,
+  `tb-calc.js` via `includeCalcJs`) and `.intake-field`; F1 (`/contact/`, `/quickbooks/file-review/`) use the
+  intake-form. **NEITHER the calc JS loader (only base.njk has it, not dc-base) NOR the `.calc`/`intake` CSS
+  (in 06-content.css, NOT dc-system.css) is in the v2 system.** Migrating these to v2 needs the calc/intake
+  components PORTED into dc-system.css + `includeCalcJs` added to dc-base — OR the handoff Tool/Form template's
+  v2 calc/form styling extracted from the zip. **DECISION for founder (new-type proof glance): port the existing
+  real `.calc`/`.intake` components into dc-system (functional, current look) vs extract the handoff Tool/Form
+  v2 styling (proper but more work).** Deferred to do RIGHT (with the component port) rather than ship broken/old
+  calc on new chrome. Tools + F1 are the only families with this dependency; everything else migrates cleanly.
+- CARRIED (RESOLVED 2026-06-24): B3 listing CTA = LIGHT ✅; proadvisor-near-me stays t-money ✅.
 
 **R0 — DUAL-LOG EVERY TURN (founder, 2026-06-23):** append the full turn to
 `_build/reports/SESSION-LOG.md` AND update THIS file (family status) every turn; cat the

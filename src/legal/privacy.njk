@@ -1,10 +1,8 @@
 ---json
 {
-  "layout": "layouts/t-guide.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/legal/privacy-policy/",
   "slug": "privacy",
-  "tierClass": "section--tier-guide",
-  "bodyClass": "page--legal",
   "title": "Privacy Policy · How TechBrot Handles Your Data · TechBrot",
   "description": "TechBrot Inc.'s privacy policy — what personal and financial data we collect, how we use and protect it, who we share with, and your rights.",
   "breadcrumb": [
@@ -19,143 +17,200 @@
 }
 ---
 
-<section class="section section--legal-doc" id="privacy-doc" aria-labelledby="privacy-heading">
-      <div class="container">
-        <div class="legal-doc legal-doc__layout">
+{#- DOC HEADER — eyebrow + H1 (authored in body) + effective/updated meta -#}
+<section class="section" id="privacy-doc" style="padding:56px 0 12px;" aria-labelledby="privacy-heading">
+  <div class="ct read read--doc">
+    <p class="eyebrow" style="display:inline-flex;align-items:center;gap:12px;margin-bottom:20px;"><span class="rule-mark" aria-hidden="true"><span></span><span></span></span>Legal</p>
+    <h1 class="dsp" id="privacy-heading" style="font-weight:500;font-variation-settings:'opsz' 80;font-size:clamp(32px,1.7rem + 2.4vw,48px);margin:0 0 18px;">Privacy Policy</h1>
+    <p class="meta-reviewed"><span>Entity: TechBrot Inc. (Delaware C-Corporation)</span><span>Effective: <time datetime="2026-05-01">May 1, 2026</time></span><span>Last updated: <time datetime="2026-05-23">May 23, 2026</time></span></p>
+  </div>
+</section>
 
-            <nav class="legal-doc__toc" aria-label="On this page">
-              <p class="legal-doc__toc-label">On this page</p>
-              <ol class="legal-doc__toc-list" role="list">
-                <li><a href="#sec-1">1. Who We Are</a></li>
-                <li><a href="#sec-2">2. Information We Collect</a></li>
-                <li><a href="#sec-3">3. How We Use Information</a></li>
-                <li><a href="#sec-4">4. Client Financial Data</a></li>
-                <li><a href="#sec-5">5. How We Share Information</a></li>
-                <li><a href="#sec-6">6. Data Security</a></li>
-                <li><a href="#sec-7">7. Data Retention</a></li>
-                <li><a href="#sec-8">8. Your Rights</a></li>
-                <li><a href="#sec-9">9. Cookies &amp; Analytics</a></li>
-                <li><a href="#sec-10">10. Children&rsquo;s Privacy</a></li>
-                <li><a href="#sec-11">11. International Users</a></li>
-                <li><a href="#sec-12">12. Changes &amp; Contact</a></li>
-              </ol>
-            </nav>
+{#- PLAIN-LANGUAGE SUMMARY — v2 TL;DR sand block -#}
+<section class="sec reveal" id="privacy-summary" style="padding-top:36px;padding-bottom:36px;" aria-label="Plain-language summary">
+  <div class="ct read read--doc">
+    <div class="tldr-prose">
+      <span class="eyebrow">The short version</span>
+      <p>We collect only what we need to respond to you and deliver our services &mdash; your contact details, what you tell us about your business, and (during an engagement) access to your financial records. <strong>We don&rsquo;t sell your data, ever.</strong> We use it to do the work, communicate with you, and meet our legal obligations. During engagements, <strong>we work inside your own QuickBooks file</strong> &mdash; your data stays yours, and you can revoke our access anytime. We share data only with the service providers needed to run our business (and only under confidentiality terms), or when the law requires it. You have rights to access, correct, and delete your information. The full policy is below.</p>
+    </div>
+  </div>
+</section>
 
-            <article class="legal-doc__body">
-
-              <header class="legal-doc__header">
-                <p class="legal-doc__eyebrow">Legal</p>
-                <h1 class="legal-doc__title" id="privacy-heading">Privacy Policy</h1>
-                <dl class="legal-doc__meta">
-                  <div class="legal-doc__meta-item"><dt>Entity</dt><dd>TechBrot Inc. (Delaware C-Corporation)</dd></div>
-                  <div class="legal-doc__meta-item"><dt>Effective</dt><dd><time datetime="2026-05-01">May 1, 2026</time></dd></div>
-                  <div class="legal-doc__meta-item"><dt>Last updated</dt><dd><time datetime="2026-05-23">May 23, 2026</time></dd></div>
-                </dl>
-              </header>
-
-              <aside class="legal-doc__summary" aria-label="Plain-language summary">
-                <p class="legal-doc__summary-label">The short version</p>
-                <p class="legal-doc__summary-body">
-                  We collect only what we need to respond to you and deliver our services &mdash; your contact details, what you tell us about your business, and (during an engagement) access to your financial records. <strong>We don&rsquo;t sell your data, ever.</strong> We use it to do the work, communicate with you, and meet our legal obligations. During engagements, <strong>we work inside your own QuickBooks file</strong> &mdash; your data stays yours, and you can revoke our access anytime. We share data only with the service providers needed to run our business (and only under confidentiality terms), or when the law requires it. You have rights to access, correct, and delete your information. The full policy is below.
-                </p>
-              </aside>
-
-              <section class="legal-doc__section" id="sec-1" aria-labelledby="psec-1-h">
-                <h2 class="legal-doc__section-heading" id="psec-1-h">1. Who We Are</h2>
-                <p>This Privacy Policy describes how <strong>TechBrot Inc.</strong> (&ldquo;TechBrot,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), a Delaware C-Corporation, collects, uses, shares, and protects information when you visit our website, contact us, or engage our services.</p>
-                <p>For the purposes of this policy, TechBrot is the data controller for personal information collected through this website and in the course of providing its services, except where TechBrot processes a client&rsquo;s financial data on the client&rsquo;s behalf, in which case the client is the controller and TechBrot is the processor, as described in our <a href="/legal/dpa/">Data Processing Terms</a>.</p>
-              </section>
-
-              <section class="legal-doc__section" id="sec-2" aria-labelledby="psec-2-h">
-                <h2 class="legal-doc__section-heading" id="psec-2-h">2. Information We Collect</h2>
-                <p>We collect information in three ways:</p>
-                <p><strong>Information you give us.</strong> When you submit a contact or discovery form, request a quote, email us, or book a call, we collect details such as your name, business name, email address, phone number, your QuickBooks version, and any information you choose to share about your business or accounting situation.</p>
-                <p><strong>Information from engagements.</strong> If you become a client, we collect the information needed to deliver services &mdash; which may include access to your accounting records, payroll information, financial statements, and related business data, as defined in your engagement scope and governed by our <a href="/legal/dpa/">Data Processing Terms</a>.</p>
-                <p><strong>Information collected automatically.</strong> When you visit our website, we may automatically collect limited technical information such as IP address, browser type, device information, pages visited, and referring URLs, through cookies and similar technologies (see Section 9).</p>
-              </section>
-
-              <section class="legal-doc__section" id="sec-3" aria-labelledby="psec-3-h">
-                <h2 class="legal-doc__section-heading" id="psec-3-h">3. How We Use Information</h2>
-                <p>We use the information we collect to:</p>
-                <ul class="legal-doc__list">
-                  <li>Respond to your inquiries and schedule discovery calls;</li>
-                  <li>Prepare engagement scopes and provide the services you request;</li>
-                  <li>Communicate with you about your engagement and our services;</li>
-                  <li>Operate, maintain, and improve our website and services;</li>
-                  <li>Comply with legal, accounting, and regulatory obligations;</li>
-                  <li>Detect, prevent, and address security or technical issues.</li>
-                </ul>
-                <p><strong>We do not sell your personal information, and we do not use your financial data for any purpose other than delivering the services you engage us for.</strong> We do not add inquiry contacts to marketing lists without consent, and we do not send unsolicited marketing sequences.</p>
-              </section>
-
-              <section class="legal-doc__section" id="sec-4" aria-labelledby="psec-4-h">
-                <h2 class="legal-doc__section-heading" id="psec-4-h">4. Client Financial Data</h2>
-                <p>Client financial data warrants specific treatment. During an engagement, <strong>TechBrot works as an authorized accountant-user inside the client&rsquo;s own accounting system</strong> (such as the client&rsquo;s QuickBooks file). The data remains the client&rsquo;s; TechBrot accesses it under permissions the client grants and can revoke at any time.</p>
-                <p>We do not require clients to export their financial data into a separate TechBrot-owned system. Where we process client financial data, we do so as a processor on the client&rsquo;s documented instructions, as set out in our <a href="/legal/dpa/">Data Processing Terms</a>, which form part of the engagement agreement.</p>
-              </section>
-
-              <section class="legal-doc__section" id="sec-5" aria-labelledby="psec-5-h">
-                <h2 class="legal-doc__section-heading" id="psec-5-h">5. How We Share Information</h2>
-                <p>We share information only in the following circumstances:</p>
-                <p><strong>Service providers.</strong> We use trusted third-party providers to operate our business &mdash; for example, email, scheduling, document storage, and payment processing. These providers may access information only as needed to perform services for us and are bound by confidentiality obligations.</p>
-                <p><strong>Network operators.</strong> Where your engagement is delivered through a TechBrot network operator, we share with that operator the information needed to deliver the engagement, under the operator&rsquo;s confidentiality and data-handling obligations.</p>
-                <p><strong>Your professionals.</strong> With your direction, we coordinate with your CPA, EA, or other advisors and may share relevant information to do so.</p>
-                <p><strong>Legal requirements.</strong> We may disclose information where required by law, regulation, legal process, or governmental request, or to protect the rights, property, or safety of TechBrot, our clients, or others.</p>
-                <p><strong>Business transfers.</strong> If TechBrot is involved in a merger, acquisition, or sale of assets, information may be transferred as part of that transaction, subject to this policy.</p>
-                <p><strong>We do not sell personal information to third parties.</strong></p>
-              </section>
-
-              <section class="legal-doc__section" id="sec-6" aria-labelledby="psec-6-h">
-                <h2 class="legal-doc__section-heading" id="psec-6-h">6. Data Security</h2>
-                <p>We maintain administrative, technical, and physical safeguards designed to protect information against unauthorized access, use, alteration, and disclosure. These include encrypted connections for working sessions and file transfers, access controls, and the principle of working within the client&rsquo;s own systems rather than duplicating data unnecessarily.</p>
-                <p>No method of transmission or storage is completely secure, and we cannot guarantee absolute security. We encourage you to use care when sharing sensitive information and to use the secure channels we provide.</p>
-              </section>
-
-              <section class="legal-doc__section" id="sec-7" aria-labelledby="psec-7-h">
-                <h2 class="legal-doc__section-heading" id="psec-7-h">7. Data Retention</h2>
-                <p>We retain personal information for as long as needed to fulfill the purposes described in this policy, including to provide services, comply with legal, tax, and accounting obligations, resolve disputes, and enforce agreements. Retention periods for client engagement records reflect applicable professional and regulatory requirements. When information is no longer needed, we take reasonable steps to delete or de-identify it.</p>
-              </section>
-
-              <section class="legal-doc__section" id="sec-8" aria-labelledby="psec-8-h">
-                <h2 class="legal-doc__section-heading" id="psec-8-h">8. Your Rights</h2>
-                <p>Depending on your location, you may have rights regarding your personal information, including the right to:</p>
-                <ul class="legal-doc__list">
-                  <li>Access the personal information we hold about you;</li>
-                  <li>Request correction of inaccurate or incomplete information;</li>
-                  <li>Request deletion of your personal information, subject to legal retention obligations;</li>
-                  <li>Object to or restrict certain processing;</li>
-                  <li>Withdraw consent where processing is based on consent;</li>
-                  <li>Opt out of any marketing communications.</li>
-                </ul>
-                <p>To exercise any of these rights, contact us at <a href="mailto:privacy@techbrot.com">privacy@techbrot.com</a>.<!-- [VERIFY] privacy@ inbox --> We will respond within the timeframes required by applicable law. We may need to verify your identity before fulfilling certain requests.</p>
-              </section>
-
-              <section class="legal-doc__section" id="sec-9" aria-labelledby="psec-9-h">
-                <h2 class="legal-doc__section-heading" id="psec-9-h">9. Cookies &amp; Analytics</h2>
-                <p>Our website uses cookies and similar technologies to operate the site, remember preferences, and understand how the site is used. We may use analytics services to collect aggregated, non-identifying information about site usage to improve our content and performance.</p>
-                <p>You can control cookies through your browser settings. Disabling certain cookies may affect site functionality. Where required by law, we obtain consent before placing non-essential cookies.<!-- [VERIFY] confirm actual analytics/cookie tools in use (e.g. GA4) and whether a consent banner is implemented --></p>
-              </section>
-
-              <section class="legal-doc__section" id="sec-10" aria-labelledby="psec-10-h">
-                <h2 class="legal-doc__section-heading" id="psec-10-h">10. Children&rsquo;s Privacy</h2>
-                <p>Our website and services are intended for businesses and are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If you believe we have inadvertently collected such information, please contact us and we will delete it.</p>
-              </section>
-
-              <section class="legal-doc__section" id="sec-11" aria-labelledby="psec-11-h">
-                <h2 class="legal-doc__section-heading" id="psec-11-h">11. International Users</h2>
-                <p>TechBrot is based in the United States and serves U.S. businesses. If you access our website or communicate with us from outside the United States, you understand that your information may be processed in the United States, where data-protection laws may differ from those of your jurisdiction. By using our website or services, you consent to this processing.</p>
-              </section>
-
-              <section class="legal-doc__section" id="sec-12" aria-labelledby="psec-12-h">
-                <h2 class="legal-doc__section-heading" id="psec-12-h">12. Changes &amp; Contact</h2>
-                <p>We may update this Privacy Policy from time to time. The &ldquo;Last updated&rdquo; date at the top reflects the most recent revision. Material changes will be indicated by updating that date, and where appropriate we may provide additional notice.</p>
-                <p>Questions about this policy or your information may be directed to TechBrot Inc. at <a href="mailto:privacy@techbrot.com">privacy@techbrot.com</a>.<!-- [VERIFY] --></p>
-                <p>This Privacy Policy should be read together with our <a href="/legal/disclaimer/">Disclaimer</a>, <a href="/legal/terms/">Terms of Service</a>, and <a href="/legal/dpa/">Data Processing Terms</a>.</p>
-              </section>
-
-              <p class="legal-doc__footer-line">TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm. QuickBooks is a registered trademark of Intuit Inc. TechBrot Inc. is not affiliated with Intuit Inc.</p>
-
-            </article>
-          </div>
+{#- ON THIS PAGE — internal-href set preserved -#}
+<section class="sec reveal" id="privacy-toc" style="padding-top:24px;padding-bottom:8px;">
+  <div class="ct read read--doc">
+    <nav aria-label="On this page">
+      <p class="eyebrow" style="margin-bottom:12px;">On this page</p>
+      <div class="prose">
+        <ol role="list">
+          <li><a href="#sec-1">1. Who We Are</a></li>
+          <li><a href="#sec-2">2. Information We Collect</a></li>
+          <li><a href="#sec-3">3. How We Use Information</a></li>
+          <li><a href="#sec-4">4. Client Financial Data</a></li>
+          <li><a href="#sec-5">5. How We Share Information</a></li>
+          <li><a href="#sec-6">6. Data Security</a></li>
+          <li><a href="#sec-7">7. Data Retention</a></li>
+          <li><a href="#sec-8">8. Your Rights</a></li>
+          <li><a href="#sec-9">9. Cookies &amp; Analytics</a></li>
+          <li><a href="#sec-10">10. Children&rsquo;s Privacy</a></li>
+          <li><a href="#sec-11">11. International Users</a></li>
+          <li><a href="#sec-12">12. Changes &amp; Contact</a></li>
+        </ol>
       </div>
-    </section>
+    </nav>
+  </div>
+</section>
+
+<section class="sec reveal" id="sec-1" style="padding-top:24px;" aria-labelledby="psec-1-h">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">&sect;1</span><span class="idx__t">Who we are</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="psec-1-h" style="margin-bottom:18px;">1. Who We Are</h2>
+    <div class="prose">
+      <p>This Privacy Policy describes how <strong>TechBrot Inc.</strong> (&ldquo;TechBrot,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), a Delaware C-Corporation, collects, uses, shares, and protects information when you visit our website, contact us, or engage our services.</p>
+      <p>For the purposes of this policy, TechBrot is the data controller for personal information collected through this website and in the course of providing its services, except where TechBrot processes a client&rsquo;s financial data on the client&rsquo;s behalf, in which case the client is the controller and TechBrot is the processor, as described in our <a href="/legal/dpa/">Data Processing Terms</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="sec-2" style="padding-top:24px;" aria-labelledby="psec-2-h">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">&sect;2</span><span class="idx__t">Collection</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="psec-2-h" style="margin-bottom:18px;">2. Information We Collect</h2>
+    <div class="prose">
+      <p>We collect information in three ways:</p>
+      <p><strong>Information you give us.</strong> When you submit a contact or discovery form, request a quote, email us, or book a call, we collect details such as your name, business name, email address, phone number, your QuickBooks version, and any information you choose to share about your business or accounting situation.</p>
+      <p><strong>Information from engagements.</strong> If you become a client, we collect the information needed to deliver services &mdash; which may include access to your accounting records, payroll information, financial statements, and related business data, as defined in your engagement scope and governed by our <a href="/legal/dpa/">Data Processing Terms</a>.</p>
+      <p><strong>Information collected automatically.</strong> When you visit our website, we may automatically collect limited technical information such as IP address, browser type, device information, pages visited, and referring URLs, through cookies and similar technologies (see Section 9).</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="sec-3" style="padding-top:24px;" aria-labelledby="psec-3-h">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">&sect;3</span><span class="idx__t">Use</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="psec-3-h" style="margin-bottom:18px;">3. How We Use Information</h2>
+    <div class="prose">
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li>Respond to your inquiries and schedule discovery calls;</li>
+        <li>Prepare engagement scopes and provide the services you request;</li>
+        <li>Communicate with you about your engagement and our services;</li>
+        <li>Operate, maintain, and improve our website and services;</li>
+        <li>Comply with legal, accounting, and regulatory obligations;</li>
+        <li>Detect, prevent, and address security or technical issues.</li>
+      </ul>
+      <p><strong>We do not sell your personal information, and we do not use your financial data for any purpose other than delivering the services you engage us for.</strong> We do not add inquiry contacts to marketing lists without consent, and we do not send unsolicited marketing sequences.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="sec-4" style="padding-top:24px;" aria-labelledby="psec-4-h">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">&sect;4</span><span class="idx__t">Financial data</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="psec-4-h" style="margin-bottom:18px;">4. Client Financial Data</h2>
+    <div class="prose">
+      <p>Client financial data warrants specific treatment. During an engagement, <strong>TechBrot works as an authorized accountant-user inside the client&rsquo;s own accounting system</strong> (such as the client&rsquo;s QuickBooks file). The data remains the client&rsquo;s; TechBrot accesses it under permissions the client grants and can revoke at any time.</p>
+      <p>We do not require clients to export their financial data into a separate TechBrot-owned system. Where we process client financial data, we do so as a processor on the client&rsquo;s documented instructions, as set out in our <a href="/legal/dpa/">Data Processing Terms</a>, which form part of the engagement agreement.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="sec-5" style="padding-top:24px;" aria-labelledby="psec-5-h">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">&sect;5</span><span class="idx__t">Sharing</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="psec-5-h" style="margin-bottom:18px;">5. How We Share Information</h2>
+    <div class="prose">
+      <p>We share information only in the following circumstances:</p>
+      <p><strong>Service providers.</strong> We use trusted third-party providers to operate our business &mdash; for example, email, scheduling, document storage, and payment processing. These providers may access information only as needed to perform services for us and are bound by confidentiality obligations.</p>
+      <p><strong>Network operators.</strong> Where your engagement is delivered through a TechBrot network operator, we share with that operator the information needed to deliver the engagement, under the operator&rsquo;s confidentiality and data-handling obligations.</p>
+      <p><strong>Your professionals.</strong> With your direction, we coordinate with your CPA, EA, or other advisors and may share relevant information to do so.</p>
+      <p><strong>Legal requirements.</strong> We may disclose information where required by law, regulation, legal process, or governmental request, or to protect the rights, property, or safety of TechBrot, our clients, or others.</p>
+      <p><strong>Business transfers.</strong> If TechBrot is involved in a merger, acquisition, or sale of assets, information may be transferred as part of that transaction, subject to this policy.</p>
+      <p><strong>We do not sell personal information to third parties.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="sec-6" style="padding-top:24px;" aria-labelledby="psec-6-h">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">&sect;6</span><span class="idx__t">Security</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="psec-6-h" style="margin-bottom:18px;">6. Data Security</h2>
+    <div class="prose">
+      <p>We maintain administrative, technical, and physical safeguards designed to protect information against unauthorized access, use, alteration, and disclosure. These include encrypted connections for working sessions and file transfers, access controls, and the principle of working within the client&rsquo;s own systems rather than duplicating data unnecessarily.</p>
+      <p>No method of transmission or storage is completely secure, and we cannot guarantee absolute security. We encourage you to use care when sharing sensitive information and to use the secure channels we provide.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="sec-7" style="padding-top:24px;" aria-labelledby="psec-7-h">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">&sect;7</span><span class="idx__t">Retention</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="psec-7-h" style="margin-bottom:18px;">7. Data Retention</h2>
+    <div class="prose">
+      <p>We retain personal information for as long as needed to fulfill the purposes described in this policy, including to provide services, comply with legal, tax, and accounting obligations, resolve disputes, and enforce agreements. Retention periods for client engagement records reflect applicable professional and regulatory requirements. When information is no longer needed, we take reasonable steps to delete or de-identify it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="sec-8" style="padding-top:24px;" aria-labelledby="psec-8-h">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">&sect;8</span><span class="idx__t">Your rights</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="psec-8-h" style="margin-bottom:18px;">8. Your Rights</h2>
+    <div class="prose">
+      <p>Depending on your location, you may have rights regarding your personal information, including the right to:</p>
+      <ul>
+        <li>Access the personal information we hold about you;</li>
+        <li>Request correction of inaccurate or incomplete information;</li>
+        <li>Request deletion of your personal information, subject to legal retention obligations;</li>
+        <li>Object to or restrict certain processing;</li>
+        <li>Withdraw consent where processing is based on consent;</li>
+        <li>Opt out of any marketing communications.</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <a href="mailto:privacy@techbrot.com">privacy@techbrot.com</a>.<!-- [VERIFY] privacy@ inbox --> We will respond within the timeframes required by applicable law. We may need to verify your identity before fulfilling certain requests.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="sec-9" style="padding-top:24px;" aria-labelledby="psec-9-h">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">&sect;9</span><span class="idx__t">Cookies</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="psec-9-h" style="margin-bottom:18px;">9. Cookies &amp; Analytics</h2>
+    <div class="prose">
+      <p>Our website uses cookies and similar technologies to operate the site, remember preferences, and understand how the site is used. We may use analytics services to collect aggregated, non-identifying information about site usage to improve our content and performance.</p>
+      <p>You can control cookies through your browser settings. Disabling certain cookies may affect site functionality. Where required by law, we obtain consent before placing non-essential cookies.<!-- [VERIFY] confirm actual analytics/cookie tools in use (e.g. GA4) and whether a consent banner is implemented --></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="sec-10" style="padding-top:24px;" aria-labelledby="psec-10-h">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">&sect;10</span><span class="idx__t">Children</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="psec-10-h" style="margin-bottom:18px;">10. Children&rsquo;s Privacy</h2>
+    <div class="prose">
+      <p>Our website and services are intended for businesses and are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If you believe we have inadvertently collected such information, please contact us and we will delete it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="sec-11" style="padding-top:24px;" aria-labelledby="psec-11-h">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">&sect;11</span><span class="idx__t">International</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="psec-11-h" style="margin-bottom:18px;">11. International Users</h2>
+    <div class="prose">
+      <p>TechBrot is based in the United States and serves U.S. businesses. If you access our website or communicate with us from outside the United States, you understand that your information may be processed in the United States, where data-protection laws may differ from those of your jurisdiction. By using our website or services, you consent to this processing.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="sec-12" style="padding-top:24px;" aria-labelledby="psec-12-h">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">&sect;12</span><span class="idx__t">Changes</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="psec-12-h" style="margin-bottom:18px;">12. Changes &amp; Contact</h2>
+    <div class="prose">
+      <p>We may update this Privacy Policy from time to time. The &ldquo;Last updated&rdquo; date at the top reflects the most recent revision. Material changes will be indicated by updating that date, and where appropriate we may provide additional notice.</p>
+      <p>Questions about this policy or your information may be directed to TechBrot Inc. at <a href="mailto:privacy@techbrot.com">privacy@techbrot.com</a>.<!-- [VERIFY] --></p>
+      <p>This Privacy Policy should be read together with our <a href="/legal/disclaimer/">Disclaimer</a>, <a href="/legal/terms/">Terms of Service</a>, and <a href="/legal/dpa/">Data Processing Terms</a>.</p>
+      <p class="meta-reviewed" style="margin-top:32px;">TechBrot Inc. is an independent Certified QuickBooks ProAdvisor firm. QuickBooks is a registered trademark of Intuit Inc. TechBrot Inc. is not affiliated with Intuit Inc.</p>
+    </div>
+  </div>
+</section>

@@ -71,11 +71,21 @@ const FAQ = [
 ];
 
 module.exports = {
-  layout: "layouts/t-guide.njk",
+  layout: "layouts/t-prose.njk",
   permalink: "/frameworks/historical-accounting-debt/",
   slug: "fw-had",
   tierClass: "section--tier-guide",
   bodyClass: "page--mofu",
+  // AI summary authored IN THE BODY at the frozen speakable id #had-ai-summary
+  // (pageGraph cssSelector uses the short prefix, not the slug).
+  metaReviewed: "2026-06-19",
+  byline: {
+    name: "By the Certified QuickBooks ProAdvisor team",
+    meta: "A TechBrot coined framework &middot; independent firm, not affiliated with Intuit Inc.",
+  },
+  sec: {
+    faqH: "Historical Accounting Debt questions.",
+  },
   title: "Historical Accounting Debt — TechBrot Framework · TechBrot",
   description:
     "Historical Accounting Debt — TechBrot's coined framework for the unpaid liability that accrues when bookkeeping falls behind, and how catch-up pays it down.",
