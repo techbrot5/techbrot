@@ -21,10 +21,8 @@
       { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
     ]
   },
-  "inBrief": {
-    "text": "<strong>The TechBrot service catalog:</strong> monthly &middot; cleanup &middot; catch-up bookkeeping &middot; QuickBooks (setup, cleanup, migration) &middot; payroll management &middot; multi-state sales tax compliance &middot; fractional CFO &mdash; seven engagement types, each fixed-fee with a written scope before any work begins, delivered by Certified Intuit ProAdvisors across all 50 states.",
-    "source": "Independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books; your CPA files. Not affiliated with Intuit Inc."
-  },
+  "summary": "<strong>The TechBrot service catalog:</strong> monthly &middot; cleanup &middot; catch-up bookkeeping &middot; QuickBooks (setup, cleanup, migration) &middot; payroll management &middot; multi-state sales tax compliance &middot; fractional CFO &mdash; seven engagement types, each fixed-fee with a written scope before any work begins, delivered by Certified Intuit ProAdvisors across all 50 states.",
+  "summarySource": "Independent Certified QuickBooks ProAdvisor firm &mdash; we keep the books; your CPA files. Not affiliated with Intuit Inc.",
   "ctaBand": {
     "eyebrow": "Start here",
     "heading": "Scope your engagement.",
@@ -33,95 +31,53 @@
       { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
       { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
     ]
+  },
+  "sec": {
+    "summaryId": "acct-svc-hub-in-brief-text",
+    "summaryTag": "In one paragraph",
+    "summaryH": "The TechBrot service catalog, summarized.",
+    "aiH": "The service catalog, in five questions.",
+    "faqTag": "Services FAQ",
+    "faqH": "Questions about the catalog."
   }
 }
 ---
 
-<section class="section section--compact section--tier-hub" id="acct-svc-hub-tldr">
-  <div class="container">
-    <div class="tldr">
-      <p class="tldr__label">In one paragraph</p>
-      <h2 class="tldr__heading">The TechBrot service catalog, summarized.</h2>
-      <p class="tldr__body" id="acct-svc-hub-tldr-body">TechBrot delivers seven core service tracks for U.S. small and mid-sized businesses: <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a> ($400&ndash;$2,500+/month), <a href="/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup">cleanup bookkeeping</a> ($1,500&ndash;$15,000+), <a href="/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up">catch-up bookkeeping</a> ($2,000&ndash;$20,000+), <a href="/quickbooks/?intent=quickbooks">QuickBooks services</a> (setup, cleanup, migration &mdash; $750&ndash;$15,000+), <a href="/accounting/payroll-management/?intent=payroll">payroll management</a> ($150&ndash;$800+/month), <a href="/accounting/sales-tax-compliance/?intent=sales-tax">sales tax compliance</a> ($250&ndash;$1,500+/month), and <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">fractional CFO</a> ($3,000&ndash;$8,000+/month, by application). <strong>Every engagement is fixed-fee with a written scope before any work begins</strong> &mdash; no hourly billing &mdash; delivered by Certified Intuit ProAdvisors across all four core QuickBooks platforms. National coverage with state-specific operational depth.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="acct-svc-hub-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">The service catalog, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="acct-svc-hub-tracks">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The service tracks</p>
-      <h2 class="section__heading">Seven engagement types. Distinct work, distinct outcomes.</h2>
-      <p class="section__lede">Each track links to full scope, deliverables, cadence, and pricing detail. Or use the diagnostic below if you&rsquo;re not sure which engagement fits your situation.</p>
-    </header>
-    <div class="grid-3">
+{# ── TRACKS — seven engagement types (dc-card hub-card r-3, white). (H2: Seven engagement types. Distinct work, distinct outcomes.) ── #}
+<section class="sec reveal" id="acct-svc-hub-tracks">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The service tracks</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:30ch;margin-bottom:10px;">Seven engagement types. Distinct work, distinct outcomes.</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:64ch;">Each track links to full scope, deliverables, cadence, and pricing detail. Or use the diagnostic below if you&rsquo;re not sure which engagement fits your situation.</p>
+    <div class="r-3">
       {%- for s in tracks %}
-      <article class="review-card">
-        <p class="team-card__role">{{ s.eyebrow | safe }}</p>
-        <h3>{{ s.name | safe }}</h3>
-        <p class="review-card__fact">{{ s.body | safe }}</p>
-        <p class="review-card__fact"><strong>{{ s.fee | safe }}</strong> &middot; {{ s.eng | safe }}</p>
-        <p class="review-card__fact">Best for: {{ s.best | safe }}</p>
-        <a class="review-card__link" href="{{ s.href }}">{{ s.name | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <article class="dc-card hub-card"><span class="eyebrow">{{ s.eyebrow | safe }}</span><h3>{{ s.name | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 12px;">{{ s.body | safe }}</p><p class="mono" style="font-size:12px;color:var(--color-ink-mute);margin:0 0 8px;"><strong style="color:var(--color-ink);">{{ s.fee | safe }}</strong> &middot; {{ s.eng | safe }}</p><p class="prose" style="font-size:13px;margin:0 0 12px;color:var(--color-ink-mute);"><strong style="color:var(--color-ink);">Best for:</strong> {{ s.best | safe }}</p><a class="hub-card__go" href="{{ s.href }}">{{ s.name | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
       {%- endfor %}
+      <article class="dc-card hub-card"><span class="eyebrow">{{ cfo.eyebrow | safe }}</span><h3>{{ cfo.name | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 12px;">{{ cfo.lede | safe }}</p><p class="mono" style="font-size:12px;color:var(--color-ink-mute);margin:0 0 8px;"><strong style="color:var(--color-ink);">{{ cfo.fee | safe }}</strong> &middot; {{ cfo.eng | safe }}</p><p class="prose" style="font-size:13px;margin:0 0 12px;color:var(--color-ink-mute);"><strong style="color:var(--color-ink);">Best for:</strong> {{ cfo.best | safe }}</p><a class="hub-card__go" href="{{ cfo.href }}">{{ cfo.name | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
     </div>
-    <article class="review-card">
-      <p class="team-card__role">{{ cfo.eyebrow | safe }}</p>
-      <h3>{{ cfo.name | safe }}</h3>
-      <p class="review-card__fact">{{ cfo.lede | safe }}</p>
-      <p class="review-card__fact"><strong>{{ cfo.fee | safe }}</strong> &middot; {{ cfo.eng | safe }}</p>
-      <p class="review-card__fact">Best for: {{ cfo.best | safe }}</p>
-      <a class="review-card__link" href="{{ cfo.href }}">{{ cfo.name | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-    </article>
   </div>
 </section>
 
-<section class="section" id="acct-svc-hub-diagnostic">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Find your situation</p>
-      <h2 class="section__heading">Which engagement do you actually need?</h2>
-      <p class="section__lede">Most buyers don&rsquo;t know exactly which service fits &mdash; they know something&rsquo;s wrong. Below are the six most common situations and the engagement that fits each.</p>
-    </header>
-    <div class="grid-3">
+{# ── DIAGNOSTIC — six situations (dc-card r-3, sand). (H2: Which engagement do you actually need?) ── #}
+<section class="sec reveal" id="acct-svc-hub-diagnostic" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Find your situation</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:10px;">Which engagement do you actually need?</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:64ch;">Most buyers don&rsquo;t know exactly which service fits &mdash; they know something&rsquo;s wrong. Below are the six most common situations and the engagement that fits each.</p>
+    <div class="r-3">
       {%- for d in diagnostic %}
-      <article class="review-card">
-        <h3>{{ d.q | safe }}</h3>
-        <p class="review-card__fact"><strong>Diagnosis:</strong> {{ d.diagnosis | safe }}</p>
-        <p class="review-card__fact"><strong>Right path:</strong> {{ d.path | safe }}</p>
-        <p class="review-card__fact"><strong>Typical fee:</strong> {{ d.fee | safe }}</p>
-        <a class="review-card__link" href="{{ d.href }}">{{ d.cta | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <div class="dc-card"><h3>{{ d.q | safe }}</h3><p class="prose" style="font-size:15px;margin:8px 0 0;"><strong>Diagnosis:</strong> {{ d.diagnosis | safe }}</p><p class="prose" style="font-size:15px;margin:8px 0 0;"><strong>Right path:</strong> {{ d.path | safe }}</p><p class="prose" style="font-size:15px;margin:8px 0 0;"><strong>Typical fee:</strong> {{ d.fee | safe }}</p><a class="hub-card__go" href="{{ d.href }}">{{ d.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-svc-hub-pricing">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Pricing at a glance</p>
-      <h2 class="section__heading">All engagement pricing in one view.</h2>
-      <p class="section__lede">Every TechBrot engagement is fixed-fee with a written scope before any work begins. No hourly billing. Specific quotes follow the free discovery call.</p>
-    </header>
+{# ── PRICING — all engagements in one view (vs-table, white). (H2: All engagement pricing in one view.) ── #}
+<section class="sec reveal" id="acct-svc-hub-pricing">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Pricing at a glance</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">All engagement pricing in one view.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:64ch;">Every TechBrot engagement is fixed-fee with a written scope before any work begins. No hourly billing. Specific quotes follow the free discovery call.</p>
     <div class="vs-scroll">
       <table class="vs-table">
         <caption class="sr-only">TechBrot accounting service pricing summary across all engagement tracks.</caption>
@@ -149,20 +105,19 @@
   </div>
 </section>
 
-<section class="section" id="acct-svc-hub-delivery">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How we deliver</p>
-      <h2 class="section__heading">Direct service or curated network.</h2>
-      <p class="section__lede">Two delivery modes, one operating standard. Engagements route based on what the work requires &mdash; your location, industry, and the specific service needed.</p>
-    </header>
-    <div class="grid-2">
+{# ── DELIVERY MODES — direct vs vetted-local (incl-card r-2, sand). (H2: Direct service or curated network.) ── #}
+<section class="sec reveal" id="acct-svc-hub-delivery" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How we deliver</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:10px;">Direct service or curated network.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:64ch;">Two delivery modes, one operating standard. Engagements route based on what the work requires &mdash; your location, industry, and the specific service needed.</p>
+    <div class="r-2">
       {%- for m in modes %}
-      <article class="review-card">
-        <p class="team-card__role">{{ m.eyebrow | safe }}</p>
+      <article class="incl-card">
+        <span class="eyebrow">{{ m.eyebrow | safe }}</span>
         <h3>{{ m.name | safe }}</h3>
-        <p class="review-card__fact">{{ m.lede | safe }}</p>
-        <ul class="checks-list">
+        <p class="prose" style="font-size:15px;margin:8px 0 0;">{{ m.lede | safe }}</p>
+        <ul class="checklist">
           {%- for p in m.points %}
           <li>{{ p | safe }}</li>
           {%- endfor %}
@@ -173,52 +128,29 @@
   </div>
 </section>
 
-<section class="section section--alt" id="acct-svc-hub-standards">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Engagement standards</p>
-      <h2 class="section__heading">What every TechBrot engagement includes.</h2>
-      <p class="section__lede">Regardless of service track, every engagement runs to the same operating standards. The standards are the platform; the services are the application of them.</p>
-    </header>
-    <ol class="process-diagram">
+{# ── STANDARDS — six engagement standards (process-grid, white). (H2: What every TechBrot engagement includes.) ── #}
+<section class="sec reveal" id="acct-svc-hub-standards">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Engagement standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">What every TechBrot engagement includes.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:64ch;">Regardless of service track, every engagement runs to the same operating standards. The standards are the platform; the services are the application of them.</p>
+    <div class="process-grid">
       {%- for s in standards %}
-      <li class="process-step">
-        <p class="process-step__number">0{{ loop.index }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
-      {%- endfor %}
-    </ol>
-  </div>
-</section>
-
-<section class="section" id="acct-svc-hub-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Services FAQ</p>
-      <h2 class="section__heading">Questions about the catalog.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-svc-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acct-svc-hub-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
+      <div class="process-step">
+        <span class="process-step__n">0{{ loop.index }}</span>
+        <h3>{{ s.name | safe }}</h3>
+        <p>{{ s.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-svc-hub-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Catalog standards</p>
-      <h2 class="section__heading">Service catalog maintained by the TechBrot platform team.</h2>
-    </header>
+{# ── CATALOG REVIEW & STANDARDS — prose + trust-row (sand, read). (H2: Service catalog maintained by the TechBrot platform team.) ── #}
+<section class="sec reveal" id="acct-svc-hub-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Catalog standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Service catalog maintained by the TechBrot platform team.</h2>
     <div class="prose">
       <p>This catalog is maintained by the platform team at TechBrot Inc., a Delaware-incorporated independent Certified QuickBooks ProAdvisor firm. Pricing ranges, engagement structures, and service descriptions reflect current operational practice. Pricing is reviewed quarterly; service-track definitions update as the firm&rsquo;s capabilities expand. For a current quote on any specific engagement, the 30-minute discovery call is the right path &mdash; specific quotes are delivered within three business days of the call.</p>
     </div>

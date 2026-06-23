@@ -11,6 +11,7 @@
     { "name": "Home", "href": "/" },
     { "name": "QuickBooks" }
   ],
+  "heroFigure": "taccount",
   "hero": {
     "eyebrow": "QuickBooks ProAdvisor services",
     "heading": "Independent ProAdvisor services across the full QuickBooks stack.",
@@ -20,10 +21,8 @@
       { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks", "class": "btn--ghost" }
     ]
   },
-  "inBrief": {
-    "text": "<strong>TechBrot QuickBooks services</strong> are independent Certified ProAdvisor engagements &mdash; setup, file cleanup, migration, consulting, and plan selection &mdash; across QuickBooks Online, Desktop, Enterprise, and Payroll, delivered by a vetted local operator against a written scope with platform-level quality review.",
-    "source": "Independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with, endorsed by, or sponsored by Intuit Inc."
-  },
+  "summary": "<strong>TechBrot QuickBooks services</strong> are independent Certified ProAdvisor engagements &mdash; setup, file cleanup, migration, consulting, and plan selection &mdash; across QuickBooks Online, Desktop, Enterprise, and Payroll, delivered by a vetted local operator against a written scope with platform-level quality review.",
+  "summarySource": "Independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with, endorsed by, or sponsored by Intuit Inc.",
   "ctaBand": {
     "eyebrow": "Start here",
     "heading": "Talk to an independent ProAdvisor.",
@@ -32,34 +31,41 @@
       { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks", "class": "btn--primary" },
       { "label": "Explore Services", "href": "#quickbooks-engagements", "class": "btn--ghost" }
     ]
+  },
+  "sec": {
+    "heroFigCaption": "Where the file work ties out",
+    "summaryId": "quickbooks-in-brief-text",
+    "summaryTag": "In brief",
+    "summaryH": "TechBrot QuickBooks services, summarized.",
+    "aiH": "TechBrot QuickBooks services, in five questions.",
+    "faqTag": "Common questions",
+    "faqH": "What people ask about TechBrot QuickBooks services."
   }
 }
 ---
 
-<section class="section section--compact section--tier-hub" id="quickbooks-credentials">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Certified by Intuit</p>
-      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials.</h2>
-      <p class="section__lede">Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack, plus the Intuit Certified Bookkeeping Professional credential. Verification available on request.</p>
-    </header>
-    <div class="stat-row">
+{# ── CREDENTIALS — the citable credential stack: stat band + checklist (white). (H2: Certified QuickBooks ProAdvisor credentials) ── #}
+<section class="sec reveal" id="quickbooks-credentials">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Certified by Intuit</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Certified QuickBooks ProAdvisor credentials</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:64ch;">Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack, plus the Intuit Certified Bookkeeping Professional credential. Verification available on request.</p>
+    <div class="r-4">
       {%- for s in stats %}
-      <div><div class="stat__value">{{ s.value }}</div><div class="stat__label">{{ s.label }}</div></div>
+      <div><div class="mono" style="font-size:30px;font-weight:500;color:var(--color-accent);">{{ s.value | safe }}</div><div style="font-size:13px;line-height:1.5;color:var(--color-ink-mute);margin-top:8px;">{{ s.label | safe }}</div></div>
       {%- endfor %}
     </div>
-    <ul class="checks-list">
+    <ul class="checklist" style="margin-top:26px;">
       {%- for c in credentials %}<li>{{ c | safe }}</li>{%- endfor %}
     </ul>
   </div>
 </section>
 
-<section class="section" id="quickbooks-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The silo</p>
-      <h2 class="section__heading">What TechBrot QuickBooks services are.</h2>
-    </header>
+{# ── DEFINITION — what the silo is, prose (sand, read). (H2: What TechBrot QuickBooks services are.) ── #}
+<section class="sec reveal" id="quickbooks-definition" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The silo</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">What TechBrot QuickBooks services are.</h2>
     <div class="prose">
       <p>TechBrot QuickBooks services are independent Certified ProAdvisor engagements delivered by a curated network of vetted local accounting practices, serving U.S. small and mid-sized businesses. The QuickBooks silo covers six engagement types &mdash; setup &amp; onboarding, file cleanup, migration, consulting &amp; workflow advisory, plan selection, and the ProAdvisor help center &mdash; across four QuickBooks products: Online, Desktop, Enterprise, and Payroll.</p>
       <p>Every engagement is delivered by a Certified ProAdvisor against a written scope, with platform-level quality review. <strong>TechBrot is an independent ProAdvisor firm and is not affiliated with, endorsed by, or sponsored by Intuit Inc.</strong></p>
@@ -67,104 +73,69 @@
   </div>
 </section>
 
-<section class="section section--alt" id="quickbooks-engagements">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The engagements</p>
-      <h2 class="section__heading">Six ProAdvisor engagements. Pick the one that fits.</h2>
-    </header>
-    <div class="grid-3">
+{# ── ENGAGEMENTS — six ProAdvisor engagements, dc-card hub-card r-3 (white). (H2: Six ProAdvisor engagements. Pick the one that fits.) ── #}
+<section class="sec reveal" id="quickbooks-engagements">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The engagements</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:28px;">Six ProAdvisor engagements. Pick the one that fits.</h2>
+    <div class="r-3">
       {%- for e in engagements %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ e.num }} &middot; {{ e.tag }}</p>
-        <h3>{{ e.name | safe }}</h3>
-        <p class="prose">{{ e.body | safe }}</p>
-        <p class="prose"><strong>For:</strong> {{ e.forWhom | safe }} &middot; <strong>{{ e.timeline | safe }}</strong> &middot; {{ e.price | safe }}</p>
-        <p class="prose"><a href="{{ e.href }}">{{ e.cta | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
-      </div>
+      <article class="dc-card hub-card"><span class="eyebrow">{{ e.num }} &middot; {{ e.tag }}</span><h3>{{ e.name | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 12px;">{{ e.body | safe }}</p><p class="mono" style="font-size:12px;color:var(--color-ink-mute);margin:0 0 10px;"><strong style="color:var(--color-ink);">For:</strong> {{ e.forWhom | safe }} &middot; <strong style="color:var(--color-ink);">{{ e.timeline | safe }}</strong> &middot; {{ e.price | safe }}</p><a class="hub-card__go" href="{{ e.href }}">{{ e.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="quickbooks-routing">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Your situation</p>
-      <h2 class="section__heading">Where are you with QuickBooks?</h2>
-    </header>
-    <div class="grid-3">
-      <a class="buyer-card" href="/quickbooks/cleanup/"><p class="buyer-card__opener">&ldquo;I don&rsquo;t trust the numbers.&rdquo;</p><p class="buyer-card__body">File cleanup reconciles every account and documents what changed &mdash; the next close starts from truth.</p><span class="buyer-card__cta">QuickBooks cleanup</span></a>
-      <a class="buyer-card" href="/quickbooks/migration/desktop-to-online/"><p class="buyer-card__opener">&ldquo;We&rsquo;re on Desktop and the clock is ticking.&rdquo;</p><p class="buyer-card__body">Desktop-to-Online migration with integrity verification and reconciliation &mdash; the step Intuit&rsquo;s free tool skips.</p><span class="buyer-card__cta">QuickBooks migration</span></a>
-      <a class="buyer-card" href="/quickbooks/which-plan-is-right/"><p class="buyer-card__opener">&ldquo;I don&rsquo;t know which product I need.&rdquo;</p><p class="buyer-card__body">A complimentary plan-selection call sorts Online vs Desktop vs Enterprise &mdash; no commission, no upsell incentive.</p><span class="buyer-card__cta">Find the right plan</span></a>
+{# ── ROUTING — buyer situations, dc-card hub-card r-3 (sand). (no frozen heading — additive routing aid) ── #}
+<section class="sec reveal" id="quickbooks-routing" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Your situation</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:28px;">Where are you with QuickBooks?</h2>
+    <div class="r-3">
+      <a class="dc-card hub-card" href="/quickbooks/cleanup/"><h3>&ldquo;I don&rsquo;t trust the numbers.&rdquo;</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">File cleanup reconciles every account and documents what changed &mdash; the next close starts from truth.</p><span class="hub-card__go">QuickBooks cleanup <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="dc-card hub-card" href="/quickbooks/migration/desktop-to-online/"><h3>&ldquo;We&rsquo;re on Desktop and the clock is ticking.&rdquo;</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">Desktop-to-Online migration with integrity verification and reconciliation &mdash; the step Intuit&rsquo;s free tool skips.</p><span class="hub-card__go">QuickBooks migration <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="dc-card hub-card" href="/quickbooks/which-plan-is-right/"><h3>&ldquo;I don&rsquo;t know which product I need.&rdquo;</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">A complimentary plan-selection call sorts Online vs Desktop vs Enterprise &mdash; no commission, no upsell incentive.</p><span class="hub-card__go">Find the right plan <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </div>
   </div>
 </section>
 
-<section class="section" id="quickbooks-products">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The products</p>
-      <h2 class="section__heading">Every QuickBooks product. Same operator network.</h2>
-    </header>
-    <div class="grid-2">
+{# ── PRODUCTS — four QuickBooks products, dc-card r-2 (white). (H2: Every QuickBooks product. Same operator network.) ── #}
+<section class="sec reveal" id="quickbooks-products">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The products</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:28px;">Every QuickBooks product. Same operator network.</h2>
+    <div class="r-2">
       {%- for p in products %}
-      <div class="stack-8">
-        <h3>{{ p.name | safe }}</h3>
-        <p class="prose">{{ p.body | safe }}</p>
-        <p class="prose"><strong>Best for:</strong> {{ p.best | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ p.name | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 10px;">{{ p.body | safe }}</p><p class="prose" style="font-size:14px;margin:0;color:var(--color-ink-mute);"><strong style="color:var(--color-ink);">Best for:</strong> {{ p.best | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="quickbooks-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">TechBrot QuickBooks services, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="quickbooks-independence">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Why independent</p>
-      <h2 class="section__heading">Independence matters in QuickBooks advisory.</h2>
-    </header>
-    <ol class="process-diagram">
+{# ── INDEPENDENCE — six differentiators, process-grid (sand). (H2: Independence matters in QuickBooks advisory.) ── #}
+<section class="sec reveal" id="quickbooks-independence" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why independent</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:30px;">Independence matters in QuickBooks advisory.</h2>
+    <div class="process-grid">
       {%- for d in independence %}
-      <li class="process-step">
-        <p class="process-step__number">{{ d.num }}</p>
-        <h3 class="process-step__heading">{{ d.name | safe }}</h3>
-        <p class="process-step__body">{{ d.body | safe }}</p>
-      </li>
+      <div class="process-step">
+        <span class="process-step__n">{{ d.num }}</span>
+        <h3>{{ d.name | safe }}</h3>
+        <p>{{ d.body | safe }}</p>
+      </div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section" id="quickbooks-standard">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The operating standard</p>
-      <h2 class="section__heading">One standard, every engagement.</h2>
-    </header>
-    <div class="grid-2">
-      <blockquote class="pull-quote">
-        <p>We earn nothing from your QuickBooks subscription &mdash; so the recommendation is the product, not the upsell.</p>
-        <footer>The case for independence &mdash; TechBrot methodology</footer>
-      </blockquote>
+{# ── STANDARD — opquote + flow diagram, r-2 (white). (no frozen heading; additive methodology) ── #}
+<section class="sec reveal" id="quickbooks-standard">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The operating standard</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:28px;">One standard, every engagement.</h2>
+    <div class="r-2">
+      <blockquote class="opquote"><blockquote>We earn nothing from your QuickBooks subscription &mdash; so the recommendation is the product, not the upsell.</blockquote><cite>The case for independence &mdash; TechBrot methodology</cite></blockquote>
       <figure style="margin:0" role="img" aria-label="The engagement standard: written scope, then a named operator, then platform-level quality review, then guaranteed continuity">
         <div class="flow">
           <div class="flow__step"><span class="flow__label">Written scope</span><span class="flow__sub">fixed fee, first</span></div>
@@ -180,27 +151,24 @@
   </div>
 </section>
 
-<section class="section section--alt" id="quickbooks-bookkeeping">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The tool and the work</p>
-      <h2 class="section__heading">QuickBooks is the tool. Bookkeeping is the work.</h2>
-    </header>
-    {%- for n in bookkeepingLinks %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+{# ── BOOKKEEPING LINKS — the tool vs the work, dc-card hub-card r-2 (sand). (H2: QuickBooks is the tool. Bookkeeping is the work.) ── #}
+<section class="sec reveal" id="quickbooks-bookkeeping" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The tool and the work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:30ch;margin-bottom:28px;">QuickBooks is the tool. Bookkeeping is the work.</h2>
+    <div class="r-2">
+      {%- for n in bookkeepingLinks %}
+      <a class="dc-card hub-card" href="{{ n.href }}"><h3>{{ n.title | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">{{ n.body | safe }}</p></a>
+      {%- endfor %}
     </div>
-    {%- endfor %}
   </div>
 </section>
 
-<section class="section" id="quickbooks-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Who performs the work</p>
-      <h2 class="section__heading">A named Certified ProAdvisor.</h2>
-    </header>
+{# ── OPERATOR — who performs the work, prose + trust-row (white). (H2: A named Certified ProAdvisor.) ── #}
+<section class="sec reveal" id="quickbooks-operator">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Who performs the work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">A named Certified ProAdvisor.</h2>
     <div class="prose">
       <p>Every TechBrot QuickBooks engagement is delivered by a vetted local operator &mdash; an independent accounting practice running under TechBrot&rsquo;s brand, standards, and infrastructure. Every operator holds active Certified ProAdvisor credentials, is credentialed and insured, and is onboarded against a defined quality standard. Named point of contact, platform-level quality review, continuity guaranteed.</p>
     </div>
@@ -208,27 +176,6 @@
       {%- for r in operatorSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="quickbooks-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">What people ask about TechBrot QuickBooks services.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="quickbooks-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="quickbooks-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
       {%- endfor %}
     </div>
   </div>
