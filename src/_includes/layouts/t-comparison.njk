@@ -17,6 +17,8 @@ footerNav:
     Every section guarded — reused by both concept-vs and techbrot-vs pages.
     =========================================================================== -#}
 {%- set intent = comparisonIntent or "role" %}
+{%- set sec = sec or {} %}
+{%- set cmpCols = cmpCols or {} %}
 
 {#- HERO — editorial-calm: eyebrow + H1 + lede, ~820px, no buttons (MOFU) -#}
 <section style="padding:56px 0 12px;">
@@ -55,12 +57,23 @@ footerNav:
 </section>
 {%- endif %}
 
+{#- DISCLOSURE — competitor/product caveat (guarded; trademark + publicly-available info) -#}
+{%- if disclosure %}
+<section class="sec reveal" style="padding-top:20px;padding-bottom:8px;">
+  <div class="ct read">
+    <div class="ph"><span class="ph__t">{{ sec.disclosureTag | default("Disclosure", true) | safe }}</span><span class="ph__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">{{ sec.disclosureH | default("About this comparison.", true) | safe }}</h2>
+    <div class="prose">{%- for p in disclosure %}<p>{{ p | safe }}</p>{%- endfor %}</div>
+  </div>
+</section>
+{%- endif %}
+
 {#- SUMMARY prose -#}
 {%- if summary %}
 <section class="sec reveal" style="padding-top:20px;padding-bottom:24px;">
   <div class="ct read">
-    <div class="ph"><span class="ph__t">In one paragraph</span><span class="ph__rule"></span></div>
-    <h2 class="h2" style="margin-bottom:18px;">The honest summary.</h2>
+    <div class="ph"><span class="ph__t">{{ sec.summaryTag | default("In one paragraph", true) | safe }}</span><span class="ph__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">{{ sec.summaryH | default("The honest summary.", true) | safe }}</h2>
     <div class="prose">{%- for p in summary %}<p>{{ p | safe }}</p>{%- endfor %}</div>
   </div>
 </section>
@@ -87,15 +100,16 @@ footerNav:
 </section>
 {%- endif %}
 
-{#- ROLES — definitional grid-2 -#}
-{%- if roles %}
+{#- ROLES / SIDES — definitional grid-2 (concept pages pass `sides`, same shape) -#}
+{%- set roleItems = roles or sides %}
+{%- if roleItems %}
 <section class="sec reveal">
   <div class="ct">
-    <div class="ph"><span class="ph__t">The two roles, defined</span><span class="ph__rule"></span></div>
-    <h2 class="h2">What each role does &mdash; in plain language.</h2>
-    <p class="lede" style="margin:10px 0 28px;max-width:60ch;">Most confusion between the two roles comes from people using the terms interchangeably. They&rsquo;re not interchangeable. Here&rsquo;s what each actually means in U.S. small business practice.</p>
+    <div class="ph"><span class="ph__t">{{ sec.rolesTag | default("The two roles, defined", true) | safe }}</span><span class="ph__rule"></span></div>
+    <h2 class="h2">{{ sec.rolesH | default("What each role does &mdash; in plain language.", true) | safe }}</h2>
+    {%- if sec.rolesLede != false %}<p class="lede" style="margin:10px 0 28px;max-width:60ch;">{{ sec.rolesLede | default("Most confusion between the two roles comes from people using the terms interchangeably. They&rsquo;re not interchangeable. Here&rsquo;s what each actually means in U.S. small business practice.", true) | safe }}</p>{%- endif %}
     <div class="r-2">
-      {%- for r in roles %}
+      {%- for r in roleItems %}
       <div class="dc-card"><span class="eyebrow">{{ r.eyebrow | safe }}</span><h3>{{ r.name | safe }}</h3><div class="prose">{{ r.body | safe }}</div></div>
       {%- endfor %}
     </div>
@@ -105,20 +119,26 @@ footerNav:
 
 {#- COMPARISON TABLE — the C2 signature viz -#}
 {%- if vsTable %}
+{%- set dk = cmpCols.dimKey | default("cap", true) %}
+{%- set akey = cmpCols.aKey | default("bk", true) %}
+{%- set bkey = cmpCols.bKey | default("acct", true) %}
+{%- set usCol = cmpCols.usCol | default("a", true) %}
+{%- set aLabel = cmpCols.aLabel | default("Bookkeeper", true) %}
+{%- set bLabel = cmpCols.bLabel | default("Accountant / CPA", true) %}
 <section class="sec reveal">
   <div class="ct read">
-    <div class="ph"><span class="ph__t">Side by side</span><span class="ph__rule"></span></div>
-    <h2 class="h2" style="margin-bottom:8px;">Across the dimensions that actually matter.</h2>
-    <p class="lede" style="margin:0 0 24px;">Twelve dimensions where the two roles differ in practice. Neither role &ldquo;wins&rdquo; &mdash; they do different things. This table makes the boundaries clear.</p>
+    <div class="ph"><span class="ph__t">{{ sec.cmpTag | default("Side by side", true) | safe }}</span><span class="ph__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:8px;">{{ sec.cmpH | default("Across the dimensions that actually matter.", true) | safe }}</h2>
+    <p class="lede" style="margin:0 0 24px;">{{ sec.cmpLede | default("Twelve dimensions where the two roles differ in practice. Neither role &ldquo;wins&rdquo; &mdash; they do different things. This table makes the boundaries clear.", true) | safe }}</p>
     <table class="cmp" data-viz="comparison-table" data-viz-state="FINAL">
-      <caption>Bookkeeper vs accountant &middot; what each role actually does across twelve dimensions</caption>
-      <thead><tr><th scope="col">Dimension</th><th scope="col" class="us">Bookkeeper<span class="sub">day-to-day records</span></th><th scope="col">Accountant / CPA<span class="sub">analysis &amp; planning</span></th></tr></thead>
+      <caption>{{ cmpCols.caption | default("Bookkeeper vs accountant &middot; what each role actually does across twelve dimensions", true) | safe }}</caption>
+      <thead><tr><th scope="col">{{ cmpCols.c1 | default("Dimension", true) | safe }}</th><th scope="col"{% if usCol == "a" %} class="us"{% endif %}>{{ aLabel | safe }}{% if cmpCols.aSub %}<span class="sub">{{ cmpCols.aSub | safe }}</span>{% elif not cmpCols.aKey %}<span class="sub">day-to-day records</span>{% endif %}</th><th scope="col"{% if usCol == "b" %} class="us"{% endif %}>{{ bLabel | safe }}{% if cmpCols.bSub %}<span class="sub">{{ cmpCols.bSub | safe }}</span>{% elif not cmpCols.bKey %}<span class="sub">analysis &amp; planning</span>{% endif %}</th></tr></thead>
       <tbody>
         {%- for r in vsTable %}
         <tr>
-          <th scope="row">{{ r.cap | safe }}</th>
-          <td class="us" data-col="Bookkeeper">{{ r.bk | safe }}</td>
-          <td data-col="Accountant / CPA">{{ r.acct | safe }}</td>
+          <th scope="row">{{ r[dk] | safe }}</th>
+          <td{% if usCol == "a" %} class="us"{% endif %} data-col="{{ aLabel | safe }}">{{ r[akey] | safe }}</td>
+          <td{% if usCol == "b" %} class="us"{% endif %} data-col="{{ bLabel | safe }}">{{ r[bkey] | safe }}</td>
         </tr>
         {%- endfor %}
       </tbody>
@@ -131,8 +151,8 @@ footerNav:
 {%- if together %}
 <section class="sec reveal">
   <div class="ct read">
-    <div class="ph"><span class="ph__t">How they work together</span><span class="ph__rule"></span></div>
-    <h2 class="h2" style="margin-bottom:18px;">The bookkeeper produces. The accountant interprets.</h2>
+    <div class="ph"><span class="ph__t">{{ sec.togetherTag | default("How they work together", true) | safe }}</span><span class="ph__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">{{ sec.togetherH | default("The bookkeeper produces. The accountant interprets.", true) | safe }}</h2>
     <div class="prose">{%- for p in together %}<p>{{ p | safe }}</p>{%- endfor %}</div>
   </div>
 </section>
@@ -142,9 +162,9 @@ footerNav:
 {%- if decision %}
 <section class="sec reveal">
   <div class="ct">
-    <div class="ph"><span class="ph__t">When you need each</span><span class="ph__rule"></span></div>
-    <h2 class="h2">A practical decision guide.</h2>
-    <p class="lede" style="margin:10px 0 28px;max-width:60ch;">Three patterns cover most U.S. small businesses. Find the one that fits your situation.</p>
+    <div class="ph"><span class="ph__t">{{ sec.decisionTag | default("When you need each", true) | safe }}</span><span class="ph__rule"></span></div>
+    <h2 class="h2">{{ sec.decisionH | default("A practical decision guide.", true) | safe }}</h2>
+    {%- if sec.decisionLede != false %}<p class="lede" style="margin:10px 0 28px;max-width:60ch;">{{ sec.decisionLede | default("Three patterns cover most U.S. small businesses. Find the one that fits your situation.", true) | safe }}</p>{%- endif %}
     <div class="r-3">
       {%- for d in decision %}
       <div class="dc-card"><span class="eyebrow">{{ d.eyebrow | safe }}</span><h3>{{ d.name | safe }}</h3><div class="prose">{{ d.body | safe }}</div></div>
@@ -158,9 +178,9 @@ footerNav:
 {%- if credentials %}
 <section class="sec reveal">
   <div class="ct">
-    <div class="ph"><span class="ph__t">Credentials, demystified</span><span class="ph__rule"></span></div>
-    <h2 class="h2">What each credential actually means.</h2>
-    <p class="lede" style="margin:10px 0 28px;max-width:60ch;">U.S. accounting credentials confuse a lot of buyers. Here&rsquo;s what each one means and what it actually authorizes.</p>
+    <div class="ph"><span class="ph__t">{{ sec.credentialsTag | default("Credentials, demystified", true) | safe }}</span><span class="ph__rule"></span></div>
+    <h2 class="h2">{{ sec.credentialsH | default("What each credential actually means.", true) | safe }}</h2>
+    {%- if sec.credentialsLede != false %}<p class="lede" style="margin:10px 0 28px;max-width:60ch;">{{ sec.credentialsLede | default("U.S. accounting credentials confuse a lot of buyers. Here&rsquo;s what each one means and what it actually authorizes.", true) | safe }}</p>{%- endif %}
     <div class="r-3">
       {%- for c in credentials %}
       <div class="dc-card"><span class="eyebrow">{{ c.tag | safe }}</span><h3>{{ c.name | safe }}</h3><div class="prose">{{ c.body | safe }}</div></div>
@@ -174,8 +194,8 @@ footerNav:
 {%- if fit %}
 <section class="sec reveal">
   <div class="ct read">
-    <div class="ph"><span class="ph__t">Where TechBrot fits</span><span class="ph__rule"></span></div>
-    <h2 class="h2" style="margin-bottom:18px;">We&rsquo;re the bookkeeping side. Done well.</h2>
+    <div class="ph"><span class="ph__t">{{ sec.fitTag | default("Where TechBrot fits", true) | safe }}</span><span class="ph__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">{{ sec.fitH | default("We&rsquo;re the bookkeeping side. Done well.", true) | safe }}</h2>
     <div class="prose">{%- for p in fit %}<p>{{ p | safe }}</p>{%- endfor %}</div>
     {%- if fitSpec %}
     <div class="trust-row">
@@ -202,12 +222,28 @@ footerNav:
 </section>
 {%- endif %}
 
+{#- VERDICT CARDS — competitor/product "when each fits" grid-3 (guarded) -#}
+{%- if verdictCards %}
+<section class="sec reveal">
+  <div class="ct">
+    <div class="ph"><span class="ph__t">{{ sec.verdictTag | default("The verdict", true) | safe }}</span><span class="ph__rule"></span></div>
+    <h2 class="h2">{{ sec.verdictH | default("When each option actually fits.", true) | safe }}</h2>
+    {%- if sec.verdictLede %}<p class="lede" style="margin:10px 0 28px;max-width:62ch;">{{ sec.verdictLede | safe }}</p>{%- endif %}
+    <div class="r-3">
+      {%- for v in verdictCards %}
+      <div class="dc-card">{% if v.eyebrow %}<span class="eyebrow">{{ v.eyebrow | safe }}</span>{% endif %}<h3>{{ v.name | safe }}</h3>{% if v.bullets %}<ul class="checklist">{% for b in v.bullets %}<li>{{ b | safe }}</li>{% endfor %}</ul>{% endif %}{% if v.note %}<p class="prose" style="font-size:14px;margin:12px 0 0;color:var(--color-ink-mute);">{{ v.note | safe }}</p>{% endif %}</div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
 {#- RELATED — sibling comparisons (sand band) -#}
 {%- if related %}
 <section class="sec reveal" style="background:#F7F2E9;border-top:1px solid #ECE5D8;border-bottom:1px solid #ECE5D8;">
   <div class="ct">
-    <div class="ph"><span class="ph__t">Other comparisons</span><span class="ph__rule"></span></div>
-    <h2 class="h2" style="margin-bottom:24px;">More honest comparisons in the same series.</h2>
+    <div class="ph"><span class="ph__t">{{ sec.relatedTag | default("Other comparisons", true) | safe }}</span><span class="ph__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">{{ sec.relatedH | default("More honest comparisons in the same series.", true) | safe }}</h2>
     <div class="r-3">
       {%- for n in related %}
       <a class="rel-card" href="{{ n.href }}"><h3 class="rel-card__t">{{ n.title | safe }}</h3><p class="rel-card__d">{{ n.body | safe }}</p></a>
@@ -221,8 +257,8 @@ footerNav:
 {%- if faq %}
 <section class="sec reveal">
   <div class="ct read">
-    <div class="ph"><span class="ph__t">Common questions</span><span class="ph__rule"></span></div>
-    <h2 class="h2" style="margin-bottom:24px;">What people ask before choosing.</h2>
+    <div class="ph"><span class="ph__t">{{ sec.faqTag | default("Common questions", true) | safe }}</span><span class="ph__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">{{ sec.faqH | default("What people ask before choosing.", true) | safe }}</h2>
     <div class="faq">
       {%- for item in faq %}
       <details name="cmp-faq"{% if loop.first %} open{% endif %}><summary>{{ item.q | safe }}<span class="pl"></span></summary><div>{{ item.a | safe }}</div></details>
