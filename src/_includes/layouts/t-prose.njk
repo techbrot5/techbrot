@@ -8,98 +8,110 @@ footerNav:
     - { href: "/resources/", text: "Resources & guides" }
 ---
 {#- ===========================================================================
-    t-prose — D2 prose family (NEW handoff "Prose - Template.dc.html").
-    Document/reading column (help-error + informational flavors). New handoff
-    CHROME via dc-base; the prose body (TL;DR · LIGHT ruled multi-Q&A AI ·
-    disclosure · diagnostic · fix-steps · call-breakout · prose/vs-table · faq)
-    renders via the elevated component layer. Editorial-calm compact hero (split
-    only where a page opts in via heroFigure). Final CTA = LIGHT (D2 convention).
-    No call-bar (never on guides). Frozen speakable #<slug>-in-brief-text kept.
+    t-prose — D2 prose family (handoff "Prose - Template.dc.html"). DOCUMENT /
+    READING-COLUMN spine. dc-base chrome + crumb. The two D2 flavors share this
+    spine: help/error (HERO error-badge + DISCLOSURE + DIAGNOSTIC + FIX-STEPS) and
+    informational (VARIANT-DETAIL prose + vs-table). The layout renders the framing
+    seams every D2 page shares — HERO (error-badge variant when `hero.badge` is set)
+    · TL;DR (own selectable block, sand) · AI-SUMMARY (prose ruled Q&A, light) —
+    then {{content}} = the page's PROSE BODY flowed into an editorial reading column
+    (.read--doc / .prose, ~68-72ch: disclosure · diagnostic · fix-steps[HowTo] ·
+    call-breakout · variant-detail · vs-table) · FAQ (crawlable) · LIGHT final CTA
+    (D2 convention — on paper, centered; NO earned-dark, NO call-bar). Frozen
+    speakable #<slug>-in-brief-text lives on the TL;DR text. Schema-referenced body
+    ids (e.g. #<slug>-fix HowTo anchor) are authored in the page body and preserved.
     =========================================================================== -#}
-{%- set heroFigure = heroFigure if heroFigure is defined else false -%}
+{%- set sec = sec or {} %}
+
+{#- HERO — compact editorial-calm reading-column hero. Error-badge variant when a
+    help/error page sets `hero.badge` (e.g. "ERROR · 6000-SERIES"); informational
+    pages omit it and render the plain eyebrow rule-mark. -#}
 {%- if hero %}
-{%- if heroFigure %}
-<section class="section hero-tier hero--compact hero--split" id="{{ slug }}-hero">
-  <div class="container">
-    <div class="hero-split">
-      <div class="hero">
-        <p class="hero__eyebrow"><span class="hero__eyebrow-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
-        <h1 class="hero__heading speakable">{{ hero.heading | safe }}</h1>
-        <p class="hero__subheading speakable">{{ hero.subheading | safe }}</p>
-        {%- if hero.actions %}
-        <div class="hero__actions">
-          {%- for action in hero.actions.slice(0, 2) %}
-          <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-            {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
-          {%- endfor %}
-        </div>
-        {%- endif %}
-        {%- if hero.trust %}
-        <ul class="hero__trust">
-          {%- for t in hero.trust %}<li class="hero__trust-item">{{ t | safe }}</li>{%- endfor %}
-        </ul>
-        {%- endif %}
-      </div>
-      <div class="hero__figure">{% include "partials/figure-" + heroFigure + ".svg" %}</div>
+<section class="section" id="{{ slug }}-hero" style="padding:56px 0 12px;">
+  <div class="ct read read--doc">
+    {%- if hero.badge %}
+    <div style="display:inline-flex;align-items:center;gap:9px;margin-bottom:20px;"><span class="error-pill">{{ hero.badge | safe }}</span></div>
+    {%- else %}
+    <p class="eyebrow" style="display:inline-flex;align-items:center;gap:12px;margin-bottom:20px;"><span class="rule-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
+    {%- endif %}
+    <h1 class="dsp speakable" style="font-weight:500;font-variation-settings:'opsz' 80;font-size:clamp(32px,1.7rem + 2.4vw,48px);margin:0 0 18px;">{{ hero.heading | safe }}</h1>
+    <p class="lede speakable" style="margin:0;max-width:62ch;">{{ hero.subheading | safe }}</p>
+    {%- if hero.actions %}
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;">
+      {%- for a in hero.actions.slice(0, 2) %}
+      <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel or (a.href and a.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
+      {%- endfor %}
     </div>
+    {%- endif %}
+    {#- reviewed byline — firm-level authorship (founder schema-only). Opt-in via `byline`. -#}
+    {%- if byline %}
+    <div class="prose-byline">
+      <span class="prose-byline__mark"><svg width="16" height="16" viewBox="0 0 64 64" fill="#FCFBF8" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span>
+      <div><p class="prose-byline__name">{{ byline.name | default("TechBrot &middot; Certified QuickBooks ProAdvisors", true) | safe }}</p><p class="prose-byline__meta">{{ byline.meta | safe }}</p></div>
+    </div>
+    {%- endif %}
   </div>
 </section>
-{%- else %}
-<section class="section hero-tier hero--compact" id="{{ slug }}-hero">
-  <div class="container">
-    <div class="hero">
-      <p class="hero__eyebrow"><span class="hero__eyebrow-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
-      <h1 class="hero__heading speakable">{{ hero.heading | safe }}</h1>
-      <p class="hero__subheading speakable">{{ hero.subheading | safe }}</p>
-      {%- if hero.actions %}
-      <div class="hero__actions">
-        {%- for action in hero.actions.slice(0, 2) %}
-        <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
-        {%- endfor %}
-      </div>
-      {%- endif %}
-      {%- if hero.trust %}
-      <ul class="hero__trust">
-        {%- for t in hero.trust %}<li class="hero__trust-item">{{ t | safe }}</li>{%- endfor %}
-      </ul>
-      {%- endif %}
-    </div>
-  </div>
-</section>
-{%- endif %}
 {%- endif %}
 
+{#- TL;DR — own selectable block (sand). FROZEN speakable id #<slug>-in-brief-text. -#}
 {%- if inBrief %}
-<section class="section section--compact" id="{{ slug }}-in-brief">
-  <div class="container">
-    <div class="in-brief">
-      <p class="in-brief__text" id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
-      {%- if inBrief.source %}<p class="in-brief__source">{{ inBrief.source | safe }}</p>{%- endif %}
+<section class="sec reveal" id="{{ slug }}-in-brief" style="padding-top:36px;padding-bottom:36px;">
+  <div class="ct read read--doc">
+    <div class="tldr-prose speakable">
+      <span class="eyebrow">{{ sec.tldrTag | default("TL;DR", true) }}</span>
+      <p id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
+      {%- if inBrief.source %}<p class="tldr__src">{{ inBrief.source | safe }}</p>{%- endif %}
     </div>
   </div>
 </section>
 {%- endif %}
 
+{#- AI SUMMARY — prose ruled Q&A list (light). Renders when `aiSummary` is provided
+    in frontmatter; pages that author it in the body skip this and flow it inline. -#}
+{%- if aiSummary %}
+<section class="sec reveal" id="{{ slug }}-ai-summary" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">For AI engines &amp; quick answers</div>
+    <h2 class="h2" style="margin-bottom:24px;">{{ sec.aiH | safe }}</h2>
+    <div class="ai-ruled speakable">
+      {%- for item in aiSummary %}<div class="ai-ruled__item"><h3>{{ item.q | safe }}</h3><p>{{ item.a | safe }}</p></div>{%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- ═══ PROSE BODY — the page's full-depth document (disclosure · diagnostic ·
+    fix-steps[HowTo] · call-breakout · variant-detail · vs-table), flowed into the
+    editorial reading column in shared dc-system v2 prose-body components ═══ -#}
 {{ content | safe }}
 
-{#- D2 final CTA = LIGHT, on PAPER, centered (handoff Prose convention: no sand
-    band — `.final-cta` from dc-system centers it). Keeps FAQ[sand]→CTA[paper]
-    alternation (section-bg gate). -#}
+{#- FAQ — own crawlable Q&A block (FAQPage verbatim). From `faq` frontmatter; pages
+    that author the FAQ in the body skip this. -#}
+{%- if faq %}
+<section class="sec reveal" id="{{ slug }}-faq" style="padding-top:32px;">
+  <div class="ct read read--doc">
+    <h2 class="h2" style="margin-bottom:26px;">{{ sec.faqH | safe }}</h2>
+    <div class="faq">{%- for item in faq %}<details name="{{ slug }}-faq"{% if loop.first %} open{% endif %}><summary>{{ item.q | safe }}<span class="pl"></span></summary><div>{{ item.a | safe }}</div></details>{%- endfor %}</div>
+    {%- if metaReviewed %}<p class="meta-reviewed"><span>Published: {{ metaReviewed }}</span><span>Updated: {{ metaReviewed }}</span><span>Reviewed: {{ metaReviewed }} &middot; Certified QuickBooks ProAdvisor</span></p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- FINAL CTA — LIGHT (D2 convention): paper, centered, no sand band, no earned-dark. -#}
 {%- if ctaBand %}
 <section class="section" id="{{ slug }}-cta" style="padding-top:72px;padding-bottom:80px;">
-  <div class="container">
+  <div class="ct read read--doc">
     <div class="final-cta">
-      <p class="section__eyebrow">{{ ctaBand.eyebrow | safe }}</p>
-      <h2 class="final-cta__heading">{{ ctaBand.heading | safe }}</h2>
+      <p class="eyebrow" style="margin-bottom:16px;">{{ ctaBand.eyebrow | safe }}</p>
+      <h2 class="final-cta__h">{{ ctaBand.heading | safe }}</h2>
       <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
       <div class="final-cta__actions">
-        {%- for action in ctaBand.actions %}
-        <a class="btn {{ action.class }}" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+        {%- for a in ctaBand.actions %}
+        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel or (a.href and a.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 24px;border-radius:13px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
         {%- endfor %}
       </div>
-      <p class="final-cta__disclaimer">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
+      <p class="final-cta__disclaimer" style="font-size:12.5px;line-height:1.6;color:var(--color-ink-faint);margin:24px auto 0;max-width:70ch;">TechBrot Inc. is an independent firm and is not affiliated with Intuit Inc. QuickBooks and ProAdvisor are trademarks of Intuit Inc. We do not file taxes or represent clients before tax authorities.</p>
     </div>
   </div>
 </section>
