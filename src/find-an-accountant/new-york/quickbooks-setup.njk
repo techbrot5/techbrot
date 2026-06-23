@@ -1,11 +1,11 @@
 ---json
 {
-  "layout": "layouts/t-bofu.njk",
+  "layout": "layouts/t-money.njk",
   "permalink": "/find-an-accountant/new-york/quickbooks-setup/",
   "slug": "ny-svc-qbsetup",
-  "tierClass": "section--tier-bofu",
   "bodyClass": "page--bofu",
-  "callBar": true,
+  "intent": "new-york",
+  "metaReviewed": "2026-06-07",
   "title": "New York QuickBooks Setup · TechBrot · TechBrot",
   "description": "QuickBooks setup for New York businesses — right edition, clean chart of accounts, NYC sales tax configured from day one. Fixed-fee, all 62 counties. Call (877) 751-5575.",
   "breadcrumb": [
@@ -14,162 +14,112 @@
     { "name": "New York", "href": "/find-an-accountant/new-york/" },
     { "name": "QuickBooks Setup" }
   ],
-  "heroFigure": "taccount",
   "hero": {
-    "trust": [
-      "Certified QuickBooks ProAdvisor team",
-      "Independent &middot; not Intuit",
-      "Fixed-fee &middot; written scope in 3 days"
-    ],
     "eyebrow": "New York &middot; QuickBooks",
     "heading": "New York QuickBooks setup done right from day one.",
-    "subheading": "The right edition, an industry-specific chart of accounts, and destination-based NYC sales-tax tracking configured before your first transaction &mdash; so your books stay accurate and never need a costly cleanup. Set up in your own QuickBooks file by a Certified ProAdvisor, fixed-fee from $750. We deliver the books; your CPA files.",
+    "subheading": "The right edition, an industry-specific chart of accounts, and destination-based NYC sales-tax tracking configured before your first transaction. Set up in your own QuickBooks file by a Certified ProAdvisor, fixed-fee from $750. We deliver the books; your CPA files.",
+    "helper": "Independent firm &middot; not Intuit. Fixed-fee, written scope in 3 days.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=new-york", "class": "btn--primary" },
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
-      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
+  },
+  "sec": {
+    "inBriefTag": "In brief",
+    "inBriefH": "New York QuickBooks setup, in brief.",
+    "aiH": "QuickBooks Setup in New York, in five questions.",
+    "intakeH": "Scope your QuickBooks setup.",
+    "faqH": "QuickBooks Setup questions."
   },
   "inBrief": {
     "text": "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor setup for New York businesses</strong> &mdash; the right edition, an industry-specific chart of accounts, destination-based NYC/NY sales-tax items, connected bank and card feeds, opening balances, payroll items, and reconciliation routines, configured in your own QuickBooks file by a Certified ProAdvisor. Fixed-fee from $750. The full New York QuickBooks-setup summary is below.",
     "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. New York sales-tax facts (destination-based NYC 8.875% combined rate; NYC UBT filed by your CPA) verified against NY Department of Taxation and Finance guidance. Independent firm &mdash; does not file New York taxes."
   },
   "ctaBand": {
+    "dark": true,
     "eyebrow": "New York businesses start here",
     "heading": "Set it up right &mdash; skip the cleanup later.",
     "lede": "Book a free discovery call. We&rsquo;ll recommend the right QuickBooks setup for your New York business, confirm how NYC/NY sales tax should be configured, and send a written fixed-fee scope within 3 business days. No pitch. Independent firm &mdash; does not file NY taxes; coordinates with your CPA.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=new-york", "class": "btn--primary" },
-      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
   }
 }
 ---
 
-{# ── SHORT VERSION · real H2 carrying the setup summary prose (right after the in-brief). (H2: The short version.) ── #}
-<section class="section section--compact" id="ny-svc-qbsetup-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In one paragraph</p>
-      <h2 class="section__heading">The short version.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in summary %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+{#- ═══ BESPOKE MIDDLE (NY QuickBooks setup) — full depth re-flowed into shared dc-system v2
+    components. Spine (hero/proof/§01 in-brief/§03 aiSummary/call/intake/faq/CTA) is
+    layout-owned (t-money). Bespoke sections alternate white/sand. Nothing dropped — every
+    contract heading, the 5 setup steps, the scope split, the advisory line, all 8 FAQ, and
+    the firm-level expert-review block preserved verbatim. NY content frozen. Anchors =
+    this page's own pageGraph ids (#ny-svc-qbsetup-*). Founder-name-zero. ═══ -#}
+
+{#- THE SHORT VERSION — speakable summary (frozen #ny-svc-qbsetup-summary) — white -#}
+<section class="sec reveal" id="ny-svc-qbsetup-summary">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">The short version.</h2>
+    <div class="prose speakable">
+      {%- for p in summary %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── FIVE QUESTIONS · AI-summary block. (H2: QuickBooks Setup in New York, in five questions.) ── #}
-<section class="section" id="ny-svc-qbsetup-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">QuickBooks Setup in New York, in five questions.</h2>
-    </header>
-    <dl class="ai-summary ai-summary--ruled" id="ny-svc-qbsetup-ai-summary-list">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
-        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
-      </div>
-      {%- endfor %}
-    </dl>
-  </div>
-</section>
-
-{# ── HOW WE HANDLE · the five setup steps (grid-3 buyer-cards). (H2: How we handle quickbooks setup for New York businesses. + 5 H3s) ── #}
-<section class="section section--alt" id="ny-svc-qbsetup-handle">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s involved</p>
-      <h2 class="section__heading">How we handle quickbooks setup for New York businesses.</h2>
-      <p class="section__lede">Every setup is scoped to your business and delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
-    </header>
-    <div class="grid-3">
+{#- HOW WE HANDLE — the five setup steps (numbered lift cards) — sand -#}
+<section class="sec reveal" id="ny-svc-qbsetup-handle" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">What&rsquo;s involved</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">How we handle quickbooks setup for New York businesses.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">Every setup is scoped to your business and delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    <div class="r-2">
       {%- for s in handle %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ s.num }}</p>
-        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-      </article>
+      <div class="lift"><span class="lift__n">{{ s.num | safe }}</span><div><h3>{{ s.title | safe }}</h3><p>{{ s.body | safe }}</p></div></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── SCOPE SPLIT · honest books/CPA boundary (grid-2 buyer-cards). (H2: What we do — and what your CPA does. + H3 TechBrot + H3 Your CPA) ── #}
-<section class="section" id="ny-svc-qbsetup-scope">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Honest scope</p>
-      <h2 class="section__heading">What we do &mdash; and what your CPA does.</h2>
-    </header>
-    <div class="grid-2">
+{#- HONEST SCOPE — what we do / what your CPA does (two checklist cards) — white -#}
+<section class="sec reveal" id="ny-svc-qbsetup-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:22ch;margin-bottom:36px;">What we do &mdash; and what your CPA does.</h2>
+    <div class="r-2">
       {%- for col in scope %}
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading">{{ col.title | safe }}</h3>
-        <ul class="checks-list">
-          {%- for i in col.items %}<li>{{ i | safe }}</li>{%- endfor %}
-        </ul>
-      </article>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── ADVISORY · standing brand line carried as section prose. (H2: Automation handles the data entry. We handle the judgment.) ── #}
-<section class="section section--alt" id="ny-svc-qbsetup-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The advisory line</p>
-      <h2 class="section__heading">Automation handles the data entry. We handle the judgment.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in advisoryBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
-    </div>
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="/contact/?intent=new-york">Book the discovery call</a>
-    </div>
-  </div>
-</section>
-
-{# ── FAQ · 8 verbatim contract Q/A; visible faq__list = FAQPage schema (same array). (H2: QuickBooks Setup questions.) ── #}
-<section class="section" id="ny-svc-qbsetup-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">QuickBooks Setup questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-svc-qbsetup-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="ny-svc-qbsetup-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
+      <div class="incl-card">
+        <h3>{{ col.title | safe }}</h3>
+        <ul class="checklist">{%- for i in col.items %}<li>{{ i | safe }}</li>{%- endfor %}</ul>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── EXPERT REVIEW · firm-level, no founder name (byline-block + meta-reviewed). (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
-<section class="section section--alt" id="ny-svc-qbsetup-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
-    </header>
-    <div class="byline-block">
-      <div class="byline-block__mark" aria-hidden="true"></div>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
-      </div>
-    </div>
+{#- THE ADVISORY LINE — statement + body prose — sand -#}
+<section class="sec reveal" id="ny-svc-qbsetup-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">The advisory line</span><span class="idx__rule"></span></div>
+    <h2 class="statement">Automation handles the data entry. We handle the judgment.</h2>
     <div class="prose">
+      {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- EXPERT REVIEW — firm-level (no founder name) byline + standards prose + trust-row + meta — white -#}
+<section class="sec reveal" id="ny-svc-qbsetup-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
+      <div>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:22px;">
       <p>This page reflects how TechBrot handles New York QuickBooks setup engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, an independent ProAdvisor firm, and reviewed for technical accuracy on edition selection, chart-of-accounts structure, and destination-based <a href="https://www.tax.ny.gov/" rel="noopener nofollow">NYC/NY sales-tax</a> configuration. Pricing reflects TechBrot&rsquo;s New York setup ranges. TechBrot delivers the books and coordinates with your CPA, who files New York and federal returns and the NYC UBT.</p>
     </div>
     <div class="trust-row">

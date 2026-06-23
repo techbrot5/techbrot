@@ -1,11 +1,11 @@
 ---json
 {
-  "layout": "layouts/t-bofu.njk",
+  "layout": "layouts/t-money.njk",
   "permalink": "/find-an-accountant/new-york/quickbooks-training/",
   "slug": "ny-svc-qbtraining",
-  "tierClass": "section--tier-bofu",
   "bodyClass": "page--bofu",
-  "callBar": true,
+  "intent": "new-york",
+  "metaReviewed": "2026-06-07",
   "title": "New York QuickBooks Training · TechBrot",
   "description": "One-on-one QuickBooks training for New York businesses from a Certified ProAdvisor — taught on your own file, including NYC sales-tax filing. From $150/hr, all 62 counties. Call (877) 751-5575.",
   "breadcrumb": [
@@ -14,167 +14,115 @@
     { "name": "New York", "href": "/find-an-accountant/new-york/" },
     { "name": "QuickBooks Training" }
   ],
-  "heroFigure": "taccount",
   "hero": {
-    "trust": [
-      "Certified QuickBooks ProAdvisor team",
-      "Independent &middot; not Intuit",
-      "Fixed-fee &middot; written scope in 3 days"
-    ],
     "eyebrow": "New York &middot; QuickBooks Training",
     "heading": "Learn QuickBooks the way your business actually uses it.",
-    "subheading": "One-on-one QuickBooks training from a Certified ProAdvisor, taught live on your own company file &mdash; not a generic demo. Sessions are built around your role, your industry, and the New York tasks that trip people up: NYC sales-tax filing, monthly reconciliation, invoicing, and the reports that actually tell you how the business is doing. Every session is recorded. We teach the software; your CPA files.",
+    "subheading": "One-on-one QuickBooks training from a Certified ProAdvisor, taught live on your own company file &mdash; built around your role, your industry, and the New York tasks that trip people up. Every session is recorded. We teach the software; your CPA files.",
+    "helper": "Independent firm &middot; not Intuit. From $150/hour, all 62 counties.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-spoke&funnel_stage=TOFU", "class": "btn--primary" },
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
-      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-spoke&funnel_stage=TOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
+  },
+  "sec": {
+    "inBriefTag": "In brief",
+    "inBriefH": "New York QuickBooks training, in brief.",
+    "aiH": "New York QuickBooks training, in five questions.",
+    "intakeH": "Scope your training.",
+    "faqH": "What people ask before booking QuickBooks training."
   },
   "inBrief": {
     "text": "<strong>TechBrot</strong> delivers <strong>live one-on-one QuickBooks training for New York businesses</strong> &mdash; taught by a Certified QuickBooks ProAdvisor on your own company file, role-based, and built around the New York tasks that matter, including NYC and NY sales-tax filing. From $150/hour. The full New York QuickBooks-training summary is below.",
     "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. New York sales-tax facts (destination-based sourcing; NYC 8.875% combined rate; quarterly NYS return) reflect NY Department of Taxation and Finance guidance. We teach the software; your CPA files."
   },
   "ctaBand": {
+    "dark": true,
     "eyebrow": "New York businesses start here",
     "heading": "Get confident in your own QuickBooks.",
     "lede": "Book a free discovery call. We&rsquo;ll figure out exactly what you need to learn, recommend the right number of sessions, and confirm pricing before anything starts. No pitch. Independent firm &mdash; does not file NY taxes; coordinates with your CPA.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-spoke&funnel_stage=BOFU", "class": "btn--primary" },
-      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-spoke&funnel_stage=BOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
   }
 }
 ---
 
-{# ── SUMMARY · real H2 carrying the training summary prose (right after the in-brief). (H2: What New York QuickBooks training actually is.) ── #}
-<section class="section section--compact" id="ny-svc-qbtraining-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In one paragraph</p>
-      <h2 class="section__heading">What New York QuickBooks training actually is.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in summary %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+{#- ═══ BESPOKE MIDDLE (NY QuickBooks training) — full depth re-flowed into shared dc-system v2
+    components. Spine (hero/proof/§01 in-brief/§03 aiSummary/call/intake/faq/CTA) is
+    layout-owned (t-money). Bespoke sections alternate white/sand. Nothing dropped — every
+    contract heading, the 5 training topics, the do/don't scope split, the advisory line,
+    all 7 FAQ, and the firm-level expert-review block preserved verbatim. NY content frozen.
+    Anchors = this page's own pageGraph ids (#ny-svc-qbtraining-*). Founder-name-zero. ═══ -#}
+
+{#- WHAT TRAINING IS — speakable summary (frozen #ny-svc-qbtraining-summary) — white -#}
+<section class="sec reveal" id="ny-svc-qbtraining-summary">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">What New York QuickBooks training actually is.</h2>
+    <div class="prose speakable">
+      {%- for p in summary %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── AI SUMMARY · five-question block. (H2: New York QuickBooks training, in five questions.) ── #}
-<section class="section" id="ny-svc-qbtraining-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">New York QuickBooks training, in five questions.</h2>
-    </header>
-    <dl class="ai-summary ai-summary--ruled" id="ny-svc-qbtraining-ai-summary-list">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
-        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
-      </div>
-      {%- endfor %}
-    </dl>
-  </div>
-</section>
-
-{# ── COVERS · the five training topics (grid-3 buyer-cards). (H2 + 5 H3s) ── #}
-<section class="section section--alt" id="ny-svc-qbtraining-covers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What we cover</p>
-      <h2 class="section__heading">What New York QuickBooks training covers.</h2>
-      <p class="section__lede">Every session is scoped to your role and your file, delivered live by a named Certified ProAdvisor and recorded for the team.</p>
-    </header>
-    <div class="grid-3">
+{#- WHAT WE COVER — the five training topics (numbered lift cards) — sand -#}
+<section class="sec reveal" id="ny-svc-qbtraining-covers" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">What we cover</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">What New York QuickBooks training covers.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">Every session is scoped to your role and your file, delivered live by a named Certified ProAdvisor and recorded for the team.</p>
+    <div class="r-2">
       {%- for c in covers %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ c.num }}</p>
-        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
-        <p class="buyer-card__body">{{ c.body | safe }}</p>
-      </article>
+      <div class="lift"><span class="lift__n">{{ c.num | safe }}</span><div><h3>{{ c.title | safe }}</h3><p>{{ c.body | safe }}</p></div></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── SCOPE · what training is and isn't (grid-2 + checks-list). (H2 + H3 Training covers / H3 Not training) ── #}
-<section class="section" id="ny-svc-qbtraining-scope">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Honest scope</p>
-      <h2 class="section__heading">What training gives you &mdash; and what it doesn&rsquo;t.</h2>
-    </header>
-    <div class="grid-2">
-      <div>
+{#- HONEST SCOPE — what training gives you / what it doesn't (two checklist cards) + note — white -#}
+<section class="sec reveal" id="ny-svc-qbtraining-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:36px;">What training gives you &mdash; and what it doesn&rsquo;t.</h2>
+    <div class="r-2">
+      <div class="incl-card">
         <h3>Training covers</h3>
-        <ul class="checks-list">
-          {%- for t in scopeDo %}<li>{{ t | safe }}</li>{%- endfor %}
-        </ul>
+        <ul class="checklist">{%- for t in scopeDo %}<li>{{ t | safe }}</li>{%- endfor %}</ul>
       </div>
-      <div>
+      <div class="incl-card">
         <h3>Not training</h3>
-        <ul class="checks-list">
-          {%- for t in scopeDont %}<li>{{ t | safe }}</li>{%- endfor %}
-        </ul>
+        <ul class="checklist">{%- for t in scopeDont %}<li>{{ t | safe }}</li>{%- endfor %}</ul>
       </div>
     </div>
-    <p class="prose">{{ scopeNote | safe }}</p>
+    <p class="prose" style="margin-top:28px;max-width:72ch;">{{ scopeNote | safe }}</p>
   </div>
 </section>
 
-{# ── ADVISORY · standing brand line carried as section prose. (H2: Automation handles the data entry. We handle the judgment.) ── #}
-<section class="section section--alt" id="ny-svc-qbtraining-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The advisory line</p>
-      <h2 class="section__heading">Automation handles the data entry. We handle the judgment.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in advisoryBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
-    </div>
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="/contact/?intent=new-york&amp;state=new-york&amp;source_type=state-spoke&amp;funnel_stage=BOFU">Book the discovery call</a>
-    </div>
-  </div>
-</section>
-
-{# ── FAQ · 7 verbatim contract Q/A; visible faq__list = FAQPage schema (same array). (H2: What people ask before booking QuickBooks training.) ── #}
-<section class="section" id="ny-svc-qbtraining-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">What people ask before booking QuickBooks training.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-svc-qbtraining-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="ny-svc-qbtraining-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── EXPERT REVIEW · firm-level, no founder name (byline-block + meta-reviewed). (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
-<section class="section section--alt" id="ny-svc-qbtraining-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
-    </header>
-    <div class="byline-block">
-      <div class="byline-block__mark" aria-hidden="true"></div>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
-      </div>
-    </div>
+{#- THE ADVISORY LINE — statement + body prose — sand -#}
+<section class="sec reveal" id="ny-svc-qbtraining-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">The advisory line</span><span class="idx__rule"></span></div>
+    <h2 class="statement">Automation handles the data entry. We handle the judgment.</h2>
     <div class="prose">
+      {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- EXPERT REVIEW — firm-level (no founder name) byline + standards prose + trust-row + meta — white -#}
+<section class="sec reveal" id="ny-svc-qbtraining-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
+      <div>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:22px;">
       <p>This page reflects how TechBrot delivers New York QuickBooks training. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on QuickBooks Online and Desktop instruction and on the New York sales-tax handling taught in sessions &mdash; destination-based sourcing, the NYC 8.875% combined rate, and the quarterly <a href="https://www.tax.ny.gov/" rel="noopener nofollow">New York State return</a>. Pricing reflects TechBrot&rsquo;s New York training rates. TechBrot teaches the software and coordinates with your CPA, who files.</p>
     </div>
     <div class="trust-row">

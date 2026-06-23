@@ -59,9 +59,10 @@ footerNav:
 <section class="sec reveal" id="{{ slug }}-signals">
   <div class="ct">
     <div class="idx"><span class="idx__n">§02</span><span class="idx__t">{{ sec.signalsTag | default("Is this you", true) }}</span><span class="idx__rule"></span></div>
-    <h2 class="h2" style="max-width:22ch;margin-bottom:36px;">{{ sec.signalsH | safe }}</h2>
+    <h2 class="h2" style="max-width:22ch;margin-bottom:{% if sec.signalsLede %}14px{% else %}36px{% endif %};">{{ sec.signalsH | safe }}</h2>
+    {%- if sec.signalsLede %}<p class="lede" style="margin:0 0 36px;max-width:62ch;">{{ sec.signalsLede | safe }}</p>{%- endif %}
     <div class="r-2">
-      {%- for s in signals %}<div class="lift"><span class="lift__n">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span><div><h3>{{ s.opener | safe }}</h3>{% if s.body %}<p>{{ s.body | safe }}</p>{% endif %}</div></div>{%- endfor %}
+      {%- for s in signals %}<div class="lift"><span class="lift__n">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span><div>{% if s.signal %}<p class="lift__tag mono">{{ s.signal | safe }}</p>{% endif %}<h3>{{ (s.opener or s.title) | safe }}</h3>{% if s.body %}<p>{{ s.body | safe }}</p>{% endif %}</div></div>{%- endfor %}
     </div>
   </div>
 </section>

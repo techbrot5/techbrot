@@ -1,11 +1,11 @@
 ---json
 {
-  "layout": "layouts/t-bofu.njk",
+  "layout": "layouts/t-money.njk",
   "permalink": "/find-an-accountant/new-york/small-business-accountant/",
   "slug": "ny-svc-smallbiz",
-  "tierClass": "section--tier-bofu",
   "bodyClass": "page--bofu",
-  "callBar": true,
+  "intent": "new-york",
+  "metaReviewed": "2026-06-07",
   "title": "New York Small Business Accountant · TechBrot",
   "description": "Need a small business accountant in New York? Certified QuickBooks ProAdvisor bookkeeping, setup, and cleanup — coordinated with your CPA. Fixed-fee, all 62 counties. Call (877) 751-5575.",
   "breadcrumb": [
@@ -14,165 +14,115 @@
     { "name": "New York", "href": "/find-an-accountant/new-york/" },
     { "name": "Small Business Accountant" }
   ],
-  "heroFigure": "taccount",
   "hero": {
-    "trust": [
-      "Certified QuickBooks ProAdvisor team",
-      "Independent &middot; not Intuit",
-      "Fixed-fee &middot; written scope in 3 days"
-    ],
     "eyebrow": "New York &middot; Small Business",
-    "heading": "Your New York <em>small business accountant</em>, starting with the books.",
-    "subheading": "Bookkeeping, QuickBooks setup, and cleanup for New York small businesses &mdash; the financial backbone that keeps you organized, compliant, and ready for your CPA. Entity-aware books for LLCs, S-corps, and partnerships, NYC &amp; NY sales-tax tracking, and a named Certified ProAdvisor. We keep the books; your CPA files. Fixed-fee, all 62 counties.",
+    "heading": "Your New York small business accountant, starting with the books.",
+    "subheading": "Bookkeeping, QuickBooks setup, and cleanup for New York small businesses &mdash; entity-aware books for LLCs, S-corps, and partnerships, NYC &amp; NY sales-tax tracking, and a named Certified ProAdvisor. We keep the books; your CPA files. Fixed-fee, all 62 counties.",
+    "helper": "Independent firm &middot; not Intuit, not a CPA firm. Coordinates with your CPA.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-money&funnel_stage=TOFU", "class": "btn--primary" },
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
-      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-money&funnel_stage=TOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
+  },
+  "sec": {
+    "inBriefTag": "In brief",
+    "inBriefH": "New York small business accounting, in brief.",
+    "aiH": "New York small business accounting, in five questions.",
+    "intakeH": "Scope your New York engagement.",
+    "faqH": "New York small business accounting questions."
   },
   "inBrief": {
     "text": "<strong>TechBrot</strong> is the <strong>day-to-day financial backbone for New York small businesses</strong> &mdash; Certified QuickBooks ProAdvisor bookkeeping, setup, cleanup, entity-aware chart of accounts, and NYC &amp; NY sales-tax tracking, kept in your own QuickBooks file by a named ProAdvisor and coordinated with your CPA, who files. The full New York small-business summary is below.",
     "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc., and not a CPA or tax-prep firm. New York facts (NYC Unincorporated Business Tax; NYC combined 8.875% sales-tax rate) reflect current NYC and NY DTF guidance."
   },
   "ctaBand": {
+    "dark": true,
     "eyebrow": "New York small businesses start here",
-    "heading": "Get the books right — the rest gets easier.",
+    "heading": "Get the books right &mdash; the rest gets easier.",
     "lede": "Book a free discovery call. We&rsquo;ll review your situation and your books, recommend setup, cleanup, monthly service, or a mix, and send a written fixed-fee quote within 3 business days. No pitch. Independent firm &mdash; we keep the books and coordinate with your CPA, who files; we do not file NY taxes.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-money&funnel_stage=MOFU", "class": "btn--primary" },
-      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-money&funnel_stage=MOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
   }
 }
 ---
 
-{# ── SHORT VERSION · real H2 carrying the summary prose (right after the in-brief). (H2: The short version.) ── #}
-<section class="section section--compact" id="ny-svc-smallbiz-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In one paragraph</p>
-      <h2 class="section__heading">The short version.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in summary %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+{#- ═══ BESPOKE MIDDLE (NY small business accountant) — full depth re-flowed into shared
+    dc-system v2 components. Spine (hero/proof/§01 in-brief/§03 aiSummary/call/intake/faq/CTA)
+    is layout-owned (t-money). Bespoke sections alternate white/sand. Nothing dropped — the
+    short version, the five financial-backbone services (with their cross-links), the scope
+    split (TechBrot / Your CPA), the advisory line, all 8 FAQ, and the firm-level
+    expert-review block preserved verbatim. NY content frozen. Anchors = this page's own
+    pageGraph ids (#ny-svc-smallbiz-*). Founder-name-zero. ═══ -#}
+
+{#- THE SHORT VERSION — speakable summary (frozen #ny-svc-smallbiz-summary) — white -#}
+<section class="sec reveal" id="ny-svc-smallbiz-summary">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">The short version.</h2>
+    <div class="prose speakable">
+      {%- for p in summary %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── AI SUMMARY · five-question block. (H2: New York small business accounting, in five questions.) ── #}
-<section class="section" id="ny-svc-smallbiz-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">New York small business accounting, in five questions.</h2>
-    </header>
-    <dl class="ai-summary ai-summary--ruled" id="ny-svc-smallbiz-ai-summary-list">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
-        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
-      </div>
-      {%- endfor %}
-    </dl>
-  </div>
-</section>
-
-{# ── FINANCIAL BACKBONE · the five services (grid-3 buyer-cards). (H2 + 5 H3s) ── #}
-<section class="section section--alt" id="ny-svc-smallbiz-handle">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What we handle for New York small businesses</p>
-      <h2 class="section__heading">The financial backbone, built and maintained.</h2>
-      <p class="section__lede">Every engagement is scoped to your business and entity, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
-    </header>
-    <div class="grid-3">
+{#- THE FINANCIAL BACKBONE — the five services (numbered lift cards, each with its cross-link) — sand -#}
+<section class="sec reveal" id="ny-svc-smallbiz-handle" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">What we handle for New York small businesses</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">The financial backbone, built and maintained.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">Every engagement is scoped to your business and entity, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    <div class="r-2">
       {%- for s in handle %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ s.num | safe }}</p>
-        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ s.href }}">{{ s.cta | safe }}</a>
-      </article>
+      <div class="lift"><span class="lift__n">{{ s.num | safe }}</span><div><h3>{{ s.title | safe }}</h3><p>{{ s.body | safe }}</p><p style="margin-top:10px;"><a href="{{ s.href }}" style="color:var(--color-accent);font-size:14px;font-weight:600;">{{ s.cta | safe }}</a></p></div></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── SCOPE SPLIT · what we do vs. what your CPA does (grid-2 buyer-cards). (H2 + 2 H3s: TechBrot / Your CPA) ── #}
-<section class="section" id="ny-svc-smallbiz-scope">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Honest scope</p>
-      <h2 class="section__heading">What we do &mdash; and what your CPA does.</h2>
-      <p class="section__lede">We&rsquo;re bookkeepers and Certified QuickBooks ProAdvisors, not a CPA or tax-prep firm. The split is clean &mdash; and we coordinate directly across it.</p>
-    </header>
-    <div class="grid-2">
+{#- HONEST SCOPE — what we do / what your CPA does (two checklist cards, role label kept) — white -#}
+<section class="sec reveal" id="ny-svc-smallbiz-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">What we do &mdash; and what your CPA does.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">We&rsquo;re bookkeepers and Certified QuickBooks ProAdvisors, not a CPA or tax-prep firm. The split is clean &mdash; and we coordinate directly across it.</p>
+    <div class="r-2">
       {%- for col in scope %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ col.role | safe }}</p>
-        <h3 class="buyer-card__heading">{{ col.title | safe }}</h3>
-        <ul class="checks-list">
-          {%- for it in col.items %}<li>{{ it | safe }}</li>{%- endfor %}
-        </ul>
-      </article>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── ADVISORY · standing brand line carried as section prose. (H2: Automation handles the data entry. We handle the judgment.) ── #}
-<section class="section section--alt" id="ny-svc-smallbiz-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the books</p>
-      <h2 class="section__heading">Automation handles the data entry. We handle the judgment.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in advisoryBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
-    </div>
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="/contact/?intent=new-york&amp;state=new-york&amp;source_type=state-money&amp;funnel_stage=MOFU">Book the discovery call</a>
-    </div>
-  </div>
-</section>
-
-{# ── FAQ · 8 verbatim contract Q/A; visible faq__list = FAQPage schema (same array). (H2: New York small business accounting questions.) ── #}
-<section class="section" id="ny-svc-smallbiz-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">New York small business accounting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-svc-smallbiz-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="ny-svc-smallbiz-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
+      <div class="incl-card">
+        <p class="eyebrow" style="display:block;margin-bottom:8px;">{{ col.role | safe }}</p>
+        <h3>{{ col.title | safe }}</h3>
+        <ul class="checklist">{%- for it in col.items %}<li>{{ it | safe }}</li>{%- endfor %}</ul>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── EXPERT REVIEW · firm-level, no founder name (byline-block + meta-reviewed). (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
-<section class="section section--alt" id="ny-svc-smallbiz-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
-    </header>
-    <div class="byline-block">
-      <div class="byline-block__mark" aria-hidden="true"></div>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
-      </div>
-    </div>
+{#- THE ADVISORY LINE — statement + body prose — sand -#}
+<section class="sec reveal" id="ny-svc-smallbiz-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Beyond the books</span><span class="idx__rule"></span></div>
+    <h2 class="statement">Automation handles the data entry. We handle the judgment.</h2>
     <div class="prose">
+      {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- EXPERT REVIEW — firm-level (no founder name) byline + standards prose + trust-row + meta — white -#}
+<section class="sec reveal" id="ny-svc-smallbiz-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
+      <div>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:22px;">
       <p>This page reflects how TechBrot handles New York small-business engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on the bookkeeping scope, entity-aware chart of accounts, and New York references (the <a href="https://www.nyc.gov/site/finance/business/business-unincorporated-business-tax-ubt.page" rel="noopener nofollow">NYC Unincorporated Business Tax</a> and NYC&rsquo;s combined 8.875% sales-tax rate). TechBrot keeps the books and coordinates with your CPA, who files; we do not file New York or federal returns and do not represent clients before the tax authorities.</p>
     </div>
     <div class="trust-row">

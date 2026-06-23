@@ -1,11 +1,11 @@
 ---json
 {
-  "layout": "layouts/t-bofu.njk",
+  "layout": "layouts/t-money.njk",
   "permalink": "/find-an-accountant/new-york/sales-tax-help/",
   "slug": "ny-svc-salestax",
-  "tierClass": "section--tier-bofu",
   "bodyClass": "page--bofu",
-  "callBar": true,
+  "intent": "new-york",
+  "metaReviewed": "2026-06-15",
   "title": "New York Sales Tax Help for Businesses · TechBrot",
   "description": "New York sales tax help — 8.875% NYC rate, $500K economic nexus, Certificate of Authority, quarterly filing, SaaS taxability. Tracked in your books. Call (877) 751-5575.",
   "breadcrumb": [
@@ -14,163 +14,117 @@
     { "name": "New York", "href": "/find-an-accountant/new-york/" },
     { "name": "Sales Tax Help" }
   ],
-  "heroFigure": "taccount",
   "hero": {
-    "trust": [
-      "Certified QuickBooks ProAdvisor team",
-      "Independent &middot; not Intuit",
-      "Fixed-fee &middot; written scope in 3 days"
-    ],
     "eyebrow": "New York &middot; Sales Tax",
     "heading": "New York sales tax , tracked right in your books.",
-    "subheading": "The 8.875% NYC rate, $500K economic nexus, the Certificate of Authority, quarterly filing, and SaaS taxability &mdash; explained plainly and tracked accurately in your own QuickBooks file by a named Certified ProAdvisor, so your sales-tax liability reconciles and the quarterly return is a non-event. We prepare CPA-ready figures; you or your CPA file via NYS Web File.",
+    "subheading": "The 8.875% NYC rate, $500K economic nexus, the Certificate of Authority, quarterly filing, and SaaS taxability &mdash; tracked accurately in your own QuickBooks file by a named Certified ProAdvisor, so the quarterly return is a non-event. We prepare CPA-ready figures; you or your CPA file via NYS Web File.",
+    "helper": "Independent firm &middot; not Intuit. Does not file NY returns; coordinates with your CPA.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-tax&funnel_stage=MOFU", "class": "btn--primary" },
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
-      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-tax&funnel_stage=MOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
+  },
+  "sec": {
+    "inBriefTag": "In brief",
+    "inBriefH": "New York sales tax, in brief.",
+    "aiH": "New York sales tax, in five questions.",
+    "intakeH": "Scope your sales-tax tracking.",
+    "faqH": "New York sales tax questions."
   },
   "inBrief": {
     "text": "<strong>TechBrot</strong> tracks <strong>New York sales tax in your own QuickBooks file</strong> &mdash; destination-based rates including NYC&rsquo;s 8.875% combined rate (4% state + 4.5% city + 0.375% MCTD), taxable-vs-exempt categorization, economic-nexus monitoring ($500K + 100 transactions), and monthly reconciliation of your sales-tax liability &mdash; then prepares CPA-ready quarterly figures. The full New York sales-tax summary is below.",
     "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. New York sales-tax facts (the 8.875% NYC combined rate; the $500K / 100-transaction economic-nexus threshold; Certificate of Authority / Form DTF-17; quarterly due dates; SaaS taxability) reflect NYS Department of Taxation &amp; Finance rules current as of the review date and are reviewed periodically; TechBrot does not file NY sales-tax or income-tax returns and does not represent clients before the Tax Department."
   },
   "ctaBand": {
+    "dark": true,
     "eyebrow": "New York businesses start here",
     "heading": "Get your New York sales tax tracked properly.",
     "lede": "Book a free books review. We&rsquo;ll check how your books handle New York sales tax, flag any nexus or taxability gaps, and send a written fixed-fee quote within 3 business days. No pitch. Independent firm &mdash; does not file NY sales-tax or income-tax returns; coordinates with your CPA.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-tax&funnel_stage=BOFU", "class": "btn--primary" },
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
-      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-york&state=new-york&source_type=state-tax&funnel_stage=BOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
   }
 }
 ---
 
-{# ── SUMMARY · real H2 carrying the sales-tax summary prose (right after the in-brief). (H2: The short version.) ── #}
-<section class="section section--compact" id="ny-svc-salestax-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <h2 class="section__heading">The short version.</h2>
-    </header>
-    <p class="prose">{{ summary | safe }}</p>
-  </div>
-</section>
+{#- ═══ BESPOKE MIDDLE (NY sales-tax help) — full depth re-flowed into shared dc-system v2
+    components. Spine (hero/proof/§01 in-brief/§03 aiSummary/call/intake/faq/CTA) is
+    layout-owned (t-money). Bespoke sections alternate white/sand. Nothing dropped — the
+    short version, the three-reason "why it trips businesses up" prose + cards, the honest
+    do/don't scope split, the advisory line, all 8 FAQ, and the firm-level expert-review
+    block preserved verbatim. NY content frozen. Anchors = this page's own pageGraph ids
+    (#ny-svc-salestax-*). Founder-name-zero. ═══ -#}
 
-{# ── AI SUMMARY · five-question block. (H2: New York sales tax, in five questions.) ── #}
-<section class="section" id="ny-svc-salestax-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">New York sales tax, in five questions.</h2>
-    </header>
-    <dl class="ai-summary ai-summary--ruled" id="ny-svc-salestax-ai-summary-list">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
-        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
-      </div>
-      {%- endfor %}
-    </dl>
-  </div>
-</section>
-
-{# ── WHY IT TRIPS BUSINESSES UP · body prose + the three reasons (grid-3 buyer-cards). (H2: Why New York sales tax trips up so many businesses) ── #}
-<section class="section section--alt" id="ny-svc-salestax-why">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Why New York is hard</p>
-      <h2 class="section__heading">Why New York sales tax trips up so many businesses</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in whyBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+{#- THE SHORT VERSION — speakable summary (frozen #ny-svc-salestax-summary; single paragraph) — white -#}
+<section class="sec reveal" id="ny-svc-salestax-summary">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In short</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">The short version.</h2>
+    <div class="prose speakable">
+      <p>{{ summary | safe }}</p>
     </div>
-    <div class="grid-3">
+  </div>
+</section>
+
+{#- WHY NEW YORK IS HARD — body prose + the three reasons (lift cards) — sand -#}
+<section class="sec reveal" id="ny-svc-salestax-why" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Why New York is hard</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:24px;">Why New York sales tax trips up so many businesses</h2>
+    <div class="prose" style="max-width:72ch;margin-bottom:40px;">
+      {%- for p in whyBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+    <div class="r-3">
       {%- for c in whyCards %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ c.signal | safe }}</p>
-        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
-        <p class="buyer-card__body">{{ c.body | safe }}</p>
-      </article>
+      <div class="lift"><span class="lift__n">{{ c.signal | safe }}</span><div><h3>{{ c.title | safe }}</h3><p>{{ c.body | safe }}</p></div></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── SCOPE · honest do/don't split (grid-2; checks-list inside each col). 2 frozen H3s verbatim. (H2: How we help with New York sales tax. + h3 TechBrot handles / h3 You or your CPA handle) ── #}
-<section class="section" id="ny-svc-salestax-scope">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Honest scope</p>
-      <h2 class="section__heading">How we help with New York sales tax.</h2>
-    </header>
-    <div class="grid-2">
-      <div class="stack-8">
+{#- HONEST SCOPE — TechBrot handles / You or your CPA handle (two checklist cards) — white -#}
+<section class="sec reveal" id="ny-svc-salestax-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:36px;">How we help with New York sales tax.</h2>
+    <div class="r-2">
+      <div class="incl-card">
         <h3>TechBrot handles</h3>
-        <ul class="checks-list">
-          {%- for d in scopeDo %}<li>{{ d | safe }}</li>{%- endfor %}
-        </ul>
+        <ul class="checklist">{%- for d in scopeDo %}<li>{{ d | safe }}</li>{%- endfor %}</ul>
       </div>
-      <div class="stack-8">
+      <div class="incl-card">
         <h3>You or your CPA handle</h3>
-        <ul class="checks-list">
-          {%- for d in scopeDont %}<li>{{ d | safe }}</li>{%- endfor %}
-        </ul>
+        <ul class="checklist">{%- for d in scopeDont %}<li>{{ d | safe }}</li>{%- endfor %}</ul>
       </div>
     </div>
   </div>
 </section>
 
-{# ── ADVISORY · standing brand line lives inside the body. (H2: Automation handles the data entry. We handle the judgment.) ── #}
-<section class="section section--alt" id="ny-svc-salestax-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The advisory line</p>
-      <h2 class="section__heading">Automation handles the data entry. We handle the judgment.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in advisoryBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── FAQ · 8 verbatim contract Q/A; visible faq__list = FAQPage schema (same array). (H2: New York sales tax questions.) ── #}
-<section class="section" id="ny-svc-salestax-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">New York sales tax questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-svc-salestax-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="ny-svc-salestax-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── EXPERT REVIEW · firm-level, no personal name (byline-block + trust-row + meta-reviewed). (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
-<section class="section section--alt" id="ny-svc-salestax-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
-    </header>
-    <div class="byline-block">
-      <div class="byline-block__mark" aria-hidden="true"></div>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
-      </div>
-    </div>
+{#- THE ADVISORY LINE — statement + body prose — sand -#}
+<section class="sec reveal" id="ny-svc-salestax-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">The advisory line</span><span class="idx__rule"></span></div>
+    <h2 class="statement">Automation handles the data entry. We handle the judgment.</h2>
     <div class="prose">
+      {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- EXPERT REVIEW — firm-level (no personal name) byline + standards prose + trust-row + meta — white -#}
+<section class="sec reveal" id="ny-svc-salestax-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
+      <div>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:22px;">
       <p>Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving New York businesses remotely across all 62 counties. New York sales-tax figures &mdash; the 8.875% NYC combined rate, the $500K / 100-transaction economic-nexus threshold, Form DTF-17, the quarterly due dates, and SaaS taxability &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href="https://www.tax.ny.gov/" rel="noopener nofollow">NY Department of Taxation &amp; Finance</a>. This page is educational and operational; it is not tax advice or a substitute for filing. TechBrot provides bookkeeping and sales-tax tracking and coordinates with your CPA, who files; we do not file New York sales-tax or income-tax returns and do not represent clients before the Tax Department.</p>
     </div>
     <div class="trust-row">
