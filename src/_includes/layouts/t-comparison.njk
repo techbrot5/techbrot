@@ -57,24 +57,27 @@ footerNav:
 </section>
 {%- endif %}
 
-{#- DISCLOSURE — competitor/product caveat (guarded; trademark + publicly-available info) -#}
-{%- if disclosure %}
+{#- DISCLOSURE — competitor/product caveat (guarded; accepts `disclosure` or
+    `context` — several data files key the status/disclosure prose as context) -#}
+{%- set discItems = disclosure or context or benchStatus %}
+{%- if discItems %}
 <section class="sec reveal" style="padding-top:20px;padding-bottom:8px;">
   <div class="ct read">
     <div class="ph"><span class="ph__t">{{ sec.disclosureTag | default("Disclosure", true) | safe }}</span><span class="ph__rule"></span></div>
     <h2 class="h2" style="margin-bottom:18px;">{{ sec.disclosureH | default("About this comparison.", true) | safe }}</h2>
-    <div class="prose">{%- for p in disclosure %}<p>{{ p | safe }}</p>{%- endfor %}</div>
+    <div class="prose">{%- for p in discItems %}<p>{{ p | safe }}</p>{%- endfor %}</div>
   </div>
 </section>
 {%- endif %}
 
-{#- SUMMARY prose -#}
-{%- if summary %}
+{#- SUMMARY prose (accepts `summary` or `definition` — competitor pages use definition) -#}
+{%- set summaryItems = summary or definition %}
+{%- if summaryItems %}
 <section class="sec reveal" style="padding-top:20px;padding-bottom:24px;">
   <div class="ct read">
     <div class="ph"><span class="ph__t">{{ sec.summaryTag | default("In one paragraph", true) | safe }}</span><span class="ph__rule"></span></div>
     <h2 class="h2" style="margin-bottom:18px;">{{ sec.summaryH | default("The honest summary.", true) | safe }}</h2>
-    <div class="prose">{%- for p in summary %}<p>{{ p | safe }}</p>{%- endfor %}</div>
+    <div class="prose">{%- for p in summaryItems %}<p>{{ p | safe }}</p>{%- endfor %}</div>
   </div>
 </section>
 {%- endif %}
@@ -190,16 +193,19 @@ footerNav:
 </section>
 {%- endif %}
 
-{#- FIT — where TechBrot fits + trust-row -#}
-{%- if fit %}
+{#- FIT / REVIEW — where TechBrot fits + trust-row. Accepts `fit`+`fitSpec` or
+    `reviewProse`+`reviewSpec` (reviewed-by blocks reuse this prose+trust-row shape) -#}
+{%- set fitItems = fit or reviewProse %}
+{%- set fitSpecItems = fitSpec or reviewSpec %}
+{%- if fitItems %}
 <section class="sec reveal">
   <div class="ct read">
     <div class="ph"><span class="ph__t">{{ sec.fitTag | default("Where TechBrot fits", true) | safe }}</span><span class="ph__rule"></span></div>
     <h2 class="h2" style="margin-bottom:18px;">{{ sec.fitH | default("We&rsquo;re the bookkeeping side. Done well.", true) | safe }}</h2>
-    <div class="prose">{%- for p in fit %}<p>{{ p | safe }}</p>{%- endfor %}</div>
-    {%- if fitSpec %}
+    <div class="prose">{%- for p in fitItems %}<p>{{ p | safe }}</p>{%- endfor %}</div>
+    {%- if fitSpecItems %}
     <div class="trust-row">
-      {%- for r in fitSpec %}
+      {%- for r in fitSpecItems %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
@@ -209,29 +215,34 @@ footerNav:
 </section>
 {%- endif %}
 
-{#- VERDICT — competitor/product intents only (role omits per template) -#}
-{%- if verdict and intent != "role" %}
-<section class="sec reveal" style="padding-top:8px;">
-  <div class="ct read">
-    <div class="verdict">
-      <div class="eyebrow">The honest verdict</div>
-      <p class="verdict__lead">{{ verdict.lead | safe }}</p>
-      {%- if verdict.sub %}<p class="verdict__sub">{{ verdict.sub | safe }}</p>{%- endif %}
-    </div>
-  </div>
-</section>
-{%- endif %}
-
-{#- VERDICT CARDS — competitor/product "when each fits" grid-3 (guarded) -#}
-{%- if verdictCards %}
+{#- VERDICT CARDS — competitor/product "when each fits" grid-3 (accepts
+    `verdictCards` or a `verdict` array; role intent omits per template) -#}
+{%- set verdictItems = verdictCards or verdict %}
+{%- if verdictItems and intent != "role" %}
 <section class="sec reveal">
   <div class="ct">
     <div class="ph"><span class="ph__t">{{ sec.verdictTag | default("The verdict", true) | safe }}</span><span class="ph__rule"></span></div>
     <h2 class="h2">{{ sec.verdictH | default("When each option actually fits.", true) | safe }}</h2>
     {%- if sec.verdictLede %}<p class="lede" style="margin:10px 0 28px;max-width:62ch;">{{ sec.verdictLede | safe }}</p>{%- endif %}
     <div class="r-3">
-      {%- for v in verdictCards %}
-      <div class="dc-card">{% if v.eyebrow %}<span class="eyebrow">{{ v.eyebrow | safe }}</span>{% endif %}<h3>{{ v.name | safe }}</h3>{% if v.bullets %}<ul class="checklist">{% for b in v.bullets %}<li>{{ b | safe }}</li>{% endfor %}</ul>{% endif %}{% if v.note %}<p class="prose" style="font-size:14px;margin:12px 0 0;color:var(--color-ink-mute);">{{ v.note | safe }}</p>{% endif %}</div>
+      {%- for v in verdictItems %}
+      <div class="dc-card">{% if v.eyebrow %}<span class="eyebrow">{{ v.eyebrow | safe }}</span>{% endif %}<h3>{{ (v.name or v.heading) | safe }}</h3>{% if v.body %}<p class="prose" style="font-size:15px;margin:6px 0 0;">{{ v.body | safe }}</p>{% endif %}{% if v.bullets %}<ul class="checklist">{% for b in v.bullets %}<li>{{ b | safe }}</li>{% endfor %}</ul>{% endif %}{% if v.note %}<p class="prose" style="font-size:14px;margin:12px 0 0;color:var(--color-ink-mute);">{{ v.note | safe }}</p>{% endif %}</div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- MIGRATION — "practical migration path" steps (guarded; switch/competitor pages) -#}
+{%- if migration %}
+<section class="sec reveal">
+  <div class="ct">
+    <div class="ph"><span class="ph__t">{{ sec.migrationTag | default("How to switch", true) | safe }}</span><span class="ph__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:{% if sec.migrationLede %}10{% else %}28{% endif %}px;">{{ sec.migrationH | default("A practical migration path.", true) | safe }}</h2>
+    {%- if sec.migrationLede %}<p class="lede" style="margin:0 0 28px;max-width:62ch;">{{ sec.migrationLede | safe }}</p>{%- endif %}
+    <div class="process-grid">
+      {%- for m in migration %}
+      <div class="process-step"><span class="process-step__n">{{ m.num | default("0" + loop.index, true) | safe }}</span><h3>{{ m.name | safe }}</h3>{% if m.when %}<p class="mono" style="font-size:12px;color:var(--color-ink-mute);margin:0 0 6px;">{{ m.when | safe }}</p>{% endif %}<p>{{ m.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
