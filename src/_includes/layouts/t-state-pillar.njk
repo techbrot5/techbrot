@@ -8,93 +8,539 @@ footerNav:
     - { href: "/find-an-accountant/", text: "All states" }
 ---
 {#- ===========================================================================
-    t-state-pillar — D3 state-pillar family (NEW handoff "State Pillar.dc.html").
-    New handoff CHROME via dc-base; the pillar body (already on the elevated
-    sense-of-place vocabulary: trust strip · stat band · in-brief · LIGHT ruled
-    multi-Q&A AI · deliver · process · industries · directory · vs-table · form ·
-    review · faq) renders via the elevated component layer. Hero = light split
-    article-hero + signature figure (heroFigure). Final CTA = LIGHT (pillar
-    convention). Frozen speakable #<slug>-in-brief-text preserved.
-    ⚠ state-servicemap viz: handoff ships NY's map only; CA/TX/FL/IL maps are NOT
-    in the handoff → keep the real heroFigure (taccount) until founder rules on
-    per-state map assets (FLAGGED — never fabricate geography).
+    t-state-pillar — D3 state-pillar family (handoff "State Pillar - Template.dc.html").
+    DATA-DRIVEN SPINE: all 5 pillars (NY/CA/TX/FL/IL) share the same ~40 data
+    fields, so this one layout renders the full handoff composition from each
+    page's frontmatter (`sec` per-state heading/eyebrow/lede strings) + the
+    .11tydata.js content arrays — the page bodies are now frontmatter only.
+
+    Section order = handoff: HERO (taccount figure — founder ruling: NO fabricated
+    state maps; all 5 use the T-account ledger SVG) · TRUST STRIP (shared partial,
+    sand) · STAT BAND (r-4 by-the-numbers) · §summary · §credentials · IN-BRIEF
+    (shared partial, sand) · AI SUMMARY (light ruled, place-framed) · glossary ·
+    DELIVER (r-2 buyer cards) · context · scenarios · outcomes · PULL QUOTE
+    (statement) · INDUSTRIES (r-3) · services · ecosystem · PRICING (cmp) · CITY
+    DIRECTORY (r-4 citylinks) · INTAKE+CALL (dual path + shared intake-form) ·
+    operators · why · REVIEW (2 real Clutch) · COMPARISON (cmp vs-table) ·
+    authority · FAQ · expert review · related · FINAL CTA (LIGHT — pillar
+    convention). Backgrounds alternate sand/white so no two tinted sections
+    collide (in-brief partial is sand).
+
+    FROZEN speakable ids preserved: #{{ slug }}-in-brief-text (in-brief partial)
+    and #{{ slug }}-ai-summary-list (AI summary) — both referenced by each page's
+    pageGraph cssSelector. Section ids kept on the same anchors the intra-page
+    links + schema use.
     =========================================================================== -#}
-{%- set heroFigure = heroFigure if heroFigure is defined else false -%}
-{%- if heroFigure %}
-<section class="section hero-tier hero--compact hero--rule hero--split" id="{{ slug }}-hero">
-  <div class="container">
-    <div class="hero-split">
-      <div class="hero">
-        <p class="hero__eyebrow"><span class="hero__eyebrow-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
-        <h1 class="hero__heading speakable">{{ hero.heading | safe }}</h1>
-        <p class="hero__subheading speakable">{{ hero.subheading | safe }}</p>
-        <div class="hero__actions">
-          {%- for action in hero.actions.slice(0, 2) %}
-          <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-            {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
-          {%- endfor %}
-        </div>
-        {%- if hero.trust %}
-        <ul class="hero__trust">
-          {%- for t in hero.trust %}<li class="hero__trust-item">{{ t | safe }}</li>{%- endfor %}
-        </ul>
-        {%- endif %}
-      </div>
-      <div class="hero__figure">{% include "partials/figure-" + heroFigure + ".svg" %}</div>
-    </div>
-  </div>
-</section>
-{%- else %}
-<section class="section hero-tier hero--compact hero--rule" id="{{ slug }}-hero">
-  <div class="container">
-    <div class="hero">
-      <p class="hero__eyebrow"><span class="hero__eyebrow-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
-      <h1 class="hero__heading speakable">{{ hero.heading | safe }}</h1>
-      <p class="hero__subheading speakable">{{ hero.subheading | safe }}</p>
-      <div class="hero__actions">
-        {%- for action in hero.actions.slice(0, 2) %}
-        <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+{%- set sec = sec or {} %}
+
+{#- HERO — light split, taccount figure, rule-mark eyebrow (handoff sense-of-place) -#}
+<section class="sec" id="{{ slug }}-hero" style="padding-top:64px;padding-bottom:56px;border-bottom:1px solid var(--border-subtle);">
+  <div class="ct dc-rhero">
+    <div>
+      <p class="eyebrow" style="display:inline-flex;align-items:center;gap:12px;margin-bottom:22px;"><span class="rule-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
+      <h1 class="dsp speakable" style="font-weight:500;font-variation-settings:'opsz' 96;font-size:clamp(36px,1.8rem + 3.4vw,60px);margin:0 0 22px;">{{ hero.heading | safe }}</h1>
+      <p class="lede speakable" style="margin:0 0 30px;max-width:42ch;">{{ hero.subheading | safe }}</p>
+      {%- if hero.actions %}
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px;">
+        {%- for a in hero.actions.slice(0, 2) %}
+        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:52px;padding:0 24px;border-radius:12px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
         {%- endfor %}
       </div>
+      {%- endif %}
       {%- if hero.trust %}
-      <ul class="hero__trust">
-        {%- for t in hero.trust %}<li class="hero__trust-item">{{ t | safe }}</li>{%- endfor %}
-      </ul>
+      <p style="font-size:14px;color:var(--color-ink-mute);margin:0;max-width:46ch;">{% for t in hero.trust %}{{ t | safe }}{% if not loop.last %} &middot; {% endif %}{% endfor %}</p>
       {%- endif %}
     </div>
+    <figure class="figcard"><div class="figcard__grid" aria-hidden="true"></div><figcaption><span class="figcard__t">{{ sec.heroFigCaption | default("How the books tie out", true) | safe }}</span><span class="figcard__tag mono">ledger view</span></figcaption>{% include "partials/figure-taccount.svg" %}</figure>
   </div>
 </section>
-{%- endif %}
 
-{%- if inBrief %}
-<section class="section section--compact" id="{{ slug }}-in-brief">
-  <div class="container">
-    <div class="in-brief">
-      <p class="in-brief__text" id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
-      {%- if inBrief.source %}<p class="in-brief__source">{{ inBrief.source | safe }}</p>{%- endif %}
+{#- TRUST STRIP — shared partial (Intuit credentials band, sand) -#}
+{%- if showBadges %}{% include "partials/trust-strip.njk" %}{% endif %}
+
+{#- STAT BAND — "by the numbers" r-4 (white) -#}
+{%- if stats %}
+<section class="sec reveal" id="{{ slug }}-stats" style="padding-top:44px;padding-bottom:44px;border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.statsTag | default("By the numbers", true) | safe }}</span><span class="idx__rule"></span></div>
+    {%- if sec.statsH %}<h2 class="h2" style="max-width:22ch;margin-bottom:8px;">{{ sec.statsH | safe }}</h2>{%- endif %}
+    {%- if sec.statsLede %}<p class="lede" style="margin:0 0 30px;max-width:60ch;">{{ sec.statsLede | safe }}</p>{%- endif %}
+    <div class="r-4">
+      {%- for s in stats %}
+      <div><div class="mono" style="font-size:30px;font-weight:500;color:var(--color-accent);">{{ s.figure | safe }}</div><div style="font-size:13px;line-height:1.5;color:var(--color-ink-mute);margin-top:8px;">{{ s.label | safe }}</div></div>
+      {%- endfor %}
     </div>
   </div>
 </section>
 {%- endif %}
 
-{{ content | safe }}
+{#- §SUMMARY — real H2 carrying the full state summary prose (sand) -#}
+{%- if summarized %}
+<section class="sec reveal" id="{{ slug }}-summarized" style="background:var(--color-paper-warm);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <h2 class="h2" style="margin-bottom:18px;">{{ sec.summarizedH | safe }}</h2>
+    <div class="prose">{{ summarized | safe }}</div>
+  </div>
+</section>
+{%- endif %}
 
+{#- §CREDENTIALS — cert line + proof-strip pills + trust-row (white) -#}
+{%- if credLede %}
+<section class="sec reveal" id="{{ slug }}-credentials">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.credTag | default("Certified by Intuit", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">{{ sec.credH | safe }}</h2>
+    <div class="prose" style="margin-bottom:18px;">{{ credLede | safe }}</div>
+    {%- if credBadges %}
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:6px;">
+      {%- for b in credBadges %}<span class="figcard__tag mono" style="font-size:12px;">{{ b.label }} <span class="sr-only">{{ b.name }}</span></span>{%- endfor %}
+    </div>
+    {%- endif %}
+    {%- if trustRow %}
+    <div class="trust-row">
+      {%- for r in trustRow %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- §01 IN BRIEF — shared partial (sand). Frozen speakable id #{{ slug }}-in-brief-text -#}
+{% include "partials/in-brief.njk" %}
+
+{#- AI SUMMARY — place-framed light ruled multi-Q&A. Frozen id #{{ slug }}-ai-summary-list -#}
+{%- if aiSummary %}
+<section class="sec reveal" id="{{ slug }}-ai-summary">
+  <div class="ct read">
+    <div class="idx idx--center"><span class="idx__n">§</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="text-align:center;margin:0 auto 36px;max-width:24ch;">{{ sec.aiH | safe }}</h2>
+    <dl class="speakable ai-qa" id="{{ slug }}-ai-summary-list">
+      {%- for item in aiSummary %}
+      <div class="ai-qa__item"><dt><h3>{{ item.q | safe }}</h3></dt><dd style="margin:0;"><p>{{ item.a | safe }}</p></dd></div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+{%- endif %}
+
+{#- §GLOSSARY — state terms grid-2 (sand) -#}
+{%- if stateTerms %}
+<section class="sec reveal" id="{{ slug }}-glossary" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.glossaryTag | default("Accounting glossary", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">{{ sec.glossaryH | safe }}</h2>
+    {%- if sec.glossaryLede %}<p class="lede" style="margin:0 0 32px;max-width:62ch;">{{ sec.glossaryLede | safe }}</p>{%- endif %}
+    <div class="r-2">
+      {%- for g in stateTerms %}
+      <div class="dc-card"><span class="eyebrow">{{ g.term | safe }}</span><div class="prose">{{ g.def | safe }}</div></div>
+      {%- endfor %}
+    </div>
+    {%- if sec.glossaryNote %}<p class="prose" style="margin-top:24px;font-size:14px;color:var(--color-ink-mute);">{{ sec.glossaryNote | safe }}</p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- §DELIVER — direct vs partners, buyer-card r-2 (white) -#}
+{%- if delivery %}
+<section class="sec reveal" id="{{ slug }}-delivery">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.deliveryTag | default("Service coverage", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:22ch;margin-bottom:10px;">{{ sec.deliveryH | safe }}</h2>
+    {%- if sec.deliveryLede %}<p class="lede" style="margin:0 0 32px;max-width:62ch;">{{ sec.deliveryLede | safe }}</p>{%- endif %}
+    <div class="r-2">
+      {%- for d in delivery %}
+      <article class="incl-card"><span class="eyebrow" style="display:block;margin-bottom:10px;">{{ d.eyebrow | safe }}</span><h3>{{ d.heading | safe }}</h3><p class="prose" style="font-size:15px;margin:8px 0 0;">{{ d.lede | safe }}</p><ul class="checklist">{%- for li in d.list %}<li>{{ li | safe }}</li>{%- endfor %}</ul><a class="ptier__link" href="{{ d.href }}">{{ d.cta | safe }}</a></article>
+      {%- endfor %}
+    </div>
+    {%- if deliveryNote %}<p class="prose" style="margin-top:24px;font-size:14px;color:var(--color-ink-mute);">{{ deliveryNote | safe }}</p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- §CONTEXT — what makes this state different, grid-2 (sand) -#}
+{%- if context %}
+<section class="sec reveal" id="{{ slug }}-context" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.contextTag | default("Why this state is different", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:10px;">{{ sec.contextH | safe }}</h2>
+    {%- if sec.contextLede %}<p class="lede" style="margin:0 0 32px;max-width:64ch;">{{ sec.contextLede | safe }}</p>{%- endif %}
+    <div class="r-2">
+      {%- for c in context %}
+      <div class="dc-card"><span class="eyebrow">{{ c.category | safe }}</span><h3>{{ c.heading | safe }}</h3><div class="prose">{%- for p in c.body %}<p>{{ p | safe }}</p>{%- endfor %}</div></div>
+      {%- endfor %}
+    </div>
+    {%- if contextNote %}<p class="prose" style="margin-top:24px;font-size:14px;color:var(--color-ink-mute);">{{ contextNote | safe }}</p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- §SCENARIOS — honestly-labeled composites, grid-3 (white) -#}
+{%- if scenarios %}
+<section class="sec reveal" id="{{ slug }}-scenarios">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.scenariosTag | default("Engagement scenarios", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">{{ sec.scenariosH | safe }}</h2>
+    {%- if scenariosNote %}<p class="lede" style="margin:0 0 32px;max-width:64ch;">{{ scenariosNote | safe }}</p>{%- endif %}
+    <div class="r-3">
+      {%- for s in scenarios %}
+      <article class="dc-card"><span class="eyebrow">{{ s.tag | safe }}</span><h3>{{ s.heading | safe }}</h3><div class="prose">{%- for p in s.body %}<p>{{ p | safe }}</p>{%- endfor %}</div><a class="ptier__link" href="{{ s.href }}">{{ s.cta | safe }}</a></article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- §OUTCOMES — representative figures, grid-3 (sand) -#}
+{%- if outcomes %}
+<section class="sec reveal" id="{{ slug }}-outcomes" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.outcomesTag | default("Representative outcomes", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:30px;">{{ sec.outcomesH | safe }}</h2>
+    <div class="r-3">
+      {%- for o in outcomes %}
+      <div class="dc-card"><div class="trust-row__value" style="font-size:30px;">{{ o.figure | safe }}</div><p class="prose" style="font-size:15px;margin:6px 0 0;">{{ o.detail | safe }}<br><small style="color:var(--color-ink-faint);">{{ o.meta | safe }}</small></p></div>
+      {%- endfor %}
+    </div>
+    {%- if outcomesNote %}<p class="prose" style="margin-top:24px;font-size:14px;color:var(--color-ink-mute);">{{ outcomesNote | safe }}</p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- §ADVISORY — standing brand line + body (white, read) -#}
+{%- if advisoryBody %}
+<section class="sec reveal" id="{{ slug }}-advisory">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.advisoryTag | default("Beyond bookkeeping", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">{{ sec.advisoryH | safe }}</h2>
+    <div class="prose">{{ advisoryBody | safe }}</div>
+    {%- if sec.advisoryHref %}
+    <div style="margin-top:22px;"><a class="btn btn-cta" href="{{ sec.advisoryHref | safe }}" style="display:inline-flex;align-items:center;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Book the discovery call</a></div>
+    {%- endif %}
+    {%- if sec.advisoryLink %}<p class="prose" style="margin-top:16px;">{{ sec.advisoryLink | safe }}</p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- §INDUSTRIES — r-3 (sand) -#}
+{%- if industries %}
+<section class="sec reveal" id="{{ slug }}-industries" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.industriesTag | default("Industries we serve", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">{{ sec.industriesH | safe }}</h2>
+    {%- if sec.industriesLede %}<p class="lede" style="margin:0 0 32px;max-width:64ch;">{{ sec.industriesLede | safe }}</p>{%- endif %}
+    <div class="r-3">
+      {%- for i in industries %}
+      <div class="dc-card"><span class="eyebrow">{{ i.num }}</span><h3>{% if i.href %}<a href="{{ i.href }}">{{ i.name | safe }}</a>{% else %}{{ i.name | safe }}{% endif %}</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">{{ i.body | safe }}</p></div>
+      {%- endfor %}
+    </div>
+    {%- if industriesNote %}<p class="prose" style="margin-top:24px;font-size:14px;color:var(--color-ink-mute);">{{ industriesNote | safe }}</p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- §SERVICES — buyer-card routing r-3 (white) -#}
+{%- if services %}
+<section class="sec reveal" id="{{ slug }}-services">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.servicesTag | default("Services", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">{{ sec.servicesH | safe }}</h2>
+    {%- if sec.servicesLede %}<p class="lede" style="margin:0 0 32px;max-width:64ch;">{{ sec.servicesLede | safe }}</p>{%- endif %}
+    <div class="r-3">
+      {%- for s in services %}
+      <article class="dc-card"><span class="eyebrow">{{ s.eyebrow }}</span><h3>{% if sec.servicesLinkNames and s.href %}<a href="{{ s.href }}">{{ s.name | safe }}</a>{% else %}{{ s.name | safe }}{% endif %}</h3><p class="prose" style="font-size:15px;margin:6px 0 12px;">{{ s.body | safe }}</p><p class="mono" style="font-size:12px;color:var(--color-ink-mute);margin:0 0 10px;">Starting {{ s.starting | safe }} &middot; {{ s.cadence | safe }}</p><a class="ptier__link" href="{% if sec.servicesCtaContact %}/contact/?intent={{ intent | default(slug, true) }}{% else %}{{ s.href }}{% endif %}">{{ s.cta | safe }}</a></article>
+      {%- endfor %}
+    </div>
+    {%- if servicesNote %}<p class="prose" style="margin-top:24px;font-size:14px;color:var(--color-ink-mute);">{{ servicesNote | safe }}</p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- §ECOSYSTEM — cluster directory r-3 (sand). links (NY/CA/TX) or items (FL/IL) -#}
+{%- if ecosystem %}
+<section class="sec reveal" id="{{ pillarAnchor | default(slug, true) }}-ecosystem" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.ecosystemTag | default("The full ecosystem", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:10px;">{{ sec.ecosystemH | safe }}</h2>
+    {%- if sec.ecosystemLede %}<p class="lede" style="margin:0 0 32px;max-width:64ch;">{{ sec.ecosystemLede | safe }}</p>{%- endif %}
+    <div class="r-3">
+      {%- for cl in ecosystem %}
+      <article class="dc-card"><span class="eyebrow">{{ cl.eyebrow }}</span><h3>{{ cl.heading | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 12px;">{{ cl.lede | safe }}</p><ul class="checklist">
+        {%- for l in (cl.links or cl.items) %}<li>{% if l.href %}<a href="{{ l.href }}">{{ l.label | safe }}</a>{% elif l.label %}{{ l.label | safe }}{% else %}{{ l | safe }}{% endif %}{% if l.tag %} <span class="figcard__tag mono" style="font-size:10px;">{{ l.tag | safe }}</span>{% endif %}</li>{%- endfor %}
+      </ul></article>
+      {%- endfor %}
+    </div>
+    {%- if ecosystemNote %}<p class="prose" style="margin-top:24px;font-size:14px;color:var(--color-ink-mute);">{{ ecosystemNote | safe }}</p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- §PRICING — fixed-fee ranges, cmp table (white) -#}
+{%- if pricing %}
+<section class="sec reveal" id="{{ slug }}-pricing">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.pricingTag | default("Pricing", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:10px;">{{ sec.pricingH | safe }}</h2>
+    {%- if sec.pricingLede %}<p class="lede" style="margin:0 0 30px;max-width:64ch;">{{ sec.pricingLede | safe }}</p>{%- endif %}
+    <table class="cmp" aria-describedby="{{ slug }}-pricing-note">
+      <caption>{{ sec.pricingCaption | default("Indicative fixed-fee starting ranges", true) | safe }}</caption>
+      <thead><tr><th scope="col">Engagement</th><th scope="col">Starting range</th><th scope="col">Cadence</th><th scope="col">{{ sec.pricingNotesCol | default("Notes", true) | safe }}</th></tr></thead>
+      <tbody>
+        {%- for r in pricing %}
+        <tr><th scope="row">{% if r.href %}<a href="{{ r.href }}">{{ r.svc | safe }}</a>{% else %}{{ r.svc | safe }}{% endif %}</th><td data-col="Starting range"><strong>{{ r.range | safe }}</strong></td><td data-col="Cadence">{{ r.cadence | safe }}</td><td data-col="Notes">{{ r.notes | safe }}</td></tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+    {%- if pricingNote %}<p class="prose" id="{{ slug }}-pricing-note" style="margin-top:18px;font-size:14px;color:var(--color-ink-mute);">{{ pricingNote | safe }}</p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- §CITY DIRECTORY — statewide r-4 citylinks (sand). cities linked (NY) or plain -#}
+{%- if cities %}
+<section class="sec reveal" id="{{ slug }}-cities" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.citiesTag | default("Statewide", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:22ch;margin-bottom:10px;">{{ sec.citiesH | safe }}</h2>
+    {%- if sec.citiesLede %}<p class="lede" style="margin:0 0 30px;max-width:62ch;">{{ sec.citiesLede | safe }}</p>{%- endif %}
+    {%- if sec.citiesSubH %}<h3 class="prose" style="font-family:'Fraunces',serif;font-weight:600;font-size:19px;margin:0 0 16px;">{{ sec.citiesSubH | safe }}</h3>{%- endif %}
+    <div class="r-3">
+      {%- for c in cities %}
+      <div class="dc-card" style="padding:16px 18px;">{% if c.href %}<a href="{{ c.href }}"><strong>{{ c.name | safe }}</strong></a>{% else %}<strong>{{ c.name | safe }}</strong>{% endif %} <span class="mono" style="font-size:12px;color:var(--color-ink-faint);">&mdash; {{ c.county | safe }}</span></div>
+      {%- endfor %}
+    </div>
+    {%- if countyProse %}
+    <h3 class="prose" style="font-family:'Fraunces',serif;font-weight:600;font-size:19px;margin:30px 0 12px;">{{ sec.countiesSubH | default("Counties served &mdash; representative sample", true) | safe }}</h3>
+    <p class="prose" style="font-size:15px;">{{ countyProse | safe }}</p>
+    {%- endif %}
+    {%- if citiesNote %}<p class="prose" style="margin-top:18px;font-size:14px;color:var(--color-ink-mute);">{{ citiesNote | safe }}</p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- §INTAKE — dual path (call + shared intake-form partial), byline credits (white) -#}
+{%- if teamDavid %}
+<section class="sec reveal" id="{{ slug }}-intake">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.intakeTag | default("Talk to a Certified ProAdvisor", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:10px;">{{ sec.intakeH | safe }}</h2>
+    {%- if sec.intakeLede %}<p class="lede" style="margin:0 0 32px;max-width:60ch;">{{ sec.intakeLede | safe }}</p>{%- endif %}
+
+    <div class="r-2" style="margin-bottom:18px;">
+      <div class="dc-card">
+        <div class="byline" style="margin-bottom:14px;"><svg class="byline__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#0E4A50"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#FCFBF8"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg><div><p class="byline__name">By the Certified QuickBooks ProAdvisor team</p><p class="byline__review">{{ teamDavid.name }} &middot; {{ teamDavid.role }}</p></div></div>
+        <p class="eyebrow" style="margin-bottom:8px;">{{ teamDavid.creds | safe }}</p>
+        <p class="prose" style="font-size:15px;">{{ teamDavid.line | safe }}</p>
+        <a class="ptier__link" href="https://proadvisor.intuit.com/" rel="noopener nofollow">Verify on Intuit&rsquo;s ProAdvisor directory <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      {%- if teamIntake %}
+      <div class="dc-card">
+        <div class="byline" style="margin-bottom:14px;"><svg class="byline__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#0E4A50"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#FCFBF8"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg><div><p class="byline__name">By the Certified QuickBooks ProAdvisor team</p><p class="byline__review">{{ teamIntake.name | safe }} &middot; {{ teamIntake.role }}</p></div></div>
+        <p class="eyebrow" style="margin-bottom:8px;">{{ teamIntake.creds | safe }}</p>
+        <p class="prose" style="font-size:15px;">{{ teamIntake.line | safe }}</p>
+      </div>
+      {%- endif %}
+    </div>
+
+    <div class="r-2">
+      <article class="incl-card">
+        <span class="eyebrow" style="display:block;margin-bottom:10px;">Option 01</span>
+        <h3>{{ sec.callH | default("Call directly.", true) | safe }}</h3>
+        <p class="prose" style="font-size:15px;margin:8px 0 16px;">{{ sec.callBody | default("A Certified ProAdvisor answers &mdash; not a call center. Best for same-day diagnostics, behind-on-the-books situations, or compliance urgencies.", true) | safe }}</p>
+        <a class="btn btn-cta" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">{% include "icons/phone.svg" %} Speak to a ProAdvisor</a>
+        {%- if callAssurance %}<ul class="checklist" style="margin-top:16px;">{%- for a in callAssurance %}<li>{{ a | safe }}</li>{%- endfor %}</ul>{%- endif %}
+      </article>
+      <div class="incl-card">
+        <h3 id="{{ slug }}-intake-form-heading">{{ sec.formH | default("Send a short discovery brief.", true) | safe }}</h3>
+        <p class="prose" style="font-size:15px;margin:8px 0 16px;">Six fields. We respond by the next business day with a path forward &mdash; a scoping call or, if not a fit, a referral. <strong>Includes a free QuickBooks file review &mdash; we&rsquo;ll identify the top 3 issues in your file before any engagement begins.</strong></p>
+        {%- set intakePrefix = slug %}
+        {%- set intakeFormId = slug + "-intake-form" %}
+        {%- set intakeIntent = intent | default(slug, true) %}
+        {%- set intakeSourceType = "location" %}
+        {%- set intakeFunnelStage = "MOFU" %}
+        {%- set intakeLegend = sec.intakeLegend | default("What we should discuss for your business", true) %}
+        {%- set intakeSubmit = "Send the Discovery Brief" %}
+        {%- set intakeReassurance = "Same-day diagnostic for emergencies, 1 business day for scoping, written fixed-fee scope within 3 business days of the first call." %}
+        {% include "partials/intake-form.njk" %}
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- §OPERATORS — partner placeholder + vetting standards r-2 (sand) -#}
+{%- if operatorStandards %}
+<section class="sec reveal" id="{{ pillarAnchor | default(slug, true) }}-operators" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.operatorsTag | default("Partner practices", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:10px;">{{ sec.operatorsH | safe }}</h2>
+    {%- if sec.operatorsLede %}<p class="lede" style="margin:0 0 32px;max-width:64ch;">{{ sec.operatorsLede | safe }}</p>{%- endif %}
+    <div class="r-2">
+      <article class="incl-card">
+        <span class="eyebrow" style="display:block;margin-bottom:10px;">Partner practice &middot; Onboarding 2026</span>
+        <h3>{{ sec.operatorsSlotH | safe }}</h3>
+        <p class="prose" style="font-size:15px;margin:8px 0 0;">{{ sec.operatorsSlotBody | safe }}</p>
+        <a class="ptier__link" href="/partners/">Apply to partner practices <span aria-hidden="true">&rarr;</span></a>
+      </article>
+      <div class="dc-card">
+        <span class="eyebrow">The vetting standard</span>
+        <h3>{{ sec.operatorsStandardH | safe }}</h3>
+        <p class="prose" style="font-size:15px;margin:6px 0 0;">Every operator runs under the same standard TechBrot delivers directly. The bar to carry the brand:</p>
+        <ul class="checklist" style="margin-top:14px;">
+          {%- for o in operatorStandards %}<li><strong>{{ o.term | safe }}.</strong> {{ o.detail | safe }}</li>{%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- §WHY — differentiators grid-2 (white) -#}
+{%- if why %}
+<section class="sec reveal" id="{{ slug }}-why">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.whyTag | default("Why businesses choose TechBrot", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">{{ sec.whyH | safe }}</h2>
+    {%- if sec.whyLede %}<p class="lede" style="margin:0 0 32px;max-width:66ch;">{{ sec.whyLede | safe }}</p>{%- endif %}
+    <div class="r-2">
+      {%- for w in why %}
+      <div class="dc-card"><span class="eyebrow">{{ w.num }}</span><h3>{{ w.name | safe }}</h3><div class="prose">{{ w.body | safe }}</div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- PULL QUOTE — statement (white, centered) -#}
+{%- if sec.pullQuote %}
+<section class="sec reveal" style="padding-top:30px;padding-bottom:70px;">
+  <div class="ct read" style="text-align:center;">
+    <p class="statement">{{ sec.pullQuote | safe }}</p>
+  </div>
+</section>
+{%- endif %}
+
+{#- §REVIEWS — ONLY the 2 real Clutch reviews (sand) -#}
+{%- if reviews %}
+<section class="sec reveal" id="{{ slug }}-reviews" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.reviewsTag | default("What clients say", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">{{ sec.reviewsH | default("Verified client reviews.", true) | safe }}</h2>
+    {%- if sec.reviewsLede %}<p class="lede" style="margin:0 0 32px;max-width:66ch;">{{ sec.reviewsLede | safe }}</p>{%- endif %}
+    <div class="r-2">
+      {%- for r in reviews %}
+      <article class="dc-card"><figure class="opquote" style="margin:0;"><blockquote style="font-size:18px;">&ldquo;{{ r.quote | safe }}&rdquo;</blockquote></figure><p class="prose" style="font-size:15px;margin:14px 0 0;">{{ r.context | safe }}</p><p class="byline__review" style="margin-top:10px;">{{ r.author }} &mdash; {{ r.role | safe }} &middot; {{ r.meta | safe }}</p></article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- §COMPARISON — vs-table cmp (white) -#}
+{%- if comparison %}
+<section class="sec reveal" id="{{ slug }}-comparison">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.comparisonTag | default("How we compare", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:30ch;margin-bottom:10px;">{{ sec.comparisonH | safe }}</h2>
+    {%- if sec.comparisonLede %}<p class="lede" style="margin:0 0 30px;max-width:66ch;">{{ sec.comparisonLede | safe }}</p>{%- endif %}
+    <table class="cmp">
+      <caption>{{ sec.comparisonCaption | default("TechBrot vs. the alternatives", true) | safe }}</caption>
+      <thead><tr><th scope="col">Dimension</th><th scope="col" class="us">TechBrot</th><th scope="col">{{ sec.comparisonColCpa | default("Local CPA", true) | safe }}</th><th scope="col">National remote bookkeeping</th></tr></thead>
+      <tbody>
+        {%- for r in comparison %}
+        <tr><th scope="row">{{ r.dim | safe }}</th><td class="us" data-col="TechBrot">{{ r.us | safe }}</td><td data-col="{{ sec.comparisonColCpa | default('Local CPA', true) | safe }}">{{ r.cpa | safe }}</td><td data-col="National remote">{{ r.remote | safe }}</td></tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+    {%- if comparisonVerdict %}<p class="prose" style="margin-top:20px;">{{ comparisonVerdict | safe }}</p>{%- endif %}
+    {%- if comparisonRelated %}<p class="prose" style="margin-top:12px;font-size:14px;color:var(--color-ink-mute);">{{ comparisonRelated | safe }}</p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- §AUTHORITY — .gov sources (sand, read) -#}
+{%- if authority %}
+<section class="sec reveal" id="{{ slug }}-authority" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.authorityTag | default("Authority sources & verification", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">{{ sec.authorityH | default("Verify everything on this page.", true) | safe }}</h2>
+    {%- if sec.authorityLede %}<p class="lede" style="margin:0 0 30px;max-width:64ch;">{{ sec.authorityLede | safe }}</p>{%- endif %}
+    <div class="prose">
+      {%- for a in authority %}
+      <h3><a href="{{ a.href }}" rel="noopener nofollow">{{ a.name | safe }}</a></h3>
+      <p>{{ a.detail | safe }}</p>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- §FAQ — visible = FAQPage schema (white) -#}
+{%- if faq %}
+<section class="sec reveal" id="{{ slug }}-faq" style="padding-top:80px;">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.faqTag | default("Questions", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;">{{ sec.faqH | safe }}</h2>
+    <div class="faq">
+      {%- for item in faq %}
+      <details name="{{ slug }}-faq"{% if loop.first %} open{% endif %}><summary>{{ item.q | safe }}<span class="pl"></span></summary><div>{{ item.a | safe }}</div></details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- §EXPERT REVIEW — firm-level E-E-A-T, no founder name (sand) -#}
+{%- if reviewCreds %}
+<section class="sec reveal" id="{{ slug }}-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.reviewTag | default("Page review & standards", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">{{ sec.reviewH | default("Reviewed by Certified QuickBooks ProAdvisors.", true) | safe }}</h2>
+    {%- if sec.reviewBody %}<div class="prose">{% for p in sec.reviewBody %}<p>{{ p | safe }}</p>{% endfor %}</div>{%- endif %}
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value" style="font-size:15px;">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    {%- if metaReviewed %}<p class="meta-reviewed"><span>Published: {{ metaReviewed }}</span><span>Updated: {{ metaReviewed }}</span><span>Reviewed: {{ metaReviewed }} &middot; Certified QuickBooks ProAdvisor</span></p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- §RELATED STATES — neighbors grid-2 (white) -#}
+{%- if related %}
+<section class="sec reveal" id="{{ slug }}-related">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.relatedTag | default("Neighboring states", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">{{ sec.relatedH | safe }}</h2>
+    {%- if sec.relatedLede %}<p class="lede" style="margin:0 0 32px;max-width:66ch;">{{ sec.relatedLede | safe }}</p>{%- endif %}
+    <div class="r-2">
+      {%- for r in related %}
+      <article class="dc-card"><h3>{{ r.name | safe }}</h3><div class="prose" style="font-size:15px;">{{ r.body | safe }}</div><a class="ptier__link" href="{{ r.href | default(sec.relatedCtaHref, true) | default('/find-an-accountant/', true) }}">{{ r.cta | safe }}</a></article>
+      {%- endfor %}
+    </div>
+    {%- if relatedNote %}<p class="prose" style="margin-top:24px;font-size:14px;color:var(--color-ink-mute);">{{ relatedNote | safe }}</p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- FINAL CTA — LIGHT (pillar convention, not the dark money-page CTA) -#}
 {%- if ctaBand %}
-<section class="section section--cta-band section--cta-band--light section--tier-hub" id="{{ slug }}-cta">
-  <div class="cta-band__motif" aria-hidden="true">{% include "partials/motif-align-single.svg" %}</div>
-  <div class="container">
+<section class="sec reveal section--cta-band--light" id="{{ slug }}-cta" style="padding:88px 0;">
+  <div class="ct read">
     <div class="final-cta">
-      <p class="section__eyebrow">{{ ctaBand.eyebrow | safe }}</p>
-      <h2 class="final-cta__heading">{{ ctaBand.heading | safe }}</h2>
+      {%- if ctaBand.eyebrow %}<p class="eyebrow" style="margin-bottom:16px;">{{ ctaBand.eyebrow | safe }}</p>{%- endif %}
+      <h2 class="final-cta__h">{{ ctaBand.heading | safe }}</h2>
       <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
       <div class="final-cta__actions">
-        {%- for action in ctaBand.actions %}
-        <a class="btn {{ action.class }}" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+        {%- for a in ctaBand.actions %}
+        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 24px;border-radius:13px;font-size:15.5px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
         {%- endfor %}
       </div>
-      <p class="final-cta__disclaimer">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
+      <p class="prose" style="margin-top:28px;font-size:12.5px;color:var(--color-ink-faint);">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
     </div>
   </div>
 </section>
