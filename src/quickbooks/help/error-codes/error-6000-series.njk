@@ -1,9 +1,8 @@
 ---json
 {
-  "layout": "layouts/t-guide.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/quickbooks/help/error-codes/error-6000-series/",
   "slug": "e6k",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
   "title": "QuickBooks Error 6000-Series: Complete ProAdvisor Reference · TechBrot",
   "description": "Every QuickBooks 6000-series error explained — 6000-77, 6000-301, 6189, 6190, 6147, and others. What each variant means, what causes it, a step-by-step self-fix, and when file damage requires a Certified ProAdvisor. Independent firm, not affiliated with Intuit Inc.",
@@ -14,15 +13,24 @@
     { "name": "Error Codes", "href": "/quickbooks/help/error-codes/" },
     { "name": "6000-series Errors" }
   ],
+  "metaReviewed": "2026-06-14",
+  "byline": {
+    "name": "By the Certified QuickBooks ProAdvisor team",
+    "meta": "Reviewed 2026-06 &middot; File-repair specialists &middot; Desktop &amp; Enterprise certified &middot; independent, not Intuit"
+  },
   "hero": {
-    "eyebrow": "QuickBooks error reference &middot; <span class=\"error-badge\">6000-series</span>",
+    "badge": "ERROR &middot; 6000-SERIES",
+    "eyebrow": "QuickBooks error reference",
     "heading": "QuickBooks 6000-Series: the file-access &amp; integrity errors.",
     "subheading": "6000-series errors &mdash; <code>6000-77</code>, <code>6000-301</code>, <code>6189</code>, <code>6190</code>, <code>6147</code>, and others &mdash; all signal something between QuickBooks and the company file is broken, but the variant tells you which of three buckets you&rsquo;re in: <strong>file access, multi-user conflict, or actual file damage</strong>. Access and conflict variants are usually self-fixable; damage variants (6000-301, 6147, 6000-832) require a ProAdvisor before continued use worsens the corruption. Below: the three buckets, the universal first-pass, and per-variant detail. Independent firm, not affiliated with Intuit Inc.",
     "actions": [
       { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
-      { "label": "Book the discovery call", "href": "/contact/?intent=qb-error-6000", "class": "btn--ghost" },
-      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=qb-error-6000", "class": "btn--ghost" }
     ]
+  },
+  "sec": {
+    "aiH": "The 6000-series, in five questions.",
+    "faqH": "What people ask about 6000-series errors."
   },
   "inBrief": {
     "text": "<strong>6000-series errors</strong> all mean QuickBooks can&rsquo;t open, read, or write a company file &mdash; but the variant sorts into three buckets. <strong>File-access</strong> variants (6000-77, -80, -83) are path/permission/network issues; <strong>multi-user-conflict</strong> variants (6189, 6190) are a locked file or single/multi-user mismatch &mdash; both usually self-fixable. <strong>File-damage</strong> variants (6000-301, 6147, 6000-832) are genuine integrity problems that do not resolve durably with self-fix and require a Certified ProAdvisor. The universal first-pass (Tool Hub, rename .ND/.TLG, move local, run as Admin, verify mode) clears most access and conflict cases; persistence is itself the signal you&rsquo;re in file-damage territory.",
@@ -40,162 +48,114 @@
 }
 ---
 
-<section class="section section--compact" id="e6k-disclosure">
-  <div class="container container--narrow">
-    <div class="disclosure">
-      <strong>This is an independent Certified QuickBooks ProAdvisor reference &mdash; not Intuit, and not QuickBooks&rsquo; official support.</strong> For Intuit software-level issues (login, billing, subscription), Intuit&rsquo;s own support is the right path. We provide independent, operational help resolving file-access errors and repairing file damage inside QuickBooks. QuickBooks and Intuit are registered trademarks of Intuit Inc.
+{#- DISCLOSURE — Sheet-7 honest-triage, above the fold of the body -#}
+<section style="padding:8px 0 32px;" id="e6k-disclosure">
+  <div class="ct read read--doc">
+    <div class="disclose">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.3" stroke-linecap="round"/></svg>
+      <div class="disclose__body"><strong>This is an independent Certified QuickBooks ProAdvisor reference &mdash; not Intuit, and not QuickBooks&rsquo; official support.</strong> For Intuit software-level issues (login, billing, subscription), Intuit&rsquo;s own support is the right path. We provide independent, operational help resolving file-access errors and repairing file damage inside QuickBooks. QuickBooks and Intuit are registered trademarks of Intuit Inc.</div>
     </div>
   </div>
 </section>
 
-<section class="section section--compact" id="e6k-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; Desktop &amp; Enterprise certified</p>
-      </div>
+{#- CREDENTIALS — Certified-by-Intuit proof, prose reading column -#}
+<section class="sec reveal" id="e6k-credentials" style="padding-top:24px;padding-bottom:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Certified by Intuit &middot; File-repair specialists</div>
+    <h2 class="h2" style="margin-bottom:18px;">Certified QuickBooks ProAdvisor credentials.</h2>
+    <div class="r-3" style="margin-bottom:22px;">
+      {%- for s in credStats %}<div><p style="font-family:'Fraunces',serif;font-variation-settings:'opsz' 40;font-weight:600;font-size:26px;color:var(--color-accent);margin:0 0 4px;">{{ s.value }}</p><p style="font-size:13px;line-height:1.5;color:var(--color-ink-mute);margin:0;">{{ s.label }}</p></div>{%- endfor %}
     </div>
-  </div>
-</section>
-
-<section class="section section--compact section--tier-guide" id="e6k-credentials">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Certified by Intuit · File-repair specialists</p>
-      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials.</h2>
-    </header>
-    <div class="stat-row">
-      {%- for s in credStats %}
-      <div><div class="stat__value">{{ s.value }}</div><div class="stat__label">{{ s.label }}</div></div>
-      {%- endfor %}
-    </div>
-    <ul class="checks-list">
+    <ul class="checklist">
       {%- for c in credentials %}<li>{{ c | safe }}</li>{%- endfor %}
     </ul>
   </div>
 </section>
 
-<section class="section section--alt" id="e6k-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">The 6000-series, plainly.</h2>
-    </header>
+{#- DEFINITION — plain-terms prose body -#}
+<section class="sec reveal" id="e6k-definition" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">In plain terms</div>
+    <h2 class="h2" style="margin-bottom:18px;">The 6000-series, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="e6k-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">The 6000-series, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="e6k-buckets">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Three buckets within the family</p>
-      <h2 class="section__heading">Identify which 6000 bucket you&rsquo;re in.</h2>
-      <p class="section__lede">Knowing the bucket determines whether self-fix is realistic or whether you should skip ahead to a ProAdvisor diagnostic. Each bucket gets dedicated detail below.</p>
-    </header>
-    <div class="grid-3">
+{#- BUCKETS — identify which 6000 bucket you're in -#}
+<section class="sec reveal" id="e6k-buckets" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Three buckets within the family</div>
+    <h2 class="h2" style="margin-bottom:8px;">Identify which 6000 bucket you&rsquo;re in.</h2>
+    <p style="font-size:15px;color:var(--color-ink-mute);margin:0 0 18px;">Knowing the bucket determines whether self-fix is realistic or whether you should skip ahead to a ProAdvisor diagnostic. Each bucket gets dedicated detail below.</p>
+    <div class="prose">
       {%- for b in buckets %}
-      <div class="stack-8">
-        <h3>{{ b.name | safe }}</h3>
-        <p class="prose">{{ b.body | safe }}</p>
-      </div>
+      <h3>{{ b.name | safe }}</h3>
+      <p>{{ b.body | safe }}</p>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="e6k-first-pass">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Universal first-pass</p>
-      <h2 class="section__heading">The fix that works for most 6000 variants.</h2>
-      <p class="section__lede">These six steps address the file-access and multi-user-conflict causes that drive the majority of 6000 errors. Work through them in order; many users resolve their error before reaching step 4. If you complete all six and the error persists, you&rsquo;re in bucket 3 (file damage) and self-fix has reached its limit.</p>
-    </header>
-    <ol class="fix-steps">
+{#- FIX STEPS — universal first-pass. KEEPS schema-referenced anchor #e6k-first-pass -#}
+<section class="sec reveal" id="e6k-first-pass" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Universal first-pass</div>
+    <h2 class="h2" style="margin-bottom:8px;">The fix that works for most 6000 variants.</h2>
+    <p style="font-size:15px;color:var(--color-ink-mute);margin:0 0 8px;">These six steps address the file-access and multi-user-conflict causes that drive the majority of 6000 errors. Work through them in order; many users resolve their error before reaching step 4. If you complete all six and the error persists, you&rsquo;re in bucket 3 (file damage) and self-fix has reached its limit.</p>
+    <div class="steps">
       {%- for s in fixSteps %}
-      <li>
-        <span class="n">{{ loop.index }}</span>
-        <div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
-      </li>
+      <div class="fixstep"><span class="fixstep__n{% if loop.last %} fixstep__n--done{% endif %}">{{ loop.index }}</span><div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section section--alt" id="e6k-variants">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Variant-specific detail</p>
-      <h2 class="section__heading">Each 6000 variant, explained.</h2>
-      <p class="section__lede">If the universal first-pass didn&rsquo;t resolve your error, the specific variant determines next steps. Find yours below for variant-specific cause and recommendation.</p>
-    </header>
-    <div class="grid-3">
+{#- VARIANTS — each 6000 variant, explained -#}
+<section class="sec reveal" id="e6k-variants" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Variant-specific detail</div>
+    <h2 class="h2" style="margin-bottom:8px;">Each 6000 variant, explained.</h2>
+    <p style="font-size:15px;color:var(--color-ink-mute);margin:0 0 18px;">If the universal first-pass didn&rsquo;t resolve your error, the specific variant determines next steps. Find yours below for variant-specific cause and recommendation.</p>
+    <div class="prose">
       {%- for v in variants %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ v.code }}</p>
-        <h3>{{ v.name | safe }}</h3>
-        <p class="prose">{{ v.body | safe }}</p>
-      </div>
+      <h3>{{ v.code }} &middot; {{ v.name | safe }}</h3>
+      <p>{{ v.body | safe }}</p>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="e6k-escalate">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When to stop self-fix and call</p>
-      <h2 class="section__heading">Three signals you&rsquo;re past self-fix.</h2>
-    </header>
-    <div class="grid-3">
+{#- ESCALATE — three signals you're past self-fix -#}
+<section class="sec reveal" id="e6k-escalate" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">When to stop self-fix and call</div>
+    <h2 class="h2" style="margin-bottom:18px;">Three signals you&rsquo;re past self-fix.</h2>
+    <div class="prose">
       {%- for p in proSignals %}
-      <div class="stack-8">
-        <h3>{{ p.name | safe }}</h3>
-        <p class="prose">{{ p.body | safe }}</p>
-      </div>
+      <h3>{{ p.name | safe }}</h3>
+      <p>{{ p.body | safe }}</p>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="e6k-breakout">
-  <div class="container container--narrow">
-    <div class="call-breakout">
-      <div>
-        <p class="call-breakout__title">First-pass didn&rsquo;t clear the 6000 error?</p>
-        <p class="call-breakout__sub">A Certified ProAdvisor repairs the file damage before it worsens &mdash; typically a $1,200&ndash;$3,000 fixed-fee scope. Independent firm.</p>
-      </div>
-      <a class="btn btn--primary" href="/contact/?intent=qb-error-6000">Book the discovery call</a>
+{#- CALL-BREAKOUT — slim conversion seam -#}
+<section style="padding:16px 0 40px;" id="e6k-breakout">
+  <div class="ct read read--doc">
+    <div class="breakout">
+      <div><p class="breakout__t">First-pass didn&rsquo;t clear the 6000 error?</p><p class="breakout__sub">A Certified ProAdvisor repairs the file damage before it worsens &mdash; typically a $1,200&ndash;$3,000 fixed-fee scope. Independent firm.</p></div>
+      <a class="btn btn-cta" href="/contact/?intent=qb-error-6000" style="display:inline-flex;align-items:center;height:46px;padding:0 20px;border-radius:10px;font-size:14.5px;font-weight:600;flex:none;">Book the discovery call</a>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="e6k-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">When self-fix has reached its limit</p>
-      <h2 class="section__heading">File damage doesn&rsquo;t resolve itself.</h2>
-    </header>
+{#- OPERATOR — file damage doesn't resolve itself + fit stats -#}
+<section class="sec reveal" id="e6k-operator" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">When self-fix has reached its limit</div>
+    <h2 class="h2" style="margin-bottom:18px;">File damage doesn&rsquo;t resolve itself.</h2>
     <div class="prose">
       <p>The honest truth about 6000-series file-damage variants (6000-301, 6147, 6000-832): they don&rsquo;t self-heal. Each open and close of a damaged file risks worsening the underlying corruption. The right move when you&rsquo;re seeing these codes &mdash; or when first-pass self-fix didn&rsquo;t resolve any 6000 variant &mdash; is a Certified ProAdvisor diagnostic that identifies the actual integrity state of the file and scopes the repair before continued use makes the problem worse.</p>
       <p>Every TechBrot ProAdvisor holds active Desktop and Enterprise certifications with hands-on experience across the full 6000-series. Fixed-fee, written scope, no hourly billing, no commission on Intuit products. When multiple variants point to broader integrity issues, a <a href="/quickbooks/cleanup/">QuickBooks file cleanup</a> is the right engagement. Independent firm &mdash; not Intuit, and not Intuit&rsquo;s software support.</p>
@@ -209,40 +169,17 @@
   </div>
 </section>
 
-<section class="section" id="e6k-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">6000-series questions</p>
-      <h2 class="section__heading">What people ask about 6000-series errors.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="e6k-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="e6k-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-    <p class="meta-reviewed"><span>Published: 2026-06-14</span><span>Updated: 2026-06-14</span><span>Reviewed: 2026-06-14 &middot; Certified QuickBooks ProAdvisor</span></p>
-    <p class="prose"><a href="/quickbooks/help/error-codes/">All QuickBooks error codes <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
-  </div>
-</section>
-
-<section class="section section--alt" id="e6k-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related references</p>
-      <h2 class="section__heading">If you&rsquo;re also seeing other errors.</h2>
-    </header>
-    {%- for n in related %}
-    <div class="stack-8">
+{#- RELATED — if you're also seeing other errors -#}
+<section class="sec reveal" id="e6k-related" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Related references</div>
+    <h2 class="h2" style="margin-bottom:18px;">If you&rsquo;re also seeing other errors.</h2>
+    <div class="prose">
+      {%- for n in related %}
       <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+      <p>{{ n.body | safe }}</p>
+      {%- endfor %}
+      <p><a href="/quickbooks/help/error-codes/">All QuickBooks error codes <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
     </div>
-    {%- endfor %}
   </div>
 </section>

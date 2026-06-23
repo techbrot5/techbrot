@@ -1,9 +1,8 @@
 ---json
 {
-  "layout": "layouts/t-guide.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/quickbooks/help/error-codes/3371/",
   "slug": "e3371",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
   "title": "QuickBooks Error 3371: License Validation Fix · TechBrot",
   "description": "QuickBooks Error 3371 explained by Certified ProAdvisors — what it means, why license validation fails, the qbregistration.dat fix, the two status-code variants, and what to do when 3371 keeps coming back. Independent firm, not affiliated with Intuit Inc.",
@@ -14,15 +13,24 @@
     { "name": "Error Codes", "href": "/quickbooks/help/error-codes/" },
     { "name": "Error 3371" }
   ],
+  "metaReviewed": "2026-06-14",
+  "byline": {
+    "name": "By the Certified QuickBooks ProAdvisor team",
+    "meta": "Reviewed 2026-06 &middot; Desktop &amp; Enterprise certified &middot; independent, not Intuit"
+  },
   "hero": {
-    "eyebrow": "QuickBooks error reference &middot; <span class=\"error-badge\">3371</span>",
+    "badge": "ERROR &middot; 3371",
+    "eyebrow": "QuickBooks error reference",
     "heading": "QuickBooks Error 3371: license validation failed.",
     "subheading": "Error 3371 means QuickBooks can&rsquo;t verify its own license at startup &mdash; specifically, the <code>qbregistration.dat</code> file that stores product registration and license information is missing, corrupted, or inaccessible. The good news: of all QuickBooks errors, 3371 has one of the most well-bounded fixes &mdash; Tool Hub&rsquo;s automated 3371 Fix resolves the majority of cases on the first attempt. Below: what causes it, the step-by-step fix, the two status-code variants, and what to do when 3371 keeps coming back. Independent firm, not affiliated with Intuit Inc.",
     "actions": [
       { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
-      { "label": "Book the discovery call", "href": "/contact/?intent=qb-error-3371", "class": "btn--ghost" },
-      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=qb-error-3371", "class": "btn--ghost" }
     ]
+  },
+  "sec": {
+    "aiH": "Error 3371, in five questions.",
+    "faqH": "What people ask about Error 3371."
   },
   "inBrief": {
     "text": "<strong>Error 3371</strong> is a license-validation error: QuickBooks can&rsquo;t verify its license at startup because the <code>qbregistration.dat</code> file is missing, corrupted, or inaccessible. Two status-code variants exist &mdash; <strong>-1</strong> (file missing/damaged) and <strong>11118</strong> (system clock or .NET Framework). The standard fix resolves most cases within 20 minutes: verify the system clock, run Tool Hub&rsquo;s automated 3371 Error Fix, and if that fails, delete <code>qbregistration.dat</code> and reactivate. Recurring 3371 signals an underlying cause &mdash; antivirus, user-profile damage, or registry corruption &mdash; that needs a Certified ProAdvisor diagnostic.",
@@ -40,163 +48,115 @@
 }
 ---
 
-<section class="section section--compact" id="e3371-disclosure">
-  <div class="container container--narrow">
-    <div class="disclosure">
-      <strong>This is an independent Certified QuickBooks ProAdvisor reference &mdash; not Intuit, and not QuickBooks&rsquo; official support.</strong> For Intuit software-level issues (license reactivation, billing, subscription), Intuit&rsquo;s own support is the right path. We provide independent, operational help resolving errors inside QuickBooks. QuickBooks and Intuit are registered trademarks of Intuit Inc.
+{#- DISCLOSURE — Sheet-7 honest-triage, above the fold of the body -#}
+<section style="padding:8px 0 32px;" id="e3371-disclosure">
+  <div class="ct read read--doc">
+    <div class="disclose">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.3" stroke-linecap="round"/></svg>
+      <div class="disclose__body"><strong>This is an independent Certified QuickBooks ProAdvisor reference &mdash; not Intuit, and not QuickBooks&rsquo; official support.</strong> For Intuit software-level issues (license reactivation, billing, subscription), Intuit&rsquo;s own support is the right path. We provide independent, operational help resolving errors inside QuickBooks. QuickBooks and Intuit are registered trademarks of Intuit Inc.</div>
     </div>
   </div>
 </section>
 
-<section class="section section--compact" id="e3371-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; Desktop &amp; Enterprise certified</p>
-      </div>
+{#- CREDENTIALS — Certified-by-Intuit proof, prose reading column -#}
+<section class="sec reveal" id="e3371-credentials" style="padding-top:24px;padding-bottom:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Certified by Intuit &middot; Desktop &amp; Enterprise specialists</div>
+    <h2 class="h2" style="margin-bottom:18px;">Certified QuickBooks ProAdvisor credentials.</h2>
+    <div class="r-3" style="margin-bottom:22px;">
+      {%- for s in credStats %}<div><p style="font-family:'Fraunces',serif;font-variation-settings:'opsz' 40;font-weight:600;font-size:26px;color:var(--color-accent);margin:0 0 4px;">{{ s.value }}</p><p style="font-size:13px;line-height:1.5;color:var(--color-ink-mute);margin:0;">{{ s.label }}</p></div>{%- endfor %}
     </div>
-  </div>
-</section>
-
-<section class="section section--compact section--tier-guide" id="e3371-credentials">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Certified by Intuit · Desktop &amp; Enterprise specialists</p>
-      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials.</h2>
-    </header>
-    <div class="stat-row">
-      {%- for s in credStats %}
-      <div><div class="stat__value">{{ s.value }}</div><div class="stat__label">{{ s.label }}</div></div>
-      {%- endfor %}
-    </div>
-    <ul class="checks-list">
+    <ul class="checklist">
       {%- for c in credentials %}<li>{{ c | safe }}</li>{%- endfor %}
     </ul>
   </div>
 </section>
 
-<section class="section section--alt" id="e3371-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Error 3371, plainly.</h2>
-    </header>
+{#- DEFINITION — plain-terms prose body -#}
+<section class="sec reveal" id="e3371-definition" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">In plain terms</div>
+    <h2 class="h2" style="margin-bottom:18px;">Error 3371, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="e3371-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Error 3371, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="e3371-what-is">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The technical heart of 3371</p>
-      <h2 class="section__heading">Understanding qbregistration.dat.</h2>
-      <p class="section__lede">Almost every 3371 fix involves this one file. Understanding what it does makes the fix procedures clearer and the recurring-error patterns easier to recognize.</p>
-    </header>
-    <div class="grid-3">
+{#- WHAT-IS — the technical heart of 3371: qbregistration.dat -#}
+<section class="sec reveal" id="e3371-what-is" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">The technical heart of 3371</div>
+    <h2 class="h2" style="margin-bottom:8px;">Understanding qbregistration.dat.</h2>
+    <p style="font-size:15px;color:var(--color-ink-mute);margin:0 0 18px;">Almost every 3371 fix involves this one file. Understanding what it does makes the fix procedures clearer and the recurring-error patterns easier to recognize.</p>
+    <div class="prose">
       {%- for w in whatIs %}
-      <div class="stack-8">
-        <h3>{{ w.name | safe }}</h3>
-        <p class="prose">{{ w.body | safe }}</p>
-      </div>
+      <h3>{{ w.name | safe }}</h3>
+      <p>{{ w.body | safe }}</p>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="e3371-self-fix">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The self-fix</p>
-      <h2 class="section__heading">How to fix Error 3371 yourself.</h2>
-      <p class="section__lede">This sequence resolves most 3371 cases within 20 minutes. The first step (system-clock check) is the one most users skip &mdash; and it&rsquo;s the most common reason Tool Hub&rsquo;s automated fix doesn&rsquo;t hold. Have your QuickBooks license number ready before starting; you&rsquo;ll need it for reactivation.</p>
-    </header>
-    <ol class="fix-steps">
+{#- FIX STEPS — numbered HowTo procedure. KEEPS schema-referenced anchor #e3371-self-fix -#}
+<section class="sec reveal" id="e3371-self-fix" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">The self-fix</div>
+    <h2 class="h2" style="margin-bottom:8px;">How to fix Error 3371 yourself.</h2>
+    <p style="font-size:15px;color:var(--color-ink-mute);margin:0 0 8px;">This sequence resolves most 3371 cases within 20 minutes. The first step (system-clock check) is the one most users skip &mdash; and it&rsquo;s the most common reason Tool Hub&rsquo;s automated fix doesn&rsquo;t hold. Have your QuickBooks license number ready before starting; you&rsquo;ll need it for reactivation.</p>
+    <div class="steps">
       {%- for s in fixSteps %}
-      <li>
-        <span class="n">{{ loop.index }}</span>
-        <div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
-      </li>
+      <div class="fixstep"><span class="fixstep__n{% if loop.last %} fixstep__n--done{% endif %}">{{ loop.index }}</span><div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section section--alt" id="e3371-variants">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Two status code variants</p>
-      <h2 class="section__heading">3371 isn&rsquo;t one error &mdash; it&rsquo;s two.</h2>
-      <p class="section__lede">QuickBooks displays 3371 with a status code that indicates which underlying problem produced it. Knowing your variant narrows the cause and tightens the fix.</p>
-    </header>
-    <div class="grid-3">
+{#- VARIANTS — two status code variants -#}
+<section class="sec reveal" id="e3371-variants" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Two status code variants</div>
+    <h2 class="h2" style="margin-bottom:8px;">3371 isn&rsquo;t one error &mdash; it&rsquo;s two.</h2>
+    <p style="font-size:15px;color:var(--color-ink-mute);margin:0 0 18px;">QuickBooks displays 3371 with a status code that indicates which underlying problem produced it. Knowing your variant narrows the cause and tightens the fix.</p>
+    <div class="prose">
       {%- for v in variants %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ v.code }}</p>
-        <h3>{{ v.name | safe }}</h3>
-        <p class="prose">{{ v.body | safe }}</p>
-      </div>
+      <h3>{{ v.code }} &middot; {{ v.name | safe }}</h3>
+      <p>{{ v.body | safe }}</p>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="e3371-recurs">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When 3371 keeps coming back</p>
-      <h2 class="section__heading">Surface fix vs. durable fix.</h2>
-      <p class="section__lede">Tool Hub&rsquo;s 3371 Fix and manual qbregistration.dat deletion almost always resolve the error <em>temporarily</em>. When the error returns &mdash; within days, weeks, or the next startup &mdash; the surface fix isn&rsquo;t the problem; the underlying cause is.</p>
-    </header>
-    <div class="grid-3">
+{#- RECURS — when 3371 keeps coming back -#}
+<section class="sec reveal" id="e3371-recurs" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">When 3371 keeps coming back</div>
+    <h2 class="h2" style="margin-bottom:8px;">Surface fix vs. durable fix.</h2>
+    <p style="font-size:15px;color:var(--color-ink-mute);margin:0 0 18px;">Tool Hub&rsquo;s 3371 Fix and manual qbregistration.dat deletion almost always resolve the error <em>temporarily</em>. When the error returns &mdash; within days, weeks, or the next startup &mdash; the surface fix isn&rsquo;t the problem; the underlying cause is.</p>
+    <div class="prose">
       {%- for r in recurs %}
-      <div class="stack-8">
-        <h3>{{ r.name | safe }}</h3>
-        <p class="prose">{{ r.body | safe }}</p>
-      </div>
+      <h3>{{ r.name | safe }}</h3>
+      <p>{{ r.body | safe }}</p>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="e3371-breakout">
-  <div class="container container--narrow">
-    <div class="call-breakout">
-      <div>
-        <p class="call-breakout__title">Tool Hub didn&rsquo;t clear 3371?</p>
-        <p class="call-breakout__sub">A Certified ProAdvisor finds why the license file keeps breaking &mdash; typically a $500&ndash;$1,500 fixed-fee scope. Independent firm.</p>
-      </div>
-      <a class="btn btn--primary" href="/contact/?intent=qb-error-3371">Book the discovery call</a>
+{#- CALL-BREAKOUT — slim conversion seam -#}
+<section style="padding:16px 0 40px;" id="e3371-breakout">
+  <div class="ct read read--doc">
+    <div class="breakout">
+      <div><p class="breakout__t">Tool Hub didn&rsquo;t clear 3371?</p><p class="breakout__sub">A Certified ProAdvisor finds why the license file keeps breaking &mdash; typically a $500&ndash;$1,500 fixed-fee scope. Independent firm.</p></div>
+      <a class="btn btn-cta" href="/contact/?intent=qb-error-3371" style="display:inline-flex;align-items:center;height:46px;padding:0 20px;border-radius:10px;font-size:14.5px;font-weight:600;flex:none;">Book the discovery call</a>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="e3371-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">When the surface fix won&rsquo;t hold</p>
-      <h2 class="section__heading">Durable fix beats another Tool Hub run.</h2>
-    </header>
+{#- OPERATOR — durable fix past the surface + fit stats -#}
+<section class="sec reveal" id="e3371-operator" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">When the surface fix won&rsquo;t hold</div>
+    <h2 class="h2" style="margin-bottom:18px;">Durable fix beats another Tool Hub run.</h2>
     <div class="prose">
       <p>If you&rsquo;ve resolved 3371 with Tool Hub twice and it keeps coming back, another Tool Hub run isn&rsquo;t the answer &mdash; you need diagnosis of <em>why</em> the file keeps getting damaged. A Certified ProAdvisor identifies the underlying cause (antivirus, user profile, registry, or system-level) within an hour and applies a durable fix that holds across restarts and the next Windows update.</p>
       <p>3371 engagements are among the fastest and most well-bounded we run &mdash; reflected in the pricing. Fixed-fee, written scope, no commission on Intuit products. When 3371 turns out to signal broader installation problems, a <a href="/quickbooks/cleanup/">QuickBooks file cleanup</a> is the right scope. Independent firm &mdash; not Intuit, and not Intuit&rsquo;s software support.</p>
@@ -210,40 +170,17 @@
   </div>
 </section>
 
-<section class="section" id="e3371-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Error 3371 questions</p>
-      <h2 class="section__heading">What people ask about Error 3371.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="e3371-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="e3371-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-    <p class="meta-reviewed"><span>Published: 2026-06-14</span><span>Updated: 2026-06-14</span><span>Reviewed: 2026-06-14 &middot; Certified QuickBooks ProAdvisor</span></p>
-    <p class="prose"><a href="/quickbooks/help/error-codes/">All QuickBooks error codes <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
-  </div>
-</section>
-
-<section class="section section--alt" id="e3371-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related references</p>
-      <h2 class="section__heading">Other installation &amp; license errors.</h2>
-    </header>
-    {%- for n in related %}
-    <div class="stack-8">
+{#- RELATED — other installation & license errors -#}
+<section class="sec reveal" id="e3371-related" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Related references</div>
+    <h2 class="h2" style="margin-bottom:18px;">Other installation &amp; license errors.</h2>
+    <div class="prose">
+      {%- for n in related %}
       <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+      <p>{{ n.body | safe }}</p>
+      {%- endfor %}
+      <p><a href="/quickbooks/help/error-codes/">All QuickBooks error codes &rarr;</a></p>
     </div>
-    {%- endfor %}
   </div>
 </section>
