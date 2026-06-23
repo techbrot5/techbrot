@@ -1,8 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-hub.njk",
+  "layout": "layouts/t-location.njk",
   "permalink": "/find-an-accountant/florida/industries/",
   "slug": "fl-industries-hub",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "heroLight": true,
+  "sec": { "faqH": "Florida industry accounting questions." },
   "title": "Florida Industry-Specific Accounting · TechBrot",
   "description": "Industry-specific accounting for Florida businesses — hospitality, real estate, construction, marine, healthcare, and professional services, each built around Florida's tax rules. Call (877) 751-5575.",
   "breadcrumb": [
@@ -42,56 +47,30 @@
 }
 ---
 
-{# ── SUMMARY ── #}
-<section class="section section--compact" id="fl-industries-hub-summary-sec">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In short</p>
-      <h2 class="section__heading">Industry-specific Florida accounting.</h2>
-    </header>
-    <p class="prose" id="fl-industries-hub-summary">{{ summary | safe }}</p>
+{#- ═══ BESPOKE BODY (FL industries sub-hub) — v2 dc-system, full depth, FROZEN content.
+    Section ids == this page's own pageGraph anchors (#fl-industries-hub-summary speakable +
+    #fl-industries-hub-grid + #fl-industries-hub-faq handled by layout). ═══ -#}
+
+{# ── SUMMARY · real H2 carrying the TL;DR (.idx + .prose) — sand ── #}
+<section class="sec reveal" id="fl-industries-hub-summary-sec" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In short</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Industry-specific Florida accounting.</h2>
+    <div class="prose"><p id="fl-industries-hub-summary">{{ summary | safe }}</p></div>
   </div>
 </section>
 
-{# ── INDUSTRIES GRID · the 6 FL state-weighted verticals (buyer-cards) ── #}
-<section class="section" id="fl-industries-hub-grid">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Florida-weighted verticals</p>
-      <h2 class="section__heading">Six Florida industries we build books for.</h2>
-      <p class="section__lede">Each page is built around that industry's Florida-specific accounting &mdash; not a keyword swap.</p>
-    </header>
-    <div class="grid-3">
+{# ── INDUSTRY ROUTING · 6 FL state-weighted verticals → .rel-card grid (r-3), each links its child ── #}
+<section class="sec reveal" id="fl-industries-hub-grid">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Florida-weighted verticals</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Six Florida industries we build books for.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:62ch;">Each page is built around that industry&rsquo;s Florida-specific accounting &mdash; not a keyword swap.</p>
+    <div class="r-3">
       {%- for i in industries %}
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading">{{ i.title | safe }}</h3>
-        <p class="buyer-card__body">{{ i.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ i.href }}">{{ i.cta | safe }}</a>
-      </article>
+      <a class="rel-card" href="{{ i.href }}"><h3 class="rel-card__t">{{ i.title | safe }}</h3><p class="rel-card__d">{{ i.body | safe }}</p><span class="ptier__link" style="margin-top:10px;">{{ i.cta | safe }}</span></a>
       {%- endfor %}
     </div>
-    <p class="prose">{{ industriesNote | safe }}</p>
-  </div>
-</section>
-
-{# ── FAQ ── #}
-<section class="section section--alt" id="fl-industries-hub-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Florida industry accounting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="fl-industries-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="fl-industries-hub-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
+    <div class="prose" style="margin-top:26px;"><p>{{ industriesNote | safe }}</p></div>
   </div>
 </section>

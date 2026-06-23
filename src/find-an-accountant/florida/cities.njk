@@ -9,6 +9,7 @@
   "heroLight": true,
   "title": "Florida Cities We Serve · Bookkeeping & QuickBooks · TechBrot",
   "description": "Certified QuickBooks ProAdvisor bookkeeping across Florida — Miami, Orlando, Tampa, Jacksonville, Fort Lauderdale, St. Petersburg, and all 67 counties. No income tax; the 5.5% corporate tax, 6%+surtax sales tax, and tax on services handled. Call (877) 751-5575.",
+  "sec": { "faqH": "Florida cities &amp; coverage questions." },
   "breadcrumb": [
     { "name": "Home", "href": "/" },
     { "name": "Find an Accountant", "href": "/find-an-accountant/" },
@@ -45,56 +46,30 @@
 }
 ---
 
-{# ── SUMMARY ── #}
-<section class="section section--compact" id="fl-cities-summary-sec">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In short</p>
-      <h2 class="section__heading">Florida bookkeeping, city by city.</h2>
-    </header>
-    <p class="prose" id="fl-cities-summary">{{ summary | safe }}</p>
+{#- ═══ BESPOKE BODY (FL cities sub-hub) — v2 dc-system, full depth, FROZEN content.
+    Section ids == this page's own pageGraph anchors (#fl-cities-summary speakable +
+    #fl-cities-grid + #fl-cities-faq handled by layout). ═══ -#}
+
+{# ── SUMMARY · real H2 carrying the TL;DR (.idx + .prose) — sand ── #}
+<section class="sec reveal" id="fl-cities-summary-sec" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In short</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Florida bookkeeping, city by city.</h2>
+    <div class="prose"><p id="fl-cities-summary">{{ summary | safe }}</p></div>
   </div>
 </section>
 
-{# ── CITIES GRID · the dedicated metro pages (buyer-cards) ── #}
-<section class="section" id="fl-cities-grid">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Dedicated city pages</p>
-      <h2 class="section__heading">Florida metros we serve.</h2>
-      <p class="section__lede">Each city page is built around that city&rsquo;s real economy &mdash; not a name swap.</p>
-    </header>
-    <div class="grid-3">
+{# ── CITY ROUTING · dedicated metro pages → .rel-card grid (r-3), each links its child ── #}
+<section class="sec reveal" id="fl-cities-grid">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Dedicated city pages</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Florida metros we serve.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:62ch;">Each city page is built around that city&rsquo;s real economy &mdash; not a name swap.</p>
+    <div class="r-3">
       {%- for c in cities %}
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading">{{ c.name | safe }}</h3>
-        <p class="buyer-card__body">{{ c.note | safe }}</p>
-        <a class="buyer-card__cta" href="{{ c.href }}">{{ c.name | safe }} bookkeeper &rarr;</a>
-      </article>
+      <a class="rel-card" href="{{ c.href }}"><h3 class="rel-card__t">{{ c.name | safe }}</h3><p class="rel-card__d">{{ c.note | safe }}</p><span class="ptier__link" style="margin-top:10px;">{{ c.name | safe }} bookkeeper &rarr;</span></a>
       {%- endfor %}
     </div>
-    <p class="prose">{{ citiesNote | safe }}</p>
-  </div>
-</section>
-
-{# ── FAQ ── #}
-<section class="section section--alt" id="fl-cities-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Florida cities &amp; coverage questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="fl-cities-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="fl-cities-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
+    <div class="prose" style="margin-top:26px;"><p>{{ citiesNote | safe }}</p></div>
   </div>
 </section>

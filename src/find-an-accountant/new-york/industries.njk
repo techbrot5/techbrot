@@ -3,6 +3,7 @@
   "layout": "layouts/t-location.njk",
   "permalink": "/find-an-accountant/new-york/industries/",
   "slug": "ny-ind-hub",
+  "sec": { "faqH": "New York industry accounting questions." },
   "tierClass": "section--tier-hub",
   "bodyClass": "page--location",
   "callBar": true,
@@ -46,124 +47,91 @@
 }
 ---
 
+{#- ═══ BESPOKE BODY (NY industries sub-hub) — v2 dc-system components, full depth, NY
+    content FROZEN. Spine (hero / in-brief #ny-ind-hub-in-brief-text / FAQ [sec.faqH] /
+    light CTA) is layout-owned (t-location). Every section id == this page's own
+    pageGraph schema anchor; the AI-summary list keeps #ny-ind-hub-ai-summary-list intact.
+    Zero old classes. ═══ -#}
+
 {# ── INDUSTRY ACCOUNTING, PLAINLY · real H2 carrying the one-paragraph summary (right after the in-brief) ── #}
-<section class="section section--compact" id="ny-ind-hub-coverage">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In one paragraph</p>
-      <h2 class="section__heading">New York industry accounting, plainly.</h2>
-    </header>
-    <p class="prose" id="ny-ind-hub-in-brief-text">{{ coverage | safe }}</p>
+<section class="sec reveal" id="ny-ind-hub-coverage" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">New York industry accounting, plainly.</h2>
+    <div class="prose"><p>{{ coverage | safe }}</p></div>
   </div>
 </section>
 
-{# ── AI SUMMARY · 5 entity-dense Q&As (H2: New York industry accounting, in five questions.) ── #}
-<section class="section section--alt" id="ny-ind-hub-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">New York industry accounting, in five questions.</h2>
-    </header>
-    <dl class="ai-summary ai-summary--ruled" id="ny-ind-hub-ai-summary-list">
+{# ── AI SUMMARY · 5 entity-dense Q&As — frozen anchor #ny-ind-hub-ai-summary-list (H2: New York industry accounting, in five questions.) ── #}
+<section class="sec reveal" id="ny-ind-hub-ai-summary">
+  <div class="ct read">
+    <div class="idx idx--center"><span class="idx__n">§</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="text-align:center;margin:0 auto 36px;max-width:28ch;">New York industry accounting, in five questions.</h2>
+    <dl class="speakable ai-qa" id="ny-ind-hub-ai-summary-list">
       {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
-        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
-      </div>
+      <div class="ai-qa__item"><dt><h3>{{ item.q | safe }}</h3></dt><dd style="margin:0;"><p>{{ item.a | safe }}</p></dd></div>
       {%- endfor %}
     </dl>
   </div>
 </section>
 
-{# ── FEATURED INDUSTRIES · buyer-card grid; each H3 verbatim, each links to its industry page ──
-   (H2: Where we go deep in New York. + 6 H3s; stat card = grid-3 + stack-8) #}
-<section class="section" id="ny-ind-hub-featured">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">New York industry expertise</p>
-      <h2 class="section__heading">Where we go deep in New York.</h2>
-      <p class="section__lede">Six industries with dedicated New York pages &mdash; each built around the number that runs that business, with the state&rsquo;s rules included.</p>
-    </header>
-    <div class="grid-3">
+{# ── FEATURED INDUSTRIES · industry routing rel-cards; each H3 verbatim, each links to its industry page ──
+   (H2: Where we go deep in New York. + 6 H3s) #}
+<section class="sec reveal" id="ny-ind-hub-featured" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">New York industry expertise</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Where we go deep in New York.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:64ch;">Six industries with dedicated New York pages &mdash; each built around the number that runs that business, with the state&rsquo;s rules included.</p>
+    <div class="r-3">
       {%- for c in featured %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ c.num }} &middot; {{ c.eyebrow | safe }}</p>
-        <h3 class="buyer-card__heading"><a href="{{ c.href }}">{{ c.heading | safe }}</a></h3>
-        <p class="buyer-card__body">{{ c.body | safe }}</p>
-        <div class="stack-8">
-          <p class="buyer-card__opener"><b>Focus</b> &middot; {{ c.focus | safe }}</p>
-        </div>
-        <a class="buyer-card__cta" href="{{ c.href }}">{{ c.cta | safe }}</a>
-      </article>
+      <a class="rel-card" href="{{ c.href }}">
+        <span class="eyebrow" style="display:block;margin-bottom:8px;">{{ c.num }} &middot; {{ c.eyebrow | safe }}</span>
+        <h3 class="rel-card__t">{{ c.heading | safe }}</h3>
+        <p class="rel-card__d">{{ c.body | safe }}</p>
+        <p class="rel-card__d" style="margin-top:8px;"><strong>Focus</strong> &middot; {{ c.focus | safe }}</p>
+        <span class="ptier__link" style="margin-top:12px;">{{ c.cta | safe }}</span>
+      </a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
 {# ── WHY INDUSTRY · context prose (H2: Generic bookkeeping misses the number that runs your business — twice over in New York.) ── #}
-<section class="section section--alt" id="ny-ind-hub-why">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Why it matters</p>
-      <h2 class="section__heading">Generic bookkeeping misses the number that runs your business &mdash; twice over in New York.</h2>
-    </header>
-    {%- for p in why %}
-    <p class="prose">{{ p | safe }}</p>
-    {%- endfor %}
-  </div>
-</section>
-
-{# ── MORE INDUSTRIES · additional dedicated pages routing list (additive — NOT a frozen heading section) ── #}
-<section class="section" id="ny-ind-hub-more">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">More New York industries</p>
-      <h2 class="section__heading">We build for these New York industries too.</h2>
-      <p class="section__lede">The same operating standard and Certified ProAdvisor delivery, with each industry&rsquo;s real New York angle.</p>
-    </header>
-    <ul class="checks-list">
-      {%- for c in moreIndustries %}
-      <li><a href="{{ c.href }}">{{ c.name | safe }}</a> &mdash; {{ c.angle | safe }}</li>
-      {%- endfor %}
-    </ul>
-    <p class="prose"><small>{{ moreNote | safe }}</small></p>
-  </div>
-</section>
-
-{# ── FAQ · contract Q/A; visible = FAQPage schema (H2: New York industry accounting questions.) ── #}
-<section class="section section--alt" id="ny-ind-hub-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">New York industry accounting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-ind-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="ny-ind-hub-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
+<section class="sec reveal" id="ny-ind-hub-why">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why it matters</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Generic bookkeeping misses the number that runs your business &mdash; twice over in New York.</h2>
+    <div class="prose">
+      {%- for p in why %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
+{# ── MORE INDUSTRIES · additional dedicated pages routing (additive — NOT a frozen heading section) ── #}
+<section class="sec reveal" id="ny-ind-hub-more" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">More New York industries</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">We build for these New York industries too.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:64ch;">The same operating standard and Certified ProAdvisor delivery, with each industry&rsquo;s real New York angle.</p>
+    <div class="r-2">
+      {%- for c in moreIndustries %}
+      <a class="rel-card" href="{{ c.href }}"><h3 class="rel-card__t">{{ c.name | safe }}</h3><p class="rel-card__d">{{ c.angle | safe }}</p><span class="ptier__link" style="margin-top:10px;">Explore &rarr;</span></a>
+      {%- endfor %}
+    </div>
+    <div class="prose" style="margin-top:22px;"><p><small>{{ moreNote | safe }}</small></p></div>
+  </div>
+</section>
+
 {# ── EXPERT REVIEW · firm-level, no founder name (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
-<section class="section" id="ny-ind-hub-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
-    </header>
-    <div class="byline-block">
-      <div class="byline-block__mark" aria-hidden="true"></div>
+<section class="sec reveal" id="ny-ind-hub-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline" style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div class="byline__mark" aria-hidden="true" style="width:38px;height:38px;border-radius:9px;background:var(--color-accent);flex:none;"></div>
       <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified ProAdvisor firm</p>
+        <p class="byline__name" style="margin:0;font-weight:600;color:var(--color-ink);">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review" style="margin:2px 0 0;">TechBrot Inc. &middot; Independent Certified ProAdvisor firm</p>
       </div>
     </div>
     <div class="prose">
@@ -171,7 +139,7 @@
     </div>
     <div class="trust-row">
       {%- for c in reviewCreds %}
-      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      <div class="trust-row__item"><p class="trust-row__value" style="font-size:15px;">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
@@ -179,20 +147,14 @@
   </div>
 </section>
 
-{# ── RELATED · next-step cards; each H3 verbatim (H2: Related New York services. + 4 H3s) ── #}
-<section class="section section--alt" id="ny-ind-hub-related">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related New York services.</h2>
-    </header>
-    <div class="grid-2">
+{# ── RELATED · next-step rel-cards; each H3 verbatim (H2: Related New York services. + 4 H3s) ── #}
+<section class="sec reveal" id="ny-ind-hub-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;">Related New York services.</h2>
+    <div class="r-2">
       {%- for r in related %}
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading"><a href="{{ r.href }}">{{ r.name | safe }}</a></h3>
-        <p class="buyer-card__body">{{ r.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>
-      </article>
+      <a class="rel-card" href="{{ r.href }}"><h3 class="rel-card__t">{{ r.name | safe }}</h3><p class="rel-card__d">{{ r.body | safe }}</p><span class="ptier__link" style="margin-top:10px;">{{ r.cta | safe }}</span></a>
       {%- endfor %}
     </div>
   </div>
