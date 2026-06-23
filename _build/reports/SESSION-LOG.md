@@ -1543,3 +1543,13 @@ VERIFY: clean build 618 · 34 help pages on t-prose (33 + REP) · **battery GREE
 **METHOD VALIDATED** — batch subagents (REP as exact pattern) + battery gate works for the uniform D2 fan-out. Defer section-bg/overflow to the pre-flip pass.
 COUNT: **D2 = 35/153** (34 help + bank-feeds informational REP). Cumulative v2: C2(1)+D1(19)+D3(5)+D2(35) = 60 pages. Commit 121d02c (+ this log). Dev server live http://192.168.1.7:8080.
 OPEN/NEXT: **D2 fan-out continues — 118 remaining:** help 18 (reconciliation-broken/reports-wrong/sales-tax-issues/speak-to-an-expert/two-factor/w2-printing/when-to-call/proadvisor-phone-help/proadvisor-vs-intuit-support/irs-notices/missing-transactions/payroll-deadline-missed/payroll-failed/payroll-tax-error/file-corrupted/file-wont-open/unrecoverable-error/ps038) → online 39 → resources 19 → QB sub-pages (cleanup/recon/enterprise/desktop/setup/payroll/migration/premier ~31) → accounting singles 11. Same batch method + battery gate + anchor rule. Then D4/5/6 (NY) → D7 → B/C/E/F/G → A1.
+
+---
+
+## Turn -- 2026-06-23 -- D2 fan-out WAVE 2 (help 18 + online 38) — help+online silos COMPLETE [commit 5e63646]
+**56 pages converted t-guide→t-prose** via 5 parallel subagents (2 help-finish, 3 online), my battery = gate. **help 52/52 + online 39/39 DONE.** Full-depth GREEN: every heading/FAQ/cause/step/feature-part + Sheet-7 disclosure verbatim; hero/TL;DR/AI-summary/FAQ layout-rendered, prose body in reading column; data files untouched.
+**HARD anchor rule held** (non-uniform anchors preserved byte-exact: ps038-self-fix · urec-what-to-do · qbo-feat-*-fix · qbo-int-*-fix per each pageGraph). Badge: error-pill on error/error-code pages, rule-mark eyebrow on advisory/informational/integration. Sheet-7 triage pages (speak-to-an-expert/proadvisor-*/when-to-call) kept disclosure + intake-qualifying language verbatim, no Intuit affiliation implied.
+VERIFY: clean build 618 · help 52/52 + online 39/39 on t-prose · **battery GREEN** (anchors + equity, no regression).
+**NOTE (matches approved REP):** t-prose hero/ctaBand slice to 2 actions; a few pages' 3rd CTA action no longer renders (covered by breakout/ctaBand seams) — pre-flip review if wanted.
+COUNT: **D2 = 91/153** (help 52 + online 39). Cumulative v2: C2(1)+D1(19)+D3(5)+D2(91) = 116 pages. Commit 5e63646 (+ this log). Dev server live http://192.168.1.7:8080.
+OPEN/NEXT: **D2 remaining 62:** resources 19 (resources/guides 13 + resources/checklists 6) → QB sub-pages ~31 (quickbooks/cleanup 11 / reconciliation 5 / enterprise 4 / desktop 3 / setup 3 / payroll 2 / migration 2 / premier 1) → accounting singles 11. Same batch method + battery gate + anchor rule, defer section-bg/overflow to pre-flip. Then D4/5/6 (NY children) → D7 → B/C/E/F/G → A1.
