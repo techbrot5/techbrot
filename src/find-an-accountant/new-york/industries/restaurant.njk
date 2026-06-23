@@ -3,6 +3,7 @@
   "layout": "layouts/t-location.njk",
   "permalink": "/find-an-accountant/new-york/industries/restaurant/",
   "slug": "ny-ind-restaurant",
+  "sec": { "faqH": "New York restaurant accounting questions." },
   "tierClass": "section--tier-hub",
   "bodyClass": "page--location page--industry",
   "callBar": true,
@@ -43,170 +44,115 @@
 }
 ---
 
-{# ── SUMMARY · real H2 carrying the TL;DR prose. (H2: The short version.) ── #}
-<section class="section section--compact" id="ny-ind-restaurant-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In one paragraph</p>
-      <h2 class="section__heading">The short version.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in summary %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
-    </div>
+{#- ═══ BESPOKE BODY (NY restaurant industry child) — v2 dc-system components, full
+    depth, NY content FROZEN. Spine (hero / FAQ / light CTA) is layout-owned (t-location).
+    This page carries NO in-brief (none in frontmatter — baseline behavior preserved).
+    Schema cssSelector anchors are #ny-ind-restaurant-summary +
+    #ny-ind-restaurant-ai-summary-list. ═══ -#}
+
+{# ── SUMMARY · real H2 carrying the TL;DR prose. SCHEMA ANCHOR #ny-ind-restaurant-summary. (H2: The short version.) ── #}
+<section class="sec reveal" id="ny-ind-restaurant-summary" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">The short version.</h2>
+    <div class="prose">{%- for p in summary %}<p>{{ p | safe }}</p>{%- endfor %}</div>
   </div>
 </section>
 
-{# ── AI SUMMARY · five-question block. (H2: New York restaurant accounting, in five questions.) ── #}
-<section class="section" id="ny-ind-restaurant-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">New York restaurant accounting, in five questions.</h2>
-    </header>
-    <dl class="ai-summary ai-summary--ruled" id="ny-ind-restaurant-ai-summary-list">
+{# ── AI SUMMARY · five-question block. SCHEMA ANCHOR #ny-ind-restaurant-ai-summary-list. (H2: New York restaurant accounting, in five questions.) ── #}
+<section class="sec reveal" id="ny-ind-restaurant-ai-summary">
+  <div class="ct read">
+    <div class="idx idx--center"><span class="idx__n">§</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="text-align:center;margin:0 auto 36px;max-width:26ch;">New York restaurant accounting, in five questions.</h2>
+    <dl class="speakable ai-qa" id="ny-ind-restaurant-ai-summary-list">
       {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
-        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
-      </div>
+      <div class="ai-qa__item"><dt><h3>{{ item.q | safe }}</h3></dt><dd style="margin:0;"><p>{{ item.a | safe }}</p></dd></div>
       {%- endfor %}
     </dl>
   </div>
 </section>
 
-{# ── CHALLENGES · three places NY restaurants lose money (grid-3 buyer-cards). (H2 + 3 H3s) ── #}
-<section class="section section--alt" id="ny-ind-restaurant-challenges">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Why NY restaurant books leak margin</p>
-      <h2 class="section__heading">Three places New York restaurants lose money and risk penalties.</h2>
-      <p class="section__lede">In a business that lives on single-digit margins, each of these can be the difference between a profitable month and a loss. Knowing which one you&rsquo;re in tells us where to start.</p>
-    </header>
-    <div class="grid-3">
+{# ── CHALLENGES · three places NY restaurants lose money (r-3 dc-cards). (H2 + 3 H3s) ── #}
+<section class="sec reveal" id="ny-ind-restaurant-challenges" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why NY restaurant books leak margin</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:30ch;margin-bottom:10px;">Three places New York restaurants lose money and risk penalties.</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:64ch;">In a business that lives on single-digit margins, each of these can be the difference between a profitable month and a loss. Knowing which one you&rsquo;re in tells us where to start.</p>
+    <div class="r-3">
       {%- for c in challenges %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ c.signal | safe }}</p>
-        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
-        <p class="buyer-card__body">{{ c.body | safe }}</p>
-      </article>
+      <article class="dc-card"><span class="eyebrow">{{ c.signal | safe }}</span><h3>{{ c.title | safe }}</h3><div class="prose" style="font-size:15px;"><p>{{ c.body | safe }}</p></div></article>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── WHAT WE HANDLE · the six services (grid-3 buyer-cards). (H2 + 6 H3s) ── #}
-<section class="section" id="ny-ind-restaurant-handle">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What TechBrot handles</p>
-      <h2 class="section__heading">New York restaurant accounting, done by an expert.</h2>
-      <p class="section__lede">Every engagement is scoped to your concept and locations, delivered in your own QuickBooks file by a named Certified ProAdvisor &mdash; coordinating with your CPA, who files.</p>
-    </header>
-    <div class="grid-3">
+{# ── WHAT WE HANDLE · the six services (r-3 dc-cards). (H2 + 6 H3s) ── #}
+<section class="sec reveal" id="ny-ind-restaurant-handle">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What TechBrot handles</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:30ch;margin-bottom:10px;">New York restaurant accounting, done by an expert.</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:66ch;">Every engagement is scoped to your concept and locations, delivered in your own QuickBooks file by a named Certified ProAdvisor &mdash; coordinating with your CPA, who files.</p>
+    <div class="r-3">
       {%- for s in handle %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ s.num }}</p>
-        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ s.href }}">{{ s.cta | safe }}</a>
-      </article>
+      <article class="dc-card"><span class="eyebrow">{{ s.num }}</span><h3>{{ s.title | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 12px;">{{ s.body | safe }}</p><a class="ptier__link" href="{{ s.href }}">{{ s.cta | safe }}</a></article>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── INTEGRATIONS · tools reconciled with QuickBooks (checks-list). (H2: Connected to how you run service.) ── #}
-<section class="section section--alt" id="ny-ind-restaurant-integrations">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Tools we work alongside</p>
-      <h2 class="section__heading">Connected to how you run service.</h2>
-    </header>
-    <ul class="checks-list">
-      {%- for t in integrations %}<li>{{ t | safe }}</li>{%- endfor %}
-    </ul>
-    <p class="prose">{{ integrationsNote | safe }}</p>
+{# ── INTEGRATIONS · tools reconciled with QuickBooks (incl-card + checklist). (H2: Connected to how you run service.) ── #}
+<section class="sec reveal" id="ny-ind-restaurant-integrations" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Tools we work alongside</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Connected to how you run service.</h2>
+    <div class="incl-card">
+      <ul class="checklist">
+        {%- for t in integrations %}<li>{{ t | safe }}</li>{%- endfor %}
+      </ul>
+    </div>
+    <div class="prose" style="margin-top:18px;"><p>{{ integrationsNote | safe }}</p></div>
   </div>
 </section>
 
-{# ── PROCESS · four-phase engagement rhythm (grid-2 buyer-cards). (H2 + 4 H3s) ── #}
-<section class="section" id="ny-ind-restaurant-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How engagements work</p>
-      <h2 class="section__heading">From bank-balance guessing to prime-cost control.</h2>
-      <p class="section__lede">Every New York restaurant engagement follows the same four-phase rhythm &mdash; books accurate first, margin visibility second, advisory third.</p>
-    </header>
-    <div class="grid-2">
+{# ── PROCESS · four-phase engagement rhythm (r-2 dc-cards). (H2 + 4 H3s) ── #}
+<section class="sec reveal" id="ny-ind-restaurant-process">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How engagements work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:10px;">From bank-balance guessing to prime-cost control.</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:66ch;">Every New York restaurant engagement follows the same four-phase rhythm &mdash; books accurate first, margin visibility second, advisory third.</p>
+    <div class="r-2">
       {%- for p in process %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ p.phase }}</p>
-        <h3 class="buyer-card__heading">{{ p.title | safe }}</h3>
-        <p class="buyer-card__body">{{ p.body | safe }}</p>
-      </article>
+      <article class="dc-card"><span class="eyebrow">{{ p.phase }}</span><h3>{{ p.title | safe }}</h3><div class="prose" style="font-size:15px;"><p>{{ p.body | safe }}</p></div></article>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── ADVISORY · standing brand line carried as section prose. (H2: Controlling prime cost is the start. Building a profitable concept is the point.) ── #}
-<section class="section section--alt" id="ny-ind-restaurant-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the books</p>
-      <h2 class="section__heading">Controlling prime cost is the start. Building a profitable concept is the point.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in advisoryBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
-    </div>
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="/contact/?intent=new-york&amp;state=new-york&amp;source_type=industry&amp;funnel_stage=BOFU">Book the discovery call</a>
-    </div>
+{# ── ADVISORY · standing brand line (pull-quote .statement). (H2: Controlling prime cost is the start. Building a profitable concept is the point.) ── #}
+<section class="sec reveal" id="ny-ind-restaurant-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Beyond the books</span><span class="idx__rule"></span></div>
+    <h2 class="statement" style="margin-bottom:18px;">Controlling prime cost is the start. Building a profitable concept is the point.</h2>
+    <div class="prose">{%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}</div>
+    <div style="margin-top:22px;"><a class="btn btn-cta" href="/contact/?intent=new-york&amp;state=new-york&amp;source_type=industry&amp;funnel_stage=BOFU" style="display:inline-flex;align-items:center;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Book the discovery call</a></div>
   </div>
 </section>
 
-{# ── FAQ · 8 verbatim contract Q/A; visible faq__list = FAQPage schema (same array). (H2: New York restaurant accounting questions.) ── #}
-<section class="section" id="ny-ind-restaurant-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">New York restaurant accounting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-ind-restaurant-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="ny-ind-restaurant-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── EXPERT REVIEW · firm-level, no founder name (byline-block + meta-reviewed). (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
-<section class="section section--alt" id="ny-ind-restaurant-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
-    </header>
-    <div class="byline-block">
-      <div class="byline-block__mark" aria-hidden="true"></div>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
-      </div>
+{# ── EXPERT REVIEW · firm-level, no founder name (byline + trust-row). (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
+<section class="sec reveal" id="ny-ind-restaurant-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline" style="margin-bottom:18px;">
+      <svg class="byline__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#0E4A50"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#FCFBF8"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div><p class="byline__name">By the Certified QuickBooks ProAdvisor team</p><p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p></div>
     </div>
     <div class="prose">
       <p>This page reflects how TechBrot handles New York restaurant and hospitality engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on POS-to-bank reconciliation, food and prime cost, tip-credit payroll under the <a href="https://dol.ny.gov/minimum-wage-0" rel="noopener nofollow">NY Hospitality Wage Order</a>, and prepared-food sales tax (<a href="https://www.tax.ny.gov/" rel="noopener nofollow">NY DTF</a>). The 2026 tipped-wage rates, the 80/20 rule, and prepared-food taxability reflect NY Department of Labor and Tax Department guidance current as of the date below &mdash; confirm current rates before each payroll year. TechBrot delivers the books and coordinates with your CPA, who files.</p>
     </div>
     <div class="trust-row">
       {%- for c in reviewCreds %}
-      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      <div class="trust-row__item"><p class="trust-row__value" style="font-size:15px;">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
@@ -214,20 +160,14 @@
   </div>
 </section>
 
-{# ── RELATED · NY services & industries (grid-2 buyer-cards). (H2 + 4 H3s) ── #}
-<section class="section" id="ny-ind-restaurant-related">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related New York services &amp; industries.</h2>
-    </header>
-    <div class="grid-2">
+{# ── RELATED · NY services & industries (r-2 rel-cards). (H2 + 4 H3s) ── #}
+<section class="sec reveal" id="ny-ind-restaurant-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related New York services &amp; industries.</h2>
+    <div class="r-2">
       {%- for r in related %}
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading">{{ r.title | safe }}</h3>
-        <p class="buyer-card__body">{{ r.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>
-      </article>
+      <a class="rel-card" href="{{ r.href }}"><h3 class="rel-card__t">{{ r.title | safe }}</h3><p class="rel-card__d">{{ r.body | safe }}</p><span class="ptier__link" style="margin-top:10px;">{{ r.cta | safe }}</span></a>
       {%- endfor %}
     </div>
   </div>

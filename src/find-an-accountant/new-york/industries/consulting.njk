@@ -3,6 +3,7 @@
   "layout": "layouts/t-location.njk",
   "permalink": "/find-an-accountant/new-york/industries/consulting/",
   "slug": "ny-ind-consulting",
+  "sec": { "faqH": "New York consulting accounting questions." },
   "tierClass": "section--tier-hub",
   "bodyClass": "page--location",
   "callBar": true,
@@ -48,172 +49,118 @@
 }
 ---
 
-{# ── SUMMARY · real H2 carrying the consulting summary prose (right after the in-brief). (H2: The short version.) ── #}
-<section class="section section--compact" id="ny-ind-consulting-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <h2 class="section__heading">The short version.</h2>
-    </header>
-    <p class="prose">{{ summarized | safe }}</p>
+{#- ═══ BESPOKE BODY (NY consulting industry child) — v2 dc-system components, full
+    depth, NY content FROZEN. DIVERGENT data shape vs the other industry children:
+    summarized (single string) · challenges signal/heading/problem/fix/honesty ·
+    included (services) · tools/toolsNote (integrations) · process phase/heading/body.
+    Spine (hero / in-brief #ny-ind-consulting-in-brief-text / FAQ / light CTA) is
+    layout-owned (t-location). Schema cssSelector anchors are #ny-ind-consulting-summary
+    + #ny-ind-consulting-ai-summary-list. ═══ -#}
+
+{# ── SUMMARY · real H2 carrying the consulting summary prose. SCHEMA ANCHOR #ny-ind-consulting-summary. (H2: The short version.) ── #}
+<section class="sec reveal" id="ny-ind-consulting-summary" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">The short version.</h2>
+    <div class="prose"><p>{{ summarized | safe }}</p></div>
   </div>
 </section>
 
-{# ── AI SUMMARY · five-question block. (H2: New York consulting accounting, in five questions.) ── #}
-<section class="section" id="ny-ind-consulting-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">New York consulting accounting, in five questions.</h2>
-    </header>
-    <dl class="ai-summary ai-summary--ruled" id="ny-ind-consulting-ai-summary-list">
+{# ── AI SUMMARY · five-question block. SCHEMA ANCHOR #ny-ind-consulting-ai-summary-list. (H2: New York consulting accounting, in five questions.) ── #}
+<section class="sec reveal" id="ny-ind-consulting-ai-summary">
+  <div class="ct read">
+    <div class="idx idx--center"><span class="idx__n">§</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="text-align:center;margin:0 auto 36px;max-width:26ch;">New York consulting accounting, in five questions.</h2>
+    <dl class="speakable ai-qa" id="ny-ind-consulting-ai-summary-list">
       {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
-        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
-      </div>
+      <div class="ai-qa__item"><dt><h3>{{ item.q | safe }}</h3></dt><dd style="margin:0;"><p>{{ item.a | safe }}</p></dd></div>
       {%- endfor %}
     </dl>
   </div>
 </section>
 
-{# ── CHALLENGES · three places the numbers slip (stack-8 cards in grid-3). (H2: Three places New York consultancies lose the real numbers. + 3 H3s) ── #}
-<section class="section section--alt" id="ny-ind-consulting-challenges">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Why NY consulting books mislead</p>
-      <h2 class="section__heading">Three places New York consultancies lose the real numbers.</h2>
-      <p class="section__lede">A busy, profitable-looking firm can still be subsidizing its worst clients. Knowing which of these you&rsquo;re in tells us where to start.</p>
-    </header>
-    <div class="grid-3">
+{# ── CHALLENGES · three places the numbers slip (r-3 dc-cards; problem/fix/honesty prose). (H2 + 3 H3s) ── #}
+<section class="sec reveal" id="ny-ind-consulting-challenges" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why NY consulting books mislead</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:30ch;margin-bottom:10px;">Three places New York consultancies lose the real numbers.</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:64ch;">A busy, profitable-looking firm can still be subsidizing its worst clients. Knowing which of these you&rsquo;re in tells us where to start.</p>
+    <div class="r-3">
       {%- for c in challenges %}
-      <article class="stack-8">
-        <p class="section__eyebrow">{{ c.signal | safe }}</p>
-        <h3>{{ c.heading | safe }}</h3>
-        <p class="prose">{{ c.problem | safe }}</p>
-        <p class="prose">{{ c.fix | safe }}</p>
-        <p class="prose"><small>{{ c.honesty | safe }}</small></p>
-      </article>
+      <article class="dc-card"><span class="eyebrow">{{ c.signal | safe }}</span><h3>{{ c.heading | safe }}</h3><div class="prose" style="font-size:15px;"><p>{{ c.problem | safe }}</p><p>{{ c.fix | safe }}</p><p><small>{{ c.honesty | safe }}</small></p></div></article>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── WHAT'S INCLUDED · grid-3 buyer-cards (6 services). (H2: New York consulting accounting, done by an expert. + 6 H3s) ── #}
-<section class="section" id="ny-ind-consulting-included">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What TechBrot handles</p>
-      <h2 class="section__heading">New York consulting accounting, done by an expert.</h2>
-      <p class="section__lede">Every engagement is scoped to your clients and service lines, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
-    </header>
-    <div class="grid-3">
+{# ── WHAT'S INCLUDED · the six services (r-3 dc-cards). (H2 + 6 H3s) ── #}
+<section class="sec reveal" id="ny-ind-consulting-included">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What TechBrot handles</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:30ch;margin-bottom:10px;">New York consulting accounting, done by an expert.</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:66ch;">Every engagement is scoped to your clients and service lines, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    <div class="r-3">
       {%- for s in included %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ s.num }}</p>
-        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ s.href }}">{{ s.cta | safe }}</a>
-      </article>
+      <article class="dc-card"><span class="eyebrow">{{ s.num }}</span><h3>{{ s.title | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 12px;">{{ s.body | safe }}</p><a class="ptier__link" href="{{ s.href }}">{{ s.cta | safe }}</a></article>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── TOOLS · integrations as checks-list (cobalt vocab; no integration-grid). (H2: Connected to how you run the practice.) ── #}
-<section class="section section--alt" id="ny-ind-consulting-tools">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Tools we work alongside</p>
-      <h2 class="section__heading">Connected to how you run the practice.</h2>
-      <p class="section__lede">We reconcile what your time-tracking, PSA, billing, and payroll tools export into QuickBooks &mdash; you keep the stack you already run.</p>
-    </header>
-    <ul class="checks-list">
-      {%- for t in tools %}
-      <li>{{ t | safe }}</li>
-      {%- endfor %}
-    </ul>
-    <p class="prose"><small>{{ toolsNote | safe }}</small></p>
+{# ── TOOLS · integrations reconciled with QuickBooks (incl-card + checklist). (H2: Connected to how you run the practice.) ── #}
+<section class="sec reveal" id="ny-ind-consulting-tools" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Tools we work alongside</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Connected to how you run the practice.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:66ch;">We reconcile what your time-tracking, PSA, billing, and payroll tools export into QuickBooks &mdash; you keep the stack you already run.</p>
+    <div class="incl-card">
+      <ul class="checklist">
+        {%- for t in tools %}<li>{{ t | safe }}</li>{%- endfor %}
+      </ul>
+    </div>
+    <div class="prose" style="margin-top:18px;"><p><small>{{ toolsNote | safe }}</small></p></div>
   </div>
 </section>
 
-{# ── PROCESS · four-phase cadence as stack-8 (cobalt vocab). (H2: From flat P&L to client-level profit. + 4 H3s) ── #}
-<section class="section" id="ny-ind-consulting-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How engagements work</p>
-      <h2 class="section__heading">From flat P&amp;L to client-level profit.</h2>
-      <p class="section__lede">Every New York consulting engagement follows the same four-phase rhythm &mdash; books accurate first, profit visibility second, advisory third.</p>
-    </header>
-    <div class="grid-2">
+{# ── PROCESS · four-phase engagement rhythm (r-2 dc-cards). (H2 + 4 H3s) ── #}
+<section class="sec reveal" id="ny-ind-consulting-process">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How engagements work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:10px;">From flat P&amp;L to client-level profit.</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:66ch;">Every New York consulting engagement follows the same four-phase rhythm &mdash; books accurate first, profit visibility second, advisory third.</p>
+    <div class="r-2">
       {%- for p in process %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ p.phase }}</p>
-        <h3>{{ p.heading | safe }}</h3>
-        <p class="prose">{{ p.body | safe }}</p>
-      </div>
-      {%- endfor %}
-    </div>
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="/contact/?intent=new-york&amp;state=new-york&amp;source_type=industry&amp;funnel_stage=MOFU">Book the discovery call</a>
-    </div>
-  </div>
-</section>
-
-{# ── ADVISORY · standing brand line lives inside the body. (H2: Accurate client margins are the start. Pricing the work is the point.) ── #}
-<section class="section section--alt" id="ny-ind-consulting-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the books</p>
-      <h2 class="section__heading">Accurate client margins are the start. Pricing the work is the point.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in advisoryBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── FAQ · 8 verbatim Q/A; visible faq__list = FAQPage schema (same array). (H2: New York consulting accounting questions.) ── #}
-<section class="section" id="ny-ind-consulting-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">New York consulting accounting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-ind-consulting-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="ny-ind-consulting-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
+      <article class="dc-card"><span class="eyebrow">{{ p.phase }}</span><h3>{{ p.heading | safe }}</h3><div class="prose" style="font-size:15px;"><p>{{ p.body | safe }}</p></div></article>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── EXPERT REVIEW · firm-level, no personal name (byline-block + trust-row + meta-reviewed). (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
-<section class="section section--alt" id="ny-ind-consulting-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
-    </header>
-    <div class="byline-block">
-      <div class="byline-block__mark" aria-hidden="true"></div>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
-      </div>
+{# ── ADVISORY · standing brand line (pull-quote .statement). (H2: Accurate client margins are the start. Pricing the work is the point.) ── #}
+<section class="sec reveal" id="ny-ind-consulting-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Beyond the books</span><span class="idx__rule"></span></div>
+    <h2 class="statement" style="margin-bottom:18px;">Accurate client margins are the start. Pricing the work is the point.</h2>
+    <div class="prose">{%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}</div>
+    <div style="margin-top:22px;"><a class="btn btn-cta" href="/contact/?intent=new-york&amp;state=new-york&amp;source_type=industry&amp;funnel_stage=MOFU" style="display:inline-flex;align-items:center;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Book the discovery call</a></div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level, no founder name (byline + trust-row). (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
+<section class="sec reveal" id="ny-ind-consulting-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline" style="margin-bottom:18px;">
+      <svg class="byline__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#0E4A50"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#FCFBF8"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div><p class="byline__name">By the Certified QuickBooks ProAdvisor team</p><p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p></div>
     </div>
     <div class="prose">
       <p>Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor firm serving New York consulting and professional-services businesses remotely. Pricing reflects TechBrot&rsquo;s New York engagement ranges; New York sales-tax, NYC UBT, and multi-state nexus references reflect rules current as of the date below and are reviewed periodically against the <a href="https://www.tax.ny.gov/" rel="noopener nofollow">NY Department of Taxation &amp; Finance</a> and the <a href="https://www.nyc.gov/site/finance/index.page" rel="noopener nofollow">NYC Department of Finance</a>. TechBrot provides bookkeeping and coordinates with your CPA, who files and confirms taxability; we do not file NY State or NYC returns and do not determine your nexus position.</p>
     </div>
     <div class="trust-row">
       {%- for c in reviewCreds %}
-      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      <div class="trust-row__item"><p class="trust-row__value" style="font-size:15px;">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
@@ -221,20 +168,14 @@
   </div>
 </section>
 
-{# ── RELATED · grid-2 buyer-cards into NY services/industries. (H2: Related New York services & industries. + 4 H3s) ── #}
-<section class="section" id="ny-ind-consulting-related">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related New York services &amp; industries.</h2>
-    </header>
-    <div class="grid-2">
+{# ── RELATED · NY services & industries (r-2 rel-cards). (H2 + 4 H3s) ── #}
+<section class="sec reveal" id="ny-ind-consulting-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related New York services &amp; industries.</h2>
+    <div class="r-2">
       {%- for r in related %}
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading"><a href="{{ r.href }}">{{ r.title | safe }}</a></h3>
-        <p class="buyer-card__body">{{ r.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>
-      </article>
+      <a class="rel-card" href="{{ r.href }}"><h3 class="rel-card__t">{{ r.title | safe }}</h3><p class="rel-card__d">{{ r.body | safe }}</p><span class="ptier__link" style="margin-top:10px;">{{ r.cta | safe }}</span></a>
       {%- endfor %}
     </div>
   </div>

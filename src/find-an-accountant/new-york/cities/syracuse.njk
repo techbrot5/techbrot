@@ -3,6 +3,7 @@
   "layout": "layouts/t-location.njk",
   "permalink": "/find-an-accountant/new-york/cities/syracuse/",
   "slug": "ny-syracuse",
+  "sec": { "faqH": "Syracuse bookkeeping questions." },
   "tierClass": "section--tier-hub",
   "bodyClass": "page--location",
   "callBar": true,
@@ -47,177 +48,149 @@
 }
 ---
 
-{# ── SUMMARY · real H2 carrying the Syracuse short-version prose (right after the in-brief) ── #}
-<section class="section section--compact" id="ny-syracuse-summarized">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <h2 class="section__heading">The short version.</h2>
-    </header>
-    <p class="prose">{{ summarized | safe }}</p>
+{#- ═══ BESPOKE BODY (Syracuse city child) — v2 dc-system components, full depth, NY
+    content FROZEN. Spine (hero / in-brief #ny-syracuse-in-brief-text / FAQ / light CTA)
+    is layout-owned (t-location). Section ids preserved on their pageGraph anchors; the
+    schema speakable cssSelector anchors are #ny-syracuse-in-brief-text (layout) +
+    #ny-syracuse-ai-summary-list (below). ═══ -#}
+
+{# ── SHORT VERSION · real H2 carrying the Syracuse short-version prose (right after the in-brief) ── #}
+<section class="sec reveal" id="ny-syracuse-summarized" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In full</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">The short version.</h2>
+    <div class="prose"><p>{{ summarized | safe }}</p></div>
   </div>
 </section>
 
-{# ── AI SUMMARY · 5 entity-dense Q&As (H2: Syracuse bookkeeping, in five questions.) ── #}
-<section class="section section--alt" id="ny-syracuse-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Syracuse bookkeeping, in five questions.</h2>
-    </header>
-    <dl class="ai-summary ai-summary--ruled" id="ny-syracuse-ai-summary-list">
+{# ── AI SUMMARY (H2: Syracuse bookkeeping, in five questions.) — frozen anchor #ny-syracuse-ai-summary-list ── #}
+<section class="sec reveal" id="ny-syracuse-ai-summary">
+  <div class="ct read">
+    <div class="idx idx--center"><span class="idx__n">§</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="text-align:center;margin:0 auto 36px;max-width:26ch;">Syracuse bookkeeping, in five questions.</h2>
+    <dl class="speakable ai-qa" id="ny-syracuse-ai-summary-list">
       {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
-        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
-      </div>
+      <div class="ai-qa__item"><dt><h3>{{ item.q | safe }}</h3></dt><dd style="margin:0;"><p>{{ item.a | safe }}</p></dd></div>
       {%- endfor %}
     </dl>
   </div>
 </section>
 
-{# ── LOCAL CONTEXT · the un-clonable band (H2: Why Central New York books have their own character.) ── #}
-<section class="section" id="ny-syracuse-context">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Bookkeeping built for how Syracuse actually operates</p>
-      <h2 class="section__heading">Why Central New York books have their own character.</h2>
-    </header>
-    <p class="prose"><strong>{{ localLead | safe }}</strong></p>
-    {%- for p in localBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+{# ── WHY LOCAL · the un-clonable band (H2: Why Central New York books have their own character.) ── #}
+<section class="sec reveal" id="ny-syracuse-context" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Bookkeeping built for how Syracuse actually operates</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Why Central New York books have their own character.</h2>
+    <div class="prose">
+      <p><strong>{{ localLead | safe }}</strong></p>
+      {%- for p in localBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
   </div>
 </section>
 
-{# ── AREAS · Onondaga County & Central NY coverage (H2: Syracuse areas we serve.) ── #}
-<section class="section section--alt" id="ny-syracuse-areas">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Across Onondaga County &amp; Central New York</p>
-      <h2 class="section__heading">Syracuse areas we serve.</h2>
-    </header>
-    <div class="grid-3">
+{# ── AREAS WE SERVE · neighborhood chips (name + note preserved). (H2: Syracuse areas we serve.) ── #}
+<section class="sec reveal" id="ny-syracuse-areas">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Across Onondaga County &amp; Central New York</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:20px;">Syracuse areas we serve.</h2>
+    <div class="chips">
       {%- for a in areas %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ a.name | safe }}</p>
-        <p class="prose">{{ a.note | safe }}</p>
-      </div>
+      <span class="chip"><strong>{{ a.name | safe }}</strong>&nbsp;<span class="chip__note">&middot; {{ a.note | safe }}</span></span>
       {%- endfor %}
+      <a class="chip chip--more" href="/find-an-accountant/new-york/cities/">All New York cities &rarr;</a>
     </div>
   </div>
 </section>
 
-{# ── TAX FACTS · grid-3 + stack-8 (H2: Syracuse sales tax, at a glance.) ── #}
-<section class="section" id="ny-syracuse-tax">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">{{ taxEyebrow | safe }}</p>
-      <h2 class="section__heading">Syracuse sales tax, at a glance.</h2>
-    </header>
-    <div class="grid-3">
-      {%- for t in taxFacts %}
-      <div class="stack-8">
-        <div class="stat__value">{{ t.fig | safe }}</div>
-        <p class="prose">{{ t.desc | safe }}</p>
+{# ── LOCAL TAX STACK · RATE-FREE v2 figure built from the REAL `taxFacts` data (fig + desc).
+     No invented rates; every figure/desc verbatim from the data. (H2: Syracuse sales tax, at a glance.) ── #}
+<section class="sec reveal" id="ny-syracuse-tax" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx idx--center"><span class="idx__n">§</span><span class="idx__t">{{ taxEyebrow | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="text-align:center;margin:0 auto 30px;max-width:24ch;">Syracuse sales tax, at a glance.</h2>
+    <figure style="margin:0;" aria-label="Syracuse local tax facts">
+      <div class="r-3">
+        {%- for t in taxFacts %}
+        <div class="dc-card"><div class="trust-row__value" style="font-size:30px;margin-bottom:8px;">{{ t.fig | safe }}</div><p class="prose" style="font-size:15px;">{{ t.desc | safe }}</p></div>
+        {%- endfor %}
       </div>
-      {%- endfor %}
-    </div>
+    </figure>
   </div>
 </section>
 
-{# ── INDUSTRIES · Syracuse verticals → NY industry pages (H2: Industry-specific bookkeeping for Syracuse businesses.) ── #}
-<section class="section section--alt" id="ny-syracuse-industries">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Syracuse verticals we know</p>
-      <h2 class="section__heading">Industry-specific bookkeeping for Syracuse businesses.</h2>
-      <p class="section__lede">Each links to our dedicated New York industry page, with the local wrinkles built in.</p>
-    </header>
-    <ul class="checks-list">
+{# ── INDUSTRIES · chips, each links to the NY industry page. (H2: Industry-specific bookkeeping for Syracuse businesses.) ── #}
+<section class="sec reveal" id="ny-syracuse-industries">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Syracuse verticals we know</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Industry-specific bookkeeping for Syracuse businesses.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:62ch;">Each links to our dedicated New York industry page, with the local wrinkles built in.</p>
+    <div class="chips">
       {%- for i in industries %}
-      <li><a href="{{ i.href }}">{{ i.name | safe }}</a></li>
+      <a class="chip" href="{{ i.href }}">{{ i.name | safe }} &rarr;</a>
       {%- endfor %}
-    </ul>
+    </div>
   </div>
 </section>
 
-{# ── VALUE STACK · 4 services + 4 H3s (H2: Complete bookkeeping, locally aware.) ── #}
-<section class="section" id="ny-syracuse-value">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What we do for Syracuse businesses</p>
-      <h2 class="section__heading">Complete bookkeeping, locally aware.</h2>
-    </header>
-    <div class="grid-2">
+{# ── VALUE STACK · 4 services, real H3s (dc-card). (H2: Complete bookkeeping, locally aware. + 4 H3s) ── #}
+<section class="sec reveal" id="ny-syracuse-value" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What we do for Syracuse businesses</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:30px;">Complete bookkeeping, locally aware.</h2>
+    <div class="r-2">
       {%- for v in valueStack %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ v.num }}</p>
-        <h3 class="buyer-card__heading">{{ v.title | safe }}</h3>
-        <p class="buyer-card__body">{{ v.body | safe }}</p>
-      </article>
+      <div class="dc-card"><span class="eyebrow">{{ v.num }}</span><h3>{{ v.title | safe }}</h3><div class="prose" style="font-size:15.5px;">{{ v.body | safe }}</div></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── ADVISORY · standing brand line (H2: Automation handles the data entry. We handle the judgment.) ── #}
-<section class="section section--alt" id="ny-syracuse-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The advisory line</p>
-      <h2 class="section__heading">Automation handles the data entry. We handle the judgment.</h2>
-    </header>
-    <p class="prose">{{ advisoryBody | safe }}</p>
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="/contact/?intent=new-york&amp;state=new-york&amp;city=syracuse&amp;source_type=location&amp;funnel_stage=BOFU">Book the discovery call</a>
+{# ── ADVISORY · standing brand line (pull-quote .statement). (H2: Automation handles the data entry. We handle the judgment.) ── #}
+<section class="sec reveal" id="ny-syracuse-advisory">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The advisory line</span><span class="idx__rule"></span></div>
+    <h2 class="statement" style="margin-bottom:18px;">Automation handles the data entry. We handle the judgment.</h2>
+    <div class="prose"><p>{{ advisoryBody | safe }}</p></div>
+    <div style="margin-top:22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;">
+      <a class="btn btn-cta" href="/contact/?intent=new-york&amp;state=new-york&amp;city=syracuse&amp;source_type=location&amp;funnel_stage=BOFU" style="display:inline-flex;align-items:center;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Book the discovery call</a>
+      <a class="ptier__link" href="/accounting/advisory/fractional-cfo/">Fractional CFO (New York) &rarr;</a>
     </div>
   </div>
 </section>
 
-{# ── INTAKE · dual-path call + shared intake-form partial ── #}
-<section class="section" id="ny-syracuse-intake">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Talk to a Certified ProAdvisor</p>
-      <h2 class="section__heading">Two ways to start a Syracuse engagement.</h2>
-      <p class="section__lede">Both paths go to the same Certified ProAdvisor. Pick the one that fits how you work.</p>
-    </header>
-
-    <div class="grid-2">
-      <div class="stack-8">
-        <div class="byline-block">
-          <div class="byline-block__mark" aria-hidden="true"></div>
-          <div>
-            <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-            <p class="byline-block__review">{{ teamProAdvisor.name | safe }} &middot; {{ teamProAdvisor.role | safe }}</p>
-          </div>
-        </div>
-        <p class="section__eyebrow">{{ teamProAdvisor.creds | safe }}</p>
-        <p class="prose">{{ teamProAdvisor.line | safe }}</p>
-        <a class="buyer-card__cta" href="https://proadvisor.intuit.com/" rel="noopener nofollow">Verify on Intuit&rsquo;s ProAdvisor directory <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
+{# ── TWO WAYS TO START · dual-path call + shared intake-form partial. Named-team byline cards
+     (firm-level; no founder name). (H2: Two ways to start a Syracuse engagement.) ── #}
+<section class="sec reveal" id="ny-syracuse-intake" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Talk to a Certified ProAdvisor</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Two ways to start a Syracuse engagement.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:60ch;">Both paths go to the same Certified ProAdvisor. Pick the one that fits how you work.</p>
+    <div class="r-2" style="margin-bottom:18px;">
+      <div class="dc-card">
+        <p class="byline__name" style="font-size:14.5px;font-weight:600;color:var(--color-ink);margin:0;">{{ teamProAdvisor.name | safe }}</p>
+        <p class="byline__review" style="margin:2px 0 10px;">{{ teamProAdvisor.role | safe }}</p>
+        <p class="eyebrow" style="display:block;margin-bottom:10px;">{{ teamProAdvisor.creds | safe }}</p>
+        <p class="prose" style="font-size:15px;">{{ teamProAdvisor.line | safe }}</p>
+        <a class="ptier__link" href="https://proadvisor.intuit.com/" rel="noopener nofollow">Verify on Intuit&rsquo;s ProAdvisor directory &rarr;</a>
       </div>
-      <div class="stack-8">
-        <div class="byline-block">
-          <div class="byline-block__mark" aria-hidden="true"></div>
-          <div>
-            <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-            <p class="byline-block__review">{{ teamIntake.name | safe }} &middot; {{ teamIntake.role }}</p>
-          </div>
-        </div>
-        <p class="section__eyebrow">{{ teamIntake.creds | safe }}</p>
-        <p class="prose">{{ teamIntake.line | safe }}</p>
+      <div class="dc-card">
+        <p class="byline__name" style="font-size:14.5px;font-weight:600;color:var(--color-ink);margin:0;">{{ teamIntake.name | safe }}</p>
+        <p class="byline__review" style="margin:2px 0 10px;">{{ teamIntake.role }}</p>
+        <p class="eyebrow" style="display:block;margin-bottom:10px;">{{ teamIntake.creds | safe }}</p>
+        <p class="prose" style="font-size:15px;">{{ teamIntake.line | safe }}</p>
       </div>
     </div>
-
-    <div class="grid-2">
-      <article class="buyer-card">
-        <p class="buyer-card__opener">Option 01</p>
-        <h3 class="buyer-card__heading">Call directly.</h3>
-        <p class="buyer-card__body">A Certified ProAdvisor answers &mdash; not a call center. Best for same-day diagnostics, behind-on-the-books situations, or a quick read on your Syracuse file.</p>
-        <a class="btn btn--primary btn--lg" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">Speak to a ProAdvisor</a>
-        <ul class="checks-list">{%- for a in callAssurance %}<li>{{ a | safe }}</li>{%- endfor %}</ul>
+    <div class="r-2">
+      <article class="incl-card">
+        <span class="eyebrow" style="display:block;margin-bottom:10px;">Option 01</span>
+        <h3>Call directly.</h3>
+        <p class="prose" style="font-size:15px;margin:8px 0 16px;">A Certified ProAdvisor answers &mdash; not a call center. Best for same-day diagnostics, behind-on-the-books situations, or a quick read on your Syracuse file.</p>
+        <a class="btn btn-cta" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Speak to a ProAdvisor</a>
+        <ul class="checklist" style="margin-top:16px;">{%- for a in callAssurance %}<li>{{ a | safe }}</li>{%- endfor %}</ul>
       </article>
-      <div class="contact-form-wrap">
-        <h3 class="buyer-card__heading" id="ny-syracuse-intake-form-heading">Send a short discovery brief.</h3>
-        <p class="prose">Six fields. We respond by the next business day with a path forward &mdash; a scoping call or, if not a fit, a referral. <strong>Includes a free QuickBooks file review &mdash; we&rsquo;ll identify the top 3 issues in your file before any engagement begins.</strong></p>
+      <div class="incl-card">
+        <h3 id="ny-syracuse-intake-form-heading">Send a short discovery brief.</h3>
+        <p class="prose" style="font-size:15px;margin:8px 0 16px;">Six fields. We respond by the next business day with a path forward &mdash; a scoping call or, if not a fit, a referral. <strong>Includes a free QuickBooks file review &mdash; we&rsquo;ll identify the top 3 issues in your file before any engagement begins.</strong></p>
         {%- set intakePrefix = "ny-syracuse" %}
         {%- set intakeFormId = "ny-syracuse-intake-form" %}
         {%- set intakeIntent = "new-york" %}
@@ -232,41 +205,16 @@
   </div>
 </section>
 
-{# ── FAQ · 8 contract Q/A verbatim; visible = FAQPage schema (H2: Syracuse bookkeeping questions.) ── #}
-<section class="section section--alt" id="ny-syracuse-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">Syracuse bookkeeping questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-syracuse-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="ny-syracuse-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── EXPERT REVIEW · firm-level, no founder name (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
-<section class="section" id="ny-syracuse-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
-    </header>
-    <div class="prose">
-      <p>{{ reviewBody | safe }}</p>
-    </div>
+{# ── EXPERT REVIEW · firm-level, no founder name. trust-row credential cells.
+     (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
+<section class="sec reveal" id="ny-syracuse-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="prose"><p>{{ reviewBody | safe }}</p></div>
     <div class="trust-row">
       {%- for c in reviewCreds %}
-      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      <div class="trust-row__item"><p class="trust-row__value" style="font-size:15px;">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>

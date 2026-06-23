@@ -3,6 +3,7 @@
   "layout": "layouts/t-location.njk",
   "permalink": "/find-an-accountant/new-york/cities/staten-island/",
   "slug": "ny-statenisland",
+  "sec": { "faqH": "Staten Island bookkeeping questions." },
   "tierClass": "section--tier-hub",
   "bodyClass": "page--location",
   "callBar": true,
@@ -48,176 +49,128 @@
 }
 ---
 
-{# ── SUMMARY · real H2 carrying the Staten Island summary prose (right after the in-brief). (H2: The short version.) ── #}
-<section class="section section--compact" id="ny-statenisland-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <h2 class="section__heading">The short version.</h2>
-    </header>
-    <p class="prose">{{ summarized | safe }}</p>
+{#- ═══ BESPOKE BODY (Staten Island city child) — v2 dc-system components, full depth, NY
+    content FROZEN. Spine (hero / in-brief #ny-statenisland-in-brief-text / FAQ / light CTA)
+    is layout-owned (t-location). Section ids preserved on their pageGraph anchors; the
+    schema speakable cssSelector anchors are #ny-statenisland-summary (below) +
+    #ny-statenisland-ai-summary-list (below). ═══ -#}
+
+{# ── SHORT VERSION · real H2 carrying the Staten Island summary prose. frozen speakable anchor #ny-statenisland-summary ── #}
+<section class="sec reveal" id="ny-statenisland-summary" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In full</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">The short version.</h2>
+    <div class="prose"><p>{{ summarized | safe }}</p></div>
   </div>
 </section>
 
-{# ── AI SUMMARY · five-question block. (H2: Staten Island bookkeeping, in five questions.) ── #}
-<section class="section" id="ny-statenisland-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Staten Island bookkeeping, in five questions.</h2>
-    </header>
-    <dl class="ai-summary ai-summary--ruled" id="ny-statenisland-ai-summary-list">
+{# ── AI SUMMARY (H2: Staten Island bookkeeping, in five questions.) — frozen anchor #ny-statenisland-ai-summary-list ── #}
+<section class="sec reveal" id="ny-statenisland-ai-summary">
+  <div class="ct read">
+    <div class="idx idx--center"><span class="idx__n">§</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="text-align:center;margin:0 auto 36px;max-width:26ch;">Staten Island bookkeeping, in five questions.</h2>
+    <dl class="speakable ai-qa" id="ny-statenisland-ai-summary-list">
       {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
-        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
-      </div>
+      <div class="ai-qa__item"><dt><h3>{{ item.q | safe }}</h3></dt><dd style="margin:0;"><p>{{ item.a | safe }}</p></dd></div>
       {%- endfor %}
     </dl>
   </div>
 </section>
 
-{# ── LOCAL CONTEXT · the un-clonable band. (H2: Why Staten Island books have their own character.) ── #}
-<section class="section section--alt" id="ny-statenisland-local">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Bookkeeping built for how Staten Island actually operates</p>
-      <h2 class="section__heading">Why Staten Island books have their own character.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in localContext %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+{# ── WHY LOCAL · the un-clonable band (H2: Why Staten Island books have their own character.) ── #}
+<section class="sec reveal" id="ny-statenisland-local" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Bookkeeping built for how Staten Island actually operates</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Why Staten Island books have their own character.</h2>
+    <div class="prose">
+      {%- for p in localContext %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── AREAS · across the borough. (H2: Staten Island areas we serve.) ── #}
-<section class="section" id="ny-statenisland-areas">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Across the borough</p>
-      <h2 class="section__heading">Staten Island areas we serve.</h2>
-    </header>
-    <div class="grid-3">
+{# ── AREAS WE SERVE · neighborhood chips (name + note preserved). (H2: Staten Island areas we serve.) ── #}
+<section class="sec reveal" id="ny-statenisland-areas">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Across the borough</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:20px;">Staten Island areas we serve.</h2>
+    <div class="chips">
       {%- for a in areas %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ a.name | safe }}</p>
-        <p class="prose">{{ a.note | safe }}</p>
-      </div>
+      <span class="chip"><strong>{{ a.name | safe }}</strong>&nbsp;<span class="chip__note">&middot; {{ a.note | safe }}</span></span>
       {%- endfor %}
+      <a class="chip chip--more" href="/find-an-accountant/new-york/cities/">All New York cities &rarr;</a>
     </div>
   </div>
 </section>
 
-{# ── TAX STACK · grid-3 + stack-8 tax/stat cards. (H2: Staten Island's tax stack, at a glance.) ── #}
-<section class="section section--alt" id="ny-statenisland-tax">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The Staten Island tax picture we build into your books</p>
-      <h2 class="section__heading">Staten Island&rsquo;s tax stack, at a glance.</h2>
-    </header>
-    <div class="grid-3">
-      {%- for t in taxStack %}
-      <div class="stack-8">
-        <p class="proof-strip__rating">{{ t.figure | safe }}</p>
-        <p class="prose">{{ t.desc | safe }}</p>
+{# ── LOCAL TAX STACK · RATE-FREE v2 figure built from the REAL `taxStack` data (figure + desc).
+     No invented rates; every figure/desc verbatim from the data. (H2: Staten Island's tax stack, at a glance.) ── #}
+<section class="sec reveal" id="ny-statenisland-tax" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx idx--center"><span class="idx__n">§</span><span class="idx__t">The Staten Island tax picture we build into your books</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="text-align:center;margin:0 auto 30px;max-width:24ch;">Staten Island&rsquo;s tax stack, at a glance.</h2>
+    <figure style="margin:0;" aria-label="Staten Island local tax facts">
+      <div class="r-3">
+        {%- for t in taxStack %}
+        <div class="dc-card"><div class="trust-row__value" style="font-size:30px;margin-bottom:8px;">{{ t.figure | safe }}</div><p class="prose" style="font-size:15px;">{{ t.desc | safe }}</p></div>
+        {%- endfor %}
       </div>
-      {%- endfor %}
-    </div>
-    <p class="prose"><small>{{ taxNote | safe }}</small></p>
+    </figure>
+    <p class="prose" style="font-size:13px;color:var(--color-ink-faint);margin-top:18px;">{{ taxNote | safe }}</p>
   </div>
 </section>
 
-{# ── INDUSTRIES · Staten Island verticals (checks-list into NY industry pages). (H2: Industry-specific bookkeeping for Staten Island businesses.) ── #}
-<section class="section" id="ny-statenisland-industries">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Staten Island verticals we know</p>
-      <h2 class="section__heading">Industry-specific bookkeeping for Staten Island businesses.</h2>
-      <p class="section__lede">Each links to our dedicated New York industry page, with the local wrinkles built in.</p>
-    </header>
-    <ul class="checks-list">
+{# ── INDUSTRIES · chips, each links to the NY industry page (label + note). (H2: Industry-specific bookkeeping for Staten Island businesses.) ── #}
+<section class="sec reveal" id="ny-statenisland-industries">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Staten Island verticals we know</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Industry-specific bookkeeping for Staten Island businesses.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:62ch;">Each links to our dedicated New York industry page, with the local wrinkles built in.</p>
+    <div class="r-2">
       {%- for i in industries %}
-      <li><a href="{{ i.href }}">{{ i.label | safe }}</a> &mdash; {{ i.note | safe }}</li>
+      <div class="dc-card"><h3 style="margin:0 0 6px;"><a class="prose" href="{{ i.href }}" style="color:var(--color-accent);">{{ i.label | safe }} &rarr;</a></h3><p class="prose" style="font-size:15px;">{{ i.note | safe }}</p></div>
       {%- endfor %}
-    </ul>
+    </div>
   </div>
 </section>
 
-{# ── SERVICES · value stack (grid-2 buyer-cards). (H2: Complete bookkeeping, Staten Island-aware. + 4 H3s) ── #}
-<section class="section section--alt" id="ny-statenisland-services">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What we do for Staten Island businesses</p>
-      <h2 class="section__heading">Complete bookkeeping, Staten Island-aware.</h2>
-    </header>
-    <div class="grid-2">
+{# ── VALUE STACK · 4 services, real H3s (dc-card grid). (H2: Complete bookkeeping, Staten Island-aware. + 4 H3s) ── #}
+<section class="sec reveal" id="ny-statenisland-services" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What we do for Staten Island businesses</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:30px;">Complete bookkeeping, Staten Island-aware.</h2>
+    <div class="r-2">
       {%- for s in services %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ s.num }}</p>
-        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ s.href }}">{{ s.cta | safe }}</a>
-      </article>
+      <div class="dc-card"><span class="eyebrow">{{ s.num }}</span><h3>{{ s.title | safe }}</h3><div class="prose" style="font-size:15.5px;"><p>{{ s.body | safe }}</p></div><a class="ptier__link" href="{{ s.href }}" style="margin-top:12px;">{{ s.cta | safe }}</a></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── ADVISORY · standing brand line. (H2: Automation handles the data entry. We handle the judgment.) ── #}
-<section class="section" id="ny-statenisland-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The advisory line</p>
-      <h2 class="section__heading">Automation handles the data entry. We handle the judgment.</h2>
-    </header>
-    <p class="prose">{{ advisoryBody | safe }}</p>
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="/contact/?intent=new-york&amp;state=new-york&amp;city=staten-island&amp;source_type=city-page&amp;funnel_stage=BOFU">Book the discovery call</a>
+{# ── ADVISORY · standing brand line (pull-quote .statement). (H2: Automation handles the data entry. We handle the judgment.) ── #}
+<section class="sec reveal" id="ny-statenisland-advisory">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The advisory line</span><span class="idx__rule"></span></div>
+    <h2 class="statement" style="margin-bottom:18px;">Automation handles the data entry. We handle the judgment.</h2>
+    <div class="prose"><p>{{ advisoryBody | safe }}</p></div>
+    <div style="margin-top:22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;">
+      <a class="btn btn-cta" href="/contact/?intent=new-york&amp;state=new-york&amp;city=staten-island&amp;source_type=city-page&amp;funnel_stage=BOFU" style="display:inline-flex;align-items:center;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Book the discovery call</a>
+      <a class="ptier__link" href="/accounting/advisory/fractional-cfo/">Fractional CFO (New York) &rarr;</a>
     </div>
   </div>
 </section>
 
-{# ── FAQ · 8 verbatim Q/A; visible = FAQPage schema. (H2: Staten Island bookkeeping questions.) ── #}
-<section class="section section--alt" id="ny-statenisland-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">Staten Island bookkeeping questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-statenisland-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="ny-statenisland-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── EXPERT REVIEW · firm-level, no founder name (byline-block + meta-reviewed). (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
-<section class="section" id="ny-statenisland-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
-    </header>
-    <div class="byline-block">
-      <div class="byline-block__mark" aria-hidden="true"></div>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
-      </div>
-    </div>
+{# ── EXPERT REVIEW · firm-level, no founder name. trust-row credential cells.
+     (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
+<section class="sec reveal" id="ny-statenisland-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
     <div class="prose">
       <p>Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor firm serving Staten Island and the wider New York City market. Staten Island tax figures &mdash; 8.875% combined sales tax; 4% UBT after the $95,000 gross-income threshold, with a credit fully offsetting UBT of $3,400 or less; and no Commercial Rent Tax, which applies only to Manhattan south of 96th Street &mdash; reflect <a href="https://www.nyc.gov/site/finance/index.page" rel="noopener nofollow">NYC Department of Finance</a> and <a href="https://www.tax.ny.gov/" rel="noopener nofollow">NY DTF</a> rules current as of the date below and are reviewed periodically. TechBrot provides bookkeeping and coordinates with your CPA, who files.</p>
     </div>
     <div class="trust-row">
       {%- for c in reviewCreds %}
-      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      <div class="trust-row__item"><p class="trust-row__value" style="font-size:15px;">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
