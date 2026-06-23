@@ -1,12 +1,14 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
 
-## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · B-HUB FAN-OUT COMPLETE 18/18)
-**RESUME ANCHOR (2026-06-24):** B1-B5 hubs DONE (18 fan-out + 3 REPs, battery GREEN, pushed 2691f05).
-NEXT FAMILY = **C2 fan-out — the 13 /vs/ siblings onto t-comparison** (bookkeeper-vs-accountant is the
-proven REP; comparisonIntent role|product|competitor). THEN C1 (comparison hub + qb/compare) → E1-E6 →
-F1/F2 → G1/G2 → A1 (home, LAST) → pre-flip sitewide pass (section-bg/overflow/axe batch). OPEN founder
-calls carried: (a) B3 listing CTA light-vs-dark (shipped light per v2 convention); (b) proadvisor-near-me
-re-tier (still t-money, GREEN).
+## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · C2 FAN-OUT COMPLETE 14/14)
+**RESUME ANCHOR (2026-06-24):** B1-B5 hubs DONE (18+3, pushed 2691f05). **C2 /vs/ DONE (14/14 on
+t-comparison, pushed 4c22934)** — REP + 5 concept (data-driven, shared partial retired) + 8 competitor;
+generalized t-comparison layout (per-page sec.* + cmpCols + guarded disclosure/verdictCards/migration/
+review-via-fit aliases); baseline pilot/bench/qblive equity GREEN. NEXT FAMILY = **C1** (comparison hub
+`/vs/` index `src/vs.njk` + `/quickbooks/compare/`). THEN E1-E6 → F1/F2 → G1/G2 → A1 (home, LAST) →
+pre-flip sitewide pass (section-bg/overflow/axe batch; retire unused partials/vs-compare-body.njk + trim).
+OPEN founder calls carried: (a) B3 listing CTA light-vs-dark (shipped light per v2 convention);
+(b) proadvisor-near-me re-tier (still t-money, GREEN).
 **R0 — DUAL-LOG EVERY TURN (founder, 2026-06-23):** append the full turn to
 `_build/reports/SESSION-LOG.md` AND update THIS file (family status) every turn; cat the
 tail of both back so the founder sees them current. Never skip either.
@@ -24,7 +26,7 @@ D1 → D3 → D2 → D4/5/6 (NY incl) → D7 → B1-B5 → C1 → E1-E6 → F1 �
 
 | Family | Layout | Status | Notes |
 |---|---|---|---|
-| C2 comparison (/vs/, 14) | t-comparison | ✅ REP done | bookkeeper-vs-accountant proof; fan-out pending |
+| **C2 comparison (/vs/, 14)** | t-comparison | **✅ 14/14 DONE** | REP (bookkeeper-vs-accountant) + 5 concept (cpa-vs-ea·bookkeeper-vs-cpa·firm-vs-freelancer·in-house-vs-outsourced·local-cpa-vs-online — data-driven, shared vs-compare-body.njk retired) + 8 competitor (7 techbrot-vs-* + bench-vs-qbl). Generalized t-comparison: per-page sec.* headings + cmpCols (configurable keys, no data churn) + guarded disclosure(disclosure\|context\|benchStatus)/verdictCards(name\|heading + body\|bullets)/migration/review(via fit alias). comparisonIntent role\|product\|competitor → calm/dark CTA. Baseline pilot/bench/qblive equity GREEN. Commits 81d9c52·03aa817·4c22934. |
 | **D1 money (19)** | **t-money (data-driven spine)** | **✅ 19/19 DONE** | bookkeeping 3 + migration 9 + QB-service 4 + accounting 3, all full-depth GREEN, ledes tightened. proadvisor-near-me flagged for possible re-tier (prose-heavy). |
 | **D3 state pillar (5)** | t-state-pillar (data-driven) | **✅ 5/5 DONE** | 16-section handoff; NY full depth intact; taccount figure; light CTA; pillarAnchor fix; full-depth GREEN |
 | **D2 prose (153)** | t-prose (v2) | **✅ 153/153 DONE** | help 52 + online 39 + resources 19 + QB sub-pages 31 + accounting 12, all full-depth GREEN. Non-uniform schema anchors preserved; prose-table + IRS-triage handled. 31 still on t-guide = other families (correct) |
@@ -33,7 +35,7 @@ D1 → D3 → D2 → D4/5/6 (NY incl) → D7 → B1-B5 → C1 → E1-E6 → F1 �
 | Location sub-hubs (10) | t-location | **✅ DONE** | state city/industry listings → Location-Sub-Hub v2; find-an-accountant silo (children+sub-hubs) complete |
 | **D7 triage (10)** | t-triage (v2) | **✅ 10/10 DONE** | all honest-triage on t-triage, Sheet-7 compliant (disclosure above fold verbatim, Intuit-billing qualified away, calm CTA, only verbatim 'official' negations). Depth gate caught+restored 1 h1. |
 | **B1-B5 hubs (21)** | t-hub (v2) | **✅ COMPLETE (18 fan-out + 3 REPs)** | All hubs body→v2 on t-hub: B1 silo 8 (quickbooks·accounting/advisory·bookkeeping·tax·services·accounting-systems·quickbooks/reconciliation·switch) + B2 card-grid 5 (qbo/features·advanced·integrations·platforms·accounting/industries) + B3 listing 5 (resources/guides·checklists·research·tools·blog) + 3 REPs (accounting silo·resources card-grid·find-an-accountant national). accounting CTA→LIGHT (founder). `.hub-rt--alt` defined in dc-system.css (one source, site-wide). Each subagent battery-gated by me; stale speakable ids (`*-tldr-body`) corrected to pageGraph `*-in-brief-text`; no AI-summary fabricated where absent (honesty); research N=0 empty-state preserved. Commits 16fc84e·45c127e·ee853cd·2691f05, all full battery GREEN. **FLAG: B3 listing CTA shipped LIGHT (v2 convention: light silo/card-grid/listing, dark only national) — a stale 2026-06-19 ruling said B3=DARK; founder call (trivial ctaBand.dark toggle if dark preferred). about=G2, qb/compare=C1 (re-scoped, not in B).** |
-| **C2 fan-out (13)** | t-comparison | **⏳ PENDING** | only the bookkeeper-vs-accountant REP is on t-comparison; 13 /vs/ siblings still old — fan out to the proven REP pattern |
+| **C2 fan-out (13)** | t-comparison | **✅ DONE** | all 13 siblings fanned out (see C2 comparison row above); 14/14 on t-comparison, battery GREEN |
 | **C1 / E1-E6 / F1-F2 / G1-G2 / A1** | various | **🔜 NEXT** | comparison hub (+qb/compare) · glossary/frameworks/tool/listing · pricing (incl 5 state) · legal/about-trust · home LAST · pre-flip sitewide pass |
 | proadvisor-near-me | t-money | **⏳ review** | flagged for possible re-tier (prose-heavy) — founder call |
 
