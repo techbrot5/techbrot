@@ -1,10 +1,10 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-hub.njk",
   "permalink": "/vs/",
   "slug": "vs-hub",
-  "tierClass": "section--tier-guide",
-  "bodyClass": "page--mofu",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--hub",
   "callBar": true,
   "title": "Comparison Library · TechBrot vs Bench, Pilot, QuickBooks Live & More",
   "description": "Honest, definitional comparisons of TechBrot against Bench, Pilot, QuickBooks Live, and other U.S. small business bookkeeping options. Plus role and structure comparisons for confused buyers. Updated 2026.",
@@ -12,6 +12,7 @@
     { "name": "Home", "href": "/" },
     { "name": "Comparisons" }
   ],
+  "heroFigure": false,
   "hero": {
     "eyebrow": "Comparison Library",
     "heading": "Honest comparisons. For buyers actually evaluating.",
@@ -22,10 +23,8 @@
       { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
     ]
   },
-  "inBrief": {
-    "text": "<strong>The TechBrot comparison library is a working reference, not a sales funnel.</strong> Every page uses the same structure &mdash; tl;dr, AI-extractable Q&amp;As, a fourteen-dimension feature table, and a three-column verdict that includes when <em>neither</em> service fits. We route you to the right comparison for the decision you&rsquo;re actually making &mdash; and when the honest answer is a competitor, we say so.",
-    "source": "Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. or any provider compared here. No affiliate, referral, or commission revenue from any compared vendor."
-  },
+  "summary": "<strong>The TechBrot comparison library is a working reference, not a sales funnel.</strong> Every page uses the same structure &mdash; tl;dr, AI-extractable Q&amp;As, a fourteen-dimension feature table, and a three-column verdict that includes when <em>neither</em> service fits. We route you to the right comparison for the decision you&rsquo;re actually making &mdash; and when the honest answer is a competitor, we say so.",
+  "summarySource": "Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. or any provider compared here. No affiliate, referral, or commission revenue from any compared vendor.",
   "ctaBand": {
     "eyebrow": "Still comparing",
     "heading": "Want the same honest read in a call?",
@@ -34,181 +33,157 @@
       { "label": "Book the discovery call", "href": "/contact/?intent=comparison", "class": "btn--primary" },
       { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
     ]
+  },
+  "sec": {
+    "summaryId": "vs-hub-in-brief-text",
+    "summaryTag": "How this library works",
+    "summaryH": "A working comparison library, not a sales funnel."
   }
 }
 ---
 
-{# ── BYLINE · firm-level, no founder name ── #}
-<section class="section section--compact" id="vs-hub-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+{# ── BYLINE · firm-level, no founder name (v2 .byline) ── #}
+<section class="sec reveal" id="vs-hub-byline" style="padding-top:28px;padding-bottom:8px;">
+  <div class="ct read">
+    <div class="byline">
+      <svg class="byline__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#0E4A50"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#FCFBF8"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
       <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">TechBrot Inc. &middot; independent firm &mdash; no referral or affiliate revenue from any provider compared here</p>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; independent firm &mdash; no referral or affiliate revenue from any provider compared here</p>
       </div>
     </div>
   </div>
 </section>
 
-{# ── HOW THIS LIBRARY WORKS · one-paragraph plain read (H2: A working comparison library, not a sales funnel.) ── #}
-<section class="section section--alt section--tier-guide" id="vs-hub-library">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">How this library works</p>
-      <h2 class="section__heading">A working comparison library, not a sales funnel.</h2>
-    </header>
+{# ── HOW THIS LIBRARY WORKS · one-paragraph plain read (sand)
+   (H2: A working comparison library, not a sales funnel. — rendered by the §summary block in t-hub) ── #}
+<section class="sec reveal" id="vs-hub-library" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
     <div class="prose">
       {%- for p in libraryIntro %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── AI SUMMARY · 4 entity-dense Q&As (H2: The library, in four questions.) ── #}
-<section class="section" id="vs-hub-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">The library, in four questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
+{# ── AI SUMMARY · 4 entity-dense Q&As, ruled ai-qa (NOT FAQPage)
+   (H2: The library, in four questions.) ── #}
+<section class="sec reveal" id="vs-hub-ai-summary">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;">The library, in four questions.</h2>
+    <dl class="speakable ai-qa">
       {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
+      <div class="ai-qa__item"><dt><h3>{{ item.q | safe }}</h3></dt><dd style="margin:0;"><p>{{ item.a | safe }}</p></dd></div>
       {%- endfor %}
-    </div>
+    </dl>
   </div>
 </section>
 
-{# ── AT-A-GLANCE ROUTING TABLE · vs-scroll + vs-table (tier-signature; SEPARATE from H3s, T3 no-collapse) ── #}
-<section class="section section--alt" id="vs-hub-glance">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">At a glance</p>
-      <h2 class="section__heading">Find the comparison that matches your question.</h2>
-      <p class="section__lede">A quick map of the library &mdash; the full provider and role comparisons, with their honest summaries, are below. We hold no referral or affiliate incentive on any of them.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">TechBrot comparison library at a glance</caption>
-        <thead><tr><th scope="col">Comparison</th><th scope="col">Who it&rsquo;s for</th><th scope="col" class="vs-table__us">Status</th></tr></thead>
-        <tbody>
-          {%- for r in vsTable %}
-          <tr><th scope="row">{{ r.cap | safe }}</th>
-            <td>{{ r.who | safe }}</td>
-            <td class="vs-table__us"><span class="vs-table__concede">{{ r.live | safe }}</span></td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+{# ── AT-A-GLANCE ROUTING TABLE · v2 .cmp NEUTRAL (no us-column)
+   (H2: Find the comparison that matches your question.) ── #}
+<section class="sec reveal" id="vs-hub-glance" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">At a glance</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:8px;">Find the comparison that matches your question.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:64ch;">A quick map of the library &mdash; the full provider and role comparisons, with their honest summaries, are below. We hold no referral or affiliate incentive on any of them.</p>
+    <table class="cmp" data-viz="comparison-table" data-viz-state="FINAL">
+      <caption>TechBrot comparison library at a glance</caption>
+      <thead><tr><th scope="col">Comparison</th><th scope="col">Who it&rsquo;s for</th><th scope="col">Status</th></tr></thead>
+      <tbody>
+        {%- for r in vsTable %}
+        <tr>
+          <th scope="row">{{ r.cap | safe }}</th>
+          <td data-col="Who it&rsquo;s for">{{ r.who | safe }}</td>
+          <td data-col="Status">{{ r.live | safe }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 
-{# ── PROVIDER COMPARISONS · buyer-card grid; each H3 verbatim; live children linked, in-progress NOT linked (NO-CHILDREN-404)
+{# ── PROVIDER COMPARISONS · dc-card hub-card grid; each H3 verbatim; live children linked,
+   in-progress NOT linked (NO-CHILDREN-404 rule preserved)
    (H2: TechBrot vs the alternatives buyers actually consider. + 5 H3s) ── #}
-<section class="section" id="vs-hub-providers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Provider comparisons</p>
-      <h2 class="section__heading">TechBrot vs the alternatives buyers actually consider.</h2>
-      <p class="section__lede">If you&rsquo;re evaluating TechBrot against another bookkeeping service, the comparison you&rsquo;re looking for is below. Where the alternative has changed materially &mdash; like Bench&rsquo;s Chapter 7 filing &mdash; the page leads with that.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="vs-hub-providers">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Provider comparisons</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:10px;">TechBrot vs the alternatives buyers actually consider.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">If you&rsquo;re evaluating TechBrot against another bookkeeping service, the comparison you&rsquo;re looking for is below. Where the alternative has changed materially &mdash; like Bench&rsquo;s Chapter 7 filing &mdash; the page leads with that.</p>
+    <div class="r-3">
       {%- for c in providers %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ c.status | safe }}</p>
-        {%- if c.href %}
-        <h3 class="buyer-card__heading"><a href="{{ c.href }}">{{ c.name | safe }}</a></h3>
-        {%- else %}
-        <h3 class="buyer-card__heading">{{ c.name | safe }}</h3>
-        {%- endif %}
-        <p class="buyer-card__body">{{ c.body | safe }}</p>
-        {%- if c.href %}<a class="buyer-card__cta" href="{{ c.href }}">{{ c.cta | safe }}</a>{%- endif %}
-      </article>
+      {%- if c.href %}
+      <a class="dc-card hub-card" href="{{ c.href }}"><span class="eyebrow">{{ c.status | safe }}</span><h3>{{ c.name | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">{{ c.body | safe }}</p><span class="hub-card__go">{{ c.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      {%- else %}
+      <div class="dc-card"><span class="eyebrow">{{ c.status | safe }}</span><h3>{{ c.name | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
+      {%- endif %}
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── ROLE & STRUCTURE COMPARISONS · buyer-card grid; each H3 verbatim
+{# ── ROLE & STRUCTURE COMPARISONS · dc-card hub-card grid; each H3 verbatim; same href rule
    (H2: Role and structure comparisons. + 3 H3s) ── #}
-<section class="section section--alt" id="vs-hub-concepts">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Definitional comparisons</p>
-      <h2 class="section__heading">Role and structure comparisons.</h2>
-      <p class="section__lede">Most buyer confusion isn&rsquo;t between providers &mdash; it&rsquo;s between concepts. What&rsquo;s the difference between a bookkeeper and an accountant? Hire in-house or outsource? Monthly retainer or hourly billing? These pages cover the structural questions.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="vs-hub-concepts" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Definitional comparisons</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:10px;">Role and structure comparisons.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">Most buyer confusion isn&rsquo;t between providers &mdash; it&rsquo;s between concepts. What&rsquo;s the difference between a bookkeeper and an accountant? Hire in-house or outsource? Monthly retainer or hourly billing? These pages cover the structural questions.</p>
+    <div class="r-3">
       {%- for c in concepts %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ c.status | safe }}</p>
-        {%- if c.href %}
-        <h3 class="buyer-card__heading"><a href="{{ c.href }}">{{ c.name | safe }}</a></h3>
-        {%- else %}
-        <h3 class="buyer-card__heading">{{ c.name | safe }}</h3>
-        {%- endif %}
-        <p class="buyer-card__body">{{ c.body | safe }}</p>
-        {%- if c.href %}<a class="buyer-card__cta" href="{{ c.href }}">{{ c.cta | safe }}</a>{%- endif %}
-      </article>
+      {%- if c.href %}
+      <a class="dc-card hub-card" href="{{ c.href }}"><span class="eyebrow">{{ c.status | safe }}</span><h3>{{ c.name | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">{{ c.body | safe }}</p><span class="hub-card__go">{{ c.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      {%- else %}
+      <div class="dc-card"><span class="eyebrow">{{ c.status | safe }}</span><h3>{{ c.name | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
+      {%- endif %}
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── HOW TO USE THE LIBRARY · routing prose (H2: Pick the comparison that matches your real question.) ── #}
-<section class="section" id="vs-hub-howto">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">How to use this library</p>
-      <h2 class="section__heading">Pick the comparison that matches your real question.</h2>
-    </header>
+{# ── HOW TO USE THE LIBRARY · routing prose (read)
+   (H2: Pick the comparison that matches your real question.) ── #}
+<section class="sec reveal" id="vs-hub-howto">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How to use this library</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Pick the comparison that matches your real question.</h2>
     <div class="prose">
       {%- for p in howto %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── THE FRAMEWORK · 6 framework H3s as REAL <h3> in stack-8 (T3: NOT collapsed)
+{# ── THE FRAMEWORK · 6 framework H3s as REAL <h3> in process-grid (numbered framework; NOT collapsed)
    (H2: Every comparison uses the same structure. + 6 H3s) ── #}
-<section class="section section--alt" id="vs-hub-framework">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The comparison framework</p>
-      <h2 class="section__heading">Every comparison uses the same structure.</h2>
-      <p class="section__lede">Apples-to-apples comparisons are only useful if the apples are evaluated against the same dimensions. Each comparison in this library follows the same six-section structure.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="vs-hub-framework" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The comparison framework</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Every comparison uses the same structure.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">Apples-to-apples comparisons are only useful if the apples are evaluated against the same dimensions. Each comparison in this library follows the same six-section structure.</p>
+    <div class="process-grid">
       {%- for d in framework %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ d.num }}</p>
+      <div class="process-step">
+        <span class="process-step__n">{{ d.num }}</span>
         <h3>{{ d.name | safe }}</h3>
-        <p class="prose">{{ d.body | safe }}</p>
+        <p>{{ d.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── LIBRARY QUESTIONS · baseline carries ZERO FAQ — rendered as PROSE Q&A (ai-summary),
-   NOT a schema'd FAQPage (no fabricated FAQ) (H2: What people ask about how we compare.) ── #}
-<section class="section" id="vs-hub-library-qs">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Library questions</p>
-      <h2 class="section__heading">What people ask about how we compare.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
+{# ── LIBRARY QUESTIONS · baseline carries ZERO FAQ — rendered as PROSE Q&A (ruled ai-qa),
+   NOT a schema'd FAQPage (no fabricated FAQ)
+   (H2: What people ask about how we compare.) ── #}
+<section class="sec reveal" id="vs-hub-library-qs">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Library questions</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;">What people ask about how we compare.</h2>
+    <dl class="speakable ai-qa">
       {%- for item in libraryQs %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
+      <div class="ai-qa__item"><dt><h3>{{ item.q | safe }}</h3></dt><dd style="margin:0;"><p>{{ item.a | safe }}</p></dd></div>
       {%- endfor %}
-    </div>
+    </dl>
     <p class="meta-reviewed"><span>Published: 2026-06-15</span><span>Updated: 2026-06-15</span><span>Reviewed: 2026-06-15 &middot; Certified QuickBooks ProAdvisor</span></p>
   </div>
 </section>

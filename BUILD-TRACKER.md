@@ -1,14 +1,15 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
 
-## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · C2 FAN-OUT COMPLETE 14/14)
-**RESUME ANCHOR (2026-06-24):** B1-B5 hubs DONE (18+3, pushed 2691f05). **C2 /vs/ DONE (14/14 on
-t-comparison, pushed 4c22934)** — REP + 5 concept (data-driven, shared partial retired) + 8 competitor;
-generalized t-comparison layout (per-page sec.* + cmpCols + guarded disclosure/verdictCards/migration/
-review-via-fit aliases); baseline pilot/bench/qblive equity GREEN. NEXT FAMILY = **C1** (comparison hub
-`/vs/` index `src/vs.njk` + `/quickbooks/compare/`). THEN E1-E6 → F1/F2 → G1/G2 → A1 (home, LAST) →
+## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · C1 COMPLETE — next E1-E6)
+**RESUME ANCHOR (2026-06-24):** B1-B5 DONE (2691f05). C2 /vs/ DONE 14/14 (4c22934). **C1 DONE** —
+`/vs/` hub (baseline, 28 headings GREEN) + `/quickbooks/compare/` recomposed to v2 t-hub card-grid
+(bespoke body in {{content}}: idx/h2, dc-card hub-card grids, .cmp at-a-glance table, ai-qa prose-Q&A,
+process-grid framework; unlinked comparisons stay unlinked; ctaBand light). NEXT FAMILY = **E1-E6**
+(glossary/frameworks/tool/guide/blog-article/research — check each family's current layout + REP first).
+THEN F1/F2 (forms/pricing) → G1/G2 (legal/editorial) → A1 (home, LAST) →
 pre-flip sitewide pass (section-bg/overflow/axe batch; retire unused partials/vs-compare-body.njk + trim).
-OPEN founder calls carried: (a) B3 listing CTA light-vs-dark (shipped light per v2 convention);
-(b) proadvisor-near-me re-tier (still t-money, GREEN).
+**FOUNDER RULINGS (2026-06-24, both confirm shipped state — NO rework): (a) B3 listing CTA = LIGHT (match
+accounting/convention) ✅; (b) proadvisor-near-me STAYS on t-money for now ✅.** Both prior open calls RESOLVED.
 **R0 — DUAL-LOG EVERY TURN (founder, 2026-06-23):** append the full turn to
 `_build/reports/SESSION-LOG.md` AND update THIS file (family status) every turn; cat the
 tail of both back so the founder sees them current. Never skip either.
@@ -36,7 +37,8 @@ D1 → D3 → D2 → D4/5/6 (NY incl) → D7 → B1-B5 → C1 → E1-E6 → F1 �
 | **D7 triage (10)** | t-triage (v2) | **✅ 10/10 DONE** | all honest-triage on t-triage, Sheet-7 compliant (disclosure above fold verbatim, Intuit-billing qualified away, calm CTA, only verbatim 'official' negations). Depth gate caught+restored 1 h1. |
 | **B1-B5 hubs (21)** | t-hub (v2) | **✅ COMPLETE (18 fan-out + 3 REPs)** | All hubs body→v2 on t-hub: B1 silo 8 (quickbooks·accounting/advisory·bookkeeping·tax·services·accounting-systems·quickbooks/reconciliation·switch) + B2 card-grid 5 (qbo/features·advanced·integrations·platforms·accounting/industries) + B3 listing 5 (resources/guides·checklists·research·tools·blog) + 3 REPs (accounting silo·resources card-grid·find-an-accountant national). accounting CTA→LIGHT (founder). `.hub-rt--alt` defined in dc-system.css (one source, site-wide). Each subagent battery-gated by me; stale speakable ids (`*-tldr-body`) corrected to pageGraph `*-in-brief-text`; no AI-summary fabricated where absent (honesty); research N=0 empty-state preserved. Commits 16fc84e·45c127e·ee853cd·2691f05, all full battery GREEN. **FLAG: B3 listing CTA shipped LIGHT (v2 convention: light silo/card-grid/listing, dark only national) — a stale 2026-06-19 ruling said B3=DARK; founder call (trivial ctaBand.dark toggle if dark preferred). about=G2, qb/compare=C1 (re-scoped, not in B).** |
 | **C2 fan-out (13)** | t-comparison | **✅ DONE** | all 13 siblings fanned out (see C2 comparison row above); 14/14 on t-comparison, battery GREEN |
-| **C1 / E1-E6 / F1-F2 / G1-G2 / A1** | various | **🔜 NEXT** | comparison hub (+qb/compare) · glossary/frameworks/tool/listing · pricing (incl 5 state) · legal/about-trust · home LAST · pre-flip sitewide pass |
+| **C1 comparison hub (2)** | t-hub (v2) | **✅ DONE** | `/vs/` library hub (baseline, 28 headings GREEN) + `/quickbooks/compare/` → v2 t-hub card-grid (bespoke body: dc-card hub-card grids, .cmp at-a-glance table, ai-qa prose-Q&A, process-grid framework; unlinked comparisons unlinked; light CTA). |
+| **E1-E6 / F1-F2 / G1-G2 / A1** | various | **🔜 NEXT** | glossary/frameworks/tool/guide/blog/research · forms/pricing (incl 5 state) · legal/about-trust · home LAST · pre-flip sitewide pass |
 | proadvisor-near-me | t-money | **⏳ review** | flagged for possible re-tier (prose-heavy) — founder call |
 
 **SHARED v2 COMPONENTS (fix at SOURCE → all families inherit):** PARTIALS — trust-strip.njk
