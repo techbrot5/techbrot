@@ -1,110 +1,274 @@
 ---
-layout: layouts/base.njk
+layout: layouts/dc-base.njk
 tierClass: section--tier-hub
 pageTier: hub
 ---
-{#- T-HUB tier skeleton — NEW SKIN (tiers/t-hub.html + PLACEMENT-MAP).
-    Dark hero + full aligned motif (the only dark band on the page) ·
-    chrome full · no call-bar · cta-band light on hub tint. Hero buttons
-    take the inverted variants on the dark band. Content machinery
-    (quick-5, FAQ, intents, schema, section IDs) is page-owned — FENCED. -#}
+{#- ===========================================================================
+    t-hub — B1-B5 HUB FAMILY (handoff Hub / Card-Grid / Listing / Location-
+    National-Hub templates). v2 dc-base composition, fully DATA-DRIVEN: every
+    hub section is gated by data presence so ONE layout renders the silo-hub,
+    card-grid-hub, listing-hub, and national-hub shapes from frontmatter + the
+    .11tydata.js content arrays.
 
-{%- if breadcrumb %}
-<nav class="breadcrumb" aria-label="Breadcrumb" id="{{ slug }}-breadcrumb">
-  <div class="container">
-    <ol>
-      {%- for item in breadcrumb %}
-      {%- if item.href %}
-      <li><a href="{{ item.href }}">{{ item.name }}</a></li>
-      <li class="sep" aria-hidden="true">/</li>
-      {%- else %}
-      <li aria-current="page">{{ item.name }}</li>
+    HANDOFF SECTION ORDER (superset; each gated):
+      HERO (compact split, taccount figure default) ·
+      PROOF STRIP (shared partial, dark) ·
+      §summary / IN-BRIEF (custom tldr block OR shared in-brief partial) ·
+      STATE ROUTER (B5 national hub only — links the 5 state pillars) ·
+      ROUTING SECTIONS (routeGroups → rel-card / dc-card grids r-2/r-3/r-4;
+        every child linked, name + blurb) ·
+      VALUE / WHAT-YOU-GET (valueProps → dc-card r-4) ·
+      NETWORK (network → dc-card r-2/r-3) ·
+      STAT BAND (stats → r-4) ·
+      AI SUMMARY (aiSummary → light ruled ai-qa) ·
+      LEGACY BODY ({{ content }} — un-migrated hub pages still render here) ·
+      FAQ ({% if faq and sec.faqH %}) ·
+      FINAL CTA (LIGHT for silo/card-grid/listing; DARK when ctaBand.dark).
+
+    CTA CONVENTION (handoff): the national hub uses a DARK final CTA
+    (ctaBand.dark: true); silo / card-grid / listing hubs use the LIGHT CTA.
+
+    FROZEN: each page's pageGraph speakable cssSelector id is preserved — the
+    in-brief partial renders #<slug>-in-brief-text; pages whose speakable is on
+    a custom tldr/summary block pass `summary` + `sec.summaryId`.
+    Section ids = each page's OWN pageGraph / intra-page anchors.
+    =========================================================================== -#}
+{%- set sec = sec or {} %}
+
+{#- HERO — compact split; taccount figure default, opt out via heroFigure:false -#}
+{%- set heroFigure = heroFigure if heroFigure is defined else "taccount" -%}
+<section class="sec" id="{{ slug }}-hero" style="padding-top:60px;padding-bottom:{% if heroFigure %}56{% else %}40{% endif %}px;border-bottom:1px solid var(--border-subtle);">
+  <div class="ct{% if heroFigure %} dc-rhero{% endif %}">
+    <div{% if not heroFigure %} style="max-width:760px;"{% endif %}>
+      <p class="eyebrow" style="display:inline-flex;align-items:center;gap:12px;margin-bottom:20px;"><span class="rule-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
+      <h1 class="dsp speakable" style="font-weight:500;font-variation-settings:'opsz' 96;font-size:clamp(34px,1.8rem + 2.8vw,56px);margin:0 0 18px;">{{ hero.heading | safe }}</h1>
+      <p class="lede speakable" style="margin:0{% if hero.actions %} 0 28px{% endif %};max-width:{% if heroFigure %}42{% else %}58{% endif %}ch;">{{ hero.subheading | safe }}</p>
+      {%- if hero.actions %}
+      <div style="display:flex;flex-wrap:wrap;gap:12px;{% if hero.trust %}margin-bottom:22px;{% endif %}">
+        {%- for a in hero.actions.slice(0, 2) %}
+        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:52px;padding:0 24px;border-radius:12px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
+        {%- endfor %}
+      </div>
       {%- endif %}
-      {%- endfor %}
-    </ol>
+      {%- if hero.trust %}
+      <p style="font-size:14px;color:var(--color-ink-mute);margin:0;max-width:48ch;">{% for t in hero.trust %}{{ t | safe }}{% if not loop.last %} &middot; {% endif %}{% endfor %}</p>
+      {%- endif %}
+    </div>
+    {%- if heroFigure %}
+    <figure class="figcard"><div class="figcard__grid" aria-hidden="true"></div><figcaption><span class="figcard__t">{{ sec.heroFigCaption | default("How the books tie out", true) | safe }}</span><span class="figcard__tag mono">ledger view</span></figcaption>{% include "partials/figure-" + heroFigure + ".svg" %}</figure>
+    {%- endif %}
   </div>
-</nav>
+</section>
+
+{#- PROOF STRIP — shared dark "what you can verify" band (opt in via proofStrip) -#}
+{%- if proofStrip %}{% include "partials/proof-strip.njk" %}{% endif %}
+
+{#- §SUMMARY — custom tldr/summary block (carries a page-OWNED speakable id when
+    the pageGraph cssSelector is NOT #<slug>-in-brief-text). sand band. -#}
+{%- if summary %}
+<section class="sec reveal" id="{{ sec.summaryId | default(slug + '-summary', true) }}-sec" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§01</span><span class="idx__t">{{ sec.summaryTag | default("In brief", true) | safe }}</span><span class="idx__rule"></span></div>
+    {%- if sec.summaryH %}<h2 class="h2" style="margin-bottom:18px;max-width:28ch;">{{ sec.summaryH | safe }}</h2>{%- endif %}
+    <div class="prose speakable"><p id="{{ sec.summaryId | default(slug + '-summary', true) }}">{{ summary | safe }}</p>{% if summarySource %}<p class="in-brief__source">{{ summarySource | safe }}</p>{% endif %}</div>
+  </div>
+</section>
 {%- endif %}
 
-{#- Hub fan-out (founder 2026-06-17): the elevated light split hero is the t-hub
-    DEFAULT (signature = T-account unless a page sets its own heroFigure). The
-    legacy dark hub hero is retired but kept below for any page that opts out via
-    heroFigure: false. -#}
-{%- set heroFigure = heroFigure if heroFigure is defined else "taccount" -%}
-{%- if heroFigure %}
-{#- Elevated light editorial hero — split text + signature figure; the earned
-    dark moment moves to the final CTA (dark by default for hubs). -#}
-<section class="section hero-tier hero--compact hero--rule hero--split" id="{{ slug }}-hero">
-  <div class="container">
-    <div class="hero-split">
-      <div class="hero">
-        <p class="hero__eyebrow"><span class="hero__eyebrow-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
-        <h1 class="hero__heading">{{ hero.heading | safe }}</h1>
-        <p class="hero__subheading">{{ hero.subheading | safe }}</p>
-        <div class="hero__actions">
-          {%- for action in hero.actions.slice(0, 2) %}
-          <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-            {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+{#- §01 IN-BRIEF — shared partial (sand). Frozen id #<slug>-in-brief-text.
+    Renders only when inBrief + sec.inBriefH present (the custom summary above is
+    the alternative for pages whose speakable lives on a tldr block). -#}
+{%- if inBrief and sec.inBriefH %}{% include "partials/in-brief.njk" %}{% endif %}
+
+{#- STATE ROUTER — B5 national hub signature: links to the state pillars (sand).
+    stateRouter.states = the linked/coming pillars; stateRouter.select = optional
+    no-fabrication selector that routes built-out → pillar, else → contact. -#}
+{%- if stateRouter %}
+<section class="sec reveal" id="{{ sec.stateRouterId | default(slug + '-states', true) }}">
+  <div class="ct">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:10px;">
+      <div class="idx" style="margin-bottom:0;"><span class="idx__n">§</span><span class="idx__t">{{ sec.stateRouterTag | default("Routing by state", true) | safe }}</span></div>
+      {%- if sec.stateRouterMeta %}<span class="mono" style="font-size:12.5px;color:var(--color-ink-faint);">{{ sec.stateRouterMeta | safe }}</span>{%- endif %}
+    </div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">{{ sec.stateRouterH | safe }}</h2>
+    {%- if sec.stateRouterLede %}<p class="lede" style="margin:0 0 26px;max-width:64ch;">{{ sec.stateRouterLede | safe }}</p>{%- endif %}
+    {%- if stateRouter.select %}
+    <div class="state-router" style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;margin-bottom:30px;">
+      <label style="flex:1;min-width:240px;"><span style="display:block;font-size:13px;font-weight:500;color:var(--color-ink);margin-bottom:7px;">{{ sec.stateRouterSelectLabel | default("Pick your state", true) | safe }}</span>
+        <select id="{{ slug }}-state-select" aria-label="Choose your state to find an accountant" style="width:100%;min-height:48px;padding:11px 13px;background:var(--white);border:1px solid var(--border-default);border-radius:10px;font:inherit;font-size:14.5px;color:var(--color-ink);">
+          <option value="" selected>Choose your state&hellip;</option>
+          {%- for s in stateRouter.select %}
+          <option value="{{ s.href }}">{{ s.name }}{% if s.built %} &mdash; dedicated page{% endif %}</option>
           {%- endfor %}
-        </div>
-        {%- if hero.trust %}
-        <ul class="hero__trust">
-          {%- for t in hero.trust %}<li class="hero__trust-item">{{ t | safe }}</li>{%- endfor %}
-        </ul>
-        {%- endif %}
+        </select>
+      </label>
+      <button type="button" class="btn btn-cta" id="{{ slug }}-state-go" style="height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">{{ sec.stateRouterSelectCta | default("Find my accountant", true) | safe }}</button>
+    </div>
+    {%- endif %}
+    <nav aria-label="States served" class="states">
+      {%- for s in stateRouter.states %}
+      {%- if s.href %}
+      <a class="state{% if s.ask %} state--ask{% endif %}" href="{{ s.href }}">{{ s.name | safe }} <span class="mono">{{ s.abbr | safe }}</span></a>
+      {%- else %}
+      <span class="state state--soon">{{ s.name | safe }} <span class="mono">{{ s.abbr | default("soon", true) | safe }}</span></span>
+      {%- endif %}
+      {%- endfor %}
+    </nav>
+    {%- if stateRouter.note %}<p class="prose" style="margin-top:22px;font-size:14px;color:var(--color-ink-mute);">{{ stateRouter.note | safe }}</p>{%- endif %}
+  </div>
+</section>
+{%- if stateRouter.select %}
+<script>
+(function(){var s=document.getElementById("{{ slug }}-state-select"),b=document.getElementById("{{ slug }}-state-go");if(!s||!b)return;function go(){if(s.value){window.location.href=s.value;}}b.addEventListener("click",go);s.addEventListener("keydown",function(e){if(e.key==="Enter"){go();}});})();
+</script>
+{%- endif %}
+{%- endif %}
+
+{#- ROUTING SECTIONS — the hub centerpiece. Each group = a card grid of CHILD
+    links (rel-card or dc-card), every child linked, name + blurb. group.cols
+    selects r-2/r-3/r-4; group.card "rel" (compact) or "dc" (full). Backgrounds
+    alternate sand/white via group.alt or auto by loop index. -#}
+{%- if routeGroups %}
+{%- for group in routeGroups %}
+<section class="sec reveal{% if group.alt %} hub-rt--alt{% endif %}" id="{{ slug }}-{{ group.id }}"{% if group.alt %} style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);"{% endif %}>
+  <div class="ct">
+    <div class="idx"><span class="idx__n">{{ group.idx | default("§", true) }}</span><span class="idx__t">{{ group.eyebrow | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:{% if group.lede %}10{% else %}28{% endif %}px;">{{ group.heading | safe }}</h2>
+    {%- if group.lede %}<p class="lede" style="margin:0 0 30px;max-width:66ch;">{{ group.lede | safe }}</p>{%- endif %}
+    <div class="{{ group.gridClass | default('r-3', true) }}">
+      {%- for r in group.cards %}
+      {%- if group.card == "rel" %}
+      <a class="rel-card" href="{{ r.href }}"><span class="rel-card__t">{{ r.title | safe }}</span>{% if r.body %}<span class="rel-card__d">{{ r.body | safe }}</span>{% endif %}</a>
+      {%- else %}
+      <a class="dc-card hub-card" href="{{ r.href }}">{% if r.eyebrow %}<span class="eyebrow">{{ r.eyebrow | safe }}</span>{% endif %}<h3>{{ r.title | safe }}</h3>{% if r.body %}<p class="prose" style="font-size:15px;margin:6px 0 0;">{{ r.body | safe }}</p>{% endif %}{% if r.cta %}<span class="hub-card__go">{{ r.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>{% endif %}</a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+    {%- if group.note %}<p class="prose" style="margin-top:24px;font-size:14px;color:var(--color-ink-mute);">{{ group.note | safe }}</p>{%- endif %}
+  </div>
+</section>
+{%- endfor %}
+{%- endif %}
+
+{#- VALUE / WHAT-YOU-GET — numbered dc-card r-4 (white). -#}
+{%- if valueProps %}
+<section class="sec reveal{% if sec.valueAlt %} hub-rt--alt{% endif %}" id="{{ slug }}-value"{% if sec.valueAlt %} style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);"{% endif %}>
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.valueTag | default("What you get", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:{% if sec.valueLede %}10{% else %}28{% endif %}px;">{{ sec.valueH | safe }}</h2>
+    {%- if sec.valueLede %}<p class="lede" style="margin:0 0 30px;max-width:64ch;">{{ sec.valueLede | safe }}</p>{%- endif %}
+    <div class="{{ sec.valueGrid | default('r-4', true) }}">
+      {%- for v in valueProps %}
+      <div class="dc-card"><div class="mono" style="font-size:12px;color:var(--color-accent);margin-bottom:12px;">0{{ loop.index }}{% if v.done %} &check;{% endif %}</div><h3 style="font-size:16px;">{{ v.name | safe }}</h3><p class="prose" style="font-size:14px;margin:6px 0 0;color:var(--color-ink-mute);">{{ v.body | safe }}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- NETWORK / HONEST MODEL — dc-card r-2/r-3 (sand). -#}
+{%- if network %}
+<section class="sec reveal" id="{{ slug }}-network" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.networkTag | default("How it works", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:{% if sec.networkLede %}10{% else %}28{% endif %}px;">{{ sec.networkH | safe }}</h2>
+    {%- if sec.networkLede %}<p class="lede" style="margin:0 0 30px;max-width:64ch;">{{ sec.networkLede | safe }}</p>{%- endif %}
+    <div class="{{ sec.networkGrid | default('r-3', true) }}">
+      {%- for n in network %}
+      <div class="dc-card"><h3>{{ n.title | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">{{ n.body | safe }}</p></div>
+      {%- endfor %}
+    </div>
+    {%- if networkNote %}<p class="prose" style="margin-top:24px;font-size:13.5px;color:var(--color-ink-mute);">{{ networkNote | safe }}</p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- STAT BAND — "by the numbers" r-4 (white). -#}
+{%- if stats %}
+<section class="sec reveal" id="{{ slug }}-stats" style="padding-top:44px;padding-bottom:44px;border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.statsTag | default("By the numbers", true) | safe }}</span><span class="idx__rule"></span></div>
+    {%- if sec.statsH %}<h2 class="h2" style="max-width:22ch;margin-bottom:{% if sec.statsLede %}8{% else %}28{% endif %}px;">{{ sec.statsH | safe }}</h2>{%- endif %}
+    {%- if sec.statsLede %}<p class="lede" style="margin:0 0 30px;max-width:60ch;">{{ sec.statsLede | safe }}</p>{%- endif %}
+    <div class="r-4">
+      {%- for s in stats %}
+      <div><div class="mono" style="font-size:30px;font-weight:500;color:var(--color-accent);">{{ s.figure | safe }}</div><div style="font-size:13px;line-height:1.5;color:var(--color-ink-mute);margin-top:8px;">{{ s.label | safe }}</div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- AI SUMMARY — light ruled multi-Q&A (hub treatment, centered head). -#}
+{%- if aiSummary %}
+<section class="sec reveal" id="{{ slug }}-ai-summary">
+  <div class="ct read">
+    <div class="idx idx--center"><span class="idx__n">§</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="text-align:center;margin:0 auto 36px;max-width:26ch;">{{ sec.aiH | safe }}</h2>
+    <dl class="speakable ai-qa"{% if sec.aiId %} id="{{ sec.aiId }}"{% endif %}>
+      {%- for item in aiSummary %}
+      <div class="ai-qa__item"><dt><h3>{{ item.q | safe }}</h3></dt><dd style="margin:0;"><p>{{ item.a | safe }}</p></dd></div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+{%- endif %}
+
+{#- LEGACY BODY — un-migrated hub pages still render their old-class body here
+    until they fan out to the data-driven sections above. Migrated REPs have an
+    empty body, so this emits nothing. -#}
+{{ content | safe }}
+
+{#- FAQ — visible = FAQPage schema (white). Gated on faq + sec.faqH. -#}
+{%- if faq and sec.faqH %}
+<section class="sec reveal" id="{{ slug }}-faq" style="padding-top:80px;">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.faqTag | default("Questions", true) | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;">{{ sec.faqH | safe }}</h2>
+    <div class="faq">
+      {%- for item in faq %}
+      <details name="{{ slug }}-faq"{% if loop.first %} open{% endif %}><summary>{{ item.q | safe }}<span class="pl"></span></summary><div>{{ item.a | safe }}</div></details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- FINAL CTA — LIGHT for silo / card-grid / listing hubs (default); DARK for the
+    national hub (handoff convention) when ctaBand.dark is true. -#}
+{%- if ctaBand %}
+{%- if ctaBand.dark %}
+<section class="final-dark" id="{{ slug }}-cta">
+  <div class="final-dark__mono" aria-hidden="true"><svg width="420" height="420" viewBox="0 0 64 64"><path d="M8 10 H38 V54 H26 V22 H8 Z" fill="#fff"/><rect x="42" y="10" width="14" height="12" fill="#fff"/></svg></div>
+  <div class="ct" style="position:relative;padding:88px 32px;">
+    <div style="max-width:720px;">
+      <div class="rule-mark" style="margin-bottom:22px;"><span style="background:var(--accent-on-ink);"></span><span></span></div>
+      <h2 class="final-dark__h">{{ ctaBand.heading | safe }}</h2>
+      <p class="final-dark__lede">{{ ctaBand.lede | safe }}</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;">
+        {%- for a in ctaBand.actions %}
+        <a class="btn {% if loop.first %}btn-cta{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:11px;height:54px;padding:0 26px;border-radius:13px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};{% if not loop.first %}background:transparent;color:#fff;border:1px solid rgba(245,247,251,0.32);{% endif %}">{{ a.label }}</a>
+        {%- endfor %}
       </div>
-      <div class="hero__figure">{% include "partials/figure-" + heroFigure + ".svg" %}</div>
+      <p class="final-dark__disc">TechBrot Inc. is an independent firm and is not affiliated with Intuit Inc. QuickBooks and ProAdvisor are trademarks of Intuit Inc. We do not file taxes or represent clients before tax authorities.</p>
     </div>
   </div>
 </section>
 {%- else %}
-<section class="section hero-tier hero--hub" id="{{ slug }}-hero">
-  <div class="hero__motif" aria-hidden="true">{% include "partials/motif-align-full.svg" %}</div>
-  <div class="container">
-    <div class="hero">
-      <p class="hero__eyebrow"><span class="hero__eyebrow-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
-      <h1 class="hero__heading">{{ hero.heading | safe }}</h1>
-      <p class="hero__subheading">{{ hero.subheading | safe }}</p>
-      <div class="hero__actions">
-        {%- for action in hero.actions.slice(0, 2) %}
-        <a class="btn {{ action.class }} btn--inverted btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
-        {%- endfor %}
-      </div>
-    </div>
-  </div>
-</section>
-{%- endif %}
-
-{%- if inBrief %}
-<section class="section section--compact" id="{{ slug }}-in-brief">
-  <div class="container">
-    <div class="in-brief">
-      <p class="in-brief__text" id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
-      {%- if inBrief.source %}<p class="in-brief__source">{{ inBrief.source | safe }}</p>{%- endif %}
-    </div>
-  </div>
-</section>
-{%- endif %}
-
-{{ content | safe }}
-
-{%- if ctaBand %}
-<section class="section section--cta-band section--cta-band--{% if ctaBand.dark == false %}light{% else %}dark{% endif %} {{ tierClass }}" id="{{ slug }}-cta">
-  <div class="cta-band__motif" aria-hidden="true">{% include "partials/motif-align-single.svg" %}</div>
-  <div class="container">
+<section class="sec reveal section--cta-band--light" id="{{ slug }}-cta" style="padding:88px 0;">
+  <div class="ct read">
     <div class="final-cta">
-      <p class="section__eyebrow">{{ ctaBand.eyebrow | safe }}</p>
-      <h2 class="final-cta__heading">{{ ctaBand.heading | safe }}</h2>
+      {%- if ctaBand.eyebrow %}<p class="eyebrow" style="margin-bottom:16px;">{{ ctaBand.eyebrow | safe }}</p>{%- endif %}
+      <h2 class="final-cta__h">{{ ctaBand.heading | safe }}</h2>
       <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
       <div class="final-cta__actions">
-        {%- for action in ctaBand.actions %}
-        <a class="btn {{ action.class }}" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+        {%- for a in ctaBand.actions %}
+        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 24px;border-radius:13px;font-size:15.5px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
         {%- endfor %}
       </div>
-      <p class="final-cta__disclaimer">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
+      <p class="prose" style="margin-top:28px;font-size:12.5px;color:var(--color-ink-faint);">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
     </div>
   </div>
 </section>
+{%- endif %}
 {%- endif %}

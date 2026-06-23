@@ -26,10 +26,7 @@
       "All 50 states"
     ]
   },
-  "inBrief": {
-    "text": "<strong>The operational accounting layer:</strong> bookkeeping (monthly, cleanup, catch-up) &middot; QuickBooks (setup, cleanup, migration) &middot; payroll &middot; multi-state sales tax &middot; fractional CFO &mdash; fixed-fee, written scope, Certified ProAdvisor delivery, all 50 states.",
-    "source": "Independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc."
-  },
+  "summary": "TechBrot delivers the operational accounting layer for U.S. small and mid-sized businesses &mdash; bookkeeping (monthly, cleanup, catch-up), QuickBooks (setup, cleanup, migration), payroll management, multi-state sales tax compliance, and fractional CFO. We handle the work that keeps your books clean and your operations compliant; your CPA or EA handles tax filing and IRS representation. Every engagement is <strong>fixed-fee with a written scope before any work begins</strong> &mdash; no hourly billing &mdash; delivered by Certified Intuit ProAdvisors across all four core QuickBooks platforms. National coverage with state-specific operational depth.",
   "ctaBand": {
     "dark": true,
     "eyebrow": "Start here",
@@ -39,65 +36,39 @@
       { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
       { "label": "Explore Services", "href": "/accounting/services/", "class": "btn--ghost" }
     ]
+  },
+  "sec": {
+    "heroFigCaption": "How the books tie out",
+    "summaryId": "accounting-tldr-body",
+    "summaryTag": "In one paragraph",
+    "summaryH": "TechBrot&rsquo;s accounting practice, summarized.",
+    "aiH": "TechBrot accounting, in five questions.",
+    "faqTag": "Common questions",
+    "faqH": "Common questions."
   }
 }
 ---
 
-<section class="section section--compact section--tier-hub" id="accounting-tldr">
-  <div class="container">
-    <div class="tldr">
-      <p class="tldr__label">In one paragraph</p>
-      <h2 class="tldr__heading">TechBrot&rsquo;s accounting practice, summarized.</h2>
-      <p class="tldr__body" id="accounting-tldr-body">TechBrot delivers the operational accounting layer for U.S. small and mid-sized businesses &mdash; bookkeeping (monthly, cleanup, catch-up), QuickBooks (setup, cleanup, migration), payroll management, multi-state sales tax compliance, and fractional CFO. We handle the work that keeps your books clean and your operations compliant; your CPA or EA handles tax filing and IRS representation. Every engagement is <strong>fixed-fee with a written scope before any work begins</strong> &mdash; no hourly billing &mdash; delivered by Certified Intuit ProAdvisors across all four core QuickBooks platforms. National coverage with state-specific operational depth.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="accounting-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">TechBrot accounting, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="accounting-services">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What we deliver</p>
-      <h2 class="section__heading">The operational accounting layer.</h2>
-      <p class="section__lede">Six engagement areas, each fixed-fee with a written scope. Canonical price ranges shown; your exact fee follows the free discovery call.</p>
-    </header>
-    <div class="grid-3">
+{# ── SERVICES — the operational accounting layer; 6-area routing (dc-card r-3). (H2: The operational accounting layer.) ── #}
+<section class="sec reveal" id="accounting-services">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What we deliver</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">The operational accounting layer.</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:64ch;">Six engagement areas, each fixed-fee with a written scope. Canonical price ranges shown; your exact fee follows the free discovery call.</p>
+    <div class="r-3">
       {%- for s in services %}
-      <article class="review-card">
-        <p class="team-card__role">Area {{ s.area }}</p>
-        <h3>{{ s.name | safe }}</h3>
-        <p class="review-card__fact">{{ s.body | safe }}</p>
-        <p class="review-card__fact"><strong>{{ s.fee | safe }}</strong> &middot; {{ s.eng | safe }}</p>
-        <a class="review-card__link" href="{{ s.href }}{% if s.intent %}?intent={{ s.intent }}{% endif %}">{{ s.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <article class="dc-card hub-card"><span class="eyebrow">Area {{ s.area }}</span><h3>{{ s.name | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 12px;">{{ s.body | safe }}</p><p class="mono" style="font-size:12px;color:var(--color-ink-mute);margin:0 0 10px;"><strong style="color:var(--color-ink);">{{ s.fee | safe }}</strong> &middot; {{ s.eng | safe }}</p><a class="hub-card__go" href="{{ s.href }}{% if s.intent %}?intent={{ s.intent }}{% endif %}">{{ s.cta }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></article>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="accounting-distinction">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The distinction</p>
-      <h2 class="section__heading">Bookkeeping, accounting, and where TechBrot fits.</h2>
-    </header>
-    <div class="legal-doc__body">
+{# ── DISTINCTION — bookkeeping vs accounting prose (sand, read). (H2: Bookkeeping, accounting, and where TechBrot fits.) ── #}
+<section class="sec reveal" id="accounting-distinction" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The distinction</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Bookkeeping, accounting, and where TechBrot fits.</h2>
+    <div class="prose">
       <p>Bookkeeping is the operational recording and organizing of financial transactions &mdash; categorizing expenses, reconciling bank and credit accounts, producing monthly financial statements, managing accounts payable and receivable. It&rsquo;s the foundation everything else is built on.</p>
       <p>Accounting is the broader discipline: bookkeeping plus financial analysis, reporting, tax preparation, audit, and strategy. Some accounting functions require licensure &mdash; tax filing and IRS representation require a CPA or EA.</p>
       <p>TechBrot delivers the <strong>operational accounting layer</strong>: bookkeeping, QuickBooks management, payroll, and sales tax compliance, plus fractional CFO strategy for growth-stage businesses. We produce CPA-ready books and coordinate directly with your CPA for tax filing and audit. The clean split: <strong>TechBrot keeps the books right; your CPA files from them.</strong> Most businesses need both.</p>
@@ -105,17 +76,16 @@
   </div>
 </section>
 
-<section class="section section--alt" id="accounting-modes">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How the work is delivered</p>
-      <h2 class="section__heading">Direct service or curated network.</h2>
-    </header>
-    <div class="grid-2">
-      <article class="review-card">
+{# ── DELIVERY MODES — direct vs vetted-local, incl-card r-2. (H2: Direct service or curated network.) ── #}
+<section class="sec reveal" id="accounting-modes">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How the work is delivered</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:28px;">Direct service or curated network.</h2>
+    <div class="r-2">
+      <article class="incl-card">
         <h3>Direct service by the lead practice.</h3>
-        <p class="review-card__fact">Most engagements are delivered directly by TechBrot&rsquo;s lead practice &mdash; Certified ProAdvisors operating under the TechBrot brand, with platform infrastructure behind every engagement.</p>
-        <ul class="checks-list">
+        <p class="prose" style="font-size:15px;margin:8px 0 0;">Most engagements are delivered directly by TechBrot&rsquo;s lead practice &mdash; Certified ProAdvisors operating under the TechBrot brand, with platform infrastructure behind every engagement.</p>
+        <ul class="checklist">
           <li>All 50 states served</li>
           <li>Certified across all four QuickBooks platforms</li>
           <li>Multi-state payroll &amp; sales tax depth</li>
@@ -124,10 +94,10 @@
           <li>Fixed-fee written scopes</li>
         </ul>
       </article>
-      <article class="review-card">
+      <article class="incl-card">
         <h3>Vetted local accounting practices.</h3>
-        <p class="review-card__fact">Where in-state presence or specialized industry experience matters, engagements route to a vetted local practice operating under TechBrot&rsquo;s standards.</p>
-        <ul class="checks-list">
+        <p class="prose" style="font-size:15px;margin:8px 0 0;">Where in-state presence or specialized industry experience matters, engagements route to a vetted local practice operating under TechBrot&rsquo;s standards.</p>
+        <ul class="checklist">
           <li>Independent U.S.-based practices</li>
           <li>State-specific operational depth</li>
           <li>In-state CPA coordination</li>
@@ -140,55 +110,31 @@
   </div>
 </section>
 
-<section class="section" id="accounting-differentiators">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The standard</p>
-      <h2 class="section__heading">What separates the practice.</h2>
-    </header>
-    <ol class="process-diagram">
+{# ── DIFFERENTIATORS — the standard, numbered process (4-step). (H2: What separates the practice.) ── #}
+<section class="sec reveal" id="accounting-differentiators" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The standard</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:30px;">What separates the practice.</h2>
+    <div class="process-grid">
       {%- for d in differentiators %}
-      <li class="process-step">
-        <p class="process-step__number">0{{ loop.index }}</p>
-        <h3 class="process-step__heading">{{ d.name | safe }}</h3>
-        <p class="process-step__body">{{ d.body | safe }}</p>
-      </li>
-      {%- endfor %}
-    </ol>
-  </div>
-</section>
-
-<section class="section section--alt" id="accounting-scope">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Honest scope</p>
-      <h2 class="section__heading">What we do and don&rsquo;t do.</h2>
-    </header>
-    {%- for b in doDont %}
-    <div class="stack-8">
-      <h3>{{ b.name | safe }}</h3>
-      <p class="legal-doc__body">{{ b.body | safe }}</p>
-    </div>
-    {%- endfor %}
-  </div>
-</section>
-
-<section class="section" id="accounting-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">Common questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="accounting-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="accounting-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
+      <div class="process-step">
+        <span class="process-step__n">0{{ loop.index }}</span>
+        <h3>{{ d.name | safe }}</h3>
+        <p>{{ d.body | safe }}</p>
       </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── HONEST SCOPE — do / don't / coordinate, dc-card r-3. (H2: What we do and don't do.) ── #}
+<section class="sec reveal" id="accounting-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;">What we do and don&rsquo;t do.</h2>
+    <div class="r-3">
+      {%- for b in doDont %}
+      <div class="dc-card"><h3>{{ b.name | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">{{ b.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
