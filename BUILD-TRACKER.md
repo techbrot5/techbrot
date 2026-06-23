@@ -21,7 +21,7 @@ D1 → D3 → D2 → D4/5/6 (NY incl) → D7 → B1-B5 → C1 → E1-E6 → F1 �
 | C2 comparison (/vs/, 14) | t-comparison | ✅ REP done | bookkeeper-vs-accountant proof; fan-out pending |
 | **D1 money (19)** | **t-money (data-driven spine)** | **✅ 19/19 DONE** | bookkeeping 3 + migration 9 + QB-service 4 + accounting 3, all full-depth GREEN, ledes tightened. proadvisor-near-me flagged for possible re-tier (prose-heavy). |
 | **D3 state pillar (5)** | t-state-pillar (data-driven) | **✅ 5/5 DONE** | 16-section handoff; NY full depth intact; taccount figure; light CTA; pillarAnchor fix; full-depth GREEN |
-| **D2 prose (~177)** | t-prose | **🔜 NEXT** | BIG family; precise path-scope (not t-guide catch-all); fresh context recommended |
+| **D2 prose (153)** | t-prose (v2) | **🔄 2/153 + foundation** | scope LOCKED (d2-scope.txt); t-prose v2 built + 2 REPs GREEN. Fan-out = scriptable class-map per silo + battery; preserve schema HowTo anchors byte-exact. EXCL 21 (legal/glossary/frameworks/partners/hubs/faq), HELD 10 (switch/tool/triage) |
 | D4/D5/D6 (NY children) | — | ⏳ | NY incl, content-frozen + rate-free viz |
 | D7 / B1-B5 / C1 / E1-E6 / F1 / F2 / G1 / G2 / A1 | — | ⏳ | pending (A1 last) |
 
