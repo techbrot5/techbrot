@@ -111,6 +111,15 @@ h1, h2, h3 { font-weight: 500; text-wrap: balance; }
 .dc-card h3 { font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 19px; color: var(--color-ink); margin: 0 0 8px; }
 .dc-card .prose { font-size: 15.5px; line-height: 1.65; }
 
+/* ---------- chips (location-child "areas we serve" neighborhood chips) ----------
+   handoff Location-Child AREAS block: pill row of place names; no equivalent existed
+   in the kit (dc-card is too heavy for a one-line label). Tokenized, hover-petrol. */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { display: inline-flex; align-items: center; min-height: 36px; padding: 7px 15px; background: var(--white); border: 1px solid var(--border-subtle); border-radius: 999px; font-size: 14px; line-height: 1.35; color: var(--color-ink); transition: border-color .15s, background .15s; }
+.chip:hover { border-color: var(--color-accent); background: var(--color-paper-warm); }
+.chip__note { color: var(--color-ink-mute); }
+.chip--more { color: var(--color-accent); border-color: var(--accent-border); background: var(--color-paper-warm); }
+
 /* ---------- TL;DR card ---------- */
 .tldr { background: var(--color-paper-warm); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 22px 26px; }
 .tldr .eyebrow { margin-bottom: 10px; }

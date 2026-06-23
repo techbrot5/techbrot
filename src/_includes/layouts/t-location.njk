@@ -1,136 +1,101 @@
 ---
-layout: layouts/base.njk
-tierClass: section--tier-hub
-pageTier: location
-callBar: true
+layout: layouts/dc-base.njk
+footerNav:
+  label: Find an accountant
+  links:
+    - { href: "/find-an-accountant/new-york/", text: "New York" }
+    - { href: "/find-an-accountant/california/", text: "California" }
+    - { href: "/find-an-accountant/", text: "All states" }
 ---
-{#- T-LOCATION tier skeleton — NEW SKIN (tiers/t-location.html +
-    PLACEMENT-MAP). Dark hero + STATE CONTOUR LEDGER motif (NY grade
-    shipped; per-state generation rule in the SVG header: 16 rows · h24 ·
-    pitch 40 · one anchor channel · echo layer +12/+14 at 12%) ·
-    breadcrumb · sticky call-bar (mobile) · hub tint (ruling: location =
-    hub surface). Pages override `motif` to a per-state partial when
-    generated. -#}
+{#- ===========================================================================
+    t-location — D4/D5/D6 location-child family (handoff "Location Child -
+    Template.dc.html"). v2 dc-system spine. layout: dc-base.njk owns the chrome
+    (topbar / mega-nav / breadcrumb / footer / drawer); this layout renders the
+    COMMON location-child frame in v2 components and hands the BESPOKE body to
+    {{ content }}.
 
-{%- if breadcrumb %}
-<nav class="breadcrumb" aria-label="Breadcrumb" id="{{ slug }}-breadcrumb">
-  <div class="container">
-    <ol>
-      {%- for item in breadcrumb %}
-      {%- if item.href %}
-      <li><a href="{{ item.href }}">{{ item.name }}</a></li>
-      <li class="sep" aria-hidden="true">/</li>
-      {%- else %}
-      <li aria-current="page">{{ item.name }}</li>
-      {%- endif %}
+    Section order (handoff Location Child): compact LIGHT hero (rule-mark eyebrow
+    + place H1 + lede + 2 actions + trust line) · IN BRIEF (sand TL;DR card,
+    frozen speakable id #{{ slug }}-in-brief-text) · {{ content }} (the page's
+    bespoke body: AI-summary / why-local / local-tax-stack / areas / deliver /
+    advisory / pull-quote / reviews / two-ways-to-start — all in v2 components,
+    each section id == that page's own pageGraph schema anchor) · FAQ (visible =
+    FAQPage schema) · FINAL CTA (LIGHT — location-child convention).
+
+    The AI-summary block stays BODY-rendered so each page keeps its own schema
+    cssSelector anchor (#<slug>-ai-summary-list) intact. The in-brief card is
+    layout-rendered so the frozen #<slug>-in-brief-text resolves once.
+    =========================================================================== -#}
+{%- set sec = sec or {} %}
+
+{#- HERO — compact, LIGHT (location child is subordinate to the pillar): rule-mark
+    eyebrow + place H1 + lede + 2 actions + trust line. No figure, no dark contour. -#}
+<section class="sec" id="{{ slug }}-hero" style="padding-top:52px;padding-bottom:44px;border-bottom:1px solid var(--border-faint);">
+  <div class="ct read">
+    <p class="eyebrow" style="display:inline-flex;align-items:center;gap:12px;margin-bottom:20px;"><span class="rule-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
+    <h1 class="dsp speakable" style="font-weight:500;font-variation-settings:'opsz' 80;font-size:clamp(33px,1.7rem + 2.4vw,50px);margin:0 0 18px;">{{ hero.heading | safe }}</h1>
+    <p class="lede speakable" style="margin:0 0 26px;max-width:48ch;">{{ hero.subheading | safe }}</p>
+    {%- if hero.actions %}
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px;">
+      {%- for a in hero.actions.slice(0, 2) %}
+      <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel or (a.href and a.href.startsWith('tel:')) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:50px;padding:0 22px;border-radius:12px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
       {%- endfor %}
-    </ol>
+    </div>
+    {%- endif %}
+    {%- if hero.trust %}
+    <p style="font-size:14px;color:var(--color-ink-mute);margin:0;max-width:52ch;">{% for t in hero.trust %}{{ t | safe }}{% if not loop.last %} &middot; {% endif %}{% endfor %}</p>
+    {%- endif %}
   </div>
-</nav>
-{%- endif %}
+</section>
 
-{#- State pillar hero (founder 2026-06-17, locked State Pillar template): the
-    elevated treatment is the LIGHT split article-hero + signature ledger figure
-    (heroFigure), NOT the legacy dark state-contour hero. heroFigure is OPT-IN —
-    the NY pillar leads on it; the legacy dark-contour hero stays the fallback for
-    state landings until each is fanned out. -#}
-{%- set heroFigure = heroFigure if heroFigure is defined else false -%}
-{%- if heroFigure %}
-<section class="section hero-tier hero--compact hero--rule hero--split" id="{{ slug }}-hero">
-  <div class="container">
-    <div class="hero-split">
-      <div class="hero">
-        <p class="hero__eyebrow"><span class="hero__eyebrow-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
-        <h1 class="hero__heading">{{ hero.heading | safe }}</h1>
-        <p class="hero__subheading">{{ hero.subheading | safe }}</p>
-        <div class="hero__actions">
-          {%- for action in hero.actions.slice(0, 2) %}
-          <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-            {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
-          {%- endfor %}
-        </div>
-        {%- if hero.trust %}
-        <ul class="hero__trust">
-          {%- for t in hero.trust %}<li class="hero__trust-item">{{ t | safe }}</li>{%- endfor %}
-        </ul>
-        {%- endif %}
-      </div>
-      <div class="hero__figure">{% include "partials/figure-" + heroFigure + ".svg" %}</div>
-    </div>
-  </div>
-</section>
-{%- elif heroLight %}
-{#- LOCATION CHILD (founder ruling 2026-06-17, Gallery 06 A4 fix): cities &
-    industries get a LIGHTER, conversion-focused compact hero — clearly
-    subordinate to the pillar, NEVER the pillar's heavy figure-split hero. No
-    figure, no dark contour, no motif. -#}
-<section class="section hero-tier hero--compact hero--rule" id="{{ slug }}-hero">
-  <div class="container">
-    <div class="hero">
-      <p class="hero__eyebrow"><span class="hero__eyebrow-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
-      <h1 class="hero__heading">{{ hero.heading | safe }}</h1>
-      <p class="hero__subheading">{{ hero.subheading | safe }}</p>
-      <div class="hero__actions">
-        {%- for action in hero.actions.slice(0, 2) %}
-        <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
-        {%- endfor %}
-      </div>
-      {%- if hero.trust %}
-      <ul class="hero__trust">
-        {%- for t in hero.trust %}<li class="hero__trust-item">{{ t | safe }}</li>{%- endfor %}
-      </ul>
-      {%- endif %}
-    </div>
-  </div>
-</section>
-{%- else %}
-<section class="section hero-tier hero--location" id="{{ slug }}-hero">
-  <div class="hero__motif" aria-hidden="true">{% include heroMotif or "partials/motif-align-ny.svg" %}</div>
-  <div class="container">
-    <div class="hero">
-      <p class="hero__eyebrow"><span class="hero__eyebrow-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
-      <h1 class="hero__heading">{{ hero.heading | safe }}</h1>
-      <p class="hero__subheading">{{ hero.subheading | safe }}</p>
-      <div class="hero__actions">
-        {%- for action in hero.actions.slice(0, 2) %}
-        <a class="btn {{ action.class }} btn--inverted btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
-        {%- endfor %}
-      </div>
-    </div>
-  </div>
-</section>
-{%- endif %}
-
+{#- IN BRIEF — sand TL;DR card (handoff "The short version"). Frozen speakable id
+    #{{ slug }}-in-brief-text on the answer paragraph. -#}
 {%- if inBrief %}
-<section class="section section--compact" id="{{ slug }}-in-brief">
-  <div class="container">
-    <div class="in-brief">
-      <p class="in-brief__text" id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
-      {%- if inBrief.source %}<p class="in-brief__source">{{ inBrief.source | safe }}</p>{%- endif %}
+<section class="sec reveal" id="{{ slug }}-in-brief" style="padding-top:44px;padding-bottom:28px;">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.inBriefTag | default("The short version", true) }}</span><span class="idx__rule"></span></div>
+    <div class="tldr speakable">
+      <p id="{{ slug }}-in-brief-text">{{ inBrief.text | safe }}</p>
+      {%- if inBrief.source %}<p class="tldr__src">{{ inBrief.source | safe }}</p>{%- endif %}
     </div>
   </div>
 </section>
 {%- endif %}
 
+{#- ═══ BESPOKE BODY — the page's unique location-child sections in v2 dc-system
+    components; each section id == the page's own pageGraph schema anchor ═══ -#}
 {{ content | safe }}
 
+{#- FAQ — visible = FAQPage schema (white). id #{{ slug }}-faq -#}
+{%- if faq %}
+<section class="sec reveal" id="{{ slug }}-faq" style="padding-top:72px;">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.faqTag | default("Questions", true) }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">{{ sec.faqH | default("Questions.", true) | safe }}</h2>
+    <div class="faq">
+      {%- for item in faq %}
+      <details name="{{ slug }}-faq"{% if loop.first %} open{% endif %}><summary>{{ item.q | safe }}<span class="pl"></span></summary><div>{{ item.a | safe }}</div></details>
+      {%- endfor %}
+    </div>
+    {%- if metaReviewed %}<p class="meta-reviewed"><span>Reviewed by the TechBrot Certified ProAdvisor team &middot; Updated {{ metaReviewed }}</span></p>{%- endif %}
+  </div>
+</section>
+{%- endif %}
+
+{#- FINAL CTA — LIGHT (location-child convention) -#}
 {%- if ctaBand %}
-<section class="section section--cta-band section--cta-band--light {{ tierClass }}" id="{{ slug }}-cta">
-  <div class="cta-band__motif" aria-hidden="true">{% include "partials/motif-align-single.svg" %}</div>
-  <div class="container">
+<section class="sec reveal section--cta-band--light" id="{{ slug }}-cta" style="padding:80px 0;">
+  <div class="ct read">
     <div class="final-cta">
-      <p class="section__eyebrow">{{ ctaBand.eyebrow | safe }}</p>
-      <h2 class="final-cta__heading">{{ ctaBand.heading | safe }}</h2>
+      {%- if ctaBand.eyebrow %}<p class="eyebrow" style="margin-bottom:16px;">{{ ctaBand.eyebrow | safe }}</p>{%- endif %}
+      <h2 class="final-cta__h">{{ ctaBand.heading | safe }}</h2>
       <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
       <div class="final-cta__actions">
-        {%- for action in ctaBand.actions %}
-        <a class="btn {{ action.class }}" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+        {%- for a in ctaBand.actions %}
+        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel or (a.href and a.href.startsWith('tel:')) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 24px;border-radius:13px;font-size:15.5px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
         {%- endfor %}
       </div>
-      <p class="final-cta__disclaimer">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
+      <p class="prose" style="margin-top:28px;font-size:12.5px;color:var(--color-ink-faint);">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
     </div>
   </div>
 </section>
