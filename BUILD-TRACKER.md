@@ -1,15 +1,44 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
 
-## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · C1 COMPLETE — next E1-E6)
-**RESUME ANCHOR (2026-06-24):** B1-B5 DONE (2691f05). C2 /vs/ DONE 14/14 (4c22934). **C1 DONE** —
-`/vs/` hub (baseline, 28 headings GREEN) + `/quickbooks/compare/` recomposed to v2 t-hub card-grid
-(bespoke body in {{content}}: idx/h2, dc-card hub-card grids, .cmp at-a-glance table, ai-qa prose-Q&A,
-process-grid framework; unlinked comparisons stay unlinked; ctaBand light). NEXT FAMILY = **E1-E6**
-(glossary/frameworks/tool/guide/blog-article/research — check each family's current layout + REP first).
-THEN F1/F2 (forms/pricing) → G1/G2 (legal/editorial) → A1 (home, LAST) →
+## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · C1 COMPLETE · CHECKPOINT before E — context full)
+**RESUME ANCHOR (2026-06-24):** B1-B5 DONE (2691f05). C2 /vs/ DONE 14/14 (4c22934). C1 DONE (1710daf) —
+`/vs/` hub (baseline, 28 headings GREEN) + `/quickbooks/compare/` → v2 t-hub card-grid. **STOPPED before
+E1-E6 per founder directive #5 (context full → clean checkpoint). Tree CLEAN at the C1+docs commit.**
+
+**🔑 KEY ARCHITECTURE FINDING for E-F-G-A (verified 2026-06-24) — the remaining recompose is a LAYOUT
+MIGRATION, not just body conversion:** Two layout families exist —
+  • **v2 (dc-base, new chrome: dark topbar + 74px mega-nav + dc-system.css):** t-hub · t-comparison ·
+    t-money · t-state-pillar · t-location · t-triage · t-prose.
+  • **OLD (base.njk + site.min.css, old chrome):** **t-guide · t-bofu · t-mofu · t-article** ← anything
+    still on these 4 is NOT yet v2 (old header/footer even if its body were converted).
+**So E-F-G-A pages on these 4 old layouts must MIGRATE to a v2 dc-base layout (+ body→v2), like /vs/
+siblings did t-mofu→t-comparison and hubs did →t-hub. Body-only conversion is INSUFFICIENT (leaves old
+chrome).** REMAINING WORK BY FAMILY (verify each first):
+  - **E2 glossary:** `src/glossary/entry.njk` (paginated term template, on t-guide=OLD) + `src/glossary/index.njk`
+    (hub, OLD t-guide, old-kit body) → migrate to a v2 layout (t-prose fits the article shape; guide children
+    already run on t-prose). Glossary terms = growth (not baseline); DefinedTerm ids `#gl-<slug>-definition` +
+    `#gl-<slug>-def-body` are FROZEN — preserve. (A body→v2 draft was made + reverted; redo with the layout move.)
+  - **E1 guides:** 13 guide children already on **t-prose (v2)** + 0 old-kit → likely DONE; verify chrome + spot-check.
+  - **E5 tools/calculators:** 9 children under `src/tools/` still old-kit (interactive calc pages) → need a v2
+    layout + body; build a tool REP first (calculator JS + result panel must keep working). Tools hub done (B3).
+  - **E3 frameworks:** `src/resources/frameworks/` MISSING — locate framework pages (may be elsewhere or 0).
+  - **E6 research:** hub done (B3); research children = data-driven/none — verify.
+  - **Blog articles (8 md, src/blog/posts/):** check their layout (likely t-article=OLD) → migrate to t-prose/t-article-v2.
+  - **F1 forms** (/contact/, /quickbooks/file-review/) + **F2 pricing** (+5 state) — check layout (t-bofu=OLD?).
+  - **G1 legal** (4 docs) on t-guide=OLD → migrate. **G2** about/trust/partners — check.
+  - **A1 home** (`src/index.njk`) LAST. Then **pre-flip pass** (retire vs-compare-body.njk + legacy /vs/ data keys;
+    css trim toward target; LIVE axe/overflow on founder machine; baseline-vs-prod recrawl).
+NEXT SESSION (fresh context): resume at **E** — start by upgrading/confirming the v2 layout target for each
+old-layout family, then migrate + body→v2 per family, battery-gate + commit per family, dual-log every turn.
+(superseded older NEXT line kept below for history:) THEN F1/F2 (forms/pricing) → G1/G2 (legal/editorial) → A1 (home, LAST) →
 pre-flip sitewide pass (section-bg/overflow/axe batch; retire unused partials/vs-compare-body.njk + trim).
 **FOUNDER RULINGS (2026-06-24, both confirm shipped state — NO rework): (a) B3 listing CTA = LIGHT (match
 accounting/convention) ✅; (b) proadvisor-near-me STAYS on t-money for now ✅.** Both prior open calls RESOLVED.
+## 🛑 FOUNDER DECISIONS PENDING (clear before flip — founder 2026-06-24, autonomous-sleep run)
+Real founder calls deferred during the autonomous run (best-judgment applied + noted; founder to ratify pre-flip):
+- *(none yet — autonomous run in progress; minor calls are taken by best-judgment + logged, only real content/legal/honesty/re-tier/ranking calls land here.)*
+- CARRIED (now RESOLVED 2026-06-24): B3 listing CTA = LIGHT ✅; proadvisor-near-me stays t-money ✅.
+
 **R0 — DUAL-LOG EVERY TURN (founder, 2026-06-23):** append the full turn to
 `_build/reports/SESSION-LOG.md` AND update THIS file (family status) every turn; cat the
 tail of both back so the founder sees them current. Never skip either.
