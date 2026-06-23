@@ -22,7 +22,8 @@ D1 → D3 → D2 → D4/5/6 (NY incl) → D7 → B1-B5 → C1 → E1-E6 → F1 �
 | **D1 money (19)** | **t-money (data-driven spine)** | **✅ 19/19 DONE** | bookkeeping 3 + migration 9 + QB-service 4 + accounting 3, all full-depth GREEN, ledes tightened. proadvisor-near-me flagged for possible re-tier (prose-heavy). |
 | **D3 state pillar (5)** | t-state-pillar (data-driven) | **✅ 5/5 DONE** | 16-section handoff; NY full depth intact; taccount figure; light CTA; pillarAnchor fix; full-depth GREEN |
 | **D2 prose (153)** | t-prose (v2) | **✅ 153/153 DONE** | help 52 + online 39 + resources 19 + QB sub-pages 31 + accounting 12, all full-depth GREEN. Non-uniform schema anchors preserved; prose-table + IRS-triage handled. 31 still on t-guide = other families (correct) |
-| **D4/D5/D6 (state children, ~90)** | t-location (v2) | **🔄 20/~90** | t-location v2 + ALL NY children true-v2 (17 + SF, frozen content, own anchors, rate-free tax). Next: ~64 CA/TX/FL/IL children on t-bofu → switch+body→v2; then ~10 sub-hub index pages (Location-Sub-Hub). Batch per state + battery gate. |
+| **D4/D6 children (~86)** | t-location (v2) | **✅ 86/86 DONE** | ALL city + industry children true-v2: NY 18 (frozen, divergent anchors) + CA/TX/FL/IL 68 (via 2 shared partials — 0 leaks). Rate-free tax, FAQ de-duped. |
+| **D5 state-service + sub-hubs (~35)** | t-bofu / index | **🔜 NEXT** | 25 state-service landings ({state}/pricing/speak-to-a-proadvisor + NY service landings) + ~10 sub-hub index → assess (D5 vs MOFU; Location-Sub-Hub/B5) + recompose |
 | D7 / B1-B5 / C1 / E1-E6 / F1 / F2 / G1 / G2 / A1 | — | ⏳ | pending (A1 last) |
 
 **SHARED v2 COMPONENTS (fix at SOURCE → all families inherit):** PARTIALS — trust-strip.njk
