@@ -3,6 +3,8 @@
   "layout": "layouts/t-hub.njk",
   "permalink": "/quickbooks/reconciliation/",
   "slug": "recon-hub",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--hub",
   "title": "QuickBooks Reconciliation: How to Do It, Fix It, Keep It Clean · TechBrot",
   "description": "How to reconcile in QuickBooks the right way, fix it when it won't balance, and keep it from breaking again — by Certified ProAdvisors. We reconcile and configure in your own file. Independent firm, not Intuit. Call (877) 751-5575.",
   "breadcrumb": [
@@ -25,10 +27,7 @@
       "We reconcile in your own file"
     ]
   },
-  "inBrief": {
-    "text": "<strong>TechBrot</strong> is an independent Certified QuickBooks ProAdvisor firm — <strong>not Intuit</strong>. Reconciliation is how you prove the books match reality: every transaction in QuickBooks matched against your real bank and credit-card statements so the balances are proven, not assumed. This hub explains <strong>how to reconcile right in QuickBooks, fix it when it won't balance, and keep it from breaking again</strong>, and links to a dedicated page for each. We don't sell QuickBooks; we reconcile and configure inside <em>your</em> file so the books stay accurate. The full guide is below.",
-    "source": "Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not Intuit, and not Intuit's official software support. QuickBooks behavior reflects the product as of the review date and is set by Intuit. Not affiliated with Intuit Inc."
-  },
+  "summarySource": "Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not Intuit, and not Intuit's official software support. QuickBooks behavior reflects the product as of the review date and is set by Intuit. Not affiliated with Intuit Inc.",
   "ctaBand": {
     "eyebrow": "Start with your real file",
     "heading": "We'll reconcile your books and show you what doesn't tie.",
@@ -37,68 +36,36 @@
       { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
       { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks", "class": "btn--ghost" }
     ]
+  },
+  "sec": {
+    "summaryId": "recon-hub-summary",
+    "summaryTag": "In short",
+    "summaryH": "Do it right, fix it when it breaks, keep it clean.",
+    "faqTag": "FAQ",
+    "faqH": "QuickBooks reconciliation questions."
   }
 }
 ---
 
-{# ── SUMMARY ── #}
-<section class="section section--compact" id="recon-hub-summary-sec">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In short</p>
-      <h2 class="section__heading">Do it right, fix it when it breaks, keep it clean.</h2>
-    </header>
-    <p class="prose" id="recon-hub-summary">{{ summary | safe }}</p>
-  </div>
-</section>
-
-{# ── RECONCILIATION GRID · grouped, spoke + related pages (buyer-cards) ── #}
+{# ── RECONCILIATION GRID · grouped, spoke + related pages (dc-card hub-card r-3) ── #}
 {%- for group in cardGroups %}
-<section class="section{% if loop.index is even %} section--alt{% endif %}" id="recon-hub-{{ group.id }}">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">{{ group.eyebrow | safe }}</p>
-      <h2 class="section__heading">{{ group.heading | safe }}</h2>
-      {%- if group.lede %}<p class="section__lede">{{ group.lede | safe }}</p>{%- endif %}
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="recon-hub-{{ group.id }}"{% if loop.index is even %} style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);"{% endif %}>
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ group.eyebrow | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:{% if group.lede %}10{% else %}28{% endif %}px;">{{ group.heading | safe }}</h2>
+    {%- if group.lede %}<p class="lede" style="margin:0 0 30px;max-width:66ch;">{{ group.lede | safe }}</p>{%- endif %}
+    <div class="r-3">
       {%- for c in group.cards %}
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
-        <p class="buyer-card__body">{{ c.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ c.href }}">{{ c.cta | safe }}</a>
-      </article>
+      <a class="dc-card hub-card" href="{{ c.href }}"><h3>{{ c.title | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">{{ c.body | safe }}</p><span class="hub-card__go">{{ c.cta | safe }}</span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 {%- endfor %}
 
-{# ── CROSS-LINKS ── #}
-<section class="section section--compact" id="recon-hub-related">
-  <div class="container container--narrow">
-    <p class="prose">{{ relatedNote | safe }}</p>
-  </div>
-</section>
-
-{# ── FAQ ── #}
-<section class="section section--alt" id="recon-hub-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">QuickBooks reconciliation questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="recon-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="recon-hub-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
+{# ── CROSS-LINKS — prose note (sand, read) ── #}
+<section class="sec reveal" id="recon-hub-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="prose"><p>{{ relatedNote | safe }}</p></div>
   </div>
 </section>

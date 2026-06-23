@@ -3,6 +3,8 @@
   "layout": "layouts/t-hub.njk",
   "permalink": "/switch/",
   "slug": "switch-hub",
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--hub",
   "title": "Switch to TechBrot: How to Leave Your Current Bookkeeping Provider · TechBrot",
   "description": "Already decided to leave Bench, Pilot, QuickBooks Live, or your current bookkeeper? Here's exactly how a switch to TechBrot works — we rescue your data, migrate it into your own QuickBooks file, and pick up the books with a named Certified ProAdvisor. Independent firm, not Intuit. Call (877) 751-5575.",
   "breadcrumb": [
@@ -24,10 +26,7 @@
       "Your data, your QuickBooks file — no lock-in"
     ]
   },
-  "inBrief": {
-    "text": "<strong>TechBrot</strong> is an independent Certified QuickBooks ProAdvisor firm — <strong>not Intuit</strong>, and <strong>not affiliated</strong> with Bench, Employer.com, Pilot, QuickBooks Live, or any prior provider. If you've already decided to leave, this hub shows exactly how a switch works: we <strong>export your data</strong>, <strong>migrate it into your own QuickBooks file</strong>, <strong>clean up the gaps</strong> from the handover, then keep the books accurate every month with a <em>named</em> ProAdvisor. The point of switching is portability — <strong>your data and your QuickBooks file are yours</strong>, and you can leave anytime. Pick the page that matches who you're leaving below, or start with a <a href=\"/quickbooks/file-review/?intent=file-review\">free file review</a>.",
-    "source": "Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not Intuit, and not affiliated with Bench, Employer.com, Pilot, QuickBooks Live, or any other bookkeeping provider. QuickBooks and Intuit are registered trademarks of Intuit Inc. Switch timelines and scope depend on the state of your books at handover and are confirmed after the free file review."
-  },
+  "summarySource": "Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not Intuit, and not affiliated with Bench, Employer.com, Pilot, QuickBooks Live, or any other bookkeeping provider. QuickBooks and Intuit are registered trademarks of Intuit Inc. Switch timelines and scope depend on the state of your books at handover and are confirmed after the free file review.",
   "ctaBand": {
     "eyebrow": "Start with your real file",
     "heading": "We'll tell you honestly what switching takes.",
@@ -36,87 +35,56 @@
       { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
       { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--ghost" }
     ]
+  },
+  "sec": {
+    "summaryId": "switch-hub-summary",
+    "summaryTag": "In short",
+    "summaryH": "How switching to TechBrot actually works.",
+    "faqTag": "FAQ",
+    "faqH": "Switching questions, answered honestly."
   }
 }
 ---
 
-{# ── SUMMARY ── #}
-<section class="section section--compact" id="switch-hub-summary-sec">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In short</p>
-      <h2 class="section__heading">How switching to TechBrot actually works.</h2>
-    </header>
-    <p class="prose" id="switch-hub-summary">{{ summary | safe }}</p>
-  </div>
-</section>
-
-{# ── SWITCH GRID · routes the 4 switch pages (buyer-cards) ── #}
+{# ── SWITCH GRID · routes the 4 switch pages (dc-card hub-card r-3). (H2: Pick the page that matches your move.) ── #}
 {%- for group in switchGroups %}
-<section class="section{% if loop.index is even %} section--alt{% endif %}" id="switch-hub-{{ group.id }}">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">{{ group.eyebrow | safe }}</p>
-      <h2 class="section__heading">{{ group.heading | safe }}</h2>
-      {%- if group.lede %}<p class="section__lede">{{ group.lede | safe }}</p>{%- endif %}
-    </header>
-    <div class="grid-3">
+<section class="sec reveal{% if loop.index is even %} hub-rt--alt{% endif %}" id="switch-hub-{{ group.id }}"{% if loop.index is even %} style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);"{% endif %}>
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ group.eyebrow | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:{% if group.lede %}10{% else %}28{% endif %}px;">{{ group.heading | safe }}</h2>
+    {%- if group.lede %}<p class="lede" style="margin:0 0 30px;max-width:66ch;">{{ group.lede | safe }}</p>{%- endif %}
+    <div class="r-3">
       {%- for f in group.options %}
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading">{{ f.title | safe }}</h3>
-        <p class="buyer-card__body">{{ f.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ f.href }}">{{ f.cta | safe }}</a>
-      </article>
+      <a class="dc-card hub-card" href="{{ f.href }}"><h3>{{ f.title | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">{{ f.body | safe }}</p><span class="hub-card__go">{{ f.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 {%- endfor %}
 
-{# ── HOW IT WORKS · the four-step switch ── #}
-<section class="section section--alt" id="switch-hub-how">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The switch, step by step</p>
-      <h2 class="section__heading">Export → migrate → cleanup → ongoing.</h2>
-      <p class="section__lede">Every switch follows the same four steps. The details change by who you're leaving; the shape doesn't.</p>
-    </header>
-    <div class="grid-3">
+{# ── HOW IT WORKS · the four-step switch (process-grid). (H2: Export → migrate → cleanup → ongoing.) ── #}
+<section class="sec reveal" id="switch-hub-how" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The switch, step by step</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Export &rarr; migrate &rarr; cleanup &rarr; ongoing.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">Every switch follows the same four steps. The details change by who you're leaving; the shape doesn't.</p>
+    <div class="process-grid">
       {%- for step in steps %}
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading">{{ step.title | safe }}</h3>
-        <p class="buyer-card__body">{{ step.body | safe }}</p>
-      </article>
+      <div class="process-step">
+        <span class="process-step__n">0{{ loop.index }}</span>
+        <h3>{{ step.title | safe }}</h3>
+        <p>{{ step.body | safe }}</p>
+      </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── CROSS-LINKS ── #}
-<section class="section section--compact" id="switch-hub-related">
-  <div class="container container--narrow">
-    <p class="prose">{{ relatedNote | safe }}</p>
-  </div>
-</section>
-
-{# ── FAQ ── #}
-<section class="section section--alt" id="switch-hub-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Switching questions, answered honestly.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="switch-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="switch-hub-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
+{# ── CROSS-LINKS · prose (white, read). (no heading — additive cross-link aid) ── #}
+<section class="sec reveal" id="switch-hub-related">
+  <div class="ct read">
+    <div class="prose">
+      <p>{{ relatedNote | safe }}</p>
     </div>
   </div>
 </section>
