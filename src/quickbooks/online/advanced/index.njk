@@ -26,10 +26,7 @@
       "Honest read: many businesses are fine on Plus"
     ]
   },
-  "inBrief": {
-    "text": "<strong>TechBrot</strong> is an independent Certified QuickBooks ProAdvisor firm — <strong>not Intuit</strong>. <strong>QuickBooks Online Advanced</strong> is the highest QBO tier; these 10 capabilities are what you're paying the extra for over <a href=\"/quickbooks/which-plan-is-right/\">Plus</a>. We won't oversell it: Advanced is worth the cost <em>only</em> if you'll actually use these — high transaction volume, more users, deeper reporting, or tighter controls. Many businesses are perfectly served by Plus. We don't set Advanced pricing (Intuit does); we help you decide whether the fit is real and, if it is, set the features up in <em>your</em> file. Revenue recognition and fixed asset accounting touch GAAP and tax, so we coordinate those with your CPA. Each capability is below.",
-    "source": "Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not Intuit, and not Intuit's official software support. QuickBooks Online Advanced feature and pricing availability are set by Intuit and reflect the product as of the review date. Not affiliated with Intuit Inc."
-  },
+  "summarySource": "Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm — not Intuit, and not Intuit's official software support. QuickBooks Online Advanced feature and pricing availability are set by Intuit and reflect the product as of the review date. Not affiliated with Intuit Inc.",
   "ctaBand": {
     "eyebrow": "Decide with your real file",
     "heading": "We'll tell you honestly whether Advanced is worth it for you.",
@@ -38,68 +35,36 @@
       { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
       { "label": "Book the discovery call", "href": "/contact/?intent=quickbooks", "class": "btn--ghost" }
     ]
+  },
+  "sec": {
+    "summaryId": "qbo-advanced-hub-summary",
+    "summaryTag": "In short",
+    "summaryH": "All 10 QuickBooks Online Advanced capabilities — and whether you need them.",
+    "faqTag": "FAQ",
+    "faqH": "QuickBooks Online Advanced questions."
   }
 }
 ---
 
-{# ── SUMMARY ── #}
-<section class="section section--compact" id="qbo-advanced-hub-summary-sec">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In short</p>
-      <h2 class="section__heading">All 10 QuickBooks Online Advanced capabilities — and whether you need them.</h2>
-    </header>
-    <p class="prose" id="qbo-advanced-hub-summary">{{ summary | safe }}</p>
-  </div>
-</section>
-
-{# ── CAPABILITY GRID · grouped by what they're for, 10 Advanced capability pages (buyer-cards) ── #}
+{# ── CAPABILITY GRID · grouped by what they're for, 10 Advanced capability pages (dc-card hub-cards). (H2 per group.) ── #}
 {%- for group in capabilityGroups %}
-<section class="section{% if loop.index is even %} section--alt{% endif %}" id="qbo-advanced-hub-{{ group.id }}">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">{{ group.eyebrow | safe }}</p>
-      <h2 class="section__heading">{{ group.heading | safe }}</h2>
-      {%- if group.lede %}<p class="section__lede">{{ group.lede | safe }}</p>{%- endif %}
-    </header>
-    <div class="grid-3">
+<section class="sec reveal{% if loop.index is even %} hub-rt--alt{% endif %}" id="qbo-advanced-hub-{{ group.id }}"{% if loop.index is even %} style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);"{% endif %}>
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ group.eyebrow | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:{% if group.lede %}10{% else %}28{% endif %}px;">{{ group.heading | safe }}</h2>
+    {%- if group.lede %}<p class="lede" style="margin:0 0 30px;max-width:66ch;">{{ group.lede | safe }}</p>{%- endif %}
+    <div class="r-3">
       {%- for c in group.capabilities %}
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
-        <p class="buyer-card__body">{{ c.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ c.href }}">{{ c.cta | safe }}</a>
-      </article>
+      <a class="dc-card hub-card" href="{{ c.href }}"><h3>{{ c.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ c.body | safe }}</p><span class="hub-card__go">{{ c.cta | safe }}</span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 {%- endfor %}
 
-{# ── CROSS-LINKS ── #}
-<section class="section section--compact" id="qbo-advanced-hub-related">
-  <div class="container container--narrow">
+{# ── CROSS-LINKS (read). ── #}
+<section class="sec reveal" id="qbo-advanced-hub-related">
+  <div class="ct read">
     <p class="prose">{{ relatedNote | safe }}</p>
-  </div>
-</section>
-
-{# ── FAQ ── #}
-<section class="section section--alt" id="qbo-advanced-hub-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">QuickBooks Online Advanced questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbo-advanced-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="qbo-advanced-hub-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
   </div>
 </section>

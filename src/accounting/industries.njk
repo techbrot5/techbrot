@@ -21,10 +21,8 @@
       { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--ghost" }
     ]
   },
-  "inBrief": {
-    "text": "<strong>Industry-specific accounting</strong> configures the books around the way a particular business actually earns and spends &mdash; because the number that runs it is different in each one. E-commerce nets payouts and triggers sales-tax nexus; construction lives on job costing and WIP; real estate tracks per-property and security deposits; law firms run client trust accounting; restaurants survive on prime cost; healthcare collects far less than it bills. Built and delivered in your own QuickBooks file at a fixed fee, with advisory layered on when you&rsquo;re ready to act on the numbers.",
-    "source": "We deliver the books; your CPA files the taxes. Independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc."
-  },
+  "summary": "<strong>Industry-specific accounting</strong> configures the books around the way a particular business actually earns and spends &mdash; because the number that runs it is different in each one. E-commerce nets payouts and triggers sales-tax nexus; construction lives on job costing and WIP; real estate tracks per-property and security deposits; law firms run client trust accounting; restaurants survive on prime cost; healthcare collects far less than it bills. Built and delivered in your own QuickBooks file at a fixed fee, with advisory layered on when you&rsquo;re ready to act on the numbers.",
+  "summarySource": "We deliver the books; your CPA files the taxes. Independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc.",
   "ctaBand": {
     "eyebrow": "Ready when you are",
     "heading": "Get accounting that fits your industry.",
@@ -33,16 +31,23 @@
       { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
       { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
     ]
+  },
+  "sec": {
+    "summaryId": "acct-ind-hub-in-brief-text",
+    "summaryTag": "In brief",
+    "summaryH": "Industry-specific accounting, summarized.",
+    "aiH": "Industry accounting, in five questions.",
+    "faqTag": "FAQ",
+    "faqH": "Industry accounting questions."
   }
 }
 ---
 
-<section class="section" id="acct-ind-hub-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Plainly</p>
-      <h2 class="section__heading">Industry accounting, plainly.</h2>
-    </header>
+{# ── DEFINITION — what industry accounting is, prose (sand, read). (H2: Industry accounting, plainly.) ── #}
+<section class="sec reveal hub-rt--alt" id="acct-ind-hub-definition" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Plainly</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Industry accounting, plainly.</h2>
     <div class="prose">
       <p>Industry-specific accounting means configuring the books around the way a particular business actually earns and spends &mdash; because the number that runs the business is different in each one. <a href="/accounting/industries/ecommerce/">E-commerce</a> nets payouts and triggers sales-tax nexus; <a href="/accounting/industries/construction/">construction</a> lives on job costing and WIP; <a href="/accounting/industries/real-estate/">real estate</a> tracks per-property and security deposits; <a href="/accounting/industries/legal/">law firms</a> run client trust accounting; <a href="/accounting/industries/restaurant/">restaurants</a> survive on prime cost; <a href="/accounting/industries/healthcare/">healthcare</a> collects far less than it bills.</p>
       <p>TechBrot is a firm of <a href="/quickbooks/proadvisor-team/">Certified QuickBooks ProAdvisors</a> who build each engagement around those realities, deliver in your own QuickBooks file at a fixed fee, and layer on <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">advisory</a> when you&rsquo;re ready to act on the numbers. We deliver the books; your CPA files the taxes. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc.</p>
@@ -50,50 +55,25 @@
   </div>
 </section>
 
-<section class="section section--alt" id="acct-ind-hub-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Industry accounting, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="acct-ind-hub-deep">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Industry expertise</p>
-      <h2 class="section__heading">Where we go deep.</h2>
-      <p class="section__lede">Six industries with dedicated expertise pages &mdash; each built around the number that actually runs that business.</p>
-    </header>
-    <div class="grid-3">
+{# ── WHERE WE GO DEEP — six deep-dive industries, dc-card hub-card r-3 (white). (H2: Where we go deep.) ── #}
+<section class="sec reveal" id="acct-ind-hub-deep">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Industry expertise</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:10px;">Where we go deep.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">Six industries with dedicated expertise pages &mdash; each built around the number that actually runs that business.</p>
+    <div class="r-3">
       {%- for s in industries %}
-      <article class="review-card">
-        <p class="review-card__role">{{ s.area | safe }}</p>
-        <h3>{{ s.name | safe }}</h3>
-        <p class="review-card__fact">{{ s.body | safe }}</p>
-        <p class="review-card__fact"><strong>Focus:</strong> {{ s.focus | safe }}</p>
-        <a class="review-card__link" href="{{ s.href }}">{{ s.name | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <a class="dc-card hub-card" href="{{ s.href }}"><span class="eyebrow">{{ s.area | safe }}</span><h3>{{ s.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ s.body | safe }}</p><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);"><strong style="color:var(--color-ink);">Focus:</strong> {{ s.focus | safe }}</p><span class="hub-card__go">{{ s.name | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-ind-hub-why">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Why it matters</p>
-      <h2 class="section__heading">Generic bookkeeping misses the number that runs your business.</h2>
-    </header>
+{# ── WHY IT MATTERS — generic-vs-industry prose (sand, read). (H2: Generic bookkeeping misses the number that runs your business.) ── #}
+<section class="sec reveal hub-rt--alt" id="acct-ind-hub-why" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why it matters</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Generic bookkeeping misses the number that runs your business.</h2>
     <div class="prose">
       <p>Most bookkeepers treat every business the same: categorize, reconcile, produce a P&amp;L. That&rsquo;s fine until you need to know the thing your industry actually turns on &mdash; job profitability on a build, prime cost on a Friday night, collection rate against what you billed, whether trust funds reconcile to the penny. Those numbers don&rsquo;t appear by accident; the books have to be built to surface them.</p>
       <p>TechBrot configures QuickBooks and your monthly process around how your industry operates, so the financials answer the questions you actually ask &mdash; and so the work is ready the moment you want advisory on top of it. As automation commoditizes routine data entry, that industry judgment is exactly where the value now lives.</p>
@@ -102,13 +82,12 @@
   </div>
 </section>
 
-<section class="section" id="acct-ind-hub-more">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">More industries</p>
-      <h2 class="section__heading">We work across these too.</h2>
-      <p class="section__lede">The same operating standard and Certified ProAdvisor delivery, applied to the way each of these runs.</p>
-    </header>
+{# ── MORE INDUSTRIES — overflow vs-table (KEEP), white read. (H2: We work across these too.) ── #}
+<section class="sec reveal" id="acct-ind-hub-more">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">More industries</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">We work across these too.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">The same operating standard and Certified ProAdvisor delivery, applied to the way each of these runs.</p>
     <div class="vs-scroll">
       <table class="vs-table">
         <caption class="sr-only">Additional industries TechBrot serves, the number that runs each one, and its industry page.</caption>
@@ -133,33 +112,11 @@
   </div>
 </section>
 
-<section class="section section--alt" id="acct-ind-hub-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Industry accounting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-ind-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acct-ind-hub-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="acct-ind-hub-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+{# ── REVIEW — who maintains the page, prose + trust-row (KEEP), sand read. (H2: Reviewed by the ProAdvisor team.) ── #}
+<section class="sec reveal hub-rt--alt" id="acct-ind-hub-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot approaches industry-specific accounting. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy across the industries represented here. Where our approach or scope changes, this page is updated, and we hold engagements to the standards described on each industry page.</p>
     </div>
@@ -173,19 +130,14 @@
   </div>
 </section>
 
-<section class="section section--alt" id="acct-ind-hub-related">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services.</h2>
-    </header>
-    <div class="grid-2">
+{# ── RELATED — four related services, dc-card hub-card r-4 (white). (H2: Related services.) ── #}
+<section class="sec reveal" id="acct-ind-hub-related">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;">Related services.</h2>
+    <div class="r-4">
       {%- for n in related %}
-      <article class="review-card">
-        <h3>{{ n.title | safe }}</h3>
-        <p class="review-card__fact">{{ n.body | safe }}</p>
-        <a class="review-card__link" href="{{ n.href }}">{{ n.title | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <a class="dc-card hub-card" href="{{ n.href }}"><h3>{{ n.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ n.body | safe }}</p><span class="hub-card__go">{{ n.title | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
