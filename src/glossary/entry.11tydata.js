@@ -74,7 +74,10 @@ module.exports = {
     slug: (d) => "gl-" + d.term.slug,
     title: (d) => d.term.title,
     description: (d) => d.term.description,
-    faq: (d) => d.term.faq || null,
+    // faq nulled for the LAYOUT slot: the FAQ is rendered in the BODY (per-page
+    // paginated term.faq) — NOT via t-prose's `faq` frontmatter. FAQPage schema is
+    // still built from term.faq directly in buildGraph(), so structured data is intact.
+    faq: () => null,
     hero: (d) => ({
       eyebrow: "Glossary &middot; Bookkeeping &amp; QuickBooks term",
       heading: d.term.term,
@@ -89,17 +92,17 @@ module.exports = {
       { name: "Glossary", href: "/glossary/" },
       { name: d.term.term },
     ],
-    inBrief: (d) => ({
-      text: d.term.definition[0],
-      source: "Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc.",
-    }),
+    // inBrief omitted: the definition keeps its OWN frozen id (#gl-<slug>-def-body,
+    // the speakable selector) in the body, so a separate TL;DR would duplicate it.
+    inBrief: () => null,
+    // ctaBand (light final CTA) carries term.call verbatim — title/sub are content
+    // equity (RISK #2) and must survive the migration intact. Phone action only.
     ctaBand: (d) => ({
-      eyebrow: "From definition to done",
-      heading: "Put it to work on your own books.",
-      lede: "If this term describes something in your own QuickBooks file, a free file review tells you exactly where you stand &mdash; with a written fixed-fee scope. Independent firm; not Intuit.",
+      eyebrow: "Put it to work",
+      heading: d.term.call.title,
+      lede: d.term.call.sub,
       actions: [
-        { label: "Get the free file review", href: "/quickbooks/file-review/?intent=file-review", class: "btn--primary" },
-        { label: "Speak to a ProAdvisor", tel: true, class: "btn--ghost" },
+        { label: "Speak to a ProAdvisor", tel: true, class: "btn--primary" },
       ],
     }),
     pageGraph: (d) => buildGraph(d.term),

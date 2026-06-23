@@ -1,50 +1,50 @@
 ---json
 {
-  "layout": "layouts/t-guide.njk",
-  "tierClass": "section--tier-guide",
+  "layout": "layouts/t-prose.njk",
   "bodyClass": "page--mofu",
   "pagination": { "data": "glossary", "size": 1, "alias": "term" }
 }
 ---
 {%- set t = term %}
 
-{# ── DEFINITION · speakable (DefinedTerm source). ── #}
-<section class="section section--compact" id="gl-{{ t.slug }}-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">What {{ t.term | lower }} means.</h2>
-    </header>
+{#- ═══ PROSE BODY — glossary term flowed into the dc-system v2 reading column.
+    HERO · TL;DR(omitted) · {{content}}(below) · FAQ(body) · LIGHT CTA(ctaBand)
+    are the t-prose seams; the body renders definition · why · how? · clarify? ·
+    related · faq? in shared v2 components. The DEFINITION section keeps the two
+    FROZEN schema ids (#gl-<slug>-definition section + #gl-<slug>-def-body prose),
+    the latter being the speakable cssSelector in entry.11tydata.js. ═══ -#}
+
+{#- DEFINITION · speakable (DefinedTerm source). FROZEN ids preserved exactly. -#}
+<section class="sec reveal" id="gl-{{ t.slug }}-definition" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <p class="eyebrow" style="display:inline-flex;align-items:center;gap:12px;margin-bottom:8px;"><span class="rule-mark" aria-hidden="true"><span></span><span></span></span>In plain terms</p>
+    <h2 class="h2" style="margin-bottom:18px;">What {{ t.term | lower }} means.</h2>
     <div class="prose" id="gl-{{ t.slug }}-def-body">
       {%- for p in t.definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── WHY IT MATTERS · context (+ optional pull-quote). ── #}
-<section class="section section--alt" id="gl-{{ t.slug }}-why">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Why it matters</p>
-      <h2 class="section__heading">{{ t.why.heading | safe }}</h2>
-    </header>
+{#- WHY IT MATTERS · context (+ optional quote → opquote). -#}
+<section class="sec reveal" id="gl-{{ t.slug }}-why" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Why it matters</div>
+    <h2 class="h2" style="margin-bottom:18px;">{{ t.why.heading | safe }}</h2>
     <div class="prose">
       {%- for p in t.why.paras %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
     {%- if t.why.quote %}
-    <blockquote class="pull-quote"><p>{{ t.why.quote | safe }}</p></blockquote>
+    <blockquote class="opquote" style="margin-top:22px;"><blockquote>{{ t.why.quote | safe }}</blockquote></blockquote>
     {%- endif %}
   </div>
 </section>
 
-{# ── HOW IT WORKS · only when the term genuinely has a process + (optional) a signature diagram that truly fits. ── #}
+{#- HOW IT WORKS · only where the term genuinely has a process (+ optional diagram). -#}
 {%- if t.how %}
-<section class="section" id="gl-{{ t.slug }}-how">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">How it works</p>
-      <h2 class="section__heading">How {{ t.term | lower }} works.</h2>
-    </header>
+<section class="sec reveal" id="gl-{{ t.slug }}-how" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">How it works</div>
+    <h2 class="h2" style="margin-bottom:18px;">How {{ t.term | lower }} works.</h2>
     <div class="prose">
       {%- for p in t.how.paras %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
@@ -53,14 +53,12 @@
 </section>
 {%- endif %}
 
-{# ── CLARIFY · common confusion (optional). ── #}
+{#- CLARIFY · common confusion (optional). -#}
 {%- if t.clarify %}
-<section class="section section--alt" id="gl-{{ t.slug }}-clarify">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">A common confusion</p>
-      <h2 class="section__heading">{{ t.clarify.heading | safe }}</h2>
-    </header>
+<section class="sec reveal" id="gl-{{ t.slug }}-clarify" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">A common confusion</div>
+    <h2 class="h2" style="margin-bottom:18px;">{{ t.clarify.heading | safe }}</h2>
     <div class="prose">
       {%- for p in t.clarify.paras %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
@@ -68,69 +66,41 @@
 </section>
 {%- endif %}
 
-{# ── CALL · every term converts by CALL. ── #}
-<section class="section section--compact" id="gl-{{ t.slug }}-call">
-  <div class="container container--narrow">
-    <div class="call-breakout">
-      <div>
-        <p class="call-breakout__title">{{ t.call.title | safe }}</p>
-        <p class="call-breakout__sub">{{ t.call.sub | safe }}</p>
-      </div>
-      <a class="btn btn--primary" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">Speak to a ProAdvisor</a>
-    </div>
-  </div>
-</section>
-
-{# ── RELATED · where the term comes up (cluster links). ── #}
-<section class="section" id="gl-{{ t.slug }}-related">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Where {{ t.term | lower }} comes up.</h2>
-    </header>
-    <div class="related-grid">
+{#- RELATED · where the term comes up (cluster links) → rel-card grid. -#}
+<section class="sec reveal" id="gl-{{ t.slug }}-related" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Related</div>
+    <h2 class="h2" style="margin-bottom:18px;">Where {{ t.term | lower }} comes up.</h2>
+    <div class="{% if t.related.length == 2 %}r-2{% else %}r-3{% endif %}">
       {%- for r in t.related %}
-      <a class="related-card" href="{{ r.href }}">
-        <h3>{{ r.title | safe }}</h3>
-        <p>{{ r.blurb | safe }}</p>
-      </a>
+      <a class="rel-card" href="{{ r.href }}"><span class="rel-card__t">{{ r.title | safe }}</span><span class="rel-card__d">{{ r.blurb | safe }}</span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── FAQ · ONLY where the term carries 6+ real questions (never padded). ── #}
+{#- FAQ · ONLY where the term carries 6+ real questions. Rendered in the BODY
+    (per-page paginated data — not the t-prose `faq` frontmatter slot). -#}
 {%- if t.faq %}
-<section class="section section--alt" id="gl-{{ t.slug }}-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Quick answers</p>
-      <h2 class="section__heading">{{ t.term }} questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in t.faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="gl-{{ t.slug }}-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="gl-{{ t.slug }}-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
+<section class="sec reveal" id="gl-{{ t.slug }}-faq" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Quick answers</div>
+    <h2 class="h2" style="margin-bottom:26px;">{{ t.term }} questions.</h2>
+    <div class="faq">
+      {%- for item in t.faq %}<details name="gl-{{ t.slug }}-faq"{% if loop.first %} open{% endif %}><summary>{{ item.q | safe }}<span class="pl"></span></summary><div>{{ item.a | safe }}</div></details>{%- endfor %}
     </div>
   </div>
 </section>
 {%- endif %}
 
-{# ── BYLINE + REVIEW · firm-level (founder-name-zero). ── #}
-<section class="section" id="gl-{{ t.slug }}-review">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+{#- BYLINE + REVIEW · firm-level (founder-name-zero). v2 .byline + meta-reviewed. -#}
+<section class="sec reveal" id="gl-{{ t.slug }}-review" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="byline">
+      <svg width="30" height="30" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
       <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; independent firm, not affiliated with Intuit Inc.</p>
+        <p style="font-size:13.5px;font-weight:600;color:var(--color-ink);margin:0;">By the Certified QuickBooks ProAdvisor team</p>
+        <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--color-ink-faint);margin:0;">Reviewed by a Certified QuickBooks ProAdvisor &middot; independent firm, not affiliated with Intuit Inc.</p>
       </div>
     </div>
     <p class="meta-reviewed"><span>Published: {{ t.published }}</span><span>Updated: {{ t.updated }}</span><span>Reviewed: {{ t.updated }} &middot; Certified QuickBooks ProAdvisor</span></p>

@@ -1,9 +1,9 @@
 ---json
 {
-  "layout": "layouts/t-guide.njk",
+  "layout": "layouts/t-hub.njk",
   "permalink": "/glossary/",
   "slug": "glossary",
-  "tierClass": "section--tier-guide",
+  "tierClass": "section--tier-hub",
   "bodyClass": "page--mofu",
   "title": "Accounting & QuickBooks Glossary — Plain-English Definitions · TechBrot",
   "description": "Plain-English definitions of the accounting and QuickBooks terms that come up in real engagements — what each term means, why it matters, and where it shows up. By Certified QuickBooks ProAdvisors.",
@@ -11,6 +11,7 @@
     { "name": "Home", "href": "/" },
     { "name": "Glossary" }
   ],
+  "heroFigure": false,
   "hero": {
     "eyebrow": "Glossary",
     "heading": "The accounting &amp; QuickBooks glossary.",
@@ -20,10 +21,8 @@
       { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
     ]
   },
-  "inBrief": {
-    "text": "The <strong>TechBrot glossary</strong> defines the accounting and QuickBooks terms that come up in real engagements &mdash; bookkeeping, cleanup, reconciliation, payroll, sales tax, and advisory. Each entry is a genuine, citable definition with the context that makes it useful and links to where the term applies in the work. New terms are added regularly.",
-    "source": "Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc."
-  },
+  "summary": "The <strong>TechBrot glossary</strong> defines the accounting and QuickBooks terms that come up in real engagements &mdash; bookkeeping, cleanup, reconciliation, payroll, sales tax, and advisory. Each entry is a genuine, citable definition with the context that makes it useful and links to where the term applies in the work. New terms are added regularly.",
+  "summarySource": "Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc.",
   "ctaBand": {
     "eyebrow": "Term raised a question about your books?",
     "heading": "Ask a Certified ProAdvisor.",
@@ -32,37 +31,36 @@
       { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
       { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
     ]
+  },
+  "sec": {
+    "summaryId": "glossary-in-brief-text",
+    "summaryTag": "In brief"
   }
 }
 ---
 
 {# ── TERMS · grid of glossary entries (grows as the type fans out). (H2: Browse the glossary.) ── #}
-<section class="section" id="glossary-terms">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Browse the terms</p>
-      <h2 class="section__heading">Browse the glossary.</h2>
-      <p class="section__lede">Every entry is a real, plain-English definition &mdash; what the term means, why it matters, and where it comes up. More terms are added regularly.</p>
-    </header>
-    <div class="related-grid">
+<section class="sec reveal" id="glossary-terms">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Browse the terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">Browse the glossary.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">Every entry is a real, plain-English definition &mdash; what the term means, why it matters, and where it comes up. More terms are added regularly.</p>
+    <div class="r-3">
       {%- for t in glossary %}
-      <a class="related-card" href="/glossary/{{ t.slug }}/">
-        <h3>{{ t.term | safe }}</h3>
-        <p>{{ t.blurb | safe }}</p>
-      </a>
+      <a class="dc-card hub-card" href="/glossary/{{ t.slug }}/"><h3>{{ t.term | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ t.blurb | safe }}</p><span class="hub-card__go">Read the definition <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
 {# ── BYLINE + REVIEW · firm-level (founder-name-zero). ── #}
-<section class="section section--alt" id="glossary-review">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+<section class="sec reveal" id="glossary-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
       <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; independent firm, not affiliated with Intuit Inc.</p>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; independent firm, not affiliated with Intuit Inc.</p>
       </div>
     </div>
     <p class="meta-reviewed"><span>Maintained by the Certified QuickBooks ProAdvisor team</span><span>Updated: 2026-06-17</span></p>
