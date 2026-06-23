@@ -23,7 +23,8 @@ D1 → D3 → D2 → D4/5/6 (NY incl) → D7 → B1-B5 → C1 → E1-E6 → F1 �
 | **D3 state pillar (5)** | t-state-pillar (data-driven) | **✅ 5/5 DONE** | 16-section handoff; NY full depth intact; taccount figure; light CTA; pillarAnchor fix; full-depth GREEN |
 | **D2 prose (153)** | t-prose (v2) | **✅ 153/153 DONE** | help 52 + online 39 + resources 19 + QB sub-pages 31 + accounting 12, all full-depth GREEN. Non-uniform schema anchors preserved; prose-table + IRS-triage handled. 31 still on t-guide = other families (correct) |
 | **D4/D6 children (~86)** | t-location (v2) | **✅ 86/86 DONE** | ALL city + industry children true-v2: NY 18 (frozen, divergent anchors) + CA/TX/FL/IL 68 (via 2 shared partials — 0 leaks). Rate-free tax, FAQ de-duped. |
-| **D5 state-service + sub-hubs (~35)** | t-bofu / index | **🔜 NEXT** | 25 state-service landings ({state}/pricing/speak-to-a-proadvisor + NY service landings) + ~10 sub-hub index → assess (D5 vs MOFU; Location-Sub-Hub/B5) + recompose |
+| **D5 NY service landings (12)** | t-money (v2) | **✅ 12/12 DONE** | recomposed to t-money spine, true-v2, NY frozen, depth-gate caught+restored 1 h1. Spine: signals opener-or-title + .lift__tag. Speakable cssSelector repoint deferred to pre-flip. |
+| **Sub-hubs + D7 + B/C/E/F/G + A1** | various | **🔜 NEXT** | ~10 sub-hub index (Location-Sub-Hub) · D7 triage (5 speak-to-proadvisor + urgent/notice/problems + emergency-help + speak-to-accountant) · B1-B5 hubs · C1 · E1-E6 · F1/F2 (incl 5 state pricing) · G1/G2 · A1 home LAST · pre-flip sitewide pass |
 | D7 / B1-B5 / C1 / E1-E6 / F1 / F2 / G1 / G2 / A1 | — | ⏳ | pending (A1 last) |
 
 **SHARED v2 COMPONENTS (fix at SOURCE → all families inherit):** PARTIALS — trust-strip.njk
