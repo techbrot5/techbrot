@@ -11,6 +11,7 @@
     { "name": "Home", "href": "/" },
     { "name": "Research" }
   ],
+  "heroFigure": "taccount",
   "hero": {
     "eyebrow": "Original research",
     "heading": "Real data on what QuickBooks cleanups actually cost.",
@@ -20,10 +21,7 @@
       { "label": "Book the discovery call", "href": "/contact/?intent=research", "class": "btn--ghost" }
     ]
   },
-  "inBrief": {
-    "text": "<strong>The US QuickBooks Cleanup Benchmarks</strong> is TechBrot&rsquo;s original dataset on the cost, effort, and error profile of QuickBooks file cleanups &mdash; one anonymized row logged at the close of every completed Certified ProAdvisor engagement. Methodology and schema are public now; each benchmark is released only once it reaches a defensible sample. No estimated or fabricated numbers, ever.",
-    "source": "Built and maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc."
-  },
+  "summary": "There is no honest, current benchmark for what a QuickBooks cleanup actually costs or involves &mdash; owners get vendor marketing or guesswork. So we&rsquo;re building one. The <strong>US QuickBooks Cleanup Benchmarks</strong> is an original dataset assembled from TechBrot&rsquo;s own completed cleanup engagements: the Certified ProAdvisor who delivers each cleanup logs one anonymized row at close &mdash; state, industry, how far behind the books were, what was broken, the hours it took, and the fixed fee it closed at. Every figure is observed on a real engagement, never estimated. The methodology and schema are fixed and public now so the data is comparable from the first row; each benchmark is published only once it reaches a defensible sample size. The dataset is currently <strong>collecting.</strong>",
   "ctaBand": {
     "eyebrow": "Read your own file against the data",
     "heading": "Where does your file actually sit?",
@@ -32,26 +30,35 @@
       { "label": "Book the discovery call", "href": "/contact/?intent=research", "class": "btn--primary" },
       { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
     ]
+  },
+  "sec": {
+    "heroFigCaption": "How a row is logged",
+    "summaryId": "research-tldr-body",
+    "summaryTag": "In one paragraph",
+    "summaryH": "TechBrot&rsquo;s research desk, summarized.",
+    "aiH": "The research desk, in five questions.",
+    "faqTag": "Common questions",
+    "faqH": "Questions about the data."
   }
 }
 ---
 
-<section class="section section--compact section--tier-hub" id="research-tldr">
-  <div class="container">
-    <div class="tldr">
-      <p class="tldr__label">In one paragraph</p>
-      <h2 class="tldr__heading">TechBrot&rsquo;s research desk, summarized.</h2>
-      <p class="tldr__body" id="research-tldr-body">There is no honest, current benchmark for what a QuickBooks cleanup actually costs or involves &mdash; owners get vendor marketing or guesswork. So we&rsquo;re building one. The <strong>US QuickBooks Cleanup Benchmarks</strong> is an original dataset assembled from TechBrot&rsquo;s own completed cleanup engagements: the Certified ProAdvisor who delivers each cleanup logs one anonymized row at close &mdash; state, industry, how far behind the books were, what was broken, the hours it took, and the fixed fee it closed at. Every figure is observed on a real engagement, never estimated. The methodology and schema are fixed and public now so the data is comparable from the first row; each benchmark is published only once it reaches a defensible sample size. The dataset is currently <strong>collecting.</strong></p>
+{# ── IN BRIEF — the dataset, one paragraph + firm-level source. Distinct from the §summary tldr above (relocated from frontmatter inBrief, verbatim). prose (sand, read). ── #}
+<section class="sec reveal" id="research-in-brief" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In brief</span><span class="idx__rule"></span></div>
+    <div class="prose">
+      <p><strong>The US QuickBooks Cleanup Benchmarks</strong> is TechBrot&rsquo;s original dataset on the cost, effort, and error profile of QuickBooks file cleanups &mdash; one anonymized row logged at the close of every completed Certified ProAdvisor engagement. Methodology and schema are public now; each benchmark is released only once it reaches a defensible sample. No estimated or fabricated numbers, ever.</p>
+      <p class="in-brief__source">Built and maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc.</p>
     </div>
   </div>
 </section>
 
-<section class="section" id="research-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">What it is</p>
-      <h2 class="section__heading">An owned dataset, not a borrowed statistic.</h2>
-    </header>
+{# ── DEFINITION — what it is, prose (white, read). (H2: An owned dataset, not a borrowed statistic.) ── #}
+<section class="sec reveal" id="research-definition">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What it is</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">An owned dataset, not a borrowed statistic.</h2>
     <div class="prose">
       <p>The <strong>US QuickBooks Cleanup Benchmarks</strong> is a structured record of what TechBrot actually sees when neglected QuickBooks files arrive for cleanup. Most &ldquo;benchmarks&rdquo; in this space are repackaged vendor marketing or a survey of opinions. This one is built the only way a benchmark earns trust: from real, completed, paid engagements &mdash; the files, the hours, and the fees as they genuinely landed.</p>
       <p>It exists because the question owners ask most often &mdash; <em>&ldquo;my books are months behind; what is this going to cost to fix?&rdquo;</em> &mdash; has no honest published answer. A dataset built from real cleanups, transparent about its own sample size, is the only way to answer it without guessing. The dataset is the visible artifact; the discipline behind it &mdash; logging one row at every close &mdash; is the real work, and it cannot be backfilled, which is why it starts now.</p>
@@ -59,160 +66,103 @@
   </div>
 </section>
 
-<section class="section section--alt" id="research-fields">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The schema</p>
-      <h2 class="section__heading">Eight fields, logged at every engagement close.</h2>
-      <p class="section__lede">The schema is fixed now &mdash; so the very first row and the thousandth row measure the same things, the same way.</p>
-    </header>
-    <div class="grid-2">
+{# ── SCHEMA — the 8 logged fields, dc-card r-2 (sand). (H2: Eight fields, logged at every engagement close.) ── #}
+<section class="sec reveal" id="research-fields" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The schema</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:30ch;margin-bottom:10px;">Eight fields, logged at every engagement close.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">The schema is fixed now &mdash; so the very first row and the thousandth row measure the same things, the same way.</p>
+    <div class="r-2">
       {%- for f in fields %}
-      <div class="stack-8">
-        <h3>{{ f.name | safe }}</h3>
-        <p class="prose">{{ f.body | safe }}</p>
+      <div class="dc-card"><h3>{{ f.name | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">{{ f.body | safe }}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── METHODOLOGY — four rules, process-grid (white). (H2: How each row gets into the dataset.) ── #}
+<section class="sec reveal" id="research-methodology">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The methodology</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">How each row gets into the dataset.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">Four rules, fixed before the first row &mdash; the difference between a benchmark and a marketing number.</p>
+    <div class="process-grid">
+      {%- for m in methodology %}
+      <div class="process-step">
+        <span class="process-step__n">0{{ loop.index }}</span>
+        <h3>{{ m.name | safe }}</h3>
+        <p>{{ m.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="research-methodology">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The methodology</p>
-      <h2 class="section__heading">How each row gets into the dataset.</h2>
-      <p class="section__lede">Four rules, fixed before the first row &mdash; the difference between a benchmark and a marketing number.</p>
-    </header>
-    <ol class="process-diagram">
-      {%- for m in methodology %}
-      <li class="process-step">
-        <p class="process-step__number">0{{ loop.index }}</p>
-        <h3 class="process-step__heading">{{ m.name | safe }}</h3>
-        <p class="process-step__body">{{ m.body | safe }}</p>
-      </li>
-      {%- endfor %}
-    </ol>
-  </div>
-</section>
-
-<section class="section section--alt" id="research-status">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Where the dataset stands today</p>
-      <h2 class="section__heading">Honest by design: the live count.</h2>
-    </header>
-    <div class="stat-row">
-      <div><div class="stat__value">{{ datasetN }}</div><div class="stat__label">completed engagements logged</div></div>
-      <div><div class="stat__value">8</div><div class="stat__label">fields per record</div></div>
-      <div><div class="stat__value">20</div><div class="stat__label">minimum N before any breakdown is reported (50+ preferred)</div></div>
+{# ── STATUS — the honest live count (N may be 0). Real config/honesty figures only — NO fabrication. stat band r-4 mono + prose (sand, read). (H2: Honest by design: the live count.) ── #}
+<section class="sec reveal" id="research-status" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Where the dataset stands today</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;">Honest by design: the live count.</h2>
+    <div class="r-4">
+      <div><div class="mono" style="font-size:30px;font-weight:500;color:var(--color-accent);">{{ datasetN }}</div><div style="font-size:13px;line-height:1.5;color:var(--color-ink-mute);margin-top:8px;">completed engagements logged</div></div>
+      <div><div class="mono" style="font-size:30px;font-weight:500;color:var(--color-accent);">8</div><div style="font-size:13px;line-height:1.5;color:var(--color-ink-mute);margin-top:8px;">fields per record</div></div>
+      <div><div class="mono" style="font-size:30px;font-weight:500;color:var(--color-accent);">20</div><div style="font-size:13px;line-height:1.5;color:var(--color-ink-mute);margin-top:8px;">minimum N before any breakdown is reported (50+ preferred)</div></div>
     </div>
-    <div class="prose">
+    <div class="prose" style="margin-top:26px;">
       <p>{% if datasetN == 0 %}The dataset is <strong>live and collecting (N=0).</strong> No statistics are published yet &mdash; and we will not publish one until a breakdown reaches at least 20 real records (we prefer 50 or more), always with the sample size shown. We&rsquo;d rather show a count of zero honestly than a number we can&rsquo;t stand behind.{% else %}The dataset currently holds <strong>{{ datasetN }} completed engagements.</strong> Statistics are published per breakdown only once it reaches at least 20 real records (50+ preferred), always with the sample size disclosed; everything below that threshold stays unreported.{% endif %} The methodology above is locked, so the data is comparable from the first row forward. This page updates as the count grows.</p>
     </div>
   </div>
 </section>
 
-<section class="section" id="research-program">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The research program</p>
-      <h2 class="section__heading">Six original datasets, each built the same honest way.</h2>
-      <p class="section__lede">The Cleanup Benchmarks is the flagship; five more datasets log alongside it &mdash; same rules: observed on real engagements, anonymized at source, and never reported on a breakdown below a defensible sample. Each shows its live record count.</p>
-    </header>
-    <div class="grid-3">
+{# ── PROGRAM — six datasets, each with live N (honest, never fabricated). dc-card r-3 (white). (H2: Six original datasets, each built the same honest way.) ── #}
+<section class="sec reveal" id="research-program">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The research program</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:30ch;margin-bottom:10px;">Six original datasets, each built the same honest way.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">The Cleanup Benchmarks is the flagship; five more datasets log alongside it &mdash; same rules: observed on real engagements, anonymized at source, and never reported on a breakdown below a defensible sample. Each shows its live record count.</p>
+    <div class="r-3">
       {%- for d in datasets %}
-      <article class="review-card">
-        <p class="review-card__role">{% if d.flagship %}Flagship &middot; {% endif %}Collecting &middot; N={{ d.n }}</p>
-        <h3>{{ d.name | safe }}</h3>
-        <p class="review-card__fact">{{ d.captures | safe }}</p>
-      </article>
+      <article class="dc-card"><span class="eyebrow">{% if d.flagship %}Flagship &middot; {% endif %}Collecting &middot; N={{ d.n }}</span><h3>{{ d.name | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">{{ d.captures | safe }}</p></article>
       {%- endfor %}
     </div>
-    <p class="prose"><small>Every dataset is &ldquo;collecting&rdquo; until it reaches a defensible sample. We publish a figure on a breakdown only at a minimum N&ge;20 (50+ preferred), always with the sample size shown &mdash; never a fabricated, estimated, or borrowed number.</small></p>
+    <p class="prose" style="margin-top:24px;font-size:14px;color:var(--color-ink-mute);"><small>Every dataset is &ldquo;collecting&rdquo; until it reaches a defensible sample. We publish a figure on a breakdown only at a minimum N&ge;20 (50+ preferred), always with the sample size shown &mdash; never a fabricated, estimated, or borrowed number.</small></p>
   </div>
 </section>
 
-<section class="section" id="research-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">The research desk, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="research-planned">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">On the roadmap</p>
-      <h2 class="section__heading">The reports we&rsquo;re building toward.</h2>
-      <p class="section__lede">Five flagship reports, each drawn from the datasets above. Each releases independently the moment its sample is defensible (minimum N&ge;20, 50+ preferred, sample size disclosed) &mdash; not before.</p>
-    </header>
-    <div class="grid-3">
+{# ── PLANNED — five reports on the roadmap, dc-card r-3 (sand). (H2: The reports we&rsquo;re building toward.) ── #}
+<section class="sec reveal" id="research-planned" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">On the roadmap</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:30ch;margin-bottom:10px;">The reports we&rsquo;re building toward.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">Five flagship reports, each drawn from the datasets above. Each releases independently the moment its sample is defensible (minimum N&ge;20, 50+ preferred, sample size disclosed) &mdash; not before.</p>
+    <div class="r-3">
       {%- for p in planned %}
-      <article class="review-card">
-        <p class="review-card__role">{{ p.tag }} &middot; {{ p.status }}</p>
-        <h3>{{ p.name | safe }}</h3>
-        <p class="review-card__fact">{{ p.body | safe }}</p>
-      </article>
+      <article class="dc-card"><span class="eyebrow">{{ p.tag }} &middot; {{ p.status }}</span><h3>{{ p.name | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">{{ p.body | safe }}</p></article>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="research-honesty">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Our standard</p>
-      <h2 class="section__heading">What you will never find here.</h2>
-    </header>
+{# ── HONESTY — the no-fabrication standard, disclosure banner (white, read). (H2: What you will never find here.) ── #}
+<section class="sec reveal" id="research-honesty">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Our standard</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">What you will never find here.</h2>
     <div class="disclosure">
-      <strong>No fabricated, estimated, or borrowed numbers.</strong> TechBrot publishes no statistic it has not observed on real, completed engagements at a defensible sample size. Until a benchmark is released, there is no number to cite &mdash; and we say so plainly rather than fill the gap with a guess. The dataset is built by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm; it carries no client-identifying data and implies no affiliation with Intuit Inc.
+      <div class="disclosure__body"><strong>No fabricated, estimated, or borrowed numbers.</strong> TechBrot publishes no statistic it has not observed on real, completed engagements at a defensible sample size. Until a benchmark is released, there is no number to cite &mdash; and we say so plainly rather than fill the gap with a guess. The dataset is built by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm; it carries no client-identifying data and implies no affiliation with Intuit Inc.</div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="research-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">Questions about the data.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="research-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="research-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
+{# ── RELATED — cross-links, dc-card hub-card r-3 (sand). (H2: Related work.) ── #}
+<section class="sec reveal" id="research-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Where else to go</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;">Related work.</h2>
+    <div class="r-3">
+      {%- for n in related %}
+      <a class="dc-card hub-card" href="{{ n.href }}"><h3>{{ n.title | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 0;">{{ n.body | safe }}</p></a>
       {%- endfor %}
     </div>
-  </div>
-</section>
-
-<section class="section" id="research-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Where else to go</p>
-      <h2 class="section__heading">Related work.</h2>
-    </header>
-    {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
-    </div>
-    {%- endfor %}
   </div>
 </section>

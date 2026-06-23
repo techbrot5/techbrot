@@ -28,6 +28,10 @@
     "text": "<strong>TechBrot</strong> is an independent Certified QuickBooks ProAdvisor firm &mdash; <strong>not Intuit</strong>. This is our blog: practical articles on <a href=\"/blog/category/bookkeeping/\">bookkeeping</a>, <a href=\"/blog/category/quickbooks/\">QuickBooks</a>, <a href=\"/blog/category/payroll/\">payroll</a>, <a href=\"/blog/category/taxes/\">tax-season prep</a>, and <a href=\"/blog/category/business-finance/\">business finance</a>, written to actually help &mdash; not to sell you anything and never padded with invented numbers. Everything here is general information, not tax, legal, or financial advice. The latest articles and all topics are below.",
     "source": "Articles maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not Intuit. Not affiliated with Intuit Inc."
   },
+  "sec": {
+    "inBriefTag": "In brief",
+    "inBriefH": "What this blog is &mdash; and isn&rsquo;t."
+  },
   "ctaBand": {
     "eyebrow": "Reading is a start",
     "heading": "Want it done on your own books?",
@@ -40,41 +44,30 @@
 }
 ---
 
-<section class="section" id="blog-hub-latest">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Latest</p>
-      <h2 class="section__heading">Recent articles.</h2>
-    </header>
+{# ── LATEST · published posts (collections.post, read-only, newest first) as dc-card hub-cards. (H2.) ── #}
+<section class="sec reveal" id="blog-hub-latest">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Latest</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:28px;">Recent articles.</h2>
     {%- set posts = collections.post %}
     {%- if posts and posts.length %}
-    <div class="grid-3">
+    <div class="r-3">
       {%- for post in posts | reverse %}
-      <article class="review-card">
-        <p class="team-card__role">{{ post.data.categoryLabel }} &middot; {{ post.data.dateDisplay }}</p>
-        <h3>{{ post.data.headline | safe }}</h3>
-        <p class="review-card__fact">{{ post.data.deck | safe }}</p>
-        <a class="review-card__link" href="{{ post.url }}">Read it <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <a class="dc-card hub-card" href="{{ post.url }}"><span class="mono" style="font-size:12.5px;color:var(--color-ink-faint);">{{ post.data.categoryLabel }} &middot; {{ post.data.dateDisplay }}</span><h3>{{ post.data.headline | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ post.data.deck | safe }}</p><span class="hub-card__go">Read it <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
     {%- endif %}
   </div>
 </section>
 
-<section class="section section--alt" id="blog-hub-topics">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Browse by topic</p>
-      <h2 class="section__heading">All categories.</h2>
-    </header>
-    <div class="grid-3">
+{# ── BROWSE BY TOPIC · 8 category routes (blogCategories) as dc-card hub-cards. sand alt. (H2.) ── #}
+<section class="sec reveal hub-rt--alt" id="blog-hub-topics" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Browse by topic</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:28px;">All categories.</h2>
+    <div class="r-3">
       {%- for c in blogCategories %}
-      <article class="review-card">
-        <h3>{{ c.label | safe }}</h3>
-        <p class="review-card__fact">{{ c.blurb | safe }}</p>
-        <a class="review-card__link" href="/blog/category/{{ c.slug }}/">Browse {{ c.label | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <a class="dc-card hub-card" href="/blog/category/{{ c.slug }}/"><h3>{{ c.label | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ c.blurb | safe }}</p><span class="hub-card__go">Browse {{ c.label | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>

@@ -23,10 +23,8 @@
       "Free · no gate, honest math"
     ]
   },
-  "inBrief": {
-    "text": "<strong>TechBrot</strong> is an independent Certified QuickBooks ProAdvisor firm &mdash; <strong>not Intuit</strong>. These tools are free and built to actually help: each one is transparent about its math and honest about its limits. Our estimates draw straight from <a href=\"/pricing/\">published fixed-fee pricing</a> &mdash; they set expectations, they are never a binding quote. The full set of tools is below; more are in development.",
-    "source": "Tools maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not Intuit. Not affiliated with Intuit Inc."
-  },
+  "summary": "<strong>TechBrot</strong> is an independent Certified QuickBooks ProAdvisor firm &mdash; <strong>not Intuit</strong>. These tools are free and built to actually help: each one is transparent about its math and honest about its limits. Our estimates draw straight from <a href=\"/pricing/\">published fixed-fee pricing</a> &mdash; they set expectations, they are never a binding quote. The full set of tools is below; more are in development.",
+  "summarySource": "Tools maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not Intuit. Not affiliated with Intuit Inc.",
   "tools": [
     { "name": "Bookkeeping Cost Calculator", "body": "Estimate a realistic monthly bookkeeping fee for your business from our published $400&ndash;$2,500+/month pricing. Five questions, an honest range, no form.", "cta": "Open the calculator", "href": "/tools/bookkeeping-cost-calculator/" },
     { "name": "Cleanup Cost Estimator", "body": "Estimate a one-time QuickBooks cleanup or catch-up from how far behind and how messy your books are, against our published cleanup and catch-up pricing.", "cta": "Open the estimator", "href": "/tools/cleanup-cost-estimator/" },
@@ -55,69 +53,46 @@
       { "label": "Book the discovery call", "href": "/contact/?intent=pricing", "class": "btn--primary" },
       { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
     ]
+  },
+  "sec": {
+    "summaryId": "tools-hub-in-brief-text",
+    "summaryTag": "In brief",
+    "faqTag": "About these tools",
+    "faqH": "Questions about the tools."
   }
 }
 ---
 
-<section class="section" id="tools-hub-available">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Available now</p>
-      <h2 class="section__heading">Tools you can use today.</h2>
-      <p class="section__lede">Free, transparent, and honest about their limits &mdash; each one shows its own math.</p>
-    </header>
-    <div class="grid-3">
+{# ── TOOLS LISTING · the calculators you can use today (dc-card hub-cards, h3 per tool). ── #}
+<section class="sec reveal" id="tools-hub-available">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Available now</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">Tools you can use today.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">Free, transparent, and honest about their limits &mdash; each one shows its own math.</p>
+    <div class="r-3">
       {%- for t in tools %}
-      <article class="review-card">
-        <h3>{{ t.name }}</h3>
-        <p class="review-card__fact">{{ t.body | safe }}</p>
-        <a class="review-card__link" href="{{ t.href }}">{{ t.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <a class="dc-card hub-card" href="{{ t.href }}"><h3>{{ t.name }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ t.body | safe }}</p><span class="hub-card__go">{{ t.cta }}</span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="tools-hub-roadmap">
-  <div class="container container--narrow">
-    <header class="section__header">
-      {%- if roadmap.length %}
-      <p class="section__eyebrow">In development</p>
-      <h2 class="section__heading">More tools on the way.</h2>
-      <p class="section__lede">We&rsquo;d rather name what&rsquo;s coming than link to pages that don&rsquo;t exist yet. These are in development and will appear here as they&rsquo;re published.</p>
-      {%- else %}
-      <p class="section__eyebrow">More to come</p>
-      <h2 class="section__heading">Need a tool we don&rsquo;t have yet?</h2>
-      <p class="section__lede">This set covers the questions we hear most. We add tools as businesses ask for them &mdash; if there&rsquo;s a calculation you wish existed, mention it on a discovery call and we&rsquo;ll look at building it.</p>
-      {%- endif %}
-    </header>
+{# ── ROADMAP · in-development tools, or (when none) an invitation to ask (H2). sand. ── #}
+<section class="sec reveal hub-rt--alt" id="tools-hub-roadmap" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
     {%- if roadmap.length %}
-    <ul class="checks-list">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In development</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">More tools on the way.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">We&rsquo;d rather name what&rsquo;s coming than link to pages that don&rsquo;t exist yet. These are in development and will appear here as they&rsquo;re published.</p>
+    <ul class="checklist">
       {%- for r in roadmap %}
       <li>{{ r }}</li>
       {%- endfor %}
     </ul>
+    {%- else %}
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">More to come</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">Need a tool we don&rsquo;t have yet?</h2>
+    <p class="lede" style="margin:0;max-width:66ch;">This set covers the questions we hear most. We add tools as businesses ask for them &mdash; if there&rsquo;s a calculation you wish existed, mention it on a discovery call and we&rsquo;ll look at building it.</p>
     {%- endif %}
-  </div>
-</section>
-
-<section class="section" id="tools-hub-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">About these tools</p>
-      <h2 class="section__heading">Questions about the tools.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="tools-hub-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="tools-hub-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
   </div>
 </section>
