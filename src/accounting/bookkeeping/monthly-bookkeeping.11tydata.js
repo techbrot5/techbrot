@@ -62,7 +62,9 @@ module.exports = {
     { title: "Payroll management", href: "/accounting/payroll-management/?intent=payroll", body: "Payroll often layers into a monthly engagement — setup, processing, tax filing, multi-state compliance." },
     { title: "Fractional CFO", href: "/accounting/advisory/fractional-cfo/?intent=fractional-cfo", body: "When monthly bookkeeping isn’t enough — forecasting, KPI reporting, board-ready financials." },
   ],
-  faq: [
+  // de-dup 2026-06-25: override the dir-data generic 11-FAQ block (hub owns it)
+  // so this page ships ONLY its page-specific questions. `override:` = array-replace.
+  "override:faq": [
     { q: "What is monthly bookkeeping?", a: "Monthly bookkeeping is a recurring engagement where a Certified QuickBooks ProAdvisor closes the books every month — reconciling bank and credit card accounts, categorizing transactions, verifying payroll and sales tax, and delivering a monthly financial package including P&L, balance sheet, and cash flow statement." },
     { q: "How much does monthly bookkeeping cost?", a: "Pricing depends on transaction volume, account count, payroll, sales tax, and entity complexity. Typical: $400–$700/mo Essentials, $700–$1,400/mo Standard, $1,400–$2,500+/mo Complex. Every TechBrot engagement is a fixed monthly fee against a written scope — no hourly billing." },
     { q: "What does monthly bookkeeping include?", a: "Standard monthly engagements include bank and credit card reconciliations, transaction categorization, AP/AR upkeep, payroll and sales tax verification, monthly close, and a monthly financial package (P&L, balance sheet, cash flow). Larger engagements add quarterly business reviews and year-end preparation." },

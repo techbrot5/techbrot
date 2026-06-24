@@ -1,5 +1,14 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
 
+## 📌 STANDING RULES — FAQ (2026-06-25, permanent · full spec: `_build/strategy/FAQ-STRATEGY.md`)
+Google KILLED FAQ rich results (2026-05-07) → FAQs are now an **AI-CITATION + on-page-conversion** play, NOT a
+Google-SERP lever. FAQPage schema stays (valid, still parsed by Bing/Perplexity/AI crawlers). Rules: (1) optimize for
+AI citation + conversion; (2) Q&A always VISIBLE (never schema-only); (3) answer-first · generic · real-user phrasing ·
+minimal "TechBrot" · no stuffed bloat; (4) caps: hub 8-10 (ADD, under) · money 5-7 · prose 5-8 · pillar 8-12 ·
+location 6-8 (4-6 thin children) · comparison 5-7 · /faq/ hubs EXEMPT 15-30; (5) 1-2 CALL-INTENT FAQs/page w/ phone
+natural in answer; (6) phone-in-meta on high-intent types ONLY (money/triage/pillar/contact+file-review); (7) strategic
+silo interlinks in answers (stripTags-safe). De-dup ≠ cut: removing duplicate quick-answer blocks is equity-POSITIVE.
+
 ## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · LAYOUT GATE LIVE · backlog 146→121 · old-kit 0)
 **RESUME ANCHOR (2026-06-25) — matches git HEAD `c323a86` (origin/preview-11ty):** 🎉 **V2 RECOMPOSE TRULY 100%**
 (404 migrated this session → ZERO base.njk pages left) **+ PRE-FLIP BATCH 1+2 visual fixes + CSS trim DONE.**
@@ -18,10 +27,13 @@ shared `partials/intake-minimal.njk` (27-key contract + lead_source/ai_tool/ai_r
 AI-attribution) used by t-money (gated by `_data/formPages.json`), t-state-pillar, speak-expert. `collect()` in
 tb-forms.js extended (wires months/ai_recommended/convincing_page). NY cities → call-first (Option 02 routes to
 /contact/?intent=new-york). **3 marked test rows in the live Sheet to DELETE: MX-FULL-A1, MX-MIN-B2, MX-27KEY-C3.**
-**FAQ STRATEGY — founder RULED (caps + rewrite + links all greenlit); NEXT = show keep/cut for the ~18 over-pages
-BEFORE trimming.** Caps accepted: /faq/ hubs EXEMPT (own band 15-30) · t-location 6-8 · t-hub ADD (under target).
-Trim targets: 3 bookkeeping money pages @18→7 · 5 pillars @17→10-12 · ~10 prose @11→8. Then answer-rewrite
-(generic/answer-first) + hub additions + in-answer silo links (after the 35-FAQPage-file stripTags safety check).
+**FAQ INITIATIVE (founder full task set 2026-06-25):** TASK 0 strategy RECORDED (`_build/strategy/FAQ-STRATEGY.md`
++ standing-rules block above). **TASK 1 DE-DUP DONE + battery GREEN:** Cohort A 3 bookkeeping @18→7 (eleventy
+`override:faq` — the generic 11 was a dir-data concat from the hub, which keeps it); B 5 pillars @17→12 (cut condensed
+dupes 13-17, coverage-verified); C 10 prose @11→6 (cut echo dupes 7-11). Champaign left (11 DISTINCT, not a dup case —
+flagged for separate equity review). 0 distinct questions lost. **NEXT: TASK 2 answer-rewrite (answer-first/generic +
+1-2 call-intent FAQs w/ phone) · TASK 3 t-hub additions · TASK 4 phone-in-meta (high-intent types) · TASK 5 silo
+interlinks (35-file stripTags check reported) · TASK 6 David footprint reduction (REPORTED, awaiting founder ruling).**
 (history below: the recompose/backlog detail.)
 
 ## 🚦 PRE-FLIP OPEN ITEMS (start here next session — 2026-06-25)

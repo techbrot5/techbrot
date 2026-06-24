@@ -74,7 +74,9 @@ module.exports = {
     { title: "QuickBooks file cleanup", href: "/quickbooks/?intent=quickbooks", body: "Specific QuickBooks file issues — broken bank feeds, file size, multi-user mode, version mismatches. ProAdvisor-led resolution." },
     { title: "Multi-year historical cleanup", href: "/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up", body: "3+ years of books, often required before a sale, an SBA application, or an IRS issue. Methodical reconstruction at scale." },
   ],
-  faq: [
+  // de-dup 2026-06-25: override the dir-data generic 11-FAQ block (hub owns it)
+  // so this page ships ONLY its page-specific questions. `override:` = array-replace.
+  "override:faq": [
     { q: "What is bookkeeping cleanup?", a: "Bookkeeping cleanup is a project-based engagement to reconstruct accurate financial records from a messy or unreconciled state. It typically includes categorization corrections, real bank and credit-card reconciliations, clearing undeposited funds, fixing duplicate or missing transactions, correcting prior-period errors, verifying payroll and sales tax entries, and producing reliable financial statements suitable for tax filing, lending, or sale of the business." },
     { q: "How long does QuickBooks cleanup take?", a: "Most cleanup engagements take 2 to 8 weeks. Single-year cleanups for small businesses with 2 to 3 bank accounts typically take 2 to 3 weeks. Multi-year cleanups for businesses with payroll, inventory, or multiple entities can take 6 to 10 weeks. The diagnostic call produces a written timeline before work begins." },
     { q: "How much does bookkeeping cleanup cost?", a: "Cleanup is priced by scope, not by hour. Small single-year cleanups typically range from $1,500 to $3,500. Standard 12 to 24 month cleanups fall between $3,500 and $8,000. Multi-year cleanups involving payroll, inventory, or multi-entity structures typically range from $8,000 to $15,000 or more. Every TechBrot cleanup engagement is fixed-fee against a written scope." },

@@ -68,7 +68,10 @@ module.exports = {
     { title: "Multi-year historical cleanup", href: "/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup", body: "3+ years of backlog combined with errors. Methodical reconstruction at scale." },
     { title: "Payroll management", href: "/accounting/payroll-management/?intent=payroll", body: "If payroll caused the backlog, we can take payroll management on going forward as part of monthly." },
   ],
-  faq: [
+  // de-dup 2026-06-25: override the dir-data generic 11-FAQ block (it lives on
+  // the /accounting/bookkeeping/ hub, which owns it) so this page ships ONLY its
+  // 7 page-specific questions. `override:` = eleventy array-replace, not concat.
+  "override:faq": [
     { q: "What is catch-up bookkeeping?", a: "Catch-up bookkeeping is a project-based engagement that brings backlogged books current. It includes entering missed transactions, completing bank and credit-card reconciliations for prior periods, verifying payroll and sales tax entries, and producing reliable financial statements through the current month." },
     { q: "How long does catch-up bookkeeping take?", a: "Most catch-up engagements take 2 to 10 weeks. A 3-to-6-month backlog typically takes 2–3 weeks. A 12-to-24-month backlog takes 4–6 weeks. Multi-year catch-ups can take 8–10 weeks depending on volume and complexity." },
     { q: "How much does catch-up bookkeeping cost?", a: "Catch-up is priced per month of backlog and complexity. Typical pricing ranges from $300 per month of backlog for small businesses to $500+ per month for businesses with payroll, inventory, or multi-state sales tax. A 12-month standard catch-up at $400/mo is a $4,800 fixed fee. Every engagement is fixed-fee against a written scope." },
