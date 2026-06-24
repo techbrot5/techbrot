@@ -1,12 +1,13 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
 
-## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · E + F + G1 DONE · G2 next)
-**RESUME ANCHOR (2026-06-24) — matches git HEAD `ffcca55` (origin/preview-11ty):** B1-B5 (2691f05),
-C2/vs (4c22934), C1 (1710daf), E2 (8750bce), G1+E3 (ba8c85e), E6 blog (93613a4), E5 tools (becb5fe),
-F1 forms (5016ba8), **F2 pricing 11 — main /pricing/ REP (a28ac93) + 10 fan-out (ffcca55) — DONE + pushed.**
-E1+E6 verified v2. **E + F FAMILIES COMPLETE.** F2: 5 state pricing confirmed F2-family (localized); all 11
-t-bofu->t-prose, canonical Sheet-0 figures EXACT, NY frozen GREEN. **REMAINING: G2 about/trust/partners ->
-A1 home (LAST) -> pre-flip pass -> final family-vs-handoff diff.** Tree CLEAN; HEAD==origin. No open founder calls.
+## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · E+F+G COMPLETE · A1 home LAST, then pre-flip)
+**RESUME ANCHOR (2026-06-24) — matches git HEAD `f7ab40d` (origin/preview-11ty):** all families DONE except A1:
+B/C (2691f05/4c22934/1710daf), E2 (8750bce), G1+E3 (ba8c85e), E6 (93613a4), E5 (becb5fe), F1 (5016ba8),
+F2 pricing 11 (a28ac93+ffcca55), **G2 about/trust/partners 6 — all BASELINE, equity GREEN (f7ab40d).**
+**E + F + G FAMILIES COMPLETE.** **REMAINING: A1 home (LAST) -> pre-flip pass -> final family-vs-handoff diff.**
+⚠ A1: src/index.njk is STILL on OLD base.njk (not dc-base; older component set) -> migrate to dc-base/t-hub +
+body->current dc-system v2 + shared-component fixes. #home-team keeps David Westgate (1 permitted operator) +
+firm team verbatim. Home NOT baseline (founder-deleted+rebuilt). Tree CLEAN; HEAD==origin. No open founder calls.
 **⚠ R0 NOTE:** 8750bce + ba8c85e shipped in a prior session but were never dual-logged (resume anchor + family
 table left stale, no SESSION-LOG entry). Backfilled 2026-06-24 (SESSION-LOG + this anchor + table). Resume anchor
 MUST match git every turn from now on — that gap is what makes recovery risky.
@@ -85,8 +86,8 @@ D1 → D3 → D2 → D4/5/6 (NY incl) → D7 → B1-B5 → C1 → E1-E6 → F1 �
 | **E5 tools (9 calc)** | t-prose (v2) | **✅ DONE** | 9 calc pages t-mofu→t-prose (Option A). .calc/.intake ported to dc-system (re-tokenized); dc-base got includeCalcJs/FormulaJs/SelectJs branches (3 engines). Calc widgets + #calc-model byte-preserved (data-* hooks); frozen #<slug>-in-brief-text resolves via TL;DR. sales-tax-rate-lookup = non-calc prose. 0 old-kit. Commit becb5fe. |
 | **F1 forms (2)** | t-prose (v2) | **✅ DONE** | /contact/ (BASELINE, equity GREEN 13 headings) + /quickbooks/file-review/ base.njk→t-prose. Shared intake-form.njk partial included VERBATIM (locked contract; 6 other consumers unaffected). dc-base +includeFormJs (tb-forms.js). Caught+fixed: 4 alt cards needed h3 (baseline)→dc-card hub-card. 2 Clutch reviews verbatim. Commit 5016ba8. |
 | **F2 pricing (11)** | t-prose (v2) | **✅ DONE** | main /pricing/ (BASELINE, 29 headings GREEN, canonical Sheet-0 figures EXACT) + 5 /pricing/ sub-pages (bookkeeping/cfo/cleanup/payroll/quickbooks-setup; .ptier/.cmp tiers) + 5 state pricing (CA/FL/IL/NY/TX; NY FROZEN, 29 GREEN). t-bofu→t-prose; ai/faq→layout slots; speakable ids preserved. Commits a28ac93 (REP) + ffcca55 (fan-out). **DEFERRED pre-flip:** NY pricing #ny-svc-pricing-ai-summary-list repoint. |
-| **G2 about/trust/partners** | various | **🔜 NEXT** | about.njk (t-hub v2 chrome, OLD body 28 refs → body→v2); about/methodology + about/network + trust + partners (t-mofu=OLD) + partners/faq (t-guide=OLD) → migrate+body→v2. trust-strip for credentials; NO fabricated stats/team; David Westgate only named individual. trust/partners/partners-faq BASELINE. |
-| **A1 home** | t-hub? (verify) | **🔜 PENDING** | LAST. Verify on final v2 system + shared-component fixes inherited (trust-strip/in-brief/process/proof-strip/eyebrow). |
+| **G2 about/trust/partners (6)** | t-hub / t-prose | **✅ DONE** | all 6 BASELINE, content-equity GREEN (about 48, methodology 34, network 31, partners 42, partners-faq 25, trust 39). about stays t-hub (body→v2); rest t-mofu/t-guide→t-prose. trust's 2 real Clutch reviews verbatim, no AggregateRating/fabrication; founder-name-zero. 0 old-kit. Commit f7ab40d. |
+| **A1 home** | base.njk→dc-base | **🔜 NEXT (LAST)** | src/index.njk STILL on OLD base.njk (older component set rcard/buyer-card/vcard/qa-item) → migrate to dc-base/t-hub + body→current dc-system + shared-component fixes (trust-strip/in-brief/proof-strip/process-step/eyebrow). #home-tldr-body speakable; #home-team David Westgate + firm team verbatim. NOT baseline. |
 | **G1 legal (4, baseline)** | t-prose | **✅ DONE** | disclaimer/dpa/privacy/terms t-guide→t-prose + body→v2 prose. ZERO legal-wording change; baseline headings verbatim (16/18/18/18); content-equity GREEN. Commit ba8c85e. |
 | proadvisor-near-me | t-money | **⏳ review** | flagged for possible re-tier (prose-heavy) — founder call |
 
