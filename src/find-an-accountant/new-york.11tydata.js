@@ -240,7 +240,7 @@ module.exports = {
   // WHY TECHBROT — 4 cards. (H2: What separates us from generic remote bookkeeping. + 4 H3s)
   why: [
     { num: "01", name: "New York operational depth", body: "NYC UBT allocation, 8.875% sales tax on services, IOLTA trust ledger setup for law firms, CHAR500-ready workpapers for nonprofits, NYC vs. upstate payroll withholding. Operational specifics, not generic remote support." },
-    { num: "02", name: "Certified QuickBooks ProAdvisors", body: "Active Intuit certifications across <strong>QuickBooks Online L2, Desktop, Enterprise, and Payroll</strong>. Verifiable on Intuit&rsquo;s <a href=\"https://proadvisor.intuit.com/\" rel=\"noopener nofollow\">public ProAdvisor directory</a>." },
+    { num: "02", name: "Certified QuickBooks ProAdvisors", body: "Active Intuit certifications across <strong>QuickBooks Online L2, Desktop, Enterprise, and Payroll</strong>. Verifiable on Intuit&rsquo;s public ProAdvisor directory." },
     { num: "03", name: "Fixed-fee, written scope", body: "Every engagement starts with a written scope and a fixed fee before any work begins. No hourly billing. No surprise invoices. No scope creep &mdash; even for complex NYC engagements." },
     { num: "04", name: "Sophisticated buyer, honest delivery", body: "New York buyers know the difference between genuine expertise and a keyword swap. We are an independent ProAdvisor firm with no Intuit affiliation, no affiliate commissions, and no upsell agenda &mdash; just the right scope for your New York business." },
   ],
@@ -272,7 +272,7 @@ module.exports = {
     { name: "NYC Department of Finance", href: "https://www.nyc.gov/site/finance/index.page", detail: "Authoritative source for the NYC Unincorporated Business Tax, NYC corporate tax, NYC tax rates, and NYC Department of Finance audits." },
     { name: "NY Attorney General &mdash; Charities Bureau", href: "https://ag.ny.gov/charities", detail: "Authoritative source for NY nonprofit registration requirements, CHAR500 annual filing, and NY charitable organization compliance." },
     { name: "Interest on Lawyer Account (IOLA) Fund of the State of New York", href: "https://iola.ny.gov/", detail: "Authoritative source for IOLTA trust account requirements for New York attorneys under the Rules of Professional Conduct." },
-    { name: "Intuit ProAdvisor Directory", href: "https://proadvisor.intuit.com/", detail: "Authoritative source for verifying active QuickBooks ProAdvisor certifications &mdash; including TechBrot&rsquo;s." },
+    { name: "Intuit ProAdvisor Directory", href: "https://proadvisor.intuit.com/", detail: "Authoritative source for verifying active QuickBooks ProAdvisor certifications." },
     { name: "Internal Revenue Service (IRS)", href: "https://www.irs.gov/", detail: "Authoritative source for federal employment tax (Form 941), Form 1099 reporting, and IRS representation requirements." },
   ],
 
@@ -296,7 +296,7 @@ module.exports = {
   // EXPERT REVIEW (E-E-A-T). (H2: Reviewed by Certified QuickBooks ProAdvisors.) Firm-level — no founder name.
   reviewCreds: [
     { label: "Entity", detail: "TechBrot Inc. &middot; Delaware C-Corporation &middot; NAICS 541219" },
-    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s <a href=\"https://proadvisor.intuit.com/\" rel=\"noopener nofollow\">public ProAdvisor directory</a>" },
+    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s public ProAdvisor directory" },
     { label: "New York practice", detail: "All 62 counties served &middot; NYC boroughs, Long Island, Westchester, upstate NY &middot; Industries: construction, real estate, legal/IOLTA, restaurant, healthcare, nonprofit/CHAR500" },
     { label: "Independence", detail: "Independent ProAdvisor firm &middot; Not affiliated with Intuit Inc. &middot; Zero affiliate revenue from any provider" },
     { label: "Editorial policy", detail: "NY statutory references reviewed against NY DTF and NYC DOF primary sources &middot; Rate changes propagated within 30 days &middot; Composite scenarios anonymized &middot; No fabricated stats, reviews, or credentials" },

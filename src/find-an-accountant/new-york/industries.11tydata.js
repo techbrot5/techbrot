@@ -81,7 +81,7 @@ module.exports = {
 
   // EXPERT REVIEW (E-E-A-T) — firm-level, NO founder name. (H2: Reviewed by the TechBrot Certified ProAdvisor team.)
   reviewCreds: [
-    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor certifications &mdash; verifiable on Intuit&rsquo;s <a href=\"https://proadvisor.intuit.com/\" rel=\"noopener nofollow\">public ProAdvisor directory</a>" },
+    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor certifications &mdash; verifiable on Intuit&rsquo;s public ProAdvisor directory" },
     { label: "Scope", detail: "Industry-specific bookkeeping, QuickBooks setup, payroll, NY sales-tax tracking, advisory &middot; income-tax filing coordinated with your CPA or EA" },
     { label: "Engagement", detail: "Fixed-fee, written scope before work &middot; delivered in your own QuickBooks file" },
     { label: "Independence", detail: "Not affiliated with Intuit Inc. &middot; QuickBooks is a registered trademark of Intuit Inc." },

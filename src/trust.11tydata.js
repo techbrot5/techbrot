@@ -37,7 +37,7 @@ module.exports = {
     {
       // live: "Are TechBrot's credentials verifiable?" — duplicated FAQ q2
       q: "Can I verify TechBrot&rsquo;s credentials myself?",
-      a: "Yes. ProAdvisor certifications are issued by Intuit and listed on <a href=\"https://proadvisor.intuit.com\" rel=\"noopener\">Intuit&rsquo;s public directory at proadvisor.intuit.com</a>. Searchable by name or firm. Certifications expire annually &mdash; a current listing means current credentials. TechBrot Inc. is a registered Delaware C-Corporation, founded 2023.",
+      a: "Yes. ProAdvisor certifications are issued by Intuit and listed on Intuit&rsquo;s public directory at proadvisor.intuit.com. Searchable by name or firm. Certifications expire annually &mdash; a current listing means current credentials. TechBrot Inc. is a registered Delaware C-Corporation, founded 2023.",
     },
     {
       q: "How is my financial data protected?",
@@ -60,7 +60,7 @@ module.exports = {
     },
     {
       q: "Are TechBrot&rsquo;s credentials verifiable?",
-      a: "Yes. ProAdvisor certifications are issued by Intuit and listed on <a href=\"https://proadvisor.intuit.com\" rel=\"noopener\">Intuit&rsquo;s public directory at proadvisor.intuit.com</a> &mdash; searchable by firm name. Certifications expire annually; a current listing means current credentials. TechBrot Inc. is a registered Delaware C-Corporation, founded 2023.",
+      a: "Yes. ProAdvisor certifications are issued by Intuit and listed on Intuit&rsquo;s public directory at proadvisor.intuit.com &mdash; searchable by firm name. Certifications expire annually; a current listing means current credentials. TechBrot Inc. is a registered Delaware C-Corporation, founded 2023.",
     },
     {
       q: "How does TechBrot protect my financial data?",

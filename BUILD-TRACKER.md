@@ -31,9 +31,12 @@ tb-forms.js extended (wires months/ai_recommended/convincing_page). NY cities �
 + standing-rules block above). **TASK 1 DE-DUP DONE + battery GREEN:** Cohort A 3 bookkeeping @18→7 (eleventy
 `override:faq` — the generic 11 was a dir-data concat from the hub, which keeps it); B 5 pillars @17→12 (cut condensed
 dupes 13-17, coverage-verified); C 10 prose @11→6 (cut echo dupes 7-11). Champaign left (11 DISTINCT, not a dup case —
-flagged for separate equity review). 0 distinct questions lost. **NEXT: TASK 2 answer-rewrite (answer-first/generic +
-1-2 call-intent FAQs w/ phone) · TASK 3 t-hub additions · TASK 4 phone-in-meta (high-intent types) · TASK 5 silo
-interlinks (35-file stripTags check reported) · TASK 6 David footprint reduction (REPORTED, awaiting founder ruling).**
+flagged for separate equity review). 0 distinct questions lost. **TASK 6B DONE** (verify-link strip: clickable proadvisor anchors 45→5 [the 5 = honest pillar authority-citation, de-claimed,
+flagged]; visible David → home+NY+TX only, CA/FL/IL genericized; ONE westgatefs.com link in /partners/; battery GREEN).
+**TASK 6A reviewedBy scope = PROPOSED, awaiting founder confirm** (KEEP money/landings/pillars/about/trust/partners;
+REMOVE glossary/blog/tools/legal/info/help). **NEXT: TASK 2 answer-rewrite (after 6A confirm) · TASK 3 t-hub additions ·
+TASK 4 phone-in-meta · TASK 5 silo interlinks (safe everywhere) · add-David-to-about/trust/partners (deferred design).**
+**FLAGS:** glossary "TechBrot operators are listed there" (false NOW — soften?); keep/remove the 5 authority citations; David on HOME ok?
 (history below: the recompose/backlog detail.)
 
 ## 🚦 PRE-FLIP OPEN ITEMS (start here next session — 2026-06-25)

@@ -258,7 +258,7 @@ module.exports = {
   // WHY TECHBROT — 4 cards. (H2: What separates us from generic remote bookkeeping. + 4 H3s)
   why: [
     { num: "01", name: "Texas operational depth", body: "Franchise-tax margin optimization, origin-based sales tax, 80% SaaS taxability, oilfield-services and AFE cost accounting, construction job costing and WIP. Operational specifics, not generic remote support." },
-    { num: "02", name: "Certified QuickBooks ProAdvisors", body: "Active Intuit certifications across <strong>QuickBooks Online L2, Desktop, Enterprise, and Payroll</strong>. Verifiable on Intuit&rsquo;s <a href=\"https://proadvisor.intuit.com/\" rel=\"noopener nofollow\">public ProAdvisor directory</a>." },
+    { num: "02", name: "Certified QuickBooks ProAdvisors", body: "Active Intuit certifications across <strong>QuickBooks Online L2, Desktop, Enterprise, and Payroll</strong>. Verifiable on Intuit&rsquo;s public ProAdvisor directory." },
     { num: "03", name: "Fixed-fee, written scope", body: "Every engagement starts with a written scope and a fixed fee before any work begins. No hourly billing. No surprise invoices. No scope creep &mdash; even for complex Texas engagements." },
     { num: "04", name: "Sophisticated buyer, honest delivery", body: "Texas buyers know the difference between genuine expertise and a keyword swap. We are an independent ProAdvisor firm with no Intuit affiliation, no affiliate commissions, and no upsell agenda &mdash; just the right scope for your Texas business." },
   ],
@@ -290,7 +290,7 @@ module.exports = {
     { name: "Texas Franchise Tax &mdash; Comptroller", href: "https://comptroller.texas.gov/taxes/franchise/", detail: "Authoritative source for franchise tax rates, the no-tax-due threshold, margin calculation methods, and PIR/OIR filing requirements." },
     { name: "Texas Workforce Commission (TWC)", href: "https://www.twc.texas.gov/", detail: "Authoritative source for Texas unemployment tax (SUTA), employer registration, and state payroll-related reporting requirements." },
     { name: "Texas Secretary of State", href: "https://www.sos.state.tx.us/", detail: "Authoritative source for Texas entity formation, registered-agent requirements, and good-standing status tied to franchise tax compliance." },
-    { name: "Intuit ProAdvisor Directory", href: "https://proadvisor.intuit.com/", detail: "Authoritative source for verifying active QuickBooks ProAdvisor certifications &mdash; including TechBrot&rsquo;s." },
+    { name: "Intuit ProAdvisor Directory", href: "https://proadvisor.intuit.com/", detail: "Authoritative source for verifying active QuickBooks ProAdvisor certifications." },
     { name: "Internal Revenue Service (IRS)", href: "https://www.irs.gov/", detail: "Authoritative source for federal employment tax (Form 941), Form 1099 reporting, and IRS representation requirements." },
   ],
 
@@ -314,7 +314,7 @@ module.exports = {
   // EXPERT REVIEW (E-E-A-T). (H2: Reviewed by Certified QuickBooks ProAdvisors.) Firm-level — no founder name.
   reviewCreds: [
     { label: "Entity", detail: "TechBrot Inc. &middot; Delaware C-Corporation &middot; NAICS 541219" },
-    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s <a href=\"https://proadvisor.intuit.com/\" rel=\"noopener nofollow\">public ProAdvisor directory</a>" },
+    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s public ProAdvisor directory" },
     { label: "Texas practice", detail: "All 254 counties served &middot; Houston, Dallas&ndash;Fort Worth, Austin, San Antonio, El Paso, Permian Basin &middot; Industries: oil &amp; gas/energy, construction, technology/SaaS, restaurant, healthcare, real estate" },
     { label: "Independence", detail: "Independent ProAdvisor firm &middot; Not affiliated with Intuit Inc. &middot; Zero affiliate revenue from any provider" },
     { label: "Editorial policy", detail: "TX statutory references reviewed against the Texas Comptroller primary source &middot; Rate changes propagated within 30 days &middot; Composite scenarios anonymized &middot; No fabricated stats, reviews, or credentials" },
