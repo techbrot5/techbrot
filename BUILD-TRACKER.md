@@ -1,12 +1,13 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
 
 ## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · LAYOUT GATE LIVE · backlog 146→121 · old-kit 0)
-**RESUME ANCHOR (2026-06-24) — matches git HEAD `432bf4d` (origin/preview-11ty):** tracked families DONE
-(B/C/E/F/G/A1) + **NEW: authoritative `layout-v2`+`old-kit` battery gate (6e77d73)** + **backlog wave 1:
-industries 25 → v2 (432bf4d)**. GATE STATUS: **old-kit 0 GREEN · layout-v2 146→121 (25 done) · content-equity
-GREEN**. The battery is now the truth: it stays RED on `layout-v2` until the 121 backlog pages are all v2 =
-TRUE recompose-complete. Resume: run backlog waves 2+ driven by the gate (next: accounting non-industry +
-quickbooks + the find-an-accountant CA/TX/FL/IL service-landings 65). Tree CLEAN; HEAD==origin.
+**RESUME ANCHOR (2026-06-24) — matches git HEAD `114f67c` (origin/preview-11ty):** tracked families DONE
+(B/C/E/F/G/A1) + authoritative `layout-v2`+`old-kit` battery gate (6e77d73) + **backlog wave 1 industries 25
+(432bf4d) + wave 2 CA/TX/FL/IL service-landings 65 via 2 shared-partial conversions (114f67c)**. GATE STATUS:
+**old-kit 0 GREEN · layout-v2 146→56 (90 done) · content-equity GREEN**. Battery stays RED on `layout-v2` until
+0 = TRUE recompose-complete. **56 LEFT:** quickbooks 30 · accounting non-industry ~15 · switch 4 · standalones
+~5 (mostly bespoke → individual migration; check for shared partials first). Run `python _build/battery/
+run_battery.py` → the `layout-v2` FAIL line IS the live worklist. Tree CLEAN; HEAD==origin.
 **🛑 BUT THE PRE-FLIP NO-OLD-LAYOUTS SWEEP FOUND THE RECOMPOSE IS NOT COMPLETE: 82 real pages (excl ~17 dev
 fixtures) are STILL on OLD base.njk layouts (t-mofu 62 / t-guide 15 / t-bofu 4 / base 1=404).** They pass
 content-equity (content intact) so prior batteries never flagged them — but they render OLD chrome, not v2.
@@ -16,11 +17,14 @@ The tracked families migrated LEAF/detail pages; the section HUBS + a MOFU long-
 Tree CLEAN; HEAD==origin. Checkpointed here (context heavy; mass-migrating 82 baseline pages now risks a
 messy partial — directive #5). No NEW founder calls beyond resourcing this backlog.
 
-## ⚠️ DISCOVERED BACKLOG — 121 LEFT (was 146; industries 25 DONE wave 1 · gate-driven)
+## ⚠️ DISCOVERED BACKLOG — 56 LEFT (was 146; waves 1+2 = 90 done · gate-driven)
 **Run `python _build/battery/run_battery.py` → the `layout-v2` FAIL line IS the live backlog list.** old-kit
-gate now PASSES (0). Done: industries 26 ✓. Remaining 121: accounting non-industry (advisory 6/services 3/
-misc 6/faqs) · quickbooks 30 · **find-an-accountant 65** (CA/TX/FL/IL state service-landings on t-bofu — biggest;
-mirror NY's done D5 → t-money/t-prose) · switch 4 · standalones ~5.
+gate PASSES (0). DONE: industries 25 (wave 1) ✓ · find-an-accountant CA/TX/FL/IL service-landings 65 (wave 2,
+via 2 shared-partial conversions state-service-body + state-triage-body → t-location) ✓. **Remaining 56:**
+quickbooks 30 (hubs online/desktop/enterprise/help + sub-pages + compare 7 + payroll 5 + support 3) ·
+accounting non-industry ~15 (advisory 6 / services 3 / misc 6 / faqs) · switch 4 · standalones ~5
+(app-stack/which-accounting-software/reviews/platforms/404). Mostly bespoke → individual migration (check for
+shared partials first).
 
 ### (history) original 146 breakdown
 **UPDATE: the source-grep undercounted at 82; the built-HTML `layout-v2` gate finds the TRUE 146** (it
