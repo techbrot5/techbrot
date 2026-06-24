@@ -6,7 +6,11 @@
 Fresh battery all green: `layout-v2` 580/580 on v2 · `old-kit` 0 · `design-fidelity` 574 (repointed to v2) ·
 `manifest` 553 · `css-bytes` minified 64206B / 73728B (9.5KB headroom, source 84354B under soft-cap). Per-family
 0 drift (family_v2_check.py). Reconciled vs live-urls-v5.txt: 586 = 580 production + 6 dev fixtures, 580/580 v2.
-**NEXT SESSION: start PRE-FLIP BATCH 3 — see "🚦 PRE-FLIP OPEN ITEMS" section below.** Tree CLEAN; HEAD==origin.
+**PRE-FLIP BATCH 3 PROGRESS (2026-06-25):** ✅ item 1 (intent engine) + item 2 (forms) = VERIFIED — see PRE-FLIP
+section. Intent engine WIRED (real applyIntent executed vs 127-key shipped map: home/cleanup/monthly/partner-apply/
+texas/state-advisory all swap headline·lede·CTA·service; unknown=graceful). Endpoint LIVE ({ok:true,result:success},
+both contract shapes accepted). **🛑 2 FOUNDER DECISIONS OPEN (forms) — see PRE-FLIP item 2; visual items 3-4 NOT
+yet started, paused for audit per SPEC→BUILD→AUDIT.** Tree CLEAN; HEAD==origin.
 (history below: the recompose/backlog detail.)
 
 ## 🚦 PRE-FLIP OPEN ITEMS (start here next session — 2026-06-25)
@@ -15,17 +19,32 @@ cols+tagline+positioning · diagram-figure centered · disclaimer-rationalized t
 **batch 2 (screenshot-verified): `.steps`/`.fixstep` horizontal — the quickbooks-pricing-2026 "How to choose"
 fix; `.tierprose` tier-list component — the "what you're paying for" text-wall fix**; housekeeping (retired
 vs-compare-body.njk; design-fidelity repoint); CSS trim ~9KB (dropped dead 04-chrome OLD chrome).
-**🔴 OPEN — BATCH 3 (NOT started):**
-1. **CRITICAL — intent/origin verification (conversion):** `?intent=`/origin params (e.g. /contact/?intent=home)
-   are meant to swap the HEADING / copy / form-prefill per origin. VERIFY it actually works vs shows generic —
-   test 3-4 `?intent=` values, report what changes. Handoff flagged "Code owns the real mappings" — confirm
-   wired, not stubbed. (Intent JS: `TB_INTENT_MAP`/`TB_LOOKUPS` injected on contact/file-review; `data-intent-headline`/`data-intent-lede` swap hooks; tb-forms.js.)
-2. **CRITICAL — ALL forms sitewide POST test:** inventory every form (contact, file-review, state-pillar bottom
-   intake, qb/speak-to-a-quickbooks-expert, NY/CA/TX/FL/IL city intakes, partners). For each confirm: (a) POSTs to
-   the working Apps Script /exec endpoint (`site.formEndpoint` / `window.TB_FORM_ENDPOINT`; note: empty string =
-   native-POST fallback, may be unset pre-flip), (b) lead-source/AI-source capture fields present + submit, (c) the
-   24-key contract intact (partials/intake-form.njk is the locked contract). Test-submit from 2-3 locations w/ a
-   marker; report which work + where each posts. **(form handler may not be live until flip — verify honestly.)**
+**🟢 DONE — BATCH 3 items 1 & 2 (VERIFIED 2026-06-25):**
+1. **✅ intent/origin verification — WIRED, NOT STUBBED.** Executed the REAL `tb-forms.js` applyIntent (vm + DOM
+   shim, `_build/scripts/intent_exec_check.js`) against the REAL 127-key map shipped in the built page. Per-origin
+   swaps confirmed: `home`→"Tell us where your books stand"+"Book the Discovery Call"+service:not-sure ·
+   `cleanup`→"Cleanup is the right place to start"+service:cleanup (CTA stays default — correct, that key has empty
+   cta) · `monthly`→full swap+"Start Monthly Bookkeeping"+monthly-bookkeeping · `partner-apply`→"Apply to the
+   operator network"+"Start the Application" · `texas`→state pillar · `florida-advisory`→advisory+fractional-cfo ·
+   UNKNOWN intent → stays generic BUT still captures intent in hidden meta (graceful, matches contract rule #3).
+   Map injected page-level on contact+file-review (`window.TB_INTENT_MAP`/`TB_LOOKUPS`); TB_ENV+TB_FORM_ENDPOINT
+   global in dc-base. `data-intent-headline`/`data-intent-lede` hooks present on both. **No action needed.**
+2. **✅ forms inventory + endpoint POST test — DONE, but 2 FOUNDER DECISIONS OPEN.** `_build/scripts/form_contract_check.py`.
+   **43 conversion forms** (all `data-form="contact-discovery"` → all driven by tb-forms.js + site.json endpoint).
+   Split: **12 carry the FULL locked 24-key contract** (contact · file-review · speak-to-a-quickbooks-expert · 4 NY
+   cities · NY/CA/TX/FL/IL pillars). **31 BOFU service/money pages render the t-money "§INTAKE FORM (minimal)"** —
+   name/email/months/qb_status/message/consent + 4 hidden meta (intent·source_page·source_type·funnel_stage) +
+   honeypot only. **ENDPOINT IS LIVE:** direct POST of both shapes → `{"ok":true,"result":"success"}` (the exact
+   condition tb-forms.js checks). **2 marked test rows written to the live Sheet — DELETE THESE:** `MX-FULL-A1`
+   (name "ZZTEST-CLAUDE FULL") + `MX-MIN-B2` (name "ZZTEST-CLAUDE MINIMAL"). Preview correctly does NOT POST
+   (TB_ENV≠production → logs payload + fake success, fail-closed). Tools (9 calc forms) = client-side only, POST
+   nowhere ✓. Footer /subscribe form = ABSENT in v2 (was endpoint-unverified on live anyway). **🛑 OPEN DECISIONS:**
+   **(A)** the 31 minimal forms have NO `lead_source`/`ai_tool` capture → **AI-channel attribution (the site's whole
+   differentiator) is lost on 31 of 43 forms.** Intentional low-friction BOFU email path, or upgrade to full
+   contract? **(B) DEAD FIELDS — answers asked but never sent:** minimal form's `name="months"` is in the DOM but
+   not in collect() (no fixed-key, no data-meta) → dropped. FULL form's `ai_recommended` + `convincing_page` inputs
+   likewise never collected (collect() locked to the 24-key contract; these were added to the markup beyond it).
+   Fix = either wire them into collect()+extend contract, or remove the misleading inputs. Founder call.
 3. **VISUAL — David Westgate photo:** still blurry on PREVIEW (source good locally) → the 11ty image transform /
    {% photo %} pipeline is over-compressing OR preview serves stale cache. Find the transform, stop the
    over-compression, force a fresh asset build. Confirm sharp on the PREVIEW url. (Used home #home-team + person schema.)
