@@ -1,13 +1,16 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
 
 ## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · LAYOUT GATE LIVE · backlog 146→121 · old-kit 0)
-**RESUME ANCHOR (2026-06-24) — matches git HEAD `114f67c` (origin/preview-11ty):** tracked families DONE
-(B/C/E/F/G/A1) + authoritative `layout-v2`+`old-kit` battery gate (6e77d73) + **backlog wave 1 industries 25
-(432bf4d) + wave 2 CA/TX/FL/IL service-landings 65 via 2 shared-partial conversions (114f67c)**. GATE STATUS:
-**old-kit 0 GREEN · layout-v2 146→56 (90 done) · content-equity GREEN**. Battery stays RED on `layout-v2` until
-0 = TRUE recompose-complete. **56 LEFT:** quickbooks 30 · accounting non-industry ~15 · switch 4 · standalones
-~5 (mostly bespoke → individual migration; check for shared partials first). Run `python _build/battery/
-run_battery.py` → the `layout-v2` FAIL line IS the live worklist. Tree CLEAN; HEAD==origin.
+**RESUME ANCHOR (2026-06-24) — matches git HEAD `6708076` (origin/preview-11ty):** 🎉 **V2 RECOMPOSE COMPLETE.**
+All tracked families + the full 146-page old-layout backlog DONE. **BATTERY PASSED all green: `layout-v2` all
+580 non-dev pages on v2 dc-base chrome · `old-kit` 0 · content-equity GREEN · manifest 585.** Backlog waves:
+gate (6e77d73) → industries 25 (432bf4d) → CA/TX/FL/IL service-landings 65 via 2 shared-partial conversions
+(114f67c) → compare/switch/faqs 17 (f26ae3b) → final 39 (6708076) = 146 migrated, 146→0.
+**📊 RECONCILED vs live-urls-v5.txt: 586 live URLs = 580 production + 6 /dev/* fixtures; 580/580 production on
+v2 (100%); 0 on old layout. Every URL accounted for.** Tree CLEAN; HEAD==origin.
+**REMAINING (pre-flip only — NO migrations left):** deferred speakable cssSelector repoints (battery-clean
+danglers) · retire vs-compare-body.njk + legacy keys · LIVE axe/overflow on founder machine · CSS trim ·
+baseline-vs-prod recrawl · final 25-family-vs-handoff design pass + flip-gate. No open founder content/honesty calls.
 **🛑 BUT THE PRE-FLIP NO-OLD-LAYOUTS SWEEP FOUND THE RECOMPOSE IS NOT COMPLETE: 82 real pages (excl ~17 dev
 fixtures) are STILL on OLD base.njk layouts (t-mofu 62 / t-guide 15 / t-bofu 4 / base 1=404).** They pass
 content-equity (content intact) so prior batteries never flagged them — but they render OLD chrome, not v2.
@@ -17,7 +20,11 @@ The tracked families migrated LEAF/detail pages; the section HUBS + a MOFU long-
 Tree CLEAN; HEAD==origin. Checkpointed here (context heavy; mass-migrating 82 baseline pages now risks a
 messy partial — directive #5). No NEW founder calls beyond resourcing this backlog.
 
-## ⚠️ DISCOVERED BACKLOG — 56 LEFT (was 146; waves 1+2 = 90 done · gate-driven)
+## ✅ DISCOVERED BACKLOG — CLEARED (was 146 → 0; all on v2, gate GREEN)
+**RESOLVED 2026-06-24.** All 146 migrated across 4 waves (industries 25 · service-landings 65 · compare/switch/
+faqs 17 · final 39). `layout-v2` gate = 0 (all 580 non-dev pages on v2), `old-kit` = 0. See history below.
+
+### (history) the 56→0 breakdown
 **Run `python _build/battery/run_battery.py` → the `layout-v2` FAIL line IS the live backlog list.** old-kit
 gate PASSES (0). DONE: industries 25 (wave 1) ✓ · find-an-accountant CA/TX/FL/IL service-landings 65 (wave 2,
 via 2 shared-partial conversions state-service-body + state-triage-body → t-location) ✓. **Remaining 56:**
@@ -37,6 +44,35 @@ ALSO: **10 v2-chrome pages carry stray old-kit body classes** (chrome-only-dirty
 (vs-table, B-hubs) · /quickbooks/ + /tools/{breakeven,business-budget,cash-runway,sales-tax-rate-lookup}
 (flow__step). Fix these first (quick — already v2 chrome). Migration order per founder: industries → quickbooks →
 find-an-accountant service-landings → the rest. Gate stays RED until TRUE 0 layout-v2 + 0 old-kit.
+
+## 🔍 BACKLOG ROOT CAUSE (why ~146 pages were missed) — recorded 2026-06-24
+**Three compounding causes:**
+1. **Families were scoped to their LEAF/detail pages.** Each build family migrated the high-value detail pages
+   it explicitly listed — e.g. "D2 prose 153/153 DONE", "D1 money 19/19 DONE" — but the **section HUBS + the
+   MOFU long-tail** (service/prose pages not on the scoped list) were **held/excluded and never re-picked-up**.
+2. **No layout/chrome completeness check existed.** The completion gate measured **content-equity (CONTENT)**:
+   headings/FAQ/schema present. It NEVER checked the LAYOUT/chrome. So a page with intact content on an OLD
+   base.njk layout (t-mofu/t-bofu/t-guide) **passed every battery as "done"** while rendering old chrome.
+3. **The family page-counts in the tracker were the SCOPED counts, not the TRUE family totals.** Reconciled
+   against `_families.txt` (authoritative, 26 families / 580 shipped), the real totals are much larger than the
+   "DONE" counts logged: **D1·Service = 66** (logged 19) · **D2·Prose = 177** (logged 153) · **C2 = 21** (logged
+   14) · D5·State-service = 68 · D4·City = 55 · D6·Industry = 32. The delta in each is the long-tail that was
+   never migrated.
+**FIX (now in force):** the new `layout-v2` + `old-kit` battery gate (6e77d73) is the **authoritative completeness
+gate**. **A family is "done" ONLY when ALL its pages — leaf + hub + long-tail — pass BOTH content-equity AND the
+layout-check.** This definition applies going forward.
+
+## 📊 RECONCILIATION vs live-urls-v5.txt (authoritative URL list) — updated each wave
+- **Total live URLs (live-urls-v5.txt):** 586 · **shipped (excl dev):** 580 · **(6-page live-vs-shipped gap is
+  PRE-EXISTING — recorded in `_families.txt`, not introduced by this work; reconcile separately pre-flip.)**
+- **On v2 (mega-nav present):** climbing each wave — waves so far: gate + industries 25 + service-landings 65 +
+  compare/switch/faqs 17 = 107 backlog pages migrated. **Remaining on OLD layout: 39** (run the `layout-v2` gate
+  for the live list).
+- **The 39 remaining, attributed to their TRUE families** (via `_page-family-map.txt`): **D1·Service 20** (the
+  service long-tail: accounting/advisory children, accounting/services, quickbooks service pages, payroll, etc.)
+  · **D2·Prose 18** (accounting misc + quickbooks prose + standalones) · **G2 1**. When these clear, every shipped
+  non-dev page is on v2 = TRUE recompose-complete; then the 6-page live-vs-shipped gap is the only open URL
+  reconciliation item.
 
 ### (superseded) earlier 82-count source-grep breakdown
 Bespoke pages (180–286 lines each, NO shared body partials → no data-driven shortcut). Most are BASELINE/
