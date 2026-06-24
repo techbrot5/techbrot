@@ -18,10 +18,9 @@ function stripTags(html) {
 
 module.exports = {
   layout: "layouts/t-article.njk",
-  chrome: "full",
-  callBar: true,
-  pageTier: "guide",
-  tierClass: "section--tier-guide",
+  // v2: t-article extends dc-base (new chrome). Old base.njk hints removed
+  // (chrome/callBar/pageTier/tierClass — dc-base reads none of them). bodyClass
+  // kept (page--mofu, whitelisted; matches the E2 glossary v2 precedent).
   bodyClass: "page--mofu",
   eleventyComputed: {
     permalink: (data) => `/blog/${data.page.fileSlug}/`,

@@ -1,139 +1,102 @@
 ---
-layout: layouts/base.njk
-tierClass: section--tier-guide
-pageTier: guide
-callBar: true
+layout: layouts/dc-base.njk
+navActive: resources
+footerNav:
+  label: Resources
+  links:
+    - { href: "/blog/", text: "All articles" }
+    - { href: "/resources/guides/", text: "Guides" }
+    - { href: "/glossary/", text: "Glossary" }
 ---
-{#- T-ARTICLE — blog post tier (round 87, NEW article type). Built on the
-    t-guide chrome: breadcrumb · compact article hero (category eyebrow + deck) ·
-    byline-block (firm-level, founder-name-zero) with published/updated dates ·
-    markdown content in .prose · optional AI-summary + FAQ · CTA band. Schema
-    (BlogPosting + Breadcrumb + FAQPage) is computed centrally in
-    src/blog/posts/posts.11tydata.js. -#}
+{#- ===========================================================================
+    t-article — BLOG POST tier (v2 dc-base). Editorial reading-column spine, like
+    t-prose, with the blog-specific seams: a category-link eyebrow, a dated
+    firm-level byline (founder-name-zero), the markdown body in .prose, an optional
+    AI-summary + FAQ, related posts, and a LIGHT final CTA. dc-base supplies the new
+    chrome (dark topbar · mega-nav · light footer · crumb). Schema (BlogPosting +
+    Breadcrumb + FAQPage) is computed centrally in src/blog/posts/posts.11tydata.js.
+    Frozen body id #{{slug}}-prose preserved (schema/anchor target).
+    =========================================================================== -#}
+{%- set sec = sec or {} %}
 
-{%- if breadcrumb %}
-<nav class="breadcrumb" aria-label="Breadcrumb" id="{{ slug }}-breadcrumb">
-  <div class="container">
-    <ol>
-      {%- for item in breadcrumb %}
-      {%- if item.href %}
-      <li><a href="{{ item.href }}">{{ item.name }}</a></li>
-      <li class="sep" aria-hidden="true">/</li>
-      {%- else %}
-      <li aria-current="page">{{ item.name }}</li>
-      {%- endif %}
-      {%- endfor %}
-    </ol>
-  </div>
-</nav>
-{%- endif %}
-
-<section class="section hero-tier hero--compact hero--rule" id="{{ slug }}-hero">
-  <div class="container container--narrow">
-    <div class="hero">
-      <p class="hero__eyebrow"><a href="/blog/category/{{ category }}/">{{ categoryLabel | safe }}</a></p>
-      <h1 class="hero__heading">{{ headline | safe }}</h1>
-      {%- if deck %}<p class="hero__subheading">{{ deck | safe }}</p>{%- endif %}
-    </div>
-    <div class="byline-block stack-8">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+{#- HERO — compact editorial reading-column: category-link eyebrow + headline + deck
+    + dated firm byline. -#}
+<section class="section" id="{{ slug }}-hero" style="padding:56px 0 12px;">
+  <div class="ct read read--doc">
+    <p class="eyebrow" style="display:inline-flex;align-items:center;gap:12px;margin-bottom:18px;"><span class="rule-mark" aria-hidden="true"><span></span><span></span></span><a href="/blog/category/{{ category }}/">{{ categoryLabel | safe }}</a></p>
+    <h1 class="dsp speakable" style="font-weight:500;font-variation-settings:'opsz' 80;font-size:clamp(32px,1.7rem + 2.4vw,48px);margin:0 0 18px;">{{ headline | safe }}</h1>
+    {%- if deck %}<p class="lede speakable" style="margin:0;max-width:62ch;">{{ deck | safe }}</p>{%- endif %}
+    <div class="prose-byline">
+      <span class="prose-byline__mark"><svg width="16" height="16" viewBox="0 0 64 64" fill="#FCFBF8" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span>
       <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">
-          Published <time datetime="{{ datePublished }}">{{ dateDisplay }}</time>
-          {%- if dateModified and dateModified != datePublished %} &middot; updated <time datetime="{{ dateModified }}">{{ dateModifiedDisplay or dateDisplay }}</time>{% endif %}
-          &middot; independent firm, not Intuit
-        </p>
+        <p class="prose-byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="prose-byline__meta">Published <time datetime="{{ datePublished }}">{{ dateDisplay }}</time>{% if dateModified and dateModified != datePublished %} &middot; updated <time datetime="{{ dateModified }}">{{ dateModifiedDisplay or dateDisplay }}</time>{% endif %} &middot; independent firm, not Intuit</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="{{ slug }}-body">
-  <div class="container container--narrow">
+{#- BODY — the markdown article, flowed into the editorial reading column. Frozen id. -#}
+<section class="sec reveal" id="{{ slug }}-body" style="padding-top:8px;">
+  <div class="ct read read--doc">
     <div class="prose" id="{{ slug }}-prose">
       {{ content | safe }}
     </div>
   </div>
 </section>
 
+{#- AI SUMMARY — prose ruled Q&A (light). -#}
 {%- if aiSummary %}
-<section class="section section--alt" id="{{ slug }}-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">{{ aiSummaryHeading or "The short version." }}</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
+<section class="sec reveal" id="{{ slug }}-ai-summary" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">For AI engines &amp; quick answers</div>
+    <h2 class="h2" style="margin-bottom:24px;">{{ aiSummaryHeading or "The short version." }}</h2>
+    <div class="ai-ruled speakable">
+      {%- for item in aiSummary %}<div class="ai-ruled__item"><h3>{{ item.q | safe }}</h3><p>{{ item.a | safe }}</p></div>{%- endfor %}
     </div>
   </div>
 </section>
 {%- endif %}
 
+{#- FAQ — crawlable Q&A (FAQPage verbatim). -#}
 {%- if faq %}
-<section class="section" id="{{ slug }}-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">{{ faqHeading or "Questions, answered." }}</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="{{ slug }}-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="{{ slug }}-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
+<section class="sec reveal" id="{{ slug }}-faq" style="padding-top:32px;">
+  <div class="ct read read--doc">
+    <h2 class="h2" style="margin-bottom:26px;">{{ faqHeading or "Questions, answered." }}</h2>
+    <div class="faq">{%- for item in faq %}<details name="{{ slug }}-faq"{% if loop.first %} open{% endif %}><summary>{{ item.q | safe }}<span class="pl"></span></summary><div>{{ item.a | safe }}</div></details>{%- endfor %}</div>
   </div>
 </section>
 {%- endif %}
 
+{#- RELATED — keep reading (sand band). -#}
 {%- if relatedPosts %}
-<section class="section section--alt" id="{{ slug }}-related">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Keep reading</p>
-      <h2 class="section__heading">Related articles.</h2>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="{{ slug }}-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Keep reading</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related articles.</h2>
+    <div class="r-3">
       {%- for card in relatedPosts %}
-      <article class="review-card">
-        <h3>{{ card.name }}</h3>
-        <p class="review-card__fact">{{ card.body | safe }}</p>
-        <a class="review-card__link" href="{{ card.href }}">Read it <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <a class="rel-card" href="{{ card.href }}"><span class="rel-card__t">{{ card.name }}</span><span class="rel-card__d">{{ card.body | safe }}</span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 {%- endif %}
 
+{#- FINAL CTA — LIGHT (article convention): paper, centered. -#}
 {%- if ctaBand %}
-<section class="section section--cta-band section--cta-band--light {{ tierClass }}" id="{{ slug }}-cta">
-  <div class="cta-band__motif" aria-hidden="true">{% include "partials/motif-align-single.svg" %}</div>
-  <div class="container">
+<section class="section" id="{{ slug }}-cta" style="padding-top:72px;padding-bottom:80px;">
+  <div class="ct read read--doc">
     <div class="final-cta">
-      <p class="section__eyebrow">{{ ctaBand.eyebrow | safe }}</p>
-      <h2 class="final-cta__heading">{{ ctaBand.heading | safe }}</h2>
+      <p class="eyebrow" style="margin-bottom:16px;">{{ ctaBand.eyebrow | safe }}</p>
+      <h2 class="final-cta__h">{{ ctaBand.heading | safe }}</h2>
       <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
       <div class="final-cta__actions">
         {%- for action in ctaBand.actions %}
-        <a class="btn {{ action.class }}" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"{% if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 24px;border-radius:13px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ action.label }}</a>
         {%- endfor %}
       </div>
-      <p class="final-cta__disclaimer">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc. Articles are general information, not tax, legal, or financial advice.</p>
+      <p class="final-cta__disclaimer" style="font-size:12.5px;line-height:1.6;color:var(--color-ink-faint);margin:24px auto 0;max-width:70ch;">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc. Articles are general information, not tax, legal, or financial advice.</p>
     </div>
   </div>
 </section>

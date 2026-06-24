@@ -3,16 +3,14 @@ pagination:
   data: blogCategories
   size: 1
   alias: cat
-layout: layouts/t-mofu.njk
-chrome: full
-callBar: true
-pageTier: mofu
+layout: layouts/t-hub.njk
 bodyClass: page--mofu
 eleventyComputed:
   permalink: "/blog/category/{{ cat.slug }}/"
   slug: "blogcat-{{ cat.slug }}"
   title: "{{ cat.label | safe }} Articles · TechBrot Blog"
   description: "{{ cat.blurb | safe }} Independent Certified QuickBooks ProAdvisor firm — not Intuit. Call (877) 751-5575."
+  heroFigure: false
   breadcrumb:
     - name: "Home"
       href: "/"
@@ -73,39 +71,34 @@ eleventyComputed:
             item: "https://techbrot.com/blog/category/{{ cat.slug }}/"
 ---
 
-<section class="section" id="{{ slug }}-list">
-  <div class="container">
+{# ── ARTICLES IN THIS CATEGORY · collections[cat.slug], newest first, as dc-card hub-cards. (H2.) ── #}
+<section class="sec reveal" id="{{ slug }}-list">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Articles</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:28px;">{{ cat.label | safe }} articles.</h2>
     {%- set posts = collections[cat.slug] %}
     {%- if posts and posts.length %}
-    <div class="grid-3">
+    <div class="r-3">
       {%- for post in posts | reverse %}
-      <article class="review-card">
-        <p class="team-card__role">{{ post.data.categoryLabel }} &middot; {{ post.data.dateDisplay }}</p>
-        <h2>{{ post.data.headline | safe }}</h2>
-        <p class="review-card__fact">{{ post.data.deck | safe }}</p>
-        <a class="review-card__link" href="{{ post.url }}">Read it <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <a class="dc-card hub-card" href="{{ post.url }}"><span class="mono" style="font-size:12.5px;color:var(--color-ink-faint);">{{ post.data.categoryLabel }} &middot; {{ post.data.dateDisplay }}</span><h3>{{ post.data.headline | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ post.data.deck | safe }}</p><span class="hub-card__go">Read it <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
     {%- else %}
-    <div class="in-brief">
-      <p class="in-brief__text">New {{ cat.label | safe }} articles are on the way. In the meantime, <a href="/blog/">browse the full blog</a> or <a href="/contact/?intent=accounting">book a free discovery call</a> with a Certified ProAdvisor.</p>
-    </div>
+    <p class="lede" style="margin:0;max-width:66ch;">New {{ cat.label | safe }} articles are on the way. In the meantime, <a href="/blog/">browse the full blog</a> or <a href="/contact/?intent=accounting">book a free discovery call</a> with a Certified ProAdvisor.</p>
     {%- endif %}
   </div>
 </section>
 
-<section class="section section--alt" id="{{ slug }}-browse">
-  <div class="container container--narrow">
-    <blockquote class="pull-quote">We write these to actually help &mdash; plain English, real substance, and an honest answer even when it&rsquo;s that you don&rsquo;t need us.</blockquote>
-    <header class="section__header">
-      <p class="section__eyebrow">Browse by topic</p>
-      <h2 class="section__heading">Other categories.</h2>
-    </header>
-    <div class="checks-list">
+{# ── BROWSE OTHER TOPICS · remaining categories as dc-card hub-cards. sand alt. (H2.) ── #}
+<section class="sec reveal hub-rt--alt" id="{{ slug }}-browse" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Browse by topic</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:10px;">Other categories.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">We write these to actually help &mdash; plain English, real substance, and an honest answer even when it&rsquo;s that you don&rsquo;t need us.</p>
+    <div class="r-3">
       {%- for c in blogCategories %}
       {%- if c.slug != cat.slug %}
-      <p><a href="/blog/category/{{ c.slug }}/">{{ c.label | safe }}</a> &mdash; {{ c.blurb | safe }}</p>
+      <a class="dc-card hub-card" href="/blog/category/{{ c.slug }}/"><h3>{{ c.label | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ c.blurb | safe }}</p><span class="hub-card__go">Browse {{ c.label | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endif %}
       {%- endfor %}
     </div>
