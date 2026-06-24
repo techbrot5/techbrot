@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/quickbooks/which-plan-is-right/",
   "slug": "qbwp",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
+  "sec": {
+    "aiH": "QuickBooks plan selection, in five questions.",
+    "faqH": "What people ask about picking a QuickBooks plan."
+  },
   "title": "Which QuickBooks Plan Is Right for You? · Free ProAdvisor Advisory · TechBrot",
   "description": "An independent Certified QuickBooks ProAdvisor helps you pick the right product and plan &mdash; QuickBooks Online (Simple Start, Essentials, Plus, Advanced), Desktop, or Enterprise. Free 30-minute call. No commission, no upsell. Independent firm, not affiliated with Intuit Inc.",
   "breadcrumb": [
@@ -39,208 +41,171 @@
 }
 ---
 
-<section class="section section--compact" id="qbwp-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+<section class="sec reveal" id="qbwp-byline">
+  <div class="ct read read--doc">
+    <div class="byline">
+      <span class="byline__mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 64 64" fill="#FCFBF8"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span>
       <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a QuickBooks Online, Desktop &amp; Enterprise ProAdvisor &middot; independent, no reseller incentive</p>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__meta">Reviewed by a QuickBooks Online, Desktop &amp; Enterprise ProAdvisor &middot; independent, no reseller incentive</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--compact section--tier-guide" id="qbwp-credentials">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Certified by Intuit &middot; Online (L2), Desktop, Enterprise, Payroll</p>
-      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials.</h2>
-    </header>
-    <div class="stat-row">
+<section class="sec reveal" id="qbwp-credentials">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Certified by Intuit &middot; Online (L2), Desktop, Enterprise, Payroll</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Certified QuickBooks ProAdvisor credentials.</h2>
+    <div class="r-3" style="margin-bottom:26px;">
       {%- for s in credStats %}
-      <div><div class="stat__value">{{ s.value }}</div><div class="stat__label">{{ s.label }}</div></div>
+      <div><div class="mono" style="font-size:30px;font-weight:500;color:var(--color-accent);">{{ s.value }}</div><div style="font-size:13px;line-height:1.5;color:var(--color-ink-mute);margin-top:8px;">{{ s.label }}</div></div>
       {%- endfor %}
     </div>
-    <ul class="checks-list">
+    <ul class="checklist">
       {%- for c in credentials %}<li>{{ c | safe }}</li>{%- endfor %}
     </ul>
   </div>
 </section>
 
-<section class="section section--alt" id="qbwp-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In one paragraph</p>
-      <h2 class="section__heading">How to pick the right QuickBooks plan.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="qbwp-definition" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">How to pick the right QuickBooks plan.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbwp-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">QuickBooks plan selection, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
+{#- AI-SUMMARY renders via the t-prose layout slot (sec.aiH = "QuickBooks plan selection, in five questions."). -#}
 
-<section class="section section--alt" id="qbwp-framework">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The decision framework</p>
-      <h2 class="section__heading">Five factors that decide the right plan.</h2>
-      <p class="section__lede">Every QuickBooks plan question reduces to these five. Map your business honestly against each, and the right product and tier becomes obvious &mdash; or obviously needs a ProAdvisor&rsquo;s read.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="qbwp-framework">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The decision framework</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Five factors that decide the right plan.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Every QuickBooks plan question reduces to these five. Map your business honestly against each, and the right product and tier becomes obvious &mdash; or obviously needs a ProAdvisor&rsquo;s read.</p>
+    <div class="r-3">
       {%- for f in factors %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ f.num }}</p>
+      <div class="dc-card">
+        <span class="eyebrow" style="display:block;margin-bottom:8px;">{{ f.num }}</span>
         <h3>{{ f.name | safe }}</h3>
-        <p class="prose">{{ f.body | safe }}</p>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ f.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbwp-patterns">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Common business patterns</p>
-      <h2 class="section__heading">What we typically recommend, by business profile.</h2>
-      <p class="section__lede">These aren&rsquo;t rules &mdash; every business has nuances &mdash; but they&rsquo;re the patterns we see most often. Find the one closest to your situation, then book the call to confirm the specifics.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="qbwp-patterns" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Common business patterns</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What we typically recommend, by business profile.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">These aren&rsquo;t rules &mdash; every business has nuances &mdash; but they&rsquo;re the patterns we see most often. Find the one closest to your situation, then book the call to confirm the specifics.</p>
+    <div class="r-3">
       {%- for p in patterns %}
-      <div class="stack-8">
+      <div class="dc-card">
         <h3>{{ p.name | safe }}</h3>
-        <p class="prose">{{ p.body | safe }}</p>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ p.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbwp-products">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The full QuickBooks product map</p>
-      <h2 class="section__heading">Nine tiers and editions, one decision.</h2>
-      <p class="section__lede">The complete QuickBooks landscape, organized by where each product fits in the lineup. Click through to any product hub for the deep read &mdash; or book the call and we&rsquo;ll walk you through it directly. For specific pricing, check Intuit directly &mdash; we don&rsquo;t publish their numbers because they change.</p>
-    </header>
-    <div class="grid-2">
+<section class="sec reveal" id="qbwp-products">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The full QuickBooks product map</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Nine tiers and editions, one decision.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">The complete QuickBooks landscape, organized by where each product fits in the lineup. Click through to any product hub for the deep read &mdash; or book the call and we&rsquo;ll walk you through it directly. For specific pricing, check Intuit directly &mdash; we don&rsquo;t publish their numbers because they change.</p>
+    <div class="r-2">
       {%- for e in editions %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ e.tier }}</p>
+      <div class="dc-card">
+        <span class="eyebrow" style="display:block;margin-bottom:8px;">{{ e.tier }}</span>
         <h3>{{ e.name | safe }}</h3>
-        <p class="prose">{{ e.body | safe }}</p>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ e.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbwp-vs">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The plan tiers, head to head</p>
-      <h2 class="section__heading">QBO Plus vs QBO Advanced vs Desktop Premier vs Enterprise.</h2>
-      <p class="section__lede">An honest comparison of the four tiers most plan decisions come down to &mdash; user counts, cloud access, inventory depth, automation, and industry features. We hold no reseller incentive in any direction.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">QuickBooks plan tiers compared — QBO Plus, QBO Advanced, Desktop Premier, and Enterprise</caption>
-        <thead><tr><th scope="col">Capability</th><th scope="col" class="vs-table__us">QBO Plus</th><th scope="col">QBO Advanced</th><th scope="col">Desktop Premier</th><th scope="col">Enterprise</th></tr></thead>
-        <tbody>
-          {%- for r in vsTable %}
-          <tr><th scope="row">{{ r.cap | safe }}</th>
-            <td class="vs-table__us">{% if r.plus == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.plus == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.plus | safe }}</span>{% endif %}</td>
-            <td>{% if r.adv == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.adv == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.adv | safe }}</span>{% endif %}</td>
-            <td>{% if r.premier == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.premier == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.premier | safe }}</span>{% endif %}</td>
-            <td>{% if r.ent == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.ent == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.ent | safe }}</span>{% endif %}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+<section class="sec reveal hub-rt--alt" id="qbwp-vs" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The plan tiers, head to head</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">QBO Plus vs QBO Advanced vs Desktop Premier vs Enterprise.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">An honest comparison of the four tiers most plan decisions come down to &mdash; user counts, cloud access, inventory depth, automation, and industry features. We hold no reseller incentive in any direction.</p>
+    <table class="cmp">
+      <caption class="sr-only">QuickBooks plan tiers compared — QBO Plus, QBO Advanced, Desktop Premier, and Enterprise</caption>
+      <thead><tr><th scope="col">Capability</th><th scope="col">QBO Plus</th><th scope="col">QBO Advanced</th><th scope="col">Desktop Premier</th><th scope="col">Enterprise</th></tr></thead>
+      <tbody>
+        {%- for r in vsTable %}
+        <tr><th scope="row" data-col="Capability">{{ r.cap | safe }}</th>
+          <td class="num us" data-col="QBO Plus">{% if r.plus == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.plus == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span style="color:var(--color-ink-mute);">{{ r.plus | safe }}</span>{% endif %}</td>
+          <td data-col="QBO Advanced">{% if r.adv == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.adv == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span style="color:var(--color-ink-mute);">{{ r.adv | safe }}</span>{% endif %}</td>
+          <td data-col="Desktop Premier">{% if r.premier == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.premier == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span style="color:var(--color-ink-mute);">{{ r.premier | safe }}</span>{% endif %}</td>
+          <td data-col="Enterprise">{% if r.ent == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.ent == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span style="color:var(--color-ink-mute);">{{ r.ent | safe }}</span>{% endif %}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 
-<section class="section section--alt" id="qbwp-nuance">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Where the call earns its keep</p>
-      <h2 class="section__heading">Three situations where the answer isn&rsquo;t obvious.</h2>
-      <p class="section__lede">Most plan decisions are straightforward. These three patterns are where having a ProAdvisor genuinely matters &mdash; because the right answer depends on variables that don&rsquo;t show up on any comparison page.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="qbwp-nuance">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Where the call earns its keep</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Three situations where the answer isn&rsquo;t obvious.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Most plan decisions are straightforward. These three patterns are where having a ProAdvisor genuinely matters &mdash; because the right answer depends on variables that don&rsquo;t show up on any comparison page.</p>
+    <div class="r-3">
       {%- for n in nuance %}
-      <div class="stack-8">
+      <div class="dc-card">
         <h3>{{ n.name | safe }}</h3>
-        <p class="prose">{{ n.body | safe }}</p>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ n.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbwp-call">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What happens on the call</p>
-      <h2 class="section__heading">Thirty minutes. No pitch. Just the answer.</h2>
-      <p class="section__lede">Here&rsquo;s exactly what a Certified ProAdvisor will cover in the free 30-minute plan-selection call &mdash; so you know what to expect and what to have ready.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="qbwp-call" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What happens on the call</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Thirty minutes. No pitch. Just the answer.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Here&rsquo;s exactly what a Certified ProAdvisor will cover in the free 30-minute plan-selection call &mdash; so you know what to expect and what to have ready.</p>
+    <div class="r-3">
       {%- for c in call %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ c.num }}</p>
+      <div class="dc-card">
+        <span class="eyebrow" style="display:block;margin-bottom:8px;">{{ c.num }}</span>
         <h3>{{ c.name | safe }}</h3>
-        <p class="prose">{{ c.body | safe }}</p>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbwp-routing">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Your situation</p>
-      <h2 class="section__heading">Where are you in the plan decision?</h2>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="qbwp-routing">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Your situation</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where are you in the plan decision?</h2>
+    <div class="r-3">
       {%- for b in routing %}
-      <a class="buyer-card" href="{{ b.href }}"><p class="buyer-card__opener">{{ b.opener | safe }}</p><p class="buyer-card__body">{{ b.body | safe }}</p><span class="buyer-card__cta">{{ b.cta | safe }}</span></a>
+      <a class="dc-card hub-card" href="{{ b.href }}"><h3>{{ b.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ b.body | safe }}</p><span class="hub-card__go">{{ b.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbwp-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Who delivers the advice</p>
-      <h2 class="section__heading">Certified across every QuickBooks product. No commission on any of them.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="qbwp-operator" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Who delivers the advice</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Certified across every QuickBooks product. No commission on any of them.</h2>
     <div class="prose">
       <p>Plan-selection advice is only as good as the depth of QuickBooks knowledge behind it. Every TechBrot ProAdvisor holds active certifications across the entire QuickBooks product line &mdash; Online Level 2, Desktop, Enterprise, and Payroll. The recommendation you get comes from someone fluent in all of them, not someone who&rsquo;s only worked in one.</p>
       <p>Critically: we earn nothing from your QuickBooks subscription, regardless of which product or tier you pick &mdash; no Intuit affiliate revenue, no referral commissions, no kickback on Enterprise sales. The independence is structural, which is what makes the recommendation worth giving free. You can <a href="/quickbooks/proadvisor-team/">meet the ProAdvisor team</a> or read our <a href="/trust/">trust &amp; methodology standards</a>. Independent firm &mdash; not affiliated with Intuit Inc.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in operatorSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -249,38 +214,21 @@
   </div>
 </section>
 
-<section class="section section--alt" id="qbwp-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">QuickBooks plan-selection questions</p>
-      <h2 class="section__heading">What people ask about picking a QuickBooks plan.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbwp-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="qbwp-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
+{#- FAQ renders via the t-prose layout slot (sec.faqH = "What people ask about picking a QuickBooks plan."). The frozen meta-reviewed line is preserved below, verbatim. -#}
+<section class="sec reveal" id="qbwp-faq-meta">
+  <div class="ct read read--doc">
     <p class="meta-reviewed"><span>Published: 2026-06-14</span><span>Updated: 2026-06-14</span><span>Reviewed: 2026-06-14 &middot; QuickBooks Online, Desktop &amp; Enterprise ProAdvisor</span></p>
   </div>
 </section>
 
-<section class="section" id="qbwp-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">All QuickBooks products</p>
-      <h2 class="section__heading">Deep reads on each product.</h2>
-    </header>
+<section class="sec reveal" id="qbwp-related">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">All QuickBooks products</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Deep reads on each product.</h2>
     {%- for n in related %}
-    <div class="stack-8">
+    <div style="margin-bottom:18px;">
       <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+      <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ n.body | safe }}</p>
     </div>
     {%- endfor %}
   </div>

@@ -1,10 +1,14 @@
 ---json
 {
-  "layout": "layouts/t-guide.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/app-stack/",
   "slug": "app-stack",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
+  "metaReviewed": "2026-06-18",
+  "sec": {
+    "aiH": "The small-business app stack, in five questions.",
+    "faqH": "What people ask about building an app stack."
+  },
   "title": "Your Small-Business App Stack: What Tools You Actually Need · TechBrot",
   "description": "What tools should my business actually use? An independent Certified QuickBooks ProAdvisor firm explains the small-business accounting app stack &mdash; core accounting, payments, payroll, expense/AP, ecommerce/POS, reporting &mdash; and why every connected app writes to your books, so the stack has to be designed and reconciled, not bolted on. Not Intuit. (877) 751-5575.",
   "breadcrumb": [
@@ -13,13 +17,17 @@
     { "name": "App Stack" }
   ],
   "hero": {
-    "eyebrow": "Advisory &middot; <span class=\"error-badge\">App stack</span>",
+    "eyebrow": "Advisory &middot; App stack",
     "heading": "Your small-business app stack: what tools you actually need.",
     "subheading": "&ldquo;What apps should my business use?&rdquo; is really a question about your books. Every tool you connect &mdash; payments, payroll, an expense app, a Shopify or Square store &mdash; writes data into your accounting file. Bolt on enough of them without a plan and you get duplicate income, mismatched deposits, and a reconciliation that won&rsquo;t tie. This page lays out the layers of a real small-business stack, how to design one around the books as your system of record, and when it&rsquo;s worth having a ProAdvisor map it. Independent firm, not affiliated with Intuit Inc.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
-      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting" },
+      { "label": "Speak to a ProAdvisor", "tel": true }
     ]
+  },
+  "byline": {
+    "name": "By the Certified QuickBooks ProAdvisor team",
+    "meta": "Reviewed by a Certified QuickBooks ProAdvisor &middot; Online &amp; Desktop certified"
   },
   "inBrief": {
     "text": "<strong>A small-business app stack</strong> is the connected set of software your business runs on &mdash; with your accounting system at the center as the single source of truth, and everything else (payments, payroll, expense and bill-pay tools, ecommerce or point-of-sale, reporting) feeding into it. The principle that makes a stack work or fail is simple: <em>every connected app writes to your books</em>. So the stack has to be designed around your accounting file as the system of record, with each app&rsquo;s data flow mapped and reconciled &mdash; not a pile of integrations switched on one at a time. Start from the books, add only apps you&rsquo;ll actually use, know exactly what each one posts, and avoid two apps syncing the same data two different ways.",
@@ -30,39 +38,35 @@
     "heading": "Have a ProAdvisor design the stack around your books.",
     "lede": "Whether you&rsquo;re choosing your first set of tools or untangling apps that fight each other in the books, start with a free file review so we can see what&rsquo;s actually posting where. From there, designing or cleaning up a stack is typically a $1,200&ndash;$3,000 fixed-fee scope, and a full cleanup runs $1,500&ndash;$15,000+ when duplicate syncs have already left the books behind. Independent ProAdvisor firm, written scope before any work begins.",
     "actions": [
-      { "label": "Book the discovery call", "href": "/contact/?intent=accounting", "class": "btn--primary" },
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
+      { "label": "Book the discovery call", "href": "/contact/?intent=accounting" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
     ]
   }
 }
 ---
+{#- ═══ APP-STACK (BASELINE). t-guide→t-prose. Disclosure (Sheet-7-style independence,
+    not honest-triage), byline + ai-summary + faq + final CTA rendered by t-prose
+    (byline/inBrief frontmatter, aiSummary/faq from .11tydata.js, sec.aiH/faqH).
+    Every baseline heading verbatim; old-kit → v2 (sec/ct/read--doc/idx/dc-card/
+    fix-steps/process). #app-stack-in-brief-text speakable preserved by layout TL;DR. ═══ -#}
 
-<section class="section section--compact" id="app-stack-disclosure">
-  <div class="container container--narrow">
-    <div class="disclosure">
-      <strong>This is an independent Certified QuickBooks ProAdvisor reference &mdash; not Intuit, and not QuickBooks&rsquo; official support.</strong> We help small businesses choose, connect, and reconcile the apps their books run on. If your question is really about an Intuit account, login, subscription, or billing &mdash; or about a specific app&rsquo;s own support &mdash; the vendor&rsquo;s own support is the right path: <a href="https://quickbooks.intuit.com/learn-support/" rel="noopener nofollow">Intuit support <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>. Any apps named below are examples of a category, mentioned neutrally &mdash; not endorsements, and no pricing is implied. QuickBooks and Intuit are registered trademarks of Intuit Inc.
-    </div>
-  </div>
-</section>
-
-<section class="section section--compact" id="app-stack-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; Online &amp; Desktop certified</p>
+{#- DISCLOSURE — independence note (not the honest-triage lead band). prose, sand-ruled. -#}
+<section class="sec reveal" id="app-stack-disclosure" style="padding-top:28px;padding-bottom:8px;">
+  <div class="ct read read--doc">
+    <div class="disclose">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 3l9 16H3z" stroke-linejoin="round"/><path d="M12 10v4M12 17.5v.3" stroke-linecap="round"/></svg>
+      <div class="disclose__body">
+        <p><strong>This is an independent Certified QuickBooks ProAdvisor reference &mdash; not Intuit, and not QuickBooks&rsquo; official support.</strong> We help small businesses choose, connect, and reconcile the apps their books run on. If your question is really about an Intuit account, login, subscription, or billing &mdash; or about a specific app&rsquo;s own support &mdash; the vendor&rsquo;s own support is the right path: <a href="https://quickbooks.intuit.com/learn-support/" rel="noopener nofollow">Intuit support &rarr;</a>. Any apps named below are examples of a category, mentioned neutrally &mdash; not endorsements, and no pricing is implied. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="app-stack-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">What an &ldquo;app stack&rdquo; actually is.</h2>
-    </header>
+{#- IN PLAIN TERMS — definition prose. -#}
+<section class="sec reveal" id="app-stack-definition" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">What an &ldquo;app stack&rdquo; actually is.</h2>
     <div class="prose">
       <p>An app stack is just the collection of software your business uses to run, connected so the pieces share data instead of being re-keyed by hand. At the center sits your accounting system &mdash; for most small businesses that&rsquo;s <code>QuickBooks</code> &mdash; and it acts as the system of record: the place where money in and money out is finally recorded. Around it you add tools for the jobs the accounting file doesn&rsquo;t do on its own: taking payments, running payroll, capturing expenses and paying bills, selling online or in person, and reporting on the result.</p>
       <p>The part people underestimate is that these aren&rsquo;t independent tools sitting side by side &mdash; they&rsquo;re plumbing. The moment you connect a payment processor, a payroll app, or an online store to your accounting file, that app starts <em>writing transactions into your books</em>. A well-designed stack means each app posts clean, predictable entries that reconcile to your bank. A bolted-on stack means two apps recording the same sale, deposits that don&rsquo;t match what hit the account, and income counted twice. The difference isn&rsquo;t the apps you pick &mdash; it&rsquo;s whether the stack was designed around the books or assembled at random.</p>
@@ -70,99 +74,66 @@
   </div>
 </section>
 
-<section class="section" id="app-stack-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">The small-business app stack, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="app-stack-layers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How a stack is built</p>
-      <h2 class="section__heading">The layers of a small-business accounting app stack.</h2>
-      <p class="section__lede">Most small-business stacks are built from these layers. You don&rsquo;t need all of them &mdash; you need the ones your business actually uses, each one feeding the accounting file cleanly. App names are examples of the category, mentioned neutrally.</p>
-    </header>
-    <div class="grid-2">
+{#- THE LAYERS — grid → dc-card grid-2. -#}
+<section class="sec reveal hub-rt--alt" id="app-stack-layers" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How a stack is built</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The layers of a small-business accounting app stack.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Most small-business stacks are built from these layers. You don&rsquo;t need all of them &mdash; you need the ones your business actually uses, each one feeding the accounting file cleanly. App names are examples of the category, mentioned neutrally.</p>
+    <div class="r-2">
       {%- for c in layers %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ c.rank }}</p>
-        <h3>{{ c.name | safe }}</h3>
-        <p class="prose">{{ c.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ c.rank }}</span><h3>{{ c.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="app-stack-build">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The method</p>
-      <h2 class="section__heading">How to build your app stack without creating a mess.</h2>
-      <p class="section__lede">Six steps, in order. The sequence matters: each one assumes the one before it. Skip straight to connecting apps and you build the mess this list is meant to prevent.</p>
-    </header>
-    <ol class="fix-steps">
+{#- THE METHOD — fix-steps (HowTo). -#}
+<section class="sec reveal" id="app-stack-build">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The method</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">How to build your app stack without creating a mess.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:66ch;">Six steps, in order. The sequence matters: each one assumes the one before it. Skip straight to connecting apps and you build the mess this list is meant to prevent.</p>
+    <div class="steps">
       {%- for s in buildSteps %}
-      <li>
-        <span class="n">{{ loop.index }}</span>
-        <div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
-      </li>
+      <div class="fixstep"><span class="fixstep__n{% if loop.last %} fixstep__n--done{% endif %}">{{ loop.index }}</span><div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section section--alt" id="app-stack-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When to call</p>
-      <h2 class="section__heading">When to get help designing the stack.</h2>
-    </header>
-    <div class="grid-3">
+{#- WHEN TO CALL — proSignals → dc-card grid-3. -#}
+<section class="sec reveal hub-rt--alt" id="app-stack-signals" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When to call</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">When to get help designing the stack.</h2>
+    <div class="r-3">
       {%- for p in proSignals %}
-      <div class="stack-8">
-        <h3>{{ p.name | safe }}</h3>
-        <p class="prose">{{ p.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ p.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ p.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="app-stack-breakout">
-  <div class="container container--narrow">
-    <div class="call-breakout">
-      <div>
-        <p class="call-breakout__title">Apps fighting in the books &mdash; or starting from scratch?</p>
-        <p class="call-breakout__sub">A Certified ProAdvisor reviews the file free, then designs the stack around your books and reconciles what&rsquo;s already there &mdash; designing or cleaning up a stack is typically a $1,200&ndash;$3,000 fixed-fee scope; cleanup runs $1,500&ndash;$15,000+ if duplicate syncs have put the books behind. Independent firm.</p>
-      </div>
-      <a class="btn btn--primary" href="/contact/?intent=accounting">Book the discovery call</a>
+{#- BREAKOUT — slim conversion seam (v2 breakout). -#}
+<section style="padding:16px 0 40px;" id="app-stack-breakout">
+  <div class="ct read read--doc">
+    <div class="breakout">
+      <div><p class="breakout__t">Apps fighting in the books &mdash; or starting from scratch?</p><p class="breakout__sub">A Certified ProAdvisor reviews the file free, then designs the stack around your books and reconciles what&rsquo;s already there &mdash; designing or cleaning up a stack is typically a $1,200&ndash;$3,000 fixed-fee scope; cleanup runs $1,500&ndash;$15,000+ if duplicate syncs have put the books behind. Independent firm.</p></div>
+      <a class="btn btn-cta" href="/contact/?intent=accounting" style="display:inline-flex;align-items:center;height:46px;padding:0 20px;border-radius:10px;font-size:14.5px;font-weight:600;flex:none;">Book the discovery call</a>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="app-stack-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Who designs it</p>
-      <h2 class="section__heading">A Certified ProAdvisor designs the stack around your books.</h2>
-    </header>
+{#- WHO DESIGNS IT — operator prose + trust-row. -#}
+<section class="sec reveal hub-rt--alt" id="app-stack-operator" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Who designs it</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">A Certified ProAdvisor designs the stack around your books.</h2>
     <div class="prose">
       <p>Picking apps is the easy part &mdash; any list will name the popular ones. The work that actually makes a stack hold together is everything underneath: deciding what each app is allowed to post, mapping its sync to the right accounts, turning off the duplicate paths so a sale isn&rsquo;t recorded twice, and reconciling the result against the bank until it ties. A Certified QuickBooks ProAdvisor with active Online and Desktop certifications does that against a written scope, with the accounting file as the system of record, and confirms each connection posts cleanly before closing. Independent firm &mdash; not Intuit, and not any app vendor&rsquo;s support; an Intuit account, login, or billing matter stays with Intuit, and a specific app&rsquo;s in-product support stays with its vendor.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in operatorSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -171,39 +142,15 @@
   </div>
 </section>
 
-<section class="section" id="app-stack-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Where this leads next</p>
-      <h2 class="section__heading">Once you know what the stack should be.</h2>
-    </header>
-    {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}"{% if n.rel %} rel="{{ n.rel }}"{% endif %}>{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
-    </div>
-    {%- endfor %}
-  </div>
-</section>
-
-<section class="section section--alt" id="app-stack-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">What people ask about building an app stack.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="app-stack-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="app-stack-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
+{#- WHERE THIS LEADS NEXT — related → stack of hub-card. -#}
+<section class="sec reveal" id="app-stack-related">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Where this leads next</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Once you know what the stack should be.</h2>
+    <div class="r-2">
+      {%- for n in related %}
+      <a class="dc-card hub-card" href="{{ n.href }}"{% if n.rel %} rel="{{ n.rel }}"{% endif %}><h3>{{ n.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ n.body | safe }}</p><span class="hub-card__go">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
-    <p class="meta-reviewed"><span>Published: 2026-06-18</span><span>Updated: 2026-06-18</span><span>Reviewed: 2026-06-18 &middot; Certified QuickBooks ProAdvisor</span></p>
   </div>
 </section>

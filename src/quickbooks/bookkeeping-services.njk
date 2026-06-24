@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/quickbooks/bookkeeping-services/",
   "slug": "qbbks",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
+  "sec": {
+    "aiH": "QuickBooks bookkeeping, in five questions.",
+    "faqH": "What people ask about QuickBooks bookkeeping."
+  },
   "title": "QuickBooks Bookkeeping Services: Certified ProAdvisor, In Your File · TechBrot",
   "description": "QuickBooks bookkeeping by a Certified ProAdvisor team working inside your own QuickBooks file (QBO or Desktop) &mdash; bank-feed categorization, statement-tied reconciliations, the monthly close, and QB-native reports. You keep ownership and full access. Monthly $400&ndash;$2,500+/mo. Independent firm, not affiliated with Intuit Inc.",
   "breadcrumb": [
@@ -23,6 +25,11 @@
       { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
     ]
   },
+  "byline": {
+    "name": "By the Certified QuickBooks ProAdvisor team",
+    "meta": "Reviewed by a QuickBooks ProAdvisor &middot; independent, no reseller incentive"
+  },
+  "metaReviewed": "2026-06-19",
   "inBrief": {
     "text": "<strong>QuickBooks bookkeeping services means a Certified ProAdvisor team keeps your books inside your own QuickBooks file</strong> &mdash; not exported into someone else&rsquo;s system. The work is QuickBooks-native: <strong>bank-feed-driven categorization</strong> against a clean chart of accounts, <strong>bank and credit-card reconciliations tied to the actual statement</strong>, Undeposited Funds matched and cleared so cash isn&rsquo;t overstated, a documented <strong>monthly close</strong>, and deliverables generated directly in QuickBooks &mdash; profit &amp; loss, balance sheet, and A/R and A/P aging &mdash; plus sales-tax liability tracked in the QuickBooks Sales Tax Center. The advantage is alignment: <strong>the bookkeeper is a ProAdvisor certified in the exact product your file runs on,</strong> so QBO-vs-Desktop differences, item mappings, and reconciliation drift are handled by someone who knows the software cold. You keep ownership and full access to your file the entire time. Pricing follows our standard monthly bookkeeping range, <strong>$400&ndash;$2,500+/month</strong> &mdash; an estimate, not a quote; the exact fixed fee is put in writing after a free discovery call and file review. We keep the books and coordinate with your CPA; we do not file income taxes, represent you before the IRS, or perform audit or assurance.",
     "source": "Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. The QuickBooks subscription is billed by Intuit separately; we earn no affiliate or referral commission on it."
@@ -39,41 +46,32 @@
 }
 ---
 
-<section class="section section--compact" id="qbbks-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a QuickBooks ProAdvisor &middot; independent, no reseller incentive</p>
-      </div>
-    </div>
-  </div>
-</section>
+{#- ═══ QuickBooks BOOKKEEPING SERVICES (BASELINE). t-mofu→t-prose. Every baseline
+    heading verbatim; #qbbks-in-brief-text (layout TL;DR) + #qbbks-ai-summary (layout
+    slot) speakable preserved. ai-summary + faq rendered by t-prose (sec.aiH/faqH). ═══ -#}
 
-<section class="section section--compact section--tier-guide" id="qbbks-credentials">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Certified by Intuit &middot; Online (L2), Desktop, Enterprise, Payroll</p>
-      <h2 class="section__heading">Certified in the software your books live in</h2>
-    </header>
-    <div class="stat-row">
+{#- CREDENTIALS — ProAdvisor credentials (.checklist). -#}
+<section class="sec reveal" id="qbbks-credentials">
+  <div class="ct read read--doc">
+    <p class="eyebrow" style="display:inline-flex;align-items:center;gap:12px;margin-bottom:14px;"><span class="rule-mark" aria-hidden="true"><span></span><span></span></span>Certified by Intuit &middot; Online (L2), Desktop, Enterprise, Payroll</p>
+    <h2 class="h2" style="margin-bottom:18px;">Certified in the software your books live in</h2>
+    <div class="trust-row" style="margin-bottom:22px;">
       {%- for s in credStats %}
-      <div><div class="stat__value">{{ s.value }}</div><div class="stat__label">{{ s.label }}</div></div>
+      <div class="trust-row__item"><p class="trust-row__value">{{ s.value }}</p><p class="trust-row__label">{{ s.label }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <ul class="checks-list">
+    <ul class="checklist">
       {%- for c in credentials %}<li>{{ c | safe }}</li>{%- endfor %}
     </ul>
   </div>
 </section>
 
-<section class="section section--alt" id="qbbks-tldr">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In one paragraph</p>
-      <h2 class="section__heading">QuickBooks bookkeeping, plainly.</h2>
-    </header>
+{#- TL;DR (body) — "In one paragraph". TWO distinct real paragraphs (not inBrief). -#}
+<section class="sec reveal hub-rt--alt" id="qbbks-tldr" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">QuickBooks bookkeeping, plainly.</h2>
     <div class="prose">
       <p>QuickBooks bookkeeping services means the day-to-day books are kept inside your own QuickBooks file by a Certified ProAdvisor, rather than reconstructed in a third-party tool and dropped on you as a report. The work is the standard bookkeeping cycle &mdash; categorize, reconcile, close, report &mdash; but executed natively in QuickBooks: transactions flow in through the bank feed and get categorized to a clean, non-bloated chart of accounts; every bank and credit-card account is reconciled to the actual statement, not just &ldquo;matched&rdquo; in the feed; Undeposited Funds is worked down so deposits tie out and cash isn&rsquo;t overstated; the period is formally closed; and the deliverables &mdash; profit &amp; loss, balance sheet, and A/R and A/P aging &mdash; come straight out of QuickBooks where you can drill into any number. Sales-tax liability is tracked in the QuickBooks Sales Tax Center so what you owe is visible, not guessed at.</p>
       <p>This page is the QuickBooks-keyword entry point. The platform-agnostic service decisions &mdash; what the recurring offer includes, whether cloud delivery fits, how the monthly cycle is structured &mdash; live in our accounting cluster, and we link you there rather than restating them: the <a href="/accounting/bookkeeping/">bookkeeping services hub</a>, the <a href="/accounting/online-bookkeeping/">online (cloud delivery) model</a>, and the canonical <a href="/accounting/bookkeeping/monthly-bookkeeping/">monthly bookkeeping</a> offer with its included deliverables and fixed-fee tiers. What this page owns is the QuickBooks-platform specifics &mdash; QBO versus Desktop, ProAdvisor certification, and working in your file. Pricing follows the same canonical monthly range, $400&ndash;$2,500+/month, an estimate confirmed as a fixed fee in writing after the free file review. We keep the books and hand off clean numbers to your CPA; we do not file income taxes, represent you before the IRS, or perform audit or assurance. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc.</p>
@@ -81,102 +79,67 @@
   </div>
 </section>
 
-<section class="section" id="qbbks-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">QuickBooks bookkeeping, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="qbbks-included">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What QuickBooks-native bookkeeping does</p>
-      <h2 class="section__heading">The QuickBooks work, done the way the software intends.</h2>
-      <p class="section__lede">The bookkeeping cycle is the same everywhere; what changes is whether it&rsquo;s executed correctly in QuickBooks. Six things a ProAdvisor handles inside your file &mdash; not in a spreadsheet alongside it.</p>
-    </header>
-    <div class="grid-3">
+{#- INCLUDED — what QuickBooks-native bookkeeping does → r-3 dc-card. -#}
+<section class="sec reveal" id="qbbks-included">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What QuickBooks-native bookkeeping does</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The QuickBooks work, done the way the software intends.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">The bookkeeping cycle is the same everywhere; what changes is whether it&rsquo;s executed correctly in QuickBooks. Six things a ProAdvisor handles inside your file &mdash; not in a spreadsheet alongside it.</p>
+    <div class="r-3">
       {%- for c in included %}
-      <div class="stack-8">
-        <h3>{{ c.name | safe }}</h3>
-        <p class="prose">{{ c.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ c.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbbks-edition">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">QBO vs Desktop</p>
-      <h2 class="section__heading">Bookkeeping differs by edition &mdash; honestly.</h2>
-      <p class="section__lede">QuickBooks Online and QuickBooks Desktop are different products, and the bookkeeping workflow isn&rsquo;t identical between them. A ProAdvisor certified in both works to each edition&rsquo;s strengths rather than pretending they&rsquo;re the same file.</p>
-    </header>
-    <div class="grid-3">
+{#- EDITIONS — QBO vs Desktop → r-3 dc-card. -#}
+<section class="sec reveal hub-rt--alt" id="qbbks-edition" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">QBO vs Desktop</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Bookkeeping differs by edition &mdash; honestly.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">QuickBooks Online and QuickBooks Desktop are different products, and the bookkeeping workflow isn&rsquo;t identical between them. A ProAdvisor certified in both works to each edition&rsquo;s strengths rather than pretending they&rsquo;re the same file.</p>
+    <div class="r-3">
       {%- for e in editions %}
-      <div class="stack-8">
-        <h3>{{ e.name | safe }}</h3>
-        <p class="prose">{{ e.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ e.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ e.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbbks-advantage">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The ProAdvisor advantage</p>
-      <h2 class="section__heading">Why a ProAdvisor doing QuickBooks books is different.</h2>
-      <p class="section__lede">A general bookkeeper can run a categorize-and-reconcile cycle in any tool. A Certified ProAdvisor doing it inside QuickBooks brings platform judgment the generic version can&rsquo;t.</p>
-    </header>
-    <div class="grid-3">
+{#- ADVANTAGE — the ProAdvisor advantage → r-3 dc-card. -#}
+<section class="sec reveal" id="qbbks-advantage">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The ProAdvisor advantage</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Why a ProAdvisor doing QuickBooks books is different.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">A general bookkeeper can run a categorize-and-reconcile cycle in any tool. A Certified ProAdvisor doing it inside QuickBooks brings platform judgment the generic version can&rsquo;t.</p>
+    <div class="r-3">
       {%- for a in advantage %}
-      <div class="stack-8">
-        <h3>{{ a.name | safe }}</h3>
-        <p class="prose">{{ a.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ a.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ a.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbbks-workflow">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How the monthly work runs</p>
-      <h2 class="section__heading">Inside your file, every month, in five steps.</h2>
-      <p class="section__lede">The recurring monthly cycle as it happens in your QuickBooks file. The structure is fixed so you always know what&rsquo;s done and when the numbers land &mdash; the full deliverable schedule is on the <a href="/accounting/bookkeeping/monthly-bookkeeping/">monthly bookkeeping</a> page.</p>
-    </header>
-    <div class="grid-3">
+{#- WORKFLOW — five steps inside your file → process-grid. -#}
+<section class="sec reveal hub-rt--alt" id="qbbks-workflow" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How the monthly work runs</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Inside your file, every month, in five steps.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">The recurring monthly cycle as it happens in your QuickBooks file. The structure is fixed so you always know what&rsquo;s done and when the numbers land &mdash; the full deliverable schedule is on the <a href="/accounting/bookkeeping/monthly-bookkeeping/">monthly bookkeeping</a> page.</p>
+    <div class="process-grid">
       {%- for w in workflow %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ w.num }}</p>
-        <h3>{{ w.name | safe }}</h3>
-        <p class="prose">{{ w.body | safe }}</p>
-      </div>
+      <div class="process-step"><div class="process-step__n">{{ w.num }}</div><h3>{{ w.name | safe }}</h3><p>{{ w.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbbks-pricing">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Pricing</p>
-      <h2 class="section__heading">One canonical range, one fixed fee in writing.</h2>
-    </header>
+{#- PRICING — prose block, TWO paragraphs (not cards). -#}
+<section class="sec reveal" id="qbbks-pricing">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Pricing</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">One canonical range, one fixed fee in writing.</h2>
     <div class="prose">
       <p>Monthly QuickBooks bookkeeping runs <strong>$400&ndash;$2,500+/month</strong>. That is a genuine range, not a teaser &mdash; where a specific business lands depends on transaction volume, the number of bank and credit-card accounts to reconcile, payroll, sales-tax obligations, A/R and A/P workload, and how clean the file is to start. It is an estimate, not a quote. After a free discovery call and file review, the <strong>exact fixed fee is put in writing</strong> before any work begins, and it doesn&rsquo;t move month to month unless the scope does. The full fixed-fee tier breakdown lives on the <a href="/accounting/bookkeeping/monthly-bookkeeping/">monthly bookkeeping</a> page; the same canonical figures apply here.</p>
       <p>Two honest notes on cost. First, the <strong>QuickBooks subscription is billed by Intuit, separately</strong> &mdash; it is not part of our fee, and as an independent firm we earn no commission on it, so we never push you to a pricier plan than the file needs. Second, if the file is materially behind or miscategorized, a one-time <a href="/quickbooks/cleanup/">cleanup</a> may be needed before recurring bookkeeping can run cleanly; cleanup is scoped separately and typically falls in the $1,500&ndash;$15,000+ range depending on the number of months and accounts to reconstruct. The free file review tells you which path you&rsquo;re on before you commit to anything.</p>
@@ -184,31 +147,29 @@
   </div>
 </section>
 
-<section class="section" id="qbbks-routing">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Your situation</p>
-      <h2 class="section__heading">Where are you with the books?</h2>
-    </header>
-    <div class="grid-3">
+{#- ROUTING — situation cards → r-3 hub-card. -#}
+<section class="sec reveal" id="qbbks-routing">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Your situation</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where are you with the books?</h2>
+    <div class="r-3">
       {%- for b in routing %}
-      <a class="buyer-card" href="{{ b.href }}"><p class="buyer-card__opener">{{ b.opener | safe }}</p><p class="buyer-card__body">{{ b.body | safe }}</p><span class="buyer-card__cta">{{ b.cta | safe }}</span></a>
+      <a class="dc-card hub-card" href="{{ b.href }}"><h3>{{ b.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ b.body | safe }}</p><span class="hub-card__go">{{ b.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbbks-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Who keeps the books</p>
-      <h2 class="section__heading">A ProAdvisor in your file. Independent. No commission.</h2>
-    </header>
+{#- OPERATOR — who keeps the books + trust-row. -#}
+<section class="sec reveal hub-rt--alt" id="qbbks-operator" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Who keeps the books</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">A ProAdvisor in your file. Independent. No commission.</h2>
     <div class="prose">
       <p>The value of QuickBooks bookkeeping is in the alignment between the bookkeeper and the platform. Every TechBrot engagement is delivered by a Certified ProAdvisor team holding active certifications across QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll &mdash; so whether your books live in QBO or in a Desktop company file, the person reconciling them knows that edition&rsquo;s mechanics, its reports, and its failure modes. The work happens <strong>inside the file you own</strong>: you keep your subscription, your login, and full real-time access, and you can revoke access or move providers and take everything with you. You are never locked out of your own books.</p>
       <p>We keep no reseller incentive &mdash; no Intuit affiliate revenue, no subscription commission &mdash; so the bookkeeping reflects what your file needs, not what keeps you on a more expensive plan. We keep the books and coordinate clean numbers to your CPA at tax time; we do not file income taxes, represent you before the IRS, or perform audit or assurance. You can <a href="/quickbooks/proadvisor-team/">meet the ProAdvisor team</a> or read our <a href="/trust/">trust &amp; methodology standards</a>. Independent firm &mdash; not affiliated with Intuit Inc.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in operatorSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -217,38 +178,15 @@
   </div>
 </section>
 
-<section class="section" id="qbbks-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Bookkeeping questions</p>
-      <h2 class="section__heading">What people ask about QuickBooks bookkeeping.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbbks-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="qbbks-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-    <p class="meta-reviewed"><span>Published: 2026-06-19</span><span>Updated: 2026-06-19</span><span>Reviewed: 2026-06-19 &middot; QuickBooks ProAdvisor</span></p>
-  </div>
-</section>
-
-<section class="section section--alt" id="qbbks-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related services</p>
-      <h2 class="section__heading">Where to go next.</h2>
-    </header>
+{#- RELATED — where to go next. -#}
+<section class="sec reveal" id="qbbks-related">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related services</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where to go next.</h2>
     {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+    <div class="prose" style="margin-bottom:18px;">
+      <h3 style="margin:0 0 4px;"><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+      <p style="margin:0;">{{ n.body | safe }}</p>
     </div>
     {%- endfor %}
   </div>

@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/quickbooks/proadvisor-team/",
   "slug": "qbpa",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
+  "sec": {
+    "aiH": "The ProAdvisor credential, in five questions.",
+    "faqH": "What people ask about ProAdvisor certification."
+  },
   "title": "The QuickBooks ProAdvisor Team at TechBrot · Certified Across QBO, Desktop, Enterprise & Payroll",
   "description": "TechBrot&rsquo;s QuickBooks ProAdvisor team holds active Intuit certifications across QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc. &mdash; delivering bookkeeping, setup, cleanup, migration, and ongoing QuickBooks expertise to U.S. small and mid-sized businesses.",
   "breadcrumb": [
@@ -23,10 +25,11 @@
       { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
     ]
   },
-  "inBrief": {
-    "text": "A <strong>Certified QuickBooks ProAdvisor</strong> is an accountant or bookkeeping professional who has passed Intuit&rsquo;s official certification exams and maintains active credentials through ongoing Intuit training. TechBrot&rsquo;s ProAdvisor team holds active certifications across all four core QuickBooks platforms: <strong>QuickBooks Online (Level 2), QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll.</strong> We deliver bookkeeping, <a href=\"/quickbooks/setup/\">setup</a>, <a href=\"/quickbooks/cleanup/\">cleanup</a>, <a href=\"/quickbooks/migration/\">migration</a>, <a href=\"/accounting/payroll-management/\">payroll management</a>, and <a href=\"/accounting/sales-tax-compliance/\">sales tax compliance</a> directly inside our clients&rsquo; QuickBooks files. <strong>Independent firm &mdash; not affiliated with Intuit Inc.</strong> Credentials are publicly verifiable on Intuit&rsquo;s ProAdvisor directory. The certification matters because it confirms the platform expertise that supports every other accounting decision.",
-    "source": "Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. No affiliate or referral commissions on any QuickBooks platform."
+  "byline": {
+    "name": "By the Certified QuickBooks ProAdvisor team",
+    "meta": "Reviewed by a QuickBooks Online (L2), Desktop, Enterprise &amp; Payroll ProAdvisor &middot; independent, no reseller incentive"
   },
+  "metaReviewed": "2026-06-14",
   "ctaBand": {
     "eyebrow": "Start here",
     "heading": "Book a discovery call with a Certified ProAdvisor.",
@@ -39,159 +42,113 @@
 }
 ---
 
-<section class="section section--compact" id="qbpa-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In brief</p>
-      <h2 class="section__heading">The ProAdvisor team, summarized.</h2>
-    </header>
-    <div class="prose">
-      <p id="qbpa-in-brief-text">{{ inBrief.text | safe }}</p>
-    </div>
+{#- ═══ QuickBooks PROADVISOR TEAM (BASELINE). t-mofu→t-prose. Every baseline heading
+    + paragraph verbatim; #qbpa-in-brief-text (layout TL;DR) is the ONLY frozen
+    speakable id, preserved by the layout. ai-summary + faq rendered by t-prose
+    (aiSummary/faq data + sec.aiH/faqH). Old byline-block folded into the layout.
+    Summary section authored in-body to keep BOTH baseline h2s (summary + ai-summary)
+    and the frozen #qbpa-in-brief-text speakable. ═══ -#}
+
+{#- SUMMARY — baseline h2 + frozen #qbpa-in-brief-text speakable (was inBrief). -#}
+<section class="sec reveal" id="qbpa-summary" style="padding-top:8px;">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In short</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">The ProAdvisor team, summarized.</h2>
+    <div class="tldr-prose"><p id="qbpa-in-brief-text">A <strong>Certified QuickBooks ProAdvisor</strong> is an accountant or bookkeeping professional who has passed Intuit&rsquo;s official certification exams and maintains active credentials through ongoing Intuit training. TechBrot&rsquo;s ProAdvisor team holds active certifications across all four core QuickBooks platforms: <strong>QuickBooks Online (Level 2), QuickBooks Desktop, QuickBooks Enterprise, and QuickBooks Payroll.</strong> We deliver bookkeeping, <a href="/quickbooks/setup/">setup</a>, <a href="/quickbooks/cleanup/">cleanup</a>, <a href="/quickbooks/migration/">migration</a>, <a href="/accounting/payroll-management/">payroll management</a>, and <a href="/accounting/sales-tax-compliance/">sales tax compliance</a> directly inside our clients&rsquo; QuickBooks files. <strong>Independent firm &mdash; not affiliated with Intuit Inc.</strong> Credentials are publicly verifiable on Intuit&rsquo;s ProAdvisor directory. The certification matters because it confirms the platform expertise that supports every other accounting decision.</p>
+    <p class="tldr__src">Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. No affiliate or referral commissions on any QuickBooks platform.</p></div>
   </div>
 </section>
 
-<section class="section section--compact" id="qbpa-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a QuickBooks Online (L2), Desktop, Enterprise &amp; Payroll ProAdvisor &middot; independent, no reseller incentive</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section--compact section--tier-guide" id="qbpa-credentials">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Certified by Intuit &middot; Online (L2), Desktop, Enterprise, Payroll</p>
-      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials.</h2>
-    </header>
-    <div class="stat-row">
+{#- CREDENTIALS — ProAdvisor credentials (.checklist). -#}
+<section class="sec reveal" id="qbpa-credentials">
+  <div class="ct read read--doc">
+    <p class="eyebrow" style="display:inline-flex;align-items:center;gap:12px;margin-bottom:14px;"><span class="rule-mark" aria-hidden="true"><span></span><span></span></span>Certified by Intuit &middot; Online (L2), Desktop, Enterprise, Payroll</p>
+    <h2 class="h2" style="margin-bottom:18px;">Certified QuickBooks ProAdvisor credentials.</h2>
+    <div class="trust-row" style="margin-bottom:22px;">
       {%- for s in credStats %}
-      <div><div class="stat__value">{{ s.value }}</div><div class="stat__label">{{ s.label }}</div></div>
+      <div class="trust-row__item"><p class="trust-row__value">{{ s.value }}</p><p class="trust-row__label">{{ s.label }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <ul class="checks-list">
+    <ul class="checklist">
       {%- for c in credentialsLede %}<li>{{ c | safe }}</li>{%- endfor %}
     </ul>
   </div>
 </section>
 
-<section class="section" id="qbpa-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">The ProAdvisor credential, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="qbpa-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The credential, defined</p>
-      <h2 class="section__heading">What a Certified QuickBooks ProAdvisor actually is.</h2>
-    </header>
+{#- DEFINITION — what a ProAdvisor actually is (prose). -#}
+<section class="sec reveal hub-rt--alt" id="qbpa-definition" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The credential, defined</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">What a Certified QuickBooks ProAdvisor actually is.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbpa-certifications">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The four core certifications</p>
-      <h2 class="section__heading">TechBrot&rsquo;s certifications, in detail.</h2>
-      <p class="section__lede">There are four core Intuit QuickBooks ProAdvisor certifications. TechBrot holds active credentials in all of them. Each covers a distinct platform and a distinct set of capabilities.</p>
-    </header>
-    <div class="grid-2">
+{#- CERTIFICATIONS — four core certifications → r-2 dc-card + certNote. -#}
+<section class="sec reveal" id="qbpa-certifications">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The four core certifications</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">TechBrot&rsquo;s certifications, in detail.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">There are four core Intuit QuickBooks ProAdvisor certifications. TechBrot holds active credentials in all of them. Each covers a distinct platform and a distinct set of capabilities.</p>
+    <div class="r-2">
       {%- for c in certifications %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ c.platform | safe }} &middot; {{ c.tier | safe }}</p>
-        <h3>{{ c.name | safe }}</h3>
-        <p class="prose">{{ c.body | safe }}</p>
-        <p><a href="{{ c.href }}">{{ c.cta | safe }}</a></p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ c.platform | safe }} &middot; {{ c.tier | safe }}</span><h3>{{ c.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p><p style="margin-top:10px;"><a href="{{ c.href }}">{{ c.cta | safe }}</a></p></div>
       {%- endfor %}
     </div>
-    <div class="prose"><p>{{ certNote | safe }}</p></div>
+    <div class="prose" style="margin-top:20px;max-width:72ch;"><p>{{ certNote | safe }}</p></div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbpa-operation">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How the practice operates</p>
-      <h2 class="section__heading">What ProAdvisor expertise actually looks like in practice.</h2>
-      <p class="section__lede">Certifications are the signal. The substance is how the practice runs every day. Below is what ProAdvisor expertise produces operationally.</p>
-    </header>
-    <div class="grid-3">
+{#- OPERATION — how the practice operates → r-3 dc-card. -#}
+<section class="sec reveal hub-rt--alt" id="qbpa-operation" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How the practice operates</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What ProAdvisor expertise actually looks like in practice.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Certifications are the signal. The substance is how the practice runs every day. Below is what ProAdvisor expertise produces operationally.</p>
+    <div class="r-3">
       {%- for n in operation %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ n.num }}</p>
-        <h3>{{ n.name | safe }}</h3>
-        <p class="prose">{{ n.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ n.num }}</span><h3>{{ n.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ n.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbpa-services">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Where ProAdvisor expertise applies</p>
-      <h2 class="section__heading">The services this credential anchors.</h2>
-      <p class="section__lede">ProAdvisor certification is the foundation. Below are the specific engagements where it shows up in client work.</p>
-    </header>
-    <div class="grid-3">
+{#- SERVICES — where ProAdvisor expertise applies → r-3 dc-card (whole card not a link). -#}
+<section class="sec reveal" id="qbpa-services">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Where ProAdvisor expertise applies</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The services this credential anchors.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">ProAdvisor certification is the foundation. Below are the specific engagements where it shows up in client work.</p>
+    <div class="r-3">
       {%- for s in services %}
-      <div class="stack-8">
-        <h3><a href="{{ s.href }}">{{ s.name | safe }}</a></h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3><a href="{{ s.href }}">{{ s.name | safe }}</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbpa-vs">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">ProAdvisor vs alternatives</p>
-      <h2 class="section__heading">How ProAdvisor compares to other options.</h2>
-      <p class="section__lede">Buyers comparing options usually weigh ProAdvisor against three alternatives. Here&rsquo;s the honest read on each.</p>
-    </header>
-    <div class="grid-2">
+{#- COMPARISON — ProAdvisor vs alternatives → r-2 dc-card. -#}
+<section class="sec reveal hub-rt--alt" id="qbpa-vs" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">ProAdvisor vs alternatives</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">How ProAdvisor compares to other options.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Buyers comparing options usually weigh ProAdvisor against three alternatives. Here&rsquo;s the honest read on each.</p>
+    <div class="r-2">
       {%- for v in comparison %}
-      <div class="stack-8">
-        <h3>{{ v.name | safe }}</h3>
-        <p class="section__eyebrow">{{ v.verdict | safe }}</p>
-        <p class="prose">{{ v.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ v.name | safe }}</h3><span class="eyebrow" style="display:block;margin:6px 0;">{{ v.verdict | safe }}</span><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ v.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbpa-why">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Why this matters for buyers</p>
-      <h2 class="section__heading">What the credential actually protects you from.</h2>
-    </header>
+{#- WHY — what the credential protects you from (prose + ol). -#}
+<section class="sec reveal" id="qbpa-why">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why this matters for buyers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">What the credential actually protects you from.</h2>
     <div class="prose">
       {%- for p in whyProse %}<p>{{ p | safe }}</p>{%- endfor %}
       <ol>
@@ -202,56 +159,39 @@
   </div>
 </section>
 
-<section class="section section--alt" id="qbpa-routing">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Your situation</p>
-      <h2 class="section__heading">Where are you with QuickBooks?</h2>
-    </header>
-    <div class="grid-3">
+{#- ROUTING — situation cards → r-3 hub-card. -#}
+<section class="sec reveal hub-rt--alt" id="qbpa-routing" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Your situation</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where are you with QuickBooks?</h2>
+    <div class="r-3">
       {%- for b in routing %}
-      <a class="buyer-card" href="{{ b.href }}"><p class="buyer-card__opener">{{ b.opener | safe }}</p><p class="buyer-card__body">{{ b.body | safe }}</p><span class="buyer-card__cta">{{ b.cta | safe }}</span></a>
+      <a class="dc-card hub-card" href="{{ b.href }}"><h3>{{ b.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ b.body | safe }}</p><span class="hub-card__go">{{ b.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbpa-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">ProAdvisor FAQ</p>
-      <h2 class="section__heading">What people ask about ProAdvisor certification.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbpa-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="qbpa-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
+{#- PAGE STANDARDS — maintained-by block (moved from old faq section). -#}
+<section class="sec reveal" id="qbpa-standards">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Maintained by TechBrot&rsquo;s certified ProAdvisor team.</h2>
+    <div class="prose">
+      <p>This page is maintained and reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc.</p>
     </div>
-    <div class="section__header">
-      <h2 class="section__heading">Maintained by TechBrot&rsquo;s certified ProAdvisor team.</h2>
-      <p class="prose">This page is maintained and reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc.</p>
-    </div>
-    <p class="meta-reviewed"><span>Published: 2026-06-14</span><span>Updated: 2026-06-14</span><span>Reviewed: 2026-06-14 &middot; QuickBooks Online (L2), Desktop, Enterprise &amp; Payroll ProAdvisor</span></p>
   </div>
 </section>
 
-<section class="section section--alt" id="qbpa-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Where this credential routes.</h2>
-    </header>
+{#- RELATED — where this credential routes. -#}
+<section class="sec reveal hub-rt--alt" id="qbpa-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where this credential routes.</h2>
     {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+    <div class="prose" style="margin-bottom:18px;">
+      <h3 style="margin:0 0 4px;"><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+      <p style="margin:0;">{{ n.body | safe }}</p>
     </div>
     {%- endfor %}
   </div>

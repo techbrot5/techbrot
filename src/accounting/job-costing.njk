@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/job-costing/",
   "slug": "acct-jobcost",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
+  "sec": {
+    "aiH": "Job costing, in five questions.",
+    "faqH": "Job costing questions."
+  },
   "title": "Job Costing Services in QuickBooks · TechBrot",
   "description": "Job costing setup and bookkeeping in QuickBooks by Certified ProAdvisors — track labor, materials, subcontractors, and overhead to each project, with WIP and job-profitability reporting that finally tells you which jobs make money.",
   "breadcrumb": [
@@ -39,190 +41,134 @@
 }
 ---
 
-<section class="section" id="acct-jobcost-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Job costing, plainly.</h2>
-    </header>
+<section class="sec reveal" id="acct-jobcost-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Job costing, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-jobcost-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Job costing, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <p class="ai-summary__question">{{ item.q | safe }}</p>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
+{#- AI-SUMMARY renders via the t-prose layout slot (sec.aiH); id #acct-jobcost-ai-summary is emitted by the layout and carries the frozen speakable. -#}
 
-<section class="section" id="acct-jobcost-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When job costing earns its keep</p>
-      <h2 class="section__heading">If any of these sound familiar, the company-wide P&amp;L is lying to you.</h2>
-      <p class="section__lede">Most operators reach for real job costing when the year-end number stops matching what their gut says about individual jobs.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="acct-jobcost-signals" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When job costing earns its keep</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">If any of these sound familiar, the company-wide P&amp;L is lying to you.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Most operators reach for real job costing when the year-end number stops matching what their gut says about individual jobs.</p>
+    <div class="r-3">
       {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
+      <div class="dc-card">
+        <h3>{{ s.opener | safe }}</h3>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-jobcost-delivers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s included</p>
-      <h2 class="section__heading">What job costing actually delivers.</h2>
-      <p class="section__lede">Six workstreams covering setup and ongoing bookkeeping &mdash; scoped to your industry and job volume.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="acct-jobcost-delivers">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What job costing actually delivers.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Six workstreams covering setup and ongoing bookkeeping &mdash; scoped to your industry and job volume.</p>
+    <div class="r-3">
       {%- for d in deliverables %}
-      <div class="stack-8">
-        <p class="num">{{ d.num }}</p>
+      <div class="dc-card">
+        <span class="eyebrow" style="display:block;margin-bottom:8px;">{{ d.num }}</span>
         <h3>{{ d.name | safe }}</h3>
-        <p class="prose">{{ d.body | safe }}</p>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ d.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-jobcost-who">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Who uses job costing</p>
-      <h2 class="section__heading">Built for project businesses &mdash; in all their flavors.</h2>
-      <p class="section__lede">Different industries call it different things. The discipline is the same.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="acct-jobcost-who" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Who uses job costing</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Built for project businesses &mdash; in all their flavors.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Different industries call it different things. The discipline is the same.</p>
+    <div class="r-3">
       {%- for a in audiences %}
-      <div class="stack-8">
-        <p class="num">{{ a.num }}</p>
+      <div class="dc-card">
+        <span class="eyebrow" style="display:block;margin-bottom:8px;">{{ a.num }}</span>
         <h3>{{ a.name | safe }}</h3>
-        <p class="prose">{{ a.body | safe }}</p>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ a.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-jobcost-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How engagements work</p>
-      <h2 class="section__heading">From setup to reports you actually use.</h2>
-      <p class="section__lede">Four phases, fixed fee, written scope. Once setup is done, job costing runs inside monthly bookkeeping.</p>
-    </header>
-    <ol class="process-diagram">
+<section class="sec reveal" id="acct-jobcost-process">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How engagements work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From setup to reports you actually use.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Four phases, fixed fee, written scope. Once setup is done, job costing runs inside monthly bookkeeping.</p>
+    <div class="process-grid">
       {%- for s in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
+      <div class="process-step"><div class="process-step__n">{{ s.num | safe }}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section" id="acct-jobcost-scope">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Honest scope</p>
-      <h2 class="section__heading">What we do, don&rsquo;t, and who we coordinate with.</h2>
-      <p class="section__lede">Operational accounting, drawn clearly &mdash; so the boundary with tax, audit, legal, and wage-rate work is never blurred.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="acct-jobcost-scope" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What we do, don&rsquo;t, and who we coordinate with.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Operational accounting, drawn clearly &mdash; so the boundary with tax, audit, legal, and wage-rate work is never blurred.</p>
+    <div class="r-3">
       {%- for s in scope %}
-      <div class="stack-8">
+      <div class="dc-card">
         <h3>{{ s.name | safe }}</h3>
-        <p class="prose">{{ s.body | safe }}</p>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-jobcost-bridge">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the books</p>
-      <h2 class="section__heading">Job-level numbers change how you bid &mdash; if anyone reads them.</h2>
-    </header>
+<section class="sec reveal" id="acct-jobcost-bridge">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Beyond the books</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Job-level numbers change how you bid &mdash; if anyone reads them.</h2>
     <div class="prose">
       {%- for p in bridgeBody %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-jobcost-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Job costing questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-jobcost-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acct-jobcost-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
+{#- FAQ renders via the t-prose layout slot (sec.faqH = "Job costing questions."). -#}
 
-<section class="section section--alt" id="acct-jobcost-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="acct-jobcost-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot delivers job-costing setup and bookkeeping. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on cost-code structure, labor and burden allocation, WIP method, change-order handling, and the boundary with construction-law, surety, and payroll-law work. Where our approach or scope changes, this page is updated. Job costing is delivered inside QuickBooks setup or monthly bookkeeping and coordinated with your CPA and counsel for licensed work.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in reviewSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <p class="in-brief__source">Page last reviewed: May 2026.</p>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:14px;">Page last reviewed: May 2026.</p>
   </div>
 </section>
 
-<section class="section" id="acct-jobcost-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services.</h2>
-    </header>
+<section class="sec reveal" id="acct-jobcost-related">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related services.</h2>
     {%- for n in related %}
-    <div class="stack-8">
+    <div style="margin-bottom:18px;">
       <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+      <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ n.body | safe }}</p>
     </div>
     {%- endfor %}
   </div>

@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/services/controller-services/",
   "slug": "acct-controller",
-  "tierClass": "section--tier-guide",
+  "sec": {
+    "aiH": "Controller services, in five questions.",
+    "faqH": "Controller services questions."
+  },
   "bodyClass": "page--mofu",
-  "callBar": true,
   "title": "Outsourced Controller Services &middot; TechBrot",
   "description": "Outsourced controller services by Certified ProAdvisors — close management, financial statement oversight, internal controls, and reporting accuracy that sits above bookkeeping and below a CFO. Fixed monthly retainer.",
   "breadcrumb": [
@@ -40,194 +42,138 @@
 }
 ---
 
-<section class="section" id="acct-controller-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Controller services, plainly.</h2>
-    </header>
+{#- ═══ BODY → v2 (t-mofu→t-prose). Hero/TL;DR(#acct-controller-in-brief-text speakable)/
+    ai-summary(sec.aiH)/faq(sec.faqH)/CTA are layout-owned. Every baseline heading
+    verbatim; content verbatim. Sand bands alternate via hub-rt--alt. ═══ -#}
+
+{#- DEFINITION → prose -#}
+<section class="sec reveal" id="acct-controller-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Controller services, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-controller-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Controller services, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <p class="ai-summary__question">{{ item.q | safe }}</p>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="acct-controller-ladder">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Where the controller sits</p>
-      <h2 class="section__heading">Bookkeeper, controller, CFO &mdash; three roles, one ladder.</h2>
-      <p class="section__lede">The roles aren&rsquo;t interchangeable, and skipping the middle one is the most common gap in a growth-stage finance function.</p>
-    </header>
-    <div class="grid-3">
+{#- LADDER → r-3 dc-card with num (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-controller-ladder" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Where the controller sits</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Bookkeeper, controller, CFO &mdash; three roles, one ladder.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">The roles aren&rsquo;t interchangeable, and skipping the middle one is the most common gap in a growth-stage finance function.</p>
+    <div class="r-3">
       {%- for r in ladder %}
-      <div class="stack-8">
-        <p class="num">{{ r.num }}</p>
-        <h3>{{ r.name | safe }}</h3>
-        <p class="prose">{{ r.body | safe }}</p>
-      </div>
+      <div class="dc-card"><p class="num" style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--color-accent);margin:0 0 4px;">{{ r.num }}</p><h3>{{ r.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ r.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-controller-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When controller oversight earns its keep</p>
-      <h2 class="section__heading">If any of these sound familiar, the answer is yes.</h2>
-      <p class="section__lede">Most owners reach for a controller when the bookkeeping is happening but no one is accountable for whether it&rsquo;s actually right.</p>
-    </header>
-    <div class="grid-3">
+{#- SIGNALS → r-3 dc-card -#}
+<section class="sec reveal" id="acct-controller-signals">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When controller oversight earns its keep</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">If any of these sound familiar, the answer is yes.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Most owners reach for a controller when the bookkeeping is happening but no one is accountable for whether it&rsquo;s actually right.</p>
+    <div class="r-3">
       {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ s.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-controller-delivers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s included</p>
-      <h2 class="section__heading">What controller services actually deliver.</h2>
-      <p class="section__lede">Oversight, accuracy, and accountability &mdash; scoped to the size and complexity of your accounting function.</p>
-    </header>
-    <div class="grid-3">
+{#- DELIVERS → r-3 dc-card with num (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-controller-delivers" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What controller services actually deliver.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Oversight, accuracy, and accountability &mdash; scoped to the size and complexity of your accounting function.</p>
+    <div class="r-3">
       {%- for d in deliverables %}
-      <div class="stack-8">
-        <p class="num">{{ d.num }}</p>
-        <h3>{{ d.name | safe }}</h3>
-        <p class="prose">{{ d.body | safe }}</p>
-      </div>
+      <div class="dc-card"><p class="num" style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--color-accent);margin:0 0 4px;">{{ d.num }}</p><h3>{{ d.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ d.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-controller-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How engagements work</p>
-      <h2 class="section__heading">From assessment to owned accountability.</h2>
-      <p class="section__lede">Four phases, fixed monthly retainer, written scope &mdash; built on books that are accurate first.</p>
-    </header>
-    <ol class="process-diagram">
+{#- PROCESS → process-grid -#}
+<section class="sec reveal" id="acct-controller-process">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How engagements work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From assessment to owned accountability.</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:70ch;">Four phases, fixed monthly retainer, written scope &mdash; built on books that are accurate first.</p>
+    <div class="process-grid">
       {%- for s in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
-      {%- endfor %}
-    </ol>
-  </div>
-</section>
-
-<section class="section" id="acct-controller-scope">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Honest scope</p>
-      <h2 class="section__heading">What a controller is, isn&rsquo;t, and coordinates with.</h2>
-    </header>
-    <div class="grid-3">
-      {%- for s in scope %}
-      <div class="stack-8">
-        <h3>{{ s.name | safe }}</h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ s.num | upper }}{% if loop.last %} &check;{% endif %}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-controller-bridge">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Controller and CFO</p>
-      <h2 class="section__heading">Accurate books are what make strategy possible.</h2>
-    </header>
+{#- SCOPE → r-3 dc-card (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-controller-scope" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">What a controller is, isn&rsquo;t, and coordinates with.</h2>
+    <div class="r-3">
+      {%- for s in scope %}
+      <div class="dc-card"><h3>{{ s.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- BRIDGE → prose -#}
+<section class="sec reveal" id="acct-controller-bridge">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Controller and CFO</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Accurate books are what make strategy possible.</h2>
     <div class="prose">
       <p>The controller and the CFO are different jobs that depend on each other. A CFO building a forecast, a board package, or a fundraising model on books no one has verified is building on sand &mdash; which is exactly why a fractional CFO&rsquo;s first move on a new engagement is to assess the accounting underneath. A controller is the role that removes that problem: the numbers are right, on time, every month, before the CFO ever opens them.</p>
-      <p>Many businesses run both &mdash; controller for accuracy and oversight, <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">fractional CFO</a> for strategy &mdash; and where TechBrot delivers the bookkeeping, controller, and CFO layers together, the whole finance stack runs as one system instead of three vendors handing off to each other. As automation handles the routine recording, the controller&rsquo;s accountability and the CFO&rsquo;s judgment are where the value concentrates. <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">Explore fractional CFO <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
+      <p>Many businesses run both &mdash; controller for accuracy and oversight, <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">fractional CFO</a> for strategy &mdash; and where TechBrot delivers the bookkeeping, controller, and CFO layers together, the whole finance stack runs as one system instead of three vendors handing off to each other. As automation handles the routine recording, the controller&rsquo;s accountability and the CFO&rsquo;s judgment are where the value concentrates. <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">Explore fractional CFO <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-controller-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Controller services questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-controller-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acct-controller-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
+{#- FAQ-EXTRA → trailing baseline prose block (supervise anchor preserved) -#}
+<section class="sec reveal" id="acct-controller-faq-extra">
+  <div class="ct read read--doc">
     <div class="prose" id="acct-controller-supervise">
       <p><strong>Can the controller supervise our existing bookkeeper?</strong> Yes. Controller services can supervise an internal bookkeeper, a third-party bookkeeping vendor, TechBrot&rsquo;s own bookkeeping team, or a combination. The controller&rsquo;s job is oversight and accountability &mdash; reviewing and directing the recording work, not necessarily doing all of it. Where TechBrot also provides the bookkeeping underneath, the controller is supervising a function we operate end to end, which removes the handoff friction entirely.</p>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-controller-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+{#- REVIEW → prose + trust-row (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-controller-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot delivers outsourced controller services. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on close management, internal-control design, reporting oversight, and the boundaries with bookkeeping, CFO, and licensed CPA work. Where our approach or scope changes, this page is updated. Controller services are delivered on a fixed monthly retainer and coordinated with your CPA for tax filing and any formal CPA engagement.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in reviewSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <p class="in-brief__source">Page last reviewed: May 2026.</p>
+    <p class="meta-reviewed" style="margin-top:18px;"><span>Page last reviewed: May 2026.</span></p>
   </div>
 </section>
 
-<section class="section" id="acct-controller-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services.</h2>
-    </header>
-    {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+{#- RELATED → r-2 dc-card hub-card -#}
+<section class="sec reveal" id="acct-controller-related">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related services.</h2>
+    <div class="r-2">
+      {%- for n in related %}
+      <a class="dc-card hub-card" href="{{ n.href }}"><h3>{{ n.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ n.body | safe }}</p><span class="hub-card__go">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      {%- endfor %}
     </div>
-    {%- endfor %}
   </div>
 </section>

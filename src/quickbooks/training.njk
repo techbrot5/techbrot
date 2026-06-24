@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/quickbooks/training/",
   "slug": "qbtrain",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
+  "sec": {
+    "aiH": "QuickBooks training, in five questions.",
+    "faqH": "What people ask about QuickBooks training."
+  },
   "title": "QuickBooks Training: ProAdvisor-Led Coaching for You &amp; Your Team · TechBrot",
   "description": "ProAdvisor-led QuickBooks training &mdash; teaching you and your staff to use QuickBooks Online, Desktop, or Enterprise well: bank feeds, reconciling, reports, payroll, the monthly routine, and the mistakes that create cleanup later. One-on-one or team, delivered remotely, built around your own file. Scoped and quoted in writing after a free discovery call. Independent firm, not affiliated with Intuit Inc.",
   "breadcrumb": [
@@ -23,6 +25,11 @@
       { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
     ]
   },
+  "byline": {
+    "name": "By the Certified QuickBooks ProAdvisor team",
+    "meta": "Reviewed by a QuickBooks ProAdvisor &middot; independent, no reseller incentive"
+  },
+  "metaReviewed": "2026-06-19",
   "inBrief": {
     "text": "<strong>QuickBooks training is ProAdvisor-led coaching that teaches you or your staff to use QuickBooks well</strong> &mdash; it is software instruction, not advisory judgment on how the file should be configured (that&rsquo;s <a href=\"/quickbooks/consulting/\">QuickBooks consulting</a>) and not done-for-you work. A Certified ProAdvisor teaches the skills that keep a file clean: <strong>navigating the interface, entering invoices, bills, and payments correctly, setting up and trusting bank feeds and rules, reconciling every account every month, running and reading the core reports</strong> (Profit &amp; Loss, Balance Sheet, A/R and A/P aging), <strong>running payroll, and following a repeatable monthly close routine.</strong> It covers QuickBooks Online, Desktop, and Enterprise; sessions are one-on-one or for a team, delivered remotely, and built around your own company file when appropriate so you&rsquo;re learning on the data you actually use. Training is scoped to what you need and quoted in writing after a free discovery call &mdash; the firm bills fixed fees, never by the hour. It coordinates with your CPA on tax matters; it does not include tax filing or IRS representation.",
     "source": "Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc., not an Intuit-authorized training partner, and not the issuer of ProAdvisor certification (Intuit issues it; our team holds it). No affiliate or referral commissions on QuickBooks subscriptions."
@@ -39,41 +46,32 @@
 }
 ---
 
-<section class="section section--compact" id="qbtrain-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a QuickBooks ProAdvisor &middot; independent, no reseller incentive</p>
-      </div>
-    </div>
-  </div>
-</section>
+{#- ═══ QuickBooks TRAINING (BASELINE). t-mofu→t-prose. Every baseline heading
+    verbatim; #qbtrain-in-brief-text (layout TL;DR) + #qbtrain-ai-summary (layout slot)
+    speakable preserved. ai-summary + faq rendered by t-prose (sec.aiH/faqH). ═══ -#}
 
-<section class="section section--compact section--tier-guide" id="qbtrain-credentials">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Certified by Intuit &middot; Online (L2), Desktop, Enterprise, Payroll</p>
-      <h2 class="section__heading">Who teaches the training</h2>
-    </header>
-    <div class="stat-row">
+{#- CREDENTIALS — who teaches the training (.checklist). -#}
+<section class="sec reveal" id="qbtrain-credentials">
+  <div class="ct read read--doc">
+    <p class="eyebrow" style="display:inline-flex;align-items:center;gap:12px;margin-bottom:14px;"><span class="rule-mark" aria-hidden="true"><span></span><span></span></span>Certified by Intuit &middot; Online (L2), Desktop, Enterprise, Payroll</p>
+    <h2 class="h2" style="margin-bottom:18px;">Who teaches the training</h2>
+    <div class="trust-row" style="margin-bottom:22px;">
       {%- for s in credStats %}
-      <div><div class="stat__value">{{ s.value }}</div><div class="stat__label">{{ s.label }}</div></div>
+      <div class="trust-row__item"><p class="trust-row__value">{{ s.value }}</p><p class="trust-row__label">{{ s.label }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <ul class="checks-list">
+    <ul class="checklist">
       {%- for c in credentials %}<li>{{ c | safe }}</li>{%- endfor %}
     </ul>
   </div>
 </section>
 
-<section class="section section--alt" id="qbtrain-tldr">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In one paragraph</p>
-      <h2 class="section__heading">QuickBooks training, plainly.</h2>
-    </header>
+{#- TL;DR (body) — "In one paragraph". Distinct prose (two real paragraphs). -#}
+<section class="sec reveal hub-rt--alt" id="qbtrain-tldr" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">QuickBooks training, plainly.</h2>
     <div class="prose">
       <p>QuickBooks training is ProAdvisor-led coaching that teaches you or your staff to <em>use</em> QuickBooks well. It is software instruction &mdash; how to navigate the interface, enter invoices, bills, and payments correctly, set up and trust bank feeds and rules, reconcile every account every month, run and read the core financial reports, run payroll, and follow a repeatable monthly routine that doesn&rsquo;t create month-end surprises. The point of training is competence: a team that records transactions the right way the first time produces a file that stays clean, which is far cheaper than fixing the same mistakes in a <a href="/quickbooks/cleanup/">cleanup</a> later. Training covers QuickBooks Online, Desktop, and Enterprise; sessions are one-on-one or for a team, delivered remotely, and &mdash; when it fits &mdash; built around your own company file so you&rsquo;re learning on the data you actually use rather than a generic sample company.</p>
       <p>Training is not the same as consulting. <a href="/quickbooks/consulting/">QuickBooks consulting</a> is expert advisory judgment on how the file should be <em>configured</em> &mdash; whether the chart of accounts, item mappings, integrations, and reporting structure are right for the business. Training teaches your team to operate the file you have; consulting decides what the file should be. For free, self-serve answers to specific how-to and error questions, see the <a href="/quickbooks/help/">QuickBooks help library</a>; if you need the file set up correctly in the first place, see <a href="/quickbooks/setup/">QuickBooks setup</a> &mdash; training often follows setup so the team can run what was built. Training is scoped to what you need and quoted in writing after a free discovery call; the firm bills fixed fees, never by the hour. It coordinates with your CPA on tax matters; it does not include tax filing or IRS representation. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc., and not an Intuit-authorized training partner.</p>
@@ -81,153 +79,112 @@
   </div>
 </section>
 
-<section class="section" id="qbtrain-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">QuickBooks training, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="qbtrain-mistakes">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Why training pays for itself</p>
-      <h2 class="section__heading">The habits that quietly turn into cleanup.</h2>
-      <p class="section__lede">Almost every messy QuickBooks file traces back to a handful of teachable habits. Training prevents these at the source &mdash; which is far cheaper than paying to undo them later.</p>
-    </header>
-    <div class="grid-3">
+{#- MISTAKES — habits that become cleanup → r-3 dc-card. -#}
+<section class="sec reveal" id="qbtrain-mistakes">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why training pays for itself</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The habits that quietly turn into cleanup.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Almost every messy QuickBooks file traces back to a handful of teachable habits. Training prevents these at the source &mdash; which is far cheaper than paying to undo them later.</p>
+    <div class="r-3">
       {%- for m in mistakes %}
-      <div class="stack-8">
-        <h3>{{ m.name | safe }}</h3>
-        <p class="prose">{{ m.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ m.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ m.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbtrain-covers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What the training covers</p>
-      <h2 class="section__heading">Six skill areas, taught on your own file.</h2>
-      <p class="section__lede">The training plan is scoped to where you and your team actually need it. The six areas below cover the skills that keep a QuickBooks file clean; the mix depends on who&rsquo;s being trained and which product you run.</p>
-    </header>
-    <div class="grid-3">
+{#- COVERS — six skill areas → r-3 dc-card. -#}
+<section class="sec reveal hub-rt--alt" id="qbtrain-covers" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What the training covers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Six skill areas, taught on your own file.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">The training plan is scoped to where you and your team actually need it. The six areas below cover the skills that keep a QuickBooks file clean; the mix depends on who&rsquo;s being trained and which product you run.</p>
+    <div class="r-3">
       {%- for c in covers %}
-      <div class="stack-8">
-        <h3>{{ c.name | safe }}</h3>
-        <p class="prose">{{ c.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ c.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbtrain-products">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Online, Desktop, Enterprise</p>
-      <h2 class="section__heading">Training is product-specific &mdash; because the products are different.</h2>
-      <p class="section__lede">QuickBooks Online and QuickBooks Desktop are not the same software with a different login &mdash; the navigation, the bank-feed model, and the available features differ enough that generic training leaves gaps. Training is taught against the product you actually run.</p>
-    </header>
-    <div class="grid-3">
+{#- PRODUCTS — Online, Desktop, Enterprise → r-3 dc-card. -#}
+<section class="sec reveal" id="qbtrain-products">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Online, Desktop, Enterprise</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Training is product-specific &mdash; because the products are different.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">QuickBooks Online and QuickBooks Desktop are not the same software with a different login &mdash; the navigation, the bank-feed model, and the available features differ enough that generic training leaves gaps. Training is taught against the product you actually run.</p>
+    <div class="r-3">
       {%- for p in products %}
-      <div class="stack-8">
-        <h3>{{ p.name | safe }}</h3>
-        <p class="prose">{{ p.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ p.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ p.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbtrain-how">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">How a training engagement works</p>
-      <h2 class="section__heading">From discovery call to confident team.</h2>
-      <p class="section__lede">Training is scoped before it starts so the sessions target what you actually need &mdash; not a fixed curriculum read off a slide deck.</p>
-    </header>
-    <div class="stack-8">
+{#- HOW — the ONE numbered system → process-grid. -#}
+<section class="sec reveal hub-rt--alt" id="qbtrain-how" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How a training engagement works</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From discovery call to confident team.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Training is scoped before it starts so the sessions target what you actually need &mdash; not a fixed curriculum read off a slide deck.</p>
+    <div class="process-grid">
       {%- for step in how %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ step.num }}</p>
-        <h3>{{ step.name | safe }}</h3>
-        <p class="prose">{{ step.body | safe }}</p>
-      </div>
+      <div class="process-step"><div class="process-step__n">{{ step.num }}</div><h3>{{ step.name | safe }}</h3><p>{{ step.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbtrain-pricing">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Pricing</p>
-      <h2 class="section__heading">Scoped to what you need, quoted in writing.</h2>
-      <p class="section__lede">Training is not a fixed package with a sticker price, because needs vary enormously &mdash; one person learning bank feeds is a different engagement from a five-person team learning the full monthly routine. We don&rsquo;t publish a per-hour or per-session rate we can&rsquo;t stand behind for your situation. Here is exactly how pricing works.</p>
-    </header>
-    <ul class="checks-list">
+{#- PRICING — scoped, quoted in writing → .checklist (no priced tiers). -#}
+<section class="sec reveal" id="qbtrain-pricing">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Pricing</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Scoped to what you need, quoted in writing.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Training is not a fixed package with a sticker price, because needs vary enormously &mdash; one person learning bank feeds is a different engagement from a five-person team learning the full monthly routine. We don&rsquo;t publish a per-hour or per-session rate we can&rsquo;t stand behind for your situation. Here is exactly how pricing works.</p>
+    <ul class="checklist">
       {%- for li in pricing %}<li>{{ li | safe }}</li>{%- endfor %}
     </ul>
-    <p class="section__lede">The discovery call is free and carries no obligation. You leave it with a written scope and quote; if training isn&rsquo;t the right fit, we&rsquo;ll point you to the engagement that is.</p>
+    <p class="prose" style="font-size:14.5px;color:var(--color-ink-mute);margin-top:20px;max-width:72ch;">The discovery call is free and carries no obligation. You leave it with a written scope and quote; if training isn&rsquo;t the right fit, we&rsquo;ll point you to the engagement that is.</p>
   </div>
 </section>
 
-<section class="section" id="qbtrain-versus">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Is training the right engagement?</p>
-      <h2 class="section__heading">Training vs the other QuickBooks engagements.</h2>
-      <p class="section__lede">Training is one of several QuickBooks engagement types. Where another fits your situation better, the comparison below points to it &mdash; we hold no reseller incentive in any direction.</p>
-    </header>
-    <div class="grid-3">
+{#- VERSUS — training vs other QB engagements → r-3 dc-card. -#}
+<section class="sec reveal hub-rt--alt" id="qbtrain-versus" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Is training the right engagement?</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Training vs the other QuickBooks engagements.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Training is one of several QuickBooks engagement types. Where another fits your situation better, the comparison below points to it &mdash; we hold no reseller incentive in any direction.</p>
+    <div class="r-3">
       {%- for r in vsTable %}
-      <div class="stack-8">
-        <h3>{{ r.cap | safe }}</h3>
-        <p class="prose">{{ r.other | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ r.cap | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ r.other | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbtrain-routing">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Your situation</p>
-      <h2 class="section__heading">Who&rsquo;s being trained, and on what?</h2>
-    </header>
-    <div class="grid-3">
+{#- ROUTING — situation cards → r-3 hub-card. -#}
+<section class="sec reveal" id="qbtrain-routing">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Your situation</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Who&rsquo;s being trained, and on what?</h2>
+    <div class="r-3">
       {%- for b in routing %}
-      <a class="buyer-card" href="{{ b.href }}"><p class="buyer-card__opener">{{ b.opener | safe }}</p><p class="buyer-card__body">{{ b.body | safe }}</p><span class="buyer-card__cta">{{ b.cta | safe }}</span></a>
+      <a class="dc-card hub-card" href="{{ b.href }}"><h3>{{ b.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ b.body | safe }}</p><span class="hub-card__go">{{ b.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbtrain-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Who delivers the training</p>
-      <h2 class="section__heading">Certified across the full product line. Independent. No commission.</h2>
-    </header>
+{#- OPERATOR — who delivers + trust-row. -#}
+<section class="sec reveal hub-rt--alt" id="qbtrain-operator" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Who delivers the training</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Certified across the full product line. Independent. No commission.</h2>
     <div class="prose">
       <p>QuickBooks training is only as good as the depth of platform knowledge behind it. Every TechBrot training engagement is delivered by a ProAdvisor holding active certifications across QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll &mdash; so the instruction is accurate whether your team is on QBO, Desktop, or Enterprise, and whether the session covers bank feeds, reconciliation, reporting, or a payroll run. Intuit issues those certifications; our team holds them. We are an independent firm &mdash; not affiliated with Intuit Inc., not an Intuit-authorized training partner, and not the issuer of the ProAdvisor credential.</p>
       <p>We earn nothing from your QuickBooks subscription &mdash; no Intuit affiliate revenue, no commissions &mdash; so the training reflects how to use the product you have well, not how to upsell you onto a more expensive plan. You can <a href="/quickbooks/proadvisor-team/">meet the ProAdvisor team</a> or read our <a href="/trust/">trust &amp; methodology standards</a>. Independent firm &mdash; not affiliated with Intuit Inc.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in operatorSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -236,38 +193,15 @@
   </div>
 </section>
 
-<section class="section section--alt" id="qbtrain-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Training questions</p>
-      <h2 class="section__heading">What people ask about QuickBooks training.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbtrain-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="qbtrain-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-    <p class="meta-reviewed"><span>Published: 2026-06-19</span><span>Updated: 2026-06-19</span><span>Reviewed: 2026-06-19 &middot; QuickBooks ProAdvisor</span></p>
-  </div>
-</section>
-
-<section class="section" id="qbtrain-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related services</p>
-      <h2 class="section__heading">Other QuickBooks engagements.</h2>
-    </header>
+{#- RELATED — other QB engagements. -#}
+<section class="sec reveal" id="qbtrain-related">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related services</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Other QuickBooks engagements.</h2>
     {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+    <div class="prose" style="margin-bottom:18px;">
+      <h3 style="margin:0 0 4px;"><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+      <p style="margin:0;">{{ n.body | safe }}</p>
     </div>
     {%- endfor %}
   </div>

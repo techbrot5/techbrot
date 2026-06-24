@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/chart-of-accounts-setup/",
   "slug": "acct-coa",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
+  "sec": {
+    "aiH": "Chart of accounts, in five questions.",
+    "faqH": "Chart of accounts questions."
+  },
   "title": "Chart of Accounts Setup for QuickBooks · TechBrot",
   "description": "Chart of accounts setup and restructure by Certified QuickBooks ProAdvisors — industry-appropriate account structure, parent-and-sub design, class and location tracking, built so your books answer the questions your business actually asks.",
   "breadcrumb": [
@@ -39,133 +41,84 @@
 }
 ---
 
-<section class="section" id="acct-coa-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Chart of accounts, plainly.</h2>
-    </header>
+<section class="sec reveal" id="acct-coa-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Chart of accounts, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-coa-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Chart of accounts, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <p class="ai-summary__question">{{ item.q | safe }}</p>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="acct-coa-anatomy">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The anatomy</p>
-      <h2 class="section__heading">What lives in a chart of accounts.</h2>
-      <p class="section__lede">Five account types, two reporting dimensions, one structure that makes the books work.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="acct-coa-anatomy" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The anatomy</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What lives in a chart of accounts.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Five account types, two reporting dimensions, one structure that makes the books work.</p>
+    <div class="r-3">
       {%- for a in anatomy %}
-      <div class="stack-8">
-        <p class="num">{{ a.num }}</p>
-        <h3>{{ a.name | safe }}</h3>
-        <p class="prose">{{ a.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ a.num }}</span><h3>{{ a.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ a.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-coa-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When restructure earns its keep</p>
-      <h2 class="section__heading">If any of these sound familiar, the structure is fighting you.</h2>
-      <p class="section__lede">Most owners reach for a chart of accounts redesign when reports stop answering the questions leadership asks.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="acct-coa-signals">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When restructure earns its keep</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">If any of these sound familiar, the structure is fighting you.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Most owners reach for a chart of accounts redesign when reports stop answering the questions leadership asks.</p>
+    <div class="r-3">
       {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ s.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-coa-delivers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s included</p>
-      <h2 class="section__heading">What chart of accounts setup actually delivers.</h2>
-      <p class="section__lede">Either a clean setup for a new file or a structured restructure for an existing one &mdash; fixed-fee project work, scoped against the business.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="acct-coa-delivers" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What chart of accounts setup actually delivers.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Either a clean setup for a new file or a structured restructure for an existing one &mdash; fixed-fee project work, scoped against the business.</p>
+    <div class="r-3">
       {%- for d in deliverables %}
-      <div class="stack-8">
-        <p class="num">{{ d.num }}</p>
-        <h3>{{ d.name | safe }}</h3>
-        <p class="prose">{{ d.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ d.num }}</span><h3>{{ d.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ d.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-coa-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How a setup runs</p>
-      <h2 class="section__heading">From discovery to a chart you can build on.</h2>
-      <p class="section__lede">Four phases, fixed fee, written scope.</p>
-    </header>
-    <ol class="process-diagram">
+<section class="sec reveal" id="acct-coa-process">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How a setup runs</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From discovery to a chart you can build on.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Four phases, fixed fee, written scope.</p>
+    <div class="process-grid">
       {%- for s in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
-      {%- endfor %}
-    </ol>
-  </div>
-</section>
-
-<section class="section" id="acct-coa-scope">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Honest scope</p>
-      <h2 class="section__heading">What setup is, isn&rsquo;t, and what comes next.</h2>
-    </header>
-    <div class="grid-3">
-      {%- for c in scope %}
-      <div class="stack-8">
-        <h3>{{ c.name | safe }}</h3>
-        <p class="prose">{{ c.body | safe }}</p>
-      </div>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ s.num | safe }}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-coa-bridge">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The bigger setup</p>
-      <h2 class="section__heading">Chart of accounts is one chapter of QuickBooks setup.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="acct-coa-scope" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">What setup is, isn&rsquo;t, and what comes next.</h2>
+    <div class="r-3">
+      {%- for c in scope %}
+      <div class="dc-card"><h3>{{ c.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="acct-coa-bridge">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The bigger setup</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Chart of accounts is one chapter of QuickBooks setup.</h2>
     <div class="prose">
       <p>A correctly designed chart of accounts is the most important chapter of a QuickBooks setup, but it&rsquo;s not the only one. A full setup also covers bank and credit card connections, payroll integration, sales-tax configuration, app integrations, user permissions, recurring transactions, and the close calendar &mdash; everything needed for the file to run cleanly from day one.</p>
       <p>Most clients buy the chart of accounts as part of a broader <a href="/quickbooks/setup/?intent=quickbooks-setup">QuickBooks setup</a> engagement &mdash; the structure costs about the same either way, but the rest of the file ships ready to use rather than half-built. Standalone chart restructure remains available where the rest of the setup is already solid.</p>
@@ -174,24 +127,10 @@
   </div>
 </section>
 
-<section class="section" id="acct-coa-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Chart of accounts questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-coa-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acct-coa-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
+<section class="sec reveal hub-rt--alt" id="acct-coa-preserved-qa" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">More questions</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">More chart of accounts questions.</h2>
     <div class="prose">
       {%- for item in preservedQA %}
       <p><strong>{{ item.q | safe }}</strong> {{ item.a | safe }}</p>
@@ -200,12 +139,10 @@
   </div>
 </section>
 
-<section class="section section--alt" id="acct-coa-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+<section class="sec reveal" id="acct-coa-review">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot designs and implements a chart of accounts. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on chart design methodology, class and location structure, and migration from legacy charts. Where our approach or scope changes, this page is updated. Chart of accounts work is delivered as fixed-fee project work and coordinated with your CPA for any tax-position or filing decisions.</p>
     </div>
@@ -215,16 +152,14 @@
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <p class="in-brief__source">Page last reviewed: May 2026.</p>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:14px;">Page last reviewed: May 2026.</p>
   </div>
 </section>
 
-<section class="section" id="acct-coa-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="acct-coa-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Related services.</h2>
     {%- for n in related %}
     <div class="stack-8">
       <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>

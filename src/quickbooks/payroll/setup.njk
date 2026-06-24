@@ -1,11 +1,9 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/quickbooks/payroll/setup/",
   "slug": "qbps",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
   "title": "QuickBooks Payroll Setup: Certified ProAdvisor Service · TechBrot",
   "description": "QuickBooks Payroll setup by Certified ProAdvisors &mdash; federal/state/local tax accounts, EFTPS enrollment, multi-state registration, benefits integration, chart-of-accounts mapping. Fixed-fee, written scope, done right from day one. Independent firm, not affiliated with Intuit Inc.",
   "breadcrumb": [
@@ -14,6 +12,15 @@
     { "name": "Payroll", "href": "/quickbooks/payroll/" },
     { "name": "Setup" }
   ],
+  "byline": {
+    "name": "By the Certified QuickBooks ProAdvisor team",
+    "meta": "Reviewed by a Certified QuickBooks Payroll ProAdvisor &middot; independent, no commission on Intuit products"
+  },
+  "metaReviewed": "2026-06-15",
+  "sec": {
+    "aiH": "QuickBooks Payroll setup, in five questions.",
+    "faqH": "What people ask about QuickBooks Payroll setup."
+  },
   "hero": {
     "eyebrow": "QuickBooks Payroll · Setup",
     "heading": "QuickBooks Payroll setup, done right from day one.",
@@ -40,164 +47,110 @@
 }
 ---
 
-<section class="section section--compact" id="qbps-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a Certified QuickBooks Payroll ProAdvisor &middot; independent, no commission on Intuit products</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section--compact section--tier-guide" id="qbps-credentials">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Certified by Intuit &middot; Payroll, Online (L2), Desktop, Enterprise</p>
-      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials</h2>
-    </header>
-    <div class="stat-row">
+{#- CREDENTIALS -#}
+<section class="sec reveal" id="qbps-credentials" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Certified by Intuit &middot; Payroll, Online (L2), Desktop, Enterprise</div>
+    <h2 class="h2" style="margin-bottom:18px;">Certified QuickBooks ProAdvisor credentials</h2>
+    <div class="trust-row">
       {%- for s in credStats %}
-      <div><div class="stat__value">{{ s.value }}</div><div class="stat__label">{{ s.label | safe }}</div></div>
+      <div class="trust-row__item"><p class="trust-row__value">{{ s.value }}</p><p class="trust-row__label">{{ s.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <ul class="checks-list">
+    <ul class="checklist">
       {%- for c in credentials %}<li>{{ c | safe }}</li>{%- endfor %}
     </ul>
   </div>
 </section>
 
-<section class="section section--alt" id="qbps-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">QuickBooks Payroll setup, plainly.</h2>
-    </header>
+{#- DEFINITION -#}
+<section class="sec reveal hub-rt--alt" id="qbps-definition" style="padding-top:24px;background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">In plain terms</div>
+    <h2 class="h2" style="margin-bottom:18px;">QuickBooks Payroll setup, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbps-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">QuickBooks Payroll setup, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="qbps-scope">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What setup actually includes</p>
-      <h2 class="section__heading">Eight categories of work, every engagement.</h2>
-      <p class="section__lede">Every category below is part of standard payroll setup. Skip any one and you create downstream problems &mdash; sometimes immediate, sometimes surfacing at year-end. The full scope is what proper setup means.</p>
-    </header>
-    <div class="grid-2">
+{#- SCOPE -#}
+<section class="sec reveal hub-rt--alt" id="qbps-scope" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What setup actually includes</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Eight categories of work, every engagement.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Every category below is part of standard payroll setup. Skip any one and you create downstream problems &mdash; sometimes immediate, sometimes surfacing at year-end. The full scope is what proper setup means.</p>
+    <div class="r-2">
       {%- for s in scope %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ s.num }}</p>
-        <h3>{{ s.name | safe }}</h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ s.num }}</span><h3>{{ s.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbps-pricing">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Pricing</p>
-      <h2 class="section__heading">Fixed-fee setup, scoped by complexity.</h2>
-      <p class="section__lede">Pricing reflects engagement complexity, not hours. Every setup engagement gets a written scope before any work begins &mdash; assessed during the complimentary discovery call.</p>
-    </header>
-    <div class="grid-3">
+{#- PRICING -#}
+<section class="sec reveal" id="qbps-pricing">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Pricing</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Fixed-fee setup, scoped by complexity.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Pricing reflects engagement complexity, not hours. Every setup engagement gets a written scope before any work begins &mdash; assessed during the complimentary discovery call.</p>
+    <div class="r-3">
       {%- for t in pricing %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ t.eyebrow | safe }}</p>
-        <h3>{{ t.tier | safe }}</h3>
-        <p class="prose"><strong>{{ t.cadence | safe }}.</strong> {{ t.fit | safe }}</p>
-        <ul class="checks-list">
-          {%- for inc in t.includes %}<li>{{ inc | safe }}</li>{%- endfor %}
-        </ul>
-        <p><a href="/contact/?intent=qb-payroll-setup">Book the discovery call <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ t.eyebrow | safe }}</span><h3>{{ t.tier | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 8px;"><strong>{{ t.cadence | safe }}.</strong> {{ t.fit | safe }}</p><ul class="checklist">{% for inc in t.includes %}<li>{{ inc | safe }}</li>{% endfor %}</ul><p style="margin:12px 0 0;"><a href="/contact/?intent=qb-payroll-setup">Book the discovery call <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p></div>
       {%- endfor %}
     </div>
-    <p class="prose">{{ pricingNote | safe }}</p>
+    <p class="lede" style="margin:18px 0 0;max-width:70ch;">{{ pricingNote | safe }}</p>
   </div>
 </section>
 
-<section class="section section--alt" id="qbps-errors">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Why proper setup matters</p>
-      <h2 class="section__heading">Setup errors compound for years.</h2>
-      <p class="section__lede">Payroll setup mistakes aren&rsquo;t recoverable through quarterly corrections &mdash; they require restate-and-refile work. The cost of fixing later is typically meaningfully higher than the cost of proper initial setup.</p>
-    </header>
-    <div class="grid-3">
+{#- ERRORS -#}
+<section class="sec reveal hub-rt--alt" id="qbps-errors" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why proper setup matters</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Setup errors compound for years.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Payroll setup mistakes aren&rsquo;t recoverable through quarterly corrections &mdash; they require restate-and-refile work. The cost of fixing later is typically meaningfully higher than the cost of proper initial setup.</p>
+    <div class="r-3">
       {%- for e in errors %}
-      <div class="stack-8">
-        <h3>{{ e.name | safe }}</h3>
-        <p class="prose">{{ e.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ e.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ e.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbps-timing">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When to set up payroll</p>
-      <h2 class="section__heading">January 1 is materially simpler than mid-year.</h2>
-      <p class="section__lede">Setup timing changes both scope and pricing. Three patterns worth understanding before booking:</p>
-    </header>
-    <div class="grid-3">
+{#- TIMING -#}
+<section class="sec reveal" id="qbps-timing">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When to set up payroll</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">January 1 is materially simpler than mid-year.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Setup timing changes both scope and pricing. Three patterns worth understanding before booking:</p>
+    <div class="r-3">
       {%- for t in timing %}
-      <div class="stack-8">
-        <h3>{{ t.name | safe }}</h3>
-        <p class="prose">{{ t.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ t.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ t.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbps-routing">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">One question before setup</p>
-      <h2 class="section__heading">Are you sure QuickBooks Payroll is the right provider?</h2>
-      <p class="section__lede">Setup engagements assume the provider decision is made. If you&rsquo;re still evaluating, that decision should happen <em>before</em> setup &mdash; switching providers after setup creates the mid-year-transition friction described above. Three paths:</p>
-    </header>
-    <div class="grid-3">
+{#- ROUTING -#}
+<section class="sec reveal hub-rt--alt" id="qbps-routing" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">One question before setup</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Are you sure QuickBooks Payroll is the right provider?</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Setup engagements assume the provider decision is made. If you&rsquo;re still evaluating, that decision should happen <em>before</em> setup &mdash; switching providers after setup creates the mid-year-transition friction described above. Three paths:</p>
+    <div class="r-3">
       {%- for b in routing %}
-      <a class="buyer-card" href="{{ b.href }}"><h3 class="buyer-card__opener">{{ b.opener | safe }}</h3><p class="buyer-card__body">{{ b.body | safe }}</p><span class="buyer-card__cta">{{ b.cta | safe }}</span></a>
+      <a class="dc-card hub-card" href="{{ b.href }}"><h3>{{ b.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ b.body | safe }}</p><span class="hub-card__go">{{ b.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbps-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Who performs the work</p>
-      <h2 class="section__heading">Certified Payroll ProAdvisor. Fixed-fee. No commission.</h2>
-    </header>
+{#- OPERATOR -#}
+<section class="sec reveal" id="qbps-operator">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Who performs the work</div>
+    <h2 class="h2" style="margin-bottom:18px;">Certified Payroll ProAdvisor. Fixed-fee. No commission.</h2>
     <div class="prose">
       {%- for p in operatorCopy %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
@@ -210,39 +163,16 @@
   </div>
 </section>
 
-<section class="section section--alt" id="qbps-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Payroll setup questions</p>
-      <h2 class="section__heading">What people ask about QuickBooks Payroll setup.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbps-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="qbps-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
+{#- RELATED -#}
+<section class="sec reveal" id="qbps-related">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Related references</div>
+    <h2 class="h2" style="margin-bottom:18px;">Other payroll resources.</h2>
+    <div class="prose">
+      {%- for n in related %}
+      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+      <p>{{ n.body | safe }}</p>
       {%- endfor %}
     </div>
-    <p class="meta-reviewed"><span>Published: 2026-06-15</span><span>Updated: 2026-06-15</span><span>Reviewed: 2026-06-15 &middot; Certified QuickBooks Payroll ProAdvisor</span></p>
-  </div>
-</section>
-
-<section class="section" id="qbps-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related references</p>
-      <h2 class="section__heading">Other payroll resources.</h2>
-    </header>
-    {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
-    </div>
-    {%- endfor %}
   </div>
 </section>

@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/reconciliation-services/",
   "slug": "acct-recon",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
+  "sec": {
+    "aiH": "Reconciliation, in five questions.",
+    "faqH": "Reconciliation questions."
+  },
   "title": "Account Reconciliation Services for QuickBooks &middot; TechBrot",
   "description": "Account reconciliation services by Certified ProAdvisors — bank, credit card, loan, payroll, and balance-sheet reconciliations performed every month so your QuickBooks file actually agrees with reality.",
   "breadcrumb": [
@@ -39,115 +41,72 @@
 }
 ---
 
-<section class="section" id="acct-recon-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Reconciliation, plainly.</h2>
-    </header>
+<section class="sec reveal" id="acct-recon-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reconciliation, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-recon-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Reconciliation, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <p class="ai-summary__question">{{ item.q | safe }}</p>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="acct-recon-accounts">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What gets reconciled</p>
-      <h2 class="section__heading">Every account that should agree with something external.</h2>
-      <p class="section__lede">Skipping any of these is how books pass a glance and fail a real review.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="acct-recon-accounts" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What gets reconciled</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Every account that should agree with something external.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Skipping any of these is how books pass a glance and fail a real review.</p>
+    <div class="r-3">
       {%- for d in deliverables %}
-      <div class="stack-8">
-        <p class="num">{{ d.num }}</p>
-        <h3>{{ d.name | safe }}</h3>
-        <p class="prose">{{ d.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ d.num }}</span><h3>{{ d.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ d.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-recon-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When real reconciliation earns its keep</p>
-      <h2 class="section__heading">If any of these sound familiar, the answer is yes.</h2>
-      <p class="section__lede">Most owners reach for professional reconciliation when &ldquo;the bank feeds match&rdquo; stops being good enough.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="acct-recon-signals">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When real reconciliation earns its keep</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">If any of these sound familiar, the answer is yes.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Most owners reach for professional reconciliation when &ldquo;the bank feeds match&rdquo; stops being good enough.</p>
+    <div class="r-3">
       {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ s.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-recon-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The monthly reconciliation rhythm</p>
-      <h2 class="section__heading">How reconciliation actually happens.</h2>
-      <p class="section__lede">Same shape every month &mdash; not a once-a-year scramble.</p>
-    </header>
-    <ol class="process-diagram">
+<section class="sec reveal hub-rt--alt" id="acct-recon-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The monthly reconciliation rhythm</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">How reconciliation actually happens.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Same shape every month &mdash; not a once-a-year scramble.</p>
+    <div class="process-grid">
       {%- for s in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
-      {%- endfor %}
-    </ol>
-  </div>
-</section>
-
-<section class="section section--alt" id="acct-recon-scope">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Honest scope</p>
-      <h2 class="section__heading">Reconciliation vs audit, vs feeds, vs hope.</h2>
-      <p class="section__lede">What reconciliation is, what it isn&rsquo;t, and what stays with licensed professionals.</p>
-    </header>
-    <div class="grid-3">
-      {%- for s in scope %}
-      <div class="stack-8">
-        <h3>{{ s.label | safe }}</h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ s.num | safe }}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-recon-floor">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond reconciliation</p>
-      <h2 class="section__heading">Reconciliation is the floor every other report stands on.</h2>
-    </header>
+<section class="sec reveal" id="acct-recon-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Reconciliation vs audit, vs feeds, vs hope.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">What reconciliation is, what it isn&rsquo;t, and what stays with licensed professionals.</p>
+    <div class="r-3">
+      {%- for s in scope %}
+      <div class="dc-card"><h3>{{ s.label | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal hub-rt--alt" id="acct-recon-floor" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Beyond reconciliation</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reconciliation is the floor every other report stands on.</h2>
     <div class="prose">
       <p>Once accounts reconcile each month, the rest of the practice can do its job: <a href="/accounting/financial-statements/">financial statements</a> become trustworthy, <a href="/accounting/advisory/kpi-reporting/">KPI reports</a> show what&rsquo;s really happening, <a href="/accounting/advisory/cash-flow-management/">cash flow forecasts</a> sit on real numbers, and your CPA stops doing bookkeeping at tax time. A reconciled file is the one that survives an audit, a lender&rsquo;s review, or a buyer&rsquo;s diligence without a scramble.</p>
       <p>Most TechBrot clients run reconciliation inside <a href="/accounting/bookkeeping/monthly-bookkeeping/">monthly bookkeeping</a> and then layer <a href="/accounting/advisory/?intent=advisory">advisory</a> on top &mdash; up to a <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">fractional CFO</a> seat when the work becomes continuous. As automation handles the routine, reliable reconciliation is the operational discipline that earns the right to do everything else. <a href="/accounting/advisory/?intent=advisory">Explore advisory <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
@@ -155,33 +114,10 @@
   </div>
 </section>
 
-<section class="section section--alt" id="acct-recon-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Reconciliation questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-recon-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acct-recon-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="acct-recon-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+<section class="sec reveal" id="acct-recon-review">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot performs account reconciliation. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on reconciliation methodology, source-document standards, and the boundary with licensed CPA engagements. Where our approach or scope changes, this page is updated. Reconciliation is delivered inside <a href="/accounting/bookkeeping/monthly-bookkeeping/">monthly bookkeeping</a> on a published close calendar and coordinated with your CPA for filing and any formal engagement.</p>
     </div>
@@ -191,16 +127,14 @@
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <p class="in-brief__source">Page last reviewed: May 2026.</p>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:14px;">Page last reviewed: May 2026.</p>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-recon-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="acct-recon-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Related services.</h2>
     {%- for n in related %}
     <div class="stack-8">
       <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>

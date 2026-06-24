@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/services/virtual-accounting/",
   "slug": "acct-virtual",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
+  "sec": {
+    "aiH": "Virtual accounting, in five questions.",
+    "faqH": "Virtual accounting questions."
+  },
   "title": "Virtual Accounting Services · TechBrot",
   "description": "Virtual accounting services by Certified ProAdvisors — cloud-based, fully remote accounting with real-time access to your own QuickBooks file, secure document exchange, and a named ProAdvisor wherever your business operates in the U.S.",
   "breadcrumb": [
@@ -40,122 +42,89 @@
 }
 ---
 
-<section class="section" id="acct-virtual-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Virtual accounting, plainly.</h2>
-    </header>
+<section class="sec reveal" id="acct-virtual-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Virtual accounting, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-virtual-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Virtual accounting, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <p class="ai-summary__question">{{ item.q | safe }}</p>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
+{#- AI-SUMMARY renders via the t-prose layout slot (sec.aiH). -#}
 
-<section class="section" id="acct-virtual-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When a virtual model fits</p>
-      <h2 class="section__heading">Built for businesses that already run in the cloud.</h2>
-      <p class="section__lede">Virtual accounting is the right call when geography is a constraint, not a help. These are the situations where it fits best.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="acct-virtual-signals" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When a virtual model fits</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Built for businesses that already run in the cloud.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Virtual accounting is the right call when geography is a constraint, not a help. These are the situations where it fits best.</p>
+    <div class="r-3">
       {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
+      <div class="dc-card">
+        <h3>{{ s.opener | safe }}</h3>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-virtual-delivers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s included</p>
-      <h2 class="section__heading">What virtual accounting actually delivers.</h2>
-      <p class="section__lede">Scoped to your business and run in your own cloud file &mdash; the same accounting operation, delivered remotely.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="acct-virtual-delivers">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What virtual accounting actually delivers.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Scoped to your business and run in your own cloud file &mdash; the same accounting operation, delivered remotely.</p>
+    <div class="r-3">
       {%- for d in deliverables %}
-      <div class="stack-8">
-        <p class="num">{{ d.num }}</p>
+      <div class="dc-card">
+        <span class="eyebrow" style="display:block;margin-bottom:8px;">{{ d.num }}</span>
         <h3>{{ d.name | safe }}</h3>
-        <p class="prose">{{ d.body | safe }}</p>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ d.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-virtual-vs">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Head to head</p>
-      <h2 class="section__heading">Online vs on-site accounting.</h2>
-      <p class="section__lede">Where a fully virtual model wins, and where the work is identical no matter how it&rsquo;s delivered &mdash; honest cells.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">Virtual accounting compared with on-site and paper-handoff outsourced accounting</caption>
-        <thead><tr><th scope="col">Capability</th><th scope="col" class="vs-table__us">Virtual (TechBrot)</th><th scope="col">On-site / local</th><th scope="col">Outsourced, paper handoff</th></tr></thead>
-        <tbody>
-          {%- for r in vsTable %}
-          <tr><th scope="row">{{ r.cap | safe }}</th>
-            <td class="vs-table__us">{% if r.virtual == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.virtual == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.virtual | safe }}</span>{% endif %}</td>
-            <td>{% if r.onsite == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.onsite == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.onsite | safe }}</span>{% endif %}</td>
-            <td>{% if r.outsourcedPaper == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.outsourcedPaper == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.outsourcedPaper | safe }}</span>{% endif %}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
+<section class="sec reveal hub-rt--alt" id="acct-virtual-vs" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Head to head</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Online vs on-site accounting.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Where a fully virtual model wins, and where the work is identical no matter how it&rsquo;s delivered &mdash; honest cells.</p>
+    <table class="cmp">
+      <caption class="sr-only">Virtual accounting compared with on-site and paper-handoff outsourced accounting</caption>
+      <thead><tr><th scope="col">Capability</th><th scope="col">Virtual (TechBrot)</th><th scope="col">On-site / local</th><th scope="col">Outsourced, paper handoff</th></tr></thead>
+      <tbody>
+        {%- for r in vsTable %}
+        <tr><th scope="row" data-col="Capability">{{ r.cap | safe }}</th>
+          <td class="num us" data-col="Virtual (TechBrot)">{% if r.virtual == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.virtual == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span style="color:var(--color-ink-mute);">{{ r.virtual | safe }}</span>{% endif %}</td>
+          <td data-col="On-site / local">{% if r.onsite == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.onsite == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span style="color:var(--color-ink-mute);">{{ r.onsite | safe }}</span>{% endif %}</td>
+          <td data-col="Outsourced, paper handoff">{% if r.outsourcedPaper == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.outsourcedPaper == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span style="color:var(--color-ink-mute);">{{ r.outsourcedPaper | safe }}</span>{% endif %}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sec reveal" id="acct-virtual-process">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How it works</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From first call to a file you trust.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Every virtual engagement follows the same four-phase rhythm &mdash; cloud-first, with a clean migration when you&rsquo;re moving off Desktop.</p>
+    <div class="process-grid">
+      {%- for s in process %}
+      <div class="process-step"><div class="process-step__n">{{ s.num | safe }}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
+      {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-virtual-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How it works</p>
-      <h2 class="section__heading">From first call to a file you trust.</h2>
-      <p class="section__lede">Every virtual engagement follows the same four-phase rhythm &mdash; cloud-first, with a clean migration when you&rsquo;re moving off Desktop.</p>
-    </header>
-    <ol class="process-diagram">
-      {%- for s in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
-      {%- endfor %}
-    </ol>
-  </div>
-</section>
-
-<section class="section" id="acct-virtual-boundary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The boundary, stated plainly</p>
-      <h2 class="section__heading">Accounting operations &mdash; coordinated with your CPA.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="acct-virtual-boundary" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The boundary, stated plainly</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Accounting operations &mdash; coordinated with your CPA.</h2>
     <div class="prose">
       <p>Virtual accounting covers the <strong>accounting operation</strong>: bookkeeping, reconciliation, the month-end close, AR/AP, payroll coordination, and a financial package you can run the business on. It is delivered fully remotely in your own cloud QuickBooks file &mdash; the delivery model is what&rsquo;s virtual, not the rigor.</p>
       <p>It is <strong>not</strong> external audit, assurance, IRS representation, or income-tax filing. Those stay with your CPA or EA, and our books are kept CPA-ready and coordinated to them at year-end. Where state-specific matters arise &mdash; such as <a href="/accounting/sales-tax-compliance/?intent=sales-tax">sales-tax nexus</a> &mdash; we handle the accounting side and coordinate the rest. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc. <a href="/accounting/services/">Explore the full service catalog <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
@@ -163,56 +132,33 @@
   </div>
 </section>
 
-<section class="section section--alt" id="acct-virtual-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Virtual accounting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-virtual-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acct-virtual-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
+{#- FAQ renders via the t-prose layout slot (sec.faqH = "Virtual accounting questions."). -#}
 
-<section class="section" id="acct-virtual-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+<section class="sec reveal" id="acct-virtual-review">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot delivers virtual accounting. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on the cloud delivery model, document security, and the boundaries of the service. Where our approach or scope changes, this page is updated. Virtual accounting is delivered in your own cloud QuickBooks file and coordinated with your CPA or EA for anything requiring a license.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in reviewSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <p class="in-brief__source">Page last reviewed: May 2026.</p>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:14px;">Page last reviewed: May 2026.</p>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-virtual-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services &amp; industries.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="acct-virtual-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related services &amp; industries.</h2>
     {%- for n in related %}
-    <div class="stack-8">
+    <div style="margin-bottom:18px;">
       <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+      <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ n.body | safe }}</p>
     </div>
     {%- endfor %}
   </div>

@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/advisory/kpi-reporting/",
   "slug": "acct-kpi",
-  "tierClass": "section--tier-guide",
+  "sec": {
+    "aiH": "KPI reporting, in five questions.",
+    "faqH": "KPI &amp; management reporting questions."
+  },
   "bodyClass": "page--mofu",
-  "callBar": true,
   "title": "KPI &amp; Management Reporting Services · TechBrot",
   "description": "KPI and management reporting by Certified ProAdvisors — the handful of numbers that actually run your business, reported monthly in plain language with leading and lagging indicators built on accurate books.",
   "breadcrumb": [
@@ -40,24 +42,25 @@
 }
 ---
 
-<section class="section section--compact" id="acct-kpi-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a QuickBooks ProAdvisor &middot; advisory, not tax or audit &middot; built on accurate books</p>
-      </div>
+{#- ═══ BODY → v2 (t-mofu→t-prose). Hero/TL;DR(#acct-kpi-in-brief-text speakable)/
+    ai-summary(sec.aiH)/faq(sec.faqH)/CTA are layout-owned. Every baseline heading
+    verbatim; content verbatim. Sand bands alternate via hub-rt--alt. ═══ -#}
+
+{#- BYLINE → v2 prose byline -#}
+<section class="sec reveal" id="acct-kpi-byline" style="padding-top:24px;padding-bottom:8px;">
+  <div class="ct read read--doc">
+    <div class="byline">
+      <span class="byline__mark"><svg width="18" height="18" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span>
+      <div><p class="byline__name">By the Certified QuickBooks ProAdvisor team</p><p class="byline__meta">Reviewed by a QuickBooks ProAdvisor &middot; advisory, not tax or audit &middot; built on accurate books</p></div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-kpi-plainly">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In one paragraph</p>
-      <h2 class="section__heading">KPI &amp; management reporting, plainly.</h2>
-    </header>
+{#- PLAINLY → prose -#}
+<section class="sec reveal" id="acct-kpi-plainly" style="padding-top:8px;">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">KPI &amp; management reporting, plainly.</h2>
     <div class="prose">
       <p><strong>KPI and management reporting</strong> is the practice of identifying the small set of numbers that actually drive a business and reporting them on a regular cadence in a form leaders can act on. It goes beyond standard financial statements to track the metrics &mdash; margin, cash conversion, utilization, customer or unit economics &mdash; that explain why the numbers move and what to do next.</p>
       <p>The common failure is tracking dozens of metrics and acting on none; the fix is a focused set, often five to ten KPIs, that ties to the decisions you actually make, with both leading and lagging indicators. TechBrot&rsquo;s <a href="/quickbooks/proadvisor-team/">Certified ProAdvisors</a> build this on top of your <a href="/accounting/bookkeeping/?intent=bookkeeping">accurate books</a> and deliver it monthly with plain-language commentary &mdash; board- and lender-ready when you need it. It&rsquo;s <a href="/accounting/advisory/?intent=advisory">advisory</a>, not bookkeeping or tax, and only as good as the books underneath it. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc.</p>
@@ -65,179 +68,129 @@
   </div>
 </section>
 
-<section class="section" id="acct-kpi-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">KPI reporting, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="acct-kpi-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When KPI reporting earns its keep</p>
-      <h2 class="section__heading">If any of these sound familiar, the answer is yes.</h2>
-      <p class="section__lede">Most owners reach for management reporting when the numbers they have aren&rsquo;t answering the questions they&rsquo;re asking.</p>
-    </header>
-    <div class="grid-2">
+{#- SIGNALS → r-2 of dc-card (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-kpi-signals" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When KPI reporting earns its keep</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">If any of these sound familiar, the answer is yes.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:68ch;">Most owners reach for management reporting when the numbers they have aren&rsquo;t answering the questions they&rsquo;re asking.</p>
+    <div class="r-2">
       {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ s.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-kpi-included">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s included</p>
-      <h2 class="section__heading">What KPI &amp; management reporting actually delivers.</h2>
-      <p class="section__lede">Scoped to your business and stage, reported on a cadence that matches how you make decisions.</p>
-    </header>
-    <div class="grid-3">
+{#- INCLUDED → r-3 of dc-card with num -#}
+<section class="sec reveal" id="acct-kpi-included">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What KPI &amp; management reporting actually delivers.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Scoped to your business and stage, reported on a cadence that matches how you make decisions.</p>
+    <div class="r-3">
       {%- for c in included %}
-      <div class="stack-8">
-        <p class="num">{{ c.num }}</p>
-        <h3>{{ c.name | safe }}</h3>
-        <p class="prose">{{ c.body | safe }}</p>
-      </div>
+      <div class="dc-card"><p class="num" style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--color-accent);margin:0 0 4px;">{{ c.num }}</p><h3>{{ c.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-kpi-indicators">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Leading vs lagging</p>
-      <h2 class="section__heading">The two halves of a KPI set that works.</h2>
-      <p class="section__lede">Lagging metrics confirm where you&rsquo;ve been; leading metrics let you steer before results land. A useful set carries both. The metrics below are representative examples, not a fixed list.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">Lagging indicators compared with leading indicators</caption>
-        <thead><tr><th scope="col">Dimension</th><th scope="col">Lagging indicator</th><th scope="col" class="vs-table__us">Leading indicator</th></tr></thead>
-        <tbody>
-          {%- for r in indicatorTable %}
-          <tr><th scope="row">{{ r.dim | safe }}</th>
-            <td>{{ r.lagging | safe }}</td>
-            <td class="vs-table__us"><span class="vs-table__concede">{{ r.leading | safe }}</span></td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+{#- INDICATORS → vs comparison table (.cmp), plain-text cells (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-kpi-indicators" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Leading vs lagging</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The two halves of a KPI set that works.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Lagging metrics confirm where you&rsquo;ve been; leading metrics let you steer before results land. A useful set carries both. The metrics below are representative examples, not a fixed list.</p>
+    <table class="cmp">
+      <caption class="sr-only">Lagging indicators compared with leading indicators</caption>
+      <thead><tr><th scope="col">Dimension</th><th scope="col">Lagging indicator</th><th scope="col" class="us">Leading indicator</th></tr></thead>
+      <tbody>
+        {%- for r in indicatorTable %}
+        <tr><th scope="row" data-col="Dimension">{{ r.dim | safe }}</th>
+          <td data-col="Lagging indicator">{{ r.lagging | safe }}</td>
+          <td class="us" data-col="Leading indicator">{{ r.leading | safe }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 
-<section class="section" id="acct-kpi-metrics">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Industry &amp; role-specific metrics</p>
-      <h2 class="section__heading">The numbers your industry actually runs on.</h2>
-      <p class="section__lede">A generic dashboard measures everyone the same way and helps no one. We define the metrics that match how your business actually makes money. These are representative examples of the patterns we build for &mdash; the real set is defined with you.</p>
-    </header>
-    <div class="grid-3">
+{#- METRICS → r-3 of dc-card with eyebrow -#}
+<section class="sec reveal" id="acct-kpi-metrics">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Industry &amp; role-specific metrics</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The numbers your industry actually runs on.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">A generic dashboard measures everyone the same way and helps no one. We define the metrics that match how your business actually makes money. These are representative examples of the patterns we build for &mdash; the real set is defined with you.</p>
+    <div class="r-3">
       {%- for m in metricsByIndustry %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ m.tag | safe }}</p>
-        <h3>{{ m.name | safe }}</h3>
-        <p class="prose">{{ m.body | safe }}</p>
-      </div>
+      <div class="dc-card"><p class="eyebrow" style="margin-bottom:8px;">{{ m.tag | safe }}</p><h3>{{ m.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ m.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-kpi-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How it works</p>
-      <h2 class="section__heading">From the right metrics to a report you&rsquo;ll actually use.</h2>
-      <p class="section__lede">Every KPI engagement follows the same four-phase rhythm &mdash; built on books that are accurate first.</p>
-    </header>
-    <div class="grid-2">
+{#- PROCESS → process-grid (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-kpi-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How it works</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From the right metrics to a report you&rsquo;ll actually use.</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:68ch;">Every KPI engagement follows the same four-phase rhythm &mdash; built on books that are accurate first.</p>
+    <div class="process-grid">
       {%- for s in cadence %}
-      <div class="stack-8">
-        <p class="num">{{ s.num | safe }}</p>
-        <h3>{{ s.name | safe }}</h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ s.num | upper }}{% if loop.last %} &check;{% endif %}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-kpi-rhythm">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The reporting cadence</p>
-      <h2 class="section__heading">Monthly report, quarterly review, refined as you grow.</h2>
-      <p class="section__lede">Management reporting is a rhythm, not a one-off build &mdash; a monthly report that lands on schedule, a quarterly business review that turns the numbers into strategy, and a metric set that evolves with the business.</p>
-    </header>
-    <div class="grid-3">
+{#- RHYTHM → r-3 of dc-card with eyebrow -#}
+<section class="sec reveal" id="acct-kpi-rhythm">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The reporting cadence</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Monthly report, quarterly review, refined as you grow.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Management reporting is a rhythm, not a one-off build &mdash; a monthly report that lands on schedule, a quarterly business review that turns the numbers into strategy, and a metric set that evolves with the business.</p>
+    <div class="r-3">
       {%- for r in rhythm %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ r.tag | safe }}</p>
-        <h3>{{ r.name | safe }}</h3>
-        <p class="prose">{{ r.body | safe }}</p>
-      </div>
+      <div class="dc-card"><p class="eyebrow" style="margin-bottom:8px;">{{ r.tag | safe }}</p><h3>{{ r.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ r.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-kpi-tooling">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Dashboard &amp; tooling</p>
-      <h2 class="section__heading">Built from the books, not keyed by hand.</h2>
-      <p class="section__lede">The report should pull from the source ledger and refresh on its own &mdash; so the numbers are never a stale, hand-built copy that two people disagree about.</p>
-    </header>
-    <div class="grid-3">
+{#- TOOLING → r-3 of dc-card (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-kpi-tooling" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Dashboard &amp; tooling</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Built from the books, not keyed by hand.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">The report should pull from the source ledger and refresh on its own &mdash; so the numbers are never a stale, hand-built copy that two people disagree about.</p>
+    <div class="r-3">
       {%- for t in tooling %}
-      <div class="stack-8">
-        <h3>{{ t.name | safe }}</h3>
-        <p class="prose">{{ t.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ t.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ t.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-kpi-when">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When it&rsquo;s needed</p>
-      <h2 class="section__heading">Where are you with management reporting?</h2>
-    </header>
-    <div class="grid-3">
+{#- WHEN → r-3 of dc-card hub-card -#}
+<section class="sec reveal" id="acct-kpi-when">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When it&rsquo;s needed</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where are you with management reporting?</h2>
+    <div class="r-3">
       {%- for b in whenNeeded %}
-      <a class="buyer-card" href="{{ b.href }}"><p class="buyer-card__opener">{{ b.opener | safe }}</p><p class="buyer-card__body">{{ b.body | safe }}</p><span class="buyer-card__cta">{{ b.cta | safe }}</span></a>
+      <a class="dc-card hub-card" href="{{ b.href }}"><h3>{{ b.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ b.body | safe }}</p><span class="hub-card__go">{{ b.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-kpi-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the report</p>
-      <h2 class="section__heading">Knowing the numbers is step one. Acting on them is the point.</h2>
-    </header>
+{#- ADVISORY → prose (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-kpi-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Beyond the report</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Knowing the numbers is step one. Acting on them is the point.</h2>
     <div class="prose">
       <p>A good KPI report makes the right questions obvious: margin is slipping &mdash; where? Utilization is down &mdash; which team? Cash conversion is stretching &mdash; why? Seeing it clearly is the start; deciding what to do is the work that actually moves the business.</p>
       <p>For owners who want that judgment on an ongoing basis, KPI reporting is one piece of a broader <strong>advisory</strong> relationship &mdash; alongside <a href="/accounting/advisory/cash-flow-management/?intent=cash-flow">cash flow management</a>, budgeting, and strategy &mdash; up to a <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">fractional CFO</a> who owns the numbers with you. This is advisory work: we coordinate with your CPA for anything requiring a license, and we don&rsquo;t provide tax filing, audit, or assurance. As automation handles the routine, this interpretation layer is where the real value now lives.</p>
@@ -245,58 +198,34 @@
   </div>
 </section>
 
-<section class="section" id="acct-kpi-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">KPI &amp; management reporting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-kpi-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acct-kpi-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="acct-kpi-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+{#- REVIEW prose + trust-row. meta-reviewed kept here. -#}
+<section class="sec reveal" id="acct-kpi-review">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot delivers KPI and management reporting. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on metric selection, leading and lagging indicators, and the boundaries of the service.</p>
       <p>Where our approach or scope changes, this page is updated. Reporting is delivered on accurate books and coordinated with your CPA for anything requiring a license. Independent firm &mdash; not affiliated with Intuit Inc.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in operatorSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <p class="meta-reviewed"><span>Published: 2026-06-15</span><span>Updated: 2026-06-15</span><span>Reviewed: 2026-06-15 &middot; QuickBooks ProAdvisor</span></p>
+    <p class="meta-reviewed" style="margin-top:18px;"><span>Published: 2026-06-15</span><span>Updated: 2026-06-15</span><span>Reviewed: 2026-06-15 &middot; QuickBooks ProAdvisor</span></p>
   </div>
 </section>
 
-<section class="section" id="acct-kpi-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related advisory &amp; services.</h2>
-    </header>
-    {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+{#- RELATED → r-2 of dc-card hub-card (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-kpi-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related advisory &amp; services.</h2>
+    <div class="r-2">
+      {%- for n in related %}
+      <a class="dc-card hub-card" href="{{ n.href }}"><h3>{{ n.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ n.body | safe }}</p><span class="hub-card__go">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      {%- endfor %}
     </div>
-    {%- endfor %}
   </div>
 </section>

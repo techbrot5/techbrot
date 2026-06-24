@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/advisory/business-performance-review/",
   "slug": "acct-bpr",
-  "tierClass": "section--tier-guide",
+  "sec": {
+    "aiH": "Business performance review, in five questions.",
+    "faqH": "Performance review questions."
+  },
   "bodyClass": "page--mofu",
-  "callBar": true,
   "title": "Business Performance Review Services · TechBrot",
   "description": "Monthly and quarterly business performance reviews by Certified ProAdvisors — a structured read on margin, profitability by segment, KPI variance, and trends, turned into a short action list with named owners.",
   "breadcrumb": [
@@ -40,161 +42,121 @@
 }
 ---
 
-<section class="section section--compact" id="acct-bpr-proof">
-  <div class="container">
-    <div class="proof-strip">
-      <span class="proof-strip__item"><b>Named</b> Certified ProAdvisor runs every review</span>
-      <span class="proof-strip__item"><b>Monthly or quarterly</b> cadence by scope</span>
-      <span class="proof-strip__item"><b>Fixed-fee</b> written scope, first</span>
-      <span class="proof-strip__item"><b>Action list</b> with owners &amp; follow-up</span>
-      <span class="proof-strip__item"><span class="proof-strip__rating">5.0</span> 2 verified Clutch reviews</span>
+{#- ═══ BODY → v2 (t-mofu→t-prose). Hero/TL;DR(#acct-bpr-in-brief-text speakable)/
+    ai-summary(sec.aiH)/faq(sec.faqH)/CTA are layout-owned. Every baseline heading
+    verbatim; content verbatim. Sand bands alternate via hub-rt--alt. ═══ -#}
+
+{#- PROOF → v2 prose row -#}
+<section class="sec reveal" id="acct-bpr-proof" style="padding-top:24px;padding-bottom:8px;">
+  <div class="ct read read--doc">
+    <div class="trust-row">
+      <div class="trust-row__item"><p class="trust-row__value">Named</p><p class="trust-row__label">Certified ProAdvisor runs every review</p></div>
+      <div class="trust-row__divider"></div>
+      <div class="trust-row__item"><p class="trust-row__value">Monthly or quarterly</p><p class="trust-row__label">cadence by scope</p></div>
+      <div class="trust-row__divider"></div>
+      <div class="trust-row__item"><p class="trust-row__value">Fixed-fee</p><p class="trust-row__label">written scope, first</p></div>
+      <div class="trust-row__divider"></div>
+      <div class="trust-row__item"><p class="trust-row__value">Action list</p><p class="trust-row__label">with owners &amp; follow-up</p></div>
+      <div class="trust-row__divider"></div>
+      <div class="trust-row__item"><p class="trust-row__value">5.0</p><p class="trust-row__label">2 verified Clutch reviews</p></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-bpr-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Business performance review, plainly.</h2>
-    </header>
+{#- DEFINITION → prose -#}
+<section class="sec reveal" id="acct-bpr-definition" style="padding-top:8px;">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Business performance review, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-bpr-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Business performance review, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="acct-bpr-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When performance review earns its keep</p>
-      <h2 class="section__heading">If any of these sound familiar, the answer is yes.</h2>
-      <p class="section__lede">Most owners reach for a review cadence when their reports keep telling them things they don&rsquo;t end up acting on.</p>
-    </header>
-    <div class="grid-2">
+{#- SIGNALS → r-2 of dc-card (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-bpr-signals" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When performance review earns its keep</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">If any of these sound familiar, the answer is yes.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Most owners reach for a review cadence when their reports keep telling them things they don&rsquo;t end up acting on.</p>
+    <div class="r-2">
       {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ s.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-bpr-included">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s included</p>
-      <h2 class="section__heading">What a performance review actually delivers.</h2>
-      <p class="section__lede">Scoped to your business, run on the cadence that matches how fast decisions need to land.</p>
-    </header>
-    <div class="grid-3">
+{#- INCLUDED → r-3 of dc-card with num -#}
+<section class="sec reveal" id="acct-bpr-included">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What a performance review actually delivers.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Scoped to your business, run on the cadence that matches how fast decisions need to land.</p>
+    <div class="r-3">
       {%- for c in included %}
-      <div class="stack-8">
-        <p class="num">{{ c.num }}</p>
-        <h3>{{ c.name | safe }}</h3>
-        <p class="prose">{{ c.body | safe }}</p>
-      </div>
+      <div class="dc-card"><p class="num" style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--color-accent);margin:0 0 4px;">{{ c.num }}</p><h3>{{ c.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-bpr-cadence">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Cadence</p>
-      <h2 class="section__heading">Monthly check, or the quarterly business review.</h2>
-      <p class="section__lede">Two cadences, the same loop &mdash; a tight monthly read on margin and KPI variance, or a deeper quarterly business review (QBR) across the whole quarter. Many clients pair both. The right cadence is set in scope by how fast you need to act on the numbers.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">Monthly performance review compared with the quarterly business review</caption>
-        <thead><tr><th scope="col">Dimension</th><th scope="col" class="vs-table__us">Monthly review</th><th scope="col">Quarterly review (QBR)</th></tr></thead>
-        <tbody>
-          {%- for r in cadenceTable %}
-          <tr><th scope="row">{{ r.dim | safe }}</th>
-            <td class="vs-table__us"><span class="vs-table__concede">{{ r.monthly | safe }}</span></td>
-            <td><span class="vs-table__concede">{{ r.quarterly | safe }}</span></td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+{#- CADENCE prose + comparison table (.cmp) (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-bpr-cadence" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Cadence</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Monthly check, or the quarterly business review.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Two cadences, the same loop &mdash; a tight monthly read on margin and KPI variance, or a deeper quarterly business review (QBR) across the whole quarter. Many clients pair both. The right cadence is set in scope by how fast you need to act on the numbers.</p>
+  </div>
+  <div class="ct">
+    <table class="cmp">
+      <caption class="sr-only">Monthly performance review compared with the quarterly business review</caption>
+      <thead><tr><th scope="col">Dimension</th><th scope="col" class="us">Monthly review</th><th scope="col">Quarterly review (QBR)</th></tr></thead>
+      <tbody>
+        {%- for r in cadenceTable %}
+        <tr><th scope="row" data-col="Dimension">{{ r.dim | safe }}</th>
+          <td class="us" data-col="Monthly review">{{ r.monthly | safe }}</td>
+          <td data-col="Quarterly review (QBR)">{{ r.quarterly | safe }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-bpr-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How it works</p>
-      <h2 class="section__heading">From close-of-books to closed action items.</h2>
-      <p class="section__lede">Every review engagement follows the same four-phase rhythm &mdash; built on books that are accurate first.</p>
-    </header>
-    <ol class="process-diagram">
+{#- PROCESS → process-grid -#}
+<section class="sec reveal" id="acct-bpr-process">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How it works</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From close-of-books to closed action items.</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:70ch;">Every review engagement follows the same four-phase rhythm &mdash; built on books that are accurate first.</p>
+    <div class="process-grid">
       {%- for s in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ s.num | upper }}{% if loop.last %} &check;{% endif %}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section" id="acct-bpr-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the review</p>
-      <h2 class="section__heading">A standing review is where advisory becomes a habit.</h2>
-    </header>
+{#- ADVISORY prose + opquote (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-bpr-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Beyond the review</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">A standing review is where advisory becomes a habit.</h2>
     <div class="prose">
       <p>A one-off analysis answers a single question. A standing performance review is something different: a rhythm where someone who knows your numbers shows up every month or quarter, asks better questions than anyone inside the business has time to ask, and holds the action list accountable across cycles. That&rsquo;s how advisory stops being a service you buy and starts being how the business is run.</p>
-      <p>For owners where this becomes the way the business operates, a performance review sits naturally inside a <strong>fractional CFO</strong> seat &mdash; reviews alongside cash, KPIs, budget, and strategy, with one person owning the integrated picture. As automation handles the routine, this is where the real value now lives. <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">Explore fractional CFO &amp; advisory <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
+      <p>For owners where this becomes the way the business operates, a performance review sits naturally inside a <strong>fractional CFO</strong> seat &mdash; reviews alongside cash, KPIs, budget, and strategy, with one person owning the integrated picture. As automation handles the routine, this is where the real value now lives. <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">Explore fractional CFO &amp; advisory <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
     </div>
-    <blockquote class="pull-quote">
+    <blockquote class="opquote"><blockquote>
       <p>A review without an action list is a meeting. A review <strong>with named owners and a follow-up next cycle</strong> is how decisions actually close.</p>
-    </blockquote>
+    </blockquote></blockquote>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-bpr-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Performance review questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-bpr-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acct-bpr-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
+{#- FAQ EXTRA → preserved baseline prose H3 (layout renders the FAQ Q&A list) -#}
+<section class="sec reveal" id="acct-bpr-faq-extra">
+  <div class="ct read read--doc">
     <div class="prose">
       <h3>What gets covered in a review?</h3>
       <p>Typically: gross and operating margin, profitability by segment or product line, KPI variance against budget and prior periods, multi-period trends, the action list from the previous review, and the new action list out of the current one. The exact scope is set per engagement so the time is spent on what actually matters.</p>
@@ -202,37 +164,34 @@
   </div>
 </section>
 
-<section class="section" id="acct-bpr-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+{#- REVIEW prose + trust-row (sand). meta-reviewed kept here. -#}
+<section class="sec reveal hub-rt--alt" id="acct-bpr-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot delivers business performance reviews. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on review methodology, cadence options, and the boundaries of the service.</p>
       <p>Where our approach or scope changes, this page is updated. Reviews are delivered on accurate books and coordinated with your CPA or EA for anything requiring a license. Independent firm &mdash; not affiliated with Intuit Inc.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in operatorSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <p class="meta-reviewed"><span>Published: 2026-06-15</span><span>Updated: 2026-06-15</span><span>Reviewed: 2026-06-15 &middot; Certified ProAdvisor team</span></p>
+    <p class="meta-reviewed" style="margin-top:18px;"><span>Published: 2026-06-15</span><span>Updated: 2026-06-15</span><span>Reviewed: 2026-06-15 &middot; Certified ProAdvisor team</span></p>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-bpr-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related advisory &amp; services.</h2>
-    </header>
-    {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+{#- RELATED → r-2 of dc-card hub-card -#}
+<section class="sec reveal" id="acct-bpr-related">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related advisory &amp; services.</h2>
+    <div class="r-2">
+      {%- for n in related %}
+      <a class="dc-card hub-card" href="{{ n.href }}"><h3>{{ n.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ n.body | safe }}</p><span class="hub-card__go">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      {%- endfor %}
     </div>
-    {%- endfor %}
   </div>
 </section>

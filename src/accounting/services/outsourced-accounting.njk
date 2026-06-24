@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/services/outsourced-accounting/",
   "slug": "acct-outsourced",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
+  "sec": {
+    "aiH": "Outsourced accounting, in five questions.",
+    "faqH": "Outsourced accounting questions."
+  },
   "title": "Outsourced Accounting Services · TechBrot",
   "description": "Outsourced accounting services by Certified ProAdvisors — your full operational accounting function (bookkeeping, close, reconciliation, reporting, optional controller) run as a managed service on a fixed monthly fee. CPA-ready, no internal team to hire.",
   "breadcrumb": [
@@ -40,176 +42,126 @@
 }
 ---
 
-<section class="section" id="acct-outsourced-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Outsourced accounting, plainly.</h2>
-    </header>
+<section class="sec reveal" id="acct-outsourced-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Outsourced accounting, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-outsourced-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Outsourced accounting, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <p class="ai-summary__question">{{ item.q | safe }}</p>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
+{#- AI-SUMMARY renders via the t-prose layout slot (sec.aiH). -#}
 
-<section class="section" id="acct-outsourced-included">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s included</p>
-      <h2 class="section__heading">The whole function &mdash; not a slice of it.</h2>
-      <p class="section__lede">Outsourced accounting bundles the operational layers into one managed service. Each is a discipline in its own right; together they&rsquo;re your accounting department.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="acct-outsourced-included" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The whole function &mdash; not a slice of it.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Outsourced accounting bundles the operational layers into one managed service. Each is a discipline in its own right; together they&rsquo;re your accounting department.</p>
+    <div class="r-3">
       {%- for d in deliverables %}
-      <div class="stack-8">
-        <p class="num">{{ d.num }}</p>
+      <div class="dc-card">
+        <span class="eyebrow" style="display:block;margin-bottom:8px;">{{ d.num }}</span>
         <h3>{{ d.name | safe }}</h3>
-        <p class="prose">{{ d.body | safe }}</p>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ d.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-outsourced-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When outsourcing the function makes sense</p>
-      <h2 class="section__heading">If any of these sound familiar, the answer is probably yes.</h2>
-      <p class="section__lede">Most owners reach for outsourced accounting when running the function internally costs more &mdash; in money, time, or risk &mdash; than it returns.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="acct-outsourced-signals">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When outsourcing the function makes sense</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">If any of these sound familiar, the answer is probably yes.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Most owners reach for outsourced accounting when running the function internally costs more &mdash; in money, time, or risk &mdash; than it returns.</p>
+    <div class="r-3">
       {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
+      <div class="dc-card">
+        <h3>{{ s.opener | safe }}</h3>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-outsourced-vs">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Outsourced vs in-house</p>
-      <h2 class="section__heading">The real cost of an internal accounting department.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="acct-outsourced-vs" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Outsourced vs in-house</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">The real cost of an internal accounting department.</h2>
     <div class="prose">
       {%- for p in vsInHouse %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-outsourced-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How it works</p>
-      <h2 class="section__heading">From handoff to a function that just runs.</h2>
-      <p class="section__lede">Four phases, fixed monthly fee, written scope, your own QuickBooks file.</p>
-    </header>
-    <ol class="process-diagram">
+<section class="sec reveal" id="acct-outsourced-process">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How it works</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From handoff to a function that just runs.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Four phases, fixed monthly fee, written scope, your own QuickBooks file.</p>
+    <div class="process-grid">
       {%- for s in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
+      <div class="process-step"><div class="process-step__n">{{ s.num | safe }}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section" id="acct-outsourced-scope">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Honest scope</p>
-      <h2 class="section__heading">What the managed function covers &mdash; and what stays with your CPA.</h2>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="acct-outsourced-scope" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What the managed function covers &mdash; and what stays with your CPA.</h2>
+    <div class="r-3">
       {%- for c in scope %}
-      <div class="stack-8">
+      <div class="dc-card">
         <h3>{{ c.name | safe }}</h3>
-        <p class="prose">{{ c.body | safe }}</p>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-outsourced-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Outsourced accounting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-outsourced-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acct-outsourced-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-    {%- for item in faqExtra %}
-    <div class="prose" id="acct-outsourced-faq-x{{ loop.index }}">
-      <h3>{{ item.q | safe }}</h3>
+{#- FAQ renders via the t-prose layout slot (sec.faqH = "Outsourced accounting questions."). The old display 7th Q/A is preserved below as body prose (NOT in the frozen-6 FAQPage schema array). -#}
+<section class="sec reveal" id="acct-outsourced-faq-extra">
+  <div class="ct read read--doc">
+    <div class="prose">
+      {%- for item in faqExtra %}
+      <h3 id="acct-outsourced-faq-x{{ loop.index }}">{{ item.q | safe }}</h3>
       <p>{{ item.a | safe }}</p>
+      {%- endfor %}
     </div>
-    {%- endfor %}
   </div>
 </section>
 
-<section class="section" id="acct-outsourced-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="acct-outsourced-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot delivers outsourced accounting. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on the scope of the managed function, the in-house comparison, and the boundary with licensed CPA and tax work. Where our approach or scope changes, this page is updated. Outsourced accounting is delivered in your own QuickBooks file on a fixed monthly fee and coordinated with your CPA for filing and any formal CPA engagement.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in reviewSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <p class="in-brief__source">Page last reviewed: May 2026.</p>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:14px;">Page last reviewed: May 2026.</p>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-outsourced-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services.</h2>
-    </header>
+<section class="sec reveal" id="acct-outsourced-related">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related services.</h2>
     {%- for n in related %}
-    <div class="stack-8">
+    <div style="margin-bottom:18px;">
       <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+      <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ n.body | safe }}</p>
     </div>
     {%- endfor %}
   </div>

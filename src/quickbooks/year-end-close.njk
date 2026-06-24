@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/quickbooks/year-end-close/",
   "slug": "qbyec",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
+  "sec": {
+    "aiH": "The year-end close, in five questions.",
+    "faqH": "Year-end close questions."
+  },
   "title": "QuickBooks Year-End Close &amp; 1099 Prep · TechBrot",
   "description": "Close your books for the year in QuickBooks with Certified ProAdvisors — final reconciliations, adjusting entries per your CPA, Undeposited Funds and Opening Balance Equity cleanup, 1099 prep, closing-date lock, and a CPA-ready file for filing. We close the books; your CPA files the taxes.",
   "breadcrumb": [
@@ -39,117 +41,87 @@
 }
 ---
 
-<section class="section" id="qbyec-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">The year-end close, plainly.</h2>
-    </header>
+{#- ═══ QuickBooks YEAR-END CLOSE (BASELINE). t-mofu→t-prose. Every baseline heading
+    verbatim; #qbyec-in-brief-text (layout TL;DR) + #qbyec-ai-summary (layout slot)
+    speakable preserved. ai-summary + faq rendered by t-prose (sec.aiH/faqH). No body
+    byline/credentials on this page. ═══ -#}
+
+{#- DEFINITION — "In plain terms" → reading-column prose. -#}
+<section class="sec reveal" id="qbyec-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">The year-end close, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbyec-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">The year-end close, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <p class="ai-summary__question">{{ item.q | safe }}</p>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="qbyec-included">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s included</p>
-      <h2 class="section__heading">What the year-end close actually covers.</h2>
-      <p class="section__lede">Six workstreams that take an open file to a clean, locked, CPA-ready year &mdash; 1099 prep folded in.</p>
-    </header>
-    <div class="grid-3">
+{#- INCLUDED — six workstreams → r-3 dc-card. -#}
+<section class="sec reveal hub-rt--alt" id="qbyec-included" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What the year-end close actually covers.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Six workstreams that take an open file to a clean, locked, CPA-ready year &mdash; 1099 prep folded in.</p>
+    <div class="r-3">
       {%- for d in included %}
-      <div class="stack-8">
-        <h3>{{ d.name | safe }}</h3>
-        <p class="prose">{{ d.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ d.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ d.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbyec-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When the year-end close earns its keep</p>
-      <h2 class="section__heading">If any of these sound familiar, the answer is yes.</h2>
-      <p class="section__lede">Most owners reach for a real year-end close when &ldquo;we&rsquo;ll sort it out at tax time&rdquo; stops being a plan.</p>
-    </header>
-    <div class="grid-3">
+{#- SIGNALS — when the close earns its keep → r-3 dc-card. -#}
+<section class="sec reveal" id="qbyec-signals">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When the year-end close earns its keep</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">If any of these sound familiar, the answer is yes.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Most owners reach for a real year-end close when &ldquo;we&rsquo;ll sort it out at tax time&rdquo; stops being a plan.</p>
+    <div class="r-3">
       {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ s.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbyec-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How it runs</p>
-      <h2 class="section__heading">The year-end close, step by step.</h2>
-      <p class="section__lede">A defined sequence from discovery to a locked period and a CPA-ready handoff &mdash; scoped to a fixed fee before any work starts.</p>
-    </header>
-    <ol class="process-diagram">
+{#- PROCESS — step by step → process-grid. -#}
+<section class="sec reveal hub-rt--alt" id="qbyec-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How it runs</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The year-end close, step by step.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">A defined sequence from discovery to a locked period and a CPA-ready handoff &mdash; scoped to a fixed fee before any work starts.</p>
+    <div class="process-grid">
       {%- for s in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
+      <div class="process-step"><div class="process-step__n">{{ s.num | safe }}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       {%- endfor %}
-    </ol>
-  </div>
-</section>
-
-<section class="section section--alt" id="qbyec-boundary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Where this engagement sits</p>
-      <h2 class="section__heading">The close, and the pages next to it.</h2>
-      <p class="section__lede">Year-end has a few adjacent pieces. Here&rsquo;s exactly what this page does &mdash; and where the others pick up.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">Year-end engagements — what this close covers and where adjacent pages take over</caption>
-        <thead><tr><th scope="col">Engagement</th><th scope="col">Where it lives</th><th scope="col">What it covers</th></tr></thead>
-        <tbody>
-          {%- for r in boundaryTable %}
-          <tr><th scope="row">{{ r.window | safe }}</th><td>{{ r.work | safe }}</td><td>{{ r.detail | safe }}</td></tr>
-          {%- endfor %}
-        </tbody>
-      </table>
     </div>
   </div>
 </section>
 
-<section class="section" id="qbyec-lane">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Where the close stops</p>
-      <h2 class="section__heading">We close the books. Your CPA files the taxes.</h2>
-    </header>
+{#- BOUNDARY — adjacent engagements → cmp table. -#}
+<section class="sec reveal" id="qbyec-boundary">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Where this engagement sits</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The close, and the pages next to it.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Year-end has a few adjacent pieces. Here&rsquo;s exactly what this page does &mdash; and where the others pick up.</p>
+    <table class="cmp">
+      <caption class="sr-only">Year-end engagements — what this close covers and where adjacent pages take over</caption>
+      <thead><tr><th scope="col">Engagement</th><th scope="col">Where it lives</th><th scope="col">What it covers</th></tr></thead>
+      <tbody>
+        {%- for r in boundaryTable %}
+        <tr><th scope="row" data-col="Engagement">{{ r.window | safe }}</th><td data-col="Where it lives">{{ r.work | safe }}</td><td data-col="What it covers">{{ r.detail | safe }}</td></tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{#- LANE — where the close stops → reading-column prose. -#}
+<section class="sec reveal hub-rt--alt" id="qbyec-lane" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Where the close stops</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">We close the books. Your CPA files the taxes.</h2>
     <div class="prose">
       <p>The year-end close is <strong>bookkeeping and management accounting</strong>: reconciliations, adjusting entries, account cleanup, 1099 information returns, and a locked, CPA-ready file. It is <strong>not</strong> tax preparation. TechBrot does <strong>not file income taxes, set tax positions, or represent you before the IRS</strong> &mdash; that is your CPA or EA&rsquo;s lane. We book adjustments per their year-end guidance, or hand off a clean file for them to finalize, and we coordinate the handoff so nothing falls through the cracks. Keeping that line bright is what keeps the work honest.</p>
       <p>The 1099 piece sits inside the bookkeeping lane: where scoped, we prepare and file the 1099-NEC/1099-MISC <strong>information returns</strong> for your contractors as a bookkeeping service &mdash; verifying W-9s, TINs, and payment totals &mdash; while any <strong>tax determination</strong> (worker classification calls, deductibility) is deferred to your CPA. Payroll <a href="/quickbooks/payroll/year-end/?intent=accounting">W-2 and 1099-from-payroll forms</a> are generated from QuickBooks Payroll and handled on that page; contractor 1099-NEC is the part that folds into this close.</p>
@@ -157,12 +129,11 @@
   </div>
 </section>
 
-<section class="section section--alt" id="qbyec-foundation">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The annual close, built on the monthly one</p>
-      <h2 class="section__heading">Twelve clean months make a short December.</h2>
-    </header>
+{#- FOUNDATION — annual close built on monthly → reading-column prose. -#}
+<section class="sec reveal" id="qbyec-foundation">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The annual close, built on the monthly one</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Twelve clean months make a short December.</h2>
     <div class="prose">
       <p>A year-end close is far smaller when the books were closed every month along the way. The annual close is built on the <a href="/accounting/month-end-close/?intent=accounting">monthly close</a> &mdash; if each period was reconciled and locked as it ended, December is a final reconciliation, a handful of year-end adjustments, 1099s, and the closing-date lock, not a year-long reconstruction. Where the books were never closed, the first move is catching the periods up and reconciling them before the annual lock; we scope that together on the discovery call.</p>
       <p>If you&rsquo;d rather work it yourself, the free <a href="/resources/checklists/year-end-checklist/">year-end checklist</a> is the self-serve companion to this engagement. And when the question is &ldquo;are the books even ready to close?&rdquo;, that diagnosis is the <a href="/accounting/year-end-review/?intent=accounting">year-end review</a> &mdash; many clients run the review first and bring the close in to fix and lock what it flags.</p>
@@ -170,56 +141,33 @@
   </div>
 </section>
 
-<section class="section" id="qbyec-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Year-end close questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbyec-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="qbyec-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="qbyec-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+{#- REVIEW — page review & standards + trust-row → reading-column. -#}
+<section class="sec reveal hub-rt--alt" id="qbyec-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot runs the QuickBooks year-end close. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on reconciliation standards, year-end adjusting-entry treatment, Undeposited Funds and Opening Balance Equity cleanup, 1099 information-return preparation, the closing-date lock, and the boundary with licensed tax work. We close the books and prepare a CPA-ready file; we do not file income taxes, set tax positions, or represent clients before the IRS &mdash; that work is coordinated with the client&rsquo;s CPA or EA.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in reviewSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <p class="in-brief__source">Page last reviewed: June 2026.</p>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:14px;">Page last reviewed: June 2026.</p>
   </div>
 </section>
 
-<section class="section" id="qbyec-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services.</h2>
-    </header>
+{#- RELATED — related services → reading-column prose list. -#}
+<section class="sec reveal" id="qbyec-related">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related services.</h2>
     {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+    <div class="prose" style="margin-bottom:18px;">
+      <h3 style="margin:0 0 4px;"><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
+      <p style="margin:0;">{{ n.body | safe }}</p>
     </div>
     {%- endfor %}
   </div>

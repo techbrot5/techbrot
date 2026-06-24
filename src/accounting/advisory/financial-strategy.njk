@@ -1,11 +1,10 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/advisory/financial-strategy/",
   "slug": "acct-finstrat",
-  "tierClass": "section--tier-guide",
+  "sec": { "aiH": "Financial strategy, in five questions.", "faqH": "Financial strategy questions." },
   "bodyClass": "page--mofu",
-  "callBar": true,
   "title": "Financial Strategy Advisory Services &middot; TechBrot",
   "description": "Financial strategy advisory by Certified ProAdvisors — pricing, margin, capital structure, and the big calls (hire, expand, borrow, sell) grounded in your real numbers, with tax-aware planning coordinated with your CPA.",
   "breadcrumb": [
@@ -40,191 +39,135 @@
 }
 ---
 
-<section class="section section--compact" id="acct-finstrat-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by the ProAdvisor team &middot; built on accurate books, coordinated with your CPA</p>
-      </div>
+{#- ═══ BODY → v2 (t-mofu→t-prose). Hero/TL;DR(#acct-finstrat-in-brief-text speakable)/
+    ai-summary(sec.aiH)/faq(sec.faqH)/CTA are layout-owned. Every baseline heading
+    verbatim; content verbatim. Sand bands alternate via hub-rt--alt. ═══ -#}
+
+{#- BYLINE → v2 prose byline -#}
+<section class="sec reveal" id="acct-finstrat-byline" style="padding-top:24px;padding-bottom:8px;">
+  <div class="ct read read--doc">
+    <div class="byline">
+      <span class="byline__mark"><svg width="18" height="18" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span>
+      <div><p class="byline__name">By the Certified QuickBooks ProAdvisor team</p><p class="byline__meta">Reviewed by the ProAdvisor team &middot; built on accurate books, coordinated with your CPA</p></div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-finstrat-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Financial strategy, plainly.</h2>
-    </header>
+{#- DEFINITION → prose -#}
+<section class="sec reveal" id="acct-finstrat-definition" style="padding-top:8px;">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Financial strategy, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-finstrat-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Financial strategy, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="acct-finstrat-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When financial strategy earns its keep</p>
-      <h2 class="section__heading">If any of these are on the table, the answer is yes.</h2>
-      <p class="section__lede">Most owners reach for strategy work when a real decision is in front of them and the gut answer no longer feels like enough.</p>
-    </header>
-    <div class="grid-3">
+{#- SIGNALS → r-3 of dc-card (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-finstrat-signals" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When financial strategy earns its keep</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">If any of these are on the table, the answer is yes.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Most owners reach for strategy work when a real decision is in front of them and the gut answer no longer feels like enough.</p>
+    <div class="r-3">
       {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.name | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ s.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-finstrat-delivers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s included</p>
-      <h2 class="section__heading">What financial strategy actually delivers.</h2>
-      <p class="section__lede">Scoped to the decision in front of you. Discrete projects, ongoing through fractional CFO when the work is continuous.</p>
-    </header>
-    <div class="grid-3">
+{#- DELIVERS → r-3 of dc-card with num -#}
+<section class="sec reveal" id="acct-finstrat-delivers">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What financial strategy actually delivers.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Scoped to the decision in front of you. Discrete projects, ongoing through fractional CFO when the work is continuous.</p>
+    <div class="r-3">
       {%- for d in delivers %}
-      <div class="stack-8">
-        <p class="num">{{ d.num }}</p>
-        <h3>{{ d.name | safe }}</h3>
-        <p class="prose">{{ d.body | safe }}</p>
-      </div>
+      <div class="dc-card"><p class="num" style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--color-accent);margin:0 0 4px;">{{ d.num }}</p><h3>{{ d.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ d.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-finstrat-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How it works</p>
-      <h2 class="section__heading">From decision in front of you to a number you can stand behind.</h2>
-      <p class="section__lede">Strategy engagements follow the same four-phase rhythm, whether discrete projects or ongoing through a fractional CFO.</p>
-    </header>
-    <ol class="process-diagram">
+{#- PROCESS → process-grid (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-finstrat-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How it works</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From decision in front of you to a number you can stand behind.</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:70ch;">Strategy engagements follow the same four-phase rhythm, whether discrete projects or ongoing through a fractional CFO.</p>
+    <div class="process-grid">
       {%- for s in phases %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ s.num | upper }}{% if loop.last %} &check;{% endif %}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       {%- endfor %}
-    </ol>
-  </div>
-</section>
-
-<section class="section" id="acct-finstrat-boundary">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The boundary, honestly</p>
-      <h2 class="section__heading">What strategy is, and what stays with the licensed professionals.</h2>
-      <p class="section__lede">Advisory and strategy &mdash; not tax filing, audit, or legal work. We analyze capital structure, build the coverage and capacity analysis lenders ask for, and time financing decisions &mdash; then coordinate with your banker, who provides the actual credit. We do not provide lending, investment, or securities advice.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">What financial strategy advisory covers, and what stays with licensed professionals</caption>
-        <thead><tr><th scope="col">Area</th><th scope="col" class="vs-table__us">Financial strategy advisory</th><th scope="col">Stays with the licensed professional</th></tr></thead>
-        <tbody>
-          {%- for r in boundaryTable %}
-          <tr><th scope="row">{{ r.area | safe }}</th>
-            <td class="vs-table__us">{% if r.strategy == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.strategy == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.strategy | safe }}</span>{% endif %}</td>
-            <td>{% if r.licensed == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.licensed == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.licensed | safe }}</span>{% endif %}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-finstrat-seat">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the project</p>
-      <h2 class="section__heading">Some decisions are projects. Some need a seat at the table.</h2>
-    </header>
+{#- BOUNDARY → prose lede + boundary table (.cmp) -#}
+<section class="sec reveal" id="acct-finstrat-boundary">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The boundary, honestly</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What strategy is, and what stays with the licensed professionals.</h2>
+    <p class="lede" style="margin:0;max-width:70ch;">Advisory and strategy &mdash; not tax filing, audit, or legal work. We analyze capital structure, build the coverage and capacity analysis lenders ask for, and time financing decisions &mdash; then coordinate with your banker, who provides the actual credit. We do not provide lending, investment, or securities advice.</p>
+  </div>
+  <div class="ct" style="margin-top:28px;">
+    <table class="cmp">
+      <caption class="sr-only">What financial strategy advisory covers, and what stays with licensed professionals</caption>
+      <thead><tr><th scope="col">Area</th><th scope="col" class="us">Financial strategy advisory</th><th scope="col">Stays with the licensed professional</th></tr></thead>
+      <tbody>
+        {%- for r in boundaryTable %}
+        <tr><th scope="row" data-col="Area">{{ r.area | safe }}</th>
+          <td class="us" data-col="Financial strategy advisory">{% if r.strategy == 'yes' %}<span class="mk mk--yes"><span class="mk__dot"></span>Yes</span>{% elif r.strategy == 'no' %}<span class="mk mk--no"><span class="mk__dot"></span>No</span>{% else %}{{ r.strategy | safe }}{% endif %}</td>
+          <td data-col="Stays with the licensed professional">{% if r.licensed == 'yes' %}<span class="mk mk--yes"><span class="mk__dot"></span>Yes</span>{% elif r.licensed == 'no' %}<span class="mk mk--no"><span class="mk__dot"></span>No</span>{% else %}{{ r.licensed | safe }}{% endif %}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{#- SEAT → prose (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-finstrat-seat" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Beyond the project</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Some decisions are projects. Some need a seat at the table.</h2>
     <div class="prose">
       {%- for p in seat %}<p>{{ p | safe }}</p>{%- endfor %}
-      <p><a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">Explore fractional CFO &amp; advisory <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
+      <p><a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">Explore fractional CFO &amp; advisory <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-finstrat-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Financial strategy questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-finstrat-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acct-finstrat-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="acct-finstrat-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+{#- REVIEW prose + trust-row. meta-reviewed kept here. -#}
+<section class="sec reveal" id="acct-finstrat-review">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot delivers financial strategy advisory. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on scope, methodology, and the boundary with tax, legal, lending, and investment-advisory work. Where our approach or scope changes, this page is updated. Strategy is delivered on accurate books and coordinated with the licensed professionals whose work it touches.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in reviewSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <p class="in-brief__source">Page last reviewed: May 2026.</p>
+    <p class="meta-reviewed" style="margin-top:18px;"><span>Page last reviewed: May 2026.</span></p>
   </div>
 </section>
 
-<section class="section" id="acct-finstrat-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related advisory &amp; services.</h2>
-    </header>
-    {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+{#- RELATED → r-2 of dc-card hub-card (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-finstrat-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related advisory &amp; services.</h2>
+    <div class="r-2">
+      {%- for n in related %}
+      <a class="dc-card hub-card" href="{{ n.href }}"><h3>{{ n.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ n.body | safe }}</p><span class="hub-card__go">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      {%- endfor %}
     </div>
-    {%- endfor %}
   </div>
 </section>

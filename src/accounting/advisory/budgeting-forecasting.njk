@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/advisory/budgeting-forecasting/",
   "slug": "acct-budget",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
+  "sec": {
+    "aiH": "Budgeting &amp; forecasting, in five questions.",
+    "faqH": "Budgeting &amp; forecasting questions."
+  },
   "title": "Budgeting &amp; Forecasting Services · TechBrot",
   "description": "Annual budgeting and rolling forecasts by Certified ProAdvisors — a budget you'll actually use, with driver-based forecasts that update against reality so plans and spending stay connected all year.",
   "breadcrumb": [
@@ -40,181 +42,126 @@
 }
 ---
 
-<section class="section section--compact" id="acct-budget-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a Certified ProAdvisor &middot; advisory on accurate books, coordinated with your CPA</p>
-      </div>
+{#- ═══ BODY → v2 (t-mofu→t-prose). Hero/TL;DR(#acct-budget-in-brief-text speakable)/
+    ai-summary(sec.aiH)/faq(sec.faqH)/CTA are layout-owned. Every baseline heading
+    verbatim; content verbatim. Sand bands alternate via hub-rt--alt. ═══ -#}
+
+{#- BYLINE → v2 prose byline -#}
+<section class="sec reveal" id="acct-budget-byline" style="padding-top:24px;padding-bottom:8px;">
+  <div class="ct read read--doc">
+    <div class="byline">
+      <span class="byline__mark"><svg width="18" height="18" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span>
+      <div><p class="byline__name">By the Certified QuickBooks ProAdvisor team</p><p class="byline__meta">Reviewed by a Certified ProAdvisor &middot; advisory on accurate books, coordinated with your CPA</p></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-budget-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Budgeting &amp; forecasting, plainly.</h2>
-    </header>
+{#- DEFINITION → prose -#}
+<section class="sec reveal" id="acct-budget-definition" style="padding-top:8px;">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Budgeting &amp; forecasting, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-budget-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Budgeting &amp; forecasting, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="acct-budget-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When budgeting &amp; forecasting earns its keep</p>
-      <h2 class="section__heading">If any of these sound familiar, the answer is yes.</h2>
-      <p class="section__lede">Most owners reach for a real budgeting and forecasting practice when planning by feel stops scaling with the business.</p>
-    </header>
-    <div class="grid-2">
+{#- SIGNALS → r-2 of dc-card (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-budget-signals" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When budgeting &amp; forecasting earns its keep</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">If any of these sound familiar, the answer is yes.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:68ch;">Most owners reach for a real budgeting and forecasting practice when planning by feel stops scaling with the business.</p>
+    <div class="r-2">
       {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ s.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-budget-delivers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s included</p>
-      <h2 class="section__heading">What budgeting &amp; forecasting actually delivers.</h2>
-      <p class="section__lede">Scoped to your business and stage, sized to the way you actually plan and review &mdash; built on books that are accurate first.</p>
-    </header>
-    <div class="grid-3">
+{#- DELIVERS → r-3 of dc-card with num -#}
+<section class="sec reveal" id="acct-budget-delivers">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What budgeting &amp; forecasting actually delivers.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Scoped to your business and stage, sized to the way you actually plan and review &mdash; built on books that are accurate first.</p>
+    <div class="r-3">
       {%- for d in delivers %}
-      <div class="stack-8">
-        <p class="num">{{ d.num }}</p>
-        <h3>{{ d.name | safe }}</h3>
-        <p class="prose">{{ d.body | safe }}</p>
-      </div>
+      <div class="dc-card"><p class="num" style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--color-accent);margin:0 0 4px;">{{ d.num }}</p><h3>{{ d.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ d.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-budget-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How it works</p>
-      <h2 class="section__heading">From first budget to a plan that keeps up with the year.</h2>
-      <p class="section__lede">Every budgeting and forecasting engagement follows the same four-phase rhythm &mdash; built on books that are accurate first.</p>
-    </header>
-    <ol class="process-diagram">
+{#- PROCESS → process-grid (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-budget-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How it works</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From first budget to a plan that keeps up with the year.</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:68ch;">Every budgeting and forecasting engagement follows the same four-phase rhythm &mdash; built on books that are accurate first.</p>
+    <div class="process-grid">
       {%- for s in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ s.num | upper }}{% if loop.last %} &check;{% endif %}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-budget-steer">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the budget</p>
-      <h2 class="section__heading">A plan is only useful if someone steers by it.</h2>
-    </header>
+{#- STEER prose + boundary table (.cmp) -#}
+<section class="sec reveal" id="acct-budget-steer">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Beyond the budget</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">A plan is only useful if someone steers by it.</h2>
     <div class="prose">
       {%- for p in steerProse %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">Where budgeting &amp; forecasting sits next to cash flow management and tax/audit work</caption>
-        <thead><tr><th scope="col">Capability</th><th scope="col" class="vs-table__us">Budgeting &amp; forecasting</th><th scope="col">Cash flow management</th><th scope="col">Tax / audit</th></tr></thead>
-        <tbody>
-          {%- for r in boundary %}
-          <tr><th scope="row">{{ r.cap | safe }}</th>
-            <td class="vs-table__us">{% if r.bf == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.bf == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.bf | safe }}</span>{% endif %}</td>
-            <td>{% if r.cash == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.cash == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.cash | safe }}</span>{% endif %}</td>
-            <td>{% if r.tax == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.tax == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.tax | safe }}</span>{% endif %}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+  </div>
+  <div class="ct" style="margin-top:28px;">
+    <table class="cmp">
+      <caption class="sr-only">Where budgeting &amp; forecasting sits next to cash flow management and tax/audit work</caption>
+      <thead><tr><th scope="col">Capability</th><th scope="col" class="us">Budgeting &amp; forecasting</th><th scope="col">Cash flow management</th><th scope="col">Tax / audit</th></tr></thead>
+      <tbody>
+        {%- for r in boundary %}
+        <tr><th scope="row" data-col="Capability">{{ r.cap | safe }}</th>
+          <td class="us" data-col="Budgeting &amp; forecasting">{% if r.bf == 'yes' %}<span class="mk mk--yes"><span class="mk__dot"></span>Yes</span>{% elif r.bf == 'no' %}<span class="mk mk--no"><span class="mk__dot"></span>No</span>{% else %}{{ r.bf | safe }}{% endif %}</td>
+          <td data-col="Cash flow management">{% if r.cash == 'yes' %}<span class="mk mk--yes"><span class="mk__dot"></span>Yes</span>{% elif r.cash == 'no' %}<span class="mk mk--no"><span class="mk__dot"></span>No</span>{% else %}{{ r.cash | safe }}{% endif %}</td>
+          <td data-col="Tax / audit">{% if r.tax == 'yes' %}<span class="mk mk--yes"><span class="mk__dot"></span>Yes</span>{% elif r.tax == 'no' %}<span class="mk mk--no"><span class="mk__dot"></span>No</span>{% else %}{{ r.tax | safe }}{% endif %}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 
-<section class="section" id="acct-budget-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Budgeting &amp; forecasting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-budget-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acct-budget-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-    <p class="meta-reviewed"><span>Published: 2026-06-15</span><span>Updated: 2026-06-15</span><span>Reviewed: 2026-06-15 &middot; Certified ProAdvisor team</span></p>
-  </div>
-</section>
-
-<section class="section section--alt" id="acct-budget-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+{#- REVIEW prose + trust-row (sand). meta-reviewed kept here. -#}
+<section class="sec reveal hub-rt--alt" id="acct-budget-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       {%- for p in reviewProse %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in reviewSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
+    <p class="meta-reviewed" style="margin-top:18px;"><span>Published: 2026-06-15</span><span>Updated: 2026-06-15</span><span>Reviewed: 2026-06-15 &middot; Certified ProAdvisor team</span></p>
   </div>
 </section>
 
-<section class="section" id="acct-budget-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related advisory &amp; services.</h2>
-    </header>
-    {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+{#- RELATED → r-2 of dc-card hub-card -#}
+<section class="sec reveal" id="acct-budget-related">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related advisory &amp; services.</h2>
+    <div class="r-2">
+      {%- for n in related %}
+      <a class="dc-card hub-card" href="{{ n.href }}"><h3>{{ n.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ n.body | safe }}</p><span class="hub-card__go">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      {%- endfor %}
     </div>
-    {%- endfor %}
   </div>
 </section>

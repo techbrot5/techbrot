@@ -1,11 +1,14 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/quickbooks/payroll/vs-gusto/",
   "slug": "qbpvg",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
+  "metaReviewed": "2026-06-15",
+  "sec": {
+    "aiH": "QuickBooks Payroll vs Gusto, in five questions.",
+    "faqH": "What people ask about QuickBooks Payroll vs Gusto."
+  },
   "title": "QuickBooks Payroll vs Gusto: Independent ProAdvisor Comparison · TechBrot",
   "description": "An independent Certified ProAdvisor&rsquo;s honest comparison of QuickBooks Payroll vs Gusto — features, pricing structure, integration, HR, contractor payments, multi-state. Who each one fits, and why we implement both based on what&rsquo;s right for the business.",
   "breadcrumb": [
@@ -19,10 +22,13 @@
     "heading": "QuickBooks Payroll vs Gusto, compared honestly.",
     "subheading": "Most &ldquo;X vs Y&rdquo; pages on the internet are written by firms earning affiliate revenue from one of them. <strong>This isn&rsquo;t one of those pages.</strong> TechBrot is a Certified QuickBooks Payroll ProAdvisor firm <em>and</em> implements Gusto for clients where Gusto fits better &mdash; with zero affiliate revenue from either. Below: where each genuinely wins, where each loses, and how to figure out which fits your business. Independent firm, not affiliated with Intuit Inc. or Gusto, Inc.",
     "actions": [
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
-      { "label": "Book the discovery call", "href": "/contact/?intent=qb-payroll-setup", "class": "btn--ghost" },
-      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=qb-payroll-setup" }
     ]
+  },
+  "byline": {
+    "name": "By the Certified QuickBooks ProAdvisor team",
+    "meta": "Reviewed by a Certified QuickBooks Payroll ProAdvisor &middot; independent, no reseller or referral incentive on either provider"
   },
   "inBrief": {
     "text": "<strong>Neither QuickBooks Payroll nor Gusto is universally better</strong> &mdash; they fit different businesses. <strong>QuickBooks Payroll</strong> wins for businesses already on QuickBooks Online or Desktop where deep accounting integration matters, for accounting-fluent users, and where the CPA prefers QuickBooks-native workflows. <strong>Gusto</strong> wins for businesses needing modern HR features, significant contractor or 1099 volume, multi-state operations, or a cleaner UI for non-accounting users running their own payroll. We are certified in QuickBooks Payroll <em>and</em> implement Gusto, with <strong>zero commission, affiliate, or referral revenue from either</strong> &mdash; so the recommendation reflects what fits your business, not what pays us.",
@@ -33,179 +39,137 @@
     "heading": "Get the honest answer for your business.",
     "lede": "Book a 30-minute call with a Certified Payroll ProAdvisor. We walk your team size, employee/contractor mix, multi-state needs, HR requirements, and existing accounting platform against both QuickBooks Payroll and Gusto &mdash; then recommend the one that genuinely fits. If neither is the right answer, we&rsquo;ll say so plainly. No pitch, no commission, no upsell. Independent firm &mdash; earns no fees on either provider.",
     "actions": [
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--primary" },
-      { "label": "Book the discovery call", "href": "/contact/?intent=qb-payroll-setup", "class": "btn--ghost" }
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" },
+      { "label": "Book the discovery call", "href": "/contact/?intent=qb-payroll-setup" }
     ]
   }
 }
 ---
+{#- ═══ QB PAYROLL vs GUSTO (BASELINE COMPARISON). t-mofu→t-prose (NOT t-comparison:
+    the 8 dimension H3s, 6 profile H3s, 3 third-option H3s, and 6 implementation H3s have
+    no slot in t-comparison's fixed data shape — forcing them in would DROP baseline
+    headings. t-prose renders {{content}}, so all baseline H2/H3 are preserved verbatim).
+    T3 NO COLLAPSE held: the 8 dimensions stay real <h3>; a SEPARATE compact .cmp at-a-glance
+    table (the comparison-tier signature) uses short row labels. ai-summary + faq + TL;DR
+    (#qbpvg-in-brief-text speakable) + final CTA rendered by t-prose. old-kit → v2. ═══ -#}
 
-<section class="section section--compact" id="qbpvg-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a Certified QuickBooks Payroll ProAdvisor &middot; independent, no reseller or referral incentive on either provider</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section--compact section--tier-guide" id="qbpvg-credentials">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Certified by Intuit &middot; fluent in both platforms</p>
-      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials.</h2>
-    </header>
-    <div class="stat-row">
+{#- CREDENTIALS — stat-row + checklist. -#}
+<section class="sec reveal" id="qbpvg-credentials" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Certified by Intuit &middot; fluent in both platforms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Certified QuickBooks ProAdvisor credentials.</h2>
+    <div class="trust-row" style="margin-bottom:22px;">
       {%- for s in credStats %}
-      <div><div class="stat__value">{{ s.value }}</div><div class="stat__label">{{ s.label }}</div></div>
+      <div class="trust-row__item"><p class="trust-row__value">{{ s.value }}</p><p class="trust-row__label">{{ s.label }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <ul class="checks-list">
+    <ul class="checklist">
       {%- for c in credentials %}<li>{{ c | safe }}</li>{%- endfor %}
     </ul>
   </div>
 </section>
 
-<section class="section section--alt" id="qbpvg-plainly">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In one paragraph</p>
-      <h2 class="section__heading">QuickBooks Payroll vs Gusto, plainly.</h2>
-    </header>
+{#- PLAINLY — the one-paragraph plain read (definition prose; baseline H2). -#}
+<section class="sec reveal hub-rt--alt" id="qbpvg-plainly" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">QuickBooks Payroll vs Gusto, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbpvg-glance">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">At a glance</p>
-      <h2 class="section__heading">QuickBooks Payroll vs Gusto, side by side.</h2>
-      <p class="section__lede">A quick summary read &mdash; the full nuance, including where each <em>loses</em>, is in the eight dimensions below. We hold no reseller or referral incentive in either direction.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">QuickBooks Payroll vs Gusto compared at a glance</caption>
-        <thead><tr><th scope="col">Dimension</th><th scope="col">QuickBooks Payroll</th><th scope="col" class="vs-table__us">Gusto</th></tr></thead>
-        <tbody>
-          {%- for r in vsTable %}
-          <tr><th scope="row">{{ r.cap | safe }}</th>
-            <td>{% if r.qb == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.qb == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.qb | safe }}</span>{% endif %}</td>
-            <td class="vs-table__us">{% if r.gusto == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.gusto == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.gusto | safe }}</span>{% endif %}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+{#- AT A GLANCE — compact .cmp comparison table (comparison-tier signature; T3: separate
+    from the 8 dimension H3s, short row labels). vs-table → .cmp, Gusto = num us highlight. -#}
+<section class="sec reveal" id="qbpvg-glance">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">At a glance</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">QuickBooks Payroll vs Gusto, side by side.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">A quick summary read &mdash; the full nuance, including where each <em>loses</em>, is in the eight dimensions below. We hold no reseller or referral incentive in either direction.</p>
+    <table class="cmp" data-viz="comparison-table" data-viz-state="FINAL">
+      <caption class="sr-only">QuickBooks Payroll vs Gusto compared at a glance</caption>
+      <thead><tr><th scope="col">Dimension</th><th scope="col">QuickBooks Payroll</th><th scope="col" class="us">Gusto</th></tr></thead>
+      <tbody>
+        {%- for r in vsTable %}
+        <tr>
+          <th scope="row">{{ r.cap | safe }}</th>
+          <td data-col="QuickBooks Payroll" style="color:var(--color-ink-mute);">{{ r.qb | safe }}</td>
+          <td class="us" data-col="Gusto">{{ r.gusto | safe }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 
-<section class="section section--alt" id="qbpvg-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">QuickBooks Payroll vs Gusto, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="qbpvg-profiles">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Who each provider fits</p>
-      <h2 class="section__heading">The business profiles where each one clearly wins.</h2>
-      <p class="section__lede">Most decisions sort cleanly when you match your business profile against the patterns below. Edge cases &mdash; businesses straddling the line &mdash; benefit from the advisory call.</p>
-    </header>
-    <div class="grid-3">
+{#- PROFILES — 6 buyer-cards → dc-card grid-3. H3s VERBATIM. -#}
+<section class="sec reveal hub-rt--alt" id="qbpvg-profiles" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Who each provider fits</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The business profiles where each one clearly wins.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Most decisions sort cleanly when you match your business profile against the patterns below. Edge cases &mdash; businesses straddling the line &mdash; benefit from the advisory call.</p>
+    <div class="r-3">
       {%- for p in profiles %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ p.name | safe }}</h3>
-        <p class="buyer-card__body">{{ p.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ p.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ p.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbpvg-dimensions">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The eight comparison dimensions</p>
-      <h2 class="section__heading">Where each wins, where each loses.</h2>
-      <p class="section__lede">The dimensions that actually decide payroll provider selection &mdash; not the marketing-page feature lists. Read each, then match against your business.</p>
-    </header>
-    <div class="grid-2">
+{#- DIMENSIONS — 8 REAL <h3> (T3 NO COLLAPSE). H3s VERBATIM. grid-2 prose pairs. -#}
+<section class="sec reveal" id="qbpvg-dimensions">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The eight comparison dimensions</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Where each wins, where each loses.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">The dimensions that actually decide payroll provider selection &mdash; not the marketing-page feature lists. Read each, then match against your business.</p>
+    <div class="r-2">
       {%- for d in dimensions %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ d.num }}</p>
-        <h3>{{ d.name | safe }}</h3>
-        <p class="prose">{{ d.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ d.num }}</span><h3>{{ d.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ d.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbpvg-third">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When neither is the right answer</p>
-      <h2 class="section__heading">Sometimes a third option fits better.</h2>
-      <p class="section__lede">Independence means saying so when neither of the two options under consideration is actually the right call.</p>
-    </header>
-    <div class="grid-3">
+{#- THIRD OPTION — 3 REAL <h3>. H3s VERBATIM. -#}
+<section class="sec reveal hub-rt--alt" id="qbpvg-third" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When neither is the right answer</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Sometimes a third option fits better.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Independence means saying so when neither of the two options under consideration is actually the right call.</p>
+    <div class="r-3">
       {%- for t in thirdOption %}
-      <div class="stack-8">
-        <h3>{{ t.name | safe }}</h3>
-        <p class="prose">{{ t.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ t.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ t.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbpvg-implementation">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How we help with payroll provider selection</p>
-      <h2 class="section__heading">From decision to implementation, both platforms.</h2>
-      <p class="section__lede">TechBrot supports the full payroll-provider lifecycle &mdash; selection, implementation, ongoing operations, and the eventual migration if you outgrow the chosen platform.</p>
-    </header>
-    <div class="grid-3">
+{#- IMPLEMENTATION — 6 REAL <h3> with service links. H3s VERBATIM. -#}
+<section class="sec reveal" id="qbpvg-implementation">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How we help with payroll provider selection</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From decision to implementation, both platforms.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">TechBrot supports the full payroll-provider lifecycle &mdash; selection, implementation, ongoing operations, and the eventual migration if you outgrow the chosen platform.</p>
+    <div class="r-3">
       {%- for s in implementation %}
-      <div class="stack-8">
-        <h3><a href="{{ s.href }}">{{ s.name | safe }}</a></h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3><a href="{{ s.href }}">{{ s.name | safe }}</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbpvg-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Who delivers the advice</p>
-      <h2 class="section__heading">Certified in QuickBooks Payroll. Implementing Gusto. Zero commission on either.</h2>
-    </header>
+{#- OPERATOR — prose + trust-row. -#}
+<section class="sec reveal hub-rt--alt" id="qbpvg-operator" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Who delivers the advice</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Certified in QuickBooks Payroll. Implementing Gusto. Zero commission on either.</h2>
     <div class="prose">
       <p>Payroll provider advice is only as good as the depth of experience behind it. Every TechBrot Payroll ProAdvisor holds active Certified QuickBooks Payroll credentials and has implemented Gusto for clients where Gusto fit better &mdash; so the recommendation you get comes from someone who has operated both platforms across real client engagements, not from feature-spec marketing pages.</p>
       <p>Critically, <strong>we earn nothing from your payroll-provider choice</strong> &mdash; no Intuit affiliate revenue, no Gusto referral commissions, no kickback from either. Our independence is structural, which is what makes the recommendation worth giving free. You can <a href="/quickbooks/proadvisor-team/">meet the ProAdvisor team</a> or read our <a href="/trust/">trust &amp; methodology standards</a>. Independent firm &mdash; not affiliated with Intuit Inc. or Gusto, Inc.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in operatorSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -214,39 +178,15 @@
   </div>
 </section>
 
-<section class="section section--alt" id="qbpvg-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Payroll comparison questions</p>
-      <h2 class="section__heading">What people ask about QuickBooks Payroll vs Gusto.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbpvg-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="qbpvg-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
+{#- RELATED — hub-card grid. -#}
+<section class="sec reveal" id="qbpvg-related">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related references</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Other payroll resources.</h2>
+    <div class="r-2">
+      {%- for n in related %}
+      <a class="dc-card hub-card" href="{{ n.href }}"><h3>{{ n.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ n.body | safe }}</p><span class="hub-card__go">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
-    <p class="meta-reviewed"><span>Published: 2026-06-15</span><span>Updated: 2026-06-15</span><span>Reviewed: 2026-06-15 &middot; Certified QuickBooks Payroll ProAdvisor</span></p>
-  </div>
-</section>
-
-<section class="section" id="qbpvg-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related references</p>
-      <h2 class="section__heading">Other payroll resources.</h2>
-    </header>
-    {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
-    </div>
-    {%- endfor %}
   </div>
 </section>

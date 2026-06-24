@@ -1,10 +1,10 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-hub.njk",
   "permalink": "/quickbooks/help/",
   "slug": "help",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
+  "heroFigure": false,
   "title": "QuickBooks Help · Direct Support from Certified ProAdvisors · TechBrot",
   "description": "QuickBooks help from Certified Intuit ProAdvisors — cleanup, setup, migration, payroll fixes, error resolution, ongoing bookkeeping. Same-day diagnostic for emergencies. Written fixed-fee scope. Independent ProAdvisor firm. Not affiliated with Intuit Inc.",
   "breadcrumb": [
@@ -25,6 +25,13 @@
     "text": "<strong>Operational QuickBooks help</strong> from Certified ProAdvisors &mdash; the work that lives inside QuickBooks: file setup, structural cleanup, Desktop migration, payroll configuration, multi-state tax setup, error resolution, file repair, and ongoing monthly bookkeeping. Fixed-fee, written scope, same-day diagnostic for emergencies. Across QBO Level&nbsp;2, Desktop, Enterprise, and Payroll.",
     "source": "Independent Certified QuickBooks ProAdvisor firm &mdash; not Intuit&rsquo;s software support. Not affiliated with Intuit Inc."
   },
+  "sec": {
+    "inBriefTag": "What we mean",
+    "inBriefH": "What &ldquo;QuickBooks help&rdquo; actually means here.",
+    "aiH": "QuickBooks help, in five questions.",
+    "faqTag": "Common questions",
+    "faqH": "Questions before you call."
+  },
   "ctaBand": {
     "eyebrow": "Start here",
     "heading": "Get QuickBooks help from a Certified ProAdvisor.",
@@ -37,105 +44,67 @@
 }
 ---
 
-<section class="section section--compact" id="help-disclosure">
-  <div class="container container--narrow">
+<section class="sec reveal" id="help-disclosure" style="padding-top:32px;padding-bottom:0;">
+  <div class="ct read">
     <div class="disclosure">
       <strong>TechBrot is an independent Certified QuickBooks ProAdvisor firm &mdash; not Intuit, and not QuickBooks&rsquo; official support.</strong> For Intuit software-level issues (login, billing, subscription, software bugs), Intuit&rsquo;s own support is the right path. We provide independent, operational help with the accounting work <em>inside</em> QuickBooks. QuickBooks and Intuit are registered trademarks of Intuit Inc.
     </div>
   </div>
 </section>
 
-<section class="section" id="help-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">What we mean</p>
-      <h2 class="section__heading">What &ldquo;QuickBooks help&rdquo; actually means here.</h2>
-    </header>
-    <div class="prose">
-      <p>TechBrot is an independent Certified QuickBooks ProAdvisor firm that delivers <strong>operational</strong> QuickBooks help to U.S. small and mid-sized businesses. Operational is the key word: we handle the work that lives inside QuickBooks &mdash; <a href="/quickbooks/setup/?intent=quickbooks-setup">file setup</a>, <a href="/quickbooks/cleanup/?intent=qb-cleanup">structural cleanup</a>, <a href="/quickbooks/migration/?intent=quickbooks-migration">Desktop migration</a>, <a href="/accounting/payroll-management/?intent=payroll">payroll configuration</a>, multi-state tax setup, error resolution, file repair, and ongoing <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a>.</p>
-      <p>We do not provide Intuit&rsquo;s own software-level support (login issues, billing, software bugs) &mdash; for those, Intuit&rsquo;s official support is the right path. Every engagement is fixed-fee with a written scope. Same-day diagnostic for emergencies (file corruption, payroll-day failures, year-end deadlines); written scope within 3 business days for scoping conversations. Certified ProAdvisors across all four core platforms &mdash; QBO Level&nbsp;2, Desktop, Enterprise, Payroll &mdash; verifiable on Intuit&rsquo;s public ProAdvisor directory.</p>
-    </div>
-  </div>
-</section>
+{#- §01 IN-BRIEF + definition prose render via the in-brief partial slot (speakable #help-in-brief-text + the "What QuickBooks help means" H2). -#}
+{%- set definition = [
+  "TechBrot is an independent Certified QuickBooks ProAdvisor firm that delivers <strong>operational</strong> QuickBooks help to U.S. small and mid-sized businesses. Operational is the key word: we handle the work that lives inside QuickBooks &mdash; <a href=\"/quickbooks/setup/?intent=quickbooks-setup\">file setup</a>, <a href=\"/quickbooks/cleanup/?intent=qb-cleanup\">structural cleanup</a>, <a href=\"/quickbooks/migration/?intent=quickbooks-migration\">Desktop migration</a>, <a href=\"/accounting/payroll-management/?intent=payroll\">payroll configuration</a>, multi-state tax setup, error resolution, file repair, and ongoing <a href=\"/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly\">monthly bookkeeping</a>.",
+  "We do not provide Intuit&rsquo;s own software-level support (login issues, billing, software bugs) &mdash; for those, Intuit&rsquo;s official support is the right path. Every engagement is fixed-fee with a written scope. Same-day diagnostic for emergencies (file corruption, payroll-day failures, year-end deadlines); written scope within 3 business days for scoping conversations. Certified ProAdvisors across all four core platforms &mdash; QBO Level&nbsp;2, Desktop, Enterprise, Payroll &mdash; verifiable on Intuit&rsquo;s public ProAdvisor directory."
+] %}
+{% include "partials/in-brief.njk" %}
 
-<section class="section section--alt" id="help-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">QuickBooks help, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="help-triage">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The diagnostic triage model</p>
-      <h2 class="section__heading">What kind of QuickBooks help do you actually need?</h2>
-      <p class="section__lede">Find your situation &mdash; each routes to the right engagement, with an honest scope and a typical fee.</p>
-    </header>
-    <div class="grid-2">
+<section class="sec reveal" id="help-triage">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The diagnostic triage model</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What kind of QuickBooks help do you actually need?</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Find your situation &mdash; each routes to the right engagement, with an honest scope and a typical fee.</p>
+    <div class="r-2">
       {%- for t in triage %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ t.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ t.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ t.href }}">{{ t.cta | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </div>
+      <a class="dc-card hub-card" href="{{ t.href }}"><h3>{{ t.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ t.body | safe }}</p><span class="hub-card__go">{{ t.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="help-urgency">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">By urgency</p>
-      <h2 class="section__heading">How fast can we help?</h2>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="help-urgency" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">By urgency</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">How fast can we help?</h2>
+    <div class="r-3">
       {%- for u in urgency %}
-      <div class="stack-8">
+      <div class="dc-card">
         <h3>{{ u.name | safe }}</h3>
-        <p class="prose">{{ u.who | safe }}</p>
-        <p class="prose"><strong>Best path:</strong> {% if u.tel %}<a href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">{{ u.path | safe }}</a>{% else %}{{ u.path | safe }}{% endif %}</p>
-        <p class="prose"><em>Honest scope:</em> {{ u.scope | safe }}</p>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ u.who | safe }}</p>
+        <p class="prose" style="font-size:14.5px;margin:8px 0 0;"><strong>Best path:</strong> {% if u.tel %}<a href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">{{ u.path | safe }}</a>{% else %}{{ u.path | safe }}{% endif %}</p>
+        <p class="prose" style="font-size:14.5px;margin:8px 0 0;"><em>Honest scope:</em> {{ u.scope | safe }}</p>
       </div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="help-problems">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Common issues</p>
-      <h2 class="section__heading">The QuickBooks problems most U.S. businesses run into.</h2>
-    </header>
-    <div class="grid-2">
+<section class="sec reveal" id="help-problems">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Common issues</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;">The QuickBooks problems most U.S. businesses run into.</h2>
+    <div class="r-2">
       {%- for p in problems %}
-      <div class="stack-8">
-        <h3>{{ p.name | safe }}</h3>
-        <p class="prose">{{ p.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ p.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ p.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="help-operational">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">What it actually looks like</p>
-      <h2 class="section__heading">What QuickBooks help delivers operationally.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="help-operational" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What it actually looks like</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">What QuickBooks help delivers operationally.</h2>
     <div class="prose">
       <p>Most &ldquo;QuickBooks help&rdquo; offerings are either too narrow (a one-hour consulting call) or too vague (an ongoing &ldquo;support package&rdquo; with no defined deliverables). TechBrot&rsquo;s engagements are scoped as specific operational projects with specific written deliverables &mdash; a cleanup delivers a reconciled, CPA-ready file with a written summary of what was fixed; a setup delivers a configured file ready to operate from day one; a migration delivers a successfully migrated file with reconciled historical data and rebuilt integrations.</p>
       <p>The work is delivered <strong>inside your QuickBooks file</strong> &mdash; we access as accountant-users, you keep your data, and the audit trail is visible to you at any time. We never operate in a parallel system or require a data export. For recurring engagements, the deliverable is the same shape every month: reconciliation, categorization, financial statements, named-ProAdvisor ownership, and a CPA-ready year-end handoff.</p>
@@ -143,36 +112,32 @@
   </div>
 </section>
 
-<section class="section" id="help-services">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Routed properly</p>
-      <h2 class="section__heading">All QuickBooks help, routed properly.</h2>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="help-services">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Routed properly</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;">All QuickBooks help, routed properly.</h2>
+    <div class="r-3">
       {%- for s in services %}
-      <article class="review-card">
-        <p class="review-card__role">{{ s.num | safe }}</p>
+      <a class="dc-card hub-card" href="{{ s.href }}">
+        <span class="eyebrow" style="display:block;margin-bottom:8px;">{{ s.num | safe }}</span>
         <h3>{{ s.name | safe }}</h3>
-        <p class="review-card__fact">{{ s.body | safe }}</p>
-        <p class="review-card__fact"><strong>{{ s.fee | safe }}</strong> &middot; {{ s.eng | safe }}</p>
-        <a class="review-card__link" href="{{ s.href }}">{{ s.name | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ s.body | safe }}</p>
+        <p class="prose" style="font-size:14px;margin:10px 0 0;"><strong>{{ s.fee | safe }}</strong> &middot; {{ s.eng | safe }}</p>
+        <span class="hub-card__go">{{ s.name | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="help-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Who delivers the help</p>
-      <h2 class="section__heading">Certified ProAdvisors. Every engagement. Every time.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="help-operator" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Who delivers the help</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Certified ProAdvisors. Every engagement. Every time.</h2>
     <div class="prose">
       <p>Every TechBrot QuickBooks engagement is delivered by a Certified Intuit QuickBooks ProAdvisor &mdash; not a general bookkeeper, not an offshore queue, not a junior associate. The ProAdvisor team holds active Intuit certifications across all four core platforms: QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll. Renewed annually, verifiable on Intuit&rsquo;s public ProAdvisor directory. The certification is the operational signal &mdash; technical proficiency on the platform you&rsquo;ll be billed for work inside, and third-party accountability to a credentialing body.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in reviewSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -181,19 +146,17 @@
   </div>
 </section>
 
-<section class="section" id="help-costs">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Pricing</p>
-      <h2 class="section__heading">What QuickBooks help typically costs.</h2>
-      <p class="section__lede">All engagements: fixed fee, written scope, no hourly billing. The discovery call is free and no-obligation; specific quotes follow the diagnostic within 3 business days.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="help-costs">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Pricing</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What QuickBooks help typically costs.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">All engagements: fixed fee, written scope, no hourly billing. The discovery call is free and no-obligation; specific quotes follow the diagnostic within 3 business days.</p>
+    <div class="r-3">
       {%- for c in costs %}
-      <div class="stack-8">
+      <div class="dc-card">
         <h3>{{ c.name | safe }}</h3>
-        <p class="prose"><strong>For:</strong> {{ c.forWhom | safe }}</p>
-        <ul class="checks-list">
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;"><strong>For:</strong> {{ c.forWhom | safe }}</p>
+        <ul class="checklist" style="margin-top:12px;">
           {%- for b in c.bullets %}<li>{{ b | safe }}</li>{%- endfor %}
         </ul>
       </div>
@@ -202,50 +165,25 @@
   </div>
 </section>
 
-<section class="section section--alt" id="help-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">Questions before you call.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="help-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="help-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="help-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by Certified QuickBooks ProAdvisors.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="help-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Reviewed by Certified QuickBooks ProAdvisors.</h2>
     <div class="prose">
       <p>This page is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent ProAdvisor firm, and reviewed for accuracy on the boundary between operational ProAdvisor help and Intuit&rsquo;s own software support. Where our scope or fees change, this page is updated.</p>
     </div>
-    <p class="in-brief__source">Page last reviewed: May 2026.</p>
+    <p class="in-brief__source" style="margin-top:14px;">Page last reviewed: May 2026.</p>
   </div>
 </section>
 
-<section class="section section--alt" id="help-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Where else to go</p>
-      <h2 class="section__heading">Where else to go.</h2>
-    </header>
+<section class="sec reveal" id="help-related">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Where else to go</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where else to go.</h2>
     {%- for n in related %}
-    <div class="stack-8">
+    <div style="margin-bottom:18px;">
       <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+      <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ n.body | safe }}</p>
     </div>
     {%- endfor %}
   </div>

@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/financial-statements/",
   "slug": "acct-finstmt",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
+  "sec": {
+    "aiH": "Financial statements, in five questions.",
+    "faqH": "Financial statement questions."
+  },
   "title": "Financial Statements: P&amp;L, Balance Sheet &amp; Cash Flow · TechBrot",
   "description": "Monthly financial statements by Certified ProAdvisors — income statement, balance sheet, and cash flow statement built from reconciled QuickBooks books, CPA-ready, with plain-language commentary.",
   "breadcrumb": [
@@ -39,129 +41,84 @@
 }
 ---
 
-<section class="section" id="acct-finstmt-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Financial statements, plainly.</h2>
-    </header>
+<section class="sec reveal" id="acct-finstmt-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Financial statements, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-finstmt-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Financial statements, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <p class="ai-summary__question">{{ item.q | safe }}</p>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="acct-finstmt-three">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The three statements</p>
-      <h2 class="section__heading">What each one tells you &mdash; and what it doesn&rsquo;t.</h2>
-      <p class="section__lede">Each statement answers a different question. Used alone, each one misleads. Read together, they tell the truth.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="acct-finstmt-three" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The three statements</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What each one tells you &mdash; and what it doesn&rsquo;t.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Each statement answers a different question. Used alone, each one misleads. Read together, they tell the truth.</p>
+    <div class="r-3">
       {%- for s in statements %}
-      <div class="stack-8">
-        <p class="num">{{ s.num }}</p>
-        <h3>{{ s.name | safe }}</h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ s.num }}</span><h3>{{ s.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-finstmt-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When real financial statements earn their keep</p>
-      <h2 class="section__heading">If any of these sound familiar, the answer is yes.</h2>
-      <p class="section__lede">Most owners reach for proper monthly statements when a single P&amp;L stops answering the questions they&rsquo;re asking.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="acct-finstmt-signals">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When real financial statements earn their keep</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">If any of these sound familiar, the answer is yes.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Most owners reach for proper monthly statements when a single P&amp;L stops answering the questions they&rsquo;re asking.</p>
+    <div class="r-3">
       {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ s.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-finstmt-delivers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s included</p>
-      <h2 class="section__heading">What financial statement preparation actually delivers.</h2>
-      <p class="section__lede">Included in monthly bookkeeping engagements. Stand-alone historical preparation quoted as fixed-fee project work.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="acct-finstmt-delivers" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What financial statement preparation actually delivers.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Included in monthly bookkeeping engagements. Stand-alone historical preparation quoted as fixed-fee project work.</p>
+    <div class="r-3">
       {%- for d in deliverables %}
-      <div class="stack-8">
-        <p class="num">{{ d.num }}</p>
-        <h3>{{ d.name | safe }}</h3>
-        <p class="prose">{{ d.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ d.num }}</span><h3>{{ d.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ d.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-finstmt-scope">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Honest scope</p>
-      <h2 class="section__heading">Management statements vs CPA engagements.</h2>
-      <p class="section__lede">We prepare the statements from clean books. External attestation and tax returns are a licensed CPA&rsquo;s work &mdash; the boundary, drawn plainly.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="acct-finstmt-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Management statements vs CPA engagements.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">We prepare the statements from clean books. External attestation and tax returns are a licensed CPA&rsquo;s work &mdash; the boundary, drawn plainly.</p>
+    <div class="r-3">
       {%- for s in scope %}
-      <div class="stack-8">
-        <h3>{{ s.name | safe }}</h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ s.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">What financial statement preparation covers vs what a licensed CPA engagement covers</caption>
-        <thead><tr><th scope="col">Capability</th><th scope="col" class="vs-table__us">Statement preparation</th><th scope="col">Licensed CPA engagement</th></tr></thead>
-        <tbody>
-          {%- for r in boundary %}
-          <tr><th scope="row">{{ r.cap | safe }}</th>
-            <td class="vs-table__us">{% if r.us == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.us == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.us | safe }}</span>{% endif %}</td>
-            <td>{% if r.cpa == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.cpa == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.cpa | safe }}</span>{% endif %}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+    <table class="cmp" style="margin-top:32px;">
+      <caption class="sr-only">What financial statement preparation covers vs what a licensed CPA engagement covers</caption>
+      <thead><tr><th scope="col">Capability</th><th scope="col" class="us">Statement preparation</th><th scope="col">Licensed CPA engagement</th></tr></thead>
+      <tbody>
+        {%- for r in boundary %}
+        <tr><th scope="row" data-col="Capability">{{ r.cap | safe }}</th>
+          <td class="us" data-col="Statement preparation">{% if r.us == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.us == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span style="color:var(--color-ink-mute);">{{ r.us | safe }}</span>{% endif %}</td>
+          <td data-col="Licensed CPA engagement">{% if r.cpa == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.cpa == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span style="color:var(--color-ink-mute);">{{ r.cpa | safe }}</span>{% endif %}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 
-<section class="section" id="acct-finstmt-beyond">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the statements</p>
-      <h2 class="section__heading">Reliable statements are the floor, not the ceiling.</h2>
-    </header>
+<section class="sec reveal" id="acct-finstmt-beyond">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Beyond the statements</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reliable statements are the floor, not the ceiling.</h2>
     <div class="prose">
       <p>Producing the three statements accurately every month is the foundation. The real value starts when someone who understands them tells you what to do about what they show: where margin is leaking, why cash is tight, which segment is carrying the business, when to hire. That&rsquo;s where reporting becomes <strong>advisory</strong>.</p>
       <p>TechBrot layers <a href="/accounting/advisory/kpi-reporting/?intent=advisory">KPI reporting</a>, <a href="/accounting/advisory/cash-flow-management/?intent=advisory">cash flow management</a>, and performance reviews on top of reliable statements &mdash; up to a <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">fractional CFO</a> seat when the work becomes continuous. As automation handles the routine, this interpretation layer is where the real value now lives.</p>
@@ -170,33 +127,10 @@
   </div>
 </section>
 
-<section class="section section--alt" id="acct-finstmt-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Financial statement questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-finstmt-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acct-finstmt-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="acct-finstmt-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="acct-finstmt-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot prepares financial statements. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on statement-preparation methodology, reconciliation standards, and the boundary with licensed CPA engagements (audit, review, compilation). Where our approach or scope changes, this page is updated. Statements are delivered CPA-ready and coordinated with your tax professional for filing and any formal CPA engagement.</p>
     </div>
@@ -206,16 +140,14 @@
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <p class="in-brief__source">Page last reviewed: May 2026.</p>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:14px;">Page last reviewed: May 2026.</p>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-finstmt-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services.</h2>
-    </header>
+<section class="sec reveal" id="acct-finstmt-related">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Related services.</h2>
     {%- for n in related %}
     <div class="stack-8">
       <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>

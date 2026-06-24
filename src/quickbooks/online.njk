@@ -1,11 +1,14 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/quickbooks/online/",
   "slug": "qbo",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
+  "metaReviewed": "2026-06-14",
+  "sec": {
+    "aiH": "QuickBooks Online, in five questions.",
+    "faqH": "What people ask about QuickBooks Online."
+  },
   "title": "QuickBooks Online: Plans, Fit &amp; ProAdvisor Help · TechBrot",
   "description": "QuickBooks Online read honestly by a Certified ProAdvisor — what QBO is, the four plan tiers, who it genuinely fits and who it doesn't, the integrations, and the full lifecycle (plan selection, setup, migration, cleanup, monthly). Independent firm, not affiliated with Intuit Inc.",
   "breadcrumb": [
@@ -39,206 +42,152 @@
 }
 ---
 
-<section class="section section--compact" id="qbo-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+<section class="sec reveal" id="qbo-byline">
+  <div class="ct read read--doc">
+    <div class="byline">
+      <span class="byline__mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 64 64" fill="#FCFBF8"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span>
       <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a QuickBooks Online ProAdvisor (Level 2) &middot; independent, no reseller incentive</p>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__meta">Reviewed by a QuickBooks Online ProAdvisor (Level 2) &middot; independent, no reseller incentive</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--compact section--tier-guide" id="qbo-credentials">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Certified by Intuit &middot; QBO Level 2</p>
-      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials.</h2>
-    </header>
-    <div class="stat-row">
+<section class="sec reveal" id="qbo-credentials">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Certified by Intuit &middot; QBO Level 2</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Certified QuickBooks ProAdvisor credentials.</h2>
+    <div class="r-3" style="margin-bottom:26px;">
       {%- for s in credStats %}
-      <div><div class="stat__value">{{ s.value }}</div><div class="stat__label">{{ s.label }}</div></div>
+      <div><div class="mono" style="font-size:30px;font-weight:500;color:var(--color-accent);">{{ s.value }}</div><div style="font-size:13px;line-height:1.5;color:var(--color-ink-mute);margin-top:8px;">{{ s.label }}</div></div>
       {%- endfor %}
     </div>
-    <ul class="checks-list">
+    <ul class="checklist">
       {%- for c in credentials %}<li>{{ c | safe }}</li>{%- endfor %}
     </ul>
   </div>
 </section>
 
-<section class="section section--alt" id="qbo-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">What QuickBooks Online actually is.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="qbo-definition" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">What QuickBooks Online actually is.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbo-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">QuickBooks Online, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
+{#- AI-SUMMARY renders via the t-prose layout slot (sec.aiH); not duplicated here. -#}
 
-<section class="section section--alt" id="qbo-plans">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The four plan tiers</p>
-      <h2 class="section__heading">Simple Start, Essentials, Plus, Advanced.</h2>
-      <p class="section__lede">Plans differ on user count, inventory, class/location tracking, and reporting depth. Below is the honest read on what each tier actually does and who it fits. For specific pricing, check Intuit directly &mdash; we don&rsquo;t publish their numbers because they change. Not sure which fits? <a href="/quickbooks/which-plan-is-right/">Use the plan selector</a> or <a href="/contact/?intent=qbo-plan-selection">book a complimentary plan-selection call</a> &mdash; no commission, no upsell incentive.</p>
-    </header>
-    <div class="grid-2">
+<section class="sec reveal hub-rt--alt" id="qbo-plans" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The four plan tiers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Simple Start, Essentials, Plus, Advanced.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Plans differ on user count, inventory, class/location tracking, and reporting depth. Below is the honest read on what each tier actually does and who it fits. For specific pricing, check Intuit directly &mdash; we don&rsquo;t publish their numbers because they change. Not sure which fits? <a href="/quickbooks/which-plan-is-right/">Use the plan selector</a> or <a href="/contact/?intent=qbo-plan-selection">book a complimentary plan-selection call</a> &mdash; no commission, no upsell incentive.</p>
+    <div class="r-2">
       {%- for p in plans %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ p.tier }}</p>
-        <h3>{{ p.name | safe }}</h3>
-        <p class="prose">{{ p.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ p.tier }}</span><h3>{{ p.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ p.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbo-vs">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Head to head</p>
-      <h2 class="section__heading">QuickBooks Online vs Desktop, Enterprise, and Xero.</h2>
-      <p class="section__lede">Where QBO wins and where it doesn&rsquo;t &mdash; honest cells. Where the other side wins, the table says so. We hold no reseller incentive in any direction.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">QuickBooks Online compared with QuickBooks Desktop/Enterprise and Xero</caption>
-        <thead><tr><th scope="col">Capability</th><th scope="col" class="vs-table__us">QuickBooks Online</th><th scope="col">Desktop / Enterprise</th><th scope="col">Xero</th></tr></thead>
-        <tbody>
-          {%- for r in vsTable %}
-          <tr><th scope="row">{{ r.cap | safe }}</th>
-            <td class="vs-table__us">{% if r.qbo == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.qbo == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.qbo | safe }}</span>{% endif %}</td>
-            <td>{% if r.desktop == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.desktop == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.desktop | safe }}</span>{% endif %}</td>
-            <td>{% if r.xero == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.xero == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}<span class="vs-table__concede">{{ r.xero | safe }}</span>{% endif %}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+<section class="sec reveal" id="qbo-vs">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Head to head</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">QuickBooks Online vs Desktop, Enterprise, and Xero.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Where QBO wins and where it doesn&rsquo;t &mdash; honest cells. Where the other side wins, the table says so. We hold no reseller incentive in any direction.</p>
+    <table class="cmp">
+      <caption class="sr-only">QuickBooks Online compared with QuickBooks Desktop/Enterprise and Xero</caption>
+      <thead><tr><th scope="col">Capability</th><th scope="col">QuickBooks Online</th><th scope="col">Desktop / Enterprise</th><th scope="col">Xero</th></tr></thead>
+      <tbody>
+        {%- for r in vsTable %}
+        <tr><th scope="row" data-col="Capability">{{ r.cap | safe }}</th>
+          <td class="num us" data-col="QuickBooks Online">{% if r.qbo == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.qbo == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}{{ r.qbo | safe }}{% endif %}</td>
+          <td data-col="Desktop / Enterprise">{% if r.desktop == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.desktop == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}{{ r.desktop | safe }}{% endif %}</td>
+          <td data-col="Xero">{% if r.xero == 'yes' %}<span class="mark-yes"></span><span class="sr-only">Yes</span>{% elif r.xero == 'no' %}<span class="mark-no"></span><span class="sr-only">No</span>{% else %}{{ r.xero | safe }}{% endif %}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 
-<section class="section section--alt" id="qbo-fit">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Who QuickBooks Online fits</p>
-      <h2 class="section__heading">The businesses QBO genuinely serves well.</h2>
-      <p class="section__lede">QBO is the right call for the large majority of U.S. small and mid-sized businesses. These are the situations where it&rsquo;s a clear win. <a href="/contact/?intent=qbo-advisory">Get an honest fit assessment</a> if you&rsquo;re unsure.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="qbo-fit" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Who QuickBooks Online fits</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The businesses QBO genuinely serves well.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">QBO is the right call for the large majority of U.S. small and mid-sized businesses. These are the situations where it&rsquo;s a clear win. <a href="/contact/?intent=qbo-advisory">Get an honest fit assessment</a> if you&rsquo;re unsure.</p>
+    <div class="r-3">
       {%- for f in fit %}
-      <div class="stack-8">
-        <h3>{{ f.name | safe }}</h3>
-        <p class="prose">{{ f.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ f.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ f.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbo-not-fit">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When QBO isn&rsquo;t the right call</p>
-      <h2 class="section__heading">Where another option genuinely fits better.</h2>
-      <p class="section__lede">Independence means saying so when QBO isn&rsquo;t right. These are the most common cases.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="qbo-not-fit">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When QBO isn&rsquo;t the right call</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Where another option genuinely fits better.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Independence means saying so when QBO isn&rsquo;t right. These are the most common cases.</p>
+    <div class="r-3">
       {%- for n in notFit %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ n.alt }}</p>
-        <h3>{{ n.name | safe }}</h3>
-        <p class="prose">{{ n.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ n.alt }}</span><h3>{{ n.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ n.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbo-routing">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Your situation</p>
-      <h2 class="section__heading">Where are you with QuickBooks Online?</h2>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="qbo-routing" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Your situation</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where are you with QuickBooks Online?</h2>
+    <div class="r-3">
       {%- for b in routing %}
-      <a class="buyer-card" href="{{ b.href }}"><p class="buyer-card__opener">{{ b.opener | safe }}</p><p class="buyer-card__body">{{ b.body | safe }}</p><span class="buyer-card__cta">{{ b.cta | safe }}</span></a>
+      <a class="dc-card hub-card" href="{{ b.href }}"><h3>{{ b.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ b.body | safe }}</p><span class="hub-card__go">{{ b.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbo-services">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How we work in QuickBooks Online</p>
-      <h2 class="section__heading">The full QBO lifecycle, one ProAdvisor firm.</h2>
-      <p class="section__lede">From the file&rsquo;s first day to its hundredth month, every TechBrot QuickBooks Online engagement is delivered by a Certified ProAdvisor against a written fixed-fee scope.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal" id="qbo-services">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How we work in QuickBooks Online</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The full QBO lifecycle, one ProAdvisor firm.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">From the file&rsquo;s first day to its hundredth month, every TechBrot QuickBooks Online engagement is delivered by a Certified ProAdvisor against a written fixed-fee scope.</p>
+    <div class="r-3">
       {%- for s in services %}
-      <div class="stack-8">
-        <h3><a href="{{ s.href }}">{{ s.name | safe }}</a></h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3><a href="{{ s.href }}">{{ s.name | safe }}</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="qbo-ecosystem">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">QBO ecosystem</p>
-      <h2 class="section__heading">What plugs into QuickBooks Online.</h2>
-      <p class="section__lede">QBO&rsquo;s integration ecosystem is one of its biggest advantages. These are the most common ones we configure for clients.</p>
-    </header>
-    <div class="grid-3">
+<section class="sec reveal hub-rt--alt" id="qbo-ecosystem" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">QBO ecosystem</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What plugs into QuickBooks Online.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">QBO&rsquo;s integration ecosystem is one of its biggest advantages. These are the most common ones we configure for clients.</p>
+    <div class="r-3">
       {%- for e in ecosystem %}
-      <div class="stack-8">
-        <h3>{{ e.name | safe }}</h3>
-        <p class="prose">{{ e.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ e.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ e.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="qbo-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Who performs the work</p>
-      <h2 class="section__heading">QBO Level 2 ProAdvisor. Independent. No commissions.</h2>
-    </header>
+<section class="sec reveal" id="qbo-operator">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Who performs the work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">QBO Level 2 ProAdvisor. Independent. No commissions.</h2>
     <div class="prose">
       <p>Every TechBrot QuickBooks Online engagement is delivered by a Certified ProAdvisor at Level 2 &mdash; the deepest QBO certification Intuit issues. Our independence isn&rsquo;t cosmetic: we earn nothing from your QBO subscription, hold no affiliate or referral relationship with Intuit, and have no incentive to push you onto a higher tier than you need.</p>
       <p>Platform-level quality review backs every engagement, and continuity is guaranteed if the relationship ever needs to transition &mdash; your file context is never held by one person alone. You can <a href="/quickbooks/proadvisor-team/">meet the ProAdvisor team</a> or read our <a href="/trust/">trust &amp; methodology standards</a>. Independent firm &mdash; not affiliated with Intuit Inc.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in operatorSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -247,38 +196,14 @@
   </div>
 </section>
 
-<section class="section section--alt" id="qbo-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">QuickBooks Online questions</p>
-      <h2 class="section__heading">What people ask about QuickBooks Online.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="qbo-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="qbo-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-    <p class="meta-reviewed"><span>Published: 2026-06-14</span><span>Updated: 2026-06-14</span><span>Reviewed: 2026-06-14 &middot; QuickBooks Online ProAdvisor (L2)</span></p>
-  </div>
-</section>
-
-<section class="section" id="qbo-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Other QuickBooks products</p>
-      <h2 class="section__heading">If QBO isn&rsquo;t the right answer.</h2>
-    </header>
+<section class="sec reveal hub-rt--alt" id="qbo-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Other QuickBooks products</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">If QBO isn&rsquo;t the right answer.</h2>
     {%- for n in related %}
-    <div class="stack-8">
+    <div style="margin-bottom:18px;">
       <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+      <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ n.body | safe }}</p>
     </div>
     {%- endfor %}
   </div>

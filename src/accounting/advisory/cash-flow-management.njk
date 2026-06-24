@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/advisory/cash-flow-management/",
   "slug": "acct-cashflow",
-  "tierClass": "section--tier-guide",
+  "sec": {
+    "aiH": "Cash flow management, in five questions.",
+    "faqH": "Cash flow management questions."
+  },
   "bodyClass": "page--mofu",
-  "callBar": true,
   "title": "Cash Flow Management &amp; Forecasting Services · TechBrot",
   "description": "Cash flow management and forecasting by Certified ProAdvisors — 13-week rolling forecasts, working-capital and AR/AP timing, runway analysis, and scenario planning that turn accurate books into cash you can predict.",
   "breadcrumb": [
@@ -40,155 +42,102 @@
 }
 ---
 
-<section class="section" id="acct-cashflow-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Cash flow management, plainly.</h2>
-    </header>
+{#- ═══ BODY → v2 (t-mofu→t-prose). Hero/TL;DR(#acct-cashflow-in-brief-text speakable)/
+    ai-summary(sec.aiH)/faq(sec.faqH)/CTA are layout-owned. Every baseline heading
+    verbatim; content verbatim. Sand bands alternate via hub-rt--alt. ═══ -#}
+
+{#- DEFINITION → prose -#}
+<section class="sec reveal" id="acct-cashflow-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Cash flow management, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-cashflow-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Cash flow management, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <p class="ai-summary__question">{{ item.q | safe }}</p>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="acct-cashflow-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When cash flow management earns its keep</p>
-      <h2 class="section__heading">If any of these sound familiar, the answer is yes.</h2>
-      <p class="section__lede">Most owners reach for active cash management when one of these starts keeping them up at night.</p>
-    </header>
-    <div class="grid-3">
+{#- SIGNALS → r-3 of dc-card (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-cashflow-signals" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">When cash flow management earns its keep</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">If any of these sound familiar, the answer is yes.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Most owners reach for active cash management when one of these starts keeping them up at night.</p>
+    <div class="r-3">
       {%- for s in signals %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__opener">{{ s.opener | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ s.opener | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-cashflow-delivers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s included</p>
-      <h2 class="section__heading">What cash flow management actually delivers.</h2>
-      <p class="section__lede">Scoped to your business and updated on a rhythm that matches how fast your cash moves.</p>
-    </header>
-    <div class="grid-3">
+{#- DELIVERS → r-3 of dc-card with num -#}
+<section class="sec reveal" id="acct-cashflow-delivers">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What cash flow management actually delivers.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Scoped to your business and updated on a rhythm that matches how fast your cash moves.</p>
+    <div class="r-3">
       {%- for d in deliverables %}
-      <div class="stack-8">
-        <p class="num">{{ d.num }}</p>
-        <h3>{{ d.name | safe }}</h3>
-        <p class="prose">{{ d.body | safe }}</p>
-      </div>
+      <div class="dc-card"><p class="num" style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--color-accent);margin:0 0 4px;">{{ d.num }}</p><h3>{{ d.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ d.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-cashflow-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How it works</p>
-      <h2 class="section__heading">From first forecast to a number you trust.</h2>
-      <p class="section__lede">Every cash flow engagement follows the same four-phase rhythm &mdash; built on books that are accurate first.</p>
-    </header>
-    <ol class="process-diagram">
+{#- PROCESS → process-grid (sand) -#}
+<section class="sec reveal hub-rt--alt" id="acct-cashflow-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How it works</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From first forecast to a number you trust.</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:70ch;">Every cash flow engagement follows the same four-phase rhythm &mdash; built on books that are accurate first.</p>
+    <div class="process-grid">
       {%- for s in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ s.num | upper }}{% if loop.last %} &check;{% endif %}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-cashflow-beyond">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the forecast</p>
-      <h2 class="section__heading">When cash is under control, the bigger questions open up.</h2>
-    </header>
+{#- BEYOND → prose -#}
+<section class="sec reveal" id="acct-cashflow-beyond">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Beyond the forecast</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">When cash is under control, the bigger questions open up.</h2>
     <div class="prose">
       <p>A reliable forecast does more than prevent shortfalls &mdash; it changes what you can plan. Once you can see cash clearly, you can decide when to hire, whether to expand, how to price for margin, and how much you can safely invest in growth. That&rsquo;s the natural step from managing cash to steering the business.</p>
-      <p>For businesses that want that judgment on an ongoing basis, a <strong>fractional CFO</strong> takes cash management as one piece of a broader seat &mdash; forecasting, KPIs, strategy, and board-level reporting. As automation handles the routine, this is where the real value now lives. <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">Explore fractional CFO &amp; advisory <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
+      <p>For businesses that want that judgment on an ongoing basis, a <strong>fractional CFO</strong> takes cash management as one piece of a broader seat &mdash; forecasting, KPIs, strategy, and board-level reporting. As automation handles the routine, this is where the real value now lives. <a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">Explore fractional CFO &amp; advisory <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-cashflow-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Cash flow management questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-cashflow-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acct-cashflow-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="acct-cashflow-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+{#- REVIEW prose + trust-row (sand). meta-reviewed kept here. -#}
+<section class="sec reveal hub-rt--alt" id="acct-cashflow-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot delivers cash flow management. It is maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm, and reviewed for accuracy on forecasting method, working-capital management, and the boundaries of the service. Where our approach or scope changes, this page is updated. Cash flow management is delivered on accurate books and coordinated with your banker and CPA for anything requiring a license.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in reviewSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
       {%- endfor %}
     </div>
-    <p class="in-brief__source">Page last reviewed: May 2026.</p>
+    <p class="meta-reviewed" style="margin-top:18px;"><span>Page last reviewed: May 2026.</span></p>
   </div>
 </section>
 
-<section class="section" id="acct-cashflow-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related advisory &amp; services.</h2>
-    </header>
-    {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+{#- RELATED → r-2 of dc-card hub-card -#}
+<section class="sec reveal" id="acct-cashflow-related">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related advisory &amp; services.</h2>
+    <div class="r-2">
+      {%- for n in related %}
+      <a class="dc-card hub-card" href="{{ n.href }}"><h3>{{ n.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ n.body | safe }}</p><span class="hub-card__go">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      {%- endfor %}
     </div>
-    {%- endfor %}
   </div>
 </section>
