@@ -1,23 +1,21 @@
 ---
-layout: layouts/base.njk
+layout: layouts/t-hub.njk
 permalink: /
 slug: home
 intent: home
-pageTier: hub
 bodyClass: page--home
 title: "QuickBooks ProAdvisor Bookkeeping & Accounting · TechBrot"
 description: "Independent Certified QuickBooks ProAdvisors — fixed-fee bookkeeping, cleanup, payroll, migration & advisory for U.S. businesses. Call (877) 751-5575."
 hero:
   eyebrow: "Independent · U.S. Certified QuickBooks ProAdvisor firm"
   heading: "Automation handles the data entry. We handle the judgment."
-  subheading: "Certified QuickBooks ProAdvisors, accountants, and advisors for U.S. small and mid-sized businesses. Setup, cleanup, migration, bookkeeping, payroll, and CFO advisory."
-  helper: "Accounting, cleanup, advisory — we match the right expert to your books."
+  subheading: "Certified QuickBooks ProAdvisors, accountants, and advisors for U.S. small and mid-sized businesses. Setup, cleanup, migration, bookkeeping, payroll, and CFO advisory — we match the right expert to your books."
   actions:
     - { label: "Book the discovery call", href: "/contact/?intent=home", class: "btn--primary" }
     - { label: "Find my accountant", href: "/find-an-accountant/", class: "btn--ghost" }
   trust:
-    - { icon: shield, label: "Certified QuickBooks ProAdvisor" }
-    - { icon: clock, label: "Written scope in 3 business days" }
+    - "Certified QuickBooks ProAdvisor"
+    - "Written scope in 3 business days"
 silos:
   - { name: "Accounting & bookkeeping", url: "/accounting/" }
   - { name: "QuickBooks services", url: "/quickbooks/" }
@@ -25,14 +23,16 @@ silos:
   - { name: "Compare your options", url: "/vs/" }
   - { name: "Find an accountant", url: "/find-an-accountant/" }
   - { name: "Pricing", url: "/pricing/" }
-ctaBand:
-  eyebrow: "Speak to an expert"
-  heading: "Bring us the file. We&rsquo;ll tell you what it needs."
-  lede: "A 30-minute discovery call with a Certified ProAdvisor — not a salesperson. You leave with an honest read on your books either way, and a written fixed-fee scope within 3 business days if we&rsquo;re the right fit."
-  reassure: "No obligation — a real ProAdvisor, same business day."
-  actions:
-    - { label: "Book the discovery call", href: "/contact/?intent=home", class: "btn--primary" }
-    - { label: "Read the methodology", href: "/about/methodology/", class: "btn--ghost-inverted" }
+summary: >
+  TechBrot Inc. is an independent U.S. accounting firm built around Certified QuickBooks ProAdvisors. Small businesses come to us when their books are behind, broken, or about to outgrow whoever is keeping them &mdash; and we fix the file, then keep it fixed. The work spans <a href="/accounting/bookkeeping/cleanup-bookkeeping/">QuickBooks cleanup</a>, <a href="/accounting/bookkeeping/catch-up-bookkeeping/">catch-up</a>, and <a href="/accounting/bookkeeping/monthly-bookkeeping/">monthly bookkeeping</a>; <a href="/quickbooks/setup/">QuickBooks setup</a> and <a href="/quickbooks/migration/">migration</a>; <a href="/accounting/payroll-management/">payroll</a> and <a href="/accounting/sales-tax-compliance/">multi-state sales tax</a>; and <a href="/accounting/advisory/">fractional-CFO advisory</a> when the books are ready to say something. Every engagement follows the same five-phase model: a free discovery call, a written fixed-fee scope within 3 business days, onboarding, delivery, and a CPA-ready handoff. Work is delivered by TechBrot directly or by a <a href="/partners/">vetted local operator</a> held to the same standard. We respond within one business day at <a href="tel:+18777515575" data-tb-event="phone_click">(877) 751-5575</a>.
+sec:
+  summaryId: "home-tldr-body"
+  summaryTag: "The short version"
+  summaryH: "What TechBrot does, in one paragraph."
+  aiH: "Five questions, answered plainly."
+  faqH: "Answers before you ask."
+  faqTag: "Common questions"
+  heroFigCaption: "How the books tie out"
 aiSummary:
   - q: "What is TechBrot?"
     a: "<strong>TechBrot Inc. is an independent U.S. accounting firm of Certified QuickBooks ProAdvisors</strong> serving small and mid-sized businesses with QuickBooks cleanup, monthly bookkeeping, payroll, multi-state sales tax, migration, and fractional-CFO advisory — directly and through a curated network of vetted local operators."
@@ -61,205 +61,110 @@ faq:
     phone: true
   - q: "What happens if we stop working with TechBrot?"
     a: "You keep everything. The QuickBooks file is yours, in your own account — we work in it, we never hold it. Any engagement ends with a CPA-ready handoff, and the exit terms are part of the written scope you sign, so there is no lock-in to discover later."
+ctaBand:
+  dark: true
+  heading: "Bring us the file. We&rsquo;ll tell you what it needs."
+  lede: "A 30-minute discovery call with a Certified ProAdvisor — not a salesperson. You leave with an honest read on your books either way, and a written fixed-fee scope within 3 business days if we&rsquo;re the right fit. No obligation — a real ProAdvisor, same business day."
+  actions:
+    - { label: "Book the discovery call", href: "/contact/?intent=home" }
+    - { label: "Read the methodology", href: "/about/methodology/" }
 ---
+{#- A1 HOME FLAGSHIP — migrated base.njk → t-hub (dc-base v2). Layout renders: hero
+    (taccount split) · §summary TL;DR (#home-tldr-body, .speakable) · ai-summary (5 Qs,
+    .speakable) · {{content}} (the 10 bespoke sections below) · FAQ (now visible) · DARK
+    final CTA. Speakable cssSelector is class-based (.speakable) — preserved by the layout
+    on hero + summary + ai-qa. Every content block from the prior flagship carried into a
+    current dc-system v2 component; #home-team keeps David Westgate (the one permitted named
+    operator) + firm team verbatim; the 2 real Clutch reviews verbatim (honesty). -#}
 
-{#- A1-home FLAGSHIP (founder ruling 2026-06-22): home template spine + every d5a35c9
-    content block carried into its REAL handoff component (Hub .route, Money-Page .vtriad
-    /.steps, State-Pillar .statband, Comparison .cmp, Location-Hub .states, Prose .tldr-box
-    /.byline, Card-Grid .cards). Nothing dropped. Components with no handoff equivalent
-    (buyer-card, team-card, industry link-wrap) reuse the existing design-system component
-    and are flagged in the report. Badge strip stays off home (template omits it; badges on
-    /trust//about//pricing/). Schema unchanged (frontmatter-driven). -#}
-
-<section class="section hero-tier hero--compact hero--rule hero--split" id="home-hero">
-  <div class="container">
-    <div class="hero-split">
-      <div class="hero">
-        <p class="hero__eyebrow"><span class="kicker-mark" aria-hidden="true"></span>{{ hero.eyebrow | safe }}</p>
-        <h1 class="hero__heading speakable">{{ hero.heading | safe }}</h1>
-        <p class="hero__subheading speakable">{{ hero.subheading | safe }}</p>
-        <div class="hero__actions">
-          {%- for action in hero.actions %}
-          <a class="btn {{ action.class }} btn--lg" href="{{ action.href }}">{{ action.label }}</a>
-          {%- endfor %}
-        </div>
-        <p class="hero__helper">{{ hero.helper | safe }}</p>
-        <ul class="hero__trust">
-          {%- for t in hero.trust %}
-          <li class="hero__trust-item">{% include "icons/trust-" + t.icon + ".svg" %}{{ t.label | safe }}</li>
-          {%- endfor %}
-        </ul>
-      </div>
-      <div class="hero__figure">{% include "partials/figure-taccount.svg" %}</div>
+{#- §SERVICES — six routes. dc-card (h3 link + sub-links + go), eyebrow = the route number. -#}
+<section class="sec reveal" id="home-services">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What we do</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:10px;">Where do you need us first?</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">Six ways in. Behind all of them, the same standard: every account reconciled, every balance supported, every fee in writing.</p>
+    <div class="r-3">
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">01 / Core</span><h3><a href="/accounting/">Accounting &amp; bookkeeping</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 10px;color:var(--color-ink-mute);">Monthly closes, cleanup, and catch-up — books that are current, reconciled, and CPA-ready.</p><p class="prose" style="font-size:13.5px;margin:0 0 10px;"><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a> &middot; <a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup</a> &middot; <a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up</a></p><a class="hub-card__go" href="/accounting/">Explore accounting <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">02 / Platform</span><h3><a href="/quickbooks/">QuickBooks services</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 10px;color:var(--color-ink-mute);">Setup, migration, repair, payroll, and error help — from the people who work in QuickBooks all day.</p><p class="prose" style="font-size:13.5px;margin:0 0 10px;"><a href="/quickbooks/setup/">Setup</a> &middot; <a href="/quickbooks/migration/">Migration</a> &middot; <a href="/quickbooks/help/">Help &amp; errors</a></p><a class="hub-card__go" href="/quickbooks/">Explore QuickBooks services <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">03 / Advisory</span><h3><a href="/accounting/advisory/">Advisory &amp; fractional CFO</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 10px;color:var(--color-ink-mute);">Forecasting, KPI reporting, and capital-event readiness — once the books are clean enough to trust.</p><p class="prose" style="font-size:13.5px;margin:0 0 10px;"><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a> &middot; <a href="/accounting/advisory/cash-flow-management/">Cash-flow</a></p><a class="hub-card__go" href="/accounting/advisory/">Explore advisory <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">04 / Decide</span><h3><a href="/vs/">Compare your options</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 10px;color:var(--color-ink-mute);">Honest comparisons — including the rows where a competitor wins. Judgment starts with telling you the truth.</p><p class="prose" style="font-size:13.5px;margin:0 0 10px;"><a href="/vs/bookkeeper-vs-accountant/">Bookkeeper vs. accountant</a> &middot; <a href="/vs/techbrot-vs-quickbooks-live/">vs. QuickBooks Live</a></p><a class="hub-card__go" href="/vs/">See the comparisons <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">05 / Local</span><h3><a href="/find-an-accountant/">Find an accountant</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 10px;color:var(--color-ink-mute);">State-aware bookkeeping and ProAdvisor support — sales tax, nexus, and filings handled by state.</p><p class="prose" style="font-size:13.5px;margin:0 0 10px;"><a href="/find-an-accountant/new-york/">New York</a> &middot; <a href="/find-an-accountant/california/">California</a> &middot; <a href="/find-an-accountant/texas/">Texas</a></p><a class="hub-card__go" href="/find-an-accountant/">Find your state <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">06 / Fit</span><h3><a href="/pricing/">Pricing &amp; fit</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 10px;color:var(--color-ink-mute);">Fixed monthly fees set in writing before work begins — and a clear read on whether we&rsquo;re the right fit at all.</p><p class="prose" style="font-size:13.5px;margin:0 0 10px;"><a href="/trust/">Trust &amp; guarantees</a> &middot; <a href="/about/methodology/">How it works</a></p><a class="hub-card__go" href="/pricing/">See the pricing model <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div>
   </div>
 </section>
 
-<section class="section section--compact" id="home-tldr">
-  <div class="container">
-    <div class="tldr-box speakable">
-      <p class="tldr-box__label">The short version</p>
-      <h2 class="tldr-box__heading">What TechBrot does, in one paragraph.</h2>
-      <p class="tldr-box__body" id="home-tldr-body">TechBrot Inc. is an independent U.S. accounting firm built around Certified QuickBooks ProAdvisors. Small businesses come to us when their books are behind, broken, or about to outgrow whoever is keeping them — and we fix the file, then keep it fixed. The work spans <a href="/accounting/bookkeeping/cleanup-bookkeeping/">QuickBooks cleanup</a>, <a href="/accounting/bookkeeping/catch-up-bookkeeping/">catch-up</a>, and <a href="/accounting/bookkeeping/monthly-bookkeeping/">monthly bookkeeping</a>; <a href="/quickbooks/setup/">QuickBooks setup</a> and <a href="/quickbooks/migration/">migration</a>; <a href="/accounting/payroll-management/">payroll</a> and <a href="/accounting/sales-tax-compliance/">multi-state sales tax</a>; and <a href="/accounting/advisory/">fractional-CFO advisory</a> when the books are ready to say something. Every engagement follows the same five-phase model: a free discovery call, a written fixed-fee scope within 3 business days, onboarding, delivery, and a CPA-ready handoff. Work is delivered by TechBrot directly or by a <a href="/partners/">vetted local operator</a> held to the same standard. We respond within one business day at <a href="tel:+18777515575" data-tb-event="phone_click">(877) 751-5575</a>.</p>
+{#- §JUDGMENT — the thesis. 3 value cards + the compounding-judgment figure. sand. -#}
+<section class="sec reveal hub-rt--alt" id="home-judgment" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Where accounting is going</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:10px;">The value is moving to judgment.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">Software categorizes transactions well — it can&rsquo;t tell you whether the books are right, what the numbers mean, or what to do next.</p>
+    <div class="r-3">
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">Accuracy</span><h3>Automated books still break</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">Bank feeds miscategorize, duplicates pile up, and reconciliations drift. A Certified ProAdvisor catches what software quietly gets wrong.</p></div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">Insight</span><h3>Numbers need interpretation</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">A clean P&amp;L is the start, not the answer. Advisory turns reports into cash-flow, pricing, and growth decisions.</p></div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">Complexity</span><h3>Complexity needs an expert</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">Multi-state payroll, sales-tax nexus, inventory, multi-entity structures — judgment calls automation isn&rsquo;t built to make.</p></div>
     </div>
-  </div>
-</section>
-
-<section class="section section--alt section--compact" id="home-in-brief">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow"><span class="kicker-mark" aria-hidden="true"></span>For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Five questions, answered plainly.</h2>
-    </header>
-    <div class="qa-grid">
-      <div class="qa-col">
-        {%- for item in aiSummary.slice(0, 3) %}
-        <div class="qa-item speakable"><h3 class="qa-item__q">{{ item.q }}</h3><p class="qa-item__a">{{ item.a | safe }}</p></div>
-        {%- endfor %}
-      </div>
-      <div class="qa-col">
-        {%- for item in aiSummary.slice(3) %}
-        <div class="qa-item speakable"><h3 class="qa-item__q">{{ item.q }}</h3><p class="qa-item__a">{{ item.a | safe }}</p></div>
-        {%- endfor %}
-        <div class="qa-item qa-item--cta">
-          <a class="btn btn--primary" href="/contact/?intent=home">Book the discovery call</a>
-          <a class="qa-item__phone" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">{{ site.phone.display }}</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="home-services">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What we do</p>
-      <h2 class="section__heading">Where do you need us first?</h2>
-      <p class="section__lede">Six ways in. Behind all of them, the same standard: every account reconciled, every balance supported, every fee in writing.</p>
-    </header>
-    <div class="route">
-      <div class="rcard">
-        <span class="rcard__icon">{% include "icons/svc-accounting.svg" %}</span><p class="rcard__n">01 / CORE</p><h3 class="rcard__t"><a href="/accounting/">Accounting &amp; bookkeeping</a></h3>
-        <p class="rcard__d">Monthly closes, cleanup, and catch-up — books that are current, reconciled, and CPA-ready.</p>
-        <ul class="rcard__sub"><li><a href="/accounting/bookkeeping/monthly-bookkeeping/">Monthly bookkeeping</a></li><li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">Cleanup</a></li><li><a href="/accounting/bookkeeping/catch-up-bookkeeping/">Catch-up</a></li></ul>
-        <a class="rcard__go" href="/accounting/">Explore accounting {% include "icons/arrow-right.svg" %}</a>
-      </div>
-      <div class="rcard">
-        <span class="rcard__icon">{% include "icons/svc-setup.svg" %}</span><p class="rcard__n">02 / PLATFORM</p><h3 class="rcard__t"><a href="/quickbooks/">QuickBooks services</a></h3>
-        <p class="rcard__d">Setup, migration, repair, payroll, and error help — from the people who work in QuickBooks all day.</p>
-        <ul class="rcard__sub"><li><a href="/quickbooks/setup/">Setup</a></li><li><a href="/quickbooks/migration/">Migration</a></li><li><a href="/quickbooks/help/">Help &amp; errors</a></li></ul>
-        <a class="rcard__go" href="/quickbooks/">Explore QuickBooks services {% include "icons/arrow-right.svg" %}</a>
-      </div>
-      <div class="rcard">
-        <span class="rcard__icon">{% include "icons/svc-advisory.svg" %}</span><p class="rcard__n">03 / ADVISORY</p><h3 class="rcard__t"><a href="/accounting/advisory/">Advisory &amp; fractional CFO</a></h3>
-        <p class="rcard__d">Forecasting, KPI reporting, and capital-event readiness — once the books are clean enough to trust.</p>
-        <ul class="rcard__sub"><li><a href="/accounting/advisory/fractional-cfo/">Fractional CFO</a></li><li><a href="/accounting/advisory/cash-flow-management/">Cash-flow</a></li></ul>
-        <a class="rcard__go" href="/accounting/advisory/">Explore advisory {% include "icons/arrow-right.svg" %}</a>
-      </div>
-      <div class="rcard">
-        <span class="rcard__icon">{% include "icons/svc-compare.svg" %}</span><p class="rcard__n">04 / DECIDE</p><h3 class="rcard__t"><a href="/vs/">Compare your options</a></h3>
-        <p class="rcard__d">Honest comparisons — including the rows where a competitor wins. Judgment starts with telling you the truth.</p>
-        <ul class="rcard__sub"><li><a href="/vs/bookkeeper-vs-accountant/">Bookkeeper vs. accountant</a></li><li><a href="/vs/techbrot-vs-quickbooks-live/">vs. QuickBooks Live</a></li></ul>
-        <a class="rcard__go" href="/vs/">See the comparisons {% include "icons/arrow-right.svg" %}</a>
-      </div>
-      <div class="rcard">
-        <span class="rcard__icon">{% include "icons/svc-find.svg" %}</span><p class="rcard__n">05 / LOCAL</p><h3 class="rcard__t"><a href="/find-an-accountant/">Find an accountant</a></h3>
-        <p class="rcard__d">State-aware bookkeeping and ProAdvisor support — sales tax, nexus, and filings handled by state.</p>
-        <ul class="rcard__sub"><li><a href="/find-an-accountant/new-york/">New York</a></li><li><a href="/find-an-accountant/california/">California</a></li><li><a href="/find-an-accountant/texas/">Texas</a></li></ul>
-        <a class="rcard__go" href="/find-an-accountant/">Find your state {% include "icons/arrow-right.svg" %}</a>
-      </div>
-      <div class="rcard">
-        <span class="rcard__icon">{% include "icons/svc-pricing.svg" %}</span><p class="rcard__n">06 / FIT</p><h3 class="rcard__t"><a href="/pricing/">Pricing &amp; fit</a></h3>
-        <p class="rcard__d">Fixed monthly fees set in writing before work begins — and a clear read on whether we&rsquo;re the right fit at all.</p>
-        <ul class="rcard__sub"><li><a href="/trust/">Trust &amp; guarantees</a></li><li><a href="/about/methodology/">How it works</a></li></ul>
-        <a class="rcard__go" href="/pricing/">See the pricing model {% include "icons/arrow-right.svg" %}</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="home-judgment">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Where accounting is going</p>
-      <h2 class="section__heading">The value is moving to judgment.</h2>
-      <p class="section__lede">Software categorizes transactions well — it can&rsquo;t tell you whether the books are right, what the numbers mean, or what to do next.</p>
-    </header>
-    <div class="vtriad stack-8">
-      <div class="vcard"><p class="vcard__label">Accuracy</p><h3 class="vcard__t">Automated books still break</h3><p class="vcard__d">Bank feeds miscategorize, duplicates pile up, and reconciliations drift. A Certified ProAdvisor catches what software quietly gets wrong.</p></div>
-      <div class="vcard"><p class="vcard__label">Insight</p><h3 class="vcard__t">Numbers need interpretation</h3><p class="vcard__d">A clean P&amp;L is the start, not the answer. Advisory turns reports into cash-flow, pricing, and growth decisions.</p></div>
-      <div class="vcard"><p class="vcard__label">Complexity</p><h3 class="vcard__t">Complexity needs an expert</h3><p class="vcard__d">Multi-state payroll, sales-tax nexus, inventory, multi-entity structures — judgment calls automation isn&rsquo;t built to make.</p></div>
-    </div>
-    <figure class="diagram-figure" id="home-judgment-figure" role="img" aria-label="Diagram: automated data entry stays flat and drifts; reconciled judgment compounds upward">
+    <figure class="diagram-figure" id="home-judgment-figure" role="img" aria-label="Diagram: automated data entry stays flat and drifts; reconciled judgment compounds upward" style="margin:30px 0 0;">
       {% include "partials/figure-judgment.svg" %}
-      <figcaption>The automation line drifts. The judgment line reconciles — and compounds.</figcaption>
+      <figcaption class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:12px;">The automation line drifts. The judgment line reconciles — and compounds.</figcaption>
     </figure>
   </div>
 </section>
 
-<section class="section" id="home-start">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Find your starting point</p>
-      <h2 class="section__heading">Where are you, actually?</h2>
-    </header>
-    <div class="grid-3 stack-8">
-      <article class="buyer-card"><p class="buyer-card__opener">&ldquo;The books exist, but I don&rsquo;t trust a number in them.&rdquo;</p><h3 class="buyer-card__heading"><a href="/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup">Cleanup bookkeeping</a></h3><p class="buyer-card__body">Messy or wrong books rebuilt to a verifiable standard — every account reconciled to source.</p><a class="buyer-card__cta" href="/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup">Start with cleanup</a></article>
-      <article class="buyer-card"><p class="buyer-card__opener">&ldquo;We&rsquo;re months — honestly, years — behind.&rdquo;</p><h3 class="buyer-card__heading"><a href="/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up">Catch-up bookkeeping</a></h3><p class="buyer-card__body">The backlog quantified, a fixed fee, and books brought current and CPA-ready.</p><a class="buyer-card__cta" href="/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up">Start with catch-up</a></article>
-      <article class="buyer-card"><p class="buyer-card__opener">&ldquo;I need this handled every month, by someone who answers.&rdquo;</p><h3 class="buyer-card__heading"><a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">Monthly bookkeeping</a></h3><p class="buyer-card__body">Recurring close on a fixed monthly fee — financial package delivered, a named operator on the file.</p><a class="buyer-card__cta" href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">Start monthly</a></article>
-      <article class="buyer-card"><p class="buyer-card__opener">&ldquo;QuickBooks itself is the problem.&rdquo;</p><h3 class="buyer-card__heading"><a href="/quickbooks/help/?intent=qb-help">Independent ProAdvisor help</a></h3><p class="buyer-card__body">Errors, broken feeds, file damage, reconciliation drift — independent help that goes beyond product support.</p><a class="buyer-card__cta" href="/quickbooks/help/?intent=qb-help">Get QuickBooks help</a></article>
-      <article class="buyer-card"><p class="buyer-card__opener">&ldquo;We&rsquo;re setting up — or moving from Desktop or other software.&rdquo;</p><h3 class="buyer-card__heading"><a href="/quickbooks/setup/?intent=quickbooks-setup">QuickBooks setup &amp; migration</a></h3><p class="buyer-card__body">A chart of accounts designed for your entity, or a migration that doesn&rsquo;t lose your history.</p><a class="buyer-card__cta" href="/quickbooks/setup/?intent=quickbooks-setup">Start with setup</a></article>
-      <article class="buyer-card"><p class="buyer-card__opener">&ldquo;The books are fine. I need to know what they&rsquo;re telling me.&rdquo;</p><h3 class="buyer-card__heading"><a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">Fractional CFO</a></h3><p class="buyer-card__body">Forecasting, KPI design, board reporting, capital-event readiness — judgment beyond bookkeeping.</p><a class="buyer-card__cta" href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">Discuss advisory</a></article>
+{#- §START — buyer entry points by situation. dc-card (opener quote + h3 link + body + cta). -#}
+<section class="sec reveal" id="home-start">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Find your starting point</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:28px;">Where are you, actually?</h2>
+    <div class="r-3">
+      <div class="dc-card"><p class="prose" style="font-size:15px;font-style:italic;margin:0 0 10px;color:var(--color-ink-soft);">&ldquo;The books exist, but I don&rsquo;t trust a number in them.&rdquo;</p><h3><a href="/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup">Cleanup bookkeeping</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 10px;color:var(--color-ink-mute);">Messy or wrong books rebuilt to a verifiable standard — every account reconciled to source.</p><a class="hub-card__go" href="/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup">Start with cleanup <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="dc-card"><p class="prose" style="font-size:15px;font-style:italic;margin:0 0 10px;color:var(--color-ink-soft);">&ldquo;We&rsquo;re months — honestly, years — behind.&rdquo;</p><h3><a href="/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up">Catch-up bookkeeping</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 10px;color:var(--color-ink-mute);">The backlog quantified, a fixed fee, and books brought current and CPA-ready.</p><a class="hub-card__go" href="/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up">Start with catch-up <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="dc-card"><p class="prose" style="font-size:15px;font-style:italic;margin:0 0 10px;color:var(--color-ink-soft);">&ldquo;I need this handled every month, by someone who answers.&rdquo;</p><h3><a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">Monthly bookkeeping</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 10px;color:var(--color-ink-mute);">Recurring close on a fixed monthly fee — financial package delivered, a named operator on the file.</p><a class="hub-card__go" href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">Start monthly <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="dc-card"><p class="prose" style="font-size:15px;font-style:italic;margin:0 0 10px;color:var(--color-ink-soft);">&ldquo;QuickBooks itself is the problem.&rdquo;</p><h3><a href="/quickbooks/help/?intent=qb-help">Independent ProAdvisor help</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 10px;color:var(--color-ink-mute);">Errors, broken feeds, file damage, reconciliation drift — independent help that goes beyond product support.</p><a class="hub-card__go" href="/quickbooks/help/?intent=qb-help">Get QuickBooks help <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="dc-card"><p class="prose" style="font-size:15px;font-style:italic;margin:0 0 10px;color:var(--color-ink-soft);">&ldquo;We&rsquo;re setting up — or moving from Desktop or other software.&rdquo;</p><h3><a href="/quickbooks/setup/?intent=quickbooks-setup">QuickBooks setup &amp; migration</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 10px;color:var(--color-ink-mute);">A chart of accounts designed for your entity, or a migration that doesn&rsquo;t lose your history.</p><a class="hub-card__go" href="/quickbooks/setup/?intent=quickbooks-setup">Start with setup <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="dc-card"><p class="prose" style="font-size:15px;font-style:italic;margin:0 0 10px;color:var(--color-ink-soft);">&ldquo;The books are fine. I need to know what they&rsquo;re telling me.&rdquo;</p><h3><a href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">Fractional CFO</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 10px;color:var(--color-ink-mute);">Forecasting, KPI design, board reporting, capital-event readiness — judgment beyond bookkeeping.</p><a class="hub-card__go" href="/accounting/advisory/fractional-cfo/?intent=fractional-cfo">Discuss advisory <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="home-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How engagements work</p>
-      <h2 class="section__heading">From first call to clean books.</h2>
-    </header>
-    <div class="steps">
-      <div class="step"><p class="step__n">STEP 01</p><h3 class="step__t">Discovery</h3><p class="step__d">A 30-minute call — where you are, what&rsquo;s broken, likely scope, and which expert fits. No pitch.</p></div>
-      <div class="step"><p class="step__n">STEP 02</p><h3 class="step__t">Scoping &amp; match</h3><p class="step__d">A written fixed-fee scope — deliverables, timeline, pricing — and the right ProAdvisor assigned: lead practice or trusted partner.</p></div>
-      <div class="step"><p class="step__n">STEP 03</p><h3 class="step__t">Onboarding</h3><p class="step__d">Secure access to QuickBooks, bank feeds, payroll, and documents. Your operator runs a diagnostic and confirms the scope.</p></div>
-      <div class="step"><p class="step__n step__n--done">STEP 04 ✓</p><h3 class="step__t">Delivery &amp; review</h3><p class="step__d">Milestones with firm-standard review. Monthly engagements add a close package and a quarterly business review.</p></div>
+{#- §PROCESS — the five-phase engagement model → process-grid. sand. -#}
+<section class="sec reveal hub-rt--alt" id="home-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How engagements work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:28px;">From first call to clean books.</h2>
+    <div class="process-grid">
+      <div class="process-step"><div class="process-step__n">STEP 01</div><h3>Discovery</h3><p>A 30-minute call — where you are, what&rsquo;s broken, likely scope, and which expert fits. No pitch.</p></div>
+      <div class="process-step"><div class="process-step__n">STEP 02</div><h3>Scoping &amp; match</h3><p>A written fixed-fee scope — deliverables, timeline, pricing — and the right ProAdvisor assigned: lead practice or trusted partner.</p></div>
+      <div class="process-step"><div class="process-step__n">STEP 03</div><h3>Onboarding</h3><p>Secure access to QuickBooks, bank feeds, payroll, and documents. Your operator runs a diagnostic and confirms the scope.</p></div>
+      <div class="process-step"><div class="process-step__n process-step__n--done">STEP 04 &check;</div><h3>Delivery &amp; review</h3><p>Milestones with firm-standard review. Monthly engagements add a close package and a quarterly business review.</p></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="home-reviews">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What clients say</p>
-      <h2 class="section__heading">Verified, not self-reported.</h2>
-      <p class="section__lede">Every TechBrot review is independently verified on Clutch — real names, real work.</p>
-      <p class="proof-rating">5.0 &middot; 2 verified reviews on Clutch</p>
-    </header>
-    <div class="grid-2 stack-8">
-      <figure class="review-card">
-        <blockquote class="review-card__quote">&ldquo;They took something that felt overwhelming to me as a first-year business owner and made it simple.&rdquo;</blockquote>
-        <figcaption class="review-card__byline"><div><span class="review-card__name">Heidi Schubert</span><br><span class="review-card__role">Owner, Beverage Connection &middot; Denver, CO</span></div><span class="review-card__verified">{% include "icons/check.svg" %}Verified</span></figcaption>
-      </figure>
-      <figure class="review-card">
-        <blockquote class="review-card__quote">&ldquo;What stood out the most was TechBrot Inc&rsquo;s attention to detail.&rdquo;</blockquote>
-        <figcaption class="review-card__byline"><div><span class="review-card__name">Barbara Best</span><br><span class="review-card__role">CEO, Barbara B. &middot; Business services, CA</span></div><span class="review-card__verified">{% include "icons/check.svg" %}Verified</span></figcaption>
-      </figure>
+{#- §REVIEWS — the 2 REAL verified Clutch reviews (only review proof; verbatim). -#}
+<section class="sec reveal" id="home-reviews">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What clients say</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:10px;">Verified, not self-reported.</h2>
+    <p class="lede" style="margin:0 0 6px;max-width:60ch;">Every TechBrot review is independently verified on Clutch — real names, real work.</p>
+    <p class="mono" style="font-size:13px;color:var(--color-accent);margin:0 0 28px;">5.0 &middot; 2 verified reviews on Clutch</p>
+    <div class="r-2">
+      <div class="dc-card"><blockquote class="opquote" style="margin:0 0 14px;"><blockquote>They took something that felt overwhelming to me as a first-year business owner and made it simple.</blockquote></blockquote><p class="mono" style="font-size:12.5px;color:var(--color-ink-mute);margin:0;">Heidi Schubert &middot; Owner, Beverage Connection &middot; Denver, CO &middot; Verified</p></div>
+      <div class="dc-card"><blockquote class="opquote" style="margin:0 0 14px;"><blockquote>What stood out the most was TechBrot Inc&rsquo;s attention to detail.</blockquote></blockquote><p class="mono" style="font-size:12.5px;color:var(--color-ink-mute);margin:0;">Barbara Best &middot; CEO, Barbara B. &middot; Business services, CA &middot; Verified</p></div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="home-compare">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Why TechBrot</p>
-      <h2 class="section__heading">Expert accountants beat the alternatives.</h2>
-    </header>
-    <table class="cmp" data-viz="comparison-table" data-viz-state="FINAL">
-      <caption>TechBrot compared with the common alternatives</caption>
+{#- §COMPARE — the .cmp comparison table (already v2 signature classes). sand. -#}
+<section class="sec reveal hub-rt--alt" id="home-compare" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why TechBrot</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:24px;">Expert accountants beat the alternatives.</h2>
+    <table class="cmp">
+      <caption class="sr-only">TechBrot compared with the common alternatives</caption>
       <thead>
-        <tr><th scope="col">What you get</th><th scope="col" class="us">TechBrot<span class="sub">expert + accountable</span></th><th scope="col">Solo bookkeeper</th><th scope="col">Remote subscription</th><th scope="col">Offshore team</th></tr>
+        <tr><th scope="col">What you get</th><th scope="col" class="us">TechBrot</th><th scope="col">Solo bookkeeper</th><th scope="col">Remote subscription</th><th scope="col">Offshore team</th></tr>
       </thead>
       <tbody>
         <tr><th scope="row">Certified ProAdvisor expertise</th><td class="us" data-col="TechBrot"><span class="mk mk--yes"><span class="mk__dot"></span>Yes</span></td><td data-col="Solo bookkeeper">Sometimes</td><td data-col="Remote subscription">Varies by assignee</td><td data-col="Offshore team">Rarely</td></tr>
@@ -269,94 +174,73 @@ faq:
         <tr><th scope="row">Works in your own QuickBooks file</th><td class="us" data-col="TechBrot"><span class="mk mk--yes"><span class="mk__dot"></span>Yes</span></td><td data-col="Solo bookkeeper"><span class="mk mk--yes"><span class="mk__dot"></span>Yes</span></td><td data-col="Remote subscription">Often proprietary</td><td data-col="Offshore team">Varies</td></tr>
       </tbody>
     </table>
-    <p class="link-wrap stack-8"><a href="/vs/techbrot-vs-bench/">vs. Bench</a><a href="/vs/techbrot-vs-pilot/">vs. Pilot</a><a href="/vs/techbrot-vs-quickbooks-live/">vs. QuickBooks Live</a><a href="/vs/bookkeeper-vs-accountant/">Bookkeeper vs. accountant</a><a href="/vs/">All comparisons {% include "icons/arrow-right.svg" %}</a></p>
+    <p class="prose" style="margin-top:22px;font-size:14px;display:flex;flex-wrap:wrap;gap:18px;"><a href="/vs/techbrot-vs-bench/">vs. Bench</a><a href="/vs/techbrot-vs-pilot/">vs. Pilot</a><a href="/vs/techbrot-vs-quickbooks-live/">vs. QuickBooks Live</a><a href="/vs/bookkeeper-vs-accountant/">Bookkeeper vs. accountant</a><a class="hub-card__go" href="/vs/">All comparisons <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
   </div>
 </section>
 
-<section class="section" id="home-team">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Named &amp; accountable</p>
-      <h2 class="section__heading">Real people, by name. Verifiable credentials.</h2>
-    </header>
-    <div class="grid-2">
-      <article class="review-card team-card">
-        <img class="team-card__photo" src="/assets/img/brand/monogram.svg" alt="" width="64" height="64">
-        <div><h3>The Certified ProAdvisor Team</h3><p class="team-card__role">Lead practice &middot; direct delivery</p><p class="review-card__fact">Active Intuit certifications — QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll. A named ProAdvisor for the life of the engagement, never a rotating queue.</p></div>
-      </article>
-      <article class="review-card team-card">
-        {% photo "src/assets/img/people/david-westgate.jpg", "David Westgate", { class: "team-card__photo", widths: [64, 128, 192], sizes: "64px" } %}
-        <div><h3>David Westgate</h3><p class="team-card__role">Certified QuickBooks ProAdvisor &middot; Network Operator, Texas</p><p class="review-card__fact">40+ years in accounting. Westgate Financial Services — a trusted partner practice delivering TechBrot engagements for Texas businesses under TechBrot&rsquo;s operating standards.</p><a class="review-card__link" href="https://proadvisor.intuit.com/app/accountant/search" rel="noopener" target="_blank">Verify on Intuit&rsquo;s ProAdvisor directory {% include "icons/arrow-right.svg" %}</a></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="home-industries">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Built for the way you operate</p>
-      <h2 class="section__heading">Accounting that understands your industry.</h2>
-    </header>
-    <ul class="link-wrap">
-      <li><a class="link-standalone" href="/accounting/industries/ecommerce/">E-commerce</a></li>
-      <li><a class="link-standalone" href="/accounting/industries/real-estate/">Real estate</a></li>
-      <li><a class="link-standalone" href="/accounting/industries/construction/">Construction</a></li>
-      <li><a class="link-standalone" href="/accounting/industries/restaurant/">Restaurants</a></li>
-      <li><a class="link-standalone" href="/accounting/industries/healthcare/">Healthcare</a></li>
-      <li><a class="link-standalone" href="/accounting/industries/legal/">Legal</a></li>
-      <li><a class="link-standalone" href="/accounting/industries/saas/">SaaS</a></li>
-      <li><a class="link-standalone" href="/accounting/industries/professional-services/">Professional services</a></li>
-      <li><a class="link-standalone" href="/accounting/industries/">All industries {% include "icons/arrow-right.svg" %}</a></li>
-    </ul>
-  </div>
-</section>
-
-<section class="section" id="home-guides">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Learning center</p>
-      <h2 class="section__heading">Understand it before you buy it.</h2>
-      <p class="section__lede">Plain-language guides from the Certified ProAdvisor team — what the work involves, what it should cost, and how to choose well.</p>
-    </header>
-    <div class="cards">
-      <a class="rcard" href="/resources/guides/quickbooks-cleanup/"><h3 class="rcard__t">The QuickBooks cleanup guide</h3><p class="rcard__d">What a real cleanup involves, how to tell how bad your file actually is, and what done looks like.</p><span class="rcard__go">Read the guide {% include "icons/arrow-right.svg" %}</span></a>
-      <a class="rcard" href="/resources/guides/hire-a-bookkeeper/"><h3 class="rcard__t">How to hire a bookkeeper</h3><p class="rcard__d">The questions to ask, the credentials that matter, and the red flags that cost businesses real money.</p><span class="rcard__go">Read the guide {% include "icons/arrow-right.svg" %}</span></a>
-      <a class="rcard" href="/resources/guides/bookkeeping-rates/"><h3 class="rcard__t">Bookkeeping rates, explained</h3><p class="rcard__d">What bookkeeping actually costs in the U.S., what drives the price, and when cheap gets expensive.</p><span class="rcard__go">Read the guide {% include "icons/arrow-right.svg" %}</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="home-states">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Find an accountant</p>
-      <h2 class="section__heading">Expert accountants across the United States.</h2>
-      <p class="section__lede">Connect with a vetted Certified ProAdvisor in your state — or the closest qualified expert where we&rsquo;re not yet in-market.</p>
-    </header>
-    <ul class="states">
-      {%- for state in states %}
-      <li><a class="state" href="/find-an-accountant/{{ state.slug }}/">{{ state.name }} <span class="state__ab">{{ state.name | upper | truncate(3, true, "") }}</span></a></li>
-      {%- endfor %}
-      <li><a class="state state--ask" href="/find-an-accountant/">All states <span class="state__ab">→</span></a></li>
-    </ul>
-  </div>
-</section>
-
-<section class="section section--cta-band section--cta-band--dark section--tier-hub" id="home-cta">
-  <div class="cta-band__monogram" aria-hidden="true">{% include "partials/monogram-tieout.svg" %}</div>
-  <div class="container">
-    <div class="final-cta">
-      <p class="section__eyebrow"><span class="kicker-mark" aria-hidden="true"></span>{{ ctaBand.eyebrow | safe }}</p>
-      <h2 class="final-cta__heading">{{ ctaBand.heading | safe }}</h2>
-      <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
-      <p class="final-cta__reassure">{% include "icons/check.svg" %}{{ ctaBand.reassure | safe }}</p>
-      <div class="final-cta__actions">
-        {%- for action in ctaBand.actions %}
-        <a class="btn {{ action.class }}" href="{{ action.href }}">{{ action.label }}</a>
-        {%- endfor %}
+{#- §TEAM — named & accountable. Firm team + David Westgate (the one permitted named
+    operator, real TX practice, verifiable Intuit link). Verbatim. -#}
+<section class="sec reveal" id="home-team">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Named &amp; accountable</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:24px;">Real people, by name. Verifiable credentials.</h2>
+    <div class="r-2">
+      <div class="dc-card" style="display:flex;gap:16px;align-items:flex-start;">
+        <img src="/assets/img/brand/monogram.svg" alt="" width="56" height="56" style="flex:none;border-radius:10px;">
+        <div><h3>The Certified ProAdvisor Team</h3><p class="mono" style="font-size:12.5px;color:var(--color-ink-mute);margin:2px 0 8px;">Lead practice &middot; direct delivery</p><p class="prose" style="font-size:14px;margin:0;color:var(--color-ink-mute);">Active Intuit certifications — QuickBooks Online (Level 2), Desktop, Enterprise, and Payroll. A named ProAdvisor for the life of the engagement, never a rotating queue.</p></div>
       </div>
-      <p class="final-cta__disclaimer">TechBrot Inc. is an independent firm and is not affiliated with Intuit Inc. QuickBooks and ProAdvisor are trademarks of Intuit Inc. We do not file taxes or represent clients before tax authorities.</p>
+      <div class="dc-card" style="display:flex;gap:16px;align-items:flex-start;">
+        <span style="flex:none;">{% photo "src/assets/img/people/david-westgate.jpg", "David Westgate", { class: "", widths: [56, 112, 168], sizes: "56px" } %}</span>
+        <div><h3>David Westgate</h3><p class="mono" style="font-size:12.5px;color:var(--color-ink-mute);margin:2px 0 8px;">Certified QuickBooks ProAdvisor &middot; Network Operator, Texas</p><p class="prose" style="font-size:14px;margin:0 0 8px;color:var(--color-ink-mute);">40+ years in accounting. Westgate Financial Services — a trusted partner practice delivering TechBrot engagements for Texas businesses under TechBrot&rsquo;s operating standards.</p><a class="hub-card__go" href="https://proadvisor.intuit.com/app/accountant/search" rel="noopener" target="_blank">Verify on Intuit&rsquo;s ProAdvisor directory <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
     </div>
+  </div>
+</section>
+
+{#- §INDUSTRIES — chips of industry links. sand. -#}
+<section class="sec reveal hub-rt--alt" id="home-industries" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Built for the way you operate</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:24px;">Accounting that understands your industry.</h2>
+    <div class="chips">
+      <a class="chip" href="/accounting/industries/ecommerce/">E-commerce</a>
+      <a class="chip" href="/accounting/industries/real-estate/">Real estate</a>
+      <a class="chip" href="/accounting/industries/construction/">Construction</a>
+      <a class="chip" href="/accounting/industries/restaurant/">Restaurants</a>
+      <a class="chip" href="/accounting/industries/healthcare/">Healthcare</a>
+      <a class="chip" href="/accounting/industries/legal/">Legal</a>
+      <a class="chip" href="/accounting/industries/saas/">SaaS</a>
+      <a class="chip" href="/accounting/industries/professional-services/">Professional services</a>
+      <a class="chip" href="/accounting/industries/">All industries &rarr;</a>
+    </div>
+  </div>
+</section>
+
+{#- §GUIDES — learning center. dc-card hub-card (full-card links). -#}
+<section class="sec reveal" id="home-guides">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Learning center</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:10px;">Understand it before you buy it.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">Plain-language guides from the Certified ProAdvisor team — what the work involves, what it should cost, and how to choose well.</p>
+    <div class="r-3">
+      <a class="dc-card hub-card" href="/resources/guides/quickbooks-cleanup/"><h3>The QuickBooks cleanup guide</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">What a real cleanup involves, how to tell how bad your file actually is, and what done looks like.</p><span class="hub-card__go">Read the guide <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="dc-card hub-card" href="/resources/guides/hire-a-bookkeeper/"><h3>How to hire a bookkeeper</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">The questions to ask, the credentials that matter, and the red flags that cost businesses real money.</p><span class="hub-card__go">Read the guide <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="dc-card hub-card" href="/resources/guides/bookkeeping-rates/"><h3>Bookkeeping rates, explained</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">What bookkeeping actually costs in the U.S., what drives the price, and when cheap gets expensive.</p><span class="hub-card__go">Read the guide <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+{#- §STATES — find-an-accountant state grid (states data; .states/.state v2 pills). sand. -#}
+<section class="sec reveal hub-rt--alt" id="home-states" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Find an accountant</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">Expert accountants across the United States.</h2>
+    <p class="lede" style="margin:0 0 26px;max-width:64ch;">Connect with a vetted Certified ProAdvisor in your state — or the closest qualified expert where we&rsquo;re not yet in-market.</p>
+    <nav aria-label="States served" class="states">
+      {%- for state in states %}
+      <a class="state" href="/find-an-accountant/{{ state.slug }}/">{{ state.name }} <span class="mono">{{ state.name | upper | truncate(3, true, "") }}</span></a>
+      {%- endfor %}
+      <a class="state state--ask" href="/find-an-accountant/">All states <span class="mono">&rarr;</span></a>
+    </nav>
   </div>
 </section>
