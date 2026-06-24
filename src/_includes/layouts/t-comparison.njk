@@ -123,16 +123,29 @@ footerNav:
 {#- COMPARISON TABLE — the C2 signature viz -#}
 {%- if vsTable %}
 {%- set dk = cmpCols.dimKey | default("cap", true) %}
-{%- set akey = cmpCols.aKey | default("bk", true) %}
-{%- set bkey = cmpCols.bKey | default("acct", true) %}
-{%- set usCol = cmpCols.usCol | default("a", true) %}
-{%- set aLabel = cmpCols.aLabel | default("Bookkeeper", true) %}
-{%- set bLabel = cmpCols.bLabel | default("Accountant / CPA", true) %}
 <section class="sec reveal">
   <div class="ct read">
     <div class="ph"><span class="ph__t">{{ sec.cmpTag | default("Side by side", true) | safe }}</span><span class="ph__rule"></span></div>
     <h2 class="h2" style="margin-bottom:8px;">{{ sec.cmpH | default("Across the dimensions that actually matter.", true) | safe }}</h2>
     <p class="lede" style="margin:0 0 24px;">{{ sec.cmpLede | default("Twelve dimensions where the two roles differ in practice. Neither role &ldquo;wins&rdquo; &mdash; they do different things. This table makes the boundaries clear.", true) | safe }}</p>
+    {#- cmpCols.cols (array of {key,label,sub?,us?}) → N-column matrix (e.g. plan tiers);
+        otherwise the standard 2-column a/b read. Both render the same .cmp component. -#}
+    {%- if cmpCols.cols %}
+    <table class="cmp" data-viz="comparison-table" data-viz-state="FINAL">
+      <caption>{{ cmpCols.caption | safe }}</caption>
+      <thead><tr><th scope="col">{{ cmpCols.c1 | default("Dimension", true) | safe }}</th>{% for c in cmpCols.cols %}<th scope="col"{% if c.us %} class="us"{% endif %}>{{ c.label | safe }}{% if c.sub %}<span class="sub">{{ c.sub | safe }}</span>{% endif %}</th>{% endfor %}</tr></thead>
+      <tbody>
+        {%- for r in vsTable %}
+        <tr><th scope="row">{{ r[dk] | safe }}</th>{% for c in cmpCols.cols %}<td{% if c.us %} class="us"{% endif %} data-col="{{ c.label | safe }}">{{ r[c.key] | safe }}</td>{% endfor %}</tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+    {%- else %}
+    {%- set akey = cmpCols.aKey | default("bk", true) %}
+    {%- set bkey = cmpCols.bKey | default("acct", true) %}
+    {%- set usCol = cmpCols.usCol | default("a", true) %}
+    {%- set aLabel = cmpCols.aLabel | default("Bookkeeper", true) %}
+    {%- set bLabel = cmpCols.bLabel | default("Accountant / CPA", true) %}
     <table class="cmp" data-viz="comparison-table" data-viz-state="FINAL">
       <caption>{{ cmpCols.caption | default("Bookkeeper vs accountant &middot; what each role actually does across twelve dimensions", true) | safe }}</caption>
       <thead><tr><th scope="col">{{ cmpCols.c1 | default("Dimension", true) | safe }}</th><th scope="col"{% if usCol == "a" %} class="us"{% endif %}>{{ aLabel | safe }}{% if cmpCols.aSub %}<span class="sub">{{ cmpCols.aSub | safe }}</span>{% elif not cmpCols.aKey %}<span class="sub">day-to-day records</span>{% endif %}</th><th scope="col"{% if usCol == "b" %} class="us"{% endif %}>{{ bLabel | safe }}{% if cmpCols.bSub %}<span class="sub">{{ cmpCols.bSub | safe }}</span>{% elif not cmpCols.bKey %}<span class="sub">analysis &amp; planning</span>{% endif %}</th></tr></thead>
@@ -146,6 +159,7 @@ footerNav:
         {%- endfor %}
       </tbody>
     </table>
+    {%- endif %}
   </div>
 </section>
 {%- endif %}

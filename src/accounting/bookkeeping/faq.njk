@@ -1,10 +1,8 @@
 ---json
 {
-  "layout": "layouts/t-guide.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/bookkeeping/faq/",
   "slug": "acct-bk-faq",
-  "tierClass": "section--tier-guide",
-  "pageTier": "guide",
   "bodyClass": "page--mofu",
   "title": "Bookkeeping FAQ: Monthly, Cleanup, Catch-Up, Software, Switching · TechBrot",
   "description": "Thirty-five questions on monthly bookkeeping, cleanup, catch-up, QuickBooks software, pricing, switching providers, and what working with an independent ProAdvisor firm actually looks like. Fixed-fee, no hourly billing, zero affiliate commission.",
@@ -14,13 +12,7 @@
     { "name": "Bookkeeping", "href": "/accounting/bookkeeping/" },
     { "name": "FAQ" }
   ],
-  "heroFigure": "taccount",
   "hero": {
-    "trust": [
-      "Certified QuickBooks ProAdvisor team",
-      "Independent &middot; zero commission",
-      "Reconciled monthly &middot; CPA-ready"
-    ],
     "eyebrow": "The bookkeeping reference &middot; maintained by Certified ProAdvisors",
     "heading": "Bookkeeping, answered.",
     "subheading": "Questions on what bookkeeping covers, monthly bookkeeping in practice, cleanup and catch-up engagements, pricing and the engagement model, software and technology, and how switching providers actually works. Written by an independent Certified QuickBooks ProAdvisor firm with zero commission on QuickBooks or any other platform. Every answer reflects how we&rsquo;d actually advise a client &mdash; no hedging, no affiliate spin. We keep the books right; your CPA files from them. Not affiliated with Intuit Inc.",
@@ -46,92 +38,86 @@
 }
 ---
 
-<section class="section section--compact" id="acct-bk-faq-popular">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Most asked</p>
-      <h2 class="section__heading">Six questions answered most often.</h2>
-    </header>
-    <div class="grid-3">
+{#- ═══ BOOKKEEPING FAQ (BASELINE, equity-gated). t-guide→t-prose / dc-base chrome.
+    Every baseline heading verbatim at level. FAQPage schema is data-driven
+    (faq.11tydata.js: data.faq flat array) — clusters render prose, structured .faq
+    accordion renders the SAME flat array verbatim (schema == rendered). inBrief →
+    layout TL;DR (#acct-bk-faq-in-brief-text speakable). founder-name-zero. ═══ -#}
+
+{#- POPULAR -#}
+<section class="sec reveal" id="acct-bk-faq-popular" style="padding-top:8px;">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Most asked</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Six questions answered most often.</h2>
+    <div class="r-3">
       {%- for p in popular %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ p.qid }} &middot; {{ p.cluster }}</p>
-        <p class="prose"><a href="#{{ p.anchor }}">{{ p.q | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
-      </div>
+      <a class="dc-card hub-card" href="#{{ p.anchor }}"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ p.qid }} &middot; {{ p.cluster }}</span><h3 style="font-size:16px;">{{ p.q | safe }}</h3><span class="hub-card__go">Jump to answer <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-bk-faq-body">
-  <div class="container">
+{#- BODY — clusters as editorial reading column. -#}
+<section class="sec reveal" id="acct-bk-faq-body" style="padding-top:24px;">
+  <div class="ct read read--doc">
     <h2 class="sr-only">All bookkeeping questions, organized by topic</h2>
-    <div class="guide-grid">
-      <aside class="toc" aria-label="Topic clusters">
-        <p class="toc__label">Topic clusters</p>
-        <ol>
-          {%- for c in clusters %}
-          <li><a {% if loop.first %}class="is-active" {% endif %}href="#{{ c.id }}">{{ c.heading | safe }}</a></li>
-          {%- endfor %}
-        </ol>
-      </aside>
-      <article class="article prose">
-        <div class="byline-block" style="border-top:0;padding-top:0;margin-bottom:var(--space-6)">
-          <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
-          <div>
-            <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-            <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; independent firm, not affiliated with Intuit Inc.</p>
-          </div>
-        </div>
-        <blockquote class="pull-quote">
-          <p>Every answer here reflects how we&rsquo;d actually advise a client &mdash; no hedging, no affiliate spin, and zero commission on any Intuit product. We keep the books right; your CPA files from them.</p>
-        </blockquote>
-        {%- for c in clusters %}
-        <section id="{{ c.id }}" aria-labelledby="{{ c.id }}-h">
-          <h2 id="{{ c.id }}-h">{{ c.heading | safe }}</h2>
-          <p>{{ c.lede | safe }}</p>
-          {%- for it in c.items %}
-          <h3 id="{{ it.anchor }}">{{ it.q | safe }}</h3>
-          {{ it.a | safe }}
-          {%- endfor %}
-        </section>
-        {%- endfor %}
-        <p class="meta-reviewed"><span>Maintained by the Certified QuickBooks ProAdvisor team</span><span>7 topic clusters</span><span>Last reviewed: 2026-06 &middot; Certified QuickBooks ProAdvisor</span></p>
-      </article>
+    <div class="prose-byline" style="margin-top:0;border-top:0;padding-top:0;">
+      <span class="prose-byline__mark"><svg width="16" height="16" viewBox="0 0 64 64" fill="#FCFBF8" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span>
+      <div>
+        <p class="prose-byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="prose-byline__meta">Reviewed by a Certified QuickBooks ProAdvisor &middot; independent firm, not affiliated with Intuit Inc.</p>
+      </div>
     </div>
+    <nav class="prose" aria-label="Topic clusters" style="margin:22px 0 4px;font-size:14px;">
+      <span class="eyebrow" style="display:block;margin-bottom:8px;">Topic clusters</span>
+      <ol style="margin:0;padding-left:18px;">
+        {%- for c in clusters %}
+        <li><a href="#{{ c.id }}">{{ c.heading | safe }}</a></li>
+        {%- endfor %}
+      </ol>
+    </nav>
+    <div class="opquote" style="margin:26px 0;">
+      <blockquote>Every answer here reflects how we&rsquo;d actually advise a client &mdash; no hedging, no affiliate spin, and zero commission on any Intuit product. We keep the books right; your CPA files from them.</blockquote>
+    </div>
+    <div class="prose">
+      {%- for c in clusters %}
+      <section id="{{ c.id }}" aria-labelledby="{{ c.id }}-h">
+        <h2 id="{{ c.id }}-h">{{ c.heading | safe }}</h2>
+        <p>{{ c.lede | safe }}</p>
+        {%- for it in c.items %}
+        <h3 id="{{ it.anchor }}">{{ it.q | safe }}</h3>
+        {{ it.a | safe }}
+        {%- endfor %}
+      </section>
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Maintained by the Certified QuickBooks ProAdvisor team</span><span>7 topic clusters</span><span>Last reviewed: 2026-06 &middot; Certified QuickBooks ProAdvisor</span></p>
   </div>
 </section>
 
-<section class="section section--alt" id="acct-bk-faq-structured">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Quick answers</p>
-      <h2 class="section__heading">The seven questions businesses ask most.</h2>
-      <p class="section__lede">The core of the bookkeeping reference, condensed. Each answer carries the full detail from the clusters above.</p>
-    </header>
-    <div class="faq__list">
+{#- STRUCTURED — flat `faq` (FAQPage schema source) → v2 .faq accordion. -#}
+<section class="sec reveal" id="acct-bk-faq-structured" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Quick answers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The seven questions businesses ask most.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">The core of the bookkeeping reference, condensed. Each answer carries the full detail from the clusters above.</p>
+    <div class="faq">
       {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acct-bk-faq-a-{{ loop.index }}" id="acct-bk-faq-q-{{ loop.index }}">{{ item.q | safe }}</button></h3>
-        <div class="faq__answer" id="acct-bk-faq-a-{{ loop.index }}" data-open="false" role="region" aria-labelledby="acct-bk-faq-q-{{ loop.index }}">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
+      <details name="acct-bk-faq-structured"{% if loop.first %} open{% endif %}><summary>{{ item.q | safe }}<span class="pl"></span></summary><div><p>{{ item.a | safe }}</p></div></details>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="acct-bk-faq-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
-    </header>
+{#- REVIEW -#}
+<section class="sec reveal hub-rt--alt" id="acct-bk-faq-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
     <div class="prose">
       <p>{{ reviewBody | safe }}</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in reviewerCreds %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.label | safe }}</p><p class="trust-row__label">{{ r.detail | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -140,20 +126,15 @@
   </div>
 </section>
 
-<section class="section" id="acct-bk-faq-related">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related services</p>
-      <h2 class="section__heading">The full bookkeeping service universe.</h2>
-      <p class="section__lede">Every engagement type referenced across the FAQ, organized for quick navigation. Start where your question lives.</p>
-    </header>
-    <div class="grid-3">
+{#- RELATED -#}
+<section class="sec reveal" id="acct-bk-faq-related" style="padding-top:24px;">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related services</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The full bookkeeping service universe.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Every engagement type referenced across the FAQ, organized for quick navigation. Start where your question lives.</p>
+    <div class="r-3">
       {%- for n in related %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ n.cluster }}</p>
-        <h3><a href="{{ n.href }}">{{ n.title | safe }}</a></h3>
-        <p class="prose">{{ n.body | safe }}</p>
-      </div>
+      <a class="dc-card hub-card" href="{{ n.href }}"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ n.cluster }}</span><h3>{{ n.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ n.body | safe }}</p><span class="hub-card__go">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>

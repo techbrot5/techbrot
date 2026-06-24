@@ -1,10 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-guide.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/switch/from-bench/",
   "slug": "switch-from-bench",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--bofu",
+  "sec": {
+    "aiH": "Switching from Bench, in five questions.",
+    "faqH": "What former Bench customers ask about switching."
+  },
   "title": "Switching From Bench: Data Rescue & Migration to QuickBooks · TechBrot",
   "description": "Switching from Bench after the shutdown? An independent Certified QuickBooks ProAdvisor firm rescues your exported data, migrates it into a QuickBooks file you own, cleans up any gaps, and runs ongoing monthly bookkeeping with a named ProAdvisor. Free file review first, then fixed-fee. Not Intuit; not affiliated with Bench or Employer.com. (877) 751-5575.",
   "breadcrumb": [
@@ -13,7 +16,7 @@
     { "name": "From Bench" }
   ],
   "hero": {
-    "eyebrow": "Switch &middot; <span class=\"error-badge\">From Bench</span>",
+    "eyebrow": "Switch &middot; From Bench",
     "heading": "Switching from Bench: rescue your data, move to books you own.",
     "subheading": "Bench shut down abruptly on December 27, 2024, was acquired by Employer.com days later, and relaunched in January 2025 under new ownership. If you&rsquo;ve decided to move on, this page is the rescue: export the data still available from the Bench / Employer.com portal, migrate it into a QuickBooks file you own, clean up any gaps so the books tie out, then ongoing monthly with a named Certified ProAdvisor. Independent firm &mdash; not Intuit, and not affiliated with Bench or Employer.com.",
     "actions": [
@@ -21,10 +24,15 @@
       { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
     ]
   },
+  "byline": {
+    "name": "By the Certified QuickBooks ProAdvisor team",
+    "meta": "Reviewed by a Certified QuickBooks ProAdvisor &middot; Online &amp; Desktop certified"
+  },
   "inBrief": {
     "text": "<strong>Switching from Bench</strong> means moving your bookkeeping off the Bench platform &mdash; which shut down abruptly on December 27, 2024 and relaunched in January 2025 as an Employer.com subsidiary &mdash; and into a QuickBooks file you own outright, maintained by a named Certified ProAdvisor. The rescue is four stages: export everything available from the Bench / Employer.com portal, migrate it into your own QuickBooks file, clean up any gaps so reconciliation ties, then ongoing monthly bookkeeping. Continuity is the point: books you control, in standard software, with a provider you can reach. If you&rsquo;re still comparing rather than decided, the full side-by-side lives on the <a href=\"/vs/techbrot-vs-bench/\">TechBrot vs. Bench</a> page.",
     "source": "Reference maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not Intuit, and not affiliated with Bench or Employer.com. Not affiliated with Intuit Inc."
   },
+  "metaReviewed": "2026-06-18",
   "ctaBand": {
     "eyebrow": "Decided to move off Bench?",
     "heading": "Start with a free file review of what you exported.",
@@ -37,32 +45,28 @@
 }
 ---
 
-<section class="section section--compact" id="switch-from-bench-disclosure">
-  <div class="container container--narrow">
-    <div class="disclosure">
-      <strong>This is an independent Certified QuickBooks ProAdvisor firm &mdash; not Intuit, and not affiliated with Bench or Employer.com.</strong> We don&rsquo;t represent Bench, its acquirer Employer.com, or Intuit, and we can&rsquo;t access your Bench / Employer.com account or your Intuit account on your behalf. What we do is help former Bench customers export their own data and rebuild it into a QuickBooks file they own, then maintain it monthly. QuickBooks and Intuit are registered trademarks of Intuit Inc.; Bench and Employer.com are trademarks of their respective owners.
+{#- ═══ SWITCH/FROM-BENCH (BASELINE, equity-gated). t-guide→t-prose (dc-base v2).
+    Every baseline heading verbatim; content verbatim. disclosure→v2 caution banner;
+    definition/why/signals/operator→prose reading-column; steps→process-grid;
+    breakout→dc-card; ai-summary+faq→layout slots (sec.aiH/faqH). Speakable
+    #switch-from-bench-in-brief-text rendered by the t-prose TL;DR (slug match).
+    All hrefs + section ids preserved; founder-name-zero. ═══ -#}
+
+{#- DISCLOSURE → v2 caution banner -#}
+<section class="sec" id="switch-from-bench-disclosure">
+  <div class="ct read read--doc">
+    <div style="display:flex;gap:12px;align-items:flex-start;background:var(--caution-soft);border:1px solid var(--caution-border);border-radius:12px;padding:16px 18px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-warning)" stroke-width="1.75" aria-hidden="true" style="flex:none;margin-top:2px;"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.3" stroke-linecap="round"/></svg>
+      <div class="prose" style="font-size:14px;"><strong>This is an independent Certified QuickBooks ProAdvisor firm &mdash; not Intuit, and not affiliated with Bench or Employer.com.</strong> We don&rsquo;t represent Bench, its acquirer Employer.com, or Intuit, and we can&rsquo;t access your Bench / Employer.com account or your Intuit account on your behalf. What we do is help former Bench customers export their own data and rebuild it into a QuickBooks file they own, then maintain it monthly. QuickBooks and Intuit are registered trademarks of Intuit Inc.; Bench and Employer.com are trademarks of their respective owners.</div>
     </div>
   </div>
 </section>
 
-<section class="section section--compact" id="switch-from-bench-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Reviewed by a Certified QuickBooks ProAdvisor &middot; Online &amp; Desktop certified</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="switch-from-bench-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">&ldquo;Switching from Bench,&rdquo; plainly.</h2>
-    </header>
+{#- DEFINITION → prose, sand alt -#}
+<section class="sec reveal hub-rt--alt" id="switch-from-bench-definition" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">&ldquo;Switching from Bench,&rdquo; plainly.</h2>
     <div class="prose">
       <p>Switching from Bench means taking your bookkeeping out of the Bench platform and putting it somewhere you control: a <code>QuickBooks</code> file registered to your business, on your own subscription, maintained by a named Certified ProAdvisor. It became an urgent question for thousands of small businesses when Bench shut down without warning on December 27, 2024, leaving customers locked out of their own records with a deadline to download what they could before access closed.</p>
       <p>The rescue itself is straightforward in shape, even when the data is messy: pull everything still available from the Bench / Employer.com portal, migrate it into your QuickBooks file, reconstruct any months the export is missing, and reconcile until the books tie out &mdash; then keep them current month to month. What you end up with is the thing many former customers say they wanted all along: a stable home for the books that can&rsquo;t disappear under new ownership, in standard software you own. If you&rsquo;re weighing whether to make the move at all, the <a href="/vs/techbrot-vs-bench/">side-by-side comparison</a> is the place to start; this page is for when you&rsquo;ve decided and want to know how the switch works.</p>
@@ -70,99 +74,69 @@
   </div>
 </section>
 
-<section class="section" id="switch-from-bench-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Switching from Bench, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="switch-from-bench-why">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The documented timeline</p>
-      <h2 class="section__heading">Why Bench customers are switching.</h2>
-      <p class="section__lede">The publicly documented sequence of events &mdash; reported plainly, in order. No speculation about the people involved; just why former customers are moving their books somewhere stable.</p>
-    </header>
-    <div class="grid-2">
+{#- WHY → prose grid-2 (documented timeline) -#}
+<section class="sec reveal" id="switch-from-bench-why">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The documented timeline</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Why Bench customers are switching.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">The publicly documented sequence of events &mdash; reported plainly, in order. No speculation about the people involved; just why former customers are moving their books somewhere stable.</p>
+    <div class="r-2">
       {%- for c in causes %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ c.rank }}</p>
-        <h3>{{ c.name | safe }}</h3>
-        <p class="prose">{{ c.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ c.rank }}</span><h3>{{ c.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="switch-from-bench-steps">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The migration</p>
-      <h2 class="section__heading">How the switch from Bench works, step by step.</h2>
-      <p class="section__lede">Six steps, in order: export, set up your own file, migrate, clean up the gaps, verify, then go live monthly. We scope it in writing after the free file review &mdash; you always know what comes next.</p>
-    </header>
-    <ol class="fix-steps">
+{#- STEPS → process-grid (HowTo anchor #switch-from-bench-steps preserved) -#}
+<section class="sec reveal hub-rt--alt" id="switch-from-bench-steps" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The migration</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">How the switch from Bench works, step by step.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Six steps, in order: export, set up your own file, migrate, clean up the gaps, verify, then go live monthly. We scope it in writing after the free file review &mdash; you always know what comes next.</p>
+    <div class="process-grid">
       {%- for s in fixSteps %}
-      <li>
-        <span class="n">{{ loop.index }}</span>
-        <div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
-      </li>
+      <div class="process-step"><span class="process-step__n">STEP {{ loop.index }}</span><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section section--alt" id="switch-from-bench-signals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Timing</p>
-      <h2 class="section__heading">Signs you should move now.</h2>
-    </header>
-    <div class="grid-3">
+{#- SIGNALS → prose grid-3 -#}
+<section class="sec reveal" id="switch-from-bench-signals">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Timing</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Signs you should move now.</h2>
+    <div class="r-3">
       {%- for p in proSignals %}
-      <div class="stack-8">
-        <h3>{{ p.name | safe }}</h3>
-        <p class="prose">{{ p.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ p.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ p.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="switch-from-bench-breakout">
-  <div class="container container--narrow">
-    <div class="call-breakout">
-      <div>
-        <p class="call-breakout__title">Ready to move your books off Bench?</p>
-        <p class="call-breakout__sub">Book a discovery call and a Certified ProAdvisor maps your rescue: export, migrate to a QuickBooks file you own, clean up any gaps, then ongoing monthly. Free file review first, then fixed-fee &mdash; $1,200&ndash;$3,000 typical migration scope, $1,500&ndash;$15,000+ if months need rebuilding. Independent firm.</p>
+{#- BREAKOUT → dc-card callout -#}
+<section class="sec reveal" id="switch-from-bench-breakout">
+  <div class="ct read read--doc">
+    <div class="dc-card" style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;">
+      <div style="flex:1 1 320px;">
+        <h3 style="margin:0 0 6px;">Ready to move your books off Bench?</h3>
+        <p class="prose" style="font-size:14.5px;margin:0;">Book a discovery call and a Certified ProAdvisor maps your rescue: export, migrate to a QuickBooks file you own, clean up any gaps, then ongoing monthly. Free file review first, then fixed-fee &mdash; $1,200&ndash;$3,000 typical migration scope, $1,500&ndash;$15,000+ if months need rebuilding. Independent firm.</p>
       </div>
-      <a class="btn btn--primary" href="/contact/?intent=bench-alternative">Book the discovery call</a>
+      <a class="btn btn-cta" href="/contact/?intent=bench-alternative" style="display:inline-flex;align-items:center;gap:9px;height:50px;padding:0 22px;border-radius:12px;font-size:15px;font-weight:600;flex:none;">Book the discovery call</a>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="switch-from-bench-operator">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Who does the work</p>
-      <h2 class="section__heading">A named Certified ProAdvisor rescues the data and owns the migration.</h2>
-    </header>
+{#- OPERATOR → prose + trust-row, sand alt -#}
+<section class="sec reveal hub-rt--alt" id="switch-from-bench-operator" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Who does the work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">A named Certified ProAdvisor rescues the data and owns the migration.</h2>
     <div class="prose">
       <p>The hard part of switching isn&rsquo;t the export &mdash; it&rsquo;s turning a recovered pile of data from a shut-down platform into trustworthy books, then keeping them that way. A Certified QuickBooks ProAdvisor with active Online and Desktop certifications maps the Bench export into a clean chart of accounts, reconstructs any missing months from bank and card records, reconciles until the file ties out, and verifies prior-period balances against what was filed &mdash; all against a written scope. From there the same named professional maintains the books monthly, so you have someone to reach. Independent firm &mdash; not Intuit, not Bench, not Employer.com.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in operatorSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -171,39 +145,16 @@
   </div>
 </section>
 
-<section class="section" id="switch-from-bench-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Where this leads next</p>
-      <h2 class="section__heading">Still deciding, or ready to migrate.</h2>
-    </header>
+{#- RELATED → route cards -#}
+<section class="sec reveal" id="switch-from-bench-related">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Where this leads next</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Still deciding, or ready to migrate.</h2>
     {%- for n in related %}
-    <div class="stack-8">
-      <h3><a href="{{ n.href }}"{% if n.rel %} rel="{{ n.rel }}"{% endif %}>{{ n.title | safe }}</a></h3>
-      <p class="prose">{{ n.body | safe }}</p>
+    <div class="prose" style="margin-bottom:18px;">
+      <h3 style="margin:0 0 4px;"><a href="{{ n.href }}"{% if n.rel %} rel="{{ n.rel }}"{% endif %}>{{ n.title | safe }}</a></h3>
+      <p style="font-size:14.5px;margin:0;">{{ n.body | safe }}</p>
     </div>
     {%- endfor %}
-  </div>
-</section>
-
-<section class="section section--alt" id="switch-from-bench-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">What former Bench customers ask about switching.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="switch-from-bench-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="switch-from-bench-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-    <p class="meta-reviewed"><span>Published: 2026-06-18</span><span>Updated: 2026-06-18</span><span>Reviewed: 2026-06-18 &middot; Certified QuickBooks ProAdvisor</span></p>
   </div>
 </section>
