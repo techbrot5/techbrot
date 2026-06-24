@@ -1,18 +1,19 @@
 ---
-layout: layouts/base.njk
+layout: layouts/t-prose.njk
 permalink: /quickbooks/file-review/
 slug: file-review
 intent: file-review
+navActive: quickbooks
 breadcrumb:
   - name: Home
     href: /
   - name: QuickBooks
     href: /quickbooks/
   - name: Free file review
-chrome: minimal
-callBar: true
 bodyClass: page--bofu
 includeFormJs: true
+sec:
+  faqH: "The questions buyers actually ask."
 title: "Free QuickBooks File Review · TechBrot"
 description: "Free QuickBooks file review by a Certified ProAdvisor — plain-English findings + an optional written fixed-fee scope in 3 days. Call (877) 751-5575."
 hero:
@@ -64,77 +65,69 @@ trustRow:
   - { value: "1 day", label: "Response within one business day" }
 ---
 
-{% include "partials/util-hero.njk" %}
-
-<section class="section section--compact section--tier-bofu" id="file-review-tldr">
-  <div class="container">
-    <div class="tldr">
-      <p class="tldr__label">The short version</p>
-      <h2 class="tldr__heading">What the free file review is &mdash; in one paragraph.</h2>
-      <p class="tldr__body" id="file-review-tldr-body">Submit your QuickBooks file for a free Certified ProAdvisor review. We open the file, run a structured diagnostic across six areas &mdash; reconciliation, uncategorized and duplicate transactions, Undeposited Funds and Opening Balance Equity, A/R-A/P aging, payroll and sales-tax liability accounts, and file health &mdash; and tell you in plain English what we found and what it would take to fix. If you want it fixed, you get a written fixed-fee scope within 3 business days &mdash; from a <a href="/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup">cleanup</a> to a <a href="/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up">catch-up</a> to ongoing <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a>, depending on what the file actually needs. No obligation. A review is diagnostic, not the fix &mdash; complex multi-entity or multi-year files may need a paid deep diagnostic, and we&rsquo;ll tell you that before anything costs money. The rest of <a href="/quickbooks/">our QuickBooks work</a> picks up after the diagnostic.</p>
+{#- ═══ TL;DR — own selectable block; id #file-review-tldr-body is the speakable
+    cssSelector (preserved). ═══ -#}
+<section class="sec reveal" id="file-review-tldr" style="padding-top:36px;padding-bottom:36px;">
+  <div class="ct read read--doc">
+    <div class="tldr-prose speakable">
+      <span class="eyebrow">The short version</span>
+      <p id="file-review-tldr-body">Submit your QuickBooks file for a free Certified ProAdvisor review. We open the file, run a structured diagnostic across six areas &mdash; reconciliation, uncategorized and duplicate transactions, Undeposited Funds and Opening Balance Equity, A/R-A/P aging, payroll and sales-tax liability accounts, and file health &mdash; and tell you in plain English what we found and what it would take to fix. If you want it fixed, you get a written fixed-fee scope within 3 business days &mdash; from a <a href="/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup">cleanup</a> to a <a href="/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up">catch-up</a> to ongoing <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping</a>, depending on what the file actually needs. No obligation. A review is diagnostic, not the fix &mdash; complex multi-entity or multi-year files may need a paid deep diagnostic, and we&rsquo;ll tell you that before anything costs money. The rest of <a href="/quickbooks/">our QuickBooks work</a> picks up after the diagnostic.</p>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="file-review-checks">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">What we check</p>
-      <h2 class="section__heading">Six places a QuickBooks file goes wrong.</h2>
-      <p class="section__lede">The structured diagnostic the reviewing ProAdvisor runs against your file. None of it touches your books &mdash; it&rsquo;s a read, not a change.</p>
-    </header>
-    <ul class="checks-list">
+{#- ═══ WHAT WE CHECK — six-area diagnostic as a checklist. sand alt. ═══ -#}
+<section class="sec reveal hub-rt--alt" id="file-review-checks" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What we check</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Six places a QuickBooks file goes wrong.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:64ch;">The structured diagnostic the reviewing ProAdvisor runs against your file. None of it touches your books &mdash; it&rsquo;s a read, not a change.</p>
+    <ul class="checklist">
       {%- for item in checks %}
-      <li><strong>{{ item.title | safe }}</strong>{{ item.body | safe }}</li>
+      <li><strong>{{ item.title | safe }}</strong> {{ item.body | safe }}</li>
       {%- endfor %}
     </ul>
   </div>
 </section>
 
-<section class="section section--alt" id="file-review-trust">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What you&rsquo;re getting</p>
-      <h2 class="section__heading">Free. Certified. Verified.</h2>
-    </header>
+{#- ═══ WHAT YOU'RE GETTING — trust-row + the 2 REAL Clutch reviews (only review
+    proof; verbatim, honesty rule). ═══ -#}
+<section class="sec reveal" id="file-review-trust">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What you&rsquo;re getting</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:22px;">Free. Certified. Verified.</h2>
     <div class="trust-row">
       {%- for item in trustRow %}
       {%- if not loop.first %}<div class="trust-row__divider"></div>{% endif %}
       <div class="trust-row__item"><p class="trust-row__value">{{ item.value | safe }}</p><p class="trust-row__label">{{ item.label | safe }}</p></div>
       {%- endfor %}
     </div>
-    <div class="grid-2 stack-8">
-      <article class="review-card">
-        <blockquote class="review-card__quote">&ldquo;They took something that felt overwhelming to me as a first-year business owner and made it simple.&rdquo;</blockquote>
-        <p class="review-card__fact"><strong>The work:</strong> reviewed and corrected QuickBooks records &mdash; reconciling transactions and organizing the chart of accounts.</p>
-        <p class="review-card__fact"><strong>The outcome:</strong> books went from disorganized to fully reconciled, delivered on time.</p>
-        <div class="review-card__byline">
-          <div><span class="review-card__name">Heidi Schubert</span><br><span class="review-card__role">Owner, Beverage Connection &middot; Food &amp; Beverage &middot; Denver, Colorado &middot; via Clutch</span></div>
-          <span class="review-card__verified">{% include "icons/check.svg" %}Verified</span>
-        </div>
-        <a class="review-card__link" href="{{ site.clutchProfile }}" rel="noopener" target="_blank">Read the verified review <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-      <article class="review-card">
-        <blockquote class="review-card__quote">&ldquo;What stood out the most was TechBrot Inc&rsquo;s attention to detail.&rdquo;</blockquote>
-        <p class="review-card__fact"><strong>The work:</strong> credit-card reconciliation and financial cleanup &mdash; transaction categorization reviewed and bookkeeping structure improved.</p>
-        <p class="review-card__fact"><strong>The outcome:</strong> reporting accuracy and visibility significantly improved.</p>
-        <div class="review-card__byline">
-          <div><span class="review-card__name">Barbara Best</span><br><span class="review-card__role">CEO, Barbara B. &middot; Business services &middot; California &middot; via Clutch</span></div>
-          <span class="review-card__verified">{% include "icons/check.svg" %}Verified</span>
-        </div>
-        <a class="review-card__link" href="{{ site.clutchProfile }}" rel="noopener" target="_blank">Read the verified review <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+    <div class="r-2" style="margin-top:26px;">
+      <div class="dc-card">
+        <blockquote class="opquote" style="margin:0 0 14px;"><blockquote>They took something that felt overwhelming to me as a first-year business owner and made it simple.</blockquote></blockquote>
+        <p class="prose" style="font-size:14px;margin:0 0 6px;"><strong>The work:</strong> reviewed and corrected QuickBooks records &mdash; reconciling transactions and organizing the chart of accounts.</p>
+        <p class="prose" style="font-size:14px;margin:0 0 12px;"><strong>The outcome:</strong> books went from disorganized to fully reconciled, delivered on time.</p>
+        <p class="mono" style="font-size:12.5px;color:var(--color-ink-mute);margin:0 0 8px;">Heidi Schubert &middot; Owner, Beverage Connection &middot; Food &amp; Beverage &middot; Denver, Colorado &middot; via Clutch &middot; Verified</p>
+        <a class="hub-card__go" href="{{ site.clutchProfile }}" rel="noopener" target="_blank">Read the verified review <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="dc-card">
+        <blockquote class="opquote" style="margin:0 0 14px;"><blockquote>What stood out the most was TechBrot Inc&rsquo;s attention to detail.</blockquote></blockquote>
+        <p class="prose" style="font-size:14px;margin:0 0 6px;"><strong>The work:</strong> credit-card reconciliation and financial cleanup &mdash; transaction categorization reviewed and bookkeeping structure improved.</p>
+        <p class="prose" style="font-size:14px;margin:0 0 12px;"><strong>The outcome:</strong> reporting accuracy and visibility significantly improved.</p>
+        <p class="mono" style="font-size:12.5px;color:var(--color-ink-mute);margin:0 0 8px;">Barbara Best &middot; CEO, Barbara B. &middot; Business services &middot; California &middot; via Clutch &middot; Verified</p>
+        <a class="hub-card__go" href="{{ site.clutchProfile }}" rel="noopener" target="_blank">Read the verified review <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="file-review-form">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow" data-intent-headline>Submit the file</p>
-      <h2 class="section__heading">Send us the file. We&rsquo;ll tell you what it needs.</h2>
-      <p class="section__lede" data-intent-lede>Six minutes. A Certified ProAdvisor reviews the actual file and responds within one business day. Free; written fixed-fee scope within 3 business days if you want it fixed.</p>
-    </header>
+{#- ═══ FORM — the conversion. id="file-review-form" kept (hero anchors here).
+    intake-form partial = locked contract, included verbatim. ═══ -#}
+<section class="sec reveal hub-rt--alt" id="file-review-form" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t" data-intent-headline>Submit the file</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Send us the file. We&rsquo;ll tell you what it needs.</h2>
+    <p class="lede" data-intent-lede style="margin:0 0 28px;max-width:62ch;">Six minutes. A Certified ProAdvisor reviews the actual file and responds within one business day. Free; written fixed-fee scope within 3 business days if you want it fixed.</p>
     <div class="contact-form-wrap">
       {# NEW-SKIN form shell (handoff pages render). The render is a SHELL:
          every locked contract detail is OURS — services[] names, full
@@ -152,27 +145,6 @@ trustRow:
       {%- set intakeSubmit = "Get the free file review" %}
       {%- set intakeReassurance = "No spam, no list, no obligation. A ProAdvisor replies within one business day." %}
       {% include "partials/intake-form.njk" %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="file-review-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Before you call</p>
-      <h2 class="section__heading">The questions buyers actually ask.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="file-review-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="file-review-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
     </div>
   </div>
 </section>

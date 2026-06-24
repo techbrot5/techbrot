@@ -1,12 +1,11 @@
 ---
-layout: layouts/base.njk
+layout: layouts/t-prose.njk
 permalink: /contact/
 slug: contact
-chrome: minimal
-heroAlign: left
-callBar: true
 includeFormJs: true
 bodyClass: page--bofu
+sec:
+  faqH: "The questions buyers actually ask."
 title: "Book a Free Discovery Call · TechBrot"
 description: "Book a free 30-min discovery call with a Certified QuickBooks ProAdvisor — written fixed-fee scope in 3 business days, no pitch. Call (877) 751-5575."
 hero:
@@ -46,15 +45,15 @@ faq:
     isn’t the right path." + the 4 alt h3s); #contact-promise (speakable target)
     preserved; schema lives in contact.11tydata.js (untouched). -#}
 
-{% include "partials/util-hero.njk" %}
-
-<section class="section section--alt" id="contact-main">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow" data-intent-headline>Discovery brief</p>
-      <h2 class="section__heading" id="contact-main-heading">Send us your situation.</h2>
-      <p class="section__lede" data-intent-lede>Six minutes. Six fields. We&rsquo;ll respond within one business day with discovery call slots and a sense of where we&rsquo;d start.</p>
-    </header>
+{#- ═══ DISCOVERY FORM — the centerpiece. id="contact-main" kept (hero anchors here).
+    The intake-form partial is the LOCKED CONTRACT (field names / data-* hooks / honeypot),
+    included verbatim. data-intent-headline / data-intent-lede preserved (intent JS swaps
+    this copy). .ct read = 820px, comfortable for the 2-col intake-grid. ═══ -#}
+<section class="sec reveal" id="contact-main" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t" data-intent-headline>Discovery brief</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="contact-main-heading" style="margin-bottom:10px;">Send us your situation.</h2>
+    <p class="lede" data-intent-lede style="margin:0 0 28px;max-width:62ch;">Six minutes. Six fields. We&rsquo;ll respond within one business day with discovery call slots and a sense of where we&rsquo;d start.</p>
     <div class="contact-form-wrap">
       {%- set intakePrefix = "contact" %}
       {%- set intakeFormId = "contact-discovery-form" %}
@@ -71,89 +70,49 @@ faq:
   </div>
 </section>
 
-<section class="section" id="contact-promise-section">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Our response promise</p>
-      <h2 class="section__heading">How to reach us &amp; what to expect</h2>
-    </header>
+{#- ═══ RESPONSE PROMISE — #contact-promise is the speakable cssSelector (preserved). ═══ -#}
+<section class="sec reveal" id="contact-promise-section">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Our response promise</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">How to reach us &amp; what to expect</h2>
     <p class="prose" id="contact-promise">Every discovery-brief submission gets a response from a Certified ProAdvisor within 1 business day. Discovery calls are scheduled within 3&ndash;5 business days, and written fixed-fee scopes are delivered within 3 business days of the call. Prefer to talk first? Call <a href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">(877) 751-5575</a>, Mon&ndash;Fri 9&nbsp;AM&ndash;6&nbsp;PM ET, or email <a href="mailto:{{ site.emails.hello }}">{{ site.emails.hello }}</a> &mdash; replied within 1 business day. If you&rsquo;d rather have the actual file looked at before anyone talks, start with the <a href="/quickbooks/file-review/?intent=file-review">free QuickBooks file review</a>. Canonical pricing for every engagement is published on the <a href="/pricing/">pricing page</a>.</p>
   </div>
 </section>
 
-<section class="section section--alt" id="contact-trust">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Before you decide</p>
-      <h2 class="section__heading" id="contact-trust-heading">Why owners choose TechBrot</h2>
-    </header>
-    <ul class="checks-list">
+{#- ═══ WHY OWNERS CHOOSE — whyBullets checklist + 2 contact cards. sand alt. ═══ -#}
+<section class="sec reveal hub-rt--alt" id="contact-trust" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Before you decide</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="contact-trust-heading" style="margin-bottom:18px;">Why owners choose TechBrot</h2>
+    <ul class="checklist">
       {%- for item in whyBullets %}
       <li>{{ item | safe }}</li>
       {%- endfor %}
     </ul>
-    <div class="grid-2 stack-8">
-      <article class="review-card">
+    <div class="r-2" style="margin-top:24px;">
+      <div class="dc-card">
         <h3>Direct contact</h3>
-        <p class="review-card__fact"><strong>Phone:</strong> <a href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">+1 (877) 751-5575</a> &mdash; Mon&ndash;Fri, 9&nbsp;AM&ndash;6&nbsp;PM ET</p>
-        <p class="review-card__fact"><strong>Email:</strong> <a href="mailto:{{ site.emails.hello }}">{{ site.emails.hello }}</a> &mdash; replied within 1 business day</p>
-      </article>
-      <article class="review-card">
-        <h3>Headquartered</h3>
-        <p class="review-card__fact">{{ site.legalName }}<br>{{ site.address.streetAddress }}<br>{{ site.address.addressLocality }}, {{ site.address.addressRegion }} {{ site.address.postalCode }}<br>United States</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="contact-alt">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Other ways to connect</p>
-      <h2 class="section__heading" id="contact-alt-heading">If the form isn&rsquo;t the right path.</h2>
-    </header>
-    <div class="grid-2">
-      <article class="review-card">
-        <h3>Schedule directly</h3>
-        <p class="review-card__fact">Book a 30-minute discovery call on our calendar without filling the form. Same operator, same outcome.</p>
-        <a class="review-card__link" href="https://calendly.com/techbrot/discovery" rel="noopener" data-cta="contact-alt-calendar">Open the calendar <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-      <article class="review-card">
-        <h3>Call us</h3>
-        <p class="review-card__fact">Speak with a ProAdvisor directly during business hours. We answer the phone &mdash; this isn&rsquo;t routed through an offshore queue.</p>
-        <a class="review-card__link" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">+1 (877) 751-5575 <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-      <article class="review-card">
-        <h3>Partner inquiry</h3>
-        <p class="review-card__fact">If you&rsquo;re an independent accounting practice interested in the operator network, the partner application form is the right path.</p>
-        <a class="review-card__link" href="/partners/">Apply to the network <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-      <article class="review-card">
-        <h3>Press &amp; media</h3>
-        <p class="review-card__fact">Journalists, podcast hosts, and event organizers can reach our media contact directly.</p>
-        <a class="review-card__link" href="mailto:{{ site.emails.press }}">{{ site.emails.press }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="contact-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Before you send it</p>
-      <h2 class="section__heading">The questions buyers actually ask.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="contact-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="contact-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;"><strong>Phone:</strong> <a href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">+1 (877) 751-5575</a> &mdash; Mon&ndash;Fri, 9&nbsp;AM&ndash;6&nbsp;PM ET</p>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;"><strong>Email:</strong> <a href="mailto:{{ site.emails.hello }}">{{ site.emails.hello }}</a> &mdash; replied within 1 business day</p>
       </div>
-      {%- endfor %}
+      <div class="dc-card">
+        <h3>Headquartered</h3>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ site.legalName }}<br>{{ site.address.streetAddress }}<br>{{ site.address.addressLocality }}, {{ site.address.addressRegion }} {{ site.address.postalCode }}<br>United States</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{#- ═══ OTHER WAYS — 4 route cards (baseline h3s preserved). ═══ -#}
+<section class="sec reveal" id="contact-alt">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Other ways to connect</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="contact-alt-heading" style="margin-bottom:24px;">If the form isn&rsquo;t the right path.</h2>
+    <div class="r-2">
+      <a class="dc-card hub-card" href="https://calendly.com/techbrot/discovery" rel="noopener" data-cta="contact-alt-calendar"><h3>Schedule directly</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">Book a 30-minute discovery call on our calendar without filling the form. Same operator, same outcome.</p><span class="hub-card__go">Open the calendar <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="dc-card hub-card" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click"><h3>Call us</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">Speak with a ProAdvisor directly during business hours. We answer the phone &mdash; this isn&rsquo;t routed through an offshore queue.</p><span class="hub-card__go">+1 (877) 751-5575 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="dc-card hub-card" href="/partners/"><h3>Partner inquiry</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">If you&rsquo;re an independent accounting practice interested in the operator network, the partner application form is the right path.</p><span class="hub-card__go">Apply to the network <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="dc-card hub-card" href="mailto:{{ site.emails.press }}"><h3>Press &amp; media</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">Journalists, podcast hosts, and event organizers can reach our media contact directly.</p><span class="hub-card__go">{{ site.emails.press }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </div>
   </div>
 </section>

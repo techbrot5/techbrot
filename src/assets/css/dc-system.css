@@ -593,7 +593,21 @@ h1, h2, h3 { font-weight: 500; text-wrap: balance; }
 .intake-group__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 @media (max-width: 560px) { .intake-group__grid { grid-template-columns: 1fr; } }
 .intake-checkbox { display: flex; gap: 10px; align-items: start; font-size: 14px; color: var(--color-ink-body2); }
+.intake-checkbox > input { margin-top: 3px; flex: none; }
 .intake-checkbox a { text-decoration: underline; text-underline-offset: 0.16em; }
+.intake-checkbox__help { display: block; font-size: 12.5px; color: var(--color-ink-faint); margin-top: 2px; }
+/* F1 full intake form (contact / file-review) — shared partials/intake-form.njk */
+.intake-form { display: grid; gap: 26px; }
+.intake-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 620px) { .intake-grid { grid-template-columns: 1fr; } }
+.intake-group { border: 0; padding: 0; margin: 0; display: grid; gap: 12px; }
+.intake-group legend { font-size: 15px; font-weight: 500; color: var(--color-ink); padding: 0; }
+.intake-form textarea { resize: vertical; min-height: 110px; line-height: 1.55; }
+.intake-consent { display: grid; gap: 8px; }
+.intake-form__reassurance { font-family: 'Spline Sans Mono', monospace; font-size: 12.5px; color: var(--color-ink-mute); margin: 12px 0 0; }
+/* the partial's submit button carries OLD classes (btn--primary btn--lg) — give it the v2 CTA look on intake pages without editing the shared (NY-frozen) partial */
+.intake-form .btn--primary, .contact-form-wrap .btn--primary { display: inline-flex; align-items: center; justify-content: center; gap: 9px; height: 52px; padding: 0 26px; border-radius: 12px; background: var(--cta); color: var(--white); font-size: 15px; font-weight: 600; border: 0; cursor: pointer; transition: background .18s; }
+.intake-form .btn--primary:hover, .contact-form-wrap .btn--primary:hover { background: var(--cta-hover); }
 
 /* ---------- responsive ---------- */
 @media (max-width: 860px) { .r-foot { grid-template-columns: 1fr 1fr; gap: 26px; } .r-3 { grid-template-columns: 1fr; } }
