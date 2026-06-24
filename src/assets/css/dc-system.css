@@ -555,6 +555,46 @@ h1, h2, h3 { font-weight: 500; text-wrap: balance; }
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @supports (animation-timeline: view()) { .reveal { animation: rise .6s cubic-bezier(.16, 1, .3, 1) both; animation-timeline: view(); animation-range: entry 2% entry 20%; } }
 
+/* ---------- calc (E5 tools) + intake (F1 forms) — Option A port (2026-06-24):
+   real .calc/.intake components from 06-content.css, re-tokenized to dc-system so
+   they render on the v2 dc-base chrome. tb-calc.js binds to data-* hooks only, so
+   class restyle is behavior-safe. Functional look now; premium Tool/Form styling
+   deferred to Part 2 (post-flip CSS elevation). ---------- */
+.calc { display: grid; gap: 24px; background: var(--white); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 32px; box-shadow: 0 2px 4px rgba(10,15,28,.04), 0 14px 30px rgba(10,15,28,.05); box-sizing: border-box; max-width: 100%; min-width: 0; }
+@media (min-width: 760px) { .calc { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .calc { padding: 20px; } }
+.calc__form { display: grid; gap: 16px; min-width: 0; }
+.calc__formnote { font-family: 'Spline Sans Mono', monospace; font-size: 13px; color: var(--color-ink-mute); }
+.calc__field, .intake-field { display: grid; gap: 8px; min-width: 0; }
+.calc__field label, .intake-field__label { font-size: 14px; font-weight: 500; color: var(--color-ink); }
+.intake-field__optional, .intake-field__help { font-size: 12px; font-weight: 400; color: var(--color-ink-faint); }
+.calc__field input, .calc__field select, .intake-field input, .intake-field select, .intake-field textarea {
+  width: 100%; box-sizing: border-box; min-width: 0; padding: 12px 14px; border: 1px solid var(--border-default);
+  border-radius: 10px; background: var(--color-paper); font-family: inherit; font-size: 15px; color: var(--color-ink); }
+.calc__field select:focus, .intake-field input:focus, .intake-field select:focus, .intake-field textarea:focus { outline: 2px solid var(--color-focus); outline-offset: 1px; border-color: var(--color-focus); }
+.calc__result { background: var(--surface-dossier); color: var(--text-on-dossier); border-radius: 12px; padding: 28px; display: grid; gap: 12px; align-content: start; }
+.calc__result-label { font-family: 'Spline Sans Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-on-dossier); }
+.calc__result-range { font-family: 'Spline Sans Mono', monospace; font-size: 32px; font-weight: 500; color: var(--white); overflow-wrap: anywhere; }
+.calc__result-range--text { font-size: 20px; }
+.calc__result-unit { font-size: 14px; color: var(--text-on-dossier-mut); }
+.calc__result-band, .calc__result-why { font-size: 14px; color: var(--text-on-dossier-mut); }
+.calc__result-disclaimer { font-size: 12px; line-height: 1.55; color: var(--text-on-dossier-faint); }
+.calc__result-cta { margin-top: 8px; }
+.calc__noscript { font-size: 14px; color: var(--color-ink-body2); }
+.calc__metrics { display: grid; gap: 8px; }
+.calc__metric { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; border-top: 1px solid var(--border-on-dossier); padding-top: 8px; }
+.calc__metric-label { color: var(--text-on-dossier-mut); }
+.calc__metric-value { font-family: 'Spline Sans Mono', monospace; font-weight: 500; color: var(--white); }
+.calc__noscript a, .intake-field__help a { text-decoration: underline; text-underline-offset: 0.16em; }
+/* F1 intake form shell */
+.contact-form-wrap { background: var(--white); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 36px; box-shadow: 0 2px 4px rgba(10,15,28,.04), 0 14px 30px rgba(10,15,28,.05); min-width: 0; box-sizing: border-box; max-width: 100%; }
+.intake-group { display: grid; gap: 12px; }
+.intake-group__note { font-family: 'Spline Sans Mono', monospace; font-size: 13px; color: var(--color-ink-mute); }
+.intake-group__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 560px) { .intake-group__grid { grid-template-columns: 1fr; } }
+.intake-checkbox { display: flex; gap: 10px; align-items: start; font-size: 14px; color: var(--color-ink-body2); }
+.intake-checkbox a { text-decoration: underline; text-underline-offset: 0.16em; }
+
 /* ---------- responsive ---------- */
 @media (max-width: 860px) { .r-foot { grid-template-columns: 1fr 1fr; gap: 26px; } .r-3 { grid-template-columns: 1fr; } }
 @media (max-width: 760px) { .r-2 { grid-template-columns: 1fr; } }

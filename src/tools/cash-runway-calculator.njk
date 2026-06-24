@@ -1,13 +1,15 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/tools/cash-runway-calculator/",
   "slug": "runway-calc",
-  "chrome": "full",
-  "callBar": true,
   "includeFormulaJs": true,
   "bodyClass": "page--mofu",
-  "pageTier": "mofu",
+  "navActive": "resources",
+  "sec": {
+    "aiH": "Cash runway, in five questions.",
+    "faqH": "Questions about cash runway."
+  },
   "title": "Cash Runway Calculator · How Many Months of Cash You Have · TechBrot",
   "description": "Free cash runway calculator. Enter your cash on hand and average monthly net burn to see how many months of runway you have. Your own numbers, plain math, no signup. Call (877) 751-5575.",
   "breadcrumb": [
@@ -40,13 +42,14 @@
 }
 ---
 
-<section class="section" id="calc">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The calculator</p>
-      <h2 class="section__heading">Calculate your cash runway.</h2>
-      <p class="section__lede">Enter your figures; the result updates as you type. Everything stays in your browser &mdash; nothing is sent until <em>you</em> decide to book a call.</p>
-    </header>
+{#- ═══ CALC ISLAND — the .calc widget markup is preserved VERBATIM (tb-formula.js
+    binds to data-calc / data-formula / data-calc-num / data-out — class restyle of
+    the result CTA is behavior-safe). id="calc" kept so the hero anchor lands. ═══ -#}
+<section class="sec reveal" id="calc">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The calculator</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:10px;">Calculate your cash runway.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:66ch;">Enter your figures; the result updates as you type. Everything stays in your browser &mdash; nothing is sent until <em>you</em> decide to book a call.</p>
 
     <div class="calc" data-calc data-formula="runway">
       <form class="calc__form" aria-describedby="calc-disclaimer-top">
@@ -66,7 +69,7 @@
         <p class="calc__result-range"><span data-out="primary">&mdash;</span></p>
         <p class="calc__result-why" data-out="text">Enter your cash on hand and average monthly net burn above.</p>
         <p class="calc__result-disclaimer">This is <strong>a model of your own inputs</strong>, not financial advice. Real runway moves with revenue, hiring, and seasonality &mdash; a Certified ProAdvisor can build a forward forecast on your actual books.</p>
-        <a class="btn btn--primary btn--lg calc__result-cta" href="/contact/?intent=fractional-cfo" data-tb-event="calc_to_quote">Book the discovery call</a>
+        <a class="btn btn-cta calc__result-cta" href="/contact/?intent=fractional-cfo" data-ga="cta_click" data-tb-event="calc_to_quote" style="display:inline-flex;align-items:center;gap:9px;height:50px;padding:0 22px;border-radius:12px;font-size:15px;font-weight:600;">Book the discovery call</a>
       </div>
 
       <noscript>
@@ -78,13 +81,13 @@
   </div>
 </section>
 
-<section class="section section--alt" id="runway-calc-how">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">No black box</p>
-      <h2 class="section__heading">How cash runway is calculated.</h2>
-    </header>
-    <div class="legal-doc__body">
+{#- ═══ HOW IT'S CALCULATED — no-black-box prose + the flow diagram (preserved
+    verbatim). sand alt band. ═══ -#}
+<section class="sec reveal hub-rt--alt" id="runway-calc-how" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">No black box</span><span class="idx__rule"></span></div>
+    <h2 class="h2">How cash runway is calculated.</h2>
+    <div class="prose">
       <p>Runway answers one question: at the rate you&rsquo;re spending net of revenue, how long until the cash runs out? The math is <strong>runway in months = cash on hand ÷ average monthly net burn</strong>, where net burn is your monthly expenses minus your monthly revenue. If revenue exceeds expenses, net burn is zero or negative &mdash; you&rsquo;re not burning cash, so there&rsquo;s no runway limit, and the tool says exactly that instead of dividing by zero.</p>
       <p>The hard part isn&rsquo;t the division &mdash; it&rsquo;s getting an honest burn number. Burn should be an average over a few representative months, not your best or worst single month, and it should reflect real cash movements, not accrual timing. That&rsquo;s why accurate books matter: a runway figure built on guesswork is worse than none.</p>
       <p>This is a flat-rate snapshot &mdash; it assumes today&rsquo;s burn holds steady. In reality burn changes with hiring, seasonality, and growth. Use the number as a sanity check, then build a real forward forecast. That&rsquo;s a model of your inputs, not advice.</p>
@@ -101,57 +104,14 @@
   </div>
 </section>
 
-<section class="section" id="runway-calc-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Cash runway, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="runway-calc-next">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Where to go next.</h2>
-    </header>
-    <div class="grid-3">
+{#- ═══ RELATED — nextCards as rel-card grid. ═══ -#}
+<section class="sec reveal" id="runway-calc-next">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where to go next.</h2>
+    <div class="r-3">
       {%- for card in nextCards %}
-      <article class="review-card">
-        <h3>{{ card.name }}</h3>
-        <p class="review-card__fact">{{ card.body | safe }}</p>
-        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="runway-calc-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">Questions about cash runway.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="runway-calc-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="runway-calc-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
+      <a class="rel-card" href="{{ card.href }}"><span class="rel-card__t">{{ card.name }}</span><span class="rel-card__d">{{ card.body | safe }}</span></a>
       {%- endfor %}
     </div>
   </div>

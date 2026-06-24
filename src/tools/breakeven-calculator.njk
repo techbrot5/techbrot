@@ -1,13 +1,15 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/tools/breakeven-calculator/",
   "slug": "breakeven-calc",
-  "chrome": "full",
-  "callBar": true,
   "includeFormulaJs": true,
   "bodyClass": "page--mofu",
-  "pageTier": "mofu",
+  "navActive": "resources",
+  "sec": {
+    "aiH": "Break-even, in five questions.",
+    "faqH": "Questions about break-even."
+  },
   "title": "Break-Even Calculator · How Many Sales to Cover Your Costs · TechBrot",
   "description": "Free break-even calculator. Enter your monthly fixed costs, price per sale, and variable cost per sale to see the sales volume and revenue where you break even. Your own numbers, plain math, no signup. Call (877) 751-5575.",
   "breadcrumb": [
@@ -40,13 +42,15 @@
 }
 ---
 
-<section class="section" id="calc">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The calculator</p>
-      <h2 class="section__heading">Find your break-even point.</h2>
-      <p class="section__lede">Enter your figures; the result updates as you type. Everything stays in your browser &mdash; nothing is sent until <em>you</em> decide to book a call.</p>
-    </header>
+{#- ═══ CALC ISLAND — the .calc widget markup is preserved VERBATIM (the formula
+    JS binds to data-calc / data-formula / data-calc-num / data-out — class restyle
+    on the result CTA only is behavior-safe). id="calc" kept so the hero "Skip to
+    the calculator" anchor still lands. ═══ -#}
+<section class="sec reveal" id="calc">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The calculator</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:10px;">Find your break-even point.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:66ch;">Enter your figures; the result updates as you type. Everything stays in your browser &mdash; nothing is sent until <em>you</em> decide to book a call.</p>
 
     <div class="calc" data-calc data-formula="breakeven">
       <form class="calc__form" aria-describedby="calc-disclaimer-top">
@@ -74,7 +78,7 @@
         </ul>
         <p class="calc__result-why" data-out="text">Enter your monthly fixed costs, price per sale, and variable cost per sale above.</p>
         <p class="calc__result-disclaimer">This is <strong>a model of your own inputs</strong>, not financial advice. Real break-even analysis weighs mixed products, seasonality, and step costs &mdash; a Certified ProAdvisor can build that with you.</p>
-        <a class="btn btn--primary btn--lg calc__result-cta" href="/contact/?intent=fractional-cfo" data-tb-event="calc_to_quote">Book the discovery call</a>
+        <a class="btn btn-cta calc__result-cta" href="/contact/?intent=fractional-cfo" data-ga="cta_click" data-tb-event="calc_to_quote" style="display:inline-flex;align-items:center;gap:9px;height:50px;padding:0 22px;border-radius:12px;font-size:15px;font-weight:600;">Book the discovery call</a>
       </div>
 
       <noscript>
@@ -86,13 +90,13 @@
   </div>
 </section>
 
-<section class="section section--alt" id="breakeven-calc-how">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">No black box</p>
-      <h2 class="section__heading">How break-even is calculated.</h2>
-    </header>
-    <div class="legal-doc__body">
+{#- ═══ HOW IT'S CALCULATED — no-black-box prose + the value-flow diagram
+    (preserved verbatim). sand alt band. ═══ -#}
+<section class="sec reveal hub-rt--alt" id="breakeven-calc-how" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">No black box</span><span class="idx__rule"></span></div>
+    <h2 class="h2">How break-even is calculated.</h2>
+    <div class="prose">
       <p>Break-even is the sales volume at which total revenue exactly covers total costs &mdash; the point where you stop losing money. The math has two steps. First, <strong>contribution margin per sale = price − variable cost per sale</strong>: the dollars each sale contributes toward fixed costs after covering its own variable cost. Second, <strong>break-even sales = fixed costs ÷ contribution margin</strong>, rounded up to whole sales. Multiply by price for break-even revenue.</p>
       <p>If the contribution margin is zero or negative, there is no break-even at any volume &mdash; each sale loses money, so selling more makes the hole deeper. The tool says so plainly rather than printing a misleading number. That case usually means a price increase or a variable-cost cut, which is exactly the kind of thing a fractional CFO engagement models.</p>
       <p>This is a single-product, steady-state model. Real businesses have product mixes, seasonality, and costs that step up at certain volumes. The calculator is a fast sanity check on your own figures &mdash; not a forecast, and not advice.</p>
@@ -109,57 +113,14 @@
   </div>
 </section>
 
-<section class="section" id="breakeven-calc-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Break-even, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="breakeven-calc-next">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Where to go next.</h2>
-    </header>
-    <div class="grid-3">
+{#- ═══ RELATED — nextCards as rel-card grid. ═══ -#}
+<section class="sec reveal" id="breakeven-calc-next">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where to go next.</h2>
+    <div class="r-3">
       {%- for card in nextCards %}
-      <article class="review-card">
-        <h3>{{ card.name }}</h3>
-        <p class="review-card__fact">{{ card.body | safe }}</p>
-        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="breakeven-calc-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">Questions about break-even.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="breakeven-calc-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="breakeven-calc-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
+      <a class="rel-card" href="{{ card.href }}"><span class="rel-card__t">{{ card.name }}</span><span class="rel-card__d">{{ card.body | safe }}</span></a>
       {%- endfor %}
     </div>
   </div>

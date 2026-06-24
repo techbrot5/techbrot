@@ -1,13 +1,15 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/tools/payroll-cost-calculator/",
   "slug": "payroll-calc",
-  "chrome": "full",
-  "callBar": true,
   "includeCalcJs": true,
   "bodyClass": "page--mofu",
-  "pageTier": "mofu",
+  "navActive": "resources",
+  "sec": {
+    "aiH": "Managed payroll cost, in five questions.",
+    "faqH": "Questions about the estimate."
+  },
   "title": "Payroll Service Cost Calculator · What Managed Payroll Costs · TechBrot",
   "description": "Free payroll service cost calculator. Estimate TechBrot's monthly fee to manage your payroll from headcount, states, and frequency, against published pricing ($150–$800+/mo). This estimates the management fee, not wages or payroll taxes. An estimate, not a quote. Call (877) 751-5575.",
   "breadcrumb": [
@@ -40,13 +42,15 @@
 }
 ---
 
-<section class="section" id="calc">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The calculator</p>
-      <h2 class="section__heading">Estimate your managed-payroll fee.</h2>
-      <p class="section__lede">Pick the option that fits in each row. The estimate updates as you go. Everything stays in your browser &mdash; nothing is sent until <em>you</em> decide to book a call.</p>
-    </header>
+{#- ═══ CALC ISLAND — the .calc widget markup is preserved VERBATIM (tb-calc.js binds
+    to data-calc / data-calc-input / data-calc-result / data-calc-value|band|why +
+    #calc-model JSON — class restyle of the result CTA is behavior-safe). id="calc"
+    kept so the hero "Skip to the calculator" anchor still lands. ═══ -#}
+<section class="sec reveal" id="calc">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The calculator</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:10px;">Estimate your managed-payroll fee.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:66ch;">Pick the option that fits in each row. The estimate updates as you go. Everything stays in your browser &mdash; nothing is sent until <em>you</em> decide to book a call.</p>
 
     <div class="calc" data-calc>
       <form class="calc__form" aria-describedby="calc-disclaimer-top">
@@ -69,7 +73,7 @@
         <p class="calc__result-band" data-calc-band>Single-state, small team</p>
         <p class="calc__result-why" data-calc-why>A handful of employees on one pay schedule in a single state.</p>
         <p class="calc__result-disclaimer">This is TechBrot&rsquo;s <strong>management fee</strong> &mdash; an estimate from published pricing, not a quote, and <strong>separate from wages and payroll taxes</strong>. Your exact fixed fee is confirmed in writing within 3 business days of a free discovery call.</p>
-        <a class="btn btn--primary btn--lg calc__result-cta" href="/contact/?intent=payroll" data-tb-event="calc_to_quote">Get your exact fixed fee</a>
+        <a class="btn btn-cta calc__result-cta" href="/contact/?intent=payroll" data-ga="cta_click" data-tb-event="calc_to_quote" style="display:inline-flex;align-items:center;gap:9px;height:50px;padding:0 22px;border-radius:12px;font-size:15px;font-weight:600;">Get your exact fixed fee</a>
       </div>
 
       <noscript>
@@ -83,93 +87,42 @@
   </div>
 </section>
 
-<section class="section section--alt" id="payroll-calc-how">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">No black box</p>
-      <h2 class="section__heading">How this estimate is calculated.</h2>
-      <p class="section__lede">Every number is a slice of our published $150&ndash;$800+/month payroll-management range &mdash; we&rsquo;d rather show the math than hide it.</p>
-    </header>
-    <div class="legal-doc__body">
+{#- ═══ HOW IT'S CALCULATED — no-black-box prose + the four bands as a v2 .cmp table
+    (data-col for mobile stacking). sand alt band. ═══ -#}
+<section class="sec reveal hub-rt--alt" id="payroll-calc-how" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">No black box</span><span class="idx__rule"></span></div>
+    <h2 class="h2">How this estimate is calculated.</h2>
+    <p class="lede" style="margin:0 0 18px;max-width:66ch;">Every number is a slice of our published $150&ndash;$800+/month payroll-management range &mdash; we&rsquo;d rather show the math than hide it.</p>
+    <div class="prose">
       <p>TechBrot payroll management is a fixed monthly fee against a written scope &mdash; <strong>$150 to $800+ per month</strong>. To be clear about what that fee is: it&rsquo;s what we charge to <strong>run your payroll</strong> &mdash; calculating pay, filing and depositing payroll taxes, handling multi-state registration and compliance, and producing the reports. It is <strong>not</strong> your wage bill or your tax liability; those are your costs and depend on what you pay your people.</p>
       <p>Our fee scales with the work: headcount, the number of states you run payroll in (multi-state compliance is the biggest driver), pay frequency, and how many contractors need 1099s. The calculator scores those four factors and maps the total to a band inside the published range.</p>
       <p>The estimate is a <strong>range, never a single number</strong>. Two businesses with the same headcount can need different work depending on states, benefits, and how clean the existing setup is. The real fixed fee is set after a ProAdvisor reviews your situation on a free discovery call, and is always delivered in writing before any work begins.</p>
     </div>
-    <div class="vs-scroll stack-8">
-      <table class="vs-table">
-        <caption class="sr-only">The four managed-payroll bands inside TechBrot&rsquo;s published $150–$800+/month range.</caption>
-        <thead>
-          <tr>
-            <th scope="col">Band</th>
-            <th scope="col" class="vs-table__us">Typical range</th>
-            <th scope="col">Looks like</th>
-          </tr>
-        </thead>
-        <tbody>
-          {%- for b in model.bands %}
-          <tr>
-            <td><strong>{{ b.name }}</strong></td>
-            <td class="vs-table__us"><strong>{{ b.display | safe }}</strong><span class="vs-table__concede">/mo</span></td>
-            <td class="vs-table__concede">{{ b.why | safe }}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+    <table class="cmp" style="margin-top:24px;">
+      <caption class="sr-only">The four managed-payroll bands inside TechBrot&rsquo;s published $150–$800+/month range.</caption>
+      <thead><tr><th scope="col">Band</th><th scope="col">Typical range</th><th scope="col">Looks like</th></tr></thead>
+      <tbody>
+        {%- for b in model.bands %}
+        <tr>
+          <th scope="row" data-col="Band">{{ b.name }}</th>
+          <td class="num" data-col="Typical range">{{ b.display | safe }}/mo</td>
+          <td data-col="Looks like">{{ b.why | safe }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 
-<section class="section" id="payroll-calc-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Managed payroll cost, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="payroll-calc-next">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Where to go next.</h2>
-    </header>
-    <div class="grid-3">
+{#- ═══ RELATED — nextCards as rel-card grid. ═══ -#}
+<section class="sec reveal" id="payroll-calc-next">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where to go next.</h2>
+    <div class="r-3">
       {%- for card in nextCards %}
-      <article class="review-card">
-        <h3>{{ card.name }}</h3>
-        <p class="review-card__fact">{{ card.body | safe }}</p>
-        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="payroll-calc-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Before you call</p>
-      <h2 class="section__heading">Questions about the estimate.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="payroll-calc-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="payroll-calc-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
+      <a class="rel-card" href="{{ card.href }}"><span class="rel-card__t">{{ card.name }}</span><span class="rel-card__d">{{ card.body | safe }}</span></a>
       {%- endfor %}
     </div>
   </div>

@@ -1,13 +1,15 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/tools/1099-deadline-calculator/",
   "slug": "deadline-calc",
-  "chrome": "full",
-  "callBar": true,
   "includeSelectJs": true,
   "bodyClass": "page--mofu",
-  "pageTier": "mofu",
+  "navActive": "resources",
+  "sec": {
+    "aiH": "1099 deadlines, in five questions.",
+    "faqH": "Questions about 1099 deadlines."
+  },
   "title": "1099 Deadline Calculator · When 1099-NEC & W-2 Are Due · TechBrot",
   "description": "Free 1099 deadline calculator. Pick a tax year to see the exact 1099-NEC and W-2 filing deadline (January 31, rolled for weekends) and the 1099-MISC e-file date. Always confirm on IRS.gov. Call (877) 751-5575.",
   "breadcrumb": [
@@ -40,13 +42,15 @@
 }
 ---
 
-<section class="section" id="calc">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The calculator</p>
-      <h2 class="section__heading">Find your filing deadline.</h2>
-      <p class="section__lede">Pick the tax year &mdash; the year the income was paid. The deadline shown is for filing in the following year.</p>
-    </header>
+{#- ═══ CALC ISLAND — the .calc widget markup is preserved VERBATIM (the select-
+    formula JS binds to data-calc / data-select-formula / data-calc-sel / data-out
+    — class restyle on the result CTA only is behavior-safe). id="calc" kept so the
+    hero "Skip to the calculator" anchor still lands. ═══ -#}
+<section class="sec reveal" id="calc">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The calculator</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:10px;">Find your filing deadline.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:66ch;">Pick the tax year &mdash; the year the income was paid. The deadline shown is for filing in the following year.</p>
 
     <div class="calc" data-calc data-select-formula="deadline">
       <form class="calc__form" aria-describedby="calc-disclaimer-top">
@@ -70,7 +74,7 @@
         </ul>
         <p class="calc__result-why" data-out="text">Pick a tax year above to see the deadline.</p>
         <p class="calc__result-disclaimer">These are the published federal rules &mdash; <strong>always confirm the exact current-year dates on IRS.gov</strong>. State deadlines and penalties may differ, and this is general information, not tax advice.</p>
-        <a class="btn btn--primary btn--lg calc__result-cta" href="/contact/?intent=accounting" data-tb-event="calc_to_quote">Book the discovery call</a>
+        <a class="btn btn-cta calc__result-cta" href="/contact/?intent=accounting" data-ga="cta_click" data-tb-event="calc_to_quote" style="display:inline-flex;align-items:center;gap:9px;height:50px;padding:0 22px;border-radius:12px;font-size:15px;font-weight:600;">Book the discovery call</a>
       </div>
 
       <noscript>
@@ -82,88 +86,37 @@
   </div>
 </section>
 
-<section class="section section--alt" id="deadline-calc-how">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The rules behind it</p>
-      <h2 class="section__heading">The 1099 &amp; W-2 deadlines that matter.</h2>
-      <p class="section__lede">The federal filing calendar for the most common information returns &mdash; the same rules the calculator applies.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">Common information-return filing deadlines (federal).</caption>
-        <thead>
-          <tr>
-            <th scope="col">Form</th>
-            <th scope="col">To recipient</th>
-            <th scope="col" class="vs-table__us">To IRS / SSA</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>1099-NEC</strong> <span class="vs-table__concede">contractor pay</span></td><td>January 31</td><td class="vs-table__us"><strong>January 31</strong></td></tr>
-          <tr><td><strong>W-2</strong> <span class="vs-table__concede">employee wages</span></td><td>January 31</td><td class="vs-table__us"><strong>January 31</strong> (SSA)</td></tr>
-          <tr><td><strong>1099-MISC</strong> <span class="vs-table__concede">rents, other</span></td><td>January 31</td><td class="vs-table__us"><strong>Feb 28</strong> paper · <strong>Mar 31</strong> e-file</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="legal-doc__body stack-8">
+{#- ═══ THE RULES BEHIND IT — federal filing calendar as a v2 .cmp table
+    (data-col for mobile stacking) + prose. sand alt band. ═══ -#}
+<section class="sec reveal hub-rt--alt" id="deadline-calc-how" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The rules behind it</span><span class="idx__rule"></span></div>
+    <h2 class="h2">The 1099 &amp; W-2 deadlines that matter.</h2>
+    <div class="prose">
+      <p>The federal filing calendar for the most common information returns &mdash; the same rules the calculator applies.</p>
       <p>Any deadline that lands on a Saturday, Sunday, or legal holiday rolls to the next business day &mdash; the calculator applies that roll to the January 31 dates automatically. Send recipient copies and file with the IRS/SSA by the dates shown; e-filing is required once you hit the IRS volume threshold for information returns.</p>
       <p>Late or incorrect filings carry penalties <em>per form</em>, and they scale with how late you are &mdash; which is why clean, current books and accurate contractor records through the year matter more than a last-minute scramble. This page is general information, not tax advice; your CPA files the returns, and we keep the underlying records right.</p>
     </div>
+    <table class="cmp" style="margin-top:24px;">
+      <caption class="sr-only">Common information-return filing deadlines (federal).</caption>
+      <thead><tr><th scope="col">Form</th><th scope="col">To recipient</th><th scope="col">To IRS / SSA</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" data-col="Form"><strong>1099-NEC</strong> <span style="color:var(--color-ink-mute);font-weight:400;">contractor pay</span></th><td class="num" data-col="To recipient">January 31</td><td class="num" data-col="To IRS / SSA"><strong>January 31</strong></td></tr>
+        <tr><th scope="row" data-col="Form"><strong>W-2</strong> <span style="color:var(--color-ink-mute);font-weight:400;">employee wages</span></th><td class="num" data-col="To recipient">January 31</td><td class="num" data-col="To IRS / SSA"><strong>January 31</strong> (SSA)</td></tr>
+        <tr><th scope="row" data-col="Form"><strong>1099-MISC</strong> <span style="color:var(--color-ink-mute);font-weight:400;">rents, other</span></th><td class="num" data-col="To recipient">January 31</td><td class="num" data-col="To IRS / SSA"><strong>Feb 28</strong> paper · <strong>Mar 31</strong> e-file</td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
-<section class="section" id="deadline-calc-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">1099 deadlines, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="deadline-calc-next">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Where to go next.</h2>
-    </header>
-    <div class="grid-3">
+{#- ═══ RELATED — nextCards as rel-card grid. ═══ -#}
+<section class="sec reveal" id="deadline-calc-next">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where to go next.</h2>
+    <div class="r-3">
       {%- for card in nextCards %}
-      <article class="review-card">
-        <h3>{{ card.name }}</h3>
-        <p class="review-card__fact">{{ card.body | safe }}</p>
-        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="deadline-calc-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">Questions about 1099 deadlines.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="deadline-calc-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="deadline-calc-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
+      <a class="rel-card" href="{{ card.href }}"><span class="rel-card__t">{{ card.name }}</span><span class="rel-card__d">{{ card.body | safe }}</span></a>
       {%- endfor %}
     </div>
   </div>

@@ -1,12 +1,14 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/tools/sales-tax-rate-lookup/",
   "slug": "salestax-lookup",
-  "chrome": "full",
-  "callBar": true,
   "bodyClass": "page--mofu",
-  "pageTier": "mofu",
+  "navActive": "resources",
+  "sec": {
+    "aiH": "Sales tax rates &amp; nexus, in five questions.",
+    "faqH": "Questions about sales tax rates."
+  },
   "title": "Sales Tax Rate Lookup · We Find Your Exact Rate & Nexus · TechBrot",
   "description": "Sales tax rates change constantly and depend on the exact delivery address, not just the state — so instead of a stale live lookup, a Certified ProAdvisor finds your exact current rate and nexus obligations with you on a free call. Independent firm, not Intuit. Call (877) 751-5575.",
   "breadcrumb": [
@@ -39,13 +41,12 @@
 }
 ---
 
-<section class="section" id="salestax-lookup-why">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The honest version</p>
-      <h2 class="section__heading">Why a live rate box would mislead you.</h2>
-    </header>
-    <div class="legal-doc__body">
+{#- ═══ THE HONEST VERSION — why no live rate box; prose. ═══ -#}
+<section class="sec reveal" id="salestax-lookup-why">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The honest version</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Why a live rate box would mislead you.</h2>
+    <div class="prose">
       <p>A sales tax rate looks like it should be a simple lookup. It isn&rsquo;t. The rate that applies to a sale is the <strong>combined</strong> state, county, city, and special-district rate at the exact location of the sale &mdash; and in many places a single ZIP code contains more than one combined rate. Type in a ZIP and you can easily get a number that&rsquo;s close but wrong, and &lsquo;close&rsquo; is what triggers under-collection and audit exposure.</p>
       <p>Rates also <strong>change throughout the year</strong> as jurisdictions adjust them. A number we hard-coded today could be out of date within a quarter. Holding ourselves to the same honesty standard as the rest of this site, we&rsquo;d rather not publish a figure we can&rsquo;t guarantee is current and correct for <em>your</em> address.</p>
       <p>And the rate is usually the smaller question. The one that actually creates risk is <strong>nexus</strong>: which states your activity obligates you to register, collect, and file in. Economic-nexus thresholds mean you can owe sales tax in states you&rsquo;ve never set foot in. That&rsquo;s a judgment call about your specific footprint &mdash; exactly the kind of thing a person should look at with you, not a box on a web page.</p>
@@ -60,74 +61,27 @@
   </div>
 </section>
 
-<section class="section section--alt" id="salestax-lookup-factors">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What actually determines your rate</p>
-      <h2 class="section__heading">Four things that decide what you owe.</h2>
-    </header>
-    <div class="grid-2">
+{#- ═══ WHAT DETERMINES YOUR RATE — factors as rel-card grid. sand alt band. ═══ -#}
+<section class="sec reveal hub-rt--alt" id="salestax-lookup-factors" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What actually determines your rate</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Four things that decide what you owe.</h2>
+    <div class="r-3">
       {%- for f in factors %}
-      <article class="review-card">
-        <h3>{{ f.name }}</h3>
-        <p class="review-card__fact">{{ f.body | safe }}</p>
-      </article>
+      <div class="rel-card" style="cursor:default;"><span class="rel-card__t">{{ f.name }}</span><span class="rel-card__d">{{ f.body | safe }}</span></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="salestax-lookup-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Sales tax rates &amp; nexus, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="salestax-lookup-next">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Where to go next.</h2>
-    </header>
-    <div class="grid-3">
+{#- ═══ RELATED — nextCards as rel-card grid. ═══ -#}
+<section class="sec reveal" id="salestax-lookup-next">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where to go next.</h2>
+    <div class="r-3">
       {%- for card in nextCards %}
-      <article class="review-card">
-        <h3>{{ card.name }}</h3>
-        <p class="review-card__fact">{{ card.body | safe }}</p>
-        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="salestax-lookup-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">Questions about sales tax rates.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="salestax-lookup-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="salestax-lookup-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
+      <a class="rel-card" href="{{ card.href }}"><span class="rel-card__t">{{ card.name }}</span><span class="rel-card__d">{{ card.body | safe }}</span></a>
       {%- endfor %}
     </div>
   </div>
