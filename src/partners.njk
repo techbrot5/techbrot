@@ -1,10 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/partners/",
   "slug": "partners",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--partners",
+  "sec": {
+    "aiH": "The operator network, in five questions.",
+    "faqH": "What ProAdvisors ask before applying."
+  },
   "title": "For Independent ProAdvisors · Join TechBrot",
   "description": "TechBrot onboards vetted independent Certified QuickBooks ProAdvisors as local operators. Keep your practice, your clients, and your name.",
   "breadcrumb": [
@@ -32,8 +35,18 @@
 }
 ---
 
-<section class="section section--compact" id="partners-facts">
-  <div class="container">
+{#- ═══ G2 PARTNERS HUB (BASELINE, equity-gated). t-mofu→t-prose / dc-base chrome.
+    Every baseline heading verbatim at its level (42). Operator-network economics +
+    figures preserved EXACTLY. speakable cssSelector ["#partners-mission",
+    "#partners-model"] → section ids preserved; #partners-mission-body id kept on the
+    mission lede paragraph. ai-summary + faq rendered by t-prose (sec.aiH/faqH from
+    `aiSummary`/`faq` data). founder-name-zero. No fabricated stats/reviews/team. ═══ -#}
+
+{#- FACTS — proof strip → v2 trust-row. -#}
+<section class="sec reveal" id="partners-facts" style="padding-top:8px;">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">At a glance</span><span class="idx__rule"></span></div>
+    <h2 class="sr-only">Operator network at a glance.</h2>
     <div class="trust-row">
       <div class="trust-row__item"><p class="trust-row__value">Model</p><p class="trust-row__label">Independent operator network</p></div>
       <div class="trust-row__divider"></div>
@@ -46,46 +59,31 @@
   </div>
 </section>
 
-<section class="section section--compact section--tier-guide" id="partners-mission">
-  <div class="container">
-    <div class="tldr">
-      <p class="tldr__label">Why the network exists</p>
-      <h2 class="tldr__heading">Running a practice well shouldn&rsquo;t require running a business alone.</h2>
-      <p class="tldr__body" id="partners-mission-body">Most independent accounting practices share the same constraint: the work is rewarding, the clients are loyal, but the overhead of running everything else is exhausting. Marketing, brand, lead generation, intake, scoping, contracts, quality systems, technology, communication infrastructure &mdash; each one takes time away from the work that actually pays the bills.</p>
-      <p class="tldr__body">The traditional answer is a franchise (which trades independence for support) or a firm job (which trades autonomy for stability). Both leave something important behind. TechBrot is structured to give independent practices the leverage of a larger institution without taking their independence. You stay independent. We handle the parts that don&rsquo;t scale well alone &mdash; brand, demand, infrastructure, standards. <strong>You stay the operator. The overhead disappears.</strong></p>
+{#- MISSION — TL;DR-equivalent. speakable target #partners-mission (section id);
+    #partners-mission-body kept on the lede paragraph. -#}
+<section class="sec reveal" id="partners-mission" style="padding-top:8px;">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why the network exists</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Running a practice well shouldn&rsquo;t require running a business alone.</h2>
+    <div class="tldr-prose">
+      <p id="partners-mission-body">Most independent accounting practices share the same constraint: the work is rewarding, the clients are loyal, but the overhead of running everything else is exhausting. Marketing, brand, lead generation, intake, scoping, contracts, quality systems, technology, communication infrastructure &mdash; each one takes time away from the work that actually pays the bills.</p>
+      <p>The traditional answer is a franchise (which trades independence for support) or a firm job (which trades autonomy for stability). Both leave something important behind. TechBrot is structured to give independent practices the leverage of a larger institution without taking their independence. You stay independent. We handle the parts that don&rsquo;t scale well alone &mdash; brand, demand, infrastructure, standards. <strong>You stay the operator. The overhead disappears.</strong></p>
     </div>
   </div>
 </section>
 
-<section class="section" id="partners-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">The operator network, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="partners-model">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The model</p>
-      <h2 class="section__heading">A fair exchange, clearly defined.</h2>
-      <p class="section__lede">No fine print. Here&rsquo;s what each side brings, and what each side keeps.</p>
-    </header>
-    <div class="grid-2">
-      <article class="review-card">
-        <p class="team-card__role">TechBrot brings</p>
+{#- MODEL — fair exchange, two sides. speakable target #partners-model (section id).
+    Baseline H3s: Platform &amp; infrastructure / Practice &amp; expertise. -#}
+<section class="sec reveal hub-rt--alt" id="partners-model" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The model</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">A fair exchange, clearly defined.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:68ch;">No fine print. Here&rsquo;s what each side brings, and what each side keeps.</p>
+    <div class="r-2">
+      <div class="dc-card">
+        <span class="eyebrow" style="display:block;margin-bottom:8px;">TechBrot brings</span>
         <h3>Platform &amp; infrastructure</h3>
-        <ul class="checks-list">
+        <ul class="prose" style="font-size:14.5px;margin:10px 0 0;padding-left:18px;">
           <li>National brand and trust position</li>
           <li>Demand engine &mdash; SEO, AI search, content, referrals</li>
           <li>Client intake and engagement scoping</li>
@@ -97,11 +95,11 @@
           <li>ProAdvisor credential coordination support</li>
           <li>Marketing collateral and case study development</li>
         </ul>
-      </article>
-      <article class="review-card">
-        <p class="team-card__role">You bring</p>
+      </div>
+      <div class="dc-card">
+        <span class="eyebrow" style="display:block;margin-bottom:8px;">You bring</span>
         <h3>Practice &amp; expertise</h3>
-        <ul class="checks-list">
+        <ul class="prose" style="font-size:14.5px;margin:10px 0 0;padding-left:18px;">
           <li>Active Certified QuickBooks ProAdvisor credentials</li>
           <li>Professional liability (E&amp;O) insurance</li>
           <li>U.S.-based accounting or bookkeeping practice</li>
@@ -113,188 +111,150 @@
           <li>Responsiveness within agreed service windows</li>
           <li>Ongoing professional development</li>
         </ul>
-      </article>
+      </div>
     </div>
-    <p class="in-brief__source stack-8">You keep your existing clients, your existing contracts, and your existing revenue. The network is additive &mdash; TechBrot brings new engagements under the TechBrot brand. Your independent practice continues unchanged.</p>
+    <p class="prose" style="font-size:14px;color:var(--color-ink-mute);margin-top:22px;max-width:74ch;">You keep your existing clients, your existing contracts, and your existing revenue. The network is additive &mdash; TechBrot brings new engagements under the TechBrot brand. Your independent practice continues unchanged.</p>
   </div>
 </section>
 
-<section class="section" id="partners-benefits">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Operator benefits</p>
-      <h2 class="section__heading">What the platform actually does for you.</h2>
-      <p class="section__lede">Most independent practices spend more time finding clients than serving them. The platform inverts that.</p>
-    </header>
-    <ol class="process-diagram">
-      <li class="process-step">
-        <p class="process-step__number">01 &middot; Demand</p>
-        <h3 class="process-step__heading">Qualified engagements, not leads.</h3>
-        <p class="process-step__body">By the time an engagement reaches you, TechBrot has already had the discovery call, scoped the work, and confirmed the fit. You receive a qualified engagement with a written scope &mdash; not a cold lead to chase.</p>
-        <p class="process-step__body">Engagements are routed by state, industry, capacity, and engagement type. You can decline anything that doesn&rsquo;t fit your practice or your bandwidth without consequence.</p>
-      </li>
-      <li class="process-step">
-        <p class="process-step__number">02 &middot; Brand</p>
-        <h3 class="process-step__heading">A national brand behind your local practice.</h3>
-        <p class="process-step__body">Clients trust TechBrot before they meet you. The platform&rsquo;s editorial positioning, SEO authority, AI-search presence, and trust signals do the credibility work that takes most independent practices years to build alone.</p>
-        <p class="process-step__body">You stay your own firm. The TechBrot association is additive &mdash; it expands what your practice can credibly take on, not what you&rsquo;re forced to be.</p>
-      </li>
-      <li class="process-step">
-        <p class="process-step__number">03 &middot; Infrastructure</p>
-        <h3 class="process-step__heading">The operating overhead, handled.</h3>
-        <p class="process-step__body">Intake forms, scoping templates, engagement letters, communication infrastructure, document handling, client portal, billing coordination &mdash; the things that fill an operator&rsquo;s week without making them money.</p>
-        <p class="process-step__body">An in-house ops team would cost six figures. The platform gives you that leverage as part of the operator relationship.</p>
-      </li>
-      <li class="process-step">
-        <p class="process-step__number">04 &middot; AI &amp; tooling</p>
-        <h3 class="process-step__heading">AI-augmented workflow, built in-house.</h3>
-        <p class="process-step__body">TechBrot is building operator-facing AI tooling for engagement intake, document handling, categorization assistance, quality-review checklists, and client communication drafting. Tools that compound: more time on real work, less time on operational friction.</p>
-        <p class="process-step__body">Operators get early access. The AI augments the operator &mdash; it doesn&rsquo;t replace the judgment that clients pay for.</p>
-      </li>
-      <li class="process-step">
-        <p class="process-step__number">05 &middot; Quality</p>
-        <h3 class="process-step__heading">Platform-level review, not self-policing.</h3>
-        <p class="process-step__body">Every engagement is reviewed against a defined operating standard. That means consistency for clients and structured feedback for operators &mdash; the kind most independent practices never get.</p>
-        <p class="process-step__body">Quality review is a development tool, not a surveillance system. It exists to make operators better, not to second-guess them.</p>
-      </li>
-      <li class="process-step">
-        <p class="process-step__number">06 &middot; Continuity</p>
-        <h3 class="process-step__heading">A real institution behind your name.</h3>
-        <p class="process-step__body">If life happens &mdash; vacation, illness, capacity changes &mdash; the platform handles continuity without losing client context. Operators get the same protection they extend to clients.</p>
-        <p class="process-step__body">You&rsquo;re never the single point of failure. Neither is the client.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section class="section section--alt" id="partners-requirements">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Operator requirements</p>
-      <h2 class="section__heading">What we look for &mdash; and what we don&rsquo;t.</h2>
-      <p class="section__lede">The standard is the standard. We&rsquo;d rather have the right operators in fewer states than the wrong operators everywhere.</p>
-    </header>
-    <h3 class="section__heading stack-8">Required</h3>
-    <ul class="checks-list">
-      <li><strong>Active Certified QuickBooks ProAdvisor</strong>Current ProAdvisor status verified through Intuit&rsquo;s public directory. Online Level 2 minimum.</li>
-      <li><strong>U.S.-based accounting or bookkeeping practice</strong>A formed business entity (LLC, S-Corp, or PLLC), U.S. tax identification, and an established operating presence.</li>
-      <li><strong>Professional liability (E&amp;O) insurance</strong>Active errors &amp; omissions coverage. Minimum coverage limits discussed during application review.</li>
-      <li><strong>Demonstrable client work history</strong>At least 2&ndash;3 years of independent practice or equivalent in-firm experience. References available on request.</li>
-      <li><strong>Written communication discipline</strong>Client communication that&rsquo;s clear, timely, and professional. Tested during the application review.</li>
-    </ul>
-    <h3 class="section__heading stack-8">Valued, not required</h3>
-    <ul class="checks-list">
-      <li><strong>Additional credentials</strong>CPA, EA, CB, AIPB, NACPB credentials are valued. Not a requirement for ProAdvisor-led bookkeeping work.</li>
-      <li><strong>Industry specialization</strong>Operators with deep experience in e-commerce, real estate, construction, restaurants, SaaS, or other verticals get prioritized for routing.</li>
-      <li><strong>Multi-state experience</strong>Multi-state sales tax, multi-state payroll, and multi-entity engagement experience is valued for complex engagement routing.</li>
-      <li><strong>Team capacity</strong>Solo operators and small-team practices are both welcome. Capacity is discussed individually.</li>
-    </ul>
-    <h3 class="section__heading stack-8">Disqualifying</h3>
-    <ul class="checks-list">
-      <li><strong>Unresolved licensing or disciplinary issues</strong>Open complaints, board actions, or licensing suspensions disqualify the application.</li>
-      <li><strong>Non-U.S. operating presence</strong>Operators must run U.S.-based practices. We&rsquo;re not expanding internationally during the current phase.</li>
-      <li><strong>Proprietary-software lock-in</strong>TechBrot operates in the client&rsquo;s existing QuickBooks file. Practices that force clients onto proprietary software aren&rsquo;t a fit.</li>
-      <li><strong>No active ProAdvisor certification</strong>Lapsed or never-earned ProAdvisor status disqualifies the application. Renew first, then apply.</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section" id="partners-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Application process</p>
-      <h2 class="section__heading">From application to first engagement.</h2>
-      <p class="section__lede">Four phases. Typical timeline three to six weeks. Application is free; no obligation at any stage.</p>
-    </header>
-    {#- ROUND 11 within-page variety (founder rule 2026-06-13): the
-        application process is the page's SECOND sequential component, so
-        it takes the design-system .flow treatment (a connected journey
-        strip) instead of repeating the numbered .process-diagram used by
-        #partners-benefits. The phase journey + timings ride the flow; the
-        per-phase detail keeps its baseline H3 headings in review-cards
-        (content + equity preserved). All classes are in-bundle/manifest. -#}
-    <div class="flow" role="img" aria-label="Application journey: apply in about twenty minutes, a fit call within one to two weeks, verification, then onboarding to the first engagement &mdash; typically three to six weeks total.">
-      <div class="flow__step flow__step--accent"><span class="flow__label">1 &middot; Apply</span><span class="flow__sub">~20 min &middot; free</span></div>
-      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-      <div class="flow__step"><span class="flow__label">2 &middot; Fit Call</span><span class="flow__sub">within 1&ndash;2 weeks</span></div>
-      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-      <div class="flow__step"><span class="flow__label">3 &middot; Verification</span><span class="flow__sub">1&ndash;2 weeks</span></div>
-      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-      <div class="flow__step"><span class="flow__label">4 &middot; Onboarding</span><span class="flow__sub">1&ndash;2 weeks</span></div>
+{#- BENEFITS — 6 numbered (baseline H3s) → process-grid. -#}
+<section class="sec reveal" id="partners-benefits">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Operator benefits</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What the platform actually does for you.</h2>
+    <p class="lede" style="margin:0 0 26px;max-width:70ch;">Most independent practices spend more time finding clients than serving them. The platform inverts that.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-step__n">01 &middot; DEMAND</div>
+        <h3>Qualified engagements, not leads.</h3>
+        <p>By the time an engagement reaches you, TechBrot has already had the discovery call, scoped the work, and confirmed the fit. You receive a qualified engagement with a written scope &mdash; not a cold lead to chase.</p>
+        <p>Engagements are routed by state, industry, capacity, and engagement type. You can decline anything that doesn&rsquo;t fit your practice or your bandwidth without consequence.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__n">02 &middot; BRAND</div>
+        <h3>A national brand behind your local practice.</h3>
+        <p>Clients trust TechBrot before they meet you. The platform&rsquo;s editorial positioning, SEO authority, AI-search presence, and trust signals do the credibility work that takes most independent practices years to build alone.</p>
+        <p>You stay your own firm. The TechBrot association is additive &mdash; it expands what your practice can credibly take on, not what you&rsquo;re forced to be.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__n">03 &middot; INFRASTRUCTURE</div>
+        <h3>The operating overhead, handled.</h3>
+        <p>Intake forms, scoping templates, engagement letters, communication infrastructure, document handling, client portal, billing coordination &mdash; the things that fill an operator&rsquo;s week without making them money.</p>
+        <p>An in-house ops team would cost six figures. The platform gives you that leverage as part of the operator relationship.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__n">04 &middot; AI &amp; TOOLING</div>
+        <h3>AI-augmented workflow, built in-house.</h3>
+        <p>TechBrot is building operator-facing AI tooling for engagement intake, document handling, categorization assistance, quality-review checklists, and client communication drafting. Tools that compound: more time on real work, less time on operational friction.</p>
+        <p>Operators get early access. The AI augments the operator &mdash; it doesn&rsquo;t replace the judgment that clients pay for.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__n">05 &middot; QUALITY</div>
+        <h3>Platform-level review, not self-policing.</h3>
+        <p>Every engagement is reviewed against a defined operating standard. That means consistency for clients and structured feedback for operators &mdash; the kind most independent practices never get.</p>
+        <p>Quality review is a development tool, not a surveillance system. It exists to make operators better, not to second-guess them.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__n">06 &middot; CONTINUITY</div>
+        <h3>A real institution behind your name.</h3>
+        <p>If life happens &mdash; vacation, illness, capacity changes &mdash; the platform handles continuity without losing client context. Operators get the same protection they extend to clients.</p>
+        <p>You&rsquo;re never the single point of failure. Neither is the client.</p>
+      </div>
     </div>
-    <div class="grid-2 stack-8">
-      <article class="review-card">
+  </div>
+</section>
+
+{#- REQUIREMENTS — Required / Valued, not required / Disqualifying (baseline H3s). -#}
+<section class="sec reveal hub-rt--alt" id="partners-requirements" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Operator requirements</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What we look for &mdash; and what we don&rsquo;t.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">The standard is the standard. We&rsquo;d rather have the right operators in fewer states than the wrong operators everywhere.</p>
+    <div class="prose">
+      <h3>Required</h3>
+      <ul>
+        <li><strong>Active Certified QuickBooks ProAdvisor.</strong> Current ProAdvisor status verified through Intuit&rsquo;s public directory. Online Level 2 minimum.</li>
+        <li><strong>U.S.-based accounting or bookkeeping practice.</strong> A formed business entity (LLC, S-Corp, or PLLC), U.S. tax identification, and an established operating presence.</li>
+        <li><strong>Professional liability (E&amp;O) insurance.</strong> Active errors &amp; omissions coverage. Minimum coverage limits discussed during application review.</li>
+        <li><strong>Demonstrable client work history.</strong> At least 2&ndash;3 years of independent practice or equivalent in-firm experience. References available on request.</li>
+        <li><strong>Written communication discipline.</strong> Client communication that&rsquo;s clear, timely, and professional. Tested during the application review.</li>
+      </ul>
+      <h3>Valued, not required</h3>
+      <ul>
+        <li><strong>Additional credentials.</strong> CPA, EA, CB, AIPB, NACPB credentials are valued. Not a requirement for ProAdvisor-led bookkeeping work.</li>
+        <li><strong>Industry specialization.</strong> Operators with deep experience in e-commerce, real estate, construction, restaurants, SaaS, or other verticals get prioritized for routing.</li>
+        <li><strong>Multi-state experience.</strong> Multi-state sales tax, multi-state payroll, and multi-entity engagement experience is valued for complex engagement routing.</li>
+        <li><strong>Team capacity.</strong> Solo operators and small-team practices are both welcome. Capacity is discussed individually.</li>
+      </ul>
+      <h3>Disqualifying</h3>
+      <ul>
+        <li><strong>Unresolved licensing or disciplinary issues.</strong> Open complaints, board actions, or licensing suspensions disqualify the application.</li>
+        <li><strong>Non-U.S. operating presence.</strong> Operators must run U.S.-based practices. We&rsquo;re not expanding internationally during the current phase.</li>
+        <li><strong>Proprietary-software lock-in.</strong> TechBrot operates in the client&rsquo;s existing QuickBooks file. Practices that force clients onto proprietary software aren&rsquo;t a fit.</li>
+        <li><strong>No active ProAdvisor certification.</strong> Lapsed or never-earned ProAdvisor status disqualifies the application. Renew first, then apply.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{#- PROCESS — 4 phases (baseline H3s: Apply / Fit Call / Verification / Onboarding)
+    → process-grid. Timings preserved EXACTLY. -#}
+<section class="sec reveal" id="partners-process">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Application process</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From application to first engagement.</h2>
+    <p class="lede" style="margin:0 0 26px;max-width:70ch;">Four phases. Typical timeline three to six weeks. Application is free; no obligation at any stage.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-step__n">PHASE 1</div>
         <h3>Apply</h3>
-        <p class="review-card__fact">Submit the application with credentials, practice details, capacity, geographic coverage, and any specializations. Takes about 20 minutes &mdash; <strong>free, no obligation</strong>.</p>
-      </article>
-      <article class="review-card">
+        <p>Submit the application with credentials, practice details, capacity, geographic coverage, and any specializations. Takes about 20 minutes &mdash; <strong>free, no obligation</strong>.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__n">PHASE 2</div>
         <h3>Fit Call</h3>
-        <p class="review-card__fact">30-minute call to discuss the model, mutual expectations, and what your practice is looking for. Both sides decide whether to continue &mdash; <strong>typically within 1&ndash;2 weeks</strong>.</p>
-      </article>
-      <article class="review-card">
+        <p>30-minute call to discuss the model, mutual expectations, and what your practice is looking for. Both sides decide whether to continue &mdash; <strong>typically within 1&ndash;2 weeks</strong>.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__n">PHASE 3</div>
         <h3>Verification</h3>
-        <p class="review-card__fact">Credential verification, insurance review, reference checks, and a brief work-sample discussion. Standard for every operator &mdash; <strong>typically 1&ndash;2 weeks</strong>.</p>
-      </article>
-      <article class="review-card">
+        <p>Credential verification, insurance review, reference checks, and a brief work-sample discussion. Standard for every operator &mdash; <strong>typically 1&ndash;2 weeks</strong>.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__n process-step__n--done">PHASE 4 &check;</div>
         <h3>Onboarding</h3>
-        <p class="review-card__fact">Operator agreement signed. Onboarding to TechBrot&rsquo;s tooling, quality standards, intake workflow, and engagement routing. First engagement scoped within weeks &mdash; <strong>typically 1&ndash;2 weeks</strong>.</p>
-      </article>
+        <p>Operator agreement signed. Onboarding to TechBrot&rsquo;s tooling, quality standards, intake workflow, and engagement routing. First engagement scoped within weeks &mdash; <strong>typically 1&ndash;2 weeks</strong>.</p>
+      </div>
     </div>
-    <div class="hero__actions stack-8">
-      <a class="btn btn--primary btn--lg" href="/contact/?intent=partner-apply">Start the Application</a>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="partners-principles">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Operating principles</p>
-      <h2 class="section__heading">How the platform treats operators.</h2>
-      <p class="section__lede">The same principles that govern client engagements govern operator relationships. Same standard, both directions.</p>
-    </header>
-    {#- ROUND 11 follow-up (founder ruling 2026-06-13): operating principles
-        are a PARALLEL list of six, not a sequence, so they take a grid-3
-        card layout (not the numbered .process-diagram). This removes the
-        last numbered-grid repeat on the page — benefits keeps the numbered
-        .process-diagram, process took the .flow, principles is now cards.
-        Baseline H3 headings preserved in the cards (content + equity). -#}
-    <div class="grid-3">
-      <article class="review-card">
-        <h3>Independence is preserved.</h3>
-        <p class="review-card__fact">Operators are independent businesses, not employees and not franchisees. No territory restrictions, no required signage, no operational lock-in. The relationship is contractual and structured to be fair.</p>
-      </article>
-      <article class="review-card">
-        <h3>Economics are transparent.</h3>
-        <p class="review-card__fact">Engagement-level economics, platform fee structure, and payment cadence are documented in the operator agreement. No hidden fees, no surprise charges, no clawbacks.</p>
-      </article>
-      <article class="review-card">
-        <h3>Capacity is respected.</h3>
-        <p class="review-card__fact">Operators set their own capacity and can decline engagements that don&rsquo;t fit. The platform routes work to operators who can responsibly take it &mdash; not the other way around.</p>
-      </article>
-      <article class="review-card">
-        <h3>Quality goes both ways.</h3>
-        <p class="review-card__fact">Platform-level review applies to TechBrot too. Operators receive structured feedback; operators give structured feedback back. Quality is a system, not a script.</p>
-      </article>
-      <article class="review-card">
-        <h3>Continuity is mutual.</h3>
-        <p class="review-card__fact">If an operator leaves the network, the transition is handled professionally &mdash; for clients, for the operator, and for the platform. No hostage situations, no scorched-earth exits.</p>
-      </article>
-      <article class="review-card">
-        <h3>Voice in the platform.</h3>
-        <p class="review-card__fact">Active operators inform how TechBrot evolves &mdash; tooling priorities, standards updates, routing logic, AI development. The operators using the platform shape the platform.</p>
-      </article>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;">
+      <a class="btn btn-cta" href="/contact/?intent=partner-apply" style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Start the Application</a>
     </div>
   </div>
 </section>
 
-<section class="section" id="partners-infrastructure">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The leverage</p>
-      <h2 class="section__heading">An in-house ops team without the headcount.</h2>
-    </header>
-    <div class="legal-doc__body">
+{#- PRINCIPLES — 6 parallel (baseline H3s) → r-3 dc-card grid. -#}
+<section class="sec reveal hub-rt--alt" id="partners-principles" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Operating principles</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">How the platform treats operators.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">The same principles that govern client engagements govern operator relationships. Same standard, both directions.</p>
+    <div class="r-3">
+      <div class="dc-card"><h3>Independence is preserved.</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">Operators are independent businesses, not employees and not franchisees. No territory restrictions, no required signage, no operational lock-in. The relationship is contractual and structured to be fair.</p></div>
+      <div class="dc-card"><h3>Economics are transparent.</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">Engagement-level economics, platform fee structure, and payment cadence are documented in the operator agreement. No hidden fees, no surprise charges, no clawbacks.</p></div>
+      <div class="dc-card"><h3>Capacity is respected.</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">Operators set their own capacity and can decline engagements that don&rsquo;t fit. The platform routes work to operators who can responsibly take it &mdash; not the other way around.</p></div>
+      <div class="dc-card"><h3>Quality goes both ways.</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">Platform-level review applies to TechBrot too. Operators receive structured feedback; operators give structured feedback back. Quality is a system, not a script.</p></div>
+      <div class="dc-card"><h3>Continuity is mutual.</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">If an operator leaves the network, the transition is handled professionally &mdash; for clients, for the operator, and for the platform. No hostage situations, no scorched-earth exits.</p></div>
+      <div class="dc-card"><h3>Voice in the platform.</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">Active operators inform how TechBrot evolves &mdash; tooling priorities, standards updates, routing logic, AI development. The operators using the platform shape the platform.</p></div>
+    </div>
+  </div>
+</section>
+
+{#- INFRASTRUCTURE — prose (the leverage). -#}
+<section class="sec reveal" id="partners-infrastructure">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The leverage</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">An in-house ops team without the headcount.</h2>
+    <div class="prose">
       <p>The reason independent practices stay small isn&rsquo;t talent. It&rsquo;s leverage. A solo operator can serve a finite number of clients well because everything beyond the actual accounting work &mdash; finding clients, scoping engagements, managing communication, handling documents, reviewing for quality, drafting follow-ups &mdash; consumes time that doesn&rsquo;t scale.</p>
       <p>TechBrot is engineered around that constraint. The platform handles intake. The platform scopes the work. The platform reviews for quality. The platform develops AI-assisted tooling that compounds an operator&rsquo;s output without compromising the judgment clients are paying for.</p>
       <p><strong>The operator stays human. The overhead disappears.</strong></p>
@@ -303,67 +263,31 @@
   </div>
 </section>
 
-<section class="section section--alt" id="partners-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Operator questions</p>
-      <h2 class="section__heading" id="partners-faq-heading">What ProAdvisors ask before applying.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question"><button class="faq__trigger" type="button" aria-expanded="false" aria-controls="partners-faq-{{ loop.index }}" id="partners-faq-q-{{ loop.index }}">{{ item.q | safe }}</button></h3>
-        <div class="faq__answer" id="partners-faq-{{ loop.index }}" data-open="false" role="region" aria-labelledby="partners-faq-q-{{ loop.index }}">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
+{#- APPLICATION CTA — in-page (baseline H2). The light layout ctaBand renders at the
+    foot; this baseline mid-page CTA stays. -#}
+<section class="sec reveal hub-rt--alt" id="partners-application-cta" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Apply to the operator network</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">If the model fits, we&rsquo;d like to talk.</h2>
+    <p class="lede" style="margin:0 0 22px;max-width:70ch;">Applications are reviewed weekly. We&rsquo;re onboarding in priority states first; if you&rsquo;re outside our current focus areas, we&rsquo;ll let you know honestly and keep your application on file.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;">
+      <a class="btn btn-cta" href="/contact/?intent=partner-apply" style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Start the Application</a>
     </div>
-    <p class="faq__more"><a href="#partners-requirements">See full requirements detail <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:16px;">Free to apply &middot; 20-minute form &middot; No obligation</p>
   </div>
 </section>
 
-<section class="section" id="partners-application-cta">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Apply to the operator network</p>
-      <h2 class="section__heading">If the model fits, we&rsquo;d like to talk.</h2>
-      <p class="section__lede">Applications are reviewed weekly. We&rsquo;re onboarding in priority states first; if you&rsquo;re outside our current focus areas, we&rsquo;ll let you know honestly and keep your application on file.</p>
-    </header>
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="/contact/?intent=partner-apply">Start the Application</a>
-    </div>
-    <p class="in-brief__source stack-8">Free to apply &middot; 20-minute form &middot; No obligation</p>
-  </div>
-</section>
-
-<section class="section section--alt" id="partners-deeper">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Deeper</p>
-      <h2 class="section__heading">More about how the network operates.</h2>
-    </header>
-    <div class="grid-2">
-      <article class="review-card">
-        <h3>Operator benefits</h3>
-        <p class="review-card__fact">Detailed breakdown of what the platform delivers &mdash; demand, brand, infrastructure, AI tooling, quality systems, continuity.</p>
-        <a class="review-card__link" href="#partners-benefits">Read benefits detail <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-      <article class="review-card">
-        <h3>Operator requirements</h3>
-        <p class="review-card__fact">Full credential, insurance, and experience requirements with specific thresholds, verification process, and disqualifying conditions.</p>
-        <a class="review-card__link" href="#partners-requirements">Read requirements detail <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-      <article class="review-card">
-        <h3>How the network works</h3>
-        <p class="review-card__fact">The structural details &mdash; operator vetting, engagement scoping, quality review process, continuity mechanics.</p>
-        <a class="review-card__link" href="/about/network/">Read about the network <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-      <article class="review-card">
-        <h3>Operating methodology</h3>
-        <p class="review-card__fact">The four-phase engagement methodology applied across every project. Same standard, every operator, every engagement.</p>
-        <a class="review-card__link" href="/about/methodology/">Read the methodology <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+{#- DEEPER — route cards (baseline H3s). Carries the former faq__more link to
+    #partners-requirements via the Operator requirements card. -#}
+<section class="sec reveal" id="partners-deeper">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Deeper</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">More about how the network operates.</h2>
+    <div class="r-2">
+      <a class="dc-card hub-card" href="#partners-benefits"><h3>Operator benefits</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">Detailed breakdown of what the platform delivers &mdash; demand, brand, infrastructure, AI tooling, quality systems, continuity.</p><span class="hub-card__go">Read benefits detail <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="dc-card hub-card" href="#partners-requirements"><h3>Operator requirements</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">Full credential, insurance, and experience requirements with specific thresholds, verification process, and disqualifying conditions.</p><span class="hub-card__go">Read requirements detail <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="dc-card hub-card" href="/about/network/"><h3>How the network works</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">The structural details &mdash; operator vetting, engagement scoping, quality review process, continuity mechanics.</p><span class="hub-card__go">Read about the network <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="dc-card hub-card" href="/about/methodology/"><h3>Operating methodology</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">The four-phase engagement methodology applied across every project. Same standard, every operator, every engagement.</p><span class="hub-card__go">Read the methodology <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </div>
   </div>
 </section>

@@ -1,12 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/about/network/",
   "slug": "network",
-  "chrome": "full",
-  "callBar": false,
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
+  "sec": {
+    "aiH": "The network model, in five questions.",
+    "faqH": "Questions about the model."
+  },
   "title": "ProAdvisor Network · How the Model Works · TechBrot",
   "description": "An independent lead practice plus vetted local Certified QuickBooks ProAdvisors — one standard, one named point of accountability, and real continuity.",
   "breadcrumb": [
@@ -35,158 +36,106 @@
 }
 ---
 
-<section class="section section--compact section--tier-guide" id="network-tldr">
-  <div class="container">
-    <div class="tldr">
-      <p class="tldr__label">In one paragraph</p>
-      <h2 class="tldr__heading">The model, plainly.</h2>
-      <p class="tldr__body" id="network-tldr-body">TechBrot is a platform. The work gets delivered two ways: TechBrot&rsquo;s own lead practice handles engagements directly, and a curated network of vetted local Certified QuickBooks ProAdvisors handles engagements in their own markets &mdash; all under TechBrot&rsquo;s brand, documented standards, and platform infrastructure. Every client gets a <strong>named point of accountability</strong>, works inside their <strong>own QuickBooks file</strong>, and is backed by <strong>platform-level continuity</strong> &mdash; so the relationship never depends on one individual staying available. The result is the thing most accounting buyers can&rsquo;t otherwise get at once: local expertise, real accountability, and institutional reliability.</p>
-    </div>
+{#- ═══ G2 NETWORK (BASELINE, equity-gated). t-mofu→t-prose (dc-base chrome).
+    Every baseline heading verbatim at its level. #network-tldr-body speakable
+    preserved. ai-summary + faq rendered by t-prose from data (sec.aiH/faqH).
+    Firm-level authorship; founder schema-only. ═══ -#}
+
+{#- TL;DR (body) — #network-tldr-body = speakable. -#}
+<section class="sec reveal" id="network-tldr" style="padding-top:8px;">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">The model, plainly.</h2>
+    <div class="tldr-prose"><p id="network-tldr-body">TechBrot is a platform. The work gets delivered two ways: TechBrot&rsquo;s own lead practice handles engagements directly, and a curated network of vetted local Certified QuickBooks ProAdvisors handles engagements in their own markets &mdash; all under TechBrot&rsquo;s brand, documented standards, and platform infrastructure. Every client gets a <strong>named point of accountability</strong>, works inside their <strong>own QuickBooks file</strong>, and is backed by <strong>platform-level continuity</strong> &mdash; so the relationship never depends on one individual staying available. The result is the thing most accounting buyers can&rsquo;t otherwise get at once: local expertise, real accountability, and institutional reliability.</p></div>
   </div>
 </section>
 
-<section class="section" id="network-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">The network model, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="network-flow">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How an engagement flows</p>
-      <h2 class="section__heading">From your first call to clean books &mdash; through the platform.</h2>
-    </header>
-    <ol class="process-diagram">
+{#- FLOW — how an engagement flows → process-grid (baseline h3s: flow step names). -#}
+<section class="sec reveal hub-rt--alt" id="network-flow" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How an engagement flows</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">From your first call to clean books &mdash; through the platform.</h2>
+    <div class="process-grid">
       {%- for step in flow %}
-      <li class="process-step">
-        <p class="process-step__number">0{{ loop.index }}</p>
-        <h3 class="process-step__heading">{{ step.name | safe }}</h3>
-        <p class="process-step__body">{{ step.body | safe }}</p>
-      </li>
+      <div class="process-step"><div class="process-step__n">STEP {{ loop.index }}</div><h3>{{ step.name | safe }}</h3><p>{{ step.body | safe }}</p></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section" id="network-modes">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Two ways the work is delivered</p>
-      <h2 class="section__heading">One standard. Two delivery modes.</h2>
-    </header>
-    <div class="grid-2">
+{#- MODES — two delivery modes (baseline h3s: mode names) → r-2 dc-card with checks-list. -#}
+<section class="sec reveal" id="network-modes">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Two ways the work is delivered</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">One standard. Two delivery modes.</h2>
+    <div class="r-2">
       {%- for mode in modes %}
-      <article class="review-card">
-        <p class="team-card__role">{{ mode.label }}</p>
+      <div class="dc-card">
+        <span class="eyebrow" style="display:block;margin-bottom:8px;">{{ mode.label }}</span>
         <h3>{{ mode.name | safe }}</h3>
-        <p class="review-card__fact">{{ mode.body | safe }}</p>
-        <ul class="checks-list">
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ mode.body | safe }}</p>
+        <ul class="checks-list" style="margin-top:14px;">
           {%- for li in mode.list %}<li>{{ li | safe }}</li>{%- endfor %}
         </ul>
-        <a class="review-card__link" href="{{ mode.href }}">{{ mode.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-      {%- endfor %}
-    </div>
-    <p class="in-brief__source stack-8">In both modes you own your QuickBooks file and your data. The platform never locks you in &mdash; continuity is a feature, not a hostage.</p>
-  </div>
-</section>
-
-<section class="section section--alt" id="network-vetting">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The vetting bar</p>
-      <h2 class="section__heading">Every operator clears the same bar.</h2>
-      <p class="section__lede">Whether the work is delivered directly or by a network operator, the standard is identical &mdash; and reviewed on an ongoing basis, not just at intake.</p>
-    </header>
-    <div class="grid-3">
-      {%- for v in vetting %}
-      <article class="review-card">
-        <h3>{{ v.name | safe }}</h3>
-        <p class="review-card__fact">{{ v.body | safe }}</p>
-      </article>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="network-compare">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Honest comparison</p>
-      <h2 class="section__heading">A network beats the alternatives.</h2>
-      <p class="section__lede">The rows where a competitor holds up are shown honestly &mdash; the model wins on continuity, standards, and accountability.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">How the TechBrot operator network compares to a solo bookkeeper, a remote subscription, and an offshore team.</caption>
-        <thead>
-          <tr>
-            <th scope="col">Dimension</th>
-            <th scope="col" class="vs-table__us">TechBrot</th>
-            {%- for c in compare.cols %}<th scope="col">{{ c }}</th>{%- endfor %}
-          </tr>
-        </thead>
-        <tbody>
-          {%- for row in compare.rows %}
-          <tr>
-            <td>{{ row.dim | safe }}</td>
-            <td class="vs-table__us"><strong>{{ row.us | safe }}</strong></td>
-            {%- for o in row.others %}<td class="vs-table__concede">{{ o | safe }}</td>{%- endfor %}
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
-    <p class="faq__more"><a href="/vs/">See all the side-by-side comparisons <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
-  </div>
-</section>
-
-<section class="section section--alt" id="network-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Before you call</p>
-      <h2 class="section__heading">Questions about the model.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="network-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="network-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
+        <p class="prose" style="font-size:14.5px;margin:14px 0 0;"><a href="{{ mode.href }}">{{ mode.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
       </div>
       {%- endfor %}
     </div>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:18px;">In both modes you own your QuickBooks file and your data. The platform never locks you in &mdash; continuity is a feature, not a hostage.</p>
   </div>
 </section>
 
-<section class="section" id="network-next">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Go deeper</p>
-      <h2 class="section__heading">How the model shows up in practice.</h2>
-    </header>
-    <div class="grid-2">
+{#- VETTING — the vetting bar (baseline h3s: criterion names) → r-3 dc-card. -#}
+<section class="sec reveal hub-rt--alt" id="network-vetting" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The vetting bar</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Every operator clears the same bar.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Whether the work is delivered directly or by a network operator, the standard is identical &mdash; and reviewed on an ongoing basis, not just at intake.</p>
+    <div class="r-3">
+      {%- for v in vetting %}
+      <div class="dc-card"><h3>{{ v.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ v.body | safe }}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- COMPARE — honest comparison (vs-table→.cmp). Highlight col = TechBrot (us). -#}
+<section class="sec reveal" id="network-compare">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Honest comparison</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">A network beats the alternatives.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:72ch;">The rows where a competitor holds up are shown honestly &mdash; the model wins on continuity, standards, and accountability.</p>
+    <table class="cmp">
+      <caption class="sr-only">How the TechBrot operator network compares to a solo bookkeeper, a remote subscription, and an offshore team.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Dimension</th>
+          <th scope="col">TechBrot</th>
+          {%- for c in compare.cols %}<th scope="col">{{ c }}</th>{%- endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {%- for row in compare.rows %}
+        <tr>
+          <th scope="row" data-col="Dimension">{{ row.dim | safe }}</th>
+          <td class="num us" data-col="TechBrot"><strong>{{ row.us | safe }}</strong></td>
+          {%- for o in row.others %}<td data-col="{{ compare.cols[loop.index0] }}" style="color:var(--color-ink-mute);">{{ o | safe }}</td>{%- endfor %}
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+    <p class="prose" style="margin-top:14px;"><a href="/vs/">See all the side-by-side comparisons <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
+  </div>
+</section>
+
+{#- NEXT — 4 route cards (baseline h3s: Our methodology / Find an Accountant / Trust &amp; standards / For Accountants). -#}
+<section class="sec reveal hub-rt--alt" id="network-next" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Go deeper</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">How the model shows up in practice.</h2>
+    <div class="r-2">
       {%- for card in navCards %}
-      <article class="review-card">
-        <h3>{{ card.name | safe }}</h3>
-        <p class="review-card__fact">{{ card.body | safe }}</p>
-        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <a class="dc-card hub-card" href="{{ card.href }}"><h3>{{ card.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ card.body | safe }}</p><span class="hub-card__go">{{ card.cta }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>

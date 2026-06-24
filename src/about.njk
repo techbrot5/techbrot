@@ -3,8 +3,14 @@
   "layout": "layouts/t-hub.njk",
   "permalink": "/about/",
   "slug": "about",
-  "tierClass": "section--tier-hub",
   "bodyClass": "page--hub",
+  "heroFigure": false,
+  "sec": {
+    "inBriefH": "An independent platform, not a single firm.",
+    "aiH": "TechBrot, in five questions.",
+    "faqH": "About TechBrot, answered.",
+    "faqTag": "Common questions"
+  },
   "title": "About · Independent QuickBooks ProAdvisor Firm · TechBrot",
   "description": "TechBrot is an independent U.S. firm of Certified QuickBooks ProAdvisors — bookkeeping, QuickBooks, payroll & advisory, fixed-fee with a written scope.",
   "breadcrumb": [
@@ -36,101 +42,82 @@
 }
 ---
 
-<section class="section section--compact" id="about-credentials">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Certified by Intuit</p>
-      <h2 class="section__heading">Certified QuickBooks ProAdvisor credentials</h2>
-      <p class="section__lede">Every TechBrot engagement is led by Certified QuickBooks ProAdvisors &mdash; active across QuickBooks Online (Level&nbsp;2), Desktop, Enterprise, Payroll, and Bookkeeping certifications. Certification is the credential floor for every engagement; verification is available on request. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc.</p>
-    </header>
+{#- ═══ G2 ABOUT (BASELINE, equity-gated — 48 baseline headings, every one verbatim
+    at its exact level). Old-kit body → v2 dc-system. Chrome already v2 (t-hub).
+    #about-tldr-body speakable preserved (body). ai-summary + faq rendered ONCE by
+    t-hub (sec.aiH / sec.faqH + faq data) — DELETED from body to avoid duplication.
+    in-brief partial renders #about-in-brief-text speakable (sec.inBriefH added).
+    No fabricated content — all copy relocated from the prior body / `about` data. ═══ -#}
+<section class="sec reveal" id="about-credentials">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Certified by Intuit</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Certified QuickBooks ProAdvisor credentials</h2>
+    <p class="lede" style="margin:0 0 26px;max-width:72ch;">Every TechBrot engagement is led by Certified QuickBooks ProAdvisors &mdash; active across QuickBooks Online (Level&nbsp;2), Desktop, Enterprise, Payroll, and Bookkeeping certifications. Certification is the credential floor for every engagement; verification is available on request. Independent ProAdvisor firm &mdash; not affiliated with Intuit Inc.</p>
     <div class="trust-row">
-      <div class="trust-row__item"><p class="trust-row__value">Entity</p><p class="trust-row__label">TechBrot Inc. · Delaware C-Corp</p></div>
+      <div class="trust-row__item"><p class="trust-row__value">Entity</p><p class="trust-row__label">TechBrot Inc. &middot; Delaware C-Corp</p></div>
       <div class="trust-row__divider"></div>
       <div class="trust-row__item"><p class="trust-row__value">Practice since</p><p class="trust-row__label">2016</p></div>
       <div class="trust-row__divider"></div>
-      <div class="trust-row__item"><p class="trust-row__value">Incorporated</p><p class="trust-row__label">2023 · Delaware</p></div>
+      <div class="trust-row__item"><p class="trust-row__value">Incorporated</p><p class="trust-row__label">2023 &middot; Delaware</p></div>
       <div class="trust-row__divider"></div>
       <div class="trust-row__item"><p class="trust-row__value">Independence</p><p class="trust-row__label">Not affiliated with Intuit Inc.</p></div>
     </div>
-    {% include "partials/intuit-badges.njk" %}
+    <div style="margin-top:22px;">{% include "partials/intuit-badges.njk" %}</div>
   </div>
 </section>
 
-<section class="section section--compact section--tier-hub" id="about-tldr">
-  <div class="container">
-    <div class="tldr">
-      <p class="tldr__label">Our mission</p>
-      <h2 class="tldr__heading">Accounting that&rsquo;s accountable.</h2>
-      <p class="tldr__body" id="about-tldr-body">The U.S. small-business accounting market is large, fragmented, and structurally flawed. Most owners choose between three imperfect options: an overworked solo bookkeeper with no continuity, a remote subscription with no accountability, or an offshore team they&rsquo;ll never meet. TechBrot exists to be the fourth option &mdash; <strong>operator accountability</strong> (named, credentialed practices running real engagements) with <strong>platform standards</strong> (vetting, defined operating sequences, quality review, and continuity if anything ever needs to transition). The result is accounting that&rsquo;s accountable to a real practice and backed by a real institution.</p>
+{#- MISSION TL;DR (body) — #about-tldr-body speakable preserved verbatim. sand band. -#}
+<section class="sec reveal hub-rt--alt" id="about-tldr" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Our mission</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Accounting that&rsquo;s accountable.</h2>
+    <div class="tldr-prose"><p id="about-tldr-body">The U.S. small-business accounting market is large, fragmented, and structurally flawed. Most owners choose between three imperfect options: an overworked solo bookkeeper with no continuity, a remote subscription with no accountability, or an offshore team they&rsquo;ll never meet. TechBrot exists to be the fourth option &mdash; <strong>operator accountability</strong> (named, credentialed practices running real engagements) with <strong>platform standards</strong> (vetting, defined operating sequences, quality review, and continuity if anything ever needs to transition). The result is accounting that&rsquo;s accountable to a real practice and backed by a real institution.</p></div>
+  </div>
+</section>
+
+{#- TIMELINE — 6 milestones (baseline h3s) → process-grid. -#}
+<section class="sec reveal" id="about-timeline">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The arc</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From a practice to a platform.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">The company was incorporated in 2023; the practice and operating standards behind it run back to 2016.</p>
+    <div class="process-grid">
+      {%- for m in timeline %}
+      <div class="process-step"><div class="process-step__n">{{ m.year | safe }}</div><h3>{{ m.name | safe }}</h3><p>{{ m.body | safe }}</p></div>
+      {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="about-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">TechBrot, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
+{#- DELIVERY MODES — 2 (baseline h3s) → dc-card r-2 with checks-list. sand band. -#}
+<section class="sec reveal hub-rt--alt" id="about-modes" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How the work is delivered</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Two delivery modes. One operating standard.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:68ch;">Whether TechBrot delivers directly or routes to a vetted local operator, the engagement runs the same vetting, sequence, quality review, and continuity guarantee.</p>
+    <div class="r-2">
+      {%- for mode in modes %}
+      <div class="dc-card">
+        <span class="eyebrow" style="display:block;margin-bottom:8px;">{{ mode.label }}</span>
+        <h3>{{ mode.name | safe }}</h3>
+        <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ mode.body | safe }}</p>
+        <ul class="checks-list" style="margin-top:14px;">
+          {%- for li in mode.list %}<li>{{ li | safe }}</li>{%- endfor %}
+        </ul>
+        <a class="hub-card__go" href="{{ mode.href }}" style="margin-top:14px;">{{ mode.cta }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       {%- endfor %}
     </div>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:24px;">For clients who need accounting or tax-filing services beyond bookkeeping, the network helps connect to a credentialed CPA, EA, or accountant in your state. TechBrot is an independent ProAdvisor firm and does not file federal or state tax returns directly.</p>
   </div>
 </section>
 
-<section class="section section--alt" id="about-timeline">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The arc</p>
-      <h2 class="section__heading">From a practice to a platform.</h2>
-      <p class="section__lede">The company was incorporated in 2023; the practice and operating standards behind it run back to 2016.</p>
-    </header>
-    {%- for m in timeline %}
-    <div class="stack-8">
-      <p class="section__eyebrow">{{ m.year | safe }}</p>
-      <h3>{{ m.name | safe }}</h3>
-      <p>{{ m.body | safe }}</p>
-    </div>
-    {%- endfor %}
-  </div>
-</section>
-
-<section class="section" id="about-modes">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How the work is delivered</p>
-      <h2 class="section__heading">Two delivery modes. One operating standard.</h2>
-      <p class="section__lede">Whether TechBrot delivers directly or routes to a vetted local operator, the engagement runs the same vetting, sequence, quality review, and continuity guarantee.</p>
-    </header>
-    <div class="grid-2">
-      {%- for mode in modes %}
-      <article class="review-card">
-        <p class="team-card__role">{{ mode.label }}</p>
-        <h3>{{ mode.name | safe }}</h3>
-        <p class="review-card__fact">{{ mode.body | safe }}</p>
-        <ul class="checks-list">
-          {%- for li in mode.list %}<li>{{ li | safe }}</li>{%- endfor %}
-        </ul>
-        <a class="review-card__link" href="{{ mode.href }}">{{ mode.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
-      {%- endfor %}
-    </div>
-    <p class="in-brief__source stack-8">For clients who need accounting or tax-filing services beyond bookkeeping, the network helps connect to a credentialed CPA, EA, or accountant in your state. TechBrot is an independent ProAdvisor firm and does not file federal or state tax returns directly.</p>
-  </div>
-</section>
-
-<section class="section section--alt" id="about-platform">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Why a platform, not a firm</p>
-      <h2 class="section__heading">A firm scales by hiring. A platform scales by connecting.</h2>
-    </header>
-    <div class="legal-doc__body">
+{#- PLATFORM THESIS — prose. -#}
+<section class="sec reveal" id="about-platform">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why a platform, not a firm</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">A firm scales by hiring. A platform scales by connecting.</h2>
+    <div class="prose">
       <p>The traditional accounting firm scales by hiring more accountants, opening more offices, and managing more people. Every additional client adds operational overhead. Quality is bounded by the firm&rsquo;s ability to manage its own staff.</p>
       <p>A platform scales differently. TechBrot operates its own lead practice and curates a network of independent practices that already exist. Brand, demand, infrastructure, and standards on one side. Local expertise, market presence, and the personal accountability of running your own practice on the other.</p>
       <p>This model works because the bottleneck in accounting isn&rsquo;t demand &mdash; it&rsquo;s trust. Every U.S. small business needs reliable bookkeeping, and plenty of skilled accountants want to serve them. What&rsquo;s missing is the connective tissue: a brand the client can trust, a standard the work can be held to, and infrastructure that makes the relationship sustainable. <strong>TechBrot is that connective tissue.</strong></p>
@@ -138,31 +125,26 @@
   </div>
 </section>
 
-<section class="section" id="about-principles">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The operating standard</p>
-      <h2 class="section__heading">Six principles, applied to every engagement.</h2>
-      <p class="section__lede">The same standard governs direct engagements and network engagements alike.</p>
-    </header>
-    <div class="grid-3">
+{#- PRINCIPLES — 6 (baseline h3s) → dc-card r-3. sand band. -#}
+<section class="sec reveal hub-rt--alt" id="about-principles" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The operating standard</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Six principles, applied to every engagement.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:64ch;">The same standard governs direct engagements and network engagements alike.</p>
+    <div class="r-3">
       {%- for p in principles %}
-      <article class="review-card">
-        <h3>{{ p.name | safe }}</h3>
-        <p class="review-card__fact">{{ p.body | safe }}</p>
-      </article>
+      <div class="dc-card"><h3>{{ p.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ p.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="about-infrastructure">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Infrastructure &amp; AI roadmap</p>
-      <h2 class="section__heading">Built for the next decade of accounting.</h2>
-    </header>
-    <div class="legal-doc__body">
+{#- INFRASTRUCTURE & AI ROADMAP — prose. -#}
+<section class="sec reveal" id="about-infrastructure">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Infrastructure &amp; AI roadmap</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Built for the next decade of accounting.</h2>
+    <div class="prose">
       <p>Accounting work has changed more in the last five years than in the previous twenty. Bank feeds, document automation, machine categorization, AI-assisted reconciliation &mdash; the tools available now are categorically different from what existed when the underlying practice began. TechBrot is built around that shift.</p>
       <p>The platform is engineered to give every engagement the leverage of an in-house operations team without forcing operators to build one &mdash; intake automation, document handling, quality-review workflows, client communication infrastructure, and a growing layer of AI-assisted bookkeeping tooling developed in-house. <strong>The accounting work stays human. The overhead disappears.</strong></p>
       <p>That&rsquo;s what lets a small lead practice and a curated network of independent operators deliver the consistency a national subscription service tries to deliver &mdash; while keeping the operator accountability subscription services can&rsquo;t.</p>
@@ -170,97 +152,56 @@
   </div>
 </section>
 
-<section class="section" id="about-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The methodology</p>
-      <h2 class="section__heading">Every engagement runs the same sequence.</h2>
-      <p class="section__lede">Four phases, one standard &mdash; whether the work is delivered directly or by a network operator.</p>
-    </header>
-    <ol class="process-diagram">
+{#- PROCESS — 4-phase sequence (baseline h3s) → process-grid. sand band. -#}
+<section class="sec reveal hub-rt--alt" id="about-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The methodology</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Every engagement runs the same sequence.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:66ch;">Four phases, one standard &mdash; whether the work is delivered directly or by a network operator.</p>
+    <div class="process-grid">
       {%- for step in sequence %}
-      <li class="process-step">
-        <p class="process-step__number">0{{ loop.index }}</p>
-        <h3 class="process-step__heading">{{ step.name | safe }}</h3>
-        <p class="process-step__body">{{ step.body | safe }}</p>
-        <p class="process-step__body"><strong>{{ step.timing | safe }}</strong></p>
-      </li>
+      <div class="process-step"><div class="process-step__n">STEP {{ loop.index }}</div><h3>{{ step.name | safe }}</h3><p>{{ step.body | safe }}</p><p style="margin-top:8px;"><strong>{{ step.timing | safe }}</strong></p></div>
       {%- endfor %}
-    </ol>
-    <p class="in-brief__source stack-8"><a href="/about/methodology/">Read the full methodology <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
+    </div>
+    <p class="prose" style="margin-top:24px;"><a href="/about/methodology/">Read the full methodology <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true" style="vertical-align:-1px;"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
   </div>
 </section>
 
-<section class="section section--alt" id="about-scope">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What we don&rsquo;t do</p>
-      <h2 class="section__heading">Honest about scope.</h2>
-      <p class="section__lede">If your needs fall outside TechBrot&rsquo;s scope, we&rsquo;ll say so on the diagnostic call &mdash; and point you toward the right kind of provider. That&rsquo;s part of the standard.</p>
-    </header>
-    <div class="grid-2">
+{#- SCOPE — 4 exclusions (baseline h3s) → dc-card r-2. -#}
+<section class="sec reveal" id="about-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What we don&rsquo;t do</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Honest about scope.</h2>
+    <p class="lede" style="margin:0 0 30px;max-width:68ch;">If your needs fall outside TechBrot&rsquo;s scope, we&rsquo;ll say so on the diagnostic call &mdash; and point you toward the right kind of provider. That&rsquo;s part of the standard.</p>
+    <div class="r-2">
       {%- for s in scope %}
-      <article class="review-card">
-        <h3>{{ s.name | safe }}</h3>
-        <p class="review-card__fact">{{ s.body | safe }}</p>
-      </article>
+      <div class="dc-card"><h3>{{ s.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="about-services">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What TechBrot does</p>
-      <h2 class="section__heading">The work, summarized.</h2>
-    </header>
-    <div class="grid-2">
+{#- SERVICES — 4 (baseline h3s) → dc-card hub-card r-2 (linked). sand band. -#}
+<section class="sec reveal hub-rt--alt" id="about-services" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What TechBrot does</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;">The work, summarized.</h2>
+    <div class="r-2">
       {%- for svc in services %}
-      <article class="review-card">
-        <h3>{{ svc.name | safe }}</h3>
-        <p class="review-card__fact">{{ svc.body | safe }}</p>
-        <a class="review-card__link" href="{{ svc.href }}">{{ svc.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <a class="dc-card hub-card" href="{{ svc.href }}"><h3>{{ svc.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ svc.body | safe }}</p><span class="hub-card__go">{{ svc.cta }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="about-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">About TechBrot, answered.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="about-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="about-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="about-next">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Go deeper</p>
-      <h2 class="section__heading">More about how TechBrot operates.</h2>
-    </header>
-    <div class="grid-2">
+{#- NEXT — 4 operate-nav cards (baseline h3s) → dc-card hub-card r-2 (linked). -#}
+<section class="sec reveal" id="about-next">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Go deeper</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;">More about how TechBrot operates.</h2>
+    <div class="r-2">
       {%- for card in navCards %}
-      <article class="review-card">
-        <h3>{{ card.name | safe }}</h3>
-        <p class="review-card__fact">{{ card.body | safe }}</p>
-        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <a class="dc-card hub-card" href="{{ card.href }}"><h3>{{ card.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ card.body | safe }}</p><span class="hub-card__go">{{ card.cta }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>

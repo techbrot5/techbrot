@@ -1,12 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/about/methodology/",
   "slug": "methodology",
-  "chrome": "full",
-  "callBar": false,
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
+  "sec": {
+    "aiH": "The methodology, in five questions.",
+    "faqH": "Questions about how we work."
+  },
   "title": "Our Methodology · 5-Phase Engagement · TechBrot",
   "description": "How a TechBrot engagement works: discovery, written fixed-fee scope, onboarding, delivery by a named Certified ProAdvisor, and a CPA-ready handoff.",
   "breadcrumb": [
@@ -35,75 +36,55 @@
 }
 ---
 
-<section class="section section--compact section--tier-guide" id="methodology-tldr">
-  <div class="container">
-    <div class="tldr">
-      <p class="tldr__label">In one paragraph</p>
-      <h2 class="tldr__heading">How a TechBrot engagement works.</h2>
-      <p class="tldr__body" id="methodology-tldr-body">Every TechBrot engagement follows five consistent phases. <strong>1) Discovery</strong> &mdash; a free 30-minute call with a Certified ProAdvisor, with an honest assessment of fit. <strong>2) Written fixed-fee scope</strong> &mdash; within 3 business days you receive exactly what will be done, by when, and for what fixed fee; no hourly billing. <strong>3) Onboarding</strong> &mdash; a named ProAdvisor is assigned and you grant accountant-user access to your own QuickBooks file. <strong>4) Delivery</strong> &mdash; the work happens inside your file, audit trail visible to you, on a consistent rhythm. <strong>5) CPA-ready handoff</strong> &mdash; books stay CPA-ready throughout, with year-end files delivered to your CPA at no extra cost. The methodology is identical across bookkeeping, QuickBooks, payroll, sales tax, and fractional CFO &mdash; consistency is what makes engaging TechBrot predictable rather than a gamble.</p>
-    </div>
+{#- ═══ G2 METHODOLOGY (BASELINE, equity-gated). t-mofu→t-prose (dc-base chrome).
+    Every baseline heading verbatim at its level. #methodology-tldr-body speakable
+    preserved. ai-summary + faq rendered by t-prose from data (sec.aiH/faqH).
+    Firm-level authorship; founder schema-only. JUSTIFIED prior removal: "The Team"
+    section — NOT re-added. ═══ -#}
+
+{#- TL;DR (body) — #methodology-tldr-body = speakable. -#}
+<section class="sec reveal" id="methodology-tldr" style="padding-top:8px;">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">How a TechBrot engagement works.</h2>
+    <div class="tldr-prose"><p id="methodology-tldr-body">Every TechBrot engagement follows five consistent phases. <strong>1) Discovery</strong> &mdash; a free 30-minute call with a Certified ProAdvisor, with an honest assessment of fit. <strong>2) Written fixed-fee scope</strong> &mdash; within 3 business days you receive exactly what will be done, by when, and for what fixed fee; no hourly billing. <strong>3) Onboarding</strong> &mdash; a named ProAdvisor is assigned and you grant accountant-user access to your own QuickBooks file. <strong>4) Delivery</strong> &mdash; the work happens inside your file, audit trail visible to you, on a consistent rhythm. <strong>5) CPA-ready handoff</strong> &mdash; books stay CPA-ready throughout, with year-end files delivered to your CPA at no extra cost. The methodology is identical across bookkeeping, QuickBooks, payroll, sales tax, and fractional CFO &mdash; consistency is what makes engaging TechBrot predictable rather than a gamble.</p></div>
   </div>
 </section>
 
-<section class="section section--compact" id="methodology-byline">
-  <div class="container container--narrow">
-    <div class="byline-block">
-      <svg class="byline-block__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+{#- BYLINE · firm-level (founder-name-zero). v2 .byline. -#}
+<section class="sec reveal" id="methodology-byline" style="padding-top:8px;padding-bottom:8px;">
+  <div class="ct read read--doc">
+    <div class="byline">
+      <svg width="30" height="30" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
       <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc. &middot; independent firm</p>
+        <p style="font-size:13.5px;font-weight:600;color:var(--color-ink);margin:0;">By the Certified QuickBooks ProAdvisor team</p>
+        <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--color-ink-faint);margin:0;">Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc. &middot; independent firm</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="methodology-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">The methodology, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="methodology-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The five phases</p>
-      <h2 class="section__heading">From first contact to ongoing delivery.</h2>
-      <p class="section__lede">Each phase has a defined output &mdash; so you always know where the engagement stands.</p>
-    </header>
-    <ol class="process-diagram">
+{#- PROCESS — the five phases → process-grid (baseline h3s: phase names). -#}
+<section class="sec reveal hub-rt--alt" id="methodology-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The five phases</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From first contact to ongoing delivery.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:68ch;">Each phase has a defined output &mdash; so you always know where the engagement stands.</p>
+    <div class="process-grid">
       {%- for ph in phases %}
-      <li class="process-step">
-        <p class="process-step__number">0{{ loop.index }}</p>
-        <h3 class="process-step__heading">{{ ph.name | safe }}</h3>
-        <p class="process-step__body">{{ ph.body | safe }}</p>
-        <p class="process-step__body"><strong>Output:</strong> {{ ph.out | safe }}</p>
-      </li>
+      <div class="process-step"><div class="process-step__n">STEP {{ loop.index }}</div><h3>{{ ph.name | safe }}</h3><p>{{ ph.body | safe }}</p><p style="margin-top:8px;"><strong>Output:</strong> {{ ph.out | safe }}</p></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section" id="methodology-why">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Why it&rsquo;s built this way</p>
-      <h2 class="section__heading">Predictability is the point.</h2>
-    </header>
-    <blockquote class="pull-quote">
-      <p>The process is the product. Consistency is what makes engaging TechBrot predictable rather than a gamble.</p>
-    </blockquote>
-    <div class="legal-doc__body">
+{#- WHY — prose. -#}
+<section class="sec reveal" id="methodology-why">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why it&rsquo;s built this way</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Predictability is the point.</h2>
+    <div class="prose">
+      <blockquote class="pull-quote"><p>The process is the product. Consistency is what makes engaging TechBrot predictable rather than a gamble.</p></blockquote>
       <p>Most small businesses have a bad accounting story &mdash; the bookkeeper who vanished, the surprise invoice, the books that turned out to be wrong at tax time, the firm that rotated them through three account managers in a year. Those failures almost always trace back to the same root cause: <strong>no defined process</strong>.</p>
       <p>TechBrot&rsquo;s methodology exists to remove that risk. A written scope means you&rsquo;re never surprised by cost or deliverables. A named ProAdvisor means you&rsquo;re never re-explaining your business or wondering who&rsquo;s responsible. Working inside your own file means you never lose control of your data. CPA-ready books mean tax season is never a fire drill.</p>
       <p>None of this is exotic &mdash; it&rsquo;s simply what an operationally mature firm does. The difference is that TechBrot makes it explicit and applies it the same way to every engagement, every time.</p>
@@ -111,87 +92,52 @@
   </div>
 </section>
 
-<section class="section section--alt" id="methodology-standards">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The operating standard</p>
-      <h2 class="section__heading">The standards that run through the whole process.</h2>
-    </header>
-    <div class="grid-3">
+{#- STANDARDS — card grid (baseline h3s: standard names). -#}
+<section class="sec reveal hub-rt--alt" id="methodology-standards" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The operating standard</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">The standards that run through the whole process.</h2>
+    <div class="r-3">
       {%- for s in standards %}
-      <div class="stack-8">
-        <h3>{{ s.name | safe }}</h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ s.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="methodology-scope">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What it covers</p>
-      <h2 class="section__heading">And what it deliberately doesn&rsquo;t.</h2>
-    </header>
-    <div class="grid-3">
+{#- SCOPE — card grid (baseline h3s: covers/doesn't/coordinates). -#}
+<section class="sec reveal" id="methodology-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What it covers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">And what it deliberately doesn&rsquo;t.</h2>
+    <div class="r-3">
       {%- for b in boundaries %}
-      <div class="stack-8">
-        <h3>{{ b.name | safe }}</h3>
-        <p class="prose">{{ b.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ b.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ b.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="methodology-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Before you start</p>
-      <h2 class="section__heading">Questions about how we work.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="methodology-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="methodology-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="methodology-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the TechBrot platform team.</h2>
-    </header>
-    <div class="legal-doc__body">
+{#- REVIEW — prose + meta-reviewed (baseline H2: "Reviewed by the TechBrot platform team."). -#}
+<section class="sec reveal hub-rt--alt" id="methodology-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Reviewed by the TechBrot platform team.</h2>
+    <div class="prose">
       <p>This methodology is maintained and reviewed by the <strong>Certified QuickBooks ProAdvisor team</strong> at TechBrot Inc., a Delaware-incorporated independent ProAdvisor firm. The operating sequence is the same one applied to every engagement &mdash; direct or network &mdash; and is reviewed against the platform&rsquo;s standards. It connects directly to our <a href="/trust/">trust &amp; standards</a> and the canonical <a href="/pricing/">pricing</a> behind every scope.</p>
     </div>
     <p class="meta-reviewed"><span>Published: 2026-06-14</span><span>Updated: 2026-06-14</span><span>Reviewed: 2026-06-14 &middot; Certified QuickBooks ProAdvisor</span></p>
   </div>
 </section>
 
-<section class="section section--alt" id="methodology-next">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Go deeper</p>
-      <h2 class="section__heading">Where to go next.</h2>
-    </header>
-    <div class="grid-2">
+{#- NEXT — 4 route cards (baseline h3s: Why trust TechBrot / Pricing / Service catalog / About TechBrot). -#}
+<section class="sec reveal" id="methodology-next">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Go deeper</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where to go next.</h2>
+    <div class="r-2">
       {%- for card in navCards %}
-      <div class="stack-8">
-        <h3>{{ card.name | safe }}</h3>
-        <p class="prose">{{ card.body | safe }}</p>
-        <p class="prose"><a href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></p>
-      </div>
+      <a class="dc-card hub-card" href="{{ card.href }}"><h3>{{ card.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ card.body | safe }}</p><span class="hub-card__go">{{ card.cta }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
