@@ -1,41 +1,37 @@
 ---json
 {
-  "layout": "layouts/base.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/404.html",
   "slug": "notfound",
   "robotsOverride": "noindex, follow",
   "eleventyExcludeFromCollections": true,
   "title": "Page not found — TechBrot",
   "description": "The address doesn't match anything in our books. Find the page you meant, or call and a ProAdvisor will point you right.",
-  "breadcrumb": [
-    { "name": "Home", "href": "/" },
-    { "name": "Page not found" }
-  ],
   "hero": {
     "eyebrow": "404 · page not found",
     "heading": "This page didn&rsquo;t reconcile.",
     "subheading": "The address doesn&rsquo;t match anything in our books. The places people usually mean are below &mdash; or just call, and a ProAdvisor will point you right.",
     "actions": [
       { "label": "Back to the homepage", "href": "/", "class": "btn--primary" },
-      { "label": "Speak to a ProAdvisor", "href": "tel:+18777515575", "class": "btn--ghost" }
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
     ]
   }
 }
 ---
-{#- 404 — shared util-hero (the endpoint hero variant, also on contact +
-    file-review) + the find-the-page silo grid. "Converts even in failure." -#}
+{#- 404 — v2 (t-prose/dc-base). Hero from frontmatter; the "find the page you meant"
+    silo grid as dc-card hub-cards. "Converts even in failure." -#}
 
-{% include "partials/util-hero.njk" %}
-
-<section class="section" id="notfound-silos">
-  <div class="container">
-    <ul class="nf-silos">
-      <li><a href="/quickbooks/file-review/?intent=file-review">QuickBooks file review<span>Free &middot; the usual destination</span></a></li>
-      <li><a href="/accounting/services/">Services<span>Bookkeeping, cleanup, advisory</span></a></li>
-      <li><a href="/pricing/">Pricing<span>Fixed-fee, in writing</span></a></li>
-      <li><a href="/quickbooks/">QuickBooks<span>Setup, cleanup, migration, help</span></a></li>
-      <li><a href="/find-an-accountant/">Find an accountant<span>State by state</span></a></li>
-      <li><a href="/contact/">Contact<span>One business day, a human</span></a></li>
-    </ul>
+<section class="sec reveal" id="notfound-silos" style="padding-top:8px;">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The places people usually mean</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Find the page you meant.</h2>
+    <div class="r-3">
+      <a class="dc-card hub-card" href="/quickbooks/file-review/?intent=file-review"><h3>QuickBooks file review</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">Free &middot; the usual destination.</p><span class="hub-card__go">Get the free review <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="dc-card hub-card" href="/accounting/services/"><h3>Services</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">Bookkeeping, cleanup, advisory.</p><span class="hub-card__go">Explore services <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="dc-card hub-card" href="/pricing/"><h3>Pricing</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">Fixed-fee, in writing.</p><span class="hub-card__go">See pricing <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="dc-card hub-card" href="/quickbooks/"><h3>QuickBooks</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">Setup, cleanup, migration, help.</p><span class="hub-card__go">QuickBooks services <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="dc-card hub-card" href="/find-an-accountant/"><h3>Find an accountant</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">State by state.</p><span class="hub-card__go">Find your state <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="dc-card hub-card" href="/contact/"><h3>Contact</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">One business day, a human.</p><span class="hub-card__go">Get in touch <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    </div>
   </div>
 </section>
