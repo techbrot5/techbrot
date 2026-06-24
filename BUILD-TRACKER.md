@@ -33,10 +33,13 @@ tb-forms.js extended (wires months/ai_recommended/convincing_page). NY cities �
 dupes 13-17, coverage-verified); C 10 prose @11→6 (cut echo dupes 7-11). Champaign left (11 DISTINCT, not a dup case —
 flagged for separate equity review). 0 distinct questions lost. **TASK 6B DONE** (verify-link strip: clickable proadvisor anchors 45→5 [the 5 = honest pillar authority-citation, de-claimed,
 flagged]; visible David → home+NY+TX only, CA/FL/IL genericized; ONE westgatefs.com link in /partners/; battery GREEN).
-**TASK 6A reviewedBy scope = PROPOSED, awaiting founder confirm** (KEEP money/landings/pillars/about/trust/partners;
-REMOVE glossary/blog/tools/legal/info/help). **NEXT: TASK 2 answer-rewrite (after 6A confirm) · TASK 3 t-hub additions ·
-TASK 4 phone-in-meta · TASK 5 silo interlinks (safe everywhere) · add-David-to-about/trust/partners (deferred design).**
-**FLAGS:** glossary "TechBrot operators are listed there" (false NOW — soften?); keep/remove the 5 authority citations; David on HOME ok?
+**TASK 6A APPLIED** (reviewedBy David removed from 232 remove-bucket sources; built reviewedBy now 296 pages; global Person
+node persists). Honesty flags resolved (glossary false claims softened; 5 authority citations kept; home David kept).
+**🛑 FOUNDER DECISION PENDING:** money D1 pages + about/trust/partners NEVER had reviewedBy — add it there to match the
+"keep on money" intent? (recommend YES — honest, on-goal; about/trust/partners getting it via the David block.)
+**NEXT (autonomous): TASK 4 phone-in-meta (high-intent ~52 pages) · add-David-block about/trust/partners · TASK 2 FAQ
+rewrite (answer-first + call-intent FAQ) · TASK 3 t-hub additions · TASK 5 silo interlinks.** (Prior "580/348/232" framing
+was the global Person-node count, not reviewedBy refs — corrected in session-log.)
 (history below: the recompose/backlog detail.)
 
 ## 🚦 PRE-FLIP OPEN ITEMS (start here next session — 2026-06-25)

@@ -107,7 +107,7 @@ module.exports = {
     pageGraph(data){
       const url="https://techbrot.com/vs/techbrot-vs-bench/";
       return {"@context":"https://schema.org","@graph":[
-        {"@type":["CollectionPage","WebPage"],"@id":url+"#webpage","url":url,"name":data.title,"description":data.description,"isPartOf":{"@id":"https://techbrot.com/#website"},"about":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"inLanguage":"en-US","reviewedBy":{"@id":"https://techbrot.com/#david-westgate"},"lastReviewed":"2026-06-15","speakable":{"@type":"SpeakableSpecification","cssSelector":["#vs-bench-in-brief-text"]}},
+        {"@type":["CollectionPage","WebPage"],"@id":url+"#webpage","url":url,"name":data.title,"description":data.description,"isPartOf":{"@id":"https://techbrot.com/#website"},"about":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"inLanguage":"en-US","speakable":{"@type":"SpeakableSpecification","cssSelector":["#vs-bench-in-brief-text"]}},
         {"@type":"BreadcrumbList","@id":url+"#breadcrumb","itemListElement":[
           {"@type":"ListItem","position":1,"name":"Home","item":"https://techbrot.com/"},
           {"@type":"ListItem","position":2,"name":"Comparisons","item":"https://techbrot.com/vs/"},

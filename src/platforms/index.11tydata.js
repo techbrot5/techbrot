@@ -55,7 +55,7 @@ module.exports = {
   eleventyComputed: {
     pageGraph(data){
       return {"@context":"https://schema.org","@graph":[
-        {"@type":["CollectionPage","WebPage"],"@id":URL+"#webpage","url":URL,"name":"Platforms We're Certified On","description":"TechBrot is an independent accounting-technology advisory firm — not Intuit. QuickBooks is the platform we're certified on today; additional platforms are added only when the certification or partnership is real. No fabricated credentials.","isPartOf":{"@id":ORIGIN+"/#website"},"about":{"@id":ORIGIN+"/#organization"},"publisher":{"@id":ORIGIN+"/#organization"},"breadcrumb":{"@id":URL+"#breadcrumb"},"inLanguage":"en-US","speakable":{"@type":"SpeakableSpecification","cssSelector":["#platforms-hub-summary"]},"reviewedBy":{"@id":ORIGIN+"/#david-westgate"},"lastReviewed":"2026-06-18"},
+        {"@type":["CollectionPage","WebPage"],"@id":URL+"#webpage","url":URL,"name":"Platforms We're Certified On","description":"TechBrot is an independent accounting-technology advisory firm — not Intuit. QuickBooks is the platform we're certified on today; additional platforms are added only when the certification or partnership is real. No fabricated credentials.","isPartOf":{"@id":ORIGIN+"/#website"},"about":{"@id":ORIGIN+"/#organization"},"publisher":{"@id":ORIGIN+"/#organization"},"breadcrumb":{"@id":URL+"#breadcrumb"},"inLanguage":"en-US","speakable":{"@type":"SpeakableSpecification","cssSelector":["#platforms-hub-summary"]}},
         {"@type":"BreadcrumbList","@id":URL+"#breadcrumb","itemListElement":[
           {"@type":"ListItem","position":1,"name":"Home","item":ORIGIN+"/"},
           {"@type":"ListItem","position":2,"name":"Platforms"}]},

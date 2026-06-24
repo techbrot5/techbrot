@@ -43,7 +43,7 @@ module.exports = {
   eleventyComputed: {
     pageGraph(data){
       return {"@context":"https://schema.org","@graph":[
-        {"@type":["CollectionPage","WebPage"],"@id":URL+"#webpage","url":URL,"name":"Free Accounting & QuickBooks Resources","description":"Free, genuinely useful accounting & QuickBooks resources from Certified ProAdvisors — plain-English guides, practical checklists, a glossary, and original data. Independent firm, not Intuit.","isPartOf":{"@id":ORIGIN+"/#website"},"about":{"@id":ORIGIN+"/#organization"},"publisher":{"@id":ORIGIN+"/#organization"},"breadcrumb":{"@id":URL+"#breadcrumb"},"inLanguage":"en-US","speakable":{"@type":"SpeakableSpecification","cssSelector":["#resources-hub-summary"]},"reviewedBy":{"@id":ORIGIN+"/#david-westgate"},"lastReviewed":"2026-06-18"},
+        {"@type":["CollectionPage","WebPage"],"@id":URL+"#webpage","url":URL,"name":"Free Accounting & QuickBooks Resources","description":"Free, genuinely useful accounting & QuickBooks resources from Certified ProAdvisors — plain-English guides, practical checklists, a glossary, and original data. Independent firm, not Intuit.","isPartOf":{"@id":ORIGIN+"/#website"},"about":{"@id":ORIGIN+"/#organization"},"publisher":{"@id":ORIGIN+"/#organization"},"breadcrumb":{"@id":URL+"#breadcrumb"},"inLanguage":"en-US","speakable":{"@type":"SpeakableSpecification","cssSelector":["#resources-hub-summary"]}},
         {"@type":"BreadcrumbList","@id":URL+"#breadcrumb","itemListElement":[
           {"@type":"ListItem","position":1,"name":"Home","item":ORIGIN+"/"},
           {"@type":"ListItem","position":2,"name":"Resources"}]},

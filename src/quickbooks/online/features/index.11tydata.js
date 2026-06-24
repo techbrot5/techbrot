@@ -99,7 +99,7 @@ module.exports = {
   eleventyComputed: {
     pageGraph(data){
       return {"@context":"https://schema.org","@graph":[
-        {"@type":["CollectionPage","WebPage"],"@id":URL+"#webpage","url":URL,"name":"QuickBooks Online Features: The Complete ProAdvisor Guide","description":"Every core QuickBooks Online feature explained by Certified ProAdvisors — invoices, bills, bank feeds, reconciliation, inventory, projects, payroll, reports, and more — and how an independent firm sets each up in your file.","isPartOf":{"@id":ORIGIN+"/#website"},"about":{"@id":ORIGIN+"/#organization"},"publisher":{"@id":ORIGIN+"/#organization"},"breadcrumb":{"@id":URL+"#breadcrumb"},"inLanguage":"en-US","speakable":{"@type":"SpeakableSpecification","cssSelector":["#qbo-features-hub-summary"]},"reviewedBy":{"@id":ORIGIN+"/#david-westgate"},"lastReviewed":"2026-06-18"},
+        {"@type":["CollectionPage","WebPage"],"@id":URL+"#webpage","url":URL,"name":"QuickBooks Online Features: The Complete ProAdvisor Guide","description":"Every core QuickBooks Online feature explained by Certified ProAdvisors — invoices, bills, bank feeds, reconciliation, inventory, projects, payroll, reports, and more — and how an independent firm sets each up in your file.","isPartOf":{"@id":ORIGIN+"/#website"},"about":{"@id":ORIGIN+"/#organization"},"publisher":{"@id":ORIGIN+"/#organization"},"breadcrumb":{"@id":URL+"#breadcrumb"},"inLanguage":"en-US","speakable":{"@type":"SpeakableSpecification","cssSelector":["#qbo-features-hub-summary"]}},
         {"@type":"BreadcrumbList","@id":URL+"#breadcrumb","itemListElement":[
           {"@type":"ListItem","position":1,"name":"Home","item":ORIGIN+"/"},
           {"@type":"ListItem","position":2,"name":"QuickBooks","item":ORIGIN+"/quickbooks/"},

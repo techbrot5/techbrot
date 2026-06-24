@@ -645,7 +645,7 @@ module.exports = [
       { href: "/about/", title: "About TechBrot", blurb: "An independent ProAdvisor firm &mdash; not Intuit." },
       { href: "/vs/bookkeeper-vs-accountant/", title: "Bookkeeper vs. accountant", blurb: "Where a ProAdvisor sits relative to a CPA." },
     ],
-    call: { title: "Want to verify a ProAdvisor&rsquo;s credentials?", sub: "Active ProAdvisors are listed on Intuit&rsquo;s public Find-a-ProAdvisor directory. A Certified ProAdvisor at TechBrot can walk you through verifying any firm&rsquo;s certifications, including ours." },
+    call: { title: "Want to verify a ProAdvisor&rsquo;s credentials?", sub: "Active ProAdvisors are listed on Intuit&rsquo;s public Find-a-ProAdvisor directory. A Certified ProAdvisor at TechBrot can walk you through verifying any firm&rsquo;s certifications." },
     faq: [
       { q: "What is a Certified QuickBooks ProAdvisor?", a: "A Certified QuickBooks ProAdvisor is an accountant or bookkeeper who has completed Intuit&rsquo;s training and passed its certification exam on a QuickBooks product (Online, Desktop, Enterprise, or Payroll), with annual recertification. It signals tested fluency in the software." },
       { q: "Does being a ProAdvisor mean a firm is affiliated with Intuit?", a: "No. The ProAdvisor credential is a certification a firm holds from Intuit &mdash; it does not mean the firm is employed by, affiliated with, sponsored by, or endorsed by Intuit. TechBrot is an independent firm and is not affiliated with Intuit Inc." },

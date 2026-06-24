@@ -84,7 +84,7 @@ module.exports = {
   eleventyComputed: {
     pageGraph(data){
       return {"@context":"https://schema.org","@graph":[
-        {"@type":["CollectionPage","WebPage"],"@id":URL+"#webpage","url":URL,"name":"Accounting & QuickBooks Guides","description":"Plain-English accounting and QuickBooks guides from Certified ProAdvisors — how bookkeeping, QuickBooks, hiring, pricing, and compliance actually work for small businesses. Free, dated, and reviewed. Independent firm, not Intuit.","isPartOf":{"@id":ORIGIN+"/#website"},"about":{"@id":ORIGIN+"/#organization"},"publisher":{"@id":ORIGIN+"/#organization"},"breadcrumb":{"@id":URL+"#breadcrumb"},"inLanguage":"en-US","speakable":{"@type":"SpeakableSpecification","cssSelector":["#guides-hub-summary"]},"reviewedBy":{"@id":ORIGIN+"/#david-westgate"},"lastReviewed":"2026-06-18"},
+        {"@type":["CollectionPage","WebPage"],"@id":URL+"#webpage","url":URL,"name":"Accounting & QuickBooks Guides","description":"Plain-English accounting and QuickBooks guides from Certified ProAdvisors — how bookkeeping, QuickBooks, hiring, pricing, and compliance actually work for small businesses. Free, dated, and reviewed. Independent firm, not Intuit.","isPartOf":{"@id":ORIGIN+"/#website"},"about":{"@id":ORIGIN+"/#organization"},"publisher":{"@id":ORIGIN+"/#organization"},"breadcrumb":{"@id":URL+"#breadcrumb"},"inLanguage":"en-US","speakable":{"@type":"SpeakableSpecification","cssSelector":["#guides-hub-summary"]}},
         {"@type":"BreadcrumbList","@id":URL+"#breadcrumb","itemListElement":[
           {"@type":"ListItem","position":1,"name":"Home","item":ORIGIN+"/"},
           {"@type":"ListItem","position":2,"name":"Resources","item":ORIGIN+"/resources/"},
