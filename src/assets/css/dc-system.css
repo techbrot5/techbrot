@@ -469,7 +469,32 @@ h1, h2, h3 { font-weight: 500; text-wrap: balance; }
 .disclose--lead .disclose__body p + p { margin-top: 10px; font-size: 14.5px; line-height: 1.6; color: #7E4D06; }
 
 /* FIX STEPS — numbered procedure (HowTo), v2 petrol step chips */
-.steps { display: grid; }
+/* .steps is shared by HowTo fix-steps (.fixstep children, already row-shaped) AND the guide/
+   process .step children. Force single-column (overrides 06-content.css `.steps{repeat(4,1fr)}`
+   that made .step a row of narrow ribbon columns). Pre-flip fix 2026-06-25 — 159 pages inherit. */
+.steps { display: grid; grid-template-columns: 1fr; gap: 0; }
+/* .step → HORIZONTAL row: mono number gutter + heading/body across full width (was a narrow
+   4-col column wrapping to ribbons). Mirrors the .process-step treatment. */
+.step { display: grid; grid-template-columns: 92px 1fr; column-gap: 24px; row-gap: 6px; align-items: baseline; padding: 22px 0; border-right: 0; border-bottom: 1px solid var(--border-default); min-width: 0; }
+.step:first-child { padding-top: 4px; padding-left: 0; }
+.step:last-child { padding-bottom: 0; padding-right: 0; border-right: 0; border-bottom: 0; }
+.step__n { grid-column: 1; grid-row: 1 / span 2; align-self: baseline; font-family: 'Spline Sans Mono', monospace; font-size: 13px; color: var(--cta); margin: 0; white-space: nowrap; }
+.step__n--done { color: var(--color-success); }
+.step__t { grid-column: 2; grid-row: 1; font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 19px; color: var(--color-ink); margin: 0; overflow-wrap: anywhere; }
+.step__d { grid-column: 2; grid-row: 2; font-size: 14.5px; line-height: 1.6; color: var(--color-ink-mute); margin: 0; overflow-wrap: anywhere; }
+@media (max-width: 520px) { .step { grid-template-columns: 1fr; row-gap: 5px; } .step__n { grid-row: auto; margin-bottom: 4px; } .step__t, .step__d { grid-column: 1; grid-row: auto; } }
+/* TIER LIST (.tierprose) — the "what you're paying for / tier-by-capability" blocks were raw
+   <h3>+<p> prose reading as an undesigned text wall. Now: each tier is a separated row with a
+   top rule + an accent marker + the heading as a clear label + body beneath. Content UNCHANGED
+   (h3 text kept verbatim = content-equity safe). Pre-flip 2026-06-25; premium version = Part 2. */
+.tierprose { margin-top: 6px; }
+.tierprose > h3 { display: flex; align-items: baseline; gap: 12px; margin: 0; padding: 22px 0 0; border-top: 1px solid var(--border-subtle); font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'opsz' 40; font-weight: 600; font-size: 18px; line-height: 1.25; color: var(--color-ink); text-wrap: balance; }
+.tierprose > h3::before { content: ""; flex: none; width: 20px; height: 3px; margin-top: 9px; border-radius: 2px; background: var(--color-accent); }
+.tierprose > h3:first-child { border-top: 0; padding-top: 0; }
+.tierprose > p { margin: 8px 0 22px 32px; font-size: 14.5px; line-height: 1.65; color: var(--color-ink-mute); }
+.tierprose > p:last-child { margin-bottom: 0; }
+.tierprose > p strong { color: var(--color-ink); }
+@media (max-width: 520px) { .tierprose > p { margin-left: 0; } }
 .fixstep { display: grid; grid-template-columns: 40px 1fr; gap: 16px; padding: 20px 0; border-top: 1px solid var(--border-subtle); }
 .fixstep:last-child { border-bottom: 1px solid var(--border-subtle); }
 .fixstep__n { font-family: 'Spline Sans Mono', monospace; font-size: 13px; font-weight: 600; color: var(--white); background: var(--color-accent); width: 32px; height: 32px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; flex: none; }
