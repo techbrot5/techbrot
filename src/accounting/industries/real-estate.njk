@@ -1,13 +1,15 @@
----json
+﻿---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/industries/real-estate/",
   "slug": "acctind-realestate",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
-  "title": "Real Estate Accounting &amp; QuickBooks Bookkeeping · TechBrot",
-  "description": "Expert real estate accounting and QuickBooks bookkeeping — per-property tracking, security-deposit and owner-fund handling, depreciation, and software integration by Certified ProAdvisors for landlords, investors, and property managers.",
+  "sec": {
+    "aiH": "Real estate accounting, in five questions.",
+    "faqH": "Real estate accounting questions."
+  },
+  "title": "Real Estate Accounting &amp; QuickBooks Bookkeeping Â· TechBrot",
+  "description": "Expert real estate accounting and QuickBooks bookkeeping â€” per-property tracking, security-deposit and owner-fund handling, depreciation, and software integration by Certified ProAdvisors for landlords, investors, and property managers.",
   "breadcrumb": [
     { "name": "Home", "href": "/" },
     { "name": "Accounting", "href": "/accounting/" },
@@ -40,205 +42,126 @@
 }
 ---
 
-{# ── DEFINITION · real H2 carrying the plain-language definition prose. (H2: Real estate accounting, plainly.) ── #}
-<section class="section section--compact section--tier-guide" id="acctind-realestate-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Real estate accounting, plainly.</h2>
-    </header>
+{#- â•â•â• INDUSTRY Â· Real estate (BASELINE) Â· t-mofuâ†’t-prose, dc-base chrome. Every
+    baseline heading verbatim at level; content verbatim (no thin). ai-summary + faq
+    rendered by t-prose from data (sec.aiH/faqH). #acctind-realestate-definition speakable
+    target + #acctind-realestate-in-brief-text (layout TL;DR) preserved. â•â•â• -#}
+
+{#- DEFINITION â€” speakable target id PRESERVED. -#}
+<section class="sec reveal" id="acctind-realestate-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Real estate accounting, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── AI SUMMARY · five-question quick-answer block. Questions are NON-heading
-     (ai-summary__question as <dt>) — the 5 quick-answer Qs are NOT in the frozen
-     heading inventory. (H2: Real estate accounting, in five questions.) ── #}
-<section class="section" id="acctind-realestate-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Real estate accounting, in five questions.</h2>
-    </header>
-    <dl class="ai-summary ai-summary--ruled" id="acctind-realestate-ai-summary-list">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
-        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
-      </div>
-      {%- endfor %}
-    </dl>
-  </div>
-</section>
-
-{# ── CHALLENGES · three places owners lose the numbers (grid-3 buyer-cards).
-     (H2: Three places owners lose the numbers. + 3 H3s verbatim) ── #}
-<section class="section section--alt" id="acctind-realestate-challenges">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Why real estate books break</p>
-      <h2 class="section__heading">Three places owners lose the numbers.</h2>
-      <p class="section__lede">Nearly every messy real estate file fails in the same three areas. Knowing which one you&rsquo;re in tells us where to start.</p>
-    </header>
-    <div class="grid-3">
+{#- CHALLENGES â€” 3 H3s verbatim (r-3 dc-card). -#}
+<section class="sec reveal hub-rt--alt" id="acctind-realestate-challenges" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Why real estate books break</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Three places owners lose the numbers.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Nearly every messy real estate file fails in the same three areas. Knowing which one you&rsquo;re in tells us where to start.</p>
+    <div class="r-3">
       {%- for c in challenges %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ c.signal | safe }}</p>
-        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
-        <p class="buyer-card__body">{{ c.body | safe }}</p>
-      </article>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ c.signal | safe }}</span><h3>{{ c.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── WHAT WE HANDLE · the six services (grid-3 buyer-cards).
-     (H2: Real estate accounting, done by an expert. + 6 H3s verbatim) ── #}
-<section class="section" id="acctind-realestate-handle">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What TechBrot handles</p>
-      <h2 class="section__heading">Real estate accounting, done by an expert.</h2>
-      <p class="section__lede">Every engagement is scoped to your properties and software, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
-    </header>
-    <div class="grid-3">
+{#- WHAT WE HANDLE â€” 6 H3s verbatim (r-3 dc-card, h3 linked). -#}
+<section class="sec reveal" id="acctind-realestate-handle">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">What TechBrot handles</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Real estate accounting, done by an expert.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Every engagement is scoped to your properties and software, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    <div class="r-3">
       {%- for s in handle %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ s.num }}</p>
-        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ s.href }}">{{ s.cta | safe }}</a>
-      </article>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ s.num }}</span><h3><a href="{{ s.href }}">{{ s.title | safe }}</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p><p class="prose" style="font-size:14.5px;margin:8px 0 0;"><a href="{{ s.href }}">{{ s.cta | safe }}</a></p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── PER-PROPERTY BOOK ANATOMY · content-to-goal table (vs-scroll + vs-table,
-     no collapse per T3). Real national real-estate specificity. ── #}
-<section class="section section--alt" id="acctind-realestate-anatomy">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How the books are built</p>
-      <h2 class="section__heading">What a real-estate ledger does that a standard one can&rsquo;t.</h2>
-      <p class="section__lede">The difference between a generalist file and a real-estate file isn&rsquo;t effort &mdash; it&rsquo;s structure. Each row below is a place property accounting diverges from ordinary bookkeeping.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">How real-estate bookkeeping differs from standard company-wide bookkeeping</caption>
-        <thead><tr><th scope="col">What it tracks</th><th scope="col" class="vs-table__us">Real-estate books</th><th scope="col">Standard books</th></tr></thead>
-        <tbody>
-          {%- for r in anatomy %}
-          <tr>
-            <th scope="row">{{ r.cap | safe }}</th>
-            <td class="vs-table__us">{{ r.re | safe }}</td>
-            <td>{{ r.std | safe }}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
-    <p class="prose">{{ anatomyNote | safe }}</p>
+{#- PER-PROPERTY BOOK ANATOMY â€” content-to-goal table (.cmp). -#}
+<section class="sec reveal" id="acctind-realestate-anatomy">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">How the books are built</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What a real-estate ledger does that a standard one can&rsquo;t.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">The difference between a generalist file and a real-estate file isn&rsquo;t effort &mdash; it&rsquo;s structure. Each row below is a place property accounting diverges from ordinary bookkeeping.</p>
+    <table class="cmp">
+      <caption class="sr-only">How real-estate bookkeeping differs from standard company-wide bookkeeping</caption>
+      <thead><tr><th scope="col">What it tracks</th><th scope="col" class="us">Real-estate books</th><th scope="col">Standard books</th></tr></thead>
+      <tbody>
+        {%- for r in anatomy %}
+        <tr>
+          <th scope="row" data-col="What it tracks">{{ r.cap | safe }}</th>
+          <td class="us" data-col="Real-estate books">{{ r.re | safe }}</td>
+          <td data-col="Standard books">{{ r.std | safe }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+    <p class="prose" style="margin-top:16px;">{{ anatomyNote | safe }}</p>
   </div>
 </section>
 
-{# ── INTEGRATIONS · property tools reconciled with QuickBooks (checks-list).
-     (H2: Connected to how you manage property.) ── #}
-<section class="section" id="acctind-realestate-integrations">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Platforms we reconcile</p>
-      <h2 class="section__heading">Connected to how you manage property.</h2>
-    </header>
-    <ul class="checks-list">
+{#- INTEGRATIONS â€” checks-list. -#}
+<section class="sec reveal hub-rt--alt" id="acctind-realestate-integrations" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Platforms we reconcile</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Connected to how you manage property.</h2>
+    <ul class="checklist">
       {%- for t in integrations %}<li>{{ t | safe }}</li>{%- endfor %}
     </ul>
-    <p class="prose">{{ integrationsNote | safe }}</p>
+    <p class="prose" style="margin-top:16px;">{{ integrationsNote | safe }}</p>
   </div>
 </section>
 
-{# ── PROCESS · four-phase engagement rhythm (grid-2 buyer-cards).
-     (H2: From mixed-up ledgers to clean per-property books. + 4 H3s verbatim) ── #}
-<section class="section section--alt" id="acctind-realestate-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How engagements work</p>
-      <h2 class="section__heading">From mixed-up ledgers to clean per-property books.</h2>
-      <p class="section__lede">Every real estate engagement follows the same four-phase rhythm &mdash; built so your books are accurate before anyone tries to advise on them.</p>
-    </header>
-    <div class="grid-2">
+{#- PROCESS â€” 4 H3s verbatim (process-grid). -#}
+<section class="sec reveal" id="acctind-realestate-process">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">How engagements work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From mixed-up ledgers to clean per-property books.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Every real estate engagement follows the same four-phase rhythm &mdash; built so your books are accurate before anyone tries to advise on them.</p>
+    <div class="process-grid">
       {%- for p in process %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ p.phase }}</p>
-        <h3 class="buyer-card__heading">{{ p.title | safe }}</h3>
-        <p class="buyer-card__body">{{ p.body | safe }}</p>
-      </article>
+      <div class="process-step"><div class="process-step__n">{{ p.phase }}</div><h3>{{ p.title | safe }}</h3><p>{{ p.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── ADVISORY · standing brand line carried as section prose.
-     (H2: Clean books are the start. The next deal is the point.) ── #}
-<section class="section" id="acctind-realestate-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the books</p>
-      <h2 class="section__heading">Clean books are the start. The next deal is the point.</h2>
-    </header>
+{#- ADVISORY â€” prose. -#}
+<section class="sec reveal hub-rt--alt" id="acctind-realestate-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Beyond the books</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Clean books are the start. The next deal is the point.</h2>
     <div class="prose">
       {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="/contact/?intent=accounting">Book the discovery call</a>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;">
+      <a class="btn btn-cta" href="/contact/?intent=accounting" style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Book the discovery call</a>
     </div>
   </div>
 </section>
 
-{# ── FAQ · 7 verbatim contract Q/A; visible faq__list = FAQPage schema (same array).
-     (H2: Real estate accounting questions.) ── #}
-<section class="section section--alt" id="acctind-realestate-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Real estate accounting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acctind-realestate-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acctind-realestate-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
+{#- EXPERT REVIEW â€” firm-level byline + trust-row + meta-reviewed. -#}
+<section class="sec reveal" id="acctind-realestate-review">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the ProAdvisor team.</h2>
+    <div class="byline">
+      <span class="prose-byline__mark"><svg width="16" height="16" viewBox="0 0 64 64" fill="#FCFBF8" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span>
+      <div><p class="prose-byline__name">By the Certified QuickBooks ProAdvisor team</p><p class="prose-byline__meta">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p></div>
     </div>
-  </div>
-</section>
-
-{# ── EXPERT REVIEW · firm-level, no founder name (byline-block + trust-row + meta-reviewed).
-     (H2: Reviewed by the ProAdvisor team.) ── #}
-<section class="section" id="acctind-realestate-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
-    <div class="byline-block">
-      <div class="byline-block__mark" aria-hidden="true"></div>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
-      </div>
-    </div>
-    <div class="prose">
+    <div class="prose" style="margin-top:18px;">
       <p>This page reflects how TechBrot actually handles real estate engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on per-property and per-unit tracking, deposit and owner-fund handling, and fixed-asset and depreciation treatment. Where our approach or scope changes, this page is updated. TechBrot keeps the books; your CPA or EA files income taxes and sets depreciation method and tax treatment.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for c in reviewCreds %}
       <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -248,21 +171,14 @@
   </div>
 </section>
 
-{# ── RELATED · services & industries (grid-2 buyer-cards).
-     (H2: Related services & industries. + 4 H3s verbatim) ── #}
-<section class="section section--alt" id="acctind-realestate-related">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services &amp; industries.</h2>
-    </header>
-    <div class="grid-2">
+{#- RELATED â€” 4 H3s verbatim (r-2 hub-card). -#}
+<section class="sec reveal hub-rt--alt" id="acctind-realestate-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related services &amp; industries.</h2>
+    <div class="r-2">
       {%- for r in related %}
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading">{{ r.title | safe }}</h3>
-        <p class="buyer-card__body">{{ r.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>
-      </article>
+      <a class="dc-card hub-card" href="{{ r.href }}"><h3>{{ r.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ r.body | safe }}</p><span class="hub-card__go">{{ r.cta | replace(" &rarr;", "") | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>

@@ -1,19 +1,21 @@
----json
+﻿---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/industries/manufacturing/",
   "slug": "acctind-manufacturing",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
   "title": "Manufacturing Accounting: Inventory, BOM, Job Costing, COGS &middot; TechBrot",
-  "description": "Specialist accounting for U.S. manufacturers — raw materials, WIP, finished goods, bill of materials, job costing, landed cost, multi-location inventory. Built for QuickBooks Enterprise and growing manufacturers. Certified ProAdvisors, fixed-fee, independent firm.",
+  "description": "Specialist accounting for U.S. manufacturers â€” raw materials, WIP, finished goods, bill of materials, job costing, landed cost, multi-location inventory. Built for QuickBooks Enterprise and growing manufacturers. Certified ProAdvisors, fixed-fee, independent firm.",
   "breadcrumb": [
     { "name": "Home", "href": "/" },
     { "name": "Accounting", "href": "/accounting/" },
     { "name": "Industries", "href": "/accounting/industries/" },
     { "name": "Manufacturing" }
   ],
+  "sec": {
+    "aiH": "Manufacturing accounting, in five questions.",
+    "faqH": "Manufacturing accounting questions."
+  },
   "hero": {
     "eyebrow": "Industry &middot; Manufacturing accounting",
     "heading": "Manufacturing accounting that tracks every raw material to every finished sale.",
@@ -40,207 +42,137 @@
 }
 ---
 
-{# ── DEFINITION · real H2 carrying the manufacturing definition prose. (H2: Manufacturing accounting, plainly.) ── #}
-<section class="section" id="acctind-manufacturing-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Manufacturing accounting, plainly.</h2>
-    </header>
+{#- â•â•â• ACCTIND MANUFACTURING (BASELINE, equity-gated). t-mofuâ†’t-prose (dc-base). Every
+    baseline heading verbatim at level; content verbatim. DEFINITION id #acctind-manufacturing-definition
+    preserved (speakable target 1). ai-summary + faq DELETED from body â€” t-prose renders them from
+    data via sec.aiH/sec.faqH; layout emits #acctind-manufacturing-ai-summary (speakable target 2). â•â•â• -#}
+
+{#- DEFINITION Â· speakable target â€” id PRESERVED. (H2: Manufacturing accounting, plainly.) -#}
+<section class="sec reveal" id="acctind-manufacturing-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Manufacturing accounting, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── AI SUMMARY · five-question block. NON-heading questions (baseline <dt>). (H2: Manufacturing accounting, in five questions.) ── #}
-<section class="section section--alt" id="acctind-manufacturing-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Manufacturing accounting, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <p class="ai-summary__question">{{ item.q | safe }}</p>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── CHALLENGES · three places manufacturers lose the numbers (grid-3 buyer-cards). (H2 + 3 H3s) ── #}
-<section class="section" id="acctind-manufacturing-challenges">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Why manufacturing books break</p>
-      <h2 class="section__heading">Three places manufacturers lose the numbers.</h2>
-      <p class="section__lede">Nearly every messy manufacturing file fails in the same three areas. Knowing which one you&rsquo;re in tells us where to start.</p>
-    </header>
-    <div class="grid-3">
+{#- CHALLENGES Â· three places manufacturers lose the numbers (r-3 dc-card). (H2 + 3 H3s) -#}
+<section class="sec reveal" id="acctind-manufacturing-challenges">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Why manufacturing books break</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Three places manufacturers lose the numbers.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Nearly every messy manufacturing file fails in the same three areas. Knowing which one you&rsquo;re in tells us where to start.</p>
+    <div class="r-3">
       {%- for c in challenges %}
-      <div class="buyer-card">
-        <p class="buyer-card__opener">{{ c.signal | safe }}</p>
-        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
-        <p class="buyer-card__body">{{ c.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ c.signal | safe }}</span><h3>{{ c.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── SUB-VERTICALS · manufacturing comes in many shapes (grid-3 stack-8). (H2 + 6 H3s) ── #}
-<section class="section section--alt" id="acctind-manufacturing-subverticals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Who we serve</p>
-      <h2 class="section__heading">Manufacturing comes in many shapes.</h2>
-      <p class="section__lede">Each manufacturing sub-segment has its own inventory and costing patterns. The engagement model &mdash; fixed-fee, written scope, named ProAdvisor, work in your own QuickBooks file &mdash; stays consistent.</p>
-    </header>
-    <div class="grid-3">
+{#- SUB-VERTICALS Â· manufacturing comes in many shapes (r-3 dc-card, sand). (H2 + 6 H3s) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-manufacturing-subverticals" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Who we serve</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Manufacturing comes in many shapes.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Each manufacturing sub-segment has its own inventory and costing patterns. The engagement model &mdash; fixed-fee, written scope, named ProAdvisor, work in your own QuickBooks file &mdash; stays consistent.</p>
+    <div class="r-3">
       {%- for s in subverticals %}
-      <div class="stack-8">
-        <h3>{{ s.title | safe }}</h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ s.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── WHAT WE HANDLE · the six services (grid-3 stack-8). (H2 + 6 H3s) ── #}
-<section class="section" id="acctind-manufacturing-handle">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What TechBrot handles</p>
-      <h2 class="section__heading">Manufacturing accounting, done by an expert.</h2>
-      <p class="section__lede">Every engagement is scoped to your sub-segment, SKU count, location count, and BOM complexity &mdash; delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
-    </header>
-    <div class="grid-3">
+{#- WHAT WE HANDLE Â· the six services (r-3 dc-card, linked h3). (H2 + 6 H3s) -#}
+<section class="sec reveal" id="acctind-manufacturing-handle">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">What TechBrot handles</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Manufacturing accounting, done by an expert.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Every engagement is scoped to your sub-segment, SKU count, location count, and BOM complexity &mdash; delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    <div class="r-3">
       {%- for s in handle %}
-      <div class="stack-8">
-        <p class="num">{{ s.num | safe }}</p>
-        <h3><a href="{{ s.href }}">{{ s.title | safe }}</a></h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ s.num | safe }}</span><h3><a href="{{ s.href }}">{{ s.title | safe }}</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── INTEGRATIONS · manufacturing stack reconciled with QuickBooks (checks-list). (H2: Connected to your manufacturing stack.) ── #}
-<section class="section section--alt" id="acctind-manufacturing-integrations">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Tools we integrate with</p>
-      <h2 class="section__heading">Connected to your manufacturing stack.</h2>
-    </header>
-    <ul class="checks-list">
+{#- INTEGRATIONS Â· manufacturing stack reconciled with QuickBooks (checks-list, sand). (H2: Connected to your manufacturing stack.) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-manufacturing-integrations" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Tools we integrate with</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Connected to your manufacturing stack.</h2>
+    <ul class="checklist">
       {%- for t in integrations %}<li>{{ t | safe }}</li>{%- endfor %}
     </ul>
-    <p class="prose">{{ integrationsNote | safe }}</p>
+    <p class="prose" style="margin-top:16px;">{{ integrationsNote | safe }}</p>
   </div>
 </section>
 
-{# ── COMPARISON · QBO inventory vs Enterprise advanced inventory · vs-scroll + vs-table (no collapse, T3). (H2: QuickBooks Online inventory vs. QuickBooks Enterprise advanced inventory.) ── #}
-<section class="section" id="acctind-manufacturing-comparison">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When manufacturers outgrow QBO</p>
-      <h2 class="section__heading">QuickBooks Online inventory vs. QuickBooks Enterprise advanced inventory.</h2>
-      <p class="section__lede">The structural differences that explain why most growing manufacturers eventually migrate to Enterprise &mdash; and where QBO genuinely still fits. We don&rsquo;t push Enterprise when QBO is the right call; we hold no reseller incentive in any direction.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">QuickBooks Online inventory compared with QuickBooks Enterprise advanced inventory for manufacturers</caption>
-        <thead><tr><th scope="col">What manufacturers need</th><th scope="col">QuickBooks Online</th><th scope="col" class="vs-table__us">QuickBooks Enterprise</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Inventory costing methods</th><td><span class="vs-table__concede">FIFO (Plus and above)</span></td><td class="vs-table__us"><span class="vs-table__concede">FIFO &amp; weighted-average with advanced inventory module</span></td></tr>
-          <tr><th scope="row">Multi-location inventory</th><td><span class="vs-table__concede">Workaround via classes or sites; not native</span></td><td class="vs-table__us"><span class="vs-table__concede">Native multi-location and multi-warehouse tracking</span></td></tr>
-          <tr><th scope="row">Bill of materials</th><td><span class="vs-table__concede">Bundles (limited); no multi-level BOM</span></td><td class="vs-table__us"><span class="vs-table__concede">Multi-level BOMs and assemblies with sub-assembly support</span></td></tr>
-          <tr><th scope="row">Lot &amp; serial number tracking</th><td><span class="mark-no"></span><span class="sr-only">No</span></td><td class="vs-table__us"><span class="mark-yes"></span><span class="sr-only">Yes</span></td></tr>
-          <tr><th scope="row">Bin location tracking</th><td><span class="mark-no"></span><span class="sr-only">No</span></td><td class="vs-table__us"><span class="mark-yes"></span><span class="sr-only">Yes</span></td></tr>
-          <tr><th scope="row">Barcode scanning</th><td><span class="vs-table__concede">Limited via third-party apps</span></td><td class="vs-table__us"><span class="vs-table__concede">Native barcode scanning for receiving and picking</span></td></tr>
-          <tr><th scope="row">SKU count handled cleanly</th><td><span class="vs-table__concede">Typically up to a few hundred SKUs</span></td><td class="vs-table__us"><span class="vs-table__concede">Thousands of SKUs without performance degradation</span></td></tr>
-          <tr><th scope="row">When it fits</th><td><span class="vs-table__concede">Single-location, simple BOM, low SKU count, no regulatory tracking</span></td><td class="vs-table__us"><span class="vs-table__concede">Multi-location, multi-level BOM, hundreds of SKUs, regulated</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="prose">We don&rsquo;t push Enterprise when QBO genuinely fits. For some manufacturers a connected inventory app (Cin7, Katana, Fishbowl) on QBO is enough; for others, dedicated manufacturing ERP is the right answer. The discovery call assesses honestly.</p>
+{#- COMPARISON Â· QBO inventory vs Enterprise advanced inventory (cmp) â€” HARDCODED rows. (H2) -#}
+<section class="sec reveal" id="acctind-manufacturing-comparison">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">When manufacturers outgrow QBO</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">QuickBooks Online inventory vs. QuickBooks Enterprise advanced inventory.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:72ch;">The structural differences that explain why most growing manufacturers eventually migrate to Enterprise &mdash; and where QBO genuinely still fits. We don&rsquo;t push Enterprise when QBO is the right call; we hold no reseller incentive in any direction.</p>
+    <table class="cmp">
+      <caption class="sr-only">QuickBooks Online inventory compared with QuickBooks Enterprise advanced inventory for manufacturers</caption>
+      <thead><tr><th scope="col">What manufacturers need</th><th scope="col">QuickBooks Online</th><th scope="col" class="us">QuickBooks Enterprise</th></tr></thead>
+      <tbody>
+        <tr><th scope="row" data-col="What manufacturers need">Inventory costing methods</th><td data-col="QuickBooks Online">FIFO (Plus and above)</td><td class="us" data-col="QuickBooks Enterprise">FIFO &amp; weighted-average with advanced inventory module</td></tr>
+        <tr><th scope="row" data-col="What manufacturers need">Multi-location inventory</th><td data-col="QuickBooks Online">Workaround via classes or sites; not native</td><td class="us" data-col="QuickBooks Enterprise">Native multi-location and multi-warehouse tracking</td></tr>
+        <tr><th scope="row" data-col="What manufacturers need">Bill of materials</th><td data-col="QuickBooks Online">Bundles (limited); no multi-level BOM</td><td class="us" data-col="QuickBooks Enterprise">Multi-level BOMs and assemblies with sub-assembly support</td></tr>
+        <tr><th scope="row" data-col="What manufacturers need">Lot &amp; serial number tracking</th><td data-col="QuickBooks Online"><span class="mark-no"></span><span class="sr-only">No</span></td><td class="us" data-col="QuickBooks Enterprise"><span class="mark-yes"></span><span class="sr-only">Yes</span></td></tr>
+        <tr><th scope="row" data-col="What manufacturers need">Bin location tracking</th><td data-col="QuickBooks Online"><span class="mark-no"></span><span class="sr-only">No</span></td><td class="us" data-col="QuickBooks Enterprise"><span class="mark-yes"></span><span class="sr-only">Yes</span></td></tr>
+        <tr><th scope="row" data-col="What manufacturers need">Barcode scanning</th><td data-col="QuickBooks Online">Limited via third-party apps</td><td class="us" data-col="QuickBooks Enterprise">Native barcode scanning for receiving and picking</td></tr>
+        <tr><th scope="row" data-col="What manufacturers need">SKU count handled cleanly</th><td data-col="QuickBooks Online">Typically up to a few hundred SKUs</td><td class="us" data-col="QuickBooks Enterprise">Thousands of SKUs without performance degradation</td></tr>
+        <tr><th scope="row" data-col="What manufacturers need">When it fits</th><td data-col="QuickBooks Online">Single-location, simple BOM, low SKU count, no regulatory tracking</td><td class="us" data-col="QuickBooks Enterprise">Multi-location, multi-level BOM, hundreds of SKUs, regulated</td></tr>
+      </tbody>
+    </table>
+    <p class="prose" style="margin-top:14px;">We don&rsquo;t push Enterprise when QBO genuinely fits. For some manufacturers a connected inventory app (Cin7, Katana, Fishbowl) on QBO is enough; for others, dedicated manufacturing ERP is the right answer. The discovery call assesses honestly.</p>
   </div>
 </section>
 
-{# ── PROCESS · four-phase engagement rhythm (process-diagram). (H2 + 4 H3s) ── #}
-<section class="section section--alt" id="acctind-manufacturing-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How engagements work</p>
-      <h2 class="section__heading">From inventory chaos to true product margin.</h2>
-      <p class="section__lede">Every manufacturing engagement follows the same four-phase rhythm &mdash; built so inventory, BOM, landed cost, and SKU margin are accurate before anyone tries to make pricing decisions from them.</p>
-    </header>
-    <ol class="process-diagram">
+{#- PROCESS Â· four-phase engagement rhythm (process-grid, sand). (H2 + 4 H3s) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-manufacturing-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">How engagements work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From inventory chaos to true product margin.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Every manufacturing engagement follows the same four-phase rhythm &mdash; built so inventory, BOM, landed cost, and SKU margin are accurate before anyone tries to make pricing decisions from them.</p>
+    <div class="process-grid">
       {%- for s in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ s.num | safe }}{% if loop.last %} &check;{% endif %}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-{# ── ADVISORY · standing brand line carried as section prose. (H2: Accurate inventory is the start. Pricing the line is the point.) ── #}
-<section class="section" id="acctind-manufacturing-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the books</p>
-      <h2 class="section__heading">Accurate inventory is the start. Pricing the line is the point.</h2>
-    </header>
+{#- ADVISORY Â· standing brand line carried as section prose. (H2: Accurate inventory is the start. Pricing the line is the point.) -#}
+<section class="sec reveal" id="acctind-manufacturing-advisory">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Beyond the books</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Accurate inventory is the start. Pricing the line is the point.</h2>
     <div class="prose">
       {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="/contact/?intent=accounting">Book the discovery call</a>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;">
+      <a class="btn btn-cta" href="/contact/?intent=accounting" style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Book the discovery call</a>
     </div>
   </div>
 </section>
 
-{# ── FAQ · all 7 contract Q/A verbatim; visible faq__list = FAQPage schema (same array, NO dedup). (H2: Manufacturing accounting questions.) ── #}
-<section class="section section--alt" id="acctind-manufacturing-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Manufacturing accounting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acctind-manufacturing-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acctind-manufacturing-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── EXPERT REVIEW · firm-level, no founder name (trust-row + meta-reviewed). (H2: Reviewed by the ProAdvisor team.) ── #}
-<section class="section" id="acctind-manufacturing-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+{#- EXPERT REVIEW Â· firm-level, no founder name (prose + trust-row + meta-reviewed). (H2: Reviewed by the ProAdvisor team.) -#}
+<section class="sec reveal" id="acctind-manufacturing-review">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot actually handles manufacturing engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on three-stage inventory accounting, bill of materials, landed-cost capitalization, job costing, multi-location inventory, and QuickBooks Enterprise configuration. Where our approach or scope changes, this page is updated. TechBrot delivers the books and coordinates with your CPA, who files.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in reviewSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -250,18 +182,15 @@
   </div>
 </section>
 
-{# ── RELATED · services & industries (stack-8). (H2 + 4 H3s) ── #}
-<section class="section section--alt" id="acctind-manufacturing-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services &amp; industries.</h2>
-    </header>
-    {%- for r in related %}
-    <div class="stack-8">
-      <h3><a href="{{ r.href }}">{{ r.title | safe }}</a></h3>
-      <p class="prose">{{ r.body | safe }}</p>
+{#- RELATED Â· services & industries (r-3 hub-card, sand). (H2 + 4 H3s) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-manufacturing-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related services &amp; industries.</h2>
+    <div class="r-3">
+      {%- for r in related %}
+      <a class="dc-card hub-card" href="{{ r.href }}"><h3>{{ r.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ r.body | safe }}</p><span class="hub-card__go">{{ r.cta | default("Learn more", true) | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      {%- endfor %}
     </div>
-    {%- endfor %}
   </div>
 </section>

@@ -1,19 +1,21 @@
----json
+﻿---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/industries/property-management/",
   "slug": "acctind-propmgmt",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
-  "title": "Property Management Accounting &amp; QuickBooks Bookkeeping · TechBrot",
-  "description": "Expert property management accounting and QuickBooks bookkeeping — tenant security deposits as trust liabilities, monthly owner statements and draws, 1099-MISC to owners, management-fee revenue, CAM reconciliation, and AppFolio/Buildium reconciled to QuickBooks by Certified ProAdvisors. We keep records and reconcile only; we never hold or disburse trust funds.",
+  "title": "Property Management Accounting &amp; QuickBooks Bookkeeping Â· TechBrot",
+  "description": "Expert property management accounting and QuickBooks bookkeeping â€” tenant security deposits as trust liabilities, monthly owner statements and draws, 1099-MISC to owners, management-fee revenue, CAM reconciliation, and AppFolio/Buildium reconciled to QuickBooks by Certified ProAdvisors. We keep records and reconcile only; we never hold or disburse trust funds.",
   "breadcrumb": [
     { "name": "Home", "href": "/" },
     { "name": "Accounting", "href": "/accounting/" },
     { "name": "Industries", "href": "/accounting/industries/" },
     { "name": "Property Management" }
   ],
+  "sec": {
+    "aiH": "Property management accounting, in five questions.",
+    "faqH": "Property management accounting questions."
+  },
   "hero": {
     "eyebrow": "Industry &middot; Property management accounting",
     "heading": "Property management books that keep other people&rsquo;s money straight.",
@@ -40,197 +42,127 @@
 }
 ---
 
-{# ── DEFINITION · plain-language definition prose. (H2: Property management accounting, plainly.) ── #}
-<section class="section section--compact section--tier-guide" id="acctind-propmgmt-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Property management accounting, plainly.</h2>
-    </header>
+{#- â•â•â• ACCTIND PROPERTY MANAGEMENT (BASELINE, equity-gated, TRUST-SENSITIVE). t-mofuâ†’t-prose
+    (dc-base). Every baseline heading verbatim at level; EVERY trust-fund / liability statement EXACT
+    (data-driven; boundary prose + anatomy table + review prose preserved verbatim). DEFINITION id
+    #acctind-propmgmt-definition preserved (speakable target). ai-summary (was a <dl>) + faq DELETED
+    from body â€” t-prose renders from data via sec.aiH/sec.faqH; layout emits #acctind-propmgmt-ai-summary
+    (speakable target; data cssSelector updated to layout ai-summary id + in-brief-text). â•â•â• -#}
+
+{#- DEFINITION Â· plain-language definition prose. id PRESERVED (speakable). (H2: Property management accounting, plainly.) -#}
+<section class="sec reveal" id="acctind-propmgmt-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Property management accounting, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── AI SUMMARY · five-question quick-answer block. (H2: Property management accounting, in five questions.) ── #}
-<section class="section" id="pm-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Property management accounting, in five questions.</h2>
-    </header>
-    <dl class="ai-summary ai-summary--ruled" id="acctind-propmgmt-ai-summary-list">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
-        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
-      </div>
-      {%- endfor %}
-    </dl>
-  </div>
-</section>
-
-{# ── CHALLENGES · three places property managers lose the numbers (grid-3 buyer-cards). ── #}
-<section class="section section--alt" id="acctind-propmgmt-challenges">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Why property management books break</p>
-      <h2 class="section__heading">Three places managers put their license at risk.</h2>
-      <p class="section__lede">Property-management books rarely fail on the fee side &mdash; they fail on the money that belongs to someone else. These are the three places it goes wrong.</p>
-    </header>
-    <div class="grid-3">
+{#- CHALLENGES Â· three places property managers lose the numbers (r-3 dc-card). (H2 + 3 H3s) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-propmgmt-challenges" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Why property management books break</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Three places managers put their license at risk.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Property-management books rarely fail on the fee side &mdash; they fail on the money that belongs to someone else. These are the three places it goes wrong.</p>
+    <div class="r-3">
       {%- for c in challenges %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ c.signal | safe }}</p>
-        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
-        <p class="buyer-card__body">{{ c.body | safe }}</p>
-      </article>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ c.signal | safe }}</span><h3>{{ c.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── WHAT WE HANDLE · the six services (grid-3 buyer-cards). Also the ItemList deliverables. ── #}
-<section class="section" id="acctind-propmgmt-handle">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What TechBrot handles</p>
-      <h2 class="section__heading">Property management accounting, done by an expert.</h2>
-      <p class="section__lede">Every engagement is scoped to your trust setup, owner portfolio, and software, delivered in your own QuickBooks file by a named Certified ProAdvisor. We keep the records; the money stays in your accounts, under your control.</p>
-    </header>
-    <div class="grid-3">
+{#- WHAT WE HANDLE Â· the six services (r-3 dc-card hub-card; cta preserved as go-link). (H2 + 6 H3s) -#}
+<section class="sec reveal" id="acctind-propmgmt-handle">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">What TechBrot handles</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Property management accounting, done by an expert.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Every engagement is scoped to your trust setup, owner portfolio, and software, delivered in your own QuickBooks file by a named Certified ProAdvisor. We keep the records; the money stays in your accounts, under your control.</p>
+    <div class="r-3">
       {%- for s in handle %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ s.num }}</p>
-        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ s.href }}">{{ s.cta | safe }}</a>
-      </article>
+      <a class="dc-card hub-card" href="{{ s.href }}"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ s.num }}</span><h3>{{ s.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ s.body | safe }}</p><span class="hub-card__go">{{ s.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── TRUST BOUNDARY · the founder-ruling lane statement, carried as section prose. ── #}
-<section class="section section--alt" id="acctind-propmgmt-boundary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Where our lane stops</p>
-      <h2 class="section__heading">We keep the trust ledger. We never touch the trust money.</h2>
-    </header>
+{#- TRUST BOUNDARY Â· the founder-ruling lane statement, carried as section prose (sand). (H2) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-propmgmt-boundary" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Where our lane stops</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">We keep the trust ledger. We never touch the trust money.</h2>
     <div class="prose">
       {%- for p in boundary %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── BOOK ANATOMY · content-to-goal table (vs-scroll + vs-table, no collapse). ── #}
-<section class="section" id="acctind-propmgmt-anatomy">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How the books are built</p>
-      <h2 class="section__heading">What a property-management ledger does that a standard one can&rsquo;t.</h2>
-      <p class="section__lede">A management company&rsquo;s books carry three kinds of money at once &mdash; tenants&rsquo;, owners&rsquo;, and the firm&rsquo;s. Each row below is a place property-management accounting diverges from ordinary bookkeeping.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">How property-management bookkeeping differs from standard company-wide bookkeeping</caption>
-        <thead><tr><th scope="col">What it tracks</th><th scope="col" class="vs-table__us">Property-management books</th><th scope="col">Standard books</th></tr></thead>
-        <tbody>
-          {%- for r in anatomy %}
-          <tr>
-            <th scope="row">{{ r.cap | safe }}</th>
-            <td class="vs-table__us">{{ r.pm | safe }}</td>
-            <td>{{ r.std | safe }}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
-    <p class="prose">{{ anatomyNote | safe }}</p>
+{#- BOOK ANATOMY Â· content-to-goal table (cmp). (H2: What a property-management ledger does that a standard one can't.) -#}
+<section class="sec reveal" id="acctind-propmgmt-anatomy">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">How the books are built</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What a property-management ledger does that a standard one can&rsquo;t.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:72ch;">A management company&rsquo;s books carry three kinds of money at once &mdash; tenants&rsquo;, owners&rsquo;, and the firm&rsquo;s. Each row below is a place property-management accounting diverges from ordinary bookkeeping.</p>
+    <table class="cmp">
+      <caption class="sr-only">How property-management bookkeeping differs from standard company-wide bookkeeping</caption>
+      <thead><tr><th scope="col">What it tracks</th><th scope="col" class="us">Property-management books</th><th scope="col">Standard books</th></tr></thead>
+      <tbody>
+        {%- for r in anatomy %}
+        <tr><th scope="row" data-col="What it tracks">{{ r.cap | safe }}</th><td class="us" data-col="Property-management books">{{ r.pm | safe }}</td><td data-col="Standard books">{{ r.std | safe }}</td></tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+    <p class="prose" style="margin-top:14px;">{{ anatomyNote | safe }}</p>
   </div>
 </section>
 
-{# ── INTEGRATIONS · property-management tools reconciled with QuickBooks (checks-list). ── #}
-<section class="section section--alt" id="acctind-propmgmt-integrations">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Platforms we reconcile</p>
-      <h2 class="section__heading">Connected to how you manage property.</h2>
-    </header>
-    <ul class="checks-list">
+{#- INTEGRATIONS Â· property-management tools reconciled with QuickBooks (checks-list, sand). (H2) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-propmgmt-integrations" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Platforms we reconcile</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Connected to how you manage property.</h2>
+    <ul class="checklist">
       {%- for t in integrations %}<li>{{ t | safe }}</li>{%- endfor %}
     </ul>
-    <p class="prose">{{ integrationsNote | safe }}</p>
+    <p class="prose" style="margin-top:16px;">{{ integrationsNote | safe }}</p>
   </div>
 </section>
 
-{# ── PROCESS · four-phase engagement rhythm (grid-2 buyer-cards). ── #}
-<section class="section" id="acctind-propmgmt-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How engagements work</p>
-      <h2 class="section__heading">From a tangled trust account to clean owner statements.</h2>
-      <p class="section__lede">Every property-management engagement follows the same four-phase rhythm &mdash; built so the trust ledger reconciles before anyone relies on a statement.</p>
-    </header>
-    <div class="grid-2">
+{#- PROCESS Â· four-phase engagement rhythm (process-grid). (H2 + 4 H3s) -#}
+<section class="sec reveal" id="acctind-propmgmt-process">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">How engagements work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From a tangled trust account to clean owner statements.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Every property-management engagement follows the same four-phase rhythm &mdash; built so the trust ledger reconciles before anyone relies on a statement.</p>
+    <div class="process-grid">
       {%- for p in process %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ p.phase }}</p>
-        <h3 class="buyer-card__heading">{{ p.title | safe }}</h3>
-        <p class="buyer-card__body">{{ p.body | safe }}</p>
-      </article>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ p.phase }}{% if loop.last %} &check;{% endif %}</div><h3>{{ p.title | safe }}</h3><p>{{ p.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── ADVISORY · standing brand line carried as section prose. ── #}
-<section class="section section--alt" id="acctind-propmgmt-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the books</p>
-      <h2 class="section__heading">Clean trust books are the start. A scalable management company is the point.</h2>
-    </header>
+{#- ADVISORY Â· standing brand line carried as section prose (sand). (H2) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-propmgmt-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Beyond the books</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Clean trust books are the start. A scalable management company is the point.</h2>
     <div class="prose">
       {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="/contact/?intent=accounting">Book the discovery call</a>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;">
+      <a class="btn btn-cta" href="/contact/?intent=accounting" style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Book the discovery call</a>
     </div>
   </div>
 </section>
 
-{# ── FAQ · verbatim Q/A; visible faq__list = FAQPage schema (same array). ── #}
-<section class="section" id="acctind-propmgmt-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Property management accounting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acctind-propmgmt-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acctind-propmgmt-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── EXPERT REVIEW · firm-level, no founder name (byline-block + trust-row + meta-reviewed). ── #}
-<section class="section section--alt" id="acctind-propmgmt-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+{#- EXPERT REVIEW Â· firm-level, no founder name (byline-block + prose + trust-row + meta-reviewed). (H2) -#}
+<section class="sec reveal" id="acctind-propmgmt-review">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the ProAdvisor team.</h2>
     <div class="byline-block">
       <div class="byline-block__mark" aria-hidden="true"></div>
       <div>
@@ -241,7 +173,7 @@
     <div class="prose">
       <p>This page reflects how TechBrot actually handles property-management engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on tenant-deposit and owner-fund liability treatment, trust-account reconciliation, owner-statement and owner-draw handling, management-fee revenue recognition, and 1099-MISC data preparation. TechBrot keeps records and reconciles only &mdash; we never hold, control, sign on, or disburse trust or escrow funds; trust-account compliance and disbursement decisions stay with the manager and their attorney, and your CPA or EA files income taxes.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for c in reviewCreds %}
       <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -251,20 +183,14 @@
   </div>
 </section>
 
-{# ── RELATED · services & industries (grid-2 buyer-cards). ── #}
-<section class="section" id="acctind-propmgmt-related">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services &amp; industries.</h2>
-    </header>
-    <div class="grid-2">
+{#- RELATED Â· services & industries (r-2 hub-card). (H2 + 4 H3s) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-propmgmt-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related services &amp; industries.</h2>
+    <div class="r-2">
       {%- for r in related %}
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading">{{ r.title | safe }}</h3>
-        <p class="buyer-card__body">{{ r.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>
-      </article>
+      <a class="dc-card hub-card" href="{{ r.href }}"><h3>{{ r.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ r.body | safe }}</p><span class="hub-card__go">{{ r.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>

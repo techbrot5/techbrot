@@ -1,21 +1,23 @@
----json
+﻿---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/industries/law-firm-trust-accounting/",
   "slug": "acctind-iolta",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
-  "title": "IOLTA &amp; Law Firm Trust Accounting · Three-Way Reconciliation · TechBrot",
-  "description": "Deep IOLTA and client trust accounting: per-client trust ledgers, three-way reconciliation, earned-vs-unearned retainers, and no commingling — maintained as a recordkeeping service by Certified ProAdvisors. We keep the ledger; the attorney controls the trust account.",
+  "title": "IOLTA &amp; Law Firm Trust Accounting Â· Three-Way Reconciliation Â· TechBrot",
+  "description": "Deep IOLTA and client trust accounting: per-client trust ledgers, three-way reconciliation, earned-vs-unearned retainers, and no commingling â€” maintained as a recordkeeping service by Certified ProAdvisors. We keep the ledger; the attorney controls the trust account.",
   "breadcrumb": [
     { "name": "Home", "href": "/" },
     { "name": "Accounting", "href": "/accounting/" },
     { "name": "Industries", "href": "/accounting/industries/" },
     { "name": "Law Firm Trust Accounting" }
   ],
+  "sec": {
+    "aiH": "Trust accounting, in five questions.",
+    "faqH": "IOLTA &amp; trust accounting questions."
+  },
   "hero": {
-    "eyebrow": "Industry · Law firm trust (IOLTA) accounting",
+    "eyebrow": "Industry Â· Law firm trust (IOLTA) accounting",
     "heading": "IOLTA and client-trust books, reconciled three ways every month.",
     "subheading": "Client trust money is the single highest-risk area on a law firm&rsquo;s books &mdash; and the leading cause of bar discipline. Funds in an IOLTA or client-trust account belong to clients, must never be commingled with operating cash, have to be tracked on a separate ledger for every client and matter, and must reconcile three ways: the trust bank balance, the trust book balance, and the sum of all individual client-ledger balances, in agreement. TechBrot&rsquo;s Certified QuickBooks ProAdvisors maintain that trust ledger and perform the three-way reconciliation as a recordkeeping and bookkeeping service. To be exact about the boundary: we never hold, control, sign on, deposit to, or disburse from the IOLTA or any client-trust account &mdash; the attorney controls the trust account and makes every disbursement and transfer decision. For the broader picture, see our <a href=\"/accounting/industries/legal/\">law firm accounting hub</a>. We do the records; your CPA files. Independent firm, not affiliated with Intuit Inc.",
     "actions": [
@@ -40,173 +42,111 @@
 }
 ---
 
-{# ── DEFINITION · plain-terms trust-accounting prose. (H2: Trust accounting, plainly.) ── #}
-<section class="section" id="acctind-iolta-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Trust accounting, plainly.</h2>
-    </header>
+{#- â•â•â• ACCTIND IOLTA / LAW-FIRM TRUST (BASELINE, equity-gated, TRUST-SENSITIVE). t-mofuâ†’t-prose
+    (dc-base). Every baseline heading verbatim at level; EVERY trust/IOLTA compliance statement
+    EXACT (data-driven; boundary list + boundaryNote + review prose preserved verbatim). DEFINITION
+    id #acctind-iolta-definition preserved (speakable target 1). ai-summary + faq DELETED from body â€”
+    t-prose renders from data via sec.aiH/sec.faqH; layout emits #acctind-iolta-ai-summary (speakable
+    target 2; data cssSelector updated to the preserved definition id + layout ai-summary id). â•â•â• -#}
+
+{#- DEFINITION Â· plain-terms trust-accounting prose. id PRESERVED (speakable). (H2: Trust accounting, plainly.) -#}
+<section class="sec reveal" id="acctind-iolta-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Trust accounting, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── AI SUMMARY · five-question quick-answer block (NON-heading ai-summary__question).
-     (H2: Trust accounting, in five questions.) ── #}
-<section class="section section--alt" id="acctind-iolta-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Trust accounting, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled" id="acctind-iolta-ai-summary-list">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <p class="ai-summary__question">{{ item.q | safe }}</p>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── CHALLENGES · three places trust books fail (grid-3 buyer-cards). (H2 + 3 H3s) ── #}
-<section class="section" id="acctind-iolta-challenges">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Where trust books fail</p>
-      <h2 class="section__heading">Three failures bar auditors find first.</h2>
-      <p class="section__lede">Trust-account problems cluster in the same three places &mdash; and any one of them can turn a routine bar audit into a discipline inquiry. The reconciliation we maintain is built to surface all three before anyone else does.</p>
-    </header>
-    <div class="grid-3">
+{#- CHALLENGES Â· three places trust books fail (r-3 dc-card). (H2 + 3 H3s) -#}
+<section class="sec reveal" id="acctind-iolta-challenges">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Where trust books fail</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Three failures bar auditors find first.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Trust-account problems cluster in the same three places &mdash; and any one of them can turn a routine bar audit into a discipline inquiry. The reconciliation we maintain is built to surface all three before anyone else does.</p>
+    <div class="r-3">
       {%- for c in challenges %}
-      <div class="buyer-card">
-        <p class="buyer-card__opener">{{ c.signal | safe }}</p>
-        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
-        <p class="buyer-card__body">{{ c.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ c.signal | safe }}</span><h3>{{ c.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── THREE-WAY · the one numbered system on the page (process-diagram explainer). (H2 + 3 H3s) ── #}
-<section class="section section--alt" id="acctind-iolta-threeway">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The core control</p>
-      <h2 class="section__heading">What three-way reconciliation actually checks.</h2>
-      <p class="section__lede">Three-way reconciliation is the heart of trust accounting: three independently maintained balances must agree. When they do, no client is overdrawn and no trust money has touched operating cash. We perform this reconciliation as a recordkeeping step every month and flag any break for the attorney to resolve.</p>
-    </header>
-    <ol class="process-diagram">
+{#- THREE-WAY Â· the one numbered system on the page (process-grid, sand). (H2 + 3 H3s) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-iolta-threeway" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">The core control</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What three-way reconciliation actually checks.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Three-way reconciliation is the heart of trust accounting: three independently maintained balances must agree. When they do, no client is overdrawn and no trust money has touched operating cash. We perform this reconciliation as a recordkeeping step every month and flag any break for the attorney to resolve.</p>
+    <div class="process-grid">
       {%- for step in threeWay %}
-      <li class="process-step">
-        <p class="process-step__number">{{ step.phase | safe }}</p>
-        <h3 class="process-step__heading">{{ step.title | safe }}</h3>
-        <p class="process-step__body">{{ step.body | safe }}</p>
-      </li>
-      {%- endfor %}
-    </ol>
-  </div>
-</section>
-
-{# ── WHAT WE HANDLE · the six trust-recordkeeping services (grid-3 stack-8 linked). (H2 + 6 H3s) ── #}
-<section class="section" id="acctind-iolta-handle">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What TechBrot handles</p>
-      <h2 class="section__heading">Trust recordkeeping, done by an expert.</h2>
-      <p class="section__lede">Every engagement is scoped to your matters and the practice-management software you use, delivered in your own QuickBooks file by a named Certified ProAdvisor. We maintain the records and reconciliation; you control the trust account and every disbursement, and your CPA files.</p>
-    </header>
-    <div class="grid-3">
-      {%- for s in handle %}
-      <div class="stack-8">
-        <p class="section__eyebrow">{{ s.num }}</p>
-        <h3><a href="{{ s.href }}">{{ s.title | safe }}</a></h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="process-step"><div class="process-step__n">{{ step.phase | safe }}</div><h3>{{ step.title | safe }}</h3><p>{{ step.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── BOUNDARY · the trust-fund boundary stated unambiguously (checks-list of what we do / don't). (H2) ── #}
-<section class="section section--alt" id="acctind-iolta-boundary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The boundary, stated plainly</p>
-      <h2 class="section__heading">What we do &mdash; and what we never do.</h2>
-      <p class="section__lede">Trust accounting is the most boundary-sensitive work a bookkeeper can touch. We hold a single line and we hold it without exception. We are a recordkeeping service: we maintain the trust ledger and perform the three-way reconciliation. We do not, ever:</p>
-    </header>
-    <ul class="checks-list">
+{#- WHAT WE HANDLE Â· the six trust-recordkeeping services (r-3 dc-card, linked h3). (H2 + 6 H3s) -#}
+<section class="sec reveal" id="acctind-iolta-handle">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">What TechBrot handles</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Trust recordkeeping, done by an expert.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Every engagement is scoped to your matters and the practice-management software you use, delivered in your own QuickBooks file by a named Certified ProAdvisor. We maintain the records and reconciliation; you control the trust account and every disbursement, and your CPA files.</p>
+    <div class="r-3">
+      {%- for s in handle %}
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ s.num }}</span><h3><a href="{{ s.href }}">{{ s.title | safe }}</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- BOUNDARY Â· the trust-fund boundary stated unambiguously (checks-list of what we do / don't, sand). (H2) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-iolta-boundary" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">The boundary, stated plainly</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What we do &mdash; and what we never do.</h2>
+    <p class="lede" style="margin:0 0 22px;max-width:72ch;">Trust accounting is the most boundary-sensitive work a bookkeeper can touch. We hold a single line and we hold it without exception. We are a recordkeeping service: we maintain the trust ledger and perform the three-way reconciliation. We do not, ever:</p>
+    <ul class="checklist">
       {%- for b in boundary %}<li>{{ b | safe }}</li>{%- endfor %}
     </ul>
-    <p class="prose">{{ boundaryNote | safe }}</p>
+    <p class="prose" style="margin-top:16px;">{{ boundaryNote | safe }}</p>
   </div>
 </section>
 
-{# ── INTEGRATIONS · legal trust/practice tools reconciled with QuickBooks (checks-list). (H2) ── #}
-<section class="section" id="acctind-iolta-integrations">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Platforms we reconcile</p>
-      <h2 class="section__heading">Reconciled to how the trust account moves.</h2>
-    </header>
-    <ul class="checks-list">
+{#- INTEGRATIONS Â· legal trust/practice tools reconciled with QuickBooks (checks-list). (H2) -#}
+<section class="sec reveal" id="acctind-iolta-integrations">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Platforms we reconcile</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reconciled to how the trust account moves.</h2>
+    <ul class="checklist">
       {%- for t in integrations %}<li>{{ t | safe }}</li>{%- endfor %}
     </ul>
-    <p class="prose">{{ integrationsNote | safe }}</p>
+    <p class="prose" style="margin-top:16px;">{{ integrationsNote | safe }}</p>
   </div>
 </section>
 
-{# ── ADVISORY · standing brand line carried as section prose. (H2) ── #}
-<section class="section section--alt" id="acctind-iolta-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the trust ledger</p>
-      <h2 class="section__heading">Clean trust books are the floor, not the ceiling.</h2>
-    </header>
+{#- ADVISORY Â· standing brand line carried as section prose (sand). (H2) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-iolta-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Beyond the trust ledger</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Clean trust books are the floor, not the ceiling.</h2>
     <div class="prose">
       {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── FAQ · 6+ verbatim Q/A; visible faq__list = FAQPage schema (same array, no dedup). (H2) ── #}
-<section class="section" id="acctind-iolta-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">IOLTA &amp; trust accounting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acctind-iolta-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acctind-iolta-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── EXPERT REVIEW · firm-level, no founder name (prose + trust-row). (H2) ── #}
-<section class="section section--alt" id="acctind-iolta-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+{#- EXPERT REVIEW Â· firm-level, no founder name (prose + trust-row). (H2) -#}
+<section class="sec reveal" id="acctind-iolta-review">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot actually handles client-trust and IOLTA recordkeeping. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on per-client trust ledgers, three-way reconciliation, and earned-versus-unearned retainer handling. We maintain the trust ledger and the reconciliation only &mdash; we never hold, control, sign on, deposit to, or disburse from any client-trust account; the attorney controls the account and makes every disbursement. Bar-rule and ethics compliance (for example ABA Model Rule 1.15 and the specific rules of your state bar) is the attorney&rsquo;s professional responsibility; we support it with clean records and do not provide legal or ethics advice or certify compliance. For trust-rule specifics, defer to your state bar and the firm&rsquo;s own counsel.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in reviewCreds %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.label }}</p><p class="trust-row__label">{{ r.detail | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -216,20 +156,14 @@
   </div>
 </section>
 
-{# ── RELATED · services & industries (grid-2 buyer-cards). (H2 + 4 H3s) ── #}
-<section class="section" id="acctind-iolta-related">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services &amp; industries.</h2>
-    </header>
-    <div class="grid-2">
+{#- RELATED Â· services & industries (r-2 hub-card). (H2 + 4 H3s) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-iolta-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related services &amp; industries.</h2>
+    <div class="r-2">
       {%- for r in related %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__heading">{{ r.title | safe }}</h3>
-        <p class="buyer-card__body">{{ r.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>
-      </div>
+      <a class="dc-card hub-card" href="{{ r.href }}"><h3>{{ r.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ r.body | safe }}</p><span class="hub-card__go">{{ r.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>

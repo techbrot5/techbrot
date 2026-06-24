@@ -1,19 +1,21 @@
----json
+﻿---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/industries/landscaping/",
   "slug": "acctind-landscaping",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
-  "title": "Landscaping Accounting: Maintenance Contracts, Design-Build, Crew Economics, Seasonality · TechBrot",
-  "description": "Specialist accounting for U.S. landscapers — recurring maintenance contracts as deferred revenue, design-build WIP, revenue per crew per day, seasonality, equipment depreciation, LMN/Aspire/ServiceAutopilot integration. Certified ProAdvisors, fixed-fee.",
+  "title": "Landscaping Accounting: Maintenance Contracts, Design-Build, Crew Economics, Seasonality Â· TechBrot",
+  "description": "Specialist accounting for U.S. landscapers â€” recurring maintenance contracts as deferred revenue, design-build WIP, revenue per crew per day, seasonality, equipment depreciation, LMN/Aspire/ServiceAutopilot integration. Certified ProAdvisors, fixed-fee.",
   "breadcrumb": [
     { "name": "Home", "href": "/" },
     { "name": "Accounting", "href": "/accounting/" },
     { "name": "Industries", "href": "/accounting/industries/" },
     { "name": "Landscaping" }
   ],
+  "sec": {
+    "aiH": "Landscaping accounting, in five questions.",
+    "faqH": "Landscaping accounting questions."
+  },
   "hero": {
     "eyebrow": "Industry &middot; Landscaping accounting",
     "heading": "Landscaping accounting that handles three revenue streams, severe seasonality, and every crew.",
@@ -40,202 +42,132 @@
 }
 ---
 
-{# ── DEFINITION · real H2 carrying the landscaping definition prose. (H2: Landscaping accounting, plainly.) ── #}
-<section class="section" id="acctind-landscaping-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Landscaping accounting, plainly.</h2>
-    </header>
+{#- â•â•â• ACCTIND LANDSCAPING (BASELINE, equity-gated). t-mofuâ†’t-prose (dc-base). Every
+    baseline heading verbatim at level; content verbatim. DEFINITION id #acctind-landscaping-definition
+    preserved (speakable target 1). ai-summary + faq DELETED from body â€” t-prose renders them from
+    data via sec.aiH/sec.faqH; layout emits #acctind-landscaping-ai-summary (speakable target 2). â•â•â• -#}
+
+{#- DEFINITION Â· speakable target â€” id PRESERVED. (H2: Landscaping accounting, plainly.) -#}
+<section class="sec reveal" id="acctind-landscaping-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Landscaping accounting, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── AI SUMMARY · five-question block. NON-heading questions (baseline <dt>). (H2: Landscaping accounting, in five questions.) ── #}
-<section class="section section--alt" id="acctind-landscaping-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Landscaping accounting, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <p class="ai-summary__question">{{ item.q | safe }}</p>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── CHALLENGES · three places landscapers lose the numbers (grid-3 buyer-cards). (H2 + 3 H3s) ── #}
-<section class="section" id="acctind-landscaping-challenges">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Why landscaping books break</p>
-      <h2 class="section__heading">Three places landscapers lose the numbers.</h2>
-      <p class="section__lede">Almost every messy landscaping file fails in the same three areas. Knowing which one you&rsquo;re in tells us where to start.</p>
-    </header>
-    <div class="grid-3">
+{#- CHALLENGES Â· three places landscapers lose the numbers (r-3 dc-card). (H2 + 3 H3s) -#}
+<section class="sec reveal" id="acctind-landscaping-challenges">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Why landscaping books break</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Three places landscapers lose the numbers.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Almost every messy landscaping file fails in the same three areas. Knowing which one you&rsquo;re in tells us where to start.</p>
+    <div class="r-3">
       {%- for c in challenges %}
-      <div class="buyer-card">
-        <p class="buyer-card__opener">{{ c.signal | safe }}</p>
-        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
-        <p class="buyer-card__body">{{ c.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ c.signal | safe }}</span><h3>{{ c.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── SUB-VERTICALS · who we serve, every landscaping format (grid-3 stack-8). (H2 + 6 H3s) ── #}
-<section class="section section--alt" id="acctind-landscaping-subverticals">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Who we serve</p>
-      <h2 class="section__heading">Landscaping across every format.</h2>
-      <p class="section__lede">Each landscaping segment has its own revenue mix, crew structure, and platform pattern. The engagement model &mdash; fixed-fee, written scope, named ProAdvisor, work in your own QuickBooks file &mdash; stays consistent.</p>
-    </header>
-    <div class="grid-3">
+{#- SUB-VERTICALS Â· landscaping across every format (r-3 dc-card, sand). (H2 + 6 H3s) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-landscaping-subverticals" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Who we serve</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Landscaping across every format.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Each landscaping segment has its own revenue mix, crew structure, and platform pattern. The engagement model &mdash; fixed-fee, written scope, named ProAdvisor, work in your own QuickBooks file &mdash; stays consistent.</p>
+    <div class="r-3">
       {%- for s in subverticals %}
-      <div class="stack-8">
-        <h3>{{ s.name | safe }}</h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ s.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── WHAT WE HANDLE · the six services (grid-3 stack-8). (H2 + 6 H3s) ── #}
-<section class="section" id="acctind-landscaping-handle">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What TechBrot handles</p>
-      <h2 class="section__heading">Landscaping accounting, done by an expert.</h2>
-      <p class="section__lede">Every engagement is scoped to your revenue mix, crew count, platform, and seasonal complexity, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
-    </header>
-    <div class="grid-3">
+{#- WHAT WE HANDLE Â· the six services (r-3 dc-card, linked h3). (H2 + 6 H3s) -#}
+<section class="sec reveal" id="acctind-landscaping-handle">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">What TechBrot handles</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Landscaping accounting, done by an expert.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Every engagement is scoped to your revenue mix, crew count, platform, and seasonal complexity, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    <div class="r-3">
       {%- for s in handle %}
-      <div class="stack-8">
-        <p class="num">{{ s.num | safe }}</p>
-        <h3><a href="{{ s.href }}">{{ s.title | safe }}</a></h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ s.num | safe }}</span><h3><a href="{{ s.href }}">{{ s.title | safe }}</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── INTEGRATIONS · landscaping platforms reconciled with QuickBooks (checks-list). (H2: Connected to your landscaping stack.) ── #}
-<section class="section section--alt" id="acctind-landscaping-integrations">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Tools we work alongside</p>
-      <h2 class="section__heading">Connected to your landscaping stack.</h2>
-    </header>
-    <ul class="checks-list">
+{#- INTEGRATIONS Â· landscaping platforms reconciled with QuickBooks (checks-list, sand). (H2: Connected to your landscaping stack.) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-landscaping-integrations" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Tools we work alongside</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Connected to your landscaping stack.</h2>
+    <ul class="checklist">
       {%- for t in integrations %}<li>{{ t | safe }}</li>{%- endfor %}
     </ul>
-    <p class="prose">{{ integrationsNote | safe }}</p>
+    <p class="prose" style="margin-top:16px;">{{ integrationsNote | safe }}</p>
   </div>
 </section>
 
-{# ── COMPARISON TABLE · single-crew vs multi-crew + design-build · vs-scroll + vs-table (no collapse, T3). ── #}
-<section class="section" id="acctind-landscaping-comparison">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">When landscaping outgrows single-crew books</p>
-      <h2 class="section__heading">Owner-operator single-crew vs. multi-crew route + design-build.</h2>
-      <p class="section__lede">The structural differences that explain why growing from one maintenance crew to a multi-service operation multiplies accounting complexity &mdash; and why the transition needs to happen at crew 2, not crew 6.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">Owner-operator single-crew compared with multi-crew route plus design-build landscaping accounting</caption>
-        <thead><tr><th scope="col">What the books need to handle</th><th scope="col">Owner-operator single-crew</th><th scope="col" class="vs-table__us">Multi-crew + design-build operation</th></tr></thead>
-        <tbody>
-          {%- for r in comparison %}
-          <tr><th scope="row">{{ r.cap | safe }}</th><td><span class="vs-table__concede">{{ r.left | safe }}</span></td><td class="vs-table__us"><span class="vs-table__concede">{{ r.right | safe }}</span></td></tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
-    <p class="prose">Most landscaping operators start on the left and grow into the right. The accounting transition needs to happen at crew 2 or when design-build is added &mdash; before commingled data makes per-crew and per-service-line analysis painful to reconstruct later.</p>
+{#- COMPARISON Â· single-crew vs multi-crew + design-build (cmp). (H2) -#}
+<section class="sec reveal" id="acctind-landscaping-comparison">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">When landscaping outgrows single-crew books</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Owner-operator single-crew vs. multi-crew route + design-build.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:72ch;">The structural differences that explain why growing from one maintenance crew to a multi-service operation multiplies accounting complexity &mdash; and why the transition needs to happen at crew 2, not crew 6.</p>
+    <table class="cmp">
+      <caption class="sr-only">Owner-operator single-crew compared with multi-crew route plus design-build landscaping accounting</caption>
+      <thead><tr><th scope="col">What the books need to handle</th><th scope="col">Owner-operator single-crew</th><th scope="col" class="us">Multi-crew + design-build operation</th></tr></thead>
+      <tbody>
+        {%- for r in comparison %}
+        <tr><th scope="row" data-col="What the books need to handle">{{ r.cap | safe }}</th><td data-col="Owner-operator single-crew">{{ r.left | safe }}</td><td class="us" data-col="Multi-crew + design-build operation">{{ r.right | safe }}</td></tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+    <p class="prose" style="margin-top:14px;">Most landscaping operators start on the left and grow into the right. The accounting transition needs to happen at crew 2 or when design-build is added &mdash; before commingled data makes per-crew and per-service-line analysis painful to reconstruct later.</p>
   </div>
 </section>
 
-{# ── PROCESS · four-phase engagement rhythm (process-diagram). (H2 + 4 H3s) ── #}
-<section class="section section--alt" id="acctind-landscaping-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How engagements work</p>
-      <h2 class="section__heading">From seasonal-revenue chaos to per-crew profitability.</h2>
-      <p class="section__lede">Every landscaping engagement follows the same four-phase rhythm &mdash; built so maintenance recognition, project WIP, crew economics, and seasonal cash flow are accurate before anyone makes pricing or expansion decisions.</p>
-    </header>
-    <ol class="process-diagram">
+{#- PROCESS Â· four-phase engagement rhythm (process-grid). (H2 + 4 H3s) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-landscaping-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">How engagements work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From seasonal-revenue chaos to per-crew profitability.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Every landscaping engagement follows the same four-phase rhythm &mdash; built so maintenance recognition, project WIP, crew economics, and seasonal cash flow are accurate before anyone makes pricing or expansion decisions.</p>
+    <div class="process-grid">
       {%- for s in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ s.num | safe }}{% if loop.last %} &check;{% endif %}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-{# ── ADVISORY · standing brand line carried as section prose; preserves baseline advisory Q/A substance. (H2: Real RPCD is the start. The next crew and the next season are the point.) ── #}
-<section class="section" id="acctind-landscaping-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the books</p>
-      <h2 class="section__heading">Real RPCD is the start. The next crew and the next season are the point.</h2>
-    </header>
+{#- ADVISORY Â· standing brand line carried as section prose. (H2: Real RPCD is the start. The next crew and the next season are the point.) -#}
+<section class="sec reveal" id="acctind-landscaping-advisory">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Beyond the books</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Real RPCD is the start. The next crew and the next season are the point.</h2>
     <div class="prose">
       {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="/contact/?intent=accounting">Book the discovery call</a>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;">
+      <a class="btn btn-cta" href="/contact/?intent=accounting" style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Book the discovery call</a>
     </div>
   </div>
 </section>
 
-{# ── FAQ · 7 contract Q/A VERBATIM (T4 NO dedup); visible faq__list = FAQPage schema (same array). (H2: Landscaping accounting questions.) ── #}
-<section class="section section--alt" id="acctind-landscaping-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Landscaping accounting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acctind-landscaping-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acctind-landscaping-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── EXPERT REVIEW · firm-level, no founder name (trust-row + meta-reviewed). (H2: Reviewed by the ProAdvisor team.) ── #}
-<section class="section" id="acctind-landscaping-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
+{#- EXPERT REVIEW Â· firm-level, no founder name (prose + trust-row + meta-reviewed). (H2: Reviewed by the ProAdvisor team.) -#}
+<section class="sec reveal" id="acctind-landscaping-review">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the ProAdvisor team.</h2>
     <div class="prose">
       <p>This page reflects how TechBrot actually handles landscaping engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on ASC 606 maintenance-contract recognition, design-build WIP and project recognition, crew-based dispatched-service economics, equipment depreciation and lease analysis, and seasonal cash flow management. Where our approach or scope changes, this page is updated. TechBrot delivers the books and coordinates with your CPA, who files.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in reviewSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -245,18 +177,15 @@
   </div>
 </section>
 
-{# ── RELATED · services & industries (stack-8). (H2 + 4 H3s) ── #}
-<section class="section" id="acctind-landscaping-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services &amp; industries.</h2>
-    </header>
-    {%- for r in related %}
-    <div class="stack-8">
-      <h3><a href="{{ r.href }}">{{ r.title | safe }}</a></h3>
-      <p class="prose">{{ r.body | safe }}</p>
+{#- RELATED Â· services & industries (r-3 hub-card, sand). (H2 + 4 H3s) -#}
+<section class="sec reveal hub-rt--alt" id="acctind-landscaping-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related services &amp; industries.</h2>
+    <div class="r-3">
+      {%- for r in related %}
+      <a class="dc-card hub-card" href="{{ r.href }}"><h3>{{ r.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ r.body | safe }}</p><span class="hub-card__go">{{ r.cta | default("Learn more", true) | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      {%- endfor %}
     </div>
-    {%- endfor %}
   </div>
 </section>

@@ -12,7 +12,19 @@ The tracked families migrated LEAF/detail pages; the section HUBS + a MOFU long-
 Tree CLEAN; HEAD==origin. Checkpointed here (context heavy; mass-migrating 82 baseline pages now risks a
 messy partial — directive #5). No NEW founder calls beyond resourcing this backlog.
 
-## ⚠️ DISCOVERED BACKLOG — 82 pages still on OLD layouts (found 2026-06-24 pre-flip sweep)
+## ⚠️ DISCOVERED BACKLOG — 146 pages on OLD layouts (AUTHORITATIVE, via new layout-v2 gate 6e77d73)
+**UPDATE: the source-grep undercounted at 82; the built-HTML `layout-v2` gate finds the TRUE 146** (it
+catches layouts set via `.11tydata.js`, which the grep missed). Breakdown by top dir: **find-an-accountant 65**
+(the CA/TX/FL/IL **state service-landings** — bookkeeping-services/cleanup/monthly/quickbooks-*/sales-tax-help/
+etc. ×4 states — still `layout: t-bofu` in their .11tydata.js; D5 did only NY's, the 4 non-NY states were NEVER
+migrated despite "silo complete") · **accounting 42** · **quickbooks 30** · **switch 4** · standalones ~5.
+ALSO: **10 v2-chrome pages carry stray old-kit body classes** (chrome-only-dirty, gate `old-kit`): /about/ +
+/about/network/ (checks-list) · /accounting/bookkeeping/ + /accounting/industries/ + /accounting/services/
+(vs-table, B-hubs) · /quickbooks/ + /tools/{breakeven,business-budget,cash-runway,sales-tax-rate-lookup}
+(flow__step). Fix these first (quick — already v2 chrome). Migration order per founder: industries → quickbooks →
+find-an-accountant service-landings → the rest. Gate stays RED until TRUE 0 layout-v2 + 0 old-kit.
+
+### (superseded) earlier 82-count source-grep breakdown
 Bespoke pages (180–286 lines each, NO shared body partials → no data-driven shortcut). Most are BASELINE/
 equity-gated. Each needs: layout switch (t-mofu/t-bofu/t-guide → t-prose or t-hub per page type) + body→v2 +
 per-page battery gate (the proven pattern). Suggested order (largest uniform-ish sets first):

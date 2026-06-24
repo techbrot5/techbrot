@@ -88,27 +88,25 @@
     <div class="idx"><span class="idx__n">§</span><span class="idx__t">More industries</span><span class="idx__rule"></span></div>
     <h2 class="h2" style="margin-bottom:10px;">We work across these too.</h2>
     <p class="lede" style="margin:0 0 30px;max-width:66ch;">The same operating standard and Certified ProAdvisor delivery, applied to the way each of these runs.</p>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">Additional industries TechBrot serves, the number that runs each one, and its industry page.</caption>
-        <thead>
-          <tr>
-            <th scope="col">Industry</th>
-            <th scope="col">{{ moreCols[0] | safe }}</th>
-            <th scope="col" class="vs-table__us">{{ moreCols[1] | safe }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {%- for row in more %}
-          <tr>
-            <th scope="row">{{ row.dim | safe }}</th>
-            <td>{{ row.turns | safe }}</td>
-            <td class="vs-table__us"><a href="{{ row.href }}">{{ row.page | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+    <table class="cmp">
+      <caption class="sr-only">Additional industries TechBrot serves, the number that runs each one, and its industry page.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Industry</th>
+          <th scope="col">{{ moreCols[0] | safe }}</th>
+          <th scope="col" class="num us">{{ moreCols[1] | safe }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for row in more %}
+        <tr>
+          <th scope="row" data-col="Industry">{{ row.dim | safe }}</th>
+          <td data-col="{{ moreCols[0] | striptags }}">{{ row.turns | safe }}</td>
+          <td class="num us" data-col="{{ moreCols[1] | striptags }}"><a href="{{ row.href }}">{{ row.page | safe }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a></td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 

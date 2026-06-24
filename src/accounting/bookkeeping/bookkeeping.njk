@@ -64,27 +64,25 @@
     <div class="idx"><span class="idx__n">§</span><span class="idx__t">Which engagement</span><span class="idx__rule"></span></div>
     <h2 class="h2" style="max-width:28ch;margin-bottom:10px;">Match your situation to the right engagement.</h2>
     <p class="lede" style="margin:0 0 30px;max-width:64ch;">If you&rsquo;re not sure, the diagnostic sorts it. But most starting points fall into one of these patterns.</p>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">Which bookkeeping engagement to start with, by the current state of your books, and what follows.</caption>
-        <thead>
-          <tr>
-            <th scope="col">If you&hellip;</th>
-            <th scope="col">{{ routing.cols[0] | safe }}</th>
-            <th scope="col">{{ routing.cols[1] | safe }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {%- for row in routing.rows %}
-          <tr>
-            <th scope="row">{{ row.dim | safe }}</th>
-            <td class="vs-table__us"><strong>{{ row.start | safe }}</strong></td>
-            <td>{{ row.then | safe }}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+    <table class="cmp">
+      <caption class="sr-only">Which bookkeeping engagement to start with, by the current state of your books, and what follows.</caption>
+      <thead>
+        <tr>
+          <th scope="col">If you&hellip;</th>
+          <th scope="col" class="us">{{ routing.cols[0] | safe }}</th>
+          <th scope="col">{{ routing.cols[1] | safe }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for row in routing.rows %}
+        <tr>
+          <th scope="row" data-col="If you…">{{ row.dim | safe }}</th>
+          <td class="us" data-col="{{ routing.cols[0] | striptags }}"><strong>{{ row.start | safe }}</strong></td>
+          <td data-col="{{ routing.cols[1] | striptags }}">{{ row.then | safe }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 

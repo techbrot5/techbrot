@@ -78,29 +78,27 @@
     <div class="idx"><span class="idx__n">§</span><span class="idx__t">Pricing at a glance</span><span class="idx__rule"></span></div>
     <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">All engagement pricing in one view.</h2>
     <p class="lede" style="margin:0 0 30px;max-width:64ch;">Every TechBrot engagement is fixed-fee with a written scope before any work begins. No hourly billing. Specific quotes follow the free discovery call.</p>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">TechBrot accounting service pricing summary across all engagement tracks.</caption>
-        <thead>
-          <tr>
-            <th scope="col">Service track</th>
-            <th scope="col">Engagement type</th>
-            <th scope="col" class="vs-table__us">Fee range</th>
-            <th scope="col">Cadence</th>
-          </tr>
-        </thead>
-        <tbody>
-          {%- for row in pricing %}
-          <tr>
-            <th scope="row"><a href="{{ row.href }}">{{ row.service | safe }}</a></th>
-            <td class="vs-table__concede">{{ row.type | safe }}</td>
-            <td class="vs-table__us"><strong>{{ row.fee | safe }}</strong></td>
-            <td class="vs-table__concede">{{ row.cadence | safe }}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
+    <table class="cmp">
+      <caption class="sr-only">TechBrot accounting service pricing summary across all engagement tracks.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Service track</th>
+          <th scope="col">Engagement type</th>
+          <th scope="col" class="num us">Fee range</th>
+          <th scope="col">Cadence</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for row in pricing %}
+        <tr>
+          <th scope="row" data-col="Service track"><a href="{{ row.href }}">{{ row.service | safe }}</a></th>
+          <td data-col="Engagement type">{{ row.type | safe }}</td>
+          <td class="num us" data-col="Fee range"><strong>{{ row.fee | safe }}</strong></td>
+          <td data-col="Cadence">{{ row.cadence | safe }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
     <p class="in-brief__source">All engagements: fixed fee, written scope before any work begins, no hourly billing. Specific quotes are produced within 3 business days of the free, no-obligation discovery call.</p>
   </div>
 </section>

@@ -1,13 +1,15 @@
----json
+﻿---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/industries/specialty-trades/",
   "slug": "acctind-trades",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
+  "sec": {
+    "aiH": "Specialty trade accounting, in five questions.",
+    "faqH": "Specialty trade accounting questions."
+  },
   "title": "Specialty Trade Contractor Accounting: HVAC, Plumbing &amp; Electrical Bookkeeping &middot; TechBrot",
-  "description": "Specialist accounting for U.S. specialty trade contractors — HVAC, plumbing, electrical, and allied service trades. Service-call job costing (parts vs labor margin per ticket), maintenance-agreement deferred revenue, revenue per tech and per truck, consumer-financing reconciliation net of dealer fees, ServiceTitan/Housecall Pro/Service Fusion reconciliation, and certified-payroll records for public jobs. Certified ProAdvisors.",
+  "description": "Specialist accounting for U.S. specialty trade contractors â€” HVAC, plumbing, electrical, and allied service trades. Service-call job costing (parts vs labor margin per ticket), maintenance-agreement deferred revenue, revenue per tech and per truck, consumer-financing reconciliation net of dealer fees, ServiceTitan/Housecall Pro/Service Fusion reconciliation, and certified-payroll records for public jobs. Certified ProAdvisors.",
   "breadcrumb": [
     { "name": "Home", "href": "/" },
     { "name": "Accounting", "href": "/accounting/" },
@@ -35,201 +37,138 @@
 }
 ---
 
-{# ── DEFINITION · real H2 carrying the specialty-trades definition prose. (H2: Specialty trade contractor accounting, plainly.) ── #}
-<section class="section" id="trade-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Specialty trade contractor accounting, plainly.</h2>
-    </header>
+{#- â•â•â• INDUSTRY Â· Specialty Trades (BASELINE) Â· t-mofuâ†’t-prose, dc-base chrome. Every
+    baseline heading verbatim at level; content verbatim (no thin). ai-summary + faq
+    rendered by t-prose from data (sec.aiH/faqH). #trade-definition speakable target
+    preserved verbatim. NOTE: layout will emit data ai-summary as #acctind-trades-ai-summary
+    (from slug), which does NOT match the .11tydata.js cssSelector "#trade-ai-summary" â€”
+    speakable-selector mismatch flagged to founder. â•â•â• -#}
+
+{#- DEFINITION â€” speakable target id PRESERVED (trade-definition). -#}
+<section class="sec reveal" id="trade-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Specialty trade contractor accounting, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── AI SUMMARY · five-question block. NON-heading questions (baseline <dt>). (H2: Specialty trade accounting, in five questions.) ── #}
-<section class="section section--alt" id="trade-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Specialty trade accounting, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <p class="ai-summary__question">{{ item.q | safe }}</p>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── CHALLENGES · three places trade contractors lose the numbers (grid-3 buyer-cards). (H2 + 3 H3s) ── #}
-<section class="section" id="trade-challenges">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Why trade-contractor books break</p>
-      <h2 class="section__heading">Three places service-and-replacement trades lose the numbers.</h2>
-      <p class="section__lede">Almost every messy HVAC, plumbing, or electrical file fails in the same three areas. Knowing which one you&rsquo;re in tells us where to start.</p>
-    </header>
-    <div class="grid-3">
+{#- CHALLENGES â€” 3 H3s verbatim (r-3 dc-card). -#}
+<section class="sec reveal hub-rt--alt" id="trade-challenges" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Why trade-contractor books break</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Three places service-and-replacement trades lose the numbers.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Almost every messy HVAC, plumbing, or electrical file fails in the same three areas. Knowing which one you&rsquo;re in tells us where to start.</p>
+    <div class="r-3">
       {%- for c in challenges %}
-      <div class="buyer-card">
-        <p class="buyer-card__opener">{{ c.signal | safe }}</p>
-        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
-        <p class="buyer-card__body">{{ c.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ c.signal | safe }}</span><h3>{{ c.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── SUB-VERTICALS · the specialty trades we serve (grid-3 stack-8). (H2 + 6 H3s) ── #}
-<section class="section section--alt" id="trade-trades">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Who we serve</p>
-      <h2 class="section__heading">One engagement model across the service trades.</h2>
-      <p class="section__lede">Each specialty trade has its own parts intensity, install-versus-service mix, and ticket profile &mdash; but the accounting backbone is shared: cost the ticket, defer the agreement, reconcile the financing, tie out the FSM platform. The engagement model &mdash; fixed-fee, written scope, named ProAdvisor, work in your own QuickBooks file &mdash; stays consistent.</p>
-    </header>
-    <div class="grid-3">
+{#- SUB-VERTICALS â€” 6 H3s verbatim (r-3 dc-card, NON-linked h3). -#}
+<section class="sec reveal" id="trade-trades">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Who we serve</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">One engagement model across the service trades.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Each specialty trade has its own parts intensity, install-versus-service mix, and ticket profile &mdash; but the accounting backbone is shared: cost the ticket, defer the agreement, reconcile the financing, tie out the FSM platform. The engagement model &mdash; fixed-fee, written scope, named ProAdvisor, work in your own QuickBooks file &mdash; stays consistent.</p>
+    <div class="r-3">
       {%- for t in trades %}
-      <div class="stack-8">
-        <h3>{{ t.title | safe }}</h3>
-        <p class="prose">{{ t.body | safe }}</p>
-      </div>
+      <div class="dc-card"><h3>{{ t.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ t.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── WHAT WE HANDLE · the six services (grid-3 stack-8). (H2 + 6 H3s) ── #}
-<section class="section" id="trade-handle">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What TechBrot handles</p>
-      <h2 class="section__heading">Trade-contractor accounting, done by an expert.</h2>
-      <p class="section__lede">Every engagement is scoped to your trade, tech and truck count, agreement volume, financing volume, FSM platform, and any prevailing-wage work, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
-    </header>
-    <div class="grid-3">
+{#- WHAT WE HANDLE â€” 6 H3s verbatim (r-3 dc-card, h3 linked, s.num eyebrow). No s.cta in data. -#}
+<section class="sec reveal hub-rt--alt" id="trade-handle" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">What TechBrot handles</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Trade-contractor accounting, done by an expert.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Every engagement is scoped to your trade, tech and truck count, agreement volume, financing volume, FSM platform, and any prevailing-wage work, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    <div class="r-3">
       {%- for s in handle %}
-      <div class="stack-8">
-        <h3><a href="{{ s.href }}">{{ s.title | safe }}</a></h3>
-        <p class="prose">{{ s.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ s.num | safe }}</span><h3><a href="{{ s.href }}">{{ s.title | safe }}</a></h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── INTEGRATIONS · trade tools reconciled with QuickBooks (checks-list). (H2: Connected to your trade-service stack.) ── #}
-<section class="section section--alt" id="trade-integrations">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Tools we work alongside</p>
-      <h2 class="section__heading">Connected to your trade-service stack.</h2>
-    </header>
-    <ul class="checks-list">
+{#- INTEGRATIONS â€” checks-list. -#}
+<section class="sec reveal" id="trade-integrations">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Tools we work alongside</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Connected to your trade-service stack.</h2>
+    <ul class="checklist">
       {%- for t in integrations %}<li>{{ t | safe }}</li>{%- endfor %}
     </ul>
-    <p class="prose">{{ integrationsNote | safe }}</p>
+    <p class="prose" style="margin-top:16px;">{{ integrationsNote | safe }}</p>
   </div>
 </section>
 
-{# ── COMPARISON TABLE · vs-scroll + vs-table (no collapse, T3). Per-ticket costing vs month-total bookkeeping. ── #}
-<section class="section" id="trade-comparison">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Why generic books miss trade economics</p>
-      <h2 class="section__heading">Per-ticket trade costing vs. month-total bookkeeping.</h2>
-      <p class="section__lede">The structural differences that explain why a standard P&amp;L can show a profitable month while individual service calls and trucks quietly lose money &mdash; and why trade contractors need the books built at the ticket level.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">Per-ticket specialty-trade costing versus month-total generic bookkeeping compared</caption>
-        <thead><tr><th scope="col">What the books need to handle</th><th scope="col" class="vs-table__us">Per-ticket trade costing (TechBrot)</th><th scope="col">Month-total generic bookkeeping</th></tr></thead>
-        <tbody>
-          {%- for r in comparison %}
-          <tr><th scope="row">{{ r.row | safe }}</th><td class="vs-table__us"><span class="vs-table__concede">{{ r.us | safe }}</span></td><td><span class="vs-table__concede">{{ r.them | safe }}</span></td></tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
-    <p class="prose">{{ comparisonNote | safe }}</p>
+{#- COMPARISON â€” vs-table â†’ cmp table. Highlighted col = Per-ticket trade costing (TechBrot). -#}
+<section class="sec reveal" id="trade-comparison">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Why generic books miss trade economics</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Per-ticket trade costing vs. month-total bookkeeping.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">The structural differences that explain why a standard P&amp;L can show a profitable month while individual service calls and trucks quietly lose money &mdash; and why trade contractors need the books built at the ticket level.</p>
+    <table class="cmp">
+      <caption class="sr-only">Per-ticket specialty-trade costing versus month-total generic bookkeeping compared</caption>
+      <thead><tr><th scope="col">What the books need to handle</th><th scope="col" class="us">Per-ticket trade costing (TechBrot)</th><th scope="col">Month-total generic bookkeeping</th></tr></thead>
+      <tbody>
+        {%- for r in comparison %}
+        <tr><th scope="row" data-col="What the books need to handle">{{ r.row | safe }}</th><td class="us" data-col="Per-ticket trade costing (TechBrot)">{{ r.us | safe }}</td><td data-col="Month-total generic bookkeeping">{{ r.them | safe }}</td></tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+    <p class="prose" style="margin-top:18px;">{{ comparisonNote | safe }}</p>
   </div>
 </section>
 
-{# ── PROCESS · four-phase engagement rhythm (process-diagram). (H2 + 4 H3s) ── #}
-<section class="section section--alt" id="trade-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How engagements work</p>
-      <h2 class="section__heading">From mixed-up tickets to margin per call and per truck.</h2>
-      <p class="section__lede">Every trade-contractor engagement follows the same four-phase rhythm &mdash; per-ticket costing, agreement deferral, financing and FSM reconciliation, and tech/truck profitability accurate first, before anyone makes hiring, pricing, or fleet-expansion decisions.</p>
-    </header>
-    <ol class="process-diagram">
+{#- PROCESS â€” 4 H3s verbatim (process-grid). -#}
+<section class="sec reveal hub-rt--alt" id="trade-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">How engagements work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From mixed-up tickets to margin per call and per truck.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Every trade-contractor engagement follows the same four-phase rhythm &mdash; per-ticket costing, agreement deferral, financing and FSM reconciliation, and tech/truck profitability accurate first, before anyone makes hiring, pricing, or fleet-expansion decisions.</p>
+    <div class="process-grid">
       {%- for s in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ s.num | safe }}</p>
-        <h3 class="process-step__heading">{{ s.name | safe }}</h3>
-        <p class="process-step__body">{{ s.body | safe }}</p>
-      </li>
+      <div class="process-step"><div class="process-step__n">{{ s.num | safe }}</div><h3>{{ s.name | safe }}</h3><p>{{ s.body | safe }}</p></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-{# ── ADVISORY · standing brand line carried as section prose (no gutting). (H2: Margin per ticket is the start. The right next truck is the point.) ── #}
-<section class="section" id="trade-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the books</p>
-      <h2 class="section__heading">Margin per ticket is the start. The right next hire is the point.</h2>
-    </header>
+{#- ADVISORY â€” prose. -#}
+<section class="sec reveal" id="trade-advisory">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Beyond the books</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Margin per ticket is the start. The right next hire is the point.</h2>
     <div class="prose">
       {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="/contact/?intent=accounting">Book the discovery call</a>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;">
+      <a class="btn btn-cta" href="/contact/?intent=accounting" style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Book the discovery call</a>
     </div>
   </div>
 </section>
 
-{# ── FAQ · contract Q/A; visible faq__list = FAQPage schema (same array, NO dedup). (H2: Specialty trade accounting questions.) ── #}
-<section class="section section--alt" id="trade-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Specialty trade accounting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="trade-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="trade-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
+{#- EXPERT REVIEW â€” firm-level byline + trust-row + meta-reviewed. -#}
+<section class="sec reveal" id="trade-review">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the ProAdvisor team.</h2>
+    <div class="byline">
+      <span class="prose-byline__mark"><svg width="16" height="16" viewBox="0 0 64 64" fill="#FCFBF8" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span>
+      <div><p class="prose-byline__name">By the Certified QuickBooks ProAdvisor team</p><p class="prose-byline__meta">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p></div>
     </div>
-  </div>
-</section>
-
-{# ── EXPERT REVIEW · firm-level, no founder name (trust-row + meta-reviewed). (H2: Reviewed by the ProAdvisor team.) ── #}
-<section class="section" id="trade-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
-    <div class="prose">
+    <div class="prose" style="margin-top:18px;">
       <p>This page reflects how TechBrot actually handles specialty trade contractor engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on per-ticket job costing, parts-versus-labor margin, maintenance-agreement deferred revenue, consumer-financing reconciliation net of dealer fees, FSM platform integration, revenue per technician and per truck, and certified-payroll recordkeeping for prevailing-wage work. Where our approach or scope changes, this page is updated. TechBrot delivers the books and coordinates with your CPA, who files; the prevailing-wage legal determination stays with the client and the awarding authority.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for r in reviewSpec %}
       <div class="trust-row__item"><p class="trust-row__value">{{ r.value | safe }}</p><p class="trust-row__label">{{ r.label | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -239,18 +178,15 @@
   </div>
 </section>
 
-{# ── RELATED · services & industries (stack-8). (H2 + 4 H3s) ── #}
-<section class="section section--alt" id="trade-related">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services &amp; industries.</h2>
-    </header>
-    {%- for r in related %}
-    <div class="stack-8">
-      <h3><a href="{{ r.href }}">{{ r.title | safe }}</a></h3>
-      <p class="prose">{{ r.body | safe }}</p>
+{#- RELATED â€” 4 H3s verbatim (r-2 hub-card). No r.cta in data â†’ arrow-only svg. -#}
+<section class="sec reveal hub-rt--alt" id="trade-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related services &amp; industries.</h2>
+    <div class="r-2">
+      {%- for r in related %}
+      <a class="dc-card hub-card" href="{{ r.href }}"><h3>{{ r.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ r.body | safe }}</p><span class="hub-card__go"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      {%- endfor %}
     </div>
-    {%- endfor %}
   </div>
 </section>

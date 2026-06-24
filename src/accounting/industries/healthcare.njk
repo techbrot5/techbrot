@@ -1,13 +1,15 @@
----json
+﻿---json
 {
-  "layout": "layouts/t-mofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/accounting/industries/healthcare/",
   "slug": "acctind-healthcare",
-  "tierClass": "section--tier-guide",
   "bodyClass": "page--mofu",
-  "callBar": true,
-  "title": "Healthcare &amp; Medical Practice Accounting · TechBrot",
-  "description": "Expert healthcare and medical practice accounting on QuickBooks — insurance revenue reconciliation, billed-vs-collected tracking, per-provider books, payroll, and patient refunds by Certified ProAdvisors.",
+  "sec": {
+    "aiH": "Healthcare accounting, in five questions.",
+    "faqH": "Healthcare accounting questions."
+  },
+  "title": "Healthcare &amp; Medical Practice Accounting Â· TechBrot",
+  "description": "Expert healthcare and medical practice accounting on QuickBooks â€” insurance revenue reconciliation, billed-vs-collected tracking, per-provider books, payroll, and patient refunds by Certified ProAdvisors.",
   "breadcrumb": [
     { "name": "Home", "href": "/" },
     { "name": "Accounting", "href": "/accounting/" },
@@ -40,190 +42,121 @@
 }
 ---
 
-{# ── DEFINITION · plain-terms prose. (H2: Healthcare accounting, plainly.) ── #}
-<section class="section" id="acctind-healthcare-definition">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In plain terms</p>
-      <h2 class="section__heading">Healthcare accounting, plainly.</h2>
-    </header>
+{#- â•â•â• INDUSTRY Â· HEALTHCARE (BASELINE, equity-gated). t-mofuâ†’t-prose / dc-base. Every
+    baseline heading verbatim at its level; all prose carried, no thinning. #acctind-healthcare-definition
+    preserved (speakable #1). ai-summary + faq rendered by t-prose (sec.aiH/faqH) â€” the layout
+    emits #acctind-healthcare-ai-summary == speakable #2. vs-tableâ†’.cmp. founder-name-zero. â•â•â• -#}
+
+{#- DEFINITION â€” speakable target, id preserved. -#}
+<section class="sec reveal" id="acctind-healthcare-definition">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">In plain terms</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Healthcare accounting, plainly.</h2>
     <div class="prose">
       {%- for p in definition %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── AI SUMMARY · five-question block. Questions are NON-heading (ai-summary__question
-   <p>) to keep the frozen heading inventory exact; QAPage built from this array.
-   (H2: Healthcare accounting, in five questions.) ── #}
-<section class="section section--alt" id="acctind-healthcare-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Healthcare accounting, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled" id="acctind-healthcare-ai-summary-list">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <p class="ai-summary__question">{{ item.q | safe }}</p>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── CHALLENGES · three places practices lose the numbers (grid-3 buyer-cards). 3 frozen H3s verbatim. ── #}
-<section class="section" id="acctind-healthcare-challenges">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Why healthcare books break</p>
-      <h2 class="section__heading">Three places practices lose the numbers.</h2>
-      <p class="section__lede">Nearly every messy practice file fails in the same three areas. Knowing which one you&rsquo;re in tells us where to start.</p>
-    </header>
-    <div class="grid-3">
+{#- CHALLENGES â€” 3 dc-cards (H2 + 3 H3s). -#}
+<section class="sec reveal hub-rt--alt" id="acctind-healthcare-challenges" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Why healthcare books break</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Three places practices lose the numbers.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Nearly every messy practice file fails in the same three areas. Knowing which one you&rsquo;re in tells us where to start.</p>
+    <div class="r-3">
       {%- for c in challenges %}
-      <div class="buyer-card">
-        <p class="buyer-card__opener">{{ c.signal | safe }}</p>
-        <h3 class="buyer-card__heading">{{ c.title | safe }}</h3>
-        <p class="buyer-card__body">{{ c.body | safe }}</p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ c.signal | safe }}</span><h3>{{ c.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ c.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── WHAT WE HANDLE · the six services (grid-3 stack-8). 6 frozen H3s verbatim. ── #}
-<section class="section section--alt" id="acctind-healthcare-handle">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What TechBrot handles</p>
-      <h2 class="section__heading">Healthcare accounting, done by an expert.</h2>
-      <p class="section__lede">Every engagement is scoped to your providers, locations, and systems, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
-    </header>
-    <div class="grid-3">
+{#- WHAT WE HANDLE â€” the six services (H2 + 6 H3s). -#}
+<section class="sec reveal" id="acctind-healthcare-handle">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">What TechBrot handles</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Healthcare accounting, done by an expert.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Every engagement is scoped to your providers, locations, and systems, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    <div class="r-3">
       {%- for s in handle %}
-      <div class="stack-8">
-        <p class="num">{{ s.num }}</p>
-        <h3>{{ s.title | safe }}</h3>
-        <p class="prose">{{ s.body | safe }}</p>
-        <p class="prose"><a href="{{ s.href }}">{{ s.cta | safe }}</a></p>
-      </div>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ s.num }}</span><h3>{{ s.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p><p class="prose" style="font-size:14px;margin:8px 0 0;"><a href="{{ s.href }}">{{ s.cta | safe }}</a></p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── INTEGRATIONS · systems reconciled with QuickBooks (checks-list). ── #}
-<section class="section" id="acctind-healthcare-integrations">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Systems we reconcile</p>
-      <h2 class="section__heading">Connected to how you run the practice.</h2>
-    </header>
-    <ul class="checks-list">
+{#- INTEGRATIONS â€” systems reconciled with QuickBooks (checks-list). -#}
+<section class="sec reveal hub-rt--alt" id="acctind-healthcare-integrations" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Systems we reconcile</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">Connected to how you run the practice.</h2>
+    <ul class="checklist">
       {%- for t in integrations %}<li>{{ t | safe }}</li>{%- endfor %}
     </ul>
     <p class="prose">{{ integrationsNote | safe }}</p>
   </div>
 </section>
 
-{# ── PROCESS · four-phase engagement rhythm (process-diagram). 4 frozen H3s verbatim. ── #}
-<section class="section section--alt" id="acctind-healthcare-process">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">How engagements work</p>
-      <h2 class="section__heading">From billed-not-banked to collection-based books.</h2>
-      <p class="section__lede">Every healthcare engagement follows the same four-phase rhythm &mdash; built so your books are accurate before anyone tries to advise on them.</p>
-    </header>
-    <ol class="process-diagram">
+{#- PROCESS â€” four-phase engagement rhythm â†’ process-grid (H2 + 4 H3s). -#}
+<section class="sec reveal" id="acctind-healthcare-process">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">How engagements work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">From billed-not-banked to collection-based books.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Every healthcare engagement follows the same four-phase rhythm &mdash; built so your books are accurate before anyone tries to advise on them.</p>
+    <div class="process-grid">
       {%- for p in process %}
-      <li class="process-step">
-        <p class="process-step__number">{{ p.phase | safe }}</p>
-        <h3 class="process-step__heading">{{ p.title | safe }}</h3>
-        <p class="process-step__body">{{ p.body | safe }}</p>
-      </li>
+      <div class="process-step"><div class="process-step__n">{{ p.phase | safe }}</div><h3>{{ p.title | safe }}</h3><p>{{ p.body | safe }}</p></div>
       {%- endfor %}
-    </ol>
-  </div>
-</section>
-
-{# ── COMPARISON · billed-vs-collected, the load-bearing specificity (vs-scroll + vs-table,
-   no collapse per T3). Preserved baseline body Q/A on contractual adjustments as section content. ── #}
-<section class="section" id="acctind-healthcare-billed-collected">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Billed is not collected</p>
-      <h2 class="section__heading">The five numbers a practice charge becomes.</h2>
-      <p class="section__lede">A single claim moves through five different figures before it&rsquo;s real revenue. Bookkeeping that records only the deposit &mdash; or only the charge &mdash; misses where the money actually went.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">How a billed charge becomes collected revenue in a medical practice</caption>
-        <thead><tr><th scope="col">Figure</th><th scope="col" class="vs-table__us">What it is</th><th scope="col">Where it belongs in the books</th></tr></thead>
-        <tbody>
-          {%- for r in billedCollected %}
-          <tr><th scope="row">{{ r.figure | safe }}</th>
-            <td class="vs-table__us">{{ r.what | safe }}</td>
-            <td>{{ r.books | safe }}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
     </div>
   </div>
 </section>
 
-{# ── ADVISORY · standing brand line is the H2; body carried as section prose. ── #}
-<section class="section section--alt" id="acctind-healthcare-advisory">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Beyond the books</p>
-      <h2 class="section__heading">Clean books are the start. A stronger practice is the point.</h2>
-    </header>
+{#- BILLED-VS-COLLECTED TABLE â€” vs-tableâ†’.cmp. The five numbers a practice charge becomes. -#}
+<section class="sec reveal hub-rt--alt" id="acctind-healthcare-billed-collected" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Billed is not collected</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The five numbers a practice charge becomes.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:72ch;">A single claim moves through five different figures before it&rsquo;s real revenue. Bookkeeping that records only the deposit &mdash; or only the charge &mdash; misses where the money actually went.</p>
+    <table class="cmp">
+      <caption class="sr-only">How a billed charge becomes collected revenue in a medical practice</caption>
+      <thead><tr><th scope="col">Figure</th><th scope="col" class="num us">What it is</th><th scope="col">Where it belongs in the books</th></tr></thead>
+      <tbody>
+        {%- for r in billedCollected %}
+        <tr><th scope="row" data-col="Figure">{{ r.figure | safe }}</th><td class="num us" data-col="What it is">{{ r.what | safe }}</td><td data-col="Where it belongs in the books">{{ r.books | safe }}</td></tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{#- ADVISORY â€” standing brand line as H2; body carried as prose (no gutting). -#}
+<section class="sec reveal" id="acctind-healthcare-advisory">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Beyond the books</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Clean books are the start. A stronger practice is the point.</h2>
     <div class="prose">
       {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
-    <div class="hero__actions">
-      <a class="btn btn--primary btn--lg" href="/contact/?intent=accounting">Book the discovery call</a>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;">
+      <a class="btn btn-cta" href="/contact/?intent=accounting" style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Book the discovery call</a>
     </div>
   </div>
 </section>
 
-{# ── FAQ · 7 verbatim contract Q/A; visible faq__list = FAQPage schema (same array, NO dedup).
-   (H2: Healthcare accounting questions.) ── #}
-<section class="section" id="acctind-healthcare-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">FAQ</p>
-      <h2 class="section__heading">Healthcare accounting questions.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="acctind-healthcare-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="acctind-healthcare-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
+{#- EXPERT REVIEW â€” firm-level byline (founder-name-zero). -#}
+<section class="sec reveal hub-rt--alt" id="acctind-healthcare-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Reviewed by the ProAdvisor team.</h2>
+    <div class="byline">
+      <span class="byline__mark"><svg width="16" height="16" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span>
+      <div><p class="byline__name">By the Certified QuickBooks ProAdvisor team</p><p class="byline__meta">TechBrot Inc. &middot; independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc.</p></div>
     </div>
-  </div>
-</section>
-
-{# ── EXPERT REVIEW · firm-level, no founder name (trust-row). (H2: Reviewed by the ProAdvisor team.) ── #}
-<section class="section section--alt" id="acctind-healthcare-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the ProAdvisor team.</h2>
-    </header>
-    <div class="prose">
+    <div class="prose" style="margin-top:18px;">
       <p>This page reflects how TechBrot actually handles healthcare engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm, and reviewed for technical accuracy on payer-deposit reconciliation, collection-based revenue, and per-provider tracking. Where our approach or scope changes, this page is updated. We are not a medical billing or coding company and do not certify HIPAA compliance; income-tax filing and entity matters stay with your CPA and counsel.</p>
     </div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for c in reviewCreds %}
       <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -233,20 +166,14 @@
   </div>
 </section>
 
-{# ── RELATED · services & industries (grid-2 buyer-cards). 4 frozen H3s verbatim. ── #}
-<section class="section" id="acctind-healthcare-related">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Related services &amp; industries.</h2>
-    </header>
-    <div class="grid-2">
+{#- RELATED â€” services & industries (H2 + 4 H3s). -#}
+<section class="sec reveal" id="acctind-healthcare-related">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">Â§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related services &amp; industries.</h2>
+    <div class="r-2">
       {%- for r in related %}
-      <div class="buyer-card">
-        <h3 class="buyer-card__heading">{{ r.title | safe }}</h3>
-        <p class="buyer-card__body">{{ r.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>
-      </div>
+      <a class="dc-card hub-card" href="{{ r.href }}"><h3>{{ r.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ r.body | safe }}</p><span class="hub-card__go">{{ (r.cta | replace(" &rarr;", "") | replace("&rarr;", "")) | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
