@@ -1,11 +1,13 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
 
-## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · E1/E2/E3/E6 + G1 DONE · E5+F1 next)
-**RESUME ANCHOR (2026-06-24) — matches git HEAD `93613a4` (origin/preview-11ty):** B1-B5 DONE (2691f05),
-C2 /vs/ 14/14 (4c22934), C1 (1710daf). **E2 glossary (8750bce), G1 legal 4 + E3 frameworks 5 (ba8c85e),
-E6 blog t-article + category (93613a4) all DONE + pushed.** E1 guides (13+index) + E6 research hub VERIFIED
-already-v2 this session (0 old-kit leaks in built HTML). **Remaining in E = E5 tools (9 calc children still on
-OLD t-mofu).** Tree CLEAN; HEAD==origin.
+## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · E FAMILY COMPLETE + G1 DONE · F2 next)
+**RESUME ANCHOR (2026-06-24) — matches git HEAD `5016ba8` (origin/preview-11ty):** B1-B5 (2691f05),
+C2 /vs/ 14/14 (4c22934), C1 (1710daf), E2 glossary (8750bce), G1 legal 4 + E3 frameworks 5 (ba8c85e),
+E6 blog (93613a4), **E5 tools 9 (becb5fe), F1 forms 2 (5016ba8) — all DONE + pushed.** E1 guides (13+index)
++ E6 research VERIFIED already-v2. **E FAMILY COMPLETE.** OPTION A executed: .calc/.intake ported to dc-system,
+dc-base got 4 JS loader branches (calc/formula/select/form), the 9 tools use 3 engines (tb-calc/formula/select),
+calculators computation-preserved by construction. **REMAINING: F2 pricing (main + 5 state) -> G2 about/trust/
+partners -> A1 home (LAST) -> pre-flip pass.** Tree CLEAN; HEAD==origin. No open founder calls.
 **⚠ R0 NOTE:** 8750bce + ba8c85e shipped in a prior session but were never dual-logged (resume anchor + family
 table left stale, no SESSION-LOG entry). Backfilled 2026-06-24 (SESSION-LOG + this anchor + table). Resume anchor
 MUST match git every turn from now on — that gap is what makes recovery risky.
@@ -41,16 +43,11 @@ pre-flip sitewide pass (section-bg/overflow/axe batch; retire unused partials/vs
 accounting/convention) ✅; (b) proadvisor-near-me STAYS on t-money for now ✅.** Both prior open calls RESOLVED.
 ## 🛑 FOUNDER DECISIONS PENDING (clear before flip — founder 2026-06-24, autonomous-sleep run)
 Real founder calls deferred during the autonomous run (best-judgment applied + noted; founder to ratify pre-flip):
-- **E5 TOOLS + F1 FORMS — v2-component dependency (deferred during autonomous run, 2026-06-24):** the 9
-  calculator pages (`src/tools/*.njk`, on OLD t-mofu) use the `.calc` widget (`data-calc`, JSON model,
-  `tb-calc.js` via `includeCalcJs`) and `.intake-field`; F1 (`/contact/`, `/quickbooks/file-review/`) use the
-  intake-form. **NEITHER the calc JS loader (only base.njk has it, not dc-base) NOR the `.calc`/`intake` CSS
-  (in 06-content.css, NOT dc-system.css) is in the v2 system.** Migrating these to v2 needs the calc/intake
-  components PORTED into dc-system.css + `includeCalcJs` added to dc-base — OR the handoff Tool/Form template's
-  v2 calc/form styling extracted from the zip. **DECISION for founder (new-type proof glance): port the existing
-  real `.calc`/`.intake` components into dc-system (functional, current look) vs extract the handoff Tool/Form
-  v2 styling (proper but more work).** Deferred to do RIGHT (with the component port) rather than ship broken/old
-  calc on new chrome. Tools + F1 are the only families with this dependency; everything else migrates cleanly.
+- **E5 TOOLS + F1 FORMS — v2-component dependency → RESOLVED 2026-06-24 (founder chose OPTION A):** port the
+  real `.calc`/`.intake` into dc-system (functional, current look), keep calculators working, defer the premium
+  handoff Tool/Form styling to **Part 2 (post-flip CSS elevation)**. DONE — dc-system got the re-tokenized calc/
+  intake CSS; dc-base got includeCalcJs/FormulaJs/SelectJs/FormJs loaders; 9 tools + 2 forms on t-prose, battery
+  GREEN, calc computation preserved by construction. **Part-2 owed:** premium Tool/Form v2 styling pass.
 - CARRIED (RESOLVED 2026-06-24): B3 listing CTA = LIGHT ✅; proadvisor-near-me stays t-money ✅.
 
 **R0 — DUAL-LOG EVERY TURN (founder, 2026-06-23):** append the full turn to
@@ -86,9 +83,10 @@ D1 → D3 → D2 → D4/5/6 (NY incl) → D7 → B1-B5 → C1 → E1-E6 → F1 �
 | **E3 frameworks (1 index + 4)** | t-hub / t-prose | **✅ DONE** | index→t-hub card-grid + 4 articles→t-prose (opquote/process-grid/ai-ruled/rel-card/details-FAQ); frozen speakable ids #had/#mip/#tsp/#crd-* preserved (AI-summary authored in body). Commit ba8c85e. |
 | **E6 blog (8 posts + index + categories)** | t-article / t-hub | **✅ DONE** | t-article.njk base.njk→dc-base (editorial reading column, blog seams, FROZEN speakable blog-<slug>-prose); category.njk t-mofu→t-hub card-grid; index already t-hub (B3). posts.11tydata.js dead chrome keys trimmed. Commit 93613a4. |
 | **E6 research** | t-hub | **✅ DONE (verified)** | hub on t-hub, 0 old-kit leaks; no children (data-driven/none). Verified 2026-06-24. |
-| **E5 tools (9 calc) + F1 forms (2)** | OLD t-mofu → v2 | **🔜 NEXT** | 9 calculator children + /contact/ + /quickbooks/file-review/ still on OLD chrome. **OPTION A (founder):** port real .calc/.intake into dc-system + includeCalcJs to dc-base, keep tb-calc.js working, defer premium styling to Part 2. |
+| **E5 tools (9 calc)** | t-prose (v2) | **✅ DONE** | 9 calc pages t-mofu→t-prose (Option A). .calc/.intake ported to dc-system (re-tokenized); dc-base got includeCalcJs/FormulaJs/SelectJs branches (3 engines). Calc widgets + #calc-model byte-preserved (data-* hooks); frozen #<slug>-in-brief-text resolves via TL;DR. sales-tax-rate-lookup = non-calc prose. 0 old-kit. Commit becb5fe. |
+| **F1 forms (2)** | t-prose (v2) | **✅ DONE** | /contact/ (BASELINE, equity GREEN 13 headings) + /quickbooks/file-review/ base.njk→t-prose. Shared intake-form.njk partial included VERBATIM (locked contract; 6 other consumers unaffected). dc-base +includeFormJs (tb-forms.js). Caught+fixed: 4 alt cards needed h3 (baseline)→dc-card hub-card. 2 Clutch reviews verbatim. Commit 5016ba8. |
+| **F2 / G2 / A1** | various | **🔜 NEXT** | F2 pricing (main + 5 state, likely t-bofu=OLD) → t-money/t-prose; G2 about/trust/partners; A1 home LAST; then pre-flip pass |
 | **G1 legal (4, baseline)** | t-prose | **✅ DONE** | disclaimer/dpa/privacy/terms t-guide→t-prose + body→v2 prose. ZERO legal-wording change; baseline headings verbatim (16/18/18/18); content-equity GREEN. Commit ba8c85e. |
-| **F2 / G2 / A1** | various | **🔜 PENDING** | pricing (incl 5 state) · about/trust/partners · home LAST · then pre-flip sitewide pass |
 | proadvisor-near-me | t-money | **⏳ review** | flagged for possible re-tier (prose-heavy) — founder call |
 
 **SHARED v2 COMPONENTS (fix at SOURCE → all families inherit):** PARTIALS — trust-strip.njk
