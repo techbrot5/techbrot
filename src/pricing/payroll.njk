@@ -1,12 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-bofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/pricing/payroll/",
   "slug": "ppr",
-  "chrome": "full",
-  "callBar": false,
-  "tierClass": "section--tier-bofu",
   "bodyClass": "page--bofu",
+  "sec": {
+    "aiH": "Payroll pricing, in five questions.",
+    "faqH": "Questions about payroll cost."
+  },
   "title": "Payroll Management Cost — Fixed Monthly Fee · TechBrot",
   "description": "What payroll management costs and what drives the monthly fee: employees, pay frequency, multi-state, 1099 volume, year-end W-2s. Fixed fee $150–$800+/mo. Software billed separately.",
   "breadcrumb": [
@@ -39,77 +40,53 @@
 }
 ---
 
-<section class="section section--compact section--tier-bofu" id="ppr-tldr">
-  <div class="container">
-    <div class="tldr">
-      <p class="tldr__label">In one paragraph</p>
-      <h2 class="tldr__heading">What payroll management costs.</h2>
-      <p class="tldr__body" id="ppr-tldr-body">Payroll management at TechBrot is a <strong>fixed monthly fee of $150&ndash;$800+/month</strong> against a written scope &mdash; no hourly billing. Where your business lands in that range is driven by real factors: the number of employees, how often you run payroll, whether you pay people in more than one state, your contractor/1099 volume, and the year-end W-2 and 1099 work. The fee is for the management and processing service &mdash; the payroll <em>software</em> itself (QuickBooks Payroll, Gusto, or similar) is a separate subscription billed by that provider, and TechBrot is provider-neutral about which one you use. TechBrot manages payroll and oversees the payroll-tax filings the software performs; income-tax filing and IRS representation stay with your CPA. Your exact fixed fee is quoted in writing within 3 business days of a free discovery call.</p>
-    </div>
+{#- ═══ F2 PRICING (payroll management). t-bofu→t-prose. Canonical figures EXACT;
+    every heading verbatim. #ppr-tldr-body speakable preserved. ai-summary + faq
+    rendered by t-prose (sec.aiH/faqH). ═══ -#}
+
+{#- TL;DR (body) — canonical figures verbatim. #ppr-tldr-body = speakable. -#}
+<section class="sec reveal" id="ppr-tldr">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">What payroll management costs.</h2>
+    <div class="tldr-prose"><p id="ppr-tldr-body">Payroll management at TechBrot is a <strong>fixed monthly fee of $150&ndash;$800+/month</strong> against a written scope &mdash; no hourly billing. Where your business lands in that range is driven by real factors: the number of employees, how often you run payroll, whether you pay people in more than one state, your contractor/1099 volume, and the year-end W-2 and 1099 work. The fee is for the management and processing service &mdash; the payroll <em>software</em> itself (QuickBooks Payroll, Gusto, or similar) is a separate subscription billed by that provider, and TechBrot is provider-neutral about which one you use. TechBrot manages payroll and oversees the payroll-tax filings the software performs; income-tax filing and IRS representation stay with your CPA. Your exact fixed fee is quoted in writing within 3 business days of a free discovery call.</p></div>
   </div>
 </section>
 
-<section class="section" id="ppr-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Payroll pricing, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="ppr-drivers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What moves the number</p>
-      <h2 class="section__heading">What drives the monthly fee.</h2>
-      <p class="section__lede">Payroll is always a range because no two payrolls are the same shape. These are the factors that decide where your fixed monthly fee lands &mdash; surfaced on the free discovery call, then fixed in the written scope.</p>
-    </header>
-    <div class="grid-3">
+{#- DRIVERS — (review-card→r-3 dc-card). -#}
+<section class="sec reveal hub-rt--alt" id="ppr-drivers" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What moves the number</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What drives the monthly fee.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Payroll is always a range because no two payrolls are the same shape. These are the factors that decide where your fixed monthly fee lands &mdash; surfaced on the free discovery call, then fixed in the written scope.</p>
+    <div class="r-3">
       {%- for d in drivers %}
-      <article class="review-card">
-        <p class="team-card__role">{{ d.label }}</p>
-        <h3>{{ d.name }}</h3>
-        <p class="review-card__fact">{{ d.body | safe }}</p>
-      </article>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ d.label }}</span><h3>{{ d.name }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ d.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="ppr-scope">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What the fee covers</p>
-      <h2 class="section__heading">What the monthly fee includes.</h2>
-      <p class="section__lede">One fixed monthly fee covers the whole payroll cycle &mdash; including the heavy year-end month &mdash; against a written scope.</p>
-    </header>
-    <div class="grid-3">
+{#- SCOPE — (review-card→r-3 dc-card). -#}
+<section class="sec reveal" id="ppr-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What the fee covers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What the monthly fee includes.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">One fixed monthly fee covers the whole payroll cycle &mdash; including the heavy year-end month &mdash; against a written scope.</p>
+    <div class="r-3">
       {%- for s in scope %}
-      <article class="review-card">
-        <h3>{{ s.name }}</h3>
-        <p class="review-card__fact">{{ s.body | safe }}</p>
-      </article>
+      <div class="dc-card"><h3>{{ s.name }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="ppr-software">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Service fee vs. software</p>
-      <h2 class="section__heading">The software subscription is separate.</h2>
-    </header>
-    <div class="legal-doc__body">
+{#- SOFTWARE — prose. -#}
+<section class="sec reveal hub-rt--alt" id="ppr-software" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Service fee vs. software</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">The software subscription is separate.</h2>
+    <div class="prose">
       <p>There are two distinct costs in running payroll, and it matters to keep them apart. The first is the <strong>payroll software</strong> &mdash; the platform that actually calculates paychecks, moves the money, and submits the tax filings. That is a subscription billed directly by the provider: <code>QuickBooks Payroll</code>, <code>Gusto</code>, or whatever product fits your business. TechBrot does not resell it and does not quote its price &mdash; for that, refer to the provider, because their plans and per-employee pricing change and are theirs to state.</p>
       <p>The second cost is the <strong>management and processing service</strong> &mdash; running the pay cycle correctly, overseeing the payroll-tax calendar, onboarding new hires, handling year-end, and keeping payroll reconciled to your books. That is what TechBrot&rsquo;s <strong>$150&ndash;$800+/month</strong> fixed fee covers. You pay the software provider for the platform and TechBrot for running it well.</p>
       <p>TechBrot is <strong>provider-neutral</strong>. We hold an active Intuit Payroll certification and operate QuickBooks Payroll often, but we recommend the product that genuinely fits your headcount, states, and benefits &mdash; not the one that pays us, because none of them do. The recommendation comes out of the discovery call, with the trade-offs explained in plain terms.</p>
@@ -117,85 +94,53 @@
   </div>
 </section>
 
-<section class="section" id="ppr-tax-lane">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Where payroll tax stops</p>
-      <h2 class="section__heading">Payroll taxes, and where the lane ends.</h2>
-    </header>
-    <div class="legal-doc__body">
+{#- TAX-LANE — prose. -#}
+<section class="sec reveal" id="ppr-tax-lane">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Where payroll tax stops</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Payroll taxes, and where the lane ends.</h2>
+    <div class="prose">
       <p>Payroll management includes the <strong>payroll-tax work the software performs</strong>: TechBrot sets up and oversees the federal, state, and local payroll-tax deposits and filings &mdash; the 941s, state withholding and unemployment accounts, new-state registrations, and the year-end W-2 and 1099-NEC filings &mdash; all run through your payroll product on its calendar. That is squarely inside the engagement.</p>
       <p>What is <strong>not</strong> in scope is your <em>income-tax</em> return and any representation before the IRS. Filing the business or owner income-tax return, tax-strategy planning, and responding to the IRS on your behalf stay with your CPA or EA. TechBrot keeps payroll accurate and the books CPA-ready so that handoff is clean &mdash; but the income-tax lane belongs to your tax preparer, and we say so plainly rather than blur it. Recurring engagements include a year-end CPA handoff at no extra cost.</p>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="ppr-example">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Representative examples</p>
-      <h2 class="section__heading">How the drivers stack up.</h2>
-      <p class="section__lede">Illustrative shapes only &mdash; not quotes. Every fixed fee is set in writing after a free discovery call.</p>
-    </header>
-    <div class="legal-doc__body">
+{#- EXAMPLE — prose. -#}
+<section class="sec reveal hub-rt--alt" id="ppr-example" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Representative examples</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">How the drivers stack up.</h2>
+    <p class="lede" style="margin:0 0 22px;max-width:70ch;">Illustrative shapes only &mdash; not quotes. Every fixed fee is set in writing after a free discovery call.</p>
+    <div class="prose">
       <p><strong>Lower in the range &mdash; representative example:</strong> a handful of salaried employees, one state, monthly or semi-monthly pay, no contractors, simple deductions. Fewer runs and a single tax jurisdiction keep the recurring work light, so a payroll like this sits toward the lower end of the $150&ndash;$800+/month range.</p>
       <p><strong>Higher in the range &mdash; representative example:</strong> a larger team paid weekly, employees in several states, a meaningful contractor roster needing year-end 1099-NECs, plus benefit deductions and a garnishment or two. More runs, more jurisdictions, and heavier year-end volume mean more of the cycle to own &mdash; so a payroll like this sits toward the upper end. Your own shape is matched to a fixed number on the discovery call.</p>
     </div>
   </div>
 </section>
 
-<section class="section section--alt section--compact" id="ppr-path">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">From question to fixed fee</p>
-      <h2 class="section__heading">Four steps to a number in writing.</h2>
-    </header>
-    <div class="flow" role="img" aria-label="The path to a fixed fee: a free 30-minute discovery call, then a written fixed-fee scope within 3 business days, the exact monthly fee in writing with no hourly billing, then payroll runs begin with a named operator.">
-      <div class="flow__step flow__step--accent"><span class="flow__label">Free discovery call</span><span class="flow__sub">30 min &middot; no obligation</span></div>
-      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-      <div class="flow__step"><span class="flow__label">Written scope</span><span class="flow__sub">within 3 business days</span></div>
-      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-      <div class="flow__step"><span class="flow__label">Fixed fee, in writing</span><span class="flow__sub">no hourly billing</span></div>
-      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-      <div class="flow__step"><span class="flow__label">Payroll runs begin</span><span class="flow__sub">named operator</span></div>
+{#- PATH — 4 steps (flow→process-grid). -#}
+<section class="sec reveal" id="ppr-path">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">From question to fixed fee</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:22px;">Four steps to a number in writing.</h2>
+    <div class="process-grid">
+      <div class="process-step"><div class="process-step__n">STEP 1</div><h3>Free discovery call</h3><p>30 min &middot; no obligation</p></div>
+      <div class="process-step"><div class="process-step__n">STEP 2</div><h3>Written scope</h3><p>within 3 business days</p></div>
+      <div class="process-step"><div class="process-step__n">STEP 3</div><h3>Fixed fee, in writing</h3><p>no hourly billing</p></div>
+      <div class="process-step"><div class="process-step__n">STEP 4</div><h3>Payroll runs begin</h3><p>named operator</p></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="ppr-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Before you call</p>
-      <h2 class="section__heading">Questions about payroll cost.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ppr-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="ppr-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="ppr-related">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Where this sits</p>
-      <h2 class="section__heading">Related pages.</h2>
-    </header>
-    <div class="grid-3">
+{#- RELATED — 3 route cards (review-card link→hub-card). -#}
+<section class="sec reveal hub-rt--alt" id="ppr-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Where this sits</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Related pages.</h2>
+    <div class="r-3">
       {%- for card in related %}
-      <article class="review-card">
-        <h3>{{ card.name }}</h3>
-        <p class="review-card__fact">{{ card.body | safe }}</p>
-        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <a class="dc-card hub-card" href="{{ card.href }}"><h3>{{ card.name }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ card.body | safe }}</p><span class="hub-card__go">{{ card.cta }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>

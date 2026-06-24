@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-bofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/find-an-accountant/florida/pricing/",
   "slug": "fl-svc-pricing",
-  "tierClass": "section--tier-bofu",
   "bodyClass": "page--bofu",
-  "callBar": true,
+  "sec": {
+    "aiH": "Florida pricing, in five questions.",
+    "faqH": "Questions about cost."
+  },
   "title": "Florida Bookkeeping & QuickBooks Pricing · TechBrot",
   "description": "Fixed-fee Florida pricing — monthly bookkeeping $400+/mo, cleanup $1,500+, QuickBooks setup $750+. Written scope before any work, no hourly billing, all 67 counties. Call (877) 751-5575.",
   "breadcrumb": [
@@ -14,7 +16,6 @@
     { "name": "Florida", "href": "/find-an-accountant/florida/" },
     { "name": "Pricing" }
   ],
-  "heroFigure": "taccount",
   "hero": {
     "trust": [
       "Certified QuickBooks ProAdvisor team",
@@ -46,152 +47,98 @@
 }
 ---
 
-{# ── TLDR ── #}
-<section class="section section--compact" id="fl-svc-pricing-tldr">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In one paragraph</p>
-      <h2 class="section__heading">How TechBrot Florida pricing works.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in tldr %}<p class="prose"{% if loop.first %} id="fl-svc-pricing-summary"{% endif %}>{{ p | safe }}</p>{%- endfor %}
+{#- ═══ FL F2 STATE PRICING (money cluster, canonical figures). t-bofu→t-prose. Every
+    heading verbatim at its level; canonical FL ranges EXACT (tldr text + `ranges` data,
+    untouched). Speakable preserved: #fl-svc-pricing-summary (tldr first p) +
+    #fl-svc-pricing-ai-summary-list (city-child cssSelector) carried onto the tldr block.
+    ai-summary + faq rendered by t-prose (sec.aiH/faqH). ═══ -#}
+
+{#- TL;DR (body) — canonical figures verbatim. #fl-svc-pricing-summary = speakable;
+    #fl-svc-pricing-ai-summary-list (2nd speakable selector) carried here too. -#}
+<section class="sec reveal" id="fl-svc-pricing-tldr" style="padding-top:8px;">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">How TechBrot Florida pricing works.</h2>
+    <div class="tldr-prose" id="fl-svc-pricing-ai-summary-list">
+      {%- for p in tldr %}<p class="prose"{% if loop.first %} id="fl-svc-pricing-summary"{% endif %} style="margin:0 0 14px;">{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── AI SUMMARY ── #}
-<section class="section section--alt" id="fl-svc-pricing-ai-summary-sec">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Florida pricing, in five questions.</h2>
-    </header>
-    <dl class="ai-summary ai-summary--ruled" id="fl-svc-pricing-ai-summary-list">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
-        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
-      </div>
-      {%- endfor %}
-    </dl>
-  </div>
-</section>
-
-{# ── ENGAGEMENT SHAPES (grid-3) ── #}
-<section class="section" id="fl-svc-pricing-shapes">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Three engagement shapes</p>
-      <h2 class="section__heading">Every Florida engagement fits one of three shapes.</h2>
-      <p class="section__lede">Pricing structure follows the shape of the work. All three run to the same standard: fixed fee, written scope, named ProAdvisor.</p>
-    </header>
-    <div class="grid-3">
+{#- SHAPES — 3 engagement shapes (h3s). -#}
+<section class="sec reveal hub-rt--alt" id="fl-svc-pricing-shapes" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Three engagement shapes</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Every Florida engagement fits one of three shapes.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Pricing structure follows the shape of the work. All three run to the same standard: fixed fee, written scope, named ProAdvisor.</p>
+    <div class="r-3">
       {%- for s in shapes %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ s.tag | safe }}</p>
-        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-        <p class="buyer-card__body">{{ s.examples | safe }}</p>
-      </article>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ s.tag | safe }}</span><h3>{{ s.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p><p class="prose" style="font-size:14.5px;margin:8px 0 0;">{{ s.examples | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── FULL PRICING (grid-3) ── #}
-<section class="section section--alt" id="fl-svc-pricing-ranges">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">All pricing</p>
-      <h2 class="section__heading">Every Florida service, every range.</h2>
-      <p class="section__lede">The complete pricing landscape for Florida businesses. Every fee is fixed and scoped in writing before work begins.</p>
-    </header>
-    <div class="grid-3">
-      {%- for r in ranges %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ r.type | safe }}</p>
-        <h3 class="buyer-card__heading">{{ r.service | safe }}</h3>
-        <p class="buyer-card__body"><strong>{{ r.fee | safe }}</strong></p>
-        <p class="buyer-card__body">{{ r.cadence | safe }}</p>
-        {%- if r.href %}<a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>{%- endif %}
-      </article>
-      {%- endfor %}
-    </div>
-    <p class="prose">{{ rangesNote | safe }}</p>
+{#- THE FULL TABLE — canonical FL ranges from `ranges` data (untouched). vs-table→.cmp. -#}
+<section class="sec reveal" id="fl-svc-pricing-ranges">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">All pricing</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Every Florida service, every range.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">The complete pricing landscape for Florida businesses. Every fee is fixed and scoped in writing before work begins.</p>
+    <table class="cmp">
+      <caption class="sr-only">TechBrot fixed-fee Florida pricing across all engagement types.</caption>
+      <thead><tr><th scope="col">Service</th><th scope="col">Engagement type</th><th scope="col">Fee range</th><th scope="col">Cadence</th></tr></thead>
+      <tbody>
+        {%- for r in ranges %}
+        <tr>
+          <th scope="row" data-col="Service">{% if r.href %}<a href="{{ r.href }}">{{ r.service | safe }}</a>{% else %}{{ r.service | safe }}{% endif %}</th>
+          <td data-col="Engagement type" style="color:var(--color-ink-mute);">{{ r.type | safe }}</td>
+          <td class="num us" data-col="Fee range"><strong>{{ r.fee | safe }}</strong></td>
+          <td data-col="Cadence" style="color:var(--color-ink-mute);">{{ r.cadence | safe }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:14px;">{{ rangesNote | safe }}</p>
   </div>
 </section>
 
-{# ── WHY FIXED-FEE ── #}
-<section class="section" id="fl-svc-pricing-why">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Why fixed-fee</p>
-      <h2 class="section__heading">Why we don&rsquo;t bill by the hour.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in whyBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+{#- WHY FIXED-FEE — prose. -#}
+<section class="sec reveal hub-rt--alt" id="fl-svc-pricing-why" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why fixed-fee</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Why we don&rsquo;t bill by the hour.</h2>
+    <div class="prose">
+      {%- for p in whyBody %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── INCLUDES (grid-3) ── #}
-<section class="section section--alt" id="fl-svc-pricing-includes">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s always included</p>
-      <h2 class="section__heading">Every fixed fee includes these.</h2>
-      <p class="section__lede">Regardless of service or price, every Florida engagement includes the same six standards. They&rsquo;re not add-ons &mdash; they&rsquo;re the baseline.</p>
-    </header>
-    <div class="grid-3">
+{#- INCLUDES — 6 (h3s). -#}
+<section class="sec reveal" id="fl-svc-pricing-includes">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s always included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Every fixed fee includes these.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Regardless of service or price, every Florida engagement includes the same six standards. They&rsquo;re not add-ons &mdash; they&rsquo;re the baseline.</p>
+    <div class="r-3">
       {%- for inc in includes %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ inc.number | safe }}</p>
-        <h3 class="buyer-card__heading">{{ inc.title | safe }}</h3>
-        <p class="buyer-card__body">{{ inc.body | safe }}</p>
-      </article>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ inc.number | safe }}</span><h3>{{ inc.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ inc.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── FAQ ── #}
-<section class="section" id="fl-svc-pricing-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Pricing FAQ</p>
-      <h2 class="section__heading">Questions about cost.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="fl-svc-pricing-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="fl-svc-pricing-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── EXPERT REVIEW ── #}
-<section class="section section--alt" id="fl-svc-pricing-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Pricing standards</p>
-      <h2 class="section__heading">Florida pricing maintained by the TechBrot ProAdvisor team.</h2>
-    </header>
-    <div class="byline-block">
-      <div class="byline-block__mark" aria-hidden="true"></div>
-      <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
-      </div>
+{#- PRICING STANDARDS — byline + prose + trust-row. Founder-name-zero. -#}
+<section class="sec reveal hub-rt--alt" id="fl-svc-pricing-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Pricing standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Florida pricing maintained by the TechBrot ProAdvisor team.</h2>
+    <div class="byline">
+      <svg class="byline__mark" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#0E4A50"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#FCFBF8"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
+      <div><p class="byline__name">By the Certified QuickBooks ProAdvisor team</p><p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p></div>
     </div>
     <div class="prose"><p>{{ reviewProse | safe }}</p></div>
-    <div class="trust-row">
+    <div class="trust-row" style="margin-top:22px;">
       {%- for c in reviewCreds %}
       <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
@@ -201,20 +148,14 @@
   </div>
 </section>
 
-{# ── RELATED (grid-2) ── #}
-<section class="section" id="fl-svc-pricing-related">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Where to go next.</h2>
-    </header>
-    <div class="grid-2">
+{#- RELATED — route cards (h3s). -#}
+<section class="sec reveal" id="fl-svc-pricing-related">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where to go next.</h2>
+    <div class="r-2">
       {%- for r in related %}
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading">{{ r.title | safe }}</h3>
-        <p class="buyer-card__body">{{ r.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>
-      </article>
+      <a class="dc-card hub-card" href="{{ r.href }}"><h3>{{ r.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ r.body | safe }}</p><span class="hub-card__go">{{ r.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>

@@ -1,12 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-bofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/pricing/bookkeeping/",
   "slug": "pbk",
-  "chrome": "full",
-  "callBar": false,
-  "tierClass": "section--tier-bofu",
   "bodyClass": "page--bofu",
+  "sec": {
+    "aiH": "Monthly bookkeeping pricing, in five questions.",
+    "faqH": "Questions about bookkeeping cost."
+  },
   "title": "Monthly Bookkeeping Cost & Pricing · Fixed-Fee Tiers · TechBrot",
   "description": "What monthly bookkeeping actually costs: $400&ndash;$2,500+/mo across three fixed-fee tiers. Exactly what drives your tier, what each includes, and why fixed-fee not hourly.",
   "breadcrumb": [
@@ -39,100 +40,77 @@
 }
 ---
 
-<section class="section section--compact section--tier-bofu" id="pbk-tldr">
-  <div class="container">
-    <div class="tldr">
-      <p class="tldr__label">In one paragraph</p>
-      <h2 class="tldr__heading">What monthly bookkeeping costs.</h2>
-      <p class="tldr__body" id="pbk-tldr-body">Monthly bookkeeping at TechBrot is <strong>$400&ndash;$2,500+ per month</strong>, billed as a fixed monthly fee against a written scope &mdash; no hourly billing. There are three tiers: <strong>Essentials $400&ndash;$700/mo</strong> for low-volume single-entity businesses, <strong>Standard $700&ndash;$1,400/mo</strong> for established businesses with payroll and multiple accounts, and <strong>Complex $1,400&ndash;$2,500+/mo</strong> for higher volume, multiple entities, or class/department tracking. Four factors set your tier: monthly transaction volume, the number of bank and credit-card accounts reconciled, whether payroll is in scope, and the number of legal entities. It is always a range &mdash; your exact fixed fee is quoted in writing within 3 business days of a free discovery call. Tax filing isn&rsquo;t included (your CPA handles that), but a year-end CPA handoff is included free on every recurring engagement.</p>
-    </div>
+{#- ═══ F2 PRICING DETAIL — monthly bookkeeping (canonical Sheet-0 figures).
+    t-bofu→t-prose. Every baseline heading verbatim; canonical tier ranges EXACT
+    (tldr + `tiers` data, untouched). #pbk-tldr-body speakable preserved.
+    ai-summary + faq rendered by t-prose (sec.aiH/faqH + page data). ═══ -#}
+
+{#- TL;DR (body) — canonical figures verbatim. #pbk-tldr-body = speakable. -#}
+<section class="sec reveal" id="pbk-tldr" style="padding-top:8px;">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">What monthly bookkeeping costs.</h2>
+    <div class="tldr-prose"><p id="pbk-tldr-body">Monthly bookkeeping at TechBrot is <strong>$400&ndash;$2,500+ per month</strong>, billed as a fixed monthly fee against a written scope &mdash; no hourly billing. There are three tiers: <strong>Essentials $400&ndash;$700/mo</strong> for low-volume single-entity businesses, <strong>Standard $700&ndash;$1,400/mo</strong> for established businesses with payroll and multiple accounts, and <strong>Complex $1,400&ndash;$2,500+/mo</strong> for higher volume, multiple entities, or class/department tracking. Four factors set your tier: monthly transaction volume, the number of bank and credit-card accounts reconciled, whether payroll is in scope, and the number of legal entities. It is always a range &mdash; your exact fixed fee is quoted in writing within 3 business days of a free discovery call. Tax filing isn&rsquo;t included (your CPA handles that), but a year-end CPA handoff is included free on every recurring engagement.</p></div>
   </div>
 </section>
 
-<section class="section section--compact" id="pbk-factors">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What sets your tier</p>
-      <h2 class="section__heading">Four factors move the number.</h2>
-    </header>
-    <div class="flow" role="img" aria-label="Four factors set your monthly bookkeeping tier: monthly transaction volume, then number of bank and credit-card accounts, then whether payroll is in scope, then number of legal entities.">
-      <div class="flow__step flow__step--accent"><span class="flow__label">Transaction volume</span><span class="flow__sub">per month</span></div>
-      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-      <div class="flow__step"><span class="flow__label">Bank &amp; card accounts</span><span class="flow__sub">how many to reconcile</span></div>
-      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-      <div class="flow__step"><span class="flow__label">Payroll</span><span class="flow__sub">in scope or not</span></div>
-      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-      <div class="flow__step"><span class="flow__label">Number of entities</span><span class="flow__sub">one file per entity</span></div>
+{#- FACTORS — four tier drivers → process-grid. -#}
+<section class="sec reveal hub-rt--alt" id="pbk-factors" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What sets your tier</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:22px;">Four factors move the number.</h2>
+    <div class="process-grid">
+      <div class="process-step"><div class="process-step__n">STEP 1</div><h3>Transaction volume</h3><p>per month</p></div>
+      <div class="process-step"><div class="process-step__n">STEP 2</div><h3>Bank &amp; card accounts</h3><p>how many to reconcile</p></div>
+      <div class="process-step"><div class="process-step__n">STEP 3</div><h3>Payroll</h3><p>in scope or not</p></div>
+      <div class="process-step"><div class="process-step__n">STEP 4</div><h3>Number of entities</h3><p>one file per entity</p></div>
     </div>
-    <p class="in-brief__source stack-8">These four factors are what the free discovery call surfaces &mdash; nothing about your industry or revenue alone sets the price. The written scope reflects exactly where you land.</p>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:18px;">These four factors are what the free discovery call surfaces &mdash; nothing about your industry or revenue alone sets the price. The written scope reflects exactly where you land.</p>
   </div>
 </section>
 
-<section class="section" id="pbk-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Monthly bookkeeping pricing, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled" id="pbk-ai-summary-body">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="pbk-tiers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">The three tiers</p>
-      <h2 class="section__heading">Where monthly bookkeeping lands.</h2>
-      <p class="section__lede">The same fixed-fee model at every tier &mdash; what changes is volume, accounts, payroll, and entities. These are the canonical ranges; your exact fee is quoted in writing.</p>
-    </header>
-    <div class="grid-3">
+{#- THE THREE TIERS — canonical ranges from `tiers` data (untouched). -#}
+<section class="sec reveal" id="pbk-tiers">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The three tiers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Where monthly bookkeeping lands.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">The same fixed-fee model at every tier &mdash; what changes is volume, accounts, payroll, and entities. These are the canonical ranges; your exact fee is quoted in writing.</p>
+    <div class="r-3">
       {%- for t in tiers %}
-      <article class="review-card">
-        <p class="team-card__role">{{ t.label }}</p>
-        <h3>{{ t.name }}</h3>
-        <p class="review-card__fact"><strong>{{ t.range | safe }}</strong></p>
-        <p class="review-card__fact">{{ t.body | safe }}</p>
-        <p class="review-card__fact"><strong>Typical profile:</strong> {{ t.profile | safe }}</p>
+      <article class="ptier{% if loop.index == 2 %} ptier--featured{% endif %}">
+        {%- if t.label %}<p class="ptier__flag">{{ t.label | safe }}</p>{%- endif %}
+        <h3 class="ptier__name">{{ t.name | safe }}</h3>
+        <p class="ptier__price">{{ t.range | safe }}</p>
+        <p class="ptier__for">{{ t.body | safe }}</p>
+        {%- if t.profile %}<p class="ptier__for"><strong>Typical profile:</strong> {{ t.profile | safe }}</p>{%- endif %}
       </article>
       {%- endfor %}
     </div>
-    <p class="in-brief__source stack-8">Representative profiles only &mdash; they illustrate the factors, not a guaranteed quote. Behind on the books before a recurring engagement can start? That&rsquo;s a one-time <a href="/pricing/cleanup/?intent=cleanup">cleanup or catch-up</a>, priced separately.</p>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:14px;">Representative profiles only &mdash; they illustrate the factors, not a guaranteed quote. Behind on the books before a recurring engagement can start? That&rsquo;s a one-time <a href="/pricing/cleanup/?intent=cleanup">cleanup or catch-up</a>, priced separately.</p>
   </div>
 </section>
 
-<section class="section" id="pbk-included">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s included</p>
-      <h2 class="section__heading">What every monthly tier includes.</h2>
-      <p class="section__lede">The recurring close work in every tier. Higher tiers do more of it, across more accounts and entities &mdash; the deliverables themselves don&rsquo;t change.</p>
-    </header>
-    <div class="grid-3">
+{#- INCLUDED — recurring monthly-close deliverables (baseline h3s). -#}
+<section class="sec reveal" id="pbk-included">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What every monthly tier includes.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">The recurring close work in every tier. Higher tiers do more of it, across more accounts and entities &mdash; the deliverables themselves don&rsquo;t change.</p>
+    <div class="r-3">
       {%- for inc in included %}
-      <article class="review-card">
-        <h3>{{ inc.name }}</h3>
-        <p class="review-card__fact">{{ inc.body | safe }}</p>
-      </article>
+      <div class="dc-card"><h3>{{ inc.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ inc.body | safe }}</p></div>
       {%- endfor %}
     </div>
-    <p class="in-brief__source stack-8">What the bookkeeping work actually is &mdash; the monthly close in detail &mdash; lives on the <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping service page</a>. This page is the price; that page is the work.</p>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:14px;">What the bookkeeping work actually is &mdash; the monthly close in detail &mdash; lives on the <a href="/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly">monthly bookkeeping service page</a>. This page is the price; that page is the work.</p>
   </div>
 </section>
 
-<section class="section section--alt" id="pbk-why">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Why fixed-fee</p>
-      <h2 class="section__heading">Why monthly bookkeeping is fixed-fee, not hourly.</h2>
-    </header>
-    <div class="legal-doc__body">
+{#- WHY FIXED-FEE — prose. -#}
+<section class="sec reveal hub-rt--alt" id="pbk-why" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why fixed-fee</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Why monthly bookkeeping is fixed-fee, not hourly.</h2>
+    <div class="prose">
       <p>Most bookkeepers bill hourly, and for recurring monthly work that is exactly backwards. The monthly close is the same shape every month &mdash; the same reconciliations, the same categorization, the same reports. Pricing predictable work by the hour just means your invoice swings with someone else&rsquo;s pace, and you can&rsquo;t budget the one line item that should be the most stable on your books.</p>
       <p>TechBrot prices monthly bookkeeping as a fixed monthly fee against a written scope. You know the number before the first close, and it doesn&rsquo;t move month to month. Ask questions, send documents, call when something comes up &mdash; there&rsquo;s no meter on your own bookkeeper. If your business genuinely changes &mdash; you add an entity, take on payroll, your volume jumps a tier &mdash; the fee is re-quoted and re-approved in writing before anything changes. <strong>You are never surprised by an invoice.</strong></p>
       <p>This works because the close is delivered by Certified ProAdvisors efficient enough to price it confidently. The fixed monthly fee is a statement of competence: we know how long a clean monthly close takes at your volume, so we can quote it. No long-term lock-in &mdash; recurring bookkeeping runs month to month against the written scope.</p>
@@ -140,40 +118,14 @@
   </div>
 </section>
 
-<section class="section" id="pbk-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Before you call</p>
-      <h2 class="section__heading">Questions about bookkeeping cost.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="pbk-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="pbk-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="pbk-next">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Next steps</p>
-      <h2 class="section__heading">Where to go next.</h2>
-    </header>
-    <div class="grid-2">
+{#- NEXT — 4 route cards (baseline h3s). -#}
+<section class="sec reveal" id="pbk-next">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Next steps</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where to go next.</h2>
+    <div class="r-2">
       {%- for card in nextCards %}
-      <article class="review-card">
-        <h3>{{ card.name }}</h3>
-        <p class="review-card__fact">{{ card.body | safe }}</p>
-        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <a class="dc-card hub-card" href="{{ card.href }}"><h3>{{ card.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ card.body | safe }}</p><span class="hub-card__go">{{ card.cta }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>

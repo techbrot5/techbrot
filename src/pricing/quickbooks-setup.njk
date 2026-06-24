@@ -1,12 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-bofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/pricing/quickbooks-setup/",
   "slug": "pqs",
-  "chrome": "full",
-  "callBar": false,
-  "tierClass": "section--tier-bofu",
   "bodyClass": "page--bofu",
+  "sec": {
+    "aiH": "QuickBooks setup pricing, in five questions.",
+    "faqH": "Questions about setup cost."
+  },
   "title": "QuickBooks Setup Cost &amp; Pricing · Fixed Fee $750–$5,000+ · TechBrot",
   "description": "What a QuickBooks setup costs and why: a one-time fixed fee of $750–$5,000+, scoped to file complexity, accounts, integrations & product tier. Written quote in 3 business days.",
   "breadcrumb": [
@@ -33,143 +34,114 @@
     "lede": "A free 30-minute discovery call, then a written fixed-fee scope within 3 business days &mdash; the exact one-time setup number, before you commit to anything. The software subscription is billed by Intuit separately.",
     "actions": [
       { "label": "Book the discovery call", "href": "/contact/?intent=pricing", "class": "btn--primary" },
-      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
-      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" }
     ]
   }
 }
 ---
 
-<section class="section section--compact section--tier-bofu" id="pqs-tldr">
-  <div class="container">
-    <div class="tldr">
-      <p class="tldr__label">In one paragraph</p>
-      <h2 class="tldr__heading">What QuickBooks setup costs.</h2>
-      <p class="tldr__body" id="pqs-tldr-body">A QuickBooks setup at TechBrot is a one-time, fixed-fee implementation of <strong>$750&ndash;$5,000+</strong>, usually delivered in 2&ndash;4 weeks against a written scope &mdash; no hourly billing. Where you land in that range is driven by real, knowable factors: how complex the file is, how many bank and credit accounts and entities you run, which third-party apps need to connect, whether you&rsquo;re migrating off spreadsheets or starting fresh, and which product tier you&rsquo;re on (QuickBooks Online, Desktop, or Enterprise). The fee covers the implementation work &mdash; building the chart of accounts, connecting feeds, setting opening balances, and proving the file reconciles. The QuickBooks software subscription itself is billed by Intuit separately and is not part of this fee. Your exact fixed fee is quoted in writing within 3 business days of a free discovery call; tax filing is handled by your CPA and isn&rsquo;t included.</p>
-    </div>
+{#- ═══ F2 PRICING DETAIL — QuickBooks setup (canonical Sheet-0 figure $750–$5,000+).
+    t-bofu→t-prose. Every baseline heading verbatim; canonical figure/bands EXACT
+    (tldr + `scenarios` bands, untouched). #pqs-tldr-body speakable preserved. Coined
+    "TechBrot Setup Protocol" kept. ai-summary + faq rendered by t-prose
+    (sec.aiH/faqH). Software-billed-by-Intuit honesty preserved verbatim. ═══ -#}
+
+{#- TL;DR (body) — canonical figure verbatim. #pqs-tldr-body = speakable. -#}
+<section class="sec reveal" id="pqs-tldr" style="padding-top:8px;">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">What QuickBooks setup costs.</h2>
+    <div class="tldr-prose"><p id="pqs-tldr-body">A QuickBooks setup at TechBrot is a one-time, fixed-fee implementation of <strong>$750&ndash;$5,000+</strong>, usually delivered in 2&ndash;4 weeks against a written scope &mdash; no hourly billing. Where you land in that range is driven by real, knowable factors: how complex the file is, how many bank and credit accounts and entities you run, which third-party apps need to connect, whether you&rsquo;re migrating off spreadsheets or starting fresh, and which product tier you&rsquo;re on (QuickBooks Online, Desktop, or Enterprise). The fee covers the implementation work &mdash; building the chart of accounts, connecting feeds, setting opening balances, and proving the file reconciles. The QuickBooks software subscription itself is billed by Intuit separately and is not part of this fee. Your exact fixed fee is quoted in writing within 3 business days of a free discovery call; tax filing is handled by your CPA and isn&rsquo;t included.</p></div>
   </div>
 </section>
 
-<section class="section" id="pqs-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">QuickBooks setup pricing, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="pqs-drivers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What moves the number</p>
-      <h2 class="section__heading">Five factors decide where you land in the range.</h2>
-      <p class="section__lede">The same setup isn&rsquo;t the same price for two different businesses. These are the factors a ProAdvisor scopes on the discovery call &mdash; each one pushes the fixed fee up or down.</p>
-    </header>
-    <div class="grid-3">
+{#- DRIVERS — five factors → info cards. -#}
+<section class="sec reveal hub-rt--alt" id="pqs-drivers" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What moves the number</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Five factors decide where you land in the range.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">The same setup isn&rsquo;t the same price for two different businesses. These are the factors a ProAdvisor scopes on the discovery call &mdash; each one pushes the fixed fee up or down.</p>
+    <div class="r-3">
       {%- for d in drivers %}
-      <article class="review-card">
-        <p class="team-card__role">{{ d.label }}</p>
-        <h3>{{ d.name }}</h3>
-        <p class="review-card__fact">{{ d.body | safe }}</p>
-      </article>
+      <div class="dc-card">{% if d.label %}<span class="eyebrow" style="display:block;margin-bottom:8px;">{{ d.label }}</span>{% endif %}<h3>{{ d.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ d.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="pqs-includes">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What you&rsquo;re paying for</p>
-      <h2 class="section__heading">What a correct setup actually includes.</h2>
-      <p class="section__lede">A real implementation is more than installing software and inviting a user. These are the pieces of work the fixed fee buys &mdash; the difference between a file that simply opens and a file you can trust at year-end.</p>
-    </header>
-    <div class="grid-3">
+{#- INCLUDES — what a correct setup includes (baseline h3s). -#}
+<section class="sec reveal" id="pqs-includes">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What you&rsquo;re paying for</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">What a correct setup actually includes.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">A real implementation is more than installing software and inviting a user. These are the pieces of work the fixed fee buys &mdash; the difference between a file that simply opens and a file you can trust at year-end.</p>
+    <div class="r-3">
       {%- for inc in includes %}
-      <article class="review-card">
-        <h3>{{ inc.name }}</h3>
-        <p class="review-card__fact">{{ inc.body | safe }}</p>
-      </article>
+      <div class="dc-card"><h3>{{ inc.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ inc.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="pqs-process">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">How the fee is delivered</p>
-      <h2 class="section__heading">The setup, step by step.</h2>
-      <p class="section__lede">The one-time fee covers a defined sequence &mdash; the <a href="/quickbooks/setup/">TechBrot Setup Protocol</a> &mdash; with set start and completion dates inside the 2&ndash;4 week window.</p>
-    </header>
-    <ol class="fix-steps">
+{#- PROCESS — the setup, step by step → process-grid (TechBrot Setup Protocol). -#}
+<section class="sec reveal hub-rt--alt" id="pqs-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How the fee is delivered</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">The setup, step by step.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">The one-time fee covers a defined sequence &mdash; the <a href="/quickbooks/setup/">TechBrot Setup Protocol</a> &mdash; with set start and completion dates inside the 2&ndash;4 week window.</p>
+    <div class="process-grid">
       {%- for step in steps %}
-      <li>
-        <span class="n">{{ loop.index }}</span>
-        <div><h3>{{ step.name | safe }}</h3><p>{{ step.body | safe }}</p></div>
-      </li>
+      <div class="process-step"><div class="process-step__n">STEP {{ loop.index }}</div><h3>{{ step.name | safe }}</h3><p>{{ step.body | safe }}</p></div>
       {%- endfor %}
-    </ol>
+    </div>
   </div>
 </section>
 
-<section class="section" id="pqs-tiers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Product tier matters</p>
-      <h2 class="section__heading">QBO, Desktop, or Enterprise &mdash; the tier shifts the work.</h2>
-      <p class="section__lede">The same range covers all three, but the implementation differs. Plan selection comes first &mdash; if you don&rsquo;t know which tier fits, we settle that before scoping the setup. The software subscription for whichever tier you choose is billed by Intuit separately.</p>
-    </header>
-    <div class="grid-3">
+{#- PRODUCT TIERS — QBO / Desktop / Enterprise → ptier cards. -#}
+<section class="sec reveal" id="pqs-tiers">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Product tier matters</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">QBO, Desktop, or Enterprise &mdash; the tier shifts the work.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">The same range covers all three, but the implementation differs. Plan selection comes first &mdash; if you don&rsquo;t know which tier fits, we settle that before scoping the setup. The software subscription for whichever tier you choose is billed by Intuit separately.</p>
+    <div class="r-3">
       {%- for t in tiers %}
-      <article class="review-card">
-        <p class="team-card__role">{{ t.label }}</p>
-        <h3>{{ t.name }}</h3>
-        <p class="review-card__fact">{{ t.body | safe }}</p>
+      <article class="ptier">
+        {%- if t.label %}<p class="ptier__flag">{{ t.label | safe }}</p>{%- endif %}
+        <h3 class="ptier__name">{{ t.name | safe }}</h3>
+        <p class="ptier__for">{{ t.body | safe }}</p>
       </article>
       {%- endfor %}
     </div>
-    <p class="in-brief__source stack-8">Not sure which tier you need? Settle it first with <a href="/quickbooks/which-plan-is-right/">which QuickBooks plan is right</a> &mdash; then the setup is scoped against the right product.</p>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:14px;">Not sure which tier you need? Settle it first with <a href="/quickbooks/which-plan-is-right/">which QuickBooks plan is right</a> &mdash; then the setup is scoped against the right product.</p>
   </div>
 </section>
 
-<section class="section section--alt" id="pqs-scenarios">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Where the range comes from</p>
-      <h2 class="section__heading">Representative scenarios.</h2>
-      <p class="section__lede">Illustrative only &mdash; not quotes. Every fixed fee is set per file after the discovery call. These show how the factors above combine to move a setup across the range.</p>
-    </header>
-    <div class="grid-3">
+{#- SCENARIOS — representative bands → ptier cards (price = band). -#}
+<section class="sec reveal hub-rt--alt" id="pqs-scenarios" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Where the range comes from</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Representative scenarios.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:72ch;">Illustrative only &mdash; not quotes. Every fixed fee is set per file after the discovery call. These show how the factors above combine to move a setup across the range.</p>
+    <div class="r-3">
       {%- for s in scenarios %}
-      <article class="review-card">
-        <p class="team-card__role">{{ s.label }}</p>
-        <h3>{{ s.name }}</h3>
-        <p class="review-card__fact">{{ s.body | safe }}</p>
-        <p class="review-card__fact"><strong>Representative band:</strong> {{ s.band | safe }}</p>
+      <article class="ptier{% if loop.index == 2 %} ptier--featured{% endif %}">
+        {%- if s.label %}<p class="ptier__flag">{{ s.label | safe }}</p>{%- endif %}
+        <h3 class="ptier__name">{{ s.name | safe }}</h3>
+        <p class="ptier__for">{{ s.body | safe }}</p>
+        {%- if s.band %}<p class="ptier__price" style="font-size:15px;"><strong>Representative band:</strong> {{ s.band | safe }}</p>{%- endif %}
       </article>
       {%- endfor %}
     </div>
-    <p class="in-brief__source stack-8">Bands are illustrative and sit inside the canonical $750&ndash;$5,000+ range. Your exact fixed fee is quoted in writing within 3 business days of the free discovery call.</p>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:14px;">Bands are illustrative and sit inside the canonical $750&ndash;$5,000+ range. Your exact fixed fee is quoted in writing within 3 business days of the free discovery call.</p>
   </div>
 </section>
 
-<section class="section" id="pqs-software">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">The fee vs. the software</p>
-      <h2 class="section__heading">Two separate bills &mdash; don&rsquo;t confuse them.</h2>
-    </header>
-    <div class="legal-doc__body">
+{#- SOFTWARE — the fee vs. the software (prose, Intuit-separate honesty). -#}
+<section class="sec reveal" id="pqs-software">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The fee vs. the software</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Two separate bills &mdash; don&rsquo;t confuse them.</h2>
+    <div class="prose">
       <p>There are two costs in any QuickBooks setup, and they are billed by two different parties. <strong>The TechBrot setup fee is the implementation service</strong> &mdash; the professional work of building, connecting, and proving your file. That&rsquo;s the $750&ndash;$5,000+ range on this page, a one-time fixed fee.</p>
       <p><strong>The QuickBooks software subscription is billed by Intuit separately.</strong> It&rsquo;s a recurring charge for the license itself, set and collected by Intuit &mdash; not part of our fee, and not something we mark up or resell. We don&rsquo;t quote Intuit&rsquo;s subscription prices here; those come from Intuit directly and change on their schedule, not ours.</p>
       <p>The practical takeaway: budget the one-time setup fee against this page, and budget the recurring software subscription against Intuit&rsquo;s current pricing. The setup fee is paid once; the subscription continues for as long as you use QuickBooks. <strong>TechBrot Inc. is not affiliated with Intuit Inc.</strong></p>
@@ -177,40 +149,14 @@
   </div>
 </section>
 
-<section class="section section--alt" id="pqs-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Before you call</p>
-      <h2 class="section__heading">Questions about setup cost.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="pqs-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="pqs-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="pqs-next">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Next steps</p>
-      <h2 class="section__heading">Where to go next.</h2>
-    </header>
-    <div class="grid-2">
+{#- NEXT — 4 route cards (baseline h3s). -#}
+<section class="sec reveal" id="pqs-next">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Next steps</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where to go next.</h2>
+    <div class="r-2">
       {%- for card in nextCards %}
-      <article class="review-card">
-        <h3>{{ card.name }}</h3>
-        <p class="review-card__fact">{{ card.body | safe }}</p>
-        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <a class="dc-card hub-card" href="{{ card.href }}"><h3>{{ card.name | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ card.body | safe }}</p><span class="hub-card__go">{{ card.cta }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>

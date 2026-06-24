@@ -1,12 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-bofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/pricing/cfo/",
   "slug": "pcfo",
-  "chrome": "full",
-  "callBar": false,
-  "tierClass": "section--tier-bofu",
   "bodyClass": "page--bofu",
+  "sec": {
+    "aiH": "Fractional CFO pricing, in five questions.",
+    "faqH": "Questions about fractional CFO cost."
+  },
   "title": "Fractional CFO Cost & Pricing · TechBrot",
   "description": "What a fractional CFO costs: $3,000–$8,000+/month retainer, by application. What drives the number, how it differs from bookkeeping pricing. Call (877) 751-5575.",
   "breadcrumb": [
@@ -39,23 +40,25 @@
 }
 ---
 
-<section class="section section--compact section--tier-bofu" id="pcfo-tldr">
-  <div class="container">
-    <div class="tldr">
-      <p class="tldr__label">In one paragraph</p>
-      <h2 class="tldr__heading">What a fractional CFO costs.</h2>
-      <p class="tldr__body" id="pcfo-tldr-body">A fractional CFO at TechBrot is a <strong>monthly retainer of $3,000&ndash;$8,000+</strong>, accepted <strong>by application</strong> with limited capacity each quarter. Unlike bookkeeping &mdash; which is priced on transaction volume and the size of the close &mdash; the CFO retainer is priced on <strong>judgment and depth of involvement</strong>: how often you need strategic finance in the room, how many entities sit under you, whether there&rsquo;s a fundraise, board, or lender in play, and the cadence of the reporting and forecasting you need. The retainer is fixed, not hourly, and scoped per engagement after a free discovery call &mdash; the exact number in writing before you commit. This is advisory work: it is <strong>not tax filing and not audit or assurance</strong>, and it coordinates with your CPA rather than replacing one. Acceptance isn&rsquo;t guaranteed; senior engagements are limited.</p>
-    </div>
+{#- ═══ F2 PRICING (fractional CFO). t-bofu→t-prose. Canonical figures EXACT;
+    every heading verbatim. #pcfo-tldr-body speakable preserved. ai-summary + faq
+    rendered by t-prose (sec.aiH/faqH). ═══ -#}
+
+{#- TL;DR (body) — canonical figures verbatim. #pcfo-tldr-body = speakable. -#}
+<section class="sec reveal" id="pcfo-tldr">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">What a fractional CFO costs.</h2>
+    <div class="tldr-prose"><p id="pcfo-tldr-body">A fractional CFO at TechBrot is a <strong>monthly retainer of $3,000&ndash;$8,000+</strong>, accepted <strong>by application</strong> with limited capacity each quarter. Unlike bookkeeping &mdash; which is priced on transaction volume and the size of the close &mdash; the CFO retainer is priced on <strong>judgment and depth of involvement</strong>: how often you need strategic finance in the room, how many entities sit under you, whether there&rsquo;s a fundraise, board, or lender in play, and the cadence of the reporting and forecasting you need. The retainer is fixed, not hourly, and scoped per engagement after a free discovery call &mdash; the exact number in writing before you commit. This is advisory work: it is <strong>not tax filing and not audit or assurance</strong>, and it coordinates with your CPA rather than replacing one. Acceptance isn&rsquo;t guaranteed; senior engagements are limited.</p></div>
   </div>
 </section>
 
-<section class="section section--compact" id="pcfo-different">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Why it isn&rsquo;t priced like bookkeeping</p>
-      <h2 class="section__heading">Judgment, not transaction volume.</h2>
-    </header>
-    <div class="legal-doc__body">
+{#- DIFFERENT — prose. -#}
+<section class="sec reveal hub-rt--alt" id="pcfo-different" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why it isn&rsquo;t priced like bookkeeping</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Judgment, not transaction volume.</h2>
+    <div class="prose">
       <p>Bookkeeping pricing is volume math. Count the transactions, the bank and credit accounts, the entities, the payroll runs &mdash; the fee tracks the size of the monthly close. The work is largely the same shape every month, so it prices cleanly as a recurring fixed fee.</p>
       <p>A fractional CFO is the opposite. The deliverable isn&rsquo;t a reconciled ledger &mdash; it&rsquo;s <strong>decisions you can defend</strong>: a forecast a lender will trust, a board package that survives questions, a pricing or hiring call backed by unit economics, a cash runway you can act on before it&rsquo;s a crisis. None of that scales with transaction count. A 30-transaction-a-month startup raising a seed round can need more CFO time than a 2,000-transaction business that just wants someone steering the quarter.</p>
       <p>So the retainer is priced on the <strong>depth of involvement the business actually needs</strong>, not on how busy the books are. That&rsquo;s also why it&rsquo;s accepted by application: senior strategic capacity is finite, and the engagement only works when the scope is honest on both sides.</p>
@@ -63,152 +66,95 @@
   </div>
 </section>
 
-<section class="section" id="pcfo-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">Fractional CFO pricing, in five questions.</h2>
-    </header>
-    <div class="ai-summary ai-summary--ruled" id="pcfo-ai-summary-body">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <h3 class="ai-summary__question">{{ item.q | safe }}</h3>
-        <div class="ai-summary__answer"><p>{{ item.a | safe }}</p></div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="pcfo-drivers">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What sets the retainer</p>
-      <h2 class="section__heading">Four things move the monthly number.</h2>
-      <p class="section__lede">Where you land in the $3,000&ndash;$8,000+ range is set by depth, not by how many transactions clear &mdash; these are the factors the discovery call surfaces.</p>
-    </header>
-    <div class="grid-2">
+{#- DRIVERS — 4 (review-card→r-2 dc-card). -#}
+<section class="sec reveal" id="pcfo-drivers">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What sets the retainer</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Four things move the monthly number.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:70ch;">Where you land in the $3,000&ndash;$8,000+ range is set by depth, not by how many transactions clear &mdash; these are the factors the discovery call surfaces.</p>
+    <div class="r-2">
       {%- for d in drivers %}
-      <article class="review-card">
-        <p class="team-card__role">{{ d.label }}</p>
-        <h3>{{ d.name }}</h3>
-        <p class="review-card__fact">{{ d.body | safe }}</p>
-      </article>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ d.label }}</span><h3>{{ d.name }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ d.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="section" id="pcfo-scenarios">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Representative scenarios</p>
-      <h2 class="section__heading">Where engagements tend to land.</h2>
-      <p class="section__lede">Illustrative only &mdash; not quotes, not real clients. Your retainer is scoped per engagement after the discovery call and confirmed in writing.</p>
-    </header>
-    <div class="vs-scroll">
-      <table class="vs-table">
-        <caption class="sr-only">Representative fractional CFO retainer scenarios. Illustrative only; the exact retainer is scoped per engagement in writing.</caption>
-        <thead>
-          <tr>
-            <th scope="col">Situation</th>
-            <th scope="col">Depth of involvement</th>
-            <th scope="col" class="vs-table__us">Where it tends to land</th>
-          </tr>
-        </thead>
-        <tbody>
-          {%- for row in scenarios %}
-          <tr>
-            <td>{{ row.situation | safe }}</td>
-            <td class="vs-table__concede">{{ row.depth | safe }}</td>
-            <td class="vs-table__us"><strong>{{ row.range | safe }}</strong><span class="vs-table__concede">/mo</span></td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
-    <p class="in-brief__source stack-8">Ranges are representative and never a quote. Every retainer is fixed, scoped per engagement after a free discovery call, and confirmed in writing &mdash; engagements are accepted by application, with limited capacity per quarter.</p>
+{#- SCENARIOS — vs-table→.cmp. -#}
+<section class="sec reveal hub-rt--alt" id="pcfo-scenarios" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Representative scenarios</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Where engagements tend to land.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">Illustrative only &mdash; not quotes, not real clients. Your retainer is scoped per engagement after the discovery call and confirmed in writing.</p>
+    <table class="cmp">
+      <caption class="sr-only">Representative fractional CFO retainer scenarios. Illustrative only; the exact retainer is scoped per engagement in writing.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Situation</th>
+          <th scope="col">Depth of involvement</th>
+          <th scope="col">Where it tends to land</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for row in scenarios %}
+        <tr>
+          <th scope="row" data-col="Situation">{{ row.situation | safe }}</th>
+          <td data-col="Depth of involvement" style="color:var(--color-ink-mute);">{{ row.depth | safe }}</td>
+          <td class="num us" data-col="Where it tends to land"><strong>{{ row.range | safe }}</strong><span style="color:var(--color-ink-faint);font-weight:400;">/mo</span></td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:14px;">Ranges are representative and never a quote. Every retainer is fixed, scoped per engagement after a free discovery call, and confirmed in writing &mdash; engagements are accepted by application, with limited capacity per quarter.</p>
   </div>
 </section>
 
-<section class="section section--alt" id="pcfo-application">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">By application</p>
-      <h2 class="section__heading">Why this engagement is accepted by application.</h2>
-    </header>
-    <div class="legal-doc__body">
+{#- APPLICATION — prose. -#}
+<section class="sec reveal" id="pcfo-application">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">By application</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Why this engagement is accepted by application.</h2>
+    <div class="prose">
       <p>Senior strategic finance can&rsquo;t be mass-produced. A fractional CFO carries a small number of engagements at a time because the role demands real context &mdash; on your numbers, your decisions, and the people relying on them. To protect that depth, TechBrot accepts a limited number of CFO engagements each quarter and takes them <strong>by application</strong>.</p>
       <p>The discovery call is where the fit is tested in both directions: what you need, what capacity exists, and whether a fractional CFO is even the right answer (sometimes the honest answer is cleanup-and-bookkeeping first, then advisory later). <strong>Acceptance isn&rsquo;t guaranteed.</strong> When an engagement is accepted, the retainer scope is delivered in writing &mdash; the exact monthly number, the cadence, and the deliverables &mdash; before anything begins.</p>
     </div>
   </div>
 </section>
 
-<section class="section" id="pcfo-not">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">What the retainer is &mdash; and isn&rsquo;t</p>
-      <h2 class="section__heading">Advisory, not tax or audit.</h2>
-    </header>
-    <div class="legal-doc__body">
+{#- NOT — prose. -#}
+<section class="sec reveal hub-rt--alt" id="pcfo-not" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What the retainer is &mdash; and isn&rsquo;t</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Advisory, not tax or audit.</h2>
+    <div class="prose">
       <p>A fractional CFO retainer is <strong>advisory and strategic finance</strong>: forecasting, cash-flow strategy, KPI and board reporting, scenario and fundraise modeling, and the financial judgment behind operating decisions. It is delivered as a fixed retainer against a written scope &mdash; never hourly.</p>
       <p>It is <strong>not tax filing</strong> and <strong>not audit or assurance</strong>. TechBrot does not file your returns or issue audited financials; the fractional CFO <strong>coordinates with your CPA or EA</strong>, making sure the strategy and the books are ready for them, but tax and attestation stay with the appropriate licensed professional. If you don&rsquo;t have a CPA, the engagement helps you work with one &mdash; it doesn&rsquo;t replace one.</p>
     </div>
   </div>
 </section>
 
-<section class="section section--compact" id="pcfo-path">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">From question to retainer</p>
-      <h2 class="section__heading">Four steps to a number in writing.</h2>
-    </header>
-    <div class="flow" role="img" aria-label="The path to a fixed retainer: a free 30-minute discovery call, then a written scope within 3 business days, the monthly retainer in writing with no hourly billing, then the engagement begins with a named advisor.">
-      <div class="flow__step flow__step--accent"><span class="flow__label">Free discovery call</span><span class="flow__sub">30 min &middot; no obligation</span></div>
-      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-      <div class="flow__step"><span class="flow__label">Written scope</span><span class="flow__sub">within 3 business days</span></div>
-      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-      <div class="flow__step"><span class="flow__label">Retainer, in writing</span><span class="flow__sub">no hourly billing</span></div>
-      <span class="flow__arrow" aria-hidden="true"><svg width="22" height="10" viewBox="0 0 22 10"><line x1="0" y1="5" x2="16" y2="5" stroke="currentColor" stroke-width="1.5"></line><path d="M14 1 L20 5 L14 9" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg></span>
-      <div class="flow__step"><span class="flow__label">Engagement begins</span><span class="flow__sub">named advisor</span></div>
+{#- PATH — 4 steps (flow→process-grid). -#}
+<section class="sec reveal" id="pcfo-path">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">From question to retainer</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:22px;">Four steps to a number in writing.</h2>
+    <div class="process-grid">
+      <div class="process-step"><div class="process-step__n">STEP 1</div><h3>Free discovery call</h3><p>30 min &middot; no obligation</p></div>
+      <div class="process-step"><div class="process-step__n">STEP 2</div><h3>Written scope</h3><p>within 3 business days</p></div>
+      <div class="process-step"><div class="process-step__n">STEP 3</div><h3>Retainer, in writing</h3><p>no hourly billing</p></div>
+      <div class="process-step"><div class="process-step__n">STEP 4</div><h3>Engagement begins</h3><p>named advisor</p></div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt" id="pcfo-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Before you apply</p>
-      <h2 class="section__heading">Questions about fractional CFO cost.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="pcfo-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="pcfo-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="pcfo-next">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Next steps</p>
-      <h2 class="section__heading">Where to go next.</h2>
-    </header>
-    <div class="grid-3">
+{#- NEXT — 3 route cards (review-card link→hub-card). -#}
+<section class="sec reveal" id="pcfo-next">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Next steps</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where to go next.</h2>
+    <div class="r-3">
       {%- for card in nextCards %}
-      <article class="review-card">
-        <h3>{{ card.name }}</h3>
-        <p class="review-card__fact">{{ card.body | safe }}</p>
-        <a class="review-card__link" href="{{ card.href }}">{{ card.cta }} <span class="lnk-arrow" aria-hidden="true">&rarr;</span></a>
-      </article>
+      <a class="dc-card hub-card" href="{{ card.href }}"><h3>{{ card.name }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ card.body | safe }}</p><span class="hub-card__go">{{ card.cta }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>

@@ -1,11 +1,13 @@
 ---json
 {
-  "layout": "layouts/t-bofu.njk",
+  "layout": "layouts/t-prose.njk",
   "permalink": "/find-an-accountant/new-york/pricing/",
   "slug": "ny-svc-pricing",
-  "tierClass": "section--tier-bofu",
   "bodyClass": "page--bofu",
-  "callBar": true,
+  "sec": {
+    "aiH": "New York pricing, in five questions.",
+    "faqH": "Questions about cost."
+  },
   "title": "New York Bookkeeping & QuickBooks Pricing · TechBrot",
   "description": "Fixed-fee New York pricing — monthly bookkeeping $400+/mo, cleanup $1,500+, QuickBooks setup $750+. Written scope before any work, no hourly billing. Call (877) 751-5575.",
   "breadcrumb": [
@@ -14,7 +16,6 @@
     { "name": "New York", "href": "/find-an-accountant/new-york/" },
     { "name": "Pricing" }
   ],
-  "heroFigure": "taccount",
   "hero": {
     "trust": [
       "Certified QuickBooks ProAdvisor team",
@@ -46,151 +47,96 @@
 }
 ---
 
-{# ── TLDR · how NY pricing works (real H2 carrying the one-paragraph prose). (H2: How TechBrot New York pricing works.) ── #}
-<section class="section section--compact" id="ny-svc-pricing-tldr">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">In one paragraph</p>
-      <h2 class="section__heading">How TechBrot New York pricing works.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in tldr %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
-    </div>
+{#- ═══ F2 NY PRICING (BASELINE · CONTENT-FROZEN). t-bofu→t-prose (dc-base chrome). Every
+    baseline heading verbatim at its exact level; every canonical NY figure EXACT (tldr text
+    + `ranges` data, untouched). TL;DR id #ny-svc-pricing-tldr (section) + #ny-svc-pricing-tldr-body
+    (speakable body p) preserved. ai-summary + faq rendered by t-prose (sec.aiH/faqH). The old
+    ai-summary <dl> id #ny-svc-pricing-ai-summary-list moves to the layout-owned ai-summary block,
+    which renders no matching id → DEFERRED speakable repoint (see .11tydata.js cssSelector). ═══ -#}
+
+{#- TL;DR · how NY pricing works. #ny-svc-pricing-tldr-body = speakable. (H2: How TechBrot New York pricing works.) -#}
+<section class="sec reveal" id="ny-svc-pricing-tldr">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">How TechBrot New York pricing works.</h2>
+    <div class="tldr-prose">{%- for p in tldr %}<p{% if loop.first %} id="ny-svc-pricing-tldr-body"{% endif %}>{{ p | safe }}</p>{%- endfor %}</div>
   </div>
 </section>
 
-{# ── AI SUMMARY · five-question block. (H2: New York pricing, in five questions.) ── #}
-<section class="section section--alt" id="ny-svc-pricing-ai-summary">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">New York pricing, in five questions.</h2>
-    </header>
-    <dl class="ai-summary ai-summary--ruled" id="ny-svc-pricing-ai-summary-list">
-      {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
-        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
-      </div>
-      {%- endfor %}
-    </dl>
-  </div>
-</section>
-
-{# ── ENGAGEMENT SHAPES · three pricing models (grid-3 buyer-cards). 3 frozen H3s verbatim. (H2 + 3 H3s) ── #}
-<section class="section" id="ny-svc-pricing-shapes">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Three engagement shapes</p>
-      <h2 class="section__heading">Every New York engagement fits one of three shapes.</h2>
-      <p class="section__lede">Pricing structure follows the shape of the work. All three run to the same standard: fixed fee, written scope, named ProAdvisor.</p>
-    </header>
-    <div class="grid-3">
+{#- ENGAGEMENT SHAPES · three pricing models → r-3 dc-card. 3 frozen H3s verbatim. (H2 + 3 H3s) -#}
+<section class="sec reveal" id="ny-svc-pricing-shapes">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Three engagement shapes</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Every New York engagement fits one of three shapes.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:68ch;">Pricing structure follows the shape of the work. All three run to the same standard: fixed fee, written scope, named ProAdvisor.</p>
+    <div class="r-3">
       {%- for s in shapes %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ s.tag | safe }}</p>
-        <h3 class="buyer-card__heading">{{ s.title | safe }}</h3>
-        <p class="buyer-card__body">{{ s.body | safe }}</p>
-        <p class="buyer-card__body">{{ s.examples | safe }}</p>
-      </article>
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ s.tag | safe }}</span><h3>{{ s.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p><p class="prose" style="font-size:14.5px;margin:8px 0 0;">{{ s.examples | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── FULL PRICING · every NY service + range (grid-3 buyer-cards). Canonical figures only — range in buyer-card__body <strong>. (H2: Every New York service, every range.) ── #}
-<section class="section section--alt" id="ny-svc-pricing-ranges">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">All pricing</p>
-      <h2 class="section__heading">Every New York service, every range.</h2>
-      <p class="section__lede">The complete pricing landscape for New York businesses. Every fee is fixed and scoped in writing before work begins.</p>
-    </header>
-    <div class="grid-3">
-      {%- for r in ranges %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ r.type | safe }}</p>
-        <h3 class="buyer-card__heading">{{ r.service | safe }}</h3>
-        <p class="buyer-card__body"><strong>{{ r.fee | safe }}</strong></p>
-        <p class="buyer-card__body">{{ r.cadence | safe }}</p>
-        {%- if r.href %}<a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>{%- endif %}
-      </article>
-      {%- endfor %}
-    </div>
-    <p class="prose">{{ rangesNote | safe }}</p>
+{#- FULL PRICING · every NY service + range → vs-table→.cmp. Canonical NY figures EXACT. (H2: Every New York service, every range.) -#}
+<section class="sec reveal hub-rt--alt" id="ny-svc-pricing-ranges" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">All pricing</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Every New York service, every range.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">The complete pricing landscape for New York businesses. Every fee is fixed and scoped in writing before work begins.</p>
+    <table class="cmp">
+      <caption class="sr-only">TechBrot fixed-fee pricing across every New York service.</caption>
+      <thead><tr><th scope="col">Service</th><th scope="col">Engagement type</th><th scope="col">Fee range</th><th scope="col">Cadence</th></tr></thead>
+      <tbody>
+        {%- for r in ranges %}
+        <tr>
+          <th scope="row" data-col="Service">{% if r.href %}<a href="{{ r.href }}">{{ r.service | safe }}</a>{% else %}{{ r.service | safe }}{% endif %}</th>
+          <td data-col="Engagement type" style="color:var(--color-ink-mute);">{{ r.type | safe }}</td>
+          <td class="num us" data-col="Fee range"><strong>{{ r.fee | safe }}</strong></td>
+          <td data-col="Cadence" style="color:var(--color-ink-mute);">{{ r.cadence | safe }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:14px;">{{ rangesNote | safe }}</p>
   </div>
 </section>
 
-{# ── WHY FIXED-FEE · standing brand line as H2; body carried as prose. (H2: Why we don't bill by the hour.) ── #}
-<section class="section" id="ny-svc-pricing-why">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Why fixed-fee</p>
-      <h2 class="section__heading">Why we don&rsquo;t bill by the hour.</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in whyBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
-    </div>
+{#- WHY FIXED-FEE · standing brand line as H2; body carried as prose. (H2: Why we don't bill by the hour.) -#}
+<section class="sec reveal" id="ny-svc-pricing-why">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why fixed-fee</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Why we don&rsquo;t bill by the hour.</h2>
+    <div class="prose">{%- for p in whyBody %}<p>{{ p | safe }}</p>{%- endfor %}</div>
   </div>
 </section>
 
-{# ── INCLUDES · six standards every fixed fee carries (grid-3 buyer-cards). 6 frozen H3s verbatim. (H2 + 6 H3s) ── #}
-<section class="section section--alt" id="ny-svc-pricing-includes">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">What&rsquo;s always included</p>
-      <h2 class="section__heading">Every fixed fee includes these.</h2>
-      <p class="section__lede">Regardless of service or price, every New York engagement includes the same six standards. They&rsquo;re not add-ons &mdash; they&rsquo;re the baseline.</p>
-    </header>
-    <div class="grid-3">
+{#- INCLUDES · six standards every fixed fee carries → r-3 dc-card. 6 frozen H3s verbatim. (H2 + 6 H3s) -#}
+<section class="sec reveal hub-rt--alt" id="ny-svc-pricing-includes" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s always included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Every fixed fee includes these.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:66ch;">Regardless of service or price, every New York engagement includes the same six standards. They&rsquo;re not add-ons &mdash; they&rsquo;re the baseline.</p>
+    <div class="r-3">
       {%- for inc in includes %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ inc.number | safe }}</p>
-        <h3 class="buyer-card__heading">{{ inc.title | safe }}</h3>
-        <p class="buyer-card__body">{{ inc.body | safe }}</p>
-      </article>
+      <div class="dc-card"><h3>{{ inc.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ inc.body | safe }}</p></div>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── FAQ · 7 verbatim contract Q/A; visible faq__list = FAQPage schema (same array). (H2: Questions about cost.) ── #}
-<section class="section" id="ny-svc-pricing-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Pricing FAQ</p>
-      <h2 class="section__heading">Questions about cost.</h2>
-    </header>
-    <div class="faq__list">
-      {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="ny-svc-pricing-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="ny-svc-pricing-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-{# ── EXPERT REVIEW · firm-level, no founder name (byline-block + meta-reviewed). (H2: New York pricing maintained by the TechBrot ProAdvisor team.) ── #}
-<section class="section section--alt" id="ny-svc-pricing-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Pricing standards</p>
-      <h2 class="section__heading">New York pricing maintained by the TechBrot ProAdvisor team.</h2>
-    </header>
-    <div class="byline-block">
-      <div class="byline-block__mark" aria-hidden="true"></div>
+{#- EXPERT REVIEW · firm-level, no founder name (byline + standards prose + trust-row + meta). (H2: New York pricing maintained by the TechBrot ProAdvisor team.) -#}
+<section class="sec reveal" id="ny-svc-pricing-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Pricing standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">New York pricing maintained by the TechBrot ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
       <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
       </div>
     </div>
-    <div class="prose">
+    <div class="prose" style="margin-top:20px;">
       <p>Pricing on this page is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm serving New York businesses across all 62 counties. Ranges reflect current operational pricing for New York engagements and are reviewed periodically; specific fixed fees are quoted per engagement after a free discovery call. New York tax references &mdash; NYC&rsquo;s 8.875% combined sales-tax rate and the 4% NYC UBT &mdash; reflect <a href="https://www.tax.ny.gov/" rel="noopener nofollow">NYS Department of Taxation and Finance</a> and NYC Department of Finance rules current as of the date below. TechBrot performs bookkeeping and QuickBooks work and coordinates with your CPA, who files; it does not file New York tax returns.</p>
     </div>
     <div class="trust-row">
@@ -203,20 +149,14 @@
   </div>
 </section>
 
-{# ── RELATED · where to go next (grid-2 buyer-cards). 4 frozen H3s verbatim. (H2: Where to go next. + 4 H3s) ── #}
-<section class="section" id="ny-svc-pricing-related">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Related</p>
-      <h2 class="section__heading">Where to go next.</h2>
-    </header>
-    <div class="grid-2">
+{#- RELATED · where to go next → r-2 dc-card hub-card. 4 frozen H3s verbatim. (H2: Where to go next. + 4 H3s) -#}
+<section class="sec reveal" id="ny-svc-pricing-related">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where to go next.</h2>
+    <div class="r-2">
       {%- for r in related %}
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading">{{ r.title | safe }}</h3>
-        <p class="buyer-card__body">{{ r.body | safe }}</p>
-        <a class="buyer-card__cta" href="{{ r.href }}">{{ r.cta | safe }}</a>
-      </article>
+      <a class="dc-card hub-card" href="{{ r.href }}"><h3>{{ r.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ r.body | safe }}</p><span class="hub-card__go">{{ r.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       {%- endfor %}
     </div>
   </div>
