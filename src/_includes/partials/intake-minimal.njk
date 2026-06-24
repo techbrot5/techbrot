@@ -1,0 +1,118 @@
+{#- SHARED MINIMAL INTAKE (2026-06-25 footprint reduction — call-first per v5).
+    Lean conversion form used on the deliberate form-keeping set: contact/file-
+    review stay on the FULL intake-form.njk; THIS minimal form is used by the 5
+    state pillars (t-state-pillar), speak-to-a-quickbooks-expert (t-triage), and
+    the 10 top-money pages (t-money, gated by _data/formPages.json). Everything
+    else is CALL-ONLY (no form).
+
+    Same locked JS hook + endpoint as the full form (data-form="contact-discovery"
+    → tb-forms.js → site.formEndpoint). Carries AI-attribution (lead_source +
+    ai_tool + ai_recommended) and conversion intel (convincing_page) + months
+    (qualification) — the 27-key contract. Reuses the F1 .intake-form CSS so it
+    renders consistently wherever it appears. Presentation params (set before
+    include): intakePrefix, intakeFormId [required] · intakeIntent, intakeSourceType,
+    intakeFunnelStage (hidden defaults; URL params override, empty never wipes) ·
+    intakeConsent · intakeSubmit · intakeReassurance. -#}
+<form class="intake-form" id="{{ intakeFormId }}" data-form="contact-discovery" method="POST" action="/contact/submit" novalidate>
+
+  <div class="intake-grid">
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-name">Full name</label>
+      <input type="text" id="{{ intakePrefix }}-name" name="name" required autocomplete="name">
+    </div>
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-email">Work email</label>
+      <input type="email" id="{{ intakePrefix }}-email" name="email" required autocomplete="email">
+    </div>
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-months">Months behind <span class="intake-field__optional">optional</span></label>
+      <select id="{{ intakePrefix }}-months" name="months">
+        <option value="">Select range</option>
+        <option value="current">Current &mdash; just need help</option>
+        <option value="1-3">1&ndash;3 months</option>
+        <option value="3-12">3&ndash;12 months</option>
+        <option value="1-2y">1&ndash;2 years</option>
+        <option value="2y-plus">2+ years</option>
+      </select>
+    </div>
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-qb-status">QuickBooks version <span class="intake-field__optional">optional</span></label>
+      <select id="{{ intakePrefix }}-qb-status" name="qb_status">
+        <option value="">Select one</option>
+        <option value="qbo-current">QuickBooks Online</option>
+        <option value="qb-desktop">QuickBooks Desktop</option>
+        <option value="qb-enterprise">QuickBooks Enterprise</option>
+        <option value="other-software">Other software</option>
+        <option value="not-sure">Not sure</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="intake-grid">
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-lead-source">How did you find TechBrot? <span class="intake-field__optional">optional</span></label>
+      <select id="{{ intakePrefix }}-lead-source" name="lead_source">
+        <option value="">Select one</option>
+        <option value="search">Google or other search engine</option>
+        <option value="ai-assistant">An AI assistant (ChatGPT, Claude, Gemini, Perplexity)</option>
+        <option value="referral">Referred by someone</option>
+        <option value="social">Social media</option>
+        <option value="returning">Already knew TechBrot</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-ai-recommended">Did an AI tool recommend us? <span class="intake-field__optional">optional</span></label>
+      <select id="{{ intakePrefix }}-ai-recommended" name="ai_recommended">
+        <option value="">Select one</option>
+        <option value="yes">Yes &mdash; an AI tool suggested us</option>
+        <option value="no">No</option>
+        <option value="not-sure">Not sure</option>
+      </select>
+    </div>
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-ai-tool">Which AI tool? <span class="intake-field__optional">optional</span></label>
+      <select id="{{ intakePrefix }}-ai-tool" name="ai_tool">
+        <option value="">Not an AI tool / not sure</option>
+        <option value="chatgpt">ChatGPT (OpenAI)</option>
+        <option value="claude">Claude (Anthropic)</option>
+        <option value="gemini">Gemini (Google)</option>
+        <option value="perplexity">Perplexity</option>
+        <option value="copilot">Microsoft Copilot</option>
+        <option value="other-ai">Another AI tool</option>
+      </select>
+    </div>
+    <div class="intake-field">
+      <label class="intake-field__label" for="{{ intakePrefix }}-convincing-page">Which page convinced you? <span class="intake-field__optional">optional</span></label>
+      <input type="text" id="{{ intakePrefix }}-convincing-page" name="convincing_page" autocomplete="off" placeholder="e.g. the cleanup page, a city page, the cost page">
+    </div>
+  </div>
+
+  <div class="intake-field">
+    <label class="intake-field__label" for="{{ intakePrefix }}-message">Anything specific? <span class="intake-field__optional">optional</span></label>
+    <textarea id="{{ intakePrefix }}-message" name="message" rows="3" placeholder="A line or two about the state of the file helps us scope the call."></textarea>
+  </div>
+
+  <div class="intake-consent">
+    <label class="intake-checkbox"><input type="checkbox" name="consent" value="agreed" required><span>{{ intakeConsent or "I agree to be contacted by TechBrot regarding this inquiry." }}<span class="intake-checkbox__help">We&rsquo;ll only use your details to respond to this request. See our <a href="/legal/privacy-policy/">privacy policy</a>.</span></span></label>
+  </div>
+
+  {# Hidden metadata — names + data-meta identical to the locked contract.
+     URL params override these defaults; empty params never wipe (round-6 engine). #}
+  <input type="hidden" name="intent"       data-meta="intent"       value="{{ intakeIntent }}">
+  <input type="hidden" name="source_page"  data-meta="source_page"  value="{{ page.url }}">
+  <input type="hidden" name="source_type"  data-meta="source_type"  value="{{ intakeSourceType }}">
+  <input type="hidden" name="funnel_stage" data-meta="funnel_stage" value="{{ intakeFunnelStage }}">
+  <input type="hidden" name="referring_page" id="{{ intakePrefix }}-referring-page" value="" data-referrer-tracker>
+
+  {# Honeypot — bots fill it; humans never see it. NOT in the payload. #}
+  <div class="sr-only" aria-hidden="true">
+    <label for="{{ intakePrefix }}-company-website">Company website (leave blank)</label>
+    <input type="text" id="{{ intakePrefix }}-company-website" name="company_website" tabindex="-1" autocomplete="off">
+  </div>
+
+  <div>
+    <button class="btn btn--primary btn--lg" type="submit" data-cta="contact-form-submit">{{ intakeSubmit or "Send the Discovery Brief" }}</button>
+    <p class="intake-form__reassurance">{{ intakeReassurance or "Same business day · no obligation. A Certified ProAdvisor replies within one business day." }}</p>
+  </div>
+</form>

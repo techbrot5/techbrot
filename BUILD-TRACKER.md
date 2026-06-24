@@ -11,11 +11,17 @@ section. Intent engine WIRED (real applyIntent executed vs 127-key shipped map: 
 texas/state-advisory all swap headline·lede·CTA·service; unknown=graceful). Endpoint LIVE ({ok:true,result:success},
 both contract shapes accepted). **🛑 2 FOUNDER DECISIONS OPEN (forms) — see PRE-FLIP item 2; visual items 3-4 NOT
 yet started, paused for audit per SPEC→BUILD→AUDIT.** Tree CLEAN; HEAD==origin.
-**FORMS+FAQ STRATEGY PASS (2026-06-25):** founder ruled on A/B (add AI-attribution + WIRE dead fields, extend
-contract to 27 keys) + ordered a call-first footprint reduction (43→~17 forms). Inventory + FAQ-per-page-type report
-done (`_build/scripts/page_type_faq_form_report.py`). **AWAITING founder confirm on: (1) form keep/cut list [item 2b],
-(2) FAQ caps — I PUSHED BACK on 3 caps that would gut equity (dedicated /faq/ hubs, t-location 4-6 too tight, t-hub
-is UNDER not over). See FAQ section + session-log.** NO forms/FAQ changed this turn (both are show-me-before-changing).
+**FORMS PASS EXECUTED + VERIFIED (2026-06-25):** footprint 43→18 forms DONE, battery GREEN, endpoint accepts new
+27-key payload. **FULL 2** (contact, file-review) · **MINIMAL 16** (5 pillars + speak-expert + 10 top-money) ·
+**CALL-ONLY 25** (4 NY cities + 12 NY landings + 8 migration children + proadvisor-near-me — forms removed). New
+shared `partials/intake-minimal.njk` (27-key contract + lead_source/ai_tool/ai_recommended/convincing_page/months
+AI-attribution) used by t-money (gated by `_data/formPages.json`), t-state-pillar, speak-expert. `collect()` in
+tb-forms.js extended (wires months/ai_recommended/convincing_page). NY cities → call-first (Option 02 routes to
+/contact/?intent=new-york). **3 marked test rows in the live Sheet to DELETE: MX-FULL-A1, MX-MIN-B2, MX-27KEY-C3.**
+**FAQ STRATEGY — founder RULED (caps + rewrite + links all greenlit); NEXT = show keep/cut for the ~18 over-pages
+BEFORE trimming.** Caps accepted: /faq/ hubs EXEMPT (own band 15-30) · t-location 6-8 · t-hub ADD (under target).
+Trim targets: 3 bookkeeping money pages @18→7 · 5 pillars @17→10-12 · ~10 prose @11→8. Then answer-rewrite
+(generic/answer-first) + hub additions + in-answer silo links (after the 35-FAQPage-file stripTags safety check).
 (history below: the recompose/backlog detail.)
 
 ## 🚦 PRE-FLIP OPEN ITEMS (start here next session — 2026-06-25)

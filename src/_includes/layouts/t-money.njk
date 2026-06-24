@@ -166,34 +166,27 @@ footerNav:
   </div>
 </section>
 
-{#- §INTAKE FORM (minimal) -#}
+{#- §INTAKE FORM (minimal) — CALL-FIRST footprint (2026-06-25): the form renders
+    ONLY on the deliberate top-money set in _data/formPages.json. Every other
+    t-money page is call-only (the callband phone CTA above + the final CTA band
+    below carry conversion). Shared 27-key contract via partials/intake-minimal.njk. -#}
+{%- if page.url in formPages.keep %}
 <section class="sec reveal" id="{{ slug }}-intake" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);padding-top:80px;padding-bottom:80px;">
   <div class="ct" style="max-width:760px;">
     <div class="idx"><span class="idx__n">§</span><span class="idx__t">Prefer email</span><span class="idx__rule"></span></div>
     <h2 class="h2" style="margin-bottom:8px;">{{ sec.intakeH | default("Scope your engagement.", true) | safe }}</h2>
     <p class="lede" style="margin:0 0 28px;max-width:50ch;">Send a few details and a Certified ProAdvisor replies the same business day. Or just <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" style="color:var(--color-accent);">call {{ site.phone.display }}</a>.</p>
-    <form class="intake" id="{{ slug }}-intake-form" data-form="contact-discovery" method="POST" action="/contact/submit" novalidate>
-      <div class="sr-only" aria-hidden="true"><label for="{{ slug }}-cw">Company website (leave blank)</label><input type="text" id="{{ slug }}-cw" name="company_website" tabindex="-1" autocomplete="off"></div>
-      <div class="r-2" style="gap:16px;">
-        <label><span>Full name</span><input type="text" name="name" required autocomplete="name"></label>
-        <label><span>Work email</span><input type="email" name="email" required autocomplete="email"></label>
-        <label><span>Months behind <span style="color:var(--color-ink-faint);font-weight:400;">optional</span></span><select name="months"><option value="">Select range</option><option>1&ndash;3 months</option><option>3&ndash;12 months</option><option>1&ndash;2 years</option><option>2+ years</option></select></label>
-        <label><span>QuickBooks version <span style="color:var(--color-ink-faint);font-weight:400;">optional</span></span><select name="qb_status"><option value="">Select one</option><option>QuickBooks Online</option><option>QuickBooks Desktop</option><option>QuickBooks Enterprise</option><option>Not sure</option></select></label>
-      </div>
-      <label style="display:block;margin-top:16px;"><span>Anything specific? <span style="color:var(--color-ink-faint);font-weight:400;">optional</span></span><textarea name="message" rows="3" placeholder="A line or two about the state of the file helps us scope the call."></textarea></label>
-      <label class="intake-checkbox" style="display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:13.5px;color:var(--color-ink-body2);"><input type="checkbox" name="consent" value="agreed" required style="width:auto;min-height:0;margin-top:3px;"><span>I agree to be contacted by TechBrot regarding this inquiry. We&rsquo;ll only use your details to respond to this request. See our <a href="/legal/privacy-policy/" style="color:var(--color-accent);">privacy policy</a>.</span></label>
-      <input type="hidden" name="intent" data-meta="intent" value="{{ intent | default('cleanup', true) }}">
-      <input type="hidden" name="source_page" data-meta="source_page" value="{{ page.url | replace('/','',1) | replace('/','',-1) }}">
-      <input type="hidden" name="source_type" data-meta="source_type" value="bofu-conversion">
-      <input type="hidden" name="funnel_stage" data-meta="funnel_stage" value="BOFU">
-      <input type="hidden" name="referring_page" value="" data-referrer-tracker>
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:18px;">
-        <button class="btn btn-cta" type="submit" data-cta="contact-form-submit" style="display:inline-flex;align-items:center;height:48px;padding:0 22px;border:0;border-radius:10px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;">Send the Discovery Brief</button>
-        <span style="font-size:13px;color:var(--color-ink-mute);">Same business day &middot; no obligation. A Certified ProAdvisor replies within one business day.</span>
-      </div>
-    </form>
+    {%- set intakePrefix = slug %}
+    {%- set intakeFormId = slug + "-intake-form" %}
+    {%- set intakeIntent = intent | default("cleanup", true) %}
+    {%- set intakeSourceType = "bofu-conversion" %}
+    {%- set intakeFunnelStage = "BOFU" %}
+    {%- set intakeSubmit = "Send the Discovery Brief" %}
+    {%- set intakeReassurance = "Same business day &middot; no obligation. A Certified ProAdvisor replies within one business day." %}
+    {% include "partials/intake-minimal.njk" %}
   </div>
 </section>
+{%- endif %}
 
 {#- §FAQ -#}
 {%- if faq %}

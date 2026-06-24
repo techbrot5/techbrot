@@ -65,11 +65,15 @@
     if (errors.length) errors[0].el.focus();
   }
 
-  /* collect() — EXACT port from live contact.js. Key order, the services
-     array, and the industry overwrite quirk are part of the contract. */
+  /* collect() — port of live contact.js, EXTENDED (2026-06-25 founder ruling)
+     to the 27-key contract: wires months (qualification) + ai_recommended +
+     convincing_page (AI-attribution + conversion intel) that the markup asked
+     but the old 24-key collect dropped. Fields absent on a given form are
+     simply skipped (field() returns null), so full + minimal both stay valid.
+     Key order, the services array, and the industry overwrite quirk preserved. */
   function collect() {
     var data = {};
-    ['name','company','email','phone','revenue_range','industry','qb_status','timeline','message','consent','lead_source','ai_tool'].forEach(function (n) {
+    ['name','company','email','phone','revenue_range','industry','qb_status','timeline','months','message','consent','lead_source','ai_tool','ai_recommended','convincing_page'].forEach(function (n) {
       var el = field(n);
       if (el) data[n] = (el.type === 'checkbox') ? (el.checked ? el.value : '') : el.value.trim();
     });

@@ -187,19 +187,13 @@
         <a class="btn btn-cta" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Speak to a ProAdvisor</a>
         <ul class="checklist" style="margin-top:16px;">{%- for a in callAssurance %}<li>{{ a | safe }}</li>{%- endfor %}</ul>
       </article>
-      <div class="incl-card">
-        <h3 id="ny-rochester-intake-form-heading">Send a short discovery brief.</h3>
-        <p class="prose" style="font-size:15px;margin:8px 0 16px;">Six fields. We respond by the next business day with a path forward &mdash; a scoping call or, if not a fit, a referral. <strong>Includes a free QuickBooks file review &mdash; we&rsquo;ll identify the top 3 issues in your file before any engagement begins.</strong></p>
-        {%- set intakePrefix = "ny-rochester" %}
-        {%- set intakeFormId = "ny-rochester-intake-form" %}
-        {%- set intakeIntent = "new-york" %}
-        {%- set intakeSourceType = "location" %}
-        {%- set intakeFunnelStage = "MOFU" %}
-        {%- set intakeLegend = "What we should discuss for your Rochester business" %}
-        {%- set intakeSubmit = "Send the Discovery Brief" %}
-        {%- set intakeReassurance = "Same-day diagnostic for emergencies, 1 business day for scoping, written fixed-fee scope within 3 business days of the first call." %}
-        {% include "partials/intake-form.njk" %}
-      </div>
+      {#- footprint reduction 2026-06-25: city pages are CALL-FIRST. Online option routes to the central full form with NY context (no per-city form). -#}
+      <article class="incl-card">
+        <span class="eyebrow" style="display:block;margin-bottom:10px;">Option 02</span>
+        <h3>Prefer to send details online?</h3>
+        <p class="prose" style="font-size:15px;margin:8px 0 16px;">Write out a short discovery brief and a Certified ProAdvisor responds by the next business day &mdash; a scoping call or, if not a fit, a referral. Includes a free QuickBooks file review of the top 3 issues before any engagement.</p>
+        <a class="btn btn--ghost" href="/contact/?intent=new-york&amp;state=new-york&amp;city=rochester" data-cta="city-online-intake" style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Send the Discovery Brief</a>
+      </article>
     </div>
   </div>
 </section>
