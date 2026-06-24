@@ -612,6 +612,50 @@ else:
        f"all pages carry <=1 numbered system ({len(var_exc)} pre-elevation pages exempted, "
        f"fixed in-wave) · #12b adjacency reported on {adj_flag} page(s)")
 
+# ── LAYOUT-V2 + OLD-KIT GATE (added 2026-06-24) ──────────────────────────────
+# Content-equity checks CONTENT; it does NOT check CHROME. That blind spot let 82
+# pages on OLD base.njk layouts (t-mofu/t-bofu/t-guide/t-article/base) pass for
+# months. The dc-base mega-nav (class="navlink") is the unique v2 chrome marker —
+# emitted by EVERY dc-base layout and by NONE of the old base.njk layouts. So:
+#   layout-v2 : a built page WITHOUT the marker is still on an old layout (FAIL).
+#   old-kit   : a v2-chrome page that still carries old-kit BODY classes (new
+#               chrome + old body) — the "green≠design" chrome-only anti-pattern.
+# A page is recompose-complete only when it passes content-equity AND both of
+# these. dev/* fixtures are exempt (preview-only scaffolding).
+V2_MARKER = 'class="navlink'
+OLD_KIT = (
+    "buyer-card", "review-card", "team-card", '="rcard', '="vcard', "qa-item",
+    "qa-grid", "tldr-box", "tldr__body", "tldr__heading", "legal-doc__",
+    "checks-list", "vs-table", "process-diagram", "flow__step", "container--narrow",
+    "section__heading", "section__eyebrow", "section__header", "section__lede",
+    "ai-summary--ruled", "ai-summary__", "faq__trigger", "faq__list",
+)
+old_layout, dirty_body = [], []
+for _p in built:
+    _rel = _p.relative_to(SITE).parent.as_posix()
+    _url = "/" if _rel == "." else f"/{_rel}/"
+    if _url.startswith("/dev/"):
+        continue
+    _html = _p.read_text(encoding="utf-8", errors="ignore")
+    if V2_MARKER not in _html:
+        old_layout.append(_url)
+        continue
+    _hits = sorted({k.lstrip('="') for k in OLD_KIT if k in _html})
+    if _hits:
+        dirty_body.append(f"{_url} {_hits}")
+_checked = len([1 for _p in built if not _p.relative_to(SITE).parent.as_posix().startswith("dev")])
+if old_layout:
+    fail("layout-v2", f"{len(old_layout)} page(s) NOT on a v2 dc-base layout "
+         f"(no mega-nav — still on base.njk/t-mofu/t-bofu/t-guide/t-article): "
+         f"{old_layout[:15]}{' …' if len(old_layout) > 15 else ''}")
+else:
+    ok("layout-v2", f"all {_checked} non-dev pages on v2 dc-base chrome (mega-nav present)")
+if dirty_body:
+    fail("old-kit", f"{len(dirty_body)} v2-chrome page(s) carry old-kit BODY classes "
+         f"(new chrome + old body): {dirty_body[:15]}{' …' if len(dirty_body) > 15 else ''}")
+else:
+    ok("old-kit", "no old-kit body classes on any v2 page")
+
 print()
 if FAILURES:
     print(f"BATTERY FAILED — {len(FAILURES)} problem(s):")
