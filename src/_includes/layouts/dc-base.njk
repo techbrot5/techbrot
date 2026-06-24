@@ -138,15 +138,32 @@
       <div class="r-foot">
         <div>
           <div class="foot__brand"><span class="brand__mark"><svg width="17" height="17" viewBox="0 0 64 64" fill="#FCFBF8" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span><span class="brand__name">TechBrot</span></div>
-          <p class="foot__about">Independent accounting &amp; advisory, staffed by Certified QuickBooks ProAdvisors.</p>
+          <p style="font-family:'Fraunces',Georgia,serif;font-variation-settings:'opsz' 40;font-size:17px;line-height:1.3;color:#14110C;margin:14px 0 8px;max-width:26ch;">Automation handles the data entry. We handle the judgment.</p>
+          <p class="foot__about">Independent Certified QuickBooks ProAdvisors &mdash; fixed-fee bookkeeping, cleanup, QuickBooks, payroll &amp; CFO advisory for U.S. small and mid-sized businesses.</p>
           <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" class="mono" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;color:#14110C;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ site.phone.display }}</a>
         </div>
-        <div><div class="col-head">{{ footerNav.label or "Explore" }}</div><ul>
-          {%- for l in (footerNav.links or defaultFooterLinks) %}<li><a href="{{ l.href }}">{{ l.text }}</a></li>{%- endfor %}
+        <div><div class="col-head">Services</div><ul>
+          <li><a href="/quickbooks/">QuickBooks services</a></li>
+          <li><a href="/accounting/">Accounting &amp; bookkeeping</a></li>
+          <li><a href="/accounting/advisory/">Advisory &amp; fractional CFO</a></li>
+          <li><a href="/accounting/bookkeeping/cleanup-bookkeeping/">QuickBooks cleanup</a></li>
+          <li><a href="/quickbooks/migration/">QuickBooks migration</a></li>
+          <li><a href="/accounting/payroll-management/">Payroll &amp; sales tax</a></li>
         </ul></div>
         <div><div class="col-head">Company</div><ul>
+          <li><a href="/about/">About TechBrot</a></li>
+          <li><a href="/trust/">Trust &amp; guarantees</a></li>
           <li><a href="/find-an-accountant/">Find an accountant</a></li>
-          <li><a href="/resources/">Resources</a></li>
+          <li><a href="/vs/">Compare your options</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/partners/">For accountants</a></li>
+        </ul></div>
+        <div><div class="col-head">Resources</div><ul>
+          <li><a href="/resources/">Guides &amp; resources</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/glossary/">Glossary</a></li>
+          <li><a href="/tools/">Calculators</a></li>
+          <li><a href="/quickbooks/help/">QuickBooks help &amp; errors</a></li>
           <li><a href="/contact/">Contact</a></li>
         </ul></div>
         <div><div class="col-head">Office</div><p style="font-size:14px;line-height:1.65;margin:0 0 10px;color:#4A443B;">{{ site.address.streetAddress }}<br>{{ site.address.addressLocality }}, {{ site.address.addressRegion }} {{ site.address.postalCode }}</p><a href="mailto:info@techbrot.com" style="font-size:14px;color:#4A443B;">info@techbrot.com</a></div>

@@ -250,7 +250,7 @@ pageTier: hub
         <a class="btn {% if loop.first %}btn-cta{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:11px;height:54px;padding:0 26px;border-radius:13px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};{% if not loop.first %}background:transparent;color:#fff;border:1px solid rgba(245,247,251,0.32);{% endif %}">{{ a.label }}</a>
         {%- endfor %}
       </div>
-      <p class="final-dark__disc">TechBrot Inc. is an independent firm and is not affiliated with Intuit Inc. QuickBooks and ProAdvisor are trademarks of Intuit Inc. We do not file taxes or represent clients before tax authorities.</p>
+      {#- disclaimer rationalized (2026-06-25): canonical disclaimer lives in the dc-base footer; duplicate removed. -#}
     </div>
   </div>
 </section>

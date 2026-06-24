@@ -45,6 +45,28 @@ ALSO: **10 v2-chrome pages carry stray old-kit body classes** (chrome-only-dirty
 (flow__step). Fix these first (quick — already v2 chrome). Migration order per founder: industries → quickbooks →
 find-an-accountant service-landings → the rest. Gate stays RED until TRUE 0 layout-v2 + 0 old-kit.
 
+## 🎨 PRE-FLIP VISUAL FIXES (founder batch 1, 2026-06-25) — fixed at component source
+- ✅ **process-grid/step → horizontal rows** (dc-system.css): was repeat(4,1fr) narrow columns wrapping to
+  ribbons; now single-col stack, each step = mono number gutter + heading/body across full width. All usages inherit.
+- ✅ **footer** (dc-base.njk): 5 populated columns (Services/Company/Resources rich link lists, no more sparse
+  per-page footerNav) + Fraunces tagline "Automation handles the data entry. We handle the judgment." + stronger
+  positioning copy. `.r-foot` → 5-col grid.
+- ✅ **diagram-figure centered** (dc-system.css): was left-aligned; now `margin:auto` + centered svg/figcaption.
+- ✅ **DISCLAIMER rationalized — disclaim ONCE:** canonical Intuit/independence/no-tax-filing disclaimer stays
+  ONLY in the dc-base footer (`foot__disc`, once per page). Removed the duplicate CTA-band disclaimers from
+  t-prose/t-hub/t-money/t-location/t-state-pillar (every page inherited one = duplicate-content drag); t-article
+  trimmed to its unique blog editorial note only. KEPT: topbar positioning line; **D5/D7 honest-triage above-fold
+  disclosures** (state-service-body/state-triage-body banners + t-triage disclose--lead + its Sheet-7 CTA routing).
+  Equity unaffected (disclaimers are prose, not baseline headings/FAQ/schema). Audit: only 2 stray hits — a dev
+  fixture (skip) + a contextual /vs/ summary.source note (kept, it's content not boilerplate).
+- ⏳ **DEFERRED — David Westgate photo (ASSET, founder supplies):** current photo over-compressed/blurry; founder
+  to re-upload higher-res source; use WITHOUT aggressive compression/refinement. Used on home #home-team + person schema.
+- 📦 **PART 2 (premium elevation, post-flip) — industries as SVG-icon cards:** currently text chips (works fine);
+  the icon-card upgrade = a new component + per-industry icon assets. Deferred.
+- ⏳ **PRE-FLIP STILL OWED:** re-point the now-vacuous `design-fidelity` battery check (keyed on removed pageTier
+  → key off `layout`); deferred speakable cssSelector repoints (battery-clean danglers); retire vs-compare-body.njk
+  + legacy keys; LIVE axe + overflow (360/390/768) on founder machine (chrome leaks here); CSS trim.
+
 ## 🔍 BACKLOG ROOT CAUSE (why ~146 pages were missed) — recorded 2026-06-24
 **Three compounding causes:**
 1. **Families were scoped to their LEAF/detail pages.** Each build family migrated the high-value detail pages

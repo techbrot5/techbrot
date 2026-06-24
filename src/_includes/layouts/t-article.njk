@@ -96,7 +96,9 @@ footerNav:
         <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"{% if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 24px;border-radius:13px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ action.label }}</a>
         {%- endfor %}
       </div>
-      <p class="final-cta__disclaimer" style="font-size:12.5px;line-height:1.6;color:var(--color-ink-faint);margin:24px auto 0;max-width:70ch;">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc. Articles are general information, not tax, legal, or financial advice.</p>
+      {#- disclaimer rationalized (2026-06-25): the Intuit/independence boilerplate is now ONLY in
+          the dc-base footer; kept just the blog-specific editorial note (not in the footer). -#}
+      <p class="final-cta__disclaimer" style="font-size:12.5px;line-height:1.6;color:var(--color-ink-faint);margin:24px auto 0;max-width:70ch;">Articles are general information, not tax, legal, or financial advice.</p>
     </div>
   </div>
 </section>

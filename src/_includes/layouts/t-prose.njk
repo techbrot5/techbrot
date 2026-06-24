@@ -111,7 +111,9 @@ footerNav:
         <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel or (a.href and a.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 24px;border-radius:13px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
         {%- endfor %}
       </div>
-      <p class="final-cta__disclaimer" style="font-size:12.5px;line-height:1.6;color:var(--color-ink-faint);margin:24px auto 0;max-width:70ch;">TechBrot Inc. is an independent firm and is not affiliated with Intuit Inc. QuickBooks and ProAdvisor are trademarks of Intuit Inc. We do not file taxes or represent clients before tax authorities.</p>
+      {#- disclaimer rationalized (2026-06-25): the canonical Intuit/independence/no-tax-filing
+          disclaimer lives ONCE in the dc-base footer (foot__disc). Removed here to kill the
+          duplicate-per-page boilerplate (SEO/AI duplicate-content drag). -#}
     </div>
   </div>
 </section>
