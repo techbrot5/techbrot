@@ -1,9 +1,14 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
 
-## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · C1 COMPLETE · CHECKPOINT before E — context full)
-**RESUME ANCHOR (2026-06-24):** B1-B5 DONE (2691f05). C2 /vs/ DONE 14/14 (4c22934). C1 DONE (1710daf) —
-`/vs/` hub (baseline, 28 headings GREEN) + `/quickbooks/compare/` → v2 t-hub card-grid. **STOPPED before
-E1-E6 per founder directive #5 (context full → clean checkpoint). Tree CLEAN at the C1+docs commit.**
+## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · E1/E2/E3/E6 + G1 DONE · E5+F1 next)
+**RESUME ANCHOR (2026-06-24) — matches git HEAD `93613a4` (origin/preview-11ty):** B1-B5 DONE (2691f05),
+C2 /vs/ 14/14 (4c22934), C1 (1710daf). **E2 glossary (8750bce), G1 legal 4 + E3 frameworks 5 (ba8c85e),
+E6 blog t-article + category (93613a4) all DONE + pushed.** E1 guides (13+index) + E6 research hub VERIFIED
+already-v2 this session (0 old-kit leaks in built HTML). **Remaining in E = E5 tools (9 calc children still on
+OLD t-mofu).** Tree CLEAN; HEAD==origin.
+**⚠ R0 NOTE:** 8750bce + ba8c85e shipped in a prior session but were never dual-logged (resume anchor + family
+table left stale, no SESSION-LOG entry). Backfilled 2026-06-24 (SESSION-LOG + this anchor + table). Resume anchor
+MUST match git every turn from now on — that gap is what makes recovery risky.
 
 **🔑 KEY ARCHITECTURE FINDING for E-F-G-A (verified 2026-06-24) — the remaining recompose is a LAYOUT
 MIGRATION, not just body conversion:** Two layout families exist —
@@ -76,7 +81,14 @@ D1 → D3 → D2 → D4/5/6 (NY incl) → D7 → B1-B5 → C1 → E1-E6 → F1 �
 | **B1-B5 hubs (21)** | t-hub (v2) | **✅ COMPLETE (18 fan-out + 3 REPs)** | All hubs body→v2 on t-hub: B1 silo 8 (quickbooks·accounting/advisory·bookkeeping·tax·services·accounting-systems·quickbooks/reconciliation·switch) + B2 card-grid 5 (qbo/features·advanced·integrations·platforms·accounting/industries) + B3 listing 5 (resources/guides·checklists·research·tools·blog) + 3 REPs (accounting silo·resources card-grid·find-an-accountant national). accounting CTA→LIGHT (founder). `.hub-rt--alt` defined in dc-system.css (one source, site-wide). Each subagent battery-gated by me; stale speakable ids (`*-tldr-body`) corrected to pageGraph `*-in-brief-text`; no AI-summary fabricated where absent (honesty); research N=0 empty-state preserved. Commits 16fc84e·45c127e·ee853cd·2691f05, all full battery GREEN. **FLAG: B3 listing CTA shipped LIGHT (v2 convention: light silo/card-grid/listing, dark only national) — a stale 2026-06-19 ruling said B3=DARK; founder call (trivial ctaBand.dark toggle if dark preferred). about=G2, qb/compare=C1 (re-scoped, not in B).** |
 | **C2 fan-out (13)** | t-comparison | **✅ DONE** | all 13 siblings fanned out (see C2 comparison row above); 14/14 on t-comparison, battery GREEN |
 | **C1 comparison hub (2)** | t-hub (v2) | **✅ DONE** | `/vs/` library hub (baseline, 28 headings GREEN) + `/quickbooks/compare/` → v2 t-hub card-grid (bespoke body: dc-card hub-card grids, .cmp at-a-glance table, ai-qa prose-Q&A, process-grid framework; unlinked comparisons unlinked; light CTA). |
-| **E1-E6 / F1-F2 / G1-G2 / A1** | various | **🔜 NEXT** | glossary/frameworks/tool/guide/blog/research · forms/pricing (incl 5 state) · legal/about-trust · home LAST · pre-flip sitewide pass |
+| **E1 guides (13+index)** | t-prose / t-hub | **✅ DONE (verified)** | 13 children on t-prose + index on t-hub, 0 old-kit leaks in built HTML (verified 2026-06-24, not assumed) |
+| **E2 glossary** | t-prose / t-hub | **✅ DONE** | entry.njk t-guide→t-prose + body→v2 (idx/h2/opquote/rel-card/.byline/details-FAQ); FROZEN DefinedTerm ids #gl-<slug>-definition + -def-body preserved. index.njk→t-hub card-grid. Commit 8750bce. |
+| **E3 frameworks (1 index + 4)** | t-hub / t-prose | **✅ DONE** | index→t-hub card-grid + 4 articles→t-prose (opquote/process-grid/ai-ruled/rel-card/details-FAQ); frozen speakable ids #had/#mip/#tsp/#crd-* preserved (AI-summary authored in body). Commit ba8c85e. |
+| **E6 blog (8 posts + index + categories)** | t-article / t-hub | **✅ DONE** | t-article.njk base.njk→dc-base (editorial reading column, blog seams, FROZEN speakable blog-<slug>-prose); category.njk t-mofu→t-hub card-grid; index already t-hub (B3). posts.11tydata.js dead chrome keys trimmed. Commit 93613a4. |
+| **E6 research** | t-hub | **✅ DONE (verified)** | hub on t-hub, 0 old-kit leaks; no children (data-driven/none). Verified 2026-06-24. |
+| **E5 tools (9 calc) + F1 forms (2)** | OLD t-mofu → v2 | **🔜 NEXT** | 9 calculator children + /contact/ + /quickbooks/file-review/ still on OLD chrome. **OPTION A (founder):** port real .calc/.intake into dc-system + includeCalcJs to dc-base, keep tb-calc.js working, defer premium styling to Part 2. |
+| **G1 legal (4, baseline)** | t-prose | **✅ DONE** | disclaimer/dpa/privacy/terms t-guide→t-prose + body→v2 prose. ZERO legal-wording change; baseline headings verbatim (16/18/18/18); content-equity GREEN. Commit ba8c85e. |
+| **F2 / G2 / A1** | various | **🔜 PENDING** | pricing (incl 5 state) · about/trust/partners · home LAST · then pre-flip sitewide pass |
 | proadvisor-near-me | t-money | **⏳ review** | flagged for possible re-tier (prose-heavy) — founder call |
 
 **SHARED v2 COMPONENTS (fix at SOURCE → all families inherit):** PARTIALS — trust-strip.njk
