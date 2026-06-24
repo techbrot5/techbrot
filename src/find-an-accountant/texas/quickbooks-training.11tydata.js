@@ -1,5 +1,5 @@
-/* /find-an-accountant/texas/quickbooks-training/ — TX SERVICE CHILD (QB spoke).
- * t-bofu · partials/state-service-body.njk. TX-localized. HONESTY: Comptroller + CPA; not Intuit. */
+﻿/* /find-an-accountant/texas/quickbooks-training/ â€” TX SERVICE CHILD (QB spoke).
+ * t-bofu Â· partials/state-service-body.njk. TX-localized. HONESTY: Comptroller + CPA; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const TX_FACTS = [
   { fig: "8.25%", title: "Train your team to invoice sales tax right", body: "The most common day-to-day mistake is applying the wrong sales-tax rate at invoice time. We train your team to use the 8.25% combined rate <strong>by location</strong> so it&rsquo;s right at entry, not corrected later." },
@@ -13,15 +13,15 @@ const TX_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/texas/quickbooks-training/",
   slug: "tx-svc-qbtraining",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Texas QuickBooks Training · TechBrot",
-  description: "QuickBooks training for Texas business teams by a Certified ProAdvisor — invoice the 8.25% sales tax by location, categorize for the margin tax, record fixed assets for BPP. Live, role-specific, all 254 counties. Call (877) 751-5575.",
+  title: "Texas QuickBooks Training Â· TechBrot",
+  description: "QuickBooks training for Texas business teams by a Certified ProAdvisor â€” invoice the 8.25% sales tax by location, categorize for the margin tax, record fixed assets for BPP. Live, role-specific, all 254 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,10 +118,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/quickbooks-training/",
     name: "Texas QuickBooks Training",
-    description: "QuickBooks training for Texas business teams by a Certified ProAdvisor — live, role-specific sessions on invoicing the 8.25% sales tax by location, categorizing for the margin tax, and recording fixed assets for BPP. Independent firm; does not file Texas taxes.",
+    description: "QuickBooks training for Texas business teams by a Certified ProAdvisor â€” live, role-specific sessions on invoicing the 8.25% sales tax by location, categorizing for the margin tax, and recording fixed assets for BPP. Independent firm; does not file Texas taxes.",
     serviceName: "Texas QuickBooks Training Services",
     serviceType: "QuickBooks training and staff enablement",
-    serviceDesc: "Live, role-specific QuickBooks training for Texas business teams — invoicing the 8.25% sales tax by location, categorizing transactions for the franchise (margin) tax, recording fixed assets for the business personal property rendition, and reporting, in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "Live, role-specific QuickBooks training for Texas business teams â€” invoicing the 8.25% sales tax by location, categorizing transactions for the franchise (margin) tax, recording fixed assets for the business personal property rendition, and reporting, in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
     audienceType: "Texas business owners and staff learning QuickBooks across all 254 counties",
     offerPrice: "400",

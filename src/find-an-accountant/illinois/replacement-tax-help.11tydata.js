@@ -1,6 +1,6 @@
-/* /find-an-accountant/illinois/replacement-tax-help/ — IL SERVICE CHILD (tax cluster, non-triage).
- * t-bofu · partials/state-service-body.njk. The IL-distinctive ENTITY-tax stack: the Personal Property
- * Replacement Tax (PPRT — 2.5% C-corp / 1.5% pass-through, even pass-throughs owe it), the 9.5% combined
+﻿/* /find-an-accountant/illinois/replacement-tax-help/ â€” IL SERVICE CHILD (tax cluster, non-triage).
+ * t-bofu Â· partials/state-service-body.njk. The IL-distinctive ENTITY-tax stack: the Personal Property
+ * Replacement Tax (PPRT â€” 2.5% C-corp / 1.5% pass-through, even pass-throughs owe it), the 9.5% combined
  * C-corp rate (7% corporate + 2.5% PPRT), and the permanent PTE election (4.95%, SB 1911 Dec 2025).
  * HONESTY: we track Illinois net income in the books; the computation, the PTE election, and FILING stay
  * with the IDOR + the CPA. We do not compute the liability, advise on the election, file, or represent.
@@ -18,7 +18,7 @@ const IL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc. or the Department of Revenue" },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/illinois/replacement-tax-help/",
   slug: "il-svc-pprt",
   disclosure: "<strong>Independent, and clear about the limits.</strong> TechBrot is an independent Certified QuickBooks ProAdvisor and bookkeeping firm &mdash; not a tax authority, not Intuit, and not a CPA, EA, or attorney. We reconstruct and reconcile the books a notice or filing depends on, fast and accurately; your CPA or EA files and represents you before the agency. We never trade accuracy for speed.",
@@ -26,8 +26,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Illinois Replacement Tax (PPRT) & PTE Help · TechBrot",
-  description: "Illinois's entity-level taxes — the Personal Property Replacement Tax (PPRT, 2.5%/1.5%), the 9.5% combined C-corp rate, and the permanent PTE election — tracked in your books so your CPA can compute and file. Call (877) 751-5575.",
+  title: "Illinois Replacement Tax (PPRT) & PTE Help Â· TechBrot",
+  description: "Illinois's entity-level taxes â€” the Personal Property Replacement Tax (PPRT, 2.5%/1.5%), the 9.5% combined C-corp rate, and the permanent PTE election â€” tracked in your books so your CPA can compute and file. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -124,10 +124,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/replacement-tax-help/",
     name: "Illinois Replacement Tax (PPRT) & PTE Help",
-    description: "Illinois's entity-level taxes — the Personal Property Replacement Tax (PPRT, 2.5% C-corp / 1.5% pass-through), the 9.5% combined C-corp rate, and the permanent PTE election — tracked in your QuickBooks file so your CPA can compute and file. Independent firm; does not compute, advise on the election, or file.",
+    description: "Illinois's entity-level taxes â€” the Personal Property Replacement Tax (PPRT, 2.5% C-corp / 1.5% pass-through), the 9.5% combined C-corp rate, and the permanent PTE election â€” tracked in your QuickBooks file so your CPA can compute and file. Independent firm; does not compute, advise on the election, or file.",
     serviceName: "Illinois Replacement Tax (PPRT) & PTE Bookkeeping Support",
     serviceType: "Entity-tax bookkeeping support",
-    serviceDesc: "Tracking and reconciliation of the Illinois net income behind the Personal Property Replacement Tax (2.5% C-corp / 1.5% pass-through), the 9.5% combined C-corp rate, and the permanent Pass-Through Entity (PTE) election, plus distribution/add-back and multi-state-apportionment tracking, for Illinois businesses across all 102 counties. Independent Certified QuickBooks ProAdvisor firm; does not compute the liability, advise on or make the PTE election, file the returns, or represent clients before the Illinois Department of Revenue — coordinates with the client's CPA or EA.",
+    serviceDesc: "Tracking and reconciliation of the Illinois net income behind the Personal Property Replacement Tax (2.5% C-corp / 1.5% pass-through), the 9.5% combined C-corp rate, and the permanent Pass-Through Entity (PTE) election, plus distribution/add-back and multi-state-apportionment tracking, for Illinois businesses across all 102 counties. Independent Certified QuickBooks ProAdvisor firm; does not compute the liability, advise on or make the PTE election, file the returns, or represent clients before the Illinois Department of Revenue â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Illinois", sameAs: "https://en.wikipedia.org/wiki/Illinois" }],
     audienceType: "Illinois C-corporations, S-corporations, and partnerships subject to the PPRT and evaluating the PTE election across all 102 counties",
     offerPrice: "400",

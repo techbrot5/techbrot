@@ -1,168 +1,124 @@
-{#- SHARED STATE-TRIAGE-CHILD BODY (find-an-accountant honest-triage, growth phase).
+{#- SHARED STATE-TRIAGE-CHILD BODY (find-an-accountant honest-triage). v2 dc-system.
     ONE source for per-state honest-triage pages (state-tax-notice-help, business-tax-problems).
-    t-bofu tier. DOM modelled on the founder-approved NY honest-triage pages
-    (new-york/state-tax-notice-help.njk) — Sheet-7 honest-triage discipline (§8):
-      • amber .disclosure--warn banner ABOVE THE FOLD + explicit do/don't boundaries
-      • not a tax authority, not a CPA/EA/attorney; contacting us reaches no agency
-      • we deliver the BOOKS work; the licensed professional responds + represents
-      • converts by CALL; never "official"; never implies Intuit/agency affiliation
-    All state+page-specific content comes from the page's .11tydata.js (disclosure,
-    boundariesDo/Dont, callBreakout, tldr, aiSummary, problemTypes, booksBody, scopeDo/Dont,
-    faq, reviewProse, reviewCreds, copy.*). HONESTY is the #1 gate on these pages. -#}
+    Renders into t-location's {{content}} slot (hero is layout-rendered). Sheet-7 honest-triage
+    discipline (§8): amber disclosure banner ABOVE THE FOLD + explicit do/don't boundaries · not
+    a tax authority/CPA/EA/attorney; contacting us reaches no agency · we deliver the BOOKS work,
+    the licensed professional represents · converts by CALL; never "official"; never implies
+    Intuit/agency affiliation. HONESTY is the #1 gate. FROZEN ids: #{{slug}}-summary,
+    #{{slug}}-ai-summary-list (speakable). -#}
 
-{# ── DISCLOSURE BANNER · ABOVE THE FOLD (Sheet-7) ── #}
-<section class="section section--compact" id="{{ slug }}-disclosure">
-  <div class="container container--narrow">
-    <div class="disclosure disclosure--warn">
-      <svg class="disclosure__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A4660A" stroke-width="1.75" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.3" stroke-linecap="round"/></svg>
-      <div class="disclosure__body">{{ disclosure | safe }}</div>
+{# ── DISCLOSURE BANNER · ABOVE THE FOLD (Sheet-7) + boundaries ── #}
+<section class="sec" id="{{ slug }}-disclosure" style="padding-top:28px;padding-bottom:4px;">
+  <div class="ct read read--doc">
+    <div style="display:flex;gap:12px;align-items:flex-start;background:var(--caution-soft);border:1px solid var(--caution-border);border-radius:12px;padding:16px 18px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-warning)" stroke-width="1.75" aria-hidden="true" style="flex:none;margin-top:2px;"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.3" stroke-linecap="round"/></svg>
+      <div class="prose" style="font-size:14px;">{{ disclosure | safe }}</div>
     </div>
-    <ul class="checks-list" id="{{ slug }}-boundaries">
+    <ul class="checklist" id="{{ slug }}-boundaries" style="margin-top:16px;">
       <li><strong>What we do:</strong> {{ boundariesDo | safe }}</li>
       <li><strong>What we do not do:</strong> {{ boundariesDont | safe }}</li>
     </ul>
   </div>
 </section>
 
-{# ── CALL · honest-triage converts by CALL ── #}
-<section class="section section--compact" id="{{ slug }}-call">
-  <div class="container container--narrow">
-    <div class="call-breakout">
-      <div>
-        <p class="call-breakout__title">{{ callBreakout.title | safe }}</p>
-        <p class="call-breakout__sub">{{ callBreakout.sub | safe }}</p>
-      </div>
-      <a class="btn btn--primary" href="tel:{{ site.phone.e164 }}" data-tb-event="phone_click">Speak to a ProAdvisor</a>
+{# ── CALL · honest-triage converts by CALL (calm) ── #}
+<section class="sec reveal" id="{{ slug }}-call" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="dc-card" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;">
+      <div><p style="font-size:16px;font-weight:600;color:var(--color-ink);margin:0;">{{ callBreakout.title | safe }}</p><p class="prose" style="font-size:14px;margin:4px 0 0;color:var(--color-ink-mute);">{{ callBreakout.sub | safe }}</p></div>
+      <a class="btn btn-cta" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" style="display:inline-flex;align-items:center;gap:9px;height:50px;padding:0 24px;border-radius:12px;font-size:15px;font-weight:600;flex:none;">Speak to a ProAdvisor</a>
     </div>
   </div>
 </section>
 
-{# ── SHORT VERSION · TL;DR ── #}
-<section class="section section--compact" id="{{ slug }}-tldr">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <h2 class="section__heading">The short version.</h2>
-    </header>
-    <p class="prose" id="{{ slug }}-summary">{{ tldr | safe }}</p>
+{# ── SHORT VERSION · TL;DR. #{{slug}}-summary speakable ── #}
+<section class="sec reveal" id="{{ slug }}-tldr" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The short version</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">The short version.</h2>
+    <div class="tldr-prose"><p id="{{ slug }}-summary">{{ tldr | safe }}</p></div>
   </div>
 </section>
 
-{# ── AI SUMMARY · five-question block ── #}
-<section class="section" id="{{ slug }}-ai-summary-sec">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">For AI engines &amp; quick answers</p>
-      <h2 class="section__heading">{{ copy.aiHeading | safe }}</h2>
-    </header>
-    <dl class="ai-summary ai-summary--ruled" id="{{ slug }}-ai-summary-list">
+{# ── AI SUMMARY · five-question block. #{{slug}}-ai-summary-list speakable ── #}
+<section class="sec reveal" id="{{ slug }}-ai-summary-sec" style="padding-top:24px;">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">For AI engines &amp; quick answers</div>
+    <h2 class="h2" style="margin-bottom:24px;">{{ copy.aiHeading | safe }}</h2>
+    <dl class="ai-ruled speakable" id="{{ slug }}-ai-summary-list">
       {%- for item in aiSummary %}
-      <div class="ai-summary__item">
-        <dt class="ai-summary__question">{{ item.q | safe }}</dt>
-        <dd class="ai-summary__answer"><p>{{ item.a | safe }}</p></dd>
-      </div>
+      <div class="ai-ruled__item"><dt><h3>{{ item.q | safe }}</h3></dt><dd style="margin:0;"><p>{{ item.a | safe }}</p></dd></div>
       {%- endfor %}
     </dl>
   </div>
 </section>
 
-{# ── PROBLEM / NOTICE TYPES · grid-3 buyer-cards ── #}
-<section class="section section--alt" id="{{ slug }}-types">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">{{ copy.typesEyebrow | safe }}</p>
-      <h2 class="section__heading">{{ copy.typesHeading | safe }}</h2>
-      {%- if copy.typesLede %}<p class="section__lede">{{ copy.typesLede | safe }}</p>{%- endif %}
-    </header>
-    <div class="grid-3">
+{# ── PROBLEM / NOTICE TYPES → dc-card r-3. sand ── #}
+<section class="sec reveal hub-rt--alt" id="{{ slug }}-types" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ copy.typesEyebrow | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:{% if copy.typesLede %}10{% else %}28{% endif %}px;">{{ copy.typesHeading | safe }}</h2>
+    {%- if copy.typesLede %}<p class="lede" style="margin:0 0 28px;max-width:66ch;">{{ copy.typesLede | safe }}</p>{%- endif %}
+    <div class="r-3">
       {%- for n in problemTypes %}
-      <article class="buyer-card">
-        <p class="buyer-card__opener">{{ n.form | safe }}</p>
-        <h3 class="buyer-card__heading">{{ n.title | safe }}</h3>
-        <p class="buyer-card__body">{{ n.body | safe }}</p>
-      </article>
+      <div class="dc-card"><span class="mono" style="font-size:12.5px;color:var(--color-accent);display:block;margin-bottom:8px;">{{ n.form | safe }}</span><h3>{{ n.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ n.body | safe }}</p></div>
       {%- endfor %}
     </div>
-    {%- if problemTypesNote %}<p class="prose"><small>{{ problemTypesNote | safe }}</small></p>{%- endif %}
+    {%- if problemTypesNote %}<p class="prose" style="font-size:13px;color:var(--color-ink-mute);margin-top:18px;">{{ problemTypesNote | safe }}</p>{%- endif %}
   </div>
 </section>
 
 {# ── BOOKS-PROBLEM root-cause band ── #}
-<section class="section" id="{{ slug }}-books">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">{{ copy.booksEyebrow | safe }}</p>
-      <h2 class="section__heading">{{ copy.booksHeading | safe }}</h2>
-    </header>
-    <div class="stack-8">
-      {%- for p in booksBody %}<p class="prose">{{ p | safe }}</p>{%- endfor %}
+<section class="sec reveal" id="{{ slug }}-books">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ copy.booksEyebrow | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">{{ copy.booksHeading | safe }}</h2>
+    <div class="prose">
+      {%- for p in booksBody %}<p>{{ p | safe }}</p>{%- endfor %}
     </div>
-    {%- if booksNote %}<ul class="checks-list" id="{{ slug }}-booksnote"><li>{{ booksNote | safe }}</li></ul>{%- endif %}
+    {%- if booksNote %}<ul class="checklist" id="{{ slug }}-booksnote" style="margin-top:14px;"><li>{{ booksNote | safe }}</li></ul>{%- endif %}
   </div>
 </section>
 
-{# ── SCOPE SPLIT · honest who-does-what (grid-2 buyer-cards) ── #}
-<section class="section section--alt" id="{{ slug }}-scope">
-  <div class="container">
-    <header class="section__header">
-      <p class="section__eyebrow">Honest scope</p>
-      <h2 class="section__heading">{{ copy.scopeHeading | safe }}</h2>
-      {%- if copy.scopeLede %}<p class="section__lede">{{ copy.scopeLede | safe }}</p>{%- endif %}
-    </header>
-    <div class="grid-2">
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading">{{ copy.scopeDoTitle | safe }}</h3>
-        <ul class="checks-list">
-          {%- for li in scopeDo %}<li>{{ li | safe }}</li>{%- endfor %}
-        </ul>
-      </article>
-      <article class="buyer-card">
-        <h3 class="buyer-card__heading">{{ copy.scopeDontTitle | safe }}</h3>
-        <ul class="checks-list">
-          {%- for li in scopeDont %}<li>{{ li | safe }}</li>{%- endfor %}
-        </ul>
-      </article>
+{# ── SCOPE SPLIT · honest who-does-what → dc-card r-2 checklist. sand ── #}
+<section class="sec reveal hub-rt--alt" id="{{ slug }}-scope" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">{{ copy.scopeHeading | safe }}</h2>
+    <div class="r-2">
+      <div class="dc-card"><h3>{{ copy.scopeDoTitle | safe }}</h3><ul class="checklist" style="margin-top:12px;">{%- for li in scopeDo %}<li>{{ li | safe }}</li>{%- endfor %}</ul></div>
+      <div class="dc-card"><h3>{{ copy.scopeDontTitle | safe }}</h3><ul class="checklist" style="margin-top:12px;">{%- for li in scopeDont %}<li>{{ li | safe }}</li>{%- endfor %}</ul></div>
     </div>
   </div>
 </section>
 
-{# ── FAQ · visible faq__list = FAQPage schema ── #}
-<section class="section" id="{{ slug }}-faq">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Common questions</p>
-      <h2 class="section__heading">{{ copy.faqHeading | safe }}</h2>
-    </header>
-    <div class="faq__list">
+{# ── FAQ · visible .faq = FAQPage schema ── #}
+<section class="sec reveal" id="{{ slug }}-faq">
+  <div class="ct read read--doc">
+    <div class="eyebrow" style="margin-bottom:8px;">Common questions</div>
+    <h2 class="h2" style="margin-bottom:26px;">{{ copy.faqHeading | safe }}</h2>
+    <div class="faq">
       {%- for item in faq %}
-      <div class="faq__item">
-        <h3 class="faq__question">
-          <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="{{ slug }}-faq-a{{ loop.index }}">{{ item.q | safe }}</button>
-        </h3>
-        <div class="faq__answer" id="{{ slug }}-faq-a{{ loop.index }}" data-open="false">
-          <p>{{ item.a | safe }}</p>
-        </div>
-      </div>
+      <details name="{{ slug }}-faq"{% if loop.first %} open{% endif %}><summary>{{ item.q | safe }}<span class="pl"></span></summary><div>{{ item.a | safe }}</div></details>
       {%- endfor %}
     </div>
   </div>
 </section>
 
-{# ── EXPERT REVIEW · firm-level, no personal name ── #}
-<section class="section section--alt" id="{{ slug }}-review">
-  <div class="container container--narrow">
-    <header class="section__header">
-      <p class="section__eyebrow">Page review &amp; standards</p>
-      <h2 class="section__heading">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
-    </header>
-    <div class="byline-block">
-      <div class="byline-block__mark" aria-hidden="true"></div>
+{# ── EXPERT REVIEW · firm-level → v2 byline + trust-row. sand ── #}
+<section class="sec reveal hub-rt--alt" id="{{ slug }}-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline">
+      <svg width="30" height="30" viewBox="0 0 64 64" role="img" aria-label="TechBrot"><rect width="64" height="64" rx="14" fill="#1A1915"></rect><g transform="translate(12.16 12.16) scale(0.62)" fill="#F5F3EC"><path d="M8 10 H38 V54 H26 V22 H8 Z"></path><rect x="42" y="10" width="14" height="12"></rect></g></svg>
       <div>
-        <p class="byline-block__name">By the Certified QuickBooks ProAdvisor team</p>
-        <p class="byline-block__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
       </div>
     </div>
-    <div class="prose"><p>{{ reviewProse | safe }}</p></div>
-    <div class="trust-row">
+    <div class="prose" style="margin-top:16px;"><p>{{ reviewProse | safe }}</p></div>
+    <div class="trust-row" style="margin-top:22px;">
       {%- for c in reviewCreds %}
       <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
       {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}

@@ -1,5 +1,5 @@
-/* /find-an-accountant/illinois/monthly-bookkeeping/ — IL SERVICE CHILD (bkg spoke).
- * t-bofu · partials/state-service-body.njk. IL-localized: PPRT / 10.25% Chicago / cloud tax. */
+﻿/* /find-an-accountant/illinois/monthly-bookkeeping/ â€” IL SERVICE CHILD (bkg spoke).
+ * t-bofu Â· partials/state-service-body.njk. IL-localized: PPRT / 10.25% Chicago / cloud tax. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const IL_FACTS = [
   { fig: "Monthly", title: "A close every month, not a scramble at filing", body: "Monthly bookkeeping means the books are reconciled and closed each month &mdash; so the combined sales tax, the PPRT net income, and Chicago&rsquo;s cloud-tax figures are right all year, not reconstructed at filing time." },
@@ -13,15 +13,15 @@ const IL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/illinois/monthly-bookkeeping/",
   slug: "il-svc-monthly",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Illinois Monthly Bookkeeping · TechBrot",
-  description: "Monthly bookkeeping for Illinois businesses — a real close every month, 10.25% Chicago sales tax reconciled by jurisdiction, PPRT net income kept current, CPA-ready statements. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  title: "Illinois Monthly Bookkeeping Â· TechBrot",
+  description: "Monthly bookkeeping for Illinois businesses â€” a real close every month, 10.25% Chicago sales tax reconciled by jurisdiction, PPRT net income kept current, CPA-ready statements. Fixed-fee, all 102 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,10 +118,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/monthly-bookkeeping/",
     name: "Illinois Monthly Bookkeeping",
-    description: "Monthly bookkeeping for Illinois businesses — a real close every month, 6.25%–10.25% sales tax reconciled by jurisdiction, PPRT net income kept current, Chicago's cloud tax handled, and CPA-ready statements in your own QuickBooks file across all 102 counties. Independent firm; does not file Illinois taxes.",
+    description: "Monthly bookkeeping for Illinois businesses â€” a real close every month, 6.25%â€“10.25% sales tax reconciled by jurisdiction, PPRT net income kept current, Chicago's cloud tax handled, and CPA-ready statements in your own QuickBooks file across all 102 counties. Independent firm; does not file Illinois taxes.",
     serviceName: "Illinois Monthly Bookkeeping Services",
     serviceType: "Monthly bookkeeping and close services",
-    serviceDesc: "A monthly close — reconciliation, categorization, combined sales-tax reconciliation by jurisdiction, Illinois-net-income tracking for the Personal Property Replacement Tax, Chicago lease/cloud-tax handling, and CPA-ready statements for Illinois businesses across all 102 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns.",
+    serviceDesc: "A monthly close â€” reconciliation, categorization, combined sales-tax reconciliation by jurisdiction, Illinois-net-income tracking for the Personal Property Replacement Tax, Chicago lease/cloud-tax handling, and CPA-ready statements for Illinois businesses across all 102 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns.",
     areaServed: [{ type: "State", name: "Illinois", sameAs: "https://en.wikipedia.org/wiki/Illinois" }],
     audienceType: "Illinois small and midsize businesses across all 102 counties",
     offerPrice: "400",

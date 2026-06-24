@@ -1,5 +1,5 @@
-/* /find-an-accountant/california/monthly-bookkeeping/ — CA SERVICE CHILD (bookkeeping spoke).
- * t-bofu. Shared body: partials/state-service-body.njk. v4 bookkeeping spoke — the
+﻿/* /find-an-accountant/california/monthly-bookkeeping/ â€” CA SERVICE CHILD (bookkeeping spoke).
+ * t-bofu. Shared body: partials/state-service-body.njk. v4 bookkeeping spoke â€” the
  * recurring monthly close for California. GENUINELY CA-localized. HONESTY: deferred to
  * FTB/CDTFA/EDD + CPA/EA; founder-name-zero; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
@@ -15,15 +15,15 @@ const CA_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/california/monthly-bookkeeping/",
   slug: "ca-svc-monthly",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "California Monthly Bookkeeping · TechBrot",
-  description: "Monthly bookkeeping for California businesses — books closed every month by a Certified ProAdvisor, CDTFA district sales tax reconciled, $800 franchise tax accrued, CPA-ready statements. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  title: "California Monthly Bookkeeping Â· TechBrot",
+  description: "Monthly bookkeeping for California businesses â€” books closed every month by a Certified ProAdvisor, CDTFA district sales tax reconciled, $800 franchise tax accrued, CPA-ready statements. Fixed-fee, all 58 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -123,10 +123,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/monthly-bookkeeping/",
     name: "California Monthly Bookkeeping",
-    description: "Monthly bookkeeping for California businesses — a recurring close by a Certified ProAdvisor with CDTFA district sales tax reconciled, the $800 franchise tax accrued, and a CPA-ready package each month, across all 58 counties. Independent firm; does not file California taxes.",
+    description: "Monthly bookkeeping for California businesses â€” a recurring close by a Certified ProAdvisor with CDTFA district sales tax reconciled, the $800 franchise tax accrued, and a CPA-ready package each month, across all 58 counties. Independent firm; does not file California taxes.",
     serviceName: "California Monthly Bookkeeping Services",
     serviceType: "Monthly bookkeeping and close services",
-    serviceDesc: "A recurring monthly close for California businesses — reconciliation, CDTFA district sales tax by location, the $800 franchise-tax accrual, AB5 tracking, and a CPA-ready monthly financial package, in the client's own QuickBooks file across all 58 counties. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "A recurring monthly close for California businesses â€” reconciliation, CDTFA district sales tax by location, the $800 franchise-tax accrual, AB5 tracking, and a CPA-ready monthly financial package, in the client's own QuickBooks file across all 58 counties. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
     audienceType: "California small and midsize businesses across all 58 counties needing a recurring monthly bookkeeping close",
     offerPrice: "400",

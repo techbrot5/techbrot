@@ -1,5 +1,5 @@
-/* /find-an-accountant/florida/quickbooks-training/ — FL SERVICE CHILD (QB spoke).
- * t-bofu · partials/state-service-body.njk. FL-localized. HONESTY: FL DOR + CPA; not Intuit. */
+﻿/* /find-an-accountant/florida/quickbooks-training/ â€” FL SERVICE CHILD (QB spoke).
+ * t-bofu Â· partials/state-service-body.njk. FL-localized. HONESTY: FL DOR + CPA; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
   { fig: "6% + surtax", title: "Train your team to invoice sales tax right", body: "The most common day-to-day mistake is applying the wrong sales-tax rate at invoice time. We train your team to use 6% + the correct county surtax <strong>by location</strong> &mdash; with single-item caps &mdash; so it&rsquo;s right at entry, not corrected later." },
@@ -13,15 +13,15 @@ const FL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/florida/quickbooks-training/",
   slug: "fl-svc-qbtraining",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Florida QuickBooks Training · TechBrot",
-  description: "QuickBooks training for Florida business teams by a Certified ProAdvisor — invoice 6%+surtax sales tax by county, record the taxability of services, track fixed assets for TPP. Live, role-specific, all 67 counties. Call (877) 751-5575.",
+  title: "Florida QuickBooks Training Â· TechBrot",
+  description: "QuickBooks training for Florida business teams by a Certified ProAdvisor â€” invoice 6%+surtax sales tax by county, record the taxability of services, track fixed assets for TPP. Live, role-specific, all 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,10 +118,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/quickbooks-training/",
     name: "Florida QuickBooks Training",
-    description: "QuickBooks training for Florida business teams by a Certified ProAdvisor — live, role-specific sessions on invoicing 6%+surtax sales tax by county, recording the taxability of services, and tracking fixed assets for TPP. Independent firm; does not file Florida taxes.",
+    description: "QuickBooks training for Florida business teams by a Certified ProAdvisor â€” live, role-specific sessions on invoicing 6%+surtax sales tax by county, recording the taxability of services, and tracking fixed assets for TPP. Independent firm; does not file Florida taxes.",
     serviceName: "Florida QuickBooks Training Services",
     serviceType: "QuickBooks training and staff enablement",
-    serviceDesc: "Live, role-specific QuickBooks training for Florida business teams — invoicing 6% + county surtax sales tax by location, recording the taxability of services, tracking fixed assets for the tangible personal property return, and reporting, in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "Live, role-specific QuickBooks training for Florida business teams â€” invoicing 6% + county surtax sales tax by location, recording the taxability of services, tracking fixed assets for the tangible personal property return, and reporting, in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
     audienceType: "Florida business owners and staff learning QuickBooks across all 67 counties",
     offerPrice: "400",

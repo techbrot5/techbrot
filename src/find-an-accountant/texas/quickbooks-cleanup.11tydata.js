@@ -1,5 +1,5 @@
-/* /find-an-accountant/texas/quickbooks-cleanup/ — TX SERVICE CHILD (QB spoke).
- * t-bofu · partials/state-service-body.njk. TX-localized cleanup. HONESTY: deferred to Comptroller
+﻿/* /find-an-accountant/texas/quickbooks-cleanup/ â€” TX SERVICE CHILD (QB spoke).
+ * t-bofu Â· partials/state-service-body.njk. TX-localized cleanup. HONESTY: deferred to Comptroller
  * + CPA; founder-name-zero; not Intuit. Links to BUILT pages only. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const TX_FACTS = [
@@ -14,15 +14,15 @@ const TX_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/texas/quickbooks-cleanup/",
   slug: "tx-svc-qbcleanup",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Texas QuickBooks Cleanup · TechBrot",
-  description: "QuickBooks cleanup for Texas businesses by a Certified ProAdvisor — fix single-rate sales tax, separate margin-tax figures, rebuild the fixed-asset schedule, reconcile to CPA-ready. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  title: "Texas QuickBooks Cleanup Â· TechBrot",
+  description: "QuickBooks cleanup for Texas businesses by a Certified ProAdvisor â€” fix single-rate sales tax, separate margin-tax figures, rebuild the fixed-asset schedule, reconcile to CPA-ready. Fixed-fee, all 254 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -120,10 +120,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/quickbooks-cleanup/",
     name: "Texas QuickBooks Cleanup",
-    description: "QuickBooks cleanup for Texas businesses by a Certified ProAdvisor — fix single-rate sales tax, separate margin-tax figures, rebuild the fixed-asset schedule for BPP, and reconcile to CPA-ready. Independent firm; does not file Texas taxes.",
+    description: "QuickBooks cleanup for Texas businesses by a Certified ProAdvisor â€” fix single-rate sales tax, separate margin-tax figures, rebuild the fixed-asset schedule for BPP, and reconcile to CPA-ready. Independent firm; does not file Texas taxes.",
     serviceName: "Texas QuickBooks Cleanup & Catch-Up Services",
     serviceType: "QuickBooks cleanup and catch-up bookkeeping",
-    serviceDesc: "Cleanup and catch-up of QuickBooks files for Texas businesses — correcting single-rate sales tax to the 8.25% combined rate by location, separating revenue/COGS/compensation for the franchise (margin) tax, rebuilding the fixed-asset schedule for the business personal property rendition, reconciling all accounts, and catching the file up to current. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "Cleanup and catch-up of QuickBooks files for Texas businesses â€” correcting single-rate sales tax to the 8.25% combined rate by location, separating revenue/COGS/compensation for the franchise (margin) tax, rebuilding the fixed-asset schedule for the business personal property rendition, reconciling all accounts, and catching the file up to current. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
     audienceType: "Texas businesses with behind or broken QuickBooks files across all 254 counties",
     offerPrice: "1500",

@@ -1,5 +1,5 @@
-/* /find-an-accountant/florida/quickbooks-accountant/ — FL SERVICE CHILD (money/umbrella).
- * t-bofu · partials/state-service-body.njk. v4 FL money cluster umbrella. GENUINELY FL-localized:
+﻿/* /find-an-accountant/florida/quickbooks-accountant/ â€” FL SERVICE CHILD (money/umbrella).
+ * t-bofu Â· partials/state-service-body.njk. v4 FL money cluster umbrella. GENUINELY FL-localized:
  * facts band = the real FL stack (no personal income tax BUT 5.5% C-corp tax; 6% + discretionary
  * county surtax sales tax; the FL service-taxability angle (Florida taxes services other states exempt)). HONESTY: deferred to
  * the Florida Department of Revenue + CPA/EA; founder-name-zero; not Intuit; does not file FL returns. */
@@ -16,15 +16,15 @@ const FL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/florida/quickbooks-accountant/",
   slug: "fl-svc-qbaccountant",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Florida QuickBooks Accountant & ProAdvisor · TechBrot",
-  description: "Certified QuickBooks ProAdvisor & accountant for Florida businesses — bookkeeping, cleanup, payroll, 6%+surtax sales tax, the 5.5% corporate tax, service taxability, and TPP. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  title: "Florida QuickBooks Accountant & ProAdvisor Â· TechBrot",
+  description: "Certified QuickBooks ProAdvisor & accountant for Florida businesses â€” bookkeeping, cleanup, payroll, 6%+surtax sales tax, the 5.5% corporate tax, service taxability, and TPP. Fixed-fee, all 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -124,12 +124,12 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/quickbooks-accountant/",
     name: "Florida QuickBooks Accountant & ProAdvisor",
-    description: "Certified QuickBooks ProAdvisor and accountant for Florida businesses — bookkeeping, cleanup, payroll coordination, 6%+surtax sales tax, the 5.5% corporate tax, service taxability, and tangible personal property in your own QuickBooks file across all 67 counties. Independent firm; does not file Florida taxes.",
+    description: "Certified QuickBooks ProAdvisor and accountant for Florida businesses â€” bookkeeping, cleanup, payroll coordination, 6%+surtax sales tax, the 5.5% corporate tax, service taxability, and tangible personal property in your own QuickBooks file across all 67 counties. Independent firm; does not file Florida taxes.",
     serviceName: "Florida QuickBooks ProAdvisor & Accountant Services",
     serviceType: "QuickBooks ProAdvisor and bookkeeping services",
-    serviceDesc: "Monthly bookkeeping, QuickBooks setup and cleanup, 6% + county surtax sales-tax configuration, 5.5% corporate-tax tracking, service-taxability handling, tangible personal property record-keeping, payroll and reemployment-tax coordination, and CPA-ready statements for Florida businesses across all 67 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "Monthly bookkeeping, QuickBooks setup and cleanup, 6% + county surtax sales-tax configuration, 5.5% corporate-tax tracking, service-taxability handling, tangible personal property record-keeping, payroll and reemployment-tax coordination, and CPA-ready statements for Florida businesses across all 67 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
-    audienceType: "Florida small and midsize businesses across all 67 counties — tourism and hospitality, real estate, construction, healthcare, marine, and professional services",
+    audienceType: "Florida small and midsize businesses across all 67 counties â€” tourism and hospitality, real estate, construction, healthcare, marine, and professional services",
     offerPrice: "400",
   },
   eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },

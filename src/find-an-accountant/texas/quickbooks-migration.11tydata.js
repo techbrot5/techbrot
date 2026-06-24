@@ -1,5 +1,5 @@
-/* /find-an-accountant/texas/quickbooks-migration/ — TX SERVICE CHILD (QB spoke).
- * t-bofu · partials/state-service-body.njk. TX-localized. HONESTY: Comptroller + CPA; not Intuit. */
+﻿/* /find-an-accountant/texas/quickbooks-migration/ â€” TX SERVICE CHILD (QB spoke).
+ * t-bofu Â· partials/state-service-body.njk. TX-localized. HONESTY: Comptroller + CPA; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const TX_FACTS = [
   { fig: "8.25%", title: "Sales tax re-mapped to Texas, by location", body: "A migration is the moment to set sales tax up <strong>right</strong> &mdash; the 8.25% combined rate applied by location, not carried over as a flat rate from the old system. We re-map it as part of the move." },
@@ -13,15 +13,15 @@ const TX_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/texas/quickbooks-migration/",
   slug: "tx-svc-qbmigration",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Texas QuickBooks Migration · TechBrot",
-  description: "QuickBooks migration for Texas businesses by a Certified ProAdvisor — Desktop to Online or another platform, opening balances and history intact, sales tax re-mapped by location, fixed assets carried over. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  title: "Texas QuickBooks Migration Â· TechBrot",
+  description: "QuickBooks migration for Texas businesses by a Certified ProAdvisor â€” Desktop to Online or another platform, opening balances and history intact, sales tax re-mapped by location, fixed assets carried over. Fixed-fee, all 254 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,10 +118,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/quickbooks-migration/",
     name: "Texas QuickBooks Migration",
-    description: "QuickBooks migration for Texas businesses by a Certified ProAdvisor — Desktop to Online or another platform with history intact, sales tax re-mapped to 8.25% by location, and the fixed-asset schedule carried over for BPP. Independent firm; does not file Texas taxes.",
+    description: "QuickBooks migration for Texas businesses by a Certified ProAdvisor â€” Desktop to Online or another platform with history intact, sales tax re-mapped to 8.25% by location, and the fixed-asset schedule carried over for BPP. Independent firm; does not file Texas taxes.",
     serviceName: "Texas QuickBooks Migration Services",
     serviceType: "QuickBooks data migration and conversion",
-    serviceDesc: "Migration of QuickBooks files from Desktop to Online or from another platform for Texas businesses — opening balances and history intact, 8.25% sales tax re-mapped by location, revenue/COGS/compensation landing separated for the franchise (margin) tax, and the fixed-asset schedule carried over for the business personal property rendition, with data verified before go-live. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "Migration of QuickBooks files from Desktop to Online or from another platform for Texas businesses â€” opening balances and history intact, 8.25% sales tax re-mapped by location, revenue/COGS/compensation landing separated for the franchise (margin) tax, and the fixed-asset schedule carried over for the business personal property rendition, with data verified before go-live. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
     audienceType: "Texas businesses migrating to or between QuickBooks editions across all 254 counties",
     offerPrice: "2500",

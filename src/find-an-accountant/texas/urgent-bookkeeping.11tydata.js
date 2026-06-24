@@ -1,6 +1,6 @@
-/* /find-an-accountant/texas/urgent-bookkeeping/ — TX SERVICE CHILD (bkg spoke).
- * t-bofu · partials/state-service-body.njk. Fast-turnaround bookkeeping for a deadline (loan, sale,
- * investor, franchise-tax due). NON-triage — this is a service, not honest-triage. TX-localized.
+﻿/* /find-an-accountant/texas/urgent-bookkeeping/ â€” TX SERVICE CHILD (bkg spoke).
+ * t-bofu Â· partials/state-service-body.njk. Fast-turnaround bookkeeping for a deadline (loan, sale,
+ * investor, franchise-tax due). NON-triage â€” this is a service, not honest-triage. TX-localized.
  * HONESTY: Comptroller + CPA; not Intuit; we don't promise filing outcomes. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const TX_FACTS = [
@@ -15,7 +15,7 @@ const TX_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/texas/urgent-bookkeeping/",
   slug: "tx-svc-urgent",
   tierClass: "section--tier-bofu",
@@ -23,8 +23,8 @@ module.exports = {
   callBar: true,
   disclosure: "<strong>Independent &mdash; and honest about the limits.</strong> TechBrot is an independent Certified QuickBooks ProAdvisor firm, not Intuit and not a tax authority, CPA, or attorney. On a deadline we bring your books current fast and accurately; your CPA or EA files the returns and represents you. We never trade accuracy for speed.",
   heroFigure: "taccount",
-  title: "Texas Urgent & Fast-Turnaround Bookkeeping · TechBrot",
-  description: "Urgent bookkeeping for Texas businesses on a deadline — franchise-tax due, loan or sale pending, sales-tax period closing. Fast, reconciled, CPA-ready. All 254 counties. Call (877) 751-5575.",
+  title: "Texas Urgent & Fast-Turnaround Bookkeeping Â· TechBrot",
+  description: "Urgent bookkeeping for Texas businesses on a deadline â€” franchise-tax due, loan or sale pending, sales-tax period closing. Fast, reconciled, CPA-ready. All 254 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -121,10 +121,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/urgent-bookkeeping/",
     name: "Texas Urgent & Fast-Turnaround Bookkeeping",
-    description: "Urgent bookkeeping for Texas businesses on a deadline — franchise-tax due, loan or sale pending, sales-tax period closing. Fast, reconciled, CPA-ready. Independent firm; does not file Texas taxes or guarantee outcomes.",
+    description: "Urgent bookkeeping for Texas businesses on a deadline â€” franchise-tax due, loan or sale pending, sales-tax period closing. Fast, reconciled, CPA-ready. Independent firm; does not file Texas taxes or guarantee outcomes.",
     serviceName: "Texas Urgent & Fast-Turnaround Bookkeeping",
     serviceType: "Expedited bookkeeping services",
-    serviceDesc: "Fast-turnaround bookkeeping for Texas businesses facing a deadline — the franchise (margin) tax due, a lender or buyer needing statements, or a sales-tax period closing — prioritizing reconciliation of revenue/COGS/compensation and the 8.25% sales-tax liability to deliver CPA-ready books quickly. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns, guarantee filing or financing outcomes, or represent clients before the Comptroller — coordinates with the client's CPA or EA.",
+    serviceDesc: "Fast-turnaround bookkeeping for Texas businesses facing a deadline â€” the franchise (margin) tax due, a lender or buyer needing statements, or a sales-tax period closing â€” prioritizing reconciliation of revenue/COGS/compensation and the 8.25% sales-tax liability to deliver CPA-ready books quickly. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns, guarantee filing or financing outcomes, or represent clients before the Comptroller â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
     audienceType: "Texas businesses facing a tax, financing, or sale deadline across all 254 counties",
     offerPrice: "400",

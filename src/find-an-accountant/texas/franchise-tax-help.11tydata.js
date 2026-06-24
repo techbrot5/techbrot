@@ -1,5 +1,5 @@
-/* /find-an-accountant/texas/franchise-tax-help/ — TX SERVICE CHILD (tax cluster, non-triage).
- * t-bofu · partials/state-service-body.njk. TX Franchise ("margin") tax. HONESTY: we track the
+﻿/* /find-an-accountant/texas/franchise-tax-help/ â€” TX SERVICE CHILD (tax cluster, non-triage).
+ * t-bofu Â· partials/state-service-body.njk. TX Franchise ("margin") tax. HONESTY: we track the
  * position in the books for the CPA; the margin computation, no-tax-due determination, and FILING
  * stay with the Texas Comptroller + the client's CPA. We do not file, compute the liability, or
  * represent. All forward-links point to BUILT pages only. */
@@ -16,7 +16,7 @@ const TX_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc. or the Texas Comptroller" },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/texas/franchise-tax-help/",
   slug: "tx-svc-franchisetax",
   disclosure: "<strong>Independent, and clear about the limits.</strong> TechBrot is an independent Certified QuickBooks ProAdvisor and bookkeeping firm &mdash; not a tax authority, not Intuit, and not a CPA, EA, or attorney. We reconstruct and reconcile the books a notice or filing depends on, fast and accurately; your CPA or EA files and represents you before the agency. We never trade accuracy for speed.",
@@ -24,8 +24,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Texas Franchise (Margin) Tax Help · TechBrot",
-  description: "Texas franchise (margin) tax tracked in your books so your CPA can file accurately — margin base, the no-tax-due threshold, May filing. We keep the books; your CPA computes and files. Call (877) 751-5575.",
+  title: "Texas Franchise (Margin) Tax Help Â· TechBrot",
+  description: "Texas franchise (margin) tax tracked in your books so your CPA can file accurately â€” margin base, the no-tax-due threshold, May filing. We keep the books; your CPA computes and files. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -122,7 +122,7 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/franchise-tax-help/",
     name: "Texas Franchise (Margin) Tax Help",
-    description: "Texas franchise (margin) tax tracked in your QuickBooks file — revenue, COGS, and compensation reconciled and the no-tax-due threshold monitored so your CPA can compute the margin and file. Independent firm; does not compute the liability or file the report.",
+    description: "Texas franchise (margin) tax tracked in your QuickBooks file â€” revenue, COGS, and compensation reconciled and the no-tax-due threshold monitored so your CPA can compute the margin and file. Independent firm; does not compute the liability or file the report.",
     serviceName: "Texas Franchise (Margin) Tax Bookkeeping Support",
     serviceType: "Franchise-tax bookkeeping support",
     serviceDesc: "Tracking and reconciliation of the revenue, cost of goods sold, and compensation figures the Texas franchise (margin) tax is computed from, revenue-threshold monitoring, pre-deadline close, and cleanup for Texas businesses across all 254 counties. Independent Certified QuickBooks ProAdvisor firm; does not compute the franchise-tax margin, choose deduction methods, file the report, or represent clients before the Texas Comptroller.",

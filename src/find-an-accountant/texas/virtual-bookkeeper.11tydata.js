@@ -1,5 +1,5 @@
-/* /find-an-accountant/texas/virtual-bookkeeper/ — TX SERVICE CHILD (money).
- * t-bofu · partials/state-service-body.njk. TX-localized: margin tax / 8.25% sales / BPP. */
+﻿/* /find-an-accountant/texas/virtual-bookkeeper/ â€” TX SERVICE CHILD (money).
+ * t-bofu Â· partials/state-service-body.njk. TX-localized: margin tax / 8.25% sales / BPP. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const TX_FACTS = [
   { fig: "254", title: "All 254 counties, one named ProAdvisor", body: "A virtual bookkeeper means the same Certified ProAdvisor works your file from anywhere in Texas &mdash; Houston to El Paso, all 254 counties &mdash; on your own QuickBooks Online or hosted Desktop file. Location changes the sales-tax rate, never the service." },
@@ -13,15 +13,15 @@ const TX_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/texas/virtual-bookkeeper/",
   slug: "tx-svc-virtual",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Texas Virtual Bookkeeper · TechBrot",
-  description: "Virtual bookkeeper for Texas businesses — remote reconciliation, 8.25% sales tax, the franchise (margin) tax tracked, CPA-ready statements in your own QuickBooks file. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  title: "Texas Virtual Bookkeeper Â· TechBrot",
+  description: "Virtual bookkeeper for Texas businesses â€” remote reconciliation, 8.25% sales tax, the franchise (margin) tax tracked, CPA-ready statements in your own QuickBooks file. Fixed-fee, all 254 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,7 +118,7 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/virtual-bookkeeper/",
     name: "Texas Virtual Bookkeeper",
-    description: "Virtual bookkeeper for Texas businesses — remote reconciliation, 8.25% sales tax by location, the franchise (margin) tax tracked, BPP records, and CPA-ready statements in your own QuickBooks file across all 254 counties. Independent firm; does not file Texas taxes.",
+    description: "Virtual bookkeeper for Texas businesses â€” remote reconciliation, 8.25% sales tax by location, the franchise (margin) tax tracked, BPP records, and CPA-ready statements in your own QuickBooks file across all 254 counties. Independent firm; does not file Texas taxes.",
     serviceName: "Texas Virtual Bookkeeping Services",
     serviceType: "Virtual (remote) bookkeeping services",
     serviceDesc: "Remote reconciliation, categorization, 8.25% sales-tax configuration by location, franchise (margin) tax tracking, business personal property record-keeping, payroll coordination, and CPA-ready statements for Texas businesses across all 254 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns.",

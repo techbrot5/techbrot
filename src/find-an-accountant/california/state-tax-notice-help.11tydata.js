@@ -1,9 +1,9 @@
-/* /find-an-accountant/california/state-tax-notice-help/ — CA HONEST-TRIAGE (tax cluster).
- * t-bofu. Shared body: partials/state-triage-body.njk. Sheet-7 honest-triage / §8 honesty —
+﻿/* /find-an-accountant/california/state-tax-notice-help/ â€” CA HONEST-TRIAGE (tax cluster).
+ * t-bofu. Shared body: partials/state-triage-body.njk. Sheet-7 honest-triage / Â§8 honesty â€”
  * the #1 gate on this page. CA agencies: FTB (income/franchise), CDTFA (sales/use), EDD
  * (payroll/worker-class). Disclosure ABOVE FOLD; we are NOT a tax authority, NOT a CPA/EA/
  * attorney; contacting us reaches no agency; we do NOT respond to notices, represent, advise,
- * or file/protest — the licensed professional does. We do the BOOKS work behind it. Educational
+ * or file/protest â€” the licensed professional does. We do the BOOKS work behind it. Educational
  * only; not legal/tax advice. Founder-name-zero; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const CA_REVIEW_PROSE = "This page is reviewed and maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm. California notice types and processes reference <a href=\"https://www.ftb.ca.gov/\" rel=\"noopener nofollow\">FTB</a>, <a href=\"https://www.cdtfa.ca.gov/\" rel=\"noopener nofollow\">CDTFA</a>, and <a href=\"https://edd.ca.gov/\" rel=\"noopener nofollow\">EDD</a> guidance current as of the date below. This page is educational; it is not legal or tax advice. For a notice with protest rights or audit exposure, work with a CPA, EA, or tax attorney &mdash; supported by reconciled books. TechBrot does not respond to notices, file returns or protests, or represent clients before tax authorities.";
@@ -13,14 +13,14 @@ const CA_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/california/state-tax-notice-help/",
   slug: "ca-svc-notice",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
-  title: "California State Tax Notice Help (FTB · CDTFA · EDD) · TechBrot",
-  description: "Got a California tax notice from the FTB, CDTFA, or EDD? We help you understand it and reconcile the records behind it so your CPA, EA, or tax attorney can respond. Independent bookkeeping firm — not a tax agency. Call (877) 751-5575.",
+  title: "California State Tax Notice Help (FTB Â· CDTFA Â· EDD) Â· TechBrot",
+  description: "Got a California tax notice from the FTB, CDTFA, or EDD? We help you understand it and reconcile the records behind it so your CPA, EA, or tax attorney can respond. Independent bookkeeping firm â€” not a tax agency. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -120,11 +120,11 @@ module.exports = {
   reviewCreds: CA_REVIEW_CREDS,
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/state-tax-notice-help/",
-    name: "California State Tax Notice Help (FTB · CDTFA · EDD)",
-    description: "Help understanding a California tax notice from the FTB, CDTFA, or EDD and reconciling the books behind it, so your CPA, EA, or tax attorney can respond. Independent bookkeeping firm — not a tax agency; does not respond to notices or represent clients.",
+    name: "California State Tax Notice Help (FTB Â· CDTFA Â· EDD)",
+    description: "Help understanding a California tax notice from the FTB, CDTFA, or EDD and reconciling the books behind it, so your CPA, EA, or tax attorney can respond. Independent bookkeeping firm â€” not a tax agency; does not respond to notices or represent clients.",
     serviceName: "California Tax-Notice Bookkeeping Support",
     serviceType: "Tax-notice records reconciliation and bookkeeping support",
-    serviceDesc: "Bookkeeping support for California businesses that received an FTB, CDTFA, or EDD notice — identifying the notice type and deadline, reconciling the period's books and records, and assembling a documented package for the client's CPA, EA, or tax attorney. Educational only; not legal or tax advice. Independent Certified QuickBooks ProAdvisor firm; does not respond to notices, file returns or protests, or represent clients before any tax agency.",
+    serviceDesc: "Bookkeeping support for California businesses that received an FTB, CDTFA, or EDD notice â€” identifying the notice type and deadline, reconciling the period's books and records, and assembling a documented package for the client's CPA, EA, or tax attorney. Educational only; not legal or tax advice. Independent Certified QuickBooks ProAdvisor firm; does not respond to notices, file returns or protests, or represent clients before any tax agency.",
     areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
     audienceType: "California businesses that received a tax notice from the FTB, CDTFA, or EDD and need the underlying books reconciled for their tax professional",
     offerPrice: "400",

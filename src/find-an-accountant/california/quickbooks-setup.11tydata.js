@@ -1,4 +1,4 @@
-/* /find-an-accountant/california/quickbooks-setup/ — CA SERVICE CHILD (QB spoke).
+﻿/* /find-an-accountant/california/quickbooks-setup/ â€” CA SERVICE CHILD (QB spoke).
  * t-bofu. Shared body: partials/state-service-body.njk. v4 QB spoke. GENUINELY CA-localized
  * (facts band = real CA stack; content = CA-correct QuickBooks setup). HONESTY: deferred to
  * FTB/CDTFA/EDD + CPA/EA; founder-name-zero; not Intuit. */
@@ -15,15 +15,15 @@ const CA_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/california/quickbooks-setup/",
   slug: "ca-svc-qbsetup",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "California QuickBooks Setup · TechBrot",
-  description: "QuickBooks setup for California businesses by a Certified ProAdvisor — CA chart of accounts, CDTFA district sales-tax items by location, AB5 contractor tracking, $800 franchise-tax accrual, CA payroll. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  title: "California QuickBooks Setup Â· TechBrot",
+  description: "QuickBooks setup for California businesses by a Certified ProAdvisor â€” CA chart of accounts, CDTFA district sales-tax items by location, AB5 contractor tracking, $800 franchise-tax accrual, CA payroll. Fixed-fee, all 58 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -123,10 +123,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/quickbooks-setup/",
     name: "California QuickBooks Setup",
-    description: "QuickBooks setup for California businesses by a Certified ProAdvisor — a CA chart of accounts, CDTFA district sales-tax items by location, AB5 contractor tracking, the $800 franchise-tax accrual, and California payroll. Independent firm; does not file California taxes.",
+    description: "QuickBooks setup for California businesses by a Certified ProAdvisor â€” a CA chart of accounts, CDTFA district sales-tax items by location, AB5 contractor tracking, the $800 franchise-tax accrual, and California payroll. Independent firm; does not file California taxes.",
     serviceName: "California QuickBooks Setup Services",
     serviceType: "QuickBooks setup and implementation",
-    serviceDesc: "QuickBooks Online or Desktop setup for California businesses — a California-correct chart of accounts, CDTFA district sales-tax items by location, AB5 contractor tracking, the $800 franchise-tax accrual, California payroll, opening balances, and integrations. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "QuickBooks Online or Desktop setup for California businesses â€” a California-correct chart of accounts, CDTFA district sales-tax items by location, AB5 contractor tracking, the $800 franchise-tax accrual, California payroll, opening balances, and integrations. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
     audienceType: "California small and midsize businesses across all 58 counties setting up or restructuring QuickBooks",
     offerPrice: "750",

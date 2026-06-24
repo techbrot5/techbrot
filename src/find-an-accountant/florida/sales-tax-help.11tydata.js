@@ -1,5 +1,5 @@
-/* /find-an-accountant/florida/sales-tax-help/ — FL SERVICE CHILD (tax cluster, non-triage).
- * t-bofu · partials/state-service-body.njk. FL sales & use tax. HONESTY: we configure and reconcile
+﻿/* /find-an-accountant/florida/sales-tax-help/ â€” FL SERVICE CHILD (tax cluster, non-triage).
+ * t-bofu Â· partials/state-service-body.njk. FL sales & use tax. HONESTY: we configure and reconcile
  * in QuickBooks; nexus, taxability, county-surtax determinations, and FILING stay with the Florida
  * Department of Revenue + the client's CPA. We do not file or represent. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
@@ -15,7 +15,7 @@ const FL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc. or the Department of Revenue" },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/florida/sales-tax-help/",
   slug: "fl-svc-salestax",
   disclosure: "<strong>Independent, and clear about the limits.</strong> TechBrot is an independent Certified QuickBooks ProAdvisor and bookkeeping firm &mdash; not a tax authority, not Intuit, and not a CPA, EA, or attorney. We reconstruct and reconcile the books a notice or filing depends on, fast and accurately; your CPA or EA files and represents you before the agency. We never trade accuracy for speed.",
@@ -23,8 +23,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Florida Sales Tax Help in QuickBooks · TechBrot",
-  description: "Florida sales tax set up right in QuickBooks — 6% + county surtax by location, reconciled so the Department of Revenue return ties. We configure; your CPA files. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  title: "Florida Sales Tax Help in QuickBooks Â· TechBrot",
+  description: "Florida sales tax set up right in QuickBooks â€” 6% + county surtax by location, reconciled so the Department of Revenue return ties. We configure; your CPA files. Fixed-fee, all 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -121,12 +121,12 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/sales-tax-help/",
     name: "Florida Sales Tax Help in QuickBooks",
-    description: "Florida sales tax configured and reconciled in QuickBooks — the 6% + county surtax by location, items mapped, liability reconciled so the Department of Revenue return ties. We configure; your CPA confirms taxability and files. Independent firm; does not file returns or make nexus determinations.",
+    description: "Florida sales tax configured and reconciled in QuickBooks â€” the 6% + county surtax by location, items mapped, liability reconciled so the Department of Revenue return ties. We configure; your CPA confirms taxability and files. Independent firm; does not file returns or make nexus determinations.",
     serviceName: "Florida Sales Tax Configuration & Reconciliation in QuickBooks",
     serviceType: "Sales-tax configuration and reconciliation (bookkeeping)",
     serviceDesc: "Configuration of the Florida 6% state rate plus discretionary county surtax by location in QuickBooks, sales-tax item mapping, single-item surtax-cap handling, period reconciliation with collection-allowance capture, marketplace-tax reconciliation, and cleanup of misconfigured setups for Florida businesses across all 67 counties. Independent Certified QuickBooks ProAdvisor firm; does not determine taxability or nexus, file sales-tax returns, or represent clients before the Florida Department of Revenue.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
-    audienceType: "Florida businesses that collect sales tax — retail, e-commerce, hospitality, and services across all 67 counties",
+    audienceType: "Florida businesses that collect sales tax â€” retail, e-commerce, hospitality, and services across all 67 counties",
     offerPrice: "400",
   },
   eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },

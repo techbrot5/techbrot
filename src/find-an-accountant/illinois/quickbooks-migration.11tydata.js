@@ -1,7 +1,7 @@
-/* /find-an-accountant/illinois/quickbooks-migration/ — IL SERVICE CHILD (QB spoke).
- * t-bofu · partials/state-service-body.njk. IL-localized. The MIGRATION angle: a move from Desktop
+﻿/* /find-an-accountant/illinois/quickbooks-migration/ â€” IL SERVICE CHILD (QB spoke).
+ * t-bofu Â· partials/state-service-body.njk. IL-localized. The MIGRATION angle: a move from Desktop
  * or another system to QBO is the moment to carry the IL-correct setup forward cleanly rather than
- * re-importing the old errors — an IL chart of accounts, by-jurisdiction sales-tax items (10.25% in
+ * re-importing the old errors â€” an IL chart of accounts, by-jurisdiction sales-tax items (10.25% in
  * Chicago), PPRT-ready net-income tracking, and the Chicago lease/"cloud" tax tracked separately.
  * HONESTY: IDOR + Chicago Dept of Finance + CPA/EA; founder-name-zero; not Intuit; does not file IL
  * returns or elect the PTE. */
@@ -18,15 +18,15 @@ const IL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/illinois/quickbooks-migration/",
   slug: "il-svc-qbmigration",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Illinois QuickBooks Migration · TechBrot",
-  description: "QuickBooks migration for Illinois businesses by a Certified ProAdvisor — Desktop to Online or another platform, opening balances and history intact, sales tax re-mapped by jurisdiction (10.25% in Chicago), the PPRT tracked, and Chicago's cloud tax carried over. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  title: "Illinois QuickBooks Migration Â· TechBrot",
+  description: "QuickBooks migration for Illinois businesses by a Certified ProAdvisor â€” Desktop to Online or another platform, opening balances and history intact, sales tax re-mapped by jurisdiction (10.25% in Chicago), the PPRT tracked, and Chicago's cloud tax carried over. Fixed-fee, all 102 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -124,10 +124,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/quickbooks-migration/",
     name: "Illinois QuickBooks Migration",
-    description: "QuickBooks migration for Illinois businesses by a Certified ProAdvisor — Desktop to Online or another platform with history intact, sales tax re-mapped by jurisdiction (up to 10.25% in Chicago), the chart of accounts carried over PPRT-ready, and Chicago's 15% cloud tax tracked separately. Independent firm; does not file Illinois taxes.",
+    description: "QuickBooks migration for Illinois businesses by a Certified ProAdvisor â€” Desktop to Online or another platform with history intact, sales tax re-mapped by jurisdiction (up to 10.25% in Chicago), the chart of accounts carried over PPRT-ready, and Chicago's 15% cloud tax tracked separately. Independent firm; does not file Illinois taxes.",
     serviceName: "Illinois QuickBooks Migration Services",
     serviceType: "QuickBooks data migration and conversion",
-    serviceDesc: "Migration of QuickBooks files from Desktop to Online or from another platform for Illinois businesses — opening balances and history intact, combined sales tax re-mapped by jurisdiction (up to 10.25% in Chicago), the chart of accounts carried over so Illinois net income tracks for the Personal Property Replacement Tax, and Chicago's 15% lease/cloud tax carried forward as a separate item, with data verified before go-live. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns or elect the PTE — coordinates with the client's CPA or EA.",
+    serviceDesc: "Migration of QuickBooks files from Desktop to Online or from another platform for Illinois businesses â€” opening balances and history intact, combined sales tax re-mapped by jurisdiction (up to 10.25% in Chicago), the chart of accounts carried over so Illinois net income tracks for the Personal Property Replacement Tax, and Chicago's 15% lease/cloud tax carried forward as a separate item, with data verified before go-live. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns or elect the PTE â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Illinois", sameAs: "https://en.wikipedia.org/wiki/Illinois" }],
     audienceType: "Illinois businesses migrating to or between QuickBooks editions across all 102 counties",
     offerPrice: "750",

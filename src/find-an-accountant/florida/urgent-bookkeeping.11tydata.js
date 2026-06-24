@@ -1,5 +1,5 @@
-/* /find-an-accountant/florida/urgent-bookkeeping/ — FL SERVICE CHILD (bkg spoke).
- * t-bofu · partials/state-service-body.njk. Fast-turnaround bookkeeping for a deadline. NON-triage.
+﻿/* /find-an-accountant/florida/urgent-bookkeeping/ â€” FL SERVICE CHILD (bkg spoke).
+ * t-bofu Â· partials/state-service-body.njk. Fast-turnaround bookkeeping for a deadline. NON-triage.
  * FL-localized. HONESTY: FL DOR + CPA; not Intuit; no filing/financing-outcome guarantees. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
@@ -14,7 +14,7 @@ const FL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/florida/urgent-bookkeeping/",
   slug: "fl-svc-urgent",
   tierClass: "section--tier-bofu",
@@ -22,8 +22,8 @@ module.exports = {
   callBar: true,
   disclosure: "<strong>Independent &mdash; and honest about the limits.</strong> TechBrot is an independent Certified QuickBooks ProAdvisor firm, not Intuit and not a tax authority, CPA, or attorney. On a deadline we bring your books current fast and accurately; your CPA or EA files the returns and represents you. We never trade accuracy for speed.",
   heroFigure: "taccount",
-  title: "Florida Urgent & Fast-Turnaround Bookkeeping · TechBrot",
-  description: "Urgent bookkeeping for Florida businesses on a deadline — DOR filing due, loan or sale pending, sales-tax period closing. Fast, reconciled, CPA-ready. All 67 counties. Call (877) 751-5575.",
+  title: "Florida Urgent & Fast-Turnaround Bookkeeping Â· TechBrot",
+  description: "Urgent bookkeeping for Florida businesses on a deadline â€” DOR filing due, loan or sale pending, sales-tax period closing. Fast, reconciled, CPA-ready. All 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -120,10 +120,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/urgent-bookkeeping/",
     name: "Florida Urgent & Fast-Turnaround Bookkeeping",
-    description: "Urgent bookkeeping for Florida businesses on a deadline — DOR filing due, loan or sale pending, sales-tax period closing. Fast, reconciled, CPA-ready. Independent firm; does not file Florida taxes or guarantee outcomes.",
+    description: "Urgent bookkeeping for Florida businesses on a deadline â€” DOR filing due, loan or sale pending, sales-tax period closing. Fast, reconciled, CPA-ready. Independent firm; does not file Florida taxes or guarantee outcomes.",
     serviceName: "Florida Urgent & Fast-Turnaround Bookkeeping",
     serviceType: "Expedited bookkeeping services",
-    serviceDesc: "Fast-turnaround bookkeeping for Florida businesses facing a deadline — a Department of Revenue filing due, a lender or buyer needing statements, or a sales-tax period closing — prioritizing reconciliation of the sales-tax and corporate figures to deliver CPA-ready books quickly. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns, guarantee filing or financing outcomes, or represent clients before the Department — coordinates with the client's CPA or EA.",
+    serviceDesc: "Fast-turnaround bookkeeping for Florida businesses facing a deadline â€” a Department of Revenue filing due, a lender or buyer needing statements, or a sales-tax period closing â€” prioritizing reconciliation of the sales-tax and corporate figures to deliver CPA-ready books quickly. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns, guarantee filing or financing outcomes, or represent clients before the Department â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
     audienceType: "Florida businesses facing a tax, financing, or sale deadline across all 67 counties",
     offerPrice: "400",

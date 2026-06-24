@@ -1,5 +1,5 @@
-/* /find-an-accountant/illinois/quickbooks-reconciliation/ — IL SERVICE CHILD (QB spoke).
- * t-bofu · partials/state-service-body.njk. IL-localized from the RECONCILIATION angle.
+﻿/* /find-an-accountant/illinois/quickbooks-reconciliation/ â€” IL SERVICE CHILD (QB spoke).
+ * t-bofu Â· partials/state-service-body.njk. IL-localized from the RECONCILIATION angle.
  * Facts band = the real IL stack re-angled to reconciliation: Illinois net income tied so the
  * PPRT is supportable; Chicago's 10.25% combined sales-tax liability tied so the ST-1 ties;
  * Chicago's 15% lease/"cloud" tax reconciled SEPARATELY from sales tax. HONESTY: deferred to the
@@ -18,15 +18,15 @@ const IL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/illinois/quickbooks-reconciliation/",
   slug: "il-svc-qbrecon",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Illinois QuickBooks Reconciliation · TechBrot",
-  description: "QuickBooks reconciliation for Illinois businesses by a Certified ProAdvisor — every account reconciled monthly, the 6.25%–10.25% sales-tax liability tied to the ST-1 by jurisdiction, Illinois net income reconciled for the PPRT, Chicago's 15% cloud tax reconciled separately. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  title: "Illinois QuickBooks Reconciliation Â· TechBrot",
+  description: "QuickBooks reconciliation for Illinois businesses by a Certified ProAdvisor â€” every account reconciled monthly, the 6.25%â€“10.25% sales-tax liability tied to the ST-1 by jurisdiction, Illinois net income reconciled for the PPRT, Chicago's 15% cloud tax reconciled separately. Fixed-fee, all 102 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -124,10 +124,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/quickbooks-reconciliation/",
     name: "Illinois QuickBooks Reconciliation",
-    description: "QuickBooks reconciliation for Illinois businesses by a Certified ProAdvisor — every account reconciled monthly, the 6.25%–10.25% sales-tax liability tied to the ST-1 by jurisdiction, Illinois net income reconciled so the PPRT holds, and Chicago's 15% cloud tax reconciled separately. Independent firm; does not file Illinois taxes.",
+    description: "QuickBooks reconciliation for Illinois businesses by a Certified ProAdvisor â€” every account reconciled monthly, the 6.25%â€“10.25% sales-tax liability tied to the ST-1 by jurisdiction, Illinois net income reconciled so the PPRT holds, and Chicago's 15% cloud tax reconciled separately. Independent firm; does not file Illinois taxes.",
     serviceName: "Illinois QuickBooks Reconciliation Services",
     serviceType: "Account reconciliation (bookkeeping)",
-    serviceDesc: "Monthly reconciliation of bank, credit-card, loan, and clearing accounts and the 6.25%–10.25% sales-tax liability for Illinois businesses, tying the liability to the Illinois ST-1 return by jurisdiction (10.25% in Chicago), reconciling Illinois net income so the Personal Property Replacement Tax is supportable, and reconciling Chicago's 15% lease/cloud tax separately. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "Monthly reconciliation of bank, credit-card, loan, and clearing accounts and the 6.25%â€“10.25% sales-tax liability for Illinois businesses, tying the liability to the Illinois ST-1 return by jurisdiction (10.25% in Chicago), reconciling Illinois net income so the Personal Property Replacement Tax is supportable, and reconciling Chicago's 15% lease/cloud tax separately. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Illinois", sameAs: "https://en.wikipedia.org/wiki/Illinois" }],
     audienceType: "Illinois businesses needing monthly account reconciliation across all 102 counties",
     offerPrice: "400",

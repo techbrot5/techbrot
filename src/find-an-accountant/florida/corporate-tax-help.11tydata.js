@@ -1,9 +1,9 @@
-/* /find-an-accountant/florida/corporate-tax-help/ — FL SERVICE CHILD (tax cluster, non-triage).
- * t-bofu · partials/state-service-body.njk. The Florida-distinctive business-tax stack BEYOND sales
+﻿/* /find-an-accountant/florida/corporate-tax-help/ â€” FL SERVICE CHILD (tax cluster, non-triage).
+ * t-bofu Â· partials/state-service-body.njk. The Florida-distinctive business-tax stack BEYOND sales
  * tax: the 5.5% CORPORATE income tax (C-corps, Form F-1120, $50K exemption), the SALES TAX ON SERVICES
  * (FL taxes services others exempt), and the TANGIBLE PERSONAL PROPERTY return (DR-405). ACCURACY NOTE
  * (round 48): the FL commercial-rent / "business rent" sales tax was REPEALED effective Oct 1, 2025
- * (HB 7031) and no longer applies — stated explicitly below; do NOT describe it as current. HONESTY:
+ * (HB 7031) and no longer applies â€” stated explicitly below; do NOT describe it as current. HONESTY:
  * we track the figures; computation, taxability, and FILING stay with the Florida DOR + CPA. Founder-
  * name-zero; not Intuit. All forward-links point to BUILT pages only. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
@@ -19,7 +19,7 @@ const FL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc. or the Department of Revenue" },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/florida/corporate-tax-help/",
   slug: "fl-svc-corporatetax",
   disclosure: "<strong>Independent, and clear about the limits.</strong> TechBrot is an independent Certified QuickBooks ProAdvisor and bookkeeping firm &mdash; not a tax authority, not Intuit, and not a CPA, EA, or attorney. We reconstruct and reconcile the books a notice or filing depends on, fast and accurately; your CPA or EA files and represents you before the agency. We never trade accuracy for speed.",
@@ -27,8 +27,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Florida Corporate, Services & TPP Tax Help · TechBrot",
-  description: "Florida's business taxes beyond sales tax — the 5.5% corporate income tax, the taxability of services, and the tangible personal property return — tracked in your books so your CPA can file. Call (877) 751-5575.",
+  title: "Florida Corporate, Services & TPP Tax Help Â· TechBrot",
+  description: "Florida's business taxes beyond sales tax â€” the 5.5% corporate income tax, the taxability of services, and the tangible personal property return â€” tracked in your books so your CPA can file. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -125,10 +125,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/corporate-tax-help/",
     name: "Florida Corporate, Services & TPP Tax Help",
-    description: "Florida's business taxes beyond sales tax — the 5.5% corporate income tax (C-corps), the taxability of services Florida applies that others exempt, and the tangible personal property return — tracked in your QuickBooks file so your CPA can compute and file. The commercial-rent tax was repealed Oct 2025. Independent firm; does not compute or file.",
+    description: "Florida's business taxes beyond sales tax â€” the 5.5% corporate income tax (C-corps), the taxability of services Florida applies that others exempt, and the tangible personal property return â€” tracked in your QuickBooks file so your CPA can compute and file. The commercial-rent tax was repealed Oct 2025. Independent firm; does not compute or file.",
     serviceName: "Florida Corporate, Services & TPP Tax Bookkeeping Support",
     serviceType: "Business-tax bookkeeping support",
-    serviceDesc: "Tracking and reconciliation of the figures behind Florida's 5.5% corporate income tax (C-corps), the sales tax on services Florida applies that other states exempt, and the annual tangible personal property return (DR-405), plus reemployment-tax wage tracking, for Florida businesses across all 67 counties. The Florida commercial-rent (business rent) tax was repealed effective Oct 1, 2025 and no longer applies. Independent Certified QuickBooks ProAdvisor firm; does not compute the liabilities, determine taxability, file the returns, or represent clients before the Florida Department of Revenue — coordinates with the client's CPA or EA.",
+    serviceDesc: "Tracking and reconciliation of the figures behind Florida's 5.5% corporate income tax (C-corps), the sales tax on services Florida applies that other states exempt, and the annual tangible personal property return (DR-405), plus reemployment-tax wage tracking, for Florida businesses across all 67 counties. The Florida commercial-rent (business rent) tax was repealed effective Oct 1, 2025 and no longer applies. Independent Certified QuickBooks ProAdvisor firm; does not compute the liabilities, determine taxability, file the returns, or represent clients before the Florida Department of Revenue â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
     audienceType: "Florida C-corporations and businesses selling taxable services or holding tangible personal property across all 67 counties",
     offerPrice: "400",

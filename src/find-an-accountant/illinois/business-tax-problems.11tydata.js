@@ -1,12 +1,12 @@
-/* /find-an-accountant/illinois/business-tax-problems/ — IL HONEST-TRIAGE (tax cluster).
- * t-bofu. Shared body: partials/state-triage-body.njk. Sheet-7 honest-triage / §8 — HONESTY is
+﻿/* /find-an-accountant/illinois/business-tax-problems/ â€” IL HONEST-TRIAGE (tax cluster).
+ * t-bofu. Shared body: partials/state-triage-body.njk. Sheet-7 honest-triage / Â§8 â€” HONESTY is
  * the #1 gate. Framing: most "business tax problems" are really BOOKS problems; we get the books
  * current and CPA-ready; the FILING, the agencies (IDOR / City of Chicago / IDES / IRS), controversy,
  * and any resolution/negotiation are the CPA's/EA's/attorney's. Disclosure ABOVE FOLD; we do NOT
  * resolve tax debt, negotiate with agencies, file returns, or represent. Educational only. Not Intuit.
  * IL agency set re-derived (no CA fact copied): IDOR (income, PPRT, sales/use ST-1), City of Chicago
  * Dept of Finance (lease/"cloud", amusement), IDES (payroll/unemployment + worker classification),
- * IRS (federal). IL has NO $800 minimum franchise tax — loss-of-good-standing / administrative
+ * IRS (federal). IL has NO $800 minimum franchise tax â€” loss-of-good-standing / administrative
  * dissolution is framed around the Illinois Secretary of State + unfiled returns. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const IL_REVIEW_PROSE = "This page is reviewed and maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm serving Illinois businesses remotely across all 102 counties. Illinois references &mdash; the flat 4.95% income tax, the Personal Property Replacement Tax (PPRT), the ST-1 sales tax, IDES payroll, Chicago city taxes, and loss of good standing with the Illinois Secretary of State &mdash; reflect rules current as of the date below, reviewed periodically against the <a href=\"https://tax.illinois.gov/\" rel=\"noopener nofollow\">Illinois Department of Revenue</a>, the City of Chicago Department of Finance, and <a href=\"https://ides.illinois.gov/\" rel=\"noopener nofollow\">IDES</a>. This page is educational; it is not legal or tax advice. TechBrot gets the books current and CPA-ready; filing, agency resolution, and representation are handled by your CPA, EA, or tax attorney. We do not file returns, resolve tax debt, negotiate with agencies, or represent clients before tax authorities.";
@@ -16,14 +16,14 @@ const IL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/illinois/business-tax-problems/",
   slug: "il-svc-biztax",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
-  title: "Illinois Business Tax Problems (Books First) · TechBrot",
-  description: "Behind on Illinois taxes? Most business tax problems start as bookkeeping problems. We get your books current and CPA-ready so your CPA or EA can file and resolve. Independent firm — we don't file or negotiate with the IDOR, IDES, Chicago, or the IRS. Call (877) 751-5575.",
+  title: "Illinois Business Tax Problems (Books First) Â· TechBrot",
+  description: "Behind on Illinois taxes? Most business tax problems start as bookkeeping problems. We get your books current and CPA-ready so your CPA or EA can file and resolve. Independent firm â€” we don't file or negotiate with the IDOR, IDES, Chicago, or the IRS. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -123,10 +123,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/business-tax-problems/",
     name: "Illinois Business Tax Problems (Books First)",
-    description: "Behind on Illinois taxes? Most business tax problems start as bookkeeping problems. TechBrot gets your books current and CPA-ready so your CPA or EA can file and resolve. Independent firm — does not file, negotiate, or represent before the IDOR, the City of Chicago, IDES, or the IRS.",
+    description: "Behind on Illinois taxes? Most business tax problems start as bookkeeping problems. TechBrot gets your books current and CPA-ready so your CPA or EA can file and resolve. Independent firm â€” does not file, negotiate, or represent before the IDOR, the City of Chicago, IDES, or the IRS.",
     serviceName: "Illinois Catch-Up & CPA-Ready Bookkeeping (Tax-Problem Support)",
     serviceType: "Catch-up bookkeeping and CPA-readiness support",
-    serviceDesc: "Getting Illinois businesses' books current and CPA-ready when tax problems have surfaced — reconciling accounts, rebuilding sales-tax (ST-1), PPRT, and payroll records, tracking Illinois net income, closing open periods, and building books from source documents, then handing the client's CPA or EA documented figures to file and resolve from. Educational only; not legal or tax advice. Independent Certified QuickBooks ProAdvisor firm; does not file returns, negotiate or settle tax debt, or represent clients before the IDOR, the City of Chicago Department of Finance, IDES, or the IRS.",
+    serviceDesc: "Getting Illinois businesses' books current and CPA-ready when tax problems have surfaced â€” reconciling accounts, rebuilding sales-tax (ST-1), PPRT, and payroll records, tracking Illinois net income, closing open periods, and building books from source documents, then handing the client's CPA or EA documented figures to file and resolve from. Educational only; not legal or tax advice. Independent Certified QuickBooks ProAdvisor firm; does not file returns, negotiate or settle tax debt, or represent clients before the IDOR, the City of Chicago Department of Finance, IDES, or the IRS.",
     areaServed: [{ type: "State", name: "Illinois", sameAs: "https://en.wikipedia.org/wiki/Illinois" }],
     audienceType: "Illinois businesses behind on taxes or facing tax problems that need their books brought current and CPA-ready",
     offerPrice: "1500",

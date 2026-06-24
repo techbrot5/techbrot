@@ -1,5 +1,5 @@
-/* /find-an-accountant/california/urgent-bookkeeping/ — CA SERVICE CHILD (bookkeeping spoke).
- * t-bofu. Shared body: partials/state-service-body.njk. v4 bookkeeping spoke — DEADLINE-DRIVEN
+﻿/* /find-an-accountant/california/urgent-bookkeeping/ â€” CA SERVICE CHILD (bookkeeping spoke).
+ * t-bofu. Shared body: partials/state-service-body.njk. v4 bookkeeping spoke â€” DEADLINE-DRIVEN
  * fast books (loan, sale, board, investor diligence, tax deadline). GENUINELY CA. HONESTY:
  * deferred to FTB/CDTFA/EDD + CPA/EA; founder-name-zero; not Intuit; no false-urgency claims. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
@@ -15,7 +15,7 @@ const CA_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/california/urgent-bookkeeping/",
   slug: "ca-svc-urgent",
   tierClass: "section--tier-bofu",
@@ -23,8 +23,8 @@ module.exports = {
   callBar: true,
   disclosure: "<strong>Independent &mdash; and honest about the limits.</strong> TechBrot is an independent Certified QuickBooks ProAdvisor firm, not Intuit and not a tax authority, CPA, or attorney. On a deadline we bring your books current fast and accurately; your CPA or EA files the returns and represents you. We never trade accuracy for speed.",
   heroFigure: "taccount",
-  title: "California Urgent Bookkeeping (Deadline-Driven) · TechBrot",
-  description: "Urgent bookkeeping for California businesses — books done fast for a loan, sale, board, or diligence deadline, accurate and CPA-ready, with CDTFA sales tax and the $800 franchise tax handled. Call (877) 751-5575.",
+  title: "California Urgent Bookkeeping (Deadline-Driven) Â· TechBrot",
+  description: "Urgent bookkeeping for California businesses â€” books done fast for a loan, sale, board, or diligence deadline, accurate and CPA-ready, with CDTFA sales tax and the $800 franchise tax handled. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -123,10 +123,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/urgent-bookkeeping/",
     name: "California Urgent Bookkeeping (Deadline-Driven)",
-    description: "Urgent bookkeeping for California businesses — books done fast for a loan, sale, board, or diligence deadline, accurate and CPA-ready, with CDTFA sales tax and the $800 franchise tax handled. Independent firm; does not file California taxes.",
+    description: "Urgent bookkeeping for California businesses â€” books done fast for a loan, sale, board, or diligence deadline, accurate and CPA-ready, with CDTFA sales tax and the $800 franchise tax handled. Independent firm; does not file California taxes.",
     serviceName: "California Urgent / Deadline-Driven Bookkeeping Services",
     serviceType: "Urgent and deadline-driven bookkeeping services",
-    serviceDesc: "Fast, deadline-driven bookkeeping for California businesses facing a loan, sale, board, diligence, or tax deadline — prioritized reconciliation, CDTFA district sales tax and $800 franchise tax kept right, AB5 exposure surfaced, and diligence-ready CPA-ready statements, without sacrificing accuracy for speed. Independent Certified QuickBooks ProAdvisor firm; does not file California returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "Fast, deadline-driven bookkeeping for California businesses facing a loan, sale, board, diligence, or tax deadline â€” prioritized reconciliation, CDTFA district sales tax and $800 franchise tax kept right, AB5 exposure surfaced, and diligence-ready CPA-ready statements, without sacrificing accuracy for speed. Independent Certified QuickBooks ProAdvisor firm; does not file California returns â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
     audienceType: "California businesses facing a loan, sale, diligence, board, or tax deadline with books that aren't ready",
     offerPrice: "1500",

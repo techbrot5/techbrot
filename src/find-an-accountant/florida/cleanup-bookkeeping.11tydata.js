@@ -1,5 +1,5 @@
-/* /find-an-accountant/florida/cleanup-bookkeeping/ — FL SERVICE CHILD (bkg spoke).
- * t-bofu · partials/state-service-body.njk. The bookkeeping BACKLOG catch-up (months/years behind),
+﻿/* /find-an-accountant/florida/cleanup-bookkeeping/ â€” FL SERVICE CHILD (bkg spoke).
+ * t-bofu Â· partials/state-service-body.njk. The bookkeeping BACKLOG catch-up (months/years behind),
  * distinct intent from quickbooks-cleanup (file mechanics). FL-localized. HONESTY: FL DOR + CPA; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
@@ -14,15 +14,15 @@ const FL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/florida/cleanup-bookkeeping/",
   slug: "fl-svc-cleanupbk",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Florida Cleanup & Catch-Up Bookkeeping · TechBrot",
-  description: "Catch-up bookkeeping for Florida businesses behind by months or years — reconstruct the books, rebuild the sales-tax figures, get CPA-ready. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  title: "Florida Cleanup & Catch-Up Bookkeeping Â· TechBrot",
+  description: "Catch-up bookkeeping for Florida businesses behind by months or years â€” reconstruct the books, rebuild the sales-tax figures, get CPA-ready. Fixed-fee, all 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -119,10 +119,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/cleanup-bookkeeping/",
     name: "Florida Cleanup & Catch-Up Bookkeeping",
-    description: "Catch-up bookkeeping for Florida businesses behind by months or years — reconstruct the backlog, rebuild the 6%+surtax sales-tax figures and the fixed-asset schedule, reconcile to CPA-ready. Independent firm; does not file Florida taxes.",
+    description: "Catch-up bookkeeping for Florida businesses behind by months or years â€” reconstruct the backlog, rebuild the 6%+surtax sales-tax figures and the fixed-asset schedule, reconcile to CPA-ready. Independent firm; does not file Florida taxes.",
     serviceName: "Florida Cleanup & Catch-Up Bookkeeping",
     serviceType: "Catch-up and cleanup bookkeeping",
-    serviceDesc: "Reconstruction of a bookkeeping backlog for Florida businesses behind by months or years — categorizing untouched transactions, rebuilding the 6% + county surtax liability by location and the taxability of services, reconstructing the fixed-asset schedule for the tangible personal property return, and reconciling all accounts to current and CPA-ready. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "Reconstruction of a bookkeeping backlog for Florida businesses behind by months or years â€” categorizing untouched transactions, rebuilding the 6% + county surtax liability by location and the taxability of services, reconstructing the fixed-asset schedule for the tangible personal property return, and reconciling all accounts to current and CPA-ready. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
     audienceType: "Florida businesses behind on bookkeeping across all 67 counties",
     offerPrice: "2000",

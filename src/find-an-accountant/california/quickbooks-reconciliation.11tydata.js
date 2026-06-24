@@ -1,4 +1,4 @@
-/* /find-an-accountant/california/quickbooks-reconciliation/ — CA SERVICE CHILD (QB spoke).
+﻿/* /find-an-accountant/california/quickbooks-reconciliation/ â€” CA SERVICE CHILD (QB spoke).
  * t-bofu. Shared body: partials/state-service-body.njk. GENUINELY CA-localized reconciliation.
  * HONESTY: deferred to FTB/CDTFA/EDD + CPA/EA; founder-name-zero; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
@@ -14,15 +14,15 @@ const CA_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/california/quickbooks-reconciliation/",
   slug: "ca-svc-qbrecon",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "California QuickBooks Reconciliation · TechBrot",
-  description: "QuickBooks reconciliation for California businesses — bank, card & loan accounts reconciled, plus a CDTFA sales-tax sub-reconciliation so the return ties. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  title: "California QuickBooks Reconciliation Â· TechBrot",
+  description: "QuickBooks reconciliation for California businesses â€” bank, card & loan accounts reconciled, plus a CDTFA sales-tax sub-reconciliation so the return ties. Fixed-fee, all 58 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -122,10 +122,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/quickbooks-reconciliation/",
     name: "California QuickBooks Reconciliation",
-    description: "QuickBooks reconciliation for California businesses — bank, card, and loan accounts reconciled plus a CDTFA sales-tax sub-reconciliation so the return ties, one-time or monthly, across all 58 counties. Independent firm; does not file California taxes.",
+    description: "QuickBooks reconciliation for California businesses â€” bank, card, and loan accounts reconciled plus a CDTFA sales-tax sub-reconciliation so the return ties, one-time or monthly, across all 58 counties. Independent firm; does not file California taxes.",
     serviceName: "California QuickBooks Reconciliation Services",
     serviceType: "QuickBooks account reconciliation services",
-    serviceDesc: "Reconciliation of California QuickBooks files — every bank, card, and loan account matched to statements, Undeposited Funds and duplicates cleared, and a CDTFA sales-tax sub-reconciliation tying the liability to the return, one-time or ongoing. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "Reconciliation of California QuickBooks files â€” every bank, card, and loan account matched to statements, Undeposited Funds and duplicates cleared, and a CDTFA sales-tax sub-reconciliation tying the liability to the return, one-time or ongoing. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
     audienceType: "California small and midsize businesses needing one-time or ongoing QuickBooks reconciliation",
     offerPrice: "400",

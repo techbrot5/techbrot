@@ -1,10 +1,10 @@
-/* /find-an-accountant/illinois/state-tax-notice-help/ — IL HONEST-TRIAGE (tax cluster).
- * t-bofu. Shared body: partials/state-triage-body.njk. Sheet-7 honest-triage / §8 honesty —
+﻿/* /find-an-accountant/illinois/state-tax-notice-help/ â€” IL HONEST-TRIAGE (tax cluster).
+ * t-bofu. Shared body: partials/state-triage-body.njk. Sheet-7 honest-triage / Â§8 honesty â€”
  * the #1 gate on this page. IL agencies: IDOR (income/PPRT and sales/use ST-1), City of Chicago
  * Dept of Finance (lease/"cloud" + amusement city taxes), IDES (payroll/worker classification),
  * IRS (federal). Disclosure ABOVE FOLD; we are NOT a tax authority, NOT a CPA/EA/attorney;
  * contacting us reaches no agency; we do NOT respond to notices, represent, advise, or file/
- * protest — the licensed professional does. We do the BOOKS work behind it. Educational only;
+ * protest â€” the licensed professional does. We do the BOOKS work behind it. Educational only;
  * not legal/tax advice. Founder-name-zero; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const IL_REVIEW_PROSE = "This page is reviewed and maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm serving Illinois businesses across all 102 counties. Illinois notice types and processes reference the <a href=\"https://tax.illinois.gov/\" rel=\"noopener nofollow\">Illinois Department of Revenue</a>, the City of Chicago Department of Finance, and <a href=\"https://ides.illinois.gov/\" rel=\"noopener nofollow\">IDES</a> guidance current as of the date below. This page is educational; it is not legal or tax advice. For a notice with protest rights or audit exposure, work with a CPA, EA, or tax attorney &mdash; supported by reconciled books. TechBrot does not respond to notices, file returns or protests, or represent clients before any tax authority.";
@@ -14,14 +14,14 @@ const IL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/illinois/state-tax-notice-help/",
   slug: "il-svc-notice",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
-  title: "Illinois State Tax Notice Help (IDOR · Chicago · IRS) · TechBrot",
-  description: "Got an Illinois tax notice from the IDOR, the City of Chicago, IDES, or the IRS? We help you understand it and reconcile the records behind it so your CPA, EA, or tax attorney can respond. Independent bookkeeping firm — not a tax agency. Call (877) 751-5575.",
+  title: "Illinois State Tax Notice Help (IDOR Â· Chicago Â· IRS) Â· TechBrot",
+  description: "Got an Illinois tax notice from the IDOR, the City of Chicago, IDES, or the IRS? We help you understand it and reconcile the records behind it so your CPA, EA, or tax attorney can respond. Independent bookkeeping firm â€” not a tax agency. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -121,11 +121,11 @@ module.exports = {
   reviewCreds: IL_REVIEW_CREDS,
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/state-tax-notice-help/",
-    name: "Illinois State Tax Notice Help (IDOR · Chicago · IRS)",
-    description: "Help understanding an Illinois tax notice from the IDOR, the City of Chicago, IDES, or the IRS and reconciling the books behind it, so your CPA, EA, or tax attorney can respond. Independent bookkeeping firm — not a tax agency; does not respond to notices or represent clients.",
+    name: "Illinois State Tax Notice Help (IDOR Â· Chicago Â· IRS)",
+    description: "Help understanding an Illinois tax notice from the IDOR, the City of Chicago, IDES, or the IRS and reconciling the books behind it, so your CPA, EA, or tax attorney can respond. Independent bookkeeping firm â€” not a tax agency; does not respond to notices or represent clients.",
     serviceName: "Illinois Tax-Notice Bookkeeping Support",
     serviceType: "Tax-notice records reconciliation and bookkeeping support",
-    serviceDesc: "Bookkeeping support for Illinois businesses that received an IDOR, City of Chicago, IDES, or IRS notice — identifying the notice type and deadline, reconciling the period's books and records, and assembling a documented package for the client's CPA, EA, or tax attorney. Educational only; not legal or tax advice. Independent Certified QuickBooks ProAdvisor firm; does not respond to notices, file returns or protests, or represent clients before any tax agency.",
+    serviceDesc: "Bookkeeping support for Illinois businesses that received an IDOR, City of Chicago, IDES, or IRS notice â€” identifying the notice type and deadline, reconciling the period's books and records, and assembling a documented package for the client's CPA, EA, or tax attorney. Educational only; not legal or tax advice. Independent Certified QuickBooks ProAdvisor firm; does not respond to notices, file returns or protests, or represent clients before any tax agency.",
     areaServed: [{ type: "State", name: "Illinois", sameAs: "https://en.wikipedia.org/wiki/Illinois" }],
     audienceType: "Illinois businesses that received a tax notice from the IDOR, the City of Chicago, IDES, or the IRS and need the underlying books reconciled for their tax professional",
     offerPrice: "400",

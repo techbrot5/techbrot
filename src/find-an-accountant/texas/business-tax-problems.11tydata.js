@@ -1,4 +1,4 @@
-/* /find-an-accountant/texas/business-tax-problems/ — TX HONEST-TRIAGE (tax cluster).
+﻿/* /find-an-accountant/texas/business-tax-problems/ â€” TX HONEST-TRIAGE (tax cluster).
  * t-bofu. Shared body: partials/state-triage-body.njk. APPROVED CA pattern (founder sign-off
  * 2026-06-18), localized to Texas. HONESTY is the #1 gate: most "business tax problems" are really
  * BOOKS problems; we get the books current and CPA-ready; the FILING, the agencies (Texas Comptroller
@@ -13,14 +13,14 @@ const TX_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/texas/business-tax-problems/",
   slug: "tx-svc-biztax",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
-  title: "Texas Business Tax Problems (Books First) · TechBrot",
-  description: "Behind on Texas taxes? Most business tax problems start as bookkeeping problems. We get your books current and CPA-ready so your CPA or EA can file and resolve. Independent firm — we don't file or negotiate with the Comptroller. Call (877) 751-5575.",
+  title: "Texas Business Tax Problems (Books First) Â· TechBrot",
+  description: "Behind on Texas taxes? Most business tax problems start as bookkeeping problems. We get your books current and CPA-ready so your CPA or EA can file and resolve. Independent firm â€” we don't file or negotiate with the Comptroller. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -120,10 +120,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/business-tax-problems/",
     name: "Texas Business Tax Problems (Books First)",
-    description: "Behind on Texas taxes? Most business tax problems start as bookkeeping problems. TechBrot gets your books current and CPA-ready so your CPA or EA can file and resolve. Independent firm — does not file, negotiate, or represent before tax agencies.",
+    description: "Behind on Texas taxes? Most business tax problems start as bookkeeping problems. TechBrot gets your books current and CPA-ready so your CPA or EA can file and resolve. Independent firm â€” does not file, negotiate, or represent before tax agencies.",
     serviceName: "Texas Catch-Up & CPA-Ready Bookkeeping (Tax-Problem Support)",
     serviceType: "Catch-up bookkeeping and CPA-readiness support",
-    serviceDesc: "Getting Texas businesses' books current and CPA-ready when tax problems have surfaced — reconciling accounts, rebuilding sales-tax and payroll records, closing open periods, and building books from source documents, then handing the client's CPA or EA documented figures to file and resolve from. Educational only; not legal or tax advice. Independent Certified QuickBooks ProAdvisor firm; does not file returns, negotiate or settle tax debt, or represent clients before the Texas Comptroller, IRS, or TWC.",
+    serviceDesc: "Getting Texas businesses' books current and CPA-ready when tax problems have surfaced â€” reconciling accounts, rebuilding sales-tax and payroll records, closing open periods, and building books from source documents, then handing the client's CPA or EA documented figures to file and resolve from. Educational only; not legal or tax advice. Independent Certified QuickBooks ProAdvisor firm; does not file returns, negotiate or settle tax debt, or represent clients before the Texas Comptroller, IRS, or TWC.",
     areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
     audienceType: "Texas businesses behind on taxes or facing tax problems that need their books brought current and CPA-ready",
     offerPrice: "1500",

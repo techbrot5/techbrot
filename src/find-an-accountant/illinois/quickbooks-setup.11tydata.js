@@ -1,7 +1,7 @@
-/* /find-an-accountant/illinois/quickbooks-setup/ — IL SERVICE CHILD (QB spoke).
- * t-bofu · partials/state-service-body.njk. IL-localized from the SETUP angle (configured right from
+﻿/* /find-an-accountant/illinois/quickbooks-setup/ â€” IL SERVICE CHILD (QB spoke).
+ * t-bofu Â· partials/state-service-body.njk. IL-localized from the SETUP angle (configured right from
  * day one vs fixed later as cleanup). GENUINELY IL-localized: facts band = the real IL stack (the
- * Personal Property Replacement Tax / PPRT — entity-level, even pass-throughs owe it; Chicago's 10.25%
+ * Personal Property Replacement Tax / PPRT â€” entity-level, even pass-throughs owe it; Chicago's 10.25%
  * layered sales tax; Chicago's 15% lease/"cloud" tax on SaaS). Flat 4.95% income + 9.5% combined C-corp
  * + the permanent PTE election woven into the body. HONESTY: deferred to the Illinois Dept of Revenue
  * (IDOR) + Chicago Dept of Finance + CPA/EA; founder-name-zero; not Intuit; does not file IL returns. */
@@ -18,15 +18,15 @@ const IL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/illinois/quickbooks-setup/",
   slug: "il-svc-qbsetup",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Illinois QuickBooks Setup · TechBrot",
-  description: "QuickBooks setup for Illinois businesses by a Certified ProAdvisor — IL chart of accounts, 6.25%–10.25% sales tax by jurisdiction, PPRT-ready books, Chicago's 15% cloud tax configured separately, payroll. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  title: "Illinois QuickBooks Setup Â· TechBrot",
+  description: "QuickBooks setup for Illinois businesses by a Certified ProAdvisor â€” IL chart of accounts, 6.25%â€“10.25% sales tax by jurisdiction, PPRT-ready books, Chicago's 15% cloud tax configured separately, payroll. Fixed-fee, all 102 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -126,10 +126,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/quickbooks-setup/",
     name: "Illinois QuickBooks Setup",
-    description: "QuickBooks setup for Illinois businesses by a Certified ProAdvisor — an IL chart of accounts, sales-tax items by jurisdiction (10.25% in Chicago), PPRT-ready net-income tracking, Chicago's 15% cloud tax configured separately, and Illinois payroll. Independent firm; does not file Illinois taxes.",
+    description: "QuickBooks setup for Illinois businesses by a Certified ProAdvisor â€” an IL chart of accounts, sales-tax items by jurisdiction (10.25% in Chicago), PPRT-ready net-income tracking, Chicago's 15% cloud tax configured separately, and Illinois payroll. Independent firm; does not file Illinois taxes.",
     serviceName: "Illinois QuickBooks Setup Services",
     serviceType: "QuickBooks setup and implementation",
-    serviceDesc: "QuickBooks Online or Desktop setup for Illinois businesses — an Illinois-correct chart of accounts structured to track Illinois net income for the Personal Property Replacement Tax, sales-tax items by jurisdiction (6.25% state up to 10.25% in Chicago), Chicago's 15% lease/cloud-tax configuration as a separate item, Illinois payroll (4.95% withholding, IDES), opening balances, and integrations. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois or Chicago tax returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "QuickBooks Online or Desktop setup for Illinois businesses â€” an Illinois-correct chart of accounts structured to track Illinois net income for the Personal Property Replacement Tax, sales-tax items by jurisdiction (6.25% state up to 10.25% in Chicago), Chicago's 15% lease/cloud-tax configuration as a separate item, Illinois payroll (4.95% withholding, IDES), opening balances, and integrations. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois or Chicago tax returns â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Illinois", sameAs: "https://en.wikipedia.org/wiki/Illinois" }],
     audienceType: "Illinois small and midsize businesses across all 102 counties setting up or restructuring QuickBooks",
     offerPrice: "750",

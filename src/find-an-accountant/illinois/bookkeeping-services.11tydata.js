@@ -1,5 +1,5 @@
-/* /find-an-accountant/illinois/bookkeeping-services/ — IL SERVICE CHILD (money).
- * t-bofu · partials/state-service-body.njk. IL-localized: PPRT / 10.25% Chicago / cloud tax. */
+﻿/* /find-an-accountant/illinois/bookkeeping-services/ â€” IL SERVICE CHILD (money).
+ * t-bofu Â· partials/state-service-body.njk. IL-localized: PPRT / 10.25% Chicago / cloud tax. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const IL_FACTS = [
   { fig: "10.25%", title: "Sales tax baked into the books, by jurisdiction", body: "Illinois sales tax is 6.25% state plus county and home-rule add-ons &mdash; <strong>10.25% in Chicago</strong>, destination-based. Bookkeeping that records the right combined rate by jurisdiction is the difference between an ST-1 that ties and one that doesn&rsquo;t." },
@@ -13,15 +13,15 @@ const IL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/illinois/bookkeeping-services/",
   slug: "il-svc-bookkeeping",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Illinois Bookkeeping Services · TechBrot",
-  description: "Bookkeeping services for Illinois businesses — reconciliation, clean categorization, 10.25% Chicago sales tax by jurisdiction, PPRT net-income tracking, Chicago cloud tax, CPA-ready statements. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  title: "Illinois Bookkeeping Services Â· TechBrot",
+  description: "Bookkeeping services for Illinois businesses â€” reconciliation, clean categorization, 10.25% Chicago sales tax by jurisdiction, PPRT net-income tracking, Chicago cloud tax, CPA-ready statements. Fixed-fee, all 102 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,7 +118,7 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/bookkeeping-services/",
     name: "Illinois Bookkeeping Services",
-    description: "Bookkeeping services for Illinois businesses — reconciliation, clean categorization, 6.25%–10.25% sales tax by jurisdiction, PPRT net-income tracking, Chicago's lease/cloud tax captured, and CPA-ready statements in your own QuickBooks file across all 102 counties. Independent firm; does not file Illinois taxes.",
+    description: "Bookkeeping services for Illinois businesses â€” reconciliation, clean categorization, 6.25%â€“10.25% sales tax by jurisdiction, PPRT net-income tracking, Chicago's lease/cloud tax captured, and CPA-ready statements in your own QuickBooks file across all 102 counties. Independent firm; does not file Illinois taxes.",
     serviceName: "Illinois Bookkeeping Services",
     serviceType: "Bookkeeping services",
     serviceDesc: "Reconciliation, categorization, combined sales-tax recording by jurisdiction, Illinois-net-income tracking for the Personal Property Replacement Tax, Chicago lease/cloud-tax capture, cleanup, and CPA-ready monthly statements for Illinois businesses across all 102 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns.",

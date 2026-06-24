@@ -1,5 +1,5 @@
-/* /find-an-accountant/illinois/cleanup-bookkeeping/ — IL SERVICE CHILD (bkg spoke).
- * t-bofu · partials/state-service-body.njk. The bookkeeping BACKLOG catch-up (months/years behind),
+﻿/* /find-an-accountant/illinois/cleanup-bookkeeping/ â€” IL SERVICE CHILD (bkg spoke).
+ * t-bofu Â· partials/state-service-body.njk. The bookkeeping BACKLOG catch-up (months/years behind),
  * distinct intent from quickbooks-cleanup (file mechanics). IL-localized: facts band = the real IL stack
  * (PPRT / Chicago 10.25% sales tax / Chicago 15% lease-"cloud" tax) re-angled to the catch-up backlog.
  * HONESTY: IDOR + City of Chicago Dept of Finance + CPA; not Intuit; does not file IL returns. */
@@ -16,15 +16,15 @@ const IL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/illinois/cleanup-bookkeeping/",
   slug: "il-svc-cleanupbk",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Illinois Cleanup & Catch-Up Bookkeeping · TechBrot",
-  description: "Catch-up bookkeeping for Illinois businesses behind by months or years — reconstruct the books, rebuild the 6.25%–10.25% sales-tax figures by jurisdiction, get CPA-ready. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  title: "Illinois Cleanup & Catch-Up Bookkeeping Â· TechBrot",
+  description: "Catch-up bookkeeping for Illinois businesses behind by months or years â€” reconstruct the books, rebuild the 6.25%â€“10.25% sales-tax figures by jurisdiction, get CPA-ready. Fixed-fee, all 102 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -121,10 +121,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/cleanup-bookkeeping/",
     name: "Illinois Cleanup & Catch-Up Bookkeeping",
-    description: "Catch-up bookkeeping for Illinois businesses behind by months or years — reconstruct the backlog, rebuild the 6.25%–10.25% sales-tax figures by jurisdiction, record the Illinois net income the PPRT needs, separate Chicago's cloud tax, reconcile to CPA-ready. Independent firm; does not file Illinois taxes.",
+    description: "Catch-up bookkeeping for Illinois businesses behind by months or years â€” reconstruct the backlog, rebuild the 6.25%â€“10.25% sales-tax figures by jurisdiction, record the Illinois net income the PPRT needs, separate Chicago's cloud tax, reconcile to CPA-ready. Independent firm; does not file Illinois taxes.",
     serviceName: "Illinois Cleanup & Catch-Up Bookkeeping",
     serviceType: "Catch-up and cleanup bookkeeping",
-    serviceDesc: "Reconstruction of a bookkeeping backlog for Illinois businesses behind by months or years — categorizing untouched transactions, rebuilding the 6.25%–10.25% combined sales-tax liability by jurisdiction, reconstructing the Illinois net income for the Personal Property Replacement Tax, separating Chicago's lease/cloud tax, and reconciling all accounts to current and CPA-ready. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "Reconstruction of a bookkeeping backlog for Illinois businesses behind by months or years â€” categorizing untouched transactions, rebuilding the 6.25%â€“10.25% combined sales-tax liability by jurisdiction, reconstructing the Illinois net income for the Personal Property Replacement Tax, separating Chicago's lease/cloud tax, and reconciling all accounts to current and CPA-ready. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Illinois", sameAs: "https://en.wikipedia.org/wiki/Illinois" }],
     audienceType: "Illinois businesses behind on bookkeeping across all 102 counties",
     offerPrice: "2000",

@@ -1,5 +1,5 @@
-/* /find-an-accountant/florida/monthly-bookkeeping/ — FL SERVICE CHILD (bkg spoke).
- * t-bofu · partials/state-service-body.njk. FL-localized: 5.5% corp / 6%+surtax / service-taxability. */
+﻿/* /find-an-accountant/florida/monthly-bookkeeping/ â€” FL SERVICE CHILD (bkg spoke).
+ * t-bofu Â· partials/state-service-body.njk. FL-localized: 5.5% corp / 6%+surtax / service-taxability. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
   { fig: "Monthly", title: "A close every month, not a scramble at filing", body: "Monthly bookkeeping means the books are reconciled and closed each month &mdash; so the <strong>6%+surtax sales tax</strong>, the taxability of services, and the corporate-tax position are right all year, not reconstructed at filing time." },
@@ -13,15 +13,15 @@ const FL_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/florida/monthly-bookkeeping/",
   slug: "fl-svc-monthly",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Florida Monthly Bookkeeping · TechBrot",
-  description: "Monthly bookkeeping for Florida businesses — a real close every month, 6%+surtax sales tax reconciled by county, the taxability of services, CPA-ready statements. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  title: "Florida Monthly Bookkeeping Â· TechBrot",
+  description: "Monthly bookkeeping for Florida businesses â€” a real close every month, 6%+surtax sales tax reconciled by county, the taxability of services, CPA-ready statements. Fixed-fee, all 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,10 +118,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/monthly-bookkeeping/",
     name: "Florida Monthly Bookkeeping",
-    description: "Monthly bookkeeping for Florida businesses — a real close every month, 6%+surtax sales tax reconciled by county, service taxability handled, TPP records, and CPA-ready statements in your own QuickBooks file across all 67 counties. Independent firm; does not file Florida taxes.",
+    description: "Monthly bookkeeping for Florida businesses â€” a real close every month, 6%+surtax sales tax reconciled by county, service taxability handled, TPP records, and CPA-ready statements in your own QuickBooks file across all 67 counties. Independent firm; does not file Florida taxes.",
     serviceName: "Florida Monthly Bookkeeping Services",
     serviceType: "Monthly bookkeeping and close services",
-    serviceDesc: "A monthly close — reconciliation, categorization, 6% + county surtax sales-tax reconciliation, taxability of services capture, 5.5% corporate-tax tracking where applicable, tangible personal property record-keeping, and CPA-ready statements for Florida businesses across all 67 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns.",
+    serviceDesc: "A monthly close â€” reconciliation, categorization, 6% + county surtax sales-tax reconciliation, taxability of services capture, 5.5% corporate-tax tracking where applicable, tangible personal property record-keeping, and CPA-ready statements for Florida businesses across all 67 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
     audienceType: "Florida small and midsize businesses across all 67 counties",
     offerPrice: "400",

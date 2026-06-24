@@ -1,5 +1,5 @@
-/* /find-an-accountant/texas/monthly-bookkeeping/ — TX SERVICE CHILD (bkg spoke).
- * t-bofu · partials/state-service-body.njk. TX-localized: margin tax / 8.25% sales / BPP. */
+﻿/* /find-an-accountant/texas/monthly-bookkeeping/ â€” TX SERVICE CHILD (bkg spoke).
+ * t-bofu Â· partials/state-service-body.njk. TX-localized: margin tax / 8.25% sales / BPP. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const TX_FACTS = [
   { fig: "Monthly", title: "A close every month, not a scramble in March", body: "Monthly bookkeeping means the books are reconciled and closed each month &mdash; so the <strong>franchise (margin) tax</strong> figures and <strong>8.25% sales tax</strong> are right all year, not reconstructed at filing time." },
@@ -13,15 +13,15 @@ const TX_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/texas/monthly-bookkeeping/",
   slug: "tx-svc-monthly",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Texas Monthly Bookkeeping · TechBrot",
-  description: "Monthly bookkeeping for Texas businesses — a real close every month, 8.25% sales tax reconciled, the franchise (margin) tax tracked, CPA-ready statements. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  title: "Texas Monthly Bookkeeping Â· TechBrot",
+  description: "Monthly bookkeeping for Texas businesses â€” a real close every month, 8.25% sales tax reconciled, the franchise (margin) tax tracked, CPA-ready statements. Fixed-fee, all 254 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,10 +118,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/monthly-bookkeeping/",
     name: "Texas Monthly Bookkeeping",
-    description: "Monthly bookkeeping for Texas businesses — a real close every month, 8.25% sales tax reconciled, the franchise (margin) tax figures kept current, BPP records, and CPA-ready statements in your own QuickBooks file across all 254 counties. Independent firm; does not file Texas taxes.",
+    description: "Monthly bookkeeping for Texas businesses â€” a real close every month, 8.25% sales tax reconciled, the franchise (margin) tax figures kept current, BPP records, and CPA-ready statements in your own QuickBooks file across all 254 counties. Independent firm; does not file Texas taxes.",
     serviceName: "Texas Monthly Bookkeeping Services",
     serviceType: "Monthly bookkeeping and close services",
-    serviceDesc: "A monthly close — reconciliation, categorization, 8.25% sales-tax reconciliation, franchise (margin) tax tracking, business personal property record-keeping, and CPA-ready statements for Texas businesses across all 254 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns.",
+    serviceDesc: "A monthly close â€” reconciliation, categorization, 8.25% sales-tax reconciliation, franchise (margin) tax tracking, business personal property record-keeping, and CPA-ready statements for Texas businesses across all 254 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns.",
     areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
     audienceType: "Texas small and midsize businesses across all 254 counties",
     offerPrice: "400",

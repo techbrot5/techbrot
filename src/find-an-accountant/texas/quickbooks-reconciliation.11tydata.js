@@ -1,5 +1,5 @@
-/* /find-an-accountant/texas/quickbooks-reconciliation/ — TX SERVICE CHILD (QB spoke).
- * t-bofu · partials/state-service-body.njk. TX-localized. HONESTY: Comptroller + CPA; not Intuit. */
+﻿/* /find-an-accountant/texas/quickbooks-reconciliation/ â€” TX SERVICE CHILD (QB spoke).
+ * t-bofu Â· partials/state-service-body.njk. TX-localized. HONESTY: Comptroller + CPA; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const TX_FACTS = [
   { fig: "8.25%", title: "Sales-tax liability reconciled to the return", body: "Reconciliation isn&rsquo;t just bank accounts &mdash; the 8.25% sales-tax liability has to reconcile to what the <strong>Texas Comptroller</strong> return reports, by location. We tie the liability account to the filing so nothing is over- or under-remitted." },
@@ -13,15 +13,15 @@ const TX_REVIEW_CREDS = [
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];
 module.exports = {
-  layout: "layouts/t-bofu.njk",
+  layout: "layouts/t-location.njk",
   permalink: "/find-an-accountant/texas/quickbooks-reconciliation/",
   slug: "tx-svc-qbrecon",
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Texas QuickBooks Reconciliation · TechBrot",
-  description: "QuickBooks reconciliation for Texas businesses by a Certified ProAdvisor — every account reconciled monthly, the 8.25% sales-tax liability tied to the Comptroller return, margin-tax figures clean. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  title: "Texas QuickBooks Reconciliation Â· TechBrot",
+  description: "QuickBooks reconciliation for Texas businesses by a Certified ProAdvisor â€” every account reconciled monthly, the 8.25% sales-tax liability tied to the Comptroller return, margin-tax figures clean. Fixed-fee, all 254 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,10 +118,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/quickbooks-reconciliation/",
     name: "Texas QuickBooks Reconciliation",
-    description: "QuickBooks reconciliation for Texas businesses by a Certified ProAdvisor — every account reconciled monthly and the 8.25% sales-tax liability tied to the Comptroller return so the margin-tax figures hold. Independent firm; does not file Texas taxes.",
+    description: "QuickBooks reconciliation for Texas businesses by a Certified ProAdvisor â€” every account reconciled monthly and the 8.25% sales-tax liability tied to the Comptroller return so the margin-tax figures hold. Independent firm; does not file Texas taxes.",
     serviceName: "Texas QuickBooks Reconciliation Services",
     serviceType: "Account reconciliation (bookkeeping)",
-    serviceDesc: "Monthly reconciliation of bank, credit-card, loan, and clearing accounts and the 8.25% sales-tax liability for Texas businesses, tying the liability to the Texas Comptroller return by location and verifying the figures behind the franchise (margin) tax. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns — coordinates with the client's CPA or EA.",
+    serviceDesc: "Monthly reconciliation of bank, credit-card, loan, and clearing accounts and the 8.25% sales-tax liability for Texas businesses, tying the liability to the Texas Comptroller return by location and verifying the figures behind the franchise (margin) tax. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns â€” coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
     audienceType: "Texas businesses needing monthly account reconciliation across all 254 counties",
     offerPrice: "400",
