@@ -1,9 +1,51 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
 
 ## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · LAYOUT GATE LIVE · backlog 146→121 · old-kit 0)
-**RESUME ANCHOR (2026-06-24) — matches git HEAD `6708076` (origin/preview-11ty):** 🎉 **V2 RECOMPOSE COMPLETE.**
-All tracked families + the full 146-page old-layout backlog DONE. **BATTERY PASSED all green: `layout-v2` all
-580 non-dev pages on v2 dc-base chrome · `old-kit` 0 · content-equity GREEN · manifest 585.** Backlog waves:
+**RESUME ANCHOR (2026-06-25) — matches git HEAD `c323a86` (origin/preview-11ty):** 🎉 **V2 RECOMPOSE TRULY 100%**
+(404 migrated this session → ZERO base.njk pages left) **+ PRE-FLIP BATCH 1+2 visual fixes + CSS trim DONE.**
+Fresh battery all green: `layout-v2` 580/580 on v2 · `old-kit` 0 · `design-fidelity` 574 (repointed to v2) ·
+`manifest` 553 · `css-bytes` minified 64206B / 73728B (9.5KB headroom, source 84354B under soft-cap). Per-family
+0 drift (family_v2_check.py). Reconciled vs live-urls-v5.txt: 586 = 580 production + 6 dev fixtures, 580/580 v2.
+**NEXT SESSION: start PRE-FLIP BATCH 3 — see "🚦 PRE-FLIP OPEN ITEMS" section below.** Tree CLEAN; HEAD==origin.
+(history below: the recompose/backlog detail.)
+
+## 🚦 PRE-FLIP OPEN ITEMS (start here next session — 2026-06-25)
+**✅ DONE this session (do NOT redo):** recompose 100% (404→v2); batch 1 (process-grid horizontal · footer 5
+cols+tagline+positioning · diagram-figure centered · disclaimer-rationalized to footer-only, D5/D7 triage kept);
+**batch 2 (screenshot-verified): `.steps`/`.fixstep` horizontal — the quickbooks-pricing-2026 "How to choose"
+fix; `.tierprose` tier-list component — the "what you're paying for" text-wall fix**; housekeeping (retired
+vs-compare-body.njk; design-fidelity repoint); CSS trim ~9KB (dropped dead 04-chrome OLD chrome).
+**🔴 OPEN — BATCH 3 (NOT started):**
+1. **CRITICAL — intent/origin verification (conversion):** `?intent=`/origin params (e.g. /contact/?intent=home)
+   are meant to swap the HEADING / copy / form-prefill per origin. VERIFY it actually works vs shows generic —
+   test 3-4 `?intent=` values, report what changes. Handoff flagged "Code owns the real mappings" — confirm
+   wired, not stubbed. (Intent JS: `TB_INTENT_MAP`/`TB_LOOKUPS` injected on contact/file-review; `data-intent-headline`/`data-intent-lede` swap hooks; tb-forms.js.)
+2. **CRITICAL — ALL forms sitewide POST test:** inventory every form (contact, file-review, state-pillar bottom
+   intake, qb/speak-to-a-quickbooks-expert, NY/CA/TX/FL/IL city intakes, partners). For each confirm: (a) POSTs to
+   the working Apps Script /exec endpoint (`site.formEndpoint` / `window.TB_FORM_ENDPOINT`; note: empty string =
+   native-POST fallback, may be unset pre-flip), (b) lead-source/AI-source capture fields present + submit, (c) the
+   24-key contract intact (partials/intake-form.njk is the locked contract). Test-submit from 2-3 locations w/ a
+   marker; report which work + where each posts. **(form handler may not be live until flip — verify honestly.)**
+3. **VISUAL — David Westgate photo:** still blurry on PREVIEW (source good locally) → the 11ty image transform /
+   {% photo %} pipeline is over-compressing OR preview serves stale cache. Find the transform, stop the
+   over-compression, force a fresh asset build. Confirm sharp on the PREVIEW url. (Used home #home-team + person schema.)
+4. **VISUAL — legal (G1) "On this page" TOC sidebar:** sticky-left looks unfinished. Check vs the HANDOFF Legal
+   template + the E1 Guide TOC-sidebar template — did the proper handoff TOC-sidebar component get applied or is it
+   an approximation? Fix to match handoff; also verify E1 guides use the correct TOC treatment.
+5. **VISUAL — contact (F1) composition:** section order after hero ("Before you decide / Why owners choose" cards
+   then "How to reach us") + the "Why owners choose" cards look empty/contentless. Check section ORDER + card
+   rendering vs the handoff Form template; fix to match.
+**🟡 STILL QUEUED (lower priority):** speakable cssSelector repoints (battery-clean danglers: NY-svc + NY-pricing
++ file-review + industries healthcare/str/shopify/trades/real-estate `-ai-summary-list`/`-in-brief-text`); legacy
+data keys + stale t-bofu/COBALT comments in .11tydata.js (cosmetic); LIVE axe + overflow (360/390/768) on the
+FOUNDER machine (headless chrome leaks here — render_shot.ps1 works for single screenshots via static server);
+baseline-vs-prod recrawl; final 25-family-vs-handoff design pass + flip-gate.
+**TOOLS:** `python _build/battery/run_battery.py` (full gate) · `python _build/scripts/family_v2_check.py`
+(per-family old-layout) · serve `_site` on :8080 + `_build/scripts/render_shot.ps1 -url … -name … -h N` to screenshot.
+
+## (history) V2 RECOMPOSE — backlog detail
+**HEAD was `6708076` at recompose-complete:** All tracked families + the full 146-page old-layout backlog DONE.
+**BATTERY PASSED: `layout-v2` 580 · `old-kit` 0 · content-equity · manifest 585.** Backlog waves:
 gate (6e77d73) → industries 25 (432bf4d) → CA/TX/FL/IL service-landings 65 via 2 shared-partial conversions
 (114f67c) → compare/switch/faqs 17 (f26ae3b) → final 39 (6708076) = 146 migrated, 146→0.
 **📊 RECONCILED vs live-urls-v5.txt: 586 live URLs = 580 production + 6 /dev/* fixtures; 580/580 production on
