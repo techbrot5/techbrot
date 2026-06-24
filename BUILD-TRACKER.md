@@ -63,9 +63,23 @@ find-an-accountant service-landings → the rest. Gate stays RED until TRUE 0 la
   to re-upload higher-res source; use WITHOUT aggressive compression/refinement. Used on home #home-team + person schema.
 - 📦 **PART 2 (premium elevation, post-flip) — industries as SVG-icon cards:** currently text chips (works fine);
   the icon-card upgrade = a new component + per-industry icon assets. Deferred.
-- ⏳ **PRE-FLIP STILL OWED:** re-point the now-vacuous `design-fidelity` battery check (keyed on removed pageTier
-  → key off `layout`); deferred speakable cssSelector repoints (battery-clean danglers); retire vs-compare-body.njk
-  + legacy keys; LIVE axe + overflow (360/390/768) on founder machine (chrome leaks here); CSS trim.
+**BATCH 2 (founder caught — fixed 2026-06-25, verified by screenshot of /resources/guides/quickbooks-pricing-2026/):**
+- ✅ **numbered-steps `.steps`/`.step`** (dc-system.css) — a DIFFERENT component than .process-grid; 06-content's
+  `.steps{repeat(4,1fr)}` still made `.step` narrow ribbon columns. Fixed → horizontal rows (mono number gutter +
+  heading/body across). 159 pages inherit. Screenshot-confirmed: "How to choose" renders STEP 01..n as readable rows.
+- ✅ **tier list `.tierprose`** (dc-system.css) — the "what you're paying for" `causes` loop was raw `<h3>+<p>`
+  text-wall; new component = top rule + accent-dash marker + heading label + indented body = reads DESIGNED.
+  Content unchanged (h3 verbatim = equity GREEN). Swapped 133 pages `.prose`→`.tierprose` (r-3/r-2 card variants
+  left). Screenshot-confirmed. Premium tier-cards = Part 2.
+**HOUSEKEEPING (2026-06-25):**
+- ✅ **retired** `partials/vs-compare-body.njk` (unused since C2 went data-driven).
+- ✅ **re-pointed `design-fidelity` battery check** — was keyed on `<main data-tier>` + OLD components
+  (buyer-card/vs-table/flow__step…, all removed by recompose) → vacuous. Now keys off the dc-base mega-nav
+  (v2 signal) + requires every v2 content page to carry ≥1 dc-system rich component (no bare prose-on-chrome).
+- ⚠️ **CSS NOW NEAR HARD GATE:** minified 73314 / 73728B (414B headroom) after batch 1+2 additions — **CSS trim
+  is now urgent** (next CSS add could fail the gate).
+- ⏳ **PRE-FLIP STILL OWED:** deferred speakable cssSelector repoints (battery-clean danglers) + legacy data keys;
+  CSS trim toward target; LIVE axe + overflow (360/390/768) on founder machine (chrome leaks here).
 
 ## 🔍 BACKLOG ROOT CAUSE (why ~146 pages were missed) — recorded 2026-06-24
 **Three compounding causes:**

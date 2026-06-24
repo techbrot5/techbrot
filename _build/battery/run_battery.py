@@ -504,73 +504,40 @@ else:
 #       is a pull-quote, which the map marks "—" for BOFU). Excluded:
 #       legal/404/standalone forms. Tolerated only if listed as known re-pattern
 #       debt. Source of truth: _design/.../handoff/PLACEMENT-MAP.md.
-RICH_COMPONENTS = [
-    "buyer-card", "vs-table", "flow__step", "pull-quote", "toc__label",
-    "guide-grid", "byline-block", "meta-reviewed", "intake-form", "proof-strip",
-    "error-badge", "fix-steps", "call-breakout", "stat__delta", "diagram-figure",
-    "hero__motif",
-    # ── elevated library (2026-06-16 re-skin): the signature hero diagram, the
-    #    premium CALL conversion block, and the non-numbered deliverable cards. ──
-    "hero-figure", "call-block", "deliver-card",
-]
-# Per-tier rich components the PLACEMENT-MAP PERMITS on that tier (✓ or opt;
-# components marked "—" for the tier are deliberately absent so they do NOT
-# satisfy it). Transcribed from PLACEMENT-MAP.md + elevated library additions.
-TIER_ALLOWED = {
-    "hub":      {"buyer-card", "flow__step", "pull-quote", "proof-strip", "stat__delta", "hero__motif",
-                 "hero-figure", "call-block"},
-    "location": {"buyer-card", "pull-quote", "intake-form", "proof-strip", "stat__delta", "hero__motif",
-                 "hero-figure"},
-    "mofu":     {"buyer-card", "vs-table", "flow__step", "pull-quote", "byline-block",
-                 "meta-reviewed", "proof-strip", "error-badge", "fix-steps", "call-breakout", "stat__delta",
-                 "hero-figure", "call-block"},
-    "guide":    {"vs-table", "flow__step", "pull-quote", "toc__label", "guide-grid",
-                 "byline-block", "meta-reviewed", "stat__delta", "diagram-figure", "hero-figure"},
-    "bofu":     {"flow__step", "intake-form", "proof-strip", "error-badge", "fix-steps", "call-breakout",
-                 "hero-figure", "call-block", "deliver-card"},
-}
-TIER_RE = re.compile(r'<main[^>]*\bdata-tier="([a-z]+)"')
+# design-fidelity v2 (REPOINTED 2026-06-25): the old check keyed on <main data-tier> + OLD
+# rich components (buyer-card/vs-table/flow__step/byline-block…) — all REMOVED by the v2
+# recompose, so it went vacuous. Now it keys off the v2 signal (dc-base mega-nav) and requires
+# every v2 content page to carry >=1 dc-system rich component (no bare prose-on-chrome).
+V2_RICH = (
+    "dc-card", "idx__t", "process-step", "opquote", "trust-row", "ai-ruled", "ai-qa",
+    '"cmp"', "ptier", "tldr-prose", '"chips"', "statement", "deliver", '"byline"', "hub-card",
+    "checklist", "rel-card", "tierprose", "incl-card", "verdict", "intake-form",
+)
+V2_NAV = 'class="navlink'
 df_exc = json.loads(
     (ROOT / "_build/battery/design-fidelity-exceptions.json").read_text(encoding="utf-8"))
 df_exclude = set(df_exc.get("exclude_urls", []))
 df_debt = set(df_exc.get("rich_component_debt", []))
-df_problems, df_debt_seen, df_ok, df_untiered = [], [], 0, []
+df_problems, df_ok, df_untiered = [], 0, []
 for url, lp in pages.items():
     if url.startswith("/dev/") or url in df_exclude:
         continue
     html = (SITE / url.lstrip("/") / "index.html").read_text(encoding="utf-8")
-    m = TIER_RE.search(html)
-    if not m:
-        df_untiered.append(url)            # no tier surface (non-tier layout) — not assessed
+    if V2_NAV not in html:
+        df_untiered.append(url)            # non-v2 / utility surface — not assessed
         continue
-    tier = m.group(1)
-    allowed = TIER_ALLOWED.get(tier)
-    if allowed is None:
-        df_untiered.append(f"{url} (unknown tier '{tier}')")
-        continue
-    present = [c for c in RICH_COMPONENTS if c in html]
-    tier_hits = [c for c in present if c in allowed]
-    if tier_hits:
+    if any(c in html for c in V2_RICH):
         df_ok += 1
     elif url in df_debt:
-        df_debt_seen.append(url)
+        df_untiered.append(f"{url} (known debt)")
     else:
-        has = ", ".join(present) if present else "none"
-        df_problems.append(
-            f"{url} [tier={tier}]: no tier-correct handoff component "
-            f"(has: {has}; {tier} permits one of: {', '.join(sorted(allowed))})")
+        df_problems.append(f"{url}: v2 page carries NO dc-system rich component (bare prose-on-chrome)")
 if df_problems:
     for x in df_problems:
         fail("design-fidelity", x)
 else:
-    bits = []
-    if df_debt_seen:
-        bits.append(f"{len(df_debt_seen)} known re-pattern DEBT")
-    if df_untiered:
-        bits.append(f"{len(df_untiered)} untiered (not assessed)")
-    note = (" · " + " · ".join(bits)) if bits else ""
-    ok("design-fidelity",
-       f"{df_ok} content pages carry a tier-correct handoff component (per-tier){note}")
+    note = (f" · {len(df_untiered)} not assessed (non-v2/utility)") if df_untiered else ""
+    ok("design-fidelity", f"{df_ok} v2 content pages carry a dc-system rich component{note}")
 
 # 13 ── Variety gate (founder directive 2026-06-16). #12a: at most ONE numbered
 #       system per page (process-diagram / fix-steps / legacy num-grid) — the
