@@ -1,13 +1,26 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
 
-## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · E+F+G COMPLETE · A1 home LAST, then pre-flip)
-**RESUME ANCHOR (2026-06-24) — matches git HEAD `f7ab40d` (origin/preview-11ty):** all families DONE except A1:
-B/C (2691f05/4c22934/1710daf), E2 (8750bce), G1+E3 (ba8c85e), E6 (93613a4), E5 (becb5fe), F1 (5016ba8),
-F2 pricing 11 (a28ac93+ffcca55), **G2 about/trust/partners 6 — all BASELINE, equity GREEN (f7ab40d).**
-**E + F + G FAMILIES COMPLETE.** **REMAINING: A1 home (LAST) -> pre-flip pass -> final family-vs-handoff diff.**
-⚠ A1: src/index.njk is STILL on OLD base.njk (not dc-base; older component set) -> migrate to dc-base/t-hub +
-body->current dc-system v2 + shared-component fixes. #home-team keeps David Westgate (1 permitted operator) +
-firm team verbatim. Home NOT baseline (founder-deleted+rebuilt). Tree CLEAN; HEAD==origin. No open founder calls.
+## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · tracked families DONE · ⚠️ 82-PAGE OLD-LAYOUT BACKLOG FOUND)
+**RESUME ANCHOR (2026-06-24) — matches git HEAD `76c2809` (origin/preview-11ty):** every TRACKED family DONE:
+B/C, E (all), F1/F2, G1/G2, **A1 home (76c2809)**. All committed + battery GREEN.
+**🛑 BUT THE PRE-FLIP NO-OLD-LAYOUTS SWEEP FOUND THE RECOMPOSE IS NOT COMPLETE: 82 real pages (excl ~17 dev
+fixtures) are STILL on OLD base.njk layouts (t-mofu 62 / t-guide 15 / t-bofu 4 / base 1=404).** They pass
+content-equity (content intact) so prior batteries never flagged them — but they render OLD chrome, not v2.
+The tracked families migrated LEAF/detail pages; the section HUBS + a MOFU long-tail were never migrated.
+**The final-verification target (0 pages on old layouts / 25 MATCH 0 DRIFT) is NOT met.** See the
+"⚠️ DISCOVERED BACKLOG" section below for the categorized 82-page inventory — this is the real remaining work.
+Tree CLEAN; HEAD==origin. Checkpointed here (context heavy; mass-migrating 82 baseline pages now risks a
+messy partial — directive #5). No NEW founder calls beyond resourcing this backlog.
+
+## ⚠️ DISCOVERED BACKLOG — 82 pages still on OLD layouts (found 2026-06-24 pre-flip sweep)
+Bespoke pages (180–286 lines each, NO shared body partials → no data-driven shortcut). Most are BASELINE/
+equity-gated. Each needs: layout switch (t-mofu/t-bofu/t-guide → t-prose or t-hub per page type) + body→v2 +
+per-page battery gate (the proven pattern). Suggested order (largest uniform-ish sets first):
+- **accounting/industries/ — 26** (ecommerce·real-estate·construction·restaurant·healthcare·legal·saas·professional-services·agency·amazon-sellers·auto-repair·dental·fitness·franchise·home-services·landscaping·law-firm-trust-accounting·manufacturing·nonprofit·property-management·retail·shopify-sellers·short-term-rentals·specialty-trades·trucking + faq)
+- **quickbooks/ — 14** (online·desktop·enterprise·help·consulting·training·year-end-close·which-plan-is-right·proadvisor-team·proadvisor-cost·hire-a-proadvisor·bookkeeping-services·speak-to-a-quickbooks-expert + help/error-codes/index)
+- **quickbooks/compare/ — 7** · **accounting/advisory/ — 6** · **accounting/ — 6** (month-end-close·reconciliation-services·job-costing·chart-of-accounts-setup·financial-statements·faq)
+- **quickbooks/payroll/ — 5** · **switch/ — 4** · **ROOT — 4** (app-stack·which-accounting-software·reviews·404) · **quickbooks/support/ — 3** · **accounting/services/ — 3** · **platforms/quickbooks — 1** · **accounting/bookkeeping/faq — 1** · **accounting-systems/migration-planning — 1**
+Sweep cmd: `grep -rl "layouts/t-guide.njk\|layouts/t-bofu.njk\|layouts/t-mofu.njk\|layouts/base.njk" src --include="*.njk" | grep -v "_includes/layouts/\|src/dev/"`
 **⚠ R0 NOTE:** 8750bce + ba8c85e shipped in a prior session but were never dual-logged (resume anchor + family
 table left stale, no SESSION-LOG entry). Backfilled 2026-06-24 (SESSION-LOG + this anchor + table). Resume anchor
 MUST match git every turn from now on — that gap is what makes recovery risky.
@@ -87,7 +100,8 @@ D1 → D3 → D2 → D4/5/6 (NY incl) → D7 → B1-B5 → C1 → E1-E6 → F1 �
 | **F1 forms (2)** | t-prose (v2) | **✅ DONE** | /contact/ (BASELINE, equity GREEN 13 headings) + /quickbooks/file-review/ base.njk→t-prose. Shared intake-form.njk partial included VERBATIM (locked contract; 6 other consumers unaffected). dc-base +includeFormJs (tb-forms.js). Caught+fixed: 4 alt cards needed h3 (baseline)→dc-card hub-card. 2 Clutch reviews verbatim. Commit 5016ba8. |
 | **F2 pricing (11)** | t-prose (v2) | **✅ DONE** | main /pricing/ (BASELINE, 29 headings GREEN, canonical Sheet-0 figures EXACT) + 5 /pricing/ sub-pages (bookkeeping/cfo/cleanup/payroll/quickbooks-setup; .ptier/.cmp tiers) + 5 state pricing (CA/FL/IL/NY/TX; NY FROZEN, 29 GREEN). t-bofu→t-prose; ai/faq→layout slots; speakable ids preserved. Commits a28ac93 (REP) + ffcca55 (fan-out). **DEFERRED pre-flip:** NY pricing #ny-svc-pricing-ai-summary-list repoint. |
 | **G2 about/trust/partners (6)** | t-hub / t-prose | **✅ DONE** | all 6 BASELINE, content-equity GREEN (about 48, methodology 34, network 31, partners 42, partners-faq 25, trust 39). about stays t-hub (body→v2); rest t-mofu/t-guide→t-prose. trust's 2 real Clutch reviews verbatim, no AggregateRating/fabrication; founder-name-zero. 0 old-kit. Commit f7ab40d. |
-| **A1 home** | base.njk→dc-base | **🔜 NEXT (LAST)** | src/index.njk STILL on OLD base.njk (older component set rcard/buyer-card/vcard/qa-item) → migrate to dc-base/t-hub + body→current dc-system + shared-component fixes (trust-strip/in-brief/proof-strip/process-step/eyebrow). #home-tldr-body speakable; #home-team David Westgate + firm team verbatim. NOT baseline. |
+| **A1 home** | t-hub (v2) | **✅ DONE** | base.njk→t-hub. Hero(taccount)+summary TL;DR(#home-tldr-body)+ai-summary+visible FAQ+dark CTA via layout; 10 bespoke sections→dc-card/process-grid/.cmp/chips/.states. David Westgate + firm team + 2 Clutch reviews verbatim; silos restored (schema). 0 old-kit, battery GREEN. Commit 76c2809. |
+| **⚠️ OLD-LAYOUT BACKLOG (82)** | t-mofu/t-bofu/t-guide → v2 | **🛑 NOT STARTED** | Found by pre-flip sweep — see "DISCOVERED BACKLOG" section above. industries 26 · quickbooks 14 · compare 7 · advisory 6 · accounting 6 · payroll 5 · switch 4 · root 4 · support 3 · services 3 · misc 4. The real remaining recompose; most baseline. |
 | **G1 legal (4, baseline)** | t-prose | **✅ DONE** | disclaimer/dpa/privacy/terms t-guide→t-prose + body→v2 prose. ZERO legal-wording change; baseline headings verbatim (16/18/18/18); content-equity GREEN. Commit ba8c85e. |
 | proadvisor-near-me | t-money | **⏳ review** | flagged for possible re-tier (prose-heavy) — founder call |
 
