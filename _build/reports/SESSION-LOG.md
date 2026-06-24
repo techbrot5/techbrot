@@ -1857,5 +1857,24 @@ OPEN/NEXT (founder's order): **FAQ TRIM -- show keep/cut for the ~18 over-pages 
 - **Cohort C (10 prose @11->6):** removed faq items 7-11 (abbreviated echoes of the detailed Q1-6 -- e.g. "What does it cost?" = kept "What does X cost?"). Verified kept-6 covers every cut topic on all 10 (advisory x5 + chart-of-accounts/financial-statements/job-costing/month-end-close/reconciliation). aiSummary quick-answers (separate QAPage) untouched.
 - **Champaign (stray @11, t-location):** NOT a dup case -- 11 genuinely DISTINCT city-specific questions (no condensed block). Left as-is; trimming would be a real content cut (equity-sensitive) -> flagged for separate founder review, not folded into de-dup.
 - Files: 3 override + 15 trailing-cut (`faq_dedup.py`, line-wise, dup-assertion-gated). Net: removed pure duplicate-content drag, 0 distinct questions lost.
-**TASK 5 report (35 files) + TASK 6 report (David footprint): see this turn's chat + below.** Battery: [result pending in this entry -- update on commit].
+**TASK 1 battery: PASSED all green** (committed ad9dc8c); built FAQ counts confirmed 7/7/7 (hub 11) · 12/12 · 6/6/6.
+**TASK 5 report (silo-link safety) = ALL SAFE, no unsafe files.** The "35 files" was a false alarm: every one of the
+371 FAQPage-emitting files wraps the answer in `stripTags(<var>.a)` (the 35 just used loop-var `it` not `i`). NEGATIVE
+check: 0 FAQPage answers reach schema unstripped. -> in-answer `<a>` links are stripTags-safe EVERYWHERE; TASK 5 can
+proceed to add strategic child/sibling links with no schema risk.
+**TASK 6 report (David/Westgate footprint) — REPORTED, awaiting founder ruling (no changes made):**
+- VISIBLE "David Westgate" (rendered text): only 6 pages — home + the 5 state pillars. NOT on money/prose (those are
+  schema-only). Named-operator block "David Westgate, Lead ProAdvisor" lives on pillars (+ home #home-team).
+- SCHEMA-only `#david-westgate` reviewedBy (E-E-A-T Person, rule #9): 574 pages. Correct/intended — KEEP.
+- "Verify on Intuit's ProAdvisor directory ->" credential LINK to the GENERIC https://proadvisor.intuit.com/ (David
+  NOT individually listed = fake verification): renders on 50 pages, from 49 source link occurrences. Founder ruling:
+  REMOVE the link, keep credential text. (Spread across credLede / operator detail / error-code credential lines +
+  the pillar button — not one partial, but a consistent `<a href="proadvisor.intuit.com">...</a>` pattern.)
+- /about/, /trust/, /partners/ do NOT currently show visible David (founder WANTS him there) -> his visible presence is
+  on home+pillars instead. westgatefs.com links currently = 0 (founder wants ONE from /partners/, optionally /about/).
+- PROPOSED (awaiting ruling): (1) strip the proadvisor.intuit.com verify-link on all 50 pages, keep credential text;
+  (2) keep visible David on NY+TX pillars, replace with generic "Certified ProAdvisor team" on CA/FL/IL pillars;
+  (3) add a David named-operator block to /about/ (+ /trust/, /partners/) where founder wants him; (4) ONE contextual
+  westgatefs.com link in /partners/ partnership copy (varied firm-name anchor). OPEN Qs: keep David visible on HOME?
+  Is the 574-page reviewedBy claim honest for every page or should it scope to operator/reviewed pages?
 OPEN/NEXT: TASK 2 answer-rewrite (answer-first/generic + fold 1-2 call-intent FAQs w/ phone) · TASK 3 t-hub additions · TASK 4 phone-in-meta · TASK 5 silo interlinks (post 35-file check) · TASK 6 David changes (after founder rules on the footprint report). Still queued: BATCH 3 visual items.
