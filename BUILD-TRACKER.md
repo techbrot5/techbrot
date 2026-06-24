@@ -10,6 +10,20 @@ natural in answer; (6) phone-in-meta on high-intent types ONLY (money/triage/pil
 silo interlinks in answers (stripTags-safe). De-dup ≠ cut: removing duplicate quick-answer blocks is equity-POSITIVE.
 
 ## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · LAYOUT GATE LIVE · backlog 146→121 · old-kit 0)
+**🟢 CHECKPOINT (2026-06-25, HEAD `3752db1` origin/preview-11ty, tree CLEAN, battery GREEN).** FAQ+FORMS+DAVID initiative:
+**DONE & shipped** — TASK 0 strategy (`_build/strategy/FAQ-STRATEGY.md`) · TASK 1 FAQ de-dup (bookkeeping→7/pillars→12/
+prose→6) · forms footprint 43→18 + 27-key contract + AI-attribution · TASK 5 safety (links safe everywhere) · TASK 6B
+(verify-link strip 45→5 honest authority-citations, visible David→home+NY+TX, 1 Westgate link) · TASK 6A (reviewedBy
+scoped: removed from 232 info/glossary/blog/vs/help/tools/legal pages → 296 keep; global Person node persists) · honesty
+softens (false "listed there" claims fixed). **NOT DONE (genuine content-authoring — do NOT mechanize; quality/honesty
+rules):** TASK 2 FAQ answer-rewrite (answer-first + 1-2 call-intent FAQs w/ phone, ~all FAQ pages) · TASK 3 t-hub Q
+additions · TASK 4 phone-in-meta (~52 high-intent pages, natural per-page) · TASK 5 silo-link insertion · David operator
+block on /about//trust//partners/ (NOTE: reverses the deliberate founder-name-zero stance on those pages — founder asked,
+proceed when resuming) · add reviewedBy to ~31 money D1 pages (they never had it). These are per-page writing passes.
+**🛑 FOUNDER DECISIONS PENDING:** (1) add reviewedBy David to the 31 money D1 pages? (recommend YES). (2) David visible
+block on about/trust/partners reverses founder-name-zero — confirm scope (recommend about+trust; partners already has the
+Westgate operator-network link). **RESUME at TASK 4 phone-in-meta (bounded, call-driver) then TASK 2 per page-type.**
+
 **RESUME ANCHOR (2026-06-25) — matches git HEAD `c323a86` (origin/preview-11ty):** 🎉 **V2 RECOMPOSE TRULY 100%**
 (404 migrated this session → ZERO base.njk pages left) **+ PRE-FLIP BATCH 1+2 visual fixes + CSS trim DONE.**
 Fresh battery all green: `layout-v2` 580/580 on v2 · `old-kit` 0 · `design-fidelity` 574 (repointed to v2) ·
