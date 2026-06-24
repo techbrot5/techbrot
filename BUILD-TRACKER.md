@@ -11,6 +11,11 @@ section. Intent engine WIRED (real applyIntent executed vs 127-key shipped map: 
 texas/state-advisory all swap headline·lede·CTA·service; unknown=graceful). Endpoint LIVE ({ok:true,result:success},
 both contract shapes accepted). **🛑 2 FOUNDER DECISIONS OPEN (forms) — see PRE-FLIP item 2; visual items 3-4 NOT
 yet started, paused for audit per SPEC→BUILD→AUDIT.** Tree CLEAN; HEAD==origin.
+**FORMS+FAQ STRATEGY PASS (2026-06-25):** founder ruled on A/B (add AI-attribution + WIRE dead fields, extend
+contract to 27 keys) + ordered a call-first footprint reduction (43→~17 forms). Inventory + FAQ-per-page-type report
+done (`_build/scripts/page_type_faq_form_report.py`). **AWAITING founder confirm on: (1) form keep/cut list [item 2b],
+(2) FAQ caps — I PUSHED BACK on 3 caps that would gut equity (dedicated /faq/ hubs, t-location 4-6 too tight, t-hub
+is UNDER not over). See FAQ section + session-log.** NO forms/FAQ changed this turn (both are show-me-before-changing).
 (history below: the recompose/backlog detail.)
 
 ## 🚦 PRE-FLIP OPEN ITEMS (start here next session — 2026-06-25)
@@ -45,6 +50,19 @@ vs-compare-body.njk; design-fidelity repoint); CSS trim ~9KB (dropped dead 04-ch
    not in collect() (no fixed-key, no data-meta) → dropped. FULL form's `ai_recommended` + `convincing_page` inputs
    likewise never collected (collect() locked to the 24-key contract; these were added to the markup beyond it).
    Fix = either wire them into collect()+extend contract, or remove the misleading inputs. Founder call.
+   **➡️ FOUNDER RULED (2026-06-25):** (A) ADD lead_source+ai_tool to all REMAINING forms. (B) WIRE all dead fields
+   (months + ai_recommended + convincing_page) — extend contract to 27 keys (don't remove). FIRST reduce footprint
+   (see item 2b). EXECUTE only after the footprint list below is confirmed.
+2b. **🆕 FORM FOOTPRINT REDUCTION (call-first per v5) — inventory done, footprint AWAITING confirm.**
+   Report: `_build/scripts/page_type_faq_form_report.py`. Current 43 forms by page-type: FULL 12 = contact +
+   file-review (t-prose) · 5 state pillars (t-state-pillar) · 4 NY cities albany/buffalo/rochester/syracuse
+   (t-location) · speak-to-a-quickbooks-expert (t-triage). MINIMAL 31 = all t-money (accounting 6 · NY service-
+   landings 12 · quickbooks 13 incl migration hub+8 children). **PROPOSED target footprint:** FULL=2 (contact,
+   file-review ONLY) · MINIMAL=15 (5 pillars [demoted from full] + 10 top money: qb/cleanup·setup·payroll·migration-
+   hub + acct/cleanup·monthly·catch-up·fractional-cfo·payroll-mgmt·sales-tax) · CALL-ONLY=26 lose the form (4 NY
+   cities + 12 NY service-landings + 8 migration children + proadvisor-near-me + speak-to-expert[founder call]).
+   Note: NY silo carries legacy forms the other 4 states' equivalents DON'T (CA/TX/FL/IL service-landings = t-location,
+   no form) → going call-only makes states consistent. **AWAITING founder confirm of keep/cut list before any change.**
 3. **VISUAL — David Westgate photo:** still blurry on PREVIEW (source good locally) → the 11ty image transform /
    {% photo %} pipeline is over-compressing OR preview serves stale cache. Find the transform, stop the
    over-compression, force a fresh asset build. Confirm sharp on the PREVIEW url. (Used home #home-team + person schema.)
