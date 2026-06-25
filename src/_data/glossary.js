@@ -816,7 +816,7 @@ module.exports = [
     slug: "accrued-expenses",
     term: "Accrued expenses",
     title: "Accrued Expenses — Definition & Why They Matter · TechBrot",
-    description: "Accrued expenses: costs your business has incurred but not yet paid or been billed for &mdash; wages earned, interest accrued. What they are, how adjusting entries record them, and why accrual books need them. By Certified QuickBooks ProAdvisors.",
+    description: "Accrued expenses: costs your business has incurred but not yet paid or been billed for — wages earned, interest accrued. What they are, how adjusting entries record them, and why accrual books need them. By Certified QuickBooks ProAdvisors.",
     shortDef: "Costs your business has already incurred but not yet paid or been invoiced for &mdash; recorded as a liability through adjusting entries so the period&rsquo;s expenses match the period that earned them.",
     blurb: "Costs incurred but not yet paid or billed &mdash; a liability recorded by adjusting entries on accrual books.",
     definition: [
@@ -850,8 +850,8 @@ module.exports = [
   {
     slug: "prepaid-expenses",
     term: "Prepaid expenses",
-    title: "Prepaid Expenses — Definition & Why They&rsquo;re an Asset · TechBrot",
-    description: "Prepaid expenses: payments made in advance for a future benefit &mdash; insurance, rent, annual software. Why they&rsquo;re recorded as an asset and expensed over time, not all at once. By Certified QuickBooks ProAdvisors.",
+    title: "Prepaid Expenses — Definition & Why They’re an Asset · TechBrot",
+    description: "Prepaid expenses: payments made in advance for a future benefit — insurance, rent, annual software. Why they’re recorded as an asset and expensed over time, not all at once. By Certified QuickBooks ProAdvisors.",
     shortDef: "Payments made in advance for a benefit you&rsquo;ll receive later &mdash; insurance, rent, an annual subscription &mdash; recorded as a current asset and expensed over the period the payment actually covers.",
     blurb: "Payments made in advance &mdash; recorded as an asset, then expensed over the period they cover.",
     definition: [
@@ -886,7 +886,7 @@ module.exports = [
     slug: "fixed-assets",
     term: "Fixed assets",
     title: "Fixed Assets — Definition, Capitalization & Depreciation · TechBrot",
-    description: "Fixed assets: long-lived tangible property a business uses to operate &mdash; equipment, vehicles, furniture, buildings. Why they&rsquo;re capitalized on the balance sheet and depreciated over time, not expensed at purchase. By Certified QuickBooks ProAdvisors.",
+    description: "Fixed assets: long-lived tangible property a business uses to operate — equipment, vehicles, furniture, buildings. Why they’re capitalized on the balance sheet and depreciated over time, not expensed at purchase. By Certified QuickBooks ProAdvisors.",
     shortDef: "Long-lived tangible property a business owns and uses to operate &mdash; equipment, vehicles, furniture, buildings &mdash; recorded on the balance sheet and depreciated over its useful life rather than expensed when bought.",
     blurb: "Long-lived tangible property &mdash; equipment, vehicles, buildings &mdash; capitalized and depreciated, not expensed at purchase.",
     definition: [
@@ -920,8 +920,8 @@ module.exports = [
   {
     slug: "operating-expenses",
     term: "Operating expenses",
-    title: "Operating Expenses (OpEx) — Definition & Why They&rsquo;re Below Gross Profit · TechBrot",
-    description: "Operating expenses (OpEx): the ongoing costs of running a business that aren&rsquo;t tied directly to a sale &mdash; rent, utilities, admin salaries, software, marketing. What counts, and why they sit below gross profit on the P&L. By Certified QuickBooks ProAdvisors.",
+    title: "Operating Expenses (OpEx) — Definition & Why They’re Below Gross Profit · TechBrot",
+    description: "Operating expenses (OpEx): the ongoing costs of running a business that aren’t tied directly to a sale — rent, utilities, admin salaries, software, marketing. What counts, and why they sit below gross profit on the P&L. By Certified QuickBooks ProAdvisors.",
     shortDef: "The ongoing costs of running the business that aren&rsquo;t tied directly to producing a sale &mdash; rent, utilities, admin salaries, software, marketing &mdash; reported below gross profit on the profit and loss statement.",
     blurb: "The ongoing costs of running the business not tied to a sale &mdash; below gross profit on the P&L.",
     definition: [
@@ -955,7 +955,7 @@ module.exports = [
 {
     slug: "owners-equity",
     term: "Owner&rsquo;s equity",
-    title: "Owner&rsquo;s Equity — Definition & Where It Sits on the Balance Sheet · TechBrot",
+    title: "Owner’s Equity — Definition & Where It Sits on the Balance Sheet · TechBrot",
     description: "Owner's equity: the owner's residual claim on the business — assets minus liabilities. What it is, how it appears for sole props, partnerships, and corporations, and how it differs from retained earnings. By Certified QuickBooks ProAdvisors.",
     shortDef: "The owner&rsquo;s residual claim on the business &mdash; what&rsquo;s left when you subtract everything the business owes (liabilities) from everything it owns (assets). It is the equity section of the balance sheet.",
     blurb: "The owner&rsquo;s residual claim on the business &mdash; assets minus liabilities, the equity section of the balance sheet.",
@@ -990,7 +990,7 @@ module.exports = [
   {
     slug: "owners-draw",
     term: "Owner&rsquo;s draw",
-    title: "Owner&rsquo;s Draw — Definition & How It Differs From Salary · TechBrot",
+    title: "Owner’s Draw — Definition & How It Differs From Salary · TechBrot",
     description: "Owner's draw: money an owner takes out of an unincorporated business for personal use. What it is, why it isn't a deductible expense or payroll, and how it differs from an S-corp salary. By Certified QuickBooks ProAdvisors.",
     shortDef: "Money an owner takes out of an unincorporated business &mdash; a sole proprietorship, partnership, or LLC &mdash; for personal use. It reduces owner&rsquo;s equity and is not a tax-deductible business expense.",
     blurb: "Money an owner takes out of an unincorporated business for personal use &mdash; it reduces equity, and it isn&rsquo;t payroll or a deductible expense.",
@@ -1494,7 +1494,7 @@ module.exports = [
     slug: "estimated-taxes",
     term: "Estimated taxes",
     title: "Estimated Taxes — Quarterly Payments & Why Accurate Books Matter · TechBrot",
-    description: "Estimated taxes: the quarterly payments individuals and businesses make on income not subject to withholding, because the U.S. tax system is pay-as-you-go. What they are, why underpaying triggers penalties, and why accurate books make the estimate reliable. Educational only &mdash; your CPA or EA calculates and files. By Certified QuickBooks ProAdvisors.",
+    description: "Estimated taxes: the quarterly payments individuals and businesses make on income not subject to withholding, because the U.S. tax system is pay-as-you-go. What they are, why underpaying triggers penalties, and why accurate books make the estimate reliable. Educational only — your CPA or EA calculates and files. By Certified QuickBooks ProAdvisors.",
     shortDef: "Periodic payments &mdash; generally quarterly &mdash; that individuals and businesses make through the year on income that isn&rsquo;t subject to withholding, because the U.S. tax system is pay-as-you-go.",
     blurb: "Quarterly payments on income that isn&rsquo;t withheld &mdash; the pay-as-you-go system. Your CPA calculates them; accurate books make the estimate reliable.",
     definition: [
@@ -1531,7 +1531,7 @@ module.exports = [
     slug: "payroll-liabilities",
     term: "Payroll liabilities",
     title: "Payroll Liabilities — Definition & Why They Must Be Remitted On Time · TechBrot",
-    description: "Payroll liabilities: amounts a business has withheld from employees or owes as an employer but not yet remitted &mdash; income-tax withholding, Social Security and Medicare, unemployment, and benefit withholdings. What they are, why trust-fund taxes must be remitted on time, and how they&rsquo;re kept reconciled in QuickBooks. By Certified QuickBooks ProAdvisors.",
+    description: "Payroll liabilities: amounts a business has withheld from employees or owes as an employer but not yet remitted — income-tax withholding, Social Security and Medicare, unemployment, and benefit withholdings. What they are, why trust-fund taxes must be remitted on time, and how they’re kept reconciled in QuickBooks. By Certified QuickBooks ProAdvisors.",
     shortDef: "Amounts a business has withheld from employees, or owes as an employer, but not yet remitted to the agencies &mdash; a liability on the balance sheet until it&rsquo;s paid.",
     blurb: "What you&rsquo;ve withheld from employees or owe as an employer but haven&rsquo;t yet remitted &mdash; a liability until it&rsquo;s paid, and the trust-fund portion is serious.",
     definition: [
@@ -1567,7 +1567,7 @@ module.exports = [
     slug: "fiscal-year",
     term: "Fiscal year",
     title: "Fiscal Year — Definition & How It Differs From a Calendar Year · TechBrot",
-    description: "Fiscal year: the 12-month period a business uses for accounting and tax reporting &mdash; often the calendar year, but it can be any 12-month span. What it is, how it differs from the calendar year, and why the choice affects when books close and returns are due. The election is confirmed with your CPA. By Certified QuickBooks ProAdvisors.",
+    description: "Fiscal year: the 12-month period a business uses for accounting and tax reporting — often the calendar year, but it can be any 12-month span. What it is, how it differs from the calendar year, and why the choice affects when books close and returns are due. The election is confirmed with your CPA. By Certified QuickBooks ProAdvisors.",
     shortDef: "The 12-month period a business uses for accounting and tax reporting &mdash; often the calendar year (January through December), but it can be any 12-month span a business chooses.",
     blurb: "The 12-month period a business reports on &mdash; often the calendar year, but not always. It sets when the books close and returns come due.",
     definition: [
