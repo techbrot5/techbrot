@@ -21,7 +21,8 @@ Remove 4 VISIBLE inputs; keep hidden auto-capture where derivable. Both full + m
 - ✅ FORM-STRATEGY.md recorded.
 - (also optimized the slow `meta-hygiene` battery check → title/desc-only — TASK 6 item, done early since it blocked.)
 
-## TASK 2 — TITLE/DESC REWRITE  🟢 bulk complete (verify stragglers)
+## TASK 2 — TITLE/DESC REWRITE  ✅ COMPLETE
+- ✅ Final residual: the 5 silo HUB index pages (/accounting/, /accounting/industries/, /glossary/, /quickbooks/, /vs/) were excluded by the cluster subagent scopes — authored keyword-led ≤60 titles + value-led ≤160 descs directly. Sitewide over-length now 0/0.
 - ✅ META-STRATEGY.md recorded · ✅ `meta-unique` battery gate added (enforces unique titles+descs sitewide; catches bulk-stamping).
 - 🔵 titles → keyword-LED ≤60. DONE: w1 6 high-intent · w2 industries 26 · w3 qb/help+support 57 + qb/online 42 + glossary 46. ≈124 done; ~115 titles left.
 - 🔵 descs → value+keyword led ≤160. DONE: 52 high-intent (TASK-4) · w2 industries 26 · w3 145 (help/online/glossary). ≈223 done; ~262 descs left.
