@@ -28,12 +28,23 @@ checks here as defects are discovered (this file grows; never shrinks silently).
 - The `meta-hygiene` battery check fails the build if either reappears.
 
 ## C. <head> / META (every page)
-- **TITLE**: present · UNIQUE sitewide (no duplicate titles — duplicate meta is a
-  ranking drag) · ≤ ~60 chars / ~600px (SERP-truncation-safe) · primary keyword
-  included · consistent ` · TechBrot` brand suffix · no entities/mojibake (B).
-- **META DESCRIPTION**: present · UNIQUE · ~150–160 chars (truncation-safe) ·
-  compelling · no entities/mojibake · phone `(877) 751-5575` on high-intent types
-  (t-money / t-triage / t-state-pillar / contact / file-review — DONE).
+- **TITLE** (standing rule, founder 2026-06-25):
+  1. **LEAD with the page's primary keyword / intent** — the term the page targets,
+     in the FIRST words (early words rank). Non-negotiable: every title must contain
+     the keyword/intent it targets.
+  2. **Brand suffix (` · TechBrot`) ONLY if the total stays ≤ 60 chars** (~600px,
+     SERP-truncation-safe). If keyword + brand > 60 → **DROP the brand, keep the full
+     keyword.** NEVER sacrifice keyword for brand. (So keyword-heavy BOFU titles
+     naturally shed the brand; shorter informational/blog/tool titles keep it —
+     keyword priority + the 60-char limit decide it, NOT a page-type split.)
+  3. **UNIQUE sitewide** — no duplicate titles (duplicate meta is a ranking drag).
+  4. No entities/mojibake (B). [Separator is the established `·`; revisit only on
+     explicit founder call.]
+- **META DESCRIPTION** (standing rule): LEAD with the value/answer + the keyword
+  naturally (SERP term-bolding + CTR) · ≤ 160 chars (truncation-safe) · brand
+  OPTIONAL (usefulness > self-reference) · UNIQUE per page · no entities/mojibake ·
+  phone `(877) 751-5575` on high-intent types (t-money / t-triage / t-state-pillar /
+  contact / file-review — DONE).
 - **CANONICAL**: present + SELF-REFERENCING on every page (canonical href ==
   the page's own absolute https://techbrot.com URL). A wrong canonical can
   de-index the page — critical.
