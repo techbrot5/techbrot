@@ -37,11 +37,11 @@ Remove 4 VISIBLE inputs; keep hidden auto-capture where derivable. Both full + m
 - ✅ EEAT-STRATEGY.md recorded (reviewedBy scoped not blanket; one real operator named where contextual; no fabrication; entity corroboration by consistent accurate mention not link volume; one westgatefs link only, in /partners/).
 - ✅ Carry-forward: blog/category.njk meta straggler fixed (description was blurb + appended boilerplate+phone → over 160; now just the value-led blurb, all 8 categories ≤160, no phone per MOFU rule).
 
-## TASK 4 — FAQ AUTHORING (per page-type, money-first)  🛑 BLOCKED — founder decision
-- ⚠️ MONEY WAVE ATTEMPTED + REVERTED (commits d6927fe + 3fb0f8b → reverted fb09341 + 040a5dd). Root cause: the money pages are BASELINE-equity-gated and AT the FAQ cap (5-7). Adding a call-intent FAQ by "replace weakest at cap" REMOVED baseline FAQ *questions* → 26 content-equity FAILURES. (content-equity protects baseline FAQ QUESTION text, not answers.) I committed before reading the full battery verdict (deleted the output early) — my error; reverted to baseline-verbatim (green).
-- 🛑 FOUNDER DECISION NEEDED — how to add call-intent FAQ on at-cap baseline pages without losing baseline equity. Options: (A) allow cap+1 (8 FAQs) on baseline pages — keep all baseline Qs + add call-intent, zero equity loss [recommend]; (B) approve specific baseline-Q replacements → I add equity-exceptions.json entries (founder-signed) per page; (C) skip the call-intent *question* on at-cap baseline pages, instead weave the phone into an EXISTING FAQ answer (equity-safe — answers aren't equity-checked) [also clean]; (D) call-intent FAQ only on UNDER-cap + non-baseline pages.
-- SAFE regardless: answer-first/minimal-brand ANSWER rewrites + silo links in answers (equity-safe — Qs unchanged) + t-hub FAQ ADDITIONS (hubs are under cap).
-- Per FAQ-STRATEGY.md. Report-before-change on baseline-FAQ-Q cuts (this is exactly that).
+## TASK 4 — FAQ AUTHORING (per page-type, money-first)  🔵 in-progress
+- ✅ RESOLUTION: founder ruled OPTION C (recorded in FAQ-STRATEGY.md, commit f82cb27): phone woven into an EXISTING FAQ answer (equity-safe — answers aren't equity-checked); dedicated call-intent QUESTION only where cap room + no baseline removal. Never reword/remove a baseline FAQ question.
+- ✅ MONEY WAVE DONE (Option C, commit 219ca41): all 31 t-money pages — phone in one existing answer (30) or an added call-intent Q on under-cap proadvisor-near-me (1); answer-first/minimal-brand rewrites + silo links (7 pages). Questions byte-identical to baseline; content-equity run to COMPLETION + read = 0 failures. (Earlier non-Option-C attempt reverted fb09341+040a5dd — see history.)
+- ⬜ remaining clusters (Option C): prose · pillars · location children · comparison · /faq/ hubs (EXEMPT) + t-hub FAQ ADDITIONS (under cap → add Qs) + silo links throughout.
+- Per FAQ-STRATEGY.md. PROCESS: content-equity to completion + read before commit; FULL battery (faq-schema/overlap/flat) before flip (--fast skips them).
 
 ## TASK 5 — LOCATION EXPANSION (the spine — PLAN FIRST)  ⬜ pending
 - ⬜ **FIRST DELIVERABLE: full LOCATION PLAN for founder review** (state list 10-15, tier assignment, exact pages per tier, counts, routing, schema per type) — from `techbrot-blueprint-v5.xlsx`. HARD-STOP for founder ruling before building.
