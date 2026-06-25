@@ -20,9 +20,13 @@ rules):** TASK 2 FAQ answer-rewrite (answer-first + 1-2 call-intent FAQs w/ phon
 additions · TASK 4 phone-in-meta (~52 high-intent pages, natural per-page) · TASK 5 silo-link insertion · David operator
 block on /about//trust//partners/ (NOTE: reverses the deliberate founder-name-zero stance on those pages — founder asked,
 proceed when resuming) · add reviewedBy to ~31 money D1 pages (they never had it). These are per-page writing passes.
-**🛑 FOUNDER DECISIONS PENDING:** (1) add reviewedBy David to the 31 money D1 pages? (recommend YES). (2) David visible
-block on about/trust/partners reverses founder-name-zero — confirm scope (recommend about+trust; partners already has the
-Westgate operator-network link). **RESUME at TASK 4 phone-in-meta (bounded, call-driver) then TASK 2 per page-type.**
+**✅ FOUNDER DECISIONS RESOLVED + APPLIED:** (1) reviewedBy David ADDED to all 31 money D1 pages (10 were missing, now
+added; battery GREEN). (2) David visible block → /about/ + /partners/ ONLY; /trust/ STAYS team-voice (founder-name-zero,
+deliberate — do NOT reverse). **RESUME (fresh context, authored per page-type, highest-conversion first, do NOT bulk-
+mechanize): TASK 4 phone-in-meta (~52 high-intent: t-money 31 + t-triage 14 + pillars 5 + contact + file-review; per-page
+natural, watch SERP length) → David block /about/+/partners/ (authored + reviewedBy) → TASK 2 FAQ rewrite (money/pillars/
+file-review first; answer-first + call-intent FAQ that REPLACES weakest at cap) → TASK 3 hub Qs → TASK 5 silo links.**
+HEAD after this = reviewedBy-money commit. Battery hang fix: `taskkill python` if stale procs (chrome-probe-leak machine).
 
 **RESUME ANCHOR (2026-06-25) — matches git HEAD `c323a86` (origin/preview-11ty):** 🎉 **V2 RECOMPOSE TRULY 100%**
 (404 migrated this session → ZERO base.njk pages left) **+ PRE-FLIP BATCH 1+2 visual fixes + CSS trim DONE.**

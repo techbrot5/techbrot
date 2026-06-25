@@ -84,7 +84,7 @@ module.exports = {
     pageGraph(data){
       const url="https://techbrot.com/accounting/bookkeeping/catch-up-bookkeeping/";
       return {"@context":"https://schema.org","@graph":[
-        {"@type":"WebPage","@id":url+"#webpage","url":url,"name":data.title,"description":data.description,"isPartOf":{"@id":"https://techbrot.com/#website"},"about":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"inLanguage":"en-US","speakable":{"@type":"SpeakableSpecification","cssSelector":["#catch-up-bookkeeping-in-brief-text"]}},
+        {"@type":"WebPage","@id":url+"#webpage","url":url,"name":data.title,"description":data.description,"isPartOf":{"@id":"https://techbrot.com/#website"},"about":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"inLanguage":"en-US","reviewedBy":{"@id":"https://techbrot.com/#david-westgate"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#catch-up-bookkeeping-in-brief-text"]}},
         {"@type":"BreadcrumbList","@id":url+"#breadcrumb","itemListElement":[
           {"@type":"ListItem","position":1,"name":"Home","item":"https://techbrot.com/"},
           {"@type":"ListItem","position":2,"name":"Accounting","item":"https://techbrot.com/accounting/"},
