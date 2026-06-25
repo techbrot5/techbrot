@@ -48,7 +48,8 @@ Remove 4 VISIBLE inputs; keep hidden auto-capture where derivable. Both full + m
 - Build state-by-state after founder rules; battery+commit per state.
 
 ## TASK 6 — CLEANUP + FLIP GATES  ⬜ pending
-- ⬜ Optimize the slow `meta-hygiene` battery check (scan title/desc only, reuse parsed HTML).
+- ✅ Optimize the slow `meta-hygiene` battery check (title/desc only) — done in T1.
+- ✅ `--fast` battery mode added (mid-wave cadence: url-set/css/content-equity/layout-v2/old-kit/meta-hygiene/meta-unique; skips heavy full-HTML scans). Standing rule in PRE-PUBLISH-AUDIT.md: --fast = provisional green; one FULL run required before flip.
 - ⬜ Orphan pages (33) + 16 homepage→unbuilt-state 301-hops: list by type, propose internal links, founder rules. (State hops resolve as TASK 5 builds states.)
 - ⬜ FLIP GATES (confirm at flip): Cloudflare ENVIRONMENT=production · robots.txt flip + sitemap reference · live axe/overflow (founder machine) · final noindex-leak check · baseline-vs-prod recrawl (no 404s).
 

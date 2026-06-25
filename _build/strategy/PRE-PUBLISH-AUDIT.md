@@ -14,6 +14,22 @@ per task. Several of these are now AUTOMATED in `_build/battery/run_battery.py`
 Keep this file + the BUILD-TRACKER "PRE-PUBLISH CHECKLIST" block in sync. Add new
 checks here as defects are discovered (this file grows; never shrinks silently).
 
+### BATTERY: --fast vs FULL (standing rule, founder 2026-06-25)
+The battery is slow on the build machine (I/O-bound, ~8–12 min full). So:
+- **Mid-wave cadence = `python _build/battery/run_battery.py --fast`.** Runs the
+  cheap, CRITICAL checks that catch real regressions fast: **url-set, css-drift,
+  css-bytes, content-equity diff, layout-v2, old-kit, meta-hygiene (entity/mojibake
+  on title+desc), meta-unique.** SKIPS the heavy full-HTML scans (links, intents,
+  founder-zero, faq/ai-summary, cta-lexicon, manifest, faq-flat, design-fidelity,
+  variety) by leaving the LinkParser `pages` map + the manifest file-list empty.
+- **A wave committed under `--fast` is PROVISIONALLY green.**
+- **Before flip (NON-NEGOTIABLE): one FULL run** (`run_battery.py`, no flag) over the
+  whole site — the complete check including everything `--fast` skips. The full run
+  is the real flip gate; `--fast` is only for cadence.
+- **If `--fast` passes but you SUSPECT something it doesn't cover** (e.g. a wave that
+  could have introduced a broken internal link, a stray class, or a CTA-label change),
+  run FULL on that wave. Never let speed hide a real issue.
+
 ## B. ENCODING / MOJIBAKE  **[battery: meta-hygiene]**
 - No CP1252↔UTF-8 mojibake anywhere rendered: `â€"`/`â€™`/`â€œ`/`Â§`/`Â·`/`Ã©` etc.
   in title, description, or body. Root cause = a file saved through a bad

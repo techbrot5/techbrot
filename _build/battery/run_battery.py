@@ -34,6 +34,14 @@ ROOT = Path(__file__).resolve().parents[2]
 # reading the founder's live _site / :8080 dev-server output (which may be mid-rebuild).
 SITE = ROOT / (os.environ.get("TB_OUTDIR") or "_site")
 FAILURES = []
+# --fast (founder 2026-06-25): mid-wave cadence gate. Runs the cheap, CRITICAL
+# checks that catch real regressions — url-set, css-drift/bytes, content-equity
+# diff, layout-v2, old-kit, meta-hygiene, meta-unique — and SKIPS the heavy
+# full-HTML scans (links, intents, founder-zero, faq/ai-summary, cta-lexicon,
+# manifest, faq-flat, design-fidelity, variety) by leaving the LinkParser `pages`
+# map + the manifest file list empty. A wave gated under --fast is PROVISIONALLY
+# green; a FULL run (no flag) is the real flip gate and is REQUIRED before flip.
+FAST = "--fast" in sys.argv
 
 
 def fail(check, msg):
@@ -91,7 +99,7 @@ class LinkParser(HTMLParser):
 
 
 pages = {}
-for p in built:
+for p in ([] if FAST else built):   # --fast: skip the heavy per-page parse
     rel = p.relative_to(SITE).parent.as_posix()
     url = "/" if rel == "." else f"/{rel}/"
     lp = LinkParser()
@@ -447,7 +455,7 @@ for cf in (ROOT / "src/assets/css").glob("*.css"):
                                        cf.read_text(encoding="utf-8")))
 allowed_classes = manifest_classes | MANIFEST_WHITELIST
 manifest_strays = {}
-manifest_html = list(SITE.rglob("*.html"))
+manifest_html = [] if FAST else list(SITE.rglob("*.html"))   # --fast: skip
 for p in manifest_html:
     rel = p.relative_to(SITE).as_posix()
     if rel.startswith("dev/"):
@@ -643,7 +651,9 @@ import html as _html_mod
 meta_hygiene = []
 _title_map = {}   # displayed title -> [urls]   (uniqueness)
 _desc_map = {}    # displayed desc  -> [urls]
-for url in pages:
+# iterate built_urls (NOT `pages`) so this critical check runs under --fast too,
+# where `pages` is intentionally empty.
+for url in sorted(built_urls):
     if url.startswith("/dev/"):
         continue
     # read only the <head> region (cheap) — title + description live there
@@ -683,9 +693,16 @@ else:
     ok("meta-unique", f"all {len(_title_map)} titles + {len(_desc_map)} descriptions unique sitewide")
 
 print()
+if FAST:
+    print("MODE: --fast (mid-wave cadence subset). SKIPPED heavy checks: links, "
+          "intents, founder-zero, faq/ai-summary, cta-lexicon, manifest, faq-flat, "
+          "design-fidelity, variety. A FULL run (no --fast) is REQUIRED before flip.")
+else:
+    print("MODE: FULL (flip-gate) — all checks ran.")
 if FAILURES:
-    print(f"BATTERY FAILED — {len(FAILURES)} problem(s):")
+    print(f"BATTERY {'(--fast) ' if FAST else ''}FAILED — {len(FAILURES)} problem(s):")
     for f_ in FAILURES:
         print("  FAIL", f_)
     sys.exit(1)
-print("BATTERY PASSED — all checks green.")
+print(f"BATTERY {'(--fast) PROVISIONALLY ' if FAST else ''}PASSED — "
+      f"{'critical subset green; full run still required before flip.' if FAST else 'all checks green.'}")
