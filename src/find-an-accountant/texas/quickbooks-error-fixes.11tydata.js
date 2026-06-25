@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/texas/quickbooks-error-fixes/ â€” TX SERVICE CHILD (QB spoke).
- * t-bofu Â· partials/state-service-body.njk. TX-localized. HONESTY: Comptroller + CPA; not Intuit. */
+﻿/* /find-an-accountant/texas/quickbooks-error-fixes/ — TX SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. TX-localized. HONESTY: Comptroller + CPA; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const TX_FACTS = [
   { fig: "8.25%", title: "Sales-tax errors that won&rsquo;t reconcile", body: "The Texas error we fix most: a sales-tax liability that won&rsquo;t tie to the <strong>Comptroller</strong> return because the rate was flat instead of by location, or items were mapped wrong. We trace it, correct the setup, and reconcile the liability back." },
@@ -20,8 +20,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Texas QuickBooks Error Fixes Â· TechBrot",
-  description: "QuickBooks error fixes for Texas businesses by a Certified ProAdvisor â€” sales-tax liability that won't tie, out-of-balance balance sheet, duplicate entries, broken margin-tax figures. Root-cause fixes, all 254 counties. Call (877) 751-5575.",
+  title: "Texas QuickBooks Error Fixes · TechBrot",
+  description: "QuickBooks error fixes for Texas businesses by a Certified ProAdvisor — sales-tax liability that won't tie, out-of-balance balance sheet, duplicate entries, broken margin-tax figures. Root-cause fixes, all 254 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,10 +118,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/quickbooks-error-fixes/",
     name: "Texas QuickBooks Error Fixes",
-    description: "QuickBooks error fixes for Texas businesses by a Certified ProAdvisor â€” a sales-tax liability that won't tie, an out-of-balance balance sheet, duplicate entries, and broken margin-tax figures, traced to root cause and fixed. Independent firm; does not file Texas taxes.",
+    description: "QuickBooks error fixes for Texas businesses by a Certified ProAdvisor — a sales-tax liability that won't tie, an out-of-balance balance sheet, duplicate entries, and broken margin-tax figures, traced to root cause and fixed. Independent firm; does not file Texas taxes.",
     serviceName: "Texas QuickBooks Error Diagnosis & Fix Services",
     serviceType: "QuickBooks error diagnosis and correction",
-    serviceDesc: "Diagnosis and root-cause correction of QuickBooks errors for Texas businesses â€” a sales-tax liability that won't tie to the Comptroller return, an out-of-balance balance sheet, duplicate and orphaned entries, and mis-postings that break the franchise (margin) tax figures, fixed in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Diagnosis and root-cause correction of QuickBooks errors for Texas businesses — a sales-tax liability that won't tie to the Comptroller return, an out-of-balance balance sheet, duplicate and orphaned entries, and mis-postings that break the franchise (margin) tax figures, fixed in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
     audienceType: "Texas businesses with broken or out-of-balance QuickBooks files across all 254 counties",
     offerPrice: "400",

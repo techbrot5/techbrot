@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/california/business-tax-problems/ â€” CA HONEST-TRIAGE (tax cluster).
- * t-bofu. Shared body: partials/state-triage-body.njk. Sheet-7 honest-triage / Â§8 â€” HONESTY is
+﻿/* /find-an-accountant/california/business-tax-problems/ — CA HONEST-TRIAGE (tax cluster).
+ * t-bofu. Shared body: partials/state-triage-body.njk. Sheet-7 honest-triage / §8 — HONESTY is
  * the #1 gate. Framing: most "business tax problems" are really BOOKS problems; we get the books
  * current and CPA-ready; the FILING, the agencies (FTB/CDTFA/EDD/IRS), controversy, and any
  * resolution/negotiation are the CPA's/EA's/attorney's. Disclosure ABOVE FOLD; we do NOT resolve
@@ -18,8 +18,8 @@ module.exports = {
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
-  title: "California Business Tax Problems (Books First) Â· TechBrot",
-  description: "Behind on California taxes? Most business tax problems start as bookkeeping problems. We get your books current and CPA-ready so your CPA or EA can file and resolve. Independent firm â€” we don't file or negotiate with agencies. Call (877) 751-5575.",
+  title: "California Business Tax Problems (Books First) · TechBrot",
+  description: "Behind on California taxes? Most business tax problems start as bookkeeping problems. We get your books current and CPA-ready so your CPA or EA can file and resolve. Independent firm — we don't file or negotiate with agencies. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -119,10 +119,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/business-tax-problems/",
     name: "California Business Tax Problems (Books First)",
-    description: "Behind on California taxes? Most business tax problems start as bookkeeping problems. TechBrot gets your books current and CPA-ready so your CPA or EA can file and resolve. Independent firm â€” does not file, negotiate, or represent before tax agencies.",
+    description: "Behind on California taxes? Most business tax problems start as bookkeeping problems. TechBrot gets your books current and CPA-ready so your CPA or EA can file and resolve. Independent firm — does not file, negotiate, or represent before tax agencies.",
     serviceName: "California Catch-Up & CPA-Ready Bookkeeping (Tax-Problem Support)",
     serviceType: "Catch-up bookkeeping and CPA-readiness support",
-    serviceDesc: "Getting California businesses' books current and CPA-ready when tax problems have surfaced â€” reconciling accounts, rebuilding sales-tax and payroll records, closing open periods, and building books from source documents, then handing the client's CPA or EA documented figures to file and resolve from. Educational only; not legal or tax advice. Independent Certified QuickBooks ProAdvisor firm; does not file returns, negotiate or settle tax debt, or represent clients before the FTB, CDTFA, EDD, or IRS.",
+    serviceDesc: "Getting California businesses' books current and CPA-ready when tax problems have surfaced — reconciling accounts, rebuilding sales-tax and payroll records, closing open periods, and building books from source documents, then handing the client's CPA or EA documented figures to file and resolve from. Educational only; not legal or tax advice. Independent Certified QuickBooks ProAdvisor firm; does not file returns, negotiate or settle tax debt, or represent clients before the FTB, CDTFA, EDD, or IRS.",
     areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
     audienceType: "California businesses behind on taxes or facing tax problems that need their books brought current and CPA-ready",
     offerPrice: "1500",

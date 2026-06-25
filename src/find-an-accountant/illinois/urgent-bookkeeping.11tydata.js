@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/illinois/urgent-bookkeeping/ â€” IL SERVICE CHILD (bkg spoke).
- * t-bofu Â· partials/state-service-body.njk. Fast-turnaround bookkeeping for a deadline. NON-triage.
+﻿/* /find-an-accountant/illinois/urgent-bookkeeping/ — IL SERVICE CHILD (bkg spoke).
+ * t-bofu · partials/state-service-body.njk. Fast-turnaround bookkeeping for a deadline. NON-triage.
  * IL-localized. HONESTY: deferred to the Illinois Dept of Revenue (IDOR) + City of Chicago Dept of
  * Finance + CPA/EA; founder-name-zero; not Intuit; no filing/financing-outcome guarantees. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
@@ -23,8 +23,8 @@ module.exports = {
   callBar: true,
   disclosure: "<strong>Independent &mdash; and honest about the limits.</strong> TechBrot is an independent Certified QuickBooks ProAdvisor firm, not Intuit and not a tax authority, CPA, or attorney. On a deadline we bring your books current fast and accurately; your CPA or EA files the returns and represents you. We never trade accuracy for speed.",
   heroFigure: "taccount",
-  title: "Illinois Urgent & Fast-Turnaround Bookkeeping Â· TechBrot",
-  description: "Urgent bookkeeping for Illinois businesses on a deadline â€” IDOR filing due, loan or sale pending, Chicago sales-tax period closing. Fast, reconciled, CPA-ready. All 102 counties. Call (877) 751-5575.",
+  title: "Illinois Urgent & Fast-Turnaround Bookkeeping · TechBrot",
+  description: "Urgent bookkeeping for Illinois businesses on a deadline — IDOR filing due, loan or sale pending, Chicago sales-tax period closing. Fast, reconciled, CPA-ready. All 102 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -122,10 +122,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/urgent-bookkeeping/",
     name: "Illinois Urgent & Fast-Turnaround Bookkeeping",
-    description: "Urgent bookkeeping for Illinois businesses on a deadline â€” IDOR filing due, loan or sale pending, Chicago sales-tax period closing. Fast, reconciled, CPA-ready. Independent firm; does not file Illinois taxes or guarantee outcomes.",
+    description: "Urgent bookkeeping for Illinois businesses on a deadline — IDOR filing due, loan or sale pending, Chicago sales-tax period closing. Fast, reconciled, CPA-ready. Independent firm; does not file Illinois taxes or guarantee outcomes.",
     serviceName: "Illinois Urgent & Fast-Turnaround Bookkeeping",
     serviceType: "Expedited bookkeeping services",
-    serviceDesc: "Fast-turnaround bookkeeping for Illinois businesses facing a deadline â€” an Illinois Department of Revenue filing due, a lender or buyer needing statements, or a Chicago sales-tax period closing â€” prioritizing reconciliation of the sales-tax and income figures to deliver CPA-ready books quickly. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns, make the PTE election, guarantee filing or financing outcomes, or represent clients before the Department â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Fast-turnaround bookkeeping for Illinois businesses facing a deadline — an Illinois Department of Revenue filing due, a lender or buyer needing statements, or a Chicago sales-tax period closing — prioritizing reconciliation of the sales-tax and income figures to deliver CPA-ready books quickly. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns, make the PTE election, guarantee filing or financing outcomes, or represent clients before the Department — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Illinois", sameAs: "https://en.wikipedia.org/wiki/Illinois" }],
     audienceType: "Illinois businesses facing a tax, financing, or sale deadline across all 102 counties",
     offerPrice: "400",

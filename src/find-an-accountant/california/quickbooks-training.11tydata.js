@@ -1,4 +1,4 @@
-﻿/* /find-an-accountant/california/quickbooks-training/ â€” CA SERVICE CHILD (QB spoke).
+﻿/* /find-an-accountant/california/quickbooks-training/ — CA SERVICE CHILD (QB spoke).
  * t-bofu. Shared body: partials/state-service-body.njk. GENUINELY CA-localized training.
  * HONESTY: deferred to FTB/CDTFA/EDD + CPA/EA; founder-name-zero; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
@@ -21,8 +21,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "California QuickBooks Training Â· TechBrot",
-  description: "QuickBooks training for California teams by a Certified ProAdvisor â€” district sales tax entry, AB5 contractor coding, month-end close, on your own file. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  title: "California QuickBooks Training · TechBrot",
+  description: "QuickBooks training for California teams by a Certified ProAdvisor — district sales tax entry, AB5 contractor coding, month-end close, on your own file. Fixed-fee, all 58 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -122,10 +122,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/quickbooks-training/",
     name: "California QuickBooks Training",
-    description: "QuickBooks training for California teams by a Certified ProAdvisor â€” district sales tax entry by location, AB5 contractor coding, and a clean month-end close, on your own file across all 58 counties. Independent firm; does not file California taxes.",
+    description: "QuickBooks training for California teams by a Certified ProAdvisor — district sales tax entry by location, AB5 contractor coding, and a clean month-end close, on your own file across all 58 counties. Independent firm; does not file California taxes.",
     serviceName: "California QuickBooks Training Services",
     serviceType: "QuickBooks training and team enablement",
-    serviceDesc: "Role-specific QuickBooks training for California teams on their own file â€” CDTFA district sales-tax entry by location, AB5 contractor coding, the $800 franchise-tax accrual, and a repeatable month-end close, live and recorded with written SOPs. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Role-specific QuickBooks training for California teams on their own file — CDTFA district sales-tax entry by location, AB5 contractor coding, the $800 franchise-tax accrual, and a repeatable month-end close, live and recorded with written SOPs. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
     audienceType: "California small and midsize business owners and in-house bookkeeping teams learning QuickBooks",
     offerPrice: "400",

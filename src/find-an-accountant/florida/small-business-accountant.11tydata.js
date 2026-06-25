@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/florida/small-business-accountant/ â€” FL SERVICE CHILD (money).
- * t-bofu Â· partials/state-service-body.njk. FL-localized: 5.5% corp / 6%+surtax / service-taxability. */
+﻿/* /find-an-accountant/florida/small-business-accountant/ — FL SERVICE CHILD (money).
+ * t-bofu · partials/state-service-body.njk. FL-localized: 5.5% corp / 6%+surtax / service-taxability. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
   { fig: "5.5%", title: "No personal income tax &mdash; but a 5.5% corporate tax", body: "Florida has no state personal income tax, but small businesses organized as <strong>C-corporations pay a 5.5% corporate income tax</strong> to the Florida Department of Revenue. Pass-throughs generally don&rsquo;t &mdash; entity type decides. We track the position; your CPA confirms." },
@@ -20,8 +20,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Florida Small Business Accountant Â· TechBrot",
-  description: "Accountant & bookkeeper for Florida small businesses â€” monthly bookkeeping, QuickBooks, payroll, 6%+surtax sales tax, the 5.5% corporate tax, service taxability, and TPP. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  title: "Florida Small Business Accountant · TechBrot",
+  description: "Accountant & bookkeeper for Florida small businesses — monthly bookkeeping, QuickBooks, payroll, 6%+surtax sales tax, the 5.5% corporate tax, service taxability, and TPP. Fixed-fee, all 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -119,7 +119,7 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/small-business-accountant/",
     name: "Florida Small Business Accountant",
-    description: "Accountant and bookkeeper for Florida small businesses â€” monthly bookkeeping, QuickBooks, payroll coordination, 6%+surtax sales tax, the 5.5% corporate tax, service taxability, and tangible personal property in your own QuickBooks file across all 67 counties. Independent firm; does not file Florida taxes.",
+    description: "Accountant and bookkeeper for Florida small businesses — monthly bookkeeping, QuickBooks, payroll coordination, 6%+surtax sales tax, the 5.5% corporate tax, service taxability, and tangible personal property in your own QuickBooks file across all 67 counties. Independent firm; does not file Florida taxes.",
     serviceName: "Florida Small Business Accounting & Bookkeeping",
     serviceType: "Small business accounting and bookkeeping services",
     serviceDesc: "Monthly bookkeeping, QuickBooks setup and cleanup, 6% + county surtax sales-tax configuration, 5.5% corporate-tax tracking, service-taxability handling, tangible personal property record-keeping, and payroll coordination for Florida small businesses across all 67 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns.",

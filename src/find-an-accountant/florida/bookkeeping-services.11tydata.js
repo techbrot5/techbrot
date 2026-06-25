@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/florida/bookkeeping-services/ â€” FL SERVICE CHILD (money).
- * t-bofu Â· partials/state-service-body.njk. FL-localized: 5.5% corp / 6%+surtax / service-taxability. */
+﻿/* /find-an-accountant/florida/bookkeeping-services/ — FL SERVICE CHILD (money).
+ * t-bofu · partials/state-service-body.njk. FL-localized: 5.5% corp / 6%+surtax / service-taxability. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
   { fig: "6% + surtax", title: "Sales tax baked into the books, by county", body: "Florida sales &amp; use tax is 6% plus a discretionary county surtax that varies by county, via the <strong>Florida Department of Revenue</strong>. Bookkeeping that records the right combined rate by location is the difference between a return that ties and one that doesn&rsquo;t." },
@@ -20,8 +20,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Florida Bookkeeping Services Â· TechBrot",
-  description: "Bookkeeping services for Florida businesses â€” reconciliation, clean categorization, 6%+surtax sales tax by county, the taxability of services, TPP records, CPA-ready statements. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  title: "Florida Bookkeeping Services · TechBrot",
+  description: "Bookkeeping services for Florida businesses — reconciliation, clean categorization, 6%+surtax sales tax by county, the taxability of services, TPP records, CPA-ready statements. Fixed-fee, all 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,7 +118,7 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/bookkeeping-services/",
     name: "Florida Bookkeeping Services",
-    description: "Bookkeeping services for Florida businesses â€” reconciliation, clean categorization, 6%+surtax sales tax by county, service taxability handled, TPP records, and CPA-ready statements in your own QuickBooks file across all 67 counties. Independent firm; does not file Florida taxes.",
+    description: "Bookkeeping services for Florida businesses — reconciliation, clean categorization, 6%+surtax sales tax by county, service taxability handled, TPP records, and CPA-ready statements in your own QuickBooks file across all 67 counties. Independent firm; does not file Florida taxes.",
     serviceName: "Florida Bookkeeping Services",
     serviceType: "Bookkeeping services",
     serviceDesc: "Reconciliation, categorization, 6% + county surtax sales-tax recording by location, taxability of services capture, fixed-asset schedule maintenance for the tangible personal property return, cleanup, and CPA-ready monthly statements for Florida businesses across all 67 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns.",

@@ -1,4 +1,4 @@
-﻿/* /find-an-accountant/texas/quickbooks-accountant/ â€” TX SERVICE CHILD (money/umbrella).
+﻿/* /find-an-accountant/texas/quickbooks-accountant/ — TX SERVICE CHILD (money/umbrella).
  * t-bofu. Shared body: partials/state-service-body.njk. v4 TX money cluster umbrella.
  * GENUINELY TX-localized: facts band = the real TX stack (no income tax -> the Texas Franchise
  * "margin" tax via the Comptroller; 8.25% sales tax; business personal property rendition).
@@ -24,8 +24,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Texas QuickBooks Accountant & ProAdvisor Â· TechBrot",
-  description: "Certified QuickBooks ProAdvisor & accountant for Texas businesses â€” bookkeeping, cleanup, payroll, 8.25% sales tax, the franchise (margin) tax, and BPP rendition. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  title: "Texas QuickBooks Accountant & ProAdvisor · TechBrot",
+  description: "Certified QuickBooks ProAdvisor & accountant for Texas businesses — bookkeeping, cleanup, payroll, 8.25% sales tax, the franchise (margin) tax, and BPP rendition. Fixed-fee, all 254 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -125,12 +125,12 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/quickbooks-accountant/",
     name: "Texas QuickBooks Accountant & ProAdvisor",
-    description: "Certified QuickBooks ProAdvisor and accountant for Texas businesses â€” bookkeeping, cleanup, payroll coordination, 8.25% sales tax, the franchise (margin) tax, and BPP rendition in your own QuickBooks file across all 254 counties. Independent firm; does not file Texas taxes.",
+    description: "Certified QuickBooks ProAdvisor and accountant for Texas businesses — bookkeeping, cleanup, payroll coordination, 8.25% sales tax, the franchise (margin) tax, and BPP rendition in your own QuickBooks file across all 254 counties. Independent firm; does not file Texas taxes.",
     serviceName: "Texas QuickBooks ProAdvisor & Accountant Services",
     serviceType: "QuickBooks ProAdvisor and bookkeeping services",
-    serviceDesc: "Monthly bookkeeping, QuickBooks setup and cleanup, 8.25% sales-tax configuration, franchise (margin) tax tracking, business personal property record-keeping, payroll coordination, and CPA-ready statements for Texas businesses across all 254 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Monthly bookkeeping, QuickBooks setup and cleanup, 8.25% sales-tax configuration, franchise (margin) tax tracking, business personal property record-keeping, payroll coordination, and CPA-ready statements for Texas businesses across all 254 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
-    audienceType: "Texas small and midsize businesses across all 254 counties â€” energy, construction, manufacturing, real estate, trucking, healthcare, and professional services",
+    audienceType: "Texas small and midsize businesses across all 254 counties — energy, construction, manufacturing, real estate, trucking, healthcare, and professional services",
     offerPrice: "400",
   },
   eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },

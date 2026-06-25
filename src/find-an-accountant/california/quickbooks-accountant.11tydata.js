@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/california/quickbooks-accountant/ â€” CA SERVICE CHILD (money/umbrella).
- * t-bofu. Shared body: partials/state-service-body.njk. v4 money cluster â€” the umbrella
+﻿/* /find-an-accountant/california/quickbooks-accountant/ — CA SERVICE CHILD (money/umbrella).
+ * t-bofu. Shared body: partials/state-service-body.njk. v4 money cluster — the umbrella
  * "quickbooks accountant / proadvisor / bookkeeper near me" page for California.
  * GENUINELY CA-localized: the facts band is the real CA stack ($800 FTB franchise tax,
  * CDTFA district sales tax, AB5), and the service content ties QuickBooks ProAdvisor work
@@ -14,8 +14,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "California QuickBooks Accountant & ProAdvisor Â· TechBrot",
-  description: "Certified QuickBooks ProAdvisor & accountant for California businesses â€” bookkeeping, cleanup, payroll coordination, CDTFA district sales tax, AB5 tracking. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  title: "California QuickBooks Accountant & ProAdvisor · TechBrot",
+  description: "Certified QuickBooks ProAdvisor & accountant for California businesses — bookkeeping, cleanup, payroll coordination, CDTFA district sales tax, AB5 tracking. Fixed-fee, all 58 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -129,14 +129,14 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/quickbooks-accountant/",
     name: "California QuickBooks Accountant & ProAdvisor",
-    description: "Certified QuickBooks ProAdvisor and accountant for California businesses â€” bookkeeping, cleanup, payroll coordination, CDTFA district sales tax, and AB5 tracking in your own QuickBooks file across all 58 counties. Independent firm; does not file California taxes.",
+    description: "Certified QuickBooks ProAdvisor and accountant for California businesses — bookkeeping, cleanup, payroll coordination, CDTFA district sales tax, and AB5 tracking in your own QuickBooks file across all 58 counties. Independent firm; does not file California taxes.",
     serviceName: "California QuickBooks ProAdvisor & Accountant Services",
     serviceType: "QuickBooks ProAdvisor and bookkeeping services",
-    serviceDesc: "Monthly bookkeeping, QuickBooks setup and cleanup, CDTFA district sales tax configuration, AB5 contractor tracking, payroll coordination, and CPA-ready statements for California businesses, delivered in the client's own QuickBooks file across all 58 counties. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Monthly bookkeeping, QuickBooks setup and cleanup, CDTFA district sales tax configuration, AB5 contractor tracking, payroll coordination, and CPA-ready statements for California businesses, delivered in the client's own QuickBooks file across all 58 counties. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns — coordinates with the client's CPA or EA.",
     areaServed: [
       { type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" },
     ],
-    audienceType: "California small and midsize businesses across all 58 counties â€” SaaS and technology, e-commerce, agencies, professional services, restaurants, real estate, and construction",
+    audienceType: "California small and midsize businesses across all 58 counties — SaaS and technology, e-commerce, agencies, professional services, restaurants, real estate, and construction",
     offerPrice: "400",
   },
   eleventyComputed: { pageGraph(data){ return buildCityGraph(data); } },

@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/california/quickbooks-error-fixes/ â€” CA SERVICE CHILD (QB spoke).
- * t-bofu. Shared body: partials/state-service-body.njk. GENUINELY CA-localized â€” both
+﻿/* /find-an-accountant/california/quickbooks-error-fixes/ — CA SERVICE CHILD (QB spoke).
+ * t-bofu. Shared body: partials/state-service-body.njk. GENUINELY CA-localized — both
  * technical QuickBooks errors AND California file-config errors. HONESTY: deferred to
  * FTB/CDTFA/EDD + CPA/EA; founder-name-zero; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
@@ -22,8 +22,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "California QuickBooks Error Fixes Â· TechBrot",
-  description: "QuickBooks error fixes for California businesses â€” technical error codes plus California file-config errors (flat-rate sales tax, payroll items, reconciliation). Certified ProAdvisor, fixed-fee, all 58 counties. Call (877) 751-5575.",
+  title: "California QuickBooks Error Fixes · TechBrot",
+  description: "QuickBooks error fixes for California businesses — technical error codes plus California file-config errors (flat-rate sales tax, payroll items, reconciliation). Certified ProAdvisor, fixed-fee, all 58 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -123,10 +123,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/quickbooks-error-fixes/",
     name: "California QuickBooks Error Fixes",
-    description: "QuickBooks error fixes for California businesses â€” technical error codes (H202, 6000-series, payroll) plus California config errors (flat-rate sales tax, payroll items, reconciliation), by a Certified ProAdvisor across all 58 counties. Independent firm; does not file California taxes.",
+    description: "QuickBooks error fixes for California businesses — technical error codes (H202, 6000-series, payroll) plus California config errors (flat-rate sales tax, payroll items, reconciliation), by a Certified ProAdvisor across all 58 counties. Independent firm; does not file California taxes.",
     serviceName: "California QuickBooks Error-Fix Services",
     serviceType: "QuickBooks error diagnosis and repair services",
-    serviceDesc: "Diagnosis and repair of QuickBooks errors for California businesses â€” technical error codes (H202, 6000-series, payroll PS038, install/update), file damage and data recovery, and California configuration errors (flat-rate district sales tax, payroll items, reconciliation that won't tie). Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Diagnosis and repair of QuickBooks errors for California businesses — technical error codes (H202, 6000-series, payroll PS038, install/update), file damage and data recovery, and California configuration errors (flat-rate district sales tax, payroll items, reconciliation that won't tie). Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
     audienceType: "California small and midsize businesses hitting QuickBooks errors or file-configuration problems",
     offerPrice: "400",

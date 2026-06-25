@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/illinois/quickbooks-cleanup/ â€” IL SERVICE CHILD (QB spoke).
- * t-bofu Â· partials/state-service-body.njk. IL-localized cleanup, re-angled from the umbrella money page.
+﻿/* /find-an-accountant/illinois/quickbooks-cleanup/ — IL SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. IL-localized cleanup, re-angled from the umbrella money page.
  * Facts band = the same three real IL stack topics, written from the CLEANUP angle (the IL mess we find
  * and fix): single-statewide-rate sales tax instead of the correct combined rate by jurisdiction; IL net
  * income never tracked cleanly for the PPRT; Chicago's lease/"cloud" tax never separated from sales tax.
@@ -26,8 +26,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Illinois QuickBooks Cleanup Â· TechBrot",
-  description: "QuickBooks cleanup for Illinois businesses by a Certified ProAdvisor â€” fix single-rate sales tax to the correct combined rate by jurisdiction (10.25% in Chicago), track Illinois net income for the PPRT, separate Chicago's 15% cloud tax, and reconcile to CPA-ready. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  title: "Illinois QuickBooks Cleanup · TechBrot",
+  description: "QuickBooks cleanup for Illinois businesses by a Certified ProAdvisor — fix single-rate sales tax to the correct combined rate by jurisdiction (10.25% in Chicago), track Illinois net income for the PPRT, separate Chicago's 15% cloud tax, and reconcile to CPA-ready. Fixed-fee, all 102 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -126,10 +126,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/quickbooks-cleanup/",
     name: "Illinois QuickBooks Cleanup",
-    description: "QuickBooks cleanup for Illinois businesses by a Certified ProAdvisor â€” fix single-rate sales tax to the correct combined rate by jurisdiction (10.25% in Chicago), track Illinois net income for the PPRT, separate Chicago's 15% cloud tax, and reconcile to CPA-ready. Independent firm; does not file Illinois taxes.",
+    description: "QuickBooks cleanup for Illinois businesses by a Certified ProAdvisor — fix single-rate sales tax to the correct combined rate by jurisdiction (10.25% in Chicago), track Illinois net income for the PPRT, separate Chicago's 15% cloud tax, and reconcile to CPA-ready. Independent firm; does not file Illinois taxes.",
     serviceName: "Illinois QuickBooks Cleanup & Catch-Up Services",
     serviceType: "QuickBooks cleanup and catch-up bookkeeping",
-    serviceDesc: "Cleanup and catch-up of QuickBooks files for Illinois businesses â€” correcting single-rate sales tax to the correct combined rate by jurisdiction (10.25% in Chicago), rebuilding the books so Illinois net income is tracked cleanly for the Personal Property Replacement Tax, separating Chicago's lease/cloud tax from sales tax, reconciling all accounts, and catching the file up to current. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Cleanup and catch-up of QuickBooks files for Illinois businesses — correcting single-rate sales tax to the correct combined rate by jurisdiction (10.25% in Chicago), rebuilding the books so Illinois net income is tracked cleanly for the Personal Property Replacement Tax, separating Chicago's lease/cloud tax from sales tax, reconciling all accounts, and catching the file up to current. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Illinois", sameAs: "https://en.wikipedia.org/wiki/Illinois" }],
     audienceType: "Illinois businesses with behind or broken QuickBooks files across all 102 counties",
     offerPrice: "1500",

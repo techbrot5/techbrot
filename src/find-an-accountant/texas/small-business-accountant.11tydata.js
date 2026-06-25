@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/texas/small-business-accountant/ â€” TX SERVICE CHILD (money).
- * t-bofu Â· partials/state-service-body.njk. TX-localized: margin tax / 8.25% sales / BPP. */
+﻿/* /find-an-accountant/texas/small-business-accountant/ — TX SERVICE CHILD (money).
+ * t-bofu · partials/state-service-body.njk. TX-localized: margin tax / 8.25% sales / BPP. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const TX_FACTS = [
   { fig: "No income tax", title: "No income tax &mdash; the margin tax instead", body: "Texas has no state personal or corporate income tax, but small businesses still face the <strong>Texas Franchise (&ldquo;margin&rdquo;) tax</strong> through the Comptroller, with no tax due below a revenue threshold. We track the position; your CPA confirms what&rsquo;s due." },
@@ -20,8 +20,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Texas Small Business Accountant Â· TechBrot",
-  description: "Accountant & bookkeeper for Texas small businesses â€” monthly bookkeeping, QuickBooks, payroll, 8.25% sales tax, the franchise (margin) tax, and BPP. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  title: "Texas Small Business Accountant · TechBrot",
+  description: "Accountant & bookkeeper for Texas small businesses — monthly bookkeeping, QuickBooks, payroll, 8.25% sales tax, the franchise (margin) tax, and BPP. Fixed-fee, all 254 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -119,7 +119,7 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/small-business-accountant/",
     name: "Texas Small Business Accountant",
-    description: "Accountant and bookkeeper for Texas small businesses â€” monthly bookkeeping, QuickBooks, payroll coordination, 8.25% sales tax, the franchise (margin) tax, and BPP rendition in your own QuickBooks file across all 254 counties. Independent firm; does not file Texas taxes.",
+    description: "Accountant and bookkeeper for Texas small businesses — monthly bookkeeping, QuickBooks, payroll coordination, 8.25% sales tax, the franchise (margin) tax, and BPP rendition in your own QuickBooks file across all 254 counties. Independent firm; does not file Texas taxes.",
     serviceName: "Texas Small Business Accounting & Bookkeeping",
     serviceType: "Small business accounting and bookkeeping services",
     serviceDesc: "Monthly bookkeeping, QuickBooks setup and cleanup, 8.25% sales-tax configuration, franchise (margin) tax tracking, business personal property record-keeping, and payroll coordination for Texas small businesses across all 254 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns.",

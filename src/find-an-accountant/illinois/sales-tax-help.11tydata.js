@@ -1,7 +1,7 @@
-﻿/* /find-an-accountant/illinois/sales-tax-help/ â€” IL SERVICE CHILD (tax cluster, non-triage).
- * t-bofu Â· partials/state-service-body.njk. IL sales & use tax (6.25% state -> 10.25% Chicago,
+﻿/* /find-an-accountant/illinois/sales-tax-help/ — IL SERVICE CHILD (tax cluster, non-triage).
+ * t-bofu · partials/state-service-body.njk. IL sales & use tax (6.25% state -> 10.25% Chicago,
  * destination-based) PLUS the Chicago Personal Property Lease Transaction Tax ("cloud tax", 15% Jan
- * 2026) on SaaS â€” a CITY tax IL doesn't levy. HONESTY: we configure & reconcile in QuickBooks; nexus,
+ * 2026) on SaaS — a CITY tax IL doesn't levy. HONESTY: we configure & reconcile in QuickBooks; nexus,
  * taxability, and FILING stay with IDOR / Chicago Dept of Finance + the CPA. We do not file or represent. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const IL_FACTS = [
@@ -24,8 +24,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Illinois Sales Tax & Chicago Cloud Tax Help in QuickBooks Â· TechBrot",
-  description: "Illinois sales tax set up right in QuickBooks â€” 6.25%â€“10.25% combined by jurisdiction, plus Chicago's 15% lease/cloud tax on SaaS, reconciled so the returns tie. We configure; your CPA files. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  title: "Illinois Sales Tax & Chicago Cloud Tax Help in QuickBooks · TechBrot",
+  description: "Illinois sales tax set up right in QuickBooks — 6.25%–10.25% combined by jurisdiction, plus Chicago's 15% lease/cloud tax on SaaS, reconciled so the returns tie. We configure; your CPA files. Fixed-fee, all 102 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -122,7 +122,7 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/sales-tax-help/",
     name: "Illinois Sales Tax & Chicago Cloud Tax Help in QuickBooks",
-    description: "Illinois sales tax configured and reconciled in QuickBooks â€” the combined rate by jurisdiction (10.25% in Chicago), plus Chicago's 15% lease/cloud tax on SaaS set up separately, so the returns tie. We configure; your CPA confirms taxability and files. Independent firm; does not file returns or make nexus determinations.",
+    description: "Illinois sales tax configured and reconciled in QuickBooks — the combined rate by jurisdiction (10.25% in Chicago), plus Chicago's 15% lease/cloud tax on SaaS set up separately, so the returns tie. We configure; your CPA confirms taxability and files. Independent firm; does not file returns or make nexus determinations.",
     serviceName: "Illinois Sales Tax & Chicago Lease-Tax Configuration in QuickBooks",
     serviceType: "Sales-tax and lease-tax configuration and reconciliation (bookkeeping)",
     serviceDesc: "Configuration of the Illinois combined sales-tax rate by jurisdiction in QuickBooks (6.25% state up to 10.25% in Chicago, destination-based), sales-tax item mapping, period reconciliation so the IDOR ST-1 ties, separate setup of the Chicago Personal Property Lease Transaction Tax ('cloud tax') on SaaS, marketplace-tax reconciliation, and cleanup of misconfigured setups for Illinois businesses across all 102 counties. Independent Certified QuickBooks ProAdvisor firm; does not determine taxability or nexus, file sales-tax or Chicago lease-tax returns, or represent clients before the IDOR or the City of Chicago.",

@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/florida/quickbooks-error-fixes/ â€” FL SERVICE CHILD (QB spoke).
- * t-bofu Â· partials/state-service-body.njk. FL-localized. HONESTY: FL DOR + CPA; not Intuit. */
+﻿/* /find-an-accountant/florida/quickbooks-error-fixes/ — FL SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. FL-localized. HONESTY: FL DOR + CPA; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
   { fig: "6% + surtax", title: "Sales-tax errors that won&rsquo;t reconcile", body: "The Florida error we fix most: a sales-tax liability that won&rsquo;t tie to the <strong>Department of Revenue</strong> return because the rate was flat instead of by county, single-item caps were ignored, or items were mapped wrong. We trace it, correct the setup, and reconcile the liability back." },
@@ -20,8 +20,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Florida QuickBooks Error Fixes Â· TechBrot",
-  description: "QuickBooks error fixes for Florida businesses by a Certified ProAdvisor â€” sales-tax liability that won't tie, out-of-balance balance sheet, duplicate entries, mishandled taxability of services. Root-cause fixes, all 67 counties. Call (877) 751-5575.",
+  title: "Florida QuickBooks Error Fixes · TechBrot",
+  description: "QuickBooks error fixes for Florida businesses by a Certified ProAdvisor — sales-tax liability that won't tie, out-of-balance balance sheet, duplicate entries, mishandled taxability of services. Root-cause fixes, all 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,10 +118,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/quickbooks-error-fixes/",
     name: "Florida QuickBooks Error Fixes",
-    description: "QuickBooks error fixes for Florida businesses by a Certified ProAdvisor â€” a sales-tax liability that won't tie, an out-of-balance balance sheet, duplicate entries, and a mishandled taxability of services, traced to root cause and fixed. Independent firm; does not file Florida taxes.",
+    description: "QuickBooks error fixes for Florida businesses by a Certified ProAdvisor — a sales-tax liability that won't tie, an out-of-balance balance sheet, duplicate entries, and a mishandled taxability of services, traced to root cause and fixed. Independent firm; does not file Florida taxes.",
     serviceName: "Florida QuickBooks Error Diagnosis & Fix Services",
     serviceType: "QuickBooks error diagnosis and correction",
-    serviceDesc: "Diagnosis and root-cause correction of QuickBooks errors for Florida businesses â€” a sales-tax liability that won't tie to the DOR return, an out-of-balance balance sheet, duplicate and orphaned entries, and a service taxability handled wrong, fixed in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Diagnosis and root-cause correction of QuickBooks errors for Florida businesses — a sales-tax liability that won't tie to the DOR return, an out-of-balance balance sheet, duplicate and orphaned entries, and a service taxability handled wrong, fixed in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
     audienceType: "Florida businesses with broken or out-of-balance QuickBooks files across all 67 counties",
     offerPrice: "400",

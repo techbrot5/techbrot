@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/florida/quickbooks-setup/ â€” FL SERVICE CHILD (QB spoke).
- * t-bofu Â· partials/state-service-body.njk. FL-localized (6%+county-surtax / service-taxability / TPP).
+﻿/* /find-an-accountant/florida/quickbooks-setup/ — FL SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. FL-localized (6%+county-surtax / service-taxability / TPP).
  * HONESTY: deferred to FL Dept of Revenue + CPA; founder-name-zero; not Intuit. Links to BUILT pages. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
@@ -21,8 +21,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Florida QuickBooks Setup Â· TechBrot",
-  description: "QuickBooks setup for Florida businesses by a Certified ProAdvisor â€” FL chart of accounts, 6%+surtax sales tax by county, service taxability, fixed-asset schedule for TPP, payroll. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  title: "Florida QuickBooks Setup · TechBrot",
+  description: "QuickBooks setup for Florida businesses by a Certified ProAdvisor — FL chart of accounts, 6%+surtax sales tax by county, service taxability, fixed-asset schedule for TPP, payroll. Fixed-fee, all 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -120,10 +120,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/quickbooks-setup/",
     name: "Florida QuickBooks Setup",
-    description: "QuickBooks setup for Florida businesses by a Certified ProAdvisor â€” a FL chart of accounts, 6%+surtax sales-tax items by county, the taxability of services, a fixed-asset schedule for TPP, and Florida payroll. Independent firm; does not file Florida taxes.",
+    description: "QuickBooks setup for Florida businesses by a Certified ProAdvisor — a FL chart of accounts, 6%+surtax sales-tax items by county, the taxability of services, a fixed-asset schedule for TPP, and Florida payroll. Independent firm; does not file Florida taxes.",
     serviceName: "Florida QuickBooks Setup Services",
     serviceType: "QuickBooks setup and implementation",
-    serviceDesc: "QuickBooks Online or Desktop setup for Florida businesses â€” a Florida-correct chart of accounts, 6%+surtax sales-tax items by county, taxability of services configuration, a fixed-asset schedule for the tangible personal property return, Florida payroll, opening balances, and integrations. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "QuickBooks Online or Desktop setup for Florida businesses — a Florida-correct chart of accounts, 6%+surtax sales-tax items by county, taxability of services configuration, a fixed-asset schedule for the tangible personal property return, Florida payroll, opening balances, and integrations. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
     audienceType: "Florida small and midsize businesses across all 67 counties setting up or restructuring QuickBooks",
     offerPrice: "750",

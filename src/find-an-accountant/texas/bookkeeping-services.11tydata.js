@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/texas/bookkeeping-services/ â€” TX SERVICE CHILD (money).
- * t-bofu Â· partials/state-service-body.njk. TX-localized: margin tax / 8.25% sales / BPP. */
+﻿/* /find-an-accountant/texas/bookkeeping-services/ — TX SERVICE CHILD (money).
+ * t-bofu · partials/state-service-body.njk. TX-localized: margin tax / 8.25% sales / BPP. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const TX_FACTS = [
   { fig: "8.25%", title: "Sales tax baked into the books", body: "Texas sales &amp; use tax is 6.25% state plus up to 2% local (8.25% in most metros), via the <strong>Texas Comptroller</strong>. Bookkeeping that records it correctly by location is the difference between a return that ties and one that doesn&rsquo;t." },
@@ -20,8 +20,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Texas Bookkeeping Services Â· TechBrot",
-  description: "Bookkeeping services for Texas businesses â€” reconciliation, clean categorization, 8.25% sales tax, fixed-asset records for BPP, CPA-ready statements. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  title: "Texas Bookkeeping Services · TechBrot",
+  description: "Bookkeeping services for Texas businesses — reconciliation, clean categorization, 8.25% sales tax, fixed-asset records for BPP, CPA-ready statements. Fixed-fee, all 254 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,7 +118,7 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/bookkeeping-services/",
     name: "Texas Bookkeeping Services",
-    description: "Bookkeeping services for Texas businesses â€” reconciliation, clean categorization, 8.25% sales tax by location, fixed-asset records for the BPP rendition, and CPA-ready statements in your own QuickBooks file across all 254 counties. Independent firm; does not file Texas taxes.",
+    description: "Bookkeeping services for Texas businesses — reconciliation, clean categorization, 8.25% sales tax by location, fixed-asset records for the BPP rendition, and CPA-ready statements in your own QuickBooks file across all 254 counties. Independent firm; does not file Texas taxes.",
     serviceName: "Texas Bookkeeping Services",
     serviceType: "Bookkeeping services",
     serviceDesc: "Reconciliation, categorization, 8.25% sales-tax recording by location, fixed-asset schedule maintenance for the business personal property rendition, cleanup, and CPA-ready monthly statements for Texas businesses across all 254 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns.",

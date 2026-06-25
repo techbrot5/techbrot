@@ -1,4 +1,4 @@
-﻿/* /find-an-accountant/california/quickbooks-cleanup/ â€” CA SERVICE CHILD (QB spoke).
+﻿/* /find-an-accountant/california/quickbooks-cleanup/ — CA SERVICE CHILD (QB spoke).
  * t-bofu. Shared body: partials/state-service-body.njk. GENUINELY CA-localized cleanup.
  * HONESTY: deferred to FTB/CDTFA/EDD + CPA/EA; founder-name-zero; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
@@ -21,8 +21,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "California QuickBooks Cleanup Â· TechBrot",
-  description: "QuickBooks cleanup for California businesses â€” fix flat-rate district sales tax, 1099/W-2 misclassification, unreconciled accounts & ASC 606 errors, to a CPA-ready standard. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  title: "California QuickBooks Cleanup · TechBrot",
+  description: "QuickBooks cleanup for California businesses — fix flat-rate district sales tax, 1099/W-2 misclassification, unreconciled accounts & ASC 606 errors, to a CPA-ready standard. Fixed-fee, all 58 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -122,10 +122,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/quickbooks-cleanup/",
     name: "California QuickBooks Cleanup",
-    description: "QuickBooks cleanup for California businesses â€” fix flat-rate district sales tax, 1099/W-2 misclassification, unreconciled accounts, and ASC 606 errors to a CPA-ready standard, across all 58 counties. Independent firm; does not file California taxes.",
+    description: "QuickBooks cleanup for California businesses — fix flat-rate district sales tax, 1099/W-2 misclassification, unreconciled accounts, and ASC 606 errors to a CPA-ready standard, across all 58 counties. Independent firm; does not file California taxes.",
     serviceName: "California QuickBooks Cleanup Services",
     serviceType: "QuickBooks cleanup and file remediation",
-    serviceDesc: "Diagnosis and cleanup of California QuickBooks files â€” rebuilding CDTFA district sales tax to the correct rate by location, reclassifying 1099/W-2 for AB5, reconciling accounts, clearing Undeposited Funds and Opening Balance Equity, and correcting ASC 606 revenue, to a CPA-ready standard. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Diagnosis and cleanup of California QuickBooks files — rebuilding CDTFA district sales tax to the correct rate by location, reclassifying 1099/W-2 for AB5, reconciling accounts, clearing Undeposited Funds and Opening Balance Equity, and correcting ASC 606 revenue, to a CPA-ready standard. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
     audienceType: "California small and midsize businesses with QuickBooks files that have fallen behind or were set up incorrectly",
     offerPrice: "1500",

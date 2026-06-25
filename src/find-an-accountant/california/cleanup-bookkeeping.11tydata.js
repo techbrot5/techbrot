@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/california/cleanup-bookkeeping/ â€” CA SERVICE CHILD (bookkeeping spoke).
- * t-bofu. Shared body: partials/state-service-body.njk. v4 bookkeeping spoke â€” the books CATCH-UP
+﻿/* /find-an-accountant/california/cleanup-bookkeeping/ — CA SERVICE CHILD (bookkeeping spoke).
+ * t-bofu. Shared body: partials/state-service-body.njk. v4 bookkeeping spoke — the books CATCH-UP
  * & cleanup (months/years behind -> CPA-ready), distinct from quickbooks-cleanup (file/technical).
  * GENUINELY CA. HONESTY: deferred to FTB/CDTFA/EDD + CPA/EA; founder-name-zero; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
@@ -22,8 +22,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "California Bookkeeping Cleanup & Catch-Up Â· TechBrot",
-  description: "Bookkeeping cleanup & catch-up for California businesses â€” months or years behind brought current and CPA-ready, with CDTFA district sales tax and the $800 franchise tax fixed. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  title: "California Bookkeeping Cleanup & Catch-Up · TechBrot",
+  description: "Bookkeeping cleanup & catch-up for California businesses — months or years behind brought current and CPA-ready, with CDTFA district sales tax and the $800 franchise tax fixed. Fixed-fee, all 58 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -123,10 +123,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/cleanup-bookkeeping/",
     name: "California Bookkeeping Cleanup & Catch-Up",
-    description: "Bookkeeping cleanup and catch-up for California businesses â€” months or years behind brought current and CPA-ready, with CDTFA district sales tax, the $800 franchise tax, and AB5 classification fixed across back periods. Independent firm; does not file California taxes.",
+    description: "Bookkeeping cleanup and catch-up for California businesses — months or years behind brought current and CPA-ready, with CDTFA district sales tax, the $800 franchise tax, and AB5 classification fixed across back periods. Independent firm; does not file California taxes.",
     serviceName: "California Bookkeeping Cleanup & Catch-Up Services",
     serviceType: "Cleanup and catch-up bookkeeping services",
-    serviceDesc: "Cleanup and catch-up bookkeeping for California businesses â€” reconciling and categorizing every back period, rebuilding CDTFA district sales tax by location, accruing the $800 franchise tax for each missed year, cleaning AB5 classification, and clearing classic messes, to a CPA-ready standard. Independent Certified QuickBooks ProAdvisor firm; does not file California returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Cleanup and catch-up bookkeeping for California businesses — reconciling and categorizing every back period, rebuilding CDTFA district sales tax by location, accruing the $800 franchise tax for each missed year, cleaning AB5 classification, and clearing classic messes, to a CPA-ready standard. Independent Certified QuickBooks ProAdvisor firm; does not file California returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
     audienceType: "California small and midsize businesses months or years behind on bookkeeping",
     offerPrice: "1500",

@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/texas/cleanup-bookkeeping/ â€” TX SERVICE CHILD (bkg spoke).
- * t-bofu Â· partials/state-service-body.njk. Distinct intent from quickbooks-cleanup: this is the
+﻿/* /find-an-accountant/texas/cleanup-bookkeeping/ — TX SERVICE CHILD (bkg spoke).
+ * t-bofu · partials/state-service-body.njk. Distinct intent from quickbooks-cleanup: this is the
  * BOOKKEEPING BACKLOG catch-up (months/years behind), not QB-file mechanics. TX-localized.
  * HONESTY: Comptroller + CPA; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
@@ -22,8 +22,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Texas Cleanup & Catch-Up Bookkeeping Â· TechBrot",
-  description: "Catch-up bookkeeping for Texas businesses behind by months or years â€” reconstruct the books, rebuild sales-tax and margin-tax figures, get CPA-ready. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  title: "Texas Cleanup & Catch-Up Bookkeeping · TechBrot",
+  description: "Catch-up bookkeeping for Texas businesses behind by months or years — reconstruct the books, rebuild sales-tax and margin-tax figures, get CPA-ready. Fixed-fee, all 254 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -120,10 +120,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/cleanup-bookkeeping/",
     name: "Texas Cleanup & Catch-Up Bookkeeping",
-    description: "Catch-up bookkeeping for Texas businesses behind by months or years â€” reconstruct the backlog, rebuild the 8.25% sales-tax and margin-tax figures and the fixed-asset schedule, reconcile to CPA-ready. Independent firm; does not file Texas taxes.",
+    description: "Catch-up bookkeeping for Texas businesses behind by months or years — reconstruct the backlog, rebuild the 8.25% sales-tax and margin-tax figures and the fixed-asset schedule, reconcile to CPA-ready. Independent firm; does not file Texas taxes.",
     serviceName: "Texas Cleanup & Catch-Up Bookkeeping",
     serviceType: "Catch-up and cleanup bookkeeping",
-    serviceDesc: "Reconstruction of a bookkeeping backlog for Texas businesses behind by months or years â€” categorizing untouched transactions, rebuilding the 8.25% sales-tax liability by location and the figures behind the franchise (margin) tax, reconstructing the fixed-asset schedule for the business personal property rendition, and reconciling all accounts to current and CPA-ready. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Reconstruction of a bookkeeping backlog for Texas businesses behind by months or years — categorizing untouched transactions, rebuilding the 8.25% sales-tax liability by location and the figures behind the franchise (margin) tax, reconstructing the fixed-asset schedule for the business personal property rendition, and reconciling all accounts to current and CPA-ready. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
     audienceType: "Texas businesses behind on bookkeeping across all 254 counties",
     offerPrice: "2000",

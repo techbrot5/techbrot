@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/florida/quickbooks-cleanup/ â€” FL SERVICE CHILD (QB spoke).
- * t-bofu Â· partials/state-service-body.njk. FL-localized cleanup. HONESTY: FL DOR + CPA; not Intuit. */
+﻿/* /find-an-accountant/florida/quickbooks-cleanup/ — FL SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. FL-localized cleanup. HONESTY: FL DOR + CPA; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
   { fig: "6% + surtax", title: "The single-rate sales-tax mistake", body: "The most common Florida QuickBooks mess: sales tax set to one statewide rate instead of the correct 6% + the county surtax <strong>by location</strong>, with single-item caps ignored. It over- or under-collects and the Department of Revenue return won&rsquo;t tie. We correct it and reconcile prior periods back." },
@@ -20,8 +20,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Florida QuickBooks Cleanup Â· TechBrot",
-  description: "QuickBooks cleanup for Florida businesses by a Certified ProAdvisor â€” fix single-rate sales tax, add the missed taxability of services, rebuild the TPP fixed-asset schedule, reconcile to CPA-ready. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  title: "Florida QuickBooks Cleanup · TechBrot",
+  description: "QuickBooks cleanup for Florida businesses by a Certified ProAdvisor — fix single-rate sales tax, add the missed taxability of services, rebuild the TPP fixed-asset schedule, reconcile to CPA-ready. Fixed-fee, all 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -119,10 +119,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/quickbooks-cleanup/",
     name: "Florida QuickBooks Cleanup",
-    description: "QuickBooks cleanup for Florida businesses by a Certified ProAdvisor â€” fix single-rate sales tax, add the missed taxability of services, rebuild the TPP fixed-asset schedule, and reconcile to CPA-ready. Independent firm; does not file Florida taxes.",
+    description: "QuickBooks cleanup for Florida businesses by a Certified ProAdvisor — fix single-rate sales tax, add the missed taxability of services, rebuild the TPP fixed-asset schedule, and reconcile to CPA-ready. Independent firm; does not file Florida taxes.",
     serviceName: "Florida QuickBooks Cleanup & Catch-Up Services",
     serviceType: "QuickBooks cleanup and catch-up bookkeeping",
-    serviceDesc: "Cleanup and catch-up of QuickBooks files for Florida businesses â€” correcting single-rate sales tax to 6% + the county surtax by location, adding the taxability of services, rebuilding the fixed-asset schedule for the tangible personal property return, reconciling all accounts, and catching the file up to current. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Cleanup and catch-up of QuickBooks files for Florida businesses — correcting single-rate sales tax to 6% + the county surtax by location, adding the taxability of services, rebuilding the fixed-asset schedule for the tangible personal property return, reconciling all accounts, and catching the file up to current. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
     audienceType: "Florida businesses with behind or broken QuickBooks files across all 67 counties",
     offerPrice: "1500",

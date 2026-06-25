@@ -1,8 +1,8 @@
-﻿/* /find-an-accountant/california/ab5-worker-classification/ â€” CA SERVICE CHILD (tax cluster).
+﻿/* /find-an-accountant/california/ab5-worker-classification/ — CA SERVICE CHILD (tax cluster).
  * t-bofu. Shared body: partials/state-service-body.njk. The most CA-unique page in the cluster:
  * AB5 / the ABC test for worker classification. GENUINELY CA. HONESTY HARD-GATE: we keep the
  * BOOKS so W-2/1099 is separated and the exposure is visible; we do NOT make the legal
- * classification determination, give legal advice, or represent in EDD audits â€” that is the
+ * classification determination, give legal advice, or represent in EDD audits — that is the
  * client's CPA, employment counsel, and the EDD. Deferred accordingly; founder-name-zero; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const AB5_FACTS = [
@@ -24,8 +24,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "California AB5 Worker Classification (Bookkeeping) Â· TechBrot",
-  description: "AB5 worker classification for California books â€” separate W-2 from 1099 cleanly, surface misclassification exposure, keep records EDD-ready. Certified ProAdvisor; classification & audits stay with your CPA/counsel. Call (877) 751-5575.",
+  title: "California AB5 Worker Classification (Bookkeeping) · TechBrot",
+  description: "AB5 worker classification for California books — separate W-2 from 1099 cleanly, surface misclassification exposure, keep records EDD-ready. Certified ProAdvisor; classification & audits stay with your CPA/counsel. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -124,10 +124,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/ab5-worker-classification/",
     name: "California AB5 Worker Classification (Bookkeeping)",
-    description: "AB5 worker classification support for California books â€” W-2 and 1099 separated cleanly, misclassification exposure surfaced and quantified, EDD-ready records, by a Certified ProAdvisor. The legal determination, EDD audits, and disputes stay with your CPA or employment counsel. Educational only.",
+    description: "AB5 worker classification support for California books — W-2 and 1099 separated cleanly, misclassification exposure surfaced and quantified, EDD-ready records, by a Certified ProAdvisor. The legal determination, EDD audits, and disputes stay with your CPA or employment counsel. Educational only.",
     serviceName: "California AB5 Worker-Classification Bookkeeping Support",
     serviceType: "Worker-classification bookkeeping and records support",
-    serviceDesc: "Bookkeeping support for California AB5 / ABC-test worker classification â€” separating W-2 wages from 1099 contractor pay, surfacing and quantifying misclassification exposure, assembling EDD-ready records, and setting up California payroll on reclassification. Educational only; not legal or tax advice. Independent Certified QuickBooks ProAdvisor firm; does not make classification determinations, give legal advice, or represent clients before the EDD â€” coordinates with the client's CPA, EA, or employment attorney.",
+    serviceDesc: "Bookkeeping support for California AB5 / ABC-test worker classification — separating W-2 wages from 1099 contractor pay, surfacing and quantifying misclassification exposure, assembling EDD-ready records, and setting up California payroll on reclassification. Educational only; not legal or tax advice. Independent Certified QuickBooks ProAdvisor firm; does not make classification determinations, give legal advice, or represent clients before the EDD — coordinates with the client's CPA, EA, or employment attorney.",
     areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
     audienceType: "California businesses with contractor workforces needing AB5-aware bookkeeping and clean W-2/1099 records",
     offerPrice: "400",

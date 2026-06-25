@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/florida/quickbooks-reconciliation/ â€” FL SERVICE CHILD (QB spoke).
- * t-bofu Â· partials/state-service-body.njk. FL-localized. HONESTY: FL DOR + CPA; not Intuit. */
+﻿/* /find-an-accountant/florida/quickbooks-reconciliation/ — FL SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. FL-localized. HONESTY: FL DOR + CPA; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
   { fig: "6% + surtax", title: "Sales-tax liability reconciled to the return", body: "Reconciliation isn&rsquo;t just bank accounts &mdash; the 6% + county surtax liability has to reconcile to what the <strong>Florida Department of Revenue</strong> return reports, by county. We tie the liability account to the filing so nothing is over- or under-remitted and the collection allowance is captured." },
@@ -20,8 +20,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Florida QuickBooks Reconciliation Â· TechBrot",
-  description: "QuickBooks reconciliation for Florida businesses by a Certified ProAdvisor â€” every account reconciled monthly, the 6%+surtax sales-tax liability tied to the DOR return by county, service-taxability reconciled. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  title: "Florida QuickBooks Reconciliation · TechBrot",
+  description: "QuickBooks reconciliation for Florida businesses by a Certified ProAdvisor — every account reconciled monthly, the 6%+surtax sales-tax liability tied to the DOR return by county, service-taxability reconciled. Fixed-fee, all 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,10 +118,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/quickbooks-reconciliation/",
     name: "Florida QuickBooks Reconciliation",
-    description: "QuickBooks reconciliation for Florida businesses by a Certified ProAdvisor â€” every account reconciled monthly and the 6%+surtax sales-tax liability tied to the DOR return so the corporate-tax figures hold. Independent firm; does not file Florida taxes.",
+    description: "QuickBooks reconciliation for Florida businesses by a Certified ProAdvisor — every account reconciled monthly and the 6%+surtax sales-tax liability tied to the DOR return so the corporate-tax figures hold. Independent firm; does not file Florida taxes.",
     serviceName: "Florida QuickBooks Reconciliation Services",
     serviceType: "Account reconciliation (bookkeeping)",
-    serviceDesc: "Monthly reconciliation of bank, credit-card, loan, and clearing accounts and the 6% + county surtax sales-tax liability for Florida businesses, tying the liability to the Florida Department of Revenue return by county, rating taxable services correctly, and verifying the figures behind the 5.5% corporate tax. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Monthly reconciliation of bank, credit-card, loan, and clearing accounts and the 6% + county surtax sales-tax liability for Florida businesses, tying the liability to the Florida Department of Revenue return by county, rating taxable services correctly, and verifying the figures behind the 5.5% corporate tax. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
     audienceType: "Florida businesses needing monthly account reconciliation across all 67 counties",
     offerPrice: "400",

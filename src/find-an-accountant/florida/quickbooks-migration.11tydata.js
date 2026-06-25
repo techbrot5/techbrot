@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/florida/quickbooks-migration/ â€” FL SERVICE CHILD (QB spoke).
- * t-bofu Â· partials/state-service-body.njk. FL-localized. HONESTY: FL DOR + CPA; not Intuit. */
+﻿/* /find-an-accountant/florida/quickbooks-migration/ — FL SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. FL-localized. HONESTY: FL DOR + CPA; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
   { fig: "6% + surtax", title: "Sales tax re-mapped to Florida, by county", body: "A migration is the moment to set sales tax up <strong>right</strong> &mdash; 6% + the county surtax applied by location with single-item caps, not carried over as a flat rate from the old system. We re-map it as part of the move." },
@@ -20,8 +20,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Florida QuickBooks Migration Â· TechBrot",
-  description: "QuickBooks migration for Florida businesses by a Certified ProAdvisor â€” Desktop to Online or another platform, opening balances and history intact, sales tax re-mapped by county, fixed assets carried over. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  title: "Florida QuickBooks Migration · TechBrot",
+  description: "QuickBooks migration for Florida businesses by a Certified ProAdvisor — Desktop to Online or another platform, opening balances and history intact, sales tax re-mapped by county, fixed assets carried over. Fixed-fee, all 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,10 +118,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/quickbooks-migration/",
     name: "Florida QuickBooks Migration",
-    description: "QuickBooks migration for Florida businesses by a Certified ProAdvisor â€” Desktop to Online or another platform with history intact, sales tax re-mapped to 6%+surtax by county, and the fixed-asset schedule carried over for TPP. Independent firm; does not file Florida taxes.",
+    description: "QuickBooks migration for Florida businesses by a Certified ProAdvisor — Desktop to Online or another platform with history intact, sales tax re-mapped to 6%+surtax by county, and the fixed-asset schedule carried over for TPP. Independent firm; does not file Florida taxes.",
     serviceName: "Florida QuickBooks Migration Services",
     serviceType: "QuickBooks data migration and conversion",
-    serviceDesc: "Migration of QuickBooks files from Desktop to Online or from another platform for Florida businesses â€” opening balances and history intact, 6% + county surtax sales tax re-mapped by location, the taxability of services configured, and the fixed-asset schedule carried over for the tangible personal property return, with data verified before go-live. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Migration of QuickBooks files from Desktop to Online or from another platform for Florida businesses — opening balances and history intact, 6% + county surtax sales tax re-mapped by location, the taxability of services configured, and the fixed-asset schedule carried over for the tangible personal property return, with data verified before go-live. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Florida", sameAs: "https://en.wikipedia.org/wiki/Florida" }],
     audienceType: "Florida businesses migrating to or between QuickBooks editions across all 67 counties",
     offerPrice: "2500",

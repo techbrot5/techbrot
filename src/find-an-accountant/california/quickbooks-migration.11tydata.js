@@ -1,4 +1,4 @@
-﻿/* /find-an-accountant/california/quickbooks-migration/ â€” CA SERVICE CHILD (QB spoke).
+﻿/* /find-an-accountant/california/quickbooks-migration/ — CA SERVICE CHILD (QB spoke).
  * t-bofu. Shared body: partials/state-service-body.njk. GENUINELY CA-localized migration.
  * HONESTY: deferred to FTB/CDTFA/EDD + CPA/EA; founder-name-zero; not Intuit. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
@@ -21,8 +21,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "California QuickBooks Migration Â· TechBrot",
-  description: "QuickBooks migration for California businesses â€” Desktop to Online or another platform to QuickBooks, with district sales tax, AB5 tracking & balances carried over cleanly. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  title: "California QuickBooks Migration · TechBrot",
+  description: "QuickBooks migration for California businesses — Desktop to Online or another platform to QuickBooks, with district sales tax, AB5 tracking & balances carried over cleanly. Fixed-fee, all 58 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -122,10 +122,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/quickbooks-migration/",
     name: "California QuickBooks Migration",
-    description: "QuickBooks migration for California businesses â€” Desktop to Online or another platform onto QuickBooks, with balances reconciled, district sales tax rebuilt by location, and AB5 tracking carried across, all 58 counties. Independent firm; does not file California taxes.",
+    description: "QuickBooks migration for California businesses — Desktop to Online or another platform onto QuickBooks, with balances reconciled, district sales tax rebuilt by location, and AB5 tracking carried across, all 58 counties. Independent firm; does not file California taxes.",
     serviceName: "California QuickBooks Migration Services",
     serviceType: "QuickBooks migration and conversion services",
-    serviceDesc: "QuickBooks Desktop-to-Online and other-platform-to-QuickBooks migration for California businesses â€” balances reconciled to source, CDTFA district sales tax rebuilt by location, AB5 tracking and the $800 accrual carried across, and integrations reconnected. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "QuickBooks Desktop-to-Online and other-platform-to-QuickBooks migration for California businesses — balances reconciled to source, CDTFA district sales tax rebuilt by location, AB5 tracking and the $800 accrual carried across, and integrations reconnected. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
     audienceType: "California small and midsize businesses migrating QuickBooks Desktop to Online or moving onto QuickBooks from another platform",
     offerPrice: "2500",

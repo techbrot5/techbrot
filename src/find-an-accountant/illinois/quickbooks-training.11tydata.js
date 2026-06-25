@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/illinois/quickbooks-training/ â€” IL SERVICE CHILD (QB spoke).
- * t-bofu Â· partials/state-service-body.njk. IL-localized, TRAINING angle. Facts band = the real IL
+﻿/* /find-an-accountant/illinois/quickbooks-training/ — IL SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. IL-localized, TRAINING angle. Facts band = the real IL
  * stack re-angled to what we teach an in-house bookkeeper: recording combined sales tax by jurisdiction,
  * keeping IL net income clean for the PPRT, and tracking Chicago's 15% lease/"cloud" tax separately.
  * HONESTY: deferred to the Illinois Dept of Revenue (IDOR) + Chicago Dept of Finance + CPA/EA;
@@ -24,8 +24,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Illinois QuickBooks Training Â· TechBrot",
-  description: "QuickBooks training for Illinois business teams by a Certified ProAdvisor â€” invoice the combined sales tax by jurisdiction (up to 10.25% in Chicago), keep IL net income clean for the PPRT, track Chicago's 15% cloud tax separately. Live, role-specific, all 102 counties. Call (877) 751-5575.",
+  title: "Illinois QuickBooks Training · TechBrot",
+  description: "QuickBooks training for Illinois business teams by a Certified ProAdvisor — invoice the combined sales tax by jurisdiction (up to 10.25% in Chicago), keep IL net income clean for the PPRT, track Chicago's 15% cloud tax separately. Live, role-specific, all 102 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -123,10 +123,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/quickbooks-training/",
     name: "Illinois QuickBooks Training",
-    description: "QuickBooks training for Illinois business teams by a Certified ProAdvisor â€” live, role-specific sessions on invoicing the combined sales tax by jurisdiction (up to 10.25% in Chicago), keeping Illinois net income clean for the PPRT, and tracking Chicago's 15% lease/cloud tax separately. Independent firm; does not file Illinois taxes.",
+    description: "QuickBooks training for Illinois business teams by a Certified ProAdvisor — live, role-specific sessions on invoicing the combined sales tax by jurisdiction (up to 10.25% in Chicago), keeping Illinois net income clean for the PPRT, and tracking Chicago's 15% lease/cloud tax separately. Independent firm; does not file Illinois taxes.",
     serviceName: "Illinois QuickBooks Training Services",
     serviceType: "QuickBooks training and staff enablement",
-    serviceDesc: "Live, role-specific QuickBooks training for Illinois business teams â€” invoicing the combined sales tax by jurisdiction (up to 10.25% in Chicago), keeping Illinois net income clean for the Personal Property Replacement Tax, tracking Chicago's 15% lease/cloud tax separately from sales tax, and reporting, in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Live, role-specific QuickBooks training for Illinois business teams — invoicing the combined sales tax by jurisdiction (up to 10.25% in Chicago), keeping Illinois net income clean for the Personal Property Replacement Tax, tracking Chicago's 15% lease/cloud tax separately from sales tax, and reporting, in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Illinois", sameAs: "https://en.wikipedia.org/wiki/Illinois" }],
     audienceType: "Illinois business owners and staff learning QuickBooks across all 102 counties",
     offerPrice: "400",

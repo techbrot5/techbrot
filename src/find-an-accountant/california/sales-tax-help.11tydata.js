@@ -1,4 +1,4 @@
-﻿/* /find-an-accountant/california/sales-tax-help/ â€” CA SERVICE CHILD (tax cluster).
+﻿/* /find-an-accountant/california/sales-tax-help/ — CA SERVICE CHILD (tax cluster).
  * t-bofu. Shared body: partials/state-service-body.njk. v4 CA tax cluster. The genuinely
  * CA-distinct sales-tax page: CDTFA district sales tax (highest base in the U.S., sourced by
  * location), economic nexus ($500k, no transaction count), seller's permits. HONESTY: we keep
@@ -25,8 +25,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "California Sales Tax Help (CDTFA) Â· TechBrot",
-  description: "California sales tax help â€” CDTFA district rates by location, economic nexus ($500K), seller's permits, sales-tax-ready books by a Certified ProAdvisor. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  title: "California Sales Tax Help (CDTFA) · TechBrot",
+  description: "California sales tax help — CDTFA district rates by location, economic nexus ($500K), seller's permits, sales-tax-ready books by a Certified ProAdvisor. Fixed-fee, all 58 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -126,10 +126,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/sales-tax-help/",
     name: "California Sales Tax Help (CDTFA)",
-    description: "California sales-tax help â€” CDTFA district rates by location, economic nexus ($500K), seller's permits, and sales-tax-ready books by a Certified ProAdvisor across all 58 counties. Independent firm; does not file California sales tax or represent before the CDTFA.",
+    description: "California sales-tax help — CDTFA district rates by location, economic nexus ($500K), seller's permits, and sales-tax-ready books by a Certified ProAdvisor across all 58 counties. Independent firm; does not file California sales tax or represent before the CDTFA.",
     serviceName: "California Sales Tax (CDTFA) Bookkeeping Support",
     serviceType: "Sales-tax bookkeeping and CDTFA-readiness services",
-    serviceDesc: "Sales-tax-ready bookkeeping for California businesses â€” CDTFA district rates configured by location, economic-nexus tracking against the $500,000 threshold, seller's-permit and exemption detail, marketplace-vs-direct separation, and liability reconciliation. Independent Certified QuickBooks ProAdvisor firm; does not file CDTFA returns, determine nexus, or represent clients before the CDTFA â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Sales-tax-ready bookkeeping for California businesses — CDTFA district rates configured by location, economic-nexus tracking against the $500,000 threshold, seller's-permit and exemption detail, marketplace-vs-direct separation, and liability reconciliation. Independent Certified QuickBooks ProAdvisor firm; does not file CDTFA returns, determine nexus, or represent clients before the CDTFA — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
     audienceType: "California small and midsize businesses, multi-channel and remote sellers needing CDTFA-ready sales-tax bookkeeping",
     offerPrice: "400",

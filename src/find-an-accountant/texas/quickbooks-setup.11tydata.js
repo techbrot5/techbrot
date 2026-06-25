@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/texas/quickbooks-setup/ â€” TX SERVICE CHILD (QB spoke).
- * t-bofu Â· partials/state-service-body.njk. TX-localized (margin tax / 8.25% by-location / BPP).
+﻿/* /find-an-accountant/texas/quickbooks-setup/ — TX SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. TX-localized (margin tax / 8.25% by-location / BPP).
  * HONESTY: deferred to Texas Comptroller + CPA; founder-name-zero; not Intuit. Links to BUILT pages. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const TX_FACTS = [
@@ -21,8 +21,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Texas QuickBooks Setup Â· TechBrot",
-  description: "QuickBooks setup for Texas businesses by a Certified ProAdvisor â€” TX chart of accounts, 8.25% sales tax by location, margin-tax-ready books, fixed-asset schedule for BPP, payroll. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  title: "Texas QuickBooks Setup · TechBrot",
+  description: "QuickBooks setup for Texas businesses by a Certified ProAdvisor — TX chart of accounts, 8.25% sales tax by location, margin-tax-ready books, fixed-asset schedule for BPP, payroll. Fixed-fee, all 254 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -120,10 +120,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/quickbooks-setup/",
     name: "Texas QuickBooks Setup",
-    description: "QuickBooks setup for Texas businesses by a Certified ProAdvisor â€” a TX chart of accounts, 8.25% sales-tax items by location, margin-tax-ready tracking, a fixed-asset schedule for BPP, and Texas payroll. Independent firm; does not file Texas taxes.",
+    description: "QuickBooks setup for Texas businesses by a Certified ProAdvisor — a TX chart of accounts, 8.25% sales-tax items by location, margin-tax-ready tracking, a fixed-asset schedule for BPP, and Texas payroll. Independent firm; does not file Texas taxes.",
     serviceName: "Texas QuickBooks Setup Services",
     serviceType: "QuickBooks setup and implementation",
-    serviceDesc: "QuickBooks Online or Desktop setup for Texas businesses â€” a Texas-correct chart of accounts, 8.25% sales-tax items by location, revenue/COGS/compensation tracking for the franchise (margin) tax, a fixed-asset schedule for the business personal property rendition, Texas payroll, opening balances, and integrations. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "QuickBooks Online or Desktop setup for Texas businesses — a Texas-correct chart of accounts, 8.25% sales-tax items by location, revenue/COGS/compensation tracking for the franchise (margin) tax, a fixed-asset schedule for the business personal property rendition, Texas payroll, opening balances, and integrations. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Texas", sameAs: "https://en.wikipedia.org/wiki/Texas" }],
     audienceType: "Texas small and midsize businesses across all 254 counties setting up or restructuring QuickBooks",
     offerPrice: "750",

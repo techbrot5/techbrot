@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/florida/virtual-bookkeeper/ â€” FL SERVICE CHILD (money).
- * t-bofu Â· partials/state-service-body.njk. FL-localized: 5.5% corp / 6%+surtax / service-taxability. */
+﻿/* /find-an-accountant/florida/virtual-bookkeeper/ — FL SERVICE CHILD (money).
+ * t-bofu · partials/state-service-body.njk. FL-localized: 5.5% corp / 6%+surtax / service-taxability. */
 const { stripTags, buildCityGraph } = require("../../../_build/lib/city-child.js");
 const FL_FACTS = [
   { fig: "67", title: "All 67 counties, one named ProAdvisor", body: "A virtual bookkeeper means the same Certified ProAdvisor works your file from anywhere in Florida &mdash; Miami to Pensacola, all 67 counties &mdash; on your own QuickBooks Online or hosted Desktop file. Your county changes the surtax rate, never the service." },
@@ -20,8 +20,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Florida Virtual Bookkeeper Â· TechBrot",
-  description: "Virtual bookkeeper for Florida businesses â€” remote reconciliation, 6%+surtax sales tax by county, the taxability of services, CPA-ready statements in your own QuickBooks file. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  title: "Florida Virtual Bookkeeper · TechBrot",
+  description: "Virtual bookkeeper for Florida businesses — remote reconciliation, 6%+surtax sales tax by county, the taxability of services, CPA-ready statements in your own QuickBooks file. Fixed-fee, all 67 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -118,7 +118,7 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/virtual-bookkeeper/",
     name: "Florida Virtual Bookkeeper",
-    description: "Virtual bookkeeper for Florida businesses â€” remote reconciliation, 6%+surtax sales tax by county, service taxability handled, TPP records, and CPA-ready statements in your own QuickBooks file across all 67 counties. Independent firm; does not file Florida taxes.",
+    description: "Virtual bookkeeper for Florida businesses — remote reconciliation, 6%+surtax sales tax by county, service taxability handled, TPP records, and CPA-ready statements in your own QuickBooks file across all 67 counties. Independent firm; does not file Florida taxes.",
     serviceName: "Florida Virtual Bookkeeping Services",
     serviceType: "Virtual (remote) bookkeeping services",
     serviceDesc: "Remote reconciliation, categorization, 6% + county surtax sales-tax configuration by county, service-taxability handling, 5.5% corporate-tax tracking where applicable, tangible personal property record-keeping, payroll coordination, and CPA-ready statements for Florida businesses across all 67 counties. Independent Certified QuickBooks ProAdvisor firm; does not file Florida tax returns.",

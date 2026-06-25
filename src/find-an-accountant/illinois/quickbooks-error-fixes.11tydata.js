@@ -1,5 +1,5 @@
-﻿/* /find-an-accountant/illinois/quickbooks-error-fixes/ â€” IL SERVICE CHILD (QB spoke).
- * t-bofu Â· partials/state-service-body.njk. IL-localized error-fixes angle. Facts band = the real IL
+﻿/* /find-an-accountant/illinois/quickbooks-error-fixes/ — IL SERVICE CHILD (QB spoke).
+ * t-bofu · partials/state-service-body.njk. IL-localized error-fixes angle. Facts band = the real IL
  * stack re-angled as the BOOK/SETUP ERROR each one causes (PPRT net income mis-tracked so it isn't
  * supportable; Chicago 10.25% sales tax set as a single statewide rate that won't tie to the ST-1;
  * Chicago 15% lease/"cloud" tax commingled with sales tax). HONESTY: IDOR + Chicago Dept of Finance +
@@ -24,8 +24,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Illinois QuickBooks Error Fixes Â· TechBrot",
-  description: "QuickBooks error fixes for Illinois businesses by a Certified ProAdvisor â€” a sales-tax liability that won't tie to the ST-1, an out-of-balance balance sheet, duplicate entries, Chicago's 15% cloud tax commingled with sales tax. Root-cause fixes, all 102 counties. Call (877) 751-5575.",
+  title: "Illinois QuickBooks Error Fixes · TechBrot",
+  description: "QuickBooks error fixes for Illinois businesses by a Certified ProAdvisor — a sales-tax liability that won't tie to the ST-1, an out-of-balance balance sheet, duplicate entries, Chicago's 15% cloud tax commingled with sales tax. Root-cause fixes, all 102 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -124,10 +124,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/quickbooks-error-fixes/",
     name: "Illinois QuickBooks Error Fixes",
-    description: "QuickBooks error fixes for Illinois businesses by a Certified ProAdvisor â€” a sales-tax liability that won't tie to the ST-1, an out-of-balance balance sheet, duplicate entries, PPRT net income mis-tracked, and Chicago's 15% cloud tax commingled with sales tax, traced to root cause and fixed. Independent firm; does not file Illinois taxes.",
+    description: "QuickBooks error fixes for Illinois businesses by a Certified ProAdvisor — a sales-tax liability that won't tie to the ST-1, an out-of-balance balance sheet, duplicate entries, PPRT net income mis-tracked, and Chicago's 15% cloud tax commingled with sales tax, traced to root cause and fixed. Independent firm; does not file Illinois taxes.",
     serviceName: "Illinois QuickBooks Error Diagnosis & Fix Services",
     serviceType: "QuickBooks error diagnosis and correction",
-    serviceDesc: "Diagnosis and root-cause correction of QuickBooks errors for Illinois businesses â€” a sales-tax liability that won't tie to the ST-1, an out-of-balance balance sheet, duplicate and orphaned entries, Illinois net income mis-tracked for the Personal Property Replacement Tax, and Chicago's lease/cloud tax commingled with sales tax, fixed in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois or Chicago tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Diagnosis and root-cause correction of QuickBooks errors for Illinois businesses — a sales-tax liability that won't tie to the ST-1, an out-of-balance balance sheet, duplicate and orphaned entries, Illinois net income mis-tracked for the Personal Property Replacement Tax, and Chicago's lease/cloud tax commingled with sales tax, fixed in the client's own file. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois or Chicago tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "Illinois", sameAs: "https://en.wikipedia.org/wiki/Illinois" }],
     audienceType: "Illinois businesses with broken or out-of-balance QuickBooks files across all 102 counties",
     offerPrice: "400",

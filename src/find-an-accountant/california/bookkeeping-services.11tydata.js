@@ -1,4 +1,4 @@
-﻿/* /find-an-accountant/california/bookkeeping-services/ â€” CA SERVICE CHILD (money/bookkeeping).
+﻿/* /find-an-accountant/california/bookkeeping-services/ — CA SERVICE CHILD (money/bookkeeping).
  * t-bofu. Shared body: partials/state-service-body.njk. v4 money cluster. GENUINELY CA-
  * localized (facts band = real CA stack; service content = California bookkeeping).
  * HONESTY: deferred to FTB/CDTFA/EDD + CPA/EA; founder-name-zero; not Intuit. */
@@ -22,8 +22,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "California Bookkeeping Services Â· TechBrot",
-  description: "Bookkeeping services for California businesses â€” monthly, cleanup & catch-up by a Certified QuickBooks ProAdvisor, with CDTFA district sales tax and the $800 franchise tax built in. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  title: "California Bookkeeping Services · TechBrot",
+  description: "Bookkeeping services for California businesses — monthly, cleanup & catch-up by a Certified QuickBooks ProAdvisor, with CDTFA district sales tax and the $800 franchise tax built in. Fixed-fee, all 58 counties. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
@@ -123,10 +123,10 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/bookkeeping-services/",
     name: "California Bookkeeping Services",
-    description: "Bookkeeping services for California businesses â€” monthly, cleanup, and catch-up by a Certified QuickBooks ProAdvisor, with CDTFA district sales tax and the $800 franchise tax built in, across all 58 counties. Independent firm; does not file California taxes.",
+    description: "Bookkeeping services for California businesses — monthly, cleanup, and catch-up by a Certified QuickBooks ProAdvisor, with CDTFA district sales tax and the $800 franchise tax built in, across all 58 counties. Independent firm; does not file California taxes.",
     serviceName: "California Bookkeeping Services",
     serviceType: "Bookkeeping services",
-    serviceDesc: "Monthly bookkeeping, cleanup, and catch-up for California businesses â€” reconciliation, a California-correct chart of accounts, CDTFA district sales tax by location, the $800 franchise-tax accrual, AB5 tracking, and CPA-ready statements, in the client's own QuickBooks file across all 58 counties. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns â€” coordinates with the client's CPA or EA.",
+    serviceDesc: "Monthly bookkeeping, cleanup, and catch-up for California businesses — reconciliation, a California-correct chart of accounts, CDTFA district sales tax by location, the $800 franchise-tax accrual, AB5 tracking, and CPA-ready statements, in the client's own QuickBooks file across all 58 counties. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns — coordinates with the client's CPA or EA.",
     areaServed: [{ type: "State", name: "California", sameAs: "https://en.wikipedia.org/wiki/California" }],
     audienceType: "California small and midsize businesses across all 58 counties needing monthly bookkeeping, cleanup, or catch-up",
     offerPrice: "400",
