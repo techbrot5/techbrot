@@ -38,12 +38,11 @@ Remove 4 VISIBLE inputs; keep hidden auto-capture where derivable. Both full + m
 - ✅ EEAT-STRATEGY.md recorded (reviewedBy scoped not blanket; one real operator named where contextual; no fabrication; entity corroboration by consistent accurate mention not link volume; one westgatefs link only, in /partners/).
 - ✅ Carry-forward: blog/category.njk meta straggler fixed (description was blurb + appended boilerplate+phone → over 160; now just the value-led blurb, all 8 categories ≤160, no phone per MOFU rule).
 
-## TASK 4 — FAQ AUTHORING (per page-type, money-first)  🔵 in-progress
-- ✅ PROOF: quickbooks/cleanup money-page pattern shipped (d6927fe) — call-intent FAQ replaces weakest at cap + phone in answer + silo links + minimal-brand. Verified (7 FAQs, schema==rendered by construction, 0 aiSummary overlap).
-- 🔵 WAVE: money pages (30 remaining t-money) FAQ rewrite in progress (subagent, cleanup as gold standard).
-- NOTE: `--fast` SKIPS the faq checks (faq-schema-verbatim/overlap/flat) → FAQ waves need a TARGETED faq verifier (or full run). t-money FAQ uses class="faq" markup (schema auto-derived from data.faq via stripTags → rendered==schema by construction, no drift risk).
-- ⬜ remaining FAQ clusters: prose · pillars · location · comparison · /faq/ hubs (EXEMPT 15-30) + t-hub ADDITIONS (hubs under cap → add Qs) + silo links throughout.
-- Per FAQ-STRATEGY.md. Report-before-change on cuts beyond approved de-dup / new honesty Q (call-intent-replaces-weakest is the pre-approved mechanism, not a reportable cut).
+## TASK 4 — FAQ AUTHORING (per page-type, money-first)  ⬜ pending
+- ⬜ (was TASK 2) answer-first rewrite + 1-2 call-intent FAQs w/ phone (REPLACE weakest at cap, never exceed).
+- ⬜ (was TASK 3) t-hub FAQ additions (hubs under cap → ADD).
+- ⬜ (was TASK 5) silo interlinks in answers (relevant, schema-safe).
+- Per FAQ-STRATEGY.md. Report-before-change on cuts beyond approved de-dup.
 
 ## TASK 5 — LOCATION EXPANSION (the spine — PLAN FIRST)  ⬜ pending
 - ⬜ **FIRST DELIVERABLE: full LOCATION PLAN for founder review** (state list 10-15, tier assignment, exact pages per tier, counts, routing, schema per type) — from `techbrot-blueprint-v5.xlsx`. HARD-STOP for founder ruling before building.
