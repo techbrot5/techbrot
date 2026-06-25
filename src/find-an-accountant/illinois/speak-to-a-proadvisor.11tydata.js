@@ -8,7 +8,7 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/speak-to-a-proadvisor/",
     name: "Speak to an Illinois QuickBooks ProAdvisor",
-    description: "Speak to a Certified QuickBooks ProAdvisor at TechBrot — an independent firm, not Intuit or QuickBooks support. A free, no-obligation call about your Illinois books. Independent firm; does not file Illinois taxes.",
+    description: "Speak to a Certified QuickBooks ProAdvisor about your Illinois books — a free, no-obligation call. Independent firm, not Intuit support. (877) 751-5575.",
     serviceName: "Illinois QuickBooks ProAdvisor Discovery Call",
     serviceType: "QuickBooks ProAdvisor advisory and discovery call",
     serviceDesc: "A free, no-obligation discovery call with a Certified QuickBooks ProAdvisor for Illinois businesses — reviewing the client's own QuickBooks file and recommending setup, cleanup, monthly management, or advisory. Independent firm, not Intuit or QuickBooks product support; does not provide Intuit account/billing support or file Illinois tax returns — coordinates with the client's CPA or EA.",

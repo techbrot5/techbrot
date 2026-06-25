@@ -20,7 +20,7 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   title: "Texas Business Tax Problems (Books First) · TechBrot",
-  description: "Behind on Texas taxes? Most business tax problems start as bookkeeping problems. We get your books current and CPA-ready so your CPA or EA can file and resolve. Independent firm — we don't file or negotiate with the Comptroller. Call (877) 751-5575.",
+  description: "Behind on Texas taxes? Most are books problems. We get your books CPA-ready; your CPA files. Independent firm — we don't file or negotiate with the Comptroller.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -18,7 +18,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "California Agency & SaaS Accounting (ASC 606) · TechBrot",
-  description: "Accounting for California agencies, SaaS & production — ASC 606 gross-vs-net on media spend, deferred revenue, project profitability, and AB5 freelancer tracking. Fixed-fee. Call (877) 751-5575.",
+  description: "Accounting for California agencies and SaaS — ASC 606 gross-vs-net media spend, deferred revenue, profitability and AB5 freelancers. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

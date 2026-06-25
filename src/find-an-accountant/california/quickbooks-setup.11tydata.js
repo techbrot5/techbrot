@@ -23,7 +23,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "California QuickBooks Setup · TechBrot",
-  description: "QuickBooks setup for California businesses by a Certified ProAdvisor — CA chart of accounts, CDTFA district sales-tax items by location, AB5 contractor tracking, $800 franchise-tax accrual, CA payroll. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  description: "California QuickBooks setup — CA chart of accounts, CDTFA district sales-tax items by location, AB5 tracking, $800 franchise-tax accrual. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

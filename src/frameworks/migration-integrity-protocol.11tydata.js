@@ -86,7 +86,7 @@ module.exports = {
   sec: {
     faqH: "Migration Integrity Protocol questions.",
   },
-  title: "Migration Integrity Protocol — QuickBooks Migration Framework · TechBrot",
+  title: "Migration Integrity Protocol · QuickBooks Framework",
   description:
     "Migration Integrity Protocol — TechBrot's coined framework for proving a migrated QuickBooks file ties back to the source before sign-off.",
   published: "2026-06-19",

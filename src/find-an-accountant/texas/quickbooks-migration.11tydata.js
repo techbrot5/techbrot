@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Texas QuickBooks Migration · TechBrot",
-  description: "QuickBooks migration for Texas businesses by a Certified ProAdvisor — Desktop to Online or another platform, opening balances and history intact, sales tax re-mapped by location, fixed assets carried over. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  description: "Texas QuickBooks migration — Desktop to Online, balances and history intact, 8.25% sales tax re-mapped by location, BPP assets kept. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

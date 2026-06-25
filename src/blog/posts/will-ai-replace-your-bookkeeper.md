@@ -1,7 +1,7 @@
 ---
 title: "Will AI Replace Your Bookkeeper? An Honest Answer · TechBrot"
 headline: "Will AI replace your bookkeeper? An honest answer"
-description: "A Certified ProAdvisor team's honest take on AI in bookkeeping — what automation genuinely does well, where it quietly gets things wrong, and why judgment and accountability still matter. Not Intuit. Call (877) 751-5575."
+description: "An honest take on AI in bookkeeping — what automation does well, where it quietly gets things wrong, and why human judgment and accountability still matter."
 deck: "AI is genuinely good at parts of bookkeeping &mdash; and genuinely dangerous at others, precisely because it&rsquo;s confident when it&rsquo;s wrong. Here&rsquo;s where it helps, where it hurts, and what doesn&rsquo;t get automated away."
 category: "ai-and-accounting"
 tags: ["post", "ai-and-accounting"]

@@ -17,7 +17,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Texas Healthcare & Medical Practice Accounting · TechBrot",
-  description: "Accounting for Texas medical, dental & healthcare practices — insurance-AR reconciliation, provider payroll, PLLC margin tax, equipment on BPP. Books only, HIPAA-aware. Fixed-fee. Call (877) 751-5575.",
+  description: "Texas medical & dental practice accounting — insurance-AR reconciliation, provider payroll, PLLC margin tax, BPP equipment. Books only. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida Bookkeeping Services · TechBrot",
-  description: "Bookkeeping services for Florida businesses — reconciliation, clean categorization, 6%+surtax sales tax by county, the taxability of services, TPP records, CPA-ready statements. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  description: "Florida bookkeeping — reconciliation, 6%+county-surtax sales tax by location, taxability of services, TPP records, CPA-ready books. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -29,7 +29,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Gainesville Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Gainesville businesses — fluent in University of Florida-adjacent small business, the biotech, life-sciences & startup cluster, healthcare and medical research, the student economy, Florida's no-income-tax structure, and the tangible personal property (DR-405) return. Fixed-fee. Call (877) 751-5575.",
+  description: "Bookkeeping for Gainesville (Alachua County) — University of Florida small business, biotech, healthcare & the student economy, the TPP return. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

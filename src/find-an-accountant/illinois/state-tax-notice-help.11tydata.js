@@ -20,8 +20,8 @@ module.exports = {
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
-  title: "Illinois State Tax Notice Help (IDOR · Chicago · IRS) · TechBrot",
-  description: "Got an Illinois tax notice from the IDOR, the City of Chicago, IDES, or the IRS? We help you understand it and reconcile the records behind it so your CPA, EA, or tax attorney can respond. Independent bookkeeping firm — not a tax agency. Call (877) 751-5575.",
+  title: "Illinois Tax Notice Help · IDOR, Chicago, IRS · TechBrot",
+  description: "Got an Illinois tax notice from the IDOR, Chicago, IDES, or IRS? We reconcile the records behind it so your CPA can respond. Independent — not a tax agency.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

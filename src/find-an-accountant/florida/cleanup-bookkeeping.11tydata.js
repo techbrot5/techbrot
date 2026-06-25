@@ -22,7 +22,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida Cleanup & Catch-Up Bookkeeping · TechBrot",
-  description: "Catch-up bookkeeping for Florida businesses behind by months or years — reconstruct the books, rebuild the sales-tax figures, get CPA-ready. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  description: "Behind months or years? Florida catch-up bookkeeping reconstructs the backlog, rebuilds 6%+surtax sales-tax figures, gets you CPA-ready. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

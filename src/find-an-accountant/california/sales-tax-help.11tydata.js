@@ -26,7 +26,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "California Sales Tax Help (CDTFA) · TechBrot",
-  description: "California sales tax help — CDTFA district rates by location, economic nexus ($500K), seller's permits, sales-tax-ready books by a Certified ProAdvisor. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  description: "California sales tax help — CDTFA district rates by location, economic nexus ($500K), seller’s permits and sales-tax-ready books. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

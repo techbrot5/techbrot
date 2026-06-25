@@ -17,8 +17,8 @@ module.exports = {
   bodyClass: "page--location page--industry",
   callBar: true,
   heroLight: true,
-  title: "California Professional Services Accounting (Consultancies & Law Firms) · TechBrot",
-  description: "Accounting for California consultancies, law firms & advisory practices — project & matter tracking, IOLTA trust accounting, partner draws, AB5 contractor analysis, ASC 606. Fixed-fee. Call (877) 751-5575.",
+  title: "California Professional Services Accounting · TechBrot",
+  description: "Accounting for California consultancies and law firms — matter tracking, IOLTA trust accounting, partner draws, AB5 analysis and ASC 606. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -24,7 +24,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida QuickBooks Accountant & ProAdvisor · TechBrot",
-  description: "Certified QuickBooks ProAdvisor & accountant for Florida businesses — bookkeeping, cleanup, payroll, 6%+surtax sales tax, the 5.5% corporate tax, service taxability, and TPP. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  description: "Certified QuickBooks ProAdvisor for Florida businesses — bookkeeping, cleanup, payroll, 6%+surtax sales tax, the 5.5% corporate tax, TPP. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

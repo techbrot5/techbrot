@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Illinois Small Business Accountant · TechBrot",
-  description: "Accountant & bookkeeper for Illinois small businesses — monthly bookkeeping, QuickBooks, payroll, 10.25% Chicago sales tax, the PPRT, and Chicago's 15% cloud tax. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  description: "Accountant & bookkeeper for Illinois small businesses — monthly bookkeeping, QuickBooks, payroll, 10.25% Chicago sales tax, PPRT and cloud tax. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

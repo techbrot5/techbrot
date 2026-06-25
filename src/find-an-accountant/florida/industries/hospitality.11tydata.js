@@ -17,7 +17,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Florida Hospitality & Restaurant Accounting · TechBrot",
-  description: "Accounting for Florida hotels, restaurants & tourism — Tourist Development Tax, high-volume POS reconciliation, tipped payroll, food-vs-alcohol sales tax, multi-location. Fixed-fee. Call (877) 751-5575.",
+  description: "Accounting for Florida hotels & restaurants — Tourist Development Tax, high-volume POS, tipped payroll, food-vs-alcohol sales tax. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

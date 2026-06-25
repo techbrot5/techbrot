@@ -1,7 +1,7 @@
 ---
 title: "Bookkeeping vs Accounting: What's the Difference? · TechBrot"
 headline: "Bookkeeping vs accounting: what&rsquo;s the difference?"
-description: "Bookkeeping vs accounting, explained plainly by a Certified ProAdvisor team — what each does, where they overlap, who does which, and why most businesses need both. Not Intuit. Call (877) 751-5575."
+description: "Bookkeeping vs accounting, explained plainly — what each does, where they overlap, who does which, and why most small businesses end up needing both."
 deck: "People use the words interchangeably, but they&rsquo;re different jobs done at different cadences. Knowing which is which helps you hire the right help &mdash; and stop overpaying for the wrong one."
 category: "accounting"
 tags: ["post", "accounting"]

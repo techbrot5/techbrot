@@ -26,7 +26,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Illinois QuickBooks Reconciliation · TechBrot",
-  description: "QuickBooks reconciliation for Illinois businesses by a Certified ProAdvisor — every account reconciled monthly, the 6.25%–10.25% sales-tax liability tied to the ST-1 by jurisdiction, Illinois net income reconciled for the PPRT, Chicago's 15% cloud tax reconciled separately. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  description: "QuickBooks reconciliation for Illinois businesses — every account tied monthly, 6.25%–10.25% sales tax matched to the ST-1, PPRT clean. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

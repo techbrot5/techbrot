@@ -19,7 +19,7 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   title: "California Business Tax Problems (Books First) · TechBrot",
-  description: "Behind on California taxes? Most business tax problems start as bookkeeping problems. We get your books current and CPA-ready so your CPA or EA can file and resolve. Independent firm — we don't file or negotiate with agencies. Call (877) 751-5575.",
+  description: "Behind on California taxes? Most tax problems are books problems. We get your books current and CPA-ready so your CPA files and resolves. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

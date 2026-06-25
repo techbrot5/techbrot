@@ -25,7 +25,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Bakersfield Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Bakersfield & Kern County businesses — fluent in oil & gas accounting (JIB, royalties, LOS), agriculture, California's $800 franchise tax & CDTFA sales tax. Fixed-fee. Call (877) 751-5575.",
+  description: "ProAdvisor bookkeeping for Bakersfield and Kern County — oil and gas (JIB, royalties, LOS), agriculture and the $800 franchise tax. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -22,7 +22,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Illinois Trucking & Logistics Accounting · TechBrot",
-  description: "Accounting for Illinois trucking, freight & logistics businesses — IFTA fuel-tax and IRP mileage records, per-mile cost, owner-operator settlements, driver payroll, the PPRT. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  description: "Accounting for Illinois trucking & logistics — IFTA and IRP mileage records, per-mile cost, owner-operator settlements, driver payroll, PPRT. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

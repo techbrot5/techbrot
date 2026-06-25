@@ -25,7 +25,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Oakland Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Oakland businesses — fluent in Oakland's progressive Measure T business tax, California's $800 franchise tax & CDTFA sales tax, Port logistics & cannabis (280E) accounting. Fixed-fee. Call (877) 751-5575.",
+  description: "ProAdvisor bookkeeping for Oakland — the progressive Measure T business tax, the $800 franchise tax and cannabis (280E) accounting. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

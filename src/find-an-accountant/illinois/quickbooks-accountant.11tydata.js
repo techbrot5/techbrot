@@ -26,7 +26,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Illinois QuickBooks Accountant & ProAdvisor · TechBrot",
-  description: "Certified QuickBooks ProAdvisor & accountant for Illinois businesses — bookkeeping, cleanup, payroll, 10.25% Chicago sales tax, the PPRT, the PTE election, and Chicago's 15% cloud tax. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  description: "Certified QuickBooks ProAdvisor for Illinois businesses — bookkeeping, cleanup, payroll, 10.25% Chicago sales tax, PPRT and PTE tracking. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

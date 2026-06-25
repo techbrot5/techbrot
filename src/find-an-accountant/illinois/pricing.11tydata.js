@@ -72,7 +72,7 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/illinois/pricing/",
     name: "Illinois Bookkeeping & QuickBooks Pricing",
-    description: "Fixed-fee Illinois pricing — monthly bookkeeping $400–$2,500+/mo, cleanup $1,500–$15,000+, catch-up $2,000–$20,000+, QuickBooks setup $750–$5,000+, migration $2,500–$10,000+, sales-tax $250–$1,500+/mo, payroll $150–$800+/mo, fractional CFO $3,000–$8,000+/mo. Written scope before any work, no hourly billing, all 102 counties. Independent firm; does not file Illinois taxes.",
+    description: "Fixed-fee Illinois pricing — monthly bookkeeping $400+/mo, cleanup $1,500+, QuickBooks setup $750+, migration $2,500+. Written scope, never hourly billing.",
     serviceName: "Illinois Bookkeeping & QuickBooks Services (Fixed-Fee)",
     serviceType: "Fixed-fee bookkeeping, QuickBooks, and advisory pricing",
     serviceDesc: "Fixed-fee Illinois engagements against a written scope — monthly bookkeeping, cleanup, catch-up, QuickBooks setup and migration, sales-tax tracking, payroll coordination, and fractional-CFO advisory, delivered in the client's own QuickBooks file across all 102 counties. Never hourly. Independent Certified QuickBooks ProAdvisor firm; does not file Illinois tax returns — coordinates with the client's CPA or EA.",

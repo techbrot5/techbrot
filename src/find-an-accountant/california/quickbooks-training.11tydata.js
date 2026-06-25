@@ -22,7 +22,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "California QuickBooks Training · TechBrot",
-  description: "QuickBooks training for California teams by a Certified ProAdvisor — district sales tax entry, AB5 contractor coding, month-end close, on your own file. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  description: "California QuickBooks training by a ProAdvisor — district sales tax entry, AB5 contractor coding and month-end close on your file. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

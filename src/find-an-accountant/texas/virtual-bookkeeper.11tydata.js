@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Texas Virtual Bookkeeper · TechBrot",
-  description: "Virtual bookkeeper for Texas businesses — remote reconciliation, 8.25% sales tax, the franchise (margin) tax tracked, CPA-ready statements in your own QuickBooks file. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  description: "Virtual bookkeeper for Texas — remote reconciliation, 8.25% sales tax, franchise (margin) tax tracked, CPA-ready statements in your file. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -25,7 +25,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Tampa Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Tampa businesses — fluent in finance, healthcare, port & defense accounting, Florida's no-income-tax structure, ~7.5% sales tax, and the tangible personal property (DR-405) return. Fixed-fee. Call (877) 751-5575.",
+  description: "Bookkeeping for Tampa (Hillsborough County) — finance, healthcare, port & defense, ~7.5% sales tax, and the TPP (DR-405) return. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

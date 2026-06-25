@@ -25,7 +25,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Illinois QuickBooks Error Fixes · TechBrot",
-  description: "QuickBooks error fixes for Illinois businesses by a Certified ProAdvisor — a sales-tax liability that won't tie to the ST-1, an out-of-balance balance sheet, duplicate entries, Chicago's 15% cloud tax commingled with sales tax. Root-cause fixes, all 102 counties. Call (877) 751-5575.",
+  description: "QuickBooks error fixes for Illinois businesses — sales tax that won't tie to the ST-1, out-of-balance sheets, duplicates, commingled cloud tax. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

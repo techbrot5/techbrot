@@ -28,7 +28,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Corpus Christi Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Corpus Christi businesses — fluent in the Gulf energy-export, petrochemical and refining economy, the Port of Corpus Christi and marine/export logistics, wind energy and the military footprint, the Texas franchise (margin) tax, and 8.25% sales tax. Fixed-fee. Call (877) 751-5575.",
+  description: "Corpus Christi ProAdvisor bookkeeping — Gulf energy-export, refining, petrochemical and Port logistics accounting, margin tax, 8.25% sales tax. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

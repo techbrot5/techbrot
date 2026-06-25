@@ -24,7 +24,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida Sales Tax Help in QuickBooks · TechBrot",
-  description: "Florida sales tax set up right in QuickBooks — 6% + county surtax by location, reconciled so the Department of Revenue return ties. We configure; your CPA files. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  description: "Florida sales tax set up right in QuickBooks — 6% + county surtax by location, reconciled so the DOR return ties. We configure; your CPA files. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -26,7 +26,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Illinois QuickBooks Migration · TechBrot",
-  description: "QuickBooks migration for Illinois businesses by a Certified ProAdvisor — Desktop to Online or another platform, opening balances and history intact, sales tax re-mapped by jurisdiction (10.25% in Chicago), the PPRT tracked, and Chicago's cloud tax carried over. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  description: "QuickBooks migration for Illinois businesses — Desktop to Online, balances and history intact, sales tax re-mapped, cloud tax carried over. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

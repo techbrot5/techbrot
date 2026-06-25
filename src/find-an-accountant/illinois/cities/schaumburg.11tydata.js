@@ -36,7 +36,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Schaumburg Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Schaumburg, IL businesses — fluent in the northwest-suburban corporate-office and professional-services economy, Woodfield-area retail and hospitality, the flat income tax, the Personal Property Replacement Tax, and high Cook County sales tax. Fixed-fee. Call (877) 751-5575.",
+  description: "QuickBooks bookkeeping for Schaumburg, IL — corporate-office and professional-services, Woodfield retail, PPRT, high Cook County sales tax. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

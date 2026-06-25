@@ -18,7 +18,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Texas Real Estate Accounting & Bookkeeping · TechBrot",
-  description: "Real estate accounting for Texas brokers, investors & property managers — multi-entity books, trust-record keeping, property-tax tracking, 1031 documentation, agent commissions. Fixed-fee. Call (877) 751-5575.",
+  description: "Texas real estate accounting for brokers, investors & PMs — multi-entity books, trust records, property-tax tracking, 1031 docs, commissions. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

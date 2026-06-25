@@ -24,7 +24,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Anaheim Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Anaheim & Orange County businesses — fluent in the Transient Occupancy Tax & tourism economy, California's $800 franchise tax & CDTFA sales tax, hospitality & high-volume POS accounting. Fixed-fee. Call (877) 751-5575.",
+  description: "ProAdvisor bookkeeping for Anaheim and Orange County — Transient Occupancy Tax, the $800 franchise tax, hospitality and POS accounting. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

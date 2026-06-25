@@ -23,7 +23,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "California Bookkeeping Services · TechBrot",
-  description: "Bookkeeping services for California businesses — monthly, cleanup & catch-up by a Certified QuickBooks ProAdvisor, with CDTFA district sales tax and the $800 franchise tax built in. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  description: "California bookkeeping — monthly, cleanup and catch-up with CDTFA district sales tax and the $800 franchise tax built in. Fixed-fee. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -18,7 +18,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "California Construction Accounting & Job Costing · TechBrot",
-  description: "Construction accounting for California contractors — job costing, WIP, AIA billing, retainage, prevailing-wage/certified payroll, CSLB-aware compliance, AB5 subs. Fixed-fee. Call (877) 751-5575.",
+  description: "Construction accounting for California contractors — job costing, WIP, AIA billing, retainage, prevailing-wage payroll and AB5 subs. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

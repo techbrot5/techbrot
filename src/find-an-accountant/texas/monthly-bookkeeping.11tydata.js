@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Texas Monthly Bookkeeping · TechBrot",
-  description: "Monthly bookkeeping for Texas businesses — a real close every month, 8.25% sales tax reconciled, the franchise (margin) tax tracked, CPA-ready statements. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  description: "Texas monthly bookkeeping — a real close every month, 8.25% sales tax reconciled, the franchise (margin) tax tracked, CPA-ready statements. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

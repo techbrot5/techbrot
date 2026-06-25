@@ -24,8 +24,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "Illinois Sales Tax & Chicago Cloud Tax Help in QuickBooks · TechBrot",
-  description: "Illinois sales tax set up right in QuickBooks — 6.25%–10.25% combined by jurisdiction, plus Chicago's 15% lease/cloud tax on SaaS, reconciled so the returns tie. We configure; your CPA files. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  title: "Illinois Sales Tax & Chicago Cloud Tax · TechBrot",
+  description: "Illinois sales tax in QuickBooks — 6.25%–10.25% combined by jurisdiction plus Chicago's 15% lease/cloud tax on SaaS, reconciled so returns tie. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

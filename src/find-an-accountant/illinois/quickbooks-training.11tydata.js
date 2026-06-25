@@ -25,7 +25,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Illinois QuickBooks Training · TechBrot",
-  description: "QuickBooks training for Illinois business teams by a Certified ProAdvisor — invoice the combined sales tax by jurisdiction (up to 10.25% in Chicago), keep IL net income clean for the PPRT, track Chicago's 15% cloud tax separately. Live, role-specific, all 102 counties. Call (877) 751-5575.",
+  description: "QuickBooks training for Illinois teams — invoice combined sales tax by jurisdiction (10.25% Chicago), keep net income clean for the PPRT, track the cloud tax.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

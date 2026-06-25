@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Illinois Restaurant Accounting · TechBrot",
-  description: "Accounting for Illinois restaurants, bars & food service — high-volume POS reconciliation, tipped payroll and the FICA tip credit, prepared-food sales tax (10.25% in Chicago), and food-cost tracking. Books only, all 102 counties. Call (877) 751-5575.",
+  description: "Accounting for Illinois restaurants & bars — POS reconciliation, tipped payroll and FICA tip credit, prepared-food sales tax (10.25% Chicago). (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

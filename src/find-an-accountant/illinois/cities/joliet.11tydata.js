@@ -24,7 +24,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Joliet Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Joliet, IL businesses — fluent in intermodal logistics, warehousing & trucking accounting, multi-state nexus, Illinois' flat income tax, and the Personal Property Replacement Tax. Fixed-fee. Call (877) 751-5575.",
+  description: "QuickBooks bookkeeping for Joliet, IL — intermodal logistics, warehousing and trucking accounting, multi-state nexus, flat income tax and PPRT. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

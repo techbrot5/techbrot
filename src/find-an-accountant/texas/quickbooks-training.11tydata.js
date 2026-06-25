@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Texas QuickBooks Training · TechBrot",
-  description: "QuickBooks training for Texas business teams by a Certified ProAdvisor — invoice the 8.25% sales tax by location, categorize for the margin tax, record fixed assets for BPP. Live, role-specific, all 254 counties. Call (877) 751-5575.",
+  description: "Texas QuickBooks training — invoice 8.25% sales tax by location, categorize for the margin tax, record BPP fixed assets. Live, role-specific. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

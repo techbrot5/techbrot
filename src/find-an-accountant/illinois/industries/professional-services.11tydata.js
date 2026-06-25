@@ -20,8 +20,8 @@ module.exports = {
   bodyClass: "page--location page--industry",
   callBar: true,
   heroLight: true,
-  title: "Illinois Professional Services & Law Firm Accounting · TechBrot",
-  description: "Accounting for Illinois consultancies, agencies & law firms across all 102 counties — matter & project profitability, IOLTA trust records, partner draws, the PPRT. Records only. Fixed-fee. Call (877) 751-5575.",
+  title: "Illinois Law Firm & Professional Services Accounting",
+  description: "Accounting for Illinois law firms, consultancies & agencies — matter profitability, IOLTA trust records, partner draws, PPRT. Records only. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

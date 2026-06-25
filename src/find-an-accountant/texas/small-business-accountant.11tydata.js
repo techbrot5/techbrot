@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Texas Small Business Accountant · TechBrot",
-  description: "Accountant & bookkeeper for Texas small businesses — monthly bookkeeping, QuickBooks, payroll, 8.25% sales tax, the franchise (margin) tax, and BPP. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  description: "Accountant & bookkeeper for Texas small businesses — bookkeeping, QuickBooks, payroll, 8.25% sales tax, the franchise (margin) tax, BPP. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

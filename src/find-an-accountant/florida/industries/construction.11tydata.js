@@ -18,7 +18,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Florida Construction Accounting & Job Costing · TechBrot",
-  description: "Construction accounting for Florida contractors — job costing, WIP, AIA billing, retainage, the Florida real-property-improvement sales-tax rule, DBPR licensing, 1099 subs. Fixed-fee. Call (877) 751-5575.",
+  description: "Construction accounting for Florida contractors — job costing, WIP, AIA billing, retainage, the real-property-improvement sales-tax rule. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

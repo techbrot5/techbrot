@@ -71,7 +71,7 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/texas/pricing/",
     name: "Texas Bookkeeping & QuickBooks Pricing",
-    description: "Fixed-fee Texas pricing — monthly bookkeeping $400–$2,500+/mo, cleanup $1,500–$15,000+, catch-up $2,000–$20,000+, QuickBooks setup $750–$5,000+, migration $2,500–$10,000+, sales-tax $250–$1,500+/mo, payroll $150–$800+/mo, fractional CFO $3,000–$8,000+/mo. Written scope before any work, no hourly billing, all 254 counties. Independent firm; does not file Texas taxes.",
+    description: "Fixed-fee Texas pricing — monthly bookkeeping $400+/mo, cleanup $1,500+, QuickBooks setup $750+. Written scope before any work, never hourly. Independent firm.",
     serviceName: "Texas Bookkeeping & QuickBooks Services (Fixed-Fee)",
     serviceType: "Fixed-fee bookkeeping, QuickBooks, and advisory pricing",
     serviceDesc: "Fixed-fee Texas engagements against a written scope — monthly bookkeeping, cleanup, catch-up, QuickBooks setup and migration, sales-tax tracking, payroll coordination, and fractional-CFO advisory, delivered in the client's own QuickBooks file across all 254 counties. Never hourly. Independent Certified QuickBooks ProAdvisor firm; does not file Texas tax returns — coordinates with the client's CPA or EA.",

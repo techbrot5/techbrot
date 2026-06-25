@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida Small Business Accountant · TechBrot",
-  description: "Accountant & bookkeeper for Florida small businesses — monthly bookkeeping, QuickBooks, payroll, 6%+surtax sales tax, the 5.5% corporate tax, service taxability, and TPP. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  description: "Accountant & bookkeeper for Florida small businesses — monthly bookkeeping, QuickBooks, payroll, 6%+surtax sales tax, the 5.5% corporate tax. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

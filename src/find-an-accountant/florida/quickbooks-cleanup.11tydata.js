@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida QuickBooks Cleanup · TechBrot",
-  description: "QuickBooks cleanup for Florida businesses by a Certified ProAdvisor — fix single-rate sales tax, add the missed taxability of services, rebuild the TPP fixed-asset schedule, reconcile to CPA-ready. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  description: "QuickBooks cleanup for Florida — fix single-rate sales tax, add the missed taxability of services, rebuild the TPP fixed-asset schedule. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

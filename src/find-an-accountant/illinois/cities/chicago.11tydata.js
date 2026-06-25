@@ -25,7 +25,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Chicago Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Chicago businesses — fluent in the Chicago lease & amusement taxes (SaaS/streaming), the 10.25% sales tax, Illinois' flat income tax and Personal Property Replacement Tax. Fixed-fee. Call (877) 751-5575.",
+  description: "QuickBooks bookkeeping for Chicago businesses — the 10.25% sales tax, the lease/cloud and amusement taxes on SaaS and streaming, plus the PPRT. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

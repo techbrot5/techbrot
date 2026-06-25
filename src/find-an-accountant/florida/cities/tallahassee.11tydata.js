@@ -29,7 +29,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Tallahassee Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Tallahassee businesses — fluent in Florida's state-capital economy of state government, the FSU and FAMU universities, and the lobbying and professional-services cluster, plus grant-funded nonprofit fund tracking, Florida's no-income-tax structure, and the tangible personal property (DR-405) return. Fixed-fee. Call (877) 751-5575.",
+  description: "Bookkeeping for Tallahassee (Leon County) — state government, FSU/FAMU, the lobbying cluster, grant-funded nonprofit fund tracking. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

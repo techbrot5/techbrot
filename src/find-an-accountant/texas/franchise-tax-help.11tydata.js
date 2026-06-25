@@ -25,7 +25,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Texas Franchise (Margin) Tax Help · TechBrot",
-  description: "Texas franchise (margin) tax tracked in your books so your CPA can file accurately — margin base, the no-tax-due threshold, May filing. We keep the books; your CPA computes and files. Call (877) 751-5575.",
+  description: "Texas franchise (margin) tax tracked in your books — margin base, no-tax-due threshold, May filing. We keep the books; your CPA files. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

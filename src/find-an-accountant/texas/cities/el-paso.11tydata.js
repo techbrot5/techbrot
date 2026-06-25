@@ -27,7 +27,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "El Paso Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for El Paso businesses — fluent in cross-border U.S.-Mexico trade accounting, maquiladora-linked manufacturing & logistics, the Fort Bliss economy, the Texas franchise (margin) tax, and 8.25% sales tax. Fixed-fee. Call (877) 751-5575.",
+  description: "El Paso ProAdvisor bookkeeping — cross-border U.S.-Mexico trade, maquiladora manufacturing, the Fort Bliss economy, margin tax, 8.25% sales tax. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

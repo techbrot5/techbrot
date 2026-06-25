@@ -23,7 +23,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Texas Cleanup & Catch-Up Bookkeeping · TechBrot",
-  description: "Catch-up bookkeeping for Texas businesses behind by months or years — reconstruct the books, rebuild sales-tax and margin-tax figures, get CPA-ready. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  description: "Months or years behind? We reconstruct your Texas books — rebuild 8.25% sales-tax and margin-tax figures to CPA-ready. Fixed-fee. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -13,7 +13,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "California Small Business Accountant · TechBrot",
-  description: "Small business accountant for California — bookkeeping, QuickBooks, CDTFA sales tax, AB5 tracking, payroll coordination, kept CPA-ready. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  description: "Small business accountant for California — bookkeeping, QuickBooks, CDTFA sales tax, AB5 tracking and payroll, kept CPA-ready. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

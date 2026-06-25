@@ -22,7 +22,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida QuickBooks Setup · TechBrot",
-  description: "QuickBooks setup for Florida businesses by a Certified ProAdvisor — FL chart of accounts, 6%+surtax sales tax by county, service taxability, fixed-asset schedule for TPP, payroll. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  description: "QuickBooks setup for Florida — FL chart of accounts, 6%+surtax sales tax by county, service taxability, fixed-asset schedule for TPP. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

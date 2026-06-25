@@ -19,8 +19,8 @@ module.exports = {
   tierClass: "section--tier-bofu",
   bodyClass: "page--bofu",
   callBar: true,
-  title: "California State Tax Notice Help (FTB · CDTFA · EDD) · TechBrot",
-  description: "Got a California tax notice from the FTB, CDTFA, or EDD? We help you understand it and reconcile the records behind it so your CPA, EA, or tax attorney can respond. Independent bookkeeping firm — not a tax agency. Call (877) 751-5575.",
+  title: "California State Tax Notice Help · FTB · CDTFA · EDD",
+  description: "Got a California tax notice (FTB, CDTFA, EDD)? We reconcile the records behind it so your CPA can respond. Independent bookkeeping firm — not a tax agency.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

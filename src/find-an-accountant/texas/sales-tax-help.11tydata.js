@@ -24,7 +24,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Texas Sales Tax Help in QuickBooks · TechBrot",
-  description: "Texas sales tax set up right in QuickBooks — 8.25% combined rate by location, reconciled so the Comptroller return ties. We configure; your CPA files. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  description: "Texas sales tax in QuickBooks — 8.25% combined rate by location, reconciled so the Comptroller return ties. We configure; your CPA files. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

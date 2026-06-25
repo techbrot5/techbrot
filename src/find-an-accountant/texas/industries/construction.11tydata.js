@@ -19,7 +19,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Texas Construction Accounting & Job Costing · TechBrot",
-  description: "Construction accounting for Texas contractors — job costing, WIP, AIA billing, retainage, the Texas lump-sum vs separated sales-tax contract rules, margin-tax COGS, 1099 subs. Fixed-fee. Call (877) 751-5575.",
+  description: "Texas construction accounting — job costing, WIP, AIA billing, retainage, lump-sum vs separated sales-tax contracts, margin-tax COGS, 1099 subs. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

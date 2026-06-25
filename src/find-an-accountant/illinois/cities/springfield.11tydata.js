@@ -29,7 +29,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Springfield Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Springfield, IL businesses — fluent in the state-capital economy (government contractors & grant-funded nonprofits), insurance, healthcare & central-Illinois agriculture, the flat income tax, and the Personal Property Replacement Tax. Fixed-fee. Call (877) 751-5575.",
+  description: "QuickBooks bookkeeping for Springfield, IL — state-capital government contractors, grant-funded nonprofits, insurance, flat tax and PPRT. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

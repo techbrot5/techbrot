@@ -24,7 +24,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "San Antonio Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for San Antonio businesses — fluent in government/defense contracting, cyber & healthcare accounting, the Texas franchise (margin) tax, 8.25% sales tax, and the Hotel Occupancy Tax for tourism. Fixed-fee. Call (877) 751-5575.",
+  description: "San Antonio ProAdvisor bookkeeping — defense contracting, cyber and healthcare accounting, the margin tax, 8.25% sales tax, Hotel Occupancy Tax. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -17,8 +17,8 @@ module.exports = {
   bodyClass: "page--location page--industry",
   callBar: true,
   heroLight: true,
-  title: "Florida Professional Services & Law Firm Accounting · TechBrot",
-  description: "Accounting for Florida consultancies, agencies & law firms — project & matter profitability, Florida Bar IOLTA trust records, partner draws, the PA corporate tax. Records only. Fixed-fee. Call (877) 751-5575.",
+  title: "Florida Law Firm & Professional Services Accounting",
+  description: "Accounting for Florida law firms, agencies & consultancies — matter profitability, Florida Bar IOLTA trust records, partner draws, the PA corporate tax.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

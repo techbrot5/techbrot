@@ -24,7 +24,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Long Beach Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Long Beach businesses — fluent in Long Beach's own city business license tax (not LA's), California's $800 franchise tax & CDTFA sales tax, Port logistics & import/export accounting. Fixed-fee. Call (877) 751-5575.",
+  description: "ProAdvisor bookkeeping for Long Beach — its own city business license tax (not LA’s), the $800 franchise tax and Port logistics. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

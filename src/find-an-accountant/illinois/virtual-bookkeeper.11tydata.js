@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Illinois Virtual Bookkeeper · TechBrot",
-  description: "Virtual bookkeeper for Illinois businesses — remote reconciliation, 10.25% Chicago sales tax by jurisdiction, PPRT net-income tracking, Chicago cloud tax, CPA-ready statements in your own QuickBooks file. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  description: "Virtual bookkeeper for Illinois businesses — remote reconciliation, 10.25% Chicago sales tax by jurisdiction, PPRT tracking, CPA-ready books. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

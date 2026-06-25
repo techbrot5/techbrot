@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Texas Bookkeeping Services · TechBrot",
-  description: "Bookkeeping services for Texas businesses — reconciliation, clean categorization, 8.25% sales tax, fixed-asset records for BPP, CPA-ready statements. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  description: "Texas bookkeeping: reconciliation, 8.25% sales tax by location, fixed-asset records for the BPP rendition, CPA-ready statements. Fixed-fee. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida QuickBooks Training · TechBrot",
-  description: "QuickBooks training for Florida business teams by a Certified ProAdvisor — invoice 6%+surtax sales tax by county, record the taxability of services, track fixed assets for TPP. Live, role-specific, all 67 counties. Call (877) 751-5575.",
+  description: "QuickBooks training for Florida teams — invoice 6%+surtax sales tax by county, record taxability of services, track fixed assets for TPP. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

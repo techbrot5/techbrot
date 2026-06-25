@@ -22,7 +22,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "St. Petersburg Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for St. Petersburg businesses — fluent in the downtown tech/startup, marine-science, arts, and tourism economy, Florida's no-income-tax structure, ~7% sales tax, the tax on services, and the 5.5% corporate tax. Fixed-fee. Call (877) 751-5575.",
+  description: "Bookkeeping for St. Petersburg (Pinellas County) — downtown tech, marine science, arts & tourism, ~7% sales tax, the tax on services. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

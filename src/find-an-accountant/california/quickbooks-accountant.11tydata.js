@@ -15,7 +15,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "California QuickBooks Accountant & ProAdvisor · TechBrot",
-  description: "Certified QuickBooks ProAdvisor & accountant for California businesses — bookkeeping, cleanup, payroll coordination, CDTFA district sales tax, AB5 tracking. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  description: "Certified QuickBooks ProAdvisor and accountant for California — bookkeeping, cleanup, payroll, CDTFA district sales tax and AB5 tracking. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

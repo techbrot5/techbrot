@@ -24,7 +24,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Dallas Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Dallas businesses — fluent in corporate, finance & tech accounting, the Texas franchise (margin) tax, 8.25% sales tax, and business personal property rendition. Fixed-fee. Call (877) 751-5575.",
+  description: "Dallas ProAdvisor bookkeeping — corporate, finance and tech accounting, the franchise (margin) tax, 8.25% sales tax, BPP rendition. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

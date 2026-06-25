@@ -23,7 +23,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "California Monthly Bookkeeping · TechBrot",
-  description: "Monthly bookkeeping for California businesses — books closed every month by a Certified ProAdvisor, CDTFA district sales tax reconciled, $800 franchise tax accrued, CPA-ready statements. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  description: "California monthly bookkeeping — closed every month, CDTFA district sales tax reconciled, $800 franchise tax accrued, CPA-ready. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

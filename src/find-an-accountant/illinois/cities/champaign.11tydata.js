@@ -34,7 +34,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Champaign Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Champaign, IL businesses — fluent in University of Illinois (UIUC) and Research Park tech & software startups, agtech, and healthcare, the flat income tax, and the Personal Property Replacement Tax (PPRT). Fixed-fee. Call (877) 751-5575.",
+  description: "QuickBooks bookkeeping for Champaign, IL — University of Illinois and Research Park tech, agtech and healthcare, flat income tax and PPRT. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

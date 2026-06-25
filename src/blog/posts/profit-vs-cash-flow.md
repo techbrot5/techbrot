@@ -1,7 +1,7 @@
 ---
-title: "Profit vs Cash Flow: Why a Profitable Business Can Still Go Broke · TechBrot"
+title: "Profit vs Cash Flow · Why Profitable Firms Go Broke"
 headline: "Profit vs cash flow: why a profitable business can still go broke"
-description: "Profit and cash flow aren't the same thing — and confusing them sinks profitable businesses. A Certified ProAdvisor team explains the difference, why it happens, and how to stay solvent. Not Intuit. Call (877) 751-5575."
+description: "Profit and cash flow aren't the same thing — and confusing them sinks profitable businesses. The difference, why it happens, and how to stay solvent."
 deck: "You can be profitable on paper and still not make payroll. Here&rsquo;s why profit and cash diverge, the traps that catch growing businesses, and how to watch the number that actually keeps the lights on."
 category: "business-finance"
 tags: ["post", "business-finance"]

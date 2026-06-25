@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida QuickBooks Migration · TechBrot",
-  description: "QuickBooks migration for Florida businesses by a Certified ProAdvisor — Desktop to Online or another platform, opening balances and history intact, sales tax re-mapped by county, fixed assets carried over. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  description: "QuickBooks migration for Florida — Desktop to Online, balances and history intact, sales tax re-mapped by county, assets carried over. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

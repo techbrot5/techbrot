@@ -18,7 +18,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Texas Trucking & Transportation Accounting · TechBrot",
-  description: "Trucking accounting for Texas carriers & owner-operators — per-mile cost, IFTA fuel-tax records, IRP, owner-operator 1099s, HVUT, equipment on BPP. Fixed-fee. Call (877) 751-5575.",
+  description: "Texas trucking accounting for carriers & owner-operators — per-mile cost, IFTA fuel-tax records, IRP, 1099s, HVUT, BPP equipment. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

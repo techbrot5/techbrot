@@ -23,7 +23,7 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   title: "Illinois Business Tax Problems (Books First) · TechBrot",
-  description: "Behind on Illinois taxes? Most business tax problems start as bookkeeping problems. We get your books current and CPA-ready so your CPA or EA can file and resolve. Independent firm — we don't file or negotiate with the IDOR, IDES, Chicago, or the IRS. Call (877) 751-5575.",
+  description: "Behind on Illinois taxes? Most tax problems start in the books. We get them CPA-ready so your CPA can file and resolve. Independent firm — not a tax agency.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -25,7 +25,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Texas QuickBooks Accountant & ProAdvisor · TechBrot",
-  description: "Certified QuickBooks ProAdvisor & accountant for Texas businesses — bookkeeping, cleanup, payroll, 8.25% sales tax, the franchise (margin) tax, and BPP rendition. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  description: "Certified QuickBooks ProAdvisor for Texas — bookkeeping, cleanup, payroll, 8.25% sales tax, the franchise (margin) tax, BPP rendition. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

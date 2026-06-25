@@ -18,7 +18,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Texas Professional Services & Law Firm Accounting · TechBrot",
-  description: "Accounting for Texas consultancies, agencies & law firms — project & matter profitability, IOLTA trust-record keeping, partner draws, margin-tax compensation deduction. Records only. Fixed-fee. Call (877) 751-5575.",
+  description: "Texas consultancy, agency & law-firm accounting — project and matter profitability, IOLTA trust records, partner draws, margin comp deduction. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

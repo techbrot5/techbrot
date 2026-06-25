@@ -17,7 +17,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Florida Healthcare & Medical Practice Accounting · TechBrot",
-  description: "Accounting for Florida medical, dental & healthcare practices — insurance-AR reconciliation, provider payroll, the PA corporate tax, equipment on TPP. Books only, HIPAA-aware. Fixed-fee. Call (877) 751-5575.",
+  description: "Accounting for Florida medical & dental practices — insurance-AR reconciliation, provider payroll, the PA corporate tax, equipment on TPP. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

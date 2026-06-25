@@ -22,7 +22,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Texas QuickBooks Setup · TechBrot",
-  description: "QuickBooks setup for Texas businesses by a Certified ProAdvisor — TX chart of accounts, 8.25% sales tax by location, margin-tax-ready books, fixed-asset schedule for BPP, payroll. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  description: "Texas QuickBooks setup — chart of accounts, 8.25% sales tax by location, margin-tax-ready books, fixed-asset schedule for BPP, payroll. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -17,7 +17,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Florida Real Estate Accounting & Bookkeeping · TechBrot",
-  description: "Real estate accounting for Florida brokers, investors & vacation-rental owners — multi-entity books, trust-record keeping, the Tourist Development Tax on short-term rentals, property tax, 1031. Fixed-fee. Call (877) 751-5575.",
+  description: "Real estate accounting for Florida brokers, investors & vacation rentals — multi-entity books, trust records, the Tourist Development Tax, 1031. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

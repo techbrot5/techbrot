@@ -17,7 +17,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Texas Manufacturing Accounting & Cost Accounting · TechBrot",
-  description: "Manufacturing accounting for Texas makers — inventory & standard costing, the Texas manufacturing machinery sales-tax exemption, margin-tax COGS, BPP on equipment. Fixed-fee. Call (877) 751-5575.",
+  description: "Texas manufacturing accounting — inventory & standard costing, the machinery & equipment sales-tax exemption, margin-tax COGS, BPP equipment. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

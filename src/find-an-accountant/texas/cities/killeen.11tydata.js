@@ -33,7 +33,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Killeen Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Killeen businesses — built for the Fort Cavazos military-base economy (defense and government contractors, base-services businesses, military-family small business and franchises, rentals and property management), with the Texas franchise (margin) tax and 8.25% sales tax handled. Fixed-fee. Call (877) 751-5575.",
+  description: "Killeen ProAdvisor bookkeeping — Fort Cavazos military economy: defense contractors, franchises, rentals, margin tax, 8.25% sales tax. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

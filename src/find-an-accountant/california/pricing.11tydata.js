@@ -12,7 +12,7 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/california/pricing/",
     name: "California Bookkeeping & QuickBooks Pricing",
-    description: "Fixed-fee California pricing — monthly bookkeeping from $400/mo, cleanup from $1,500, QuickBooks setup from $750. Written scope before any work, no hourly billing, all 58 counties. Independent firm; does not file California taxes.",
+    description: "Fixed-fee California pricing — monthly bookkeeping from $400/mo, cleanup from $1,500, QuickBooks setup from $750. Written scope first, no hourly billing.",
     serviceName: "California Bookkeeping & QuickBooks Services (Fixed-Fee)",
     serviceType: "Fixed-fee bookkeeping and QuickBooks ProAdvisor services",
     serviceDesc: "Fixed-fee bookkeeping, QuickBooks, sales-tax, payroll, and advisory services for California businesses, scoped in writing before any work begins — monthly bookkeeping, cleanup, catch-up, setup, migration, sales-tax tracking, payroll, and fractional CFO. Independent Certified QuickBooks ProAdvisor firm; does not file California tax returns — coordinates with the client's CPA or EA.",

@@ -24,7 +24,7 @@ module.exports = {
   disclosure: "<strong>Independent &mdash; and honest about the limits.</strong> TechBrot is an independent Certified QuickBooks ProAdvisor firm, not Intuit and not a tax authority, CPA, or attorney. On a deadline we bring your books current fast and accurately; your CPA or EA files the returns and represents you. We never trade accuracy for speed.",
   heroFigure: "taccount",
   title: "Illinois Urgent & Fast-Turnaround Bookkeeping · TechBrot",
-  description: "Urgent bookkeeping for Illinois businesses on a deadline — IDOR filing due, loan or sale pending, Chicago sales-tax period closing. Fast, reconciled, CPA-ready. All 102 counties. Call (877) 751-5575.",
+  description: "Urgent bookkeeping for Illinois businesses on a deadline — IDOR filing due, loan or sale pending, Chicago sales tax closing. CPA-ready fast. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

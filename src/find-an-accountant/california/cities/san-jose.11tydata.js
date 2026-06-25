@@ -24,7 +24,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "San Jose Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for San Jose & Silicon Valley businesses — fluent in San Jose's employee-based business tax, California's $800 franchise tax & CDTFA sales tax, equity-comp, hardware & SaaS accounting. Fixed-fee. Call (877) 751-5575.",
+  description: "ProAdvisor bookkeeping for San Jose and Silicon Valley — the employee-based business tax, the $800 franchise tax, equity-comp and SaaS. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

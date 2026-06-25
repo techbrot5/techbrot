@@ -8,7 +8,7 @@ module.exports = {
   cityMeta: {
     url: "https://techbrot.com/find-an-accountant/florida/speak-to-a-proadvisor/",
     name: "Speak to a Florida QuickBooks ProAdvisor",
-    description: "Speak to a Certified QuickBooks ProAdvisor at TechBrot — an independent firm, not Intuit or QuickBooks support. A free, no-obligation call about your Florida books. Independent firm; does not file Florida taxes.",
+    description: "Speak to a Certified QuickBooks ProAdvisor at TechBrot — independent, not Intuit support. A free, no-obligation call about your Florida books. (877) 751-5575.",
     serviceName: "Florida QuickBooks ProAdvisor Discovery Call",
     serviceType: "QuickBooks ProAdvisor advisory and discovery call",
     serviceDesc: "A free, no-obligation discovery call with a Certified QuickBooks ProAdvisor for Florida businesses — reviewing the client's own QuickBooks file and recommending setup, cleanup, monthly management, or advisory. Independent firm, not Intuit or QuickBooks product support; does not provide Intuit account/billing support or file Florida tax returns — coordinates with the client's CPA or EA.",

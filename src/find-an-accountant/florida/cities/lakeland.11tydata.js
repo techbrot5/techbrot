@@ -28,7 +28,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Lakeland Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Lakeland businesses — fluent in I-4 logistics, warehousing & 3PL/distribution, manufacturing, and citrus/agribusiness accounting, Florida's no-income-tax structure, the Polk County sales tax, and the tangible personal property (DR-405) return. Fixed-fee. Call (877) 751-5575.",
+  description: "Bookkeeping for Lakeland (Polk County) — I-4 logistics, warehousing & 3PL, manufacturing, citrus/agribusiness, and the TPP (DR-405) return. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

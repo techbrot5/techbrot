@@ -88,9 +88,9 @@ module.exports = {
   sec: {
     faqH: "TechBrot Setup Protocol questions.",
   },
-  title: "TechBrot Setup Protocol — QuickBooks Setup Framework · TechBrot",
+  title: "TechBrot Setup Protocol · QuickBooks Setup Framework",
   description:
-    "The TechBrot Setup Protocol — our named, ordered method for setting up a QuickBooks file right the first time, so the chart and balances never need a cleanup later.",
+    "The TechBrot Setup Protocol — our named, ordered method for setting up a QuickBooks file right the first time, so the chart and balances never need cleanup.",
   published: "2026-06-19",
   updated: "2026-06-19",
   hero: {

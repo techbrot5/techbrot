@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Illinois Bookkeeping Services · TechBrot",
-  description: "Bookkeeping services for Illinois businesses — reconciliation, clean categorization, 10.25% Chicago sales tax by jurisdiction, PPRT net-income tracking, Chicago cloud tax, CPA-ready statements. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  description: "Bookkeeping for Illinois businesses: reconciliation, 10.25% Chicago sales tax by jurisdiction, PPRT net-income tracking, CPA-ready books. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

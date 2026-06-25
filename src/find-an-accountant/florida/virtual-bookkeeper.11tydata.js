@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida Virtual Bookkeeper · TechBrot",
-  description: "Virtual bookkeeper for Florida businesses — remote reconciliation, 6%+surtax sales tax by county, the taxability of services, CPA-ready statements in your own QuickBooks file. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  description: "Virtual bookkeeper for Florida — remote reconciliation, 6%+surtax sales tax by county, taxability of services, CPA-ready books in QuickBooks. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -26,7 +26,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Naperville Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Naperville, IL businesses — fluent in corporate, tech & professional-services accounting, Illinois' flat income tax, the Personal Property Replacement Tax, and high property tax. Fixed-fee. Call (877) 751-5575.",
+  description: "QuickBooks bookkeeping for Naperville, IL — corporate, tech and professional-services in DuPage County, flat tax, PPRT, high property tax. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

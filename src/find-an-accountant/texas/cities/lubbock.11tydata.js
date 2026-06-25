@@ -29,7 +29,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Lubbock Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Lubbock businesses — fluent in South Plains agriculture and agribusiness (cotton, grain, cattle, ag-equipment dealers), the Texas Tech University and student economy, the regional healthcare hub, the Texas franchise (margin) tax, and 8.25% sales tax. Fixed-fee. Call (877) 751-5575.",
+  description: "Lubbock ProAdvisor bookkeeping — South Plains agribusiness (cotton, grain, cattle), Texas Tech economy, healthcare, margin tax, 8.25% sales tax. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

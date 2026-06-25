@@ -23,7 +23,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "California Virtual Bookkeeper · TechBrot",
-  description: "Virtual bookkeeper for California businesses — remote, in your own QuickBooks file, by a named Certified ProAdvisor. CDTFA district sales tax, $800 franchise tax, AB5 built in. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  description: "Virtual bookkeeper for California — remote, in your own QuickBooks file. CDTFA sales tax, $800 franchise tax and AB5 built in. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -25,7 +25,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Orlando Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Orlando businesses — fluent in tourism, hospitality & vacation-rental accounting, the Tourist Development Tax, Florida's no-income-tax structure, and 6.5% sales tax. Fixed-fee. Call (877) 751-5575.",
+  description: "Bookkeeping for Orlando (Orange County) — tourism, hospitality & vacation rentals, the Tourist Development Tax, 6.5% sales tax. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

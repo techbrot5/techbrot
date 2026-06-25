@@ -25,7 +25,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Rockford Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Rockford, IL businesses — fluent in aerospace, precision-machining & air-cargo accounting, the Illinois manufacturing machinery exemption, the flat income tax, and the Personal Property Replacement Tax. Fixed-fee. Call (877) 751-5575.",
+  description: "QuickBooks bookkeeping for Rockford, IL businesses — aerospace, precision-machining and air-cargo accounting, IL machinery exemption and PPRT. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

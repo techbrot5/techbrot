@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Texas QuickBooks Error Fixes · TechBrot",
-  description: "QuickBooks error fixes for Texas businesses by a Certified ProAdvisor — sales-tax liability that won't tie, out-of-balance balance sheet, duplicate entries, broken margin-tax figures. Root-cause fixes, all 254 counties. Call (877) 751-5575.",
+  description: "Texas QuickBooks error fixes — sales tax that won't tie to the Comptroller, out-of-balance sheet, duplicates, broken margin figures. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

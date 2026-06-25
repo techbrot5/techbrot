@@ -18,7 +18,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "California Restaurant Accounting & Bookkeeping · TechBrot",
-  description: "Restaurant accounting for California operators — high-volume POS reconciled to CDTFA district rates, tipped payroll with CA SDI, food-vs-alcohol sales tax, multi-location. Fixed-fee. Call (877) 751-5575.",
+  description: "Restaurant accounting for California operators — POS reconciled to CDTFA rates, tipped payroll with CA SDI, food-vs-alcohol sales tax. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

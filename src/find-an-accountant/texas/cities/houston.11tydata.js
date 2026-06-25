@@ -27,7 +27,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Houston Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Houston businesses — fluent in oil & gas accounting (JIB, royalties, severance tax), the Texas franchise (margin) tax, 8.25% sales tax, and the energy, port & medical economy. Fixed-fee. Call (877) 751-5575.",
+  description: "Houston ProAdvisor bookkeeping — oil & gas accounting (JIB, royalties, severance tax), Port and medical economy, margin tax, 8.25% sales tax. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

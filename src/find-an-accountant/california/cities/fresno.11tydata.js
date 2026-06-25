@@ -25,7 +25,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Fresno Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Fresno & Central Valley businesses — fluent in California's farm-equipment sales-tax exemptions, the $800 franchise tax & CDTFA sales tax, agriculture, food-processing & seasonal-labor accounting. Fixed-fee. Call (877) 751-5575.",
+  description: "ProAdvisor bookkeeping for Fresno and the Central Valley — farm-equipment sales-tax exemptions, the $800 franchise tax and agriculture. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

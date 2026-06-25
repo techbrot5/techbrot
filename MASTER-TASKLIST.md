@@ -21,13 +21,15 @@ Remove 4 VISIBLE inputs; keep hidden auto-capture where derivable. Both full + m
 - ✅ FORM-STRATEGY.md recorded.
 - (also optimized the slow `meta-hygiene` battery check → title/desc-only — TASK 6 item, done early since it blocked.)
 
-## TASK 2 — TITLE/DESC REWRITE  🔵 in-progress
+## TASK 2 — TITLE/DESC REWRITE  🟢 bulk complete (verify stragglers)
 - ✅ META-STRATEGY.md recorded · ✅ `meta-unique` battery gate added (enforces unique titles+descs sitewide; catches bulk-stamping).
 - 🔵 titles → keyword-LED ≤60. DONE: w1 6 high-intent · w2 industries 26 · w3 qb/help+support 57 + qb/online 42 + glossary 46. ≈124 done; ~115 titles left.
 - 🔵 descs → value+keyword led ≤160. DONE: 52 high-intent (TASK-4) · w2 industries 26 · w3 145 (help/online/glossary). ≈223 done; ~262 descs left.
 - Per page-type, authored not bulk-stamped, battery+commit per wave.
-- ✅ WAVE 3 DONE (3 parallel subagents, verified): quickbooks/help+support 57 · quickbooks/online 42 · glossary 46 = 145 pages.
-- Remaining: find-an-accountant state landings (~16t/163d — dedicated wave, ties to T5, phone-on-near-me) · vs · guides · qb cleanup/compare/payroll/migration/enterprise · accounting advisory/services · switch · pricing · tools · blog · long-tail descs.
+- ✅ WAVE 3 DONE: quickbooks/help+support 57 · quickbooks/online 42 · glossary 46 = 145.
+- ✅ WAVE 4 DONE (4 parallel subagents, 340 pages, spot-checked + gated): find-an-accountant 174 (per-state tax facts, phone-on-near-me, honesty on triage) · quickbooks-remaining 65 · accounting+standalones 38 · resources/vs/switch/pricing/tools/frameworks/blog 63.
+- TOTAL T2: ~517 page meta rewrites (w1 6 + w2 26 + w3 145 + w4 340). Sitewide: 0 dup titles, 0 dup descs, 0 hygiene fails.
+- STRAGGLERS (data-file-driven, not per-page editable): blog/category.njk (paginated, meta from category data). Verify count after build; address if material.
 
 ## TASK 3 — DAVID BLOCK + EEAT  ⬜ pending
 - ⬜ Authored David operator block → /about/ + /partners/ (+ reviewedBy there). /trust/ stays team-voice.

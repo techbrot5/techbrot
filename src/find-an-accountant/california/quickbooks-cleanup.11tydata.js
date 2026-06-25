@@ -22,7 +22,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "California QuickBooks Cleanup · TechBrot",
-  description: "QuickBooks cleanup for California businesses — fix flat-rate district sales tax, 1099/W-2 misclassification, unreconciled accounts & ASC 606 errors, to a CPA-ready standard. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  description: "California QuickBooks cleanup — fix flat-rate district sales tax, 1099/W-2 misclassification, unreconciled accounts and ASC 606 errors. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

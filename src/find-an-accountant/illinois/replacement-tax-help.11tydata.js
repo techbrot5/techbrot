@@ -27,7 +27,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Illinois Replacement Tax (PPRT) & PTE Help · TechBrot",
-  description: "Illinois's entity-level taxes — the Personal Property Replacement Tax (PPRT, 2.5%/1.5%), the 9.5% combined C-corp rate, and the permanent PTE election — tracked in your books so your CPA can compute and file. Call (877) 751-5575.",
+  description: "Illinois Replacement Tax (PPRT, 2.5%/1.5%), the 9.5% combined C-corp rate, and the PTE election — tracked in your books so your CPA can file. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -18,7 +18,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "California E-commerce Accounting & Bookkeeping · TechBrot",
-  description: "E-commerce accounting for California DTC & marketplace sellers — multi-channel reconciliation, CDTFA district sales tax by ship-to location, economic nexus, inventory & COGS by SKU. Fixed-fee. Call (877) 751-5575.",
+  description: "E-commerce accounting for California sellers — multi-channel reconciliation, CDTFA sales tax by ship-to, economic nexus and COGS. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

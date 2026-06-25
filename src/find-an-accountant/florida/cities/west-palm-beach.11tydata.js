@@ -30,8 +30,8 @@ module.exports = {
   bodyClass: "page--location",
   callBar: true,
   heroLight: true,
-  title: "West Palm Beach Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for West Palm Beach businesses — fluent in finance and wealth-management, hedge fund and family-office back-office accounting, luxury real estate, Florida's no-income-tax structure that draws relocations, ~7% sales tax, and the tangible personal property (DR-405) return. Fixed-fee. Call (877) 751-5575.",
+  title: "West Palm Beach Bookkeeper & QuickBooks · TechBrot",
+  description: "Bookkeeping for West Palm Beach (Palm Beach County) — finance, hedge funds & family offices, luxury real estate, ~7% sales tax, the TPP return. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

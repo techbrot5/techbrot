@@ -31,7 +31,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Fort Myers Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Fort Myers businesses — fluent in Southwest Florida's construction and real-estate development, retirement and healthcare, and Gulf tourism economy, Florida's no-income-tax structure, and the tangible personal property (DR-405) return. Fixed-fee. Call (877) 751-5575.",
+  description: "Bookkeeping for Fort Myers (Lee County) — SW Florida construction & development, retirement healthcare & Gulf tourism, the TPP return. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

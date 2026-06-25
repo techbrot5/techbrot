@@ -24,8 +24,8 @@ module.exports = {
   bodyClass: "page--bofu",
   callBar: true,
   heroFigure: "taccount",
-  title: "California AB5 Worker Classification (Bookkeeping) · TechBrot",
-  description: "AB5 worker classification for California books — separate W-2 from 1099 cleanly, surface misclassification exposure, keep records EDD-ready. Certified ProAdvisor; classification & audits stay with your CPA/counsel. Call (877) 751-5575.",
+  title: "California AB5 Worker Classification · TechBrot",
+  description: "California AB5 books support: W-2 and 1099 separated, misclassification exposure surfaced for your counsel, EDD-ready records. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

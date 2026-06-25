@@ -22,7 +22,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "California QuickBooks Reconciliation · TechBrot",
-  description: "QuickBooks reconciliation for California businesses — bank, card & loan accounts reconciled, plus a CDTFA sales-tax sub-reconciliation so the return ties. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  description: "California QuickBooks reconciliation — bank, card and loan accounts reconciled, plus a CDTFA sales-tax sub-reconciliation. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -20,7 +20,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Illinois Healthcare & Medical Practice Accounting · TechBrot",
-  description: "Accounting for Illinois medical, dental & healthcare practices — insurance-AR reconciliation, provider payroll, the medical-corp/S-corp/PLLC entity tax and the PPRT. Books only, HIPAA-aware, all 102 counties. Call (877) 751-5575.",
+  description: "Accounting for Illinois medical & dental practices — insurance-AR reconciliation, provider payroll, PLLC tax and PPRT. Books only, HIPAA-aware. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

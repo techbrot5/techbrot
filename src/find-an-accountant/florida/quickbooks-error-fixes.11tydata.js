@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida QuickBooks Error Fixes · TechBrot",
-  description: "QuickBooks error fixes for Florida businesses by a Certified ProAdvisor — sales-tax liability that won't tie, out-of-balance balance sheet, duplicate entries, mishandled taxability of services. Root-cause fixes, all 67 counties. Call (877) 751-5575.",
+  description: "QuickBooks error fixes for Florida — sales-tax liability that won't tie, out-of-balance sheet, duplicates, mishandled service taxability. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

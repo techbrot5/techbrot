@@ -1,7 +1,7 @@
 ---
-title: "How to Get Your Books Ready for Tax Season (Without Doing Your Taxes) · TechBrot"
+title: "Get Your Books Ready for Tax Season · A Checklist"
 headline: "How to get your books ready for tax season (without doing your taxes)"
-description: "A Certified ProAdvisor team's checklist for making tax season painless — reconcile, categorize, tie out, and hand your CPA a clean file. We don't file taxes; we make filing easy. Not tax advice. Not Intuit. Call (877) 751-5575."
+description: "A ProAdvisor's checklist for painless tax season — reconcile, categorize, tie out, and hand your CPA a clean file. We don't file taxes; we make filing easy."
 deck: "The work that makes tax season painless isn&rsquo;t the filing &mdash; it&rsquo;s the bookkeeping that comes before it. Here&rsquo;s how to hand your CPA a clean file instead of a shoebox, so the return is fast, accurate, and cheaper."
 category: "taxes"
 tags: ["post", "taxes"]

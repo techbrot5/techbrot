@@ -25,7 +25,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "San Diego Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for San Diego businesses — fluent in San Diego's employee-based Business Tax Certificate, California's $800 franchise tax & CDTFA sales tax, defense, biotech & craft-beer accounting. Fixed-fee. Call (877) 751-5575.",
+  description: "ProAdvisor bookkeeping for San Diego — the employee-based Business Tax Certificate, the $800 franchise tax, defense and biotech. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

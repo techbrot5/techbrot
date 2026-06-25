@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Illinois Monthly Bookkeeping · TechBrot",
-  description: "Monthly bookkeeping for Illinois businesses — a real close every month, 10.25% Chicago sales tax reconciled by jurisdiction, PPRT net income kept current, CPA-ready statements. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  description: "Monthly bookkeeping for Illinois businesses: a real close each month, 10.25% Chicago sales tax reconciled by jurisdiction, PPRT net income kept current.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -31,7 +31,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Bloomington Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Bloomington-Normal, IL businesses — fluent in insurance-agency, EV and advanced-manufacturing, and Illinois State University-adjacent accounting, the Illinois manufacturing machinery exemption, the flat income tax, and the Personal Property Replacement Tax. Fixed-fee. Call (877) 751-5575.",
+  description: "QuickBooks bookkeeping for Bloomington-Normal, IL — insurance-agency, EV and advanced-manufacturing accounting, IL machinery exemption and PPRT. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

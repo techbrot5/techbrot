@@ -85,9 +85,9 @@ module.exports = {
   sec: {
     faqH: "Compounding Reconciliation Drift questions.",
   },
-  title: "Compounding Reconciliation Drift — TechBrot Framework · TechBrot",
+  title: "Compounding Reconciliation Drift · TechBrot Framework",
   description:
-    "Compounding Reconciliation Drift — TechBrot's coined framework for how un-caught QuickBooks reconciliation gaps compound period over period, and how cleanup reverses it.",
+    "Compounding Reconciliation Drift — TechBrot's coined framework for how un-caught QuickBooks reconciliation gaps compound period over period, undone by cleanup.",
   published: "2026-06-19",
   updated: "2026-06-19",
   hero: {

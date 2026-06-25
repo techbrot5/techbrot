@@ -22,7 +22,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "California QuickBooks Migration · TechBrot",
-  description: "QuickBooks migration for California businesses — Desktop to Online or another platform to QuickBooks, with district sales tax, AB5 tracking & balances carried over cleanly. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  description: "California QuickBooks migration — Desktop to Online, with district sales tax, AB5 tracking and balances carried over cleanly. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

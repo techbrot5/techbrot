@@ -27,7 +27,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Miami Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Miami businesses — fluent in international trade, finance & real-estate accounting, Florida's no-income-tax structure, ~7% sales tax, the 5.5% corporate tax, and the taxability of services. Fixed-fee. Call (877) 751-5575.",
+  description: "Bookkeeping for Miami (Miami-Dade) — international trade, finance & real estate, ~7% sales tax, the 5.5% corporate tax, tax on services. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

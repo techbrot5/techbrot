@@ -25,7 +25,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Sacramento Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Sacramento businesses — fluent in the Sacramento Business Operations Tax, California's $800 franchise tax & CDTFA sales tax, government-contract, nonprofit & association accounting. Fixed-fee. Call (877) 751-5575.",
+  description: "ProAdvisor bookkeeping for Sacramento — the Business Operations Tax, the $800 franchise tax, government-contract and nonprofit accounting. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

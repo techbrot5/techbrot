@@ -34,7 +34,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Laredo Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Laredo businesses — fluent in the trade-corridor economy of the #1 U.S. land port: customs brokerage, trucking & freight, and warehousing/3PL distribution along the I-35 corridor, plus the Texas franchise (margin) tax and 8.25% sales tax. Fixed-fee. Call (877) 751-5575.",
+  description: "Laredo ProAdvisor bookkeeping — the #1 U.S. land port: customs brokerage, trucking and IFTA, 3PL warehousing, margin tax, 8.25% sales tax. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

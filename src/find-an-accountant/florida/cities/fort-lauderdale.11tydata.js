@@ -24,8 +24,8 @@ module.exports = {
   bodyClass: "page--location",
   callBar: true,
   heroLight: true,
-  title: "Fort Lauderdale Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Fort Lauderdale businesses — fluent in marine/yachting, tourism & real-estate accounting, Florida's no-income-tax structure, 7% sales tax, and the boat sales-tax cap. Fixed-fee. Call (877) 751-5575.",
+  title: "Fort Lauderdale Bookkeeper & QuickBooks Accountant",
+  description: "Bookkeeping for Fort Lauderdale (Broward County) — marine/yachting, tourism & real estate, the boat sales-tax cap, ~7% sales tax handled. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

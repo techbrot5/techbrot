@@ -18,7 +18,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "California Real Estate Accounting & Bookkeeping · TechBrot",
-  description: "Real estate accounting for California investors, brokerages & property managers — trust accounting, multi-entity ledgers, 1031 and Prop 13 basis tracking, agent commissions. Fixed-fee. Call (877) 751-5575.",
+  description: "Real estate accounting for California investors and property managers — trust accounting, multi-entity ledgers, 1031 and Prop 13 basis. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

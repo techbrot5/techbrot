@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida QuickBooks Reconciliation · TechBrot",
-  description: "QuickBooks reconciliation for Florida businesses by a Certified ProAdvisor — every account reconciled monthly, the 6%+surtax sales-tax liability tied to the DOR return by county, service-taxability reconciled. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  description: "QuickBooks reconciliation for Florida — every account reconciled monthly, the 6%+surtax sales-tax liability tied to the DOR return. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

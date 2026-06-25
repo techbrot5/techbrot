@@ -25,7 +25,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Austin Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Austin businesses — fluent in SaaS, semiconductor & equity-comp accounting, the Texas franchise (margin) tax, 8.25% sales tax, and the Hotel Occupancy Tax for events. Fixed-fee. Call (877) 751-5575.",
+  description: "Austin ProAdvisor bookkeeping — SaaS, semiconductor and equity-comp accounting, the margin tax, 8.25% sales tax, Hotel Occupancy Tax. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

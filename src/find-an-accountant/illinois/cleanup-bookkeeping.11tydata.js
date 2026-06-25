@@ -24,7 +24,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Illinois Cleanup & Catch-Up Bookkeeping · TechBrot",
-  description: "Catch-up bookkeeping for Illinois businesses behind by months or years — reconstruct the books, rebuild the 6.25%–10.25% sales-tax figures by jurisdiction, get CPA-ready. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  description: "Catch-up bookkeeping for Illinois businesses months or years behind: rebuild the 6.25%–10.25% sales tax by jurisdiction and PPRT net income, CPA-ready.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

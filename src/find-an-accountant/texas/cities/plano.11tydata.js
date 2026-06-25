@@ -31,7 +31,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Plano Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Plano businesses — fluent in the corporate-HQ, tech, finance, and professional-services economy (multi-entity structures, equity/stock comp and executive payroll, SaaS revenue recognition), the Texas franchise (margin) tax, and 8.25% sales tax. Fixed-fee. Call (877) 751-5575.",
+  description: "Plano ProAdvisor bookkeeping — corporate-HQ, tech and finance economy: multi-entity, equity comp, SaaS revenue, margin tax, 8.25% sales tax. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

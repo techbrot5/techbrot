@@ -24,7 +24,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Riverside Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Riverside & Inland Empire businesses — fluent in logistics & warehousing accounting, multi-state sales-tax nexus, California's $800 franchise tax & CDTFA sales tax, inventory & COGS at scale. Fixed-fee. Call (877) 751-5575.",
+  description: "ProAdvisor bookkeeping for Riverside and the Inland Empire — logistics and warehousing, multi-state nexus and the $800 franchise tax. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

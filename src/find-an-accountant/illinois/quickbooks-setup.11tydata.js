@@ -26,7 +26,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Illinois QuickBooks Setup · TechBrot",
-  description: "QuickBooks setup for Illinois businesses by a Certified ProAdvisor — IL chart of accounts, 6.25%–10.25% sales tax by jurisdiction, PPRT-ready books, Chicago's 15% cloud tax configured separately, payroll. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  description: "QuickBooks setup for Illinois businesses — IL chart of accounts, 6.25%–10.25% sales tax by jurisdiction, PPRT-ready books, cloud tax separate. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

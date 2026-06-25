@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Illinois Manufacturing Accounting · TechBrot",
-  description: "Accounting for Illinois manufacturers — the MM&E sales/use-tax exemption tracked, inventory/WIP and job costing, the PPRT and 9.5% C-corp rate, multi-state sales tax. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  description: "Accounting for Illinois manufacturers — the MM&E sales/use-tax exemption tracked, inventory/WIP and job costing, PPRT and 9.5% C-corp rate. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

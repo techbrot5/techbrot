@@ -1,7 +1,7 @@
 ---
 title: "Inside the TechBrot Accountant Partner Program · TechBrot"
 headline: "Inside the TechBrot accountant partner program"
-description: "How the TechBrot partner program works for accountants, CPAs, and bookkeepers — what we take on, what stays yours, and who it fits. From a Certified ProAdvisor team. Not Intuit. Call (877) 751-5575."
+description: "How the TechBrot partner program works for accountants, CPAs, and bookkeepers — what we take on, what stays yours, and who it's a fit for."
 deck: "Our first partner-spotlight post is about the program itself: how independent accountants and CPAs work with us, what we handle, what stays theirs, and who it&rsquo;s a fit for. Real partner stories will follow &mdash; with their permission, never invented."
 category: "partner-spotlight"
 tags: ["post", "partner-spotlight"]

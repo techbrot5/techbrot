@@ -20,7 +20,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Illinois Agency & Creative Accounting · TechBrot",
-  description: "Accounting for Illinois marketing, creative & digital agencies across all 102 counties — project and retainer profitability, 1099 contractor classification, the PPRT, the PTE election, and Chicago's 15% cloud tax on SaaS. Books CPA-ready, fixed-fee. Call (877) 751-5575.",
+  description: "Accounting for Illinois marketing & creative agencies — project and retainer profitability, 1099 classification, PPRT, Chicago's cloud tax. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

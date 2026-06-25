@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida Monthly Bookkeeping · TechBrot",
-  description: "Monthly bookkeeping for Florida businesses — a real close every month, 6%+surtax sales tax reconciled by county, the taxability of services, CPA-ready statements. Fixed-fee, all 67 counties. Call (877) 751-5575.",
+  description: "Monthly bookkeeping for Florida businesses — a real close each month, 6%+surtax sales tax reconciled by county, taxability of services. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

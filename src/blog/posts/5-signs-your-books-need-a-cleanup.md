@@ -1,7 +1,7 @@
 ---
 title: "5 Signs Your Books Need a Cleanup · TechBrot"
 headline: "5 signs your books need a cleanup"
-description: "Five clear signals that your QuickBooks file needs a cleanup, from a Certified ProAdvisor team — unreconciled accounts, a bloated chart of accounts, and more. How to tell, and what to do. Not Intuit. Call (877) 751-5575."
+description: "Five clear signals your QuickBooks file needs a cleanup — unreconciled accounts, a bloated chart of accounts, and more. How to tell, and what cleanup does."
 deck: "Messy books rarely announce themselves &mdash; they just quietly make every report and decision less trustworthy. Here are five signs it&rsquo;s time for a cleanup, and what one actually fixes."
 category: "bookkeeping"
 tags: ["post", "bookkeeping"]

@@ -24,7 +24,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Jacksonville Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Jacksonville businesses — fluent in logistics, insurance & Navy-contracting accounting, Florida's no-income-tax structure, ~7.5% sales tax, and reemployment (RT-6) payroll tax. Fixed-fee. Call (877) 751-5575.",
+  description: "Bookkeeping for Jacksonville (Duval County) — logistics, insurance & Navy contracting, ~7.5% sales tax, reemployment (RT-6) tax. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

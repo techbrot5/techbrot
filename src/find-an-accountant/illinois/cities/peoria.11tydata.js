@@ -31,7 +31,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Peoria Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Peoria, IL businesses — fluent in heavy-equipment & industrial manufacturing, OSF-area healthcare, and Illinois River barge/logistics accounting, the Illinois manufacturing machinery exemption, the flat income tax, and the Personal Property Replacement Tax. Fixed-fee. Call (877) 751-5575.",
+  description: "QuickBooks bookkeeping for Peoria, IL — heavy-equipment manufacturing, OSF-area healthcare, river logistics, IL machinery exemption and PPRT. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

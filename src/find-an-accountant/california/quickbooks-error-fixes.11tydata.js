@@ -23,7 +23,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "California QuickBooks Error Fixes · TechBrot",
-  description: "QuickBooks error fixes for California businesses — technical error codes plus California file-config errors (flat-rate sales tax, payroll items, reconciliation). Certified ProAdvisor, fixed-fee, all 58 counties. Call (877) 751-5575.",
+  description: "California QuickBooks error fixes — technical error codes plus CA file-config errors: flat-rate sales tax, payroll items, reconciliation. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -23,7 +23,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "California Bookkeeping Cleanup & Catch-Up · TechBrot",
-  description: "Bookkeeping cleanup & catch-up for California businesses — months or years behind brought current and CPA-ready, with CDTFA district sales tax and the $800 franchise tax fixed. Fixed-fee, all 58 counties. Call (877) 751-5575.",
+  description: "California bookkeeping cleanup and catch-up — months or years behind brought CPA-ready, CDTFA sales tax and the $800 franchise tax fixed. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

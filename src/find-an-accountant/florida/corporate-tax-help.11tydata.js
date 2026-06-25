@@ -28,7 +28,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Florida Corporate, Services & TPP Tax Help · TechBrot",
-  description: "Florida's business taxes beyond sales tax — the 5.5% corporate income tax, the taxability of services, and the tangible personal property return — tracked in your books so your CPA can file. Call (877) 751-5575.",
+  description: "Florida business taxes beyond sales tax — the 5.5% corporate income tax, taxability of services, and the TPP (DR-405) return, tracked so your CPA can file.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

@@ -27,7 +27,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Illinois QuickBooks Cleanup · TechBrot",
-  description: "QuickBooks cleanup for Illinois businesses by a Certified ProAdvisor — fix single-rate sales tax to the correct combined rate by jurisdiction (10.25% in Chicago), track Illinois net income for the PPRT, separate Chicago's 15% cloud tax, and reconcile to CPA-ready. Fixed-fee, all 102 counties. Call (877) 751-5575.",
+  description: "QuickBooks cleanup for Illinois businesses — fix single-rate sales tax to the right combined rate (10.25% Chicago), track PPRT, reconcile to CPA-ready.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

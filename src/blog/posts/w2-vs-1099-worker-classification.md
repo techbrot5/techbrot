@@ -1,7 +1,7 @@
 ---
-title: "W-2 vs 1099: How to Classify a Worker (and Why It Matters) · TechBrot"
+title: "W-2 vs 1099 · How to Classify a Worker Correctly"
 headline: "W-2 vs 1099: how to classify a worker (and why it matters)"
-description: "Employee or independent contractor? A Certified ProAdvisor team explains the W-2 vs 1099 distinction, the tests that decide it, the cost of getting it wrong, and how to stay clean. General info, not legal advice. Not Intuit. Call (877) 751-5575."
+description: "Employee or contractor? The W-2 vs 1099 distinction, the tests that decide it, the cost of getting it wrong, and how to stay clean. Not legal advice."
 deck: "Calling a worker a contractor doesn&rsquo;t make them one &mdash; the IRS and states decide that by how the work actually happens. Misclassify, and the back taxes and penalties land on you. Here&rsquo;s how the line really works."
 category: "payroll"
 tags: ["post", "payroll"]

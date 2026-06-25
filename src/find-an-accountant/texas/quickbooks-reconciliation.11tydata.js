@@ -21,7 +21,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Texas QuickBooks Reconciliation · TechBrot",
-  description: "QuickBooks reconciliation for Texas businesses by a Certified ProAdvisor — every account reconciled monthly, the 8.25% sales-tax liability tied to the Comptroller return, margin-tax figures clean. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  description: "Texas QuickBooks reconciliation — every account monthly, the 8.25% sales-tax liability tied to the Comptroller return. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

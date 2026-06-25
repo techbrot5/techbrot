@@ -22,7 +22,7 @@ module.exports = {
   callBar: true,
   heroFigure: "taccount",
   title: "Texas QuickBooks Cleanup · TechBrot",
-  description: "QuickBooks cleanup for Texas businesses by a Certified ProAdvisor — fix single-rate sales tax, separate margin-tax figures, rebuild the fixed-asset schedule, reconcile to CPA-ready. Fixed-fee, all 254 counties. Call (877) 751-5575.",
+  description: "Texas QuickBooks cleanup — fix single-rate sales tax, separate the margin-tax figures, rebuild the BPP asset schedule, reconcile. Call (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

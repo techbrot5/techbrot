@@ -18,7 +18,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Florida Marine & Boating Accounting · TechBrot",
-  description: "Accounting for Florida boat dealers, marinas & yacht brokers — the vessel sales-tax cap, dealer inventory, slip/fuel/storage/repair, brokerage trust records, use-tax rules. Fixed-fee. Call (877) 751-5575.",
+  description: "Accounting for Florida boat dealers, marinas & yacht brokers — the vessel sales-tax cap, dealer inventory, slip/fuel/repair, brokerage trust records.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },

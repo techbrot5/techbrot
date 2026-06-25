@@ -25,7 +25,7 @@ module.exports = {
   callBar: true,
   heroLight: true,
   title: "Fort Worth Bookkeeper & QuickBooks Accountant · TechBrot",
-  description: "Certified QuickBooks ProAdvisor bookkeeping for Fort Worth businesses — fluent in Barnett Shale natural-gas accounting, aerospace & logistics, the Texas franchise (margin) tax, 8.25% sales tax, and severance tax. Fixed-fee. Call (877) 751-5575.",
+  description: "Fort Worth ProAdvisor bookkeeping — Barnett Shale gas royalty and severance accounting, aerospace and logistics, margin tax, 8.25% sales tax. (877) 751-5575.",
   breadcrumb: [
     { name: "Home", href: "/" },
     { name: "Find an Accountant", href: "/find-an-accountant/" },
