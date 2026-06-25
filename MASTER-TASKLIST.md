@@ -23,9 +23,11 @@ Remove 4 VISIBLE inputs; keep hidden auto-capture where derivable. Both full + m
 
 ## TASK 2 — TITLE/DESC REWRITE  🔵 in-progress
 - ✅ META-STRATEGY.md recorded · ✅ `meta-unique` battery gate added (enforces unique titles+descs sitewide; catches bulk-stamping).
-- 🔵 257 titles >60 → keyword-LED ≤60. DONE: wave1 6 high-intent [6439655] · wave2 industries 25+faq [this commit]. ~226 titles left.
-- 🔵 511 descs >160 → value+keyword led ≤160, unique. DONE: 52 high-intent (TASK-4) · wave2 industries 25+faq. ~485 descs left.
-- Per page-type, authored not bulk-stamped, battery+commit per wave. Remaining clusters after industries: qb help/online-features/online-advanced/compare · glossary · guides · accounting services/advisory · vs · switch · the long-tail descs.
+- 🔵 titles → keyword-LED ≤60. DONE: w1 6 high-intent · w2 industries 26 · w3 qb/help+support 57 + qb/online 42 + glossary 46. ≈124 done; ~115 titles left.
+- 🔵 descs → value+keyword led ≤160. DONE: 52 high-intent (TASK-4) · w2 industries 26 · w3 145 (help/online/glossary). ≈223 done; ~262 descs left.
+- Per page-type, authored not bulk-stamped, battery+commit per wave.
+- ✅ WAVE 3 DONE (3 parallel subagents, verified): quickbooks/help+support 57 · quickbooks/online 42 · glossary 46 = 145 pages.
+- Remaining: find-an-accountant state landings (~16t/163d — dedicated wave, ties to T5, phone-on-near-me) · vs · guides · qb cleanup/compare/payroll/migration/enterprise · accounting advisory/services · switch · pricing · tools · blog · long-tail descs.
 
 ## TASK 3 — DAVID BLOCK + EEAT  ⬜ pending
 - ⬜ Authored David operator block → /about/ + /partners/ (+ reviewedBy there). /trust/ stays team-voice.

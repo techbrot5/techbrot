@@ -22,8 +22,8 @@ module.exports = [
   {
     slug: "bank-reconciliation",
     term: "Bank reconciliation",
-    title: "Bank Reconciliation — Definition, Why It Matters, How It Works · TechBrot",
-    description: "Bank reconciliation: what it is, why it's the core control in bookkeeping, and how it works — matching your books to your bank statement so the balances agree. By Certified QuickBooks ProAdvisors.",
+    title: "Bank Reconciliation: Match Books to Bank · TechBrot",
+    description: "Bank reconciliation is matching your books to your bank statement for a period and resolving every difference so the balances agree — the core accuracy control.",
     shortDef: "Matching the transactions in your accounting records against your bank statement for the same period &mdash; and resolving every difference &mdash; so your book balance and your bank balance agree.",
     blurb: "Matching your books to your bank statement for the period so the balances agree &mdash; the core accuracy control in bookkeeping.",
     definition: [
@@ -71,8 +71,8 @@ module.exports = [
   {
     slug: "chart-of-accounts",
     term: "Chart of accounts",
-    title: "Chart of Accounts — Definition, Structure & Why It Matters · TechBrot",
-    description: "The chart of accounts (COA): the structured list of every account your books use to record transactions. What it is, how it's organized, and why a well-designed COA makes every report accurate. By Certified QuickBooks ProAdvisors.",
+    title: "Chart of Accounts: How Your Books Are Organized",
+    description: "The chart of accounts (COA) is the structured list of every account your books use — assets, liabilities, equity, income, expenses — what reports are built on.",
     shortDef: "The structured list of every account your books use to record money &mdash; assets, liabilities, equity, income, and expenses &mdash; the framework every transaction and every report is built on.",
     blurb: "The structured list of every account your books record into &mdash; the framework every report is built on.",
     definition: [
@@ -106,8 +106,8 @@ module.exports = [
   {
     slug: "double-entry-accounting",
     term: "Double-entry accounting",
-    title: "Double-Entry Accounting — Debits, Credits & Why It Works · TechBrot",
-    description: "Double-entry accounting: every transaction recorded as equal debits and credits so the books always balance. What it is, how debits and credits work, and why it's the foundation of reliable books. By Certified QuickBooks ProAdvisors.",
+    title: "Double-Entry Accounting: Debits & Credits · TechBrot",
+    description: "Double-entry accounting records each transaction in at least two accounts with equal debits and credits, so the books always balance and errors surface.",
     shortDef: "The method behind every real accounting system: each transaction is recorded in at least two accounts &mdash; equal debits and credits &mdash; so the books always balance and errors surface.",
     blurb: "Every transaction recorded as equal debits and credits, so the books always balance &mdash; the foundation of reliable accounting.",
     definition: [
@@ -141,8 +141,8 @@ module.exports = [
   {
     slug: "general-ledger",
     term: "General ledger",
-    title: "General Ledger — Definition & Role in Your Books · TechBrot",
-    description: "The general ledger (GL): the complete record of every transaction posted to every account. What it is, how it relates to the chart of accounts and financial statements, and why it's the source of truth. By Certified QuickBooks ProAdvisors.",
+    title: "General Ledger: The Master Record · TechBrot",
+    description: "The general ledger (GL) is the complete record of every transaction a business has posted, organized by account — source of the trial balance and statements.",
     shortDef: "The complete record of every transaction your business has posted, organized by account &mdash; the source the trial balance and every financial statement are produced from.",
     blurb: "The complete record of every transaction posted to every account &mdash; the books&rsquo; source of truth.",
     definition: [
@@ -171,8 +171,8 @@ module.exports = [
   {
     slug: "accrual-vs-cash-basis-accounting",
     term: "Accrual vs. cash basis accounting",
-    title: "Accrual vs. Cash Basis Accounting — The Difference · TechBrot",
-    description: "Accrual vs. cash basis accounting: cash records money when it moves; accrual records it when it's earned or owed. The difference, when each is required, and why it changes what your reports say. By Certified QuickBooks ProAdvisors.",
+    title: "Accrual vs. Cash Basis Accounting · TechBrot",
+    description: "Accrual vs. cash basis is how you time transactions: cash basis records money when it moves; accrual records income when earned and expenses when incurred.",
     shortDef: "Two ways to time when transactions hit your books: cash basis records money when it actually moves; accrual records it when it&rsquo;s earned or incurred &mdash; and the two can tell very different stories.",
     blurb: "Cash records money when it moves; accrual records it when earned or owed &mdash; and the choice changes what your reports say.",
     definition: [
@@ -201,8 +201,8 @@ module.exports = [
   {
     slug: "catch-up-bookkeeping",
     term: "Catch-up bookkeeping",
-    title: "Catch-Up Bookkeeping — What It Is vs. Cleanup · TechBrot",
-    description: "Catch-up bookkeeping: bringing months or years of un-entered books current. What it is, how it differs from cleanup, and when you need it — before a tax deadline, a loan, or a sale. By Certified QuickBooks ProAdvisors.",
+    title: "Catch-Up Bookkeeping: Get Behind Books Current",
+    description: "Catch-up bookkeeping brings books that are months or years behind fully up to date — entering and reconciling the backlog so the numbers are current and real.",
     shortDef: "Bringing books that are months or years behind fully up to date &mdash; entering and reconciling the backlog so the file is current and the numbers are real.",
     blurb: "Bringing months or years of un-entered books current &mdash; distinct from cleanup, which fixes books that were kept wrong.",
     definition: [
@@ -236,8 +236,8 @@ module.exports = [
   {
     slug: "month-end-close",
     term: "Month-end close",
-    title: "Month-End Close — What It Is & Why It Matters · TechBrot",
-    description: "The month-end close: the routine of finalizing a month's books so the numbers are complete and trustworthy. What it includes, why it matters, and how it produces reports you can run a business on. By Certified QuickBooks ProAdvisors.",
+    title: "Month-End Close: Finalizing the Books · TechBrot",
+    description: "The month-end close is the routine of finalizing each month’s books — reconciling every account, recording what’s missing, and locking the period you can trust.",
     shortDef: "The monthly routine of finalizing the books &mdash; reconciling every account, recording what&rsquo;s missing, and locking the period &mdash; so the month&rsquo;s numbers are complete and can be trusted.",
     blurb: "The monthly routine that finalizes the books so the period&rsquo;s numbers are complete and trustworthy.",
     definition: [
@@ -266,8 +266,8 @@ module.exports = [
   {
     slug: "accounts-receivable",
     term: "Accounts receivable",
-    title: "Accounts Receivable (AR) — Definition & Why It Matters · TechBrot",
-    description: "Accounts receivable (AR): the money customers owe you for work delivered but not yet paid. What it is, how it sits on the balance sheet, and why aging AR is a cash-flow early-warning. By Certified QuickBooks ProAdvisors.",
+    title: "Accounts Receivable (AR): Money Owed to You",
+    description: "Accounts receivable (AR) is the money customers owe you for goods or services already delivered but not yet paid — a current asset until the cash arrives.",
     shortDef: "The money your customers owe you for goods or services already delivered but not yet paid &mdash; an asset on your balance sheet until the cash arrives.",
     blurb: "Money customers owe you for work already delivered &mdash; an asset until it&rsquo;s collected.",
     definition: [
@@ -301,8 +301,8 @@ module.exports = [
   {
     slug: "accounts-payable",
     term: "Accounts payable",
-    title: "Accounts Payable (AP) — Definition & Why It Matters · TechBrot",
-    description: "Accounts payable (AP): the money your business owes vendors for bills received but not yet paid. What it is, how it sits on the balance sheet, and why managing AP protects cash and credit. By Certified QuickBooks ProAdvisors.",
+    title: "Accounts Payable (AP): What Your Business Owes",
+    description: "Accounts payable (AP) is the money your business owes vendors and suppliers for bills received but not yet paid — a current liability until you settle it.",
     shortDef: "The money your business owes vendors and suppliers for bills received but not yet paid &mdash; a liability on your balance sheet until you settle it.",
     blurb: "Money you owe vendors for bills received but not yet paid &mdash; a liability until settled.",
     definition: [
@@ -331,8 +331,8 @@ module.exports = [
   {
     slug: "trial-balance",
     term: "Trial balance",
-    title: "Trial Balance — Definition & Role in Closing the Books · TechBrot",
-    description: "Trial balance: a report listing every account's ending balance to confirm total debits equal total credits. What it is, what it does and doesn't catch, and how it fits the month-end close. By Certified QuickBooks ProAdvisors.",
+    title: "Trial Balance: Do Debits Equal Credits? · TechBrot",
+    description: "A trial balance lists the ending balance of every account to confirm total debits equal total credits — the first check the books are internally consistent.",
     shortDef: "A report listing the ending balance of every account so you can confirm total debits equal total credits &mdash; the first check that the books are internally consistent.",
     blurb: "A list of every account&rsquo;s balance confirming total debits equal total credits &mdash; the books&rsquo; internal-consistency check.",
     definition: [
@@ -361,8 +361,8 @@ module.exports = [
   {
     slug: "profit-and-loss-statement",
     term: "Profit and loss statement",
-    title: "Profit and Loss Statement (P&L) — Definition & How to Read It · TechBrot",
-    description: "The profit and loss statement (P&L / income statement): revenue minus expenses over a period, showing whether you made money. What it includes, how to read it, and how it differs from cash. By Certified QuickBooks ProAdvisors.",
+    title: "Profit and Loss Statement (P&L) · TechBrot",
+    description: "The profit and loss statement (P&L) shows revenue minus expenses over a period — whether a business made or lost money, and where the money came from and went.",
     shortDef: "The report that shows revenue minus expenses over a period of time &mdash; whether the business made or lost money, and where the money came from and went.",
     blurb: "Revenue minus expenses over a period &mdash; whether you made money, and where it came from and went.",
     definition: [
@@ -396,8 +396,8 @@ module.exports = [
   {
     slug: "balance-sheet",
     term: "Balance sheet",
-    title: "Balance Sheet — Definition & How to Read It · TechBrot",
-    description: "The balance sheet: a snapshot of what a business owns, owes, and is worth at a single moment. What it includes, why assets = liabilities + equity, and what it reveals that the P&L can't. By Certified QuickBooks ProAdvisors.",
+    title: "Balance Sheet: Assets, Liabilities & Equity",
+    description: "The balance sheet is a snapshot of what a business owns (assets), owes (liabilities), and is worth to owners (equity) — assets equal liabilities plus equity.",
     shortDef: "A snapshot, at a single moment, of what the business owns (assets), owes (liabilities), and is worth to its owners (equity) &mdash; where assets always equal liabilities plus equity.",
     blurb: "A point-in-time snapshot of what you own, owe, and are worth &mdash; assets = liabilities + equity.",
     definition: [
@@ -426,8 +426,8 @@ module.exports = [
   {
     slug: "fractional-cfo",
     term: "Fractional CFO",
-    title: "Fractional CFO — What It Is & When You Need One · TechBrot",
-    description: "A fractional CFO: senior financial leadership on a part-time, fixed-fee basis — forecasting, cash strategy, and decision support without a full-time hire. What it is, what it isn't, and when it fits. By Certified QuickBooks ProAdvisors.",
+    title: "Fractional CFO: Part-Time Financial Leadership",
+    description: "A fractional CFO provides senior financial leadership — forecasting, cash strategy, KPIs, decision support — part-time, for firms not needing a full-time CFO.",
     shortDef: "Senior financial leadership &mdash; forecasting, cash strategy, KPIs, and decision support &mdash; on a part-time, fixed-fee basis, for businesses that need CFO judgment but not a full-time CFO salary.",
     blurb: "Senior financial leadership part-time &mdash; the forecasting and judgment a full-time CFO gives, without the full-time cost.",
     definition: [
@@ -461,8 +461,8 @@ module.exports = [
   {
     slug: "sales-tax-nexus",
     term: "Sales tax nexus",
-    title: "Sales Tax Nexus — Definition, Economic Nexus & Why It Matters · TechBrot",
-    description: "Sales tax nexus: the connection to a state that requires you to collect and remit its sales tax. Physical vs. economic nexus, the post-Wayfair thresholds, and why it's a top compliance risk. By Certified QuickBooks ProAdvisors.",
+    title: "Sales Tax Nexus: When You Must Collect · TechBrot",
+    description: "Sales tax nexus is the connection between a business and a state that legally requires you to register, collect, and remit its sales tax — by presence or sales.",
     shortDef: "The connection between your business and a state that legally obligates you to register, collect, and remit that state&rsquo;s sales tax &mdash; created by physical presence or, since 2018, by economic activity alone.",
     blurb: "The connection to a state that requires you to collect its sales tax &mdash; physical or, post-Wayfair, economic.",
     definition: [
@@ -498,8 +498,8 @@ module.exports = [
   {
     slug: "bookkeeping-vs-accounting",
     term: "Bookkeeping vs. accounting",
-    title: "Bookkeeping vs. Accounting — The Difference · TechBrot",
-    description: "Bookkeeping records and reconciles transactions; accounting interprets, reports, and advises on them. The difference, where they overlap, and who you actually need. By Certified QuickBooks ProAdvisors.",
+    title: "Bookkeeping vs. Accounting: The Difference",
+    description: "Bookkeeping is the disciplined recording and reconciling of transactions; accounting is the broader work of interpreting, reporting, and advising on them.",
     shortDef: "Bookkeeping is the disciplined recording and reconciling of transactions; accounting is the broader work of interpreting, reporting, and advising on them. One produces the records; the other turns them into meaning.",
     blurb: "Bookkeeping records and reconciles; accounting interprets and advises &mdash; what each is, and who you need.",
     definition: [
@@ -533,8 +533,8 @@ module.exports = [
   {
     slug: "cost-of-goods-sold",
     term: "Cost of goods sold",
-    title: "Cost of Goods Sold (COGS) — Definition & Why Margin Depends on It · TechBrot",
-    description: "Cost of goods sold (COGS): the direct cost of what you sold, subtracted from revenue to get gross profit. What counts, what doesn't, and why miscategorizing it hides your true margin. By Certified QuickBooks ProAdvisors.",
+    title: "Cost of Goods Sold (COGS): Direct Costs · TechBrot",
+    description: "Cost of goods sold (COGS) is the direct cost of producing what you sold — subtracted from revenue to get gross profit. What belongs in COGS decides your margin.",
     shortDef: "The direct cost of producing the goods or services you actually sold &mdash; subtracted from revenue to get gross profit. What belongs in COGS, and what doesn&rsquo;t, decides whether your margin is real.",
     blurb: "The direct cost of what you sold &mdash; and getting it right is the difference between knowing your margin and guessing.",
     definition: [
@@ -563,8 +563,8 @@ module.exports = [
   {
     slug: "cash-flow-statement",
     term: "Cash flow statement",
-    title: "Cash Flow Statement — Definition & Why Profit Isn't Cash · TechBrot",
-    description: "The cash flow statement: the third core financial statement, showing actual cash in and out across operating, investing, and financing activities. What it reveals that the P&L can't. By Certified QuickBooks ProAdvisors.",
+    title: "Cash Flow Statement: Where Cash Moved · TechBrot",
+    description: "The cash flow statement tracks the cash that moved in and out over a period — operating, investing, financing — explaining the gap between profit and cash.",
     shortDef: "The third core financial statement &mdash; it tracks the actual cash that moved in and out over a period, across operating, investing, and financing activities, and explains the gap between profit and the bank balance.",
     blurb: "Actual cash in and out over a period &mdash; the statement that explains &lsquo;profitable but broke.&rsquo;",
     definition: [
@@ -593,8 +593,8 @@ module.exports = [
   {
     slug: "depreciation",
     term: "Depreciation",
-    title: "Depreciation — Definition & How It Affects Your Books · TechBrot",
-    description: "Depreciation: spreading the cost of a long-lived asset over its useful life instead of expensing it at once. What it is, why it's a non-cash expense, and where book and tax depreciation differ. By Certified QuickBooks ProAdvisors.",
+    title: "Depreciation: Spreading an Asset’s Cost · TechBrot",
+    description: "Depreciation spreads the cost of a long-lived asset across the years it’s used rather than expensing it all at once — a non-cash expense that lowers profit.",
     shortDef: "The accounting method that spreads the cost of a long-lived asset across the years it&rsquo;s used, rather than expensing it all in the year of purchase &mdash; a non-cash expense that lowers profit without touching cash.",
     blurb: "Spreading an asset&rsquo;s cost over its useful life &mdash; a non-cash expense that lowers profit, not cash.",
     definition: [
@@ -623,8 +623,8 @@ module.exports = [
   {
     slug: "certified-quickbooks-proadvisor",
     term: "Certified QuickBooks ProAdvisor",
-    title: "Certified QuickBooks ProAdvisor — What It Is (and Isn't) · TechBrot",
-    description: "A Certified QuickBooks ProAdvisor: an accountant or bookkeeper who passed Intuit's QuickBooks certification. What the credential means, what it doesn't (it's not Intuit affiliation, not a CPA), and how to verify it. By Certified QuickBooks ProAdvisors.",
+    title: "Certified QuickBooks ProAdvisor: What It Means",
+    description: "A Certified QuickBooks ProAdvisor has completed Intuit’s training and passed its exam on a QuickBooks product — signaling product skill, not Intuit affiliation.",
     shortDef: "An accountant or bookkeeper who has completed Intuit&rsquo;s training and passed its certification exams on a QuickBooks product. It signals product fluency &mdash; not Intuit affiliation, and not a CPA license.",
     blurb: "What the ProAdvisor credential means &mdash; and what it doesn&rsquo;t (it&rsquo;s not Intuit affiliation, not a CPA).",
     definition: [
@@ -660,8 +660,8 @@ module.exports = [
   {
     slug: "retained-earnings",
     term: "Retained earnings",
-    title: "Retained Earnings — Definition & Where It Comes From · TechBrot",
-    description: "Retained earnings: the cumulative profit a business has kept rather than distributed to owners. What it is, how QuickBooks rolls income into it at year-end, and why a wrong balance signals a cleanup. By Certified QuickBooks ProAdvisors.",
+    title: "Retained Earnings: Profit the Business Kept",
+    description: "Retained earnings is the cumulative net profit a business has kept rather than paid out to owners since it began — an equity account on the balance sheet.",
     shortDef: "The cumulative net profit a business has kept &mdash; not paid out to owners &mdash; since it began. An equity account on the balance sheet that each year&rsquo;s profit rolls into.",
     blurb: "Cumulative profit the business has kept &mdash; an equity account each year&rsquo;s net income rolls into.",
     definition: [
@@ -690,8 +690,8 @@ module.exports = [
   {
     slug: "deferred-revenue",
     term: "Deferred revenue",
-    title: "Deferred Revenue — Definition & Why It's a Liability · TechBrot",
-    description: "Deferred revenue (unearned revenue): money collected before the work is delivered. Why it's a liability, not income, until earned — and why recording it wrong overstates profit. By Certified QuickBooks ProAdvisors.",
+    title: "Deferred Revenue: Paid Before You Deliver",
+    description: "Deferred revenue is money you’ve been paid before delivering the work — a liability, not revenue, until it’s earned, recognized as income only as you deliver.",
     shortDef: "Money you&rsquo;ve been paid before you&rsquo;ve delivered the work &mdash; a liability, not revenue, until it&rsquo;s earned. Recognized as income only as you deliver.",
     blurb: "Money collected before the work is delivered &mdash; a liability until earned, not income on receipt.",
     definition: [
@@ -720,8 +720,8 @@ module.exports = [
   {
     slug: "opening-balance",
     term: "Opening balance",
-    title: "Opening Balance — Definition & Why It Matters in QuickBooks · TechBrot",
-    description: "Opening balance: the starting balance of an account when it's first entered into the books or at the start of a period. Why wrong opening balances break migrations and trigger cleanups. By Certified QuickBooks ProAdvisors.",
+    title: "Opening Balance: Where an Account Starts · TechBrot",
+    description: "An opening balance is the balance of an account when it’s first entered into the books, or at the start of a period — if wrong, everything after inherits it.",
     shortDef: "The balance of an account at the moment it&rsquo;s first entered into the books &mdash; or at the start of a new period. Everything that follows is built on it, so if it&rsquo;s wrong, everything after inherits the error.",
     blurb: "An account&rsquo;s starting balance &mdash; the foundation everything else is built on, and a top cause of wrong books after a migration.",
     definition: [
@@ -750,8 +750,8 @@ module.exports = [
   {
     slug: "1099-vs-w2",
     term: "1099 vs. W-2",
-    title: "1099 vs. W-2 — Contractor vs. Employee Classification · TechBrot",
-    description: "1099 vs. W-2: the difference between an independent contractor and an employee — withholding, taxes, control, and the real penalties for misclassification. By Certified QuickBooks ProAdvisors.",
+    title: "1099 vs. W-2: Worker Classification · TechBrot",
+    description: "1099 vs. W-2 is how a worker is classified: a W-2 employee (you withhold and pay employer taxes) versus a 1099 contractor (no withholding; they pay their own).",
     shortDef: "The two ways a worker is classified for tax and payroll: a W-2 employee (you withhold and pay employer taxes) versus a 1099 independent contractor (no withholding; they pay their own). Getting it wrong carries real penalties.",
     blurb: "Employee vs. independent contractor &mdash; the classification that drives withholding, taxes, and real compliance risk.",
     definition: [
@@ -780,8 +780,8 @@ module.exports = [
   {
     slug: "journal-entry",
     term: "Journal entry",
-    title: "Journal Entry — Definition & Adjusting Entries · TechBrot",
-    description: "A journal entry: the foundational double-entry record of a transaction — debits and credits to specific accounts. What it is, why adjusting entries close the books, and where QuickBooks posts them automatically. By Certified QuickBooks ProAdvisors.",
+    title: "Journal Entry: The Record of a Transaction",
+    description: "A journal entry is the foundational record of a transaction in double-entry accounting — equal debits and credits to specific accounts, dated and described.",
     shortDef: "The foundational record of a transaction in double-entry accounting &mdash; equal debits and credits to specific accounts, dated and described. QuickBooks posts most automatically; manual ones handle the rest.",
     blurb: "The double-entry record of a transaction &mdash; debits and credits; manual adjusting entries close the books.",
     definition: [
@@ -815,8 +815,8 @@ module.exports = [
   {
     slug: "accrued-expenses",
     term: "Accrued expenses",
-    title: "Accrued Expenses — Definition & Why They Matter · TechBrot",
-    description: "Accrued expenses: costs your business has incurred but not yet paid or been billed for — wages earned, interest accrued. What they are, how adjusting entries record them, and why accrual books need them. By Certified QuickBooks ProAdvisors.",
+    title: "Accrued Expenses: Incurred but Not Yet Paid",
+    description: "Accrued expenses are costs a business has incurred but not yet paid or been billed for — recorded as a liability so expenses match the period that earned them.",
     shortDef: "Costs your business has already incurred but not yet paid or been invoiced for &mdash; recorded as a liability through adjusting entries so the period&rsquo;s expenses match the period that earned them.",
     blurb: "Costs incurred but not yet paid or billed &mdash; a liability recorded by adjusting entries on accrual books.",
     definition: [
@@ -850,8 +850,8 @@ module.exports = [
   {
     slug: "prepaid-expenses",
     term: "Prepaid expenses",
-    title: "Prepaid Expenses — Definition & Why They’re an Asset · TechBrot",
-    description: "Prepaid expenses: payments made in advance for a future benefit — insurance, rent, annual software. Why they’re recorded as an asset and expensed over time, not all at once. By Certified QuickBooks ProAdvisors.",
+    title: "Prepaid Expenses: Paid Ahead, Used Later",
+    description: "Prepaid expenses are payments made in advance for a future benefit — insurance, rent, a yearly subscription — booked as an asset and expensed over the period.",
     shortDef: "Payments made in advance for a benefit you&rsquo;ll receive later &mdash; insurance, rent, an annual subscription &mdash; recorded as a current asset and expensed over the period the payment actually covers.",
     blurb: "Payments made in advance &mdash; recorded as an asset, then expensed over the period they cover.",
     definition: [
@@ -885,8 +885,8 @@ module.exports = [
   {
     slug: "fixed-assets",
     term: "Fixed assets",
-    title: "Fixed Assets — Definition, Capitalization & Depreciation · TechBrot",
-    description: "Fixed assets: long-lived tangible property a business uses to operate — equipment, vehicles, furniture, buildings. Why they’re capitalized on the balance sheet and depreciated over time, not expensed at purchase. By Certified QuickBooks ProAdvisors.",
+    title: "Fixed Assets: Long-Lived Property You Use",
+    description: "Fixed assets are long-lived tangible property a business owns and uses to operate — equipment, vehicles, buildings — held on the balance sheet and depreciated.",
     shortDef: "Long-lived tangible property a business owns and uses to operate &mdash; equipment, vehicles, furniture, buildings &mdash; recorded on the balance sheet and depreciated over its useful life rather than expensed when bought.",
     blurb: "Long-lived tangible property &mdash; equipment, vehicles, buildings &mdash; capitalized and depreciated, not expensed at purchase.",
     definition: [
@@ -920,8 +920,8 @@ module.exports = [
   {
     slug: "operating-expenses",
     term: "Operating expenses",
-    title: "Operating Expenses (OpEx) — Definition & Why They’re Below Gross Profit · TechBrot",
-    description: "Operating expenses (OpEx): the ongoing costs of running a business that aren’t tied directly to a sale — rent, utilities, admin salaries, software, marketing. What counts, and why they sit below gross profit on the P&L. By Certified QuickBooks ProAdvisors.",
+    title: "Operating Expenses (OpEx): Cost to Run · TechBrot",
+    description: "Operating expenses (OpEx) are the ongoing costs of running a business not tied to a sale — rent, utilities, salaries, software — reported below gross profit.",
     shortDef: "The ongoing costs of running the business that aren&rsquo;t tied directly to producing a sale &mdash; rent, utilities, admin salaries, software, marketing &mdash; reported below gross profit on the profit and loss statement.",
     blurb: "The ongoing costs of running the business not tied to a sale &mdash; below gross profit on the P&L.",
     definition: [
@@ -955,8 +955,8 @@ module.exports = [
 {
     slug: "owners-equity",
     term: "Owner&rsquo;s equity",
-    title: "Owner’s Equity — Definition & Where It Sits on the Balance Sheet · TechBrot",
-    description: "Owner's equity: the owner's residual claim on the business — assets minus liabilities. What it is, how it appears for sole props, partnerships, and corporations, and how it differs from retained earnings. By Certified QuickBooks ProAdvisors.",
+    title: "Owner’s Equity: The Owner’s Stake · TechBrot",
+    description: "Owner’s equity is the owner’s residual claim on a business — what’s left when you subtract everything it owes (liabilities) from everything it owns (assets).",
     shortDef: "The owner&rsquo;s residual claim on the business &mdash; what&rsquo;s left when you subtract everything the business owes (liabilities) from everything it owns (assets). It is the equity section of the balance sheet.",
     blurb: "The owner&rsquo;s residual claim on the business &mdash; assets minus liabilities, the equity section of the balance sheet.",
     definition: [
@@ -990,8 +990,8 @@ module.exports = [
   {
     slug: "owners-draw",
     term: "Owner&rsquo;s draw",
-    title: "Owner’s Draw — Definition & How It Differs From Salary · TechBrot",
-    description: "Owner's draw: money an owner takes out of an unincorporated business for personal use. What it is, why it isn't a deductible expense or payroll, and how it differs from an S-corp salary. By Certified QuickBooks ProAdvisors.",
+    title: "Owner’s Draw: Taking Money Out · TechBrot",
+    description: "An owner’s draw is money an owner takes from an unincorporated business — sole proprietorship, partnership, or LLC — for personal use; it reduces equity.",
     shortDef: "Money an owner takes out of an unincorporated business &mdash; a sole proprietorship, partnership, or LLC &mdash; for personal use. It reduces owner&rsquo;s equity and is not a tax-deductible business expense.",
     blurb: "Money an owner takes out of an unincorporated business for personal use &mdash; it reduces equity, and it isn&rsquo;t payroll or a deductible expense.",
     definition: [
@@ -1025,8 +1025,8 @@ module.exports = [
   {
     slug: "working-capital",
     term: "Working capital",
-    title: "Working Capital — Definition & Why Liquidity Matters · TechBrot",
-    description: "Working capital: current assets minus current liabilities — the short-term cushion that funds day-to-day operations. What it is, why positive working capital matters, and how it reads on the balance sheet. By Certified QuickBooks ProAdvisors.",
+    title: "Working Capital: Your Short-Term Cushion",
+    description: "Working capital is current assets minus current liabilities — the short-term liquidity cushion that funds day-to-day operations and covers what’s owed soon.",
     shortDef: "Current assets minus current liabilities &mdash; the short-term liquidity cushion that funds day-to-day operations. Positive working capital means the business can cover what it owes in the near term.",
     blurb: "Current assets minus current liabilities &mdash; the short-term cushion that funds day-to-day operations.",
     definition: [
@@ -1055,8 +1055,8 @@ module.exports = [
   {
     slug: "gross-margin",
     term: "Gross margin",
-    title: "Gross Margin — Definition & How It Differs From Markup · TechBrot",
-    description: "Gross margin: gross profit as a percentage of revenue — how much of each sales dollar is left after the cost of goods sold. What it measures, why it matters, and how it differs from markup. By Certified QuickBooks ProAdvisors.",
+    title: "Gross Margin: Profit Per Sales Dollar · TechBrot",
+    description: "Gross margin is gross profit as a percentage of revenue — gross profit ÷ revenue — how much of each sales dollar is left after the cost of what you sold.",
     shortDef: "Gross profit as a percentage of revenue &mdash; gross profit &divide; revenue &mdash; showing how much of each sales dollar is left after the cost of what you sold.",
     blurb: "Gross profit as a percentage of revenue &mdash; how much of each sales dollar is left after COGS.",
     definition: [
@@ -1090,8 +1090,8 @@ module.exports = [
 {
     slug: "write-off",
     term: "Write-off",
-    title: "Write-Off — Definition & What It Really Means in the Books · TechBrot",
-    description: "A write-off: removing an amount from the books that's no longer collectible or has no value — most often a bad-debt or obsolete-inventory write-off. What it means in bookkeeping, and why it isn't the same as a tax deduction. By Certified QuickBooks ProAdvisors.",
+    title: "Write-Off: Removing What Has No Value",
+    description: "A write-off removes from the books an amount no longer collectible or worthless — usually a bad receivable or dead inventory — recording the loss as an expense.",
     shortDef: "Removing from the books an amount that&rsquo;s no longer collectible or has no remaining value &mdash; most often an uncollectible receivable or obsolete inventory &mdash; and recording the loss as an expense.",
     blurb: "Removing an uncollectible or worthless amount from the books and recording the loss &mdash; not the same as a tax deduction.",
     definition: [
@@ -1125,8 +1125,8 @@ module.exports = [
   {
     slug: "net-income",
     term: "Net income",
-    title: "Net Income — Definition & Why It's the Bottom Line · TechBrot",
-    description: "Net income: revenue minus all expenses — COGS, operating expenses, interest, and taxes — over a period. The final profit on the P&L, why it's called the bottom line, and why it isn't the same as cash. By Certified QuickBooks ProAdvisors.",
+    title: "Net Income: The Bottom Line · TechBrot",
+    description: "Net income is the bottom line — revenue minus every expense (cost of goods sold, operating expenses, interest, taxes) over a period; the final profit figure.",
     shortDef: "The bottom line &mdash; revenue minus every expense (cost of goods sold, operating expenses, interest, and taxes) over a period. The final profit figure on the profit and loss statement.",
     blurb: "Revenue minus all expenses over a period &mdash; the final profit on the P&L, and not the same as cash.",
     definition: [
@@ -1160,8 +1160,8 @@ module.exports = [
   {
     slug: "amortization",
     term: "Amortization",
-    title: "Amortization — Definition & How It Differs from Depreciation · TechBrot",
-    description: "Amortization: spreading the cost of an intangible asset, or a loan's principal, over time. What it means for patents, goodwill, and software, how loan amortization works, and how it differs from depreciation. By Certified QuickBooks ProAdvisors.",
+    title: "Amortization: Spreading a Cost Over Time",
+    description: "Amortization spreads a cost over time — an intangible asset’s cost across its useful life (the analog of depreciation), or a loan’s principal as it’s repaid.",
     shortDef: "Spreading a cost over time &mdash; either the cost of an intangible asset across its useful life (the intangible analog of depreciation), or a loan&rsquo;s principal across the schedule by which it&rsquo;s repaid.",
     blurb: "Spreading the cost of an intangible asset, or a loan&rsquo;s principal, over time &mdash; depreciation&rsquo;s intangible counterpart.",
     definition: [
@@ -1195,8 +1195,8 @@ module.exports = [
 {
     slug: "undeposited-funds",
     term: "Undeposited Funds",
-    title: "Undeposited Funds — What the Account Is For & Why It Piles Up · TechBrot",
-    description: "Undeposited Funds: the default QuickBooks holding account where received payments sit until you group them into a deposit that matches the bank. What it's for, why it piles up, and how to fix it. By Certified QuickBooks ProAdvisors.",
+    title: "Undeposited Funds: The QuickBooks Holding Account",
+    description: "Undeposited Funds is a default QuickBooks account where customer payments sit after they’re received but before they’re grouped into a single bank deposit.",
     shortDef: "A default QuickBooks holding account where customer payments sit after they&rsquo;re received but before they&rsquo;re grouped into a bank deposit &mdash; so the deposit in your books matches the single deposit slip the bank actually shows.",
     blurb: "The default QuickBooks holding account where received payments wait until you group them into a deposit that matches the bank &mdash; and a classic place errors pile up.",
     definition: [
@@ -1235,8 +1235,8 @@ module.exports = [
   {
     slug: "class-tracking",
     term: "Class tracking",
-    title: "Class Tracking in QuickBooks — What It Is & When to Use It · TechBrot",
-    description: "Class tracking: the QuickBooks feature for tagging transactions to a segment — location, department, program, or property — so you can run a P&L by class. What it does, when it helps, and why consistency is everything. By Certified QuickBooks ProAdvisors.",
+    title: "Class Tracking in QuickBooks · TechBrot",
+    description: "Class tracking is a QuickBooks feature that tags each transaction to a segment — location, department, program, property — so you can run a P&L for that slice.",
     shortDef: "A QuickBooks feature that lets you tag each transaction to a segment of the business &mdash; a location, department, program, or property &mdash; so you can run a profit and loss statement for that segment, not just the company as a whole.",
     blurb: "The QuickBooks feature for tagging transactions to a segment &mdash; location, department, program &mdash; so you can run a P&L by class. Powerful, but only if applied consistently.",
     definition: [
@@ -1274,8 +1274,8 @@ module.exports = [
   {
     slug: "bank-feeds",
     term: "Bank feeds",
-    title: "Bank Feeds in QuickBooks — What They Do & Their Limits · TechBrot",
-    description: "Bank feeds: the QuickBooks feature that imports transactions automatically from a connected bank or card into the For Review queue. What they do, why they speed bookkeeping, and why a feed is not a finished reconciliation. By Certified QuickBooks ProAdvisors.",
+    title: "Bank Feeds in QuickBooks: Auto-Import · TechBrot",
+    description: "Bank feeds are a QuickBooks feature that imports transactions automatically into a For Review queue, where each is categorized and matched — speeding the work.",
     shortDef: "The QuickBooks feature that imports transactions automatically from a connected bank or credit-card account into a For Review queue, where each one is categorized and matched &mdash; speeding bookkeeping, but not replacing reconciliation.",
     blurb: "The QuickBooks feature that auto-imports transactions from a connected bank or card into the For Review queue. Speeds bookkeeping &mdash; but matching the feed is not a finished reconciliation.",
     definition: [
@@ -1313,8 +1313,8 @@ module.exports = [
   {
     slug: "audit-trail",
     term: "Audit trail",
-    title: "QuickBooks Audit Trail (Audit Log) — What It Records & Why · TechBrot",
-    description: "The QuickBooks audit trail: a built-in, unalterable log of every change to the file — who entered, edited, or deleted a transaction and when. What it records, where to find it, and why it's essential for accountability and cleanup. By Certified QuickBooks ProAdvisors.",
+    title: "Audit Trail in QuickBooks: The Change Log",
+    description: "The audit trail is QuickBooks’ unalterable log of every change to the company file — who entered, edited, or deleted each transaction, what changed, and when.",
     shortDef: "QuickBooks&rsquo; built-in, unalterable log of every change made to the company file &mdash; who entered, edited, or deleted each transaction, what changed, and when &mdash; so nothing in the books is anonymous or untraceable.",
     blurb: "QuickBooks&rsquo; built-in, unalterable log of every change to the file &mdash; who did what, and when. Essential for accountability and for finding what changed.",
     definition: [
@@ -1348,8 +1348,8 @@ module.exports = [
   {
     slug: "memorized-transaction",
     term: "Memorized transaction",
-    title: "Memorized / Recurring Transactions in QuickBooks — What They Are · TechBrot",
-    description: "Memorized transactions (recurring transactions): saved templates QuickBooks uses to create repeating transactions on a schedule — recurring invoices, bills, journal entries. What they do, why they save time, and why stale templates cause errors. By Certified QuickBooks ProAdvisors.",
+    title: "Memorized Transaction in QuickBooks · TechBrot",
+    description: "A memorized transaction is a saved QuickBooks template that creates a repeating transaction on a schedule — a recurring invoice, bill, or journal entry.",
     shortDef: "A saved transaction template QuickBooks uses to create a repeating transaction automatically on a schedule &mdash; a recurring invoice, bill, or journal entry &mdash; so the same routine entry doesn&rsquo;t have to be built by hand every time.",
     blurb: "A saved template QuickBooks uses to create repeating transactions on a schedule &mdash; recurring invoices, bills, journal entries. Saves time; stale templates post wrong amounts.",
     definition: [
@@ -1387,8 +1387,8 @@ module.exports = [
 {
     slug: "w-9-form",
     term: "Form W-9",
-    title: "Form W-9 — What It Is & Why You Collect It Before You Pay · TechBrot",
-    description: "Form W-9: the IRS form a business collects from a vendor or contractor to get their legal name, address, and taxpayer ID so it can issue a 1099 at year end. What it is, when to collect it, and how it differs from a 1099. By Certified QuickBooks ProAdvisors.",
+    title: "Form W-9: Collect a Vendor’s Tax ID · TechBrot",
+    description: "Form W-9 is the IRS form a business collects from a vendor or contractor — capturing their legal name, address, and taxpayer ID — so it can issue a 1099.",
     shortDef: "The IRS form a business collects <em>from</em> a vendor or contractor &mdash; capturing their legal name, address, and taxpayer ID (TIN, SSN, or EIN) &mdash; so the business can issue a 1099 at year end. Collect it before you pay.",
     blurb: "The form you collect from a contractor to get their taxpayer ID &mdash; so you can issue a 1099 at year end. Educational only.",
     definition: [
@@ -1423,8 +1423,8 @@ module.exports = [
   {
     slug: "1099-nec",
     term: "Form 1099-NEC",
-    title: "Form 1099-NEC — Nonemployee Compensation Explained · TechBrot",
-    description: "Form 1099-NEC: the IRS information return businesses file to report nonemployee compensation — generally $600 or more paid to an independent contractor in a year. What it reports, the $600 threshold, and why card payments go on a 1099-K instead. By Certified QuickBooks ProAdvisors.",
+    title: "Form 1099-NEC: Reporting Contractor Pay",
+    description: "Form 1099-NEC is the IRS return a business files to report nonemployee compensation — generally $600 or more paid to an independent contractor during the year.",
     shortDef: "The IRS information return a business files to report <strong>nonemployee compensation</strong> &mdash; generally $600 or more paid to an independent contractor during the year. Reintroduced in 2020, split back out from the 1099-MISC.",
     blurb: "The form that reports $600+ paid to a contractor in a year &mdash; we get the QuickBooks data right; your CPA files. Educational only.",
     definition: [
@@ -1458,8 +1458,8 @@ module.exports = [
   {
     slug: "ein",
     term: "Employer Identification Number (EIN)",
-    title: "EIN (Employer Identification Number) — What It Is & When You Need One · TechBrot",
-    description: "Employer Identification Number (EIN): the IRS-issued nine-digit federal tax ID for a business — like an SSN for the entity. What it is, when you need one to hire, file, or open a bank account, and how it differs from a state tax ID. By Certified QuickBooks ProAdvisors.",
+    title: "EIN: Your Business Federal Tax ID · TechBrot",
+    description: "An EIN (Employer Identification Number) is the IRS-issued nine-digit federal tax ID for a business — effectively an SSN for the entity, free to obtain.",
     shortDef: "The IRS-issued nine-digit federal tax ID for a business &mdash; effectively an SSN for the entity. It identifies the business on federal returns, payroll filings, and bank accounts. Issued by the IRS, free of charge.",
     blurb: "The IRS&rsquo;s nine-digit federal tax ID for a business &mdash; like an SSN for the entity. Educational only; the IRS issues it.",
     definition: [
@@ -1493,8 +1493,8 @@ module.exports = [
 {
     slug: "estimated-taxes",
     term: "Estimated taxes",
-    title: "Estimated Taxes — Quarterly Payments & Why Accurate Books Matter · TechBrot",
-    description: "Estimated taxes: the quarterly payments individuals and businesses make on income not subject to withholding, because the U.S. tax system is pay-as-you-go. What they are, why underpaying triggers penalties, and why accurate books make the estimate reliable. Educational only — your CPA or EA calculates and files. By Certified QuickBooks ProAdvisors.",
+    title: "Estimated Taxes: Pay-As-You-Go Payments",
+    description: "Estimated taxes are periodic payments — generally quarterly — individuals and businesses make on income not subject to withholding; U.S. tax is pay-as-you-go.",
     shortDef: "Periodic payments &mdash; generally quarterly &mdash; that individuals and businesses make through the year on income that isn&rsquo;t subject to withholding, because the U.S. tax system is pay-as-you-go.",
     blurb: "Quarterly payments on income that isn&rsquo;t withheld &mdash; the pay-as-you-go system. Your CPA calculates them; accurate books make the estimate reliable.",
     definition: [
@@ -1530,8 +1530,8 @@ module.exports = [
   {
     slug: "payroll-liabilities",
     term: "Payroll liabilities",
-    title: "Payroll Liabilities — Definition & Why They Must Be Remitted On Time · TechBrot",
-    description: "Payroll liabilities: amounts a business has withheld from employees or owes as an employer but not yet remitted — income-tax withholding, Social Security and Medicare, unemployment, and benefit withholdings. What they are, why trust-fund taxes must be remitted on time, and how they’re kept reconciled in QuickBooks. By Certified QuickBooks ProAdvisors.",
+    title: "Payroll Liabilities: What You Owe the Agencies",
+    description: "Payroll liabilities are amounts a business has withheld from employees, or owes as an employer, but not yet remitted to the agencies — a liability until paid.",
     shortDef: "Amounts a business has withheld from employees, or owes as an employer, but not yet remitted to the agencies &mdash; a liability on the balance sheet until it&rsquo;s paid.",
     blurb: "What you&rsquo;ve withheld from employees or owe as an employer but haven&rsquo;t yet remitted &mdash; a liability until it&rsquo;s paid, and the trust-fund portion is serious.",
     definition: [
@@ -1566,8 +1566,8 @@ module.exports = [
   {
     slug: "fiscal-year",
     term: "Fiscal year",
-    title: "Fiscal Year — Definition & How It Differs From a Calendar Year · TechBrot",
-    description: "Fiscal year: the 12-month period a business uses for accounting and tax reporting — often the calendar year, but it can be any 12-month span. What it is, how it differs from the calendar year, and why the choice affects when books close and returns are due. The election is confirmed with your CPA. By Certified QuickBooks ProAdvisors.",
+    title: "Fiscal Year: Your 12-Month Accounting Period",
+    description: "A fiscal year is the 12-month period a business uses for accounting and tax reporting — often the calendar year, but it can be any 12-month span you choose.",
     shortDef: "The 12-month period a business uses for accounting and tax reporting &mdash; often the calendar year (January through December), but it can be any 12-month span a business chooses.",
     blurb: "The 12-month period a business reports on &mdash; often the calendar year, but not always. It sets when the books close and returns come due.",
     definition: [
