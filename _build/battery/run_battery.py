@@ -623,6 +623,42 @@ if dirty_body:
 else:
     ok("old-kit", "no old-kit body classes on any v2 page")
 
+# 15 ── META HYGIENE (standing pre-publish check, added 2026-06-25). Two
+#        encoding defects must never ship:
+#        (a) HTML entities in the AUTO-ESCAPED meta fields. <title>/<meta
+#            description> render via {{ }} without |safe, so a source entity
+#            (&middot; &mdash; &rsquo; &amp;X) double-escapes and shows the
+#            LITERAL "&amp;middot;" text in the tab/SERP. Detect the rendered
+#            signature `&amp;<entity>;` in the built title/description.
+#        (b) CP1252<->UTF-8 mojibake (an em-dash saved as "â€"", an apostrophe
+#            as "â€™", "Â§"/"Â·", a "Ã©") rendering as visible garbage. Detect
+#            the signatures in title, description, AND body. (Comment-only
+#            corruption is stripped from rendered HTML, so body scan is safe.)
+ENT_BAD = re.compile(r'&amp;(?:middot|mdash|ndash|rsquo|lsquo|ldquo|rdquo|hellip|amp|eacute|sect);')
+MOJI_BAD = re.compile(r'â€|â†|Â§|Â·|Ã©|Ã¢|Ã‚|�')
+meta_hygiene = []
+for url, lp in pages.items():
+    if url.startswith("/dev/"):
+        continue
+    html = (SITE / url.lstrip("/") / "index.html").read_text(encoding="utf-8")
+    t = re.search(r"<title>(.*?)</title>", html, re.S)
+    d = re.search(r'<meta name="description" content="([^"]*)"', html)
+    tv = t.group(1) if t else ""
+    dv = d.group(1) if d else ""
+    if ENT_BAD.search(tv) or ENT_BAD.search(dv):
+        meta_hygiene.append(f"{url}: literal HTML entity in title/description")
+    if MOJI_BAD.search(tv) or MOJI_BAD.search(dv):
+        meta_hygiene.append(f"{url}: mojibake in title/description")
+    elif MOJI_BAD.search(html):
+        meta_hygiene.append(f"{url}: mojibake in rendered body")
+if meta_hygiene:
+    for x in meta_hygiene[:20]:
+        fail("meta-hygiene", x)
+    if len(meta_hygiene) > 20:
+        fail("meta-hygiene", f"... +{len(meta_hygiene) - 20} more")
+else:
+    ok("meta-hygiene", "no head-field entities, no mojibake in titles/descriptions/body")
+
 print()
 if FAILURES:
     print(f"BATTERY FAILED — {len(FAILURES)} problem(s):")

@@ -9,6 +9,11 @@ location 6-8 (4-6 thin children) · comparison 5-7 · /faq/ hubs EXEMPT 15-30; (
 natural in answer; (6) phone-in-meta on high-intent types ONLY (money/triage/pillar/contact+file-review); (7) strategic
 silo interlinks in answers (stripTags-safe). De-dup ≠ cut: removing duplicate quick-answer blocks is equity-POSITIVE.
 
+## 📌 STANDING RULES — PRE-PUBLISH CHECKLIST (2026-06-25, permanent · full spec: `_build/strategy/PRE-PUBLISH-AUDIT.md`)
+Run before EVERY publish (once live, every push is production). Order: encoding → head/meta → schema → links.
+REPORT before mass-fixing content-sensitive items; mechanical fixes (entities/canonicals/alt) proceed. Battery+commit per task.
+(B) **Encoding** — no mojibake (`â€"`/`Â·`/`Ã©`), no literal entities in title/desc (auto-escaped → render `&amp;middot;`). **[battery: meta-hygiene]** · fixers `fix_mojibake.py`+`fix_meta_entities.py`. (C) **Head** — title present/UNIQUE/≤60ch · desc present/UNIQUE/~150-160 · **canonical self-referencing every page** · OG+twitter · **NO noindex on prod** (fail-closed env) · lang/charset/viewport. (D) **Schema** — valid JSON-LD · matches visible content · right @type per page-type · no broken `@id` (reviewedBy→#david-westgate exists) · **no fabricated AggregateRating/reviews** · no Intuit-affiliation. (E) **Links** — no 404s **[battery: links]** · no orphans · img alt + David photo · one H1/logical headings · sitemap.xml accurate · robots.txt correct. Flip-only: prove prod headers (no noindex + analytics on) · baseline recrawl · live axe/overflow.
+
 ## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-25 · LAYOUT GATE LIVE · backlog 146→121 · old-kit 0)
 **🟢 CHECKPOINT (2026-06-25, HEAD `36f4479` origin/preview-11ty, tree CLEAN, battery GREEN).** **TASK 4 phone-in-meta
 COMPLETE (52/52):** every high-intent page type (t-money 31 · t-triage 14 · pillars 5 · contact + file-review 2) now
