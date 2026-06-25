@@ -24,8 +24,7 @@ Remove 4 VISIBLE inputs; keep hidden auto-capture where derivable. Both full + m
 ## TASK 2 — TITLE/DESC REWRITE  ✅ COMPLETE
 - ✅ Final residual: the 5 silo HUB index pages (/accounting/, /accounting/industries/, /glossary/, /quickbooks/, /vs/) were excluded by the cluster subagent scopes — authored keyword-led ≤60 titles + value-led ≤160 descs directly. Sitewide over-length now 0/0.
 - ✅ META-STRATEGY.md recorded · ✅ `meta-unique` battery gate added (enforces unique titles+descs sitewide; catches bulk-stamping).
-- 🔵 titles → keyword-LED ≤60. DONE: w1 6 high-intent · w2 industries 26 · w3 qb/help+support 57 + qb/online 42 + glossary 46. ≈124 done; ~115 titles left.
-- 🔵 descs → value+keyword led ≤160. DONE: 52 high-intent (TASK-4) · w2 industries 26 · w3 145 (help/online/glossary). ≈223 done; ~262 descs left.
+- ✅ titles keyword-LED ≤60 + ✅ descs value+keyword ≤160 — sitewide over-length 0/0 (waves 1-4 + 5 hubs).
 - Per page-type, authored not bulk-stamped, battery+commit per wave.
 - ✅ WAVE 3 DONE: quickbooks/help+support 57 · quickbooks/online 42 · glossary 46 = 145.
 - ✅ WAVE 4 DONE (4 parallel subagents, 340 pages, spot-checked + gated): find-an-accountant 174 (per-state tax facts, phone-on-near-me, honesty on triage) · quickbooks-remaining 65 · accounting+standalones 38 · resources/vs/switch/pricing/tools/frameworks/blog 63.
@@ -38,11 +37,11 @@ Remove 4 VISIBLE inputs; keep hidden auto-capture where derivable. Both full + m
 - ✅ EEAT-STRATEGY.md recorded (reviewedBy scoped not blanket; one real operator named where contextual; no fabrication; entity corroboration by consistent accurate mention not link volume; one westgatefs link only, in /partners/).
 - ✅ Carry-forward: blog/category.njk meta straggler fixed (description was blurb + appended boilerplate+phone → over 160; now just the value-led blurb, all 8 categories ≤160, no phone per MOFU rule).
 
-## TASK 4 — FAQ AUTHORING (per page-type, money-first)  ⬜ pending
-- ⬜ (was TASK 2) answer-first rewrite + 1-2 call-intent FAQs w/ phone (REPLACE weakest at cap, never exceed).
-- ⬜ (was TASK 3) t-hub FAQ additions (hubs under cap → ADD).
-- ⬜ (was TASK 5) silo interlinks in answers (relevant, schema-safe).
-- Per FAQ-STRATEGY.md. Report-before-change on cuts beyond approved de-dup.
+## TASK 4 — FAQ AUTHORING (per page-type, money-first)  🛑 BLOCKED — founder decision
+- ⚠️ MONEY WAVE ATTEMPTED + REVERTED (commits d6927fe + 3fb0f8b → reverted fb09341 + 040a5dd). Root cause: the money pages are BASELINE-equity-gated and AT the FAQ cap (5-7). Adding a call-intent FAQ by "replace weakest at cap" REMOVED baseline FAQ *questions* → 26 content-equity FAILURES. (content-equity protects baseline FAQ QUESTION text, not answers.) I committed before reading the full battery verdict (deleted the output early) — my error; reverted to baseline-verbatim (green).
+- 🛑 FOUNDER DECISION NEEDED — how to add call-intent FAQ on at-cap baseline pages without losing baseline equity. Options: (A) allow cap+1 (8 FAQs) on baseline pages — keep all baseline Qs + add call-intent, zero equity loss [recommend]; (B) approve specific baseline-Q replacements → I add equity-exceptions.json entries (founder-signed) per page; (C) skip the call-intent *question* on at-cap baseline pages, instead weave the phone into an EXISTING FAQ answer (equity-safe — answers aren't equity-checked) [also clean]; (D) call-intent FAQ only on UNDER-cap + non-baseline pages.
+- SAFE regardless: answer-first/minimal-brand ANSWER rewrites + silo links in answers (equity-safe — Qs unchanged) + t-hub FAQ ADDITIONS (hubs are under cap).
+- Per FAQ-STRATEGY.md. Report-before-change on baseline-FAQ-Q cuts (this is exactly that).
 
 ## TASK 5 — LOCATION EXPANSION (the spine — PLAN FIRST)  ⬜ pending
 - ⬜ **FIRST DELIVERABLE: full LOCATION PLAN for founder review** (state list 10-15, tier assignment, exact pages per tier, counts, routing, schema per type) — from `techbrot-blueprint-v5.xlsx`. HARD-STOP for founder ruling before building.
