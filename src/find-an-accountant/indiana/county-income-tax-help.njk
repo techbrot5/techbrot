@@ -1,0 +1,136 @@
+---json
+{
+  "layout": "layouts/t-money.njk",
+  "permalink": "/find-an-accountant/indiana/county-income-tax-help/",
+  "slug": "in-svc-countytax",
+  "bodyClass": "page--bofu",
+  "intent": "indiana",
+  "metaReviewed": "2026-06-26",
+  "title": "Indiana County Income Tax Help · TechBrot",
+  "description": "Indiana county income tax (LIT) help — county-of-residence withholding for all 92 counties set up in QuickBooks Payroll. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Indiana", "href": "/find-an-accountant/indiana/" },
+    { "name": "County Income Tax Help" }
+  ],
+  "hero": {
+    "eyebrow": "Indiana &middot; County Income Tax (LIT)",
+    "heading": "Indiana county income tax, withheld right in your payroll.",
+    "subheading": "All 92 Indiana counties levy a local income tax (LIT) on top of the flat state rate, each at its own rate, driven by an employee&rsquo;s county of residence on January 1. We configure QuickBooks Payroll to withhold the correct county rate for every employee &mdash; including multi-county and remote staff &mdash; so payroll and the withholding return reconcile. Served across all 92 counties.",
+    "helper": "Independent firm &middot; not Intuit. Does not file Indiana returns; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=indiana&state=indiana&source_type=state-spoke&funnel_stage=MOFU" },
+      { "label": "Speak to a ProAdvisor", "tel": true }
+    ]
+  },
+  "sec": {
+    "inBriefTag": "In brief",
+    "inBriefH": "Indiana county income tax, in brief.",
+    "aiH": "Indiana county income tax, in five questions.",
+    "intakeH": "Scope your county-LIT withholding.",
+    "faqH": "Indiana county income tax questions."
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> sets up <strong>Indiana county local-income-tax (LIT) withholding in your own QuickBooks Payroll</strong> &mdash; each employee&rsquo;s county of residence (or principal work county) captured from <strong>Form WH-4</strong>, the correct county rate mapped from the current Department of Revenue list, withholding updated when someone moves or changes work county, multi-county and remote workforces configured, and the <strong>30-day safe harbor</strong> for short-term nonresident workers flagged &mdash; with withheld LIT reconciled to payroll each period and CPA-ready figures prepared. The full Indiana county-LIT summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Indiana county-LIT mechanics (all 92 counties levy a local income tax at their own rates; the rate is set by county of residence on January 1; the same rate applies to residents and nonresidents; Form WH-4 establishes the county; the 30-day nonresident safe harbor) reflect Indiana Department of Revenue guidance (Income Tax Information Bulletin #32; Departmental Notice #1) and are reviewed periodically. We never quote a specific county rate &mdash; the current per-county figures live on the DOR list. TechBrot does not file the Indiana withholding or income-tax return."
+  },
+  "ctaBand": {
+    "dark": true,
+    "eyebrow": "Indiana businesses start here",
+    "heading": "Get your county LIT withholding set up right.",
+    "lede": "Book a free payroll review. We&rsquo;ll check how your QuickBooks Payroll handles county LIT, flag any wrong or missing county rates and stale WH-4s, and send a written fixed-fee quote within 3 business days. No pitch. Independent firm &mdash; does not file Indiana returns; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=indiana&state=indiana&source_type=state-spoke&funnel_stage=BOFU" },
+      { "label": "Speak to a ProAdvisor", "tel": true }
+    ]
+  }
+}
+---
+
+{#- ═══ BESPOKE MIDDLE (IN county-income-tax / LIT help) — re-flowed into shared dc-system v2
+    components, mirroring the DE gross-receipts-tax-help spine (the state-distinct tax service).
+    Layout-owned spine: hero/proof/§01 in-brief/§03 aiSummary/call/intake/faq/CTA. Bespoke sections
+    alternate white/sand. Anchors #in-svc-countytax-*. Founder-name-zero. NEVER quotes a specific
+    county LIT %. IN figures only from IN-FACTS.md. ═══ -#}
+
+{#- THE SHORT VERSION — speakable summary (#in-svc-countytax-summary; single paragraph) — white -#}
+<section class="sec reveal" id="in-svc-countytax-summary">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In short</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">The short version.</h2>
+    <div class="prose speakable">
+      <p>{{ summary | safe }}</p>
+    </div>
+  </div>
+</section>
+
+{#- WHY COUNTY LIT IS DIFFERENT — body prose + the three reasons (lift cards) — sand -#}
+<section class="sec reveal" id="in-svc-countytax-why" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Why it trips businesses up</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:24px;">Why county income tax trips up so many Indiana employers</h2>
+    <div class="prose" style="max-width:72ch;margin-bottom:40px;">
+      {%- for p in whyBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+    <div class="r-3">
+      {%- for c in whyCards %}
+      <div class="lift"><span class="lift__n">{{ c.signal | safe }}</span><div><h3>{{ c.title | safe }}</h3><p>{{ c.body | safe }}</p></div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- HONEST SCOPE — TechBrot handles / You or your CPA handle (two checklist cards) — white -#}
+<section class="sec reveal" id="in-svc-countytax-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:36px;">How we help with Indiana county income tax.</h2>
+    <div class="r-2">
+      <div class="incl-card">
+        <h3>TechBrot handles</h3>
+        <ul class="checklist">{%- for d in scopeDo %}<li>{{ d | safe }}</li>{%- endfor %}</ul>
+      </div>
+      <div class="incl-card">
+        <h3>You or your CPA handle</h3>
+        <ul class="checklist">{%- for d in scopeDont %}<li>{{ d | safe }}</li>{%- endfor %}</ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{#- THE ADVISORY LINE — statement + body prose — sand -#}
+<section class="sec reveal" id="in-svc-countytax-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">The advisory line</span><span class="idx__rule"></span></div>
+    <h2 class="statement">Automation handles the data entry. We handle the judgment.</h2>
+    <div class="prose">
+      {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- EXPERT REVIEW — firm-level byline + standards prose + trust-row + meta — white -#}
+<section class="sec reveal" id="in-svc-countytax-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
+      <div>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:22px;">
+      <p>Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Indiana businesses remotely across all 92 counties. Indiana county-LIT mechanics &mdash; all 92 counties levying a local income tax at their own rates, the rate set by county of residence on January 1, the same rate for residents and nonresidents, Form WH-4, and the 30-day nonresident safe harbor &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href="https://www.in.gov/dor/" rel="noopener nofollow">Indiana Department of Revenue</a> (<a href="https://www.in.gov/dor/files/ib32.pdf" rel="noopener nofollow">Information Bulletin #32</a> and <a href="https://www.in.gov/dor/files/dn01.pdf" rel="noopener nofollow">Departmental Notice #1</a>, the official per-county rate list). This page is educational and operational; it is not tax advice or a substitute for filing, and it does not quote any specific county rate &mdash; confirm current rates on the <a href="https://www.in.gov/dor/i-am-a/individual/individual-income-county-tax-rates-by-year/" rel="noopener nofollow">DOR county-rate page</a>. TechBrot configures and maintains the withholding and coordinates with your CPA, who files; we do not file the Indiana withholding or income-tax return or represent clients before the Department of Revenue.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-26</span><span>Updated: 2026-06-26</span><span>Reviewed: 2026-06-26 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>

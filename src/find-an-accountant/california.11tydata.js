@@ -35,7 +35,7 @@ module.exports = {
   summarized: "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor services</strong>, California bookkeeping, QuickBooks setup, cleanup, migration, California sales tax compliance, and fractional CFO engagements to California businesses across <strong>all 58 counties</strong> &mdash; from Los Angeles and San Diego to San Francisco, San Jose, and Sacramento. California&rsquo;s <strong>AB5 worker-classification rules</strong>, <strong>district sales tax (the most complex in the U.S.)</strong>, <strong>the highest personal income tax in the country (13.3%)</strong>, the <strong>$800 FTB franchise tax</strong>, and concentration in <strong>SaaS and technology, ecommerce, agencies, entertainment and production, restaurants, and real estate</strong> make the California operational context substantively different from every other state. Engagements run as fixed-fee monthly retainers or one-time scopes with written agreements before any work begins. <strong>Direct service by TechBrot</strong> for most engagements; <strong>curated local California operators</strong> where in-region presence or industry specialization matters. Honest scope: we do not file California or federal tax returns &mdash; we coordinate with your CPA or EA. Independent ProAdvisor firm; not affiliated with Intuit Inc.",
 
   // PROADVISOR CREDENTIAL STRIP. (H2: Certified QuickBooks ProAdvisor credentials)
-  credLede: "Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack &mdash; Online (Level 2), Desktop, Enterprise, and Payroll. Verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+  credLede: "Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack &mdash; Online (Level 2), Desktop, Enterprise, and Payroll. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
   credBadges: [
     { label: "Online (L2)", name: "QuickBooks Online ProAdvisor (Level 2)" },
     { label: "Desktop", name: "QuickBooks Desktop ProAdvisor" },
@@ -244,7 +244,7 @@ module.exports = {
 
   // OPERATORS — 4 vetting standards. (H2: Trusted California partner practices. + 2 H3s)
   operatorStandards: [
-    { num: "01", term: "Active Certified ProAdvisor credentials", detail: "QuickBooks Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s public directory." },
+    { num: "01", term: "Active Certified ProAdvisor credentials", detail: "QuickBooks Online (L2), Desktop, Enterprise, and Payroll." },
     { num: "02", term: "Demonstrated California tax fluency", detail: "AB5 / ABC test, district sales tax by jurisdiction, $800 franchise tax and LLC fee, FTB / CDTFA / EDD coordination." },
     { num: "03", term: "Industry specialization depth", detail: "ASC 606 revenue recognition for SaaS, gross-vs-net for agencies and production, job costing for construction." },
     { num: "04", term: "Insurance &amp; engagement discipline", detail: "Active E&amp;O insurance, fixed-fee written scope before work, and your-file/your-data working model." },
@@ -253,7 +253,7 @@ module.exports = {
   // WHY TECHBROT — 4 cards. H3 names VERBATIM. (H2: What separates us from generic remote bookkeeping. + 4 H3s)
   why: [
     { num: "01", name: "California operational depth", body: "AB5 worker-classification tracking, district sales tax by jurisdiction, ASC 606 revenue recognition for SaaS and agencies, $800 franchise tax and LLC fee accrual, CA SDI payroll. Operational specifics, not generic remote support." },
-    { num: "02", name: "Certified QuickBooks ProAdvisors", body: "Active Intuit certifications across <strong>QuickBooks Online L2, Desktop, Enterprise, and Payroll</strong>. Verifiable on Intuit&rsquo;s public ProAdvisor directory." },
+    { num: "02", name: "Certified QuickBooks ProAdvisors", body: "Active Intuit certifications across <strong>QuickBooks Online L2, Desktop, Enterprise, and Payroll</strong>. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification." },
     { num: "03", name: "Fixed-fee, written scope", body: "Every engagement starts with a written scope and a fixed fee before any work begins. No hourly billing. No surprise invoices. No scope creep &mdash; even for complex SaaS and multi-channel engagements." },
     { num: "04", name: "Sophisticated buyer, honest delivery", body: "California buyers know the difference between genuine expertise and a keyword swap. We are an independent ProAdvisor firm with no Intuit affiliation, no affiliate commissions, and no upsell agenda &mdash; just the right scope for your California business." },
   ],
@@ -308,7 +308,7 @@ module.exports = {
   // EXPERT REVIEW (E-E-A-T). (H2: Reviewed by Certified QuickBooks ProAdvisors.) Firm-level — no founder name.
   reviewCreds: [
     { label: "Entity", detail: "TechBrot Inc. &middot; Delaware C-Corporation &middot; NAICS 541219" },
-    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s public ProAdvisor directory" },
+    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll" },
     { label: "California practice", detail: "All 58 counties served &middot; LA, the Bay Area, San Diego, the Central Valley, Sacramento &middot; Industries: ecommerce, agencies/SaaS/production, restaurants, real estate, professional services, construction" },
     { label: "Independence", detail: "Independent ProAdvisor firm &middot; Not affiliated with Intuit Inc. &middot; Zero affiliate revenue from any provider" },
     { label: "Editorial policy", detail: "CA statutory references reviewed against FTB, CDTFA, and EDD primary sources &middot; Rate changes propagated within 30 days &middot; Composite scenarios anonymized &middot; No fabricated stats, reviews, or credentials" },

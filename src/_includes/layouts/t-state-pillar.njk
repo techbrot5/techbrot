@@ -16,8 +16,9 @@ footerNav:
 
     Section order = handoff: HERO (taccount figure — founder ruling: NO fabricated
     state maps; all 5 use the T-account ledger SVG) · TRUST STRIP (shared partial,
-    sand) · STAT BAND (r-4 by-the-numbers) · §summary · §credentials · IN-BRIEF
-    (shared partial, sand) · AI SUMMARY (light ruled, place-framed) · glossary ·
+    sand) · STAT BAND (r-4 by-the-numbers) · IN-BRIEF (shared partial, sand —
+    leads, 2026-06-26 founder reorder) · §credentials · §summary (dense block,
+    now below) · AI SUMMARY (light ruled, place-framed) · glossary ·
     DELIVER (r-2 buyer cards) · context · scenarios · outcomes · PULL QUOTE
     (statement) · INDUSTRIES (r-3) · services · ecosystem · PRICING (cmp) · CITY
     DIRECTORY (r-4 citylinks) · INTAKE+CALL (dual path + shared intake-form) ·
@@ -74,15 +75,12 @@ footerNav:
 </section>
 {%- endif %}
 
-{#- §SUMMARY — real H2 carrying the full state summary prose (sand) -#}
-{%- if summarized %}
-<section class="sec reveal" id="{{ slug }}-summarized" style="background:var(--color-paper-warm);border-bottom:1px solid var(--border-subtle);">
-  <div class="ct read">
-    <h2 class="h2" style="margin-bottom:18px;">{{ sec.summarizedH | safe }}</h2>
-    <div class="prose">{{ summarized | safe }}</div>
-  </div>
-</section>
-{%- endif %}
+{#- §01 IN BRIEF — shared partial (sand). Frozen speakable id #{{ slug }}-in-brief-text.
+   REORDERED 2026-06-26 (founder, all pillars): lead with the short scannable in-brief;
+   credentials sit next; the dense AI-extraction "summarized" block drops BELOW (was: summary
+   first → credentials → in-brief lower). Position swap only — no content change. Background
+   alternation preserved: STAT (white) → in-brief (sand) → credentials (white) → summarized (sand). -#}
+{% include "partials/in-brief.njk" %}
 
 {#- §CREDENTIALS — cert line + proof-strip pills + trust-row (white) -#}
 {%- if credLede %}
@@ -108,8 +106,16 @@ footerNav:
 </section>
 {%- endif %}
 
-{#- §01 IN BRIEF — shared partial (sand). Frozen speakable id #{{ slug }}-in-brief-text -#}
-{% include "partials/in-brief.njk" %}
+{#- §SUMMARY — real H2 carrying the full state summary prose (sand). Sits BELOW the in-brief +
+   credentials per the 2026-06-26 founder reorder (dense block under the scannable lead). -#}
+{%- if summarized %}
+<section class="sec reveal" id="{{ slug }}-summarized" style="background:var(--color-paper-warm);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <h2 class="h2" style="margin-bottom:18px;">{{ sec.summarizedH | safe }}</h2>
+    <div class="prose">{{ summarized | safe }}</div>
+  </div>
+</section>
+{%- endif %}
 
 {#- AI SUMMARY — place-framed light ruled multi-Q&A. Frozen id #{{ slug }}-ai-summary-list -#}
 {%- if aiSummary %}

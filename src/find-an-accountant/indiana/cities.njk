@@ -1,0 +1,164 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/indiana/cities/",
+  "slug": "in-cities",
+  "sec": { "faqH": "Indiana coverage questions." },
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "title": "Indiana Bookkeeping — Cities We Serve · TechBrot",
+  "description": "QuickBooks bookkeeping across Indiana — Indianapolis, Fort Wayne, Evansville, South Bend, Carmel, Fishers, Bloomington, Hammond. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Indiana", "href": "/find-an-accountant/indiana/" },
+    { "name": "Cities" }
+  ],
+  "heroFigure": "taccount",
+  "hero": {
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Independent &middot; not Intuit",
+      "Fixed-fee &middot; written scope in 3 days"
+    ],
+    "eyebrow": "Indiana &middot; Cities We Serve &middot; All 92 Counties",
+    "heading": "An Indiana bookkeeper for your city &mdash; every county&rsquo;s tax handled.",
+    "subheading": "Certified QuickBooks ProAdvisor bookkeeping for businesses across Indiana &mdash; Indianapolis, Fort Wayne, Evansville, South Bend, Carmel, Fishers, Bloomington, Hammond, and everywhere between. Same named ProAdvisor, same fixed fee, wherever you are. Your city doesn&rsquo;t change the service &mdash; but Indiana&rsquo;s 92-county local income tax means your county changes the withholding, and your local economy changes the books.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=indiana&state=indiana&source_type=city-index&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor bookkeeping</strong> to Indiana businesses in <strong>all 92 counties</strong> &mdash; dedicated pages for Indianapolis, Fort Wayne, Evansville, South Bend, Carmel, Fishers, Bloomington, and Hammond, plus remote, fixed-fee service everywhere between. Indiana&rsquo;s income tax (a flat 2.95% in 2026) and sales tax (a flat 7%, with no local add-ons) are statewide &mdash; but <strong>every Indiana county levies its own local income tax (LIT)</strong>, set by your county of residence, and that is what changes city to city. The full coverage map is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Indiana figures verified against the Indiana Department of Revenue and the DLGF."
+  },
+  "ctaBand": {
+    "eyebrow": "Find your Indiana bookkeeper",
+    "heading": "Find your Indiana bookkeeper &mdash; wherever you are.",
+    "lede": "Book a free discovery call. We&rsquo;ll review your QuickBooks file and the tax specifics of your Indiana city &mdash; including your county&rsquo;s local income tax (LIT) withholding &mdash; and send a written fixed-fee quote within 3 business days. Independent firm &mdash; does not file Indiana returns; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=indiana&state=indiana&source_type=city-index&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{#- ═══ BESPOKE BODY (IN cities sub-hub) — v2 dc-system components. Spine (hero /
+    in-brief #in-cities-in-brief-text / FAQ [sec.faqH] / light CTA) is layout-owned
+    (t-location). Every section id == this page's own pageGraph schema anchor; the
+    AI-summary list keeps #in-cities-ai-summary-list intact. ═══ -#}
+
+{# ── COVERAGE, PLAINLY · real H2 carrying the one-paragraph summary (right after the in-brief) ── #}
+<section class="sec reveal" id="in-cities-coverage" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Indiana coverage, plainly.</h2>
+    <div class="prose"><p>{{ coverage | safe }}</p></div>
+  </div>
+</section>
+
+{# ── AI SUMMARY · 5 entity-dense Q&As — frozen anchor #in-cities-ai-summary-list (H2: Indiana coverage, in five questions.) ── #}
+<section class="sec reveal" id="in-cities-ai-summary">
+  <div class="ct read">
+    <div class="idx idx--center"><span class="idx__n">§</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="text-align:center;margin:0 auto 36px;max-width:26ch;">Indiana coverage, in five questions.</h2>
+    <dl class="speakable ai-qa" id="in-cities-ai-summary-list">
+      {%- for item in aiSummary %}
+      <div class="ai-qa__item"><dt><h3>{{ item.q | safe }}</h3></dt><dd style="margin:0;"><p>{{ item.a | safe }}</p></dd></div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+{# ── FEATURED CITIES · city routing rel-cards; each H3 links to its city page ──
+   (H2: Cities with dedicated pages. + 8 H3s) #}
+<section class="sec reveal" id="in-cities-featured" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Indiana markets</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Cities with dedicated pages.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:62ch;">Our largest Indiana markets, each built around the local economy &mdash; and the county local income tax &mdash; that defines it.</p>
+    <div class="r-3">
+      {%- for c in featured %}
+      <a class="rel-card" href="{{ c.href }}">
+        <span class="eyebrow" style="display:block;margin-bottom:8px;">{{ c.num }} &middot; {{ c.eyebrow | safe }}</span>
+        <h3 class="rel-card__t">{{ c.heading | safe }}</h3>
+        <p class="rel-card__d">{{ c.body | safe }}</p>
+        <p class="rel-card__d" style="margin-top:8px;"><strong>Area</strong> &middot; {{ c.area | safe }}</p>
+        <span class="ptier__link" style="margin-top:12px;">{{ c.cta | safe }}</span>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── WHY LOCATION · context prose (H2: Your city doesn't change the service — your county changes the tax.) ── #}
+<section class="sec reveal" id="in-cities-why">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why local context matters</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Your city doesn&rsquo;t change the service &mdash; your county changes the tax.</h2>
+    <div class="prose">
+      {%- for p in why %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── MORE TOWNS · towns served without a dedicated page (non-link chips) + county context
+     (H2: We serve these too — and everywhere between.) ── #}
+<section class="sec reveal" id="in-cities-more" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">More Indiana towns</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">We serve these too &mdash; and everywhere between.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:62ch;">The same operating standard and Certified ProAdvisor delivery, across all 92 Indiana counties.</p>
+    <div class="chips" style="margin-bottom:26px;">
+      {%- for t in servedTowns %}
+      <span class="chip"><strong>{{ t.name | safe }}</strong>&nbsp;<span class="chip__note">&middot; {{ t.county | safe }}</span></span>
+      {%- endfor %}
+    </div>
+    <div class="prose">
+      <p>{{ countyProse | safe }}</p>
+      <p><small>{{ moreNote | safe }}</small></p>
+    </div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level, no founder name (H2: Reviewed by the TechBrot Certified ProAdvisor team.) ── #}
+<section class="sec reveal" id="in-cities-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline" style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div class="byline__mark" aria-hidden="true" style="width:38px;height:38px;border-radius:9px;background:var(--color-accent);flex:none;"></div>
+      <div>
+        <p class="byline__name" style="margin:0;font-weight:600;color:var(--color-ink);">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review" style="margin:2px 0 0;">TechBrot Inc. &middot; Independent Certified ProAdvisor firm &middot; serving all of Indiana</p>
+      </div>
+    </div>
+    <div class="prose">
+      <p>Maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor firm serving Indiana businesses across all 92 counties remotely. Indiana tax facts &mdash; the flat 2.95% state income tax, the 7% statewide sales tax with no local add-ons, and each county&rsquo;s own local income tax (LIT) &mdash; reflect rules current as of the date below and are reviewed periodically against current <a href="https://www.in.gov/dor/" rel="noopener nofollow">Indiana Department of Revenue</a> guidance, including the per-county <a href="https://www.in.gov/dor/i-am-a/individual/individual-income-county-tax-rates-by-year/" rel="noopener nofollow">county tax rate</a> list. TechBrot delivers the books and coordinates with your CPA, who files.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value" style="font-size:15px;">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-26</span><span>Updated: 2026-06-26</span><span>Reviewed: 2026-06-26 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
+
+{# ── RELATED · next-step rel-cards; each H3 verbatim (H2: Where to go next. + 4 H3s) ── #}
+<section class="sec reveal" id="in-cities-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;">Where to go next.</h2>
+    <div class="r-2">
+      {%- for r in related %}
+      <a class="rel-card" href="{{ r.href }}"><h3 class="rel-card__t">{{ r.name | safe }}</h3><p class="rel-card__d">{{ r.body | safe }}</p><span class="ptier__link" style="margin-top:10px;">{{ r.cta | safe }}</span></a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

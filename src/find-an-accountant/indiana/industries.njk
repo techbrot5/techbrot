@@ -1,0 +1,160 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/indiana/industries/",
+  "slug": "in-industries",
+  "sec": { "faqH": "Indiana industry accounting questions." },
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location",
+  "callBar": true,
+  "title": "Indiana Industry Accounting & Bookkeeping · TechBrot",
+  "description": "Industry accounting for Indiana businesses — manufacturing, logistics, agriculture, construction, real estate, healthcare. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Indiana", "href": "/find-an-accountant/indiana/" },
+    { "name": "Industries" }
+  ],
+  "heroFigure": "taccount",
+  "hero": {
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Independent &middot; not Intuit",
+      "Fixed-fee &middot; written scope in 3 days"
+    ],
+    "eyebrow": "Indiana &middot; Industry Accounting &middot; Built Around How You Run",
+    "heading": "Indiana industry accounting &mdash; built around how your business runs.",
+    "subheading": "Industry-specific accounting for Indiana businesses &mdash; manufacturing, logistics and distribution, agriculture, construction, real estate, and healthcare &mdash; configured around the number that runs each business, with Indiana&rsquo;s rules (the flat 2.95% income tax, the clean 7% sales tax, the 92-county local income tax, and the $2M business-personal-property exemption) built in. Same Certified ProAdvisor team, same fixed fee, all 92 counties.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=indiana&state=indiana&source_type=industry-index&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>industry-specific Certified QuickBooks ProAdvisor accounting</strong> to Indiana businesses &mdash; dedicated pages for manufacturing, logistics and distribution, agriculture, construction, real estate, and healthcare. Generic bookkeeping misses the number that runs your business; we configure your books around how your industry actually operates, with Indiana&rsquo;s layer &mdash; the flat 2.95% income tax, the clean 7% sales tax with no local add-ons, the 92-county local income tax (LIT), and the $2M business-personal-property exemption &mdash; built in. Fixed-fee, in your own QuickBooks file, across all 92 counties. The full industry map is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Indiana figures verified against the Indiana Department of Revenue and DLGF. TechBrot does not file Indiana returns &mdash; it keeps the books and coordinates with your CPA."
+  },
+  "ctaBand": {
+    "eyebrow": "Find your Indiana industry accountant",
+    "heading": "Get accounting that fits your Indiana industry.",
+    "lede": "Book a free discovery call. We&rsquo;ll review your QuickBooks file and the way your industry actually runs &mdash; with Indiana&rsquo;s rules included &mdash; and send a written fixed-fee scope within 3 business days. Independent firm &mdash; does not file Indiana returns or the county LIT; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=indiana&state=indiana&source_type=industry-index&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{#- ═══ BESPOKE BODY (IN industries sub-hub) — mirrors the proven NY/DE industries hubs
+    (find-an-accountant/new-york/industries.njk, delaware/industries.njk). Spine (hero /
+    in-brief #in-industries-in-brief-text / FAQ [sec.faqH] / light CTA) is layout-owned
+    (t-location). Every section id == this page's own pageGraph schema anchor; the
+    AI-summary list keeps #in-industries-ai-summary-list intact. ═══ -#}
+
+{# ── INDUSTRY ACCOUNTING, PLAINLY · real H2 carrying the one-paragraph summary (right after the in-brief) ── #}
+<section class="sec reveal" id="in-industries-coverage" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Indiana industry accounting, plainly.</h2>
+    <div class="prose"><p>{{ coverage | safe }}</p></div>
+  </div>
+</section>
+
+{# ── AI SUMMARY · 5 entity-dense Q&As — frozen anchor #in-industries-ai-summary-list ── #}
+<section class="sec reveal" id="in-industries-ai-summary">
+  <div class="ct read">
+    <div class="idx idx--center"><span class="idx__n">§</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="text-align:center;margin:0 auto 36px;max-width:28ch;">Indiana industry accounting, in five questions.</h2>
+    <dl class="speakable ai-qa" id="in-industries-ai-summary-list">
+      {%- for item in aiSummary %}
+      <div class="ai-qa__item"><dt><h3>{{ item.q | safe }}</h3></dt><dd style="margin:0;"><p>{{ item.a | safe }}</p></dd></div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+{# ── FEATURED INDUSTRIES · 6 dedicated IN industry pages (rel-card grid) ── #}
+<section class="sec reveal" id="in-industries-featured" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Indiana industry expertise</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Where we go deep in Indiana.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:64ch;">Six industries with dedicated Indiana pages &mdash; each built around the number that runs that business, with the state&rsquo;s rules included.</p>
+    <div class="r-3">
+      {%- for c in featured %}
+      <a class="rel-card" href="{{ c.href }}">
+        <span class="eyebrow" style="display:block;margin-bottom:8px;">{{ c.num }} &middot; {{ c.eyebrow | safe }}</span>
+        <h3 class="rel-card__t">{{ c.heading | safe }}</h3>
+        <p class="rel-card__d">{{ c.body | safe }}</p>
+        <p class="rel-card__d" style="margin-top:8px;"><strong>Focus</strong> &middot; {{ c.focus | safe }}</p>
+        <span class="ptier__link" style="margin-top:12px;">{{ c.cta | safe }}</span>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── WHY INDUSTRY · context prose ── #}
+<section class="sec reveal" id="in-industries-why">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why it matters</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Generic bookkeeping misses the number that runs your business &mdash; twice over in Indiana.</h2>
+    <div class="prose">
+      {%- for p in why %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{# ── MORE INDUSTRIES · additional sectors routed to the global industry pages (additive routing) ── #}
+<section class="sec reveal" id="in-industries-more" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">More Indiana industries</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">We build for these Indiana industries too.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:64ch;">The same operating standard and Certified ProAdvisor delivery, with each industry&rsquo;s real Indiana angle.</p>
+    <div class="r-2">
+      {%- for c in moreIndustries %}
+      <a class="rel-card" href="{{ c.href }}"><h3 class="rel-card__t">{{ c.name | safe }}</h3><p class="rel-card__d">{{ c.angle | safe }}</p><span class="ptier__link" style="margin-top:10px;">Explore &rarr;</span></a>
+      {%- endfor %}
+    </div>
+    <div class="prose" style="margin-top:22px;"><p><small>{{ moreNote | safe }}</small></p></div>
+  </div>
+</section>
+
+{# ── EXPERT REVIEW · firm-level, no founder name ── #}
+<section class="sec reveal" id="in-industries-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline" style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div class="byline__mark" aria-hidden="true" style="width:38px;height:38px;border-radius:9px;background:var(--color-accent);flex:none;"></div>
+      <div>
+        <p class="byline__name" style="margin:0;font-weight:600;color:var(--color-ink);">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review" style="margin:2px 0 0;">TechBrot Inc. &middot; Independent Certified ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose">
+      <p>Maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor firm serving Indiana businesses across all 92 counties remotely, and reviewed for technical accuracy across the industries represented here &mdash; including Indiana-specific rules (the flat 2.95% income tax, the 7% statewide sales tax with no local add-ons, the 92-county local income tax, and the $2M business-personal-property exemption per the <a href="https://www.in.gov/dor/" rel="noopener nofollow">Indiana Department of Revenue</a> and <a href="https://www.in.gov/dlgf/assessments/personal-property/" rel="noopener nofollow">DLGF</a>). TechBrot keeps the books and coordinates with your CPA, who files.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value" style="font-size:15px;">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-26</span><span>Updated: 2026-06-26</span><span>Reviewed: 2026-06-26 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
+
+{# ── RELATED · next-step rel-cards ── #}
+<section class="sec reveal" id="in-industries-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;">Related Indiana services.</h2>
+    <div class="r-2">
+      {%- for r in related %}
+      <a class="rel-card" href="{{ r.href }}"><h3 class="rel-card__t">{{ r.name | safe }}</h3><p class="rel-card__d">{{ r.body | safe }}</p><span class="ptier__link" style="margin-top:10px;">{{ r.cta | safe }}</span></a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

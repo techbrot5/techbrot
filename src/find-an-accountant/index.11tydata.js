@@ -48,7 +48,7 @@ const needs = [
 
 // WHAT YOU GET — rendered as the premium numbered process (the ONE numbered system).
 const valueProps = [
-  { name: "A Certified QuickBooks ProAdvisor on your file", body: "Not a generic bookkeeper &mdash; a Certified ProAdvisor team with a named operator on the same file every month. Credentials verifiable on Intuit&rsquo;s public directory." },
+  { name: "A Certified QuickBooks ProAdvisor on your file", body: "Not a generic bookkeeper &mdash; a Certified ProAdvisor team with a named operator on the same file every month. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors." },
   { name: "Real local tax fluency, never a template", body: "Each state page answers what&rsquo;s actually different there &mdash; the SF Gross Receipts Tax, the NYC UBT, the Texas margin tax &mdash; built into how your books are kept." },
   { name: "Fixed-fee, written scope first", body: "Every engagement is quoted as a fixed fee against a written scope before any work begins &mdash; no hourly billing, no surprises." },
   { name: "Remote-first, so location never limits you", body: "Delivered on QuickBooks Online or hosted Desktop. Your city or state changes the tax context, never the service, the cadence, or the named operator." },

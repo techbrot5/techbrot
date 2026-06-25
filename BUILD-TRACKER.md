@@ -1,5 +1,12 @@
 # BUILD-TRACKER.md — living truth (overrides blueprint between revisions)
 
+## 📌 STANDING RULE — PROACTIVE CONTEXT CHECKPOINT (2026-06-26, permanent)
+When context reaches ~75–80%, checkpoint WITHOUT being asked: commit + push ALL work, update
+MASTER-TASKLIST + SESSION-LOG + BUILD-TRACKER + resume anchor, confirm tree CLEAN + HEAD==origin,
+then tell the founder it's checkpoint-ready for a fresh session. NEVER start a new large unit (e.g. a
+full state build) when context is already high enough that the unit would exhaust it mid-build —
+checkpoint first. A half-built state/unit is a STOP CONDITION (never leave a state partial).
+
 ## 📌 STANDING RULES — FAQ (2026-06-25, permanent · full spec: `_build/strategy/FAQ-STRATEGY.md`)
 Google KILLED FAQ rich results (2026-05-07) → FAQs are now an **AI-CITATION + on-page-conversion** play, NOT a
 Google-SERP lever. FAQPage schema stays (valid, still parsed by Bing/Perplexity/AI crawlers). Rules: (1) optimize for
@@ -14,8 +21,15 @@ Run before EVERY publish (once live, every push is production). Order: encoding 
 REPORT before mass-fixing content-sensitive items; mechanical fixes (entities/canonicals/alt) proceed. Battery+commit per task.
 (B) **Encoding** — no mojibake (`â€"`/`Â·`/`Ã©`), no literal entities in title/desc (auto-escaped → render `&amp;middot;`). **[battery: meta-hygiene]** · fixers `fix_mojibake.py`+`fix_meta_entities.py`. (C) **Head** — title present/UNIQUE/≤60ch · desc present/UNIQUE/~150-160 · **canonical self-referencing every page** · OG+twitter · **NO noindex on prod** (fail-closed env) · lang/charset/viewport. (D) **Schema** — valid JSON-LD · matches visible content · right @type per page-type · no broken `@id` (reviewedBy→#david-westgate exists) · **no fabricated AggregateRating/reviews** · no Intuit-affiliation. (E) **Links** — no 404s **[battery: links]** · no orphans · img alt + David photo · one H1/logical headings · sitemap.xml accurate · robots.txt correct. Flip-only: prove prod headers (no noindex + analytics on) · baseline recrawl · live axe/overflow.
 
-## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-26 · T5 DELAWARE ANCHOR BUILT · battery green)
-**🟢 T5 CHECKPOINT (2026-06-26) — DELAWARE ANCHOR COMPLETE (about to commit).** Plan RULED (founder): 12 core
+## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-26 · T5 INDIANA ANCHOR BUILT + pillar summary-swap + ProAdvisor-verify honesty fix · FULL battery green)
+**🟢 T5 CHECKPOINT (2026-06-26) — INDIANA ANCHOR COMPLETE + founder pillar-swap + honesty softening; FULL battery green, pushed.**
+**STATES: 7 built / 20 planned** (5 existing NY·CA·TX·FL·IL + DE + IN; 13 core remain: PA·NJ·MD·VA·OH·MI·GA·NC·AZ·TN·WA·CO·MA).
+**IN = 36 pages** (pillar + cities-hub+8 [Indianapolis·Fort Wayne·Evansville·South Bend·Carmel·Fishers·Bloomington·Hammond] + industries-hub+6 [manufacturing·logistics-distribution·agriculture·construction·real-estate·healthcare] + 14 services [incl. IN-distinct sales-tax-help + county-income-tax-help] + 4 honest-triage + pricing). Built from `_build/strategy/IN-FACTS.md` (fact-checked vs Indiana DOR + DLGF + Tax Foundation 2026: flat 2.95% PIT 2026 / 4.9% corp / 7% sales no-local · all 92 counties levy a LIT by county-of-residence-Jan-1 [rates QUALITATIVE, never quoted — link DOR Departmental Notice #1] · $2M business-personal-property exemption 2026) via 7 parallel subagents, data-files-only. **IN = areaServed-only, NO street address** (DE is the only real-address state) — verified on the built pillar. register_state.py registered 36 IN URLs + indiana/-advisory intents.
+**PILLAR SUMMARY-SWAP (founder, `t-state-pillar.njk` → ALL pillars):** IN-BRIEF now LEADS, §credentials next, dense "summarized" block dropped BELOW; position-only, equity-safe, bg alternation preserved. Verified on built IN pillar.
+**HONESTY (founder, credentials block):** "Verifiable on Intuit's public ProAdvisor directory" SOFTENED (couldn't confirm individual operator listing) across the find-an-accountant silo (34 repl/14 files, `soften_proadvisor_verify.py`) → "...directory lists active ProAdvisors for verification"; **~50 OTHER sitewide occurrences FLAGGED** for a separate sweep. "5.0 on Clutch · 2 verified reviews" = REAL → KEPT (no fabricated AggregateRating).
+**FULL battery (flip-gate mode) GREEN** (frozen-copy workaround): meta-unique 650/650, faq-flat/schema/overlap clean, content-equity all PASS (IN additive), layout-v2 650, old-kit 0, design-fidelity 644. **AUTONOMOUS from here:** 13 core states (STATE-FACTS.md FIRST vs that state's revenue dept, checkpoint between states) → national-hub capstone → remaining T4 FAQ clusters → T6 flip gates. **Founder TODO:** real Google Business Profile for the DE Middletown address (map pack); the ~50 sitewide "verifiable on Intuit" occurrences (honesty sweep).
+
+**🟢 PRIOR T5 CHECKPOINT (2026-06-26) — DELAWARE ANCHOR COMPLETE.** Plan RULED (founder): 12 core
 (PA·NJ·MD·VA·OH·MI·GA·NC·AZ·TN·WA·CO; MA deferred) @ 6 essentials each + DE/IN full anchors + national-hub capstone;
 route absent services/industries → global; DE-only real-address LocalBusiness/map-pack. Full plan + rulings:
 `_build/strategy/LOCATION-SEO-STRATEGY.md`; verified DE fact base + build conventions: `_build/strategy/DE-FACTS.md`.

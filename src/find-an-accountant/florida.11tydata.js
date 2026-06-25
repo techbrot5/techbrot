@@ -28,7 +28,7 @@ module.exports = {
   summarized: "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor services</strong>, Florida bookkeeping, QuickBooks setup, cleanup, migration, Florida sales tax compliance, and fractional CFO engagements to Florida businesses across <strong>all 67 counties</strong> &mdash; from Miami, Fort Lauderdale, and Orlando to Tampa, Jacksonville, and the Gulf Coast. Florida has <strong>no state personal income tax</strong> (only a 5.5% corporate income tax on C-corps), but it <strong>taxes many services that other states exempt</strong>, layers a <strong>county discretionary surtax</strong> on the 6% state sales tax, and as of <strong>October 2025 repealed its commercial-rent tax</strong> &mdash; and the economy concentrates in <strong>hospitality and restaurants, healthcare and dental, real estate, construction, and home services</strong>, making the Florida operational context substantively different from every other state. Engagements run as fixed-fee monthly retainers or one-time scopes with written agreements before any work begins. <strong>Direct service by TechBrot</strong> for most engagements; <strong>curated local Florida operators</strong> where metro presence, hospitality volume, or healthcare-practice depth matters. Honest scope: we do not file Florida or federal returns &mdash; we coordinate with your CPA or EA. Independent ProAdvisor firm; not affiliated with Intuit Inc.",
 
   // PROADVISOR CREDENTIAL STRIP. (H2: Certified QuickBooks ProAdvisor credentials)
-  credLede: "Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack &mdash; Online (Level 2), Desktop, Enterprise, and Payroll. Verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+  credLede: "Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack &mdash; Online (Level 2), Desktop, Enterprise, and Payroll. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
   credBadges: [
     { label: "Online (L2)", name: "QuickBooks Online ProAdvisor (Level 2)" },
     { label: "Desktop", name: "QuickBooks Desktop ProAdvisor" },
@@ -207,7 +207,7 @@ module.exports = {
 
   // OPERATORS — partner placeholder + 4 vetting standards. (H2: Trusted Florida partner practices. + 2 H3s)
   operatorStandards: [
-    { num: "01", term: "Active Certified ProAdvisor credentials", detail: "QuickBooks Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s public directory." },
+    { num: "01", term: "Active Certified ProAdvisor credentials", detail: "QuickBooks Online (L2), Desktop, Enterprise, and Payroll." },
     { num: "02", term: "Demonstrated Florida tax fluency", detail: "County discretionary surtax, taxable-services rules, the commercial-rent repeal, Florida Department of Revenue coordination." },
     { num: "03", term: "Industry specialization depth", detail: "High-volume hospitality and restaurant accounting, healthcare/dental payer reconciliation, multi-location retail." },
     { num: "04", term: "Insurance &amp; engagement discipline", detail: "Active E&amp;O insurance, fixed-fee written scope before work, and your-file/your-data working model." },
@@ -216,7 +216,7 @@ module.exports = {
   // WHY TECHBROT — 4 cards. (H2: What separates us from generic remote bookkeeping. + 4 H3s)
   why: [
     { num: "01", name: "Florida operational depth", body: "County-surtax sales tax, taxable-services flagging, multi-location hospitality, healthcare and dental payer reconciliation, and hurricane/casualty accounting. Operational specifics, not generic remote support." },
-    { num: "02", name: "Certified QuickBooks ProAdvisors", body: "Active Intuit certifications across <strong>QuickBooks Online L2, Desktop, Enterprise, and Payroll</strong>. Verifiable on Intuit&rsquo;s public ProAdvisor directory." },
+    { num: "02", name: "Certified QuickBooks ProAdvisors", body: "Active Intuit certifications across <strong>QuickBooks Online L2, Desktop, Enterprise, and Payroll</strong>. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification." },
     { num: "03", name: "Fixed-fee, written scope", body: "Every engagement starts with a written scope and a fixed fee before any work begins. No hourly billing. No surprise invoices. No scope creep &mdash; even for complex Florida engagements." },
     { num: "04", name: "Sophisticated buyer, honest delivery", body: "Florida buyers know the difference between genuine expertise and a keyword swap. We are an independent ProAdvisor firm with no Intuit affiliation, no affiliate commissions, and no upsell agenda &mdash; just the right scope for your Florida business." },
   ],
@@ -272,7 +272,7 @@ module.exports = {
   // EXPERT REVIEW (E-E-A-T). (H2: Reviewed by Certified QuickBooks ProAdvisors.) Firm-level — no founder name.
   reviewCreds: [
     { label: "Entity", detail: "TechBrot Inc. &middot; Delaware C-Corporation &middot; NAICS 541219" },
-    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s public ProAdvisor directory" },
+    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll" },
     { label: "Florida practice", detail: "All 67 counties served &middot; Miami, Fort Lauderdale, Orlando, Tampa, Jacksonville, St. Petersburg &middot; Industries: restaurant/hospitality, healthcare, dental, real estate, construction, home services" },
     { label: "Independence", detail: "Independent ProAdvisor firm &middot; Not affiliated with Intuit Inc. &middot; Zero affiliate revenue from any provider" },
     { label: "Editorial policy", detail: "Florida statutory references reviewed against Florida Department of Revenue primary sources &middot; Rate changes propagated within 30 days &middot; Composite scenarios anonymized &middot; No fabricated stats, reviews, or credentials" },

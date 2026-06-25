@@ -76,7 +76,7 @@ module.exports = {
 
   // EXPERT REVIEW (E-E-A-T) — firm-level, NO founder name. (H2: Reviewed by the TechBrot Certified ProAdvisor team.)
   reviewCreds: [
-    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor certifications &mdash; Online (L2), Desktop, Enterprise, Payroll &middot; verifiable on Intuit&rsquo;s public directory" },
+    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor certifications &mdash; Online (L2), Desktop, Enterprise, Payroll" },
     { label: "Scope", detail: "Bookkeeping, QuickBooks, gross-receipts-tax tracking, franchise-tax reserve, advisory &middot; Delaware return filing coordinated with your CPA or EA" },
     { label: "Delaware presence", detail: "Office in Middletown, New Castle County &middot; all 3 counties served &middot; New Castle, Kent, Sussex" },
     { label: "Independence", detail: "Not affiliated with Intuit Inc. &middot; not a registered agent &middot; QuickBooks is a registered trademark of Intuit Inc." },

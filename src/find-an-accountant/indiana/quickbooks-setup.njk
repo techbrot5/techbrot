@@ -1,0 +1,131 @@
+---json
+{
+  "layout": "layouts/t-money.njk",
+  "permalink": "/find-an-accountant/indiana/quickbooks-setup/",
+  "slug": "in-svc-qbsetup",
+  "bodyClass": "page--bofu",
+  "intent": "indiana",
+  "metaReviewed": "2026-06-26",
+  "title": "Indiana QuickBooks Setup · TechBrot",
+  "description": "QuickBooks setup for Indiana businesses — right edition, clean chart of accounts, sales tax and county-LIT payroll set up from day one. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Indiana", "href": "/find-an-accountant/indiana/" },
+    { "name": "QuickBooks Setup" }
+  ],
+  "hero": {
+    "eyebrow": "Indiana &middot; QuickBooks",
+    "heading": "Indiana QuickBooks setup done right from day one.",
+    "subheading": "The right edition, an industry-specific chart of accounts, Indiana&rsquo;s flat 7% sales tax, and county local-income-tax (LIT) payroll withholding configured before your first transaction. Set up in your own QuickBooks file by a Certified ProAdvisor, fixed-fee from $750. We deliver the books; your CPA files.",
+    "helper": "Independent firm &middot; not Intuit. Fixed-fee, written scope in 3 days.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=indiana&state=indiana&source_type=state-spoke&funnel_stage=MOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  },
+  "sec": {
+    "inBriefTag": "In brief",
+    "inBriefH": "Indiana QuickBooks setup, in brief.",
+    "aiH": "QuickBooks Setup in Indiana, in five questions.",
+    "intakeH": "Scope your QuickBooks setup.",
+    "faqH": "QuickBooks Setup questions."
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor setup for Indiana businesses</strong> &mdash; the right edition, an industry-specific chart of accounts, Indiana&rsquo;s flat 7% sales-tax tracking, county local-income-tax (LIT) payroll withholding by employee county of residence, connected bank and card feeds, opening balances, and reconciliation routines, configured in your own QuickBooks file by a Certified ProAdvisor. Fixed-fee from $750. The full Indiana QuickBooks-setup summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Indiana facts (a flat 7% statewide sales tax with no local add-ons; a flat 2.95% individual income tax for 2026; the county local income tax levied by all 92 counties; the $2,000,000 business personal-property exemption) verified against the Indiana Department of Revenue and DLGF. Independent firm &mdash; does not file Indiana taxes."
+  },
+  "ctaBand": {
+    "dark": true,
+    "eyebrow": "Indiana businesses start here",
+    "heading": "Set it up right &mdash; skip the cleanup later.",
+    "lede": "Book a free discovery call. We&rsquo;ll recommend the right QuickBooks setup for your Indiana business, confirm how sales tax and county-LIT withholding should be configured, and send a written fixed-fee scope within 3 business days. No pitch. Independent firm &mdash; does not file Indiana taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=indiana&state=indiana&source_type=state-spoke&funnel_stage=BOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  }
+}
+---
+
+{#- ═══ BESPOKE MIDDLE (IN QuickBooks setup) — mirrors the NY/DE setup child re-flowed into shared
+    dc-system v2 components. Spine (hero/proof/§01 in-brief/§03 aiSummary/call/intake/faq/CTA) is
+    layout-owned (t-money). Bespoke sections alternate white/sand. Anchors #in-svc-qbsetup-*.
+    Founder-name-zero. ═══ -#}
+
+{#- THE SHORT VERSION — speakable summary (#in-svc-qbsetup-summary) — white -#}
+<section class="sec reveal" id="in-svc-qbsetup-summary">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">The short version.</h2>
+    <div class="prose speakable">
+      {%- for p in summary %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- HOW WE HANDLE — the five setup steps (numbered lift cards) — sand -#}
+<section class="sec reveal" id="in-svc-qbsetup-handle" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">What&rsquo;s involved</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">How we handle quickbooks setup for Indiana businesses.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">Every setup is scoped to your business and delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    <div class="r-2">
+      {%- for s in handle %}
+      <div class="lift"><span class="lift__n">{{ s.num | safe }}</span><div><h3>{{ s.title | safe }}</h3><p>{{ s.body | safe }}</p></div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- HONEST SCOPE — what we do / what your CPA does (two checklist cards) — white -#}
+<section class="sec reveal" id="in-svc-qbsetup-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:22ch;margin-bottom:36px;">What we do &mdash; and what your CPA does.</h2>
+    <div class="r-2">
+      {%- for col in scope %}
+      <div class="incl-card">
+        <h3>{{ col.title | safe }}</h3>
+        <ul class="checklist">{%- for i in col.items %}<li>{{ i | safe }}</li>{%- endfor %}</ul>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- THE ADVISORY LINE — statement + body prose — sand -#}
+<section class="sec reveal" id="in-svc-qbsetup-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">The advisory line</span><span class="idx__rule"></span></div>
+    <h2 class="statement">Automation handles the data entry. We handle the judgment.</h2>
+    <div class="prose">
+      {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- EXPERT REVIEW — firm-level byline + standards prose + trust-row + meta — white -#}
+<section class="sec reveal" id="in-svc-qbsetup-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
+      <div>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:22px;">
+      <p>This page reflects how TechBrot handles Indiana QuickBooks setup engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm serving Indiana businesses remotely across all 92 counties, and reviewed for technical accuracy on edition selection, chart-of-accounts structure, Indiana sales-tax configuration, and <a href="/find-an-accountant/indiana/county-income-tax-help/">county-LIT payroll withholding</a>, verified against the <a href="https://www.in.gov/dor/" rel="noopener nofollow">Indiana Department of Revenue</a>. Pricing reflects TechBrot&rsquo;s Indiana setup ranges. TechBrot delivers the books and coordinates with your CPA, who files Indiana and federal returns.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-26</span><span>Updated: 2026-06-26</span><span>Reviewed: 2026-06-26 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>

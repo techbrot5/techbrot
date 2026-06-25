@@ -1,0 +1,128 @@
+---json
+{
+  "layout": "layouts/t-money.njk",
+  "permalink": "/find-an-accountant/indiana/virtual-bookkeeper/",
+  "slug": "in-svc-virtual",
+  "bodyClass": "page--bofu",
+  "intent": "indiana",
+  "metaReviewed": "2026-06-26",
+  "title": "Indiana Virtual Bookkeeper · TechBrot",
+  "description": "Virtual bookkeeper for Indiana — a named Certified ProAdvisor working your books remotely, sales tax and county LIT aware. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Indiana", "href": "/find-an-accountant/indiana/" },
+    { "name": "Virtual Bookkeeper" }
+  ],
+  "hero": {
+    "eyebrow": "Indiana &middot; Virtual / Remote",
+    "heading": "An Indiana virtual bookkeeper &mdash; in-house expertise, none of the overhead.",
+    "subheading": "A named Certified QuickBooks ProAdvisor works your books securely in the cloud &mdash; reconciliation, statements, flat 7% sales-tax tracking, county local-income-tax (LIT) payroll withholding &mdash; with the same continuity as an employee, at a fraction of the loaded cost. Fully remote, Indianapolis to the Region, all 92 counties. We deliver the books; your CPA files.",
+    "helper": "Independent firm &middot; not Intuit. Fixed-fee, written scope in 3 days.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=indiana&state=indiana&source_type=state-money&funnel_stage=MOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  },
+  "sec": {
+    "inBriefTag": "In brief",
+    "inBriefH": "Indiana virtual bookkeeping, in brief.",
+    "aiH": "Virtual bookkeeping in Indiana, in five questions.",
+    "intakeH": "Scope your virtual bookkeeping.",
+    "faqH": "Indiana virtual bookkeeper questions."
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers an <strong>Indiana virtual bookkeeper</strong> &mdash; a named Certified QuickBooks ProAdvisor working your books fully remotely through cloud QuickBooks Online: monthly reconciliation and statements, flat 7% sales-tax tracking, county local-income-tax (LIT) payroll withholding, cleanup and catch-up, and a secure document flow, fixed-fee. Built for Indiana businesses across all 92 counties, including those with distributed or multi-county workforces. The full Indiana virtual-bookkeeping summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Indiana tax facts (a flat 7% statewide sales tax with no local add-ons; the county local income tax levied by all 92 counties, withheld by employee county of residence) verified against Indiana Department of Revenue guidance."
+  },
+  "ctaBand": {
+    "dark": true,
+    "eyebrow": "Indiana businesses start here",
+    "heading": "Remote bookkeeping that feels in-house &mdash; without the overhead.",
+    "lede": "Book a free discovery call. We&rsquo;ll review your QuickBooks file remotely, recommend the right scope &mdash; cleanup first or straight to monthly &mdash; and send a written fixed-fee quote within 3 business days. No pitch. Independent firm &mdash; does not file Indiana returns; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=indiana&state=indiana&source_type=state-money&funnel_stage=BOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  }
+}
+---
+
+{#- ═══ BESPOKE MIDDLE (IN virtual bookkeeper) — full depth re-flowed into shared dc-system v2
+    components, mirroring the proven NY/DE virtual-bookkeeper child. Spine (hero/proof/§01 in-brief/
+    §03 aiSummary/call/intake/faq/CTA) is layout-owned (t-money). Bespoke sections alternate
+    white/sand. Anchors #in-svc-virtual-*. Founder-name-zero. ═══ -#}
+
+{#- THE SHORT VERSION — speakable summary (#in-svc-virtual-summary) — white -#}
+<section class="sec reveal" id="in-svc-virtual-summary">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">The short version</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">The short version.</h2>
+    <div class="prose speakable">
+      {%- for p in summary %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- PROOF — "Virtual, without the trade-offs." four trade-off cards — sand -#}
+<section class="sec reveal" id="in-svc-virtual-proof" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">What you keep, what you skip</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:22ch;margin-bottom:36px;">Virtual, without the trade-offs.</h2>
+    <div class="r-2">
+      {%- for c in proof %}
+      <div class="lift"><span class="lift__n">{{ c.signal | safe }}</span><div><h3>{{ c.title | safe }}</h3><p>{{ c.body | safe }}</p></div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- EVERYTHING, DELIVERED REMOTELY — the four services (lift cards, each with its cross-link) — white -#}
+<section class="sec reveal" id="in-svc-virtual-handle">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">What your virtual bookkeeper handles</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">Everything, delivered remotely.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">Every engagement is scoped to your business and delivered in your own cloud QuickBooks file by a named Certified ProAdvisor &mdash; no on-site visit required.</p>
+    <div class="r-2">
+      {%- for s in handle %}
+      <div class="lift"><span class="lift__n">{{ s.num | safe }}</span><div><h3>{{ s.title | safe }}</h3><p>{{ s.body | safe }}</p><p style="margin-top:10px;"><a href="{{ s.href }}" style="color:var(--color-accent);font-size:14px;font-weight:600;">{{ s.cta | safe }}</a></p></div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- THE ADVISORY LINE — statement + body prose — sand -#}
+<section class="sec reveal" id="in-svc-virtual-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Beyond the books</span><span class="idx__rule"></span></div>
+    <h2 class="statement">Automation handles the data entry. We handle the judgment.</h2>
+    <div class="prose">
+      {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- EXPERT REVIEW — firm-level byline + standards prose + trust-row + meta — white -#}
+<section class="sec reveal" id="in-svc-virtual-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
+      <div>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:22px;">
+      <p>This page reflects how TechBrot delivers virtual bookkeeping to Indiana businesses remotely. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm serving Indiana businesses remotely across all 92 counties, and reviewed for technical accuracy on remote QuickBooks Online workflow, the flat 7% Indiana <a href="https://www.in.gov/dor/" rel="noopener nofollow">sales tax</a>, and county local-income-tax (LIT) payroll withholding. Service is delivered through the client&rsquo;s own cloud QuickBooks account. TechBrot delivers the books and coordinates with your CPA, who files.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-26</span><span>Updated: 2026-06-26</span><span>Reviewed: 2026-06-26 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>

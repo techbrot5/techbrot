@@ -26,7 +26,7 @@ module.exports = {
   summarized: "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor services</strong>, New York bookkeeping, QuickBooks setup, cleanup, migration, NY sales tax compliance, and fractional CFO engagements to New York businesses across <strong>all 62 counties</strong> &mdash; from Manhattan and Brooklyn to Buffalo, Rochester, Syracuse, and Albany. New York&rsquo;s <strong>combined NYC + NY State income tax (the highest in the U.S. at 14.776%)</strong>, <strong>NYC Unincorporated Business Tax</strong>, <strong>sales tax applied to services unusual in other states</strong>, MTA surcharge, and concentration in <strong>financial services, agencies, real estate, legal, healthcare, and nonprofit</strong> make the New York operational context substantively different from every other state. Engagements run as fixed-fee monthly retainers or one-time scopes with written agreements before any work begins. <strong>Direct service by TechBrot</strong> for most engagements; <strong>curated local New York operators</strong> where in-city presence, IOLTA specialization, or CHAR500 depth matters. Honest scope: we do not file NY State or NYC tax returns &mdash; we coordinate with your CPA or EA.",
 
   // PROADVISOR CREDENTIAL STRIP — proof-strip + cert line. (H2: Certified QuickBooks ProAdvisor credentials)
-  credLede: "Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack &mdash; Online (Level 2), Desktop, Enterprise, and Payroll. Verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+  credLede: "Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack &mdash; Online (Level 2), Desktop, Enterprise, and Payroll. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
   credBadges: [
     { label: "Online (L2)", name: "QuickBooks Online ProAdvisor (Level 2)" },
     { label: "Desktop", name: "QuickBooks Desktop ProAdvisor" },
@@ -231,7 +231,7 @@ module.exports = {
 
   // OPERATORS — partner placeholder + 4 vetting standards. (H2: Trusted New York partner practices. + 2 H3s)
   operatorStandards: [
-    { num: "01", term: "Active Certified ProAdvisor credentials", detail: "QuickBooks Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s public directory." },
+    { num: "01", term: "Active Certified ProAdvisor credentials", detail: "QuickBooks Online (L2), Desktop, Enterprise, and Payroll." },
     { num: "02", term: "Demonstrated New York tax fluency", detail: "NYC UBT allocation, 8.875% sales tax on services, MTA surcharge, NY DTF and NYC DOF coordination." },
     { num: "03", term: "Industry specialization depth", detail: "IOLTA trust accounting for law firms, CHAR500-ready workpapers for nonprofits, job costing for construction." },
     { num: "04", term: "Insurance &amp; engagement discipline", detail: "Active E&amp;O insurance, fixed-fee written scope before work, and your-file/your-data working model." },
@@ -240,7 +240,7 @@ module.exports = {
   // WHY TECHBROT — 4 cards. (H2: What separates us from generic remote bookkeeping. + 4 H3s)
   why: [
     { num: "01", name: "New York operational depth", body: "NYC UBT allocation, 8.875% sales tax on services, IOLTA trust ledger setup for law firms, CHAR500-ready workpapers for nonprofits, NYC vs. upstate payroll withholding. Operational specifics, not generic remote support." },
-    { num: "02", name: "Certified QuickBooks ProAdvisors", body: "Active Intuit certifications across <strong>QuickBooks Online L2, Desktop, Enterprise, and Payroll</strong>. Verifiable on Intuit&rsquo;s public ProAdvisor directory." },
+    { num: "02", name: "Certified QuickBooks ProAdvisors", body: "Active Intuit certifications across <strong>QuickBooks Online L2, Desktop, Enterprise, and Payroll</strong>. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification." },
     { num: "03", name: "Fixed-fee, written scope", body: "Every engagement starts with a written scope and a fixed fee before any work begins. No hourly billing. No surprise invoices. No scope creep &mdash; even for complex NYC engagements." },
     { num: "04", name: "Sophisticated buyer, honest delivery", body: "New York buyers know the difference between genuine expertise and a keyword swap. We are an independent ProAdvisor firm with no Intuit affiliation, no affiliate commissions, and no upsell agenda &mdash; just the right scope for your New York business." },
   ],
@@ -296,7 +296,7 @@ module.exports = {
   // EXPERT REVIEW (E-E-A-T). (H2: Reviewed by Certified QuickBooks ProAdvisors.) Firm-level — no founder name.
   reviewCreds: [
     { label: "Entity", detail: "TechBrot Inc. &middot; Delaware C-Corporation &middot; NAICS 541219" },
-    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s public ProAdvisor directory" },
+    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll" },
     { label: "New York practice", detail: "All 62 counties served &middot; NYC boroughs, Long Island, Westchester, upstate NY &middot; Industries: construction, real estate, legal/IOLTA, restaurant, healthcare, nonprofit/CHAR500" },
     { label: "Independence", detail: "Independent ProAdvisor firm &middot; Not affiliated with Intuit Inc. &middot; Zero affiliate revenue from any provider" },
     { label: "Editorial policy", detail: "NY statutory references reviewed against NY DTF and NYC DOF primary sources &middot; Rate changes propagated within 30 days &middot; Composite scenarios anonymized &middot; No fabricated stats, reviews, or credentials" },

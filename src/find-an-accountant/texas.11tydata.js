@@ -28,7 +28,7 @@ module.exports = {
   summarized: "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor services</strong>, Texas bookkeeping, QuickBooks setup, cleanup, migration, Texas sales tax compliance, and fractional CFO engagements to Texas businesses across <strong>all 254 counties</strong> &mdash; from Houston, Dallas&ndash;Fort Worth, and Austin to San Antonio, El Paso, and the Permian Basin. Texas has <strong>no state personal income tax</strong>, but its <strong>franchise (margin) tax</strong> applies to most entities above the <strong>$2.65M no-tax-due threshold</strong>, <strong>SaaS and data-processing services are taxable at 80% of sales price</strong>, sales tax uses <strong>origin-based sourcing</strong> at up to 8.25%, and the economy concentrates in <strong>energy, construction, real estate, technology, healthcare, and professional services</strong> &mdash; making the Texas operational context substantively different from every other state. Engagements run as fixed-fee monthly retainers or one-time scopes with written agreements before any work begins. <strong>Direct service by TechBrot</strong> for most engagements; <strong>curated local Texas operators</strong> where metro presence, oil-and-gas accounting, or franchise-tax depth matters. Honest scope: we do not file the Texas franchise tax report or federal returns &mdash; we coordinate with your CPA or EA.",
 
   // PROADVISOR CREDENTIAL STRIP. (H2: Certified QuickBooks ProAdvisor credentials)
-  credLede: "Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack &mdash; Online (Level 2), Desktop, Enterprise, and Payroll. Verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+  credLede: "Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack &mdash; Online (Level 2), Desktop, Enterprise, and Payroll. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
   credBadges: [
     { label: "Online (L2)", name: "QuickBooks Online ProAdvisor (Level 2)" },
     { label: "Desktop", name: "QuickBooks Desktop ProAdvisor" },
@@ -249,7 +249,7 @@ module.exports = {
 
   // OPERATORS — partner placeholder + 4 vetting standards. (H2: Trusted Texas partner practices. + 2 H3s)
   operatorStandards: [
-    { num: "01", term: "Active Certified ProAdvisor credentials", detail: "QuickBooks Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s public directory." },
+    { num: "01", term: "Active Certified ProAdvisor credentials", detail: "QuickBooks Online (L2), Desktop, Enterprise, and Payroll." },
     { num: "02", term: "Demonstrated Texas tax fluency", detail: "Franchise-tax margin methods, origin-based sales tax, 80% SaaS taxability, Texas Comptroller coordination." },
     { num: "03", term: "Industry specialization depth", detail: "Oilfield-services and AFE cost accounting, job costing and WIP for construction, ASC 606 for tech." },
     { num: "04", term: "Insurance &amp; engagement discipline", detail: "Active E&amp;O insurance, fixed-fee written scope before work, and your-file/your-data working model." },
@@ -258,7 +258,7 @@ module.exports = {
   // WHY TECHBROT — 4 cards. (H2: What separates us from generic remote bookkeeping. + 4 H3s)
   why: [
     { num: "01", name: "Texas operational depth", body: "Franchise-tax margin optimization, origin-based sales tax, 80% SaaS taxability, oilfield-services and AFE cost accounting, construction job costing and WIP. Operational specifics, not generic remote support." },
-    { num: "02", name: "Certified QuickBooks ProAdvisors", body: "Active Intuit certifications across <strong>QuickBooks Online L2, Desktop, Enterprise, and Payroll</strong>. Verifiable on Intuit&rsquo;s public ProAdvisor directory." },
+    { num: "02", name: "Certified QuickBooks ProAdvisors", body: "Active Intuit certifications across <strong>QuickBooks Online L2, Desktop, Enterprise, and Payroll</strong>. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification." },
     { num: "03", name: "Fixed-fee, written scope", body: "Every engagement starts with a written scope and a fixed fee before any work begins. No hourly billing. No surprise invoices. No scope creep &mdash; even for complex Texas engagements." },
     { num: "04", name: "Sophisticated buyer, honest delivery", body: "Texas buyers know the difference between genuine expertise and a keyword swap. We are an independent ProAdvisor firm with no Intuit affiliation, no affiliate commissions, and no upsell agenda &mdash; just the right scope for your Texas business." },
   ],
@@ -314,7 +314,7 @@ module.exports = {
   // EXPERT REVIEW (E-E-A-T). (H2: Reviewed by Certified QuickBooks ProAdvisors.) Firm-level — no founder name.
   reviewCreds: [
     { label: "Entity", detail: "TechBrot Inc. &middot; Delaware C-Corporation &middot; NAICS 541219" },
-    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s public ProAdvisor directory" },
+    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll" },
     { label: "Texas practice", detail: "All 254 counties served &middot; Houston, Dallas&ndash;Fort Worth, Austin, San Antonio, El Paso, Permian Basin &middot; Industries: oil &amp; gas/energy, construction, technology/SaaS, restaurant, healthcare, real estate" },
     { label: "Independence", detail: "Independent ProAdvisor firm &middot; Not affiliated with Intuit Inc. &middot; Zero affiliate revenue from any provider" },
     { label: "Editorial policy", detail: "TX statutory references reviewed against the Texas Comptroller primary source &middot; Rate changes propagated within 30 days &middot; Composite scenarios anonymized &middot; No fabricated stats, reviews, or credentials" },

@@ -1,0 +1,135 @@
+---json
+{
+  "layout": "layouts/t-money.njk",
+  "permalink": "/find-an-accountant/indiana/sales-tax-help/",
+  "slug": "in-svc-salestax",
+  "bodyClass": "page--bofu",
+  "intent": "indiana",
+  "metaReviewed": "2026-06-26",
+  "title": "Indiana Sales Tax Help for Businesses · TechBrot",
+  "description": "Indiana sales tax help — one flat 7% statewide rate, no local tax, use tax and economic nexus tracked in your books. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Indiana", "href": "/find-an-accountant/indiana/" },
+    { "name": "Sales Tax Help" }
+  ],
+  "hero": {
+    "eyebrow": "Indiana &middot; Sales Tax",
+    "heading": "Indiana sales tax, tracked right in your books.",
+    "subheading": "One flat 7% statewide rate with no county or city add-ons, use tax on out-of-state purchases, economic nexus for remote sellers, and taxable-vs-exempt categorization &mdash; tracked accurately in your own QuickBooks file by a named Certified ProAdvisor, so the return is a non-event. We prepare CPA-ready figures; you or your CPA file with the Department of Revenue.",
+    "helper": "Independent firm &middot; not Intuit. Does not file Indiana returns; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=indiana&state=indiana&source_type=state-tax&funnel_stage=MOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  },
+  "sec": {
+    "inBriefTag": "In brief",
+    "inBriefH": "Indiana sales tax, in brief.",
+    "aiH": "Indiana sales tax, in five questions.",
+    "intakeH": "Scope your sales-tax tracking.",
+    "faqH": "Indiana sales tax questions."
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> tracks <strong>Indiana sales tax in your own QuickBooks file</strong> &mdash; the single <strong>flat 7% statewide rate</strong> (no local sales tax anywhere in Indiana), taxable-vs-exempt categorization, use-tax on out-of-state purchases, economic-nexus monitoring for remote sellers, and monthly reconciliation of your sales-tax liability &mdash; then prepares CPA-ready figures for the Department of Revenue return. The full Indiana sales-tax summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Indiana sales-tax facts (the flat 7% statewide rate; no local sales tax; use tax on untaxed out-of-state purchases; economic nexus for remote sellers; the Registered Retail Merchant Certificate) reflect Indiana Department of Revenue rules current as of the review date and are reviewed periodically; TechBrot does not file Indiana sales-tax or income-tax returns and does not represent clients before the Department of Revenue."
+  },
+  "ctaBand": {
+    "dark": true,
+    "eyebrow": "Indiana businesses start here",
+    "heading": "Get your Indiana sales tax tracked properly.",
+    "lede": "Book a free books review. We&rsquo;ll check how your books handle Indiana sales and use tax, flag any nexus or taxability gaps, and send a written fixed-fee quote within 3 business days. No pitch. Independent firm &mdash; does not file Indiana sales-tax or income-tax returns; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=indiana&state=indiana&source_type=state-tax&funnel_stage=BOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  }
+}
+---
+
+{#- ═══ BESPOKE MIDDLE (IN sales-tax help) — mirrors the NY sales-tax-help spine, adapted to
+    Indiana per IN-FACTS (flat 7% statewide, no local sales tax). Layout-owned spine: hero/proof/
+    §01 in-brief/§03 aiSummary/call/intake/faq/CTA. Bespoke sections alternate white/sand.
+    Anchors #in-svc-salestax-*. Founder-name-zero. ═══ -#}
+
+{#- THE SHORT VERSION — speakable summary (#in-svc-salestax-summary; single paragraph) — white -#}
+<section class="sec reveal" id="in-svc-salestax-summary">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In short</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">The short version.</h2>
+    <div class="prose speakable">
+      <p>{{ summary | safe }}</p>
+    </div>
+  </div>
+</section>
+
+{#- WHY IT TRIPS BUSINESSES UP — body prose + the three reasons (lift cards) — sand -#}
+<section class="sec reveal" id="in-svc-salestax-why" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Why it trips businesses up</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:24px;">Why Indiana sales tax still trips up so many businesses</h2>
+    <div class="prose" style="max-width:72ch;margin-bottom:40px;">
+      {%- for p in whyBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+    <div class="r-3">
+      {%- for c in whyCards %}
+      <div class="lift"><span class="lift__n">{{ c.signal | safe }}</span><div><h3>{{ c.title | safe }}</h3><p>{{ c.body | safe }}</p></div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- HONEST SCOPE — TechBrot handles / You or your CPA handle (two checklist cards) — white -#}
+<section class="sec reveal" id="in-svc-salestax-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:36px;">How we help with Indiana sales tax.</h2>
+    <div class="r-2">
+      <div class="incl-card">
+        <h3>TechBrot handles</h3>
+        <ul class="checklist">{%- for d in scopeDo %}<li>{{ d | safe }}</li>{%- endfor %}</ul>
+      </div>
+      <div class="incl-card">
+        <h3>You or your CPA handle</h3>
+        <ul class="checklist">{%- for d in scopeDont %}<li>{{ d | safe }}</li>{%- endfor %}</ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{#- THE ADVISORY LINE — statement + body prose — sand -#}
+<section class="sec reveal" id="in-svc-salestax-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">The advisory line</span><span class="idx__rule"></span></div>
+    <h2 class="statement">Automation handles the data entry. We handle the judgment.</h2>
+    <div class="prose">
+      {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- EXPERT REVIEW — firm-level byline + standards prose + trust-row + meta — white -#}
+<section class="sec reveal" id="in-svc-salestax-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
+      <div>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:22px;">
+      <p>Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Indiana businesses remotely across all 92 counties. Indiana sales-tax facts &mdash; the flat 7% statewide rate, the absence of any local sales tax, use tax on untaxed out-of-state purchases, economic nexus for remote sellers, and the Registered Retail Merchant Certificate &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href="https://www.in.gov/dor/" rel="noopener nofollow">Indiana Department of Revenue</a>. This page is educational and operational; it is not tax advice or a substitute for filing. TechBrot provides bookkeeping and sales-tax tracking and coordinates with your CPA, who files; we do not file Indiana sales-tax or income-tax returns and do not represent clients before the Department of Revenue.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-26</span><span>Updated: 2026-06-26</span><span>Reviewed: 2026-06-26 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>

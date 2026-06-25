@@ -39,6 +39,23 @@ STATES = {
             "_added": "T5 location expansion — DE advisory route.",
         },
     },
+    "indiana": {
+        "name": "Indiana",
+        "intent": {
+            "headline": "Tell us about your Indiana books.<br>We&rsquo;ll handle the rest.",
+            "lede": "A Certified QuickBooks ProAdvisor reviews where your Indiana books stand &mdash; the 92-county local income tax (LIT) withholding by county of residence, the flat 7% sales tax, business personal-property posture, multi-state nexus for shippers &mdash; recommends the right engagement, and delivers a written fixed-fee scope within 3 business days. We don&rsquo;t file Indiana returns; we keep clean, CPA-ready books and coordinate with your CPA. If TechBrot isn&rsquo;t the right fit, we&rsquo;ll say so.",
+            "service": "not-sure",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — IN anchor pillar (areaServed-only, no street address). State-slug intent.",
+        },
+        "advisory": {
+            "headline": "Advisory for Indiana businesses<br>ready to move beyond the books.",
+            "lede": "Fractional CFO and advisory for Indiana businesses &mdash; forecasting, board reporting, KPI design &mdash; coordinated with your Indiana CPA. A Certified ProAdvisor reviews your situation and tells you honestly whether advisory is the right next step.",
+            "service": "fractional-cfo",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — IN advisory route.",
+        },
+    },
 }
 
 

@@ -70,7 +70,7 @@ module.exports = {
 
   // EXPERT REVIEW (E-E-A-T) — firm-level, NO founder name.
   reviewCreds: [
-    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor certifications &mdash; Online (L2), Desktop, Enterprise, Payroll &middot; verifiable on Intuit&rsquo;s public directory" },
+    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor certifications &mdash; Online (L2), Desktop, Enterprise, Payroll" },
     { label: "Delaware scope", detail: "Industry-specific bookkeeping, QuickBooks setup, gross-receipts tracking by activity, franchise-tax reserve, Wilmington wage tax &middot; income-tax and franchise filing coordinated with your CPA and registered agent" },
     { label: "Engagement", detail: "Fixed-fee, written scope before work &middot; delivered in your own QuickBooks file from the Middletown office" },
     { label: "Independence", detail: "Independent Certified ProAdvisor firm &middot; Not affiliated with Intuit Inc. &middot; Not a registered agent" },

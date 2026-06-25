@@ -33,7 +33,7 @@ module.exports = {
   summarized: "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor services</strong>, Illinois bookkeeping, QuickBooks setup, cleanup, migration, Illinois sales tax compliance, and <a href=\"/accounting/advisory/fractional-cfo/\">fractional CFO</a> engagements to Illinois businesses across <strong>all 102 counties</strong> &mdash; from Chicago and the collar counties to Rockford, Peoria, and Springfield. Illinois has a <strong>flat 4.95% personal income tax</strong>, but layers a <strong>Personal Property Replacement Tax (1.5%&ndash;2.5%) on entity income</strong>, a combined <strong>9.5% rate on C-corporations</strong>, <strong>Chicago&rsquo;s 15% lease/SaaS &ldquo;cloud tax,&rdquo;</strong> and <strong>Cook County&rsquo;s high combined sales tax</strong> &mdash; making the Illinois operational context substantively different from every other state. Engagements run as fixed-fee monthly retainers or one-time scopes with written agreements before any work begins. <strong>Direct service by TechBrot</strong> for most engagements; <strong>curated local Illinois operators</strong> where Chicago presence, manufacturing depth, or healthcare-practice accounting matters. Honest scope: we do not file Illinois or federal returns &mdash; we coordinate with your CPA or EA. Independent ProAdvisor firm; not affiliated with Intuit Inc.",
 
   // PROADVISOR CREDENTIAL STRIP. (H2: Certified QuickBooks ProAdvisor credentials)
-  credLede: "Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack &mdash; Online (Level 2), Desktop, Enterprise, and Payroll. Verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+  credLede: "Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack &mdash; Online (Level 2), Desktop, Enterprise, and Payroll. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
   credBadges: [
     { label: "Online (L2)", name: "QuickBooks Online ProAdvisor (Level 2)" },
     { label: "Desktop", name: "QuickBooks Desktop ProAdvisor" },
@@ -247,7 +247,7 @@ module.exports = {
 
   // OPERATORS — partner placeholder + 4 vetting standards. (H2: Trusted Illinois partner practices. + 2 H3s)
   operatorStandards: [
-    { num: "01", term: "Active Certified ProAdvisor credentials", detail: "QuickBooks Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s public directory." },
+    { num: "01", term: "Active Certified ProAdvisor credentials", detail: "QuickBooks Online (L2), Desktop, Enterprise, and Payroll." },
     { num: "02", term: "Demonstrated Illinois tax fluency", detail: "PPRT and PTE-election mechanics, Cook County/home-rule sales tax, the Chicago lease tax, IDOR coordination." },
     { num: "03", term: "Industry specialization depth", detail: "Manufacturing standard costing and inventory, healthcare payer reconciliation, per-load trucking costing." },
     { num: "04", term: "Insurance &amp; engagement discipline", detail: "Active E&amp;O insurance, fixed-fee written scope before work, and your-file/your-data working model." },
@@ -256,7 +256,7 @@ module.exports = {
   // WHY TECHBROT — 4 cards. (H2: What separates us from generic remote bookkeeping. + 4 H3s)
   why: [
     { num: "01", name: "Illinois operational depth", body: "PPRT and PTE-election mechanics, Cook County and home-rule sales tax, the Chicago lease/SaaS tax, manufacturing standard costing, and per-load logistics costing. Operational specifics, not generic remote support." },
-    { num: "02", name: "Certified QuickBooks ProAdvisors", body: "Active Intuit certifications across <strong>QuickBooks Online L2, Desktop, Enterprise, and Payroll</strong>. Verifiable on Intuit&rsquo;s public ProAdvisor directory." },
+    { num: "02", name: "Certified QuickBooks ProAdvisors", body: "Active Intuit certifications across <strong>QuickBooks Online L2, Desktop, Enterprise, and Payroll</strong>. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification." },
     { num: "03", name: "Fixed-fee, written scope", body: "Every engagement starts with a written scope and a fixed fee before any work begins. No hourly billing. No surprise invoices. No scope creep &mdash; even for complex Illinois engagements." },
     { num: "04", name: "Sophisticated buyer, honest delivery", body: "Illinois buyers know the difference between genuine expertise and a keyword swap. We are an independent ProAdvisor firm with no Intuit affiliation, no affiliate commissions, and no upsell agenda &mdash; just the right scope for your Illinois business." },
   ],
@@ -313,7 +313,7 @@ module.exports = {
   // EXPERT REVIEW (E-E-A-T). (H2: Reviewed by Certified QuickBooks ProAdvisors.) Firm-level — no founder name.
   reviewCreds: [
     { label: "Entity", detail: "TechBrot Inc. &middot; Delaware C-Corporation &middot; NAICS 541219" },
-    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s public ProAdvisor directory" },
+    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll" },
     { label: "Illinois practice", detail: "All 102 counties served &middot; Chicago, the collar counties, and downstate &middot; Industries: manufacturing, healthcare, agencies, restaurant, professional services, trucking/logistics" },
     { label: "Independence", detail: "Independent ProAdvisor firm &middot; Not affiliated with Intuit Inc. &middot; Zero affiliate revenue from any provider" },
     { label: "Editorial policy", detail: "IL statutory references reviewed against IDOR and Chicago Department of Finance primary sources &middot; Rate changes propagated within 30 days &middot; Composite scenarios anonymized &middot; No fabricated stats, reviews, or credentials" },

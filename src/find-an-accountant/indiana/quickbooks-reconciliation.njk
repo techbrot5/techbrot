@@ -1,0 +1,132 @@
+---json
+{
+  "layout": "layouts/t-money.njk",
+  "permalink": "/find-an-accountant/indiana/quickbooks-reconciliation/",
+  "slug": "in-svc-recon",
+  "bodyClass": "page--bofu",
+  "intent": "indiana",
+  "metaReviewed": "2026-06-26",
+  "title": "Indiana QuickBooks Reconciliation · TechBrot",
+  "description": "QuickBooks reconciliation for Indiana businesses — every account tied to statements monthly, discrepancies resolved. Fixed-fee. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Indiana", "href": "/find-an-accountant/indiana/" },
+    { "name": "QuickBooks Reconciliation" }
+  ],
+  "hero": {
+    "eyebrow": "Indiana &middot; QuickBooks",
+    "heading": "Indiana QuickBooks reconciliation that ties every account to reality.",
+    "subheading": "Every bank, card, loan, and merchant account matched to its statement each month, every discrepancy resolved &mdash; in your own QuickBooks file, by a named Certified ProAdvisor, fixed-fee. We deliver reconciled books; your CPA files.",
+    "helper": "Independent firm &middot; not Intuit. Fixed-fee, written scope in 3 days.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=indiana&state=indiana&source_type=state-spoke&funnel_stage=MOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  },
+  "sec": {
+    "inBriefTag": "In brief",
+    "inBriefH": "Indiana QuickBooks reconciliation, in brief.",
+    "aiH": "QuickBooks Reconciliation in Indiana, in five questions.",
+    "intakeH": "Scope your reconciliation.",
+    "faqH": "QuickBooks Reconciliation questions."
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>QuickBooks reconciliation for Indiana businesses</strong> &mdash; a named Certified QuickBooks ProAdvisor ties every bank, credit-card, loan, and merchant account to its statement each month, resolves discrepancies and duplicates, clears the reconciliation-discrepancy and undeposited-funds accounts, and fixes beginning-balance mismatches so the books stay trustworthy, all in your own QuickBooks file. The full Indiana reconciliation summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Reconciliation is delivered as part of bookkeeping engagements. TechBrot does not file Indiana tax returns."
+  },
+  "ctaBand": {
+    "dark": true,
+    "eyebrow": "Indiana businesses start here",
+    "heading": "Keep every account tied to reality.",
+    "lede": "Book a free file review. We&rsquo;ll find what&rsquo;s causing any reconciliation gap, get your accounts tied out, and send a written fixed-fee scope &mdash; then keep them reconciled every month. No pitch. Independent firm &mdash; does not file Indiana taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=indiana&state=indiana&source_type=state-spoke&funnel_stage=BOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  }
+}
+---
+
+{#- ═══ BESPOKE MIDDLE (IN QuickBooks reconciliation) — mirrors the NY/DE recon child. Spine
+    (hero/proof/§01 in-brief/§03 aiSummary/call/intake/faq/CTA) is layout-owned (t-money).
+    Bespoke sections alternate white/sand. Anchors #in-svc-recon-*. Founder-name-zero. ═══ -#}
+
+{#- THE SHORT VERSION — speakable summary (#in-svc-recon-summary) — white -#}
+<section class="sec reveal" id="in-svc-recon-summary">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In short</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">The short version.</h2>
+    <div class="prose speakable">
+      {%- for p in summary %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- WHAT'S INVOLVED — the five reconciliation workstreams (numbered lift cards) — sand -#}
+<section class="sec reveal" id="in-svc-recon-handle" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">What&rsquo;s involved</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">How we handle quickbooks reconciliation for Indiana businesses.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">Every reconciliation engagement is scoped to your accounts and delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    <div class="r-2">
+      {%- for s in handle %}
+      <div class="lift"><span class="lift__n">{{ s.num | safe }}</span><div><h3>{{ s.title | safe }}</h3><p>{{ s.body | safe }}</p></div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- HONEST SCOPE — what we do / what your CPA does (two checklist cards) + scopeNote — white -#}
+<section class="sec reveal" id="in-svc-recon-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:22ch;margin-bottom:12px;">What we do &mdash; and what your CPA does.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">We reconcile the books and coordinate the handoff. Your CPA files the returns from the reconciled numbers.</p>
+    <div class="r-2">
+      {%- for col in scope %}
+      <div class="incl-card">
+        <h3>{{ col.title | safe }}</h3>
+        <ul class="checklist">{%- for item in col.items %}<li>{{ item | safe }}</li>{%- endfor %}</ul>
+      </div>
+      {%- endfor %}
+    </div>
+    <p class="prose" style="margin-top:28px;max-width:72ch;">{{ scopeNote | safe }}</p>
+  </div>
+</section>
+
+{#- THE ADVISORY LINE — statement + body prose — sand -#}
+<section class="sec reveal" id="in-svc-recon-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">The advisory line</span><span class="idx__rule"></span></div>
+    <h2 class="statement">Automation handles the data entry. We handle the judgment.</h2>
+    <div class="prose">
+      {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- EXPERT REVIEW — firm-level byline + standards prose + trust-row + meta — white -#}
+<section class="sec reveal" id="in-svc-recon-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
+      <div>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:22px;">
+      <p>This page reflects how TechBrot handles Indiana QuickBooks reconciliation engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm serving Indiana businesses remotely across all 92 counties. Reconciliation is delivered as part of bookkeeping engagements; Indiana tax references reflect <a href="https://www.in.gov/dor/" rel="noopener nofollow">Indiana Department of Revenue</a> rules current as of the date below and are reviewed periodically. TechBrot performs bookkeeping and QuickBooks work and coordinates with your CPA, who files; it does not file Indiana tax returns or represent clients before tax authorities.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-26</span><span>Updated: 2026-06-26</span><span>Reviewed: 2026-06-26 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>

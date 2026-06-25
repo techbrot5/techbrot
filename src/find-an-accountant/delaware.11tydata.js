@@ -37,7 +37,7 @@ module.exports = {
   summarized: "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor services</strong>, Delaware bookkeeping, QuickBooks setup, cleanup, migration, gross-receipts-tax tracking, and fractional CFO engagements to Delaware businesses from our <strong>Middletown office</strong> in New Castle County &mdash; serving <strong>all three counties</strong>, from Wilmington and Newark to Dover, Smyrna, and the Sussex coast. Delaware&rsquo;s tax structure is genuinely unlike its neighbors: <strong>no sales tax at all</strong>, replaced by a <strong>gross receipts tax</strong> levied on the seller and tracked by business activity; an <strong>annual franchise tax</strong> every Delaware entity owes; <strong>Wilmington&rsquo;s 1.25% city wage and net-profits tax</strong>; and an <strong>8.7% corporate income tax</strong> on top. As the incorporation capital of the U.S. &mdash; <strong>66.7% of the Fortune 500 and 2.1 million-plus entities</strong> are registered here &mdash; Delaware is also full of holding-company and out-of-state-owner structures that need real bookkeeping behind the registered-agent address. Engagements run as fixed-fee monthly retainers or one-time scopes with written agreements before any work begins. <strong>Direct service by TechBrot</strong> from the Middletown office; <strong>curated local partner practices</strong> where in-person presence or local CPA hand-off matters. Honest scope: we do not file Delaware returns or the franchise-tax/annual report &mdash; we keep the books and coordinate with your CPA and registered agent.",
 
   // PROADVISOR CREDENTIAL STRIP. (H2: Certified QuickBooks ProAdvisor credentials)
-  credLede: "Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack &mdash; Online (Level 2), Desktop, Enterprise, and Payroll. Verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+  credLede: "Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack &mdash; Online (Level 2), Desktop, Enterprise, and Payroll. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
   credBadges: [
     { label: "Online (L2)", name: "QuickBooks Online ProAdvisor (Level 2)" },
     { label: "Desktop", name: "QuickBooks Desktop ProAdvisor" },
@@ -231,7 +231,7 @@ module.exports = {
 
   // OPERATORS — partner placeholder + 4 vetting standards (DE-localized).
   operatorStandards: [
-    { num: "01", term: "Active Certified ProAdvisor credentials", detail: "QuickBooks Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s public directory." },
+    { num: "01", term: "Active Certified ProAdvisor credentials", detail: "QuickBooks Online (L2), Desktop, Enterprise, and Payroll." },
     { num: "02", term: "Demonstrated Delaware tax fluency", detail: "Gross-receipts tax by activity, franchise-tax methods, Wilmington wage tax, and Division of Revenue coordination." },
     { num: "03", term: "Multi-entity &amp; industry depth", detail: "Holding-company and intercompany structure, job costing for construction, fund accounting for nonprofits." },
     { num: "04", term: "Insurance &amp; engagement discipline", detail: "Active E&amp;O insurance, fixed-fee written scope before work, and your-file/your-data working model." },
@@ -285,7 +285,7 @@ module.exports = {
   // EXPERT REVIEW — firm-level trust row (no founder name).
   reviewCreds: [
     { label: "Entity", detail: "TechBrot Inc. &middot; Delaware C-Corporation &middot; Office in Middletown, DE &middot; NAICS 541219" },
-    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll &mdash; verifiable on Intuit&rsquo;s public ProAdvisor directory" },
+    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll" },
     { label: "Delaware practice", detail: "All 3 counties served &middot; New Castle, Kent, Sussex &middot; Gross-receipts tax, franchise-tax reserve, Wilmington wage tax, holding-company &amp; multi-entity books" },
     { label: "Independence", detail: "Independent ProAdvisor firm &middot; Not affiliated with Intuit Inc. &middot; Not a registered agent &middot; Zero affiliate revenue from any provider" },
     { label: "Editorial policy", detail: "Delaware statutory references reviewed against DE Division of Revenue and Division of Corporations primary sources &middot; Rate changes propagated within 30 days &middot; Composite scenarios anonymized &middot; No fabricated stats, reviews, or credentials" },
