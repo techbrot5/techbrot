@@ -298,3 +298,13 @@ a:hover .lnk-arrow, .stat-tier__link:hover .lnk-arrow { transform: translateX(3p
 .nav__mega-col { display: grid; gap: var(--space-1); align-content: start; }
 .section--zigzag { display: block; }
 .section--tier-bofu:not(.section--cta-band) { background: var(--surface-tier-bofu); }
+
+/* Operator identity avatar (founder 2026-06-26) — balances the photo card with the
+   logo-mark card on the credential/operator blocks (/about/, /partners/, home + any reuse).
+   David's photo was rendering uncontained (eleventy-img sized the <img> to its largest
+   generated width → a banner dwarfing the 56px team mark). Contain both identity elements
+   to ONE fixed footprint so the two cards read in parallel: identity element + heading + text.
+   Consistent mobile + desktop; object-fit keeps the portrait square + sharp (no re-compress). */
+.op-avatar { width: 96px; height: 96px; flex: none; display: block; border-radius: 16px; object-fit: cover; object-position: center top; background: var(--color-paper-warm); }
+.op-mark   { width: 96px; height: 96px; flex: none; display: block; border-radius: 16px; }
+@media (max-width: 480px) { .op-avatar, .op-mark { width: 80px; height: 80px; } }
