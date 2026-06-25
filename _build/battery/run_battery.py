@@ -631,26 +631,27 @@ else:
 #            LITERAL "&amp;middot;" text in the tab/SERP. Detect the rendered
 #            signature `&amp;<entity>;` in the built title/description.
 #        (b) CP1252<->UTF-8 mojibake (an em-dash saved as "â€"", an apostrophe
-#            as "â€™", "Â§"/"Â·", a "Ã©") rendering as visible garbage. Detect
-#            the signatures in title, description, AND body. (Comment-only
-#            corruption is stripped from rendered HTML, so body scan is safe.)
+#            as "â€™", "Â§"/"Â·", a "Ã©") rendering as visible garbage.
+#        Scans TITLE + META DESCRIPTION only (founder 2026-06-25): the auto-escaped
+#        head fields are where these defects actually ship + bite (tab/SERP); body
+#        entities render via |safe (correct) and body mojibake is caught at the
+#        source by fix_mojibake.py. Title/desc-only keeps the battery fast (no
+#        full-body regex over 580 pages). Extracted from the already-read HTML head.
 ENT_BAD = re.compile(r'&amp;(?:middot|mdash|ndash|rsquo|lsquo|ldquo|rdquo|hellip|amp|eacute|sect);')
 MOJI_BAD = re.compile(r'â€|â†|Â§|Â·|Ã©|Ã¢|Ã‚|�')
 meta_hygiene = []
-for url, lp in pages.items():
+for url in pages:
     if url.startswith("/dev/"):
         continue
-    html = (SITE / url.lstrip("/") / "index.html").read_text(encoding="utf-8")
-    t = re.search(r"<title>(.*?)</title>", html, re.S)
-    d = re.search(r'<meta name="description" content="([^"]*)"', html)
-    tv = t.group(1) if t else ""
-    dv = d.group(1) if d else ""
-    if ENT_BAD.search(tv) or ENT_BAD.search(dv):
+    # read only the <head> region (cheap) — title + description live there
+    head = (SITE / url.lstrip("/") / "index.html").read_text(encoding="utf-8")[:6000]
+    t = re.search(r"<title>(.*?)</title>", head, re.S)
+    d = re.search(r'<meta name="description" content="([^"]*)"', head)
+    fields = (t.group(1) if t else "") + " " + (d.group(1) if d else "")
+    if ENT_BAD.search(fields):
         meta_hygiene.append(f"{url}: literal HTML entity in title/description")
-    if MOJI_BAD.search(tv) or MOJI_BAD.search(dv):
+    if MOJI_BAD.search(fields):
         meta_hygiene.append(f"{url}: mojibake in title/description")
-    elif MOJI_BAD.search(html):
-        meta_hygiene.append(f"{url}: mojibake in rendered body")
 if meta_hygiene:
     for x in meta_hygiene[:20]:
         fail("meta-hygiene", x)

@@ -85,18 +85,6 @@
       </select>
     </div>
     <div class="intake-field">
-      <label class="intake-field__label" for="{{ intakePrefix }}-qb-status">QuickBooks status <span class="intake-field__optional">optional</span></label>
-      <select id="{{ intakePrefix }}-qb-status" name="qb_status">
-        <option value="">Select status</option>
-        <option value="qbo-current">Using QuickBooks Online</option>
-        <option value="qb-desktop">Using QuickBooks Desktop</option>
-        <option value="qb-enterprise">Using QuickBooks Enterprise</option>
-        <option value="other-software">Using other software (Xero, Wave, etc.)</option>
-        <option value="no-software">No accounting software / spreadsheets</option>
-        <option value="not-sure">Not sure</option>
-      </select>
-    </div>
-    <div class="intake-field">
       <label class="intake-field__label" for="{{ intakePrefix }}-timeline">Timeline <span class="intake-field__optional">optional</span></label>
       <select id="{{ intakePrefix }}-timeline" name="timeline">
         <option value="">Select urgency</option>
@@ -104,39 +92,6 @@
         <option value="month">Within a month</option>
         <option value="quarter">Within this quarter</option>
         <option value="exploring">Just exploring</option>
-      </select>
-    </div>
-    <div class="intake-field">
-      <label class="intake-field__label" for="{{ intakePrefix }}-lead-source">How did you find TechBrot? <span class="intake-field__optional">optional</span></label>
-      <select id="{{ intakePrefix }}-lead-source" name="lead_source">
-        <option value="">Select one</option>
-        <option value="search">Google or other search engine</option>
-        <option value="ai-assistant">An AI assistant (ChatGPT, Claude, Gemini, Perplexity)</option>
-        <option value="referral">Referred by someone</option>
-        <option value="social">Social media</option>
-        <option value="returning">Already knew TechBrot</option>
-        <option value="other">Other</option>
-      </select>
-    </div>
-    <div class="intake-field">
-      <label class="intake-field__label" for="{{ intakePrefix }}-ai-recommended">Did an AI tool recommend TechBrot? <span class="intake-field__optional">optional</span></label>
-      <select id="{{ intakePrefix }}-ai-recommended" name="ai_recommended">
-        <option value="">Select one</option>
-        <option value="yes">Yes &mdash; an AI tool suggested us</option>
-        <option value="no">No</option>
-        <option value="not-sure">Not sure</option>
-      </select>
-    </div>
-    <div class="intake-field">
-      <label class="intake-field__label" for="{{ intakePrefix }}-ai-tool">Which AI tool? <span class="intake-field__optional">optional</span></label>
-      <select id="{{ intakePrefix }}-ai-tool" name="ai_tool">
-        <option value="">Not an AI tool / not sure</option>
-        <option value="chatgpt">ChatGPT (OpenAI)</option>
-        <option value="claude">Claude (Anthropic)</option>
-        <option value="gemini">Gemini (Google)</option>
-        <option value="perplexity">Perplexity</option>
-        <option value="copilot">Microsoft Copilot</option>
-        <option value="other-ai">Another AI tool</option>
       </select>
     </div>
     <div class="intake-field">
@@ -175,6 +130,15 @@
   <input type="hidden" name="last_touch_source"  id="{{ intakePrefix }}-last-touch"  value="" data-last-touch>
   <input type="hidden" name="landing_page"       id="{{ intakePrefix }}-landing-page" value="" data-landing-page>
   <input type="hidden" name="prior_page"         id="{{ intakePrefix }}-prior-page"   value="" data-prior-page>
+
+  {# AI-attribution + lead source — AUTO-CAPTURED (hidden), never asked (2026-06-25
+     friction trim). tb-forms.js deriveAttribution() fills these from
+     ?lead_source=/?ai_tool= URL params + the referrer (chatgpt.com/claude.ai/
+     perplexity.ai → ai-assistant + tool + ai_recommended=yes; google/bing → search;
+     another site → referral). collect() still sends the keys. #}
+  <input type="hidden" name="lead_source"    value="" data-attr-source>
+  <input type="hidden" name="ai_tool"        value="" data-attr-aitool>
+  <input type="hidden" name="ai_recommended" value="" data-attr-airec>
 
   {# Honeypot — bots fill it; humans never see it. NOT in the payload. #}
   <div class="sr-only" aria-hidden="true">

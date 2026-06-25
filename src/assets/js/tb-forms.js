@@ -254,4 +254,48 @@
       if (box) box.checked = true;
     }
   })();
+
+  /* ── Attribution auto-capture (2026-06-25 form trim). The visible
+        "How did you find us / which AI tool / did AI recommend us" selects were
+        removed for friction; derive lead_source + ai_tool + ai_recommended
+        silently from explicit URL params first, then the referrer host, and
+        write them to the hidden inputs so the payload keeps the attribution
+        without asking the user. Best-effort + honest: only set when a real
+        signal exists; never overwrite an explicit value. ── */
+  (function deriveAttribution() {
+    var params = new URLSearchParams(window.location.search);
+    function p(k) { return (params.get(k) || '').trim().toLowerCase(); }
+    function setHidden(name, val) {
+      if (!val) return;
+      var el = form.querySelector('[name="' + name + '"]');
+      if (el && !el.value) el.value = val;   // never overwrite an explicit value
+    }
+    var ref = '';
+    try { ref = (document.referrer || '').toLowerCase(); } catch (e) { ref = ''; }
+
+    var AI = [
+      [/chatgpt\.|openai\./, 'chatgpt'], [/claude\.ai|anthropic\./, 'claude'],
+      [/perplexity\./, 'perplexity'], [/gemini\.|bard\.google/, 'gemini'],
+      [/copilot\.|bing\.com\/chat/, 'copilot']
+    ];
+    var SEARCH = /(google|bing|duckduckgo|yahoo|ecosia|brave)\./;
+
+    var leadSource = p('lead_source');
+    var aiTool = p('ai_tool');
+    var aiRec = p('ai_recommended');
+
+    if (!aiTool) {
+      for (var i = 0; i < AI.length; i++) { if (AI[i][0].test(ref)) { aiTool = AI[i][1]; break; } }
+    }
+    if (!leadSource) {
+      if (aiTool) leadSource = 'ai-assistant';
+      else if (SEARCH.test(ref)) leadSource = 'search';
+      else if (ref && ref.indexOf(window.location.host) === -1) leadSource = 'referral';
+    }
+    if (!aiRec) aiRec = (aiTool || leadSource === 'ai-assistant') ? 'yes' : '';
+
+    setHidden('lead_source', leadSource);
+    setHidden('ai_tool', aiTool);
+    setHidden('ai_recommended', aiRec);
+  })();
 })();
