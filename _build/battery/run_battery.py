@@ -639,7 +639,10 @@ else:
 #        full-body regex over 580 pages). Extracted from the already-read HTML head.
 ENT_BAD = re.compile(r'&amp;(?:middot|mdash|ndash|rsquo|lsquo|ldquo|rdquo|hellip|amp|eacute|sect);')
 MOJI_BAD = re.compile(r'â€|â†|Â§|Â·|Ã©|Ã¢|Ã‚|�')
+import html as _html_mod
 meta_hygiene = []
+_title_map = {}   # displayed title -> [urls]   (uniqueness)
+_desc_map = {}    # displayed desc  -> [urls]
 for url in pages:
     if url.startswith("/dev/"):
         continue
@@ -647,11 +650,16 @@ for url in pages:
     head = (SITE / url.lstrip("/") / "index.html").read_text(encoding="utf-8")[:6000]
     t = re.search(r"<title>(.*?)</title>", head, re.S)
     d = re.search(r'<meta name="description" content="([^"]*)"', head)
-    fields = (t.group(1) if t else "") + " " + (d.group(1) if d else "")
-    if ENT_BAD.search(fields):
+    tv = t.group(1) if t else ""
+    dv = d.group(1) if d else ""
+    if ENT_BAD.search(tv + " " + dv):
         meta_hygiene.append(f"{url}: literal HTML entity in title/description")
-    if MOJI_BAD.search(fields):
+    if MOJI_BAD.search(tv + " " + dv):
         meta_hygiene.append(f"{url}: mojibake in title/description")
+    if tv:
+        _title_map.setdefault(_html_mod.unescape(tv).strip(), []).append(url)
+    if dv:
+        _desc_map.setdefault(_html_mod.unescape(dv).strip(), []).append(url)
 if meta_hygiene:
     for x in meta_hygiene[:20]:
         fail("meta-hygiene", x)
@@ -659,6 +667,20 @@ if meta_hygiene:
         fail("meta-hygiene", f"... +{len(meta_hygiene) - 20} more")
 else:
     ok("meta-hygiene", "no head-field entities, no mojibake in titles/descriptions/body")
+
+# 16 ── META UNIQUENESS (standing meta rule, founder 2026-06-25): every page's
+#        title + description must be UNIQUE sitewide (duplicate meta is a ranking
+#        drag + the canary for bulk-stamped rewrite waves). Reports the duplicate
+#        groups. (404 + any intentional dupes would need an explicit exception.)
+dup_titles = {k: v for k, v in _title_map.items() if len(v) > 1}
+dup_descs = {k: v for k, v in _desc_map.items() if len(v) > 1}
+if dup_titles or dup_descs:
+    for k, v in list(dup_titles.items())[:10]:
+        fail("meta-unique", f"duplicate TITLE on {len(v)} pages: {k!r} -> {sorted(v)[:4]}")
+    for k, v in list(dup_descs.items())[:10]:
+        fail("meta-unique", f"duplicate DESCRIPTION on {len(v)} pages: {k[:60]!r}… -> {sorted(v)[:4]}")
+else:
+    ok("meta-unique", f"all {len(_title_map)} titles + {len(_desc_map)} descriptions unique sitewide")
 
 print()
 if FAILURES:

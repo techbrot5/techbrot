@@ -16,16 +16,16 @@ Standing rules live in `_build/strategy/`: FAQ-STRATEGY.md ✅ · PRE-PUBLISH-AU
 Remove 4 VISIBLE inputs; keep hidden auto-capture where derivable. Both full + minimal forms.
 - ✅ Removed from VIEW (both forms): Months behind, QuickBooks version/status, "How did you find us?" (lead_source), "Did an AI tool recommend us?" (ai_recommended) + "Which AI tool?" (ai_tool).
 - ✅ Auto-capture HIDDEN: lead_source + ai_tool + ai_recommended via `tb-forms.js deriveAttribution()` from `?lead_source=`/`?ai_tool=` + referrer host (chatgpt/claude/perplexity/gemini/copilot→ai-assistant+tool+yes; search-engine→search; external→referral). Honest/best-effort.
-- ✅ MINIMAL form → name+email+convincing_page(opt)+message(opt)+consent. FULL form (contact/file-review) → kept its richer qualification (company/phone/services/revenue/industry/timeline) minus the 4 named + AI selects. **[interpretation: "remove 4 inputs" not "reduce to 4" — flagged in report; confirm if full form should also reduce to the 4.]**
+- ✅ MINIMAL form → name+email+convincing_page(opt)+message(opt)+consent. FULL form (contact/file-review) → **KEEPS its richer qualification (company/phone/services/revenue/industry/timeline) minus the 4 named + AI selects — founder CONFIRMED 2026-06-25.**
 - ✅ Contract: collect() skips absent fields; endpoint appends-by-key → no endpoint change. Verified visible/hidden field sets on the BUILT pages.
 - ✅ FORM-STRATEGY.md recorded.
 - (also optimized the slow `meta-hygiene` battery check → title/desc-only — TASK 6 item, done early since it blocked.)
 
-## TASK 2 — TITLE/DESC REWRITE  ⬜ pending  (started: wave 1 = 6 high-intent titles, commit 6439655)
-- ⬜ 257 titles >60 → keyword-LED ≤60, brand `· TechBrot` only if it fits, unique. (6/263 done.)
-- ⬜ 511 descs >160 → value+keyword led ≤160, unique, phone on high-intent (D1/D7/D3/F1; 52 done in TASK-4 phone pass).
-- ⬜ Record META-STRATEGY.md (keyword-first, ≤60/≤160 truncation-safe, brand-if-room-never-over-keyword, unique, phone high-intent).
-- Per page-type, authored not bulk-stamped, battery+commit per wave.
+## TASK 2 — TITLE/DESC REWRITE  🔵 in-progress
+- ✅ META-STRATEGY.md recorded · ✅ `meta-unique` battery gate added (enforces unique titles+descs sitewide; catches bulk-stamping).
+- 🔵 257 titles >60 → keyword-LED ≤60. DONE: wave1 6 high-intent [6439655] · wave2 industries 25+faq [this commit]. ~226 titles left.
+- 🔵 511 descs >160 → value+keyword led ≤160, unique. DONE: 52 high-intent (TASK-4) · wave2 industries 25+faq. ~485 descs left.
+- Per page-type, authored not bulk-stamped, battery+commit per wave. Remaining clusters after industries: qb help/online-features/online-advanced/compare · glossary · guides · accounting services/advisory · vs · switch · the long-tail descs.
 
 ## TASK 3 — DAVID BLOCK + EEAT  ⬜ pending
 - ⬜ Authored David operator block → /about/ + /partners/ (+ reviewedBy there). /trust/ stays team-voice.
