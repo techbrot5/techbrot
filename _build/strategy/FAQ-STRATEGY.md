@@ -33,10 +33,24 @@ _Recorded 2026-06-25 (founder ruling). Read this before any FAQ change._
    | location (t-location) | 6–8 | 4–6 only for genuinely thin city children |
    | comparison (t-comparison) | 5–7 | |
    | dedicated /faq/ hub pages | 15–30 | EXEMPT — they ARE the FAQ hub |
-5. **PHONE-IN-FAQ:** on each page, make **1–2** FAQs genuinely call-intent
-   ("How do I reach a Certified ProAdvisor?", "Can I speak to someone today?")
-   with the phone number **naturally in the answer**. Drives AI-surfaced calls +
-   on-page conversion. NOT in every answer (bloat).
+5. **PHONE-IN-FAQ (resolution, founder 2026-06-25 — OPTION C):** the goal is the
+   phone in a citable answer where a user would want to call — NOT a mandatory new
+   question. **Default = weave `(877) 751-5575` NATURALLY into the most call-relevant
+   EXISTING answer** ("how do we start?", "what does it cost?", or a "how do I reach
+   a ProAdvisor?" Q if one already exists). This is EQUITY-SAFE (content-equity checks
+   baseline FAQ *question* text, not answers) and respects the cap with no baseline
+   question removed. **Only ADD a dedicated call-intent question where there is cap
+   room (under-cap page) AND no baseline question would be removed** (or the page is
+   non-baseline) — judgment per page on which reads best. NEVER remove or reword a
+   baseline FAQ *question* to fit a call-intent Q (that's a content-equity removal
+   needing founder sign-off + an equity-exceptions.json entry).
+   ⚠️ WHY THIS RULE EXISTS: a first attempt added call-intent *questions* by replacing
+   the weakest at cap on baseline money pages → removed baseline FAQ questions → 26
+   content-equity failures (reverted). Answers are free to rewrite; questions are
+   equity-protected. PROCESS: for ALL FAQ work, run the content-equity check to
+   COMPLETION and READ the verdict before committing — `--fast` includes content-equity
+   but SKIPS the faq-schema/overlap/flat checks, so a FULL run (or targeted faq verify)
+   is still required before flip.
 6. **PHONE-IN-META:** phone number in meta descriptions (+ titles where natural)
    on **high-intent page types ONLY** — money (D1), triage (D7), pillars (D3),
    contact + file-review (F1). Click-to-call from search/mobile. NOT sitewide.
