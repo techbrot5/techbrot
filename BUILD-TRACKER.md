@@ -19,11 +19,12 @@ signal preserved) · 36f4479 (illinois nudge; other pillars+F1 were already comp
 meta `title`/`description` ONLY (67 titles + 150 descs njk frontmatter incl BOM files + 11 glossary.js term meta).
 Built re-scan: entity-escape titles 0/71, descs 0/161. Battery GREEN. Script `_build/scripts/fix_meta_entities.py`.
 Triage disclosure CONFIRMED untouched (above-fold `.disclose--lead` intact on all 14; TASK-4 changed 0 body lines).
-**🚩 NEW FLAG -- MOJIBAKE (NOT fixed, founder call needed):** a CP1252 round-trip corruption (em-dash -> "a-EUR-" 3-char
-garbage) in **90 source files / 536 occurrences, in BODY content too** (23 industries + state service-landing data files) +
-89 meta descriptions. Distinct from HTML entities; touches body prose -> content-equity territory. Recommend a dedicated
-content-equity-gated repair pass (mechanical, before flip). AWAITING founder go on scope/ordering vs David block.
-**RESUME (founder order, authored fresh-context, do NOT bulk-mechanize):** (0) mojibake repair pass (founder call) · (1) David visible block -> /about/ + /partners/
+**✅ MOJIBAKE REPAIR DONE [00b5c72]:** founder-approved, safeguarded. Repaired the confirmed CP1252 round-trip corruption
+(em-dash/en-dash/arrow/§/middle-dot) -- **1069 occ / 90 files** (23 industries + CA/FL/IL/TX state-landing data files), body
+prose + idx markers + meta. Script `_build/scripts/fix_mojibake.py` derives keys at runtime (pure-ASCII, no typed mojibake).
+Safeguards met: per-file integrity (len-math + zero-residual) on all 90; git diff = only mojibake->correct swaps; RENDER-CHECK
+0 rendered-mojibake across all 580 built pages; battery GREEN. Left: decorative box-rule U+2550 in Nunjucks comments (non-rendering).
+**RESUME (founder order, authored fresh-context, do NOT bulk-mechanize): (1) David visible block -> /about/ + /partners/
 (authored + reviewedBy there; /trust/ STAYS team-voice, deliberate) · (2) TASK 2 FAQ answer rewrite per page-type (money/
 pillars/file-review first; answer-first/generic/minimal-brand; fold 1-2 call-intent FAQs w/ phone -- REPLACE weakest at
 cap, never exceed) · (3) TASK 3 t-hub Q additions (under cap -> ADD) · (4) TASK 5 silo interlinks (stripTags-safe everywhere).
