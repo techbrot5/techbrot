@@ -1,0 +1,136 @@
+---json
+{
+  "layout": "layouts/t-money.njk",
+  "permalink": "/find-an-accountant/delaware/small-business-accountant/",
+  "slug": "de-svc-smb",
+  "bodyClass": "page--bofu",
+  "intent": "delaware",
+  "metaReviewed": "2026-06-25",
+  "title": "Delaware Small Business Accountant · TechBrot",
+  "description": "Need a small business accountant in Delaware? Certified ProAdvisor bookkeeping, setup and cleanup, coordinated with your CPA. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Delaware", "href": "/find-an-accountant/delaware/" },
+    { "name": "Small Business Accountant" }
+  ],
+  "hero": {
+    "eyebrow": "Delaware &middot; Small Business",
+    "heading": "Your Delaware small business accountant, starting with the books.",
+    "subheading": "Bookkeeping, QuickBooks setup, and cleanup for Delaware small businesses &mdash; entity-aware books for LLCs, S-corps, and partnerships, gross-receipts-tax tracking by activity, and a named Certified ProAdvisor. We keep the books; your CPA files. Fixed-fee, all three counties.",
+    "helper": "Independent firm &middot; not Intuit, not a CPA firm. Coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=delaware&state=delaware&source_type=state-money&funnel_stage=TOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  },
+  "sec": {
+    "inBriefTag": "In brief",
+    "inBriefH": "Delaware small business accounting, in brief.",
+    "aiH": "Delaware small business accounting, in five questions.",
+    "intakeH": "Scope your Delaware engagement.",
+    "faqH": "Delaware small business accounting questions."
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> is the <strong>day-to-day financial backbone for Delaware small businesses</strong> &mdash; Certified QuickBooks ProAdvisor bookkeeping, setup, cleanup, an entity-aware chart of accounts, gross-receipts-tax tracking by activity, and a franchise-tax reserve, kept in your own QuickBooks file by a named ProAdvisor and coordinated with your CPA, who files. The full Delaware small-business summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc., and not a CPA or tax-prep firm. Delaware facts (no sales tax; the gross receipts tax on the seller; the annual franchise tax; Wilmington&rsquo;s 1.25% city wage tax) reflect current DE Division of Revenue and Division of Corporations guidance."
+  },
+  "ctaBand": {
+    "dark": true,
+    "eyebrow": "Delaware small businesses start here",
+    "heading": "Get the books right &mdash; the rest gets easier.",
+    "lede": "Book a free discovery call. We&rsquo;ll review your situation and your books, recommend setup, cleanup, monthly service, or a mix, and send a written fixed-fee quote within 3 business days. No pitch. Independent firm &mdash; we keep the books and coordinate with your CPA, who files; we do not file Delaware returns or the franchise tax.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=delaware&state=delaware&source_type=state-money&funnel_stage=MOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  }
+}
+---
+
+{#- ═══ BESPOKE MIDDLE (DE small business accountant) — full depth re-flowed into shared
+    dc-system v2 components, mirroring the proven NY small-business child. Spine (hero/proof/
+    §01 in-brief/§03 aiSummary/call/intake/faq/CTA) is layout-owned (t-money). Bespoke sections
+    alternate white/sand: the short version, the five financial-backbone services (with their DE
+    cross-links), the scope split (TechBrot / Your CPA), the advisory line, the DE FAQ, and the
+    firm-level expert-review block. Anchors = this page's own pageGraph ids (#de-svc-smb-*).
+    Founder-name-zero. ═══ -#}
+
+{#- THE SHORT VERSION — speakable summary (#de-svc-smb-summary) — white -#}
+<section class="sec reveal" id="de-svc-smb-summary">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">The short version.</h2>
+    <div class="prose speakable">
+      {%- for p in summary %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- THE FINANCIAL BACKBONE — the five services (numbered lift cards, each with its cross-link) — sand -#}
+<section class="sec reveal" id="de-svc-smb-handle" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">What we handle for Delaware small businesses</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">The financial backbone, built and maintained.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">Every engagement is scoped to your business and entity, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    <div class="r-2">
+      {%- for s in handle %}
+      <div class="lift"><span class="lift__n">{{ s.num | safe }}</span><div><h3>{{ s.title | safe }}</h3><p>{{ s.body | safe }}</p><p style="margin-top:10px;"><a href="{{ s.href }}" style="color:var(--color-accent);font-size:14px;font-weight:600;">{{ s.cta | safe }}</a></p></div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- HONEST SCOPE — what we do / what your CPA does (two checklist cards, role label kept) — white -#}
+<section class="sec reveal" id="de-svc-smb-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">What we do &mdash; and what your CPA does.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">We&rsquo;re bookkeepers and Certified QuickBooks ProAdvisors, not a CPA or tax-prep firm &mdash; and not a registered agent. The split is clean, and we coordinate directly across it.</p>
+    <div class="r-2">
+      {%- for col in scope %}
+      <div class="incl-card">
+        <p class="eyebrow" style="display:block;margin-bottom:8px;">{{ col.role | safe }}</p>
+        <h3>{{ col.title | safe }}</h3>
+        <ul class="checklist">{%- for it in col.items %}<li>{{ it | safe }}</li>{%- endfor %}</ul>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- THE ADVISORY LINE — statement + body prose — sand -#}
+<section class="sec reveal" id="de-svc-smb-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Beyond the books</span><span class="idx__rule"></span></div>
+    <h2 class="statement">Automation handles the data entry. We handle the judgment.</h2>
+    <div class="prose">
+      {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- EXPERT REVIEW — firm-level (no founder name) byline + standards prose + trust-row + meta — white -#}
+<section class="sec reveal" id="de-svc-smb-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
+      <div>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:22px;">
+      <p>This page reflects how TechBrot handles Delaware small-business engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm with a local office in Middletown, and reviewed for accuracy on the bookkeeping scope, the entity-aware chart of accounts, and the Delaware references (the <a href="https://revenue.delaware.gov/" rel="noopener nofollow">gross receipts tax on the seller</a> and the <a href="https://corp.delaware.gov/" rel="noopener nofollow">annual franchise tax</a>). TechBrot keeps the books and coordinates with your CPA and registered agent, who file; we do not file Delaware or federal returns, the franchise tax, or the annual report, and do not represent clients before the tax authorities.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-25</span><span>Updated: 2026-06-25</span><span>Reviewed: 2026-06-25 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>

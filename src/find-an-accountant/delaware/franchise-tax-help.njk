@@ -1,0 +1,136 @@
+---json
+{
+  "layout": "layouts/t-money.njk",
+  "permalink": "/find-an-accountant/delaware/franchise-tax-help/",
+  "slug": "de-svc-franchise",
+  "bodyClass": "page--bofu",
+  "intent": "delaware",
+  "metaReviewed": "2026-06-25",
+  "title": "Delaware Franchise Tax Help · TechBrot",
+  "description": "Delaware franchise tax help — LLC/LP flat $300, corporations $175–$200,000, tracked and reserved in QuickBooks. We don’t file it. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Delaware", "href": "/find-an-accountant/delaware/" },
+    { "name": "Franchise Tax Help" }
+  ],
+  "hero": {
+    "eyebrow": "Delaware &middot; Franchise Tax &middot; Middletown office",
+    "heading": "Delaware franchise tax, tracked and reserved in your books.",
+    "subheading": "Every Delaware entity owes an annual franchise tax &mdash; a flat $300 for LLCs, LPs, and GPs (June 1), and $175 to $200,000 for corporations by one of two methods (March 1, with an annual report). We don&rsquo;t file it and we&rsquo;re not your registered agent &mdash; we track and reserve the liability in QuickBooks so it&rsquo;s never a surprise, and confirm the method that produces the lower corporate tax. Served from our Middletown office across all three counties.",
+    "helper": "Independent firm &middot; not Intuit. Not a registered agent. Does not file the franchise tax or annual report.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=delaware&state=delaware&source_type=state-spoke&funnel_stage=MOFU" },
+      { "label": "Speak to a ProAdvisor", "tel": true }
+    ]
+  },
+  "sec": {
+    "inBriefTag": "In brief",
+    "inBriefH": "Delaware franchise tax, in brief.",
+    "aiH": "Delaware franchise tax, in five questions.",
+    "intakeH": "Scope your franchise-tax reserve.",
+    "faqH": "Delaware franchise tax questions."
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> tracks and reserves the <strong>Delaware franchise tax in your own QuickBooks file</strong> &mdash; accrued so the annual bill is funded, not a surprise &mdash; and <strong>confirms which corporate method produces the lower tax</strong>: a flat <strong>$300</strong> for LLCs, LPs, and GPs (due June 1, no annual report), or <strong>$175 to $200,000</strong> for corporations under the Authorized Shares or Assumed Par Value method (due March 1, with an annual report). <strong>We do not file the franchise tax or the annual report, and we are not a registered agent</strong> &mdash; your registered agent or CPA files. The full Delaware franchise-tax summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent firm &mdash; not affiliated with Intuit Inc. Delaware franchise-tax facts (the flat $300 LLC/LP/GP tax due June 1; the $175 Authorized Shares / $400 Assumed Par Value corporate minimums, $200,000 maximum, due March 1 with an annual report; the two-method election) are verified against the DE Division of Corporations and reviewed periodically; TechBrot does not file the Delaware franchise tax or annual report, is not a registered agent, and does not represent clients before the Division of Corporations."
+  },
+  "ctaBand": {
+    "dark": true,
+    "eyebrow": "Delaware businesses start here",
+    "heading": "Get your Delaware franchise tax tracked and reserved.",
+    "lede": "Book a free books review. We check whether your franchise tax is reserved in the books and whether the lower-tax corporate method is being used, then send a written fixed-fee quote within 3 business days. No pitch. Independent firm &mdash; not a registered agent; does not file the franchise tax or annual report; coordinates with your CPA and agent.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=delaware&state=delaware&source_type=state-spoke&funnel_stage=BOFU" },
+      { "label": "Speak to a ProAdvisor", "tel": true }
+    ]
+  }
+}
+---
+
+{#- ═══ BESPOKE MIDDLE (DE franchise-tax help) — re-flowed into shared dc-system v2
+    components, mirroring the NY sales-tax-help spine. Layout-owned spine: hero/proof/
+    §01 in-brief/§03 aiSummary/call/intake/faq/CTA. Bespoke sections alternate white/sand.
+    Anchors = this page's own pageGraph ids (#de-svc-franchise-*). Founder-name-zero.
+    DE figures only from DE-FACTS.md. HONESTY: does not file; not a registered agent. ═══ -#}
+
+{#- THE SHORT VERSION — speakable summary (#de-svc-franchise-summary; single paragraph) — white -#}
+<section class="sec reveal" id="de-svc-franchise-summary">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In short</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">The short version.</h2>
+    <div class="prose speakable">
+      <p>{{ summary | safe }}</p>
+    </div>
+  </div>
+</section>
+
+{#- WHY DELAWARE FRANCHISE TAX IS DIFFERENT — body prose + the three reasons (lift cards) — sand -#}
+<section class="sec reveal" id="de-svc-franchise-why" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Why it trips businesses up</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:28ch;margin-bottom:24px;">Why the franchise tax trips up so many Delaware entities</h2>
+    <div class="prose" style="max-width:72ch;margin-bottom:40px;">
+      {%- for p in whyBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+    <div class="r-3">
+      {%- for c in whyCards %}
+      <div class="lift"><span class="lift__n">{{ c.signal | safe }}</span><div><h3>{{ c.title | safe }}</h3><p>{{ c.body | safe }}</p></div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- HONEST SCOPE — TechBrot handles / Your agent or CPA handles (two checklist cards) — white -#}
+<section class="sec reveal" id="de-svc-franchise-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:36px;">How we help with the Delaware franchise tax.</h2>
+    <div class="r-2">
+      <div class="incl-card">
+        <h3>TechBrot handles</h3>
+        <ul class="checklist">{%- for d in scopeDo %}<li>{{ d | safe }}</li>{%- endfor %}</ul>
+      </div>
+      <div class="incl-card">
+        <h3>Your registered agent or CPA handles</h3>
+        <ul class="checklist">{%- for d in scopeDont %}<li>{{ d | safe }}</li>{%- endfor %}</ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{#- THE ADVISORY LINE — statement + body prose — sand -#}
+<section class="sec reveal" id="de-svc-franchise-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">The advisory line</span><span class="idx__rule"></span></div>
+    <h2 class="statement">Automation handles the data entry. We handle the judgment.</h2>
+    <div class="prose">
+      {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- EXPERT REVIEW — firm-level (no personal name) byline + standards prose + trust-row + meta — white -#}
+<section class="sec reveal" id="de-svc-franchise-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
+      <div>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm &middot; Middletown, DE</p>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:22px;">
+      <p>Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm with an office in Middletown, Delaware, serving New Castle, Kent, and Sussex counties. Delaware franchise-tax figures &mdash; the flat $300 for LLCs, LPs, and GPs due June 1; the $175 Authorized Shares and $400 Assumed Par Value corporate minimums, the $200,000 maximum, and the March 1 due date with an annual report &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href="https://corp.delaware.gov/" rel="noopener nofollow">Delaware Division of Corporations</a>. This page is educational and operational; it is not tax or legal advice. TechBrot tracks and reserves the franchise tax in the books and confirms the lower-tax method; it <strong>does not file the franchise tax or the annual report, is not a registered agent</strong>, and does not represent clients before the Division of Corporations &mdash; your registered agent or CPA files.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-25</span><span>Updated: 2026-06-25</span><span>Reviewed: 2026-06-25 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>

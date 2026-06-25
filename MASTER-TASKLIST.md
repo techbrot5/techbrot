@@ -43,8 +43,11 @@ Remove 4 VISIBLE inputs; keep hidden auto-capture where derivable. Both full + m
 - ⬜ remaining clusters (Option C): prose · pillars · location children · comparison · /faq/ hubs (EXEMPT) + t-hub FAQ ADDITIONS (under cap → add Qs) + silo links throughout.
 - Per FAQ-STRATEGY.md. PROCESS: content-equity to completion + read before commit; FULL battery (faq-schema/overlap/flat) before flip (--fast skips them).
 
-## TASK 5 — LOCATION EXPANSION (the spine — PLAN FIRST)  ⬜ pending
-- ⬜ **FIRST DELIVERABLE: full LOCATION PLAN for founder review** (state list 10-15, tier assignment, exact pages per tier, counts, routing, schema per type) — from `techbrot-blueprint-v5.xlsx`. HARD-STOP for founder ruling before building.
+## TASK 5 — LOCATION EXPANSION (the spine — PLAN FIRST)  🔵 in-progress
+- ✅ **PLAN RULED (founder 2026-06-25):** 12 core (PA·NJ·MD·VA·OH·MI·GA·NC·AZ·TN·WA·CO; MA deferred) · 6 pages/state · pre-flip build OK · national-hub capstone in T5 · DE-only real-address LocalBusiness/map-pack · DE 6 / IN 8 cities. Full spec: `_build/strategy/LOCATION-SEO-STRATEGY.md`.
+- ✅ **DE ANCHOR DONE (pattern approved + full state built, battery green):** pillar + 33 children = **34 pages**. Pillar `delaware.njk`/`.11tydata.js` (NEW real-address LocalBusiness/map-pack node, DE-only). Children: 6 cities+hub · 6 industries+hub (finance-banking swapped for nonprofit) · 14 services (incl. DE-specific gross-receipts-tax-help + franchise-tax-help) · 4 triage · pricing — fanned out via 7 subagents from `_build/strategy/DE-FACTS.md`, fact-checked vs DE Div. of Revenue + Div. of Corporations. Registered via new reusable `_build/scripts/register_state.py` (URLs→queue + state intents). Battery GREEN (frozen-copy workaround for the layout-v2 read-race). Commit per state. **Founder TODO: real Google Business Profile for the Middletown address → map pack.**
+- ⬜ **NEXT (autonomous):** IN (full anchor, 8 cities) → 12 core states (6 essentials each, route absent→global) → national-hub capstone (drops the /find-an-accountant/ 301). Then remaining T4 FAQ clusters → T6 flip gates.
+- ⬜ (superseded) FIRST DELIVERABLE: full LOCATION PLAN for founder review (state list 10-15, tier assignment, exact pages per tier, counts, routing, schema per type) — from `techbrot-blueprint-v5.xlsx`. HARD-STOP for founder ruling before building.
 - ⬜ TIER 1 anchor (full build): Middletown DE (real address — richest near-me asset) · Indianapolis/Indiana.
 - ⬜ TIER 2 core (~10-13: pillar + near-me/ProAdvisor + QB cleanup/setup/bookkeeping + LocalBusiness/areaServed; route sub-services/industries to global; 2-3 metros max).
 - ⬜ TIER 3 later (data-driven, post-flip).

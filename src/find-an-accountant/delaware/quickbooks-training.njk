@@ -1,0 +1,133 @@
+---json
+{
+  "layout": "layouts/t-money.njk",
+  "permalink": "/find-an-accountant/delaware/quickbooks-training/",
+  "slug": "de-svc-training",
+  "bodyClass": "page--bofu",
+  "intent": "delaware",
+  "metaReviewed": "2026-06-25",
+  "title": "Delaware QuickBooks Training · TechBrot",
+  "description": "QuickBooks training for Delaware from a Certified ProAdvisor — taught on your own file, gross receipts tax included. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Delaware", "href": "/find-an-accountant/delaware/" },
+    { "name": "QuickBooks Training" }
+  ],
+  "hero": {
+    "eyebrow": "Delaware &middot; QuickBooks Training",
+    "heading": "Learn QuickBooks the way your business actually uses it.",
+    "subheading": "One-on-one QuickBooks training from a Certified ProAdvisor, taught live on your own company file &mdash; built around your role, your industry, and the Delaware tasks that trip people up, like gross-receipts-tax tracking. Every session is recorded. We teach the software; your CPA files.",
+    "helper": "Independent firm &middot; not Intuit. Hourly or session packages, all three counties.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=delaware&state=delaware&source_type=state-spoke&funnel_stage=TOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  },
+  "sec": {
+    "inBriefTag": "In brief",
+    "inBriefH": "Delaware QuickBooks training, in brief.",
+    "aiH": "Delaware QuickBooks training, in five questions.",
+    "intakeH": "Scope your training.",
+    "faqH": "What people ask before booking QuickBooks training."
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>live one-on-one QuickBooks training for Delaware businesses</strong> &mdash; taught by a Certified QuickBooks ProAdvisor on your own company file, role-based, and built around the Delaware tasks that matter, including gross-receipts-tax tracking and filing. Pricing is confirmed before booking. The full Delaware QuickBooks-training summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent firm &mdash; not affiliated with Intuit Inc. Delaware facts (no sales tax; a gross receipts tax on the seller, 0.0945%&ndash;1.9914% by activity, filed monthly or quarterly) reflect Delaware Division of Revenue guidance. We teach the software; your CPA files."
+  },
+  "ctaBand": {
+    "dark": true,
+    "eyebrow": "Delaware businesses start here",
+    "heading": "Get confident in your own QuickBooks.",
+    "lede": "Book a free discovery call. We&rsquo;ll figure out exactly what you need to learn, recommend the right number of sessions, and confirm pricing before anything starts. No pitch. Independent firm &mdash; does not file Delaware taxes; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=delaware&state=delaware&source_type=state-spoke&funnel_stage=BOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  }
+}
+---
+
+{#- ═══ BESPOKE MIDDLE (DE QuickBooks training) — mirrors the NY training child. Spine
+    (hero/proof/§01 in-brief/§03 aiSummary/call/intake/faq/CTA) is layout-owned (t-money).
+    Bespoke sections alternate white/sand. Anchors #de-svc-training-*. Founder-name-zero. ═══ -#}
+
+{#- WHAT TRAINING IS — speakable summary (#de-svc-training-summary) — white -#}
+<section class="sec reveal" id="de-svc-training-summary">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">What Delaware QuickBooks training actually is.</h2>
+    <div class="prose speakable">
+      {%- for p in summary %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- WHAT WE COVER — the five training topics (numbered lift cards) — sand -#}
+<section class="sec reveal" id="de-svc-training-covers" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">What we cover</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">What Delaware QuickBooks training covers.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">Every session is scoped to your role and your file, delivered live by a named Certified ProAdvisor and recorded for the team.</p>
+    <div class="r-2">
+      {%- for c in covers %}
+      <div class="lift"><span class="lift__n">{{ c.num | safe }}</span><div><h3>{{ c.title | safe }}</h3><p>{{ c.body | safe }}</p></div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- HONEST SCOPE — what training gives you / what it doesn't (two checklist cards) + note — white -#}
+<section class="sec reveal" id="de-svc-training-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:36px;">What training gives you &mdash; and what it doesn&rsquo;t.</h2>
+    <div class="r-2">
+      <div class="incl-card">
+        <h3>Training covers</h3>
+        <ul class="checklist">{%- for t in scopeDo %}<li>{{ t | safe }}</li>{%- endfor %}</ul>
+      </div>
+      <div class="incl-card">
+        <h3>Not training</h3>
+        <ul class="checklist">{%- for t in scopeDont %}<li>{{ t | safe }}</li>{%- endfor %}</ul>
+      </div>
+    </div>
+    <p class="prose" style="margin-top:28px;max-width:72ch;">{{ scopeNote | safe }}</p>
+  </div>
+</section>
+
+{#- THE ADVISORY LINE — statement + body prose — sand -#}
+<section class="sec reveal" id="de-svc-training-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">The advisory line</span><span class="idx__rule"></span></div>
+    <h2 class="statement">Automation handles the data entry. We handle the judgment.</h2>
+    <div class="prose">
+      {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- EXPERT REVIEW — firm-level byline + standards prose + trust-row + meta — white -#}
+<section class="sec reveal" id="de-svc-training-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
+      <div>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:22px;">
+      <p>This page reflects how TechBrot delivers Delaware QuickBooks training. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm with its office in Middletown, and reviewed for technical accuracy on QuickBooks Online and Desktop instruction and on the Delaware gross-receipts handling taught in sessions &mdash; tracking by business activity and preparing the monthly or quarterly <a href="https://revenue.delaware.gov/" rel="noopener nofollow">Division of Revenue return</a>. TechBrot teaches the software and coordinates with your CPA, who files.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-25</span><span>Updated: 2026-06-25</span><span>Reviewed: 2026-06-25 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>

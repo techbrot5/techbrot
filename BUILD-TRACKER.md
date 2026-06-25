@@ -14,7 +14,26 @@ Run before EVERY publish (once live, every push is production). Order: encoding 
 REPORT before mass-fixing content-sensitive items; mechanical fixes (entities/canonicals/alt) proceed. Battery+commit per task.
 (B) **Encoding** — no mojibake (`â€"`/`Â·`/`Ã©`), no literal entities in title/desc (auto-escaped → render `&amp;middot;`). **[battery: meta-hygiene]** · fixers `fix_mojibake.py`+`fix_meta_entities.py`. (C) **Head** — title present/UNIQUE/≤60ch · desc present/UNIQUE/~150-160 · **canonical self-referencing every page** · OG+twitter · **NO noindex on prod** (fail-closed env) · lang/charset/viewport. (D) **Schema** — valid JSON-LD · matches visible content · right @type per page-type · no broken `@id` (reviewedBy→#david-westgate exists) · **no fabricated AggregateRating/reviews** · no Intuit-affiliation. (E) **Links** — no 404s **[battery: links]** · no orphans · img alt + David photo · one H1/logical headings · sitemap.xml accurate · robots.txt correct. Flip-only: prove prod headers (no noindex + analytics on) · baseline recrawl · live axe/overflow.
 
-## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-25 · LAYOUT GATE LIVE · backlog 146→121 · old-kit 0)
+## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-26 · T5 DELAWARE ANCHOR BUILT · battery green)
+**🟢 T5 CHECKPOINT (2026-06-26) — DELAWARE ANCHOR COMPLETE (about to commit).** Plan RULED (founder): 12 core
+(PA·NJ·MD·VA·OH·MI·GA·NC·AZ·TN·WA·CO; MA deferred) @ 6 essentials each + DE/IN full anchors + national-hub capstone;
+route absent services/industries → global; DE-only real-address LocalBusiness/map-pack. Full plan + rulings:
+`_build/strategy/LOCATION-SEO-STRATEGY.md`; verified DE fact base + build conventions: `_build/strategy/DE-FACTS.md`.
+**DE = 34 pages** (pillar + 33 children: 6 cities+hub · 6 industries+hub [finance-banking swapped in for nonprofit] ·
+14 services incl. DE-specific gross-receipts-tax-help + franchise-tax-help · 4 triage · pricing). Pillar carries the NEW
+`["AccountingService","LocalBusiness"]` node (real Middletown address + hasMap + geo + hours + 3-county areaServed) —
+DE-ONLY; all other states = Service+areaServed, no street address (honesty). Children fanned out via 7 parallel
+subagents, data-files-only on existing layouts, fact-checked vs DE Div. of Revenue + Div. of Corporations. Build exit 0
+(646 pages); **battery GREEN** (registered 34 DE URLs in build-new-queue.json + delaware/-advisory intents via new
+reusable `_build/scripts/register_state.py`; fixed non-canonical CTA on 7 industry pages). **AUTONOMOUS from here:**
+IN → 12 core → capstone → remaining T4 FAQ clusters → T6 flip gates. **Founder TODO:** real Google Business Profile for
+the Middletown address to activate the map pack.
+**⚠ BATTERY ENV QUIRK (use the workaround every commit):** the `layout-v2` check intermittently FALSE-fails ~39
+pre-existing t-prose `/accounting/*` pages against the LIVE `_site` (Windows read-race during the 2-min parse; standalone
+replication = 0 missing-marker, 3×). **Run the battery against a frozen copy:** `cp -r _site _site-frozen && rm logs;
+TB_OUTDIR=_site-frozen python _build/battery/run_battery.py` → all green. (`_site-frozen` is untracked; clean it after.)
+
+## ⭐ V2 RECOMPOSE — PRIOR STATUS (updated 2026-06-25 · LAYOUT GATE LIVE · backlog 146→121 · old-kit 0)
 **🟢 CHECKPOINT (2026-06-25, HEAD `36f4479` origin/preview-11ty, tree CLEAN, battery GREEN).** **TASK 4 phone-in-meta
 COMPLETE (52/52):** every high-intent page type (t-money 31 · t-triage 14 · pillars 5 · contact + file-review 2) now
 carries the phone (877) 751-5575 in its meta description, AUTHORED per page, <=157 chars so the number survives SERP

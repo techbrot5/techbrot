@@ -1,0 +1,80 @@
+#!/usr/bin/env python3
+"""register_state.py — register a new location-silo state with the build contract.
+Reusable for every T5 state (DE, IN, + 12 core). Does two things, idempotently:
+  1. Adds every built /find-an-accountant/<slug>/** URL (from _site) to
+     _build/build-new-queue.json "urls" (so the url-set battery check passes — new
+     additive pages live in the queue; the original 139 are in the frozen baseline).
+  2. Ensures the state's CTA intents (<slug> and <slug>-advisory) exist in
+     src/_data/intents.json (so the intents battery check passes). Per-state intent
+     copy lives in the STATES dict below — add an entry per state as it's built.
+
+Usage:  python _build/scripts/register_state.py <slug>
+        e.g. python _build/scripts/register_state.py delaware
+Run AFTER a full build (the script reads _site to discover the state's real URLs).
+"""
+import json, sys, io
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+SITE = ROOT / "_site"
+QUEUE = ROOT / "_build/build-new-queue.json"
+INTENTS = ROOT / "src/_data/intents.json"
+
+# Per-state intent copy (state-distinct — author one block per state as it's built).
+STATES = {
+    "delaware": {
+        "name": "Delaware",
+        "intent": {
+            "headline": "Tell us about your Delaware books.<br>We&rsquo;ll handle the rest.",
+            "lede": "A Certified QuickBooks ProAdvisor reviews where your Delaware books stand &mdash; gross receipts tax by activity, franchise-tax reserve, holding-company or out-of-state-owner structure &mdash; recommends the right engagement, and delivers a written fixed-fee scope within 3 business days. We don&rsquo;t file Delaware returns or the franchise tax; we coordinate with your CPA and registered agent. If TechBrot isn&rsquo;t the right fit, we&rsquo;ll say so.",
+            "service": "not-sure",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — DE anchor pillar (real-address LocalBusiness). State-slug intent.",
+        },
+        "advisory": {
+            "headline": "Advisory for Delaware businesses<br>ready to move beyond the books.",
+            "lede": "Fractional CFO and advisory for Delaware businesses &mdash; forecasting, board reporting, KPI design &mdash; coordinated with your Delaware CPA. A Certified ProAdvisor reviews your situation and tells you honestly whether advisory is the right next step.",
+            "service": "fractional-cfo",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — DE advisory route.",
+        },
+    },
+}
+
+
+def main(slug):
+    if slug not in STATES:
+        sys.exit(f"No STATES entry for '{slug}' — add its intent copy to register_state.py first.")
+    cfg = STATES[slug]
+
+    # 1 ── URLs → queue
+    urls = sorted({
+        "/" + p.relative_to(SITE).parent.as_posix() + "/"
+        for p in SITE.rglob("index.html")
+        if p.relative_to(SITE).as_posix().startswith(f"find-an-accountant/{slug}/")
+        or p.relative_to(SITE).parent.as_posix() == f"find-an-accountant/{slug}"
+    })
+    q = json.loads(QUEUE.read_text(encoding="utf-8"))
+    have = set(q["urls"])
+    added = [u for u in urls if u not in have]
+    q["urls"] = sorted(have | set(urls))
+    QUEUE.write_text(json.dumps(q, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    # 2 ── intents
+    d = json.loads(INTENTS.read_text(encoding="utf-8"))
+    I = d["intents"]
+    added_intents = []
+    for key, block in ((slug, cfg["intent"]), (f"{slug}-advisory", cfg["advisory"])):
+        if key not in I:
+            I[key] = block
+            added_intents.append(key)
+    INTENTS.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    out = io.StringIO()
+    print(f"[register_state] {slug}: {len(urls)} state URLs in queue (+{len(added)} new); "
+          f"intents added: {added_intents or 'none (already present)'}", file=out)
+    sys.stdout.buffer.write(out.getvalue().encode("utf-8"))
+
+
+if __name__ == "__main__":
+    main(sys.argv[1] if len(sys.argv) > 1 else "delaware")

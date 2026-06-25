@@ -1,0 +1,166 @@
+---json
+{
+  "layout": "layouts/t-prose.njk",
+  "permalink": "/find-an-accountant/delaware/pricing/",
+  "slug": "de-pricing",
+  "bodyClass": "page--bofu",
+  "intent": "delaware",
+  "sec": {
+    "aiH": "Delaware pricing, in five questions.",
+    "faqH": "Questions about cost."
+  },
+  "title": "Delaware Bookkeeping & QuickBooks Pricing · TechBrot",
+  "description": "Fixed-fee Delaware pricing — monthly bookkeeping from $400/mo, cleanup from $1,200, QuickBooks setup from $750. No hourly billing. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Delaware", "href": "/find-an-accountant/delaware/" },
+    { "name": "Pricing" }
+  ],
+  "hero": {
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Independent &middot; not Intuit &middot; not a registered agent",
+      "Fixed-fee &middot; written scope in 3 business days"
+    ],
+    "eyebrow": "Delaware &middot; Pricing",
+    "heading": "Fixed-fee Delaware pricing &mdash; written scope before any work.",
+    "subheading": "Most firms hide pricing and bill by the hour. TechBrot does the opposite: every Delaware engagement is a fixed fee against a written scope, agreed before work begins &mdash; monthly bookkeeping from $400/mo, cleanup from $1,200. No hourly billing, no surprise invoices. A named Certified ProAdvisor works inside your own QuickBooks file across New Castle, Kent, and Sussex counties. We deliver the books and the CPA-ready handoff &mdash; gross-receipts tracking, the franchise-tax reserve, Wilmington wage tax; your CPA files the returns and your registered agent or CPA files the franchise tax.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=delaware&state=delaware&source_type=pricing&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> prices every Delaware engagement as a <strong>fixed fee against a written scope</strong>, agreed before any work begins &mdash; never hourly. Delaware starting ranges: <strong>monthly bookkeeping from $400/mo, cleanup / catch-up from $1,200, QuickBooks setup from $750, QuickBooks cleanup from $1,200, gross-receipts-tax help from $500, franchise-tax help from $300, fractional CFO from $1,500/mo</strong>. The free 30-minute discovery call returns your exact fixed fee in writing within 3 business days. The full Delaware pricing detail is below.",
+    "source": "Maintained by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. and not a registered agent. Delaware facts (no sales tax; the gross receipts tax on the seller; the annual franchise tax; Wilmington&rsquo;s 1.25% wage tax) reflect DE Division of Revenue and Division of Corporations guidance and are reviewed periodically. TechBrot does not file Delaware returns or the franchise tax / annual report; your CPA and registered agent file."
+  },
+  "ctaBand": {
+    "eyebrow": "Delaware businesses start here",
+    "heading": "Get your exact Delaware fixed fee.",
+    "lede": "Book a free 30-minute discovery call. We&rsquo;ll review your file, scope the right engagement, and quote your exact fixed fee &mdash; in writing &mdash; within 3 business days, before any work begins. No hourly billing, no surprise invoices. Independent firm &mdash; does not file Delaware returns or the franchise tax; coordinates with your CPA and registered agent.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=delaware&state=delaware&source_type=pricing&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{#- ═══ DELAWARE PRICING. t-prose (dc-base chrome). Mirrors the proven NY pricing body
+    (find-an-accountant/new-york/pricing.njk): TL;DR (#de-pricing-tldr, speakable) · engagement
+    shapes · full pricing vs-table (.cmp, canonical DE figures) · why fixed-fee · includes ·
+    firm-level expert review (no founder name) · related. hero / in-brief / ai-summary / faq /
+    final CTA are layout-owned (t-prose) from the .11tydata arrays + sec.aiH/faqH. Canonical DE
+    pricing only (DE-FACTS): from-$400/mo monthly · from-$1,200 cleanup/catch-up · from-$750 QB
+    setup · from-$1,200 QB cleanup · from-$500 gross receipts · from-$300 franchise · from-$1,500/mo
+    fractional CFO. ═══ -#}
+
+{#- TL;DR · how DE pricing works. #de-pricing-tldr = speakable. (H2: How TechBrot Delaware pricing works.) -#}
+<section class="sec reveal" id="de-pricing-tldr">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;">How TechBrot Delaware pricing works.</h2>
+    <div class="tldr-prose">{%- for p in tldr %}<p{% if loop.first %} id="de-pricing-tldr-body"{% endif %}>{{ p | safe }}</p>{%- endfor %}</div>
+  </div>
+</section>
+
+{#- ENGAGEMENT SHAPES · three pricing models → r-3 dc-card. (H2 + 3 H3s) -#}
+<section class="sec reveal" id="de-pricing-shapes">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Three engagement shapes</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Every Delaware engagement fits one of three shapes.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:68ch;">Pricing structure follows the shape of the work. All three run to the same standard: fixed fee, written scope, named ProAdvisor.</p>
+    <div class="r-3">
+      {%- for s in shapes %}
+      <div class="dc-card"><span class="eyebrow" style="display:block;margin-bottom:8px;">{{ s.tag | safe }}</span><h3>{{ s.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ s.body | safe }}</p><p class="prose" style="font-size:14.5px;margin:8px 0 0;">{{ s.examples | safe }}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- FULL PRICING · every DE service + range → vs-table→.cmp. Canonical DE figures. (H2: Every Delaware service, every range.) -#}
+<section class="sec reveal hub-rt--alt" id="de-pricing-ranges" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">All pricing</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Every Delaware service, every range.</h2>
+    <p class="lede" style="margin:0 0 24px;max-width:70ch;">The complete pricing landscape for Delaware businesses. Every fee is fixed and scoped in writing before work begins.</p>
+    <table class="cmp">
+      <caption class="sr-only">TechBrot fixed-fee starting pricing across every Delaware service.</caption>
+      <thead><tr><th scope="col">Service</th><th scope="col">Engagement type</th><th scope="col">Fee range</th><th scope="col">Cadence</th></tr></thead>
+      <tbody>
+        {%- for r in ranges %}
+        <tr>
+          <th scope="row" data-col="Service">{% if r.href %}<a href="{{ r.href }}">{{ r.service | safe }}</a>{% else %}{{ r.service | safe }}{% endif %}</th>
+          <td data-col="Engagement type" style="color:var(--color-ink-mute);">{{ r.type | safe }}</td>
+          <td class="num us" data-col="Fee range"><strong>{{ r.fee | safe }}</strong></td>
+          <td data-col="Cadence" style="color:var(--color-ink-mute);">{{ r.cadence | safe }}</td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+    <p class="prose" style="font-size:13.5px;color:var(--color-ink-mute);margin-top:14px;">{{ rangesNote | safe }}</p>
+  </div>
+</section>
+
+{#- WHY FIXED-FEE · standing brand line as H2; body carried as prose. (H2: Why we don't bill by the hour.) -#}
+<section class="sec reveal" id="de-pricing-why">
+  <div class="ct read read--doc">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Why fixed-fee</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:14px;">Why we don&rsquo;t bill by the hour.</h2>
+    <div class="prose">{%- for p in whyBody %}<p>{{ p | safe }}</p>{%- endfor %}</div>
+  </div>
+</section>
+
+{#- INCLUDES · six standards every fixed fee carries → r-3 dc-card. (H2 + 6 H3s) -#}
+<section class="sec reveal hub-rt--alt" id="de-pricing-includes" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What&rsquo;s always included</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:10px;">Every fixed fee includes these.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:66ch;">Regardless of service or price, every Delaware engagement includes the same six standards. They&rsquo;re not add-ons &mdash; they&rsquo;re the baseline.</p>
+    <div class="r-3">
+      {%- for inc in includes %}
+      <div class="dc-card"><h3>{{ inc.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ inc.body | safe }}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- EXPERT REVIEW · firm-level, no founder name (byline + standards prose + trust-row + meta). (H2: Delaware pricing maintained by the TechBrot ProAdvisor team.) -#}
+<section class="sec reveal" id="de-pricing-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Pricing standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Delaware pricing maintained by the TechBrot ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
+      <div>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm &middot; Office in Middletown, DE</p>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:20px;">
+      <p>Pricing on this page is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, an independent ProAdvisor firm with a local office in Middletown, Delaware, serving New Castle, Kent, and Sussex counties. Ranges reflect current operational starting pricing for Delaware engagements and are reviewed periodically; specific fixed fees are quoted per engagement after a free discovery call. Delaware tax references &mdash; the gross receipts tax on the seller, the annual franchise tax, and Wilmington&rsquo;s 1.25% wage and net-profits tax &mdash; reflect <a href="https://revenue.delaware.gov/" rel="noopener nofollow">Delaware Division of Revenue</a> and <a href="https://corp.delaware.gov/" rel="noopener nofollow">Delaware Division of Corporations</a> rules current as of the date below. TechBrot performs bookkeeping and QuickBooks work and coordinates with your CPA and registered agent, who file; it does not file Delaware returns or the franchise tax / annual report.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-26</span><span>Updated: 2026-06-26</span><span>Reviewed: 2026-06-26 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
+
+{#- RELATED · where to go next → r-2 dc-card hub-card. (H2: Where to go next. + 4 H3s) -#}
+<section class="sec reveal" id="de-pricing-related">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">Where to go next.</h2>
+    <div class="r-2">
+      {%- for r in related %}
+      <a class="dc-card hub-card" href="{{ r.href }}"><h3>{{ r.title | safe }}</h3><p class="prose" style="font-size:14.5px;margin:6px 0 0;color:var(--color-ink-mute);">{{ r.body | safe }}</p><span class="hub-card__go">{{ r.cta | safe }} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

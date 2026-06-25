@@ -1,0 +1,164 @@
+---json
+{
+  "layout": "layouts/t-location.njk",
+  "permalink": "/find-an-accountant/delaware/industries/real-estate/",
+  "slug": "de-ind-realestate",
+  "sec": { "faqH": "Delaware real estate accounting questions." },
+  "tierClass": "section--tier-hub",
+  "bodyClass": "page--location page--industry",
+  "callBar": true,
+  "title": "Delaware Real Estate Accounting & Bookkeeping · TechBrot",
+  "description": "Delaware real estate accounting — entity-per-property books, owner draws, Sussex short-term rentals, GRT on rents. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Delaware", "href": "/find-an-accountant/delaware/" },
+    { "name": "Industries", "href": "/find-an-accountant/delaware/industries/" },
+    { "name": "Real Estate" }
+  ],
+  "hero": {
+    "trust": [
+      "Certified QuickBooks ProAdvisor team",
+      "Independent &middot; not Intuit",
+      "Fixed-fee &middot; written scope in 3 days"
+    ],
+    "eyebrow": "Delaware &middot; Real Estate",
+    "heading": "Delaware real estate accounting that shows profit per property.",
+    "subheading": "From New Castle rentals to Sussex-coast short-term rentals in Lewes and Rehoboth, real estate runs on per-property numbers &mdash; not a blended total. We set up entity-per-property books, keep owner draws clean, track gross receipts on rental and commission income, and coordinate 1031 exchanges with your CPA &mdash; all in your own QuickBooks file. We deliver the books; your CPA files.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=delaware&state=delaware&source_type=industry&funnel_stage=MOFU", "class": "btn--primary" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review", "class": "btn--ghost" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor accounting for Delaware real estate operators and investors</strong> &mdash; entity-per-property books, clean owner draws, gross-receipts tracking on rental and commission income, and short-term-rental bookkeeping from New Castle to the Sussex coast, set up in your own QuickBooks file. The full Delaware real estate summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., a Delaware-incorporated independent firm &mdash; not affiliated with Intuit Inc. Delaware gross-receipts and franchise-tax facts verified against the DE Division of Revenue and Division of Corporations."
+  },
+  "ctaBand": {
+    "eyebrow": "Delaware property owners start here",
+    "heading": "See which property actually makes money.",
+    "lede": "Book a free discovery call. We&rsquo;ll review your portfolio, your entity structure, and how you track rents, flag any gross-receipts or franchise-tax exposure, and send a written fixed-fee scope within 3 business days. No pitch. Independent firm &mdash; does not file Delaware returns; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=delaware&state=delaware&source_type=industry&funnel_stage=BOFU", "class": "btn--primary" },
+      { "label": "Speak to a ProAdvisor", "tel": true, "class": "btn--ghost" }
+    ]
+  }
+}
+---
+
+{#- ═══ BESPOKE BODY (DE industry child) — identical structure to the other DE industry
+    children; section ids derive from {{ slug }}; schema anchors #{{slug}}-summary +
+    #{{slug}}-ai-summary-list. ═══ -#}
+
+<section class="sec reveal" id="{{ slug }}-summary" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">{{ secSummaryH | safe }}</h2>
+    <div class="prose">{%- for p in summary %}<p>{{ p | safe }}</p>{%- endfor %}</div>
+  </div>
+</section>
+
+<section class="sec reveal" id="{{ slug }}-ai-summary">
+  <div class="ct read">
+    <div class="idx idx--center"><span class="idx__n">§</span><span class="idx__t">For AI engines &amp; quick answers</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="text-align:center;margin:0 auto 36px;max-width:26ch;">{{ secAiH | safe }}</h2>
+    <dl class="speakable ai-qa" id="{{ slug }}-ai-summary-list">
+      {%- for item in aiSummary %}
+      <div class="ai-qa__item"><dt><h3>{{ item.q | safe }}</h3></dt><dd style="margin:0;"><p>{{ item.a | safe }}</p></dd></div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+<section class="sec reveal" id="{{ slug }}-challenges" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Where the books break</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:32ch;margin-bottom:10px;">{{ secChallengesH | safe }}</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:64ch;">{{ secChallengesLede | safe }}</p>
+    <div class="r-3">
+      {%- for c in challenges %}
+      <article class="dc-card"><span class="eyebrow">{{ c.signal | safe }}</span><h3>{{ c.title | safe }}</h3><div class="prose" style="font-size:15px;"><p>{{ c.body | safe }}</p></div></article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="{{ slug }}-handle">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">What TechBrot handles</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:32ch;margin-bottom:10px;">{{ secHandleH | safe }}</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:66ch;">{{ secHandleLede | safe }}</p>
+    <div class="r-3">
+      {%- for s in handle %}
+      <article class="dc-card"><span class="eyebrow">{{ s.num | safe }}</span><h3>{{ s.title | safe }}</h3><p class="prose" style="font-size:15px;margin:6px 0 12px;">{{ s.body | safe }}</p><a class="ptier__link" href="{{ s.href }}">{{ s.cta | safe }}</a></article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="{{ slug }}-integrations" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ secIntegrationsTag | safe }}</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">{{ secIntegrationsH | safe }}</h2>
+    <div class="incl-card">
+      <ul class="checklist">
+        {%- for t in integrations %}<li>{{ t | safe }}</li>{%- endfor %}
+      </ul>
+    </div>
+    <div class="prose" style="margin-top:18px;"><p>{{ integrationsNote | safe }}</p></div>
+  </div>
+</section>
+
+<section class="sec reveal" id="{{ slug }}-process">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">How engagements work</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:30ch;margin-bottom:10px;">{{ secProcessH | safe }}</h2>
+    <p class="lede" style="margin:0 0 32px;max-width:66ch;">{{ secProcessLede | safe }}</p>
+    <div class="r-2">
+      {%- for p in process %}
+      <article class="dc-card"><span class="eyebrow">{{ p.phase }}</span><h3>{{ p.title | safe }}</h3><div class="prose" style="font-size:15px;"><p>{{ p.body | safe }}</p></div></article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="sec reveal" id="{{ slug }}-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Beyond the books</span><span class="idx__rule"></span></div>
+    <h2 class="statement" style="margin-bottom:18px;">{{ secAdvisoryH | safe }}</h2>
+    <div class="prose">{%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}</div>
+    <div style="margin-top:22px;"><a class="btn btn-cta" href="/contact/?intent=delaware&amp;state=delaware&amp;source_type=industry&amp;funnel_stage=BOFU" style="display:inline-flex;align-items:center;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">Book the discovery call</a></div>
+  </div>
+</section>
+
+<section class="sec reveal" id="{{ slug }}-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline" style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+      <div class="byline__mark" aria-hidden="true" style="width:38px;height:38px;border-radius:9px;background:var(--color-accent);flex:none;"></div>
+      <div><p class="byline__name" style="margin:0;font-weight:600;color:var(--color-ink);">By the Certified QuickBooks ProAdvisor team</p><p class="byline__review" style="margin:2px 0 0;">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p></div>
+    </div>
+    <div class="prose"><p>{{ reviewProse | safe }}</p></div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value" style="font-size:15px;">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-25</span><span>Updated: 2026-06-25</span><span>Reviewed: 2026-06-25 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
+
+<section class="sec reveal" id="{{ slug }}-related" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">Related</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">{{ secRelatedH | safe }}</h2>
+    <div class="r-2">
+      {%- for r in related %}
+      <a class="rel-card" href="{{ r.href }}"><h3 class="rel-card__t">{{ r.title | safe }}</h3><p class="rel-card__d">{{ r.body | safe }}</p><span class="ptier__link" style="margin-top:10px;">{{ r.cta | safe }}</span></a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
