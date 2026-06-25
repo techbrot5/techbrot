@@ -9,8 +9,23 @@ location 6-8 (4-6 thin children) · comparison 5-7 · /faq/ hubs EXEMPT 15-30; (
 natural in answer; (6) phone-in-meta on high-intent types ONLY (money/triage/pillar/contact+file-review); (7) strategic
 silo interlinks in answers (stripTags-safe). De-dup ≠ cut: removing duplicate quick-answer blocks is equity-POSITIVE.
 
-## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-24 · LAYOUT GATE LIVE · backlog 146→121 · old-kit 0)
-**🟢 CHECKPOINT (2026-06-25, HEAD `3752db1` origin/preview-11ty, tree CLEAN, battery GREEN).** FAQ+FORMS+DAVID initiative:
+## ⭐ V2 RECOMPOSE — CURRENT STATUS (updated 2026-06-25 · LAYOUT GATE LIVE · backlog 146→121 · old-kit 0)
+**🟢 CHECKPOINT (2026-06-25, HEAD `36f4479` origin/preview-11ty, tree CLEAN, battery GREEN).** **TASK 4 phone-in-meta
+COMPLETE (52/52):** every high-intent page type (t-money 31 · t-triage 14 · pillars 5 · contact + file-review 2) now
+carries the phone (877) 751-5575 in its meta description, AUTHORED per page, <=157 chars so the number survives SERP
+truncation; verified on the BUILT pages (0 issues). 3 commits 425782d (t-money) · d500ddf (t-triage, Sheet-7 honesty
+signal preserved) · 36f4479 (illinois nudge; other pillars+F1 were already compliant). Helper: `_build/scripts/meta_audit.py`.
+**🚩 FLAG (surfaced, NOT auto-fixed):** `{{ title }}`/`{{ description }}` auto-escape -> HTML entities render LITERALLY
+in tab+SERP. Sitewide: **71 titles** (the `&middot;` separator) + **161 descriptions** show a literal `&middot;`/`&mdash;`/
+`&rsquo;`. Clean scripted fix = entities -> Unicode in those source fields (the 52 TASK-4 pages are already correct).
+Preview is noindex (no prod harm yet); fix before flip. AWAITING founder green-light (232-page meta change).
+**RESUME (founder order, authored fresh-context, do NOT bulk-mechanize):** (1) David visible block -> /about/ + /partners/
+(authored + reviewedBy there; /trust/ STAYS team-voice, deliberate) · (2) TASK 2 FAQ answer rewrite per page-type (money/
+pillars/file-review first; answer-first/generic/minimal-brand; fold 1-2 call-intent FAQs w/ phone -- REPLACE weakest at
+cap, never exceed) · (3) TASK 3 t-hub Q additions (under cap -> ADD) · (4) TASK 5 silo interlinks (stripTags-safe everywhere).
+PLUS the entity-escape fix (after green-light). Quality bar = `_build/strategy/FAQ-STRATEGY.md`. Battery+commit per page-type.
+
+**(prior checkpoint 2026-06-25, HEAD `3752db1`)** FAQ+FORMS+DAVID initiative:
 **DONE & shipped** — TASK 0 strategy (`_build/strategy/FAQ-STRATEGY.md`) · TASK 1 FAQ de-dup (bookkeeping→7/pillars→12/
 prose→6) · forms footprint 43→18 + 27-key contract + AI-attribution · TASK 5 safety (links safe everywhere) · TASK 6B
 (verify-link strip 45→5 honest authority-citations, visible David→home+NY+TX, 1 Westgate link) · TASK 6A (reviewedBy
