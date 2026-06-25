@@ -113,6 +113,11 @@ module.exports = {
             about: { "@id": "https://techbrot.com/#organization" },
             publisher: { "@id": "https://techbrot.com/#organization" },
             inLanguage: "en-US",
+            // reviewedBy David Westgate — honest E-E-A-T: a real network operator
+            // (Westgate Financial Services, TX) who runs the exact model this page
+            // describes, named visibly in the operator block. Scoped, not blanket
+            // (EEAT-STRATEGY.md). Global #david-westgate Person node.
+            reviewedBy: { "@id": "https://techbrot.com/#david-westgate" },
             audience: {
               "@type": "BusinessAudience",
               audienceType:

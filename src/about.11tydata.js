@@ -101,6 +101,11 @@ module.exports = {
             publisher: { "@id": "https://techbrot.com/#organization" },
             inLanguage: "en-US",
             speakable: { "@type": "SpeakableSpecification", cssSelector: ["#about-tldr-body", "#about-in-brief-text"] },
+            // reviewedBy David Westgate — honest E-E-A-T: a real named operator
+            // (Westgate Financial Services, TX) genuinely reviews/delivers TechBrot
+            // engagements and is named visibly in the operator block below. Scoped,
+            // not blanket (see EEAT-STRATEGY.md). Global #david-westgate Person node.
+            reviewedBy: { "@id": "https://techbrot.com/#david-westgate" },
           },
           {
             "@type": "BreadcrumbList",

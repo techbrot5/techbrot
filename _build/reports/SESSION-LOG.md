@@ -2007,3 +2007,19 @@ OPEN/NEXT: find-an-accountant state-landing meta (ties to T5, phone-on-near-me) 
 **VERIFY:** rebuilt 618; --fast gate (content-equity + meta-unique + layout-v2 + old-kit + meta-hygiene). [verdict at commit]. FULL run still required before flip (standing rule).
 COUNT: T2 ~517 meta rewrites total (w1 6 + w2 26 + w3 145 + w4 340). Bulk complete. Commit this turn. Removed subagents' temp scripts.
 OPEN/NEXT: verify T2 stragglers (blog/category data-driven) · then T3 DAVID block /about/+/partners/ (+EEAT-STRATEGY.md) → T4 FAQ → T5 LOCATIONS (PLAN FIRST, hard-stop) → T6 flip gates (incl one FULL battery run).
+
+---
+
+## Turn -- 2026-06-25 -- T3 DAVID BLOCK + EEAT-STRATEGY + blog/category straggler
+**Founder: continue, start T3. Authored David operator block on /about/ + /partners/ (+ reviewedBy), record EEAT-STRATEGY.md, address the blog/category meta straggler.**
+**T3 DAVID BLOCK (authored, contextual, honest — the one permitted named individual, CLAUDE.md #9):**
+- **/about/ `#about-operator` ("The network, named"):** the named-operator network made concrete — H2 "A network is only as trustworthy as the operators in it." + operator card (photo + David Westgate + "Certified QuickBooks ProAdvisor · Network Operator, Texas" + real bio: 40yr, Westgate Financial Services partner practice delivering TX engagements under operating standards, verifiable credential, links to /partners/ operator program). ADDITIVE (baseline page, 48 headings intact). Placed after #about-platform.
+- **/partners/ `#partners-operator` ("Proof of the model"):** H2 "An operator already running it." + operator card framed for prospective partners (David kept his own practice+clients, took TechBrot brand/demand/standards). ADDITIVE (baseline, 42 headings). Placed after #partners-benefits. Links to #partners-application-cta.
+- **reviewedBy `#david-westgate`** added to BOTH pages' WebPage/AboutPage nodes (about.11tydata.js + partners.11tydata.js). Verified on built pages: visible David=True + reviewedBy=True both.
+- **/trust/ UNTOUCHED** — stays team-voice (founder-name-zero, deliberate; reversal considered + rejected).
+- **Entity corroboration by accurate mention, NOT link volume:** the single westgatefs.com outbound link stays in #partners-mission; David named (not re-linked) in both new blocks.
+**EEAT-STRATEGY.md recorded** (portable): reviewedBy scoped to genuine-review pages only (never blanket — history: 574→honest set); one real operator named where contextual; founder schema-only; no fabrication (0 AggregateRating, only 2 real Clutch reviews); entity corroboration by consistent accurate Organization-schema description + minimal deliberate links, not link-stuffing; credential = held-from-Intuit, never affiliation.
+**STRAGGLER (carry-forward) FIXED:** blog/category.njk description was `{{cat.blurb}}` + appended "Independent...not Intuit. Call (877)..." → over 160 on all 8 category pages. Removed the boilerplate+phone (MOFU blog → no phone); now just the value-led blurb. Verified all 8 ≤160 (107-132). Titles were already ≤60.
+**VERIFY:** rebuilt 618; David + reviewedBy confirmed on built /about/+/partners/; blog/category 8/8 ≤160; founder-name-zero unaffected (David is the permitted individual; no Abid added). --fast gate running [verdict at commit]; sitewide over-length recount running.
+COUNT: T3 done. EEAT-STRATEGY.md + blog/category straggler done. Commit this turn.
+OPEN/NEXT: T4 FAQ (per FAQ-STRATEGY.md, money-first, answer-first + call-intent FAQ + silo links + t-hub additions) → T5 LOCATIONS (LOCATION PLAN FIRST — HARD-STOP for founder review) → T6 flip gates (incl one FULL battery run; the --fast gates are provisional).

@@ -31,9 +31,11 @@ Remove 4 VISIBLE inputs; keep hidden auto-capture where derivable. Both full + m
 - TOTAL T2: ~517 page meta rewrites (w1 6 + w2 26 + w3 145 + w4 340). Sitewide: 0 dup titles, 0 dup descs, 0 hygiene fails.
 - STRAGGLERS (data-file-driven, not per-page editable): blog/category.njk (paginated, meta from category data). Verify count after build; address if material.
 
-## TASK 3 — DAVID BLOCK + EEAT  ⬜ pending
-- ⬜ Authored David operator block → /about/ + /partners/ (+ reviewedBy there). /trust/ stays team-voice.
-- ⬜ Record EEAT-STRATEGY.md (reviewedBy scoped to genuine-review pages only; real operator named where contextual; no fabrication).
+## TASK 3 — DAVID BLOCK + EEAT  ✅ done (commit pending --fast confirm)
+- ✅ Authored David operator block → /about/ (`#about-operator`, "the network, named") + /partners/ (`#partners-operator`, "proof — an operator already running it"). Contextual per page, not boilerplate. Photo + name + role + real bio (40yr, Westgate Financial Services TX partner practice, verifiable Intuit credential). Verified visible on both built pages.
+- ✅ reviewedBy `#david-westgate` added to both pages' WebPage/AboutPage schema nodes (verified). /trust/ UNTOUCHED (stays team-voice, founder-name-zero — deliberate).
+- ✅ EEAT-STRATEGY.md recorded (reviewedBy scoped not blanket; one real operator named where contextual; no fabrication; entity corroboration by consistent accurate mention not link volume; one westgatefs link only, in /partners/).
+- ✅ Carry-forward: blog/category.njk meta straggler fixed (description was blurb + appended boilerplate+phone → over 160; now just the value-led blurb, all 8 categories ≤160, no phone per MOFU rule).
 
 ## TASK 4 — FAQ AUTHORING (per page-type, money-first)  ⬜ pending
 - ⬜ (was TASK 2) answer-first rewrite + 1-2 call-intent FAQs w/ phone (REPLACE weakest at cap, never exceed).
