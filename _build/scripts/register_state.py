@@ -141,6 +141,23 @@ STATES = {
             "_added": "T5 location expansion — OH advisory route.",
         },
     },
+    "michigan": {
+        "name": "Michigan",
+        "intent": {
+            "headline": "Tell us about your Michigan books.<br>We&rsquo;ll handle the rest.",
+            "lede": "A Certified QuickBooks ProAdvisor reviews where your Michigan books stand &mdash; the flat 4.25% income tax, the city income tax withheld by work location across the 24 City Income Tax Act cities (Detroit at 2.4%/1.2%, Grand Rapids and Saginaw at 1.5%/0.75%), the 6% Corporate Income Tax and the flow-through entity election, the flat 6% sales tax, and IL/IN/KY/MN/OH/WI reciprocity &mdash; recommends the right engagement, and delivers a written fixed-fee scope within 3 business days. We don&rsquo;t file Michigan returns, the CIT, or the city income tax; we keep clean, CPA-ready books and coordinate with your CPA and the city. If TechBrot isn&rsquo;t the right fit, we&rsquo;ll say so.",
+            "service": "not-sure",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — MI core-state pillar (areaServed-only, no street address). State-slug intent.",
+        },
+        "advisory": {
+            "headline": "Advisory for Michigan businesses<br>ready to move beyond the books.",
+            "lede": "Fractional CFO and advisory for Michigan businesses &mdash; forecasting, board reporting, KPI design, CIT and flow-through entity planning, multi-state and cross-border nexus &mdash; coordinated with your Michigan CPA. A Certified ProAdvisor reviews your situation and tells you honestly whether advisory is the right next step.",
+            "service": "fractional-cfo",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — MI advisory route.",
+        },
+    },
 }
 
 
