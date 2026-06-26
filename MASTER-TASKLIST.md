@@ -49,7 +49,9 @@ Remove 4 VISIBLE inputs; keep hidden auto-capture where derivable. Both full + m
 - ✅ **IN ANCHOR DONE (2026-06-26, FULL battery green):** pillar + 35 children = **36 pages** (cities-hub+8 · industries-hub+6 · 14 services incl. IN-distinct sales-tax-help + county-income-tax-help · 4 triage · pricing). Built from `_build/strategy/IN-FACTS.md` (fact-checked vs Indiana DOR + DLGF + Tax Foundation 2026; per-county LIT rates QUALITATIVE) via 7 subagents, data-files-only. **areaServed-only, NO street address** (verified). register_state.py registered 36 URLs + indiana/-advisory intents.
 - ✅ **PILLAR SUMMARY-SWAP (founder, all pillars):** `t-state-pillar.njk` — IN-BRIEF leads, dense "summarized" drops below; position-only, equity-safe.
 - ✅ **HONESTY FIX (founder):** "Verifiable on Intuit's public ProAdvisor directory" softened across the find-an-accountant silo (couldn't confirm individual operator listing); Clutch "5.0 · 2 verified reviews" REAL → kept. 🚩 ~50 sitewide occurrences outside the silo flagged for a separate sweep.
-- ⬜ **NEXT (autonomous):** 13 core states PA·NJ·MD·VA·OH·MI·GA·NC·AZ·TN·WA·CO·MA (each: STATE-FACTS.md fact-checked vs that state's revenue dept FIRST → pillar + 6 essentials, route absent→global → battery → commit; checkpoint between states) → national-hub capstone (drops the /find-an-accountant/ 301). Then remaining T4 FAQ clusters → T6 flip gates.
+- ✅ **MA RULED IN (founder, 2026-06-26):** MA is the 13th core state, **pre-flip build** (supersedes earlier "MA deferred"). **13 core + DE + IN + 5 existing = 20 states total at flip.** LOCATION-SEO-STRATEGY.md #1 + build order updated (Wave E = MA, after WA·CO).
+- ✅ **PA DONE (2026-06-26, FULL battery green, pushed):** Pennsylvania core state = 6 pages (pillar + 5 essentials). **Established the CORE-STATE PATTERN** (exemplar for the remaining 12): pillar omits `ecosystem`, industries→global, cities no-href, pricing→children+global; areaServed-only. Built from `PA-FACTS.md` (PA DOR/DCED/Philadelphia, cited). PA-distinct hook = Act 32 EIT/PSD + Philadelphia city taxes + split 6/7/8% sales tax. New reusable `battery-frozen.ps1`. Bug caught+fixed (escaped `\"` href in cleanup.njk body). register_state.py pennsylvania ran.
+- 🔵 **NEXT (autonomous, Wave A continues):** 12 core states NJ·MD·VA·OH·MI·GA·NC·AZ·TN·WA·CO·MA (each: STATE-FACTS.md fact-checked vs that state's revenue dept FIRST → pillar + 5 essentials on the **PA core-state exemplar**, route absent→global, Service+areaServed NO address, reviewedBy David on service children → battery on frozen copy → commit; checkpoint between states). Wave order: NJ·MD·VA → OH·MI → GA·NC·AZ·TN → WA·CO → MA. Then national-hub capstone (drops the /find-an-accountant/ 301) → remaining T4 FAQ clusters → T6 flip gates.
 - ⬜ (superseded) FIRST DELIVERABLE: full LOCATION PLAN for founder review (state list 10-15, tier assignment, exact pages per tier, counts, routing, schema per type) — from `techbrot-blueprint-v5.xlsx`. HARD-STOP for founder ruling before building.
 - ⬜ TIER 1 anchor (full build): Middletown DE (real address — richest near-me asset) · Indianapolis/Indiana.
 - ⬜ TIER 2 core (~10-13: pillar + near-me/ProAdvisor + QB cleanup/setup/bookkeeping + LocalBusiness/areaServed; route sub-services/industries to global; 2-3 metros max).
@@ -65,8 +67,14 @@ Remove 4 VISIBLE inputs; keep hidden auto-capture where derivable. Both full + m
 
 ---
 
+## ASSIGNED TO ME (founder 2026-06-26)
+- 🔵 **HONESTY SWEEP (sitewide, outside location silo):** the ~50 "verifiable on Intuit['s public ProAdvisor directory]"
+  occurrences in /quickbooks/*, glossary, /trust/, error-codes — soften to honest generic framing exactly like the
+  location silo ("the directory lists active ProAdvisors for verification"), reusing `_build/scripts/soften_proadvisor_verify.py`.
+  Do as its own commit during the autonomous run (after PA proof or at a natural checkpoint). Founder keeps DE-GBP himself.
+
 ## FOUNDER DECISIONS PENDING
-- TASK 5 LOCATION PLAN — must be reviewed + ruled before any state build.
+- TASK 5 LOCATION PLAN — ✅ ruled + MA-in (2026-06-26). No location decisions open.
 - (T6) orphan-page internal-linking proposal + the 16 unbuilt-state homepage links.
 
 ## DONE EARLIER THIS SESSION (context)

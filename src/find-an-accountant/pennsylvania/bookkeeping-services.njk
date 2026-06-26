@@ -1,0 +1,159 @@
+---json
+{
+  "layout": "layouts/t-money.njk",
+  "permalink": "/find-an-accountant/pennsylvania/bookkeeping-services/",
+  "slug": "pa-svc-bkkg",
+  "intent": "pennsylvania",
+  "showBadges": true,
+  "bodyClass": "page--bofu",
+  "metaReviewed": "2026-06-26",
+  "title": "Pennsylvania Bookkeeping Services · TechBrot",
+  "description": "Fixed-fee bookkeeping for Pennsylvania businesses — bank reconciliation, Act 32 EIT review, 6/7/8% sales tax, CPA-ready statements. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "Pennsylvania", "href": "/find-an-accountant/pennsylvania/" },
+    { "name": "Bookkeeping Services" }
+  ],
+  "hero": {
+    "eyebrow": "Pennsylvania &middot; Bookkeeping Services",
+    "heading": "Pennsylvania bookkeeping services &mdash; clean books, same bookkeeper, every month.",
+    "subheading": "Monthly bookkeeping, cleanup, and catch-up for Pennsylvania businesses &mdash; every account reconciled, Act 32 local Earned Income Tax (EIT) withholding reviewed by PSD code, sales tax sub-reconciled across the 6% / 7% Allegheny / 8% Philadelphia split, and CPA-ready statements delivered monthly by a named Certified ProAdvisor in your own QuickBooks file. Fixed-fee, all 67 counties.",
+    "helper": "Accounting, cleanup, advisory &mdash; we match the right expert to your books.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=pennsylvania&state=pennsylvania&source_type=state-money&funnel_stage=MOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  },
+  "sec": {
+    "inBriefTag": "The short version",
+    "inBriefH": "The short version.",
+    "aiH": "Pennsylvania bookkeeping services, in five questions.",
+    "intakeH": "Start your Pennsylvania bookkeeping.",
+    "faqH": "Pennsylvania bookkeeping services questions."
+  },
+  "inBrief": {
+    "text": "<strong>Pennsylvania bookkeeping services</strong> from TechBrot keep your books clean, current, and reconciled &mdash; every bank, credit-card, and merchant account categorized, <a href=\"/quickbooks/payroll/\">Act 32 local EIT withholding reviewed by PSD code</a>, Pennsylvania&rsquo;s <a href=\"/accounting/sales-tax-compliance/\">6% / 7% / 8% sales tax</a> sub-reconciled by location, and CPA-ready monthly financial statements produced by a named Certified ProAdvisor on the same file. Behind or messy? A one-time <a href=\"/find-an-accountant/pennsylvania/quickbooks-cleanup/\">cleanup</a> or catch-up comes first, then ongoing <a href=\"/accounting/bookkeeping/monthly-bookkeeping/\">monthly bookkeeping</a>. Fixed-fee against a written scope (monthly from $400/mo; cleanup from $1,200). We run the books in <a href=\"/quickbooks/online/\">QuickBooks Online</a> &mdash; in your own file &mdash; and coordinate with your CPA. We&rsquo;re <strong>not a CPA firm</strong>: we deliver the books; your CPA files. Served remotely across all 67 Pennsylvania counties, Philadelphia to Pittsburgh to Erie.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc. Pennsylvania references (the flat 3.07% state income tax; the Act 32 local Earned Income Tax withheld by PSD code under the &ldquo;higher-of&rdquo; rule; the Local Services Tax up to $52/year where levied; Philadelphia&rsquo;s separate Wage, Net Profits, and BIRT taxes; and the 6% / 7% Allegheny / 8% Philadelphia sales-tax split) reflect rules current as of the review date and are reviewed periodically; municipal EIT rates and Philadelphia city rates are never quoted as a fixed percentage. TechBrot does not file Pennsylvania returns, the local EIT or Local Services Tax, Philadelphia&rsquo;s city-tax returns, or the sales-tax return."
+  },
+  "ctaBand": {
+    "dark": true,
+    "eyebrow": "Pennsylvania businesses start here",
+    "heading": "Ready for Pennsylvania bookkeeping you don&rsquo;t have to think about?",
+    "lede": "Book a free books review. We&rsquo;ll tell you honestly whether you need cleanup, monthly service, or both, and send a written fixed-fee quote within 3 business days. No pitch. Independent firm &mdash; does not file Pennsylvania returns, the local EIT, the Local Services Tax, or Philadelphia&rsquo;s city-tax returns; coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=pennsylvania&state=pennsylvania&source_type=state-money&funnel_stage=BOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  }
+}
+---
+
+{#- ═══ BESPOKE MIDDLE (PA bookkeeping services hub) — full depth re-flowed into shared dc-system v2
+    components, mirroring the proven DE/NY/IN bookkeeping-services child. Spine (hero/proof/trust/§01 in-brief/
+    §03 aiSummary/intake/faq/CTA) is layout-owned (t-money). Bespoke sections below alternate white/sand:
+    included workstreams, why-owners-stay trust row, do/don't scope, four-step process, advisory line,
+    firm-level expert review. Anchors = this page's own pageGraph ids (#pa-svc-bkkg-*). Pennsylvania is
+    areaServed-only — NO street address, NO local office, NO LocalBusiness node anywhere. ═══ -#}
+
+{#- §04 INCLUDED (5 monthly-bookkeeping workstreams → lift cards) — white -#}
+<section class="sec reveal" id="pa-svc-bkkg-included">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§04</span><span class="idx__t">What&rsquo;s included every month</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:12px;">Complete monthly bookkeeping, not a partial service.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">Every engagement is scoped to your business and delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    <div class="r-2">
+      {%- for s in included %}
+      <div class="lift">
+        <span class="lift__n">{{ s.num }}</span>
+        <div>
+          <h3>{{ s.title | safe }}</h3>
+          <p>{{ s.body | safe }}</p>
+          {%- if s.href %}<p style="margin-top:10px;"><a class="ptier__link" style="margin-top:0;" href="{{ s.href }}">{{ s.cta | safe }}</a></p>{%- endif %}
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- §05 WHY (representative trust points → trust-row) — sand -#}
+<section class="sec reveal" id="pa-svc-bkkg-why" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§05</span><span class="idx__t">Why owners stay</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">Why Pennsylvania businesses keep their books with us.</h2>
+    <p class="lede" style="margin:0 0 28px;max-width:62ch;">{{ whyLede | safe }}</p>
+    <div class="trust-row">
+      {%- for w in why %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ w.value }}</p><p class="trust-row__label">{{ w.label | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- §06 SCOPE (honest do/don't split → incl-card x2 in r-2) — white -#}
+<section class="sec reveal" id="pa-svc-bkkg-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§06</span><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:36px;">What we do &mdash; and what we don&rsquo;t.</h2>
+    <div class="r-2">
+      <div class="incl-card">
+        <h3>TechBrot bookkeeping</h3>
+        <ul class="checklist">{%- for d in scopeDo %}<li>{{ d | safe }}</li>{%- endfor %}</ul>
+      </div>
+      <div class="incl-card">
+        <h3>Your CPA</h3>
+        <ul class="checklist">{%- for d in scopeDont %}<li>{{ d | safe }}</li>{%- endfor %}</ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{#- §07 PROCESS (4 steps to clean books → process-grid) — sand -#}
+<section class="sec reveal" id="pa-svc-bkkg-process" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__n">§07</span><span class="idx__t">How it starts</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:16ch;margin-bottom:12px;">Four steps to clean books.</h2>
+    <p class="lede" style="margin:0 0 44px;max-width:62ch;">Every Pennsylvania engagement follows the same rhythm &mdash; books accurate first, monthly cadence second, advisory third.</p>
+    <div class="process-grid">
+      {%- for p in process %}
+      <div class="process-step"><div class="process-step__n{% if loop.last %} process-step__n--done{% endif %}">{{ p.phase }}{% if loop.last %} &check;{% endif %}</div>{% if p.title %}<h3>{{ p.title | safe }}</h3>{% endif %}<p>{{ p.body | safe }}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- §08 ADVISORY (standing brand line — bespoke H2 prose) — white -#}
+<section class="sec reveal" id="pa-svc-bkkg-advisory">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§08</span><span class="idx__t">The advisory line</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:26ch;margin-bottom:18px;">Automation handles the data entry. We handle the judgment.</h2>
+    <div class="prose">{%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}</div>
+  </div>
+</section>
+
+{#- §09 EXPERT REVIEW — firm-level (no founder name) byline + standards prose + trust-row + meta — sand -#}
+<section class="sec reveal" id="pa-svc-bkkg-review" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§09</span><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
+      <div>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:20px;">
+      <p>Reviewed and maintained by the accounting team at <strong>TechBrot Inc.</strong>, an independent Certified QuickBooks ProAdvisor and bookkeeping firm serving Pennsylvania businesses remotely across all 67 counties &mdash; Philadelphia, Pittsburgh, Allentown and the Lehigh Valley, Harrisburg, Lancaster, Erie, and Scranton. Pricing reflects TechBrot&rsquo;s Pennsylvania engagement ranges; Pennsylvania references &mdash; the flat 3.07% state income tax, the Act 32 local Earned Income Tax withheld by PSD code under the &ldquo;higher-of&rdquo; rule, the Local Services Tax up to $52/year where levied, Philadelphia&rsquo;s separate Wage/NPT/BIRT taxes, and the 6% / 7% Allegheny / 8% Philadelphia sales-tax split &mdash; reflect rules current as of the date below and are reviewed periodically against the <a href="https://www.pa.gov/agencies/revenue/" rel="noopener nofollow">Pennsylvania Department of Revenue</a>, <a href="https://dced.pa.gov/local-government/local-income-tax-information/" rel="noopener nofollow">PA DCED</a>, and the <a href="https://www.phila.gov/departments/department-of-revenue/" rel="noopener nofollow">City of Philadelphia</a>; municipal EIT rates and Philadelphia city rates are never quoted as a fixed percentage. TechBrot provides bookkeeping and QuickBooks work and coordinates with your CPA, EA, and the TCD collector or City of Philadelphia, who file; we do not file Pennsylvania returns, the local EIT or Local Services Tax, Philadelphia&rsquo;s city-tax returns, or the sales-tax return, and do not represent clients before tax authorities.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-26</span><span>Updated: 2026-06-26</span><span>Reviewed: 2026-06-26 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>

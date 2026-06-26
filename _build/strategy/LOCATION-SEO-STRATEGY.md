@@ -1,9 +1,10 @@
 # LOCATION-SEO-STRATEGY.md — T5 Location Expansion
 **STATUS: RULED (founder, 2026-06-25). Standing location-SEO doc (rule + reasoning, portable to Westgate).**
 
-### FOUNDER RULINGS (2026-06-25) — locked
-1. **State list:** 12 core APPROVED (PA·NJ·MD·VA·OH·MI·GA·NC·AZ·TN·WA·CO). **MA deferred** to Tier 3/post-flip
-   (don't pad pre-flip; add later on traction).
+### FOUNDER RULINGS (2026-06-25; MA revised IN 2026-06-26) — locked
+1. **State list:** **13 core APPROVED** (PA·NJ·MD·VA·OH·MI·GA·NC·AZ·TN·WA·CO·**MA**). **MA RULED IN as the 13th
+   core state, PRE-FLIP build** (founder, 2026-06-26 — supersedes the earlier "MA deferred" call). With DE+IN
+   anchors that is **20 states total** at flip. Build MA last in the wave order (after WA·CO).
 2. **Tier-2 depth:** **6/state confirmed** — pillar + near-me-accountant (quickbooks-accountant) +
    small-business-accountant + quickbooks-cleanup + quickbooks-setup + bookkeeping-services. (Not lean-5: too
    thin for a pillar to rank. Not rich-7: diminishing pre-flip.)
@@ -190,7 +191,8 @@ Option C). Meta per META-STRATEGY (phone-in-meta on near-me/triage high-intent).
 4. **Wave B — Midwest (IN-credible):** OH · MI
 5. **Wave C — Sunbelt:** GA · NC · AZ · TN
 6. **Wave D — distinct-tax/high-value:** WA · CO
-7. **Capstone:** rebuild `/find-an-accountant/` national hub → routes to all states → **drop the 301**.
+7. **Wave E — Northeast cap:** MA (ruled IN 2026-06-26, pre-flip — Boston high-value services/biotech).
+8. **Capstone:** rebuild `/find-an-accountant/` national hub → routes to all **20** states → **drop the 301**.
 
 Per state: author data files (genuinely localized tax/economy — no mad-libs) → `--fast` battery mid-wave →
 **FULL battery** (incl. faq-schema/overlap/flat, content-equity to completion, links, axe/overflow) →

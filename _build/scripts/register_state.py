@@ -56,6 +56,23 @@ STATES = {
             "_added": "T5 location expansion — IN advisory route.",
         },
     },
+    "pennsylvania": {
+        "name": "Pennsylvania",
+        "intent": {
+            "headline": "Tell us about your Pennsylvania books.<br>We&rsquo;ll handle the rest.",
+            "lede": "A Certified QuickBooks ProAdvisor reviews where your Pennsylvania books stand &mdash; Act 32 local Earned Income Tax (EIT) withholding by PSD code under the &ldquo;higher-of&rdquo; rule, the Local Services Tax, Philadelphia&rsquo;s Wage/NPT/BIRT taxes, and sales-tax sourcing across the 6% / 7% / 8% split &mdash; recommends the right engagement, and delivers a written fixed-fee scope within 3 business days. We don&rsquo;t file Pennsylvania returns or the local EIT; we keep clean, CPA-ready books and coordinate with your CPA. If TechBrot isn&rsquo;t the right fit, we&rsquo;ll say so.",
+            "service": "not-sure",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — PA core-state pillar (areaServed-only, no street address). State-slug intent.",
+        },
+        "advisory": {
+            "headline": "Advisory for Pennsylvania businesses<br>ready to move beyond the books.",
+            "lede": "Fractional CFO and advisory for Pennsylvania businesses &mdash; forecasting, board reporting, KPI design, multi-state nexus planning &mdash; coordinated with your Pennsylvania CPA. A Certified ProAdvisor reviews your situation and tells you honestly whether advisory is the right next step.",
+            "service": "fractional-cfo",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — PA advisory route.",
+        },
+    },
 }
 
 
