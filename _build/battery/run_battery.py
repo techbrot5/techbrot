@@ -448,6 +448,7 @@ MANIFEST_WHITELIST = {
     "page--hub", "page--bofu", "page--legal", "page--trust",
     "page--partners", "page--mofu", "page--location", "page--industry", "has-call-bar",
     "page--home", "speakable",
+    "foot--minimal",  # minimal-chrome conversion endpoints (contact, file-review): semantic marker, reuses .foot styles
 }
 manifest_classes = set()
 for cf in (ROOT / "src/assets/css").glob("*.css"):
@@ -612,6 +613,10 @@ for _p in built:
     if _url.startswith("/dev/"):
         continue
     _html = _p.read_text(encoding="utf-8", errors="ignore")
+    # minimal-chrome conversion endpoints (contact, file-review) intentionally drop the
+    # mega-nav to reduce exit paths — still dc-base v2 (site-head + foot--minimal marker).
+    if 'foot--minimal' in _html:
+        continue
     if V2_MARKER not in _html:
         old_layout.append(_url)
         continue

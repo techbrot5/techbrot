@@ -62,18 +62,21 @@
 <body class="{{ bodyClass }}">
 <a href="#main" style="position:absolute;left:-9999px;">Skip to content</a>
 
-{#- ===== dark topbar ===== -#}
+{#- ===== dark topbar (dropped on minimal-chrome endpoint pages) ===== -#}
+{%- if not minimalChrome %}
 <div class="topbar demo-collapse">
   <div class="ct topbar__row">
     <span class="topbar__badge"><span class="topbar__dot"></span>Independent Certified QuickBooks ProAdvisor firm · U.S.-based</span>
     <span class="topbar__links"><a href="/find-an-accountant/">Find an Accountant</a><a href="/partners/">For Accountants &rarr;</a></span>
   </div>
 </div>
+{%- endif %}
 
 {#- ===== sticky header + mega nav ===== -#}
 <header class="site-head">
   <div class="ct site-head__row">
     <a class="brand" href="/"><span class="brand__mark"><svg width="17" height="17" viewBox="0 0 64 64" fill="#FCFBF8" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span><span class="brand__name">TechBrot</span></a>
+    {%- if not minimalChrome %}
     <nav class="nav demo-collapse" aria-label="Primary">
       <a class="navlink" href="/find-an-accountant/">Find an accountant</a>
       <button class="navtrig" type="button" data-menu="accounting" aria-expanded="false" aria-controls="m-acct" aria-haspopup="true">Accounting <svg width="9" height="9" viewBox="0 0 10 10"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -81,11 +84,13 @@
       <a class="navlink{% if navActive == 'compare' %} navlink--active{% endif %}" href="/vs/">Compare</a>
       <a class="navlink{% if navActive == 'resources' %} navlink--active{% endif %}" href="/resources/">Resources</a>
     </nav>
+    {%- endif %}
     <div class="head-right">
       <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" class="demo-collapse mono head-phone"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ site.phone.display }}</a>
       <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" class="btn btn-cta head-cta">Speak to an advisor</a>
-      <button class="barbtn" type="button" data-drawer-open aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg></button>
+      {%- if not minimalChrome %}<button class="barbtn" type="button" data-drawer-open aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg></button>{%- endif %}
     </div>
+    {%- if not minimalChrome %}
     <div class="mega-panel" id="m-acct" data-menu-panel="accounting" role="region" aria-label="Accounting">
       <div class="mega">
         <div><div class="col-head" style="margin-bottom:6px;">Core services</div>
@@ -116,11 +121,12 @@
       </div>
       <div class="mega-call"><span style="font-size:13px;color:#6E6456;">Free file review — written scope in 3 business days.</span><a href="/quickbooks/" class="mono" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#0E4A50;">QuickBooks overview <span aria-hidden="true">&rarr;</span></a></div>
     </div>
+    {%- endif %}
   </div>
 </header>
 
 <main id="main">
-{%- if breadcrumb %}
+{%- if breadcrumb and not minimalChrome %}
   <nav class="crumb" aria-label="Breadcrumb">
     <div class="ct"><ol class="mono">
       {%- for item in breadcrumb %}
@@ -133,6 +139,17 @@
 
 {{ content | safe }}
 
+  {%- if minimalChrome %}
+  {#- MINIMAL FOOTER — conversion endpoints (contact, file-review): brand + phone +
+      essential legal links + canonical disclaimer only; no 5-column sitewide footer. -#}
+  <footer class="foot foot--minimal">
+    <div class="ct" style="padding-top:36px;padding-bottom:36px;">
+      <div class="foot__brand"><span class="brand__mark"><svg width="17" height="17" viewBox="0 0 64 64" fill="#FCFBF8" aria-hidden="true"><path d="M8 10 H38 V54 H26 V22 H8 Z"/><rect x="42" y="10" width="14" height="12"/></svg></span><span class="brand__name">TechBrot</span></div>
+      <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" class="mono" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;color:#14110C;margin:12px 0 4px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ site.phone.display }}</a>
+      <div class="foot__legal"><span class="foot__mark"><span></span><span></span></span><p class="foot__disc">TechBrot Inc. is an independent firm and is not affiliated with Intuit Inc. QuickBooks and ProAdvisor are trademarks of Intuit Inc. We do not file taxes or represent clients before tax authorities. &middot; <a href="/legal/privacy-policy/">Privacy</a> &middot; <a href="/legal/terms/">Terms</a> &middot; <a href="/legal/disclaimer/">Disclaimer</a></p></div>
+    </div>
+  </footer>
+  {%- else %}
   <footer class="foot">
     <div class="ct" style="padding-top:56px;padding-bottom:36px;">
       <div class="r-foot">
@@ -171,6 +188,7 @@
       <div class="foot__legal"><span class="foot__mark"><span></span><span></span></span><p class="foot__disc">TechBrot Inc. is an independent firm and is not affiliated with Intuit Inc. QuickBooks and ProAdvisor are trademarks of Intuit Inc. We do not file taxes or represent clients before tax authorities.</p></div>
     </div>
   </footer>
+  {%- endif %}
 </main>
 
 {#- ===== mobile drawer ===== -#}
