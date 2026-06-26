@@ -68,7 +68,7 @@ pageTier: hub
 {%- if summary %}
 <section class="sec reveal" id="{{ sec.summaryId | default(slug + '-summary', true) }}-sec" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
   <div class="ct read">
-    <div class="idx"><span class="idx__n">§01</span><span class="idx__t">{{ sec.summaryTag | default("In brief", true) | safe }}</span><span class="idx__rule"></span></div>
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.summaryTag | default("In brief", true) | safe }}</span><span class="idx__rule"></span></div>
     {%- if sec.summaryH %}<h2 class="h2" style="margin-bottom:18px;max-width:28ch;">{{ sec.summaryH | safe }}</h2>{%- endif %}
     <div class="prose speakable"><p id="{{ sec.summaryId | default(slug + '-summary', true) }}">{{ summary | safe }}</p>{% if summarySource %}<p class="in-brief__source">{{ summarySource | safe }}</p>{% endif %}</div>
   </div>

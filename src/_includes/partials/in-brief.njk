@@ -8,7 +8,7 @@
 {%- set isLong = (definition and definition.length) or coinedQuote %}
 <section class="sec reveal in-brief{% if isLong %} in-brief--flow{% endif %}" id="{{ slug }}-definition" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
   <div class="ct">
-    <div class="idx"><span class="idx__n">§01</span><span class="idx__t">{{ sec.inBriefTag | default("In brief", true) }}</span><span class="idx__rule"></span></div>
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">{{ sec.inBriefTag | default("In brief", true) }}</span><span class="idx__rule"></span></div>
     {%- if isLong %}
     <h2 class="h2 speakable in-brief__h">{{ sec.inBriefH | safe }}</h2>
     <div class="in-brief__body prose speakable">
