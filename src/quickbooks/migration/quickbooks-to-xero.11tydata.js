@@ -12,7 +12,7 @@
  * ecosystem, no native US payroll, native inventory favors QB, documented
  * free-conversion error rates. Price $2,500–$10,000+. CTA: canonical lexicon
  * only. Authorship firm-level; founder schema-only. */
-function stripTags(html){return html.replace(/<[^>]+>/g,"").replace(/&rsquo;/g,"’").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&mdash;/g,"—").replace(/&ndash;/g,"–").replace(/&rarr;/g,"→").replace(/&amp;/g,"&").replace(/&nbsp;/g," ").replace(/&middot;/g,"·").replace(/\s+/g," ").trim();}
+function stripTags(html){return html.replace(/<[^>]+>/g,"").replace(/&rsquo;/g,"’").replace(/&lsquo;/g,"‘").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&mdash;/g,"—").replace(/&ndash;/g,"–").replace(/&rarr;/g,"→").replace(/&amp;/g,"&").replace(/&nbsp;/g," ").replace(/&middot;/g,"·").replace(/&sect;/g,"§").replace(/\s+/g," ").trim();}
 module.exports = {
   credentials: [
     "QuickBooks Online ProAdvisor — Level 2",

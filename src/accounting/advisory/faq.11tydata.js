@@ -25,7 +25,7 @@
  * ANCHORS: every old body question keeps a stable in-page anchor advfaq-q01..q38.
  * The 6-question popular strip points at the real item anchors that exist (fixing
  * the prior #faq-q1..#faq-q6 dead links). */
-function stripTags(html){return html.replace(/<[^>]+>/g," ").replace(/&rsquo;/g,"’").replace(/&lsquo;/g,"‘").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&mdash;/g,"—").replace(/&ndash;/g,"–").replace(/&rarr;/g,"→").replace(/&amp;/g,"&").replace(/&nbsp;/g," ").replace(/&middot;/g,"·").replace(/&divide;/g,"÷").replace(/&times;/g,"×").replace(/&hellip;/g,"…").replace(/\s+/g," ").trim();}
+function stripTags(html){return html.replace(/<[^>]+>/g,"").replace(/&rsquo;/g,"’").replace(/&lsquo;/g,"‘").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&mdash;/g,"—").replace(/&ndash;/g,"–").replace(/&rarr;/g,"→").replace(/&amp;/g,"&").replace(/&nbsp;/g," ").replace(/&middot;/g,"·").replace(/&divide;/g,"÷").replace(/&times;/g,"×").replace(/&hellip;/g,"…").replace(/\s+/g," ").trim();}
 
 // 7 cluster h2 sections (contract headings, verbatim). Each cluster's `lede` is the
 // old cluster lede; `items` carry EVERY old-HTML body Q/A in that cluster (q01–q38)

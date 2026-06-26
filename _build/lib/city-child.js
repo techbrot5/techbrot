@@ -15,6 +15,7 @@ function stripTags(html){
     .replace(/&mdash;/g,"—").replace(/&ndash;/g,"–")
     .replace(/&rarr;/g,"→").replace(/&amp;/g,"&")
     .replace(/&nbsp;/g," ").replace(/&middot;/g,"·")
+    .replace(/&sect;/g,"§").replace(/&hellip;/g,"…")
     .replace(/\s+/g," ").trim();
 }
 

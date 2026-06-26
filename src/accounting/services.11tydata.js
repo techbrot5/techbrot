@@ -12,7 +12,7 @@
  * "Book the discovery call" -> /contact/?intent=accounting (matches accounting.njk
  * hub intent). Canonical pricing only (blueprint Sheet 0). Independent firm —
  * not affiliated with Intuit Inc. */
-function stripTags(html){return html.replace(/<[^>]+>/g,"").replace(/&rsquo;/g,"’").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&mdash;/g,"—").replace(/&ndash;/g,"–").replace(/&rarr;/g,"→").replace(/&amp;/g,"&").replace(/&nbsp;/g," ").replace(/&middot;/g,"·").replace(/\s+/g," ").trim();}
+function stripTags(html){return html.replace(/<[^>]+>/g,"").replace(/&rsquo;/g,"’").replace(/&lsquo;/g,"‘").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&mdash;/g,"—").replace(/&ndash;/g,"–").replace(/&rarr;/g,"→").replace(/&amp;/g,"&").replace(/&nbsp;/g," ").replace(/&middot;/g,"·").replace(/&sect;/g,"§").replace(/\s+/g," ").trim();}
 module.exports = {
   // h2 "The service catalog, in five questions." — five-question AI summary
   aiSummary: [

@@ -10,7 +10,7 @@
  * + the 8-card related "service universe" + the reviewer section carried. Byline =
  * "Certified QuickBooks ProAdvisor team" (never an individual). */
 const faqData = require("../../_build/data/faq-content.json");
-function stripTags(html){return html.replace(/<[^>]+>/g," ").replace(/&rsquo;/g,"’").replace(/&lsquo;/g,"‘").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&mdash;/g,"—").replace(/&ndash;/g,"–").replace(/&rarr;/g,"→").replace(/&amp;/g,"&").replace(/&nbsp;/g," ").replace(/&middot;/g,"·").replace(/&hellip;/g,"…").replace(/\s+/g," ").trim();}
+function stripTags(html){return html.replace(/<[^>]+>/g,"").replace(/&rsquo;/g,"’").replace(/&lsquo;/g,"‘").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&mdash;/g,"—").replace(/&ndash;/g,"–").replace(/&rarr;/g,"→").replace(/&amp;/g,"&").replace(/&nbsp;/g," ").replace(/&middot;/g,"·").replace(/&hellip;/g,"…").replace(/\s+/g," ").trim();}
 module.exports = {
   popular: faqData.popular,
   clusters: faqData.clusters,
