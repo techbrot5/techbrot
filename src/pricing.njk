@@ -3,6 +3,8 @@
   "layout": "layouts/t-prose.njk",
   "permalink": "/pricing/",
   "slug": "pricing",
+  "showBadges": true,
+  "proofStrip": true,
   "bodyClass": "page--bofu",
   "sec": {
     "aiH": "TechBrot pricing, in five questions.",
@@ -43,12 +45,8 @@
     baseline heading verbatim; canonical figures EXACT (tldr text + `pricing` data
     table, untouched). #pricing-tldr-body speakable preserved; #pricing-in-brief-text
     rendered by the layout TL;DR. ai-summary + faq rendered by t-prose (sec.aiH/faqH). ═══ -#}
-<section class="sec reveal" id="pricing-credentials">
-  <div class="ct">
-    <p class="eyebrow" style="display:inline-flex;align-items:center;gap:12px;margin-bottom:14px;"><span class="rule-mark" aria-hidden="true"><span></span><span></span></span>Verifiable Intuit credentials</p>
-    {% include "partials/intuit-badges.njk" %}
-  </div>
-</section>
+{#- Intuit badge credentials now render via the shared trust-strip (showBadges) +
+    proof-strip (proofStrip) from the t-prose layout — consistent decision-page band. -#}
 
 {#- TL;DR (body) — canonical figures verbatim. #pricing-tldr-body = speakable. -#}
 <section class="sec reveal" id="pricing-tldr" style="padding-top:8px;">

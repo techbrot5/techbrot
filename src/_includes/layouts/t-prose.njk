@@ -67,6 +67,11 @@ footerNav:
 </section>
 {%- endif %}
 
+{#- TRUST + PROOF STRIPS — opt-in (showBadges / proofStrip) for hire-intent service &
+    pricing prose only; informational prose leaves both off. slug in scope. -#}
+{%- if showBadges %}{% include "partials/trust-strip.njk" %}{% endif %}
+{%- if proofStrip %}{% include "partials/proof-strip.njk" %}{% endif %}
+
 {#- AI SUMMARY — prose ruled Q&A list (light). Renders when `aiSummary` is provided
     in frontmatter; pages that author it in the body skip this and flow it inline. -#}
 {%- if aiSummary %}
