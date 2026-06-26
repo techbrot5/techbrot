@@ -40,7 +40,12 @@ footerNav:
     <div>
       <p class="eyebrow" style="display:inline-flex;align-items:center;gap:12px;margin-bottom:22px;"><span class="rule-mark" aria-hidden="true"><span></span><span></span></span>{{ hero.eyebrow | safe }}</p>
       <h1 class="dsp speakable" style="font-weight:500;font-variation-settings:'opsz' 96;font-size:clamp(36px,1.8rem + 3.4vw,60px);margin:0 0 22px;">{{ hero.heading | safe }}</h1>
-      <p class="lede speakable" style="margin:0 0 30px;max-width:42ch;">{{ hero.subheading | safe }}</p>
+      {#- ABOVE-FOLD intro: short + conversion-first (what we do · for whom · the hook). The dense
+          per-state tax detail is NOT led with here — it lives lower in the `summarized` block + the
+          stats strip + the glossary/context sections (kept, not duplicated). State name derived from
+          the breadcrumb tail so all 20 pillars inherit this from the layout. (Founder 2026-06-26.) -#}
+      {%- set _pillarState = (breadcrumb | last).name -%}
+      <p class="lede speakable" style="margin:0 0 30px;max-width:46ch;">Professional bookkeeping, QuickBooks setup and cleanup, payroll, and tax compliance &mdash; delivered directly by TechBrot, serving {{ _pillarState | safe }} businesses remotely. Real local tax fluency, a named Certified ProAdvisor on your file, and a fixed-fee written scope before any work begins.</p>
       {%- if hero.actions %}
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px;">
         {%- for a in hero.actions.slice(0, 2) %}
