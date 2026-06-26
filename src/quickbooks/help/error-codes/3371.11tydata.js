@@ -10,11 +10,11 @@ module.exports = {
   credStats: [
     { value: "4", label: "core QuickBooks platforms certified — Desktop, Enterprise, Online (Level 2), Payroll" },
     { value: "L2", label: "QuickBooks Online ProAdvisor tier (the highest)" },
-    { value: "Yearly", label: "Intuit re-certification — verifiable on the public ProAdvisor directory" },
+    { value: "Yearly", label: "Annual Intuit re-certification" },
   ],
   credentials: [
     "3371 is an installation-and-licensing error &mdash; resolving the recurring cases takes fluency in QuickBooks installation architecture, Windows file permissions, and how qbregistration.dat interacts with the broader system state.",
-    "Every ProAdvisor holds active Desktop and Enterprise certifications with installation-repair experience, verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+    "Every ProAdvisor holds active Desktop and Enterprise certifications with installation-repair experience; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
     "Hands-on installation-repair experience to diagnose recurring 3371 past the surface fix &mdash; not a script-reading queue.",
   ],
   definition: [

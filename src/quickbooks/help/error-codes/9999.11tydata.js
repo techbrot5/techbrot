@@ -15,11 +15,11 @@ module.exports = {
   credStats: [
     { value: "4", label: "core QuickBooks platforms certified — Online, Desktop, Enterprise, Payroll" },
     { value: "L2", label: "QuickBooks Online ProAdvisor tier (the highest)" },
-    { value: "Yearly", label: "Intuit re-certification — verifiable on the public ProAdvisor directory" },
+    { value: "Yearly", label: "Annual Intuit re-certification" },
   ],
   credentials: [
     "Error 9999 is a QuickBooks Online browser error &mdash; sorting a browser glitch from a real books problem takes fluency in how QBO runs in the browser and in the bookkeeping behind it.",
-    "Every ProAdvisor holds an active QuickBooks Online (Level 2) certification, verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+    "Every ProAdvisor holds an active QuickBooks Online (Level 2) certification; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
     "Operational experience to tell a transient browser script error from a genuine file or data issue &mdash; not a script-reading queue.",
   ],
   // quick-5 — distinct from FAQ (what / causes / fix-yourself / when-pro / browser-vs-books)

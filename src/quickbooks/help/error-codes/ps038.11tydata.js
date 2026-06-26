@@ -11,11 +11,11 @@ module.exports = {
   credStats: [
     { value: "4", label: "core QuickBooks platforms certified — Desktop, Enterprise, Online (Level 2), Payroll" },
     { value: "L2", label: "QuickBooks Online ProAdvisor tier (the highest)" },
-    { value: "Yearly", label: "Intuit re-certification — verifiable on the public ProAdvisor directory" },
+    { value: "Yearly", label: "Annual Intuit re-certification" },
   ],
   credentials: [
     "PS038 is a payroll-transmission error &mdash; resolving the recurring cases takes fluency in the QuickBooks/Intuit payroll subscription architecture, service keys, and the transmission queue.",
-    "Every ProAdvisor holds active Payroll, Desktop, and Enterprise certifications, verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+    "Every ProAdvisor holds active Payroll, Desktop, and Enterprise certifications; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
     "We work Intuit&rsquo;s ProAdvisor channels regularly &mdash; often faster subscription-side resolution than direct support paths, which matters under a payroll deadline.",
   ],
   definition: [

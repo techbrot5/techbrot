@@ -68,7 +68,7 @@ module.exports = {
   // ── "Operator accountability, platform standards." (6 → process-diagram)
   standards: [
     { name: "Named local operator", body: "You know exactly who is closing your books, how to reach them, and what credentials they hold &mdash; not a rotating offshore team or an anonymous queue." },
-    { name: "Certified ProAdvisors", body: "Every operator is a Certified QuickBooks ProAdvisor across Online (Level&nbsp;2), Desktop, Enterprise, and Payroll. Real credentials, verifiable on Intuit&rsquo;s directory &mdash; not generic remote bookkeepers." },
+    { name: "Certified ProAdvisors", body: "Every operator is a Certified QuickBooks ProAdvisor across Online (Level&nbsp;2), Desktop, Enterprise, and Payroll. Real credentials &mdash; not generic remote bookkeepers. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification." },
     { name: "Fixed-fee scopes", body: "Every engagement is priced in writing before work begins. No hourly billing surprises, no scope creep, no surprise invoices." },
     { name: "Your QuickBooks file", body: "Operators work as an authorized accountant-user inside your existing QuickBooks file. No proprietary software, no forced migration, no vendor lock-in." },
     { name: "Platform quality review", body: "Every engagement is reviewed at the platform level against a defined operating standard. Quality is not self-policed by the individual operator." },

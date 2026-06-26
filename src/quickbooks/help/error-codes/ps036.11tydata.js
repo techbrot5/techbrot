@@ -10,11 +10,11 @@ module.exports = {
   credStats: [
     { value: "4", label: "core QuickBooks platforms certified — Desktop, Enterprise, Online (Level 2), Payroll" },
     { value: "L2", label: "QuickBooks Online ProAdvisor tier (the highest)" },
-    { value: "Yearly", label: "Intuit re-certification — verifiable on the public ProAdvisor directory" },
+    { value: "Yearly", label: "Annual Intuit re-certification" },
   ],
   credentials: [
     "PS036 is a payroll-subscription-verification error &mdash; resolving the file-side cases takes fluency in the QuickBooks/Intuit payroll service-key architecture, payroll-list integrity, and company-file repair.",
-    "Every ProAdvisor holds active Payroll, Desktop, and Enterprise certifications, verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+    "Every ProAdvisor holds active Payroll, Desktop, and Enterprise certifications; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
     "We&rsquo;re explicit about the line: the subscription, billing, and agreement live in your Intuit account &mdash; that&rsquo;s Intuit&rsquo;s to confirm and fix. We handle the file, service-key, and setup side that no amount of subscription work will resolve on its own.",
   ],
   definition: [

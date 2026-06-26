@@ -59,7 +59,7 @@ module.exports = {
     { name: "Recurring engagement", forWhom: "Monthly bookkeeping, ongoing payroll, multi-state sales tax compliance, ongoing QuickBooks support.", bullets: ["Fixed monthly fee", "Same-shape monthly deliverables", "Named ProAdvisor continuity", "Year-end CPA handoff included", "No long-term contract lock-in", "Scope reviewed quarterly"], cta: "Book the discovery call" },
   ],
   reviewSpec: [
-    { value: "Certifications", label: "Certified Intuit ProAdvisor — QBO L2, Desktop, Enterprise, Payroll · verifiable on Intuit’s directory" },
+    { value: "Certifications", label: "Certified Intuit ProAdvisor — QBO L2, Desktop, Enterprise, Payroll" },
     { value: "Scope", label: "Operational QuickBooks help inside the software — not Intuit’s login/billing/software support" },
     { value: "Engagement", label: "Fixed-fee, written scope · same-day diagnostic for emergencies · 30-min discovery call free" },
     { value: "Independence", label: "Independent ProAdvisor firm — not affiliated with, endorsed by, or sponsored by Intuit Inc." },

@@ -13,11 +13,11 @@ module.exports = {
   credStats: [
     { value: "4", label: "core QuickBooks platforms certified — Desktop, Enterprise, Online (Level 2), Payroll" },
     { value: "L2", label: "QuickBooks Online ProAdvisor tier (the highest)" },
-    { value: "Yearly", label: "Intuit re-certification — verifiable on the public ProAdvisor directory" },
+    { value: "Yearly", label: "Annual Intuit re-certification" },
   ],
   credentials: [
     "Error 6150 is a Desktop/Enterprise company-file error &mdash; resolving it takes fluency in file-integrity repair, backup restores, file-type handling, and data recovery.",
-    "Every ProAdvisor holds active Desktop and Enterprise certifications, verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+    "Every ProAdvisor holds active Desktop and Enterprise certifications; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
     "Operational experience to diagnose Error 6150 past the documented surface steps &mdash; not a script-reading queue.",
   ],
   // quick-5 — distinct from FAQ (what / causes / fix-yourself / when-pro / vs 6000-series)

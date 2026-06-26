@@ -18,7 +18,7 @@ module.exports = {
   standards: [
     { name: "Free discovery call", body: "Every engagement opens with a 30-minute call &mdash; free, no obligation, no sales push." },
     { name: "Written fixed-fee scope", body: "Within 3 business days. The scope is the agreement. No hourly billing, no creep." },
-    { name: "Certified ProAdvisor delivery", body: "Delivered by a Certified Intuit ProAdvisor &mdash; verifiable on Intuit&rsquo;s public directory." },
+    { name: "Certified ProAdvisor delivery", body: "Delivered by a Certified Intuit ProAdvisor &mdash; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification." },
     { name: "Named-operator continuity", body: "A named ProAdvisor owns your account end to end. No rotation, no re-explaining." },
     { name: "Direct file access", body: "We work inside your own QuickBooks file. Your data, your audit trail, never a parallel system." },
     { name: "CPA-ready handoff", body: "Recurring engagements include a year-end CPA handoff at no extra cost." },

@@ -20,7 +20,7 @@ module.exports = {
   ],
   credentials: [
     "Every error reference here is written by Certified QuickBooks ProAdvisors who&rsquo;ve resolved these codes in real client files &mdash; not general support staff reading scripts.",
-    "Active certifications across Desktop, Enterprise, Online (Level 2), and Payroll, verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+    "Active certifications across Desktop, Enterprise, Online (Level 2), and Payroll; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
     "Independent, operational help &mdash; we earn nothing from your QuickBooks subscription, so the fix we recommend is the one that resolves your error.",
   ],
   // quick-5 — distinct from the FAQ (zero question overlap enforced by battery)

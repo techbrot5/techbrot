@@ -113,7 +113,7 @@ module.exports = {
   // firm-level). The out-of-scope row restates the Intuit boundary in the review block.
   reviewCreds: [
     { label: "Direct line", detail: "+1 (877) 751-5575 &middot; Toll-free &middot; a Certified ProAdvisor answers" },
-    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor &mdash; Online (L2), Desktop, Enterprise, Payroll &middot; verifiable on Intuit&rsquo;s directory" },
+    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor &mdash; Online (L2), Desktop, Enterprise, Payroll" },
     { label: "Out of scope", detail: "No Intuit account, billing, subscription, or product support &middot; no tax filing or IRS representation &middot; no fabricated data" },
     { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
   ],

@@ -85,7 +85,7 @@ module.exports = {
   reviewCreds: [
     { label: "Model", detail: "Remote-first &middot; no physical offices in client cities &middot; work done inside your own QuickBooks file" },
     { label: "Coverage", detail: "Every U.S. state &middot; dedicated state pages for NY, CA, TX, FL, IL" },
-    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor &middot; verifiable on Intuit&rsquo;s directory" },
+    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor" },
     { label: "Independence", detail: "Independent firm &middot; not affiliated with Intuit Inc. &middot; does not file taxes &mdash; coordinates with your CPA/EA" },
   ],
 

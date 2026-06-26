@@ -73,7 +73,7 @@ module.exports = {
     "Where our approach or scope changes, this page is updated. Budgeting and forecasting is delivered on accurate books and coordinated with your CPA or EA for anything requiring a license. Not affiliated with Intuit Inc. &mdash; QuickBooks is a registered trademark of Intuit Inc.",
   ],
   reviewSpec: [
-    { value: "QBO L2 + Desktop, Enterprise, Payroll", label: "active Intuit ProAdvisor certifications — verifiable on Intuit&rsquo;s directory" },
+    { value: "QBO L2 + Desktop, Enterprise, Payroll", label: "active Intuit ProAdvisor certifications" },
     { value: "Advisory scope", label: "budgeting, reforecasting, variance, scenarios, projections — not tax filing, audit, or assurance" },
     { value: "Fixed-fee", label: "written scope before work — built on accurate books in your own QuickBooks file" },
     { value: "Independent", label: "ProAdvisor firm — not affiliated with Intuit Inc." },

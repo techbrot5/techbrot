@@ -13,11 +13,11 @@ module.exports = {
   credStats: [
     { value: "4", label: "core QuickBooks platforms certified — Desktop, Enterprise, Online (Level 2), Payroll" },
     { value: "L2", label: "QuickBooks Online ProAdvisor tier (the highest)" },
-    { value: "Yearly", label: "Intuit re-certification — verifiable on the public ProAdvisor directory" },
+    { value: "Yearly", label: "Annual Intuit re-certification" },
   ],
   credentials: [
     "An unrecoverable error is the most serious file-integrity class &mdash; repair takes techniques beyond Tool Hub (transaction-table reconstruction, targeted rebuild, data extraction), not another surface utility run.",
-    "Every ProAdvisor holds active Desktop and Enterprise certifications with hands-on file-repair and rebuild-from-extract experience, verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+    "Every ProAdvisor holds active Desktop and Enterprise certifications with hands-on file-repair and rebuild-from-extract experience; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
     "We preserve your accounting history either way &mdash; repairing the existing file where it&rsquo;s salvageable, extracting into a clean file where it isn&rsquo;t, and reconciling against known-good balances before you go back to work.",
   ],
   definition: [

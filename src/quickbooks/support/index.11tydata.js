@@ -58,7 +58,7 @@ const reviewProse = "This hub is maintained by the Certified QuickBooks ProAdvis
 
 const reviewCreds = [
   { label: "Direct line", detail: "+1 (877) 751-5575 &middot; a Certified ProAdvisor answers (independent firm)" },
-  { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor &mdash; Online (L2), Desktop, Enterprise, Payroll &middot; verifiable on Intuit&rsquo;s directory" },
+  { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor &mdash; Online (L2), Desktop, Enterprise, Payroll" },
   { label: "Out of scope", detail: "No Intuit account, billing, subscription, login, or product support &middot; no tax filing or IRS representation" },
   { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
 ];

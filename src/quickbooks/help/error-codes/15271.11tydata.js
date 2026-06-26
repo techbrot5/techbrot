@@ -13,11 +13,11 @@ module.exports = {
   credStats: [
     { value: "4", label: "core QuickBooks platforms certified — Desktop, Enterprise, Online (Level 2), Payroll" },
     { value: "L2", label: "QuickBooks Online ProAdvisor tier (the highest)" },
-    { value: "Yearly", label: "Intuit re-certification — verifiable on the public ProAdvisor directory" },
+    { value: "Yearly", label: "Annual Intuit re-certification" },
   ],
   credentials: [
     "Error 15271 is a Desktop update/payroll error &mdash; resolving it takes fluency in QuickBooks updates, Windows permissions/UAC, and how update files are downloaded and validated.",
-    "Every ProAdvisor holds active Desktop and Enterprise certifications, verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+    "Every ProAdvisor holds active Desktop and Enterprise certifications; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
     "Operational experience to diagnose Error 15271 past the documented surface steps &mdash; not a script-reading queue.",
   ],
   // quick-5 — distinct from FAQ (what / causes / fix-yourself / when-pro / vs 15000-series)

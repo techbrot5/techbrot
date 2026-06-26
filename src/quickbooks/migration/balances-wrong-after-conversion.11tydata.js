@@ -15,11 +15,11 @@ module.exports = {
   credStats: [
     { value: "Both", label: "sides of the conversion certified — QuickBooks Desktop and Online (Level 2)" },
     { value: "L2", label: "QuickBooks Online ProAdvisor tier (the highest)" },
-    { value: "Yearly", label: "Intuit re-certification — verifiable on the public ProAdvisor directory" },
+    { value: "Yearly", label: "Annual Intuit re-certification" },
   ],
   credentials: [
     "Post-conversion repair spans both platforms &mdash; the Desktop file the numbers came from and the Online file they landed in. Every ProAdvisor is certified on both.",
-    "Active QuickBooks Desktop, Enterprise, and Online (Level 2) certifications, verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+    "Active QuickBooks Desktop, Enterprise, and Online (Level 2) certifications; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
     "Operational experience reconciling a converted file back to its Desktop baseline &mdash; not a script-reading queue.",
   ],
   // quick-5 — distinct cuts (what / why inventory moved / fixable / re-migrate / cost-time)

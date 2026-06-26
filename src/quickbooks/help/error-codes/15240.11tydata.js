@@ -12,11 +12,11 @@ module.exports = {
   credStats: [
     { value: "4", label: "core QuickBooks platforms certified — Desktop, Enterprise, Online (Level 2), Payroll" },
     { value: "L2", label: "QuickBooks Online ProAdvisor tier (the highest)" },
-    { value: "Yearly", label: "Intuit re-certification — verifiable on the public ProAdvisor directory" },
+    { value: "Yearly", label: "Annual Intuit re-certification" },
   ],
   credentials: [
     "15240 sits at the intersection of QuickBooks, Internet Explorer, Windows security, and antivirus configuration &mdash; diagnosing recurring cases takes fluency in all four.",
-    "Every ProAdvisor holds active Payroll, Desktop, and Enterprise certifications, verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+    "Every ProAdvisor holds active Payroll, Desktop, and Enterprise certifications; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
     "Hands-on update-troubleshooting experience to diagnose 15240 past the documented surface steps &mdash; not a script-reading queue.",
   ],
   definition: [

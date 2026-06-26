@@ -75,7 +75,7 @@ module.exports = {
   ],
   // "Reviewed by the ProAdvisor team." — firm-level review spec (trust-row). No founder name in visible content.
   reviewSpec: [
-    { value: "Certifications", label: "Active Intuit ProAdvisor across QBO L2, Desktop, Enterprise, Payroll &middot; verifiable on Intuit&rsquo;s ProAdvisor directory" },
+    { value: "Certifications", label: "Active Intuit ProAdvisor across QBO L2, Desktop, Enterprise, Payroll" },
     { value: "Scope", label: "POS reconciliation, prime cost/COGS, tips, sales tax, multi-location &mdash; income-tax filing coordinated with your CPA/EA" },
     { value: "Fixed-fee", label: "Written scope before work &middot; delivered in your own QuickBooks file" },
     { value: "Independent", label: "Not affiliated with Intuit Inc. &middot; QuickBooks is a registered trademark of Intuit Inc." },

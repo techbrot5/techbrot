@@ -28,7 +28,7 @@ module.exports = {
     ],
   },
   differentiators: [
-    { name: "Certified ProAdvisor depth", body: "Active Intuit certifications across all four core QuickBooks platforms — QBO Level 2, Desktop, Enterprise, Payroll — plus bookkeeping certification. Verifiable on Intuit&rsquo;s directory." },
+    { name: "Certified ProAdvisor depth", body: "Active Intuit certifications across all four core QuickBooks platforms — QBO Level 2, Desktop, Enterprise, Payroll — plus bookkeeping certification. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification." },
     { name: "Fixed-fee, written scope", body: "Every engagement scoped and priced in writing before work begins. No hourly billing. No scope creep. No surprise invoices." },
     { name: "CPA-ready, always", body: "Books delivered CPA-ready. Year-end handoff to your tax professional included in recurring engagements — no rework, no reconciliation gaps." },
     { name: "Honest scope", body: "We deliver operational accounting and coordinate with your CPA for tax. We say what we don&rsquo;t do as clearly as what we do." },

@@ -82,11 +82,11 @@ module.exports = {
   ],
 
   // EXPERT REVIEW — firm-level prose + trust row (founder-name-zero). Restates the boundary.
-  reviewProse: "This page is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm. Certification claims and ProAdvisor credentials cited here are current and publicly verifiable on Intuit&rsquo;s ProAdvisor directory; pricing reflects canonical fixed-fee ranges and is updated when those ranges change. TechBrot is an independent firm &mdash; not affiliated with, endorsed by, or sponsored by <a href=\"https://www.intuit.com/\" rel=\"noopener nofollow\">Intuit Inc.</a> It provides no Intuit account, billing, or QuickBooks product support, holds no Intuit phone line or hours, and does not file tax returns or represent clients before the IRS. What it does is the accounting work inside your own QuickBooks file.",
+  reviewProse: "This page is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm. Certification claims and ProAdvisor credentials cited here are current; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification. Pricing reflects canonical fixed-fee ranges and is updated when those ranges change. TechBrot is an independent firm &mdash; not affiliated with, endorsed by, or sponsored by <a href=\"https://www.intuit.com/\" rel=\"noopener nofollow\">Intuit Inc.</a> It provides no Intuit account, billing, or QuickBooks product support, holds no Intuit phone line or hours, and does not file tax returns or represent clients before the IRS. What it does is the accounting work inside your own QuickBooks file.",
 
   reviewCreds: [
     { label: "Independent line", detail: "+1 (877) 751-5575 &middot; Toll-free &middot; a Certified ProAdvisor at an independent firm answers" },
-    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor &mdash; Online, Desktop, Enterprise, Payroll &middot; verifiable on Intuit&rsquo;s directory" },
+    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor &mdash; Online, Desktop, Enterprise, Payroll" },
     { label: "Out of scope", detail: "No Intuit account, billing, subscription, or product support &middot; no tax filing or IRS representation &middot; no fabricated data" },
     { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
   ],

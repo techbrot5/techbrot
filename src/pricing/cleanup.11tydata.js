@@ -52,7 +52,7 @@ module.exports = {
     { name: "Free file review first", body: "The diagnostic comes before the price. We read the actual condition of your file, then quote &mdash; you never get a number on a problem we haven&rsquo;t looked at." },
     { name: "One written fixed fee", body: "The whole project is a single fixed fee against a written scope, agreed before any work begins &mdash; no hourly billing and no surprise invoice mid-untangling." },
     { name: "CPA-ready result", body: "The endpoint is books your CPA can file from &mdash; reconciled, categorized, and proven to tie out. Tax filing itself is your CPA&rsquo;s, not ours." },
-    { name: "Certified ProAdvisor delivery", body: "Forensic correction and reconstruction handled by a Certified Intuit ProAdvisor &mdash; verifiable on Intuit&rsquo;s public directory." },
+    { name: "Certified ProAdvisor delivery", body: "Forensic correction and reconstruction handled by a Certified Intuit ProAdvisor &mdash; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification." },
     { name: "Work inside your own file", body: "We correct your existing QuickBooks file &mdash; your data, your audit trail &mdash; never a parallel rebuild you can&rsquo;t reconcile against." },
     { name: "A clean handoff to monthly", body: "Once the books are current, the project can transition straight into recurring monthly bookkeeping so they never drift again. No obligation to continue." },
   ],

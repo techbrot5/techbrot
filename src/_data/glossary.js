@@ -635,7 +635,7 @@ module.exports = [
       heading: "What it tells you about a firm &mdash; and what it doesn&rsquo;t.",
       paras: [
         "Certification confirms product knowledge, but it doesn&rsquo;t guarantee firm-level depth, real engagement experience, or business judgment &mdash; those come from a track record, not an exam. A strong ProAdvisor firm pairs the certification with operational experience, honest scope boundaries (bookkeeping and operational accounting, not tax filing), and an aligned engagement model.",
-        "TechBrot is an independent firm of Certified QuickBooks ProAdvisors &mdash; certified across QuickBooks Online, Desktop, Enterprise, and Payroll, verifiable on Intuit&rsquo;s public directory, and not affiliated with Intuit. See the <a href=\"/quickbooks/proadvisor-team/\">ProAdvisor team</a> and <a href=\"/about/\">about</a>.",
+        "TechBrot is an independent firm of Certified QuickBooks ProAdvisors &mdash; certified across QuickBooks Online, Desktop, Enterprise, and Payroll, and not affiliated with Intuit. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification. See the <a href=\"/quickbooks/proadvisor-team/\">ProAdvisor team</a> and <a href=\"/about/\">about</a>.",
       ],
     },
     how: null,

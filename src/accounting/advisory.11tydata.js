@@ -37,7 +37,7 @@ module.exports = {
     { name: "We coordinate with", body: "Your CPA or EA on tax-aware planning and filing. Your attorney on entity and transaction matters. Your banker and lenders on financing. We bring the numbers and the analysis; licensed professionals make the calls that require a license." },
   ],
   reviewSpec: [
-    { value: "Certifications", label: "Active Intuit ProAdvisor — QBO L2, Desktop, Enterprise, Payroll · verifiable on Intuit’s directory" },
+    { value: "Certifications", label: "Active Intuit ProAdvisor — QBO L2, Desktop, Enterprise, Payroll" },
     { value: "Scope", label: "Cash flow, KPIs, budgeting, performance, strategy, fractional CFO · income-tax filing coordinated with your CPA/EA" },
     { value: "Engagement", label: "Fixed-fee, written scope before work · built on accurate books in your own QuickBooks file" },
     { value: "Independence", label: "Not affiliated with Intuit Inc. · QuickBooks is a registered trademark of Intuit Inc." },

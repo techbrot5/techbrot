@@ -13,11 +13,11 @@ module.exports = {
   credStats: [
     { value: "4", label: "core QuickBooks platforms certified — Desktop, Enterprise, Online (Level 2), Payroll" },
     { value: "L2", label: "QuickBooks Online ProAdvisor tier (the highest)" },
-    { value: "Yearly", label: "Intuit re-certification — verifiable on the public ProAdvisor directory" },
+    { value: "Yearly", label: "Annual Intuit re-certification" },
   ],
   credentials: [
     "6000-series spans simple access issues to genuine file damage &mdash; telling which bucket a code is in, and whether the file can be repaired in place, is the experience that matters here.",
-    "Every ProAdvisor holds active Desktop and Enterprise certifications with hands-on experience across the full 6000-series, verifiable on Intuit&rsquo;s public ProAdvisor directory.",
+    "Every ProAdvisor holds active Desktop and Enterprise certifications with hands-on experience across the full 6000-series; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
     "We repair file-damage variants (6000-301, 6147, 6000-832) against a written scope before continued use worsens the corruption &mdash; not a script-reading queue.",
   ],
   definition: [

@@ -60,7 +60,7 @@ module.exports = {
     { dim: "Specialty trades", turns: "Per-ticket margin &amp; service agreements", page: "Specialty trades", href: "/accounting/industries/specialty-trades/" },
   ],
   reviewSpec: [
-    { value: "Certifications", label: "Active Intuit ProAdvisor &mdash; QBO L2, Desktop, Enterprise, Payroll · verifiable on Intuit&rsquo;s directory" },
+    { value: "Certifications", label: "Active Intuit ProAdvisor &mdash; QBO L2, Desktop, Enterprise, Payroll" },
     { value: "Scope", label: "Industry-specific bookkeeping, QuickBooks setup, payroll, sales tax, advisory · income-tax filing coordinated with your CPA/EA" },
     { value: "Engagement", label: "Fixed-fee, written scope before work · delivered in your own QuickBooks file" },
     { value: "Independence", label: "Not affiliated with Intuit Inc. · QuickBooks is a registered trademark of Intuit Inc." },

@@ -32,12 +32,12 @@ module.exports = {
       // live: "Why should I trust TechBrot with my books?" — duplicated
       // FAQ q1 verbatim; reworded here, answer verbatim
       q: "What makes TechBrot safe to trust with my books?",
-      a: "<strong>Four verifiable pillars:</strong> <strong>credentials</strong> (Certified Intuit ProAdvisors, verifiable on Intuit&rsquo;s directory), <strong>accountability</strong> (fixed-fee written scope, named ProAdvisor owns the account), <strong>security</strong> (bank-level encryption, access inside your own QuickBooks file, no data export), <strong>independence</strong> (not affiliated with Intuit Inc. &mdash; recommendations follow your needs).",
+      a: "<strong>Four verifiable pillars:</strong> <strong>credentials</strong> (Certified Intuit ProAdvisors &mdash; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification), <strong>accountability</strong> (fixed-fee written scope, named ProAdvisor owns the account), <strong>security</strong> (bank-level encryption, access inside your own QuickBooks file, no data export), <strong>independence</strong> (not affiliated with Intuit Inc. &mdash; recommendations follow your needs).",
     },
     {
       // live: "Are TechBrot's credentials verifiable?" — duplicated FAQ q2
       q: "Can I verify TechBrot&rsquo;s credentials myself?",
-      a: "Yes. ProAdvisor certifications are issued by Intuit and listed on Intuit&rsquo;s public directory at proadvisor.intuit.com. Searchable by name or firm. Certifications expire annually &mdash; a current listing means current credentials. TechBrot Inc. is a registered Delaware C-Corporation, founded 2023.",
+      a: "Yes. ProAdvisor certifications are issued by Intuit, and Intuit&rsquo;s public ProAdvisor directory at proadvisor.intuit.com lists active ProAdvisors for verification. Certifications expire annually, so a current credential means current competence. TechBrot Inc. is a registered Delaware C-Corporation, founded 2023 &mdash; ask on the discovery call and we&rsquo;ll walk you through our certifications.",
     },
     {
       q: "How is my financial data protected?",
@@ -56,11 +56,11 @@ module.exports = {
   faq: [
     {
       q: "Why should I trust TechBrot with my books?",
-      a: "Four verifiable pillars: <strong>credentials</strong> (Certified Intuit ProAdvisors, verifiable on Intuit&rsquo;s directory), <strong>accountability</strong> (fixed-fee written scope, named ProAdvisor owns the account), <strong>security</strong> (bank-level encryption, access inside your own QuickBooks file), <strong>independence</strong> (not affiliated with Intuit Inc.). Every claim is checkable.",
+      a: "Four verifiable pillars: <strong>credentials</strong> (Certified Intuit ProAdvisors &mdash; Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification), <strong>accountability</strong> (fixed-fee written scope, named ProAdvisor owns the account), <strong>security</strong> (bank-level encryption, access inside your own QuickBooks file), <strong>independence</strong> (not affiliated with Intuit Inc.). Every claim is checkable.",
     },
     {
       q: "Are TechBrot&rsquo;s credentials verifiable?",
-      a: "Yes. ProAdvisor certifications are issued by Intuit and listed on Intuit&rsquo;s public directory at proadvisor.intuit.com &mdash; searchable by firm name. Certifications expire annually; a current listing means current credentials. TechBrot Inc. is a registered Delaware C-Corporation, founded 2023.",
+      a: "Yes. ProAdvisor certifications are issued by Intuit, and Intuit&rsquo;s public ProAdvisor directory at proadvisor.intuit.com lists active ProAdvisors for verification. Certifications expire annually; a current credential means current competence. TechBrot Inc. is a registered Delaware C-Corporation, founded 2023 &mdash; we&rsquo;ll walk you through ours on a call.",
     },
     {
       q: "How does TechBrot protect my financial data?",
