@@ -530,7 +530,11 @@ footerNav:
     {%- if sec.relatedLede %}<p class="lede" style="margin:0 0 32px;max-width:66ch;">{{ sec.relatedLede | safe }}</p>{%- endif %}
     <div class="r-2">
       {%- for r in related %}
-      <article class="dc-card"><h3>{{ r.name | safe }}</h3><div class="prose" style="font-size:15px;">{{ r.body | safe }}</div><a class="ptier__link" href="{{ r.href | default(sec.relatedCtaHref, true) | default('/find-an-accountant/', true) }}">{{ r.cta | safe }}</a></article>
+      {#- resolve a neighbor card to its REAL pillar when that state is built (builtStates map),
+          else explicit r.href, else sec.relatedCtaHref, else the /find-an-accountant/ hub fallback. -#}
+      {%- set rslug = r.name | lower | replace(" ", "-") %}
+      {%- set rhref = r.href or builtStates[rslug] or sec.relatedCtaHref or "/find-an-accountant/" %}
+      <article class="dc-card"><h3>{{ r.name | safe }}</h3><div class="prose" style="font-size:15px;">{{ r.body | safe }}</div><a class="ptier__link" href="{{ rhref }}">{{ r.cta | safe }}</a></article>
       {%- endfor %}
     </div>
     {%- if relatedNote %}<p class="prose" style="margin-top:24px;font-size:14px;color:var(--color-ink-mute);">{{ relatedNote | safe }}</p>{%- endif %}

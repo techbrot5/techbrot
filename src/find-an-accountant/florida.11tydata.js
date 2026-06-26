@@ -279,12 +279,13 @@ module.exports = {
   ],
 
   // RELATED STATES — 4 neighbors. (H2: Multi-state Florida businesses. + 4 H3s: Georgia, Alabama, New York, Texas)
-  // Only New York has a built state page; the rest route to /find-an-accountant/ (in baseline).
+  // href omitted -> t-state-pillar resolves each neighbor via builtStates (real pillar when
+  // built, /find-an-accountant/ hub fallback otherwise). GA/TX/NY built; AL falls back.
   related: [
-    { name: "Georgia", body: "North Florida businesses with GA operations &mdash; Georgia income tax withholding (Florida has none), multi-state sales tax, and nexus along the I-95 and I-75 corridors.", cta: "ProAdvisors in Georgia &rarr;", href: "/find-an-accountant/" },
-    { name: "Alabama", body: "Panhandle businesses with AL operations &mdash; Alabama income tax and local sales-tax rates, cross-border payroll, and multi-state nexus considerations.", cta: "ProAdvisors in Alabama &rarr;", href: "/find-an-accountant/" },
-    { name: "New York", body: "Snowbird and dual-resident owners splitting time between Florida and New York &mdash; residency documentation, multi-state payroll, and the contrast between no-income-tax FL and high-tax NY.", cta: "ProAdvisors in New York &rarr;", href: "/find-an-accountant/new-york/" },
-    { name: "Texas", body: "Owners operating in both no-income-tax states &mdash; Florida and Texas &mdash; coordinating multi-state sales tax, the Texas franchise tax, and entity structure across the two.", cta: "ProAdvisors in Texas &rarr;", href: "/find-an-accountant/" },
+    { name: "Georgia", body: "North Florida businesses with GA operations &mdash; Georgia income tax withholding (Florida has none), multi-state sales tax, and nexus along the I-95 and I-75 corridors.", cta: "ProAdvisors in Georgia &rarr;" },
+    { name: "Alabama", body: "Panhandle businesses with AL operations &mdash; Alabama income tax and local sales-tax rates, cross-border payroll, and multi-state nexus considerations.", cta: "ProAdvisors in Alabama &rarr;" },
+    { name: "New York", body: "Snowbird and dual-resident owners splitting time between Florida and New York &mdash; residency documentation, multi-state payroll, and the contrast between no-income-tax FL and high-tax NY.", cta: "ProAdvisors in New York &rarr;" },
+    { name: "Texas", body: "Owners operating in both no-income-tax states &mdash; Florida and Texas &mdash; coordinating multi-state sales tax, the Texas franchise tax, and entity structure across the two.", cta: "ProAdvisors in Texas &rarr;" },
   ],
   relatedNote: "All 50 state pages on the publication roadmap. Multi-state engagements route through TechBrot direct service until neighboring state pages are live.",
 

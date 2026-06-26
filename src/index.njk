@@ -238,7 +238,8 @@ ctaBand:
     <p class="lede" style="margin:0 0 26px;max-width:64ch;">Connect with a vetted Certified ProAdvisor in your state — or the closest qualified expert where we&rsquo;re not yet in-market.</p>
     <nav aria-label="States served" class="states">
       {%- for state in states %}
-      <a class="state" href="/find-an-accountant/{{ state.slug }}/">{{ state.name }} <span class="mono">{{ state.name | upper | truncate(3, true, "") }}</span></a>
+      {#- link the real pillar when built (builtStates), else the hub — no 301-hop to an unbuilt state page -#}
+      <a class="state" href="{{ builtStates[state.slug] or '/find-an-accountant/' }}">{{ state.name }} <span class="mono">{{ state.name | upper | truncate(3, true, "") }}</span></a>
       {%- endfor %}
       <a class="state state--ask" href="/find-an-accountant/">All states <span class="mono">&rarr;</span></a>
     </nav>
