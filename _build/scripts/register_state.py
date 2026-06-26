@@ -90,6 +90,23 @@ STATES = {
             "_added": "T5 location expansion — NJ advisory route.",
         },
     },
+    "maryland": {
+        "name": "Maryland",
+        "intent": {
+            "headline": "Tell us about your Maryland books.<br>We&rsquo;ll handle the rest.",
+            "lede": "A Certified QuickBooks ProAdvisor reviews where your Maryland books stand &mdash; the county &ldquo;piggyback&rdquo; local income tax by county of residence on Form MW507, DC/PA/VA/WV reciprocity for cross-border staff, the new 3% sales tax on data and IT services, and the PTE election &mdash; recommends the right engagement, and delivers a written fixed-fee scope within 3 business days. We don&rsquo;t file Maryland returns or the local income tax; we keep clean, CPA-ready books and coordinate with your CPA. If TechBrot isn&rsquo;t the right fit, we&rsquo;ll say so.",
+            "service": "not-sure",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — MD core-state pillar (areaServed-only, no street address). State-slug intent.",
+        },
+        "advisory": {
+            "headline": "Advisory for Maryland businesses<br>ready to move beyond the books.",
+            "lede": "Fractional CFO and advisory for Maryland businesses &mdash; forecasting, board reporting, KPI design, PTE and multi-state nexus planning &mdash; coordinated with your Maryland CPA. A Certified ProAdvisor reviews your situation and tells you honestly whether advisory is the right next step.",
+            "service": "fractional-cfo",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — MD advisory route.",
+        },
+    },
 }
 
 
