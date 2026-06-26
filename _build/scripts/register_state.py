@@ -124,6 +124,23 @@ STATES = {
             "_added": "T5 location expansion — VA advisory route.",
         },
     },
+    "ohio": {
+        "name": "Ohio",
+        "intent": {
+            "headline": "Tell us about your Ohio books.<br>We&rsquo;ll handle the rest.",
+            "lede": "A Certified QuickBooks ProAdvisor reviews where your Ohio books stand &mdash; the municipal income tax withheld by work location (RITA/CCA and the 20-day rule), school-district withholding, the Commercial Activity Tax, the county sales-tax rate, and the IT 4738 PTE election &mdash; recommends the right engagement, and delivers a written fixed-fee scope within 3 business days. We don&rsquo;t file Ohio returns, the CAT, or the municipal tax; we keep clean, CPA-ready books and coordinate with your CPA and RITA/CCA. If TechBrot isn&rsquo;t the right fit, we&rsquo;ll say so.",
+            "service": "not-sure",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — OH core-state pillar (areaServed-only, no street address). State-slug intent.",
+        },
+        "advisory": {
+            "headline": "Advisory for Ohio businesses<br>ready to move beyond the books.",
+            "lede": "Fractional CFO and advisory for Ohio businesses &mdash; forecasting, board reporting, KPI design, CAT and PTE planning, multi-state nexus &mdash; coordinated with your Ohio CPA. A Certified ProAdvisor reviews your situation and tells you honestly whether advisory is the right next step.",
+            "service": "fractional-cfo",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — OH advisory route.",
+        },
+    },
 }
 
 
