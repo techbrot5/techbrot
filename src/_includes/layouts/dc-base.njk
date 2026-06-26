@@ -86,9 +86,14 @@
     </nav>
     {%- endif %}
     <div class="head-right">
+      {%- if minimalChrome %}
+      {#- minimal endpoint header: phone ONLY, always visible (no demo-collapse hide on mobile), no CTA, no menu — single-minded conversion chrome -#}
+      <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" class="mono head-phone" style="display:inline-flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ site.phone.display }}</a>
+      {%- else %}
       <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" class="demo-collapse mono head-phone"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E4A50" stroke-width="1.75"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ site.phone.display }}</a>
       <a href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" class="btn btn-cta head-cta">Speak to an advisor</a>
-      {%- if not minimalChrome %}<button class="barbtn" type="button" data-drawer-open aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg></button>{%- endif %}
+      <button class="barbtn" type="button" data-drawer-open aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg></button>
+      {%- endif %}
     </div>
     {%- if not minimalChrome %}
     <div class="mega-panel" id="m-acct" data-menu-panel="accounting" role="region" aria-label="Accounting">
