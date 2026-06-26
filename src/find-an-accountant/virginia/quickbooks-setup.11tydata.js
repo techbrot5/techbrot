@@ -1,0 +1,109 @@
+/* /find-an-accountant/virginia/quickbooks-setup/ — VA SERVICE child (QB spoke), t-money.
+ * Mirrors the proven MD/PA/NJ/IN/NY/DE exemplars (quickbooks-setup.*) with Virginia content per VA-FACTS.md.
+ * JSON front-matter lives in the .njk; this file supplies the content arrays + an eleventyComputed
+ * pageGraph (WebPage, BreadcrumbList, Service, FAQPage). FAQPage mainEntity is generated from the
+ * same `faq` array the visible faq__list renders — single source of truth.
+ *
+ * VA LOCALIZATION (DIFFERENTIATION): Maryland's county "piggyback" LOCAL income tax + MW507 → Virginia has
+ * NO local income tax. Its distinct hook is the LOCAL BUSINESS taxes — the BPOL gross-receipts business-license
+ * tax levied by most counties + independent cities (a separate license per jurisdiction, so gross receipts are
+ * tracked by locality), plus the local BTPP and Machinery & Tools taxes — the VARIABLE regional sales tax
+ * (5.3% general / 6.0% Northern Virginia, Hampton Roads, Richmond / 7.0% Historic Triangle; reduced 1% on
+ * groceries; data-center equipment exemption); and MD/PA/WV/KY/DC RECIPROCITY via Form VA-4 for cross-border
+ * staff. Graduated state income tax (2% / 3% / 5% / 5.75%, no local add-on), corporate 6%, and the elective
+ * 5.75% PTET (confirm 2026) as advisory context only. provider = #organization; areaServed = State Virginia;
+ * reviewedBy #david-westgate on the WebPage. NO street address, NO LocalBusiness (VA is areaServed-only; the
+ * DE HQ is the only real-address state). HONESTY (R5): firm-level review byline only (no founder name);
+ * independent firm — not affiliated with Intuit Inc.; does NOT file Virginia/federal/corporate/income/
+ * payroll-withholding/sales-tax/BPOL-or-local-business-tax/PTET returns; not a registered agent; specific
+ * locality BPOL rates and sales-tax regions framed qualitatively, never quoted as fixed figures; the 7.75%
+ * over-$1M bracket is a 2026 proposal, not law; the PTET is flagged to confirm 2026 status; coordinates with
+ * the client's CPA. */
+function stripTags(html){return html.replace(/<[^>]+>/g,"").replace(/&rsquo;/g,"’").replace(/&lsquo;/g,"‘").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&mdash;/g,"—").replace(/&ndash;/g,"–").replace(/&rarr;/g,"→").replace(/&amp;/g,"&").replace(/&nbsp;/g," ").replace(/&middot;/g,"·").replace(/&times;/g,"×").replace(/\s+/g," ").trim();}
+
+module.exports = {
+  // SHORT VERSION — real-H2 summary right after the in-brief. (H2: The short version.)
+  summary: [
+    "A <strong>QuickBooks setup</strong> is what keeps a Virginia business&rsquo;s books accurate from the start. We select the right edition (<a href=\"/quickbooks/online/\">QuickBooks Online</a> or Desktop), build an industry-specific <a href=\"/find-an-accountant/virginia/bookkeeping-services/\">chart of accounts</a>, configure <a href=\"/accounting/sales-tax-compliance/\">Virginia sales-tax tracking</a> from day one &mdash; <strong>variable by region: 5.3% in most of the state, 6.0% in Northern Virginia, Hampton Roads, and Richmond, and 7.0% in the Historic Triangle</strong>, applied by where the sale is sourced &mdash; set up <strong>gross-receipts tracking by locality</strong> for the <strong>BPOL business-license tax</strong> (a separate license per jurisdiction, plus BTPP and Machinery &amp; Tools asset detail), apply <strong>MD/PA/WV/KY/DC reciprocity</strong> (Form VA-4) in <a href=\"/quickbooks/payroll/\">payroll</a> per employee so cross-border staff are withheld for their home state, connect your bank and credit-card feeds, enter opening balances, set up products/services and users/permissions, and establish the reconciliation and reporting routines. Fixed-fee from <strong>$750</strong> against a written scope.",
+    "Done right at the start, you avoid the <a href=\"/find-an-accountant/virginia/quickbooks-cleanup/\">cleanup</a> most businesses need a year in. <strong>TechBrot</strong> is not a CPA firm &mdash; we set up and run the books, configure the Virginia specifics, and coordinate with your CPA, who files your Virginia, sales-tax, BPOL, and federal returns. Independent Certified QuickBooks ProAdvisor firm &mdash; not affiliated with Intuit Inc.; does not file Virginia taxes.",
+  ],
+
+  // FIVE QUESTIONS — entity-dense AI-summary block. (H2: QuickBooks Setup in Virginia, in five questions.)
+  aiSummary: [
+    { q: "What is a QuickBooks setup?", a: "Configuring your accounting file correctly from the start &mdash; the right edition, an industry-specific chart of accounts, connected bank and card feeds, opening balances, products/services, users and permissions, and reporting routines. For a Virginia business, the parts that matter most are <strong>gross-receipts tracking by locality for the BPOL business-license tax</strong>, the <strong>variable regional sales tax (5.3% / 6.0% / 7.0%) applied by location</strong>, and <strong>MD/PA/WV/KY/DC reciprocity (Form VA-4)</strong> for cross-border staff, configured from day one." },
+    { q: "QuickBooks Online or Desktop?", a: "For most Virginia small businesses, <strong>QuickBooks Online</strong> is the fit: cloud-based, collaborative, and the platform Intuit is investing in. QuickBooks Desktop or Enterprise (now subscription, often hosted) still suits some inventory-heavy Virginia manufacturing, Port-of-Virginia logistics, and data-center operations. We recommend honestly, not by default." },
+    { q: "What does it cost?", a: "From <strong>$750</strong> as a one-time fixed fee, scoped up by entity complexity, number of accounts, how many localities you owe BPOL in and how many reciprocity states you withhold for, your sales-tax footprint across regions, and migration needs. Quoted firmly against a written scope before any work starts. No hourly billing." },
+    { q: "Do you set up BPOL tracking and Virginia sales tax?", a: "Yes &mdash; gross receipts configured to track <strong>by locality</strong> so each <strong>BPOL business-license</strong> filing is clean (a separate license per jurisdiction), with the BTPP and Machinery &amp; Tools asset detail kept locality-ready. Sales tax is configured for Virginia&rsquo;s <strong>variable regional rates &mdash; 5.3% / 6.0% / 7.0%</strong> applied by location, plus the reduced 1% grocery rate and the data-center equipment exemption where they apply. Regional rates and locality BPOL rules can change, so we confirm current figures against the Virginia Department of Taxation and your locality rather than guess." },
+    { q: "What happens after setup?", a: "Most Virginia businesses roll into <a href=\"/find-an-accountant/virginia/bookkeeping-services/\">monthly bookkeeping</a> so the file stays as clean as the day it was built &mdash; the surest way to avoid a future cleanup, and the way regional-rate and BPOL changes get applied as they happen. You can also run the configured file yourself." },
+  ],
+
+  // HOW WE HANDLE — the five setup steps. (H2: How we handle quickbooks setup… + 5 H3s)
+  handle: [
+    { num: "01", title: "Right QuickBooks edition selected", body: "We assess Online vs Desktop against how you actually operate &mdash; transaction volume, inventory, industry add-ons, how many people touch the file, multi-site or multi-location structure, and whether you&rsquo;re migrating from another system &mdash; then create the file on the edition that fits, not the one we default to." },
+    { num: "02", title: "Industry-specific chart of accounts", body: "A chart of accounts built for your Virginia industry rather than the generic QuickBooks template &mdash; income and COGS accounts that match how you earn, expense accounts your CPA can map to the return, and a structure that keeps job costing, indirect-rate tracking, or per-location reporting clean for federal-contracting, IT/SaaS and data-center, professional-services, and construction operators. Products/services and customer/vendor lists are set up alongside." },
+    { num: "03", title: "Gross-receipts tracking by locality for BPOL", body: "The Virginia local detail most setups get wrong, built into QuickBooks &mdash; <strong>gross receipts tracked by jurisdiction</strong> so the <strong>BPOL business-license tax</strong> in each county or independent city you operate in can be filed cleanly (a business in several jurisdictions generally needs a <strong>separate BPOL for each</strong>). We also keep the <strong>Business Tangible Personal Property (BTPP)</strong> and <strong>Machinery &amp; Tools</strong> asset detail locality-ready. Note: Virginia has <strong>no local income tax</strong>, so the local burden sits on the business side, not payroll." },
+    { num: "04", title: "Sales tax (5.3% / 6.0% / 7.0%) &amp; feeds", body: "Sales tax configured for Virginia&rsquo;s <strong>variable regional rates</strong> &mdash; <strong>5.3%</strong> in most of the state, <strong>6.0%</strong> in Northern Virginia, Hampton Roads, and the Richmond region, and <strong>7.0%</strong> in the Historic Triangle (Williamsburg, James City County, York County) &mdash; applied by where the sale is sourced, plus the reduced <strong>1%</strong> rate on groceries and essential personal hygiene, and the <strong>data-center equipment exemption</strong> where it applies. Taxable goods and exempt items (and resale/exemption certificates) are mapped so the return to the <a href=\"https://www.tax.virginia.gov/\" rel=\"noopener nofollow\">Virginia Department of Taxation</a> reconciles to the books. All bank and credit-card accounts are linked and importing cleanly, opening balances entered and reconciled to a known statement date, and bank rules set so categorization starts right." },
+    { num: "05", title: "Reconciliation &amp; reporting routines", body: "The monthly reconciliation and reporting cadence established, with users and permissions assigned so the right people see the right data, so the file stays accurate after handoff &mdash; and you roll straight into <a href=\"/find-an-accountant/virginia/bookkeeping-services/\">monthly bookkeeping</a> if you want it kept that way, including applying regional-rate and BPOL changes as they happen." },
+  ],
+
+  // SCOPE SPLIT — honest books/CPA boundary. (H2: What we do — and what your CPA does. + H3 TechBrot + H3 Your CPA)
+  scope: [
+    { title: "TechBrot", items: [
+      "Right QuickBooks edition selected and the file created",
+      "Industry-specific chart of accounts, products/services, customers/vendors",
+      "Gross-receipts tracking by locality for the BPOL business-license tax &mdash; a separate license per jurisdiction, with BTPP and Machinery &amp; Tools asset detail kept locality-ready",
+      "Variable regional sales tax (5.3% / 6.0% / 7.0%) sourced and mapped by location, plus the 1% grocery rate and data-center exemption where they apply",
+      "MD/PA/WV/KY/DC reciprocity (Form VA-4) set per employee for cross-border staff",
+      "Bank &amp; card feeds connected, opening balances reconciled; reconciliation &amp; reporting routines established",
+    ] },
+    { title: "Your CPA", items: [
+      "Files Virginia State &amp; federal income-tax returns, the 6% corporate income tax, and the state income tax (Virginia has no local income tax)",
+      "Files the payroll-withholding filings, the sales-tax return, and the BPOL and local business-tax (BTPP / M&amp;T) returns with each locality",
+      "Tax planning &amp; advice, including the elective PTET for growing pass-throughs (confirm 2026 status)",
+      "We coordinate directly &mdash; <a href=\"/vs/bookkeeper-vs-accountant/\">bookkeeper vs accountant &rarr;</a>",
+    ] },
+  ],
+
+  // ADVISORY — standing brand line is the H2; body carried as section prose.
+  advisoryBody: [
+    "Setup software can generate a chart of accounts; it can&rsquo;t tell you that expanding into a second county just added a BPOL business-license filing and that your gross receipts now have to be tracked by jurisdiction, which regional rate (5.3%, 6.0%, or 7.0%) applies to a sale based on where it&rsquo;s sourced, whether a Maryland-, Pennsylvania-, West Virginia-, Kentucky-, or DC-resident employee needs reciprocity (Form VA-4) so you stop withholding Virginia tax, whether your data-center equipment qualifies for the sales/use-tax exemption, or whether a growing pass-through should be kept PTET-ready for its CPA. That judgment &mdash; building the file for how your Virginia business really runs &mdash; is what a Certified ProAdvisor setup adds on top of the automation.",
+  ],
+
+  // FAQ — 7 Q/A (VA-FACTS cap 5–7), answer-first, Virginia-specific. visible faq__list = FAQPage (same array).
+  // Two call-intent answers weave the phone (877) 751-5575 in (cost + start questions).
+  faq: [
+    { q: "Why does QuickBooks setup matter for a Virginia business?", a: "A clean QuickBooks setup is the difference between books that stay accurate and books that need a costly cleanup in a year. For a Virginia business specifically, setup means building gross-receipts tracking by locality so each BPOL business-license filing is clean (a separate license per jurisdiction), configuring the variable regional sales tax &mdash; 5.3% in most of the state, 6.0% in Northern Virginia, Hampton Roads, and Richmond, and 7.0% in the Historic Triangle &mdash; applying MD/PA/WV/KY/DC reciprocity (Form VA-4) so cross-border staff are withheld for the right state, building a chart of accounts that fits your industry, and structuring the file so your CPA can file cleanly. Get it right at the start and everything downstream is faster." },
+    { q: "What&rsquo;s included in a QuickBooks setup?", a: "Selecting the right QuickBooks edition (Online vs Desktop) for your business, building an industry-specific chart of accounts, setting up gross-receipts tracking by locality for the BPOL business-license tax with the BTPP and Machinery &amp; Tools asset detail kept locality-ready, configuring the variable regional sales tax (5.3% / 6.0% / 7.0%) by location, applying MD/PA/WV/KY/DC reciprocity (Form VA-4) per employee, connecting bank and credit-card feeds, setting up your products/services and customers/vendors, and establishing the reconciliation and reporting routines. If you&rsquo;re moving from another system, data migration is scoped alongside." },
+    { q: "How much does QuickBooks setup cost in Virginia?", a: "Setup starts at <strong>$750</strong> as a one-time fixed fee, scoped up by entity complexity, number of accounts, how many localities you owe BPOL in and how many reciprocity states you withhold for, your sales-tax footprint across regions, and whether you&rsquo;re migrating from another system. Simple single-locality setups land near the low end; multi-jurisdiction BPOL tracking, reciprocity payroll, or a multi-region sales-tax footprint sits higher. We quote a firm number against a written scope before starting &mdash; book a free call or dial <a href=\"tel:+18777515575\">(877) 751-5575</a> and a Certified ProAdvisor will scope it with you." },
+    { q: "Should I use QuickBooks Online or Desktop?", a: "For most Virginia small businesses, QuickBooks Online: cloud-based, collaborative, and the platform Intuit is investing in. QuickBooks Desktop or Enterprise (now subscription, often hosted) still suits some inventory-heavy manufacturing, Port-of-Virginia logistics, or data-center operations. As Certified ProAdvisors we&rsquo;ll recommend the right fit for your business honestly, rather than defaulting to one." },
+    { q: "Can you set up gross-receipts tracking by locality for BPOL?", a: "Yes &mdash; it&rsquo;s the Virginia local detail most setups get wrong. Virginia has no state business license, but <strong>most counties and independent cities levy a BPOL (Business, Professional &amp; Occupational License) tax on a business&rsquo;s gross receipts</strong>, at a rate set by each locality and business classification &mdash; and a business operating in several jurisdictions generally needs a <strong>separate BPOL for each</strong>. We configure QuickBooks to <strong>track gross receipts by locality</strong> so each filing is clean, and keep the BTPP and Machinery &amp; Tools asset detail locality-ready. Note that Virginia has <strong>no local income tax</strong>, so this local burden is on the business side, not payroll. Locality rates and rules change, so we confirm current figures against your locality&rsquo;s commissioner of the revenue rather than guess." },
+    { q: "Can you set up Virginia&rsquo;s variable regional sales tax in QuickBooks?", a: "Yes. Virginia&rsquo;s sales tax is <strong>variable by region</strong> &mdash; <strong>5.3%</strong> in most of the state (4.3% state + 1.0% local), <strong>6.0%</strong> in Northern Virginia, Hampton Roads, and the Richmond region, and <strong>7.0%</strong> in the Historic Triangle (Williamsburg, James City County, and York County) &mdash; with a reduced <strong>1%</strong> rate on groceries and essential personal hygiene products. Because the rate depends on where the sale is sourced, we configure QuickBooks to charge the correct regional rate by location, map taxable goods and exempt items with resale certificates, and set up the <strong>data-center equipment exemption</strong> where it applies &mdash; so your return reconciles to the books from the first period. Regional rates can change, so we confirm them against the Virginia Department of Taxation&rsquo;s rate lookup." },
+    { q: "What happens after setup, and how do I start?", a: "Most Virginia businesses roll straight into monthly bookkeeping so the file stays as clean as the day it was built &mdash; that&rsquo;s also how regional-rate and BPOL changes get applied as they happen. You can also take the configured file and run it yourself. To start, book a free discovery call and we&rsquo;ll send a written fixed-fee scope within 3 business days, or call a Certified ProAdvisor at <a href=\"tel:+18777515575\">(877) 751-5575</a> &mdash; not a call center &mdash; to scope it now." },
+  ],
+
+  // EXPERT REVIEW — firm-level trust row (no founder name).
+  reviewCreds: [
+    { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor &mdash; Online (L2), Desktop, Enterprise, Payroll" },
+    { label: "Scope", detail: "QuickBooks setup, chart of accounts, gross-receipts tracking by locality for BPOL, variable regional sales-tax items (5.3% / 6.0% / 7.0%), MD/PA/WV/KY/DC reciprocity (VA-4), feeds &middot; income-tax filing coordinated with your CPA/EA" },
+    { label: "Engagement", detail: "Fixed-fee, written scope before work &middot; delivered in your own QuickBooks file" },
+    { label: "Independence", detail: "Independent Certified QuickBooks ProAdvisor firm &middot; Not affiliated with Intuit Inc." },
+  ],
+
+  eleventyComputed: {
+    pageGraph(data){
+      const url="https://techbrot.com/find-an-accountant/virginia/quickbooks-setup/";
+      return {"@context":"https://schema.org","@graph":[
+        {"@type":"WebPage","@id":url+"#webpage","url":url,"name":"Virginia QuickBooks setup","description":"QuickBooks setup for Virginia businesses — right edition, clean chart of accounts, gross-receipts tracking by locality for the BPOL business-license tax, the variable regional sales tax (5.3% / 6.0% / 7.0%), and MD/PA/WV/KY/DC reciprocity (VA-4) configured from day one. Fixed-fee, by a Certified ProAdvisor.","isPartOf":{"@id":"https://techbrot.com/#website"},"about":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"breadcrumb":{"@id":url+"#breadcrumb"},"inLanguage":"en-US","primaryImageOfPage":{"@type":"ImageObject","url":"https://techbrot.com/assets/img/og/virginia-quickbooks-setup-og.png"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#va-svc-qbsetup-summary","#va-svc-qbsetup-ai-summary-list"]},"reviewedBy":{"@id":"https://techbrot.com/#david-westgate"},"lastReviewed":"2026-06-26"},
+        {"@type":"BreadcrumbList","@id":url+"#breadcrumb","itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://techbrot.com/"},
+          {"@type":"ListItem","position":2,"name":"Find an Accountant","item":"https://techbrot.com/find-an-accountant/"},
+          {"@type":"ListItem","position":3,"name":"Virginia","item":"https://techbrot.com/find-an-accountant/virginia/"},
+          {"@type":"ListItem","position":4,"name":"QuickBooks Setup"}]},
+        {"@type":"Service","@id":url+"#service","name":"Virginia QuickBooks Setup Service","serviceType":"QuickBooks setup service","description":"QuickBooks setup for Virginia businesses — right edition, industry chart of accounts, gross-receipts tracking by locality for the BPOL business-license tax (a separate license per jurisdiction), the variable regional sales tax (5.3% / 6.0% / 7.0%) applied by location with the reduced 1% grocery rate and data-center exemption, MD/PA/WV/KY/DC reciprocity (Form VA-4) for cross-border staff, bank and card feeds, opening balances, and reconciliation routines, delivered fixed-fee in your own QuickBooks file by a Certified ProAdvisor. Independent Certified QuickBooks ProAdvisor firm; does not file Virginia, BPOL, local-business-tax, or federal returns — coordinates with the client's CPA or EA.","provider":{"@id":"https://techbrot.com/#organization"},"areaServed":{"@type":"State","name":"Virginia","sameAs":"https://en.wikipedia.org/wiki/Virginia"},
+          "audience":{"@type":"BusinessAudience","audienceType":"Virginia small and midsize businesses"},
+          "offers":{"@type":"Offer","priceCurrency":"USD","price":"750","description":"From $750; one-time fixed fee against a written scope.","url":url}},
+        {"@type":"FAQPage","@id":url+"#faq","mainEntity":data.faq.map(function(i){return {"@type":"Question","name":stripTags(i.q),"acceptedAnswer":{"@type":"Answer","text":stripTags(i.a)}};})}
+      ]};
+    },
+  },
+};
