@@ -175,6 +175,23 @@ STATES = {
             "_added": "T5 location expansion — GA advisory route.",
         },
     },
+    "north-carolina": {
+        "name": "North Carolina",
+        "intent": {
+            "headline": "Tell us about your North Carolina books.<br>We&rsquo;ll handle the rest.",
+            "lede": "A Certified QuickBooks ProAdvisor reviews where your North Carolina books stand &mdash; the flat 3.99% income tax, the corporate income tax phasing out to zero by 2030, the franchise tax that survives it ($1.50 per $1,000 of tax base), the county-variable sales tax (4.75% state plus county and transit), state withholding on all North Carolina-source wages (no reciprocity), and the Taxed PTE election &mdash; recommends the right engagement, and delivers a written fixed-fee scope within 3 business days. We don&rsquo;t file North Carolina returns, the corporate income or franchise tax, or the sales-tax return; we keep clean, CPA-ready books and coordinate with your CPA. If TechBrot isn&rsquo;t the right fit, we&rsquo;ll say so.",
+            "service": "not-sure",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — NC core-state pillar (areaServed-only, no street address). State-slug intent.",
+        },
+        "advisory": {
+            "headline": "Advisory for North Carolina businesses<br>ready to move beyond the books.",
+            "lede": "Fractional CFO and advisory for North Carolina businesses &mdash; forecasting, board reporting, KPI design, franchise tax and Taxed PTE planning, multi-state nexus &mdash; coordinated with your North Carolina CPA. A Certified ProAdvisor reviews your situation and tells you honestly whether advisory is the right next step.",
+            "service": "fractional-cfo",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — NC advisory route.",
+        },
+    },
 }
 
 
