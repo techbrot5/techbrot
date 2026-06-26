@@ -46,32 +46,9 @@ faq:
     isn’t the right path." + the 4 alt h3s); #contact-promise (speakable target)
     preserved; schema lives in contact.11tydata.js (untouched). -#}
 
-{#- ═══ DISCOVERY FORM — the centerpiece. id="contact-main" kept (hero anchors here).
-    The intake-form partial is the LOCKED CONTRACT (field names / data-* hooks / honeypot),
-    included verbatim. data-intent-headline / data-intent-lede preserved (intent JS swaps
-    this copy). .ct read = 820px, comfortable for the 2-col intake-grid. ═══ -#}
-<section class="sec reveal" id="contact-main" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
-  <div class="ct read">
-    <div class="idx"><span class="idx__n">§</span><span class="idx__t" data-intent-headline>Discovery brief</span><span class="idx__rule"></span></div>
-    <h2 class="h2" id="contact-main-heading" style="margin-bottom:10px;">Send us your situation.</h2>
-    <p class="lede" data-intent-lede style="margin:0 0 28px;max-width:62ch;">Six minutes. Six fields. We&rsquo;ll respond within one business day with discovery call slots and a sense of where we&rsquo;d start.</p>
-    <div class="contact-form-wrap">
-      {%- set intakePrefix = "contact" %}
-      {%- set intakeFormId = "contact-discovery-form" %}
-      {%- set intakeIntent = "" %}
-      {%- set intakeSourceType = "" %}
-      {%- set intakeFunnelStage = "" %}
-      {%- set intakeLegend = "What we should discuss" %}
-      {%- set intakeNote = "Pick what fits. Pick more than one if more than one fits." %}
-      {%- set intakeConsent = "I agree to be contacted by TechBrot regarding this inquiry." %}
-      {%- set intakeSubmit = "Send the Discovery Brief" %}
-      {%- set intakeReassurance = "Response within 1 business day. No marketing list. No sales follow-up sequence." %}
-      {% include "partials/intake-form.njk" %}
-    </div>
-  </div>
-</section>
-
-{#- ═══ RESPONSE PROMISE — #contact-promise is the speakable cssSelector (preserved). ═══ -#}
+{#- ═══ RESPONSE PROMISE — #contact-promise is the speakable cssSelector (preserved).
+    Reassurance BEFORE the ask (founder 2026-06-27): hero → how-to-reach → why-owners
+    → THEN the form. Trust/objection-handling precedes the form on this trust-sensitive page. ═══ -#}
 <section class="sec reveal" id="contact-promise-section">
   <div class="ct read read--doc">
     <div class="idx"><span class="idx__n">§</span><span class="idx__t">Our response promise</span><span class="idx__rule"></span></div>
@@ -100,6 +77,32 @@ faq:
         <h3>Headquartered</h3>
         <p class="prose" style="font-size:14.5px;margin:6px 0 0;">{{ site.legalName }}<br>{{ site.address.streetAddress }}<br>{{ site.address.addressLocality }}, {{ site.address.addressRegion }} {{ site.address.postalCode }}<br>United States</p>
       </div>
+    </div>
+  </div>
+</section>
+
+{#- ═══ DISCOVERY FORM — moved BELOW the reassurance sections (founder 2026-06-27).
+    id="contact-main" kept (hero "Book the discovery call" anchors here — anchor follows
+    the element). intake-form partial = LOCKED CONTRACT (field names / data-* hooks /
+    honeypot), included verbatim. data-intent-headline / data-intent-lede preserved
+    (intent JS swaps this copy). .ct read = 820px for the 2-col intake-grid. ═══ -#}
+<section class="sec reveal" id="contact-main" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t" data-intent-headline>Discovery brief</span><span class="idx__rule"></span></div>
+    <h2 class="h2" id="contact-main-heading" style="margin-bottom:10px;">Send us your situation.</h2>
+    <p class="lede" data-intent-lede style="margin:0 0 28px;max-width:62ch;">Six minutes. Six fields. We&rsquo;ll respond within one business day with discovery call slots and a sense of where we&rsquo;d start.</p>
+    <div class="contact-form-wrap">
+      {%- set intakePrefix = "contact" %}
+      {%- set intakeFormId = "contact-discovery-form" %}
+      {%- set intakeIntent = "" %}
+      {%- set intakeSourceType = "" %}
+      {%- set intakeFunnelStage = "" %}
+      {%- set intakeLegend = "What we should discuss" %}
+      {%- set intakeNote = "Pick what fits. Pick more than one if more than one fits." %}
+      {%- set intakeConsent = "I agree to be contacted by TechBrot regarding this inquiry." %}
+      {%- set intakeSubmit = "Send the Discovery Brief" %}
+      {%- set intakeReassurance = "Response within 1 business day. No marketing list. No sales follow-up sequence." %}
+      {% include "partials/intake-form.njk" %}
     </div>
   </div>
 </section>
