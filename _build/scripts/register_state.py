@@ -73,6 +73,23 @@ STATES = {
             "_added": "T5 location expansion — PA advisory route.",
         },
     },
+    "new-jersey": {
+        "name": "New Jersey",
+        "intent": {
+            "headline": "Tell us about your New Jersey books.<br>We&rsquo;ll handle the rest.",
+            "lede": "A Certified QuickBooks ProAdvisor reviews where your New Jersey books stand &mdash; the UI/TDI/FLI/WF payroll stack across both wage bases, PA&ndash;NJ reciprocity and the NJ-165, Newark and Jersey City payroll taxes, the 6.625% sales tax with its UEZ/Salem half-rate, and BAIT coordination &mdash; recommends the right engagement, and delivers a written fixed-fee scope within 3 business days. We don&rsquo;t file New Jersey returns or the payroll filings; we keep clean, CPA-ready books and coordinate with your CPA. If TechBrot isn&rsquo;t the right fit, we&rsquo;ll say so.",
+            "service": "not-sure",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — NJ core-state pillar (areaServed-only, no street address). State-slug intent.",
+        },
+        "advisory": {
+            "headline": "Advisory for New Jersey businesses<br>ready to move beyond the books.",
+            "lede": "Fractional CFO and advisory for New Jersey businesses &mdash; forecasting, board reporting, KPI design, BAIT and multi-state nexus planning &mdash; coordinated with your New Jersey CPA. A Certified ProAdvisor reviews your situation and tells you honestly whether advisory is the right next step.",
+            "service": "fractional-cfo",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — NJ advisory route.",
+        },
+    },
 }
 
 

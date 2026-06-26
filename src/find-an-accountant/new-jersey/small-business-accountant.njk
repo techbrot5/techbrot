@@ -1,0 +1,134 @@
+---json
+{
+  "layout": "layouts/t-money.njk",
+  "permalink": "/find-an-accountant/new-jersey/small-business-accountant/",
+  "slug": "nj-svc-smb",
+  "bodyClass": "page--bofu",
+  "intent": "new-jersey",
+  "showBadges": true,
+  "metaReviewed": "2026-06-26",
+  "title": "New Jersey Small Business Accountant · TechBrot",
+  "description": "Need a small business accountant in New Jersey? Certified ProAdvisor books, payroll setup and cleanup, coordinated with your CPA. Call (877) 751-5575.",
+  "breadcrumb": [
+    { "name": "Home", "href": "/" },
+    { "name": "Find an Accountant", "href": "/find-an-accountant/" },
+    { "name": "New Jersey", "href": "/find-an-accountant/new-jersey/" },
+    { "name": "Small Business Accountant" }
+  ],
+  "hero": {
+    "eyebrow": "New Jersey &middot; Small Business",
+    "heading": "Your New Jersey small business accountant, starting with the books.",
+    "subheading": "Bookkeeping, QuickBooks setup, and cleanup for New Jersey small businesses &mdash; entity-aware books for LLCs, S-corps, and partnerships, 6.625% sales-tax tracking (with the UEZ/Salem 3.3125% half-rate), the UI/TDI/FLI/WF payroll stack across two wage bases, PA&ndash;NJ reciprocity withholding under Form NJ-165, and a named Certified ProAdvisor. We keep the books; your CPA files. Fixed-fee, all 21 counties.",
+    "helper": "Independent firm &middot; not Intuit, not a CPA firm. Coordinates with your CPA.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-jersey&state=new-jersey&source_type=state-money&funnel_stage=MOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  },
+  "sec": {
+    "inBriefTag": "In brief",
+    "inBriefH": "New Jersey small business accounting, in brief.",
+    "aiH": "New Jersey small business accounting, in five questions.",
+    "intakeH": "Scope your New Jersey engagement.",
+    "faqH": "New Jersey small business accounting questions."
+  },
+  "inBrief": {
+    "text": "<strong>TechBrot</strong> is the <strong>day-to-day financial backbone for New Jersey small businesses</strong> &mdash; Certified QuickBooks ProAdvisor bookkeeping, setup, cleanup, an entity-aware chart of accounts, 6.625% sales-tax tracking with the UEZ/Salem half-rate, and the UI/TDI/FLI/WF payroll stack across two wage bases configured with PA&ndash;NJ reciprocity, kept in your own QuickBooks file by a named ProAdvisor and coordinated with your CPA, who files. The full New Jersey small-business summary is below.",
+    "source": "Reviewed by the Certified QuickBooks ProAdvisor team at TechBrot Inc., an independent firm &mdash; not affiliated with Intuit Inc., and not a CPA or tax-prep firm. New Jersey facts (a graduated gross income tax from 1.4% to a 10.75% top rate on income over $1 million; the UI/TDI/FLI/WF payroll-contribution stack with both employer and employee contributions across two 2026 wage bases, $44,800 and $171,100; the PA&ndash;NJ reciprocal agreement with Form NJ-165; a 6.625% sales tax with the 3.3125% UEZ/Salem half-rate; and the Newark and Jersey City employer payroll taxes) reflect current New Jersey Division of Taxation and NJ Department of Labor &amp; Workforce Development guidance."
+  },
+  "ctaBand": {
+    "dark": true,
+    "eyebrow": "New Jersey small businesses start here",
+    "heading": "Get the books right &mdash; the rest gets easier.",
+    "lede": "Book a free discovery call. We&rsquo;ll review your situation and your books, recommend setup, cleanup, monthly service, or a mix, and send a written fixed-fee quote within 3 business days. No pitch. Independent firm &mdash; we keep the books and coordinate with your CPA, who files; we do not file New Jersey returns, the Corporation Business Tax, the gross income tax, the UI/TDI/FLI payroll filings, the sales-tax return, or the Newark or Jersey City payroll-tax returns.",
+    "actions": [
+      { "label": "Book the discovery call", "href": "/contact/?intent=new-jersey&state=new-jersey&source_type=state-money&funnel_stage=BOFU" },
+      { "label": "Get the free file review", "href": "/quickbooks/file-review/?intent=file-review" }
+    ]
+  }
+}
+---
+
+{#- ═══ BESPOKE MIDDLE (NJ small business accountant) — full depth re-flowed into shared
+    dc-system v2 components, mirroring the proven PA/IN/NY/DE small-business child. Spine
+    (hero/proof/§01 in-brief/§03 aiSummary/call/intake/faq/CTA) is layout-owned (t-money).
+    Bespoke sections alternate white/sand. Anchors #nj-svc-smb-*. Founder-name-zero. ═══ -#}
+
+{#- THE SHORT VERSION — speakable summary (#nj-svc-smb-summary) — white -#}
+<section class="sec reveal" id="nj-svc-smb-summary">
+  <div class="ct read">
+    <div class="idx"><span class="idx__n">§</span><span class="idx__t">In one paragraph</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;">The short version.</h2>
+    <div class="prose speakable">
+      {%- for p in summary %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- THE FINANCIAL BACKBONE — the five services (numbered lift cards, each with its cross-link) — sand -#}
+<section class="sec reveal" id="nj-svc-smb-handle" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">What we handle for New Jersey small businesses</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">The financial backbone, built and maintained.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">Every engagement is scoped to your business and entity, delivered in your own QuickBooks file by a named Certified ProAdvisor.</p>
+    <div class="r-2">
+      {%- for s in handle %}
+      <div class="lift"><span class="lift__n">{{ s.num | safe }}</span><div><h3>{{ s.title | safe }}</h3><p>{{ s.body | safe }}</p><p style="margin-top:10px;"><a href="{{ s.href }}" style="color:var(--color-accent);font-size:14px;font-weight:600;">{{ s.cta | safe }}</a></p></div></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- HONEST SCOPE — what we do / what your CPA does (two checklist cards, role label kept) — white -#}
+<section class="sec reveal" id="nj-svc-smb-scope">
+  <div class="ct">
+    <div class="idx"><span class="idx__t">Honest scope</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:12px;">What we do &mdash; and what your CPA does.</h2>
+    <p class="lede" style="margin:0 0 36px;max-width:62ch;">We&rsquo;re bookkeepers and Certified QuickBooks ProAdvisors, not a CPA or tax-prep firm. The split is clean, and we coordinate directly across it.</p>
+    <div class="r-2">
+      {%- for col in scope %}
+      <div class="incl-card">
+        <p class="eyebrow" style="display:block;margin-bottom:8px;">{{ col.role | safe }}</p>
+        <h3>{{ col.title | safe }}</h3>
+        <ul class="checklist">{%- for it in col.items %}<li>{{ it | safe }}</li>{%- endfor %}</ul>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- THE ADVISORY LINE — statement + body prose — sand -#}
+<section class="sec reveal" id="nj-svc-smb-advisory" style="background:var(--color-paper-warm);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Beyond the books</span><span class="idx__rule"></span></div>
+    <h2 class="statement">Automation handles the data entry. We handle the judgment.</h2>
+    <div class="prose">
+      {%- for p in advisoryBody %}<p>{{ p | safe }}</p>{%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- EXPERT REVIEW — firm-level byline + standards prose + trust-row + meta — white -#}
+<section class="sec reveal" id="nj-svc-smb-review">
+  <div class="ct read">
+    <div class="idx"><span class="idx__t">Page review &amp; standards</span><span class="idx__rule"></span></div>
+    <h2 class="h2" style="max-width:24ch;margin-bottom:18px;">Reviewed by the TechBrot Certified ProAdvisor team.</h2>
+    <div class="byline">
+      <div class="byline__mark" aria-hidden="true" style="background:var(--color-accent);"></div>
+      <div>
+        <p class="byline__name">By the Certified QuickBooks ProAdvisor team</p>
+        <p class="byline__review">TechBrot Inc. &middot; Independent Certified QuickBooks ProAdvisor firm</p>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:22px;">
+      <p>This page reflects how TechBrot handles New Jersey small-business engagements. It is maintained by the Certified QuickBooks ProAdvisor team at <strong>TechBrot Inc.</strong>, a Delaware-incorporated independent ProAdvisor firm serving New Jersey businesses remotely across all 21 counties, and reviewed for accuracy on the bookkeeping scope, the entity-aware chart of accounts, and the New Jersey references (the graduated <a href="https://www.nj.gov/treasury/taxation/taxtables.shtml" rel="noopener nofollow">gross income tax</a>, the <a href="https://www.nj.gov/labor/" rel="noopener nofollow">UI/TDI/FLI/WF payroll stack</a>, and the 6.625% / 3.3125% sales tax). TechBrot keeps the books and coordinates with your CPA, who files; we do not file New Jersey or federal returns, the Corporation Business Tax, the gross income tax, the UI/TDI/FLI payroll filings, the sales-tax return, or the Newark or Jersey City payroll-tax returns, and do not represent clients before the tax authorities.</p>
+    </div>
+    <div class="trust-row">
+      {%- for c in reviewCreds %}
+      <div class="trust-row__item"><p class="trust-row__value">{{ c.label }}</p><p class="trust-row__label">{{ c.detail | safe }}</p></div>
+      {%- if not loop.last %}<div class="trust-row__divider"></div>{%- endif %}
+      {%- endfor %}
+    </div>
+    <p class="meta-reviewed"><span>Published: 2026-06-26</span><span>Updated: 2026-06-26</span><span>Reviewed: 2026-06-26 &middot; Certified QuickBooks ProAdvisor</span></p>
+  </div>
+</section>
