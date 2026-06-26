@@ -2320,3 +2320,10 @@ OPEN/NEXT (autonomous, fresh session): T4 FAQ prose wave 2+ (industries 26 · qb
 **POST-TRIM VERIFICATION:** built = 3 bullets / 5 visible FAQ details / 5 schema Questions. Verbatim schema==visible re-run: 668/668 MATCH, /contact/ clean (visible==schema exactly). content-equity /contact/ PASS (13 baseline headings, 0 baseline FAQ -> additive trim safe). Battery 154 PASS, 58482 hrefs resolve.
 **COUNT:** 1 commit (ddad46b, contact.njk). Pushed; HEAD==origin.
 **OPEN/NEXT:** Part-2 (footer-per-family, contact section REDESIGN) deferred (design). T6 FLIP GATES founder-authorized only; untouched. All pre-flip contact-page items (minimal chrome, intent coverage, reorder, trims) COMPLETE.
+
+---
+
+## Turn -- 2026-06-27 (cont.) -- Conversion endpoints: remove competing CTAs + dead-link audit
+**DID (commit ca00319, battery green):** single-minded /contact/ + /quickbooks/file-review/. (1) Minimal header = PHONE ONLY: dropped the Speak-to-an-advisor head-cta button; restructured dc-base head-right so the minimal phone link is always visible (removed demo-collapse, which hid the header phone below 980px -- otherwise mobile minimal pages would show logo only). (2) Removed the 2nd hero CTA (Speak to a ProAdvisor btn--ghost) on both -- one primary CTA each (Book the discovery call / Get the free file review); phone still reachable via header + in-body links. (3) Dead-link audit on both endpoints = ZERO dead (all hrefs resolve, anchor targets #contact-main / #file-review-form exist). Form + intent personalization verified intact (data-form, intent map, anchor targets). Battery 154 PASS, 58478 hrefs resolve, content-equity PASS.
+**COUNT:** 1 commit (ca00319: dc-base + contact + file-review). Pushed; HEAD==origin.
+**OPEN/NEXT:** Part-2 (footer-per-family, contact section REDESIGN) deferred (design). T6 FLIP GATES founder-authorized only; untouched. Contact + file-review endpoints fully single-minded (minimal chrome, phone-only header, one hero CTA, reassurance-before-form, trimmed lists, no dead links).
