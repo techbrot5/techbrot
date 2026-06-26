@@ -243,6 +243,23 @@ STATES = {
             "_added": "T5 location expansion — WA advisory route.",
         },
     },
+    "colorado": {
+        "name": "Colorado",
+        "intent": {
+            "headline": "Tell us about your Colorado books.<br>We&rsquo;ll handle the rest.",
+            "lede": "A Certified QuickBooks ProAdvisor reviews where your Colorado books stand &mdash; the flat 4.40% income tax (with Colorado state withholding), the home-rule self-collecting city sales tax (the 2.9% state rate plus county, city, and special-district layers, with ~70+ home-rule cities filing separately or through the SUTS portal under destination sourcing), the retail delivery fee, and the SALT Parity PTE election &mdash; recommends the right engagement, and delivers a written fixed-fee scope within 3 business days. We don&rsquo;t file Colorado returns, the state or home-rule city sales-tax returns, the retail delivery fee, or the PTE election; we keep clean, CPA-ready books and coordinate with your CPA. If TechBrot isn&rsquo;t the right fit, we&rsquo;ll say so.",
+            "service": "not-sure",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — CO core-state pillar (areaServed-only, no street address). State-slug intent.",
+        },
+        "advisory": {
+            "headline": "Advisory for Colorado businesses<br>ready to move beyond the books.",
+            "lede": "Fractional CFO and advisory for Colorado businesses &mdash; forecasting, board reporting, KPI design, home-rule sales-tax footprint and SALT Parity PTE planning, multi-state nexus &mdash; coordinated with your Colorado CPA. A Certified ProAdvisor reviews your situation and tells you honestly whether advisory is the right next step.",
+            "service": "fractional-cfo",
+            "cta": "Book the discovery call",
+            "_added": "T5 location expansion — CO advisory route.",
+        },
+    },
 }
 
 
