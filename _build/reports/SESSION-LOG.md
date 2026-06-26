@@ -2285,3 +2285,9 @@ OPEN/NEXT (autonomous, fresh session): T4 FAQ prose wave 2+ (industries 26 · qb
 **COUNT:** 3 commits this segment (342f0d4 industries-revert 25 files; 59ad54f faq-fixes 5 files + 2 scripts; ccfaf72 trust-strips 3 layouts + 31 flag files + script). All pushed; tree clean; HEAD==origin ccfaf72.
 
 **OPEN/NEXT (FOUNDER-GATED):** service-prose BOTH group apply (after sign-off) -> then T6 FLIP GATES (founder-authorized only; untouched). Content + trust-strip clear-cut COMPLETE; flip-ready pending the prose group + founder go.
+
+---
+
+## Turn -- 2026-06-27 (cont.) -- Trust-strip initiative COMPLETE (service-prose group + industries-hub phone)
+**DID (commit be97e83, battery green):** founder signed off the service-prose list. (1) Flagged 50 founder-confirmed hire-intent service-prose pages with showBadges+proofStrip (both strips) -- 15 accounting services, 3 bookkeeping, 3 services-children, 7 advisory, 11 qb cleanup, 2 qb setup, 5 qb singles, 4 switch. Borderline 10 ruled NONE (qb setup checklist, migration pos+balances, year-end-close, qb payroll explainers -- how-to/explainer, learning not hiring). (2) Stripped the one remaining phone from the /accounting/industries/ HUB FAQ answer (kept discovery-call CTA + silo link) -- industries now phone-free top to bottom. Render verified: service-prose=both, borderline=none, industries-hub=badge-only. Battery 154 PASS, 58558 hrefs resolve, content-equity all PASS. TRUST-STRIP INITIATIVE COMPLETE.
+**STATE:** All content (Wave 2+ prose, hub-hero) + FAQ flip-gate audit (668/668) + industries revert + full trust-strip placement = COMPLETE and pushed. Tree clean, HEAD==origin. Only T6 FLIP GATES remain -- FOUNDER-AUTHORIZED ONLY; untouched.
