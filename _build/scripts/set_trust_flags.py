@@ -22,6 +22,46 @@ PRICING = [  # both strips
     "src/find-an-accountant/indiana/pricing.njk",
 ]
 
+SERVICE_PROSE = [  # both strips — founder-confirmed hire-intent service prose
+    # accounting services (15)
+    "src/accounting/1099-preparation.njk", "src/accounting/accounts-payable.njk",
+    "src/accounting/accounts-receivable.njk", "src/accounting/chart-of-accounts-setup.njk",
+    "src/accounting/financial-statements.njk", "src/accounting/job-costing.njk",
+    "src/accounting/month-end-close.njk", "src/accounting/new-business-setup.njk",
+    "src/accounting/online-bookkeeping.njk", "src/accounting/outsourced-bookkeeping.njk",
+    "src/accounting/profitability-analysis.njk", "src/accounting/reconciliation-services.njk",
+    "src/accounting/small-business-accounting.njk", "src/accounting/startup-accounting.njk",
+    "src/accounting/year-end-review.njk",
+    # bookkeeping (3)
+    "src/accounting/bookkeeping/cleanup-bookkeeping.njk",
+    "src/accounting/bookkeeping/monthly-bookkeeping.njk",
+    "src/accounting/bookkeeping/catch-up-bookkeeping.njk",
+    # accounting/services children (3)
+    "src/accounting/services/controller-services.njk",
+    "src/accounting/services/outsourced-accounting.njk",
+    "src/accounting/services/virtual-accounting.njk",
+    # advisory (7)
+    "src/accounting/advisory/fractional-cfo.njk", "src/accounting/advisory/cash-flow-management.njk",
+    "src/accounting/advisory/budgeting-forecasting.njk", "src/accounting/advisory/financial-strategy.njk",
+    "src/accounting/advisory/kpi-reporting.njk", "src/accounting/advisory/business-performance-review.njk",
+    "src/accounting/advisory/tax-planning.njk",
+    # qb cleanup (11)
+    "src/quickbooks/cleanup/standard.njk", "src/quickbooks/cleanup/complex.njk",
+    "src/quickbooks/cleanup/focused.njk", "src/quickbooks/cleanup/accountant-review.njk",
+    "src/quickbooks/cleanup/after-prior-bookkeeper.njk", "src/quickbooks/cleanup/before-monthly-bookkeeping.njk",
+    "src/quickbooks/cleanup/cleanup-vs-reconciliation.njk", "src/quickbooks/cleanup/forcing-reconciliation-risks.njk",
+    "src/quickbooks/cleanup/prior-owner-setup-issues.njk", "src/quickbooks/cleanup/structural-issues.njk",
+    "src/quickbooks/cleanup/undeposited-funds.njk",
+    # qb setup (2)
+    "src/quickbooks/setup/new-business.njk", "src/quickbooks/setup/migration-from-spreadsheets.njk",
+    # qb service singles (5)
+    "src/quickbooks/bookkeeping-services.njk", "src/quickbooks/hire-a-proadvisor.njk",
+    "src/quickbooks/proadvisor-cost.njk", "src/quickbooks/consulting.njk", "src/quickbooks/training.njk",
+    # switch (4)
+    "src/switch/from-bench.njk", "src/switch/from-pilot.njk",
+    "src/switch/from-quickbooks-live.njk", "src/switch/from-your-bookkeeper.njk",
+]
+
 def apply(path, flags):
     with open(path, encoding="utf-8") as f:
         txt = f.read()
@@ -43,4 +83,7 @@ for p in HUBS:
     print("  %-55s %s" % (p, apply(p, ["showBadges"])))
 print("=== PRICING (showBadges + proofStrip) ===")
 for p in PRICING:
+    print("  %-55s %s" % (p, apply(p, ["showBadges", "proofStrip"])))
+print("=== SERVICE PROSE (showBadges + proofStrip) ===")
+for p in SERVICE_PROSE:
     print("  %-55s %s" % (p, apply(p, ["showBadges", "proofStrip"])))
