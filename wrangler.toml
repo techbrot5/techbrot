@@ -1,0 +1,15 @@
+# Cloudflare Pages config for the techbrot project (preview-11ty = production branch).
+# This 11ty site is BUILT (not served from root): `npm run build:prod` writes the
+# 727-page production output to _site-prod/. pages_build_output_dir points Cloudflare
+# at that folder, overriding the v1 main-branch value (".") that served the old static
+# Bootstrap site from the repo root and caused 404s on this branch.
+#
+# NOTE: the BUILD COMMAND is NOT set here (wrangler.toml cannot carry it for Pages Git
+# builds) — it must be set in the Cloudflare dashboard:
+#   Build command          = npm run build:prod
+#   Build output directory  = _site-prod  (now managed by this file)
+# Env var ENVIRONMENT=production is already set; build:prod also forces it via cross-env.
+
+name = "techbrot"
+compatibility_date = "2024-11-01"
+pages_build_output_dir = "_site-prod"
