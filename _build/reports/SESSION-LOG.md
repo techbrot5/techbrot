@@ -2497,3 +2497,14 @@ path, fonts same-origin (only Fraunces+Geist preloaded). No per-page work.
 **OPEN:** founder to confirm deletion of the 3 stale _site* candidates; ANCHOR tier labeling (NY/CA/TX/FL/IL show as DEEP since they have children) optional tweak for v6.
 
 **ADDENDUM (2026-06-28):** Deleted 3 stale untracked+gitignored build dirs (_site, _site-frozen, _site-probe); kept _site-prod + _build; tree clean, HEAD==origin, `npm run build` regenerates _site (766f). Fixed inventory.py tiers -> 3 distinct: ANCHOR 5 (NY/CA/TX/FL/IL) / DEEP 2 (IN, DE) / CORE 13. FLAG: service-child count canNOT separate ANCHOR from DEEP (DE/IN have 19 svc children >= anchors 17-19); discriminator is CITY-child count (anchors=11, DE/IN=6-8, core=0) -> ANCHOR detected by city>=10. Summary now lists svc/cities/industries per state. Reports regenerated + committed.
+
+---
+
+## Turn -- 2026-06-28 -- v6 blueprint = source of truth + inventory-drift battery guard
+**VERIFY GATE:** branch preview-11ty, HEAD==origin. (Deviation: v5 xlsx was already deleted from the working tree, not just v6 added -> restored v5 from HEAD then git mv'd it, so history is preserved.)
+**SoT SWAP:** git mv techbrot-blueprint-v5.xlsx -> _archive/ (rename, history kept); techbrot-blueprint-v6.xlsx added in root. Root now has exactly ONE blueprint (v6).
+**DRIFT GUARD (the permanent fix):** new `inventory-drift` check in run_battery.py. Reads _site-prod (NOT the frozen preview copy -- preview is all-noindex so the inventory walk would see 0). FAILS if: (a) any sitemap url not built; (b) any NEW built-not-in-sitemap url outside the allowlist; (c) prod page count != committed inventory-summary total (fails LOUD with the delta + 'run npm run inventory, recommit, rebuild blueprint'). Editable allowlist _build/reports/inventory-allowlist.txt (currently the 1 canonicalized-away /resources/checklists/quickbooks-setup-checklist/). npm run inventory = regenerate csv+summary in one command. inventory.py re-run -> 728 pages / sitemap 727 / 1 canonicalized-away (unchanged).
+**RED-TEAM (founder-requested):** clean run = PASS [inventory-drift] prod 728==committed 728, sitemap-not-built 0, built-not-in-sitemap 1 (allowlisted), BATTERY PASSED. Injected fake _site-prod/__drift_test__/index.html -> FAIL [inventory-drift] '1 NEW built-not-in-sitemap [/__drift_test__/]' + 'PROD count 729 != committed 728 (delta +1)', BATTERY FAILED. Fake page removed; guard verified to catch real additions.
+**BATTERY:** clean FULL flip-gate (frozen copy) incl inventory-drift -> 155 PASS / 0 FAIL.
+**COUNT:** 1 commit (8dcdabf: v5->_archive rename + v6 + inventory-allowlist.txt + run_battery.py + package.json). Pushed; HEAD==origin. (inventory.csv/summary unchanged content -> already current at 3713603.)
+**OPEN:** none. v6 is SoT; drift guard live in the battery; future page-count changes will FAIL the battery until inventory is regenerated + blueprint rebuilt in the strategy chat.

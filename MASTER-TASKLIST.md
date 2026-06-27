@@ -116,3 +116,10 @@ pre-publish audit A-E (+ meta-hygiene battery gate, PRE-PUBLISH-AUDIT.md) · tit
   canonicalized-away resources checklist). Commit 8c944c8.
 - 🔵 FOUNDER CONFIRM: delete stale regenerable build dirs `_site/`, `_site-frozen/`,
   `_site-probe/` (all untracked + gitignored). KEEP `_site-prod/` + `_build/`. Not deleted yet.
+
+## BLUEPRINT v6 (2026-06-28)
+- ✅ v6 = source of truth (repo root); v5 archived to `_archive/`. Built from inventory.csv (728 pages).
+- ✅ inventory-drift battery guard live (run_battery.py) — fails on sitemap/built/count drift vs the
+  committed inventory; allowlist `_build/reports/inventory-allowlist.txt`; `npm run inventory` regenerates.
+  Red-teamed: clean PASS, injected-page FAIL. When the guard fails on a real page change → regenerate
+  inventory, recommit, rebuild the blueprint (v7 / v6-refresh) in the strategy chat.
