@@ -2475,3 +2475,12 @@ path, fonts same-origin (only Fraunces+Geist preloaded). No per-page work.
 **OPEN:** none. OG cards live across all 728 pages.
 
 **ADDENDUM (commit 0952645):** regenerated /assets/og/default.png on the Direction B template (brand-level card: "Certified QuickBooks ProAdvisors for Small Businesses" / "Accounting & Advisory", 1200x630, 15.1KB) via a new `--default` mode in og-gen.mjs. Per-page cards remain the primary og:image; default.png is the branded ultimate fallback.
+
+---
+
+## Turn -- 2026-06-28 -- OG structured-data fix (founder caught /assets/img/og 404 leftover)
+**FINDING (founder asked about https://techbrot.com/assets/img/og/techbrot-og.png):** that URL = 404, never built. It was NOT an og:image/twitter:image fallback (those already use the new per-page cards) -- it was a leftover from an earlier OG plan referenced ONLY in JSON-LD: schemaGlobal.json global "image" (techbrot-og.png) + 226 per-page primaryImageOfPage nodes (/assets/img/og/<name>-og.png), ALL pointing to 404s. Invisible to social debuggers (they read og:image) but a real structured-data defect.
+**FIX (commit d2e1ab0, battery 154 PASS):** _build/scripts/fix_og_schema.py built a broken-url->card map from the built site (each page primaryImageOfPage broken url -> that page og:image card) and repointed all 226 -> /assets/og/cards/<slug>.png (now == og:image). Manual fix for contact.11tydata.js (template-literal `${data.site.url}/assets/img/og/contact-og.png` form the map missed) -> /assets/og/cards/contact.png. schemaGlobal.json "image" -> /assets/og/default.png. RESULT: 0 /assets/img/og refs anywhere in src or built site.
+**LIVE VERIFIED:** homepage 0 dead refs; schemaGlobal image = /assets/og/default.png; agency primaryImageOfPage = /assets/og/cards/accounting-industries-agency.png (HTTP 200 image/png); old /assets/img/og/techbrot-og.png still 404 but referenced by nothing. Every page now has its correct OG image in BOTH the social meta AND the structured data.
+**NOTE:** fix_og_schema.py's built-site walk was slow/AV-stalled on this machine; reran fine. (Reusable record kept.)
+**COUNT:** 1 commit (d2e1ab0: 228 files -- 226 data files + schemaGlobal + contact + fix script). Pushed; HEAD==origin.
