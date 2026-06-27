@@ -121,7 +121,7 @@ module.exports = {
     pageGraph(data){
       const url="https://techbrot.com/quickbooks/payroll/setup/";
       return {"@context":"https://schema.org","@graph":[
-        {"@type":["WebPage"],"@id":url+"#webpage","url":url,"name":data.title,"description":data.description,"isPartOf":{"@id":"https://techbrot.com/#website"},"about":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"inLanguage":"en-US","primaryImageOfPage":{"@type":"ImageObject","url":"https://techbrot.com/assets/img/og/qb-payroll-setup-og.png"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#qbps-in-brief-text","#qbps-ai-summary"]}},
+        {"@type":["WebPage"],"@id":url+"#webpage","url":url,"name":data.title,"description":data.description,"isPartOf":{"@id":"https://techbrot.com/#website"},"about":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"inLanguage":"en-US","primaryImageOfPage":{"@type":"ImageObject","url":"https://techbrot.com/assets/og/cards/quickbooks-payroll-setup.png"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#qbps-in-brief-text","#qbps-ai-summary"]}},
         {"@type":"BreadcrumbList","@id":url+"#breadcrumb","itemListElement":[
           {"@type":"ListItem","position":1,"name":"Home","item":"https://techbrot.com/"},
           {"@type":"ListItem","position":2,"name":"QuickBooks","item":"https://techbrot.com/quickbooks/"},

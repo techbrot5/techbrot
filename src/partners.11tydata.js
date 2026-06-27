@@ -125,7 +125,7 @@ module.exports = {
             },
             primaryImageOfPage: {
               "@type": "ImageObject",
-              url: "https://techbrot.com/assets/img/og/partners-og.png",
+              url: "https://techbrot.com/assets/og/cards/partners.png",
             },
             speakable: {
               "@type": "SpeakableSpecification",

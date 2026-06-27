@@ -26,7 +26,7 @@ module.exports = { pageGraph: {
       "dateModified": "2026-05-23",
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://techbrot.com/assets/img/og/legal-og.png"
+        "url": "https://techbrot.com/assets/og/cards/legal-terms.png"
       }
     },
     {

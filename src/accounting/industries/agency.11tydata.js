@@ -146,7 +146,7 @@ module.exports = {
     pageGraph(data){
       const url="https://techbrot.com/accounting/industries/agency/";
       return {"@context":"https://schema.org","@graph":[
-        {"@type":"WebPage","@id":url+"#webpage","url":url,"name":data.title,"description":data.description,"isPartOf":{"@id":"https://techbrot.com/#website"},"about":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"breadcrumb":{"@id":url+"#breadcrumb"},"inLanguage":"en-US","primaryImageOfPage":{"@type":"ImageObject","url":"https://techbrot.com/assets/img/og/agency-og.png"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#acctind-agency-definition","#acctind-agency-ai-summary"]},"reviewedBy":{"@id":"https://techbrot.com/#david-westgate"}},
+        {"@type":"WebPage","@id":url+"#webpage","url":url,"name":data.title,"description":data.description,"isPartOf":{"@id":"https://techbrot.com/#website"},"about":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"breadcrumb":{"@id":url+"#breadcrumb"},"inLanguage":"en-US","primaryImageOfPage":{"@type":"ImageObject","url":"https://techbrot.com/assets/og/cards/accounting-industries-agency.png"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#acctind-agency-definition","#acctind-agency-ai-summary"]},"reviewedBy":{"@id":"https://techbrot.com/#david-westgate"}},
         {"@type":"BreadcrumbList","@id":url+"#breadcrumb","itemListElement":[
           {"@type":"ListItem","position":1,"name":"Home","item":"https://techbrot.com/"},
           {"@type":"ListItem","position":2,"name":"Accounting","item":"https://techbrot.com/accounting/"},

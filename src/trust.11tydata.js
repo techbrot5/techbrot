@@ -97,7 +97,7 @@ module.exports = {
             inLanguage: "en-US",
             primaryImageOfPage: {
               "@type": "ImageObject",
-              url: "https://techbrot.com/assets/img/og/trust-og.png",
+              url: "https://techbrot.com/assets/og/cards/trust.png",
             },
             speakable: {
               "@type": "SpeakableSpecification",

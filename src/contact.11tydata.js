@@ -43,7 +43,7 @@ module.exports = {
             inLanguage: "en-US",
             primaryImageOfPage: {
               "@type": "ImageObject",
-              url: `${data.site.url}/assets/img/og/contact-og.png`,
+              url: `${data.site.url}/assets/og/cards/contact.png`,
             },
             speakable: {
               "@type": "SpeakableSpecification",
