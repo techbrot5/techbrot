@@ -2495,3 +2495,5 @@ path, fonts same-origin (only Fraunces+Geist preloaded). No per-page work.
 **BATTERY:** FULL flip-gate, frozen copy -> 154 PASS / 0 FAIL (no regression; _build-only tooling).
 **COUNT:** 1 tooling commit (8c944c8: inventory.py + inventory.csv + inventory-summary.txt, _build-only) pushed. Trackers commit follows. HEAD==origin.
 **OPEN:** founder to confirm deletion of the 3 stale _site* candidates; ANCHOR tier labeling (NY/CA/TX/FL/IL show as DEEP since they have children) optional tweak for v6.
+
+**ADDENDUM (2026-06-28):** Deleted 3 stale untracked+gitignored build dirs (_site, _site-frozen, _site-probe); kept _site-prod + _build; tree clean, HEAD==origin, `npm run build` regenerates _site (766f). Fixed inventory.py tiers -> 3 distinct: ANCHOR 5 (NY/CA/TX/FL/IL) / DEEP 2 (IN, DE) / CORE 13. FLAG: service-child count canNOT separate ANCHOR from DEEP (DE/IN have 19 svc children >= anchors 17-19); discriminator is CITY-child count (anchors=11, DE/IN=6-8, core=0) -> ANCHOR detected by city>=10. Summary now lists svc/cities/industries per state. Reports regenerated + committed.

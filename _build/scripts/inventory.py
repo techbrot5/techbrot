@@ -175,20 +175,23 @@ faq_yes = sum(1 for r in rows if r[6]=="yes"); faq_total = sum(r[7] for r in row
 rev_yes = sum(1 for r in rows if r[9]=="yes")
 title_flags = [(r[0], r[11]) for r in rows if r[11] > 60]
 desc_flags = [(r[0], r[12]) for r in rows if r[12] > 160]
-# states
+# states — track service-child / city-child / industry-child counts.
+# NOTE: the ANCHOR/DEEP split is detected by CITY-child count, NOT service-child count:
+# DE & IN each have 19 service children (>= the anchors' 17-19), so a service threshold can't
+# separate them. The flagships (NY/CA/TX/FL/IL) all carry the full 11-city set; DE/IN carry 6-8.
 states = {}
 for r in rows:
     s = [x for x in r[0].split("/") if x]
     if len(s) >= 2 and s[0]=="find-an-accountant":
-        states.setdefault(s[1], {"n":0,"cities":False,"industries":False})
-        states[s[1]]["n"] += 1
-        if len(s) >= 3 and s[2]=="cities": states[s[1]]["cities"]=True
-        if len(s) >= 3 and s[2]=="industries": states[s[1]]["industries"]=True
-ANCHOR = {"new-york","california","texas","florida","illinois"}
+        d = states.setdefault(s[1], {"n":0,"svc":0,"city":0,"ind":0})
+        d["n"] += 1
+        if len(s) == 3 and s[2] not in ("cities","industries"): d["svc"] += 1
+        elif len(s) == 4 and s[2]=="cities": d["city"] += 1
+        elif len(s) == 4 and s[2]=="industries": d["ind"] += 1
 def tier(slug, d):
-    if d["cities"] or d["industries"]: return "DEEP"
-    if slug in ANCHOR: return "ANCHOR"
-    return "CORE"
+    if d["city"] >= 10: return "ANCHOR"           # flagship full city set (NY/CA/TX/FL/IL = 11)
+    if d["city"] > 0 or d["ind"] > 0: return "DEEP"  # DE/IN: cities+industries below flagship depth
+    return "CORE"                                  # 13 lean: pillar + 5 service children only
 # drift
 sm_not_built = sorted(u for u in sitemap_urls if u not in built_urls)
 built_not_sm = sorted(u for u in built_urls if u not in sitemap_urls)
@@ -199,10 +202,11 @@ out.append(f"\nBY SILO:\n" + "\n".join(f"  {k:22} {v}" for k,v in sorted(silo_c.
 out.append(f"\nBY PAGE_TYPE:\n" + "\n".join(f"  {k:22} {v}" for k,v in sorted(pt_c.items(), key=lambda x:-x[1])))
 out.append(f"\nBY FUNNEL_STAGE:\n" + "\n".join(f"  {k:8} {v}" for k,v in sorted(fs_c.items(), key=lambda x:-x[1])))
 out.append(f"\nBY TEMPLATE:\n" + "\n".join(f"  {k:22} {v}" for k,v in sorted(tpl_c.items(), key=lambda x:-x[1])))
-out.append(f"\nSTATES BUILT: {len(states)}")
+tier_c = Counter(tier(s, d) for s, d in states.items())
+out.append(f"\nSTATES BUILT: {len(states)}  (ANCHOR {tier_c['ANCHOR']} / DEEP {tier_c['DEEP']} / CORE {tier_c['CORE']})")
 for slug in sorted(states, key=lambda s:(-states[s]['n'], s)):
     d = states[slug]
-    out.append(f"  {slug:18} {d['n']:3} pages   {tier(slug,d)}")
+    out.append(f"  {slug:18} {d['n']:3} pages  [{tier(slug,d):6}]  svc {d['svc']:2}  cities {d['city']:2}  industries {d['ind']:2}")
 out.append(f"\nhas_faq=yes: {faq_yes} pages | total Q&A pairs: {faq_total}")
 out.append(f"reviewed_by_david=yes: {rev_yes} pages")
 out.append(f"\nHYGIENE FLAGS — title_len>60: {len(title_flags)}")
