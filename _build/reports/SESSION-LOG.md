@@ -2400,3 +2400,18 @@ Full sitewide footer (dc-base): (1) tagline reworded honest/clear -- "Certified 
 **REMAINING FOUNDER STEP (dashboard, one field):** set Build command = `npm run build:prod` (wrangler.toml cannot carry the build command for Pages Git builds; output dir is now managed by wrangler.toml = _site-prod). Save -> Retry deployment on a72e85f. Then deploy runs build:prod -> publishes _site-prod (727 pages) -> techbrot.com = v2, index,follow.
 **COUNT:** 1 commit (a72e85f wrangler.toml). Pushed; HEAD==origin.
 **OPEN/NEXT:** founder sets dashboard build command + retries -> I verify live (sitemap 727, dc-system, no bootstrap, robots Allow, index,follow, redirects, forms). Cutover completes on that pass. (Optional later: scrub v1 cruft off main, or delete main entirely once preview-11ty is the sole production source.)
+
+---
+
+## Turn -- 2026-06-28 -- 🎉 CUTOVER COMPLETE: techbrot.com LIVE on v2, full live verification PASS
+**Founder set the dashboard Build command = npm run build:prod; with the preview-11ty wrangler.toml (pages_build_output_dir = _site-prod) the deploy built + published _site-prod. techbrot.com is now the v2 11ty site, indexable.**
+**LIVE VERIFICATION (all 7 PASS):**
+1. Homepage = v2 + index,follow -- dc-system + TB_FORM_ENDPOINT present, 0 bootstrap.min, new title "QuickBooks ProAdvisor Bookkeeping & Accounting - TechBrot". (Founder also confirmed visually.)
+2. /robots.txt = "User-agent: * / Allow: /" + "Sitemap: https://techbrot.com/sitemap.xml". (was 404/empty on old site.)
+3. /sitemap.xml = 727 URLs (was 112 on old site).
+4. Per-page index,follow spot-check -- ALL 200 + index,follow: /find-an-accountant/new-york/ (state pillar), /accounting/bookkeeping/cleanup-bookkeeping/ (money), /contact/, /quickbooks/file-review/.
+5. Redirects -- ALL 301 to correct targets: /about/team/ -> /about/ ; /find-an-accountant/{alabama,minnesota,nevada}/ -> /find-an-accountant/ (the 3 still-unbuilt states).
+6. Forms wired LIVE -- /contact/ + /quickbooks/file-review/ both emit window.TB_ENV="production" (so tb-forms.js actually POSTs, not preview-logs) + window.TB_FORM_ENDPOINT = the Google Apps Script /exec; intake-form renders. Endpoint = the existing backend, unchanged.
+7. No old Bootstrap bleed-through -- old/spam slugs 404 (/old-spam-page, /quickbooks-proadvisor-near-me-cheap-fast); /index.html 308 -> / (normalize); /blog/ is a LEGIT v2 page (dc-system, v2 title, in sitemap w/ 16 posts, index,follow); deep pages carry dc-system only, 0 bootstrap. The deploy publishes pure _site-prod so no v1 HTML can be served.
+**CUTOVER OFFICIALLY CLOSED.** techbrot.com = the 727-page v2 site, indexable, forms live, redirects live, old spam gone. Deploy path locked in: push to preview-11ty -> Cloudflare runs npm run build:prod -> publishes _site-prod (per wrangler.toml). Every push is now production.
+**OPEN/NEXT (post-cutover, optional):** (1) scrub v1 cruft off the `main` branch (old wrangler.toml ".", Stripe/Postmark/checkout functions, committed wrangler cache) or retire main entirely now that preview-11ty is the sole production source; (2) self-host fonts (deferred pre-flip minor); (3) live PageSpeed/axe re-run by founder.
