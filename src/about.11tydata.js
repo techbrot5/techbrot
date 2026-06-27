@@ -68,6 +68,7 @@ module.exports = {
     { name: "Operating methodology", body: "The four-phase engagement methodology applied to every project &mdash; diagnostic, scope, delivery, review.", cta: "Read the methodology", href: "/about/methodology/" },
     { name: "Trust &amp; standards", body: "Operator vetting criteria, quality standards, independence statement, trademark posture, verification process.", cta: "The Four Trust Pillars", href: "/trust/" },
     { name: "Become a partner", body: "For independent accounting practices: how the operator partnership works, what we look for, and how to apply.", cta: "Become a Partner", href: "/partners/" },
+    { name: "Client reviews", body: "Verified client reviews tied to documented engagements &mdash; real reviews on Clutch, no fabricated testimonials, no aggregate rating until we have five or more.", cta: "Read our reviews", href: "/reviews/" },
   ],
   aiSummary: [
     { q: "What is TechBrot?", a: "<strong>An independent U.S. accounting platform</strong> &mdash; TechBrot Inc., a Delaware C-Corporation headquartered in Delaware (incorporated 2023; the practice behind it runs since 2016). It delivers professional bookkeeping, QuickBooks ProAdvisor services, and operational accounting directly through its lead practice and through a curated network of vetted local practices." },

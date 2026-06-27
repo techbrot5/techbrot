@@ -53,6 +53,7 @@ module.exports = {
     { title: "QuickBooks Setup", href: "/quickbooks/setup/?intent=quickbooks-setup", body: "Full QuickBooks implementation — chart of accounts, integrations, sales tax, and payroll together." },
     { title: "QuickBooks Migration", href: "/quickbooks/migration/?intent=quickbooks-migration", body: "Desktop-to-Online migration — worth scoping alongside payroll so you don’t configure it twice." },
     { title: "QuickBooks Help", href: "/quickbooks/help/?intent=qb-help", body: "Not sure which engagement fits? Start with the diagnostic triage and route to the right help." },
+    { title: "QuickBooks Payroll Tax Filing", href: "/quickbooks/payroll/tax-filing/", body: "How QuickBooks payroll tax filing actually works &mdash; what Intuit calculates and files on full-service tiers, and how a ProAdvisor sets it up so the books tie." },
   ],
   faq: [
     { q: "What are the QuickBooks Payroll plans?", a: "QuickBooks Online Payroll has three tiers: Core (full-service payroll, automated federal/state tax filing, direct deposit), Premium (adds same-day direct deposit, HR support center, workers’ comp admin, time tracking), and Elite (adds tax-penalty protection, personal HR advisor, project time tracking). Desktop Payroll exists for Desktop users. The right tier depends on employee count and multi-state complexity, not the priciest default." },

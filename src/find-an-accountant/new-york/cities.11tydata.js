@@ -56,6 +56,7 @@ module.exports = {
   // MORE CITIES — additional dedicated pages + a routing link. Boroughs + Syracuse.
   // (H2: We serve these too — and everywhere between.)
   moreCities: [
+    { href: "/find-an-accountant/new-york/cities/manhattan/", name: "Manhattan", county: "New York County" },
     { href: "/find-an-accountant/new-york/cities/queens/", name: "Queens", county: "Queens County" },
     { href: "/find-an-accountant/new-york/cities/bronx/", name: "The Bronx", county: "Bronx County" },
     { href: "/find-an-accountant/new-york/cities/staten-island/", name: "Staten Island", county: "Richmond County" },

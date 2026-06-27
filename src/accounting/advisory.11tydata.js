@@ -47,6 +47,7 @@ module.exports = {
     { title: "Monthly bookkeeping", href: "/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly", body: "The accurate-books foundation advisory is built on." },
     { title: "Industry expertise", href: "/contact/?intent=industries-faq", body: "Advisory grounded in how your specific industry runs." },
     { title: "Service catalog", href: "/accounting/services/?intent=accounting", body: "Every engagement type with scope, pricing, and the decision framework." },
+    { title: "Advisory FAQ", href: "/accounting/advisory/faq/", body: "More advisory questions answered &mdash; cost, fractional CFO readiness, how advisory builds on accurate books, and where your CPA fits." },
   ],
   faq: [
     { q: "What is accounting advisory?", a: "The work that turns accurate books into decisions: cash-flow forecasting, KPI reporting, budgeting, performance review, and financial strategy. Where bookkeeping records what happened, advisory interprets it and tells you what to do next. TechBrot delivers advisory through Certified ProAdvisors, including fractional CFO engagements, always built on books that are already correct." },

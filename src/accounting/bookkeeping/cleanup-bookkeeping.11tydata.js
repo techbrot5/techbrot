@@ -73,6 +73,10 @@ module.exports = {
     { title: "Monthly bookkeeping", href: "/accounting/bookkeeping/monthly-bookkeeping/?intent=monthly", body: "Once books are clean, ongoing monthly bookkeeping keeps them that way — real monthly close, real reconciliations, named operator." },
     { title: "QuickBooks file cleanup", href: "/quickbooks/?intent=quickbooks", body: "Specific QuickBooks file issues — broken bank feeds, file size, multi-user mode, version mismatches. ProAdvisor-led resolution." },
     { title: "Multi-year historical cleanup", href: "/accounting/bookkeeping/catch-up-bookkeeping/?intent=catch-up", body: "3+ years of books, often required before a sale, an SBA application, or an IRS issue. Methodical reconstruction at scale." },
+    { title: "Cleanup after a prior bookkeeper", href: "/quickbooks/cleanup/after-prior-bookkeeper/", body: "Inherited a messy file after a prior bookkeeper left? A ProAdvisor takes over &mdash; reconciles, rebuilds, and hands the books back CPA-ready." },
+    { title: "Cleanup before monthly bookkeeping", href: "/quickbooks/cleanup/before-monthly-bookkeeping/", body: "Want monthly bookkeeping but the file is behind? Why a one-time cleanup comes first &mdash; a known-good baseline so the monthly close ties out." },
+    { title: "Cleanup after buying a business", href: "/quickbooks/cleanup/prior-owner-setup-issues/", body: "Inherited a file the prior owner set up wrong? A ProAdvisor re-baselines it with clean opening balances as of the acquisition date." },
+    { title: "Honest file review &mdash; second opinion", href: "/quickbooks/cleanup/accountant-review/", body: "Not sure the books even need a cleanup? A ProAdvisor reviews reconciliation, the chart of accounts, and balance-sheet integrity, then tells you straight." },
   ],
   // de-dup 2026-06-25: override the dir-data generic 11-FAQ block (hub owns it)
   // so this page ships ONLY its page-specific questions. `override:` = array-replace.

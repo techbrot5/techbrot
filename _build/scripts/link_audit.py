@@ -63,7 +63,7 @@ for idx in glob.glob(os.path.join(SITE, "**", "index.html"), recursive=True):
     allurls.add(url)
     h = read(idx)
     targets = set()
-    for href in re.findall(r'href="(/[^"#?]*)"', h):
+    for href in re.findall(r'href="(/[^"#?]*)', h):   # capture path even when followed by ?query / #frag (intent params)
         t = href if href.endswith("/") else href + "/"
         t = re.sub(r"//+$", "/", t)
         targets.add(t)

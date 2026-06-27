@@ -86,6 +86,7 @@ module.exports = {
     { title: "QuickBooks setup", href: "/quickbooks/setup/?intent=quickbooks-setup", body: "When migrating from a non-QuickBooks platform, setup work runs alongside migration to build the new file correctly from scratch." },
     { title: "QuickBooks cleanup", href: "/accounting/bookkeeping/cleanup-bookkeeping/?intent=cleanup", body: "If a prior migration or Desktop file left errors behind, cleanup reconciles and corrects before the new file goes live." },
     { title: "Migrating from Bench?", href: "/contact/?intent=bench-migration", body: "After Bench’s December 2024 shutdown and relaunch, moving off Bench to QBO is a regular cross-platform engagement." },
+    { title: "QuickBooks Desktop POS migration", href: "/quickbooks/migration/pos-migration/", body: "QuickBooks Desktop Point of Sale is discontinued. Why POS users must move, and how to migrate the data to a new POS connected to QuickBooks Online." },
   ],
   faq: [
     { q: "Why is everyone migrating from QuickBooks Desktop to Online?", a: "Intuit is phasing out Desktop. New-subscription stop-sell was September 30, 2024; Desktop 2023 lost support May 31, 2026; Desktop 2024 loses support September 30, 2027. After end-of-support, payroll tables freeze, bank feeds disconnect, and security patches stop. Enterprise is exempt. Migration is a question of timing, not necessity." },

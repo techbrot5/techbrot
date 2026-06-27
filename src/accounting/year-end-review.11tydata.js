@@ -49,6 +49,7 @@ module.exports = {
     { title: "Month-end close", href: "/accounting/month-end-close/", body: "The monthly version of this discipline &mdash; reconcile, categorize, and review the period each month so the year-end close is a finish line, not a rescue. The recurring close that keeps the books current between annual reviews." },
     { title: "Financial statements", href: "/accounting/financial-statements/", body: "The finalized profit &amp; loss and balance sheet a year-end review produces &mdash; what they are, how they&rsquo;re built, and how a Certified ProAdvisor makes them statements your CPA and your lender can rely on." },
     { title: "QuickBooks payroll year-end", href: "/quickbooks/payroll/year-end/", body: "The payroll side of closing the year in QuickBooks &mdash; W-2s, payroll tax forms, and the year-end payroll steps that run alongside the books review so the whole year-end ties out together." },
+    { title: "QuickBooks year-end close", href: "/quickbooks/year-end-close/", body: "The same annual close from the QuickBooks side &mdash; final reconciliations, adjusting entries, and 1099 prep done inside QuickBooks to hand your CPA a clean, file-from-it file." },
   ],
   operatorSpec: [
     { value: "Free", label: "file review first — we look before we scope" },
