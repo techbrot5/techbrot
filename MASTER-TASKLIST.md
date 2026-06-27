@@ -108,3 +108,11 @@ Remove 4 VISIBLE inputs; keep hidden auto-capture where derivable. Both full + m
 ## DONE EARLIER THIS SESSION (context)
 TASK-4 phone-in-meta 52 pp · entity-escape meta fix 217 fields · mojibake repair 1069/90 ·
 pre-publish audit A-E (+ meta-hygiene battery gate, PRE-PUBLISH-AUDIT.md) · title-rewrite wave 1 (6).
+
+## POST-CUTOVER TOOLING (2026-06-28)
+- ✅ Canonical live-page inventory for the v6 blueprint — `_build/scripts/inventory.py` →
+  `_build/reports/inventory.csv` (728 rows) + `inventory-summary.txt`. Verify-gate passed,
+  battery 154 PASS, drift clean (0 sitemap-missing; 1 built-not-in-sitemap = intentional
+  canonicalized-away resources checklist). Commit 8c944c8.
+- 🔵 FOUNDER CONFIRM: delete stale regenerable build dirs `_site/`, `_site-frozen/`,
+  `_site-probe/` (all untracked + gitignored). KEEP `_site-prod/` + `_build/`. Not deleted yet.

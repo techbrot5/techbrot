@@ -2484,3 +2484,14 @@ path, fonts same-origin (only Fraunces+Geist preloaded). No per-page work.
 **LIVE VERIFIED:** homepage 0 dead refs; schemaGlobal image = /assets/og/default.png; agency primaryImageOfPage = /assets/og/cards/accounting-industries-agency.png (HTTP 200 image/png); old /assets/img/og/techbrot-og.png still 404 but referenced by nothing. Every page now has its correct OG image in BOTH the social meta AND the structured data.
 **NOTE:** fix_og_schema.py's built-site walk was slow/AV-stalled on this machine; reran fine. (Reusable record kept.)
 **COUNT:** 1 commit (d2e1ab0: 228 files -- 226 data files + schemaGlobal + contact + fix script). Pushed; HEAD==origin.
+
+---
+
+## Turn -- 2026-06-28 -- Repo cleanup audit + canonical live-page inventory (v6 blueprint tooling)
+**VERIFY GATE (Task 1) -- ALL PASS:** git porcelain empty (clean tree); HEAD cf7025b == origin/preview-11ty; branch preview-11ty.
+**STALE-ARTIFACT AUDIT (Task 2, report-only -- NOTHING DELETED):** _site / _site-frozen / _site-probe / _site-prod all UNTRACKED (0 git files) and all in .gitignore -- no wrongly-committed build output. CLEANUP-CANDIDATES (regenerable, safe to delete on founder confirm): _site (1544f, preview build), _site-frozen (1544f, battery copy), _site-probe (658f, 2026-06-22 stale probe). KEEP: _site-prod (prod output), _build (tooling). Awaiting founder confirm before deletion.
+**INVENTORY (Task 3) -- _build/scripts/inventory.py -> _build/reports/inventory.csv (728 rows) + inventory-summary.txt.** Walks _site-prod (skips noindex), cross-refs src front-matter (layout+permalink, JSON & YAML), parses JSON-LD. Totals: 728 live pages. Silos: find-an-accountant 341, quickbooks 173, accounting 67, glossary 47, resources 23, blog 17, vs 15. Funnel: BOFU 394 / MOFU 206 / TOFU 128. 20 states (7 DEEP: NY/CA/IL 39, TX 38, FL 37, IN 36, DE 34; 13 CORE @6). has_faq 668 / 4949 Q&A pairs; reviewedBy-david 459. Hygiene: 57 title>60, 63 desc>160. trust_strip rule: badge=trust-strip+__badges (hubs), both=trust-strip no badges (comparisons/service-prose), none=no strip.
+**DRIFT CHECK:** sitemap-not-built = 0; built-not-in-sitemap = 1 (/resources/checklists/quickbooks-setup-checklist/ -- INTENTIONAL canonicalized-away dup, explains 728 built vs 727 sitemap). No real drift.
+**BATTERY:** FULL flip-gate, frozen copy -> 154 PASS / 0 FAIL (no regression; _build-only tooling).
+**COUNT:** 1 tooling commit (8c944c8: inventory.py + inventory.csv + inventory-summary.txt, _build-only) pushed. Trackers commit follows. HEAD==origin.
+**OPEN:** founder to confirm deletion of the 3 stale _site* candidates; ANCHOR tier labeling (NY/CA/TX/FL/IL show as DEEP since they have children) optional tweak for v6.
