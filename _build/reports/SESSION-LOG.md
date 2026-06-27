@@ -2473,3 +2473,5 @@ path, fonts same-origin (only Fraunces+Geist preloaded). No per-page work.
 **HONEST:** only the true "Certified QuickBooks ProAdvisors" footer line; no fabricated badges/stats. **MAINTAINABLE:** re-run `node _build/scripts/og-gen.mjs` after page changes -> new pages auto-get a card. devDeps satori + wawoff2 (build-time only; Cloudflare passes through committed PNGs). Static OG fonts in _build/og-fonts/ (rerun og_fonts.py only if brand fonts change).
 **COUNT:** 1 commit (060e711: 741 files -- 728 cards + 6 fonts + 2 scripts + eleventy.config + 2 layouts + package). Pushed; HEAD==origin. Memory: og-image-pipeline.
 **OPEN:** none. OG cards live across all 728 pages.
+
+**ADDENDUM (commit 0952645):** regenerated /assets/og/default.png on the Direction B template (brand-level card: "Certified QuickBooks ProAdvisors for Small Businesses" / "Accounting & Advisory", 1200x630, 15.1KB) via a new `--default` mode in og-gen.mjs. Per-page cards remain the primary og:image; default.png is the branded ultimate fallback.
