@@ -2435,3 +2435,12 @@ Full sitewide footer (dc-base): (1) tagline reworded honest/clear -- "Certified 
 **AFTER (verified):** remote heads = ONLY preview-11ty; remote default = preview-11ty; tag v1-bootstrap-archive=bbae9ce preserved (full v1 history); local on preview-11ty, HEAD==origin (3b76180), tree clean. 
 **RESULT:** repo is a single branch (preview-11ty) = sole production source. v1 footgun fully retired; old site recoverable via `git show/checkout v1-bootstrap-archive`. Memory updated.
 **OPEN/NEXT (optional post-cutover):** self-host fonts; live PageSpeed/axe re-run.
+
+---
+
+## Turn -- 2026-06-28 -- PERF: self-host fonts (drop Google Fonts CDN / Cloudflare Fonts rewrite)
+**FINDING:** fonts were ALREADY self-hosted in CSS (00-fonts.css: 4 variable @font-face -- Fraunces normal+italic, Geist, Spline Sans Mono, all font-display:swap; 4 woff2 in src/assets/fonts/; passthrough + bundle wired; base.njk already preloaded + clean). The ONLY gap: dc-base.njk (main v2 layout) still linked Google Fonts css2 + 2 preconnects. Cloudflare's "Cloudflare Fonts" feature was auto-rewriting that link into an inline <style> of many STATIC-weight /cf-fonts/ subset faces (Fraunces 400/500/600/700 x several unicode-range subsets, etc.) -- competing with our single-file variable @font-face.
+**DID (commit 8f2b54e, battery 154 PASS):** removed the Google Fonts <link> + both preconnects from dc-base.njk; added <link rel=preload as=font type=font/woff2 crossorigin> for the 2 critical above-the-fold faces (fraunces-var + geist-var). Italic + mono covered by @font-face, NOT preloaded (per "don't preload everything"). CSS bundle byte-unchanged (font-face was already bundled). Full src sweep: 0 googleapis/gstatic remaining.
+**LIVE VERIFIED (after deploy):** homepage + NY/file-review/contact = 0 cf-fonts, 0 googleapis, 2 self-hosted preloads. All 4 woff2 serve 200 same-origin, content-type font/woff2 (fraunces 67KB, fraunces-italic 81KB, geist 29KB, spline-mono 36KB). Live site.min.css = 4 @font-face -> our /assets/fonts/ variable woff2.
+**BEFORE/AFTER (network):** BEFORE = Cloudflare-rewritten /cf-fonts/ many static-weight subset files, no variable-font preload (fonts found only after CSS parse). AFTER = 1 variable woff2 per family, 2 critical preloaded in <head> (discovered immediately, fetched parallel to CSS), font-display:swap. LCP win = earlier font availability + fewer font requests.
+**OPEN:** lab LCP delta -- keyless PSI API quota-exhausted (429) + local Lighthouse blocked (chrome leak); founder running pagespeed.web.dev for the Mobile LCP/score number.
