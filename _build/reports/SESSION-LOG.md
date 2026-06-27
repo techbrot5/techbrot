@@ -2364,3 +2364,8 @@ OPEN/NEXT (autonomous, fresh session): T4 FAQ prose wave 2+ (industries 26 · qb
 ## Turn -- 2026-06-27 (cont.) -- Pre-flip: footer legal links + sitemap hygiene
 **DID (commit 188553f, battery green):** (1) Added legal-page links — Privacy Policy / Terms / Disclaimer / Data Processing — to the FULL sitewide footer (dc-base foot__disc; reused class, manifest-safe). The Intuit non-affiliation disclaimer was already present and stays. Legal pages were unlinked from the full footer (compliance/findability gap for a data-collecting site); now linked on every page, all 4 resolve. (Minimal conversion-endpoint footer already had Privacy/Terms/Disclaimer.) (2) sitemap.njk now excludes any page whose canonicalUrl != its own URL -> dropped the 1 canonicalized-away duplicate; sitemap 728 -> 727 canonical URLs. lastmod intentionally skipped. Battery 154 PASS, 61471 hrefs resolve, manifest clean.
 **T6 DEFERRABLE MINORS: #1 sitemap-dup CLEARED; #2 lastmod skipped (optional); #3 self-host fonts remains post-flip.** Flip founder-gated; NOT flipped.
+
+---
+
+## Turn -- 2026-06-27 (cont.) -- Footer: tagline reword + phone -> Office column (commit 082038a)
+Full sitewide footer (dc-base): (1) tagline reworded honest/clear -- "Certified QuickBooks ProAdvisors for U.S. small businesses -- cleanup, setup, bookkeeping, payroll & CFO advisory." (Fraunces brand slogan above kept; legal links + Intuit disclaimer below kept). (2) Phone moved from the left brand area into the right Office column, below email: order address -> email -> phone (tel+icon). Removed from left -> exactly 1 tel: inside <footer> (no dup); mobile-nav drawer Call CTA is separate, kept. Minimal conversion-endpoint footer untouched. Battery 154 PASS. Flip still founder-gated.
