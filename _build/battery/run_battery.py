@@ -171,9 +171,11 @@ for f in css_dir.glob("*.css"):
     declared.update(re.findall(r"(--[A-Za-z0-9_-]+)\s*:", f.read_text(encoding="utf-8")))
 drift = []
 for f in css_dir.glob("*.css"):
-    if f.name in ("01-tokens.css", "dc-system.css"):
+    if f.name in ("01-tokens.css", "99-dc-system.css"):
         # both are token-defining design-system files (hex lives in their :root).
-        # dc-system.css is self-contained — new-design pages don't load site.min.css.
+        # 99-dc-system.css = the verbatim design-system handoff (was dc-system.css,
+        # always drift-exempt); merged into the bundle 2026-06-28 (perf) but the
+        # exemption carries forward unchanged — its palette hexes are intentional.
         continue
     # comment-aware: hex inside /* … */ is documentation, not a rule
     text = re.sub(r"/\*.*?\*/", lambda m: "\n" * m.group(0).count("\n"),
@@ -202,8 +204,10 @@ else:
 # Cutover gate (flip-gate #7): the from-scratch petrol system is lean (~63KB minified after
 # the css_audit trim pass), so the transition 100KB ceiling is lowered to the real elevated
 # target with headroom. Raise deliberately only if the design genuinely grows.
-CSS_MIN_GATE = 72 * 1024
-CSS_SRC_SOFTCAP = 90 * 1024
+# Gate raised 2026-06-28 (perf): dc-system.css merged into the bundle as 99-dc-system.css
+# (one minified render-blocking file vs two). Kept in sync with site.min.css.11ty.js.
+CSS_MIN_GATE = 120 * 1024
+CSS_SRC_SOFTCAP = 150 * 1024
 # Glob the actual NN-*.css layers (the from-scratch rebuild renamed/reshaped the
 # layer set), in filename order — matches src/assets/css/site.min.css.11ty.js.
 order = sorted(p.name for p in css_dir.glob("*.css")

@@ -6,11 +6,13 @@
 const fs = require("fs");
 const path = require("path");
 
-// Cutover gate (flip-gate #7, 2026-06-21): lowered from the 100KB transition ceiling to the
-// real elevated target after the css_audit trim pass (lean ~63KB bundle). Kept in sync with
-// _build/battery/run_battery.py (CSS_MIN_GATE).
-const CSS_BUDGET_MIN = 72 * 1024;
-const CSS_BUDGET_SRC = 90 * 1024;
+// Gate raised 2026-06-28 (perf merge): dc-system.css (the design system, ~57KB raw, was a
+// SECOND render-blocking file on every page) was merged into this bundle as 99-dc-system.css
+// and is now minified here. Total CSS shipped DROPS (one minified file + one fewer request)
+// even though this single-file gate rises from 72KB to fit the merged+minified bundle.
+// Kept in sync with _build/battery/run_battery.py (CSS_MIN_GATE).
+const CSS_BUDGET_MIN = 120 * 1024;
+const CSS_BUDGET_SRC = 150 * 1024;
 
 function minify(css) {
   return css

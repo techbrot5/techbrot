@@ -29,12 +29,10 @@
     ONLY the critical above-the-fold faces: Fraunces (headings) + Geist (body). -#}
 <link rel="preload" href="/assets/fonts/fraunces-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
-{#- Body component layer (the already-elevated petrol/warm design: all tokens +
-    section/idx/buyer-card/feature/stat-tier/call-block/etc.). dc-system.css loads
-    AFTER it so the NEW chrome + the new C2 .cmp win on the (one) collision. The old
-    chrome CSS in here is unused — dc-base renders the new chrome markup. -#}
+{#- ONE render-blocking stylesheet. site.min.css now bundles the design system too
+    (99-dc-system.css is the last layer, so the new chrome + C2 .cmp still win the
+    cascade) — merged from the old 2nd file + minified for LCP. -#}
 <link rel="stylesheet" href="/assets/css/site.min.css">
-<link rel="stylesheet" href="/assets/css/dc-system.css">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:title" content="{{ ogTitle or title }}">
@@ -55,8 +53,17 @@
 {%- endif %}
 <script>window.TB_ENV={{ env.name | dump | safe }};window.TB_FORM_ENDPOINT={{ site.formEndpoint | dump | safe }};</script>
 {%- if env.production %}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4Id }}"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ site.ga4Id }}');</script>
+{#- GA4 loaded OUT of the LCP path: on first interaction OR ~2s after load, whichever
+    first (keeps pageview tracking; removes gtag's ~66KB + forced reflow from render). -#}
+<script>
+(function(w,d,id){var done;function load(){if(done)return;done=1;
+var s=d.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id='+id;d.head.appendChild(s);
+w.dataLayer=w.dataLayer||[];w.gtag=function(){w.dataLayer.push(arguments)};w.gtag('js',new Date());w.gtag('config',id);}
+var ev=['scroll','keydown','pointerdown','touchstart'];function trig(){ev.forEach(function(e){w.removeEventListener(e,trig)});load();}
+ev.forEach(function(e){w.addEventListener(e,trig,{once:true,passive:true})});
+if(d.readyState==='complete'){setTimeout(load,2000);}else{w.addEventListener('load',function(){setTimeout(load,2000)})}
+})(window,document,'{{ site.ga4Id }}');
+</script>
 {%- endif %}
 </head>
 <body class="{{ bodyClass }}">
