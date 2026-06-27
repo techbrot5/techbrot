@@ -2427,3 +2427,11 @@ Full sitewide footer (dc-base): (1) tagline reworded honest/clear -- "Certified 
 **RESULT:** ONE clean source of truth. No branch can redeploy v1 cruft. main = clean v2 fallback snapshot (not kept in lockstep with future preview-11ty commits, but no cruft to reintroduce). Old v1 inspectable via `git show v1-bootstrap-archive`. Memory cloudflare-deploy-architecture updated.
 **NOTE:** the main force-push may have spawned a CF PREVIEW deployment of main (clean v2, harmless) -- it does NOT touch techbrot.com (production = preview-11ty).
 **OPEN/NEXT (optional):** founder could set GitHub default branch to preview-11ty + delete main entirely (more aggressive -- founder said tell them first; NOT done). Other post-cutover: self-host fonts; live PageSpeed/axe.
+
+---
+
+## Turn -- 2026-06-28 -- POST-CUTOVER: default branch -> preview-11ty + main DELETED
+**DID:** founder switched the GitHub default branch to preview-11ty (UI; gh/token not available locally). Verified remote HEAD symref = refs/heads/preview-11ty, then `git push origin --delete main` (allowed once main was no longer default). 
+**AFTER (verified):** remote heads = ONLY preview-11ty; remote default = preview-11ty; tag v1-bootstrap-archive=bbae9ce preserved (full v1 history); local on preview-11ty, HEAD==origin (3b76180), tree clean. 
+**RESULT:** repo is a single branch (preview-11ty) = sole production source. v1 footgun fully retired; old site recoverable via `git show/checkout v1-bootstrap-archive`. Memory updated.
+**OPEN/NEXT (optional post-cutover):** self-host fonts; live PageSpeed/axe re-run.
