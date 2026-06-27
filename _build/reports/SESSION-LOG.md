@@ -2369,3 +2369,11 @@ OPEN/NEXT (autonomous, fresh session): T4 FAQ prose wave 2+ (industries 26 · qb
 
 ## Turn -- 2026-06-27 (cont.) -- Footer: tagline reword + phone -> Office column (commit 082038a)
 Full sitewide footer (dc-base): (1) tagline reworded honest/clear -- "Certified QuickBooks ProAdvisors for U.S. small businesses -- cleanup, setup, bookkeeping, payroll & CFO advisory." (Fraunces brand slogan above kept; legal links + Intuit disclaimer below kept). (2) Phone moved from the left brand area into the right Office column, below email: order address -> email -> phone (tel+icon). Removed from left -> exactly 1 tel: inside <footer> (no dup); mobile-nav drawer Call CTA is separate, kept. Minimal conversion-endpoint footer untouched. Battery 154 PASS. Flip still founder-gated.
+
+---
+
+## Turn -- 2026-06-27 (cont.) -- Dead-CTA fix + badge resize + a11y audit (commits b2c6836, 53c2b5d, 285869c)
+**1. DEAD-CTA (b2c6836):** pillar bottom-intake + all phone CTAs now show the visible number "Call (877) 751-5575" + tel: (was generic "Speak to a ProAdvisor"). Fixed 3 dead ptier__link href="" per pillar -> fallback to #<slug>-intake. Converted every tel: action across 11 layout renderers + 3 hardcoded CTAs (site-header, state-triage-body, t-money). New dead_cta_audit.py: 0 href=""/0 href="#"/0 btn-no-href across 728 pages; 1455 "no-action buttons" = JS-wired drawer toggles (functional). Body-prose mentions left as-is.
+**2. BADGE RESIZE (53c2b5d):** Intuit badges 600-1200px -> 180px (3x retina) via sharp; 1534 KB -> 44 KB (saved ~1.49 MB, matches PageSpeed ~1527 KiB flag). img tags unchanged (60x60, lazy, alt). Live PageSpeed re-run = post-deploy.
+**3. A11Y AUDIT (285869c):** new a11y_audit.py. Sitewide CLEAN: 1 h1/page, main+nav+footer landmarks, 0 heading skips, 0 missing alt, 0 unnamed icon buttons, all inputs labeled (wrapped <label>). Fixed: 2 minimal-chrome pages (contact, file-review) had no <nav> -> added <nav aria-label=Legal> to minimal footer. Contrast AA passes (ink #14110C ~17:1, mute #6E6456 ~5.1-5.8:1, accent #0E4A50 ~9:1); focus-visible outlines + skip-link present. Lighthouse NOT installed locally + chrome-headless leak on this machine -> founder runs Lighthouse/PageSpeed on their end or post-deploy.
+**All battery 154 PASS. Flip still founder-gated; NOT flipped.**
