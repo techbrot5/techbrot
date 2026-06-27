@@ -715,6 +715,53 @@ if dup_titles or dup_descs:
 else:
     ok("meta-unique", f"all {len(_title_map)} titles + {len(_desc_map)} descriptions unique sitewide")
 
+# ── inventory-drift guard: v6 blueprint inventory <-> live PRODUCTION build ──
+# Reads _site-prod (NOT SITE/the frozen preview copy — preview is all-noindex, so the
+# inventory walk would see 0). Asserts the committed inventory stays in sync with the
+# prod URL set so the blueprint can't silently drift when pages are added/removed.
+if not FAST:
+    PROD = ROOT / "_site-prod"
+    allow_file = ROOT / "_build/reports/inventory-allowlist.txt"
+    summ_file = ROOT / "_build/reports/inventory-summary.txt"
+    if not PROD.exists():
+        ok("inventory-drift", "skipped — no _site-prod (run `npm run build:prod` to drift-check the blueprint)")
+    else:
+        allow = set()
+        if allow_file.exists():
+            allow = {l.strip() for l in allow_file.read_text(encoding="utf-8").splitlines()
+                     if l.strip() and not l.lstrip().startswith("#")}
+        prod_urls = set()
+        for p in PROD.rglob("index.html"):
+            rel = p.relative_to(PROD).parent.as_posix()
+            prod_urls.add("/" if rel == "." else f"/{rel}/")
+        sm = PROD / "sitemap.xml"
+        sm_urls = set()
+        if sm.exists():
+            for loc in re.findall(r"<loc>([^<]+)</loc>", sm.read_text(encoding="utf-8")):
+                sm_urls.add(re.sub(r"^https?://[^/]+", "", loc))
+        sm_not_built = sorted(sm_urls - prod_urls)
+        new_orphans = [u for u in sorted(prod_urls - sm_urls) if u not in allow]
+        committed = None
+        if summ_file.exists():
+            m = re.search(r"TOTAL LIVE PAGES:\s*(\d+)", summ_file.read_text(encoding="utf-8"))
+            if m:
+                committed = int(m.group(1))
+        problems = []
+        if sm_not_built:
+            problems.append(f"{len(sm_not_built)} url(s) in sitemap but NOT built: {sm_not_built[:5]}")
+        if new_orphans:
+            problems.append(f"{len(new_orphans)} NEW built-not-in-sitemap (not allowlisted): {new_orphans[:5]}")
+        if committed is not None and len(prod_urls) != committed:
+            problems.append(f"PROD page count {len(prod_urls)} != committed inventory total {committed} "
+                            f"(delta {len(prod_urls)-committed:+d}) — pages changed: run `npm run inventory`, "
+                            f"recommit inventory.csv, and rebuild the v6 blueprint")
+        if problems:
+            for pr in problems:
+                fail("inventory-drift", pr)
+        else:
+            ok("inventory-drift", f"prod {len(prod_urls)} pages == committed {committed}; "
+               f"sitemap-not-built 0; built-not-in-sitemap {len(prod_urls - sm_urls)} (all allowlisted)")
+
 print()
 if FAST:
     print("MODE: --fast (mid-wave cadence subset). SKIPPED heavy checks: links, "

@@ -7,7 +7,8 @@
     "build": "eleventy",
     "serve": "eleventy --serve",
     "clean": "node -e \"require('fs').rmSync('_site-prod',{recursive:true,force:true})\"",
-    "build:prod": "npm run clean && cross-env ENVIRONMENT=production TB_OUTDIR=_site-prod eleventy"
+    "build:prod": "npm run clean && cross-env ENVIRONMENT=production TB_OUTDIR=_site-prod eleventy",
+    "inventory": "python _build/scripts/inventory.py"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
