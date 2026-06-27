@@ -319,6 +319,17 @@ def normalize_eq(s):
 # real body heading of the same text is still found by the built-headings check.)
 GLOBAL_CHROME_HEADINGS = {normalize_eq(t) for t in
                           ("Accounting", "Company", "Network", "QuickBooks")}
+# founder honesty ruling 2026-06-27: TechBrot operates NO physical office — the
+# Middletown DE address is the Delaware C-corp registered/legal address only, not a
+# place where work is conducted. The global #organization schema's physical-location
+# signals (GeoCoordinates + OpeningHoursSpecification) and its LocalBusiness-subtype
+# @type (ProfessionalService) were removed sitewide, and the DE pillar's
+# ["AccountingService","LocalBusiness"] node + hasMap were deleted — so no page claims
+# a physical business location / storefront / map-pack. These baseline-frozen schema
+# types are JUSTIFIED GLOBAL REMOVALS (reported, not failed). The corporate
+# PostalAddress stays as legal/contact info. (Per-page schema_types exceptions still
+# work via equity-exceptions.json; this set is only for the sitewide org-schema change.)
+GLOBAL_SCHEMA_REMOVALS = {"GeoCoordinates", "OpeningHoursSpecification", "ProfessionalService"}
 ported = [u for u in built_urls if u in baseline_urls and u not in queue_urls]
 for url in sorted(ported):
     rec = next(p for p in baseline["pages"] if p["url"] == url)
@@ -363,8 +374,11 @@ for url in sorted(ported):
     for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S):
         collect_types(json.loads(m), built_types)
     missing_s = [t for t in rec.get("schema_types", [])
-                 if t not in built_types and t not in exc_schema]
-    justified_s = [t for t in rec.get("schema_types", []) if t in exc_schema]
+                 if t not in built_types and t not in exc_schema
+                 and t not in GLOBAL_SCHEMA_REMOVALS]
+    justified_s = [t for t in rec.get("schema_types", [])
+                   if t in exc_schema
+                   or (t not in built_types and t in GLOBAL_SCHEMA_REMOVALS)]
 
     problems = []
     if missing_h:

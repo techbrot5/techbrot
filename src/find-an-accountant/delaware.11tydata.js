@@ -1,9 +1,11 @@
-/* /find-an-accountant/delaware/ — t-location PILLAR. Delaware ANCHOR state: TechBrot's
- * real office is in Middletown, DE (651 N Broad St, Suite 201, 19709 — the address in the
- * global #organization node), so this is the ONE state pillar that carries a real-address
- * LocalBusiness/AccountingService node + hasMap (map-pack eligible). Every OTHER state pillar
- * is Service + areaServed only (no street address — remote-served; a fabricated local address
- * would breach the honesty contract §8). Data-file shape mirrors the proven NY pillar
+/* /find-an-accountant/delaware/ — t-location PILLAR. Delaware ANCHOR state: TechBrot Inc. is a
+ * Delaware C-corporation whose REGISTERED corporate address is in Middletown, DE (651 N Broad St,
+ * Suite 201, 19709 — the address in the global #organization node). This is the incorporation/
+ * registered address ONLY — NOT a physical office, storefront, or place work is conducted. All
+ * Delaware work is delivered 100% remotely, same as every other state pillar (Service + areaServed,
+ * remote-served). Do NOT claim a physical office, "actual office", or physical "local presence" —
+ * that overclaims a presence TechBrot does not have and breaches the honesty contract §8. Routing
+ * to vetted local PARTNER operators for genuine in-person needs is honest and stays. Data-file shape mirrors the proven NY pillar
  * (find-an-accountant/new-york.11tydata.js): JSON front-matter in the .njk; this file supplies
  * the content arrays + an eleventyComputed pageGraph emitting the schema @graph.
  *
@@ -34,7 +36,7 @@ function stripTags(html){return html.replace(/<[^>]+>/g,"").replace(/&rsquo;/g,"
 
 module.exports = {
   // SUMMARY — real-H2 section after the in-brief. (H2: TechBrot in Delaware, summarized.)
-  summarized: "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor services</strong>, Delaware bookkeeping, QuickBooks setup, cleanup, migration, gross-receipts-tax tracking, and fractional CFO engagements to Delaware businesses from our <strong>Middletown office</strong> in New Castle County &mdash; serving <strong>all three counties</strong>, from Wilmington and Newark to Dover, Smyrna, and the Sussex coast. Delaware&rsquo;s tax structure is genuinely unlike its neighbors: <strong>no sales tax at all</strong>, replaced by a <strong>gross receipts tax</strong> levied on the seller and tracked by business activity; an <strong>annual franchise tax</strong> every Delaware entity owes; <strong>Wilmington&rsquo;s 1.25% city wage and net-profits tax</strong>; and an <strong>8.7% corporate income tax</strong> on top. As the incorporation capital of the U.S. &mdash; <strong>66.7% of the Fortune 500 and 2.1 million-plus entities</strong> are registered here &mdash; Delaware is also full of holding-company and out-of-state-owner structures that need real bookkeeping behind the registered-agent address. Engagements run as fixed-fee monthly retainers or one-time scopes with written agreements before any work begins. <strong>Direct service by TechBrot</strong> from the Middletown office; <strong>curated local partner practices</strong> where in-person presence or local CPA hand-off matters. Honest scope: we do not file Delaware returns or the franchise-tax/annual report &mdash; we keep the books and coordinate with your CPA and registered agent.",
+  summarized: "<strong>TechBrot</strong> delivers <strong>Certified QuickBooks ProAdvisor services</strong>, Delaware bookkeeping, QuickBooks setup, cleanup, migration, gross-receipts-tax tracking, and fractional CFO engagements to Delaware businesses <strong>remotely</strong> &mdash; serving <strong>all three counties</strong>, from Wilmington and Newark to Dover, Smyrna, and the Sussex coast. Delaware&rsquo;s tax structure is genuinely unlike its neighbors: <strong>no sales tax at all</strong>, replaced by a <strong>gross receipts tax</strong> levied on the seller and tracked by business activity; an <strong>annual franchise tax</strong> every Delaware entity owes; <strong>Wilmington&rsquo;s 1.25% city wage and net-profits tax</strong>; and an <strong>8.7% corporate income tax</strong> on top. As the incorporation capital of the U.S. &mdash; <strong>66.7% of the Fortune 500 and 2.1 million-plus entities</strong> are registered here &mdash; Delaware is also full of holding-company and out-of-state-owner structures that need real bookkeeping behind the registered-agent address. Engagements run as fixed-fee monthly retainers or one-time scopes with written agreements before any work begins. <strong>Direct service by TechBrot, remotely</strong>; <strong>curated local partner practices</strong> where in-person presence or local CPA hand-off matters. Honest scope: we do not file Delaware returns or the franchise-tax/annual report &mdash; we keep the books and coordinate with your CPA and registered agent.",
 
   // PROADVISOR CREDENTIAL STRIP. (H2: Certified QuickBooks ProAdvisor credentials)
   credLede: "Every TechBrot operator holds active Certified QuickBooks ProAdvisor credentials across the full QuickBooks stack &mdash; Online (Level 2), Desktop, Enterprise, and Payroll. Intuit&rsquo;s public ProAdvisor directory lists active ProAdvisors for verification.",
@@ -48,7 +50,7 @@ module.exports = {
   trustRow: [
     { value: "5.0", label: "on Clutch &middot; 2 verified reviews" },
     { value: "4&times;", label: "QuickBooks ProAdvisor certifications &mdash; Online (L2), Desktop, Enterprise, Payroll" },
-    { value: "DE", label: "Office in Middletown &mdash; New Castle, Kent &amp; Sussex counties served" },
+    { value: "DE", label: "Delaware-incorporated &mdash; New Castle, Kent &amp; Sussex counties served remotely" },
     { value: "Independent", label: "ProAdvisor firm &mdash; not affiliated with Intuit Inc." },
   ],
 
@@ -65,7 +67,7 @@ module.exports = {
   // AI SUMMARY — 5 entity-dense Q&As (mirror the QAPage schema, word-for-word).
   // (H2: TechBrot in Delaware, in five questions.)
   aiSummary: [
-    { q: "Does TechBrot serve Delaware businesses?", a: "Yes. <strong>TechBrot delivers Certified QuickBooks ProAdvisor services, bookkeeping, payroll, gross-receipts-tax tracking, and fractional CFO engagements to Delaware businesses from a local office in Middletown, New Castle County.</strong> Coverage spans all three counties &mdash; New Castle (Wilmington, Newark, Middletown, Bear), Kent (Dover, Smyrna), and Sussex (Seaford, Georgetown, Lewes, and the coast) &mdash; direct from TechBrot, with partner practices where in-person presence helps." },
+    { q: "Does TechBrot serve Delaware businesses?", a: "Yes. <strong>TechBrot delivers Certified QuickBooks ProAdvisor services, bookkeeping, payroll, gross-receipts-tax tracking, and fractional CFO engagements to Delaware businesses remotely.</strong> Coverage spans all three counties &mdash; New Castle (Wilmington, Newark, Middletown, Bear), Kent (Dover, Smyrna), and Sussex (Seaford, Georgetown, Lewes, and the coast) &mdash; direct from TechBrot, with partner practices where in-person presence helps." },
     { q: "Does Delaware have a sales tax, and how does that change my bookkeeping?", a: "<strong>No. Delaware has no state or local sales tax.</strong> Instead it levies a <strong>gross receipts tax on the seller</strong> &mdash; 0.0945% to 1.9914% depending on your business activity &mdash; on total receipts, after a monthly or quarterly exclusion amount, filed monthly or quarterly. There is no sales tax to collect from customers, but QuickBooks must be set up to track gross receipts by business-activity category so the right rate is applied and the return reconciles to the books. Out-of-state bookkeepers who assume Delaware works like a sales-tax state get this wrong." },
     { q: "What is the Delaware franchise tax and do you handle it?", a: "The <strong>Delaware franchise tax</strong> is an annual tax every Delaware entity owes for the privilege of being incorporated or formed here &mdash; <strong>a flat $300 for LLCs, LPs, and GPs (due June 1)</strong>, and <strong>$175 to $200,000 for corporations</strong> by the authorized-shares or assumed-par-value method (due March 1). <strong>TechBrot does not file the franchise tax or annual report</strong> &mdash; your registered agent or CPA files it. What we do is make sure the liability is tracked and reserved for in QuickBooks so it is never a surprise, and that the corporate method that produces the lower tax is the one being used." },
     { q: "What QuickBooks versions does TechBrot support for Delaware businesses?", a: "All current QuickBooks versions: <strong>QuickBooks Online (Level 2 certified), Desktop, Enterprise, and Payroll</strong>. QuickBooks Online suits most Delaware small businesses and the many holding companies and out-of-state-owned entities run remotely; QuickBooks Enterprise is common in Sussex agriculture and manufacturing and larger construction firms. We configure gross-receipts tracking and multi-entity structures as standard engagement components." },
@@ -86,7 +88,7 @@ module.exports = {
 
   // DELIVER — direct vs partner practices (r-2 buyer cards). (H2: What we deliver in Delaware.)
   delivery: [
-    { eyebrow: "Direct service", heading: "TechBrot delivers it &mdash; from Middletown.", lede: "Most Delaware engagements are delivered directly by TechBrot&rsquo;s Certified ProAdvisor team from the Middletown office, in your own QuickBooks file.", list: [
+    { eyebrow: "Direct service", heading: "TechBrot delivers it &mdash; remotely.", lede: "Most Delaware engagements are delivered directly by TechBrot&rsquo;s Certified ProAdvisor team, remotely, in your own QuickBooks file.", list: [
       "Monthly bookkeeping, cleanup, and catch-up",
       "QuickBooks setup, cleanup, migration, and training",
       "Gross-receipts-tax tracking and franchise-tax reserve",
@@ -213,7 +215,7 @@ module.exports = {
     { name: "Smyrna", href: "/find-an-accountant/delaware/cities/smyrna/", county: "Kent County" },
     { name: "Bear", href: "/find-an-accountant/delaware/cities/bear/", county: "New Castle County" },
   ],
-  countyProse: "TechBrot serves all three Delaware counties &mdash; <strong>New Castle</strong> (Wilmington, Newark, Middletown, Bear, the corporate corridor), <strong>Kent</strong> (Dover, the state capital, and Smyrna), and <strong>Sussex</strong> (Seaford, Georgetown, Lewes, Milford, and the coastal economy). Remote, fixed-fee service reaches every town in between; our office is in Middletown.",
+  countyProse: "TechBrot serves all three Delaware counties &mdash; <strong>New Castle</strong> (Wilmington, Newark, Middletown, Bear, the corporate corridor), <strong>Kent</strong> (Dover, the state capital, and Smyrna), and <strong>Sussex</strong> (Seaford, Georgetown, Lewes, Milford, and the coastal economy). Remote, fixed-fee service reaches every town in between.",
   citiesNote: "Each city page covers the local economy and any city-specific tax &mdash; most notably Wilmington&rsquo;s 1.25% wage and net-profits tax. The service is the same statewide; the tax detail is local.",
 
   // INTAKE — dual path. teamDavid is the named-operator exception.
@@ -225,7 +227,7 @@ module.exports = {
   teamIntake: {
     name: "Client Intake &amp; Scoping", role: "Engagement Team",
     creds: "Your first call &middot; operational triage &middot; written fixed-fee scope",
-    line: "Answers the phone at the Middletown office, reviews your QuickBooks file, and turns it into a written scope within 3 business days &mdash; no call center, no sales script.",
+    line: "Answers your call directly, reviews your QuickBooks file, and turns it into a written scope within 3 business days &mdash; no call center, no sales script.",
   },
   callAssurance: ["Mon&ndash;Fri 8a&ndash;6p ET", "Certified ProAdvisor on the line", "Free, no pitch"],
 
@@ -239,7 +241,7 @@ module.exports = {
 
   // WHY TECHBROT — 4 cards (DE-localized).
   why: [
-    { num: "01", name: "A real Delaware office", body: "<p>Most &ldquo;Delaware&rdquo; bookkeeping is a registered-agent address with no one keeping the books. TechBrot has an <strong>actual office in Middletown</strong> and serves New Castle, Kent, and Sussex directly &mdash; not a mailbox.</p>" },
+    { num: "01", name: "A real Delaware firm &mdash; not a mailbox", body: "<p>Most &ldquo;Delaware&rdquo; bookkeeping is a registered-agent address with no one keeping the books. TechBrot is a <strong>Delaware-incorporated Certified ProAdvisor firm</strong> with genuine operational depth on DE-specific taxes &mdash; gross receipts tax, the franchise-tax reserve, and Wilmington wage tax &mdash; serving New Castle, Kent, and Sussex remotely. Real ProAdvisor bookkeeping behind the entity, not a mailbox.</p>" },
     { num: "02", name: "Gross-receipts depth", body: "<p>We configure QuickBooks to track receipts <strong>by activity</strong> so the right rate and exclusion apply and the return reconciles &mdash; the part out-of-state bookkeepers, expecting a sales tax, routinely get wrong.</p>" },
     { num: "03", name: "Holding-company fluency", body: "<p>Delaware&rsquo;s incorporation economy means multi-entity and out-of-state-owner books are routine here. We separate entities cleanly, build intercompany structure, and reserve each entity&rsquo;s franchise tax.</p>" },
     { num: "04", name: "Real credentials, honest scope", body: "<p>Active Certified ProAdvisor credentials, fixed-fee written scopes, and a clear line: we keep the books and coordinate with your CPA and registered agent, who file. <a href=\"/vs/bookkeeper-vs-accountant/\">Bookkeeper vs accountant &rarr;</a></p>" },
@@ -254,7 +256,7 @@ module.exports = {
   // COMPARISON — vs-table (DE-localized).
   comparison: [
     { dim: "Delaware tax depth", us: "Gross-receipts-by-activity, franchise-tax reserve, Wilmington wage tax configured in QuickBooks", cpa: "Files the returns; usually not in the books day-to-day", remote: "Often assumes a sales-tax state &mdash; gets Delaware wrong" },
-    { dim: "Local presence", us: "Office in Middletown; serves all 3 counties", cpa: "Local, in-person", remote: "None &mdash; offshore or anywhere" },
+    { dim: "Local presence", us: "Remote, all 3 DE counties &middot; DE-incorporated", cpa: "Local, in-person", remote: "None &mdash; offshore or anywhere" },
     { dim: "Multi-entity / holding co", us: "Clean per-entity books + intercompany structure", cpa: "Varies", remote: "Rarely" },
     { dim: "Pricing", us: "Fixed-fee, written scope before work", cpa: "Often hourly", remote: "Tiered, but thin on Delaware specifics" },
     { dim: "Who files", us: "Coordinates with your CPA &amp; agent &mdash; honest scope", cpa: "Files DE &amp; federal returns", remote: "Usually doesn&rsquo;t file" },
@@ -284,7 +286,7 @@ module.exports = {
 
   // EXPERT REVIEW — firm-level trust row (no founder name).
   reviewCreds: [
-    { label: "Entity", detail: "TechBrot Inc. &middot; Delaware C-Corporation &middot; Office in Middletown, DE &middot; NAICS 541219" },
+    { label: "Entity", detail: "TechBrot Inc. &middot; Delaware C-Corporation &middot; Middletown, DE &middot; NAICS 541219" },
     { label: "Certifications", detail: "Active Intuit Certified QuickBooks ProAdvisor across Online (L2), Desktop, Enterprise, and Payroll" },
     { label: "Delaware practice", detail: "All 3 counties served &middot; New Castle, Kent, Sussex &middot; Gross-receipts tax, franchise-tax reserve, Wilmington wage tax, holding-company &amp; multi-entity books" },
     { label: "Independence", detail: "Independent ProAdvisor firm &middot; Not affiliated with Intuit Inc. &middot; Not a registered agent &middot; Zero affiliate revenue from any provider" },
@@ -304,13 +306,12 @@ module.exports = {
       const url="https://techbrot.com/find-an-accountant/delaware/";
       const qa=data.aiSummary;
       return {"@context":"https://schema.org","@graph":[
-        {"@type":"WebPage","@id":url+"#webpage","url":url,"name":"Delaware QuickBooks ProAdvisors & Bookkeeping","description":"Certified QuickBooks ProAdvisor services, bookkeeping, payroll, and Delaware compliance for Delaware businesses across New Castle, Kent, and Sussex counties — built around the gross receipts tax, no sales tax, the annual franchise tax, and the Wilmington wage tax. Local office in Middletown.","isPartOf":{"@id":"https://techbrot.com/#website"},"about":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"breadcrumb":{"@id":url+"#breadcrumb"},"inLanguage":"en-US","primaryImageOfPage":{"@type":"ImageObject","url":"https://techbrot.com/assets/img/og/delaware-og.png"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#de-in-brief-text","#de-ai-summary-list"]},"reviewedBy":{"@id":"https://techbrot.com/#david-westgate"},"lastReviewed":"2026-06-25"},
+        {"@type":"WebPage","@id":url+"#webpage","url":url,"name":"Delaware QuickBooks ProAdvisors & Bookkeeping","description":"Certified QuickBooks ProAdvisor services, bookkeeping, payroll, and Delaware compliance for Delaware businesses across New Castle, Kent, and Sussex counties — built around the gross receipts tax, no sales tax, the annual franchise tax, and the Wilmington wage tax.","isPartOf":{"@id":"https://techbrot.com/#website"},"about":{"@id":"https://techbrot.com/#organization"},"publisher":{"@id":"https://techbrot.com/#organization"},"breadcrumb":{"@id":url+"#breadcrumb"},"inLanguage":"en-US","primaryImageOfPage":{"@type":"ImageObject","url":"https://techbrot.com/assets/img/og/delaware-og.png"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["#de-in-brief-text","#de-ai-summary-list"]},"reviewedBy":{"@id":"https://techbrot.com/#david-westgate"},"lastReviewed":"2026-06-25"},
         {"@type":"BreadcrumbList","@id":url+"#breadcrumb","itemListElement":[
           {"@type":"ListItem","position":1,"name":"Home","item":"https://techbrot.com/"},
           {"@type":"ListItem","position":2,"name":"Find an Accountant","item":"https://techbrot.com/find-an-accountant/"},
           {"@type":"ListItem","position":3,"name":"Delaware"}]},
-        {"@type":["AccountingService","LocalBusiness"],"@id":url+"#localbusiness","name":"TechBrot Inc. — Delaware QuickBooks ProAdvisors & Bookkeeping","description":"Independent Certified QuickBooks ProAdvisor and bookkeeping firm with a local office in Middletown, Delaware, serving New Castle, Kent, and Sussex counties. Gross receipts tax tracking, franchise-tax reserve, Wilmington wage tax, holding-company and multi-entity books. Does not file Delaware returns — coordinates with the client's CPA.","parentOrganization":{"@id":"https://techbrot.com/#organization"},"image":"https://techbrot.com/assets/img/og/delaware-og.png","url":url,"telephone":"+1-877-751-5575","priceRange":"$$","currenciesAccepted":"USD","paymentAccepted":["Credit Card","Bank Transfer","ACH","Check"],"address":{"@type":"PostalAddress","streetAddress":"651 N Broad St, Suite 201","addressLocality":"Middletown","addressRegion":"DE","postalCode":"19709","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":"39.449","longitude":"-75.716"},"hasMap":"https://www.google.com/maps/search/?api=1&query=651+N+Broad+St+Suite+201+Middletown+DE+19709","areaServed":[{"@type":"State","name":"Delaware","sameAs":"https://en.wikipedia.org/wiki/Delaware"},{"@type":"AdministrativeArea","name":"New Castle County"},{"@type":"AdministrativeArea","name":"Kent County"},{"@type":"AdministrativeArea","name":"Sussex County"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}]},
-        {"@type":"Service","@id":url+"#service","name":"Delaware QuickBooks ProAdvisor & Bookkeeping Services","serviceType":"QuickBooks ProAdvisor, bookkeeping, payroll, and Delaware gross receipts tax compliance","description":"Certified QuickBooks ProAdvisor services, bookkeeping, QuickBooks setup, cleanup, and migration, payroll, gross-receipts-tax tracking, and franchise-tax reserve for Delaware businesses across New Castle, Kent, and Sussex counties. Delivered directly from the Middletown office, with partner practices in Delaware. Independent Certified QuickBooks ProAdvisor firm; does not file federal or Delaware tax returns or the franchise tax/annual report — coordinates with the client's CPA, EA, and registered agent.","provider":{"@id":"https://techbrot.com/#localbusiness"},"areaServed":{"@type":"State","name":"Delaware","containsPlace":[
+        {"@type":"Service","@id":url+"#service","name":"Delaware QuickBooks ProAdvisor & Bookkeeping Services","serviceType":"QuickBooks ProAdvisor, bookkeeping, payroll, and Delaware gross receipts tax compliance","description":"Certified QuickBooks ProAdvisor services, bookkeeping, QuickBooks setup, cleanup, and migration, payroll, gross-receipts-tax tracking, and franchise-tax reserve for Delaware businesses across New Castle, Kent, and Sussex counties. Delivered remotely to Delaware businesses, with partner practices in Delaware. Independent Certified QuickBooks ProAdvisor firm; does not file federal or Delaware tax returns or the franchise tax/annual report — coordinates with the client's CPA, EA, and registered agent.","provider":{"@id":"https://techbrot.com/#organization"},"areaServed":{"@type":"State","name":"Delaware","containsPlace":[
           {"@type":"City","name":"Wilmington"},{"@type":"City","name":"Dover"},{"@type":"City","name":"Newark"},{"@type":"City","name":"Middletown"},{"@type":"City","name":"Smyrna"},{"@type":"City","name":"Bear"}]},
           "audience":{"@type":"BusinessAudience","audienceType":"Delaware small and mid-sized businesses, holding companies and out-of-state-owned Delaware entities, professional-services firms, e-commerce and retail, real estate operators, construction firms, and finance and banking firms"},
           "hasOfferCatalog":{"@type":"OfferCatalog","name":"Delaware accounting services","itemListElement":[
