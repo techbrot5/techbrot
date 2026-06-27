@@ -6,7 +6,9 @@ eleventyExcludeFromCollections: true
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for item in collections.all %}
 {%- set u = item.url %}
-{%- if u and u != "/sitemap.xml" and u != "/404.html" and (u | string).startsWith("/dev/") == false %}
+{#- exclude dev, sitemap/404, and any page that canonicalizes to a DIFFERENT URL
+    (a canonicalized-away duplicate must not be advertised in the sitemap) -#}
+{%- if u and u != "/sitemap.xml" and u != "/404.html" and (u | string).startsWith("/dev/") == false and not (item.data.canonicalUrl and item.data.canonicalUrl != u) %}
   <url><loc>{{ site.url }}{{ u }}</loc></url>
 {%- endif %}
 {%- endfor %}
