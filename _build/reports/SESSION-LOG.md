@@ -2455,3 +2455,10 @@ Full sitewide footer (dc-base): (1) tagline reworded honest/clear -- "Certified 
 **VERIFY:** prod build 734 files / [css] 8 layers minified 107401B/122880B gate / 0 err. Battery 154 PASS (after carrying the css-drift exemption to 99-dc-system.css; manifest now 555 live-bundle classes incl dc-system; design-fidelity 722 pages PASS). LIVE (commit 8130ee1): techbrot.com = exactly ONE stylesheet (site.min.css, 0 dc-system.css refs), merged bundle 107401B with .dsp/.dc-rhero, 0 eager gtag + deferred loader present, 2 same-origin font preloads. (Harmless: old /assets/css/dc-system.css URL still 200 from edge cache but referenced by 0 pages -> never loaded; ages out / purge optional.)
 **COUNT:** 1 commit (8130ee1: 6 files; dc-system.css renamed, gate raises, passthrough/link removed, GTM deferred). Pushed; HEAD==origin.
 **OPEN:** founder re-runs pagespeed.web.dev (mobile) for the AFTER LCP/score -> report before(82/4.2s)/after delta. Further lever if needed: inline critical CSS + async the rest (bigger but riskier; not done).
+
+## RESULT (founder pagespeed.web.dev, mobile) -- LCP perf fixes
+BEFORE: Performance 82 / LCP 4.2s.  AFTER: Performance 94 / LCP 2.1s.
+Delta: +12 perf points; LCP -2.1s (-50%), now under the 2.5s "Good" threshold.
+Sitewide (all 727 pages) from the 3 template/build fixes: one minified
+render-blocking CSS file (dc-system merged), GTM deferred out of the LCP
+path, fonts same-origin (only Fraunces+Geist preloaded). No per-page work.
