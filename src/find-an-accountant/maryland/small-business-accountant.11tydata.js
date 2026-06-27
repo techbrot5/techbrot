@@ -14,7 +14,7 @@
  * services and software publishing incl. business-use SaaS, effective July 1, 2025 (consumer SaaS stays 6%;
  * MPU certificates apportion). Metros Baltimore/Columbia/Silver Spring/Rockville/Bethesda/Annapolis/Frederick/
  * Gaithersburg; all 23 counties + Baltimore City; borders DE/PA/VA/WV/DC; NO street address (areaServed-only
- * — DE is the only real-address state). Pricing uses ONLY canonical MD figures (monthly from $400/mo; cleanup
+ * — all states are areaServed-only (no street address)). Pricing uses ONLY canonical MD figures (monthly from $400/mo; cleanup
  * from $1,200; setup from $750).
  *
  * ROUTING (MD is a CORE state — only 6 pages): cross-links go ONLY to the 4 MD siblings + pillar, or to

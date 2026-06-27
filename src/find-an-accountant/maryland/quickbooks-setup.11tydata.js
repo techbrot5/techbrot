@@ -10,8 +10,8 @@
  * 6% standard SALES tax with the NEW 3% data/IT-services + business-use-SaaS rate (eff 7/1/2025) and MPU
  * apportionment. Graduated state income tax (2%–6.50%, 2025 brackets), corporate 8.25%, and the PTE
  * election as advisory context only. provider = #organization; areaServed = State Maryland; reviewedBy
- * #david-westgate on the WebPage. NO street address, NO LocalBusiness (MD is areaServed-only; the DE HQ is
- * the only real-address state). HONESTY (R5): firm-level review byline only (no founder name); independent
+ * #david-westgate on the WebPage. NO street address, NO LocalBusiness (MD is areaServed-only; the firm is
+ * areaServed-only (no street address) like every state). HONESTY (R5): firm-level review byline only (no founder name); independent
  * firm — not affiliated with Intuit Inc.; does NOT file Maryland/federal/corporate/income/local-income/
  * payroll-withholding/sales-tax(incl. the 3% IT/data tax)/PTE returns; not a registered agent; state
  * middle brackets and specific county local rates framed qualitatively, never quoted as fixed figures; the

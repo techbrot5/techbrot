@@ -14,8 +14,8 @@
  * → 8.25% July 1 2026) — county-variable; configuring the correct COMBINED rate by location is THE core NC setup task
  * (the hook). NC shares GA's NO-LOCAL-INCOME-TAX + NO-RECIPROCITY shape: payroll withholding is STATE-ONLY and ALL
  * North Carolina-source wages are withheld for NC. provider = #organization; areaServed = State North Carolina;
- * reviewedBy #david-westgate on the WebPage. NO street address, NO LocalBusiness (NC is areaServed-only; the DE HQ is
- * the only real-address state). HONESTY (R5): firm-level review byline only (no founder name); independent firm — not
+ * reviewedBy #david-westgate on the WebPage. NO street address, NO LocalBusiness (NC is areaServed-only; the firm is
+ * areaServed-only (no street address) like every state). HONESTY (R5): firm-level review byline only (no founder name); independent firm — not
  * affiliated with Intuit Inc.; does NOT file North Carolina/federal returns, the corporate income tax, the franchise
  * tax, the individual income tax, the sales-tax return, or the Taxed PTE election; not a registered agent; the flat
  * 3.99% income tax (2026), the 2.00% corporate rate (2026) phasing to ZERO by 2030, the 4.75% state sales tax, and the

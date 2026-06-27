@@ -2,7 +2,7 @@
  * depth (pillar + quickbooks-accountant + small-business-accountant + quickbooks-cleanup + quickbooks-setup +
  * bookkeeping-services); every absent service/industry ROUTES TO GLOBAL. NC is an areaServed-ONLY state: TechBrot serves
  * North Carolina remotely from the Delaware HQ, so this pillar carries NO street address, NO PostalAddress, NO geo, NO
- * LocalBusiness node, and NO hasMap (DE is the ONLY real-address state). Service + areaServed (State of North Carolina +
+ * LocalBusiness node, and NO hasMap (all states are areaServed-only (no street address)). Service + areaServed (State of North Carolina +
  * named metros) only; provider = #organization. Mirrors the PA/NJ/MD/VA/OH/MI/GA core-state exemplars: OMITS `ecosystem`;
  * `industries` cards -> GLOBAL /accounting/industries/*; 5 SERVICE cards = the NC children; `cities` name+county with NO
  * href; pricing rows -> 5 children + global. North Carolina continues WAVE C (Sunbelt).

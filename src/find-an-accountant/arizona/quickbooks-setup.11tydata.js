@@ -16,7 +16,7 @@
  * AZ). GA's no-local-tax/no-reciprocity withholding → Arizona's no-local-income-tax STATE-ONLY withholding with
  * the 60-DAY nonresident rule and the CA/IN/OR/VA exemption. provider = #organization; areaServed = State
  * Arizona; reviewedBy #david-westgate on the WebPage. NO street address, NO LocalBusiness, NO PostalAddress/geo
- * (AZ is areaServed-only; DE is the only real-address state). HONESTY (R5): firm-level review byline only (no
+ * (AZ is areaServed-only; all states are areaServed-only (no street address)). HONESTY (R5): firm-level review byline only (no
  * founder name); independent firm — not affiliated with Intuit Inc.; does NOT file Arizona/federal returns, the
  * corporate income tax, the individual income tax, the TPT return, or the PTE election; not a registered agent;
  * the flat 2.5% income tax, the 4.9% corporate rate, the 5.6% state TPT, the prime-contracting 65% base, the

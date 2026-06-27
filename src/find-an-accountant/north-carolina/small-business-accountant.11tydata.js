@@ -21,7 +21,7 @@
  * Metros Charlotte (Mecklenburg)/Raleigh (Wake)/Greensboro (Guilford)/Durham/Winston-Salem (Forsyth)/
  * Fayetteville (Cumberland)/Wilmington (New Hanover)/Asheville (Buncombe); all 100 counties; Charlotte banking
  * + the Research Triangle tech/biotech + Triad manufacturing; NO street address (areaServed-only — DE is the
- * only real-address state). Pricing uses ONLY canonical NC figures (monthly from $400/mo; cleanup from $1,200;
+ * only areaServed-only state). Pricing uses ONLY canonical NC figures (monthly from $400/mo; cleanup from $1,200;
  * setup from $750).
  *
  * ROUTING (NC is a CORE state — 6 essentials only): cross-links go ONLY to the 5 NC siblings + pillar, or to

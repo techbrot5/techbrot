@@ -13,8 +13,8 @@
  * 4.25% income / 6% CIT / FTE → Georgia's flat 4.99% individual AND corporate income tax (2026, HB 1437 path),
  * PLUS the corporate NET WORTH TAX ($0 at <=$100k net worth, $5,000 max over $22M, Form 600) and the PTE election
  * (HB 149) as the advisory/SALT-cap angle. provider = #organization; areaServed = State Georgia; reviewedBy
- * #david-westgate on the WebPage. NO street address, NO LocalBusiness (GA is areaServed-only; the DE HQ is the only
- * real-address state). HONESTY (R5): firm-level review byline only (no founder name); independent firm — not
+ * #david-westgate on the WebPage. NO street address, NO LocalBusiness (GA is areaServed-only; no state is a a street address —
+ *  state). HONESTY (R5): firm-level review byline only (no founder name); independent firm — not
  * affiliated with Intuit Inc.; does NOT file Georgia/federal returns, the corporate income tax, the net worth tax,
  * the individual income tax, the sales-tax return, or the PTE election; not a registered agent; the flat 4.99%
  * income & corporate rate (2026), the 4% state sales tax, and the net-worth-tax $100k/$5,000/$22M figures are

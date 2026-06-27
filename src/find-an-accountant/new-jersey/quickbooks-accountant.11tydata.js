@@ -15,7 +15,7 @@
  * and the BAIT elective pass-through SALT-cap workaround (advisory hook). PRICING anchored to
  * NJ-FACTS canonical "from" figures (monthly $400, cleanup $1,200, setup $750). provider =
  * #organization; areaServed = State New Jersey (NO PostalAddress / geo / LocalBusiness — New Jersey
- * is an areaServed-only anchor; DE HQ anchors the Mid-Atlantic); reviewedBy #david-westgate. HONESTY
+ * is an areaServed-only anchor; remote-served across the Mid-Atlantic); reviewedBy #david-westgate. HONESTY
  * (R5): no invented reviews/stats; firm-level review byline (no founder name; David Westgate only as
  * reviewedBy @id). Independent firm — does NOT file New Jersey returns, the CBT, the GIT, the
  * UI/TDI/FLI payroll filings, the Newark/Jersey City payroll-tax returns, or the sales-tax return;

@@ -10,7 +10,7 @@
  * (LST) at the worksite, and Philadelphia's separate Wage/NPT/BIRT for Philly businesses. CNIT 7.49%
  * (2026) context only. provider = #organization; areaServed = State Pennsylvania; reviewedBy
  * #david-westgate on the WebPage. NO street address, NO LocalBusiness (PA is areaServed-only; the DE
- * HQ is the only real-address state). HONESTY (R5): firm-level review byline only (no founder name);
+ * HQ is areaServed-only (no street address) like every state). HONESTY (R5): firm-level review byline only (no founder name);
  * independent firm — not affiliated with Intuit Inc.; does NOT file Pennsylvania/federal/local-EIT/LST/
  * Philadelphia/sales-tax returns; not a registered agent; never quotes a specific municipal EIT rate;
  * Philadelphia city rates framed "current as of the review date"; coordinates with the client's CPA. */

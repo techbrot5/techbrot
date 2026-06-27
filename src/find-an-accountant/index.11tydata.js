@@ -45,7 +45,7 @@ const allStates = US_STATES.map(function(name){
 });
 
 // Built-out states as premium routing cards (the local-tax hook is the card substance).
-// 20 states with dedicated pages: NY (full tree), the 4 original landings, the DE HQ anchor,
+// 20 states with dedicated pages: NY (full tree), the 4 original landings, the firm anchor,
 // and the 14 core states (pillar + 5 essentials each). Every card's note is the REAL local-tax
 // hook from that state's verified FACTS base — no template copy.
 const states = [

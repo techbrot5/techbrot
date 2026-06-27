@@ -26,7 +26,7 @@
  * Newton (Middlesex), Framingham (Middlesex; MetroWest). PRICING anchored to MA-FACTS canonical "from"
  * figures (monthly $400, cleanup $1,200, setup $750). provider = #organization; areaServed = State
  * Massachusetts (NO PostalAddress / geo / LocalBusiness — Massachusetts is an areaServed-only state; the
- * DE HQ is the only real-address state); reviewedBy #david-westgate. NOTE sameAs target is plain
+ * all states are areaServed-only (no street address)); reviewedBy #david-westgate. NOTE sameAs target is plain
  * Massachusetts (https://en.wikipedia.org/wiki/Massachusetts).
  * HONESTY (R5): no invented reviews/stats; firm-level review byline (no founder name; David Westgate only as
  * reviewedBy @id). Independent firm — NOT affiliated with Intuit; does NOT file Massachusetts or federal

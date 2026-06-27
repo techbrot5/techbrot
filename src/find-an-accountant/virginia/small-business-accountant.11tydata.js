@@ -16,7 +16,7 @@
  * Historic Triangle, reduced 1% on groceries — QuickBooks must apply the right regional rate by location.
  * Reciprocity with MD/PA/WV/KY/DC via Form VA-4. Metros NoVA (Arlington/Alexandria/Fairfax/Loudoun's Data
  * Center Alley) / Richmond / Hampton Roads / Roanoke / Charlottesville; counties + independent cities;
- * borders MD/WV/KY/TN/NC/DC; NO street address (areaServed-only — DE is the only real-address state).
+ * borders MD/WV/KY/TN/NC/DC; NO street address (areaServed-only — all states are areaServed-only (no street address)).
  * Pricing uses ONLY canonical VA figures (monthly from $400/mo; cleanup from $1,200; setup from $750).
  *
  * ROUTING (VA is a CORE state — only 6 pages): cross-links go ONLY to the 4 VA siblings + pillar, or to

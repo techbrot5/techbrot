@@ -18,8 +18,8 @@
  * NO reciprocity with any state, so a nonresident working in Georgia is generally withheld for Georgia on the
  * Georgia-source wages (matters for multi-state/remote employers). Metros Atlanta/Savannah/Augusta/Columbus/
  * Macon/Athens/Marietta/Alpharetta; all 159 counties; logistics (Port of Savannah, Hartsfield-Jackson) +
- * Atlanta fintech "Transaction Alley" + film; NO street address (areaServed-only — DE is the only real-address
- * state). Pricing uses ONLY canonical GA figures (monthly from $400/mo; cleanup from $1,200; setup from $750).
+ * Atlanta fintech "Transaction Alley" + film; NO street address (areaServed-only — no state carries a
+ * street address). Pricing uses ONLY canonical GA figures (monthly from $400/mo; cleanup from $1,200; setup from $750).
  *
  * ROUTING (GA is a CORE state — 6 essentials only): cross-links go ONLY to the 5 GA siblings + pillar, or to
  * existing GLOBAL pages (payroll, sales-tax-compliance, fractional-cfo, bookkeeper-vs-accountant, file-review).

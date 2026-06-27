@@ -13,7 +13,7 @@
  * hinges on sourcing), and Philadelphia's separate Wage/NPT/BIRT city taxes. PRICING anchored to
  * PA-FACTS canonical "from" figures (monthly $400, cleanup $1,200, setup $750). provider =
  * #organization; areaServed = State Pennsylvania (NO PostalAddress / geo / LocalBusiness —
- * Pennsylvania is an areaServed-only anchor; DE HQ sits minutes across the line); reviewedBy
+ * Pennsylvania is an areaServed-only anchor; the firm sits minutes across the line); reviewedBy
  * #david-westgate. HONESTY (R5): no invented reviews/stats; firm-level review byline (no founder
  * name; David Westgate only as reviewedBy @id). Independent firm — does NOT file Pennsylvania
  * returns, the local EIT return, the LST, Philadelphia's Wage/NPT/BIRT, or the sales-tax return; not

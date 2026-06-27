@@ -17,7 +17,7 @@
  * the DOR local-sales-tax source). Metros Nashville/Memphis/Knoxville/Chattanooga/Clarksville/Murfreesboro/
  * Franklin/Johnson City; 95 counties across 3 Grand Divisions; healthcare-management (Nashville/HCA), logistics
  * (Memphis/FedEx), auto & EV manufacturing (Nissan, VW, GM, Ford BlueOval City). NO street address (areaServed-only
- * — DE is the only real-address state). Pricing uses ONLY canonical TN figures (monthly from $400/mo; cleanup from
+ * — all states are areaServed-only (no street address)). Pricing uses ONLY canonical TN figures (monthly from $400/mo; cleanup from
  * $1,200; setup from $750).
  *
  * ROUTING (TN is a CORE state — 6 essentials only): cross-links go ONLY to the 5 TN siblings + pillar, or to

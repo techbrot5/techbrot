@@ -3,8 +3,8 @@
  * quickbooks-setup + bookkeeping-services); every absent service/industry ROUTES TO GLOBAL. PA is an
  * areaServed-ONLY state: TechBrot serves Pennsylvania remotely from the Delaware HQ (minutes across the
  * border), so this pillar carries NO street address, NO PostalAddress, NO geo, NO LocalBusiness node, and
- * NO hasMap — a fabricated PA local address would breach the honesty contract (DE is the ONLY real-address
- * state). Service + areaServed (Commonwealth of Pennsylvania + named metros) only; provider = #organization.
+ * NO hasMap — a fabricated PA local address would breach the honesty contract (no state carries a
+ * street address — all areaServed-only). Service + areaServed (Commonwealth of Pennsylvania + named metros) only; provider = #organization.
  *
  * CORE-STATE PILLAR PATTERN (PA is the FIRST core state — sets the exemplar for NJ/MD/VA/OH/MI/GA/NC/AZ/TN/
  * WA/CO/MA): every t-state-pillar.njk section is {% if %}-guarded, so a section is OMITTED by withholding its

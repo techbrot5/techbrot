@@ -2,7 +2,7 @@
  * (pillar + quickbooks-accountant + small-business-accountant + quickbooks-cleanup + quickbooks-setup +
  * bookkeeping-services); every absent service/industry ROUTES TO GLOBAL. WA is an areaServed-ONLY state: TechBrot serves
  * Washington remotely, so this pillar carries NO street address, NO PostalAddress, NO geo, NO LocalBusiness node, and NO
- * hasMap (DE is the ONLY real-address state). Service + areaServed (State of Washington + named metros) only; provider =
+ * hasMap (all states are areaServed-only (no street address)). Service + areaServed (State of Washington + named metros) only; provider =
  * #organization. Mirrors the PA/NJ/MD/VA/OH/MI/GA/NC/AZ/TN core-state exemplars: OMITS `ecosystem`; `industries` cards ->
  * GLOBAL /accounting/industries/*; 5 SERVICE cards = the WA children; `cities` name+county with NO href; pricing rows ->
  * 5 children + global. Washington STARTS Wave D (Seattle tech / Boeing aerospace / Amazon e-commerce economy).

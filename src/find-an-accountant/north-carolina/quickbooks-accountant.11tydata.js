@@ -26,7 +26,7 @@
  * Fayetteville (Cumberland), Wilmington (New Hanover), Asheville (Buncombe). PRICING anchored to
  * NC-FACTS canonical "from" figures (monthly $400, cleanup $1,200, setup $750). provider = #organization;
  * areaServed = State North Carolina (NO PostalAddress / geo / LocalBusiness — North Carolina is an
- * areaServed-only state; the DE HQ is the only real-address state); reviewedBy #david-westgate.
+ * areaServed-only state; all states are areaServed-only (no street address)); reviewedBy #david-westgate.
  * HONESTY (R5): no invented reviews/stats; firm-level review byline (no founder name; David Westgate
  * only as reviewedBy @id). Independent firm — does NOT file North Carolina or federal returns, the
  * corporate income tax, the franchise tax, the individual income tax, the sales/use-tax return, or the

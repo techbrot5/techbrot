@@ -2,8 +2,8 @@
  * 6-essentials depth (pillar + quickbooks-accountant + small-business-accountant + quickbooks-cleanup +
  * quickbooks-setup + bookkeeping-services); every absent service/industry ROUTES TO GLOBAL. NJ is an
  * areaServed-ONLY state: TechBrot serves New Jersey remotely from the Delaware HQ, so this pillar carries
- * NO street address, NO PostalAddress, NO geo, NO LocalBusiness node, and NO hasMap (DE is the ONLY
- * real-address state). Service + areaServed (State of New Jersey + named metros) only; provider = #organization.
+ * NO street address, NO PostalAddress, NO geo, NO LocalBusiness node, and NO hasMap (no state carries
+ * a street address — all areaServed-only). Service + areaServed (State of New Jersey + named metros) only; provider = #organization.
  * Mirrors the PA core-state exemplar (find-an-accountant/pennsylvania.*): OMITS `ecosystem`; `industries`
  * cards -> GLOBAL /accounting/industries/*; 5 SERVICE cards = the NJ children; `cities` name+county with NO
  * href; pricing rows -> 5 children + global.

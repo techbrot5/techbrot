@@ -18,7 +18,7 @@
  * (HB96 — framed qualitatively, no fixed 2026 rate). The IT 4738 PTET is the SALT-cap advisory hook.
  * PRICING anchored to OH-FACTS canonical "from" figures (monthly $400, cleanup $1,200, setup $750).
  * provider = #organization; areaServed = State Ohio (NO PostalAddress / geo / LocalBusiness — Ohio is
- * an areaServed-only state; the DE HQ is the only real-address state); reviewedBy #david-westgate.
+ * an areaServed-only state; all states are areaServed-only (no street address)); reviewedBy #david-westgate.
  * HONESTY (R5): no invented reviews/stats; firm-level review byline (no founder name; David Westgate
  * only as reviewedBy @id). Independent firm — does NOT file Ohio returns, the CAT, the state income
  * tax, the municipal or school-district income-tax filings, the sales-tax return, or the IT 4738 PTE

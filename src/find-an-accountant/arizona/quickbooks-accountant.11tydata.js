@@ -23,8 +23,8 @@
  * Phoenix (Maricopa; semiconductors TSMC, finance), Tucson (Pima; aerospace/defense Raytheon, U of A), Mesa,
  * Chandler (Intel), Scottsdale, Gilbert, Tempe (ASU), Flagstaff (Coconino). PRICING anchored to AZ-FACTS
  * canonical "from" figures (monthly $400, cleanup $1,200, setup $750). provider = #organization; areaServed =
- * State Arizona (NO PostalAddress / geo / LocalBusiness — Arizona is an areaServed-only state; the DE HQ is
- * the only real-address state); reviewedBy #david-westgate.
+ * State Arizona (NO PostalAddress / geo / LocalBusiness — Arizona is an areaServed-only state; the firm is
+ * areaServed-only (no street address) like every state); reviewedBy #david-westgate.
  * HONESTY (R5): no invented reviews/stats; firm-level review byline (no founder name; David Westgate only as
  * reviewedBy @id). Independent firm — does NOT file Arizona or federal returns, the corporate income tax, the
  * individual income tax, the Transaction Privilege Tax (TPT) return, or the PTE election; not a registered

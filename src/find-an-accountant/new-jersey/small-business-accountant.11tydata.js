@@ -12,8 +12,8 @@
  * the PA–NJ reciprocal agreement (Form NJ-165); Newark and Jersey City employer payroll taxes; the
  * 6.625% sales tax with the 3.3125% UEZ/Salem half-rate; the Corporation Business Tax (9% / 2.5% transit
  * fee); and BAIT as the advisory hook. Metros Newark/Jersey City/Paterson/Elizabeth/Edison/Trenton/
- * Camden/Hoboken; all 21 counties; borders DE/PA/NY; NO street address (areaServed-only — DE is the only
- * real-address state). Pricing uses ONLY canonical NJ figures (monthly from $400/mo; cleanup from
+ * Camden/Hoboken; all 21 counties; borders DE/PA/NY; NO street address (areaServed-only — no state carries a
+ * street address). Pricing uses ONLY canonical NJ figures (monthly from $400/mo; cleanup from
  * $1,200; setup from $750).
  *
  * ROUTING (NJ is a CORE state — only 6 pages): cross-links go ONLY to the 4 NJ siblings + pillar, or to

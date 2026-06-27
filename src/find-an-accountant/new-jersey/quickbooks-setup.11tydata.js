@@ -10,7 +10,7 @@
  * Newark and Jersey City EMPLOYER payroll taxes, and the 6.625% statewide SALES tax with its UEZ/Salem
  * half-rate (3.3125%). Graduated GIT (1.4%–10.75%), CBT 9%, and BAIT as advisory context only.
  * provider = #organization; areaServed = State New Jersey; reviewedBy #david-westgate on the WebPage.
- * NO street address, NO LocalBusiness (NJ is areaServed-only; the DE HQ is the only real-address state).
+ * NO street address, NO LocalBusiness (NJ is areaServed-only; all states are areaServed-only (no street address)).
  * HONESTY (R5): firm-level review byline only (no founder name); independent firm — not affiliated with
  * Intuit Inc.; does NOT file New Jersey/federal/CBT/GIT/payroll(UI/TDI/FLI)/sales-tax/Newark/Jersey City
  * returns; not a registered agent; GIT middle brackets, experience-rated employer UI/TDI rates, and the

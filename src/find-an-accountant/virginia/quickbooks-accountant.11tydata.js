@@ -18,7 +18,7 @@
  * 5.75% PTET (available through TY2025 — confirm 2026 status; advisory hook). PRICING anchored to
  * VA-FACTS canonical "from" figures (monthly $400, cleanup $1,200, setup $750). provider =
  * #organization; areaServed = State Virginia (NO PostalAddress / geo / LocalBusiness — Virginia is
- * an areaServed-only state; DE HQ anchors the Mid-Atlantic); reviewedBy #david-westgate. HONESTY
+ * an areaServed-only state; remote-served across the Mid-Atlantic); reviewedBy #david-westgate. HONESTY
  * (R5): no invented reviews/stats; firm-level review byline (no founder name; David Westgate only as
  * reviewedBy @id). Independent firm — does NOT file Virginia or federal returns, the corporate
  * income tax, the state income tax, the payroll-withholding filings, the sales-tax return, the BPOL

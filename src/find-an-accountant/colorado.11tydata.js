@@ -2,7 +2,7 @@
  * (pillar + quickbooks-accountant + small-business-accountant + quickbooks-cleanup + quickbooks-setup +
  * bookkeeping-services); every absent service/industry ROUTES TO GLOBAL. CO is an areaServed-ONLY state: TechBrot serves
  * Colorado remotely, so this pillar carries NO street address, NO PostalAddress, NO geo, NO LocalBusiness node, and NO
- * hasMap (DE is the ONLY real-address state). Service + areaServed (State of Colorado + named metros) only; provider =
+ * hasMap (all states are areaServed-only (no street address)). Service + areaServed (State of Colorado + named metros) only; provider =
  * #organization. Mirrors the PA/NJ/MD/VA/OH/MI/GA/NC/AZ/TN/WA core-state exemplars: OMITS `ecosystem`; `industries` cards ->
  * GLOBAL /accounting/industries/*; 5 SERVICE cards = the CO children; `cities` name+county with NO href; pricing rows ->
  * 5 children + global. Colorado continues Wave D (Denver/Boulder tech corridor / Colorado Springs aerospace / Front Range growth).

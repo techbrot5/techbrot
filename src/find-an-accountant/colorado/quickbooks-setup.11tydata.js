@@ -19,7 +19,7 @@
  * years), so payroll DOES carry COLORADO STATE INCOME-TAX WITHHOLDING (Form DR 1098 / DR 0004). And the books are
  * kept PTE-ready for the SALT Parity Act election (advisory — the CPA makes the election and files).
  * provider = #organization; areaServed = State Colorado; reviewedBy #david-westgate on the WebPage. NO street
- * address, NO LocalBusiness, NO PostalAddress/geo (CO is areaServed-only; DE is the only real-address state).
+ * address, NO LocalBusiness, NO PostalAddress/geo (CO is areaServed-only; all states are areaServed-only (no street address)).
  * HONESTY (R5): firm-level review byline only (no founder name); independent firm — not affiliated with Intuit
  * Inc.; does NOT file Colorado/federal returns, the state or home-rule city sales/use-tax returns, the retail
  * delivery fee return, the income tax, or the PTE election; not a registered agent; the flat 4.40% income tax

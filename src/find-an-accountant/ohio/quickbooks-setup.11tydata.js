@@ -12,7 +12,7 @@
  * income tax); and the COUNTY-VARIABLE sales tax (5.75% state + county/transit, 6.5–8.0% combined). State
  * income tax (first $26,050 exempt; low rate on a path to zero by 2030) and the IT 4738 PTE election as
  * advisory context only. provider = #organization; areaServed = State Ohio; reviewedBy #david-westgate on the
- * WebPage. NO street address, NO LocalBusiness (OH is areaServed-only; the DE HQ is the only real-address
+ * WebPage. NO street address, NO LocalBusiness (OH is areaServed-only; no state has a street address — areaServed-only
  * state). HONESTY (R5): firm-level review byline only (no founder name); independent firm — not affiliated
  * with Intuit Inc.; does NOT file Ohio/federal/CAT/state-income/municipal/school-district/sales-tax/PTE(IT 4738)
  * returns; not a registered agent; the state income-tax rate and specific municipal and county rates framed

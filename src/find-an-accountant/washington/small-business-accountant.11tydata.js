@@ -17,7 +17,7 @@
  * 2025; +2.9% over $1M) — an INDIVIDUAL excise tax, advisory/coordination only. WA payroll premiums: PFML at 1.13%
  * for 2026 and WA Cares at 0.58% (employee-paid). Metros Seattle/Spokane/Tacoma/Vancouver/Bellevue/Everett/Kent;
  * 39 counties, Puget-Sound-centric; Seattle tech/cloud, Boeing aerospace, Amazon e-commerce, ports & logistics.
- * NO street address (areaServed-only — DE is the only real-address state). Pricing uses ONLY canonical WA figures
+ * NO street address (areaServed-only — all states are areaServed-only (no street address)). Pricing uses ONLY canonical WA figures
  * (monthly from $400/mo; cleanup from $1,200; setup from $750). DO NOT call the B&O an income tax.
  *
  * ROUTING (WA is a CORE state — 6 essentials only): cross-links go ONLY to the 5 WA siblings + pillar, or to

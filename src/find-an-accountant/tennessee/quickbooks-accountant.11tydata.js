@@ -22,7 +22,7 @@
  * Knoxville (Knox; UT, Oak Ridge), Chattanooga (Hamilton; VW, "Gig City" tech), Clarksville, Murfreesboro,
  * Franklin, Tri-Cities. PRICING anchored to TN-FACTS canonical "from" figures (monthly $400, cleanup
  * $1,200, setup $750). provider = #organization; areaServed = State Tennessee (NO PostalAddress / geo /
- * LocalBusiness — Tennessee is an areaServed-only state; the DE HQ is the only real-address state);
+ * LocalBusiness — Tennessee is an areaServed-only state; all states are areaServed-only (no street address));
  * reviewedBy #david-westgate.
  * HONESTY (R5): no invented reviews/stats; firm-level review byline (no founder name; David Westgate only as
  * reviewedBy @id). Independent firm — does NOT file Tennessee or federal returns, the F&E (FAE 170) return,

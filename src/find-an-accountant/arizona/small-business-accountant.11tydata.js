@@ -18,8 +18,8 @@
  * the AZ withholding shape — NO local or city income tax (state-only withholding) with the 60-DAY nonresident
  * rule and the CA/IN/OR/VA resident EXEMPTION (Form 140NR + credit). Metros Phoenix/Tucson/Mesa/Chandler/
  * Scottsdale/Gilbert/Tempe/Flagstaff; all 15 counties (Maricopa-centric); semiconductors (TSMC, Intel),
- * construction boom, aerospace/defense (Tucson). NO street address (areaServed-only — DE is the only
- * real-address state). Pricing uses ONLY canonical AZ figures (monthly from $400/mo; cleanup from $1,200;
+ * construction boom, aerospace/defense (Tucson). NO street address (areaServed-only — no state carries a
+ * street address). Pricing uses ONLY canonical AZ figures (monthly from $400/mo; cleanup from $1,200;
  * setup from $750). TPT is NEVER called a sales tax.
  *
  * ROUTING (AZ is a CORE state — 6 essentials only): cross-links go ONLY to the 5 AZ siblings + pillar, or to

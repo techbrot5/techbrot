@@ -2,7 +2,7 @@
  * (pillar + quickbooks-accountant + small-business-accountant + quickbooks-cleanup + quickbooks-setup +
  * bookkeeping-services); every absent service/industry ROUTES TO GLOBAL. MA is an areaServed-ONLY state: TechBrot serves
  * Massachusetts remotely, so this pillar carries NO street address, NO PostalAddress, NO geo, NO LocalBusiness node, and NO
- * hasMap (DE is the ONLY real-address state). Service + areaServed (Commonwealth of Massachusetts + named metros) only;
+ * hasMap (all states are areaServed-only (no street address)). Service + areaServed (Commonwealth of Massachusetts + named metros) only;
  * provider = #organization. Mirrors the PA/NJ/MD/VA/OH/MI/GA/NC/AZ/TN/WA/CO core-state exemplars: OMITS `ecosystem`;
  * `industries` cards -> GLOBAL /accounting/industries/*; 5 SERVICE cards = the MA children; `cities` name+county with NO href;
  * pricing rows -> 5 children + global. Massachusetts is the FINAL core state (20th) and finishes Wave D (the Cambridge/Kendall

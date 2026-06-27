@@ -20,7 +20,7 @@
  * at the entity level — advisory/coordination only (the CPA elects and files; we keep the books PTE-ready). Metros
  * Denver/Colorado Springs/Aurora/Fort Collins/Lakewood/Boulder/Pueblo/Greeley; 64 counties, Front-Range-centric;
  * Denver/Boulder tech & startups, Colorado Springs aerospace/defense, Front Range construction/real estate, Weld
- * County energy/oil & gas. NO street address (areaServed-only — DE is the only real-address state). Pricing uses
+ * County energy/oil & gas. NO street address (areaServed-only — all states are areaServed-only (no street address)). Pricing uses
  * ONLY canonical CO figures (monthly from $400/mo; cleanup from $1,200; setup from $750). DO NOT call the
  * home-rule sales tax a single statewide rate.
  *

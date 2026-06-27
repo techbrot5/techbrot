@@ -18,7 +18,7 @@
  * corporate excise (8% net-income measure plus a $2.60/$1,000 property-or-net-worth measure, $456 minimum) is kept
  * supportable; the CPA computes and files it.
  * provider = #organization; areaServed = State Massachusetts; reviewedBy #david-westgate on the WebPage. NO street
- * address, NO LocalBusiness, NO PostalAddress/geo (MA is areaServed-only; DE is the only real-address state).
+ * address, NO LocalBusiness, NO PostalAddress/geo (MA is areaServed-only; all states are areaServed-only (no street address)).
  * HONESTY (R5): firm-level review byline only (no founder name); independent firm — not affiliated with Intuit
  * Inc.; does NOT file Massachusetts/federal returns, the income tax or the 4% surtax, the corporate excise, the
  * sales/use-tax return, the PFML return, or the PTE election; not a registered agent; the flat 5% income tax with MA

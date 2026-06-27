@@ -2,7 +2,7 @@
  * TechBrot serves Indiana remotely; there is NO Indiana office, so this pillar carries NO street
  * address, NO PostalAddress, NO geo, NO LocalBusiness/AccountingService node, and NO hasMap — a
  * fabricated Indiana local address would breach the honesty contract (the DE pillar is the ONLY
- * state page with a real-address LocalBusiness node; that node is DE-only and is NOT replicated
+ * state page; no LocalBusiness/address node ships on any state (all areaServed-only) and is NOT replicated
  * here). Service + areaServed (State of Indiana + named metros) only; provider = #organization.
  * Data-file shape mirrors the proven NY pillar (find-an-accountant/new-york.11tydata.js): JSON
  * front-matter lives in the .njk; this file supplies the content arrays + an eleventyComputed

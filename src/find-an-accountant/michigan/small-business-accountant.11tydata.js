@@ -18,7 +18,7 @@
  * still applies, and it does NOT cover independent contractors or non-wage income; and a FLAT 6% sales and
  * use tax with NO local add-on anywhere in the state. Metros Detroit/Grand Rapids/Warren/Ann Arbor/Lansing/
  * Flint/Kalamazoo/Troy; all 83 counties; auto industry + West Michigan; NO street address (areaServed-only —
- * DE is the only real-address state). Pricing uses ONLY canonical MI figures (monthly from $400/mo; cleanup
+ * all states are areaServed-only (no street address)). Pricing uses ONLY canonical MI figures (monthly from $400/mo; cleanup
  * from $1,200; setup from $750).
  *
  * ROUTING (MI is a CORE state — 6 essentials only): cross-links go ONLY to the 5 MI siblings + pillar, or to

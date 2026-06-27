@@ -21,7 +21,7 @@
  * rate, SALT-cap workaround) is advisory/coordination only (the CPA elects and files; we keep the books PTE-ready).
  * Metros Boston/Cambridge/Worcester/Springfield/Lowell/Quincy/Newton/Framingham; 14 counties, Greater-Boston-centric;
  * Cambridge/Kendall Square biotech & life sciences, Boston finance & healthcare, higher ed, Route 128/495 tech. NO
- * street address (areaServed-only — DE is the only real-address state). Pricing uses ONLY canonical MA figures
+ * street address (areaServed-only — all states are areaServed-only (no street address)). Pricing uses ONLY canonical MA figures
  * (monthly from $400/mo; cleanup from $1,200; setup from $750). DO NOT call the surtax a separate tax base.
  *
  * ROUTING (MA is a CORE state — 6 essentials only): cross-links go ONLY to the 5 MA siblings + pillar, or to

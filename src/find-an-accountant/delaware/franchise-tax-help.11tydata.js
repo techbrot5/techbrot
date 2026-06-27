@@ -22,7 +22,7 @@
  * lower corporate tax. No invented reviews/stats/clients/outcomes; no AggregateRating; the 2
  * real Clutch reviews live on the DE pillar and are not duplicated here. No founder/personal
  * name in visible content (firm-level review byline). Independent firm — not affiliated with
- * Intuit Inc. Schema: provider = #organization (the real-address #localbusiness node lives on
+ * Intuit Inc. Schema: provider = #organization (no LocalBusiness node ships (areaServed-only) on
  * the DE pillar only); areaServed = State Delaware; WebPage carries reviewedBy #david-westgate
  * (the standing-rule operator exception). */
 function stripTags(html){return html.replace(/<[^>]+>/g,"").replace(/&rsquo;/g,"’").replace(/&lsquo;/g,"‘").replace(/&ldquo;/g,"“").replace(/&rdquo;/g,"”").replace(/&mdash;/g,"—").replace(/&ndash;/g,"–").replace(/&rarr;/g,"→").replace(/&amp;/g,"&").replace(/&nbsp;/g," ").replace(/&middot;/g,"·").replace(/&times;/g,"×").replace(/\s+/g," ").trim();}

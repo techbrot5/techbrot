@@ -21,7 +21,7 @@
  * STATE wage income only — does NOT cover the city income tax, independent contractors, or non-wage
  * income. PRICING anchored to MI-FACTS canonical "from" figures (monthly $400, cleanup $1,200,
  * setup $750). provider = #organization; areaServed = State Michigan (NO PostalAddress / geo /
- * LocalBusiness — Michigan is an areaServed-only state; the DE HQ is the only real-address state);
+ * LocalBusiness — Michigan is an areaServed-only state; all states are areaServed-only (no street address));
  * reviewedBy #david-westgate.
  * HONESTY (R5): no invented reviews/stats; firm-level review byline (no founder name; David Westgate
  * only as reviewedBy @id). Independent firm — does NOT file Michigan or federal returns, the CIT, the

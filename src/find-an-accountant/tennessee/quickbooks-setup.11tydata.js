@@ -15,7 +15,7 @@
  * EXCISE on net earnings + a 0.25% FRANCHISE tax on net worth ($100 min, net-worth-only since the 2024
  * property-measure/Schedule G repeal) — so the equity section/balance sheet are kept F&E-ready. provider =
  * #organization; areaServed = State Tennessee; reviewedBy #david-westgate on the WebPage. NO street address,
- * NO LocalBusiness, NO PostalAddress/geo (TN is areaServed-only; DE is the only real-address state). HONESTY
+ * NO LocalBusiness, NO PostalAddress/geo (TN is areaServed-only; all states are areaServed-only (no street address)). HONESTY
  * (R5): firm-level review byline only (no founder name); independent firm — not affiliated with Intuit Inc.;
  * does NOT file Tennessee/federal returns, the F&E (FAE 170) return, the business-tax return, or the
  * sales-tax return; not a registered agent; the no-income-tax (Hall repealed 2021), the 6.5% excise, the

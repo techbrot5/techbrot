@@ -16,7 +16,7 @@
  * from the employer share) and WA Cares (0.58%, employee-paid). And since 2022 a 7% CAPITAL-GAINS tax on owners
  * (advisory — clean cost-basis records kept ready). provider = #organization; areaServed = State Washington;
  * reviewedBy #david-westgate on the WebPage. NO street address, NO LocalBusiness, NO PostalAddress/geo (WA is
- * areaServed-only; DE is the only real-address state). HONESTY (R5): firm-level review byline only (no founder
+ * areaServed-only; all states are areaServed-only (no street address)). HONESTY (R5): firm-level review byline only (no founder
  * name); independent firm — not affiliated with Intuit Inc.; does NOT file Washington/federal returns, the B&O /
  * Combined Excise Tax Return, the sales-tax return, the capital-gains tax, or the city B&O return; not a
  * registered agent; the no-income-tax, the B&O rates (retailing 0.471%, wholesaling/manufacturing 0.484%,

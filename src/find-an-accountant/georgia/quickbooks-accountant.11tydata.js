@@ -23,8 +23,8 @@
  * film), Savannah (Chatham; the Port), Augusta (Richmond), Columbus (Muscogee), Macon (Bibb), Athens
  * (Clarke), Marietta (Cobb), Alpharetta (Fulton). PRICING anchored to GA-FACTS canonical "from"
  * figures (monthly $400, cleanup $1,200, setup $750). provider = #organization; areaServed = State
- * Georgia (NO PostalAddress / geo / LocalBusiness — Georgia is an areaServed-only state; the DE HQ is
- * the only real-address state); reviewedBy #david-westgate.
+ * Georgia (NO PostalAddress / geo / LocalBusiness — Georgia is an areaServed-only state; the firm is
+ * areaServed-only (no street address) like every state); reviewedBy #david-westgate.
  * HONESTY (R5): no invented reviews/stats; firm-level review byline (no founder name; David Westgate
  * only as reviewedBy @id). Independent firm — does NOT file Georgia or federal returns, the corporate
  * income tax, the net worth tax, the individual income tax, the sales/use-tax return, or the PTE

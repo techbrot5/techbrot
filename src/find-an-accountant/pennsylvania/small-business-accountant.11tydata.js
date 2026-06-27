@@ -10,7 +10,7 @@
  * "higher-of" rule; the Local Services Tax (up to $52/yr where levied); Philadelphia's separate
  * Wage/NPT/BIRT city taxes; sales tax of 6% statewide / 7% Allegheny (Pittsburgh) / 8% Philadelphia;
  * manufacturing / logistics / construction / ag / eds-and-meds operators; all 67 counties; NO street
- * address (areaServed-only — DE HQ is minutes across the line). Pricing uses ONLY canonical PA
+ * address (areaServed-only — the firm is minutes across the line). Pricing uses ONLY canonical PA
  * figures (monthly from $400/mo; cleanup from $1,200; setup from $750).
  *
  * ROUTING (PA is a CORE state — only 6 pages): cross-links go ONLY to the 4 PA siblings + pillar, or

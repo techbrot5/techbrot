@@ -16,7 +16,7 @@
  * (Form MI-W4; STATE wage income only — does NOT cover the city tax, contractors, or non-wage income). Flat 4.25%
  * individual income-tax rate (confirmed 2026) as advisory context. provider = #organization; areaServed = State
  * Michigan; reviewedBy #david-westgate on the WebPage. NO street address, NO LocalBusiness (MI is areaServed-only;
- * the DE HQ is the only real-address state). HONESTY (R5): firm-level review byline only (no founder name);
+ * all states are areaServed-only (no street address)). HONESTY (R5): firm-level review byline only (no founder name);
  * independent firm — not affiliated with Intuit Inc.; does NOT file Michigan/federal/CIT/individual-income/city/
  * sales-tax/FTE(Form 5772) returns; not a registered agent; the flat 4.25% income tax, Detroit's 2.4%/1.2% city
  * rate, the 6% CIT, and the 6% sales tax are VERIFIED and stated, but specific non-Detroit city rates are framed

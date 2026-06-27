@@ -13,7 +13,7 @@
  * staff. Graduated state income tax (2% / 3% / 5% / 5.75%, no local add-on), corporate 6%, and the elective
  * 5.75% PTET (confirm 2026) as advisory context only. provider = #organization; areaServed = State Virginia;
  * reviewedBy #david-westgate on the WebPage. NO street address, NO LocalBusiness (VA is areaServed-only; the
- * DE HQ is the only real-address state). HONESTY (R5): firm-level review byline only (no founder name);
+ * all states are areaServed-only (no street address)). HONESTY (R5): firm-level review byline only (no founder name);
  * independent firm — not affiliated with Intuit Inc.; does NOT file Virginia/federal/corporate/income/
  * payroll-withholding/sales-tax/BPOL-or-local-business-tax/PTET returns; not a registered agent; specific
  * locality BPOL rates and sales-tax regions framed qualitatively, never quoted as fixed figures; the 7.75%

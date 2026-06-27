@@ -15,7 +15,7 @@
  * the municipal tax still applies; the IT 4738 PTE election as the advisory hook; and a 5.75% state sales tax
  * plus a county/transit rate (combined ~6.5%-8.0%, highest in Cuyahoga/Cleveland + Franklin/Columbus). Metros
  * Columbus/Cleveland/Cincinnati/Toledo/Akron/Dayton/Canton/Youngstown; all 88 counties; borders IN/MI/PA/WV/KY;
- * NO street address (areaServed-only — DE is the only real-address state). Pricing uses ONLY canonical OH
+ * NO street address (areaServed-only — all states are areaServed-only (no street address)). Pricing uses ONLY canonical OH
  * figures (monthly from $400/mo; cleanup from $1,200; setup from $750).
  *
  * ROUTING (OH is a CORE state — only 6 pages): cross-links go ONLY to the 4 OH siblings + pillar, or to

@@ -25,7 +25,7 @@
  * tech/startups/CU, home-rule), Pueblo (Pueblo; manufacturing/steel), Greeley (Weld; ag/energy).
  * PRICING anchored to CO-FACTS canonical "from" figures (monthly $400, cleanup $1,200, setup $750).
  * provider = #organization; areaServed = State Colorado (NO PostalAddress / geo / LocalBusiness —
- * Colorado is an areaServed-only state; the DE HQ is the only real-address state); reviewedBy
+ * Colorado is an areaServed-only state; all states are areaServed-only (no street address)); reviewedBy
  * #david-westgate. NOTE sameAs target is plain Colorado (https://en.wikipedia.org/wiki/Colorado).
  * HONESTY (R5): no invented reviews/stats; firm-level review byline (no founder name; David Westgate only as
  * reviewedBy @id). Independent firm — does NOT file Colorado or federal returns, the state or home-rule city

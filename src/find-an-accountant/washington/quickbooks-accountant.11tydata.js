@@ -23,7 +23,7 @@
  * Vancouver (Clark; Oregon-border), Bellevue (King; tech), Everett (Snohomish; Boeing aerospace), Kent
  * (King; warehousing). PRICING anchored to WA-FACTS canonical "from" figures (monthly $400, cleanup
  * $1,200, setup $750). provider = #organization; areaServed = State Washington (NO PostalAddress / geo /
- * LocalBusiness — Washington is an areaServed-only state; the DE HQ is the only real-address state);
+ * LocalBusiness — Washington is an areaServed-only state; all states are areaServed-only (no street address));
  * reviewedBy #david-westgate. NOTE sameAs target is Washington_(state), not Washington.
  * HONESTY (R5): no invented reviews/stats; firm-level review byline (no founder name; David Westgate only as
  * reviewedBy @id). Independent firm — does NOT file Washington or federal returns, the B&O / Combined Excise
