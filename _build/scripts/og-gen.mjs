@@ -92,6 +92,14 @@ const ogTitleOf = (html) => { const m = html.match(/<meta property="og:title" co
 async function main() {
   const samples = process.argv.includes('--samples');
   const SITE = join(REPO, '_site-prod');
+  if (process.argv.includes('--default')) {
+    // brand-level fallback card (no specific page); honest copy only.
+    const buf = await renderCard({ title:'Certified QuickBooks ProAdvisors for Small Businesses', category:'Accounting & Advisory' });
+    const dst = join(REPO, 'src', 'assets', 'og', 'default.png');
+    writeFileSync(dst, buf);
+    console.log(`default.png -> ${dst} (${(buf.length/1024).toFixed(1)}KB)`);
+    return;
+  }
   if (samples) {
     const outDir = join(REPO, '_build', 'og-samples', 'phase2'); mkdirSync(outDir, { recursive:true });
     const set = [
