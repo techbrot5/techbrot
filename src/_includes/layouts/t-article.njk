@@ -93,7 +93,7 @@ footerNav:
       <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
       <div class="final-cta__actions">
         {%- for action in ctaBand.actions %}
-        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"{% if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 24px;border-radius:13px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ action.label }}</a>
+        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"{% if action.tel or (action.href and action.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 24px;border-radius:13px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{% if action.tel or (action.href and action.href.startsWith("tel:")) %}Call {{ site.phone.display }}{% else %}{{ action.label }}{% endif %}</a>
         {%- endfor %}
       </div>
       {#- disclaimer rationalized (2026-06-25): the Intuit/independence boilerplate is now ONLY in

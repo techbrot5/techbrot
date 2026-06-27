@@ -49,7 +49,7 @@ footerNav:
     {%- if hero.actions %}
     <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;">
       {%- for a in hero.actions.slice(0, 2) %}
-      <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel or (a.href and a.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
+      <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel or (a.href and a.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{% if a.tel or (a.href and a.href.startsWith("tel:")) %}Call {{ site.phone.display }}{% else %}{{ a.label }}{% endif %}</a>
       {%- endfor %}
     </div>
     {%- endif %}
@@ -112,7 +112,7 @@ footerNav:
       <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
       <div class="final-cta__actions">
         {%- for a in ctaBand.actions %}
-        <a class="btn {% if loop.first %}btn-ghost{% else %}btn-ghost{% endif %} mono" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel or (a.href and a.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 24px;border-radius:13px;font-size:16px;font-weight:500;">{{ a.label }}</a>
+        <a class="btn {% if loop.first %}btn-ghost{% else %}btn-ghost{% endif %} mono" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel or (a.href and a.href.startsWith("tel:")) %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 24px;border-radius:13px;font-size:16px;font-weight:500;">{% if a.tel or (a.href and a.href.startsWith("tel:")) %}Call {{ site.phone.display }}{% else %}{{ a.label }}{% endif %}</a>
         {%- endfor %}
       </div>
       {%- if ctaBand.note %}<p style="font-size:13px;color:var(--color-ink-mute);margin:18px auto 0;max-width:52ch;">{{ ctaBand.note | safe }}</p>{%- endif %}

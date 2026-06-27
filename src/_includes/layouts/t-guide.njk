@@ -43,7 +43,7 @@ pageTier: guide
         <div class="hero__actions">
           {%- for action in hero.actions.slice(0, 2) %}
           <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-            {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+            {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{% if action.tel or (action.href and action.href.startsWith("tel:")) %}Call {{ site.phone.display }}{% else %}{{ action.label }}{% endif %}</a>
           {%- endfor %}
         </div>
         {%- endif %}
@@ -68,7 +68,7 @@ pageTier: guide
       <div class="hero__actions">
         {%- for action in hero.actions.slice(0, 2) %}
         <a class="btn {{ action.class }} btn--lg" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{% if action.tel or (action.href and action.href.startsWith("tel:")) %}Call {{ site.phone.display }}{% else %}{{ action.label }}{% endif %}</a>
         {%- endfor %}
       </div>
       {%- endif %}
@@ -107,7 +107,7 @@ pageTier: guide
       <div class="final-cta__actions">
         {%- for action in ctaBand.actions %}
         <a class="btn {{ action.class }}" href="{% if action.tel %}tel:{{ site.phone.e164 }}{% else %}{{ action.href }}{% endif %}"
-          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{{ action.label }}</a>
+          {%- if action.tel or (action.href and action.href.startsWith("tel:")) %} data-tb-event="phone_click"{% endif %}>{% if action.tel or (action.href and action.href.startsWith("tel:")) %}Call {{ site.phone.display }}{% else %}{{ action.label }}{% endif %}</a>
         {%- endfor %}
       </div>
       <p class="final-cta__disclaimer">TechBrot is an independent accounting firm and Certified QuickBooks ProAdvisor. We are not Intuit. QuickBooks and Intuit are registered trademarks of Intuit Inc.</p>

@@ -30,7 +30,7 @@ footerNav:
       {%- if hero.actions %}
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px;">
         {%- for a in hero.actions.slice(0, 2) %}
-        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:52px;padding:0 24px;border-radius:12px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
+        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:52px;padding:0 24px;border-radius:12px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{% if a.tel or (a.href and a.href.startsWith("tel:")) %}Call {{ site.phone.display }}{% else %}{{ a.label }}{% endif %}</a>
         {%- endfor %}
       </div>
       {%- endif %}
@@ -76,7 +76,7 @@ footerNav:
     <h2 class="h2 dossier__h" style="max-width:16ch;margin-bottom:40px;">{{ sec.aiH | safe }}</h2>
     <div class="dossier-qa speakable">
       {%- for item in aiSummary %}<div class="dossier-qa__item"><h3>{{ item.q | safe }}</h3><p>{{ item.a | safe }}</p></div>{%- endfor %}
-      <div class="dossier-qa__item dossier-qa__cta"><a class="btn btn-cta" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" style="display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 20px;border-radius:10px;font-size:14.5px;font-weight:600;">{% include "icons/phone.svg" %} Speak to a ProAdvisor</a></div>
+      <div class="dossier-qa__item dossier-qa__cta"><a class="btn btn-cta" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" style="display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 20px;border-radius:10px;font-size:14.5px;font-weight:600;">{% include "icons/phone.svg" %} Call {{ site.phone.display }}</a></div>
     </div>
   </div>
 </section>
@@ -211,7 +211,7 @@ footerNav:
       <p class="final-dark__lede">{{ ctaBand.lede | safe }}</p>
       <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;">
         {%- for a in ctaBand.actions %}
-        <a class="btn {% if loop.first %}btn-cta{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:11px;height:56px;padding:0 26px;border-radius:13px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};{% if not loop.first %}background:transparent;color:#fff;border:1px solid rgba(245,247,251,0.32);{% endif %}">{{ a.label }}</a>
+        <a class="btn {% if loop.first %}btn-cta{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:11px;height:56px;padding:0 26px;border-radius:13px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};{% if not loop.first %}background:transparent;color:#fff;border:1px solid rgba(245,247,251,0.32);{% endif %}">{% if a.tel or (a.href and a.href.startsWith("tel:")) %}Call {{ site.phone.display }}{% else %}{{ a.label }}{% endif %}</a>
         {%- endfor %}
       </div>
       {#- disclaimer rationalized (2026-06-25): canonical disclaimer lives in the dc-base footer; duplicate removed. -#}

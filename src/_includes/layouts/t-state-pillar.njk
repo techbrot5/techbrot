@@ -49,7 +49,7 @@ footerNav:
       {%- if hero.actions %}
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px;">
         {%- for a in hero.actions.slice(0, 2) %}
-        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:52px;padding:0 24px;border-radius:12px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
+        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:9px;height:52px;padding:0 24px;border-radius:12px;font-size:16px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{% if a.tel or (a.href and a.href.startsWith("tel:")) %}Call {{ site.phone.display }}{% else %}{{ a.label }}{% endif %}</a>
         {%- endfor %}
       </div>
       {%- endif %}
@@ -163,7 +163,7 @@ footerNav:
     {%- if sec.deliveryLede %}<p class="lede" style="margin:0 0 32px;max-width:62ch;">{{ sec.deliveryLede | safe }}</p>{%- endif %}
     <div class="r-2">
       {%- for d in delivery %}
-      <article class="incl-card"><span class="eyebrow" style="display:block;margin-bottom:10px;">{{ d.eyebrow | safe }}</span><h3>{{ d.heading | safe }}</h3><p class="prose" style="font-size:15px;margin:8px 0 0;">{{ d.lede | safe }}</p><ul class="checklist">{%- for li in d.list %}<li>{{ li | safe }}</li>{%- endfor %}</ul><a class="ptier__link" href="{{ d.href }}">{{ d.cta | safe }}</a></article>
+      <article class="incl-card"><span class="eyebrow" style="display:block;margin-bottom:10px;">{{ d.eyebrow | safe }}</span><h3>{{ d.heading | safe }}</h3><p class="prose" style="font-size:15px;margin:8px 0 0;">{{ d.lede | safe }}</p><ul class="checklist">{%- for li in d.list %}<li>{{ li | safe }}</li>{%- endfor %}</ul><a class="ptier__link" href="{{ d.href or ('#' + slug + '-intake') }}">{{ d.cta | safe }}</a></article>
       {%- endfor %}
     </div>
     {%- if deliveryNote %}<p class="prose" style="margin-top:24px;font-size:14px;color:var(--color-ink-mute);">{{ deliveryNote | safe }}</p>{%- endif %}
@@ -197,7 +197,7 @@ footerNav:
     {%- if scenariosNote %}<p class="lede" style="margin:0 0 32px;max-width:64ch;">{{ scenariosNote | safe }}</p>{%- endif %}
     <div class="r-3">
       {%- for s in scenarios %}
-      <article class="dc-card"><span class="eyebrow">{{ s.tag | safe }}</span><h3>{{ s.heading | safe }}</h3><div class="prose">{%- for p in s.body %}<p>{{ p | safe }}</p>{%- endfor %}</div><a class="ptier__link" href="{{ s.href }}">{{ s.cta | safe }}</a></article>
+      <article class="dc-card"><span class="eyebrow">{{ s.tag | safe }}</span><h3>{{ s.heading | safe }}</h3><div class="prose">{%- for p in s.body %}<p>{{ p | safe }}</p>{%- endfor %}</div><a class="ptier__link" href="{{ s.href or ('#' + slug + '-intake') }}">{{ s.cta | safe }}</a></article>
       {%- endfor %}
     </div>
   </div>
@@ -261,7 +261,7 @@ footerNav:
     {%- if sec.servicesLede %}<p class="lede" style="margin:0 0 32px;max-width:64ch;">{{ sec.servicesLede | safe }}</p>{%- endif %}
     <div class="r-3">
       {%- for s in services %}
-      <article class="dc-card"><span class="eyebrow">{{ s.eyebrow }}</span><h3>{% if sec.servicesLinkNames and s.href %}<a href="{{ s.href }}">{{ s.name | safe }}</a>{% else %}{{ s.name | safe }}{% endif %}</h3><p class="prose" style="font-size:15px;margin:6px 0 12px;">{{ s.body | safe }}</p><p class="mono" style="font-size:12px;color:var(--color-ink-mute);margin:0 0 10px;">Starting {{ s.starting | safe }} &middot; {{ s.cadence | safe }}</p><a class="ptier__link" href="{% if sec.servicesCtaContact %}/contact/?intent={{ intent | default(slug, true) }}{% else %}{{ s.href }}{% endif %}">{{ s.cta | safe }}</a></article>
+      <article class="dc-card"><span class="eyebrow">{{ s.eyebrow }}</span><h3>{% if sec.servicesLinkNames and s.href %}<a href="{{ s.href }}">{{ s.name | safe }}</a>{% else %}{{ s.name | safe }}{% endif %}</h3><p class="prose" style="font-size:15px;margin:6px 0 12px;">{{ s.body | safe }}</p><p class="mono" style="font-size:12px;color:var(--color-ink-mute);margin:0 0 10px;">Starting {{ s.starting | safe }} &middot; {{ s.cadence | safe }}</p><a class="ptier__link" href="{% if sec.servicesCtaContact %}/contact/?intent={{ intent | default(slug, true) }}{% else %}{{ s.href or ('#' + slug + '-intake') }}{% endif %}">{{ s.cta | safe }}</a></article>
       {%- endfor %}
     </div>
     {%- if servicesNote %}<p class="prose" style="margin-top:24px;font-size:14px;color:var(--color-ink-mute);">{{ servicesNote | safe }}</p>{%- endif %}
@@ -359,7 +359,7 @@ footerNav:
         <span class="eyebrow" style="display:block;margin-bottom:10px;">Option 01</span>
         <h3>{{ sec.callH | default("Call directly.", true) | safe }}</h3>
         <p class="prose" style="font-size:15px;margin:8px 0 16px;">{{ sec.callBody | default("A Certified ProAdvisor answers &mdash; not a call center. Best for same-day diagnostics, behind-on-the-books situations, or compliance urgencies.", true) | safe }}</p>
-        <a class="btn btn-cta" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">{% include "icons/phone.svg" %} Speak to a ProAdvisor</a>
+        <a class="btn btn-cta" href="tel:{{ site.phone.e164 }}" data-ga="phone_click" data-tb-event="phone_click" style="display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 22px;border-radius:11px;font-size:15px;font-weight:600;">{% include "icons/phone.svg" %} Call {{ site.phone.display }}</a>
         {%- if callAssurance %}<ul class="checklist" style="margin-top:16px;">{%- for a in callAssurance %}<li>{{ a | safe }}</li>{%- endfor %}</ul>{%- endif %}
       </article>
       <div class="incl-card">
@@ -552,7 +552,7 @@ footerNav:
       <p class="final-cta__lede">{{ ctaBand.lede | safe }}</p>
       <div class="final-cta__actions">
         {%- for a in ctaBand.actions %}
-        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 24px;border-radius:13px;font-size:15.5px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{{ a.label }}</a>
+        <a class="btn {% if loop.first %}btn-cta{% else %}btn-ghost{% endif %}" href="{% if a.tel %}tel:{{ site.phone.e164 }}{% else %}{{ a.href }}{% endif %}"{% if a.tel %} data-ga="phone_click" data-tb-event="phone_click"{% endif %} style="display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 24px;border-radius:13px;font-size:15.5px;font-weight:{% if loop.first %}600{% else %}500{% endif %};">{% if a.tel or (a.href and a.href.startsWith("tel:")) %}Call {{ site.phone.display }}{% else %}{{ a.label }}{% endif %}</a>
         {%- endfor %}
       </div>
       {#- disclaimer rationalized (2026-06-25): canonical disclaimer lives in the dc-base footer; duplicate removed. -#}
