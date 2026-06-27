@@ -62,6 +62,13 @@ module.exports = function (eleventyConfig) {
   // instead of two (perf: LCP). No separate passthrough/link anymore.
   eleventyConfig.addWatchTarget("src/assets/");
 
+  // Per-page OG card path. MUST match cardSlug() in _build/scripts/og-gen.mjs:
+  // strip leading/trailing "/", "/"->"-", home "" -> "home".
+  eleventyConfig.addFilter("ogCard", (url) => {
+    const slug = String(url || "/").replace(/^\/|\/$/g, "").replace(/\//g, "-") || "home";
+    return `/assets/og/cards/${slug}.png`;
+  });
+
   return {
     dir: {
       input: "src",
