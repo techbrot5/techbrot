@@ -2462,3 +2462,14 @@ Delta: +12 perf points; LCP -2.1s (-50%), now under the 2.5s "Good" threshold.
 Sitewide (all 727 pages) from the 3 template/build fixes: one minified
 render-blocking CSS file (dc-system merged), GTM deferred out of the LCP
 path, fonts same-origin (only Fraunces+Geist preloaded). No per-page work.
+
+---
+
+## Turn -- 2026-06-28 -- OG IMAGES: templated per-page social cards, all 728 pages (3 phases)
+**PHASE 1 (design):** rendered 3 directions x 3 sample pages (satori+sharp, the site's exact brand fonts instanced variable->static TTF via fonttools/og_fonts.py; text vectorized to paths so PNGs are font-independent). Founder chose **Direction B "Split Ledger"** (ink text panel + petrol monogram panel, amber divider + ledger hairlines).
+**PHASE 2 (samples):** 5 real page-types (home/money/pillar/prose/contact) on Direction B -> founder approved. Verified auto-category from URL silo, entity-decoded titles, suffix strip, adaptive sizing (58/52/46px), long-title wrap, 10-15KB.
+**PHASE 3 (batch + wiring):** _build/scripts/og-gen.mjs reads each built og:title + derives category, renders -> src/assets/og/cards/<slug>.png. New `ogCard` eleventy filter + per-page og:image + twitter:image in dc-base + base (filter slug matches og-gen cardSlug). Generated 728 cards (avg 12.9KB, max 16.7KB, ~12MB). 
+**VERIFY (build):** 728/728 pages -> correct EXISTING card, twitter==og, 1200x630 meta present, 0 missing / 0 wrong-slug / 0 default-fallback. Battery 154 PASS. **VERIFY (LIVE, commit 060e711):** techbrot.com og:image + twitter:image = /assets/og/cards/home.png; sampled cards (home, cleanup, new-york, contact) all 200 image/png; live NY card = 1200x630 PNG.
+**HONEST:** only the true "Certified QuickBooks ProAdvisors" footer line; no fabricated badges/stats. **MAINTAINABLE:** re-run `node _build/scripts/og-gen.mjs` after page changes -> new pages auto-get a card. devDeps satori + wawoff2 (build-time only; Cloudflare passes through committed PNGs). Static OG fonts in _build/og-fonts/ (rerun og_fonts.py only if brand fonts change).
+**COUNT:** 1 commit (060e711: 741 files -- 728 cards + 6 fonts + 2 scripts + eleventy.config + 2 layouts + package). Pushed; HEAD==origin. Memory: og-image-pipeline.
+**OPEN:** none. OG cards live across all 728 pages.
